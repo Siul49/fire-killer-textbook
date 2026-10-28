@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제5편 위험물 및 특수가연물론 제1장. 제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제5편 제1장. 제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법</span>
+        <span class="text-slate-600">|</span>
+        <a href="05_02_제4류_제5류_제6류_위험물과_지정수량.html" class="hover:text-emerald-300 transition">다음 장: 제5편 제2장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제5편 제1장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제5편 위험물 및 특수가연물론 · 제1장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 제1류 위험물(산화성 고체)의 성질과 무기과산화물의 예외적 소화법</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 제2류 위험물(가연성 고체)의 성상 및 적린(제2류) vs 황린(제3류) 대조</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 제3류 위험물(자연발화성 및 금수성 물질)의 지정수량과 보호액</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 금수성 위험물과 물(H2O)의 화학 반응식 및 발생 가스 총정리</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (9문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (11문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제5편 위험물 및 특수가연물론</span>
+        <span>·</span>
+        <span>제1장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        산화성 고체(제1류), 가연성 고체(제2류), 자연발화성 및 금수성 물질(제3류)의 물리·화학적 성상과 지정수량을 비교하고, 금수성 위험물이 물과 접촉할 때 방출하는 가연성 가스 반응식을 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 제1류 위험물(산화성 고체)의 성질과 무기과산화물의 예외적 소화법</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            이제 소방학개론의 마지막 제5편인 <strong>위험물 성상 및 특수가연물</strong> 파트로 들어갑니다. ｢위험물안전관리법 시행령｣ 별표 1은 화재·폭발 위험이 큰 물질들을 물리·화학적 성질에 따라 <strong>제1류부터 제6류까지 6가지 유별</strong>로 분류합니다. 그중 첫 번째인 <strong>제1류 위험물</strong>은 고체 상태의 산소 폭탄이라 부를 수 있는 <strong>산화성 고체</strong>입니다. 수험생들이 가장 먼저 머릿속에 못 박아야 할 제1류의 반전 매력은, <strong>제1류 위험물 그 자체는 절대 불에 타지 않는 '불연성(비연소성) 물질'</strong>이라는 점입니다! "불에 타지도 않는데 왜 위험물인가요?" 제1류는 자기 분자 구조 속에 산소(O) 원자를 가득 품고 있어서, 열이나 충격·마찰을 받으면 쉽게 분해되면서 <strong>다량의 산소(O<sub>2</sub>)를 뿜어내어 주변에 있는 다른 가연물을 폭발적으로 타오르게 만드는 강력한 산화제(조연성·지연성 물질)</strong>이기 때문입니다! 대부분의 제1류 위험물은 물보다 무겁고(비중 1 초과) 물에 잘 녹는 무색 결정 또는 백색 분말입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>제1류 위험물(산화성 고체) 공통 성질</strong>: 자체는 타지 않는 <strong>불연성(비연소성)</strong> 물질이나, 열분해 시 <strong>산소(O<sub>2</sub>)를 방출하는 강산화제(조연성)</strong>, 비중 1 초과</li>
+              <li><strong>제1류 지정수량 3단계</strong>: 아염소산·염소산·과염소산·무기과산화물(<strong>50kg</strong>) / 브롬산·질산·요오드산(<strong>300kg</strong>) / 과망간산·중크롬산(<strong>1,000kg</strong>)</li>
+              <li><strong>소화방법 원칙과 예외</strong>: 제1류는 원칙적으로 <strong>주수 냉각소화</strong>이나, <strong>무기과산화물(과산화나트륨 등)</strong>은 물과 반응해 <strong>산소(O<sub>2</sub>)와 열</strong>을 내므로 주수 금지(<strong>마른모래·팽창질석 질식소화</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            제1류 위험물의 품명과 지정수량은 산소를 내놓는 위험도에 따라 3단계(50 kg · 300 kg · 1,000 kg)로 나뉩니다. ① 가장 위험한 <strong>제1등급(지정수량 50 kg)</strong>은 <strong>아염소산염류, 염소산염류, 과염소산염류, 무기과산화물</strong>입니다('아·염·과·무 50 kg'으로 기억하십시오!). ② <strong>제2등급(지정수량 300 kg)</strong>은 <strong>브롬산염류, 질산염류, 요오드산염류</strong>입니다('브·질·요 300 kg'). ③ <strong>제3등급(지정수량 1,000 kg)</strong>은 <strong>과망간산염류, 중크롬산염류</strong>입니다('과망·중크 1,000 kg').
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 제1류 위험물이 섞인 화재 현장에서는 어떤 소화 방법을 써야 할까요? 제1류는 열을 받으면 스스로 산소를 뿜어내기 때문에, 거품이나 가스로 외부 공기를 덮는 질식소화는 아무 소용이 없습니다. 따라서 원칙적으로 <strong>다량의 물을 뿌려 열분해 온도 밑으로 확 식혀버리는 '주수 냉각소화'</strong>가 정답입니다! 그러나 제1류 안에서 절대 물을 뿌리면 안 되는 단 하나의 치명적인 예외가 있으니, 바로 지정수량 50 kg인 <strong>무기과산화물(과산화나트륨 Na<sub>2</sub>O<sub>2</sub>, 과산화칼륨 K<sub>2</sub>O<sub>2</sub>, 과산화마그네슘 MgO<sub>2</sub>, 과산화바륨 BaO<sub>2</sub> 등 알칼리금속·알칼리토금속의 과산화물)</strong>입니다! 왜 무기과산화물에는 물을 뿌리면 안 될까요? 무기과산화물은 <strong>물(H<sub>2</sub>O)과 닿는 순간 격렬하게 반응하여 막대한 반응열과 함께 산소(O<sub>2</sub>) 가스를 뿜어내는 금수성 물질</strong>(2Na<sub>2</sub>O<sub>2</sub> + 2H<sub>2</sub>O ➔ 4NaOH + O<sub>2</sub>↑ + 열)이기 때문입니다! 따라서 무기과산화물 화재에는 주수 소화를 절대 금하며, 반드시 <strong>마른모래(건조사), 팽창질석, 팽창진주암, 탄산수소염류 분말로 덮는 피복 질식소화</strong>를 해야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 제2류 위험물(가연성 고체)의 성상 및 적린(제2류) vs 황린(제3류) 대조</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            제1류가 '남을 태우는 불연성 산화제'였다면, <strong>제2류 위험물</strong>은 자기 자신이 낮은 온도에서도 쉽게 불붙어 빠르게 타오르는 <strong>가연성 고체(환원성 물질)</strong>입니다(따라서 제1류 산화제와 제2류 가연성 고체가 섞이면 화약처럼 폭발하므로 절대 혼재할 수 없습니다!). 제2류 위험물은 모두 물보다 무겁고(비중 1 초과) 물에 녹지 않는 고체이며, 지정수량은 위험도에 따라 3단계(100 kg · 500 kg · 1,000 kg)로 나뉩니다. ① <strong>황화린(오황화린 P<sub>2</sub>S<sub>5</sub>, 삼황화린 P<sub>4</sub>S<sub>3</sub> 등) · 적린(붉은 인, P) · 유황(황, S)은 100 kg</strong>, ② <strong>철분(Fe) · 금속분(마그네슘·알루미늄·아연 분말 등) · 마그네슘(Mg)은 500 kg</strong>, ③ <strong>인화성 고체(고형알코올 등 인화점이 40℃ 미만인 고체)는 1,000 kg</strong>입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>제2류 지정수량 및 입도 기준</strong>: 황화린·적린·유황(순도 60wt% 이상) <strong>100kg</strong> / 철분(53μm 체 통과 50wt% 이상)·금속분(150μm 체 통과 50wt% 이상)·마그네슘 <strong>500kg</strong> / 인화성고체(인화점 40℃ 미만 고체) <strong>1,000kg</strong></li>
+              <li><strong>적린(제2류) vs 황린(제3류) 대조</strong>: <strong>적린</strong>은 제2류(100kg), 발화점 <strong>260℃</strong>, 무독성, 주수소화 가능 / <strong>황린</strong>은 제3류(20kg), 발화점 <strong>34℃</strong> 자연발화, 맹독성, <strong>물속 보관</strong> 및 주수소화 가능</li>
+              <li><strong>제2류 중 주수 금지 품목</strong>: <strong>철분 · 금속분 · 마그네슘</strong>(물과 반응해 <strong>수소 H<sub>2</sub></strong> 발생) 및 <strong>오황화린</strong>(물과 반응해 <strong>황화수소 H<sub>2</sub>S</strong> 발생)은 주수 금지 ➔ 마른모래·팽창질석 사용</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            최근 기출에서 자주 묻는 디테일은 '어떤 크기의 알갱이부터 제2류 위험물로 볼 것인가?'라는 법정 입도·순도 기준입니다. 굵은 철근이나 구리 가루는 불이 잘 안 붙기 때문입니다! ① <strong>유황</strong>은 불순물을 제외한 순도가 <strong>60중량% 이상</strong>인 것만 위험물입니다. ② <strong>철분</strong>은 <strong>53 &mu;m(마이크로미터) 표준체를 통과하는 고운 가루가 50중량% 미만인 것은 위험물에서 제외</strong>됩니다(즉 50중량% 이상 통과해야 위험물!). ③ <strong>금속분</strong>은 알칼리금속·알칼리토금속·철분·마그네슘을 제외한 금속 가루로서, 불이 잘 안 붙는 <strong>구리분·니켈분 및 150 &mu;m 체를 통과하는 것이 50중량% 미만인 것은 제외</strong>됩니다. ④ <strong>마그네슘</strong>은 <strong>2 mm 체를 통과하지 않는 덩어리 상태나 직경 2 mm 이상의 막대 모양</strong>은 표면적이 작아 위험물에서 제외됩니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            특히 시험에서 매회 비교 표로 출제되는 단골 쌍둥이가 바로 인(P)의 동소체인 <strong>적린(제2류 가연성 고체, 지정수량 100 kg)</strong>과 <strong>황린(제3류 자연발화성 물질, 지정수량 20 kg)</strong>입니다! 둘 다 똑같은 인(P) 원소로 이루어져 있는데 왜 유별이 다를까요? <strong>황린(흰 인, P<sub>4</sub>)</strong>은 분자 구조가 불안정한 정사면체여서 공기 중에 내놓으면 상온 근처인 <strong>약 34℃에서 저절로 불이 붙는(자연발화)</strong> 맹독성 물질입니다! 그래서 황린은 제3류 위험물로 분류하며 공기와 닿지 않도록 반드시 <strong>물속(pH 9 내외의 약알칼리성 수중)에 잠기게 보관</strong>합니다. 반면 이 황린을 공기를 차단한 채 260℃ 이상으로 가열해 안정한 사슬 구조로 바꾼 <strong>적린(붉은 인)</strong>은 독성이 없고 공기 중에 그냥 두어도 자연발화하지 않으며 <strong>발화점이 약 260℃</strong>로 높아서 성냥갑 옆면 원료로 쓰이는 안전한 제2류 가연성 고체입니다. 소화 방법을 볼 때 적린·유황·고형알코올은 물로 식히는 주수 냉각소화가 가능하지만, 제2류 중 <strong>철분·금속분·마그네슘은 물과 닿으면 폭발성 수소(H<sub>2</sub>) 가스를 내므로 절대 물을 뿌리면 안 되고 마른모래나 D급 금속소화기</strong>를 써야 하며, <strong>황화린 중 오황화린(P<sub>2</sub>S<sub>5</sub>)도 물과 반응해 계란 썩는 냄새가 나는 맹독성·가연성 황화수소(H<sub>2</sub>S) 가스를 내므로 주수를 금하고 마른모래</strong>로 덮어야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 제3류 위험물(자연발화성 및 금수성 물질)의 지정수량과 보호액</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            <strong>제3류 위험물</strong>은 공기 중에 노출되기만 해도 스스로 불이 붙는 <strong>자연발화성 물질</strong>이거나, 물(수분)과 접촉하면 격렬하게 반응하여 가연성 가스와 열을 내뿜는 <strong>금수성(禁水性) 물질</strong>(대부분은 자연발화성과 금수성을 동시에 가짐!)입니다. 위험도가 극도로 높기 때문에 지정수량도 매우 작으며 4단계(10 kg · 20 kg · 50 kg · 300 kg)로 구분됩니다. ① 가장 위험한 <strong>칼륨(K) · 나트륨(Na) · 알킬알루미늄 · 알킬리튬은 10 kg</strong>, ② <strong>황린은 20 kg</strong>, ③ <strong>알칼리금속(칼륨·나트륨 제외: 리튬 Li 등) · 알칼리토금속(칼슘 Ca, 바륨 Ba 등) · 유기금속화합물(알킬알루미늄·알킬리튬 제외)은 50 kg</strong>, ④ <strong>금속의 수소화물(NaH 등) · 금속의 인화물(Ca<sub>3</sub>P<sub>2</sub> 등) · 칼슘 또는 알루미늄의 탄화물(CaC<sub>2</sub>, Al<sub>4</sub>C<sub>3</sub>)은 300 kg</strong>입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>제3류 지정수량</strong>: 칼륨·나트륨·알킬알루미늄·알킬리튬(<strong>10kg</strong>) / 황린(<strong>20kg</strong>) / 알칼리금속·알칼리토금속·유기금속화합물(<strong>50kg</strong>) / 수소화물·인화물·탄화물(<strong>300kg</strong>)</li>
+              <li><strong>물질별 전용 보호액</strong>: <strong>칼륨·나트륨 = 석유(등유·경유)</strong> / <strong>황린 = 물(수중)</strong> / <strong>알킬알루미늄 = 질소 등 불활성기체 봉입</strong> (참고: 이황화탄소·니트로셀룰로오스는 물)</li>
+              <li><strong>제3류 소화방법 예외</strong>: 제3류는 원칙적으로 <strong>주수 절대 금지(마른모래·팽창질석 사용)</strong>이나, 오직 <strong>황린(자연발화성만 있고 금수성은 없음)만 주수 냉각소화 가능</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            제3류 위험물은 가만히 공기 중에 두거나 습기가 닿으면 폭발하므로, 물질의 성질에 맞춰 공기와 수분을 완벽히 차단해 주는 <strong>전용 보호액</strong> 속에 담가 보관해야 합니다. 이 보호액 매칭은 모든 소방 시험의 단골 문제입니다! ① 물과 닿으면 폭발하는 알칼리금속인 <strong>칼륨(K), 나트륨(Na), 리튬(Li)은 산소와 수분이 전혀 없는 '석유류(등유·경유·유동파라핀)' 속</strong>에 푹 잠기게 보관합니다. ② 반대로 공기 중에서는 34℃에서 자연발화하지만 물과는 전혀 반응하지 않는 <strong>황린(P<sub>4</sub>)은 '물속(수중)'</strong>에 담가 공기를 차단합니다. ③ 공기나 수분과 닿으면 즉시 폭발하는 액체 금속화합물인 <strong>알킬알루미늄</strong>은 벤젠이나 헥산 같은 불활성 용매에 묽게 희석한 뒤 강철 용기 안에 <strong>질소(N<sub>2</sub>)나 헬륨·아르곤 같은 불활성 기체를 봉입</strong>하여 보관합니다(참고로 제4류 특수인화물인 <strong>이황화탄소 CS<sub>2</sub></strong>는 유독 증기 발생을 막기 위해 <strong>물속</strong>에 보관하고, 제5류 <strong>니트로셀룰로오스</strong>는 마찰 폭발을 막기 위해 <strong>물이나 알코올</strong>로 적셔 보관합니다!).
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            소화 방법을 보면, 제3류 위험물 중 <strong>유일하게 금수성이 없는 '황린'만 주수 냉각소화가 가능</strong>하며, 황린을 제외한 모든 제3류 금수성 물질은 불이 났을 때 물이나 수계 포(거품)를 뿌리는 것이 절대 금지됩니다! 반드시 <strong>마른모래(건조사), 팽창질석, 팽창진주암, 또는 금속화재 전용 분말(탄산수소염류 등)</strong>로 덮어 질식소화해야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 금수성 위험물과 물(H2O)의 화학 반응식 및 발생 가스 총정리</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            소방학개론 위험물 파트에서 고득점 합격생을 가르는 최고의 킬러 문항은 <strong>'어떤 금수성 위험물 1몰이 물(H<sub>2</sub>O)과 만났을 때 무슨 가스가 몇 몰(mol) 발생하는가?'</strong>를 묻는 화학 반응식 문제입니다. 무작정 외우려 하면 헷갈리지만, 금속 원자가 물의 수산기(OH<sup>&minus;</sup>)를 가져가고 남은 수소(H<sup>+</sup>)가 상대방 원소와 짝을 짓는 원리만 이해하면 눈감고도 맞힐 수 있습니다!
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>탄화칼슘(CaC<sub>2</sub>) vs 탄화알루미늄(Al<sub>4</sub>C<sub>3</sub>)</strong>: <strong>탄화칼슘 + 물 ➔ 아세틸렌(C<sub>2</sub>H<sub>2</sub>)</strong> / <strong>탄화알루미늄 + 물 ➔ 메테인(CH<sub>4</sub>)</strong> (탄화알루미늄에 아세틸렌 발생이라 하면 오답!)</li>
+              <li><strong>알킬알루미늄 반응식</strong>: <strong>트라이메틸알루미늄[(CH<sub>3</sub>)<sub>3</sub>Al] 1몰 + 물 3몰 ➔ 메테인(CH<sub>4</sub>) 3몰</strong> / <strong>트라이에틸알루미늄 1몰 + 물 3몰 ➔ 에테인(C<sub>2</sub>H<sub>6</sub>) 3몰</strong></li>
+              <li><strong>인화물 vs 무기과산화물</strong>: <strong>인화칼슘(Ca<sub>3</sub>P<sub>2</sub>)·인화알루미늄(AlP) + 물 ➔ 포스핀(PH<sub>3</sub>, 가연성·맹독성)</strong> / <strong>과산화나트륨(Na<sub>2</sub>O<sub>2</sub>) + 물 ➔ 산소(O<sub>2</sub>, 조연성·비가연성)</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            첫째, <strong>순수한 금속(칼륨 K, 나트륨 Na, 칼슘 Ca, 마그네슘 Mg 등)이나 금속의 수소화물(수소화나트륨 NaH, 수소화리튬 LiH, 수소화칼슘 CaH<sub>2</sub>, 수소화알루미늄리튬 LiAlH<sub>4</sub>)</strong>이 물(H<sub>2</sub>O)과 만나면 무조건 <strong>수소(H<sub>2</sub>, 가연성 가스)</strong>가 튀어나옵니다! 단, 몰수 비율을 주의하십시오: 1가 금속인 나트륨(Na)은 <strong>2Na + 2H<sub>2</sub>O ➔ 2NaOH + H<sub>2</sub>&uarr;</strong>이므로 나트륨 <strong>1몰당 수소 0.5몰(2몰당 1몰)</strong>이 나오지만, 수소화나트륨(NaH)은 자기 몸속에도 수소가 하나 더 있어서 <strong>NaH + H<sub>2</sub>O ➔ NaOH + H<sub>2</sub>&uarr;</strong>로 <strong>1몰당 수소 1몰</strong>이 나오며, 2가 금속인 칼슘(Ca)은 <strong>Ca + 2H<sub>2</sub>O ➔ Ca(OH)<sub>2</sub> + H<sub>2</sub>&uarr;</strong>로 <strong>1몰당 수소 1몰</strong>이 나옵니다! 둘째, 시험에서 가장 많이 뒤바꾸어 내는 것이 <strong>탄화칼슘(CaC<sub>2</sub>, 카바이드)과 탄화알루미늄(Al<sub>4</sub>C<sub>3</sub>)</strong>입니다! 탄소가 2개 들어 있는 <strong>탄화칼슘(CaC<sub>2</sub>)은 물과 만나면 탄소 2개짜리 아세틸렌(C<sub>2</sub>H<sub>2</sub>) 가스</strong>를 만들고(CaC<sub>2</sub> + 2H<sub>2</sub>O ➔ Ca(OH)<sub>2</sub> + C<sub>2</sub>H<sub>2</sub>&uarr;), 탄소가 3개 들어 있는 <strong>탄화알루미늄(Al<sub>4</sub>C<sub>3</sub>)은 물 12몰과 만나 탄소 1개짜리 메테인(CH<sub>4</sub>) 가스 3몰</strong>을 만듭니다(Al<sub>4</sub>C<sub>3</sub> + 12H<sub>2</sub>O ➔ 4Al(OH)<sub>3</sub> + 3CH<sub>4</sub>&uarr;)! 시험 선지에 '탄화알루미늄이 물과 반응하면 아세틸렌 가스가 발생한다'고 나오면 100% 오답(×)입니다!
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>알킬알루미늄</strong>은 알루미늄(Al)에 알킬기 3개가 붙어 있는 구조이므로, 물 3몰과 만나면 알루미늄은 수산화알루미늄[Al(OH)<sub>3</sub>]이 되고 알킬기 3개가 물의 수소 3개와 결합해 똑같은 이름의 탄화수소 가스 <strong>3몰</strong>이 튀어나옵니다! 즉 메틸기(CH<sub>3</sub>)가 3개 붙은 <strong>트라이메틸알루미늄[(CH<sub>3</sub>)<sub>3</sub>Al] 1몰은 물 3몰과 반응해 메테인(CH<sub>4</sub>) 3몰</strong>을 내놓고, 에틸기(C<sub>2</sub>H<sub>5</sub>)가 3개 붙은 <strong>트라이에틸알루미늄[(C<sub>2</sub>H<sub>5</sub>)<sub>3</sub>Al] 1몰은 물 3몰과 반응해 에테인(C<sub>2</sub>H<sub>6</sub>) 3몰</strong>을 내놓습니다. 넷째, 인(P)이 들어 있는 <strong>금속의 인화물(인화칼슘 Ca<sub>3</sub>P<sub>2</sub>, 인화알루미늄 AlP, 인화아연 Zn<sub>3</sub>P<sub>2</sub>)</strong>은 물의 수소와 인(P)이 만나 맹독성·가연성 기체인 <strong>포스핀(인화수소, PH<sub>3</sub>)</strong>을 내놓습니다(Ca<sub>3</sub>P<sub>2</sub> + 6H<sub>2</sub>O ➔ 3Ca(OH)<sub>2</sub> + 2PH<sub>3</sub>&uarr;, AlP + 3H<sub>2</sub>O ➔ Al(OH)<sub>3</sub> + PH<sub>3</sub>&uarr;). 마지막으로 앞서 배운 제1류 <strong>무기과산화물(과산화나트륨 Na<sub>2</sub>O<sub>2</sub> 등)만 유일하게 물과 반응해 가연성 가스가 아닌 조연성 가스인 산소(O<sub>2</sub>)를 발생</strong>시킨다는 점까지 대조하면 모든 물 반응식이 완벽히 정복됩니다!
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-6">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">위험물 품명 및 화학식</th>
+                <th style="width:18%;">유별 (지정수량)</th>
+                <th style="width:22%;">물 반응 생성 가스</th>
+                <th>표준 화학 반응식 및 핵심 수험 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>과산화나트륨 (Na<sub>2</sub>O<sub>2</sub>)</strong><br/>과산화칼륨 (K<sub>2</sub>O<sub>2</sub>)</td>
+                <td>제1류 (50kg)<br/>무기과산화물</td>
+                <td><strong>산소 (O<sub>2</sub>)</strong><br/>(유일한 조연성 가스!)</td>
+                <td>2Na<sub>2</sub>O<sub>2</sub> + 2H<sub>2</sub>O ➔ 4NaOH + <strong>O<sub>2</sub>↑</strong> (발열 및 산소 방출)</td>
+              </tr>
+              <tr>
+                <td><strong>나트륨 (Na) · 칼륨 (K)</strong><br/>수소화나트륨 (NaH)</td>
+                <td>제3류 (10kg / 300kg)</td>
+                <td><strong>수소 (H<sub>2</sub>)</strong><br/>(가연성 가스)</td>
+                <td>2Na + 2H<sub>2</sub>O ➔ 2NaOH + <strong>H<sub>2</sub>↑</strong><br/>NaH + H<sub>2</sub>O ➔ NaOH + <strong>H<sub>2</sub>↑</strong></td>
+              </tr>
+              <tr>
+                <td><strong>탄화칼슘 (CaC<sub>2</sub>)</strong><br/>(카바이드)</td>
+                <td>제3류 (300kg)<br/>칼슘의 탄화물</td>
+                <td><strong>아세틸렌 (C<sub>2</sub>H<sub>2</sub>)</strong><br/>(연소범위 2.5%에서 81%)</td>
+                <td>CaC<sub>2</sub> + 2H<sub>2</sub>O ➔ Ca(OH)<sub>2</sub> + <strong>C<sub>2</sub>H<sub>2</sub>↑</strong> (1몰당 아세틸렌 1몰)</td>
+              </tr>
+              <tr>
+                <td><strong>탄화알루미늄 (Al<sub>4</sub>C<sub>3</sub>)</strong></td>
+                <td>제3류 (300kg)<br/>알루미늄의 탄화물</td>
+                <td><strong>메테인 (CH<sub>4</sub>)</strong></td>
+                <td>Al<sub>4</sub>C<sub>3</sub> + 12H<sub>2</sub>O ➔ 4Al(OH)<sub>3</sub> + <strong>3CH<sub>4</sub>↑</strong> (1몰당 메테인 3몰)</td>
+              </tr>
+              <tr>
+                <td><strong>트라이메틸알루미늄</strong><br/>[(CH<sub>3</sub>)<sub>3</sub>Al]</td>
+                <td>제3류 (10kg)<br/>알킬알루미늄</td>
+                <td><strong>메테인 (CH<sub>4</sub>)</strong><br/>(에틸기는 에테인 C<sub>2</sub>H<sub>6</sub>)</td>
+                <td>(CH<sub>3</sub>)<sub>3</sub>Al + 3H<sub>2</sub>O ➔ Al(OH)<sub>3</sub> + <strong>3CH<sub>4</sub>↑</strong> (1몰당 메테인 3몰)</td>
+              </tr>
+              <tr>
+                <td><strong>인화칼슘 (Ca<sub>3</sub>P<sub>2</sub>)</strong><br/>인화알루미늄 (AlP)</td>
+                <td>제3류 (300kg)<br/>금속의 인화물</td>
+                <td><strong>포스핀 (PH<sub>3</sub>)</strong><br/>(인화수소, 맹독성)</td>
+                <td>Ca<sub>3</sub>P<sub>2</sub> + 6H<sub>2</sub>O ➔ 3Ca(OH)<sub>2</sub> + <strong>2PH<sub>3</sub>↑</strong><br/>AlP + 3H<sub>2</sub>O ➔ Al(OH)<sub>3</sub> + <strong>PH<sub>3</sub>↑</strong></td>
+              </tr>
+              <tr>
+                <td><strong>오황화린 (P<sub>2</sub>S<sub>5</sub>)</strong></td>
+                <td>제2류 (100kg)<br/>황화린</td>
+                <td><strong>황화수소 (H<sub>2</sub>S)</strong><br/>(계란 썩는 냄새)</td>
+                <td>P<sub>2</sub>S<sub>5</sub> + 8H<sub>2</sub>O ➔ 2H<sub>3</sub>PO<sub>4</sub> + <strong>5H<sub>2</sub>S↑</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 제1류·제2류·제3류 위험물의 핵심 성상, 보호액 및 소화 적응성 체계</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 제1류(산화성 고체) · 제2류(가연성 고체) · 제3류(자연발화·금수성) 성상 및 지정수량</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">제1류 위험물 (산화성 고체)</div>
+                <div>· 자체 <strong>불연성</strong>, 산소 방출 강산화제, 비중 &gt; 1<br/>· <strong>50 kg</strong>(아·염·과·무) / <strong>300 kg</strong>(브·질·요) / <strong>1,000 kg</strong><br/>· 원칙 주수 냉각(<strong>무기과산화물은 주수 금지!</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">제2류 위험물 (가연성 고체)</div>
+                <div>· 가연성(환원성), 비중 &gt; 1, 물 불용성<br/>· <strong>100 kg</strong>(황화린·적린·유황) / <strong>500 kg</strong>(철분·금속분·마그네슘) / <strong>1,000 kg</strong>(인화성고체: 인화점 40℃ 미만)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">적린(제2류) vs 황린(제3류) 대조</div>
+                <div>· <strong>적린(제2류, 100 kg)</strong>: 발화점 260℃, 무독성, 공기 보관<br/>· <strong>황린(제3류, 20 kg)</strong>: 발화점 <strong>34℃ 자연발화</strong>, 맹독성, <strong>물속 보관·주수 소화</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">제3류 위험물 지정수량 &amp; 보호액</div>
+                <div>· <strong>10 kg</strong>(K·Na·알킬Al·알킬Li) / <strong>20 kg</strong>(황린) / <strong>50 kg</strong> / <strong>300 kg</strong>(수소화·인화·탄화물)<br/>· 보호액: <strong>K·Na(석유), 황린(물), 알킬Al(질소)</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 주수 소화 금지: <strong>제1류 중 무기과산화물(Na<sub>2</sub>O<sub>2</sub>, K<sub>2</sub>O<sub>2</sub>: 물과 반응해 산소+발열)</strong>, <strong>제2류 중 금속분·마그네슘(물과 반응해 수소가스 방출)</strong>, <strong>제3류 금수성 물질 전체(황린만 물속 보관 유일 예외!)</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 금수성 위험물 + 물(H2O) 화학 반응식 및 발생 가스 완벽 정리</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">산소(O<sub>2</sub>) · 수소(H<sub>2</sub>) · 아세틸렌(C<sub>2</sub>H<sub>2</sub>) 발생 반응</div>
+                <ul class="schema-list">
+                  <li><strong>과산화나트륨(Na<sub>2</sub>O<sub>2</sub>, 제1류) + 물 ➔ 산소(O<sub>2</sub>, 조연성 가스)</strong> / <strong>칼륨·나트륨·수소화물·금속분 + 물 ➔ 수소(H<sub>2</sub>)</strong></li>
+                  <li><strong>탄화칼슘(CaC<sub>2</sub>, 카바이드) + 2H<sub>2</sub>O ➔ Ca(OH)<sub>2</sub> + 아세틸렌(C<sub>2</sub>H<sub>2</sub>) 1몰</strong> 발생</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">메테인(CH<sub>4</sub>) · 포스핀(PH<sub>3</sub>) · 황화수소(H<sub>2</sub>S) 발생 반응 (단골 함정!)</div>
+                <ul class="schema-list">
+                  <li><strong>탄화알루미늄(Al<sub>4</sub>C<sub>3</sub>) + 12H<sub>2</sub>O ➔ 3CH<sub>4</sub>(메테인 3몰!)</strong> / <strong>트라이메틸알루미늄 + 3H<sub>2</sub>O ➔ 3CH<sub>4</sub>(메테인 3몰!)</strong></li>
+                  <li><strong>인화칼슘(Ca<sub>3</sub>P<sub>2</sub>)·인화알루미늄(AlP) + 물 ➔ 포스핀(PH<sub>3</sub>, 인화수소)</strong> / <strong>오황화린(P<sub>2</sub>S<sub>5</sub>, 제2류) + 물 ➔ 황화수소(H<sub>2</sub>S)</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 제1류·제2류·제3류 위험물의 핵심 성상, 보호액 및 소화 적응성 체계</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (9문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (11문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="04_03_자동화재탐지설비_감지기와_방재연동.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제4편 제3장)
+      </a>
+      <a href="05_02_제4류_제5류_제6류_위험물과_지정수량.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제5편 제2장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제5편 위험물 및 특수가연물론 제1장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제5편 위험물 및 특수가연물론 제1장",
+  "totalQuestions": 9,
+  "themes": [
+    {
+      "name": "금수성 및 산화성 위험물의 물(수분) 반응 화학식 및 발생 가스",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2022년 소방공채·경채 Q11, 2024년 소방공채·경채 Q25, 2026년 소방공채·경채 Q14",
+      "summary": "금수성 위험물(탄화알루미늄·인화칼슘·수소화물·트리에틸알루미늄)의 물 반응 생성 가스"
+    },
+    {
+      "name": "위험물 유별(제1류부터 제6류까지) 소화방법 및 금수성·주수소화 판별",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2022년 소방공채·경채 Q7, 2023년 소방공채·경채 Q17, 2024년 소방공채·경채 Q19",
+      "summary": "금수성·금속성 위험물(탄화칼슘·나트륨·마그네슘)과 수용성 액체(아세톤)의 소화방법"
+    },
+    {
+      "name": "제1류부터 제6류까지 유별 정의·품명 및 일반적 성질 비교",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2018년 소방공채·경채 Q13, 2018년 소방공채·경채 Q14, 2023년 소방공채·경채 Q16",
+      "summary": "제2류 위험물(가연성 고체: 적린·유황·황화린)과 제3류 위험물(황린) 구분"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂018₁3",
+    "year": 2018,
+    "q_num": 13,
+    "appearances": 2,
+    "source": "2018년 소방공채·경채 Q13",
+    "topic": "제2류 위험물(가연성 고체: 적린·유황·황화린)과 제3류 위험물(황린) 구분",
+    "freq_key": "제1류부터 제6류까지 유별 정의·품명 및 일반적 성질 비교",
+    "stem": "｢위험물안전관리법령｣상 위험물의 분류 중 가연성 고체가 아닌 것은?",
+    "stem_box": "",
+    "choices": [
+      "황린",
+      "적린",
+      "유황",
+      "황화린"
+    ],
+    "ans": 1,
+    "q_expl": "｢위험물안전관리법 시행령｣ 별표 1에서 황화린, 적린, 유황, 철분, 금속분, 마그네슘, 인화성고체는 '제2류 위험물(가연성 고체)'에 해당하며, 자연발화성 물질인 '황린(P4)'은 '제3류 위험물(자연발화성물질 및 금수성물질)'에 해당합니다.",
+    "c_expls": [
+      "[틀림 · 정답] 황린(백린, P4)은 공기 중에서 자연발화(발화점 약 34도)하는 성질이 강하여 제2류 가연성 고체가 아니라 '제3류 위험물'로 분류됩니다.",
+      "[옳음] 적린(P)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다.",
+      "[옳음] 유황(S)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다.",
+      "[옳음] 황화린(오황화린·삼황화린·칠황화린)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂018₁4",
+    "year": 2018,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2018년 소방공채·경채 Q14",
+    "topic": "제1류 위험물(산화성 고체)의 일반적 성질(불연성·강산화제·지연성)",
+    "freq_key": "제1류부터 제6류까지 유별 정의·품명 및 일반적 성질 비교",
+    "stem": "제1류 위험물의 일반적 성질에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "불연성 물질이다.",
+      "강력한 환원제이다.",
+      "대부분 무기화합물이다.",
+      "다른 가연물의 연소를 돕는 지연성 물질이다."
+    ],
+    "ans": 2,
+    "q_expl": "제1류 위험물(산화성 고체: 염소산염류, 과염소산염류, 무기과산화물, 질산염류 등)은 그 자체는 타지 않는 '불연성 무기화합물'이지만, 열분해 시 산소를 방출하여 다른 가연물의 연소를 돕는 '강력한 산화제(지연성·조연성 물질)'입니다(환원제는 산소를 받아들이며 자신이 산화·연소되는 제2류 가연성 고체 등의 성질임).",
+    "c_expls": [
+      "[옳음] 제1류 위험물은 그 자체는 연소하지 않는 불연성 물질입니다.",
+      "[틀림 · 정답] 제1류 위험물은 산소를 내어주는 '강력한 산화제'이며, 환원제(제2류 가연성 고체 등)와 혼합되면 격렬하게 폭발할 수 있습니다.",
+      "[옳음] 제1류 위험물은 대부분 산소를 다량 함유한 무기화합물(염류·무기과산화물)입니다.",
+      "[옳음] 열이나 충격에 의해 분해되어 산소를 방출함으로써 다른 가연물의 연소를 돕는 지연성(조연성) 물질입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₇",
+    "year": 2022,
+    "q_num": 7,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q7",
+    "topic": "금수성·금속성 위험물(탄화칼슘·나트륨·마그네슘)과 수용성 액체(아세톤)의 소화방법",
+    "freq_key": "위험물 유별(제1류부터 제6류까지) 소화방법 및 금수성·주수소화 판별",
+    "stem": "가연성 물질의 화재 시 소화방법으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "탄화칼슘은 물을 분무하여 소화한다.",
+      "아세톤은 알콜형포 소화약제로 소화한다.",
+      "나트륨은 할론 소화약제로 소화한다.",
+      "마그네슘은 이산화탄소 소화약제로 소화한다."
+    ],
+    "ans": 2,
+    "q_expl": "금수성 물질이나 금속 화재에는 물, 이산화탄소, 할론 소화약제 모두 반응하여 폭발을 일으키므로 사용할 수 없으며, 수용성 제1석유류인 아세톤 화재에는 알코올형포(내알코올포)를 사용합니다.",
+    "c_expls": [
+      "[틀림] 제3류 위험물인 탄화칼슘(카바이드, CaC2)은 물과 반응하여 폭발성 아세틸렌(C2H2) 가스를 발생시키므로 물을 분무하면 안 되고 마른모래 등으로 질식소화합니다.",
+      "[옳음 · 정답] 아세톤(CH3COCH3)은 수용성 제1석유류이므로 물에 녹지 않는 특수 비누막을 형성하는 '알코올형포(내알코올포) 소화약제'로 질식소화합니다.",
+      "[틀림] 제3류 나트륨(Na) 등 알칼리금속은 할론 소화약제의 할로겐 원소와 격렬하게 반응하여 폭발하므로 할론을 사용할 수 없고 마른모래·팽창질석·D급 분말을 사용합니다.",
+      "[틀림] 제2류 마그네슘(Mg) 화재에 이산화탄소(CO2)를 방사하면 고온의 마그네슘이 이산화탄소의 산소를 빼앗아 탄소를 유리시키며 연소가 더욱 확대(`2Mg + CO2 -> 2MgO + C`)되므로 사용할 수 없습니다."
+    ]
+  },
+  {
+    "id": "Q₂022₁1",
+    "year": 2022,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q11",
+    "topic": "금수성 위험물(탄화알루미늄·인화칼슘·수소화물·트리에틸알루미늄)의 물 반응 생성 가스",
+    "freq_key": "금수성 및 산화성 위험물의 물(수분) 반응 화학식 및 발생 가스",
+    "stem": "위험물과 물이 반응할 때 발생하는 가스로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "위험물: 탄화알루미늄 / 발생 가스: 아세틸렌",
+      "위험물: 인화칼슘 / 발생 가스: 포스핀",
+      "위험물: 수소화알루미늄리튬 / 발생 가스: 수소",
+      "위험물: 트리에틸알루미늄 / 발생 가스: 에테인"
+    ],
+    "ans": 1,
+    "q_expl": "제3류 금수성 위험물이 물(H2O)과 반응할 때 생성되는 가연성 가스의 종류를 정확히 구별해야 합니다.\n- **탄화칼슘(`CaC2`)** + 물 ➔ **아세틸렌(`C2H2`)**\n- **탄화알루미늄(`Al4C3`)** + 물 ➔ **메탄(메테인, `CH4`)**\n- **인화칼슘(`Ca3P2`)** + 물 ➔ **포스핀(인화수소, `PH3`)**\n- **금속의 수소화물(`LiAlH4`, `NaH` 등)** + 물 ➔ **수소(`H2`)**\n- **트리에틸알루미늄(`(C2H5)3Al`)** + 물 ➔ **에탄(에테인, `C2H6`)**",
+    "c_expls": [
+      "[틀림 · 정답] 탄화알루미늄(`Al4C3`)이 물과 반응(`Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4`)할 때 발생하는 가스는 아세틸렌이 아니라 **메탄(메테인, `CH4`)**입니다. 아세틸렌(`C2H2`)이 발생하는 것은 '탄화칼슘(`CaC2`)'입니다.",
+      "[옳음] 인화칼슘(`Ca3P2`)이 물과 반응(`Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3`)하면 맹독성·자연발화성 기체인 포스핀(인화수소, `PH3`)이 발생합니다.",
+      "[옳음] 수소화알루미늄리튬(`LiAlH4`)이 물과 반응(`LiAlH4 + 4H2O -> LiOH + Al(OH)3 + 4H2`)하면 수소(`H2`) 가스가 발생합니다.",
+      "[옳음] 트리에틸알루미늄(`(C2H5)3Al`)이 물과 반응(`(C2H5)3Al + 3H2O -> Al(OH)3 + 3C2H6`)하면 에테인(에탄, `C2H6`) 가스가 발생합니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁6",
+    "year": 2023,
+    "q_num": 16,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q16",
+    "topic": "아염소산나트륨(제1류)·마그네슘(제2류)·황린(제3류)의 개별 물리·화학적 성상",
+    "freq_key": "제1류부터 제6류까지 유별 정의·품명 및 일반적 성질 비교",
+    "stem": "위험물의 유별 특성 중 옳은 것만을 <보기>에서 있는 대로 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 아염소산나트륨은 불연성, 조해성, 수용성이며, 무색 또는 백색의 결정성 분말 형태이다.<br/>ㄴ. 마그네슘은 끓는 물과 접촉 시 수소가스를 발생시킨다.<br/>ㄷ. 황린은 공기 중 상온에 노출되면 액화되면서 자연발화를 일으킨다.",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄱ, ㄷ",
+      "ㄴ, ㄷ",
+      "ㄱ, ㄴ, ㄷ"
+    ],
+    "ans": 4,
+    "q_expl": "개별 위험물의 세부 성상을 묻는 문항입니다. 아염소산나트륨(NaClO2, 제1류)은 무색·백색 결정성 분말로 조해성·수용성·불연성이며, 마그네슘(Mg, 제2류)은 찬물과는 거의 반응하지 않으나 끓는 물(열수)과 반응하면 수소가스(`Mg + 2H2O -> Mg(OH)2 + H2`)를 발생시키며, 황린(P4, 제3류)은 융점이 약 44도, 발화점이 약 34도여서 상온 공기 중에 노출되면 산화열로 녹아 액화되면서 자연발화를 일으킵니다.",
+    "c_expls": [
+      "[틀림] ㄷ(황린의 상온 노출 시 액화 및 자연발화 특성)이 누락되었습니다.",
+      "[틀림] ㄴ(마그네슘의 끓는 물 접촉 시 수소가스 발생)이 누락되었습니다.",
+      "[틀림] ㄷ(황린은 상온 공기 노출 시 액화가 아니라 고체 상태에서 산화·발열하여 섭씨 약 34도에서 자연발화함)이 틀렸고, 옳은 설명인 ㄱ(아염소산나트륨의 성상)이 누락되었습니다.",
+      "[옳음 · 정답] 아염소산나트륨( ㄱ ), 마그네슘( ㄴ ), 황린( ㄷ )에 관한 설명이 모두 옳으므로 ㄱ, ㄴ, ㄷ이 정답입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁7",
+    "year": 2023,
+    "q_num": 17,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q17",
+    "topic": "탄화칼슘·메틸알코올·알킬알루미늄·적린의 유별 소화방법 적정성 판별",
+    "freq_key": "위험물 유별(제1류부터 제6류까지) 소화방법 및 금수성·주수소화 판별",
+    "stem": "위험물의 유별 소화방법으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "탄화칼슘 화재 시 다량의 물로 냉각소화할 수 있다.",
+      "수용성 메틸알코올 화재에는 내알코올포를 사용한다.",
+      "알킬알루미늄은 마른모래, 팽창질석, 팽창진주암으로 소화 한다.",
+      "적린은 다량의 물로 냉각소화하며, 소량의 적린인 경우 에는 마른모래나 이산화탄소 소화약제도 일시적인 효과가 있다."
+    ],
+    "ans": 1,
+    "q_expl": "2022년 7번에 이어 다시 출제된 위험물 소화방법 문항입니다. 탄화칼슘(CaC2)은 제3류 금수성 물질로서 물과 만나면 아세틸렌 가스를 발생시키므로 절대 주수소화할 수 없습니다.",
+    "c_expls": [
+      "[틀림 · 정답] 탄화칼슘(CaC2)은 물과 반응하여 폭발성 아세틸렌 가스와 반응열을 내는 제3류 금수성 위험물이므로 다량의 물로 냉각소화할 수 없으며, 마른모래·팽창질석·팽창진주암으로 질식소화해야 합니다.",
+      "[옳음] 수용성 알코올류인 메틸알코올 화재에는 수용성 액체에 거품이 녹지 않는 내알코올포(알코올형포)를 사용합니다.",
+      "[옳음] 제3류 알킬알루미늄은 금수성·자연발화성이므로 마른모래, 팽창질석, 팽창진주암으로 질식소화합니다.",
+      "[옳음] 제2류 적린(P)은 금수성이 아니므로 다량의 물로 냉각소화하며, 소량일 경우 마른모래나 이산화탄소도 일시적 효과가 있습니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁9",
+    "year": 2024,
+    "q_num": 19,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q19",
+    "topic": "황린·유황·경유·휘발유·탄화알루미늄·알킬알루미늄의 소화방법 종합 판별",
+    "freq_key": "위험물 유별(제1류부터 제6류까지) 소화방법 및 금수성·주수소화 판별",
+    "stem": "위험물의 소화방법에 관한 내용으로 옳은 것만을 <보기> 에서 있는 대로 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 황린: 물을 이용한 냉각소화<br/>ㄴ. 유황: 물을 이용한 냉각소화<br/>ㄷ. 경유, 휘발유: 포 소화약제를 이용한 질식소화<br/>ㄹ. 탄화알루미늄, 알킬알루미늄: 건조사, 팽창질석을 이용한 질식소화",
+    "choices": [
+      "ㄱ, ㄷ",
+      "ㄴ, ㄹ",
+      "ㄱ, ㄷ, ㄹ",
+      "ㄱ, ㄴ, ㄷ, ㄹ"
+    ],
+    "ans": 4,
+    "q_expl": "제3류 위험물 중 유일하게 금수성이 아닌 순수 자연발화성 물질인 **황린(P4)**은 평소에도 물속(수중)에 저장하므로 화재 시 **물을 이용한 냉각소화**가 가장 적합합니다. 또한 제2류 유황 역시 물을 이용한 냉각(무상주수)소화가 가능합니다.",
+    "c_expls": [
+      "[틀림] ㄴ(유황의 물 냉각소화)과 ㄹ(금수성 물질의 건조사 질식소화)이 누락되었습니다.",
+      "[틀림] ㄱ(황린의 물 냉각소화)과 ㄷ(석유류의 포 질식소화)이 누락되었습니다.",
+      "[틀림] ㄱ, ㄷ, ㄹ뿐만 아니라 제2류 가연성 고체인 ㄴ(유황 화재 시 물을 이용한 냉각소화, 유황은 금수성이 아님)도 옳은 소화방법이므로 ㄴ이 누락되었습니다.",
+      "[옳음 · 정답] 황린의 물 냉각소화( ㄱ ), 유황의 물 냉각소화( ㄴ ), 경유·휘발유(비수용성 제4류)의 포 질식소화( ㄷ ), 탄화알루미늄·알킬알루미늄(제3류 금수성)의 건조사·팽창질석 질식소화( ㄹ )가 모두 옳으므로 ㄱ, ㄴ, ㄷ, ㄹ이 정답입니다."
+    ]
+  },
+  {
+    "id": "Q₂024₂5",
+    "year": 2024,
+    "q_num": 25,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q25",
+    "topic": "물과 반응하여 산소(O2)를 발생시키는 위험물(과산화나트륨 등 무기과산화물)",
+    "freq_key": "금수성 및 산화성 위험물의 물(수분) 반응 화학식 및 발생 가스",
+    "stem": "물과 반응하여 산소를 발생시키는 위험물로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "칼륨",
+      "탄화칼슘",
+      "과산화나트륨",
+      "오황화인"
+    ],
+    "ans": 3,
+    "q_expl": "물과 반응할 때 가연성 가스가 아니라 조연성 가스인 **산소(`O2`)**를 발생시키는 물질은 제1류 위험물인 **알칼리금속의 과산화물(과산화나트륨 `Na2O2`, 과산화칼륨 `K2O2` 등 무기과산화물)**입니다(`2Na2O2 + 2H2O -> 4NaOH + O2`).",
+    "c_expls": [
+      "[틀림] 제3류 칼륨(`K`)은 물과 반응(`2K + 2H2O -> 2KOH + H2`)하여 가연성 기체인 **수소(`H2`)**를 발생시킵니다.",
+      "[틀림] 제3류 탄화칼슘(`CaC2`)은 물과 반응(`CaC2 + 2H2O -> Ca(OH)2 + C2H2`)하여 가연성 기체인 **아세틸렌(`C2H2`)**을 발생시킵니다.",
+      "[옳음 · 정답] 제1류 과산화나트륨(`Na2O2`)은 물과 반응(`2Na2O2 + 2H2O -> 4NaOH + O2`)하여 조연성 기체인 **산소(`O2`)**와 반응열을 발생시킵니다.",
+      "[틀림] 제2류 오황화인(`P2S5`)은 물과 반응(`P2S5 + 8H2O -> 2H3PO4 + 5H2S`)하여 독성·가연성 기체인 **황화수소(`H2S`)**를 발생시킵니다."
+    ]
+  },
+  {
+    "id": "Q₂026₁4",
+    "year": 2026,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q14",
+    "topic": "트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응식 및 메테인 발생량 계산",
+    "freq_key": "금수성 및 산화성 위험물의 물(수분) 반응 화학식 및 발생 가스",
+    "stem": "단량체인 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응에 관한 설명으로 옳지 않은 것은? (단, 생성된 가스의 부피는 표준상태 조건을 따르며, Al의 원자량은 27 )",
+    "stem_box": "",
+    "choices": [
+      "1 mol의 트라이메틸알루미늄은 3 mol의 물과 반응한다.",
+      "144 g의 트라이메틸알루미늄은 6 mol의 메테인 가스를 생성한다.",
+      "6.02×1023개의 트라이메틸알루미늄은 22.4 L의 메테인 가스를 생성한다.",
+      "트라이메틸알루미늄과 물의 반응에서 물의 mol수와 생성 되는 메테인 가스의 mol수는 같다."
+    ],
+    "ans": 3,
+    "q_expl": "제3류 위험물(유기금속화합물)인 단량체 **트라이메틸알루미늄(`(CH3)3Al`, 분자량 = `12*3 + 1*9 + 27 = 72 g/mol`)**이 물(`H2O`)과 반응하는 화학반응식은 다음과 같습니다.\n(CH₃)₃Al + 3H₂O ➔ Al(OH)₃ + 3CH₄\n즉, **1몰(`72 g`, 아보가드로수 `6.02 * 10²3`개)의 트라이메틸알루미늄**은 **3몰의 물(`H2O`)**과 반응하여 **3몰의 메테인(`CH4`) 가스**(표준상태 부피 `3 * 22.4 L = 67.2 L`)를 생성합니다.",
+    "c_expls": [
+      "[옳음] 화학반응식(`(CH3)3Al + 3H2O -> Al(OH)3 + 3CH4`)에 따라 `1 mol`의 트라이메틸알루미늄은 `3 mol`의 물과 반응합니다.",
+      "[옳음] 트라이메틸알루미늄의 분자량은 `3 * 15 + 27 = 72 g/mol`이므로 `144 g`은 `2 mol`에 해당하며, `1 mol`당 `3 mol`의 메테인이 생성되므로 `2 mol`은 총 `6 mol`의 메테인 가스를 생성합니다.",
+      "[틀림 · 정답] `6.02 * 10²3`개의 트라이메틸알루미늄은 `1 mol`에 해당하며, 반응 시 메테인 가스가 `1 mol`이 아니라 **`3 mol`** 생성되므로 표준상태에서 `22.4 L`가 아닌 **`67.2 L`(`3 * 22.4 L`)**의 메테인 가스를 생성합니다.",
+      "[옳음] 반응식의 계수가 물(`3H2O`)과 메테인(`3CH4`) 모두 `3`으로 같으므로, 반응하는 물의 몰수와 생성되는 메테인 가스의 몰수는 같습니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "S",
+    "text": "제3류 위험물은 자연발화성 및 금수성 물질이다.",
+    "isCorrect": true,
+    "source": "위험물성상 기출",
+    "explanation": "제3류 위험물은 공기 중 자연발화하거나 물과 반응하여 가연성 가스를 발생하는 자연발화성 및 금수성 물질입니다.",
+    "origQId": "",
+    "id": "SCI₀5₀1₀01"
+  },
+  {
+    "grade": "S",
+    "text": "적린, 유황, 황화린, 철분, 금속분, 마그네슘은 제2류 위험물(가연성 고체)에 해당하며, 황린은 제3류 위험물(자연발화성물질 및 금수성물질)에 해당한다.",
+    "isCorrect": true,
+    "source": "2018년 소방공채·경채 Q13 기출",
+    "explanation": "적린·황화린(제2류)과 황린·인화칼슘(제3류)을 섞어 출제하는 것은 위험물 품명 분류의 단골 유형입니다.",
+    "origQId": "Q₂018₁3",
+    "id": "SCI₀5₀1₀05"
+  },
+  {
+    "grade": "S",
+    "text": "제1류 위험물(산화성 고체)은 대부분 불연성 무기화합물로서 다른 가연물의 연소를 돕는 강력한 '산화제(지연성 물질)'이며, 제2류 위험물(가연성 고체)은 산소와 결합하기 쉬운 '환원성 물질'이다.",
+    "isCorrect": true,
+    "source": "2018년 소방공채·경채 Q14 기출",
+    "explanation": "제1류·제6류는 불연성 강산화제(산소 공급원)이고, 제2류·제3류·제4류는 가연성(환원성) 물질입니다.",
+    "origQId": "Q₂018₁4",
+    "id": "SCI₀5₀1₀06"
+  },
+  {
+    "grade": "S",
+    "text": "수용성 제1석유류인 아세톤 화재 시에는 알코올형포(내알코올포) 소화약제로 소화하며, 마그네슘이나 나트륨 화재에는 물, 이산화탄소, 할론 소화약제를 모두 사용할 수 없다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q7 기출",
+    "explanation": "금속·금수성 물질(마그네슘, 나트륨, 칼륨 등)은 물뿐만 아니라 CO2나 할론과도 화학반응을 일으키므로 건조사·팽창질석만 사용 가능합니다.",
+    "origQId": "Q₂022₇",
+    "id": "SCI₀5₀1₀13"
+  },
+  {
+    "grade": "S",
+    "text": "물과 반응할 때 탄화칼슘(CaC2)은 아세틸렌(C2H2) 가스를 발생시키고, 탄화알루미늄(Al4C3)은 메테인(CH4) 가스를 발생시킨다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q11 기출",
+    "explanation": "같은 탄화물이라도 칼슘(CaC2)은 아세틸렌, 알루미늄(Al4C3)은 메테인을 발생시키는 차이점이 1순위 출제 포인트입니다.",
+    "origQId": "Q₂022₁1",
+    "id": "SCI₀5₀1₀15"
+  },
+  {
+    "grade": "S",
+    "text": "물과 반응할 때 인화칼슘은 포스핀(PH3), 수소화알루미늄리튬은 수소(H2), 트리에틸알루미늄은 에테인(C2H6), 트리메틸알루미늄은 메테인(CH4) 가스를 발생시킨다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q11 기출",
+    "explanation": "금수성 물질의 물 반응 생성 가스 5종 세트는 화학식과 함께 반드시 암기해야 합니다.",
+    "origQId": "Q₂022₁1",
+    "id": "SCI₀5₀1₀16"
+  },
+  {
+    "grade": "A",
+    "text": "마그네슘은 끓는 물(열수)과 접촉 시 수소가스를 발생시키며, 황린은 공기 중 상온에 노출되면 액화되면서 자연발화를 일으켜 오산화인(P2O5)의 흰 연기를 낸다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q16 기출",
+    "explanation": "마그네슘의 열수 반응(수소 발생)과 황린의 상온 자연발화(융점 44도, 발화점 34도)는 대표적 유별 특성입니다.",
+    "origQId": "Q₂023₁6",
+    "id": "SCI₀5₀1₀17"
+  },
+  {
+    "grade": "S",
+    "text": "제2류 위험물인 적린과 유황은 금수성이 아니므로 다량의 물로 냉각소화할 수 있으나, 제3류 위험물인 탄화칼슘과 알킬알루미늄은 금수성이므로 마른모래·팽창질석·팽창진주암으로 소화해야 한다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q17 기출",
+    "explanation": "제2류 중 적린·유황·인화성고체는 주수소화가 가능하고, 철분·금속분·마그네슘·황화린은 주수소화가 금지됩니다.",
+    "origQId": "Q₂023₁7",
+    "id": "SCI₀5₀1₀18"
+  },
+  {
+    "grade": "S",
+    "text": "제3류 위험물 중 황린은 금수성이 아니므로 물을 이용한 냉각소화를 실시하며, 탄화알루미늄과 알킬알루미늄은 금수성이므로 건조사·팽창질석을 이용한 질식소화를 실시한다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q19 기출",
+    "explanation": "제3류 위험물 중 황린만 유일하게 수중 저장 및 주수 냉각소화 대상이고, 나머지 제3류는 금수성으로 주수 엄금입니다.",
+    "origQId": "Q₂024₁9",
+    "id": "SCI₀5₀1₀20"
+  },
+  {
+    "grade": "S",
+    "text": "과산화나트륨(Na2O2) 등 제1류 무기과산화물은 물과 반응하여 산소(O2)를 발생시키고, 칼륨(K)은 수소(H2), 오황화인(P2S5)은 황화수소(H2S)를 발생시킨다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q25 기출",
+    "explanation": "물 반응 시 산소(O2)가 나오는 유일한 그룹은 제1류 알칼리금속의 과산화물(무기과산화물)입니다.",
+    "origQId": "Q₂024₂5",
+    "id": "SCI₀5₀1₀21"
+  },
+  {
+    "grade": "S",
+    "text": "단량체인 트라이메틸알루미늄[(CH3)3Al, 분자량 72] 1몰(6.02×10의 23제곱 개)은 3몰의 물(H2O)과 반응하여 수산화알루미늄[Al(OH)3] 1몰과 메테인(CH4) 가스 3몰(표준상태에서 67.2리터)을 생성한다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q14 기출",
+    "explanation": "알킬알루미늄(`R3Al`) 1몰은 항상 3몰의 물(`3H2O`)과 반응하여 3몰의 알케인 가스(`3RH`, 표준상태 67.2리터)를 발생시킵니다.",
+    "origQId": "Q₂026₁4",
+    "id": "SCI₀5₀1₀27"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

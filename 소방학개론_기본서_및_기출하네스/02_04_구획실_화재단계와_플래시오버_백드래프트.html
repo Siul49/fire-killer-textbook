@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제2편 연소 및 폭발 이론 제4장. 실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제2편 제4장. 실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트</span>
+        <span class="text-slate-600">|</span>
+        <a href="02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상.html" class="hover:text-emerald-300 transition">다음 장: 제2편 제5장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제2편 제4장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제2편 연소 및 폭발 이론 · 제4장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 구획실 화재의 진행 4단계와 연료지배형 vs 환기지배형 화재</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 카와고에(Kawagoe) 식과 화재하중(Fire Load)·화재가혹도 계산</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 플래시오버(Flashover)와 롤오버(Rollover)의 발생 메커니즘</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 백드래프트(Backdraft)의 발생 원리와 플래시오버와의 완벽 대조</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (15문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (24문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제2편 연소 및 폭발 이론</span>
+        <span>·</span>
+        <span>제4장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        구획된 실내 화재의 진행 4단계(초기·성장기·최성기·감쇠기)와 연료지배형·환기지배형 화재를 구분하고, 카와고에 식·화재하중·화재가혹도 계산법 및 플래시오버(Flashover)와 백드래프트(Backdraft)의 메커니즘을 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 구획실 화재의 진행 4단계와 연료지배형 vs 환기지배형 화재</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞 장에서 열전달과 연기의 이동 원리를 배웠다면, 이제 그 열과 연기가 사방이 벽과 천장으로 막힌 방 안에서 어떤 드라마를 만들어 내는지 살펴볼 차례입니다. 건축물의 방이나 거실 같은 <strong>구획실(Compartment) 화재</strong>는 시간의 흐름에 따라 실내 온도가 변하면서 <strong>① 초기(발화기) ➔ ② 성장기 ➔ ③ 최성기(전성기) ➔ ④ 감쇠기(쇠퇴기)</strong>라는 뚜렷한 4단계 생애주기를 거칩니다. 먼저 <strong>초기 단계</strong>는 쓰레기통이나 콘센트 등 발화원 부근의 가연물만 국소적으로 타는 시기로서 실내 평균 온도는 아직 낮고 산소도 풍부하여 소화기 한 대로 쉽게 진압할 수 있습니다. 그러나 진압에 실패해 <strong>성장기</strong>로 접어들면 화염이 인접 가구로 옮겨붙으면서 부력에 의해 천장 아래에 뜨거운 연기층이 두껍게 쌓이고, 이 상부 연기층이 바닥의 모든 가연물에 강력한 복사열을 내리쬐면서 성장기 말기에 방 전체가 순식간에 불바다로 변하는 <strong>플래시오버(Flashover)</strong>가 터집니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>구획실 화재 4단계</strong>: <strong>초기 ➔ 성장기(말기에 플래시오버 발생!) ➔ 최성기(내화구조 설정 기준 단계!) ➔ 감쇠기</strong></li>
+              <li><strong>연료지배형 화재</strong>: 공기(산소) 공급이 충분하여 <strong>가연물의 양·표면적</strong>이 연소 속도를 지배 (개구부가 클 때, 초기 화재)</li>
+              <li><strong>환기지배형 화재</strong>: 가연물에 비해 산소가 부족하여 <strong>개구부를 통한 공기 유입량(환기계수)</strong>이 연소 속도를 지배 (불완전연소·CO 다량 발생)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            플래시오버를 기점으로 진입하는 <strong>최성기(전성기, Fully Developed Stage)</strong>는 구획실 안의 모든 가연물이 일제히 맹렬하게 타오르며 실내 온도가 <strong>약 섭씨 800도에서 1,100도 이상</strong>으로 최고조에 달하는 시기입니다. 왜 시험에서 이 최성기를 가장 중요하게 다룰까요? 바로 이 최성기야말로 <strong>건축물의 기둥·보·바닥 같은 주요 구조부가 열적 타격을 가장 가혹하게 받는 시기</strong>이기 때문에, 건축물이 무너지지 않고 버텨야 하는 <strong>내화구조 기준(표준화재 시간·온도 곡선)을 설정하는 기준 단계</strong>가 되기 때문입니다!(초기나 성장기를 기준으로 내화구조를 설계한다는 선지는 100퍼센트 오답입니다.) 이후 가연물이 거의 다 타서 불길이 잦아들고 온도가 서서히 식어가는 단계가 <strong>감쇠기</strong>입니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이 구획실 화재를 '무엇이 타는 속도를 결정하는가?'라는 관점에서 나누면 <strong>연료지배형 화재(Fuel Controlled Fire)</strong>와 <strong>환기지배형 화재(Ventilation Controlled Fire)</strong>로 대비됩니다. 화재 초기이거나 창문(개구부)이 아주 넓게 열려 있어 <strong>신선한 공기(산소)가 남아돌 만큼 넉넉하게 공급되는 상태</strong>에서는, 오직 실내 가연물의 양과 표면적에 의해 연소 속도가 결정되므로 이를 <strong>연료지배형 화재</strong>라 합니다(산소가 충분해 완전연소에 가까우므로 연기가 맑고 고온·단시간형 화재가 됩니다). 반면 플래시오버 이후의 최성기처럼 방 안의 모든 가구에서 가연성 가스는 엄청나게 쏟아져 나오는데 <strong>창문(개구부)이 좁아 산소 공급이 턱없이 부족한 상태</strong>에서는, 창문으로 들어오는 공기 유입량에 의해 연소 속도가 결정되므로 이를 <strong>환기지배형 화재</strong>라 합니다(산소 부족으로 불완전연소가 일어나 시커먼 연기와 일산화탄소가 다량 뿜어져 나옵니다).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">비교 항목</th>
+                <th style="width:38%;">연료지배형 화재 (Fuel Controlled)</th>
+                <th>환기지배형 화재 (Ventilation Controlled)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>산소(공기) 공급 상태</strong></td>
+                <td>개구부가 크거나 화세가 작아 <strong>산소 공급 충분</strong></td>
+                <td>가연물 증기에 비해 개구부가 작아 <strong>산소 공급 부족</strong></td>
+              </tr>
+              <tr>
+                <td><strong>연소 속도 결정 요인</strong></td>
+                <td>실내 <strong>가연물의 양, 종류, 표면적</strong>에 의해 결정</td>
+                <td>창문 등 <strong>개구부 면적(A)과 높이(H)</strong>에 따른 환기량에 의해 결정</td>
+              </tr>
+              <tr>
+                <td><strong>연소 특성 및 생성물</strong></td>
+                <td>밝은 화염, 완전연소에 가까움, <strong>고온·단시간형</strong></td>
+                <td><strong>불완전연소</strong>, 다량의 검은 연기와 <strong>일산화탄소(CO)</strong> 발생</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 카와고에(Kawagoe) 식과 화재하중(Fire Load)·화재가혹도 계산</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 환기지배형 화재에서 창문(개구부)의 크기에 따라 공기가 얼마나 들어오고 가연물이 얼마나 빨리 타는지를 어떻게 계산할까요? 이를 규명한 유명한 법칙이 일본의 화재학자 카와고에 쿠니오가 발표한 <strong>카와고에(Kawagoe) 식</strong>입니다. 개구부의 면적을 <strong>A(m<sup>2</sup>)</strong>, 개구부의 수직 높이를 <strong>H(m)</strong>라 할 때, 개구부를 통해 유입되는 공기량과 실내 가연물의 분당 연소 속도 R(kg/min)은 <strong>환기계수(Ventilation Factor)인 A&radic;H에 비례</strong>합니다: <strong>R = 5.5 &times; A&radic;H [kg/min]</strong>(초당 연소 속도로는 약 0.092 &times; A&radic;H [kg/s]). 왜 면적 A뿐만 아니라 높이의 제곱근(&radic;H)이 곱해질까요? 창문의 수직 높이(H)가 높을수록 위쪽(배기)과 아래쪽(급기)의 부력 압력 차이가 커져서 공기가 훨씬 빠르게 빨려 들어오기 때문입니다! 따라서 같은 면적(예: 2m<sup>2</sup>)의 창문이라도 옆으로 넓은 창문(폭 2m &times; 높이 1m)보다 <strong>위아래로 긴 창문(폭 1m &times; 높이 2m)</strong>이 환기계수(A&radic;H)가 더 커서 연소 속도가 빨라지고 화재 지속 시간은 짧아집니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>카와고에(Kawagoe) 연소속도 식</strong>: 환기지배형 화재의 연소속도는 <strong>환기계수(A&radic;H, 개구부 면적 &times; &radic;개구부 높이)</strong>에 비례 (R = 5.5 A&radic;H kg/min)</li>
+              <li><strong>화재하중(kg/m<sup>2</sup>) 공식</strong>: 총 발열량을 <strong>목재 단위발열량(4,500 kcal/kg)</strong>으로 나누어 등가 목재 중량을 구한 뒤 <strong>바닥면적(m<sup>2</sup>)</strong>으로 나눈 값</li>
+              <li><strong>화재가혹도(Fire Severity)</strong>: 건축 부재가 받는 열적 타격의 크기(온도 &times; 지속시간)로서 내화시간 결정의 척도</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 방 안에 나무 책상, 플라스틱 의자, 양탄자 등 각기 발열량이 다른 여러 가연물이 섞여 있을 때, 이 방에 총 얼마나 많은 화력(연료)이 들어 있는지를 표준 척도인 '목재의 무게'로 통일해 환산한 뒤 바닥면적으로 나눈 값을 <strong>화재하중(Fire Load, 단위 kg/m<sup>2</sup>)</strong>이라 합니다! 기준이 되는 목재 1킬로그램의 단위 발열량은 <strong>4,500 kcal/kg</strong>으로 정해져 있으므로, <strong>화재하중 공식</strong>은 <strong>화재하중(kg/m<sup>2</sup>) = [ &Sigma;(각 가연물의 질량 &times; 단위발열량) ] &divide; [ 구획실 바닥면적(m<sup>2</sup>) &times; 4,500(kcal/kg) ]</strong>입니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            시험에 나오는 계산 예를 바로 풀어 봅시다. 바닥면적이 <strong>100 m<sup>2</sup></strong>인 사무실에 목재 <strong>400 kg</strong>(단위발열량 4,500 kcal/kg)과 플라스틱 <strong>200 kg</strong>(단위발열량 9,000 kcal/kg)이 있다고 해봅시다. 플라스틱은 1kg당 열량이 목재(4,500)의 정확히 2배(9,000)이므로, 플라스틱 200 kg은 목재로 치면 200 &times; 2 = <strong>400 kg(등가 목재 중량)</strong>과 맞먹습니다. 따라서 이 방의 총 등가 목재 중량은 목재 400 kg + 환산 목재 400 kg = <strong>800 kg</strong>이 되고, 이를 바닥면적 100 m<sup>2</sup>로 나누면 화재하중은 <strong>8 kg/m<sup>2</sup></strong>가 됩니다! 이처럼 화재하중(가연물 양)이 클수록, 그리고 개구부 환기계수가 작아 열이 밖으로 빠져나가지 못하고 고온이 오랫동안 지속될수록 건축 구조체가 받는 총 열적 타격인 <strong>화재가혹도(Fire Severity, 최고 온도 &times; 지속 시간)</strong>가 커지게 됩니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 플래시오버(Flashover)와 롤오버(Rollover)의 발생 메커니즘</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞서 구획실 화재의 <strong>성장기 말기에서 최성기로 넘어가는 분기점</strong>에서 발생한다고 배운 <strong>플래시오버(Flashover, 순발연소·전실화재)</strong>의 물리적 메커니즘을 조금 더 깊이 들여다봅시다. 방 한구석의 소파에서 시작된 불길에서 뜨거운 연기와 미연소 열분해 가스가 천장으로 솟구쳐 쌓이면, 천장 아래 상부 연기층의 온도가 점차 올라가 마침내 <strong>섭씨 500도에서 600도 이상</strong>에 도달합니다. 이때 스테판·볼츠만 법칙(절대온도의 4제곱에 비례)에 따라 이 시뻘건 천장 연기층이 방 바닥 전체를 향해 <strong>약 20 kW/m<sup>2</sup> 이상</strong>의 엄청난 복사열을 폭포수처럼 내리쬡니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>플래시오버 발생 시점 및 원리</strong>: <strong>성장기에서 최성기로 전이</strong>되는 시점에 상부 연기층(약 500℃에서 600℃)의 <strong>강력한 복사열(약 20 kW/m<sup>2</sup>)</strong>에 의해 실내 가연물 전체가 동시에 착화되는 현상</li>
+              <li><strong>화재 형태의 전환</strong>: 플래시오버를 기점으로 <strong>연료지배형 화재에서 환기지배형 화재로 전환</strong>됨</li>
+              <li><strong>롤오버(Rollover)와의 구분</strong>: 롤오버는 바닥 가연물이 아니라 <strong>천장 부근에 체류한 미연소 가연성 가스층</strong>을 따라 화염이 구르듯 번지는 현상</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이 강렬한 복사열을 뒤집어쓴 방 반대편의 침대, 커튼, 책상, 장판 등 <strong>구획실 내 모든 가연물의 표면에서 일제히 가연성 열분해 가스가 피어올라 발화점에 도달하면서, 불길이 직접 닿지도 않았던 방 전체가 단 1초에서 2초 만에 동시에 화염에 휩싸이는 현상</strong>이 바로 플래시오버입니다! 플래시오버가 터지는 순간 실내 화재는 국소적인 <strong>연료지배형 화재에서 전실 규모의 환기지배형 화재로 급격히 전환</strong>되며, 실내 온도가 800도 이상으로 치솟아 방 안에 남아 있던 사람의 생존 가능성은 0에 수렴하게 됩니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 플래시오버가 터지기 직전 단계에서 소방관들이 천장을 보고 대피 신호로 삼는 전조 현상이 바로 <strong>롤오버(Rollover, 또는 플레임오버 Flameover)</strong>입니다. 롤오버는 아직 바닥의 가구들에 일제히 불이 붙기 전, <strong>천장 아래에 두껍게 모인 뜨거운 미연소 가연성 가스층(연기층) 내부에서만 불꽃이 점화되어 마치 파도가 구르듯 천장면을 타고 화염이 너울거리며 번지는 현상</strong>입니다. 즉 <strong>'천장 연기층 내부의 기상 화염 전파 = 롤오버'</strong>이고, 그 롤오버의 복사열로 인해 <strong>'바닥의 모든 고체 가연물 표면까지 일제히 동시 착화되는 전실 화재 = 플래시오버'</strong>라고 인과관계로 연결해 두면 절대 헷갈리지 않습니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 백드래프트(Backdraft)의 발생 원리와 플래시오버와의 완벽 대조</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            플래시오버와 함께 현장 소방관의 생명을 위협하는 쌍벽이 바로 영화 제목으로도 유명한 <strong>백드래프트(Backdraft, 연기폭발)</strong>입니다. 만약 창문과 출입문이 빈틈없이 닫힌 <strong>밀폐된 구획실</strong>에서 화재가 나면 어떻게 될까요? 플래시오버까지 가지도 못한 채 실내의 산소 농도가 15% 이하로 고갈되면서 불꽃(화염)이 사그라들고, 벌건 숯불처럼 연기만 꾸역꾸역 피어오르는 <strong>훈소(불완전연소) 및 감쇠기 상태</strong>에 빠집니다. 하지만 방 안의 열기는 그대로 갇혀 있기 때문에 가연물에서는 일산화탄소(CO)와 탄화수소 같은 <strong>고온의 미연소 가연성 가스가 방 안에 빽빽하게 농축</strong>됩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>백드래프트 발생 메커니즘</strong>: 환기가 불량한 밀폐 구획실(감쇠기·훈소 상태)에 고온의 미연소 가스가 축적된 상태에서 <strong>문이나 창문 개방으로 산소가 급격히 유입될 때 일어나는 폭발적 연소</strong></li>
+              <li><strong>플래시오버 vs 백드래프트 핵심 대조</strong>: 플래시오버는 <strong>성장기 말기 · 복사열에 의한 동시 착화</strong> / 백드래프트는 <strong>감쇠기(훈소기) · 산소 급유입에 의한 폭풍 동반 폭발</strong></li>
+              <li><strong>백드래프트 대응 전술</strong>: 출입문을 바로 열지 않고 <strong>지붕이나 건물 상부(수직 환기구)를 먼저 개방</strong>하여 가연성 가스를 배출하고 주수 냉각 실시</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이처럼 연소의 4요소 중 '고온의 가연성 가스(연료)'와 '발화점 이상의 열에너지(점화원)'는 이미 방 안에 가득 차 있고 오직 <strong>'산소'</strong> 하나만 빠져 있는 시한폭탄 같은 상태에서, 소방관이 진입을 위해 <strong>출입문을 열거나 유리창을 깨뜨려 외부의 신선한 공기(산소)가 급격히 빨려 들어가는 순간</strong>, 농축되어 있던 미연소 가스가 일거에 폭발적으로 착화하면서 강력한 충격파(폭풍)와 거대한 화구(Fireball)가 열린 문밖의 소방관을 향해 덮치는 현상이 바로 백드래프트입니다! 현장에서 문을 열기 전 백드래프트를 알아채는 전조 증상으로는 ① 문틈으로 황회색의 짙은 연기가 칙칙거리며 뿜어져 나왔다가 실내 압력 저하로 다시 빨려 들어가는 현상(<strong>연기의 호흡 현상</strong>), ② 문손잡이가 화상을 입을 만큼 뜨겁고 창유리가 안쪽으로 검게 그을린 채 진동하는 현상 등이 있습니다. 이때는 출입문을 바로 열지 말고 <strong>건물 지붕이나 최상부(수직 환기구)를 먼저 개방하여 뜨거운 가연성 가스를 위로 배출</strong>시킨 뒤 안개 주수로 내부를 냉각하며 진입해야 합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            시험에서는 <strong>플래시오버</strong>와 <strong>백드래프트</strong>를 대조하는 문제가 매회 출제됩니다. ① <strong>발생 시기</strong>는 플래시오버가 <strong>성장기 말기(최성기 진입 직전)</strong>인 반면, 백드래프트는 산소가 고갈된 <strong>감쇠기(또는 밀폐 공간의 훈소 상태)</strong>입니다. ② <strong>유발 요인</strong>은 플래시오버가 천장 연기층의 <strong>복사열 축적(열적 요인)</strong>인 반면, 백드래프트는 개구부 개방에 따른 <strong>급격한 산소(공기) 유입</strong>입니다. ③ <strong>폭풍(충격파) 동반 여부</strong>는 플래시오버가 실내 가연물의 급격한 동시 착화인 반면, 백드래프트는 압력파(폭풍)를 동반하는 <strong>연기폭발 현상</strong>입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">비교 항목</th>
+                <th style="width:39%;">플래시오버 (Flashover)</th>
+                <th>백드래프트 (Backdraft)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>주요 발생 단계</strong></td>
+                <td><strong>성장기 말기</strong> (성장기에서 최성기로 전이되는 시점)</td>
+                <td><strong>감쇠기 (또는 밀폐 공간의 훈소 상태)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>직접적 유발 원인</strong></td>
+                <td>천장 상부 연기층의 강력한 <strong>복사열(열 축적)</strong></td>
+                <td>출입문·창문 개방에 따른 <strong>신선한 산소(공기)의 급격한 유입</strong></td>
+              </tr>
+              <tr>
+                <td><strong>실내 환기 및 산소</strong></td>
+                <td>개구부가 열려 있어 산소가 공급되는 상태에서 발생</td>
+                <td>밀폐되어 산소가 부족하고 고온 미연소 가스가 충만한 상태</td>
+              </tr>
+              <tr>
+                <td><strong>현상적 특징</strong></td>
+                <td>실내 가연물 표면 전체의 급격한 동시 착화 (전실 화재)</td>
+                <td>충격파(폭풍)와 화구(Fireball)가 개구부 밖으로 분출되는 <strong>연기폭발</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            여기서 한 걸음 더 들어가, 왜 건축물의 창문이 크고 통풍이 잘되는 '환기 양호 화재(연료 지배형)'는 불길이 무섭게 타오르지만 빨리 꺼지고, 창문이 작고 밀폐된 '환기 불량 화재(환기 지배형)'는 온도는 상대적으로 낮지만 훨씬 오랜 시간 불완전연소를 지속할까요? 연소 속도를 결정하는 두 날개는 '가연물(연료)의 양'과 '개구부를 통해 들어오는 공기(산소) 유입량(A&radic;H)'입니다. 창문이 활짝 열린 연료 지배형 화재에서는 산소가 남아돌기 때문에 실내 가연물이 짧은 시간 안에 폭발적인 열방출률(HRR)로 타버리고 조기에 소진됩니다. 반면 창문이 좁은 환기 지배형 화재에서는 실내에 가연물이 산더미처럼 쌓여 있어도 창문 틈으로 들어오는 산소량만큼만 겨우 타오르기 때문에, 검은 일산화탄소(CO)와 미연소 가연성 증기를 실내에 가득 채운 채 장시간 훈소 상태를 유지하다가 문을 여는 순간 치명적인 백드래프트(Backdraft)를 일으키게 됩니다.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 구획실 화재 시간·온도 성장 곡선 및 플래시오버·백드래프트 발생 메커니즘</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 구획실 화재 진행 4단계 및 특수 화재 현상 발생 시점</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">1단계: 초기 (발화기)</div>
+                <div>점화원 착화 후 국소 화염 형성 · 연료 지배형 초기 연소</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">2단계: 성장기 (플래시오버 분기점)</div>
+                <div>상부 고온 연기층 형성 및 바닥 복사열(20kW/㎡) 축적 ➔ 말기에 <strong>플래시오버(Flashover)</strong> 발생</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">3단계: 최성기 (전실 화재)</div>
+                <div>구획실 내 모든 가연물 동시 연소 · 최고 온도(800℃부터 1,200℃까지) 및 <strong>환기 지배형 화재</strong> 전환</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">4단계: 감쇠기 (백드래프트 위험)</div>
+                <div>가연물 소진 및 산소 결핍 상태의 훈소 지속 ➔ 개구부 급기 유입 시 <strong>백드래프트(Backdraft)</strong> 폭발</div>
+              </div>
+            </div>
+            <div class="schema-subgrid">
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">FO</span>
+                <div>
+                  <div class="schema-box-title">플래시오버 (성장기 말 ➔ 최성기 진입)</div>
+                  <div>원인: 천장 연기층 복사열(약 500℃에서 600℃, 바닥 복사열속 20kW/㎡)에 의한 전 가연물 일시 동시 착화</div>
+                </div>
+              </div>
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">BD</span>
+                <div>
+                  <div class="schema-box-title">백드래프트 (밀폐 감쇠기 훈소 중 급기 유입)</div>
+                  <div>원인: 산소 결핍 상태에서 축적된 고온 미연소 가스에 신선한 공기가 유입되어 폭발적 화구 분출 (대책: 상부 지붕 수직 환기 선행)</div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="schema-alert">★ 핵심 대조: <strong>플래시오버(Flashover)</strong>는 <strong>성장기 ➔ 최성기 분기점</strong>(연료 지배형 ➔ 환기 지배형 전환, 바닥 복사열 20kW/㎡) vs <strong>백드래프트(Backdraft)</strong>는 <strong>감쇠기</strong> 밀폐 공간 개구부 개방 시 급격한 산소 유입으로 폭발!</div>
+          </div></div>
+      </div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 구획실 화재 시간·온도 성장 곡선 및 플래시오버·백드래프트 발생 메커니즘</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (15문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (24문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="02_03_열전달_자연발화와_연소생성물_독성가스.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제2편 제3장)
+      </a>
+      <a href="02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제2편 제5장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제2편 연소 및 폭발 이론 제4장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제2편 연소 및 폭발 이론 제4장",
+  "totalQuestions": 15,
+  "themes": [
+    {
+      "name": "화재하중·화재강도·화재가혹도 및 환기요소",
+      "qCount": 7,
+      "examCount": 14,
+      "years": "2019년 소방공채·경채 Q3, 2020년 소방공채·경채 Q16, 2020년 소방공채·경채 Q17, 2022년 소방공채·경채 Q4 외",
+      "summary": "화재실의 단위 시간당 축적 열량(화재강도 vs 화재하중)"
+    },
+    {
+      "name": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+      "qCount": 5,
+      "examCount": 10,
+      "years": "2019년 소방공채·경채 Q10, 2021년 소방공채·경채 Q20, 2023년 소방공채·경채 Q15, 2024년 소방공채·경채 Q7 외",
+      "summary": "연료지배형 화재와 환기지배형 화재의 비교"
+    },
+    {
+      "name": "플래시오버(Flashover) vs 백드래프트(Backdraft) 비교",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2021년 소방공채·경채 Q5, 2023년 소방공채·경채 Q13, 2024년 소방공채·경채 Q11",
+      "summary": "백드래프트(Backdraft)의 발생 메커니즘 및 진압 전술"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂019₃",
+    "year": 2019,
+    "q_num": 3,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q3",
+    "topic": "화재실의 단위 시간당 축적 열량(화재강도 vs 화재하중)",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "화재 용어 중 화재실의 단위 시간당 축적되는 열의 양을 의미하는 것은?",
+    "stem_box": "",
+    "choices": [
+      "훈소",
+      "화재하중",
+      "화재강도",
+      "화재가혹도"
+    ],
+    "ans": 3,
+    "q_expl": "구획실 화재의 질적 개념인 '화재강도(Fire Intensity: 단위 시간당 축적·방출되는 열량, 최고온도와 비례)'와 양적 개념인 '화재하중(Fire Load: 단위 바닥면적당 등가 목재 중량, 지속시간과 비례)', 그리고 두 개념을 결합한 '화재가혹도(Fire Severity = 최고온도 × 지속시간)'를 구분하는 핵심 문항입니다.",
+    "c_expls": [
+      "[틀림] 훈소(Smoldering)는 산소가 부족한 상태에서 화염 없이 연기만 내며 느리게 타는 연소 현상입니다.",
+      "[틀림] 화재하중(Fire Load)은 화재실 단위 바닥면적당 가연물의 총 발열량을 목재의 단위발열량(4,500kcal/kg)으로 환산한 값(kg/㎡)으로 화재의 양적 개념(지속시간 결정)입니다.",
+      "[옳음 · 정답] 화재강도(Fire Intensity)는 화재실의 '단위 시간당 축적(또는 방출)되는 열의 양(열방출률, 최고온도)'을 의미하며 화재의 질적 개념입니다.",
+      "[틀림] 화재가혹도(Fire Severity)는 화재로 인해 건물 구조체 등이 손상을 입는 총체적 정도로서 화재강도(최고온도)와 화재하중(지속시간)의 곱으로 표현됩니다."
+    ]
+  },
+  {
+    "id": "Q₂019₁0",
+    "year": 2019,
+    "q_num": 10,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q10",
+    "topic": "연료지배형 화재와 환기지배형 화재의 비교",
+    "freq_key": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+    "stem": "연료지배형화재와 환기지배형화재에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "환기지배형화재는 공기공급이 충분하지 않으므로 불완 전연소가 심하다.",
+      "연료지배형화재는 공기공급이 충분한 조건에서 발생한 화재가 일반적이다.",
+      "연료지배형화재는 주로 큰 창문이나 개방된 공간에서, 환기지배형화재는 내화구조 및 콘크리트 지하층에서 발생하기 쉽다.",
+      "일반적으로 플래시오버 전에는 환기지배형화재가, 이후 에는 연료지배형화재가 지배적이다."
+    ],
+    "ans": 4,
+    "q_expl": "구획실 화재에서 플래시오버(Flashover) 전후의 화재 성상 변화를 묻는 초빈출 S등급 문항입니다. 플래시오버 이전(성장기)에는 실내 공기가 충분하여 가연물의 양과 표면적에 의해 연소속도가 결정되는 '연료지배형 화재'가 나타나고, 플래시오버 이후(최성기)에는 실내 가연물이 일제히 타면서 산소가 부족해져 개구부를 통한 공기 유입량에 의해 연소속도가 결정되는 '환기지배형 화재'가 지배적입니다.",
+    "c_expls": [
+      "[옳음] 환기지배형 화재는 가연물에 비해 공기(산소) 공급이 충분하지 못하므로 불완전연소가 심하고 일산화탄소와 검은 연기가 다량 발생합니다.",
+      "[옳음] 연료지배형 화재는 개구부가 크거나 화재 초기여서 공기 공급이 충분한 조건에서 발생하는 일반적인 화재 양상입니다.",
+      "[옳음] 연료지배형 화재는 큰 창문이나 개방 공간에서, 환기지배형 화재는 밀폐된 내화구조물이나 개구부가 작은 콘크리트 지하층에서 발생하기 쉽습니다.",
+      "[틀림 · 정답] 설명이 정반대로 바뀌었습니다. 일반적으로 플래시오버 '전(성장기)'에는 공기가 충분한 '연료지배형 화재'가 지배적이고, 플래시오버 '이후(최성기)'에는 산소가 부족해져 '환기지배형 화재'가 지배적입니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁6",
+    "year": 2020,
+    "q_num": 16,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q16",
+    "topic": "창고 내 적재 가연물의 구획실 화재하중(kg/㎡) 계산",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "바닥 면적이 200 ㎡인 구획된 창고에 의류 1,000 ㎏, 고무 2,000 ㎏이 적재되어 있을 때 화재하중은 약 몇 ㎏/㎡인가? (단, 의류, 고무, 목재의 단위 발열량은 각각 5,000 ㎉/㎏, 9,000 ㎉/㎏, 4,500 ㎉/㎏이고, 창고 내 의류 및 고무 외의 기타 가연물은 존재하지 않으며, 화재 시 완전연소로 가정한다.)",
+    "stem_box": "",
+    "choices": [
+      "15.56",
+      "20.56",
+      "25.56",
+      "30.56"
+    ],
+    "ans": 3,
+    "q_expl": "화재하중 공식[Q = \\sum (G(i) × H(i)) / (4,500 × A)]에 대입하여 목재 등가 중량(kg/㎡)을 산출하는 대표 계산 문항입니다.\n- 총 발열량 = (1,000 kg × 5,000 kcal/kg) + (2,000 kg × 9,000 kcal/kg) = 5,000,000 + 18,000,000 = 23,000,000 kcal\n- 분모(목재 기준발열량 × 바닥면적) = 4,500 kcal/kg × 200 m² = 900,000 kcal m²/kg\n- 화재하중 = 23,000,000 / 900,000 = 230 / 9 ≈ 25.56 kg/m².",
+    "c_expls": [
+      "[틀림] 가연물 한 종류를 누락하거나 잘못 나눈 수치입니다.",
+      "[틀림] 총 발열량(1,000 × 5,000 + 2,000 × 9,000 = 23,000,000 kcal)을 목재 단위발열량(4,500)과 바닥면적(200 m²)의 곱(900,000)으로 나누면 25.56 kg/m²가 되므로 20.56은 오답입니다.",
+      "[옳음 · 정답] 화재하중 공식에 대입하면 (1,000 × 5,000 + 2,000 × 9,000) / (4,500 × 200) = 23,000,000 / 900,000 ≈ 25.56 kg/m²이 정확히 산출됩니다.",
+      "[틀림] 등가 가연물량(23,000,000 / 4,500 = 5,111.1 kg)을 바닥면적 200 m²로 나누면 25.56 kg/m²이므로 30.56은 오답입니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁7",
+    "year": 2020,
+    "q_num": 17,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q17",
+    "topic": "화재가혹도(Fire Severity)와 개구부 환기요소 공식",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "화재가혹도에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "화재가혹도란 화재발생으로 당해 건물과 내부 수용재산 등을 파괴하거나 손상을 입히는 정도를 말한다.",
+      "최고온도는 화재가혹도의 질적 개념으로 화재강도와 관련이 있다.",
+      "지속시간은 화재가혹도의 양적 개념으로 화재하중과 관련이 있다.",
+      "화재가혹도에 영향을 미치는 환기요소는 개구부 면적의 제곱근에 비례하고 개구부 높이에 비례한다."
+    ],
+    "ans": 4,
+    "q_expl": "구획실 화재가혹도의 정의, 최고온도(질적 개념·화재강도)와 지속시간(양적 개념·화재하중), 그리고 카와고에(Kawagoe)의 개구부 환기요소[A\\sqrt{H}, 여기서 A는 개구부 면적, H는 개구부 높이]를 묻는 S등급 문항입니다. 환기요소는 '개구부 면적(A)에 비례하고 개구부 높이(H)의 제곱근(\\sqrt{H})에 비례'합니다.",
+    "c_expls": [
+      "[옳음] 화재가혹도(Fire Severity)란 화재 발생으로 건물 구조체와 내부 수용재산 등을 파괴하거나 손상을 입히는 정도를 말합니다.",
+      "[옳음] 최고온도는 화재가혹도의 질적 개념으로서 단위시간당 열방출률인 '화재강도'와 밀접한 관련이 있습니다.",
+      "[옳음] 지속시간은 화재가혹도의 양적 개념으로서 단위면적당 가연물 에너지 총량인 '화재하중'과 밀접한 관련이 있습니다.",
+      "[틀림 · 정답] 환기요소 공식은 A\\sqrt{H}이므로 개구부 면적(A)에 비례하고 개구부 높이의 제곱근(\\sqrt{H})에 비례합니다. 선지는 면적의 제곱근과 높이에 비례한다고 반대로 서술하여 틀렸습니다."
+    ]
+  },
+  {
+    "id": "Q₂021₅",
+    "year": 2021,
+    "q_num": 5,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q5",
+    "topic": "백드래프트(Backdraft)의 발생 메커니즘 및 진압 전술",
+    "freq_key": "플래시오버(Flashover) vs 백드래프트(Backdraft) 비교",
+    "stem": "백드래프트(back draft)에 대한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "불완전 연소에 의해 발생된 일산화탄소가 가연물로 작용하여 폭발하는 현상이다.",
+      "화재 진압 시 지붕 등 상부를 개방하는 것보다 출입문을 먼저 개방하는 것이 효과적인 전술이다.",
+      "밀폐된 실내에서 발생되는 현상으로, 출입문을 한 번에 완전히 개방하여 연기를 일순간에 배출해야 폭발력을 억제할 수 있다.",
+      "연료지배형화재가 진행되고 있는 공간에 산소가 일시 적으로 다량 공급됨에 따라 가연성가스가 폭발적으로 연소하는 현상이다."
+    ],
+    "ans": 1,
+    "q_expl": "밀폐된 구획실에서 산소 부족으로 불완전연소(훈소)가 진행되어 다량의 가연성 가스(일산화탄소 등)가 축적된 상태에서, 출입문 개방 등으로 산소가 일시적으로 다량 유입될 때 폭발적으로 연소하는 '백드래프트(Backdraft)'를 묻는 S등급 필수 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 백드래프트는 환기 불량(산소 부족)에 따른 불완전연소로 실내에 고농도로 축적된 일산화탄소(CO) 및 미연소 열분해 가스가 가연물로 작용하여 외부 산소 유입 시 순간적으로 폭발하는 현상입니다.",
+      "[틀림] 백드래프트 징후가 있을 때 출입문을 먼저 개방하면 급격한 산소 유입으로 대원들이 폭발 화염에 직격당하므로, 반드시 '지붕 등 상부를 먼저 개방(수직 환기)'하여 내부 가연성 가스와 열기를 배출해야 합니다.",
+      "[틀림] 출입문을 한 번에 완전히 개방하면 다량의 산소가 유입되어 즉각 백드래프트가 발생하므로 매우 위험합니다.",
+      "[틀림] 백드래프트는 공기가 충분한 연료지배형 화재가 아니라, 산소가 고갈된 '환기지배형 화재(또는 감쇠기 훈소 상태)'가 진행되는 밀폐 공간에서 발생합니다."
+    ]
+  },
+  {
+    "id": "Q₂021₂0",
+    "year": 2021,
+    "q_num": 20,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q20",
+    "topic": "실내 구획실 화재의 4단계 진행 과정(발화기·성장기·최성기·감퇴기)",
+    "freq_key": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+    "stem": "실내 화재의 진행 과정을 설명한 내용으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "발화기 · 건물 내의 가구 등이 독립 연소하고 있으며 다른 동(棟)으로의 연소 위험은 없다.",
+      "성장기 · 화재의 진행이 급속히 이루어지고 개구부에 서는 검은 연기가 분출된다.",
+      "최성기 · 산소가 부족하여 연소되지 않은 가스가 다량 발생된다.",
+      "감퇴기 · 지붕이나 벽체, 대들보나 기둥도 무너져 떨어 지고 열 발산율은 증가하기 시작한다."
+    ],
+    "ans": 4,
+    "q_expl": "구획실 화재 진행 4단계[발화기(초기) ➔ 성장기(플래시오버 발생) ➔ 최성기(환기지배형 최고온도 유지) ➔ 감퇴기(감쇠기)]의 열발산율(열방출률)과 온도 변화를 묻는 문항입니다. 감퇴기(감쇠기)에는 가연물이 소진되어 열발산율과 실내 온도가 '감소'하기 시작합니다.",
+    "c_expls": [
+      "[옳음] 발화기(초기)는 착화 후 건물 내 가구 등이 국부적으로 독립 연소하는 단계로서 아직 인접 실이나 다른 동으로의 연소 확대 위험은 낮습니다.",
+      "[옳음] 성장기는 화염이 천장으로 치솟고 복사열에 의해 화재가 급속히 확대(플래시오버 전후)되며 개구부로 검은 연기가 분출되는 단계입니다.",
+      "[옳음] 최성기는 구획실 전체가 화염에 휩싸여 최고온도에 도달하나, 실내 산소가 부족해져(환기지배형) 미연소 가연성 가스가 다량 발생합니다.",
+      "[틀림 · 정답] 감퇴기(감쇠기)에는 가연물이 대부분 소진되면서 지붕이나 벽체, 기둥이 무너져 내릴 수 있으나, 열 발산율(열방출률)과 실내 온도는 증가하는 것이 아니라 '감소하기 시작합니다'."
+    ]
+  },
+  {
+    "id": "Q₂022₄",
+    "year": 2022,
+    "q_num": 4,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q4",
+    "topic": "화재가혹도(Fire Severity)의 영향인자 및 주벽 단열성",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "화재가혹도(fire severity)에 대한 설명으로 옳지 않은 것은? (A는 개구부의 면적, H 는 개구부의 높이이다.)",
+    "stem_box": "",
+    "choices": [
+      "화재가혹도의 크기는 화재강도와 화재하중의 영향을 받는다.",
+      "화재실의 최고온도와 지속시간은 화재가혹도를 판단 하는 중요한 인자이다.",
+      "화재실의 환기요소(A√ H)는 화재가혹도에 영향을 준다.",
+      "화재가혹도는 화재실이나 화재구획의 단열성에 영향 을 받지 않는다."
+    ],
+    "ans": 4,
+    "q_expl": "화재가혹도에 영향을 미치는 주요 인자[가연물의 양과 발열량(화재하중), 가연물의 표면적 및 배치, 개구부의 환기요소(A\\sqrt{H}), 구획실 주벽(벽체·천장)의 열적 특성(단열성·열관류율)]를 묻는 문항입니다. 화재구획의 단열성이 좋을수록(열전도율이 낮을수록) 열이 밖으로 빠져나가지 못해 실내 최고온도가 높아지므로 화재가혹도가 크게 증가합니다.",
+    "c_expls": [
+      "[옳음] 화재가혹도의 크기는 질적 요소인 화재강도(최고온도)와 양적 요소인 화재하중(지속시간)의 영향을 모두 받습니다.",
+      "[옳음] 화재실의 최고온도와 지속시간은 화재가혹도를 결정하는 두 가지 핵심 척도입니다.",
+      "[옳음] 화재실 개구부의 면적(A)과 높이(H)로 표현되는 환기요소(A\\sqrt{H})는 공기 유입량과 열방출량을 좌우하여 화재가혹도에 직접적인 영향을 줍니다.",
+      "[틀림 · 정답] 화재구획(벽체·천장·바닥)의 단열성이 클수록 외부로의 열손실이 줄어들어 실내 온도가 더욱 상승하므로, 화재가혹도는 구획실의 단열성에 큰 영향을 받습니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁3",
+    "year": 2023,
+    "q_num": 13,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q13",
+    "topic": "구획실 화재 현상(플래시오버 소요시간 및 내장재·개구부 영향)",
+    "freq_key": "플래시오버(Flashover) vs 백드래프트(Backdraft) 비교",
+    "stem": "화재 시 구획실에서 발생하는 현상에 관한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "개구부의 크기는 플래시오버 발생과 관련이 없다.",
+      "구획실의 창문과 문손잡이의 온도로 백드래프트의 발생 가능성을 예측할 수 없다.",
+      "준불연성이나 불연성의 내장재를 사용할 경우 플래시오버 발생까지의 소요시간이 길어진다.",
+      "구획실 내의 산소가 부족하여 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화 하는 현상은 플래시오버이다."
+    ],
+    "ans": 3,
+    "q_expl": "구획실 화재에서 플래시오버(Flashover)와 백드래프트(Backdraft)의 발생 조건 및 예방 대책을 묻는 문항입니다. 실내 마감재로 준불연재나 불연재를 사용하면 열방출률과 화염 확산 속도가 억제되어 플래시오버 발생까지의 소요시간이 길어집니다(피난 가능 시간 확보).",
+    "c_expls": [
+      "[틀림] 개구부의 크기(환기요소 A\\sqrt{H})는 공기 유입량과 열손실량을 결정하므로 플래시오버 발생 여부 및 소요시간과 밀접한 관련이 있습니다.",
+      "[틀림] 구획실의 창문과 문손잡이가 뜨겁고 유리창 안쪽에 타르 얼룩이 맺히는 것은 백드래프트의 대표적인 사전 징후이므로 이로써 발생 가능성을 예측할 수 있습니다.",
+      "[옳음 · 정답] 실내에 준불연성이나 불연성의 내장재를 사용할 경우 가연성 가스 발생과 열 축적이 지연되어 플래시오버 발생까지의 소요시간이 길어집니다.",
+      "[틀림] 산소가 부족한 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화하는 현상은 플래시오버가 아니라 '백드래프트(Backdraft)'입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁4",
+    "year": 2023,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q14",
+    "topic": "구획실 치수(mm) 환산 및 복수 가연물의 화재하중(kg/㎡) 계산",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "그림은 구획실의 크기가 가로 10,000 mm, 세로 8,000 mm, 높이 3,000 mm이며 가연물 A와 가연물 B가 놓여 있는 상태를 나타낸다. 다음과 같은 조건일 때 구획실의 화재하중[kg/m2]은? (단, 주어지지 않은 조건은 무시하고, 소수점 셋째 자리에서 반올림한다.) 단위발열량[kcal/kg] 질량[kg] 목재 4,500 - 가연물 A 2,000 200 가연물 B 9,000 100",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 조건 표 복원: 구획실(가로 10,000 mm × 세로 8,000 mm × 높이 3,000 mm) 내부 가연물 조건]</strong>· <strong>목재</strong>: 단위발열량 4,500 kcal/kg<br/>· <strong>가연물 A</strong>: 단위발열량 2,000 kcal/kg, 질량 200 kg<br/>· <strong>가연물 B</strong>: 단위발열량 9,000 kcal/kg, 질량 100 kg",
+    "choices": [
+      "1.20",
+      "2.41",
+      "3.61",
+      "7.22"
+    ],
+    "ans": 3,
+    "q_expl": "구획실 치수가 밀리미터(mm) 단위로 주어졌을 때 미터(m)로 환산하고, 높이(3m)는 바닥면적 계산에서 제외하는 함정을 피해야 하는 2023년 기출 계산 문항입니다.\n- 바닥면적 A = 가로  10 m(10,000 mm) × 세로  8 m(8,000 mm) = 80 m² (높이 3m는 무관).\n- 총 발열량 = (2,000 × 200) + (9,000 × 100) = 400,000 + 900,000 = 1,300,000 kcal.\n- 화재하중 = 1,300,000 / (4,500 × 80) = 1,300,000 / 360,000 = 130 / 36 ≈ 3.611 ≈ 3.61 kg/m².",
+    "c_expls": [
+      "[틀림] 높이(3m)까지 곱해 체적으로 나누는 등 공식을 잘못 적용한 수치입니다.",
+      "[틀림] 가연물 B만 계산하거나 수치를 잘못 대입한 값입니다.",
+      "[옳음 · 정답] 바닥면적 A = 10 m × 8 m = 80 m²이므로, 화재하중 = (2,000 × 200 + 9,000 × 100) / (4,500 × 80) = 1,300,000 / 360,000 ≈ 3.61 kg/m²입니다.",
+      "[틀림] 바닥면적은 가로 10 m × 세로  5 m = 50 m²이므로 분모에 4,500 × 50 = 225,000을 대입하면 화재하중은 812,500 / 225,000 = 3.61 kg/m²가 됩니다(7.22는 바닥면적을 25 m²로 잘못 대입한 값)."
+    ]
+  },
+  {
+    "id": "Q₂023₁5",
+    "year": 2023,
+    "q_num": 15,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q15",
+    "topic": "구획실 화재에서 플래시오버와 연료지배형·환기지배형 화재의 특성",
+    "freq_key": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+    "stem": "구획실 화재에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "플래시오버 이후에는 연료지배형 화재보다 환기지배형 화재가 지배적이다.",
+      "환기가 잘되지 않으면 환기지배형 화재에서 연료지배형 화재로 바뀌며 연기 발생이 줄어든다.",
+      "연료지배형 화재는 구획실 내 가연물의 연소에 필요한 산소가 충분히 공급되는 조건의 화재이다.",
+      "성장기에는 천장 부분에서 축적된 뜨거운 가스층이 발화 원으로부터 떨어져 있는 가연성 물질에 복사열을 공급하여 플래시오버를 초래할 수 있다."
+    ],
+    "ans": 2,
+    "q_expl": "구획실 화재에서 환기 조건 악화 시의 변화 양상을 묻는 문항입니다. 환기가 잘되지 않으면 산소 공급이 부족해지므로 연료지배형 화재에서 '환기지배형 화재'로 바뀌며, 불완전연소가 심해져 연기 발생량이 크게 '증가'합니다.",
+    "c_expls": [
+      "[옳음] 플래시오버 이후(최성기)에는 구획실 내 모든 가연물이 동시에 연소하여 산소가 부족해지므로 연료지배형보다 환기지배형 화재가 지배적입니다.",
+      "[틀림 · 정답] 환기가 잘되지 않으면 산소가 부족해져 연료지배형 화재에서 '환기지배형 화재'로 바뀌며, 불완전연소로 인해 연기 발생이 크게 '늘어납니다'.",
+      "[옳음] 연료지배형 화재는 구획실 내 가연물 연소에 필요한 산소가 충분히 공급되어 연료의 양과 표면적에 의해 연소속도가 좌우되는 화재입니다.",
+      "[옳음] 성장기에는 천장 아래에 축적된 고온의 연기·가스층이 바닥의 가연물에 강한 복사열(약 20 kW/m² 이상)을 공급하여 구획실 전체가 일시에 화염에 휩싸이는 플래시오버를 초래합니다."
+    ]
+  },
+  {
+    "id": "Q₂024₇",
+    "year": 2024,
+    "q_num": 7,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q7",
+    "topic": "실내 일반화재 진행 단계(초기·성장기·최성기·감쇠기)별 특성",
+    "freq_key": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+    "stem": "실내 일반화재 진행 과정에 관한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "화재 초기에는 실내 온도가 급격하게 상승하기 시작한다.",
+      "성장기에는 급속한 연소 진행으로 환기지배형 화재 양상이 나타난다.",
+      "최성기에는 실내 화염이 최고조에 도달하나 실내 산소 부족으로 연소속도가 느려진다.",
+      "감쇠기에는 화염의 급격한 소멸로 훈소 상태가 되어 백드 래프트(back draft)의 위험이 없다."
+    ],
+    "ans": 3,
+    "q_expl": "실내 일반화재 4단계의 세부 특징을 묻는 2024년 기출 문항입니다. 최성기에는 실내 화염과 온도가 최고조에 도달하지만, 밀폐·반밀폐 구획실 특성상 산소 부족(환기지배형)으로 인해 가연물 양 대비 실질적인 연소속도는 개구부 공기 유입량에 묶여 제한됩니다.",
+    "c_expls": [
+      "[틀림] 화재 초기(발화기)에는 국부적인 착화 단계로 실내 평균 온도는 완만하게 상승하며, 실내 온도가 급격하게 상승하는 단계는 '성장기(특히 플래시오버 시점)'입니다.",
+      "[틀림] 성장기(플래시오버 이전)에는 실내에 산소가 충분하므로 환기지배형이 아니라 '연료지배형 화재' 양상이 나타납니다.",
+      "[옳음 · 정답] 최성기에는 구획실 전체가 불길에 휩싸여 실내 화염이 최고조에 도달하나, 실내 산소 부족(환기지배형 화재)으로 인해 연소속도가 둔화·제한됩니다.",
+      "[틀림] 감쇠기(감퇴기)에 산소 부족으로 화염이 사그라들고 고온의 훈소 상태가 되었을 때, 출입문 개방 등으로 산소가 급격히 유입되면 '백드래프트(Backdraft)'가 발생할 위험이 매우 큽니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁1",
+    "year": 2024,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q11",
+    "topic": "백드래프트(Backdraft)의 사전 발생 징후 판별",
+    "freq_key": "플래시오버(Flashover) vs 백드래프트(Backdraft) 비교",
+    "stem": "백드래프트(back draft)의 발생 징후로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "유리창 안쪽에 타르와 유사한 물질이 흘러내려 얼룩진 경우",
+      "창문을 통해 보았을 때 건물 내에서 연기가 소용돌이치는 경우",
+      "화염은 보이지 않지만 창문과 문손잡이가 뜨거운 경우",
+      "균열된 틈이나 작은 구멍을 통하여 건물 밖으로 연기가 밀려 나오는 경우"
+    ],
+    "ans": 4,
+    "q_expl": "현장 대원이 출입문 개방 전 반드시 확인해야 할 백드래프트(Backdraft)의 대표적인 발생 징후[유리창 안쪽 검은 타르 얼룩, 창문·문손잡이의 고열, 외부로 화염이 보이지 않고 검은·황회색 연기가 실내에서 소용돌이침, 문틈으로 연기가 나갔다 다시 빨려 들어가는 '연기의 호흡(숨쉬기) 현상']를 묻는 2024년 기출 문항입니다.",
+    "c_expls": [
+      "[옳음] 불완전연소로 생성된 고농도 탄소·타르 성분이 유리창 안쪽에 응축되어 흘러내려 얼룩진 경우는 백드래프트의 전형적인 징후입니다.",
+      "[옳음] 산소 부족으로 화염은 꺼졌으나 내부 열기류에 의해 연기가 건물 안에서 소용돌이치는 경우는 백드래프트 징후입니다.",
+      "[옳음] 실내 산소 고갈로 불꽃(화염)은 보이지 않지만 내부 축열로 인해 창문과 문손잡이가 매우 뜨거운 경우는 백드래프트 징후입니다.",
+      "[틀림 · 정답] 백드래프트 직전에는 실내 산소가 소모되면서 순간적인 감압이 발생하여 균열된 틈이나 문틈으로 연기가 밀려 나갔다가 '다시 실내로 빨려 들어가는(흡입되는) 현상'이 반복됩니다. 단순히 밖으로만 연기가 계속 밀려 나오는 것은 일반적인 양압 분출 상태입니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁5",
+    "year": 2024,
+    "q_num": 15,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q15",
+    "topic": "구획실 화재의 제반 현상(플래시오버·굴뚝효과·화재플룸·롤오버)",
+    "freq_key": "구획실 화재 진행 단계 및 연료지배형 vs 환기지배형 화재",
+    "stem": "구획실 화재에 관한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "플래시오버(flash over)는 최성기와 감쇠기 사이에서 발생 하며 충격파를 수반한다.",
+      "굴뚝효과가 발생할 때는 개구부에 형성된 중성대 상부에서 공기가 유입되고, 중성대 하부에서 연기가 유출된다.",
+      "연료지배형 화재는 환기지배형 화재보다 산소 공급이 원활하고 연소속도가 빠르다.",
+      "화재플룸(fire plume)은 실내 공기의 압력 차이로 가연성 가스가 천장을 따라 화재가 발생하지 않은 복도 쪽으로 굴러다니는 것처럼 뿜어져 나오는 현상이다."
+    ],
+    "ans": 3,
+    "q_expl": "구획실 화재의 핵심 용어(플래시오버, 굴뚝효과 중성대, 연료지배형 vs 환기지배형, 화재플룸 vs 롤오버)를 종합적으로 묻는 2024년 기출 문항입니다. 가연성 가스가 천장을 따라 구르듯 불꽃을 일으키며 복도 쪽으로 뿜어져 나오는 현상은 화재플룸이 아니라 '롤오버(Rollover, 플레임오버)'입니다.",
+    "c_expls": [
+      "[틀림] 플래시오버는 최성기와 감쇠기 사이가 아니라 '성장기에서 최성기로 넘어가는 전이 시점'에 발생하며, 충격파(폭굉)를 수반하지 않습니다.",
+      "[틀림] 굴뚝효과(정연돌효과) 발생 시 중성대 '하부'에서 외부의 찬 공기가 유입되고, 중성대 '상부'에서 고온의 연기가 외부로 유출됩니다(상·하부가 반대로 서술됨).",
+      "[옳음 · 정답] 연료지배형 화재는 환기지배형 화재보다 산소 공급이 원활하여 완전연소에 가깝고 단위 가연물당 연소속도가 빠릅니다.",
+      "[틀림] 미연소 가연성 가스가 천장을 따라 굴러다니는 것처럼 화염을 형성하며 뿜어져 나오는 현상은 화재플룸이 아니라 '롤오버(Rollover)'입니다(화재플룸은 화원 상부로 부력에 의해 수직 상승하는 열기둥)."
+    ]
+  },
+  {
+    "id": "Q₂025₁3",
+    "year": 2025,
+    "q_num": 13,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q13",
+    "topic": "환기지배형 내화구조물에서 화재 지속시간 산정 인자",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "내화구조물의 화재가혹도 판단을 위한 주요 요소 중 화재 지속시간을 산정하기 위한 인자로 옳지 않은 것은? (단, 환기 지배형 화재로 가정한다.)",
+    "stem_box": "",
+    "choices": [
+      "화재실의 바닥면적",
+      "화재실의 최고온도",
+      "화재실의 개구부 높이",
+      "화재실의 개구부 면적"
+    ],
+    "ans": 2,
+    "q_expl": "환기지배형 화재에서 구획실의 화재 지속시간(t(d))을 산정하는 가와고에(Kawagoe)의 식[t(d) ∝ (Q · A(f)) / (A\\sqrt{H}), 여기서 Q는 화재하중, A(f)는 화재실 바닥면적, A는 개구부 면적, H는 개구부 높이]을 묻는 2025년 기출 문항입니다. 화재실의 최고온도는 화재강도(질적 개념) 척도이며 지속시간 산정 인자가 아닙니다.",
+    "c_expls": [
+      "[옳음] 화재실의 바닥면적(A(f))은 화재하중 및 총 가연물 열량 산정의 기준 인자이므로 화재 지속시간 산정에 필요합니다.",
+      "[틀림 · 정답] '화재실의 최고온도'는 화재가혹도의 두 축 중 '화재강도(질적 개념)'에 해당하는 결과값이지, 화재 지속시간(양적 개념)을 산정하기 위한 입력 인자가 아닙니다.",
+      "[옳음] 환기지배형 화재에서 개구부 높이(H)는 공기 유입 속도를 결정하는 환기요소(A\\sqrt{H})의 구성 인자이므로 화재 지속시간 산정에 필요합니다.",
+      "[옳음] 개구부 면적(A) 역시 환기요소(A\\sqrt{H})를 구성하여 연소율과 지속시간을 결정하는 핵심 인자입니다."
+    ]
+  },
+  {
+    "id": "Q₂025₁4",
+    "year": 2025,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q14",
+    "topic": "화재하중(Fuel Load) 산정 공식의 필수 항목과 불필요 항목 선별",
+    "freq_key": "화재하중·화재강도·화재가혹도 및 환기요소",
+    "stem": "건축물의 지하층에서 화재가 발생한 경우, 화재하중 산정 시 필요하지 않은 항목을 <보기>에서 있는 대로 모두 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 각 가연물의 양[kg]<br/>ㄴ. 건축물의 연면적[m2]<br/>ㄷ. 목재의 화재하중[4,500 kg/m2]<br/>ㄹ. 가연물의 단위 발열량[kcal/kg]",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄱ, ㄹ",
+      "ㄴ, ㄷ",
+      "ㄴ, ㄷ, ㄹ"
+    ],
+    "ans": 3,
+    "q_expl": "화재하중 산정 공식[Q = \\sum (G(i) × H(i)) / (4,500 × A)]의 정확한 단위와 변수를 묻는 2025년 기출 문항입니다. 분모에 들어가는 면적(A)은 건축물 전체의 연면적이 아니라 '해당 화재실(구획실)의 바닥면적'이며, 상수 4,500은 목재의 화재하중이 아니라 '목재의 단위발열량(4,500kcal/kg)'입니다.",
+    "c_expls": [
+      "[틀림] ㄱ(각 가연물의 양, kg)은 화재하중 산정의 필수 항목입니다.",
+      "[틀림] ㄱ(각 가연물의 양)과 ㄹ(가연물의 단위 발열량)은 분자(\\sum G(i) H(i))를 구성하는 필수 항목입니다.",
+      "[옳음 · 정답] 화재하중 산정 시 필요한 면적은 건축물 전체의 연면적이 아니라 '화재실의 바닥면적'이므로 ㄴ은 필요하지 않으며, 분모의 상수 4,500은 목재의 화재하중(kg/m²)이 아니라 '목재의 단위발열량(4,500 kcal/kg)'이므로 ㄷ 역시 틀린 항목입니다. 따라서 필요하지 않은 항목은 ㄴ, ㄷ입니다.",
+      "[틀림] ㄹ(가연물의 단위 발열량, kcal/kg)은 필수 항목입니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "S",
+    "text": "플래시오버(Flashover)를 유발하는 가장 지배적인 열전달 방식은 상부 고온 가스층의 복사열이다.",
+    "isCorrect": true,
+    "source": "열전달 기출",
+    "explanation": "천장 고온 가스층의 복사열이 바닥 가연물로 쏟아져 일시 발화를 일으키는 것이 플래시오버의 본질입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀2₀04"
+  },
+  {
+    "grade": "S",
+    "text": "백드래프트는 성장기에서 최성기로 넘어가는 시점에 발생하며 환기부족 상태와 무관하다.",
+    "isCorrect": false,
+    "source": "백드래프트 기출",
+    "explanation": "성장기에서 최성기로 넘어가는 것은 플래시오버입니다. 백드래프트는 감쇠기 산소 결핍(환기 부족) 상태에서 발생합니다.",
+    "origQId": "",
+    "id": "SCI₀2₀2₀05"
+  },
+  {
+    "grade": "S",
+    "text": "플래시오버는 산소 결핍 상태에서 신선한 공기가 급격히 유입될 때 발생하는 폭풍 현상이다.",
+    "isCorrect": false,
+    "source": "백드래프트 기출",
+    "explanation": "산소 결핍 상태에서 공기 급유입으로 폭풍 폭발이 일어나는 것은 백드래프트의 정의입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀2₀06"
+  },
+  {
+    "grade": "S",
+    "text": "백드래프트는 화재실 상부 개방을 통한 지붕 환기(수직 환기)로 방지할 수 있다.",
+    "isCorrect": true,
+    "source": "백드래프트 기출",
+    "explanation": "문을 열기 전에 최상부 지붕을 먼저 개방하여 고온 미연소 가스를 수직 배출시키는 것이 백드래프트의 정석 방지 전술입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀2₀07"
+  },
+  {
+    "grade": "S",
+    "text": "플래시오버의 주된 진압 대책은 급격한 개구부 개방을 통한 통풍 유도이다.",
+    "isCorrect": false,
+    "source": "백드래프트 기출",
+    "explanation": "플래시오버의 주된 대책은 천장 고온 가스층에 분무 주수를 실시하여 열을 흡수하는 냉각 주수입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀2₀08"
+  },
+  {
+    "grade": "S",
+    "text": "화재 용어 중 화재실의 단위 시간당 축적되는 열의 양(최고온도와 관련 있는 질적 개념)을 '화재강도'라 하고, 단위 바닥면적당 가연물의 목재 환산 중량(지속시간과 관련 있는 양적 개념)을 '화재하중'이라 한다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q3 기출",
+    "explanation": "화재강도는 질적 개념(최고온도), 화재하중은 양적 개념(지속시간)이며, 이 둘을 종합한 구조물 피해 정도가 화재가혹도입니다.",
+    "origQId": "Q₂019₃",
+    "id": "SCI₀2₀2₀12"
+  },
+  {
+    "grade": "S",
+    "text": "구획실 화재에서 일반적으로 플래시오버 이전(성장기)에는 연료지배형 화재가 지배적이고, 플래시오버 이후(최성기)에는 환기지배형 화재가 지배적이다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q10 기출",
+    "explanation": "화재 초기·성장기(플래시오버 전)에는 산소가 충분하여 연료지배형이고, 플래시오버 이후 최성기에는 실내 산소가 고갈되어 개구부 환기량에 좌우되는 환기지배형이 됩니다.",
+    "origQId": "Q₂019₁0",
+    "id": "SCI₀2₀2₀13"
+  },
+  {
+    "grade": "S",
+    "text": "환기지배형 화재는 공기 공급이 충분하지 않아 불완전연소가 심하며, 주로 내화구조물이나 지하층에서 발생하기 쉽다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q10 기출",
+    "explanation": "환기지배형 화재는 산소 부족으로 불완전연소 가스와 미연소 연기가 다량 축적되어 백드래프트의 원인이 됩니다.",
+    "origQId": "Q₂019₁0",
+    "id": "SCI₀2₀2₀14"
+  },
+  {
+    "grade": "S",
+    "text": "바닥면적 200제곱미터인 창고에 의류 1,000킬로그램(5,000kcal/kg)과 고무 2,000킬로그램(9,000kcal/kg)이 적재된 경우, 목재(4,500kcal/kg) 기준 화재하중은 약 25.56kg/㎡이다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q16 기출",
+    "explanation": "화재하중 = 총발열량(23,000,000kcal) / [목재단위발열량(4,500) × 바닥면적(200)] = 약 25.56kg/㎡입니다.",
+    "origQId": "Q₂020₁6",
+    "id": "SCI₀2₀2₀16"
+  },
+  {
+    "grade": "S",
+    "text": "화재가혹도에서 최고온도는 질적 개념으로 화재강도와 관련이 있고, 지속시간은 양적 개념으로 화재하중과 관련이 있다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q17 기출",
+    "explanation": "화재가혹도(면적 = 최고온도 × 지속시간)는 질적 인자인 최고온도(화재강도)와 양적 인자인 지속시간(화재하중)에 의해 결정됩니다.",
+    "origQId": "Q₂020₁7",
+    "id": "SCI₀2₀2₀17"
+  },
+  {
+    "grade": "S",
+    "text": "화재가혹도에 영향을 미치는 개구부의 환기요소는 개구부 면적(A)에 비례하고 개구부 높이(H)의 제곱근에 비례한다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q17 기출",
+    "explanation": "환기요소(Ventilation Factor)는 A√H로 정의되므로 개구부 면적에 비례하고 개구부 높이의 제곱근에 비례합니다.",
+    "origQId": "Q₂020₁7",
+    "id": "SCI₀2₀2₀18"
+  },
+  {
+    "grade": "S",
+    "text": "백드래프트(Backdraft)는 환기지배형 화재(산소 부족 훈소 상태)가 진행되는 밀폐 공간에서 불완전연소로 축적된 일산화탄소 등 가연성 가스가 산소 일시 유입 시 폭발적으로 연소하는 현상이다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q5 기출",
+    "explanation": "백드래프트는 산소가 부족한 환기지배형 구획실에서 출입문 개방 등으로 산소가 급격히 공급될 때 일어나는 연기 폭발(Smoke Explosion) 현상입니다.",
+    "origQId": "Q₂021₅",
+    "id": "SCI₀2₀2₀22"
+  },
+  {
+    "grade": "S",
+    "text": "백드래프트 위험이 있는 화재 현장에서는 출입문을 먼저 열지 않고 지붕 등 건물 상부를 먼저 개방하는 수직 환기 전술과 내부 주수 냉각을 실시해야 한다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q5 기출",
+    "explanation": "상부(지붕)를 개방하여 미연소 가스를 먼저 배출(수직 환기)해야 출입문 개방 시의 백드래프트 참사를 예방할 수 있습니다.",
+    "origQId": "Q₂021₅",
+    "id": "SCI₀2₀2₀23"
+  },
+  {
+    "grade": "A",
+    "text": "실내 화재의 진행 과정 중 최성기에는 산소가 부족하여 미연소 가스가 다량 발생하고, 감퇴기(감쇠기)에는 가연물이 소진되어 열 발산율과 온도가 감소하기 시작한다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q20 기출",
+    "explanation": "감퇴기(감쇠기)는 가연물이 약 80퍼센트 이상 소모되어 열방출률(열 발산율)이 급격히 떨어지는 단계입니다.",
+    "origQId": "Q₂021₂0",
+    "id": "SCI₀2₀2₀24"
+  },
+  {
+    "grade": "S",
+    "text": "화재가혹도는 화재강도(최고온도), 화재하중(지속시간), 개구부의 환기요소뿐만 아니라 화재구획 벽체의 단열성에도 큰 영향을 받는다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q4 기출",
+    "explanation": "구획실 벽체의 단열성이 높을수록 열 축적이 심해져 실내 최고온도와 화재가혹도가 커집니다.",
+    "origQId": "Q₂022₄",
+    "id": "SCI₀2₀2₀25"
+  },
+  {
+    "grade": "S",
+    "text": "구획실 내부에 준불연성이나 불연성의 내장재를 사용할 경우 플래시오버(Flashover) 발생까지의 소요시간이 길어진다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q13 기출",
+    "explanation": "불연·준불연 내장재를 사용하면 열방출 속도가 느려져 플래시오버 도달 시간이 지연되므로 재실자의 피난 안전성이 향상됩니다.",
+    "origQId": "Q₂023₁3",
+    "id": "SCI₀2₀2₀28"
+  },
+  {
+    "grade": "S",
+    "text": "가로 10미터, 세로 8미터, 높이 3미터인 구획실(바닥면적 80제곱미터)에 가연물 A(2,000kcal/kg, 200kg)와 B(9,000kcal/kg, 100kg)가 있을 때 목재(4,500kcal/kg) 기준 화재하중은 약 3.61kg/㎡이다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q14 기출",
+    "explanation": "화재하중 산출 시 구획실의 높이는 고려하지 않고 바닥면적(10m × 8m = 80㎡)만 적용하여 1,300,000 / (4,500 × 80) = 약 3.61kg/㎡가 됩니다.",
+    "origQId": "Q₂023₁4",
+    "id": "SCI₀2₀2₀29"
+  },
+  {
+    "grade": "S",
+    "text": "구획실 화재의 성장기에는 천장 부분에 축적된 뜨거운 가스층이 바닥의 가연성 물질에 강한 복사열을 공급하여 플래시오버를 초래할 수 있다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q15 기출",
+    "explanation": "천장 고온 연기층으로부터 바닥 가연물에 전달되는 복사열(약 20kW/㎡ 도달 시)이 플래시오버 발생의 핵심 메커니즘입니다.",
+    "origQId": "Q₂023₁5",
+    "id": "SCI₀2₀2₀30"
+  },
+  {
+    "grade": "S",
+    "text": "실내 일반화재의 최성기에는 화염이 최고조에 도달하나 실내 산소 부족(환기지배형)으로 연소속도가 느려지며, 감쇠기 훈소 상태에서는 산소 유입 시 백드래프트의 위험이 존재한다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q7 기출",
+    "explanation": "성장기는 연료지배형, 최성기는 산소 부족에 따른 환기지배형이며, 감쇠기 밀폐 훈소 공간은 대표적인 백드래프트 위험 구간입니다.",
+    "origQId": "Q₂024₇",
+    "id": "SCI₀2₀2₀31"
+  },
+  {
+    "grade": "S",
+    "text": "백드래프트(Backdraft)의 발생 징후로는 유리창 안쪽의 타르 얼룩, 건물 내 소용돌이치는 연기, 화염은 보이지 않으나 뜨거운 문손잡이, 그리고 틈새로 연기가 배출되었다가 다시 안으로 빨려 들어가는 현상 등이 있다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q11 기출",
+    "explanation": "백드래프트 직전에는 산소 소모로 인한 실내 압력 저하로 문틈의 연기가 안으로 다시 빨려 들어가는(숨쉬는 듯한) 현상이 나타납니다.",
+    "origQId": "Q₂024₁1",
+    "id": "SCI₀2₀2₀32"
+  },
+  {
+    "grade": "S",
+    "text": "굴뚝효과(정연돌효과)가 발생할 때는 중성대 하부에서 외부 공기가 유입되고, 중성대 상부에서 실내 연기가 외부로 유출된다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q15 기출",
+    "explanation": "중성대 위쪽은 실내 정압이 실외보다 높아 연기가 유출되고, 중성대 아래쪽은 실외 정압이 높아 외기가 유입됩니다.",
+    "origQId": "Q₂024₁5",
+    "id": "SCI₀2₀2₀33"
+  },
+  {
+    "grade": "S",
+    "text": "미연소 가연성 가스가 천장을 따라 굴러다니는 것처럼 불꽃을 일으키며 확산되는 현상은 화재플룸이 아니라 '롤오버(Rollover)'이다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q15 기출",
+    "explanation": "화재플룸(Fire Plume)은 화원 위쪽으로 부력에 의해 솟구치는 수직 열기류이고, 천장면을 따라 구르듯 화염이 전파되는 현상은 롤오버입니다.",
+    "origQId": "Q₂024₁5",
+    "id": "SCI₀2₀2₀34"
+  },
+  {
+    "grade": "A",
+    "text": "환기지배형 내화구조물에서 화재 지속시간을 산정하기 위한 인자에는 가연물의 양과 발열량, 화재실의 바닥면적, 개구부의 면적과 높이가 포함되며, 화재실의 최고온도는 화재강도(질적 개념)에 해당한다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q13 기출",
+    "explanation": "화재 지속시간은 총 가연물량(화재하중 × 바닥면적)을 개구부 환기요소(A√H)에 따른 연소속도로 나누어 산정합니다.",
+    "origQId": "Q₂025₁3",
+    "id": "SCI₀2₀2₀38"
+  },
+  {
+    "grade": "S",
+    "text": "구획실의 화재하중 산정 시 필요한 항목은 각 가연물의 질량(kg), 가연물의 단위발열량(kcal/kg), 목재의 단위발열량(4,500kcal/kg), 그리고 해당 화재실의 바닥면적(㎡)이다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q14 기출",
+    "explanation": "건축물 전체의 연면적이 아니라 해당 구획실(화재실)의 바닥면적으로 나누어야 하며, 4,500은 목재의 단위발열량(kcal/kg)입니다.",
+    "origQId": "Q₂025₁4",
+    "id": "SCI₀2₀2₀39"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

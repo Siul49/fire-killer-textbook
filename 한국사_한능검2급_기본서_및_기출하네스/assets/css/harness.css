@@ -1,0 +1,1043 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap");
+
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   OXFORD × RIDIBOOKS EDITORIAL PAPER DESIGN SYSTEM (STYLE A CONFIRMED)
+   - 고정 본문 판면 (600px) + 세로 실선 (+32px) + 안전 여백 (+26px) + 우측 날개 각주 (245px)
+   - 폰트 체계:
+     1) UI · 상단바 · 배지 · 제목(h1~h3) · 날개각주 · 표 · 도식 = Pretendard (--font-sans)
+     2) 본문 서술형 문단(.prose-body) 및 기출 지문(.book-p) = 리디바탕/본명조 (--font-body)
+     3) .font-mono 등 시스템 굴림체/바탕체 폴백을 유발하는 모든 클래스 원천 차단
+   ========================================================================== */
+
+:root {
+  /* Reader Bar & Chrome UI Tokens */
+  --ui-bg: #EAE3D5;
+  --ui-bar: rgba(252, 249, 244, 0.95);
+  --ui-border: #DCD3C4;
+  --ui-text: #22201D;
+  --ui-sub: #6E685F;
+  --ui-accent: #8B2635;
+
+  /* Editorial Warm Paper Tokens (Day Mode Default) */
+  --bg-desk: #EAE3D5;
+  --bg-sheet: #FCF9F4;
+  --bg-subtle: #F4EFE6;
+  --bg-card: #FAF6EE;
+  --text-main: #22201D;
+  --text-sub: #544F47;
+  --text-muted: #8A8275;
+  --accent: #8B2635;
+  --accent-hover: #6E1D29;
+  --accent-soft: rgba(139, 38, 53, 0.08);
+  --gold-hl: rgba(212, 163, 68, 0.24);
+  --border-line: #E4DDD0;
+  --border-strong: #C9BFA8;
+  --margin-rule: #DED6C6;
+
+  /* Feedback Colors (Muted Book Ink Style) */
+  --correct-ink: #1E5631;
+  --correct-bg: #EDF5F0;
+  --correct-border: #9BC4A8;
+  --wrong-ink: #9E2A2B;
+  --wrong-bg: #FBF0F0;
+  --wrong-border: #E0A8A8;
+
+  /* Single-Origin Geometry Tokens (Zero Overlap Guarantee + Wider Reading Measure) */
+  --main-col-width: 760px; /* 기존 600px -> 760px로 본문 가로 폭 대폭 확장 */
+  --line-gap: 36px;        /* 본문 우측 끝 -> 세로 실선 */
+  --note-gap: 28px;        /* 세로 실선 -> 날개 각주 첫 글자 */
+  --note-width: 270px;     /* 날개 각주 가로 폭 (245px -> 270px) */
+
+  /* Typography Tokens */
+  --font-body: "Noto Serif KR", "RIDIBatang", Georgia, serif;
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --body-size: 17px;
+  --line-height: 1.95;
+  --text-align-mode: justify;
+}
+
+/* Night Warm E-Ink Dark Mode */
+body.mode-night {
+  --ui-bg: #121211;
+  --ui-bar: rgba(24, 24, 22, 0.96);
+  --ui-border: #2C2B28;
+  --ui-text: #E2DDD2;
+  --ui-sub: #9A9488;
+  --ui-accent: #D4A373;
+
+  --bg-desk: #121211;
+  --bg-sheet: #1B1B19;
+  --bg-subtle: #242320;
+  --bg-card: #201F1D;
+  --text-main: #E2DDD2;
+  --text-sub: #B0AA9E;
+  --text-muted: #787268;
+  --accent: #D4A373;
+  --accent-hover: #E5B887;
+  --accent-soft: rgba(212, 163, 115, 0.14);
+  --gold-hl: rgba(212, 163, 115, 0.22);
+  --border-line: #2E2D29;
+  --border-strong: #42403A;
+  --margin-rule: #2E2D29;
+
+  --correct-ink: #74C69D;
+  --correct-bg: rgba(30, 86, 49, 0.25);
+  --correct-border: #2D6A4F;
+  --wrong-ink: #F28482;
+  --wrong-bg: rgba(158, 42, 43, 0.25);
+  --wrong-border: #9E2A2B;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   0. UNIVERSAL FONT GUARD (시스템 굴림체/바탕체 폴백 100% 원천 차단)
+   Tailwind의 .font-mono 등이 Windows 기본 고정폭(굴림체)으로 빠지는 현상을 완벽히 방지
+   ========================================================================== */
+html body,
+html body *,
+html body .font-mono,
+html body .font-sans,
+html body .font-serif,
+html body code,
+html body pre,
+html body kbd,
+html body samp,
+html body svg,
+html body svg text,
+html body svg tspan {
+  font-family: var(--font-sans) !important;
+}
+
+/* 본문 서술형 문단(.prose-body), 비교표(.book-table) 및 기출 본문(.book-p)에 명조(또는 설정된 서체) 정밀 적용 */
+html body main .prose-body,
+html body main .prose-body *:not(.fn-ref),
+html body main .book-p,
+html body main .book-p *:not(.fn-ref),
+html body main .book-table,
+html body main .book-table * {
+  font-family: var(--font-body) !important;
+}
+
+body {
+  background-color: var(--bg-desk) !important;
+  color: var(--text-main) !important;
+  line-height: var(--line-height);
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  margin: 0;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   1. BOOK SHEET & SINGLE-ORIGIN OXFORD MARGIN GRID
+   ========================================================================== */
+
+main {
+  max-width: 1220px !important;
+  margin: 2rem auto 3.5rem auto !important;
+  background-color: var(--bg-sheet) !important;
+  border: 1px solid var(--border-line) !important;
+  box-shadow: 0 10px 35px -10px rgba(35, 30, 20, 0.08) !important;
+  border-radius: 4px !important;
+  padding: 52px 24px 72px 24px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+@media (min-width: 1120px) {
+  main {
+    padding: 64px 56px 84px 64px !important;
+  }
+
+  /* Strict 760px Main Column Wrapper */
+  .main-column {
+    width: var(--main-col-width) !important;
+    max-width: var(--main-col-width) !important;
+    position: relative !important;
+  }
+
+  /* Style A Vertical Hairline Rule: Always 36px to the right of main-column */
+  .main-column::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% + var(--line-gap));
+    width: 1px;
+    background-color: var(--margin-rule);
+    pointer-events: none;
+    transition: background-color 0.25s ease;
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    margin: 0 auto !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    padding: 36px 18px 56px 18px !important;
+  }
+}
+
+/* Paragraph & Block Anchor Wrapper:
+   NEVER apply padding or border directly to .para-block so 100% width is always locked at 600px */
+.para-block {
+  position: relative !important;
+  width: 100% !important;
+  padding: 0 !important;
+  border: none !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHY: HEADINGS (Pretendard) & BODY PARAGRAPHS (Editorial Serif)
+   ========================================================================== */
+
+h1, h2, h3, .book-h1, .book-h2, .book-h3 {
+  font-family: var(--font-sans) !important;
+  color: var(--text-main) !important;
+  letter-spacing: -0.025em !important;
+}
+
+h1 {
+  font-weight: 800 !important;
+  font-size: 1.85rem !important;
+  line-height: 1.35 !important;
+}
+
+h2 {
+  font-weight: 700 !important;
+  font-size: 1.32rem !important;
+  line-height: 1.42 !important;
+  margin-top: 2.2rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+h3 {
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+}
+
+header {
+  border-bottom: 1px solid var(--border-line) !important;
+  padding-bottom: 1.75rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+header .inline-flex {
+  font-family: var(--font-sans) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--accent) !important;
+}
+
+header p {
+  font-family: var(--font-sans) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.78 !important;
+  color: var(--text-sub) !important;
+}
+
+.prose-body, .book-p {
+  font-size: var(--body-size) !important;
+  line-height: var(--line-height) !important;
+  color: var(--text-main) !important;
+  text-align: var(--text-align-mode) !important;
+  letter-spacing: -0.012em !important;
+  word-break: keep-all !important;
+  overflow-wrap: break-word !important;
+  margin-bottom: 1.4rem !important;
+}
+
+.prose-body strong, .book-p strong {
+  color: var(--text-main) !important;
+  font-weight: 700 !important;
+  background: linear-gradient(transparent 60%, var(--gold-hl) 60%);
+  padding: 0 2px;
+}
+
+/* Inline Footnote Reference Badge [주1] */
+.fn-ref {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  background-color: var(--accent-soft) !important;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 2px;
+  vertical-align: baseline;
+  position: relative;
+  top: -2px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. RIGHT MARGIN SIDENOTES (날개 각주 — 세로선 우측 26px 안전 여백 고정)
+   ========================================================================== */
+
+.sidenote {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.82) !important;
+  line-height: 1.62 !important;
+  color: var(--text-sub) !important;
+  text-align: left !important;
+}
+
+@media (min-width: 1120px) {
+  .sidenote {
+    position: absolute !important;
+    top: 2px;
+    left: calc(100% + var(--line-gap) + var(--note-gap)) !important;
+    width: var(--note-width) !important;
+  }
+}
+
+@media (max-width: 1119px) {
+  .sidenote {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 0.65rem 0 1.25rem 0 !important;
+    padding: 10px 14px !important;
+    background-color: var(--bg-subtle) !important;
+    border-left: 2.5px solid var(--accent) !important;
+    border-radius: 4px;
+  }
+}
+
+.sidenote-box {
+  padding-left: 0;
+}
+
+.sidenote-title {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.76) !important;
+  font-weight: 700 !important;
+  color: var(--accent) !important;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidenote-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidenote-list li {
+  position: relative;
+  padding-left: 11px;
+  margin-bottom: 4px;
+  color: var(--text-sub) !important;
+}
+
+.sidenote-list li strong {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+  background: none !important;
+}
+
+.sidenote-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   4. TOP READER CONTROLLER BAR & SLIDE-OUT TOC
+   ========================================================================== */
+
+#readingProgressBar {
+  height: 2.5px;
+  background: var(--accent) !important;
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+nav.sticky {
+  background-color: var(--ui-bar) !important;
+  border-bottom: 1px solid var(--ui-border) !important;
+  color: var(--ui-text) !important;
+  padding: 0.6rem 1.25rem !important;
+}
+
+nav.sticky > div {
+  max-width: 1220px !important;
+}
+
+.reader-ctrl-btn {
+  font-family: var(--font-sans) !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 4px 9px !important;
+  border-radius: 4px !important;
+  border: 1px solid var(--ui-border) !important;
+  background-color: var(--bg-sheet) !important;
+  color: var(--ui-text) !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.reader-ctrl-btn:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Left Slide-out TOC in Editorial Paper Style */
+#tocSidebar {
+  background-color: var(--bg-sheet) !important;
+  border-right: 1px solid var(--border-strong) !important;
+  color: var(--text-main) !important;
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+#tocSidebar.pinned,
+#tocTriggerArea:hover #tocSidebar,
+#tocSidebar:hover {
+  transform: translateX(0);
+}
+
+#tocTriggerArea > div:first-child {
+  background-color: var(--bg-sheet) !important;
+  border-color: var(--border-strong) !important;
+  color: var(--accent) !important;
+}
+
+/* ==========================================================================
+   5. BOOK TABLES, DIAGRAMS, ORIG QUESTIONS & OX CARDS
+   ========================================================================== */
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1.5px solid var(--text-main);
+  border-bottom: 1.5px solid var(--text-main);
+  font-family: var(--font-body) !important;
+  font-size: var(--body-size, 17px) !important;
+  line-height: 1.78 !important;
+  margin: 1.5rem 0;
+}
+
+.book-table th {
+  background-color: var(--bg-subtle) !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 700;
+  font-size: var(--body-size, 17px) !important;
+  line-height: 1.7 !important;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-strong);
+  text-align: left;
+}
+
+.book-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-line);
+  color: var(--text-main) !important;
+  font-family: var(--font-body) !important;
+  font-size: var(--body-size, 17px) !important;
+  line-height: 1.78 !important;
+  vertical-align: top;
+}
+
+.book-table th *:not(sub):not(sup),
+.book-table td *:not(sub):not(sup) {
+  font-family: var(--font-body) !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.book-table th *:not(sub):not(sup),
+.book-table td *:not(sub):not(sup) {
+  font-family: var(--font-body) !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.diagram-container {
+  background-color: var(--bg-subtle) !important;
+  border: 1px solid var(--border-line) !important;
+  border-left: 3px solid var(--accent) !important;
+  margin: 2rem 0 !important;
+  padding: 1.25rem !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+
+/* Accordion Animations */
+.ox-explanation,
+.orig-explanation {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+  opacity: 0;
+}
+
+.ox-explanation.open {
+  max-height: 1200px;
+  opacity: 1;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.orig-explanation.open {
+  max-height: 3600px;
+  opacity: 1;
+  transition: max-height 0.45s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.ox-card {
+  border-bottom: 1px solid var(--border-line) !important;
+  padding: 1.25rem 0 !important;
+}
+
+/* ==========================================================================
+   6. LEGACY DARK UTILITY CLASS OVERRIDES (Backward Compatibility Bridge)
+   ========================================================================== */
+main .text-white,
+#tocSidebar .text-white,
+nav.sticky .text-white {
+  color: var(--text-main) !important;
+}
+
+main .text-slate-200,
+main .text-slate-300,
+#tocSidebar .text-slate-300 {
+  color: var(--text-sub) !important;
+}
+
+main .text-slate-400,
+main .text-slate-500,
+nav.sticky .text-slate-400,
+footer {
+  color: var(--text-muted) !important;
+}
+
+main .text-emerald-400,
+main .text-emerald-300,
+main .text-amber-400,
+main .text-teal-300,
+nav.sticky .text-emerald-400,
+nav.sticky .text-emerald-300,
+#tocSidebar .text-emerald-400,
+#tocTriggerArea .text-emerald-400 {
+  color: var(--accent) !important;
+}
+
+main .border-emerald-900\/40,
+main .border-emerald-900\/60,
+main .border-emerald-950,
+footer.border-emerald-950,
+#tocSidebar .border-emerald-900\/50,
+#tocSidebar .border-emerald-900\/40,
+#tocSidebar .border-emerald-950 {
+  border-color: var(--border-line) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-desk);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   7. GALAXY S26 ULTRA & WEB NOVEL IMMERSIVE READER UX (웹소설 리더 & 바텀시트 주석)
+   ========================================================================== */
+
+/* Sage Green Eye-Care Theme */
+body.mode-sage {
+  --ui-bg: #DCE7DC;
+  --ui-bar: rgba(236, 243, 236, 0.96);
+  --ui-border: #C5D6C5;
+  --ui-text: #1D2A1E;
+  --ui-sub: #4A5D4C;
+  --ui-accent: #1E5631;
+
+  --bg-desk: #DCE7DC;
+  --bg-sheet: #EFF5EE;
+  --bg-subtle: #E3EDE2;
+  --bg-card: #E8F1E7;
+  --text-main: #1C281D;
+  --text-sub: #3E4F40;
+  --text-muted: #687B6A;
+  --accent: #1E5631;
+  --accent-hover: #143D22;
+  --accent-soft: rgba(30, 86, 49, 0.1);
+  --gold-hl: rgba(116, 198, 157, 0.32);
+  --border-line: #CFE0CF;
+  --border-strong: #B2CBB2;
+  --margin-rule: #C5D6C5;
+}
+
+/* S26 Ultra True AMOLED Dark Refinement */
+body.mode-night {
+  --bg-desk: #0A0A09;
+  --bg-sheet: #131311;
+  --bg-subtle: #1C1C19;
+  --bg-card: #181815;
+}
+
+/* Web Novel Mode Layout (Active when body.mode-novel is set OR on screens < 1120px) */
+body.mode-novel main {
+  max-width: 680px !important;
+  margin: 1.25rem auto 4rem auto !important;
+  padding: 44px 36px 76px 36px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px -12px rgba(20, 18, 14, 0.14) !important;
+}
+
+body.mode-novel .main-column {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+body.mode-novel .main-column::after {
+  display: none !important;
+}
+
+/* In Web Novel Mode (and Mobile < 1120px), hide the floating left tab that covers text */
+body.mode-novel #tocTriggerArea > div:first-child {
+  display: none !important;
+}
+
+@media (max-width: 1119px) {
+  #tocTriggerArea > div:first-child {
+    display: none !important;
+  }
+
+  #tocTriggerArea {
+    pointer-events: none;
+  }
+
+  #tocSidebar {
+    pointer-events: auto;
+    width: min(84vw, 330px) !important;
+    z-index: 60 !important;
+  }
+}
+
+body.mode-novel #tocTriggerArea {
+  pointer-events: none;
+}
+
+body.mode-novel #tocSidebar {
+  pointer-events: auto;
+  width: min(84vw, 330px) !important;
+  z-index: 60 !important;
+}
+
+#tocSidebar.mobile-open {
+  transform: translateX(0) !important;
+}
+
+/* Galaxy S26 Ultra Portrait Viewport Optimization (360px ~ 480px) */
+@media (max-width: 640px) {
+  body {
+    background-color: var(--bg-sheet) !important;
+  }
+
+  main,
+  body.mode-novel main {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 24px 20px 88px 20px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  h1 {
+    font-size: 1.48rem !important;
+    line-height: 1.38 !important;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+    line-height: 1.44 !important;
+    margin-top: 2rem !important;
+  }
+
+  header {
+    padding-bottom: 1.25rem !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .prose-body {
+    margin-bottom: 1.55rem !important;
+  }
+
+  nav.sticky {
+    padding: 0.5rem 0.85rem !important;
+  }
+}
+
+/* Novel Mode Collapsible Note Pill (Replaces bulky inline sidenotes in Novel/Mobile mode) */
+.novel-note-pill {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: -0.4rem 0 1.5rem 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-subtle);
+  color: var(--text-main);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.novel-note-pill:hover,
+.novel-note-pill:active {
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.novel-note-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: calc(var(--body-size, 17px) * 0.78) !important;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.novel-note-preview {
+  font-size: calc(var(--body-size, 17px) * 0.82) !important;
+  color: var(--text-sub);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.novel-note-arrow {
+  font-size: calc(var(--body-size, 17px) * 0.76) !important;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* When in Novel Mode or Mobile (< 1120px) AND inline-notes is NOT forced open:
+   Show the sleek pill and hide the bulky .sidenote box (content opens in Bottom Sheet!) */
+@media (max-width: 1119px) {
+  body:not(.notes-inline-open) .main-column .sidenote {
+    display: none !important;
+  }
+  body:not(.notes-inline-open) .novel-note-pill {
+    display: flex !important;
+  }
+}
+
+body.mode-novel:not(.notes-inline-open) .main-column .sidenote {
+  display: none !important;
+}
+
+body.mode-novel:not(.notes-inline-open) .novel-note-pill {
+  display: flex !important;
+}
+
+/* If user chooses '주석 본문 내 펼치기' (body.notes-inline-open) in Novel Mode */
+body.mode-novel.notes-inline-open .main-column .sidenote {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  margin: 0.5rem 0 1.5rem 0 !important;
+  padding: 14px 16px !important;
+  background-color: var(--bg-subtle) !important;
+  border-left: 3px solid var(--accent) !important;
+  border-radius: 6px;
+}
+
+/* Bottom Sheet Modal for Sidenotes & Reader Settings on S26 Ultra / Novel Mode */
+.fk-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 9, 0.52);
+  backdrop-filter: blur(3px);
+  z-index: 70;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.24s ease;
+}
+
+.fk-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fk-bottom-sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 105%);
+  width: 100%;
+  max-width: 680px;
+  max-height: 82dvh;
+  background-color: var(--bg-sheet);
+  color: var(--text-main);
+  border-top: 2px solid var(--accent);
+  border-left: 1px solid var(--border-strong);
+  border-right: 1px solid var(--border-strong);
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.28);
+  z-index: 80;
+  padding: 16px 22px 28px 22px;
+  overflow-y: auto;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fk-bottom-sheet.open {
+  transform: translate(-50%, 0);
+}
+
+.fk-sheet-handle {
+  width: 42px;
+  height: 4px;
+  border-radius: 999px;
+  background-color: var(--border-strong);
+  margin: 0 auto 14px auto;
+}
+
+.fk-sheet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fk-sheet-list li {
+  position: relative;
+  padding: 10px 0 10px 16px;
+  border-bottom: 1px solid var(--border-line);
+  font-family: var(--font-body) !important;
+  font-size: var(--body-size, 17px) !important;
+  line-height: 1.78 !important;
+  color: var(--text-main) !important;
+}
+
+.fk-sheet-list li:last-child {
+  border-bottom: none;
+}
+
+.fk-sheet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.fk-sheet-list li strong {
+  color: var(--accent) !important;
+  font-weight: 700 !important;
+}
+
+/* Touch-Friendly Table Horizontal Scroll Wrapper for Mobile */
+.table-scroll-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.table-scroll-wrap .book-table {
+  margin: 0 !important;
+  min-width: 520px;
+}
+
+/* Floating Bottom Quick Reader Bar on Mobile / Novel Mode */
+#fkFloatingBar {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: var(--ui-bar);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   8. RESPONSIVE HTML/CSS VISUAL SCHEMA BOARDS (도해/계통도 글자 크기 100% 동기화)
+   ========================================================================== */
+
+.diagram-container > div:first-child span,
+.diagram-container > span:first-child {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) + 0.5px) !important;
+  font-weight: 800 !important;
+  line-height: 1.5 !important;
+  color: var(--accent) !important;
+}
+
+.schema-board {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.schema-panel {
+  background-color: var(--bg-sheet);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.schema-panel-title {
+  font-family: var(--font-body) !important;
+  font-size: calc(var(--body-size, 17px) + 1px) !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-line);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schema-subgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.schema-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-line);
+  border-left: 3.5px solid var(--accent);
+  border-radius: 6px;
+  padding: 12px 15px;
+}
+
+.schema-box-title {
+  font-weight: 800 !important;
+  color: var(--text-main) !important;
+  margin-bottom: 4px;
+}
+
+.schema-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.schema-list li {
+  position: relative;
+  padding-left: 14px;
+  color: var(--text-main) !important;
+  line-height: 1.75 !important;
+}
+
+.schema-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.schema-badge-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-line);
+  border-radius: 8px;
+  padding: 12px 15px;
+}
+
+.schema-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: calc(var(--body-size, 17px) * 0.85) !important;
+  flex-shrink: 0;
+}
+
+.schema-arrow-down {
+  text-align: center;
+  color: var(--accent) !important;
+  font-weight: 800 !important;
+  font-size: calc(var(--body-size, 17px) + 2px) !important;
+  line-height: 1.2 !important;
+  margin: 4px 0;
+}
+
+.schema-alert {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background-color: var(--wrong-bg);
+  border: 1px solid var(--wrong-border);
+  color: var(--wrong-ink) !important;
+  font-weight: 700 !important;
+  text-align: center;
+}

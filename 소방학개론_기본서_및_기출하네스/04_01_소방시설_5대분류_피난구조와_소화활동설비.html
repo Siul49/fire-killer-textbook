@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제4편 소방시설론 제1장. 소방시설의 5대 분류, 피난구조설비 및 소화활동설비 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제4편 제1장. 소방시설의 5대 분류, 피난구조설비 및 소화활동설비</span>
+        <span class="text-slate-600">|</span>
+        <a href="04_02_옥내소화전_펌프성능과_스프링클러설비.html" class="hover:text-emerald-300 transition">다음 장: 제4편 제2장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제4편 제1장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제4편 소방시설론 · 제1장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 소방시설 5대 분류 체계와 피난구조설비 vs 소화활동설비 구별</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 피난기구(완강기·구조대)와 유도등·인명구조기구의 법정 정의</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 6대 소화활동설비의 역할과 특별피난계단 제연설비 작동 메커니즘</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 가스계 소화설비(이산화탄소 등)의 전역방출방식과 안전 연동 체계</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (7문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (13문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제4편 소방시설론</span>
+        <span>·</span>
+        <span>제1장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        소방시설의 5대 분류, 피난구조설비 및 소화활동설비
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        소방시설법에 따른 5대 설비군의 분류 기준과 거주자용 피난구조설비·소방대원 전용 6대 소화활동설비의 경계를 명확히 구분하고, 특별피난계단 제연설비의 차압·연동 원리와 가스계 소화설비의 안전 메커니즘을 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 소방시설 5대 분류 체계와 피난구조설비 vs 소화활동설비 구별</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞선 제3편에서 물·포·가스·분말이라는 '소화약제(총알)'의 물리·화학적 성질을 마스터했다면, 이제 제4편에서는 그 약제를 실제로 뿜어내고 화재를 감지하며 사람을 대피시키는 '기계·배관 시스템(총과 방패)', 즉 <strong>소방시설론</strong>으로 들어갑니다. ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1은 건축물에 설치하는 모든 소방시설을 그 목적과 작동 단계에 따라 <strong>① 소화설비(초기·본격 진압), ② 경보설비(탐지 및 통보), ③ 피난구조설비(재실자 대피), ④ 소화용수설비(수원 저장·공급), ⑤ 소화활동설비(소방대원 작전 지원)</strong>의 5대 설비군으로 체계화하고 있습니다. (참고로 방화문, 자동방화셔터, 배연창, 비상용승강기는 건축법령에 따른 '방화·건축설비'이지 소방시설법상 5대 소방시설이 아닙니다!)
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>소방시설 5대 분류</strong>: 소화설비 · 경보설비 · 피난구조설비 · 소화용수설비 · 소화활동설비 (<strong>방화문·방화셔터는 건축법상 방화시설로서 소방시설 ×</strong>)</li>
+              <li><strong>인명구조기구(4종)의 소속</strong>: <strong>방열복 · 공기호흡기 · 인공소생기 · 방화복</strong>은 소화활동설비가 아니라 <strong>피난구조설비</strong>에 해당</li>
+              <li><strong>6대 소화활동설비 암기(제·송·살·비·무·연)</strong>: <strong>제</strong>연설비 · 연결<strong>송</strong>수관 · 연결<strong>살</strong>수 · <strong>비</strong>상콘센트 · <strong>무</strong>선통신보조 · <strong>연</strong>소방지설비</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            수험생들이 시험장에서 가장 많이 걸려드는 1순위 함정은 <strong>피난구조설비</strong>와 <strong>소화활동설비</strong>의 소속 설비를 서로 뒤섞어 놓는 문제입니다. 이 두 설비군을 1초 만에 가르는 핵심 기준은 <strong>'누가 쓰는 설비인가?'</strong>입니다! 불이 났을 때 건물 안에 있던 <strong>일반 재실자(거주자·방문자·관계인)가 연기를 피해 건물 밖으로 안전하게 탈출하기 위해 쓰는 기구와 조명</strong>은 모두 <strong>피난구조설비</strong>이고, 반대로 119 신고를 받고 출동한 <strong>소방대원이 건물에 진입하여 화재 진압과 인명 구조 작전을 펼칠 수 있도록 건물에 미리 깔아둔 소방관 전용 인프라 설비</strong>는 <strong>소화활동설비</strong>입니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            여기서 수험생의 90%가 속아 넘어가는 특급 함정이 바로 <strong>인명구조기구(방열복, 공기호흡기, 인공소생기, 방화복)</strong>입니다! '방열복, 공기호흡기, 방화복'이라는 이름만 들으면 당연히 소방관이 입는 장비 같아서 '소화활동설비'라고 고르기 십상입니다. 하지만 법령에서 말하는 인명구조기구는 소방관 개인 보급품이 아니라, 지하역사나 백화점·병원 등 대형 건물 내부에 의무적으로 비치해 두어 비상시 건물 안에서 즉시 인명을 구출하고 대피하는 데 쓰도록 한 기구이므로 반드시 <strong>피난구조설비</strong>에 속합니다! 반면 소방대원의 현장 작전을 지원하는 <strong>소화활동설비 6종</strong>은 앞글자를 따서 <strong>'제·송·살·비·무·연'(제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비)</strong>으로 완벽히 암기해 두어야 합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-6">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">설비군 구분</th>
+                <th style="width:26%;">핵심 설치 목적 및 주 사용자</th>
+                <th>법정 세부 소속 설비 (빈출 구별 대상)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 소화설비</strong></td>
+                <td>물 또는 소화약제를 방출하여 초기·본격 화재 진압</td>
+                <td>소화기구(소화기·간이소화용구·자동확산소화기), 자동소화장치(주거용·상업용·캐비닛형·가스·분말·고체에어로졸), 옥내·옥외소화전, 스프링클러·간이·화재조기진압용, 물분무등소화설비(물분무·미세물분무·포·이산화탄소·할로겐·불활성기체·분말·강화액·고체에어로졸)</td>
+              </tr>
+              <tr>
+                <td><strong>2. 경보설비</strong></td>
+                <td>화재 발생 사실을 탐지하고 건물 내·외부에 통보</td>
+                <td>단독경보형감지기, 비상경보설비(비상벨·자동식사이렌), <strong>자동화재탐지설비</strong>, <strong>화재알림설비</strong>, 비상방송설비, 자동화재속보설비, 통합감시시설, 누전경보기, 가스누설경보기 (<strong>총 9종</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>3. 피난구조설비</strong></td>
+                <td><strong>재실자 피난 유도 및 탈출</strong><br/>(인명구조기구 포함 주의!)</td>
+                <td>피난기구(피난사다리·<strong>완강기·간이완강기·구조대</strong>·공기안전매트·다중피난장비·승강식피난기·하향식피난구용내림식사다리), <strong>인명구조기구(방열복·공기호흡기·인공소생기·방화복)</strong>, 유도등(피난구·통로·객석)·유도표지·피난유도선, 비상조명등·휴대용비상조명등</td>
+              </tr>
+              <tr>
+                <td><strong>4. 소화용수설비</strong></td>
+                <td>화재 진압에 필요한 수원(물)을 저장·공급</td>
+                <td><strong>상수도소화용수설비</strong>, 소화수조·저수조 그 밖의 소화용수설비</td>
+              </tr>
+              <tr>
+                <td><strong>5. 소화활동설비</strong></td>
+                <td><strong>소방대원의 현장 진압·통신·제연 활동 지원 (6종)</strong></td>
+                <td><strong>제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비</strong> (방화문·배연창·비상용승강기는 건축설비로서 제외)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 피난기구(완강기·구조대)와 유도등·인명구조기구의 법정 정의</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            피난구조설비에 속하는 개별 기구들의 법정 정의를 서로 맞바꾸어 출제하는 문제도 단골로 등장합니다. 먼저 숙박시설(호텔·모텔)이나 고층 창문 옆에서 흔히 보는 <strong>완강기</strong>는 '사용자의 몸무게에 따라 자동적으로 일정한 속도로 내려올 수 있는 기구 중 <strong>사용자가 교대하여 연속적으로 사용할 수 있는 것</strong>(줄 양 끝에 벨트가 달려 있어 한 사람이 내려가면 반대쪽 벨트가 올라오는 구조)'을 말하며, 반대로 벨트가 한쪽에만 달려 있어 한 번 내려가면 다시 감아 올리지 못해 <strong>'연속적으로 사용할 수 없는 것(1회용)'</strong>을 <strong>간이완강기</strong>라 합니다(완강기와 간이완강기 모두 최소 25 kg에서 최대 150 kg 이상의 하중을 견뎌야 합니다). 반면 <strong>구조대</strong>는 '포지(질긴 천) 등을 사용하여 긴 자루 형태로 만든 것으로서 화재 시 사용자가 그 자루 내부에 들어가 미끄러져 내려오는 피난기구(경사강하식·수직강하식)'입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>완강기 vs 간이완강기</strong>: 교대하여 <strong>연속 사용 가능하면 완강기</strong>, 연속 사용할 수 없는 1회용이면 <strong>간이완강기</strong> (최대 사용자 하중은 모두 150kg 이상)</li>
+              <li><strong>유도등 바탕·문자 색상 대조</strong>: <strong>피난구유도등</strong>은 <strong>녹색 바탕에 백색 문자</strong> / <strong>통로유도등</strong>은 <strong>백색 바탕에 녹색 문자</strong></li>
+              <li><strong>비상조명등 조도 및 시간</strong>: 바닥에서 <strong>1 lx(럭스) 이상</strong>, 유효작동시간 <strong>20분 이상</strong> (지하층 또는 무창층 도매시장·역사·공연장 및 <strong>11층 이상</strong>의 층은 <strong>60분 이상</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            인명구조기구 4종의 정의도 정확히 구별해야 합니다. <strong>방열복</strong>은 '고온의 복사열에 가까이 접근하여 소방활동을 할 수 있는 내열 피복(은색 알루미늄 코팅복)'이고, <strong>방화복</strong>은 '화재 진압 등의 소방활동을 할 때 착용하는 일반 보호복'입니다. 또한 <strong>공기호흡기</strong>는 '소화활동 시에 매연이나 유독가스 중에서 원활한 호흡을 할 수 있도록 설계된 압축공기식 개인 호흡장비(산소통이 아니라 깨끗한 압축공기통!)'이며, <strong>인공소생기</strong>는 '호흡 부전 상태에 있는 사람에게 인공호흡을 시켜 환자를 보호하거나 구급하는 기구'입니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            화재로 건물이 정전되고 검은 연기가 자욱할 때 생명의 탈출구를 알려주는 <strong>유도등</strong>은 설치 위치에 따라 바탕색과 글자색이 정반대여서 시험에 단골로 출제됩니다. 왜 색상을 반대로 만들었을까요? 최종 탈출구인 비상구 문 바로 위에 다는 <strong>피난구유도등</strong>은 어두운 연기 속에서도 초록색 출구 표식이 눈에 확 띄어야 하므로 <strong>녹색 바탕에 백색 문자(달려가는 피난구 픽토그램)</strong>를 사용합니다! 반면 복도나 계단 벽면 아래쪽(바닥으로부터 1 m 이하)에 다는 <strong>통로유도등(복도·거실·계단통로유도등)</strong>은 대피로 바닥을 환하게 비춰주는 조명 역할과 방향 안내를 겸해야 하므로 밝은 <strong>백색 바탕에 녹색 문자(방향 화살표)</strong>로 표시합니다. 아울러 정전 시 자동으로 켜지는 <strong>비상조명등</strong>은 피난통로 바닥면 조도를 최소 <strong>1 lx(럭스) 이상</strong>으로 비춰야 하며, 비상전원 용량은 일반 층은 <strong>20분 이상</strong>, 대피에 오랜 시간이 걸리는 <strong>11층 이상의 층이나 지하역사·지하상가·무창층 도매시장 등은 60분 이상</strong> 작동할 수 있어야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 6대 소화활동설비의 역할과 특별피난계단 제연설비 작동 메커니즘</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            출동한 소방대원의 손과 발이 되어주는 6대 소화활동설비('제·송·살·비·무·연')는 각각 명확한 전술적 이유 때문에 탄생했습니다. ① 고층 건물 화재 시 소방관이 무거운 호스를 들고 계단으로 수십 층을 뛰어올라갈 수 없으므로, 건물 1층 외벽의 송수구에 소방차 호스를 꽂아 물을 밀어 넣으면 고층부의 방수구에서 즉시 호스를 연결해 쏠 수 있게 한 빈 배관이 <strong>연결송수관설비</strong>입니다. ② 소방대원이 직접 진입하기조차 위험한 지하층이나 가스시설 천장에 미리 살수헤드를 달아두고 건물 밖 송수구로 소방차 물을 넣어 뿌려주는 설비가 <strong>연결살수설비</strong>입니다. ③ 현장에서 유압 전개기·절단기·조명기구를 꽂아 쓸 수 있는 소방대 전용 콘센트가 <strong>비상콘센트설비</strong>이고, ④ 콘크리트 벽에 막혀 무전기가 먹통이 되는 지하층이나 고층 건물 내부에서 지상의 지휘관과 대원 간 무전 교신이 가능하도록 누설동축케이블(LCX) 등을 깔아둔 설비가 <strong>무선통신보조설비</strong>이며, ⑤ 전력구·통신구 등 지하구에서 불이 케이블을 타고 끝없이 번지는 것을 막기 위해 일정 구간마다 물장막(수막)을 쳐주는 설비가 <strong>연소방지설비</strong>입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>부속실 제연설비 원리</strong>: 급기 가압을 통한 <strong>차압 유지(40Pa에서 60Pa까지)</strong> 및 출입문 개방 시 <strong>방연풍속(0.5m/s에서 0.7m/s까지)</strong> 확보, 문 개방력 <strong>110N 이하</strong></li>
+              <li><strong>부속실 제연 수동기동 연동</strong>: 어느 한 층의 수동기동장치를 조작해도 <strong>전 층의 자동차압·과압조절형 댐퍼(급기댐퍼)가 개방</strong>되고 <strong>급기송풍기가 작동</strong>해야 함</li>
+              <li><strong>거실 제연설비 예상제연구역</strong>: 하나의 제연구역 면적은 <strong>1,000제곱미터 이내</strong>, 통로상 제연방식 보행중심선 길이는 <strong>60미터 이내</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            6대 소화활동설비 중 소방학개론 시험에서 가장 깊이 있게 물어보는 설비가 바로 <strong>제연설비</strong>입니다. 특히 고층 건물의 유일한 수직 피난 생명선이자 소방대원의 진입 통로인 <strong>특별피난계단의 계단실 및 부속실 제연설비(NFPC 501A)</strong>는 어떤 원리로 연기를 막을까요? 많은 초심자들이 '제연설비니까 계단실에 들어온 연기를 환풍기로 빨아내어 밖으로 버리는 설비겠지'라고 오해합니다. 하지만 계단실 공기를 빨아내면 기압이 낮아져 오히려 화재실의 맹독성 연기가 계단실로 더 무섭게 빨려 들어옵니다! 따라서 부속실 제연설비는 연기를 빨아내는 것이 아니라, <strong>부속실과 계단실에 신선한 외부 공기를 급기송풍기로 강하게 불어넣어(급기 가압) 화재가 난 거실보다 부속실의 기압을 더 높게 만듦으로써, 공기가 항상 '부속실(고압) &rarr; 화재실(저압)' 쪽으로만 흐르게 하여 연기가 아예 문틈으로 넘어오지 못하게 막는 '차압(Differential Pressure) 제연 방식'</strong>을 사용합니다!
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이 원리를 이해하면 부속실 제연설비의 3대 핵심 법정 수치가 왜 그렇게 정해졌는지 저절로 이해됩니다! 첫째, 출입문이 닫혀 있을 때 부속실과 화재실 사이의 기압 차이인 <strong>제연 차압은 40 Pa(파스칼)에서 60 Pa까지</strong>(옥내에 스프링클러가 설치된 경우 연기의 부력이 약해지므로 12.5 Pa 이상 가능)를 유지해야 합니다. 왜 차압이 40 Pa보다 낮으면 안 되고 60 Pa를 넘어도 안 될까요? 40 Pa 미만이면 화재실 연기의 부력(굴뚝효과)을 이기지 못해 연기가 문틈으로 새어 들어오고, 반대로 60 Pa를 초과하면 부속실 쪽에서 미는 공기 압력이 너무 세져서 <strong>노약자나 어린이가 피난할 때 비상문을 밀고 열 수가 없기 때문</strong>입니다! 그래서 문이 닫힌 상태에서 출입문을 밀어 여는 데 필요한 힘(개방력)은 최대 <strong>110 N(뉴턴) 이하</strong>로 제한됩니다. 둘째, 피난자가 문을 활짝 여는 순간에는 차압이 사라지는 대신 부속실에서 화재실 쪽으로 <strong>초당 0.5 m/s에서 0.7 m/s까지의 바람(방연풍속)</strong>이 불어 나와 연기의 역류를 막아야 합니다. 셋째, 굴뚝효과로 인해 연기는 전 층으로 번질 수 있으므로 <strong>어느 한 층의 감지기나 수동기동장치가 작동하더라도 건물 전 층의 부속실 급기댐퍼가 동시에 열리고 급기송풍기가 기동</strong>하도록 연동되어야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 가스계 소화설비(이산화탄소 등)의 전역방출방식과 안전 연동 체계</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞선 제3편 제3장에서 배운 <strong>이산화탄소(CO<sub>2</sub>), 할로겐화합물, 불활성기체 소화약제</strong>를 실제 전기실·전산실·통신기계실에 설비로 구축한 것이 바로 <strong>가스계 소화설비</strong>입니다. 가스계 소화설비는 밀폐된 방 전체에 약제를 가득 채워 산소 농도를 낮추거나 연쇄반응을 끊는 <strong>전역방출방식</strong>과, 개방된 공간의 특정 인쇄기·도장기 부위에만 약제를 집중 분사하는 <strong>국소방출방식</strong>으로 나뉩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>가스계 소화설비 작동 순서</strong>: 교차회로 감지기 작동 ➔ 제어반 신호 ➔ <strong>기동용기 개방</strong> ➔ <strong>선택밸브 개방</strong> 및 저장용기 개방 ➔ 분사헤드 방출</li>
+              <li><strong>기동용 가스용기 규격</strong>: 이산화탄소 설비 기동용기는 용적 <strong>1리터 이상</strong>, 충전량 <strong>0.6킬로그램 이상</strong>, 충전비 <strong>1.5 이상</strong></li>
+              <li><strong>전역방출방식 인명 안전기준</strong>: 기동 후 방출까지 <strong>20초 이상 지연</strong>, 약제 방출 전 개구부·환기구 <strong>자동폐쇄장치 작동</strong>, 출입구 외부에 <strong>방출표시등</strong> 설치</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            가스계 소화설비가 작동하는 기계적 계통 순서는 왜 그렇게 설계되었을까요? 수십 개의 무거운 고압 가스 저장용기 밸브를 모터 힘만으로는 동시에 열기 어렵기 때문에, 작은 <strong>기동용 가스용기(이산화탄소 기동용기 규격: 내용적 1 L 이상, 충전량 0.6 kg 이상, 충전비 1.5 이상)</strong>의 가스 압력을 방아쇠(파일럿 압력)로 사용합니다! 구체적인 작동 순서는 다음과 같습니다: ① 방호구역 천장의 감지기 2개 이상(오작동 방출 참사를 막기 위한 <strong>교차회로 방식</strong>)이 동시에 화재를 감지하면 ➔ ② 제어반(수신기)이 음성경보를 울리고 지연시간(20초 이상)을 카운트다운한 뒤 솔레노이드 밸브의 공이를 쳐서 <strong>기동용 가스용기</strong>를 개방합니다 ➔ ③ 기동용기에서 뿜어져 나온 고압 가스가 동관을 타고 흘러가 불이 난 해당 방호구역으로 가는 <strong>선택밸브(집합관에 설치되어 화재 구역으로만 약제를 보내는 밸브)</strong>를 먼저 열어젖히고, 이어서 수십 개의 이산화탄소 <strong>저장용기 밸브</strong>를 일제히 개방합니다 ➔ ④ 저장용기에서 나온 약제가 연결관(역류 방지용 <strong>체크밸브</strong> 부착)과 집합관, 선택밸브를 거쳐 방호구역 천장의 분사헤드로 일제히 쏟아져 나갑니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            특히 전역방출방식 이산화탄소 설비는 방출되는 순간 실내 산소 농도를 15% 이하로 떨어뜨려 방 안에 사람이 남아 있으면 치명적인 질식 사망 사고로 이어집니다. 따라서 법령은 <strong>전역방출방식</strong>에 인명 보호와 소화 성공을 위한 4대 안전 연동 장치를 엄격히 의무화하고 있습니다. ① 기동장치 작동 후 약제가 실제로 분사되기 전까지 재실자가 밖으로 뛰어 나갈 수 있도록 최소 <strong>20초 이상(통상 20초에서 30초) 방출을 지연</strong>시키는 타임딜레이 기능, ② 방호구역 내부와 외부에 대피를 알리는 <strong>음향경보장치(음성경보 권장)</strong>, ③ 미처 대피하지 못한 사람이 있을 때 방출 카운트다운을 수동으로 멈추는 <strong>방출지연스위치(비상스위치)</strong>, ④ 비싼 가스 약제가 창문이나 환기구로 새어 나가 소화 농도(34%)가 깨지는 것을 막기 위해 약제 방출 전에 환기장치를 정지시키고 개구부·방화댐퍼를 자동으로 닫아주는 <strong>자동폐쇄장치</strong>(출입문은 피난을 위해 자동폐쇄 대상에서 제외!) 및 출입문 밖에서 외부인의 진입을 막는 <strong>방출표시등</strong>입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 소방시설 5대 분류 체계 및 피난구조설비와 소화활동설비의 대조</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방시설 5대 분류 및 피난구조설비 vs 소화활동설비 핵심 구별</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">피난구조설비 (재실자 대피용)</div>
+                <div>· 피난기구(완강기·간이완강기·구조대·사다리)<br/>· <strong>인명구조기구 4종(방열복·방화복·공기호흡기·인공소생기)</strong><br/>· 유도등·유도표지·비상조명등</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소화활동설비 6종 (소방대원 작전용)</div>
+                <div><strong>제·송·살·비·무·연</strong>: <strong>제</strong>연설비 · 연결<strong>송</strong>수관 · 연결<strong>살</strong>수 · <strong>비</strong>상콘센트 · <strong>무</strong>선통신보조 · <strong>연</strong>소방지설비</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">완강기 vs 간이완강기 &amp; 구조대</div>
+                <div>· <strong>완강기</strong>: 교대하여 <strong>연속 사용 가능</strong><br/>· <strong>간이완강기</strong>: 연속 사용 불가(1회용)<br/>· <strong>구조대</strong>: 자루 형태 내부로 미끄러져 하강</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">피난구유도등 vs 통로유도등 색상</div>
+                <div>· <strong>피난구유도등</strong>: <strong>녹색 바탕에 백색 문자</strong><br/>· <strong>통로유도등</strong>: <strong>백색 바탕에 녹색 문자(화살표)</strong><br/>· 비상조명등: <strong>1 lx 이상</strong>, 20분(11층 이상·지하역사 <strong>60분</strong>)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 구별: <strong>인명구조기구 4종(방열복·방화복·공기호흡기·인공소생기)</strong>과 <strong>완강기(2인 이상 연속 · 10층 이하) / 간이완강기(1회용 · 3층 이상 10층 이하 숙박시설)</strong>는 <strong>피난구조설비</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 특별피난계단 부속실 차압 제연설비 및 가스계 전역방출 안전 연동</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">특별피난계단 계단실 및 부속실 제연설비 (급기 가압 · 차압 방식)</div>
+                <ul class="schema-list">
+                  <li>신선한 외기를 불어넣어 <strong>제연 차압 40 Pa에서 60 Pa 유지</strong>(SP 설치 시 12.5 Pa 이상) / 출입문 개방력 <strong>110 N 이하</strong></li>
+                  <li>문 개방 시 <strong>방연풍속 0.5 m/s에서 0.7 m/s</strong> 확보 / 어느 한 층 수동기동 시 <strong>전 층 급기댐퍼 개방 및 급기송풍기 기동</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">가스계 소화설비(CO<sub>2</sub> 등) 기계적 작동 순서 및 전역방출 4대 안전장치</div>
+                <ul class="schema-list">
+                  <li>작동 순서: 교차회로 감지기 작동 ➔ 제어반 신호 ➔ <strong>기동용기 개방(1L·0.6kg·충전비 1.5 이상)</strong> ➔ <strong>선택밸브·저장용기 개방</strong> ➔ 헤드 방출</li>
+                  <li>전역방출 인명 안전: <strong>20초 이상 방출 지연</strong>, 음향경보, 수동 방출지연스위치, 환기·개구부 <strong>자동폐쇄장치</strong> 및 외부 방출표시등</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 소방시설 5대 분류 체계 및 피난구조설비와 소화활동설비의 대조</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (7문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (13문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="03_03_가스계소화약제와_분말소화약제_1234종.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제3편 제3장)
+      </a>
+      <a href="04_02_옥내소화전_펌프성능과_스프링클러설비.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제4편 제2장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제4편 소방시설론 제1장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제4편 소방시설론 제1장",
+  "totalQuestions": 7,
+  "themes": [
+    {
+      "name": "소방시설 5대 분류 체계(소화·경보·피난구조·소화용수·소화활동설비)",
+      "qCount": 4,
+      "examCount": 8,
+      "years": "2019년 소방공채·경채 Q1, 2020년 소방공채·경채 Q6, 2023년 소방공채·경채 Q24, 2025년 소방공채·경채 Q20",
+      "summary": "소방시설 5대 분류(소화·경보·피난구조·소화용수·소화활동설비) 구분"
+    },
+    {
+      "name": "가스계 소화설비(이산화탄소·할론 등) 구성요소 및 작동 원리",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2022년 소방공채·경채 Q20",
+      "summary": "이산화탄소 소화설비의 기동용기 역할 및 전역방출방식 안전기준"
+    },
+    {
+      "name": "부속실 제연설비(NFPC 501A) 기동 및 댐퍼·송풍기 연동 제어",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2026년 소방공채·경채 Q21",
+      "summary": "특별피난계단 부속실 제연설비의 수동기동장치 조작 시 연동 작동 기준"
+    },
+    {
+      "name": "피난구조설비(유도등·완강기·구조대·인명구조기구) 정의 및 특징",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2021년 소방공채·경채 Q19",
+      "summary": "피난구조설비(인공소생기·유도등·구조대·완강기)의 법정 정의 비교"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂019₁",
+    "year": 2019,
+    "q_num": 1,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q1",
+    "topic": "소방시설 5대 분류(소화·경보·피난구조·소화용수·소화활동설비) 구분",
+    "freq_key": "소방시설 5대 분류 체계(소화·경보·피난구조·소화용수·소화활동설비)",
+    "stem": "소방시설의 종류에 따른 분류가 옳게 짝 지어진 것은?",
+    "stem_box": "",
+    "choices": [
+      "경보설비 · 비상조명등",
+      "소화설비 · 연소방지설비",
+      "피난구조설비 · 비상방송설비",
+      "소화활동설비 · 비상콘센트설비"
+    ],
+    "ans": 4,
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따른 소방시설 5대 분류(소화설비, 경보설비, 피난구조설비, 소화용수설비, 소화활동설비)를 정확히 구분하는 최빈출 문항입니다. 특히 '연소방지설비'와 '연결송수관·연결살수설비', '비상콘센트설비', '제연설비', '무선통신보조설비'가 모두 소화설비가 아니라 '소화활동설비'라는 점이 핵심 함정 포인트입니다.",
+    "c_expls": [
+      "[틀림] 비상조명등(및 휴대용비상조명등)은 경보설비가 아니라 화재 시 안전한 대피를 돕는 '피난구조설비'에 해당합니다.",
+      "[틀림] 연소방지설비는 명칭에 '소화'가 없지만 지하구 등에서 화재 확산을 막기 위해 소방대가 활용하는 '소화활동설비'(6종: 제연, 연결송수관, 연결살수, 비상콘센트, 무선통신보조, 연소방지)에 해당합니다.",
+      "[틀림] 비상방송설비는 피난구조설비가 아니라 화재 발생 사실을 음성으로 알리는 '경보설비'에 해당합니다.",
+      "[옳음 · 정답] 비상콘센트설비는 화재 진압 시 소방대원이 사용하는 조명기구나 파괴기구 등에 전원을 공급하는 설비로서 '소화활동설비'로 옳게 짝지어졌습니다."
+    ]
+  },
+  {
+    "id": "Q₂020₆",
+    "year": 2020,
+    "q_num": 6,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q6",
+    "topic": "소화설비·경보설비·소화용수설비·소화활동설비의 세부 종류 연결",
+    "freq_key": "소방시설 5대 분류 체계(소화·경보·피난구조·소화용수·소화활동설비)",
+    "stem": "소방시설의 분류와 해당 소방시설의 종류가 옳게 연결된 것은?",
+    "stem_box": "",
+    "choices": [
+      "소화설비 · 옥내소화전설비, 포소화설비, 간이스프링클러설비",
+      "경보설비 · 자동화재속보설비, 자동화재탐지설비, 제연 설비",
+      "소화용수설비 · 상수도소화용수설비, 소화수조, 연결 살수설비",
+      "소화활동설비 · 시각경보기, 연결송수관설비, 무선통신 보조설비"
+    ],
+    "ans": 1,
+    "q_expl": "소방시설 5대 분류별 세부 설비를 묻는 문항입니다. 제연설비와 연결살수설비는 '소화활동설비'이고, 시각경보기는 단독경보형감지기·비상경보설비에 포함되는 '경보설비'입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 옥내소화전설비, 포소화설비, 간이스프링클러설비는 모두 물 또는 화학약제를 사용하여 불을 끄는 '소화설비'에 해당합니다.",
+      "[틀림] 자동화재속보설비와 자동화재탐지설비는 경보설비가 맞으나, '제연설비'는 경보설비가 아니라 '소화활동설비'입니다.",
+      "[틀림] 상수도소화용수설비와 소화수조(저수조)는 소화용수설비가 맞으나, '연결살수설비'는 소화용수설비가 아니라 '소화활동설비'입니다.",
+      "[틀림] 연결송수관설비와 무선통신보조설비는 소화활동설비가 맞으나, '시각경보기'는 청각장애인용 자동화재탐지설비(경보설비)의 구성요소입니다."
+    ]
+  },
+  {
+    "id": "Q₂021₁9",
+    "year": 2021,
+    "q_num": 19,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q19",
+    "topic": "피난구조설비(인공소생기·유도등·구조대·완강기)의 법정 정의 비교",
+    "freq_key": "피난구조설비(유도등·완강기·구조대·인명구조기구) 정의 및 특징",
+    "stem": "피난구조설비에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "인공소생기란 호흡 부전 상태인 사람에게 인공호흡을 시켜 환자를 보호하거나 구급하는 기구이다.",
+      "피난구유도등이란 피난구 또는 피난경로로 사용되는 출입구를 표시하여 피난을 유도하는 등을 말한다.",
+      "복도통로유도등이란 피난통로가 되는 복도에 설치하는 통로유도등으로서 피난구의 방향을 명시하는 것을 말한다.",
+      "구조대란 사용자의 몸무게에 의하여 자동으로 하강하고 내려서면 스스로 상승하여 연속적으로 사용할 수 있는 무동력 피난기구를 말한다."
+    ],
+    "ans": 4,
+    "q_expl": "피난기구의 화재안전기준(NFPC 301) 및 유도등 기준에서 규정하는 각 설비의 정의를 묻는 문항입니다. 사용자의 몸무게에 의해 자동 하강하고 내려서면 스스로 상승(자체 복귀)하여 연속 사용할 수 있는 무동력 피난기구는 구조대가 아니라 '완강기'입니다.",
+    "c_expls": [
+      "[옳음] 인공소생기는 인명구조기구(방열복, 공기호흡기, 인공소생기)의 하나로서 호흡 부전 상태인 사람에게 인공호흡을 시켜 환자를 보호하거나 구급하는 기구입니다.",
+      "[옳음] 피난구유도등은 피난구 또는 피난경로로 사용되는 출입구를 표시하여 피난을 유도하는 등입니다.",
+      "[옳음] 복도통로유도등은 피난통로가 되는 복도에 설치하는 통로유도등으로서 피난구의 방향을 명시하는 것입니다.",
+      "[틀림 · 정답] 사용자의 몸무게에 의하여 자동으로 하강하고 내려서면 스스로 상승하여 연속적으로 사용할 수 있는 무동력 피난기구는 '완강기'(1인용만 해당하면 간이완강기)이며, '구조대'는 포대(자루) 등을 사용하여 미끄러져 내려가는 피난기구입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₂0",
+    "year": 2022,
+    "q_num": 20,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q20",
+    "topic": "이산화탄소 소화설비의 기동용기 역할 및 전역방출방식 안전기준",
+    "freq_key": "가스계 소화설비(이산화탄소·할론 등) 구성요소 및 작동 원리",
+    "stem": "이산화탄소소화설비에 대한 일반적인 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "기동용기의 가스는 압력스위치 및 자동폐쇄장치를 작동 시키는 역할을 한다.",
+      "저장용기는 직사광선 및 빗물이 침투할 우려가 없는 곳에 설치한다.",
+      "전역방출방식에서 환기장치는 이산화탄소가 방사되기 전에 정지되어야 한다.",
+      "전역방출방식에서는 음향경보장치와 방출표시등이 필요 하다."
+    ],
+    "ans": 1,
+    "q_expl": "이산화탄소 소화설비(NFPC 106)에서 기동용기(질소나 이산화탄소 충전)의 가스는 '저장용기 밸브'와 '선택밸브'를 개방하는 역할을 하며, 압력스위치(피압스위치) 및 배기댐퍼 등의 자동폐쇄장치를 작동시키는 것은 기동용 가스가 아니라 저장용기에서 방출된 '이산화탄소 소화약제 자체의 방출 압력'입니다.",
+    "c_expls": [
+      "[틀림 · 정답] 기동용기의 가스는 저장용기 밸브를 개방하고 선택밸브를 여는 기동용 압력원으로 사용되며, 압력스위치 및 자동폐쇄장치를 작동시키는 것은 저장용기에서 방출되어 집합관을 지나는 주 소화약제(이산화탄소)의 압력입니다.",
+      "[옳음] 이산화탄소 저장용기는 온도 상승 및 부식 방지를 위해 직사광선 및 빗물이 침투할 우려가 없는 곳(40도 이하 등)에 설치합니다.",
+      "[옳음] 전역방출방식에서 실내 산소농도를 신속히 낮추고 약제 누출을 막기 위해 환기장치는 이산화탄소가 방사되기 전에 자동 정지되어야 합니다.",
+      "[옳음] 전역방출방식은 재실자의 질식 위험이 크므로 사전 대피를 위한 음향경보장치와 외부인의 출입을 막는 방출표시등이 반드시 필요합니다."
+    ]
+  },
+  {
+    "id": "Q₂023₂4",
+    "year": 2023,
+    "q_num": 24,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q24",
+    "topic": "소화활동설비의 법정 정의와 피난구조설비(인명구조기구)의 구별",
+    "freq_key": "소방시설 5대 분류 체계(소화·경보·피난구조·소화용수·소화활동설비)",
+    "stem": "소방시설은 소화설비, 경보설비, 피난구조설비, 소화용수 설비, 소화활동설비로 분류된다. 다음 정의로 분류되는 소방시설로 옳지 않은 것은? 화재를 진압하거나 인명구조활동을 위하여 사용하는 설비",
+    "stem_box": "",
+    "choices": [
+      "제연설비",
+      "인명구조설비",
+      "연결살수설비",
+      "무선통신보조설비"
+    ],
+    "ans": 2,
+    "q_expl": "'화재를 진압하거나 인명구조활동을 위하여 사용하는 설비'는 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따른 '소화활동설비'의 법정 정의입니다. 보기 중 '인명구조기구(설비)'는 명칭 때문에 소화활동설비로 착각하기 쉬우나 실제로는 '피난구조설비'에 속합니다.",
+    "c_expls": [
+      "[옳음] 제연설비는 화재 진압 및 인명구조활동을 위해 연기를 제어하는 '소화활동설비'입니다.",
+      "[틀림 · 정답] 인명구조기구(방열복·공기호흡기·인공소생기, 선지에서는 인명구조설비로 표기)는 소화활동설비가 아니라 '피난구조설비'에 해당합니다.",
+      "[옳음] 연결살수설비는 소방대가 송수구를 통해 물을 넣어 살수하는 '소화활동설비'입니다.",
+      "[옳음] 무선통신보조설비는 지하층 등에서 소방대원 간 무전 교신을 돕는 '소화활동설비'입니다."
+    ]
+  },
+  {
+    "id": "Q₂025₂0",
+    "year": 2025,
+    "q_num": 20,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q20",
+    "topic": "피난구조설비(방열복·공기호흡기·비상조명등)와 소화활동설비(제연·연소방지) 구분",
+    "freq_key": "소방시설 5대 분류 체계(소화·경보·피난구조·소화용수·소화활동설비)",
+    "stem": "<보기>에서 피난구조설비에 해당하는 것만 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 방열복<br/>ㄴ. 제연설비<br/>ㄷ. 공기호흡기<br/>ㄹ. 비상조명등<br/>ㅁ. 연소방지설비",
+    "choices": [
+      "ㄱ, ㄴ, ㄷ",
+      "ㄱ, ㄷ, ㄹ",
+      "ㄴ, ㄷ, ㅁ",
+      "ㄴ, ㄹ, ㅁ"
+    ],
+    "ans": 2,
+    "q_expl": "2019년, 2020년, 2023년에 이어 2025년에도 연속 출제된 소방시설 분류 문항입니다. 방열복( ㄱ )과 공기호흡기( ㄷ )는 인명구조기구로서 '피난구조설비'에 속하고, 비상조명등( ㄹ ) 역시 '피난구조설비'에 속합니다. 반면 제연설비( ㄴ )와 연소방지설비( ㅁ )는 '소화활동설비'입니다.",
+    "c_expls": [
+      "[틀림] ㄴ(제연설비)은 피난구조설비가 아니라 소화활동설비이며, ㄹ(비상조명등)이 누락되었습니다.",
+      "[옳음 · 정답] 피난구조설비에 해당하는 것은 인명구조기구인 방열복( ㄱ )·공기호흡기( ㄷ )와 비상조명등( ㄹ )이므로 ㄱ, ㄷ, ㄹ이 정답입니다.",
+      "[틀림] ㄴ(제연설비)과 ㅁ(연소방지설비)은 모두 소화활동설비입니다.",
+      "[틀림] ㄴ(제연설비)과 ㅁ(연소방지설비)이 포함되어 틀렸습니다."
+    ]
+  },
+  {
+    "id": "Q₂026₂1",
+    "year": 2026,
+    "q_num": 21,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q21",
+    "topic": "특별피난계단 부속실 제연설비의 수동기동장치 조작 시 연동 작동 기준",
+    "freq_key": "부속실 제연설비(NFPC 501A) 기동 및 댐퍼·송풍기 연동 제어",
+    "stem": "특별피난계단의 부속실 제연설비가 설치된 다층 건물의 1개 층에서 제연설비 수동기동장치를 조작할 경우, 이와 연동하는 장치의 작동으로 옳지 않은 것은? (단, 다툼이 있는 경우 화재안전성능기준에 따르며, 문제에서 제시한 사항 외의 것은 고려하지 않음)",
+    "stem_box": "",
+    "choices": [
+      "전 층의 배출댐퍼 또는 개폐기의 개방",
+      "전 층의 제연구역에 설치된 급기댐퍼의 개방",
+      "급기송풍기 및 유입공기의 배출용 송풍기의 작동",
+      "개방·고정된 모든 출입문(제연구역과 옥내 사이의 출입문에 한한다)의 개폐장치의 작동"
+    ],
+    "ans": 1,
+    "q_expl": "｢특별피난계단의 계단실 및 부속실 제연설비의 화재안전성능기준(NFPC 501A)｣ 제22조에 따른 수동기동장치 작동 시 연동 설비를 묻는 문항입니다. 1개 층에서 제연설비(급기가압 제연)를 수동 기동할 때, 신선한 외기를 불어넣어 부속실 전체를 가압하는 '급기댐퍼'는 전 층이 개방되어야 하지만, 화재실의 유입공기를 외부로 빼내는 '배출댐퍼 또는 개폐기'는 전 층이 아니라 '해당 층(발화층)'에 설치된 것만 개방되어야 해당 층의 차압과 방연풍속이 정상 유지됩니다.",
+    "c_expls": [
+      "[틀림 · 정답] 1개 층의 수동기동장치를 조작할 경우 배출댐퍼 또는 개폐기는 전 층이 아니라 '해당 층에 설치된 배출댐퍼 또는 개폐기'만 개방되어야 합니다(전 층 개방 시 비화재층에서도 배기가 일어나 제연 성능이 상실됨).",
+      "[옳음] 부속실 및 계단실 전체에 양압(차압)을 형성하여 연기 침투를 막아야 하므로, 전 층의 제연구역에 설치된 자동차압·과압조절형 급기댐퍼는 모두 개방되어야 합니다.",
+      "[옳음] 제연설비 기동 시 급기송풍기 및 유입공기의 배출용 송풍기(배출풍도를 둔 경우)가 즉시 연동하여 작동해야 합니다.",
+      "[옳음] 제연구역의 구획 완성을 위해 상시 개방·고정된 모든 출입문(제연구역과 옥내 사이의 방화문)의 자동폐쇄장치(개폐장치)가 작동하여 문이 닫혀야 합니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "S",
+    "text": "제연설비와 무선통신보조설비는 소방대원의 소화 및 인명구조 활동을 돕는 소화활동설비이다.",
+    "isCorrect": true,
+    "source": "소방시설분류 기출",
+    "explanation": "제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비의 6가지는 법정 소화활동설비에 해당합니다.",
+    "origQId": "",
+    "id": "SCI₀4₀1₀01"
+  },
+  {
+    "grade": "S",
+    "text": "연결송수관설비는 화재 발생 시 재실자가 초기 소화용으로 사용하는 소화설비이다.",
+    "isCorrect": false,
+    "source": "소방시설분류 기출",
+    "explanation": "연결송수관설비는 일반 재실자용이 아니라, 출동한 소방관이 소방펌프차의 수압을 송수구에 연결하여 사용하는 소화활동설비입니다.",
+    "origQId": "",
+    "id": "SCI₀4₀1₀02"
+  },
+  {
+    "grade": "S",
+    "text": "비상방송설비와 자동화재속보설비는 소방시설 중 경보설비에 속한다.",
+    "isCorrect": true,
+    "source": "소방시설분류 기출",
+    "explanation": "화재 발생 사실을 재실자 및 관할 소방관서에 알리는 경보설비의 법정 구성 항목입니다.",
+    "origQId": "",
+    "id": "SCI₀4₀1₀03"
+  },
+  {
+    "grade": "S",
+    "text": "연소방지설비는 피난구조설비의 일종으로 지하가 피난구역에 설치된다.",
+    "isCorrect": false,
+    "source": "소방시설분류 기출",
+    "explanation": "연소방지설비는 피난구조설비가 아니라 소화활동설비에 속하며, 지하구의 케이블 화재 확산을 방지하기 위해 설치됩니다.",
+    "origQId": "",
+    "id": "SCI₀4₀1₀04"
+  },
+  {
+    "grade": "S",
+    "text": "｢소방시설 설치 및 관리에 관한 법률 시행령｣상 비상콘센트설비, 연소방지설비, 연결송수관설비, 연결살수설비, 제연설비, 무선통신보조설비는 모두 '소화활동설비'로 분류된다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q1 기출",
+    "explanation": "소화활동설비 6종(제연·연결송수관·연결살수·비상콘센트·무선통신보조·연소방지설비)은 소화설비나 경보설비와 섞어 내는 1순위 빈출 지문입니다.",
+    "origQId": "Q₂019₁",
+    "id": "SCI₀4₀1₀05"
+  },
+  {
+    "grade": "S",
+    "text": "비상조명등은 경보설비에 해당하고, 비상방송설비는 피난구조설비에 해당한다.",
+    "isCorrect": false,
+    "source": "2019년 소방공채·경채 Q1 기출",
+    "explanation": "정반대입니다. 비상조명등은 '피난구조설비'이고, 비상방송설비는 '경보설비'입니다.",
+    "origQId": "Q₂019₁",
+    "id": "SCI₀4₀1₀06"
+  },
+  {
+    "grade": "S",
+    "text": "옥내소화전설비, 포소화설비, 간이스프링클러설비는 모두 '소화설비'에 해당하며, 연결살수설비와 제연설비는 '소화활동설비'에 해당한다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q6 기출",
+    "explanation": "스프링클러·간이스프링클러·물분무등소화설비는 소화설비이고, 연결송수관·연결살수·제연설비는 소화활동설비입니다.",
+    "origQId": "Q₂020₆",
+    "id": "SCI₀4₀1₀07"
+  },
+  {
+    "grade": "S",
+    "text": "사용자의 몸무게에 의하여 자동으로 하강하고 내려서면 스스로 상승하여 연속적으로 사용할 수 있는 무동력 피난기구는 구조대가 아니라 '완강기'이다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q19 기출",
+    "explanation": "구조대는 포대(천 자루) 형태로 미끄러져 탈출하는 기구이고, 밧줄과 속도조절기로 몸무게에 의해 하강하는 무동력 연속 기구는 완강기입니다.",
+    "origQId": "Q₂021₁9",
+    "id": "SCI₀4₀1₀08"
+  },
+  {
+    "grade": "S",
+    "text": "인명구조기구에는 방열복, 공기호흡기, 인공소생기가 있으며 이는 피난구조설비로 분류된다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q19 기출",
+    "explanation": "방열복·공기호흡기·인공소생기(방·공·인) 3종은 피난구조설비 중 '인명구조기구'에 해당합니다.",
+    "origQId": "Q₂021₁9",
+    "id": "SCI₀4₀1₀09"
+  },
+  {
+    "grade": "S",
+    "text": "이산화탄소 소화설비에서 압력스위치 및 자동폐쇄장치를 작동시키는 것은 기동용기의 가스가 아니라 저장용기에서 방출되는 소화약제(이산화탄소)의 압력이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q20 기출",
+    "explanation": "기동용기는 저장용기 밸브와 선택밸브를 개방하는 역할만 수행하며, 본 배관의 압력스위치와 피스톤릴리프댐퍼(자동폐쇄장치)는 방출되는 주 약제 가스의 압력으로 작동합니다.",
+    "origQId": "Q₂022₂0",
+    "id": "SCI₀4₀1₀10"
+  },
+  {
+    "grade": "S",
+    "text": "법령상 '화재를 진압하거나 인명구조활동을 위하여 사용하는 설비'는 소화활동설비의 정의이며, 인명구조기구(방열복·공기호흡기·인공소생기)는 소화활동설비가 아니라 피난구조설비에 속한다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q24 기출",
+    "explanation": "정의에 '인명구조활동'이라는 문구가 들어가 있어 인명구조기구를 소화활동설비로 오인하기 쉬우나, 인명구조기구는 피난구조설비입니다.",
+    "origQId": "Q₂023₂4",
+    "id": "SCI₀4₀1₀11"
+  },
+  {
+    "grade": "S",
+    "text": "방열복, 공기호흡기, 인공소생기, 비상조명등, 휴대용비상조명등, 유도등, 유도표지, 피난기구는 모두 '피난구조설비'에 해당한다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q20 기출",
+    "explanation": "피난구조설비 4대 그룹(피난기구, 인명구조기구, 유도등·유도표지, 비상조명등·휴대용비상조명등)을 정확히 숙지해야 합니다.",
+    "origQId": "Q₂025₂0",
+    "id": "SCI₀4₀1₀12"
+  },
+  {
+    "grade": "S",
+    "text": "특별피난계단의 부속실 제연설비가 설치된 다층 건물의 1개 층에서 수동기동장치를 조작할 경우, 급기댐퍼는 '전 층'의 제연구역에서 개방되어야 하나, 유입공기 배출댐퍼(또는 개폐기)는 전 층이 아니라 '해당 층'만 개방되어야 한다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q21 기출",
+    "explanation": "NFPC 501A상 급기댐퍼는 전 층 개방, 배출댐퍼(유입공기 배출용)는 해당 발화층만 개방되는 차이점이 핵심 출제 포인트입니다.",
+    "origQId": "Q₂026₂1",
+    "id": "SCI₀4₀1₀13"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

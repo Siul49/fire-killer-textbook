@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학습 진도 및 커리큘럼 현황 대시보드</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-sub: #cbd5e1;
+      --accent-blue: #3b82f6;
+      --accent-red: #ef4444;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      padding: 32px 20px;
+    }
+    .container { max-width: 1040px; margin: 0 auto; }
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 6px solid var(--accent-blue);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 26px;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 8px; color: #fff; }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--card-border);
+      color: #fff;
+    }
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid var(--card-border); text-align: left; vertical-align: top; }
+    th { background: rgba(15, 23, 42, 0.7); color: #93c5fd; font-weight: 700; white-space: nowrap; }
+    a { color: #60a5fa; text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .status-active { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .status-done { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .status-wait { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+    p { color: var(--text-sub); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>학습 진도 및 커리큘럼 현황 대시보드</h1>
+      <p>에이전트가 현재 수험생의 커리큘럼 상태와 과목별·소단원별 학습 진도를 즉시 파악하고 업데이트하는 중앙 인덱스 문서입니다.</p>
+    </header>
+
+    <section>
+      <h2>1. 과목별 현재 커리큘럼 및 진행 상태</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>과목명</th>
+            <th>진행 중인 커리큘럼 방식</th>
+            <th>현재 진도 위치</th>
+            <th>최근 업데이트일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>행정법총론</strong></td>
+            <td>유휘운 행정법 + 기출 선지 병행</td>
+            <td><span class="status-badge status-active">진행 중</span> 앞 단원(통칙부터 손해전보까지) 1회독 완료 후 <strong>행정소송 파트 진입 (취소소송 대상적격·단수처분·택시감차명령 등 기출 함정 선지 분석 진행)</strong></td>
+            <td>2026년 10월 23일</td>
+          </tr>
+          <tr>
+            <td><strong>소방학개론</strong></td>
+            <td>단원별 기본서 + 2018년부터 2026년까지 전 기출 하네스 완비</td>
+            <td><span class="status-badge status-done">전 기출 DB 구축 완료</span> <strong>제1편부터 제5편까지 15개 소단원 전 문항(212문항·848선지 해설 + OX 369선지 원문 연동) 구축 완료</strong> 및 제1편 학습 진행 중</td>
+            <td>2026년 10월 20일</td>
+          </tr>
+          <tr>
+            <td><strong>소방관계법규</strong></td>
+            <td>압축 강의 + 단원별 기출 즉시 병행 (30분 단위 세션제)</td>
+            <td><span class="status-badge status-active">진행 중</span> <strong>제1편 소방기본법 1회독 6세션 마스터플랜 (제1세션 완료 ➔ 제2세션: 박물관·종합계획·소방력·국고보조·안전교육사 및 위임 법령 구분 진행 중)</strong></td>
+            <td>2026년 10월 27일</td>
+          </tr>
+          <tr>
+            <td><strong>한국사 (검정제)</strong></td>
+            <td>시대별 핵심 사료 매칭 + 기출 회차 고속 풀이</td>
+            <td><span class="status-badge status-active">진행 중</span> 시대별 요약 및 기출 오답 점검 병행</td>
+            <td>2026년 10월 19일</td>
+          </tr>
+          <tr>
+            <td><strong>토익 (검정제)</strong></td>
+            <td>LC 집중 청취 + RC 파트5, 파트6 타임어택</td>
+            <td><span class="status-badge status-active">진행 중</span> 매일 야간 세션 기출 풀이</td>
+            <td>2026년 10월 19일</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>2. 과목별·소단원별 학습 기록 문서 인덱스 (컨텍스트 분리형)</h2>
+      <p style="margin-bottom: 12px;">
+        컨텍스트 낭비를 막기 위해 각 과목 폴더 하위에 <strong>소단원별 개별 HTML 문서</strong>를 생성하여 관리합니다. 각 소단원 문서 내부에는 <strong>[진행한 개념 / 주요 핵심 개념 / 내가 틀린 개념]</strong> 3대 영역이 기록됩니다.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>과목 폴더</th>
+            <th>현재 활성 소단원 문서</th>
+            <th>비고 및 확장 규칙</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>과목별_학습기록/행정법총론/</code></td>
+            <td><a href="./과목별_학습기록/행정법총론/06_행정소송.html">06_행정소송.html</a></td>
+            <td>진도에 따라 소단원(소송요건, 본안심리, 판결 등) 문서를 세분화하여 기록</td>
+          </tr>
+          <tr>
+            <td><code>과목별_학습기록/소방학개론/</code> 및 <code>소방학개론_기본서_및_기출하네스/</code></td>
+            <td><a href="./소방학개론_기본서_및_기출하네스/index.html">소방학개론 단원별 기본서 및 전 기출 하네스 (index.html)</a>, <a href="./과목별_학습기록/소방학개론/01_연소이론.html">01_연소이론.html</a>, <a href="./과목별_학습기록/소방학개론/02_소방조직.html">02_소방조직.html</a></td>
+            <td>2018년부터 2026년까지 공채·경채(9급 소방사) 전 기출 212문항(848개 선지별 상세 해설) 및 369개 OX 실전 훈련(원문 바로가기 연동) 완료</td>
+          </tr>
+          <tr>
+            <td><code>과목별_학습기록/소방관계법규/</code></td>
+            <td><a href="./과목별_학습기록/소방관계법규/01_소방기본법.html">01_소방기본법.html</a></td>
+            <td>소방기본법, 화재예방법, 소방시설법, 공사업법, 위험물안전관리법 소단원별 생성</td>
+          </tr>
+          <tr>
+            <td><code>과목별_학습기록/한국사/</code></td>
+            <td><a href="./과목별_학습기록/한국사/01_전근대사_핵심및오답.html">01_전근대사_핵심및오답.html</a></td>
+            <td>시대별 주요 사료 키워드 및 기출 틀린 선지 누적 기록</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

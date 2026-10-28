@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제3편 화재론 및 소화약제론 2장. 물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제3편 제2장. 물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식</span>
+        <span class="text-slate-600">|</span>
+        <a href="03_03_가스계소화약제와_분말소화약제_1234종.html" class="hover:text-emerald-300 transition">다음 장: 제3편 제3장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제3편 제2장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제3편 화재론 및 소화약제론 · 2장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 물 소화약제의 물리적 특성(비열·증발잠열)과 주수 형태별 효과</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 물의 물리적 한계 극복을 위한 소화약제 첨가제 (강화액·침투제·증점제)</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 포(Foam) 소화약제의 종류 (단백포·합성계면활성제포·수성막포·내알코올포)</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 포 소화설비의 4대 약제 혼합방식 (라인·프레셔·프레셔사이드·펌프)</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (12문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (14문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제3편 화재론 및 소화약제론</span>
+        <span>·</span>
+        <span>2장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        최고의 냉각소화약제인 물의 물리적 특성(비열·증발잠열)과 주수 형태별 적응성, 기능성 첨가제(침투제·증점제·부동제)를 살펴보고, 단백포·수성막포(AFFF)·내알코올포의 특성과 포 혼합방식 4종을 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 물 소화약제의 물리적 특성(비열·증발잠열)과 주수 형태별 효과</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞 장에서 A급 일반화재를 끄는 최고의 냉각소화약제가 <strong>물(H<sub>2</sub>O)</strong>이라고 배웠습니다. 값싸고 구하기 쉬운 물이 왜 지구상의 모든 액체 중에서 가장 압도적인 <strong>냉각소화</strong> 위력을 발휘할까요? 바로 물 분자 간의 강력한 수소결합 덕분에 나타나는 두 가지 독보적인 열역학적 수치 때문입니다! 첫째, 물 1 g의 온도를 1℃ 올리는 데 필요한 열량인 <strong>비열이 1 cal/(g&middot;℃) [약 4.186 kJ/(kg&middot;℃)]</strong>로 모든 일반 액체와 고체 중 가장 큽니다. 둘째, 100℃의 물 1 g이 100℃의 수증기로 기화할 때 주변 화원으로부터 빼앗아 가는 <strong>증발잠열(기화잠열)이 무려 539 cal/g(약 2,260 kJ/kg, 얼음의 융해잠열 80 cal/g의 약 6.7배!)</strong>에 달합니다! 즉 0℃의 물 1 g이 불길 속에 들어가 100℃ 수증기로 증발하면 현열(100 cal)과 잠열(539 cal)을 합쳐 총 <strong>639 cal/g</strong>의 막대한 열에너지를 화원으로부터 순식간에 흡수합니다. 게다가 액체 상태의 물이 100℃ 수증기로 기화할 때 부피가 약 <strong>1,650배에서 1,700배</strong>로 급팽창하면서 화염 주변의 산소를 밖으로 밀어내는 <strong>질식소화 보조 효과</strong>까지 동시에 발휘합니다!
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>물의 물리적 수치</strong>: <strong>비열 = 1 cal/(g&middot;℃)</strong>, <strong>증발잠열 = 539 cal/g</strong>, 기화 시 체적 팽창률 = 약 <strong>1,700배</strong> (압도적인 <strong>냉각소화</strong> + 부수적 질식·유화 효과)</li>
+              <li><strong>무상주수(안개주수)의 장점</strong>: 비표면적 증가로 냉각·질식 효과 상승, <strong>C급 전기화재 적응성 보유(비전도성)</strong>, 중질유 화재 시 <strong>유화(Emulsion) 효과</strong> 및 열복사 차단</li>
+              <li><strong>물의 주수 금지 대상</strong>: 제1류(알칼리금속 과산화물), <strong>제3류 금수성 물질(칼륨·나트륨·탄화칼슘·인화석회)</strong>, D급 금속화재</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            같은 물이라도 소방관의 관창(노즐)을 통해 어떤 형태로 쏘느냐에 따라 소화 메커니즘과 적응 화재가 완전히 달라집니다. ① 물줄기를 한 줄기 기둥처럼 강하게 쏘는 <strong>봉상주수(직사주수)</strong>는 사거리가 길고 파괴력·관통력이 뛰어나 멀리 있는 A급 일반 가연물 심부 화재를 타격하는 데는 최고이지만, 물줄기를 타고 전기가 그대로 흐르므로 C급 전기화재에는 절대 쓸 수 없고 B급 유류 화재에 쏘면 기름이 사방으로 튀어 화재를 확대시킵니다. ② 물줄기를 부채꼴 물방울 형태로 흩뿌리는 <strong>적상주수(살수, 스프링클러 헤드 등)</strong>는 봉상주수보다 냉각 면적이 넓어져 실내 공간 전체를 적시는 데 유리합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            ③ 시험에서 가장 중요하게 다루는 주수 형태는 물을 안개처럼 아주 미세한 입자로 쪼개어 분사하는 <strong>무상주수(안개주수, 분무주수)</strong>입니다! 물방울을 작게 쪼개면 같은 양의 물이라도 공기와 맞닿는 <strong>비표면적이 수십 배로 극대화되어 순식간에 수증기로 증발하므로 냉각 효과와 수증기 팽창에 의한 질식 효과, 그리고 소방대원을 보호하는 복사열 차단 효과가 비약적으로 커집니다.</strong> 더 놀라운 점은, 무상주수는 미세 물 입자들이 공기 중에서 서로 끊어져 있어 <strong>전기 전도성이 없으므로 통전 중인 C급 전기화재에도 안전하게 사용할 수 있으며</strong>, 벙커C유나 아스팔트 같은 <strong>고점도 중질유 화재 표면에 미세 물방울이 기름과 뒤섞여 불연성 유화층(에멀전, Emulsion)을 형성함으로써 B급 중질유 화재까지 진압할 수 있다</strong>는 점입니다!
+          </p>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 물의 물리적 한계 극복을 위한 소화약제 첨가제 (강화액·침투제·증점제)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            이처럼 뛰어난 물에도 치명적인 물리적 약점 세 가지가 있습니다. ① 겨울철 0℃ 이하에서 꽁꽁 얼어버리고(유동성 상실), ② 물 분자끼리 서로 잡아당기는 <strong>표면장력이 너무 커서(20℃에서 약 72.8 dyne/cm)</strong> 압축된 솜(면화)·석탄 더미·목재 틈새로 스며들지 못하고 동그랗게 맺혀 겉돌며, ③ 점성이 낮아 산불 현장이나 건물 벽면에 뿌리면 금방 바닥으로 흘러내려 버립니다. 이 세 가지 약점을 화학적으로 개조하기 위해 물에 넣는 기능성 첨가제들이 시험에 매년 출제됩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>강화액 소화약제</strong>: 물에 <strong>탄산칼륨(K<sub>2</sub>CO<sub>3</sub>)</strong> 등을 첨가하여 어는점을 영하 20℃ 이하로 낮추고, 냉각 + 부촉매 + 비누화 작용으로 <strong>A급 및 K급(주방 식용유) 화재</strong>에 적응</li>
+              <li><strong>침투제(침윤수, Wet Water)</strong>: 계면활성제를 첨가해 물의 <strong>표면장력을 감소</strong>시켜 솜·석탄·목재 심부 침투력을 높임</li>
+              <li><strong>증점제(점성수) vs 유동개량제</strong>: 증점제(CMC 등)는 점도를 높여 <strong>산림화재</strong> 시 부착력을 높이고, 유동개량제는 배관 <strong>마찰손실을 감소</strong>시킴</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            첫째, 물에 <strong>탄산칼륨(K<sub>2</sub>CO<sub>3</sub>)</strong> 같은 알칼리 금속염을 진하게 녹여 만든 약제가 바로 <strong>강화액 소화약제</strong>입니다! 왜 이름을 '강화액'이라 붙였을까요? 순수한 물은 0℃에서 얼고 냉각소화밖에 못 하지만, 탄산칼륨을 녹이면 용액의 어는점 내림 현상에 의해 <strong>영하 20℃에서 영하 30℃까지 얼지 않는 부동성</strong>을 갖게 될 뿐만 아니라, 칼륨 이온(K<sup>+</sup>)에 의한 <strong>화학적 부촉매(억제) 효과</strong>와 목재 재발화 방지 효과, 그리고 뜨거운 식용유와 만나 비누화 거품 막을 만드는 능력까지 더해져 <strong>A급 일반화재와 K급 주방화재</strong>에 최고의 성능을 발휘하기 때문입니다! 둘째, 소화력 강화보다는 오직 겨울철 배관 동결 방지만을 목적으로 물에 <strong>에틸렌글리콜(Ethylene Glycol), 프로필렌글리콜, 글리세린, 염화칼슘(CaCl<sub>2</sub>)</strong> 등을 넣는 것은 <strong>부동제(Antifreeze)</strong>라 부릅니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, 물의 높은 표면장력(72.8 dyne/cm)을 깨뜨리기 위해 합성 계면활성제를 1% 미만으로 첨가하는 <strong>침투제(Wetting Agent, 습윤제·젖음화제)</strong>를 섞은 물을 <strong>침윤수(Wet Water)</strong>라 합니다. 침윤수는 표면장력이 30 dyne/cm 이하로 뚝 떨어져 물방울이 맺히지 않고 쫙 퍼지므로, 일반 물이 뚫고 들어가지 못하는 <strong>면화(솜), 석탄 더미, 목재, 볏짚, 타이어 등의 깊은 심부 화재 내부로 깊숙이 침투</strong>하여 숨어 있는 불씨를 완전히 꺼뜨립니다. 넷째, 물이 헛되이 흘러내리지 않도록 <strong>CMC(카복시메틸셀룰로오스)나 인산암모늄, 점토(벤토나이트)</strong> 같은 <strong>증점제(Thickening Agent)</strong>를 섞어 걸쭉하게 만든 물을 <strong>점성수(Viscous Water)</strong>라 하며, 나뭇가지나 건물 벽면에 두껍게 들러붙어 수분 증발을 늦추므로 <strong>산림화재(산불) 진압 및 연소 확대 방지</strong>에 결정적인 위력을 발휘합니다. 다섯째, 긴 소방호스 내부를 흐르는 물의 난류 마찰손실을 줄여 더 멀리, 더 많은 물을 쏘기 위해 <strong>폴리에틸렌옥사이드(Polyethylene Oxide)</strong>라는 고분자 사슬을 극소량 첨가하는 것은 <strong>유동개량제(미끄럼제, Slippery Water)</strong>라 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 포(Foam) 소화약제의 종류 (단백포·합성계면활성제포·수성막포·내알코올포)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            B급 유류 탱크나 위험물 저장소 화재에서 물 대신 주력으로 활약하는 <strong>포(Foam) 소화약제</strong>는 물(97% 또는 94%)에 포 소화약제 원액(<strong>3%형 또는 6%형</strong>)을 섞어 만든 포 수용액에 공기를 불어넣어 발포시킨 거품입니다. 기름보다 가벼운 포 거품이 불타는 기름 표면을 이불처럼 빈틈없이 덮어 유증기 증발과 산소 접촉을 차단하는 <strong>질식소화(주된 원리)</strong>와 거품이 머금은 수분에 의한 <strong>냉각소화(부수적 원리)</strong>로 불을 끕니다(오늘날 소방설비에 쓰이는 포는 모두 공기 흡입 방식인 <strong>기계포[공기포]</strong>이며, 포 수용액 부피 대비 거품 부피의 비율인 <strong>팽창비</strong>에 따라 <strong>저발포[팽창비 20 이하]</strong>와 <strong>고발포[팽창비 80 이상 1,000 미만]</strong>로 구분합니다).
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>포 소화약제 주된 소화원리</strong>: 거품 피복에 의한 <strong>질식소화(주효과)</strong> + 수분에 의한 <strong>냉각소화(부효과)</strong> / 농도는 <strong>3%형과 6%형</strong> 사용</li>
+              <li><strong>단백포 vs 수성막포(AFFF)</strong>: <strong>단백포</strong>는 내열성·안정성이 우수하나 유동성·저장성이 낮음 / <strong>수성막포(AFFF)</strong>는 불소계 계면활성제로 유류 표면에 <strong>수성막</strong>을 형성하여 제압 속도가 가장 빠름</li>
+              <li><strong>내알코올포 필수 대상</strong>: 알코올·아세톤·케톤·에테르 등 <strong>수용성(친수성) 위험물 화재</strong>는 일반 포가 파괴되므로 반드시 <strong>내알코올포</strong> 사용!</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            기계포 원액의 종류별 장단점과 적응성은 왜 그렇게 차이 날까요? ① <strong>단백포(Protein Foam)</strong>는 동물의 뿔·발굽·피 등 천연 단백질을 가수분해한 뒤 철염 안정제를 넣어 만든 포입니다. 거품 벽이 매우 튼튼하고 <strong>내열성과 내화성, 기름 오염 저항성이 가장 뛰어나</strong> 고온의 대형 유류 탱크 화재에서 거품이 쉽게 꺼지지 않지만, 거품이 뻑뻑해 <strong>유동성이 나빠 퍼지는 속도가 느리고</strong> 동물성 원료라 장기 저장 시 미생물에 의해 <strong>부패·변질·침전될 우려</strong>가 있으며 분말소화약제와 함께 쓰면 거품이 파괴됩니다. ② <strong>불화단백포(FP)</strong>는 단백포에 불소계 계면활성제를 첨가하여 단백포의 단점인 낮은 유동성과 기름 오염 문제를 개선한 포입니다. ③ <strong>합성계면활성제포</strong>는 합성 세제 성분을 주원료로 하여 유동성과 장기 저장성이 좋고 거품이 아주 잘 부풀어 올라 <strong>저발포와 고발포 겸용</strong>으로 유일하게 널리 쓰이지만, 단백포에 비해 열에 버티는 내열성은 다소 약합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            ④ <strong>수성막포(AFFF, Aqueous Film Forming Foam)</strong>는 불소계 계면활성제를 주성분으로 만든 현대 주력 포 약제입니다. 거품을 뿌리면 거품에서 배어 나온 수용액이 기름보다 표면장력이 낮아 <strong>유류 표면에 아주 얇은 물막(수성막)을 순식간에 먼저 쫙 펼쳐서 유증기 증발을 1차로 차단</strong>하고, 그 위를 거품층이 덮어 2중으로 질식시킵니다! 유동성이 가장 뛰어나 항공기 활주로 유류 화재 등 초기 화재 제압 속도가 압도적으로 빠르며, <strong>분말소화약제와 동시에 방사하는 병용 사용(트윈 에이전트, Twin Agent)</strong>에도 거품이 깨지지 않고 완벽히 호환됩니다. ⑤ 마지막으로 시험에서 1순위로 묻는 것이 바로 <strong>내알코올포(알코올형포, 내유기용제포)</strong>입니다! 메틸알코올·에틸알코올·아세톤·초산에틸·피리딘 같은 <strong>수용성 액체(친수성 극성 용매) 화재</strong>에 일반 단백포나 수성막포를 뿌리면 어떻게 될까요? 물과 친한 알코올이 거품 속의 수분을 순식간에 빨아들여 <strong>거품이 닿자마자 사르르 녹아 소멸(소포 현상)</strong>해 버립니다! 따라서 수용성 위험물 화재에는 알코올과 닿는 순간 물에 녹지 않는 끈적한 고분자 젤(Gel) 보호막을 형성해 거품 파괴를 막아주는 <strong>내알코올포</strong>만 사용할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">포 소화약제 종류</th>
+                <th style="width:42%;">주성분 및 물리·화학적 특징</th>
+                <th>출제 핵심 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>단백포</strong></td>
+                <td>동물성 단백질 가수분해물 + 철염 안정제</td>
+                <td><strong>내열성·안정성 최우수</strong>, 유동성 불량, 부패·침전 우려</td>
+              </tr>
+              <tr>
+                <td><strong>합성계면활성제포</strong></td>
+                <td>합성 세제 계통의 계면활성제 주성분</td>
+                <td>거품 팽창이 잘 되어 <strong>저발포 및 고발포 겸용</strong> 가능</td>
+              </tr>
+              <tr>
+                <td><strong>수성막포 (AFFF)</strong></td>
+                <td>불소계 계면활성제 주성분 (유류 표면에 <strong>수성막 형성</strong>)</td>
+                <td><strong>유동성·초기 진압속도 최고</strong>, 분말소화약제와 병용(Twin Agent)</td>
+              </tr>
+              <tr>
+                <td><strong>내알코올포</strong></td>
+                <td>불소계 계면활성제 + 고분자 다당류(불용성 젤 막 형성)</td>
+                <td><strong>알코올·아세톤 등 수용성 액체 화재</strong>에 유일하게 적응!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 포 소화설비의 4대 약제 혼합방식 (라인·프레셔·프레셔사이드·펌프)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            포 소화설비가 작동할 때 배관을 흐르는 물에 포 원액을 정확히 3% 또는 6% 비율로 섞어주는 장치를 <strong>포 혼합장치(Proportioner, 프로포셔너)</strong>라 합니다. 원액을 어떤 힘으로 빨아들이거나 밀어 넣어 물과 섞느냐에 따라 <strong>① 라인 프로포셔너 방식, ② 프레셔 프로포셔너 방식, ③ 프레셔 사이드 프로포셔너 방식, ④ 펌프 프로포셔너 방식</strong>의 4가지로 나뉘며, 각 방식의 작동 원리를 구별하는 문제가 자주 출제됩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>라인 프로포셔너 방식</strong>: 오직 물의 흐름에 의한 <strong>벤투리 작용(부압 흡입)</strong>만으로 포 원액을 흡입·혼합 (구조 단순, 압력손실 큼)</li>
+              <li><strong>프레셔 프로포셔너 방식</strong>: 가압수로 약제 탱크 내부(격막 또는 비격막)를 가압하는 압력과 벤투리 작용을 함께 이용</li>
+              <li><strong>프레셔 사이드 프로포셔너 방식</strong>: 별도의 <strong>포 원액 압입용 전용 펌프</strong>를 사용하여 배관에 원액을 강제 주입 (대규모 설비에 적합)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            첫째, <strong>라인 프로포셔너(Line Proportioner) 방식</strong>은 별도의 가압 탱크나 압입 펌프 없이, 배관(Line) 중간에 잘록한 벤투리관(혼합기)을 설치하여 빠른 속도로 통과하는 물의 <strong>벤투리 작용(베르누이 정리에 의해 유속이 빨라지면 압력이 대기압보다 낮아지는 부압·진공 흡입 현상)</strong>만으로 약제 저장탱크의 포 원액을 직접 빨아올려 섞는 방식입니다. 구조가 가장 단순하고 경제적이지만, 벤투리관을 통과할 때 배관 압력손실이 매우 커서 소규모 설비나 호스릴 포 설비에만 쓰입니다. 둘째, <strong>프레셔 프로포셔너(Pressure Proportioner) 방식</strong>은 라인 방식의 약한 흡입력을 보완하기 위해 배관을 흐르는 가압수의 일부를 포 원액 탱크 안으로 보내 원액을 위에서 눌러주거나(무격막형) 탱크 안의 고무 주머니(격막형)를 가압수로 쥐어짜는 <strong>가압력(Pressure)과 혼합기의 벤투리 작용을 동시에 이용</strong>하여 원액을 섞는 방식입니다(가장 보편적인 중규모 건축물 포 설비 방식입니다).
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>프레셔 사이드 프로포셔너(Pressure Side Proportioner) 방식</strong>은 물을 보내는 주펌프와 별도로 <strong>포 원액 전용 압입펌프(가압펌프)</strong>를 옆(Side)에 따로 설치하여, 고압의 물 배관 속으로 포 원액을 강제로 밀어 넣어 섞는 방식입니다. 설비 비용은 가장 비싸지만 배관 길이와 압력손실에 구애받지 않고 일정한 혼합 농도를 유지할 수 있어 <strong>대규모 석유화학 플랜트나 대형 유류 저장소</strong>에 가장 적합합니다. 넷째, <strong>펌프 프로포셔너(Pump Proportioner) 방식</strong>은 주로 <strong>소방펌프차(화학차)</strong>에서 쓰는 방식으로, 주펌프의 고압 토출관과 저압 흡입관 사이에 순환배관(바이패스관)과 흡입기·농도조절밸브를 달아 펌프 입구의 흡입력과 토출수 순환으로 포 원액을 빨아들여 섞는 방식입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 물 소화약제의 열역학적 냉각 메커니즘 및 포(Foam) 소화약제 종류별·혼합방식별 비교</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 물 소화약제 열역학(비열·잠열) · 주수 형태 및 기능성 첨가제</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">물의 열역학적 수치 (최고의 냉각력)</div>
+                <div>· <strong>비열 = 1 cal/(g&middot;℃)</strong>, 융해잠열 = 80 cal/g<br/>· <strong>증발잠열 = 539 cal/g</strong>, 기화 시 체적 <strong>약 1,700배 팽창</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">무상주수(안개주수)의 3대 특수 효과</div>
+                <div>비표면적 극대화(냉각·질식 상승), <strong>C급 전기화재 비전도성 적응</strong>, 고점도 중질유 <strong>유화(Emulsion) 소화</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">강화액 (탄산칼륨 K<sub>2</sub>CO<sub>3</sub> 수용액)</div>
+                <div>영하 20℃ 부동성 + 부촉매 + 비누화 작용 ➔ <strong>A급 일반화재 및 K급 주방 식용유 화재</strong> 특화</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">침투제(침윤수) vs 증점제(점성수)</div>
+                <div>· <strong>침투제</strong>: 표면장력 감소, 솜·석탄 심부 침투<br/>· <strong>증점제(CMC)</strong>: 점도 증가, <strong>산림화재</strong> 벽면 부착</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 수치: 물의 비열 <strong>1 cal/(g&middot;℃)</strong> · 융해잠열 <strong>80 cal/g</strong> · 증발잠열 <strong>539 cal/g</strong> (체적 <strong>1,700배</strong> 팽창) / 수용성 위험물(알코올·아세톤) 화재 시 반드시 <strong>내알코올포(수성막포 제외)</strong> 사용!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 4대 포(Foam) 소화약제 비교 및 4대 포 혼합방식(Proportioner)</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">단백포 · 합성계면활성제포 · 수성막포(AFFF) · 내알코올포</div>
+                <ul class="schema-list">
+                  <li><strong>단백포</strong>(내열·안정성 최고, 유동·저장성 낮음) / <strong>수성막포 AFFF</strong>(불소계 수성막 형성, 유동성·진압속도 최고, 분말과 병용)</li>
+                  <li><strong>내알코올포</strong>: 알코올·아세톤·에테르 등 <strong>수용성(친수성) 위험물 화재</strong> 시 고분자 젤 막을 형성해 유일하게 적응!</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">포 혼합방식 4종 (3%형 · 6%형 혼합기)</div>
+                <ul class="schema-list">
+                  <li><strong>라인 프로포셔너</strong>(벤투리 부압 흡입만 이용) / <strong>프레셔 프로포셔너</strong>(가압수 탱크 가압 + 벤투리 작용 병행)</li>
+                  <li><strong>프레셔 사이드 프로포셔너</strong>(전용 <strong>원액 압입펌프</strong>로 대규모 배관 강제 주입) / <strong>펌프 프로포셔너</strong>(소방차 바이패스 흡입)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 물 소화약제의 열역학적 냉각 메커니즘 및 포(Foam) 소화약제 종류별·혼합방식별 비교</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (12문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (14문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="03_01_화재의_분류_소화원리와_화재조사_피해산정.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제3편 제1장)
+      </a>
+      <a href="03_03_가스계소화약제와_분말소화약제_1234종.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제3편 제3장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제3편 화재론 및 소화약제론 2장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제3편 화재론 및 소화약제론 2장",
+  "totalQuestions": 12,
+  "themes": [
+    {
+      "name": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+      "qCount": 5,
+      "examCount": 10,
+      "years": "2020년 소방공채·경채 Q15, 2022년 소방공채·경채 Q19, 2023년 소방공채·경채 Q22, 2023년 소방공채·경채 Q25 외",
+      "summary": "고발포(고팽창포) 제1종·제2종·제3종 기계포의 팽창비 구분"
+    },
+    {
+      "name": "포소화약제 4대 혼합방식(라인·펌프·프레셔·프레셔사이드)",
+      "qCount": 4,
+      "examCount": 8,
+      "years": "2018년 소방공채·경채 Q19, 2019년 소방공채·경채 Q4, 2021년 소방공채·경채 Q11, 2025년 소방공채·경채 Q22",
+      "summary": "포소화약제 혼합방식 중 라인 프로포셔너(Line Proportioner) 방식"
+    },
+    {
+      "name": "물 소화약제 특성 및 첨가제(침투제·부동제·증점제)",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2020년 소방공채·경채 Q2, 2021년 소방공채·경채 Q18, 2025년 소방공채·경채 Q2",
+      "summary": "물 소화약제 첨가제(침투제·증점제·부동제·유화제)의 기능"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂018₁9",
+    "year": 2018,
+    "q_num": 19,
+    "appearances": 2,
+    "source": "2018년 소방공채·경채 Q19",
+    "topic": "포소화약제 혼합방식 중 라인 프로포셔너(Line Proportioner) 방식",
+    "freq_key": "포소화약제 4대 혼합방식(라인·펌프·프레셔·프레셔사이드)",
+    "stem": "포소화약제의 혼합방식 중 펌프와 발포기의 중간에 설치된 벤츄리(Venturi) 관의 벤츄리(Venturi) 작용에 의하여 포소화 약제를 흡입·혼합하는 것은?",
+    "stem_box": "",
+    "choices": [
+      "라인 프로포셔너(Line Proportioner)",
+      "펌프 프로포셔너(Pump Proportioner)",
+      "프레셔 프로포셔너(Pressure Proportioner)",
+      "프레셔 사이드 프로포셔너(Pressure Side Proportioner)"
+    ],
+    "ans": 1,
+    "q_expl": "포소화설비의 4대 혼합방식[라인 프로포셔너(펌프와 발포기 중간 배관의 벤추리관 작용만으로 흡입), 펌프 프로포셔너(펌프 토출수 일부를 흡입기로 보내 펌프 흡입측으로 약제 흡입, 화학소방차용), 프레셔 프로포셔너(벤추리관 작용 + 가압수의 약제탱크 가압 병행), 프레셔사이드 프로포셔너(토출관 압입기에 별도의 약제 압입용 펌프로 강제 압입, 대규모 플랜트용)]을 묻는 초빈출 S등급 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 펌프와 발포기의 중간에 설치된 벤추리(Venturi)관의 벤추리 작용(유속 증가에 따른 부압 형성)만으로 포소화약제를 흡입·혼합하는 방식은 '라인 프로포셔너(Line Proportioner)'입니다.",
+      "[틀림] 펌프 프로포셔너는 펌프의 토출관과 흡입관 사이의 바이패스 배관에 설치된 흡입기(농도조절밸브)를 통해 약제를 펌프 흡입측으로 보내 혼합하는 방식입니다.",
+      "[틀림] 프레셔 프로포셔너는 벤추리관의 벤추리 작용과 함께 펌프 가압수가 포소화약제 저장탱크를 누르는 압력을 병행하여 혼합하는 방식입니다.",
+      "[틀림] 프레셔 사이드 프로포셔너는 펌프 토출관에 압입기를 설치하고 별도의 포소화약제 압입용 펌프로 약제를 강제 압입하여 혼합하는 방식입니다."
+    ]
+  },
+  {
+    "id": "Q₂019₄",
+    "year": 2019,
+    "q_num": 4,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q4",
+    "topic": "포소화설비의 프레셔사이드 프로포셔너(Pressure Side Proportioner) 방식",
+    "freq_key": "포소화약제 4대 혼합방식(라인·펌프·프레셔·프레셔사이드)",
+    "stem": "포소화설비에서 펌프의 토출관에 압입기를 설치하여 포 소화약제 압입용 펌프로 포 소화약제를 압입시켜 혼합 하는 방식은?",
+    "stem_box": "",
+    "choices": [
+      "라인 프로포셔너(line proportioner)",
+      "펌프 프로포셔너(pump proportioner)",
+      "프레셔 프로포셔너(pressure proportioner)",
+      "프레셔사이드 프로포셔너(pressure side proportioner)"
+    ],
+    "ans": 4,
+    "q_expl": "2018년 19번에 이어 출제된 포 혼합방식 문항으로, '펌프의 토출관에 압입기를 설치하여 포소화약제 압입용 펌프로 약제를 압입시켜 혼합하는 방식'은 '프레셔사이드 프로포셔너'입니다.",
+    "c_expls": [
+      "[틀림] 라인 프로포셔너는 펌프와 발포기 사이 벤추리관의 벤추리 작용만으로 흡입하는 방식입니다.",
+      "[틀림] 펌프 프로포셔너는 펌프 토출관과 흡입관 사이 흡입기를 통해 약제를 펌프 흡입측으로 보내는 방식입니다.",
+      "[틀림] 프레셔 프로포셔너는 벤추리 작용과 가압수의 약제탱크 가압을 병행하는 방식입니다.",
+      "[옳음 · 정답] 펌프의 토출관에 압입기를 설치하고 별도의 '포소화약제 압입용 펌프'로 약제를 압입시켜 혼합하는 방식은 '프레셔사이드 프로포셔너'입니다."
+    ]
+  },
+  {
+    "id": "Q₂020₂",
+    "year": 2020,
+    "q_num": 2,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q2",
+    "topic": "물 소화약제 첨가제(침투제·증점제·부동제·유화제)의 기능",
+    "freq_key": "물 소화약제 특성 및 첨가제(침투제·부동제·증점제)",
+    "stem": "물 소화약제 첨가제 중 주요 기능이 물의 표면장력을 작게 하여 심부화재에 대한 적응성을 높여 주는 것은?",
+    "stem_box": "",
+    "choices": [
+      "부동제",
+      "증점제",
+      "침투제",
+      "유화제"
+    ],
+    "ans": 3,
+    "q_expl": "물 소화약제의 단점을 보완하기 위한 첨가제[침투제(계면활성제를 첨가해 물의 표면장력을 낮추어 면화·석탄·목재 등 심부화재 침투성 향상), 증점제(점도를 높여 수직 벽면 부착성 향상, 산불 등), 부동제(빙점을 낮추어 동결 방지, 에틸렌글리콜·염화칼슘 등)]를 묻는 빈출 문항입니다.",
+    "c_expls": [
+      "[틀림] 부동제는 겨울철 물의 어는점을 낮추어 동파·응고를 방지하는 첨가제(에틸렌글리콜, 프로필렌글리콜, 글리세린, 염화칼슘 등)입니다.",
+      "[틀림] 증점제는 물의 점성을 높여(CMC, 폴리에틸렌옥사이드 등) 가연물 표면에 물이 오래 달라붙어 있게 하는 첨가제입니다.",
+      "[옳음 · 정답] 침투제(계면활성제, Wetting Agent)는 물의 높은 표면장력(상온 약 72.8dyne/cm)을 작게 낮추어 면화류·석탄·목재 내부 깊숙한 곳(심부화재)까지 물이 잘 스며들게 하는 첨가제입니다.",
+      "[틀림] 유화제는 물과 기름의 유화 작용을 돕는 물질입니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁5",
+    "year": 2020,
+    "q_num": 15,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q15",
+    "topic": "고발포(고팽창포) 제1종·제2종·제3종 기계포의 팽창비 구분",
+    "freq_key": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+    "stem": "고발포인 제2종 기계포의 팽창비에 해당하는 것은?",
+    "stem_box": "",
+    "choices": [
+      "10배 이상 20배 이하",
+      "100배 이상 200배 이하",
+      "300배 이상 400배 이하",
+      "500배 이상 600배 이하"
+    ],
+    "ans": 3,
+    "q_expl": "포소화약제의 팽창비(발포배율 = 최종 생성된 포의 체적 / 원래 포 수용액의 체적) 분류 기준을 묻는 문항입니다.\n- 저발포(저팽창포): 팽창비 20배 이하 · 고발포(고팽창포): 제1종 기계포(80배 이상 250배 미만), 제2종 기계포(250배 이상 500배 미만), 제3종 기계포(500배 이상 1,000배 이하).\n따라서 '300배 이상 400배 이하'는 250배 이상 500배 미만 구간인 '제2종 기계포'에 해당합니다.",
+    "c_expls": [
+      "[틀림] 10배 이상 20배 이하는 '저발포(저팽창포)'에 해당합니다.",
+      "[틀림] 100배 이상 200배 이하는 80배 이상 250배 미만 구간인 고발포 '제1종 기계포'에 해당합니다.",
+      "[옳음 · 정답] 고발포 제2종 기계포의 팽창비 범위는 '250배 이상 500배 미만'이므로, 이 구간에 속하는 '300배 이상 400배 이하'가 정답입니다.",
+      "[틀림] 500배 이상 600배 이하는 500배 이상 1,000배 이하 구간인 고발포 '제3종 기계포'에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂021₁1",
+    "year": 2021,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q11",
+    "topic": "포혼합장치 중 펌프 프로포셔너(Pump Proportioner) 계통도 식별",
+    "freq_key": "포소화약제 4대 혼합방식(라인·펌프·프레셔·프레셔사이드)",
+    "stem": "포혼합장치 중 펌프 프로포셔너(pump proportioner) 방식에 해당하는 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 계통도 4종 구성 요약]</strong>· <strong>①번 도식</strong>: 펌프와 발포기 사이 배관 도중에 벤추리관만 설치되어 포 원액을 흡입하는 구조 (<strong>라인 프로포셔너</strong>)<br/>· <strong>②번 도식</strong>: 주펌프의 토출관과 흡입관 사이 바이패스(순환) 배관에 흡입기(농도조절밸브)를 설치하여 포 원액을 펌프 흡입측으로 끌어들이는 구조 (<strong>펌프 프로포셔너 · 정답</strong>)<br/>· <strong>③번 도식</strong>: 펌프 토출수의 일부를 포 소화약제 저장탱크 내부로 보내 가압·배출시키는 구조 (<strong>프레셔 프로포셔너</strong>)<br/>· <strong>④번 도식</strong>: 주펌프 외에 별도의 포 약제 압입용 펌프(전동기)가 설치되어 토출관의 압입기로 밀어 넣는 구조 (<strong>프레셔사이드 프로포셔너</strong>)",
+    "choices": [
+      "[도식 ①] 배관 도중의 벤추리관 작용만으로 포 원액을 흡입·혼합하는 계통도 (라인 프로포셔너)",
+      "[도식 ②] 펌프 토출관과 흡입관 사이의 바이패스 배관 및 흡입기(농도조절밸브)로 포 원액을 흡입하는 계통도 (펌프 프로포셔너)",
+      "[도식 ③] 가압수 배관을 통해 포 약제 저장탱크 내부에 수압을 가하여 포 원액을 혼합기로 보내는 계통도 (프레셔 프로포셔너)",
+      "[도식 ④] 별도의 포 소화약제 압입용 펌프를 설치하여 주펌프 토출관의 압입기로 약제를 압입하는 계통도 (프레셔사이드 프로포셔너)"
+    ],
+    "ans": 2,
+    "q_expl": "포소화설비 4대 혼합방식의 계통도 그림을 보고 '펌프 프로포셔너(Pump Proportioner)'를 찾는 문항입니다. 펌프 프로포셔너는 주펌프의 토출측과 흡입측을 연결하는 바이패스 배관에 흡입기(농도조절밸브)가 설치되어 있어 물이 펌프 자체로 순환하며 포 원액을 빨아들이는 구조입니다.",
+    "c_expls": [
+      "[틀림] ①번 그림은 배관 도중 벤추리관만으로 흡입하는 라인 프로포셔너(또는 다른 방식)입니다.",
+      "[옳음 · 정답] ②번 그림은 펌프의 토출관과 흡입관 사이의 바이패스 배관 도중에 설치한 흡입기(농도조정밸브)를 통해 포소화약제를 펌프 흡입측으로 보내 혼합하는 '펌프 프로포셔너' 방식입니다.",
+      "[틀림] 프레셔 프로포셔너(가압수가 약제탱크를 가압하는 구조)에 해당합니다.",
+      "[틀림] 프레셔사이드 프로포셔너(별도의 약제 압입용 펌프가 있는 구조)에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂021₁8",
+    "year": 2021,
+    "q_num": 18,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q18",
+    "topic": "물 소화약제의 열역학적 특성(비열·기화잠열)과 주수 형태별 화재 적응성",
+    "freq_key": "물 소화약제 특성 및 첨가제(침투제·부동제·증점제)",
+    "stem": "물소화약제에 대한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "질식소화 작용은 기대하기 어렵다.",
+      "분무상으로 방사 시 B급화재 및 C급화재에도 적응성이 있다.",
+      "물은 비열과 기화열 값이 작아 냉각소화 효과가 우수 하다.",
+      "수용성 가연물질인 알코올, 에테르, 에스테르 등으로 인한 화재에는 적응성이 없다."
+    ],
+    "ans": 2,
+    "q_expl": "물 소화약제의 핵심 물성[비열(1 cal/g·℃)과 증발잠열(539 cal/g)이 다른 물질보다 월등히 '커서' 냉각소화 효과가 가장 우수함 / 기화 시 약 1,700배 부피 팽창으로 '질식소화' 병행 / 알코올 등 수용성 액체화재에는 다량 주수 시 '희석소화' 가능 / 무상(분무상) 방사 시 유류(B급) 및 전기(C급, 전기절연성 확보) 화재에도 적응성 있음]을 묻는 S등급 필수 문항입니다.",
+    "c_expls": [
+      "[틀림] 물은 섭씨 100도에서 수증기로 기화할 때 체적이 약 1,700배로 급격히 팽창하여 주변 공기를 밀어내므로(특히 무상주수 시) 우수한 '질식소화' 작용을 병행합니다.",
+      "[옳음 · 정답] 물을 봉상(줄기 형태)으로 방사하면 A급 일반화재에만 적응성이 있으나, 미세한 '분무상(무상)'으로 방사하면 유화·질식작용에 의해 B급(유류) 화재와 전기 비전도성 확보에 의해 C급(전기) 화재에도 적응성이 있습니다.",
+      "[틀림] 물은 비열(1 cal/g·℃)과 기화열(증발잠열, 539 cal/g) 값이 다른 액체에 비해 매우 '커서' 냉각소화 효과가 탁월합니다.",
+      "[틀림] 알코올, 에테르, 케톤 등 수용성 가연물질 화재에는 다량의 물을 주수하여 농도를 낮추는 '희석소화'가 가능하므로 적응성이 있습니다."
+    ]
+  },
+  {
+    "id": "Q₂022₁9",
+    "year": 2022,
+    "q_num": 19,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q19",
+    "topic": "포(Foam) 소화약제 종류별 특성 및 표면하 주입방식(Subsurface Injection)",
+    "freq_key": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+    "stem": "포(foam)에 대한 일반적인 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "불화단백포 및 수성막포는 표면하 주입방식에 사용할 수 있다.",
+      "불소를 함유하고 있는 합성계면활성제포는 친수성이 므로 유동성과 내유성이 좋다.",
+      "단백포는 유동성은 좋으나, 내화성은 나쁘다.",
+      "알콜형포 사용 시 비누화현상이 일어나면 소화능력이 떨어진다."
+    ],
+    "ans": 1,
+    "q_expl": "유류탱크 하부에서 포를 주입하여 유류층을 뚫고 표면으로 떠올라 덮게 하는 '표면하 주입방식(Subsurface Injection)'은 기름에 오염되지 않는 내유성(기름 저항성)이 뛰어나야 하므로, 불소계 계면활성제가 포함된 '불화단백포'와 '수성막포(AFFF)'만 사용할 수 있습니다(단백포나 일반 합성계면활성제포는 기름과 섞여 파괴되므로 사용 불가).",
+    "c_expls": [
+      "[옳음 · 정답] 불화단백포 및 수성막포는 불소계 계면활성제를 함유하여 유류에 오염되지 않는 내유성이 우수하므로 유류탱크 하부로 주입하는 '표면하 주입방식'에 사용할 수 있습니다.",
+      "[틀림] 불소를 함유한 포는 수성막포와 불화단백포이며, 일반 합성계면활성제포는 불소를 함유하지 않고 친유성(기름과 잘 섞임)이 있어 내유성이 떨어지므로 표면하 주입방식에 쓸 수 없습니다.",
+      "[틀림] 단백포는 거품이 견고하여 '내열성·내화성은 매우 우수'하나, 점성이 커서 '유동성이 나쁘고' 소화속도가 느린 것이 단점입니다(설명이 반대로 됨).",
+      "[틀림] 비누화 현상은 동·식물유 화재(K급)에서 알칼리염 약제가 만드는 소화 기전이며, 수용성 위험물(알코올·케톤 등)에 사용하는 알코올형포는 고분자 젤(Gel) 피막을 형성하여 포가 수용성 액체에 녹아 파괴되는 것을 방지합니다."
+    ]
+  },
+  {
+    "id": "Q₂023₂2",
+    "year": 2023,
+    "q_num": 22,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q22",
+    "topic": "유류탱크 하부 포 주입(표면하 주입방식)에 적합한 포 소화약제",
+    "freq_key": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+    "stem": "다음 그림의 주입 방식에 가장 적합한 포 소화약제로만 짝 지어진 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 그림 복원: 유류저장탱크 하부 포 주입 방식(표면하 주입방식, Subsurface Injection) 모식도]</strong>· 대형 위험물 유류저장탱크 상부 화재 시, 고 발포기 및탱크 하부 유류 배관을 통해 포(거품)를 주입하여 <strong>포가 유류층 내부를 통과해 유류 표면으로 떠올라 피복·질식소화</strong>하는 계통도입니다.",
+    "choices": [
+      "단백포, 불화단백포",
+      "수성막포, 불화단백포",
+      "합성계면활성제포, 수성막포",
+      "단백포, 수성막포"
+    ],
+    "ans": 2,
+    "q_expl": "2022년 19번 선지 ①을 그림 문제로 변형 출제한 2023년 기출 문항입니다. 그림은 유류저장탱크 하부 배관을 통해 포를 주입하여 유류층을 통과해 표면으로 부상시키는 '표면하 주입방식(Subsurface Injection)'을 나타내며, 여기에 사용 가능한 포 소화약제는 내유성이 뛰어난 '수성막포(AFFF)'와 '불화단백포(FP)' 2종뿐입니다.",
+    "c_expls": [
+      "[틀림] 단백포는 내유성이 없어 유류층을 통과하는 동안 기름에 오염·파괴되므로 표면하 주입방식에 사용할 수 없습니다.",
+      "[옳음 · 정답] 유류탱크 하부로 주입하는 표면하 주입방식에 적합한 포 소화약제는 불소계 계면활성제가 포함되어 내유성이 우수한 '수성막포, 불화단백포'입니다.",
+      "[틀림] 합성계면활성제포는 친유성이 강해 유류와 섞이므로 표면하 주입방식에 사용할 수 없습니다.",
+      "[틀림] 표면하 주입방식(Subsurface Injection)에는 유류에 오염되지 않는 '불화단백포, 수성막포, 내알코올형 수성막포'만 사용할 수 있으며, 일반 '단백포'는 유류 통과 시 포가 파괴되어 사용할 수 없습니다."
+    ]
+  },
+  {
+    "id": "Q₂023₂5",
+    "year": 2023,
+    "q_num": 25,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q25",
+    "topic": "포소화설비의 팽창비 정의·연성계·국소방출방식·프레셔사이드 프로포셔너",
+    "freq_key": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+    "stem": "포소화설비에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "팽창비란 최종 발생한 포 수용액 체적을 원래 포 체적으로 나눈 값을 말한다.",
+      "연성계란 대기압 이상의 압력과 대기압 이하의 압력을 측정할 수 있는 계측기를 말한다.",
+      "국소방출방식이란 소화약제 공급장치에 배관 및 분사 헤드 등을 설치하여 직접 화점에 소화약제를 방출하는 방식을 말한다.",
+      "프레셔사이드 프로포셔너방식이란 펌프의 토출관에 압입 기를 설치하여 포 소화약제 압입용펌프로 포 소화약제를 압입시켜 혼합하는 방식을 말한다."
+    ],
+    "ans": 1,
+    "q_expl": "｢포소화설비의 화재안전성능기준(NFPC 105)｣ 제3조(정의) 조문을 묻는 문항입니다. '팽창비(발포배율)'란 최종 발생한 '포(거품)의 체적'을 원래 '포 수용액(물+포원액)의 체적'으로 나눈 값을 말합니다. 선지 ①은 분자와 분모를 반대로 뒤집어 서술하였습니다.",
+    "c_expls": [
+      "[틀림 · 정답] '팽창비'란 최종 발생한 '포(Foam)의 체적'을 원래의 '포 수용액(포 원액 + 물)의 체적'으로 나눈 값을 말합니다(선지는 분자와 분모를 거꾸로 서술함).",
+      "[옳음] 연성계(Compound Gauge)는 펌프 흡입측에 설치하여 대기압 이상의 정압(양압)과 대기압 이하의 부압(진공압)을 모두 측정할 수 있는 계측기입니다.",
+      "[옳음] 국소방출방식은 소화약제 공급장치에 배관 및 분사헤드 등을 설치하여 방호대상물(화점)에 직접 소화약제를 방출하는 방식입니다.",
+      "[옳음] 프레셔사이드 프로포셔너 방식은 펌프의 토출관에 압입기를 설치하여 포 소화약제 압입용 펌프로 약제를 압입시켜 혼합하는 방식입니다."
+    ]
+  },
+  {
+    "id": "Q₂024₂2",
+    "year": 2024,
+    "q_num": 22,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q22",
+    "topic": "포 소화약제 4종(단백포·불화단백포·수성막포·합성계면활성제포·알코올형포) 비교",
+    "freq_key": "포 소화약제 종류별 특성·표면하주입방식·팽창비",
+    "stem": "포 소화약제에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "불화단백포 소화약제는 불소계 계면활성제를 첨가하여 단백포 소화약제의 단점인 유동성을 보완하였다.",
+      "알콜형포 소화약제는 케톤류, 알데히드류, 아민류 등 수용성 용제의 소화에 사용할 수 있다.",
+      "단백포 소화약제는 단백질을 가수분해 한 것을 주원료로 하며 내유성이 뛰어나 소화속도가 빠르다.",
+      "합성계면활성제포 소화약제는 유동성과 저장성이 우수 하며 저팽창포부터 고팽창포까지 사용할 수 있다."
+    ],
+    "ans": 3,
+    "q_expl": "2022년 19번과 동일하게 단백포와 불화단백포의 특성을 대조한 2024년 기출 문항입니다. 동·식물성 단백질을 가수분해하여 만든 '단백포'는 내열성과 안정성은 좋으나 점성이 커서 유동성이 나쁘고 기름에 쉽게 오염(내유성 불량)되므로 소화속도가 느립니다.",
+    "c_expls": [
+      "[옳음] 불화단백포는 단백포에 불소계 계면활성제를 첨가하여 단백포의 단점인 낮은 유동성과 낮은 내유성을 보완한 약제입니다.",
+      "[옳음] 알코올형포(내알코올포)는 알코올류, 케톤류(아세톤), 알데히드류, 에테르류, 에스테르류, 아민류 등 수용성 인화성 액체(제4류 위험물) 화재 소화에 사용합니다.",
+      "[틀림 · 정답] 단백포는 단백질을 가수분해한 것을 주원료로 하나, 기름에 오염되기 쉬워 '내유성이 나쁘고' 점성이 커서 유동성이 떨어지므로 '소화속도가 느립니다'(내유성이 뛰어나고 유동성·소화속도가 빠른 것은 수성막포와 불화단백포).",
+      "[옳음] 합성계면활성제포는 유동성과 장기 저장성이 우수하며, 저팽창포(저발포)부터 고팽창포(고발포)까지 모두 사용할 수 있는 유일한 포 약제입니다."
+    ]
+  },
+  {
+    "id": "Q₂025₂",
+    "year": 2025,
+    "q_num": 2,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q2",
+    "topic": "물 소화약제의 동결방지 첨가제(부동제 vs 증점제)",
+    "freq_key": "물 소화약제 특성 및 첨가제(침투제·부동제·증점제)",
+    "stem": "<보기>에서 설명하는 물소화약제의 첨가제로 옳지 않은 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>물의 어는점(1기압, 0℃) 이하에서 동파 및 응고현상을 방지하기 위하여 첨가하는 물질",
+    "choices": [
+      "염화칼슘(Calcium Chloride)",
+      "글리세린(Glycerin)",
+      "프로필렌글리콜(Propylene Glycol)",
+      "폴리에틸렌옥사이드(Polyethylene Oxide)"
+    ],
+    "ans": 4,
+    "q_expl": "물의 어는점(섭씨 0도) 이하에서 동파 및 응고를 방지하기 위해 첨가하는 '부동제(Antifreeze: 에틸렌글리콜, 프로필렌글리콜, 디에틸렌글리콜, 글리세린, 염화칼슘, 염화나트륨, 탄산칼륨 등)'와 마찰저항 감소제·증점제인 '폴리에틸렌옥사이드(Polyethylene Oxide)'를 구분하는 2025년 기출 문항입니다.",
+    "c_expls": [
+      "[옳음] 염화칼슘(CaCl₂)은 물의 빙점을 낮추는 대표적인 무기염류 부동제입니다.",
+      "[옳음] 글리세린(Glycerin)은 다가 알코올류로서 물의 동결을 방지하는 부동제로 사용됩니다.",
+      "[옳음] 프로필렌글리콜(Propylene Glycol)은 에틸렌글리콜과 함께 가장 널리 쓰이는 부동제입니다.",
+      "[틀림 · 정답] 폴리에틸렌옥사이드(Polyethylene Oxide)는 부동제가 아니라, 배관 내 물의 마찰손실을 줄여 방수거리와 유량을 늘려주는 '마찰저항 감소제(유동성 개량제)' 또는 점도를 높이는 '증점제'로 사용되는 고분자 물질입니다."
+    ]
+  },
+  {
+    "id": "Q₂025₂2",
+    "year": 2025,
+    "q_num": 22,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q22",
+    "topic": "포소화약제 4대 혼합방식(펌프·라인·프레셔·프레셔사이드) 계통도 및 장단점 비교",
+    "freq_key": "포소화약제 4대 혼합방식(라인·펌프·프레셔·프레셔사이드)",
+    "stem": "( 가 )에서 ( 라 )의 포소화약제 혼합방식에 관한 설명으로 옳지 않은 것은? ( 가 ) ( 나 ) ( 다 ) ( 라 )",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 도식 ( 가 )·( 나 )·( 다 )·( 라 ) 포소화약제 4대 혼합방식 계통도 복원]</strong>· <strong>( 가 ) 펌프 프로포셔너(Pump Proportioner)</strong>: 주펌프 토출측과 흡입측 바이패스 배관에 흡입기(농도조절밸브) 설치 (화학소방차 주로 사용)<br/>· <strong>( 나 ) 라인 프로포셔너(Line Proportioner)</strong>: 펌프와 노즐 사이 배관 도중에 벤추리관 흡입기만 설치 (구조가 가장 간단하나 <strong>혼합기 압력손실이 크고 흡입 가능 유량 범위가 좁음</strong>)<br/>· <strong>( 다 ) 프레셔 프로포셔너(Pressure Proportioner)</strong>: 약제 탱크 내부에 다이아프램(격막)이 있는 다이아프램식의 경우 원액과 물이 섞이지 않아 남은 약제 원액 재사용 가능<br/>· <strong>( 라 ) 프레셔사이드 프로포셔너(Pressure Side Proportioner)</strong>: 별도의 약제 압입용 펌프 사용 (대규모 석유화학 플랜트·비행기 격납고 고정식 설비에 주로 사용)",
+    "choices": [
+      "( 가 ) : 화학소방차에 주로 사용하는 방식이다.",
+      "( 나 ) : 혼합기의 압력손실이 적고, 흡입 가능한 유량의 범위가 넓다.",
+      "( 다 ) : 약제 원액 잔량을 버리지 않고 계속 사용할 수 있다.",
+      "( 라 ) : 비행기 격납고, 석유화학 플랜트 등과 같은 대단위 고정식 소화설비에 주로 사용하며, 설치비가 비싸다."
+    ],
+    "ans": 2,
+    "q_expl": "( 가 ) 펌프 프로포셔너, ( 나 ) 라인 프로포셔너, ( 다 ) 프레셔 프로포셔너(다이어프램 내장 압송식), ( 라 ) 프레셔사이드 프로포셔너의 계통도와 각각의 실무적 장단점을 물어본 2025년 기출 문항입니다. ( 나 ) 라인 프로포셔너 방식은 벤추리관의 좁은 목 부분에서 유속 차만으로 흡입하므로 '혼합기의 압력손실이 매우 크고(약 30에서 35%), 흡입 가능한 유량의 범위가 좁다'는 치명적 단점이 있습니다.",
+    "c_expls": [
+      "[옳음] ( 가 )는 펌프 프로포셔너 방식으로서 구조가 간단하고 펌프 자체 흡입력을 이용하므로 화학소방차에 주로 사용합니다.",
+      "[틀림 · 정답] ( 나 )는 라인 프로포셔너 방식으로서 벤추리관의 벤추리 작용만으로 포 원액을 빨아들이기 때문에 '혼합기에서의 압력손실이 크고, 흡입 가능한 유량의 범위가 좁다'는 단점이 있습니다(압력손실이 적고 유량 범위가 넓은 것은 프레셔사이드 프로포셔너).",
+      "[옳음] ( 다 )는 격막(다이어프램)이 있는 프레셔 프로포셔너 방식으로서 물과 포 원액이 직접 섞이지 않아 사용 후 남은 약제 원액 잔량을 버리지 않고 계속 재사용할 수 있습니다.",
+      "[옳음] ( 라 )는 별도의 포 원액 압입용 펌프를 사용하는 프레셔사이드 프로포셔너 방식으로서 비행기 격납고, 석유화학 플랜트 같은 대규모 고정식 설비에 주로 쓰이며 설치비가 비쌉니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "S",
+    "text": "화재면에 물을 분무 주수하여 기화열을 흡수하는 것은 부촉매소화이다.",
+    "isCorrect": false,
+    "source": "소화약제 기출",
+    "explanation": "물의 기화열을 흡수하여 온도를 떨어뜨리는 것은 냉각소화입니다. 부촉매소화는 라디칼 화학적 억제 반응입니다.",
+    "origQId": "",
+    "id": "SCI₀3₀2₀01"
+  },
+  {
+    "grade": "S",
+    "text": "B급 화재(유류화재)에 포 소화약제를 도포하여 소화하는 주원리는 질식소화이다.",
+    "isCorrect": true,
+    "source": "소화약제 기출",
+    "explanation": "유류 표면에 기포층을 덮어 공기 중 산소의 접촉을 차단하는 피복 질식소화가 포의 기본 원리입니다.",
+    "origQId": "",
+    "id": "SCI₀3₀2₀03"
+  },
+  {
+    "grade": "S",
+    "text": "포소화약제 혼합방식 중 펌프와 발포기의 중간에 설치된 벤추리관의 벤추리 작용에 의하여 포소화약제를 흡입·혼합하는 방식은 '라인 프로포셔너(Line Proportioner)'이다.",
+    "isCorrect": true,
+    "source": "2018년 소방공채·경채 Q19 기출",
+    "explanation": "벤추리관의 벤추리 작용만 이용하면 라인 프로포셔너이고, 벤추리 작용에 가압수의 탱크 가압까지 더해지면 프레셔 프로포셔너입니다.",
+    "origQId": "Q₂018₁9",
+    "id": "SCI₀3₀2₀06"
+  },
+  {
+    "grade": "S",
+    "text": "포소화설비에서 펌프의 토출관에 압입기를 설치하여 포소화약제 압입용 펌프로 포소화약제를 압입시켜 혼합하는 방식은 '프레셔사이드 프로포셔너'이다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q4 기출",
+    "explanation": "'압입기'와 '포소화약제 압입용 펌프'라는 키워드가 나오면 항상 프레셔사이드 프로포셔너 방식입니다.",
+    "origQId": "Q₂019₄",
+    "id": "SCI₀3₀2₀08"
+  },
+  {
+    "grade": "S",
+    "text": "물 소화약제 첨가제 중 물의 표면장력을 작게 하여 심부화재에 대한 침투성과 적응성을 높여 주는 것은 '침투제(계면활성제)'이고, 점도를 높여 부착성을 향상시키는 것은 '증점제'이다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q2 기출",
+    "explanation": "물은 표면장력이 커서 섬유·석탄 내부로 잘 스며들지 못하므로, 계면활성제인 침투제를 넣어 표면장력을 낮추어 주면 심부화재 소화력이 극대화됩니다.",
+    "origQId": "Q₂020₂",
+    "id": "SCI₀3₀2₀11"
+  },
+  {
+    "grade": "A",
+    "text": "포소화약제의 팽창비 기준에서 저발포는 20배 이하이며, 고발포는 제1종 기계포(80배 이상 250배 미만), 제2종 기계포(250배 이상 500배 미만), 제3종 기계포(500배 이상 1,000배 이하)로 구분된다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q15 기출",
+    "explanation": "300배에서 400배는 제2종 기계포(250배 이상 500배 미만)에 속합니다.",
+    "origQId": "Q₂020₁5",
+    "id": "SCI₀3₀2₀12"
+  },
+  {
+    "grade": "S",
+    "text": "포혼합장치 중 펌프의 토출관과 흡입관 사이의 배관 도중에 설치한 흡입기에 토출수의 일부를 보내고 농도조정밸브에서 조정된 포 약제를 펌프 흡입측으로 보내 혼합하는 방식은 '펌프 프로포셔너'이다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q11 기출",
+    "explanation": "펌프 프로포셔너는 펌프의 토출측에서 흡입측으로 되돌아가는 순환 배관과 흡입기가 있는 것이 시각적·기능적 특징이며 주로 화학소방차에 쓰입니다.",
+    "origQId": "Q₂021₁1",
+    "id": "SCI₀3₀2₀13"
+  },
+  {
+    "grade": "S",
+    "text": "물은 비열(1cal/g·℃)과 기화잠열(539cal/g)이 매우 커서 냉각소화 효과가 가장 우수하며, 기화 시 체적이 약 1,700배 팽창하여 질식소화 작용도 병행한다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q18 기출",
+    "explanation": "물의 높은 비열과 증발잠열은 냉각소화의 원천이며, 1,700배 수증기 체적 팽창은 질식소화의 원천입니다.",
+    "origQId": "Q₂021₁8",
+    "id": "SCI₀3₀2₀15"
+  },
+  {
+    "grade": "S",
+    "text": "물 소화약제를 분무상(무상)으로 방사할 경우 유화·질식 효과 및 전기 절연성이 확보되어 B급 화재 및 C급 화재에도 적응성이 있다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q18 기출",
+    "explanation": "봉상주수는 A급에만 적응성이 있으나, 분무상(무상) 주수는 A·B·C급 화재에 모두 적응성이 있습니다.",
+    "origQId": "Q₂021₁8",
+    "id": "SCI₀3₀2₀16"
+  },
+  {
+    "grade": "S",
+    "text": "유류탱크 하부에서 포를 주입하는 '표면하 주입방식'에는 내유성이 우수한 '불화단백포'와 '수성막포'만 사용할 수 있으며, 단백포는 사용할 수 없다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q19 기출",
+    "explanation": "단백포는 기름을 통과할 때 유류에 오염되어 포가 파괴되므로 표면하 주입방식에 쓸 수 없으며, 내유성이 뛰어난 수성막포와 불화단백포만 사용 가능합니다.",
+    "origQId": "Q₂022₁9",
+    "id": "SCI₀3₀2₀18"
+  },
+  {
+    "grade": "S",
+    "text": "단백포 소화약제는 내열성(내화성)과 포의 안정성은 우수하나, 유동성과 내유성이 떨어져 불화단백포나 수성막포보다 소화속도가 느리다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q19 기출",
+    "explanation": "단백포의 단점인 낮은 유동성과 낮은 내유성을 보완하기 위해 불소계 계면활성제를 첨가해 개발한 것이 불화단백포입니다.",
+    "origQId": "Q₂022₁9",
+    "id": "SCI₀3₀2₀19"
+  },
+  {
+    "grade": "S",
+    "text": "합성계면활성제포 소화약제는 유동성과 저장성이 우수하며 저팽창포부터 고팽창포까지 모두 사용할 수 있고, 알코올형포는 알코올·케톤(아세톤)·에테르 등 수용성 액체 화재에 사용한다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q22 기출",
+    "explanation": "고발포용으로 주로 쓰이는 약제는 합성계면활성제포이며, 수용성 위험물 화재에는 일반 포가 녹아 파괴되므로 반드시 알코올형포(내알코올포)를 사용해야 합니다.",
+    "origQId": "Q₂024₂2",
+    "id": "SCI₀3₀2₀26"
+  },
+  {
+    "grade": "S",
+    "text": "물 소화약제의 동결을 방지하는 부동제로는 에틸렌글리콜, 프로필렌글리콜, 글리세린, 염화칼슘 등이 사용되며, 폴리에틸렌옥사이드는 부동제가 아니라 마찰저항 감소제(유동성 개량제) 및 증점제로 사용된다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q2 기출",
+    "explanation": "폴리에틸렌옥사이드(Polyethylene Oxide)는 미끄러운 사슬형 고분자로서 소방호스 내 마찰손실을 줄여주는 유동성 개량제(마찰저항 감소제)입니다.",
+    "origQId": "Q₂025₂",
+    "id": "SCI₀3₀2₀27"
+  },
+  {
+    "grade": "S",
+    "text": "포소화약제 혼합방식 중 라인 프로포셔너 방식은 구조가 간단하나 혼합기의 압력손실이 크고 흡입 가능한 유량의 범위가 좁으며, 프레셔사이드 프로포셔너 방식은 대규모 고정식 설비에 주로 사용된다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q22 기출",
+    "explanation": "라인 프로포셔너는 벤추리관 단독 흡입 방식이어서 배관 압력손실이 크고 소규모 설비(호스릴포 등)에만 제한적으로 쓰입니다.",
+    "origQId": "Q₂025₂2",
+    "id": "SCI₀3₀2₀28"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

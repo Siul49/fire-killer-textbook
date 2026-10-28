@@ -1,0 +1,14 @@
+# Ignore heavy PDFs, HWP, and workspace internal files for fast textbook deployment
+*.pdf
+*.hwp
+.agents/
+기출문제/
+한능검_기출문제_PDF/
+UpNote_수험단권화_패키지/
+*.md
+study_logs.json
+갤럭시S26_울트라_웹소설모드_미리보기.html
+고강도_뇌과부하_단기합격_마스터플랜.html
+디자인_시스템_4종_미리보기.html
+옥스퍼드_페이퍼북_디자인시스템_미리보기.html
+교재_최신화_배포.bat

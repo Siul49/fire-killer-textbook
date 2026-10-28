@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제2편 연소 및 폭발 이론 제1장. 연소의 본질, 완전연소 화학양론 및 인화점·발화점 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제2편 제1장. 연소의 본질, 완전연소 화학양론 및 인화점·발화점</span>
+        <span class="text-slate-600">|</span>
+        <a href="02_02_연소범위_위험도_최소산소농도와_연소형태.html" class="hover:text-emerald-300 transition">다음 장: 제2편 제2장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제2편 제1장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제2편 연소 및 폭발 이론 · 제1장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 연소의 정의, 연소의 4요소 및 반응 엔탈피(발열·흡열)</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 탄화수소 완전연소 반응식과 필요 산소량(화학양론) 계산</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 인화점·연소점·발화점의 정의와 탄화수소 물성 변화</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 최소발화에너지(MIE)와 물질의 화재 위험성 판별</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (14문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (24문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제2편 연소 및 폭발 이론</span>
+        <span>·</span>
+        <span>제1장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        연소의 본질, 완전연소 화학양론 및 인화점·발화점
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        빛과 열을 수반하는 급격한 산화반응인 연소의 4요소와 엔탈피 변화를 이해하고, 탄화수소(메탄·프로판·펜탄) 완전연소 시 필요 산소 부피 계산법과 인화점·연소점·발화점 및 최소발화에너지(MIE)의 원리를 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 연소의 정의, 연소의 4요소 및 반응 엔탈피(발열·흡열)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            제2편 연소·화재·폭발 이론은 소방학개론 전체의 심장부입니다. 왜 불이 나고 어떻게 꺼야 하는지를 이해하려면 먼저 '불(연소)이란 대체 무엇인가?'라는 물리·화학적 정의부터 출발해야 합니다. <strong>연소(Combustion)</strong>란 가연물질이 공기 중의 산소(또는 산화제)와 결합하면서 <strong>빛과 열을 동반하는 급격한 산화반응</strong>을 말합니다. 왜 '급격한'이라는 수식어가 붙을까요? 철이 공기 중에서 녹스는 현상이나 우리 몸속 세포가 포도당을 분해하는 호흡 작용도 산소와 결합하는 산화반응이기는 마찬가지이지만, 반응 속도가 너무 느려 발생하는 열이 공기 중으로 다 흩어지고 눈에 보이는 불꽃(빛)이 생기지 않으므로 연소라고 부르지 않기 때문입니다. 불이 시작되려면 <strong>① 가연물(타는 물질), ② 산소공급원(조연성 가스), ③ 점화원(열에너지)</strong>이라는 '연소의 3요소(연소의 삼각형)'가 모여서 숯불처럼 타는 무염연소(표면연소)를 일으킬 수 있으며, 여기에 기상에서 활성 라디칼(OH·, H·, O·)이 꼬리에 꼬리를 물고 이어지는 <strong>④ 순조로운 연쇄반응(Chain Reaction)</strong>이 더해지면 비로소 불꽃을 내며 타오르는 <strong>연소의 4요소(연소의 사면체, 발염연소)</strong>가 완성됩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>연소의 4요소(사면체)</strong>: <strong>가연물 · 산소공급원 · 점화원 · 순조로운 연쇄반응</strong> (무염연소·표면연소는 연쇄반응이 없는 3요소 연소!)</li>
+              <li><strong>발열반응 엔탈피</strong>: 연소는 <strong>반응물의 엔탈피 &gt; 생성물의 엔탈피</strong>인 발열반응(&Delta;H &lt; 0)이며, 정촉매는 활성화에너지(E<sub>a</sub>)만 낮춤</li>
+              <li><strong>불완전연소 생성물</strong>: 산소 부족 시 이산화탄소(CO<sub>2</sub>)나 물(H<sub>2</sub>O) 대신 <strong>일산화탄소(CO), 알데히드, 그을음(검댕)</strong> 다량 발생</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            열역학적으로 볼 때 연소 반응은 연료가 품고 있던 높은 화학 에너지가 밖으로 방출되는 대표적인 <strong>발열반응(Exothermic Reaction)</strong>입니다. 즉 타기 전 반응물의 에너지 상태(엔탈피, H<sub>반응물</sub>)보다 타고 난 뒤 생성물(이산화탄소와 수증기)의 에너지 상태(H<sub>생성물</sub>)가 더 낮기 때문에, 엔탈피 변화량(&Delta;H = H<sub>생성물</sub> &minus; H<sub>반응물</sub>)이 음수(&Delta;H &lt; 0)가 되며 그 낙차만큼의 에너지가 뜨거운 열과 빛으로 쏟아져 나오는 것입니다. 다만 나무와 산소가 상온에서 함께 있다고 저절로 불이 붙지는 않는데, 반응이 시작되려면 <strong>활성화에너지(E<sub>a</sub>)</strong>라는 에너지 고개를 먼저 넘어야 하기 때문입니다. 이때 점화원이 바로 그 고개를 넘겨주는 초기 에너지 역할을 하며, 만약 <strong>정촉매</strong>를 투입하면 반응열(&Delta;H)의 총량은 전혀 바꾸지 않으면서 이 <strong>활성화에너지 장벽만 낮추어 연소 반응 속도를 빠르게</strong> 만들어 줍니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            만약 밀폐된 실내에서 산소 공급이 부족하거나 화염 온도가 너무 낮으면 어떤 일이 벌어질까요? 가연물 속의 탄소(C)가 산소 2개와 온전히 결합하여 무해한 완전연소 생성물인 이산화탄소(CO<sub>2</sub>)와 수증기(H<sub>2</sub>O)가 되지 못하고, 산소 1개와만 어정쩡하게 결합하는 <strong>불완전연소</strong>가 일어납니다. 그 결과 치명적인 질식 독성가스인 <strong>일산화탄소(CO), 자극성 알데히드류(폼알데하이드, 아크롤레인), 시안화수소(HCN), 그리고 타다 남은 탄소 알갱이인 검댕(그을음)</strong>이 다량 뿜어져 나와 피난자의 눈과 호흡기를 마비시키게 됩니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 탄화수소 완전연소 반응식과 필요 산소량(화학양론) 계산</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            연소가 가연물과 산소의 화학 결합이라는 원리를 이해했다면, 이제 시험에 매번 출제되는 '연료 1몰(또는 1세제곱미터)이 완전연소할 때 산소가 정확히 몇 몰(몇 리터) 필요한가?'라는 <strong>화학양론(Stoichiometry) 계산</strong>을 손쉽게 정복할 수 있습니다. 복잡한 화학식을 외울 필요 없이 원자의 짝짓기 규칙 딱 두 가지만 알면 됩니다. 첫째, <strong>탄소 원자 1개(C)는 산소 분자 1개(O<sub>2</sub>)와 만나 이산화탄소 1개(CO<sub>2</sub>)</strong>가 됩니다. 둘째, <strong>수소 원자 4개(4H)마다 산소 분자 1개(O<sub>2</sub>)와 만나 물 분자 2개(2H<sub>2</sub>O)</strong>가 됩니다. 따라서 탄소가 m개, 수소가 n개인 탄화수소(C<sub>m</sub>H<sub>n</sub>) 1몰이 완전연소할 때 필요한 산소(O<sub>2</sub>)의 몰수(양론계수 C<sub>o</sub>)는 언제나 <strong>[ m + (n &divide; 4) ] 몰</strong>입니다! 그리고 표준상태(섭씨 0도, 1기압)에서 모든 이상기체 1몰의 부피는 <strong>22.4리터(L)</strong>이므로, 산소 몰수에 22.4를 곱하면 필요한 산소의 부피가 바로 계산됩니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>탄화수소(C<sub>m</sub>H<sub>n</sub>) 산소 몰수 공식</strong>: 연료 1몰당 필요 산소 몰수 C<sub>o</sub> = m + (n &divide; 4) (표준상태 기체 1몰 부피 = <strong>22.4 L</strong>)</li>
+              <li><strong>필수 암기 산소 몰수</strong>: <strong>메테인(CH<sub>4</sub>) = 2몰</strong>, 에테인(C<sub>2</sub>H<sub>6</sub>) = <strong>3.5몰</strong>, <strong>프로페인(C<sub>3</sub>H<sub>8</sub>) = 5몰</strong>, 뷰테인(C<sub>4</sub>H<sub>10</sub>) = <strong>6.5몰</strong>, <strong>펜테인(C<sub>5</sub>H<sub>12</sub>) = 8몰</strong></li>
+              <li><strong>메틸알코올(CH<sub>3</sub>OH)</strong>: 분자 내 산소 원자가 있으므로 연료 1몰당 필요 산소는 <strong>1.5몰</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이 공식을 실제 기출 단골 연료들에 바로 대입해 봅시다. 첫째, 도시가스(LNG)의 주성분인 <strong>메테인(CH<sub>4</sub>)</strong> 1몰은 탄소 1개와 수소 4개이므로 <strong>1 + (4 &divide; 4) = 2몰</strong>의 산소가 필요합니다(CH<sub>4</sub> + 2O<sub>2</sub> ➔ CO<sub>2</sub> + 2H<sub>2</sub>O). 따라서 표준상태에서 메테인 1몰이 완전연소할 때 필요한 산소 부피는 2몰 &times; 22.4L = <strong>44.8리터</strong>이고, 만약 메테인 2몰(32그램)이 연소한다면 산소 4몰 &times; 22.4L = <strong>89.6리터</strong>가 필요합니다. 둘째, <strong>에테인(C<sub>2</sub>H<sub>6</sub>)</strong> 1몰은 <strong>2 + (6 &divide; 4) = 3.5몰</strong>의 산소가 필요합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, LPG의 주성분인 <strong>프로페인(C<sub>3</sub>H<sub>8</sub>)</strong> 1몰은 <strong>3 + (8 &divide; 4) = 5몰</strong>의 산소가 필요합니다(C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> ➔ 3CO<sub>2</sub> + 4H<sub>2</sub>O). 기체의 몰수 비는 곧 부피 비와 같으므로 프로페인 1세제곱미터(m<sup>3</sup>)가 완전연소하려면 산소 <strong>5세제곱미터(m<sup>3</sup>)</strong>가 필요합니다. 넷째, <strong>뷰테인(C<sub>4</sub>H<sub>10</sub>)</strong> 1몰은 <strong>4 + (10 &divide; 4) = 6.5몰</strong>, 다섯째 <strong>펜테인(C<sub>5</sub>H<sub>12</sub>)</strong> 1몰은 <strong>5 + (12 &divide; 4) = 8몰</strong>의 산소가 필요합니다(탄소수가 1개씩 늘어날 때마다 필요 산소 몰수가 <strong>2몰 ➔ 3.5몰 ➔ 5몰 ➔ 6.5몰 ➔ 8몰</strong>처럼 정확히 <strong>1.5몰씩 등차수열로 증가</strong>한다는 규칙을 알면 1초 만에 암산됩니다!). 한편 알코올류인 <strong>메틸알코올(CH<sub>3</sub>OH)</strong>처럼 분자 안에 이미 산소 원자 1개(산소 분자 0.5몰 분량)를 자체 보유한 경우에는 그만큼을 빼주어 <strong>1 + (4 &divide; 4) &minus; 0.5 = 1.5몰</strong>의 외부 산소가 필요합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">가연성 물질 (화학식)</th>
+                <th style="width:42%;">완전연소 화학반응식</th>
+                <th>연료 1몰당 필요 산소(O<sub>2</sub>) 몰수 · 부피(STP)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>메테인 (CH<sub>4</sub>)</strong></td>
+                <td>CH<sub>4</sub> + 2O<sub>2</sub> ➔ CO<sub>2</sub> + 2H<sub>2</sub>O</td>
+                <td>산소 <strong>2몰</strong> (44.8 L / 2몰 연소 시 <strong>89.6 L</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>에테인 (C<sub>2</sub>H<sub>6</sub>)</strong></td>
+                <td>C<sub>2</sub>H<sub>6</sub> + 3.5O<sub>2</sub> ➔ 2CO<sub>2</sub> + 3H<sub>2</sub>O</td>
+                <td>산소 <strong>3.5몰</strong> (78.4 L)</td>
+              </tr>
+              <tr>
+                <td><strong>프로페인 (C<sub>3</sub>H<sub>8</sub>)</strong></td>
+                <td>C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> ➔ 3CO<sub>2</sub> + 4H<sub>2</sub>O</td>
+                <td>산소 <strong>5몰</strong> (112 L / 1m<sup>3</sup>당 산소 5m<sup>3</sup>)</td>
+              </tr>
+              <tr>
+                <td><strong>펜테인 (C<sub>5</sub>H<sub>12</sub>)</strong></td>
+                <td>C<sub>5</sub>H<sub>12</sub> + 8O<sub>2</sub> ➔ 5CO<sub>2</sub> + 6H<sub>2</sub>O</td>
+                <td>산소 <strong>8몰</strong> (179.2 L)</td>
+              </tr>
+              <tr>
+                <td><strong>메틸알코올 (CH<sub>3</sub>OH)</strong></td>
+                <td>CH<sub>3</sub>OH + 1.5O<sub>2</sub> ➔ CO<sub>2</sub> + 2H<sub>2</sub>O</td>
+                <td>산소 <strong>1.5몰</strong> (33.6 L)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 인화점·연소점·발화점의 정의와 탄화수소 물성 변화</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            가연성 액체는 액체 그 자체가 타는 것이 아니라, 액체 표면에서 증발한 가연성 증기가 공기 중 산소와 섞여서 타는 것입니다(증발연소). 따라서 액체의 온도를 서서히 올릴 때 나타나는 세 가지 온도 지표인 <strong>인화점(Flash Point), 연소점(Fire Point), 발화점(착화점, Ignition Temperature)</strong>은 '증기가 얼마나 피어올랐는가'와 '외부 불꽃(점화원)을 대주었는가'에 따라 명확한 인과관계로 구분됩니다. 먼저 가장 낮은 온도인 <strong>인화점</strong>은 액체 표면에서 증발한 증기 농도가 마침내 불이 붙을 수 있는 최소 농도인 <strong>연소하한계(LFL)</strong>에 도달하여, 외부에서 <strong>점화원(불꽃)을 가까이 대었을 때 '퍽' 하고 순간적으로 불이 붙는 최저 액체 온도</strong>입니다. 인화점에서는 겉에 피어오른 증기만 잠깐 타버리고 액체에서 새로 올라오는 증기 공급 속도가 느리기 때문에 점화원을 치우면 불꽃이 곧 꺼져 버립니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>온도 척도 크기 비교</strong>: 일반 인화성 액체에서 <strong>인화점(점화원 유, LFL 도달 온도) &lt; 연소점(5초 이상 지속 연소) &lt; 발화점(점화원 없이 스스로 발화)</strong></li>
+              <li><strong>파라핀계 탄화수소 탄소수 증가 시 상승</strong>: <strong>분자량 · 비중 · 비점(끓는점) · 인화점 · 발열량</strong> 증가</li>
+              <li><strong>탄소수 증가 시 감소(역전 주의!)</strong>: 사슬이 길어져 열분해가 쉬워지므로 <strong>발화점(착화점) 및 연소하한계(LFL)는 낮아짐!</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            액체를 인화점보다 약 섭씨 5도에서 10도 정도 더 가열하면 증발 속도가 빨라져, 점화원을 대어 불이 붙은 뒤 점화원을 치워도 액체에서 증기가 끊임없이 올라와 <strong>5초 이상 연소가 지속되는 최저 온도</strong>에 도달하는데 이를 <strong>연소점</strong>이라 합니다(이 온도부터는 화염에서 발생하는 열량이 외부로 빼앗기는 손실 열량보다 커서 스스로 증발과 연소를 이어갑니다). 그리고 액체를 훨씬 더 뜨겁게 가열하여, 외부에서 <strong>점화원을 전혀 대지 아니하고도</strong> 열에너지만으로 분자가 활성화되어 스스로 불이 붙는 최저 온도를 <strong>발화점(자연발화점, 착화점)</strong>이라 합니다. 따라서 일반 인화성 액체에서는 언제나 <strong>'인화점 &lt; 연소점 &lt; 발화점'</strong>의 온도 순서를 가집니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            여기서 시험에 가장 자주 나오는 킬러 논리가 바로 <strong>'파라핀계 포화탄화수소(메테인 ➔ 에테인 ➔ 프로페인 ➔ 뷰테인...)에서 탄소 원자 수(분자량)가 증가할수록 인화점과 발화점이 어떻게 변하는가?'</strong>입니다. 탄소수가 많아져 덩치가 무거워질수록 분자 간 인력이 세져서 증발하기 어려워지므로 <strong>비점(끓는점), 비중, 증기비중, 인화점, 단위 몰당 발열량은 모두 함께 증가(상승)</strong>합니다. 그런데 놀랍게도 <strong>발화점(착화점)은 탄소수가 증가할수록 오히려 낮아집니다(감소합니다)!</strong> 왜 인화점은 올라가는데 발화점은 거꾸로 내려갈까요? 탄소 사슬이 길고 복잡할수록 고온에서 사슬 중간이 툭 끊어지는 열분해와 라디칼 생성이 훨씬 쉽게 일어나 스스로 발화하기 쉬워지기 때문입니다. 아울러 <strong>연소하한계(LFL) 역시 탄소수가 증가할수록 낮아진다</strong>는 점까지 묶어서 기억해 두면 완벽합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 최소발화에너지(MIE)와 물질의 화재 위험성 판별</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            가연성 가스와 공기가 연소범위 안에서 섞여 있을 때, 외부에서 전기 스파크 같은 점화원을 주면 불이 붙습니다. 이때 혼합기체를 발화시키기 위해 공급해야 하는 최소한의 점화 에너지를 <strong>최소발화에너지(MIE, Minimum Ignition Energy, 단위: 밀리줄 mJ)</strong>라 합니다. 최소발화에너지가 작다는 것은 겨울철 스웨터를 벗을 때 튀는 미세한 정전기 스파크 하나로도 대폭발이 일어난다는 뜻이므로, <strong>최소발화에너지(MIE)가 작을수록 화재·폭발 위험성이 압도적으로 큽니다.</strong>
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>최소발화에너지(MIE) 감소 요인(= 점화 용이)</strong>: <strong>온도 상승 · 압력 상승 · 산소농도 증가 · 화학양론비 농도 부근</strong></li>
+              <li><strong>열전도율과 MIE의 관계</strong>: 혼합기체의 열전도율이 클수록 점화 열원이 주변으로 쉽게 손실되므로 <strong>최소발화에너지는 증가</strong>함</li>
+              <li><strong>화재 위험성 증가 조건</strong>: 인화점·발화점·비점·MIE·연소하한계가 <strong>낮을수록</strong>, 증기압·연소범위가 <strong>클수록</strong> 위험</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 어떤 조건에서 최소발화에너지(MIE)가 작아져서(즉, 불이 더 쉽게 붙어서) 위험해질까요? 원리를 생각하면 당연합니다. 첫째, 혼합기체의 <strong>온도가 높을수록</strong> 분자들의 운동에너지가 이미 들떠 있으므로 작은 에너지만 보태주어도 불이 붙어 MIE는 작아집니다. 둘째, 혼합기체의 <strong>압력이 높을수록</strong> 단위 부피 안에 분자들이 빽빽하게 밀집해 충돌 확률이 급증하므로 MIE는 작아집니다. 셋째, 공기 중 <strong>산소 농도가 높을수록</strong> 산화 반응이 맹렬해져 MIE는 급격히 작아집니다. 넷째, 가연성 가스의 농도가 너무 묽거나 너무 진할 때보다 딱 완전연소하기 좋은 <strong>화학양론비 농도 부근일 때</strong> MIE가 가장 작은(최소) 값을 가지는 포물선(U자형) 곡선을 그립니다. 반대로 혼합기체의 <strong>열전도율이 클수록</strong> 스파크가 준 열에너지가 주변으로 빠르게 새어나가 식어버리므로 더 큰 에너지를 주어야 불이 붙어 <strong>MIE는 증가</strong>합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이상의 원리를 종합하여 어떤 가연성 물질의 <strong>화재·폭발 위험성이 커지는 조건</strong>을 정리하면 다음과 같습니다. ① <strong>인화점·연소점·발화점·비점(끓는점)이 낮을수록</strong>, ② <strong>최소발화에너지(MIE)와 연소하한계(LFL)가 낮을수록</strong>, ③ <strong>연소범위(폭발범위)가 넓을수록</strong>, ④ 상온에서 증기가 잘 피어오르도록 <strong>증기압이 크고 연소속도·발열량이 클수록</strong> 위험성이 증가합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            또한 수험생들이 화학양론식을 계산할 때 자주 묻는 "왜 가연성 가스의 완전연소에 필요한 <strong>이론공기량(A<sub>0</sub>)</strong>을 구할 때 이론산소량(O<sub>2</sub> 몰수)을 항상 <strong>0.21로 나누어 줄까?</strong>"라는 원리도 짚어 둡시다. 우리가 숨 쉬는 건조 공기는 부피(몰수) 기준으로 질소(N<sub>2</sub>)가 약 78%, 산소(O<sub>2</sub>)가 약 <strong>21%(0.21)</strong>, 아르곤 등 기타 기체가 약 1%를 차지하고 있습니다. 따라서 가연물 1몰을 태우는 데 순수한 산소가 n몰 필요하다면, 산소가 21%밖에 들어 있지 않은 일반 공기는 그보다 약 4.76배(1 &divide; 0.21)나 많은 양을 불어넣어 주어야 필요한 산소 몰수를 채울 수 있기 때문입니다.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 연소의 4요소(연소의 사면체) 및 인화점·연소점·발화점 열역학적 비교</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 연소의 4요소 · 화학양론 산소 몰수 및 온도 지표 비교</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">무염연소(3요소) vs 발염연소(4요소)</div>
+                <div>· <strong>3요소</strong>: 가연물 + 산소공급원 + 점화원 (숯·코크스 표면연소)<br/>· <strong>4요소</strong>: 3요소 + <strong>순조로운 연쇄반응</strong>(H·, OH· 라디칼 불꽃연소)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">탄화수소(C<sub>m</sub>H<sub>n</sub>) 산소 몰수 공식</div>
+                <div>· 1몰당 필요 산소 몰수 = <strong>m + (n &divide; 4)</strong><br/>· 메테인(<strong>2몰</strong>) · 에테인(<strong>3.5몰</strong>) · 프로페인(<strong>5몰</strong>) · 뷰테인(<strong>6.5몰</strong>) · 펜테인(<strong>8몰</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">인화점 &lt; 연소점 &lt; 발화점</div>
+                <div>· <strong>인화점</strong>: 점화원 대면 순간 점화 (LFL 도달 온도)<br/>· <strong>연소점</strong>: 점화원 치워도 <strong>5초 이상</strong> 지속 연소<br/>· <strong>발화점</strong>: 점화원 없이 가열만으로 스스로 착화</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">파라핀계 탄소수 증가 시 물성 변화</div>
+                <div>· <strong>증가</strong>: 분자량, 비점, 비중, <strong>인화점</strong>, 발열량<br/>· <strong>감소(역전 주의!)</strong>: <strong>발화점(착화점)</strong>, <strong>연소하한계(LFL)</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 최소발화에너지(MIE) 변화 요인 및 화재 위험성 판별</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">최소발화에너지(MIE)가 작아지는 조건 (= 불이 더 쉽게 붙어 위험 증가)</div>
+                <ul class="schema-list">
+                  <li>혼합기체의 <strong>온도가 상승할수록</strong> · <strong>압력이 상승할수록</strong> · <strong>산소 농도가 증가할수록</strong> MIE 감소</li>
+                  <li>가연성 가스 농도가 <strong>화학양론비(완전연소 조성) 농도 부근</strong>일 때 MIE 최소 (단, <strong>열전도율이 클수록</strong> 열손실로 인해 MIE는 <strong>증가</strong>!)</li>
+                </ul>
+              </div>
+              <div class="schema-alert">★ 물질의 화재·폭발 위험성이 클 조건: <strong>인화점 · 발화점 · 비점 · 최소발화에너지(MIE) · 연소하한계(LFL)가 낮을수록</strong>, 그리고 <strong>연소범위 · 증기압 · 연소속도가 클수록</strong> 위험!</div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 연소의 4요소(연소의 사면체) 및 인화점·연소점·발화점 열역학적 비교</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (14문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (24문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="01_03_긴급구조통제단과_재난사태_특별재난지역.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제1편 제3장)
+      </a>
+      <a href="02_02_연소범위_위험도_최소산소농도와_연소형태.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제2편 제2장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제2편 연소 및 폭발 이론 제1장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제2편 연소 및 폭발 이론 제1장",
+  "totalQuestions": 14,
+  "themes": [
+    {
+      "name": "인화점·연소점·발화점의 정의와 대소 비교",
+      "qCount": 6,
+      "examCount": 12,
+      "years": "2019년 소방공채·경채 Q20, 2020년 소방공채·경채 Q19, 2022년 소방공채·경채 Q3, 2022년 소방공채·경채 Q15 외",
+      "summary": "가연성 액체의 인화점(Flash Point) 정의"
+    },
+    {
+      "name": "화학양론 완전연소 반응식 및 이론산소량 계산",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2019년 소방공채·경채 Q18, 2021년 소방공채·경채 Q14, 2025년 소방공채·경채 Q12",
+      "summary": "프로판(C3H8) 완전연소 반응식과 필요 산소 부피 계산"
+    },
+    {
+      "name": "활성화에너지·촉매·연소속도 영향인자",
+      "qCount": 2,
+      "examCount": 4,
+      "years": "2026년 소방공채·경채 Q12, 2026년 소방공채·경채 Q13",
+      "summary": "연기·대류·정촉매 작용 및 가스 분해폭발과 산화폭발의 구분"
+    },
+    {
+      "name": "연소범위(폭발한계) 및 위험도(H) 계산",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2025년 소방공채·경채 Q7",
+      "summary": "존스(Jones) 식을 이용한 에테인(C2H6) 연소하한계(LFL) 계산"
+    },
+    {
+      "name": "완전연소 vs 불완전연소 조건",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2024년 소방공채·경채 Q8",
+      "summary": "불완전연소의 발생 원인 및 생성물"
+    },
+    {
+      "name": "최소발화에너지(MIE) 영향인자",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2023년 소방공채·경채 Q5",
+      "summary": "최소발화에너지(MIE)에 영향을 주는 요인"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂019₁8",
+    "year": 2019,
+    "q_num": 18,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q18",
+    "topic": "프로판(C3H8) 완전연소 반응식과 필요 산소 부피 계산",
+    "freq_key": "화학양론 완전연소 반응식 및 이론산소량 계산",
+    "stem": "20 ℃, 1기압의 프로판(C3H8) 1 ㎥를 완전연소시키는 데 필요한 20 ℃, 1기압의 산소 부피는 얼마인가?",
+    "stem_box": "",
+    "choices": [
+      "1 ㎥",
+      "3 ㎥",
+      "5 ㎥",
+      "7 ㎥"
+    ],
+    "ans": 3,
+    "q_expl": "탄화수소(C(mH)(n)) 완전연소 반응식[C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O]과 아보가드로의 법칙(동일 온도·압력에서 기체의 부피비는 몰수비와 같다)을 이용한 기본 계산 문항입니다.",
+    "c_expls": [
+      "[틀림] 프로판 1몰(1세제곱미터) 연소 시 산소는 1몰이 아니라 5몰이 필요합니다.",
+      "[틀림] 3세제곱미터는 생성되는 이산화탄소(CO₂)의 부피입니다.",
+      "[옳음 · 정답] 완전연소 반응식 C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O에 따라, 동일 온도(섭씨 20도)와 압력(1기압)에서 프로판 1세제곱미터를 완전연소시키는 데 필요한 산소 부피는 몰수비(1 대 5)와 같은 '5세제곱미터'입니다.",
+      "[틀림] 생성되는 이산화탄소(3몰)와 수증기(4몰)의 합이 7몰이며, 필요 산소량은 5세제곱미터입니다."
+    ]
+  },
+  {
+    "id": "Q₂019₂0",
+    "year": 2019,
+    "q_num": 20,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q20",
+    "topic": "가연성 액체의 인화점(Flash Point) 정의",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "가연성 액체의 인화점에 대한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "증기가 연소범위의 하한계에 이르러 점화되는 최저온도",
+      "증기가 발생하기 시작하는 최저온도",
+      "물질이 자체의 열만으로 착화하는 최저온도",
+      "발생한 화염이 지속적으로 연소하는 최저온도"
+    ],
+    "ans": 1,
+    "q_expl": "가연성 액체의 3대 온도 척도인 인화점(점화원에 의해 연소하한계 농도의 증기가 순간 점화되는 최저온도), 연소점(점화원을 제거해도 5초 이상 연소가 지속되는 최저온도), 발화점(점화원 없이 스스로 착화하는 최저온도)을 명확히 구분하는 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 인화점(Flash Point)이란 가연성 액체 표면에서 발생한 증기가 공기와 혼합되어 연소범위의 하한계(LFL) 농도에 도달함으로써 외부 점화원을 가까이 대었을 때 순간적으로 불이 붙는(인화되는) 최저 액체온도를 말합니다.",
+      "[틀림] 액체의 증발은 인화점보다 낮은 상온에서도 일어나며, 단순히 증기가 발생하기 시작하는 온도가 아니라 '연소하한계 농도에 도달하여 점화되는 최저온도'가 인화점입니다.",
+      "[틀림] 외부 점화원 없이 물질 자체의 열이나 가열된 열만으로 스스로 착화하는 최저온도는 '발화점(착화점, Ignition Point)'입니다.",
+      "[틀림] 점화된 후 외부 점화원을 제거하여도 화염이 꺼지지 않고 5초 이상 지속적으로 연소하는 최저온도는 '연소점(Fire Point)'입니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁9",
+    "year": 2020,
+    "q_num": 19,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q19",
+    "topic": "인화점·연소점·발화점 및 파라핀계 탄화수소의 탄소수 영향",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "연소에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "액체가연물의 인화점은 액면에서 증발된 증기의 농도가 연소하한계에 도달하여 점화되는 최저온도이다.",
+      "연소하한계가 낮고 연소범위가 넓을수록 가연성 가스의 연소위험성이 증가한다.",
+      "액체가연물의 연소점은 점화된 이후 점화원을 제거하 여도 자발적으로 연소가 지속되는 최저온도이다.",
+      "파라핀계 탄화수소화합물의 경우 탄소수가 적을수록 발화점이 낮아진다."
+    ],
+    "ans": 4,
+    "q_expl": "파라핀계 포화탄화수소(C(nH)(2n+2))에서 탄소수가 증가할 때의 물성 변화를 묻는 핵심 문항입니다. 탄소수가 많아질수록(분자량이 커질수록) 비점과 인화점은 높아지지만, 분자 결합이 복잡해져 열에 의해 분해·산화되기 쉬우므로 '발화점(착화점)은 낮아집니다'(반대로 탄소수가 적을수록 발화점은 높아짐).",
+    "c_expls": [
+      "[옳음] 액체 가연물의 인화점은 액면에서 증발된 증기 농도가 연소하한계에 도달하여 외부 점화원에 의해 점화되는 최저온도입니다.",
+      "[옳음] 연소하한계가 낮고 연소범위가 넓을수록(즉, 위험도가 클수록) 누출 시 쉽게 착화하므로 연소 위험성이 증가합니다.",
+      "[옳음] 액체 가연물의 연소점은 인화된 후 점화원을 제거하여도 5초 이상 자발적으로 연소가 지속되는 최저온도로서 인화점보다 약 섭씨 5도에서 10도 정도 높습니다.",
+      "[틀림 · 정답] 파라핀계 탄화수소(메탄·에탄·프로판·부탄 등)는 탄소수가 '많을수록' 발화점이 낮아지고, 탄소수가 '적을수록' 발화점이 높아집니다(예: 메탄 약 섭씨 537도 > 에탄 515도 > 프로판 450도 > 부탄 405도)."
+    ]
+  },
+  {
+    "id": "Q₂021₁4",
+    "year": 2021,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q14",
+    "topic": "메탄(CH4) 완전연소 시 필요 산소 부피 계산",
+    "freq_key": "화학양론 완전연소 반응식 및 이론산소량 계산",
+    "stem": "1기압, 20 ℃인 조건에서 메탄(CH₄) 2 ㎥가 완전 연소 하는 데 필요한 산소 부피는 몇 ㎥인가?",
+    "stem_box": "",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "ans": 3,
+    "q_expl": "메탄(CH₄)의 완전연소 반응식[CH₄ + 2O₂ ➔ CO₂ + 2H₂O]을 이용한 기본 화학양론 계산 문항입니다. 메탄 1몰당 산소 2몰이 반응하므로, 메탄 2세제곱미터 연소 시 산소는 4세제곱미터가 필요합니다.",
+    "c_expls": [
+      "[틀림] 2세제곱미터는 메탄 1세제곱미터 연소 시 필요한 산소 부피(또는 생성되는 이산화탄소 부피)입니다.",
+      "[틀림] 화학양론비(1 대 2)에 부합하지 않는 수치입니다.",
+      "[옳음 · 정답] CH₄ + 2O₂ ➔ CO₂ + 2H₂O 반응식에 따라 메탄과 산소의 반응 부피비는 1 대 2이므로, 메탄 2세제곱미터가 완전연소하는 데 필요한 산소 부피는 2 × 2 = 4세제곱미터입니다.",
+      "[틀림] 5세제곱미터는 프로판 1세제곱미터 연소 시 필요한 산소량입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₃",
+    "year": 2022,
+    "q_num": 3,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q3",
+    "topic": "온도 · 농도 곡선에서 인화점(A)의 열역학적 의미",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "그림에서 ‘A’에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 그림 복원: 가연성 액체의 온도·증기압 곡선과 연소범위(연소하한계·상한계) 교차 그래프]</strong>· 가로축: 온도(T), 세로축: 증기 농도(또는 증기압)<br/>· 포화증기압 곡선이 <strong>연소하한계(LFL)</strong> 수평선과 만나는 최저온도 지점이 <strong>점 ‘A’ (인화점, Flash Point)</strong>이며, 포화증기압 곡선이 연소상한계(UFL)와 만나는 지점이 상한 인화점입니다.",
+    "choices": [
+      "외부에너지에 의해 발화하기 시작하는 최저연소온도 이다.",
+      "물질적 조건과 에너지 조건이 만나는 최저연소온도이다.",
+      "화학양론비(stoichiometric ratio)에서의 최저연소온도이다.",
+      "가연성 혼합기를 형성하는 최저연소온도이다."
+    ],
+    "ans": 3,
+    "q_expl": "액체 가연물의 증기압 곡선과 연소하한계(LFL)가 만나는 교점인 '인화점(A)'의 의미를 묻는 문항입니다. 인화점은 화학양론비 농도가 아니라 '연소하한계(LFL)' 농도를 형성하는 최저온도입니다.",
+    "c_expls": [
+      "[옳음] 그림의 A(인화점)는 외부 점화원(외부에너지)이 주어졌을 때 발화하기 시작하는 최저 액체온도입니다.",
+      "[옳음] 인화점은 가연성 증기 농도(물질적 조건: 연소하한계)와 점화원(에너지 조건)이 만나는 최저연소온도입니다.",
+      "[틀림 · 정답] 인화점(A)은 포화증기압 곡선이 화학양론비가 아니라 '연소하한계(폭발하한계)'와 만나는 최저연소온도입니다.",
+      "[옳음] 액체 표면에서 증발한 증기가 공기와 섞여 연소 가능한 가연성 혼합기(하한계 농도)를 형성하는 최저온도입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₁5",
+    "year": 2022,
+    "q_num": 15,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q15",
+    "topic": "가연성 물질의 물성에 따른 화재 위험성 판별",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "가연성 물질의 화재 위험성에 대한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "비열, 연소열, 비점이 작거나 낮을수록 위험하다.",
+      "증발열, 연소열, 연소속도가 크거나 빠를수록 위험하다.",
+      "표면장력, 인화점, 발화점이 작거나 낮을수록 위험하다.",
+      "비중, 압력, 융점이 크거나 높을수록 위험하다."
+    ],
+    "ans": 3,
+    "q_expl": "가연성 물질의 화재 위험성이 커지는 조건[인화점·발화점·비점·융점·비열·증발잠열·표면장력·최소발화에너지는 낮거나 작을수록 위험 / 연소열·연소속도·위험도·증기압은 크거나 빠를수록 위험]을 묻는 빈출 문항입니다.",
+    "c_expls": [
+      "[틀림] 비열과 비점이 낮을수록 위험하지만, '연소열(발열량)'은 클수록 화재 위험성이 큽니다.",
+      "[틀림] 연소열과 연소속도는 클수록 위험하지만, '증발열(증발잠열)'은 작을수록 쉽게 기화하므로 더 위험합니다.",
+      "[옳음 · 정답] 액체의 표면장력이 작을수록(비산·기화가 쉬움), 그리고 인화점과 발화점이 낮을수록 저온에서도 쉽게 착화되므로 화재 위험성이 높습니다.",
+      "[틀림] 융점(녹는점)은 낮을수록 고체가 쉽게 액화·기화되어 화재 위험성이 큽니다."
+    ]
+  },
+  {
+    "id": "Q₂023₅",
+    "year": 2023,
+    "q_num": 5,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q5",
+    "topic": "최소발화에너지(MIE)에 영향을 주는 요인",
+    "freq_key": "최소발화에너지(MIE) 영향인자",
+    "stem": "가연성 혼합기의 최소발화(점화)에너지(MIE, Minimum Ignition Energy)에 영향을 주는 요인에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "온도가 상승하면 최소발화에너지는 작아진다.",
+      "압력이 상승하면 최소발화에너지는 작아진다.",
+      "열전도율이 낮아지면 최소발화에너지는 커진다.",
+      "화학양론비 부근에서 최소발화에너지는 최저가 된다."
+    ],
+    "ans": 3,
+    "q_expl": "가연성 혼합기를 점화시키는 데 필요한 최소한의 스파크 에너지인 최소발화에너지(MIE)의 변화 요인[온도 상승 시 감소, 압력 상승 시 감소, 산소농도 증가 시 감소, 열전도율 감소 시 감소, 화학양론비 부근에서 최소]을 묻는 필수 문항입니다.",
+    "c_expls": [
+      "[옳음] 혼합기의 온도가 상승하면 분자 운동에너지가 커져 작은 에너지로도 착화되므로 최소발화에너지(MIE)는 작아집니다.",
+      "[옳음] 압력이 상승하면 단위체적당 분자 밀도와 유효충돌 횟수가 증가하므로 최소발화에너지는 작아집니다.",
+      "[틀림 · 정답] 혼합기의 열전도율이 낮아지면 점화원으로부터 주변으로 빼앗기는 열손실이 줄어들어 열이 잘 축적되므로, 최소발화에너지는 커지는 것이 아니라 '작아집니다'(열전도율이 클수록 열손실이 커져 MIE가 커짐).",
+      "[옳음] 가연성 가스와 산소의 농도가 화학양론비(당량비 1.0) 부근일 때 연소 조건이 최적이어서 최소발화에너지는 최저값을 나타냅니다."
+    ]
+  },
+  {
+    "id": "Q₂023₆",
+    "year": 2023,
+    "q_num": 6,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q6",
+    "topic": "가연성 액체의 온도 척도(인화점·연소점·발화점)와 열균형",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "가연성 액체의 연소현상에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "가연성 액체의 연소와 관련된 온도는 발화점, 연소점, 인화점 순으로 높다.",
+      "인화점과 발화점이 가까운 액체일수록 재점화가 어렵고 냉각에 의한 소화활동이 용이하다.",
+      "인화점과 연소점의 차이는 외부 점화원을 제거했을 경우 화염 전파의 지속성 여부에 따라 구분된다.",
+      "연소반응은 열생성률(heat production rate)이 외부로의 열손실률(heat loss rate)보다 큰 조건에서 지속된다."
+    ],
+    "ans": 2,
+    "q_expl": "가연성 액체의 온도 크기 순서[발화점 > 연소점 > 인화점]와 소화 난이도를 묻는 문항입니다. 인화점과 발화점이 가까울수록(즉, 발화점이 낮을수록) 약간의 열에도 스스로 재발화하기 쉬워 냉각에 의한 소화활동이 어렵습니다.",
+    "c_expls": [
+      "[옳음] 가연성 액체의 연소 관련 온도는 항상 '발화점(착화점) > 연소점 > 인화점' 순으로 높습니다.",
+      "[틀림 · 정답] 인화점과 발화점이 가까운 액체(예: 이황화탄소 등 발화점이 매우 낮은 물질, 또는 고온의 식용유)일수록 화염을 꺼도 주변 잔열에 의해 스스로 '재점화(재발화)되기 매우 쉽고', 액체 온도를 인화점 미만으로 깊이 낮추어야 하므로 냉각에 의한 소화활동이 어렵습니다.",
+      "[옳음] 인화점은 점화원을 제거하면 불꽃이 꺼지지만, 연소점은 외부 점화원을 제거해도 5초 이상 화염 전파가 지속된다는 점에서 구분됩니다.",
+      "[옳음] 연소반응이 꺼지지 않고 지속되려면 화염에서 발생하는 열생성률이 외부로 빠져나가는 열손실률보다 커야 합니다."
+    ]
+  },
+  {
+    "id": "Q₂024₈",
+    "year": 2024,
+    "q_num": 8,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q8",
+    "topic": "불완전연소의 발생 원인 및 생성물",
+    "freq_key": "완전연소 vs 불완전연소 조건",
+    "stem": "불완전연소에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "산소 과잉 상태에서 발생한다.",
+      "불꽃이 저온 물체와 접촉하여 온도가 내려갈 때 발생한다.",
+      "일산화탄소, 그을음과 같은 연소생성물이 발생한다.",
+      "연소실 내 배기가스의 배출이 불량할 때 발생한다."
+    ],
+    "ans": 1,
+    "q_expl": "불완전연소가 일어나는 조건(산소 공급 부족, 연소실 온도 저하, 혼합 불량, 배기가스 배출 불량)과 그 결과 생성되는 일산화탄소(CO)·그을음(Soot)을 묻는 문항입니다.",
+    "c_expls": [
+      "[틀림 · 정답] 불완전연소는 산소 과잉 상태가 아니라 '산소 공급이 부족한 상태(환기 불량)'에서 주로 발생합니다.",
+      "[옳음] 화염(불꽃)이 차가운 저온 물체 표면과 접촉하여 연소 온도가 급격히 내려가면 산화반응이 중단되어 불완전연소(그을음 발생)가 일어납니다.",
+      "[옳음] 불완전연소 시에는 완전 산화되지 못한 일산화탄소(CO), 알데히드, 그을음(탄소 미립자) 등이 다량 발생합니다.",
+      "[옳음] 연소실 내 배기가스의 배출이 불량하면 신선한 산소 유입이 방해받아 불완전연소가 발생합니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁0",
+    "year": 2024,
+    "q_num": 10,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q10",
+    "topic": "인화점·연소점·발화점의 정의 및 최소발화에너지 비교",
+    "freq_key": "인화점·연소점·발화점의 정의와 대소 비교",
+    "stem": "가연물의 발화온도와 발화에너지에 관한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "점화원에 의해서 가연물이 발화하기 시작하는 최저 온도를 발화점(ignition point)이라고 한다.",
+      "점화원을 제거해도 자력으로 연소를 지속할 수 있는 최저 온도를 연소점(fire point)이라고 한다.",
+      "가연물의 최소발화에너지가 클수록 더 위험하다.",
+      "가연물의 연소점은 발화점보다 높다."
+    ],
+    "ans": 2,
+    "q_expl": "인화점, 연소점, 발화점의 정확한 정의를 다시 한번 확인하는 2024년 기출 문항입니다. '점화원에 의해서' 발화하기 시작하는 최저온도는 발화점이 아니라 '인화점'입니다.",
+    "c_expls": [
+      "[틀림] 외부 '점화원에 의해서' 가연물이 불붙기 시작하는 최저온도는 발화점이 아니라 '인화점(Flash Point)'입니다(발화점은 점화원 없이 스스로 착화하는 최저온도).",
+      "[옳음 · 정답] 점화원에 의해 착화된 후 점화원을 제거해도 자력으로 연소를 지속할 수 있는 최저온도를 '연소점(Fire Point)'이라고 합니다.",
+      "[틀림] 가연물의 최소발화에너지(MIE)가 '작을수록' 미세한 정전기 스파크만으로도 쉽게 착화되므로 더 위험합니다.",
+      "[틀림] 가연물의 연소점은 인화점보다는 높지만 발화점보다는 훨씬 낮습니다(발화점 > 연소점 > 인화점)."
+    ]
+  },
+  {
+    "id": "Q₂025₇",
+    "year": 2025,
+    "q_num": 7,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q7",
+    "topic": "존스(Jones) 식을 이용한 에테인(C2H6) 연소하한계(LFL) 계산",
+    "freq_key": "연소범위(폭발한계) 및 위험도(H) 계산",
+    "stem": "에테인(C2H6)이 완전연소한다고 가정했을 때 존스(Jones) 식에 따라 산출된 연소하한계(LFL)는? (단, 계산 결과는 소수점 둘째 자리에서 반올림한다.)",
+    "stem_box": "",
+    "choices": [
+      "1.7",
+      "2.2",
+      "3.1",
+      "5.2"
+    ],
+    "ans": 3,
+    "q_expl": "화학양론농도(C(st))를 이용하여 연소하한계(LFL = 0.55 × C(st))와 연소상한계(UFL = 3.5 × C(st))를 추정하는 존스(Jones) 식 계산 문항입니다.\n1단계: 에테인 완전연소 반응식 C₂H₆ + 3.5O₂ ➔ 2CO₂ + 3H₂O에서 산소 몰수 x = 3.5몰.\n2단계: 공기 중 산소 비율이 21퍼센트(0.21)이므로 공기 몰수는 3.5 / 0.21 = 16.67몰.\n3단계: 화학양론농도 C(st) = [1 / (1 + 16.67)] × 100 ≈ 5.66 vol%.\n4단계: LFL = 0.55 × 5.66 ≈ 3.11 ≈ 3.1 vol%.",
+    "c_expls": [
+      "[틀림] 프로페인(C₃H₈ + 5O₂)의 화학양론농도 C(st) ≈ 4.02 vol%로부터 존스 식을 적용하면 LFL = 0.55 × 4.02 ≈ 2.2 vol%이며, 1.7은 부탄(C₄H₁₀) 수준의 하한계 수치입니다.",
+      "[틀림] 프로판(C₃H₈)의 연소하한계(약 2.1에서 2.2퍼센트)에 해당하는 수치입니다.",
+      "[옳음 · 정답] C₂H₆ + 3.5O₂ 반응식으로부터 공기 중 화학양론농도 C(st) = 100 / (1 + 3.5/0.21) ≈ 5.66%를 구하고, 존스(Jones)의 하한계 식 LFL = 0.55 C(st) = 0.55 × 5.66 = 3.11%에 대입하면 소수점 둘째 자리 반올림 값인 '3.1'이 산출됩니다.",
+      "[틀림] 메테인(CH₄, 약 5.0퍼센트)에 가까운 수치입니다."
+    ]
+  },
+  {
+    "id": "Q₂025₁2",
+    "year": 2025,
+    "q_num": 12,
+    "appearances": 2,
+    "source": "2025년 소방공채·경채 Q12",
+    "topic": "표준상태에서 메테인(CH4) 2몰 완전연소 시 필요 산소 부피(L)",
+    "freq_key": "화학양론 완전연소 반응식 및 이론산소량 계산",
+    "stem": "표준상태에서 메테인(CH4) 2 mole이 완전연소할 때 필요한 산소의 부피[L]는?",
+    "stem_box": "",
+    "choices": [
+      "11.2",
+      "22.4",
+      "44.8",
+      "89.6"
+    ],
+    "ans": 4,
+    "q_expl": "메테인 완전연소 반응식[CH₄ + 2O₂ ➔ CO₂ + 2H₂O]과 표준상태(섭씨 0도, 1기압) 기체 1몰의 부피(22.4리터)를 결합한 2025년 기출 문항입니다. 메테인 1몰당 산소 2몰이 필요하므로, 메테인 2몰이 완전연소할 때는 산소 2 × 2 = 4몰이 필요하며, 표준상태 부피는 4 mol × 22.4 L/mol = 89.6 L입니다.",
+    "c_expls": [
+      "[틀림] 메테인 1몰(CH₄ + 2O₂ ➔ CO₂ + 2H₂O) 완전연소에는 산소 2몰이 필요하므로 표준상태 부피는 2몰 × 22.4 L/mol = 44.8 L이며, 11.2리터는 기체 0.5몰의 부피입니다.",
+      "[틀림] 22.4리터는 표준상태 기체 1몰의 부피이며, 메테인 1몰 완전연소 시 필요한 산소는 2몰이므로 2 × 22.4 = 44.8 L가 되어야 합니다.",
+      "[틀림] 44.8리터는 메테인 1몰 연소 시 필요한 산소 2몰의 부피(또는 메테인 2몰 자체의 부피)입니다.",
+      "[옳음 · 정답] CH₄ + 2O₂ ➔ CO₂ + 2H₂O에서 메테인 2몰 완전연소 시 산소는 4몰이 소요되므로, 표준상태 부피는 4 × 22.4 L = 89.6 L입니다."
+    ]
+  },
+  {
+    "id": "Q₂026₁2",
+    "year": 2026,
+    "q_num": 12,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q12",
+    "topic": "연기·대류·정촉매 작용 및 가스 분해폭발과 산화폭발의 구분",
+    "freq_key": "활성화에너지·촉매·연소속도 영향인자",
+    "stem": "연소와 관련된 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "연기(smoke)는 연소과정에서 발생하는 고체, 액체, 기체 상태의 미립자와 화학물질의 복합체로, 공기 중에 떠다니는 특성을 가진다.",
+      "대류는 유체의 이동을 통해 열이 전달되는 현상이며, 대류 열전달의 크기는 주로 뉴턴의 냉각법칙으로 표현된다.",
+      "정촉매 작용은 촉매가 활성화에너지를 낮추는 새로운 반응 경로를 제공하여 연소반응이 더 쉽게 일어나게 하며, 촉매는 반응이 끝나도 소모되지 않는 특징이 있다.",
+      "가스의 분해폭발은 가연성 가스와 공기 또는 조연성 가스가 적정한 비율로 혼합된 가연성 혼합기가 발화원에 의하여 착화될 때 발생하고, 화재 현장에서 가장 많이 발생하는 폭발 유형이다."
+    ],
+    "ans": 4,
+    "q_expl": "연소공학 전반의 기본 개념을 묻는 2026년 기출 문항입니다. 가연성 가스와 공기(조연성 가스)가 적정 비율로 혼합되어 착화할 때 발생하는 일반 화재 현장의 폭발은 분해폭발이 아니라 화학적 폭발 중 '산화폭발(가스폭발)'입니다. 분해폭발은 산소 혼합 없이 아세틸렌·산화에틸렌 등이 단독으로 분해될 때 일어납니다.",
+    "c_expls": [
+      "[옳음] 연기(Smoke)는 불완전연소 및 열분해 과정에서 발생하는 고체·액체·기체 상태의 미립자(에어로졸)와 화학물질의 복합체로서 공기 중에 부유합니다.",
+      "[옳음] 대류는 유체(기체·액체)의 이동을 통해 열이 전달되는 현상이며, 대류 열전달량은 뉴턴의 냉각법칙[q = h A (T(s) - T(∞))]으로 표현됩니다.",
+      "[옳음] 정촉매(Positive Catalyst)는 활성화에너지를 낮추는 새로운 반응 경로를 제공하여 연소반응 속도를 높이며, 반응 전후에 자신은 소모되지 않습니다.",
+      "[틀림 · 정답] '가연성 가스와 공기 또는 조연성 가스가 적정한 비율로 혼합된 가연성 혼합기가 발화원에 의하여 착화될 때 발생하는 폭발'은 분해폭발이 아니라 '산화폭발(혼합가스 폭발)'입니다. 분해폭발은 아세틸렌 등이 산소(조연성 가스) 없이도 자체 분해열에 의해 폭발하는 현상입니다."
+    ]
+  },
+  {
+    "id": "Q₂026₁3",
+    "year": 2026,
+    "q_num": 13,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q13",
+    "topic": "화학반응의 엔탈피 변화 그래프(흡열반응 vs 발열반응) 해석",
+    "freq_key": "활성화에너지·촉매·연소속도 영향인자",
+    "stem": "<엔탈피 변화 그래프>에 관한 설명으로 옳지 않은 것은? <엔탈피 변화 그래프>",
+    "stem_box": "<strong class='text-emerald-300 block mb-1'>[원문 그래프 복원: 화학반응의 엔탈피(H) 변화 그래프]</strong>· 가로축: 반응 경로, 세로축: 엔탈피(H)<br/>· <strong>반응물(좌측 기준선)보다 생성물(우측 기준선)의 엔탈피가 더 높은 위치</strong>에 있는 <strong>흡열반응(Δ H > 0)</strong> 그래프입니다.<br/>· <strong>구간 A</strong>: 생성물 기준선에서 활성화 상태 꼭짓점까지의 높이 (<strong>역반응 활성화에너지</strong> · 정반응 활성화에너지는 반응물 기준선에서 꼭짓점까지의 높이임!)<br/>· <strong>구간 B</strong>: 반응물 기준선과 생성물 기준선 사이의 엔탈피 차이 (<strong>반응열 Δ H > 0</strong>)",
+    "choices": [
+      "A는 정반응 활성화에너지를 나타낸다.",
+      "B는 반응열로써 ∆H > 0이다.",
+      "반응 후, 엔탈피는 증가하였다.",
+      "흡열반응에서의 엔탈피 변화를 나타낸다."
+    ],
+    "ans": 1,
+    "q_expl": "생성물의 엔탈피(H(생성물))가 반응물의 엔탈피(H(반응물))보다 높은 '흡열반응(Δ H > 0)' 그래프에서 정반응 활성화에너지(반응물에서 최고 에너지 장벽까지의 차이)와 역반응 활성화에너지(생성물에서 최고 에너지 장벽까지의 차이), 그리고 반응열(B = Δ H)을 구분하는 2026년 기출 문항입니다.",
+    "c_expls": [
+      "[틀림 · 정답] 제시된 흡열반응 엔탈피 그래프에서 A는 생성물(우측 높은 위치)에서 활성화 복합체(산 정상)까지의 에너지 차이이므로 정반응 활성화에너지가 아니라 '역반응 활성화에너지'를 나타냅니다(정반응 활성화에너지는 좌측 반응물 준위에서 산 정상까지의 전체 높이인 A + B).",
+      "[옳음] B는 생성물의 엔탈피에서 반응물의 엔탈피를 뺀 반응열(엔탈피 변화량, Δ H)로서 생성물 에너지가 더 높으므로 Δ H > 0입니다.",
+      "[옳음] 반응 전보다 반응 후 생성물의 엔탈피 준위가 높아졌으므로 엔탈피는 증가하였습니다.",
+      "[옳음] 외부로부터 열을 흡수하여 반응 후 엔탈피가 증가(Δ H > 0)하는 '흡열반응'의 엔탈피 변화를 나타냅니다(일반적인 연소반응은 Δ H < 0인 발열반응)."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "S",
+    "text": "연소의 3요소는 가연물, 산소공급원, 점화원이다.",
+    "isCorrect": true,
+    "source": "연소 4요소 기출",
+    "explanation": "연소가 성립하기 위한 기본 3요소는 가연물, 산소공급원, 점화원입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀1₀02"
+  },
+  {
+    "grade": "A",
+    "text": "목재, 숯, 코크스의 표면연소는 활성 라디칼에 의한 연쇄반응이 필수적이다.",
+    "isCorrect": false,
+    "source": "연소 4요소 기출",
+    "explanation": "표면연소 및 작열연소는 고체 표면에서 산소와 직접 반응하는 무염 연소이므로 기상 라디칼에 의한 화학적 연쇄반응이 필요 없으며 3요소만으로 유지됩니다.",
+    "origQId": "",
+    "id": "SCI₀2₀1₀03"
+  },
+  {
+    "grade": "S",
+    "text": "연소점은 점화원을 제거해도 연소가 5초 이상 지속될 수 있는 최저온도이다.",
+    "isCorrect": true,
+    "source": "인화점·발화점 기출",
+    "explanation": "연소점은 점화원을 치운 후에도 자발적 연소가 5초 이상 지속되는 최저온도로 인화점보다 약 5도에서 10도 높습니다.",
+    "origQId": "",
+    "id": "SCI₀2₀1₀05"
+  },
+  {
+    "grade": "S",
+    "text": "일반적으로 동일 물질에서 인화점은 발화점보다 온도가 높다.",
+    "isCorrect": false,
+    "source": "인화점·발화점 기출",
+    "explanation": "인화점은 외부 불씨에 의해 불이 붙는 온도로 발화점보다 훨씬 낮습니다. 인화점이 발화점보다 높다는 것은 거짓입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀1₀06"
+  },
+  {
+    "grade": "S",
+    "text": "발화점은 공기 중 산소 농도가 낮을수록, 압력이 높을수록 온도가 높아진다.",
+    "isCorrect": false,
+    "source": "인화점·발화점 기출",
+    "explanation": "압력이 높을수록 분자 간 충돌 빈도가 높아져 발화점 온도는 낮아집니다. 산소 농도가 높을 때도 발화점은 낮아집니다.",
+    "origQId": "",
+    "id": "SCI₀2₀1₀07"
+  },
+  {
+    "grade": "S",
+    "text": "섭씨 20도, 1기압의 프로판(C3H8) 1세제곱미터를 완전연소시키는 데 필요한 같은 조건의 산소 부피는 5세제곱미터이다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q18 기출",
+    "explanation": "C3H8 + 5O2 -> 3CO2 + 4H2O 반응식에 따라 프로판 1부피당 산소 5부피가 필요하므로 5세제곱미터가 소요됩니다.",
+    "origQId": "Q₂019₁8",
+    "id": "SCI₀2₀1₀10"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 액체의 인화점이란 액면에서 증발된 증기가 연소범위의 하한계에 이르러 외부 점화원에 의해 점화되는 최저온도를 말한다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q20 기출",
+    "explanation": "인화점은 액체 가연물 표면에서 발생한 가연성 증기 농도가 연소하한계에 도달하여 점화원에 의해 불이 붙는 최저온도입니다.",
+    "origQId": "Q₂019₂0",
+    "id": "SCI₀2₀1₀11"
+  },
+  {
+    "grade": "S",
+    "text": "점화원 없이 물질이 가열된 열만으로 스스로 착화하는 최저온도는 인화점이 아니라 발화점(착화점)이다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q20 기출",
+    "explanation": "점화원이 필요한 최저온도는 인화점이고, 점화원 없이 스스로 불이 붙는 최저온도는 발화점(착화점)입니다.",
+    "origQId": "Q₂019₂0",
+    "id": "SCI₀2₀1₀12"
+  },
+  {
+    "grade": "S",
+    "text": "파라핀계 탄화수소화합물의 경우 탄소수가 많을수록 발화점이 낮아지고, 탄소수가 적을수록 발화점이 높아진다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q19 기출",
+    "explanation": "메탄(C1)에서 부탄(C4)으로 탄소수가 증가할수록 분자 구조가 커져 열적 안정성이 감소하므로 발화점(착화점)은 점차 낮아집니다.",
+    "origQId": "Q₂020₁9",
+    "id": "SCI₀2₀1₀14"
+  },
+  {
+    "grade": "S",
+    "text": "액체가연물의 연소점은 점화된 이후 점화원을 제거하여도 자발적으로 연소가 지속되는 최저온도이다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q19 기출",
+    "explanation": "인화점에서는 점화원을 치우면 불꽃이 꺼지지만, 연소점 이상에서는 증발 열량과 속도가 충분하여 점화원을 제거해도 5초 이상 연소가 지속됩니다.",
+    "origQId": "Q₂020₁9",
+    "id": "SCI₀2₀1₀15"
+  },
+  {
+    "grade": "S",
+    "text": "동일 온도·압력 조건에서 메탄(CH4) 2세제곱미터가 완전연소하는 데 필요한 산소 부피는 4세제곱미터이다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q14 기출",
+    "explanation": "CH4 + 2O2 -> CO2 + 2H2O 반응식에 의해 메탄 부피의 2배인 4세제곱미터의 산소가 필요합니다.",
+    "origQId": "Q₂021₁4",
+    "id": "SCI₀2₀1₀18"
+  },
+  {
+    "grade": "A",
+    "text": "온도 · 증기압 곡선에서 인화점은 가연성 액체의 증기가 화학양론비가 아니라 '연소하한계' 농도의 가연성 혼합기를 형성하는 최저연소온도이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q3 기출",
+    "explanation": "인화점은 포화증기압 곡선과 연소하한계(LFL)가 만나는 온도로서 외부 점화원에 의해 착화 가능한 최저온도입니다.",
+    "origQId": "Q₂022₃",
+    "id": "SCI₀2₀1₀20"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 물질은 표면장력, 비열, 증발잠열, 인화점, 발화점, 최소발화에너지가 작거나 낮을수록 화재 위험성이 크다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q15 기출",
+    "explanation": "인화점·발화점·비열·증발잠열·표면장력이 낮거나 작을수록 적은 열에너지로도 쉽게 기화·착화하므로 화재 위험성이 높아집니다.",
+    "origQId": "Q₂022₁5",
+    "id": "SCI₀2₀1₀22"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 혼합기의 온도와 압력이 상승할수록, 그리고 열전도율이 낮을수록 최소발화에너지(MIE)는 작아진다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q5 기출",
+    "explanation": "온도·압력 상승 시 분자 활성도가 커지고, 열전도율이 낮을수록 열손실이 적어져 더 작은 에너지로도 쉽게 발화(MIE 감소)합니다.",
+    "origQId": "Q₂023₅",
+    "id": "SCI₀2₀1₀25"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 혼합기의 농도가 화학양론비 부근일 때 최소발화에너지(MIE)는 최저가 된다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q5 기출",
+    "explanation": "연료와 산소가 완전연소 화학양론비로 혼합되었을 때 점화가 가장 용이하므로 최소발화에너지는 극소점(최저값)을 갖습니다.",
+    "origQId": "Q₂023₅",
+    "id": "SCI₀2₀1₀26"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 액체의 연소와 관련된 온도는 '발화점 > 연소점 > 인화점' 순으로 높으며, 인화점과 연소점은 외부 점화원 제거 시 화염 전파의 지속성 여부로 구분된다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q6 기출",
+    "explanation": "인화점이 가장 낮고 그보다 약 섭씨 5도에서 10도 높은 온도가 연소점이며, 점화원 없이 스스로 발화하는 발화점이 가장 높습니다.",
+    "origQId": "Q₂023₆",
+    "id": "SCI₀2₀1₀27"
+  },
+  {
+    "grade": "A",
+    "text": "인화점과 발화점이 가까운 액체일수록 재점화가 어렵고 냉각에 의한 소화활동이 용이하다.",
+    "isCorrect": false,
+    "source": "2023년 소방공채·경채 Q6 기출",
+    "explanation": "발화점이 낮아 인화점과 가까울수록 소화 후에도 잔열에 의해 재발화하기 쉬우므로 냉각소화가 까다롭습니다.",
+    "origQId": "Q₂023₆",
+    "id": "SCI₀2₀1₀28"
+  },
+  {
+    "grade": "A",
+    "text": "불완전연소는 산소 공급이 부족하거나, 불꽃이 저온 물체와 접촉하여 온도가 내려갈 때, 또는 배기가스 배출이 불량할 때 발생하며 일산화탄소와 그을음을 생성한다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q8 기출",
+    "explanation": "불완전연소는 산소 부족, 저온 물체 접촉에 의한 냉각, 배기 불량 시 발생하며 대표 생성물은 일산화탄소(CO)와 그을음입니다.",
+    "origQId": "Q₂024₈",
+    "id": "SCI₀2₀1₀31"
+  },
+  {
+    "grade": "S",
+    "text": "외부 점화원에 의해 가연물이 점화되는 최저온도는 '인화점'이고, 점화원을 제거해도 자력으로 연소를 지속할 수 있는 최저온도는 '연소점'이다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q10 기출",
+    "explanation": "점화원 유무로 인화점(점화원 필요)과 발화점(점화원 불필요)을 구분하고, 점화원 제거 후 연소 지속 여부로 인화점과 연소점을 구분합니다.",
+    "origQId": "Q₂024₁0",
+    "id": "SCI₀2₀1₀32"
+  },
+  {
+    "grade": "S",
+    "text": "존스(Jones) 식에서 연소하한계(LFL)는 화학양론농도(Cst)의 0.55배(LFL = 0.55 × Cst)이며, 에테인(C2H6)의 화학양론농도 약 5.66퍼센트를 대입하면 연소하한계는 약 3.1퍼센트로 산출된다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q7 기출",
+    "explanation": "존스(Jones) 식(하한계 LFL = 0.55 Cst, 상한계 UFL = 3.5 Cst)과 에테인의 완전연소 산소 몰수(3.5몰)를 결합한 정확한 계산 결과입니다.",
+    "origQId": "Q₂025₇",
+    "id": "SCI₀2₀1₀36"
+  },
+  {
+    "grade": "S",
+    "text": "표준상태(섭씨 0도, 1기압)에서 메테인(CH4) 2몰이 완전연소할 때 필요한 산소는 4몰이므로 부피는 89.6리터이다.",
+    "isCorrect": true,
+    "source": "2025년 소방공채·경채 Q12 기출",
+    "explanation": "CH4 1몰당 O2 2몰이 필요하므로 CH4 2몰에는 O2 4몰(4 × 22.4리터 = 89.6리터)이 필요합니다.",
+    "origQId": "Q₂025₁2",
+    "id": "SCI₀2₀1₀39"
+  },
+  {
+    "grade": "S",
+    "text": "정촉매 작용은 활성화에너지를 낮추는 새로운 반응 경로를 제공하여 연소반응이 더 쉽게 일어나게 하며, 촉매 자신은 반응이 끝나도 소모되지 않는다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q12 기출",
+    "explanation": "정촉매는 활성화에너지를 낮추어 반응속도를 증가시키고, 부촉매(소화약제)는 활성화에너지를 높여 연쇄반응을 억제합니다.",
+    "origQId": "Q₂026₁2",
+    "id": "SCI₀2₀1₀40"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 가스와 공기가 적정한 비율로 혼합된 가연성 혼합기가 착화될 때 발생하는 폭발은 분해폭발이 아니라 '산화폭발(가스폭발)'이다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q12 기출",
+    "explanation": "산소(공기)와 혼합되어 일어나는 폭발은 산화폭발이고, 산소 없이 아세틸렌 등이 자체 분해열로 폭발하는 것이 분해폭발입니다.",
+    "origQId": "Q₂026₁2",
+    "id": "SCI₀2₀1₀41"
+  },
+  {
+    "grade": "A",
+    "text": "화학반응의 엔탈피 그래프에서 생성물의 엔탈피가 반응물의 엔탈피보다 높은 경우 반응열(델타 H)은 0보다 큰 흡열반응이며, 정반응 활성화에너지는 반응물 준위에서 최고 에너지 장벽(활성화 상태)까지의 차이이다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q13 기출",
+    "explanation": "발열반응(연소반응)은 생성물 엔탈피가 낮아 델타 H < 0이고, 흡열반응은 생성물 엔탈피가 높아 델타 H > 0입니다.",
+    "origQId": "Q₂026₁3",
+    "id": "SCI₀2₀1₀42"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

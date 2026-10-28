@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제1편 소방조직 및 재난관리론 제2장. 재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제1편 제2장. 재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼</span>
+        <span class="text-slate-600">|</span>
+        <a href="01_03_긴급구조통제단과_재난사태_특별재난지역.html" class="hover:text-emerald-300 transition">다음 장: 제1편 제3장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제1편 제2장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제1편 소방조직 및 재난관리론 · 제2장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 자연재난·사회재난의 법적 분류와 존스(Jones)의 재해 분류</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 하인리히(Heinrich)와 버드(Bird)의 도미노 이론 및 분산·통합관리</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 재난관리 4단계(예방·대비·대응·복구)의 활동내용 구분</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 국가 위기관리 매뉴얼 3종 체계 (표준·실무·행동매뉴얼)</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (13문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (19문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제1편 소방조직 및 재난관리론</span>
+        <span>·</span>
+        <span>제2장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        재난 및 안전관리 기본법상 자연재난과 사회재난의 구분, 존스의 재해 분류, 하인리히와 버드의 사고 연쇄성(도미노) 이론을 살펴보고, 예방·대비·대응·복구 4단계의 세부 활동과 위기관리 매뉴얼 3종을 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 자연재난·사회재난의 법적 분류와 존스(Jones)의 재해 분류</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            제1장에서 소방조직의 역사와 원리를 살펴보았다면, 제2장에서는 소방이 맞서 싸워야 할 대상인 <strong>재난(Disaster)</strong>의 분류 체계와 발생 메커니즘을 파헤칩니다. ｢재난 및 안전관리 기본법｣ 제3조는 국민의 생명·신체·재산과 국가에 피해를 주거나 줄 수 있는 재난을 발생 원인에 따라 크게 <strong>자연재난</strong>과 <strong>사회재난</strong>의 두 가지로 분류합니다. 먼저 자연현상으로 인하여 발생하는 <strong>자연재난</strong>에는 태풍, 홍수, 호우, 강풍, 풍랑, 해일, 대설, 한파, 낙뢰, 가뭄, <strong>폭염</strong>, 지진, 황사, <strong>조류(녹조·적조) 대발생</strong>, 조수, 화산활동, 그리고 <strong>소행성·유성체 등 자연우주물체의 추락·충돌</strong>이 속합니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>자연재난 핵심 항목</strong>: 태풍·호우·지진·<strong>폭염</strong>·<strong>조류(적조·녹조) 대발생</strong>·<strong>자연우주물체(소행성·유성체) 추락·충돌</strong></li>
+              <li><strong>사회재난 핵심 항목</strong>: 화재·붕괴·폭발·산불·국가핵심기반 마비·<strong>감염병·가축전염병</strong>·<strong>미세먼지</strong>·<strong>인공우주물체 추락·충돌</strong></li>
+              <li><strong>존스(Jones)의 준자연재해</strong>: 자연 요인과 인간 활동이 결합된 <strong>스모그, 산성비, 토양 염분화, 오존층 파괴</strong> 등</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            반면 인간의 활동이나 기술적·사회적 요인으로 발생하는 <strong>사회재난</strong>에는 <strong>화재·붕괴·폭발·교통사고(항공사고 및 해상사고 포함)·화생방사고·환경오염사고</strong> 등으로 인하여 발생하는 대통령령 규모 이상의 피해, 에너지·통신·교통·금융·의료·수도 등 <strong>국가핵심기반의 마비</strong>, ｢감염병의 예방 및 관리에 관한 법률｣에 따른 <strong>감염병</strong> 또는 ｢가축전염병 예방법｣에 따른 <strong>가축전염병의 확산</strong>, <strong>미세먼지</strong> 등으로 인한 피해, 그리고 사람이 쏘아 올린 <strong>인공우주물체(인공위성·로켓 잔해 등)의 추락·충돌</strong>이 속합니다. 시험에서는 어감상 자연재난처럼 느껴지는 <strong>'감염병·가축전염병·미세먼지·산불'이 법적으로 모두 사회재난</strong>이고, 반대로 환경오염처럼 느껴지는 <strong>'조류(적조·녹조) 대발생'과 '자연우주물체(소행성) 추락'은 자연재난</strong>이라는 경계선을 집중적으로 출제하므로 이 짝을 확실히 구별해야 합니다!
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 학자 <strong>존스(D. K. C. Jones)</strong>는 법령의 이분법에서 한 걸음 더 나아가 재해를 발생 원인에 따라 3가지로 분류하였습니다. ① 순수 자연현상인 <strong>자연재해(지구물리학적 재해·생물학적 재해)</strong>, ② 인간의 기술·사회적 요인인 <strong>인위재해(기술적 재해·사회적 재해)</strong>, 그리고 ③ 자연의 대기·토양 순환에 인간의 산업오염 활동이 결합되어 나타나는 제3의 영역인 <strong>준자연재해(복합재해: 스모그, 산성비, 토양 염분화, 사막화, 오존층 파괴 등)</strong>입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">분류 구분</th>
+                <th style="width:44%;">소속 세부 재난 항목 (재난 및 안전관리 기본법 제3조)</th>
+                <th>출제 시 가장 자주 바꾸는 함정</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>자연재난</strong></td>
+                <td>태풍·홍수·호우·대설·한파·가뭄·<strong>폭염</strong>·지진·황사·<strong>조류 대발생</strong>·화산·<strong>자연우주물체(소행성) 추락</strong></td>
+                <td>폭염·조류 대발생·자연우주물체는 <strong>자연재난</strong></td>
+              </tr>
+              <tr>
+                <td><strong>사회재난</strong></td>
+                <td>화재·산불·붕괴·폭발·교통사고·환경오염·국가핵심기반 마비·<strong>감염병·가축전염병</strong>·<strong>미세먼지</strong>·<strong>인공우주물체 추락</strong></td>
+                <td>감염병·가축전염병·미세먼지·인공우주물체는 <strong>사회재난</strong></td>
+              </tr>
+              <tr>
+                <td><strong>재난관리주관기관</strong></td>
+                <td>선박·해양오염(<strong>해양수산부/해경</strong>), 산불(<strong>산림청</strong>), 유해화학물질 유출(<strong>환경부</strong>), 원전(<strong>원자력안전위원회</strong>), 다중밀집건축물 붕괴(<strong>행정안전부/국토교통부</strong>)</td>
+                <td>재난 유형별 중앙 재난관리주관기관 매칭 확인</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 하인리히(Heinrich)와 버드(Bird)의 도미노 이론 및 분산·통합관리</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 사회재난이나 산업재해는 왜 일어나는 것일까요? 사고는 우연히 하늘에서 뚝 떨어지는 것이 아니라, 앞선 원인 블록들이 차례대로 넘어지면서 발생하는 필연적 결과라고 설명한 이론이 바로 <strong>하인리히(H. W. Heinrich)의 도미노 이론(5단계 사고 연쇄성 이론)</strong>입니다. 하인리히의 5단계 도미노는 <strong>① 제1단계: 사회적 환경 및 유전적 요인(선천적 결함) ➔ ② 제2단계: 개인적 결함 ➔ ③ 제3단계: 불안전한 행동 및 불안전한 상태(직접원인) ➔ ④ 제4단계: 사고(Accident) ➔ ⑤ 제5단계: 재해(상해, Injury)</strong>의 순서로 쓰러집니다. 여기서 하인리히가 강조한 핵심 결론은 정 가운데 있는 <strong>제3단계(불안전한 행동 및 불안전한 상태)</strong>라는 도미노 패 하나만 뽑아내어 제거하면, 설령 1·2단계가 쓰러지더라도 건너편의 4단계(사고)와 5단계(재해)로는 절대 넘어가지 않는다는 점입니다! 아울러 그는 대형 중상해 1건이 터지기 전에는 반드시 같은 원인으로 인한 경상해 29건과 무상해 아차사고 300건이 먼저 나타난다는 <strong>1 : 29 : 300 법칙</strong>을 증명했습니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>하인리히 도미노 핵심 제거 단계</strong>: <strong>제3단계(불안전한 행동 및 불안전한 상태)</strong>를 제거하면 사고와 재해가 원천 차단됨 (1:29:300 법칙)</li>
+              <li><strong>버드 수정 도미노 이론</strong>: <strong>제1단계 제어(관리)의 부족</strong> ➔ 제2단계 기본원인 ➔ 제3단계 직접원인(징후) ➔ 제4단계 사고(접촉) ➔ 제5단계 손실 (1:10:30:600 법칙)</li>
+              <li><strong>분산관리 vs 통합관리</strong>: 통합관리방식(FEMA 등)은 전 재난 포괄적 접근으로 <strong>지휘 일원화·자원 중복 방지·규모의 경제</strong> 달성</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            이후 <strong>버드(F. E. Bird)</strong>는 하인리히 이론이 사고 책임을 근로자 개인의 탓으로만 돌리는 한계가 있다고 보고, 현대 조직 경영 관점에서 발전시킨 <strong>수정 도미노 이론(신도미노 이론)</strong>을 제시하였습니다. 버드의 5단계는 <strong>① 제1단계: 제어의 부족(관리의 부족, 통제 부족) ➔ ② 제2단계: 기본원인(기원, 인적·작업적 요인) ➔ ③ 제3단계: 직접원인(징후, 불안전한 행동·상태) ➔ ④ 제4단계: 사고(에너지와의 접촉) ➔ ⑤ 제5단계: 상해 또는 재산 손실</strong>로 이어지며, 사고 예방의 가장 근본적인 출발점이 경영진과 조직의 <strong>제1단계 '제어(관리)의 부족'</strong>에 있음을 밝혔습니다(버드의 비율 법칙은 물적 재산 손실까지 포함하여 중상 1 : 경상 10 : 무상해 재산손실 30 : 아차사고 600의 <strong>1 : 10 : 30 : 600 법칙</strong>입니다).
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 국가가 다양한 재난을 관리하는 행정 거버넌스는 <strong>분산관리방식</strong>과 <strong>통합관리방식</strong>으로 대조됩니다. 분산관리방식은 산불은 산림청, 화학사고는 환경부처럼 재난 유형별로 개별 부처가 각자 맡는 방식으로 세부 전문성은 높으나, 복합 재난이 터졌을 때 부처 간 할거주의와 자원 중복 투자, 지휘 혼선이 발생합니다. 반면 미국의 연방재난관리청(FEMA)이나 학자 <strong>콰란텔리(Quarantelli)·페리(Perry)</strong>가 강조한 <strong>통합관리방식(전 재난 포괄적 관리, All Hazard Approach)</strong>은 자연재난이든 사회재난이든 모든 재난에 공통으로 요구되는 경보·대피·구조·구호 기능을 단일 총괄기구 중심으로 통합 관리하여 규모의 경제와 지휘 일원화를 달성하는 현대적 표준 모델입니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 재난관리 4단계(예방·대비·대응·복구)의 활동내용 구분</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            통합적 재난관리는 시간의 흐름에 따라 재난 발생 전의 <strong>① 예방(완화)단계</strong>와 <strong>② 대비단계</strong>, 그리고 재난 발생 후의 <strong>③ 대응단계</strong>와 <strong>④ 복구단계</strong>라는 4단계 주기로 순환합니다. 시험에서는 법 조문에 나오는 구체적인 행정 조치를 제시하고 이것이 4단계 중 어디에 속하는지 묻는 문제가 매회 출제되는데, 특히 재난 발생 전의 <strong>'예방 vs 대비'</strong>, 재난 발생 후의 <strong>'대응 vs 복구'</strong>를 가르는 기준점을 명확히 잡아야 합니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>대비단계 핵심 키워드</strong>: <strong>위기관리 매뉴얼 작성·운용, 재난대비 훈련, 물자·장비 비축, 긴급통신수단 구축</strong> (예방·대응단계와 혼동 주의!)</li>
+              <li><strong>대응단계 핵심 키워드</strong>: <strong>재난사태 선포, 위험구역 설정, 대피명령, 응급조치, 긴급구조통제단 가동</strong></li>
+              <li><strong>복구단계 핵심 키워드</strong>: 피해조사 및 <strong>특별재난지역 선포</strong> (재난사태 선포는 대응단계, 특별재난지역 선포는 복구단계!)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            먼저 재난이 일어나기 전의 두 단계를 비교해 봅시다. <strong>① 예방단계(Mitigation/Prevention)</strong>는 아예 재난이 일어나지 않도록 위험 요인 자체를 제거하거나 건물을 튼튼하게 만드는 구조적·장기적 대책으로서, 국가안전관리기본계획 수립, 안전점검 및 정밀안전진단, <strong>재난예방 대국민 교육·홍보</strong>, 내진설계·방화구획 등 법령 정비, 재해위험지구 지정·정비 등이 속합니다. 반면 <strong>② 대비단계(Preparedness)</strong>는 '재난이 언젠가 터졌을 때 즉시 출동해 작전을 펼칠 수 있도록 평소에 작전 계획과 도구들을 준비해 두는 단계'입니다. 따라서 <strong>위기관리 매뉴얼의 작성·운용</strong>, <strong>재난대비 훈련 실시</strong>, <strong>응급조치용 자재·장비·물자의 비축 및 지정</strong>, 그리고 현장 지휘를 위한 <strong>긴급통신수단 및 재난관리정보통신체계의 구축</strong>은 예방이나 대응이 아니라 모두 <strong>대비단계</strong>에 속합니다!
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            다음으로 재난이 터진 직후의 두 단계를 비교해 봅시다. <strong>③ 대응단계(Response)</strong>는 현재 진행 중인 재난 현장에서 인명을 구하고 피해 확산을 막는 긴급 작전 단계로서, <strong>긴급구조통제단 및 대책본부 가동</strong>, <strong>재난사태 선포</strong>, <strong>위험구역의 설정 및 대피명령·강제대피조치</strong>, <strong>응급조치 및 긴급구조 활동</strong>, 동원명령 등이 속합니다. 마지막으로 불길이 잡히고 상황이 진정된 후의 <strong>④ 복구단계(Recovery)</strong>는 피해 규모를 파악하여 일상으로 되돌리는 단계로서, 피해상황 합동조사, 국가 재정 지원을 위한 <strong>특별재난지역의 선포</strong>, 재난복구계획 수립·시행, 이재민 구호금 지원 및 심리 회복 지원 등이 속합니다(<strong>'재난사태 선포 = 대응단계'</strong> vs <strong>'특별재난지역 선포 = 복구단계'</strong>는 시험에서 1순위로 묻는 핵심 대조 포인트입니다!).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">재난관리 4단계</th>
+                <th style="width:50%;">단계별 대표 법정 관리 사항 및 활동 내용</th>
+                <th>출제 시 가장 많이 섞는 비교 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 예방단계</strong></td>
+                <td>안전관리기본계획 수립, 안전점검·안전진단, 내진설계·법령 정비, 재난예방 대국민 교육·홍보</td>
+                <td>위험요인 자체를 줄이는 사전적·구조적 대책</td>
+              </tr>
+              <tr>
+                <td><strong>2. 대비단계</strong></td>
+                <td><strong>위기관리 매뉴얼 작성·관리</strong>, <strong>재난대비 훈련</strong>, <strong>자재·물자 비축</strong>, <strong>긴급통신수단 구축</strong></td>
+                <td><strong>긴급통신수단 구축·매뉴얼·훈련·비축 = 대비단계!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3. 대응단계</strong></td>
+                <td><strong>재난사태 선포</strong>, <strong>위험구역 설정</strong>, 대피명령, 응급조치, 긴급구조통제단·대책본부 가동</td>
+                <td><strong>재난사태 선포·위험구역 설정 = 대응단계!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>4. 복구단계</strong></td>
+                <td>피해상황 조사, <strong>특별재난지역 선포</strong>, 복구계획 수립·시행, 피해주민 지원·심리회복</td>
+                <td><strong>특별재난지역 선포 = 복구단계!</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 국가 위기관리 매뉴얼 3종 체계 (표준·실무·행동매뉴얼)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            앞서 대비단계의 가장 중요한 활동으로 꼽았던 <strong>위기관리 매뉴얼</strong>은, 실제 재난이 발생했을 때 중앙부처부터 일선 소방서·시·군·구까지 우왕좌왕하지 않고 톱니바퀴처럼 움직이도록 만드는 작전 시나리오입니다. ｢재난 및 안전관리 기본법｣ 제34조의5는 이 위기관리 매뉴얼을 적용 범위와 구체성 수준에 따라 <strong>① 위기관리 표준매뉴얼, ② 위기대응 실무매뉴얼, ③ 현장조치 행동매뉴얼</strong>의 3단계 피라미드 위계로 규정하고 있습니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>위기관리 표준매뉴얼</strong>: 국가 차원 관리 재난의 체계와 기관 역할을 규정하며 <strong>재난관리주관기관의 장</strong>이 작성(행정안전부장관 승인)</li>
+              <li><strong>위기대응 실무매뉴얼</strong>: 실제 위기대응 작동에 필요한 조치사항과 절차를 규정</li>
+              <li><strong>현장조치 행동매뉴얼</strong>: 재난 현장에서 임무를 직접 수행하는 일선 기관의 구체적 행동절차를 규정</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            첫째, 피라미드 꼭대기에 있는 최상위 기본 문서인 <strong>위기관리 표준매뉴얼</strong>은 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관들의 큰 틀의 임무·역할을 규정한 문서로서, 해당 재난의 <strong>재난관리주관기관의 장이 작성</strong>하여 <strong>행정안전부장관의 승인</strong>을 받아 확정합니다. 둘째, 중간 허리 역할을 하는 <strong>위기대응 실무매뉴얼</strong>은 표준매뉴얼에서 정한 기능과 역할을 실제로 작동시키기 위해 필요한 세부 조치사항과 기관 간 협조 절차를 규정한 문서로서, <strong>재난관리주관기관의 장과 관계 기관의 장이 작성</strong>하며 재난관리주관기관의 장의 승인을 받습니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, 가장 아래에서 실제 현장 대원들이 들고 뛰는 <strong>현장조치 행동매뉴얼</strong>은 재난 현장에서 임무를 직접 수행하는 일선 기관(시·군·구, 소방서 등)의 구체적인 행동 절차를 수록한 문서로서, 실무매뉴얼을 작성한 기관의 장이 지정한 <strong>현장 임무 수행 기관의 장이 작성</strong>합니다. 시험에서는 이 세 매뉴얼의 정의 설명을 서로 바꾸어 내므로 <strong>'표준매뉴얼(국가 차원 체계·역할) ➔ 실무매뉴얼(실제 위기대응 작동 조치·절차) ➔ 행동매뉴얼(일선 현장 임무 수행 기관의 행동절차)'</strong>의 핵심 키워드를 정확히 매칭해야 합니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            또한 재난관리 4단계(예방·대비·대응·복구) 중 수험생들이 실전 시험에서 가장 많이 틀리는 <strong>'예방(Mitigation) 단계'와 '대비(Preparedness) 단계'의 구별 기준</strong>을 원인과 결과로 명쾌하게 정리해 둡시다. 두 단계 모두 재난이 터지기 전에 하는 사전 활동이라는 공통점이 있지만, <strong>예방 단계</strong>는 위험 요인 자체를 없애거나 줄이는 근본적·법제적·구조적 조치(예: 내진설계 기준 강화, 방화구획 설치, 안전점검, 재난예방 교육·홍보, 위험물 저장 제한)입니다. 반면에 <strong>대비 단계</strong>는 "아무리 예방해도 재난이 터진다면 현장에서 어떻게 움직일 것인가?"를 미리 준비해 두는 작전적·실행적 준비 활동(예: 매뉴얼·응급대응계획 작성, 비상연락망 구축, 가상 소방훈련 실시, 구호물자·방재장비 비축, 유관기관 응원협정 체결)입니다. 즉 '사고 확률 자체를 낮추는 법·시설 개선이면 예방', '사고 발생 시 즉각 출동할 매뉴얼·훈련·물자 비축이면 대비'라는 한 줄 공식을 기억하면 어떤 낯선 예시가 나와도 백발백중 골라낼 수 있습니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            여기에 더해 안전관리 이론에서 하인리히(Heinrich)의 도미노 이론(1:29:300)과 버드(Bird)의 신(新)도미노 이론(1:10:30:600)이 왜 서로 다른 제3단계(직접원인) 제거를 강조하는지 그 시대적·구조적 차이를 비교해 봅시다. 1930년대 산업화 초기에 등장한 <strong>하인리히</strong>는 작업자의 실수나 기계의 물리적 결함인 <strong>제3단계 '불안전한 행동 및 불안전한 상태'</strong>만 들어내면 재해라는 도미노가 쓰러지지 않는다고 보았고, 전체 사고의 88%가 인간의 불안전한 행동 때문이라고 분석했습니다. 반면에 1960년대 이후 거대 기업 조직을 연구한 <strong>버드</strong>는 "근로자가 왜 불안전한 행동을 했을까? 근본 원인은 경영진의 안전관리 통제 부족(제1단계)과 작업 피로·스트레스 같은 기본원인(제2단계) 때문이 아닌가!"라고 통찰하며, 단순한 현장 실수 처벌을 넘어 조직의 <strong>관리적 통제(Management Control)</strong>를 바로잡아야만 무재해를 달성할 수 있다는 현대 안전공학의 패러다임을 정립한 것입니다.
+          </p>
+        </div>
+
+
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 하인리히·버드 도미노 이론 및 재난관리 4단계(예방·대비·대응·복구) 체계</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 자연재난 vs 사회재난 경계선 및 하인리히·버드 도미노 이론</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">자연재난 (재난안전법 제3조)</div>
+                <div>태풍·호우·대설·한파·가뭄·지진·황사·화산 + <strong>폭염 · 조류(적조·녹조) 대발생 · 자연우주물체(소행성·유성체) 추락</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">사회재난 (재난안전법 제3조)</div>
+                <div>화재·붕괴·폭발·산불·환경오염·국가핵심기반 마비 + <strong>감염병·가축전염병 · 미세먼지 · 인공우주물체 추락</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">하인리히 도미노 (1 : 29 : 300)</div>
+                <div>1.유전·사회환경 ➔ 2.개인결함 ➔ <strong>3.불안전한 행동·상태(핵심 제거 요인!)</strong> ➔ 4.사고 ➔ 5.재해(상해)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">버드 수정 도미노 (1 : 10 : 30 : 600)</div>
+                <div><strong>1.제어(관리)의 부족</strong> ➔ 2.기본원인(기원) ➔ 3.직접원인(징후) ➔ 4.사고(접촉) ➔ 5.상해·손실</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 함정: <strong>조류(적조·녹조) 대발생·자연우주물체 추락</strong>은 <strong>자연재난</strong>이고, <strong>감염병·가축전염병·미세먼지·인공우주물체 추락</strong>은 <strong>사회재난</strong>! (하인리히 <strong>1:29:300</strong> vs 버드 <strong>1:10:30:600</strong>)</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 재난관리 4단계(예방·대비·대응·복구) 및 위기관리 매뉴얼 3종</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">재난관리 4단계 핵심 구분 키워드</div>
+                <ul class="schema-list">
+                  <li><strong>예방단계</strong>: 국가안전관리기본계획 수립, 안전점검·정밀안전진단, 내진설계·법령 정비, 재난예방 교육·홍보</li>
+                  <li><strong>대비단계</strong>: <strong>위기관리 매뉴얼 작성·운용, 재난대비 훈련, 응급조치 물자·자재 비축, 긴급통신수단 구축</strong></li>
+                  <li><strong>대응단계</strong>: <strong>재난사태 선포, 위험구역 설정, 대피명령·강제대피, 응급조치, 긴급구조통제단 가동</strong></li>
+                  <li><strong>복구단계</strong>: 피해상황 합동조사, <strong>특별재난지역 선포</strong>, 복구계획 수립·시행, 피해주민 구호·심리회복</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">국가 위기관리 매뉴얼 3단계 위계</div>
+                <ul class="schema-list">
+                  <li><strong>위기관리 표준매뉴얼</strong>(국가 차원 체계·역할, 주관기관장 작성·행안부장관 승인) ➔ <strong>위기대응 실무매뉴얼</strong>(실제 작동 조치·절차) ➔ <strong>현장조치 행동매뉴얼</strong>(일선 현장기관 행동절차)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 하인리히·버드 도미노 이론 및 재난관리 4단계(예방·대비·대응·복구) 체계</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (13문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (19문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="01_01_소방의_역사_발전과_조직_인사원리.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제1편 제1장)
+      </a>
+      <a href="01_03_긴급구조통제단과_재난사태_특별재난지역.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제1편 제3장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제1편 소방조직 및 재난관리론 제2장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제1편 소방조직 및 재난관리론 제2장",
+  "totalQuestions": 13,
+  "themes": [
+    {
+      "name": "재난관리 4단계(예방·대비·대응·복구) 조치 구분",
+      "qCount": 4,
+      "examCount": 8,
+      "years": "2018년 소방공채·경채 Q5, 2020년 소방공채·경채 Q14, 2022년 소방공채·경채 Q10, 2023년 소방공채·경채 Q4",
+      "summary": "재난관리 4단계 중 긴급통신수단 구축의 소속 단계"
+    },
+    {
+      "name": "재난의 학문적·법적 분류(존스·아네스·재난안전법)",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2019년 소방공채·경채 Q5, 2020년 소방공채·경채 Q13, 2023년 소방공채·경채 Q3",
+      "summary": "존스(Jones)의 재해 분류 체계"
+    },
+    {
+      "name": "분산관리방식 vs 통합관리방식(FEMA·콰란텔리)",
+      "qCount": 2,
+      "examCount": 4,
+      "years": "2022년 소방공채·경채 Q14, 2026년 소방공채·경채 Q3",
+      "summary": "재난관리 방식 중 분산관리방식 vs 통합관리방식"
+    },
+    {
+      "name": "재난관리주관기관 법정 매칭(시행령 별표 1의3)",
+      "qCount": 2,
+      "examCount": 4,
+      "years": "2024년 소방공채·경채 Q3, 2026년 소방공채·경채 Q5",
+      "summary": "재난 및 사고 유형별 재난관리주관기관 매칭"
+    },
+    {
+      "name": "위기관리 매뉴얼 3종(표준·실무·행동)",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2022년 소방공채·경채 Q2",
+      "summary": "위기관리 매뉴얼 3종 체계(표준·실무·행동매뉴얼)"
+    },
+    {
+      "name": "하인리히 및 버드의 도미노 재해이론",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2024년 소방공채·경채 Q4",
+      "summary": "하인리히 도미노 이론과 버드 수정 도미노 이론의 핵심 제거 단계"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂018₅",
+    "year": 2018,
+    "q_num": 5,
+    "appearances": 2,
+    "source": "2018년 소방공채·경채 Q5",
+    "topic": "재난관리 4단계 중 긴급통신수단 구축의 소속 단계",
+    "freq_key": "재난관리 4단계(예방·대비·대응·복구) 조치 구분",
+    "stem": "재난관리의 단계별 주요 활동 중 ‘긴급통신수단 구축’이 해당되는 단계로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "대응 단계",
+      "대비 단계",
+      "예방 단계",
+      "복구 단계"
+    ],
+    "ans": 2,
+    "q_expl": "｢재난 및 안전관리 기본법｣ 제4장(재난의 대비, 제34조에서 제35조)에 규정된 '재난현장 긴급통신수단의 마련' 및 '재난안전통신망 구축'이 재난관리 4단계 중 '대비(Preparedness) 단계'에 속함을 묻는 초빈출 문항입니다.",
+    "c_expls": [
+      "[틀림] 대응 단계는 실제 재난 발생 시 응급조치, 긴급구조, 재난사태 선포 등을 수행하는 단계입니다.",
+      "[옳음 · 정답] 재난 발생 전 위기관리 매뉴얼을 작성하고 재난관리자원을 비축하며 '긴급통신수단을 구축·마련'하는 활동은 ｢재난 및 안전관리 기본법｣ 제34조의8에 따른 '대비 단계'의 핵심 과업입니다.",
+      "[틀림] 예방 단계는 안전점검, 안전관리규정 제정, 재난예방시설 관리 등 위험요인을 사전에 제거·억제하는 단계입니다.",
+      "[틀림] 복구 단계는 피해조사, 복구계획 수립·시행, 특별재난지역 선포 및 지원 등을 수행하는 단계입니다."
+    ]
+  },
+  {
+    "id": "Q₂019₅",
+    "year": 2019,
+    "q_num": 5,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q5",
+    "topic": "존스(Jones)의 재해 분류 체계",
+    "freq_key": "재난의 학문적·법적 분류(존스·아네스·재난안전법)",
+    "stem": "존스(Jones)의 재해분류 중 기상학적 재해가 아닌 것은?",
+    "stem_box": "",
+    "choices": [
+      "번개",
+      "폭풍",
+      "쓰나미",
+      "토네이도"
+    ],
+    "ans": 3,
+    "q_expl": "존스(David K. Jones)의 자연재해 세분류[지구물리학적(지질·지형: 지진, 화산, 쓰나미, 산사태) vs 기상학적(기후·대기: 폭풍, 토네이도, 번개, 가뭄, 홍수) vs 생물학적(전염병, 해충)]를 묻는 문항입니다. 쓰나미(지진해일)는 해저 지진이나 지각 변동으로 발생하므로 기상학적 재해가 아니라 '지구물리학적(지질학적) 재해'에 속합니다.",
+    "c_expls": [
+      "[옳음] 번개(낙뢰)는 대기 중 방전 현상으로 기상학적 재해에 속합니다.",
+      "[옳음] 폭풍(태풍, 허리케인)은 대기 순환에 의한 기상학적 재해에 속합니다.",
+      "[틀림 · 정답] 쓰나미(Tsunami, 지진해일)는 해저 지진이나 화산 폭발 등 지각 변동에 의해 발생하므로 존스(Jones)의 분류상 기상학적 재해가 아니라 '지구물리학적(지질학적) 재해'에 해당합니다.",
+      "[옳음] 토네이도(회오리바람)는 대기 불안정으로 발생하는 기상학적 재해에 속합니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁3",
+    "year": 2020,
+    "q_num": 13,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q13",
+    "topic": "자연재난과 사회재난의 법적 분류",
+    "freq_key": "재난의 학문적·법적 분류(존스·아네스·재난안전법)",
+    "stem": "｢재난 및 안전관리 기본법｣상 재난의 분류가 다른 하나는?",
+    "stem_box": "",
+    "choices": [
+      "｢감염병의 예방 및 관리에 관한 법률｣에 따른 감염병의 확산",
+      "황사로 인하여 발생하는 재해",
+      "환경오염사고로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해",
+      "｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 미세먼지 등으로 인한 피해"
+    ],
+    "ans": 2,
+    "q_expl": "｢재난 및 안전관리 기본법｣ 제3조제1호 가목(자연재난)과 나목(사회재난)을 구분하는 빈출 문항입니다. 황사(黃砂)는 태풍·홍수·지진·가뭄 등과 함께 '자연재난'에 속하며, 감염병·환경오염사고·미세먼지는 모두 '사회재난'에 속합니다.",
+    "c_expls": [
+      "[사회재난] ｢감염병의 예방 및 관리에 관한 법률｣에 따른 감염병의 확산은 법 제3조제1호 나목의 '사회재난'에 해당합니다.",
+      "[자연재난 · 정답] '황사'로 인하여 발생하는 재해는 법 제3조제1호 가목의 '자연재난'에 해당하므로 나머지 셋과 분류가 다릅니다.",
+      "[사회재난] 환경오염사고로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해는 '사회재난'에 해당합니다.",
+      "[사회재난] ｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 미세먼지 등으로 인한 피해는 '사회재난'에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁4",
+    "year": 2020,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q14",
+    "topic": "재난관리 4단계별 세부 관리 사항 매칭",
+    "freq_key": "재난관리 4단계(예방·대비·대응·복구) 조치 구분",
+    "stem": "｢재난 및 안전관리 기본법｣상 재난관리에 관한 내용으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "예방 · 재난 발생을 사전에 방지하기 위하여 매년 재난 대비훈련 계획을 수립하고, 관계 기관과 합동으로 재난 대비훈련을 실시한다.",
+      "대비 · 재난을 효율적으로 관리하기 위하여 재난유형에 따라 위기관리 매뉴얼을 작성·운용한다.",
+      "대응 · 재난 피해지역을 재해 이전 상태로 회복시키기 위하여 피해상황을 조사하고, 자체복구계획을 수립· 시행한다.",
+      "복구 · 재난의 수습활동을 효율적으로 하기 위하여 재난관리자원의 비축·관리 및 긴급통신수단을 마련 한다."
+    ],
+    "ans": 2,
+    "q_expl": "｢재난 및 안전관리 기본법｣상 예방·대비·대응·복구 4단계의 법정 조문 위치를 묻는 문항입니다. 재난유형에 따라 위기관리 매뉴얼을 작성·운용하는 것(제34조의5)과 재난대비훈련(제35조), 자원 비축 및 긴급통신수단 마련(제34조, 제34조의8)은 모두 '대비 단계'의 활동입니다.",
+    "c_expls": [
+      "[틀림] 매년 재난대비훈련 계획을 수립하고 관계 기관 합동으로 재난대비훈련을 실시하는 것(법 제35조)은 예방 단계가 아니라 '대비 단계'에 해당합니다.",
+      "[옳음 · 정답] 재난을 효율적으로 관리하기 위하여 재난유형에 따라 위기관리 매뉴얼(표준·실무·행동매뉴얼)을 작성·운용하는 것(법 제34조의5)은 '대비 단계'의 대표적 활동입니다.",
+      "[틀림] 피해상황을 조사하고 자체복구계획을 수립·시행하는 것(법 제58조, 제59조)은 대응 단계가 아니라 '복구 단계'에 해당합니다.",
+      "[틀림] 재난관리자원의 비축·관리(법 제34조) 및 긴급통신수단 마련(법 제34조의8)은 복구 단계가 아니라 '대비 단계'에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂022₂",
+    "year": 2022,
+    "q_num": 2,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q2",
+    "topic": "위기관리 매뉴얼 3종 체계(표준·실무·행동매뉴얼)",
+    "freq_key": "위기관리 매뉴얼 3종(표준·실무·행동)",
+    "stem": "｢재난 및 안전관리 기본법｣상 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서는?",
+    "stem_box": "",
+    "choices": [
+      "재난대응 활동계획",
+      "현장조치 행동매뉴얼",
+      "위기대응 실무매뉴얼",
+      "위기관리 표준매뉴얼"
+    ],
+    "ans": 2,
+    "q_expl": "｢재난 및 안전관리 기본법｣ 제34조의5에 따른 위기관리 매뉴얼 3단계[위기관리 표준매뉴얼(국가 차원 기본 문서) ➔ 위기대응 실무매뉴얼(실제 대책본부 운영·조치절차) ➔ 현장조치 행동매뉴얼(재난현장 직접 임무 수행 기관의 구체적 행동절차)]를 구분하는 빈출 문항입니다.",
+    "c_expls": [
+      "[틀림] 재난대응 활동계획은 지자체 등이 수립하는 계획이며, 위기관리 매뉴얼 3종 중 현장 임무 수행 기관의 행동절차를 담은 문서는 현장조치 행동매뉴얼입니다.",
+      "[옳음 · 정답] 법 제34조의5제1항제3호에 따라 '재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서'는 '현장조치 행동매뉴얼'입니다.",
+      "[틀림] 위기대응 실무매뉴얼(제2호)은 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서입니다.",
+      "[틀림] 위기관리 표준매뉴얼(제1호)은 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 국가 위기관리의 기준 문서입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₁0",
+    "year": 2022,
+    "q_num": 10,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q10",
+    "topic": "재난관리 대비단계의 법정 관리 사항 선별",
+    "freq_key": "재난관리 4단계(예방·대비·대응·복구) 조치 구분",
+    "stem": "｢재난 및 안전관리 기본법｣상 재난관리의 대비단계 관리 사항을 있는 대로 모두 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 국가재난관리기준의 제정·운용<br/>ㄴ. 재난 예보·경보체계 구축·운영<br/>ㄷ. 재난안전분야 종사자 교육<br/>ㄹ. 재난안전통신망의 구축·운영",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄱ, ㄹ",
+      "ㄱ, ㄴ, ㄹ",
+      "ㄴ, ㄷ, ㄹ"
+    ],
+    "ans": 2,
+    "q_expl": "｢재난 및 안전관리 기본법｣ 제4장 '재난의 대비(제34조에서 제35조)'에 속하는 조항(국가재난관리기준 제정·운용, 재난안전통신망 구축·운영)과 제3장 '재난의 예방'(종사자 교육), 제5장 '재난의 대응'(예보·경보체계 구축·운영)을 구별하는 고난도 법조문 문항입니다.",
+    "c_expls": [
+      "[틀림] ㄴ(재난 예보·경보체계 구축·운영, 법 제38조의2)은 대비 단계가 아니라 제5장 '대응 단계'에 규정되어 있습니다.",
+      "[옳음 · 정답] ㄱ(국가재난관리기준의 제정·운용, 법 제34조의4)과 ㄹ(재난안전통신망의 구축·운영, 법 제34조의9)은 모두 법 제4장 '재난의 대비'에 명시된 대비단계 관리 사항입니다.",
+      "[틀림] ㄴ(재난 예보·경보체계 구축·운영)은 ｢재난 및 안전관리 기본법｣ 제38조의2에 규정된 '대응 단계' 사항이므로 대비 단계(ㄱ 국가재난관리기준 제정·운용, ㄹ 재난안전통신망 구축·운영)에서 제외해야 합니다.",
+      "[틀림] ㄴ(대응 단계)과 ㄷ(재난안전분야 종사자 교육, 법 제29조의2로 제3장 '예방 단계')은 대비 단계가 아닙니다."
+    ]
+  },
+  {
+    "id": "Q₂022₁4",
+    "year": 2022,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q14",
+    "topic": "재난관리 방식 중 분산관리방식 vs 통합관리방식",
+    "freq_key": "분산관리방식 vs 통합관리방식(FEMA·콰란텔리)",
+    "stem": "재난관리 방식 중 분산관리에 대한 일반적인 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "재난의 종류에 따라 대응방식의 차이와 대응계획 및 책임기관이 각각 다르게 배정된다.",
+      "재난 시 유관기관 간의 중복적 대응이 있을 수 있다.",
+      "재난의 발생 유형에 따라 소관부처별로 업무가 나뉜다.",
+      "재난 시 유사한 자원동원 체계와 자원유형이 필요하다."
+    ],
+    "ans": 4,
+    "q_expl": "재난관리 행정모형인 '유형별 분산관리방식'과 '통합관리방식(All Hazards Approach)'을 비교하는 문항입니다. 재난의 유형이 달라도 대피·구조·구호 등 유사한 자원동원 체계와 공통된 대응 기능이 필요하다는 점은 분산관리가 아니라 '통합관리방식'으로 전환해야 하는 핵심 논거(콰란텔리의 주장)입니다.",
+    "c_expls": [
+      "[옳음] 분산관리방식은 재난의 종류(화재, 홍수, 산불 등)에 따라 대응계획 및 책임 주관기관이 각각 다르게 배정됩니다.",
+      "[옳음] 분산관리방식은 여러 부처가 각자 대응 자원을 보유하므로 복합재난 발생 시 유관기관 간 중복 투자나 중복 대응, 또는 관할권 마찰이 발생할 수 있습니다.",
+      "[옳음] 분산관리방식은 재난 발생 유형에 따라 소관 부처별로 업무가 세분화되어 전문성이 높은 장점이 있습니다.",
+      "[틀림 · 정답] '재난 시 유사한 자원동원 체계와 공통된 자원유형이 필요하다(대응자원의 공통성)'는 점은 분산관리의 특징이 아니라, 분산관리를 지양하고 '통합관리방식'을 채택해야 하는 핵심 근거입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₃",
+    "year": 2023,
+    "q_num": 3,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q3",
+    "topic": "재난의 분류 체계 및 하인리히 도미노 이론",
+    "freq_key": "재난의 학문적·법적 분류(존스·아네스·재난안전법)",
+    "stem": "재난(재해)에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "아네스(Br. J. Anesth)는 재난을 크게 자연재난과 인적(인위) 재난으로 구분하였다.",
+      "존스(David K. Jones)는 재난을 크게 자연재난, 준자연재난, 인적(인위)재난으로 구분하였다.",
+      "｢재난 및 안전관리 기본법｣ 제3조 제1호에 따른 재난은 자연재난, 사회재난, 해외재난으로 구분된다.",
+      "하인리히(H. W. Heinrich)의 도미노 이론은 재해발생과정을 유전적 요인 및 사회적 환경→개인적 결함→불안전 행동 및 불안전 상태→사고→재해(상해)라는 5개 요인의 연쇄 작용으로 설명하였다."
+    ],
+    "ans": 3,
+    "q_expl": "학자별 재난 분류[아네스(2분법: 자연·인위재난), 존스(3분법: 자연·준자연·인위재난)], 현행 ｢재난 및 안전관리 기본법｣ 제3조제1호의 2분법(자연재난·사회재난), 그리고 하인리히의 도미노 5단계를 종합한 문항입니다.",
+    "c_expls": [
+      "[옳음] 아네스(Br. J. Anesth)는 재난을 발생 원인에 따라 자연재난과 인적(인위)재난의 2가지로 대별하였습니다.",
+      "[옳음] 존스(David K. Jones)는 재난을 자연재난, 준자연재난(인간 활동이 가미된 자연재난), 인적(인위)재난의 3가지로 구분하였습니다.",
+      "[틀림 · 정답] ｢재난 및 안전관리 기본법｣ 제3조제1호에 따른 법정 재난은 '자연재난'과 '사회재난' 2가지로만 구분되며, '해외재난'은 제3조제1호의 대분류 항목에 포함되지 않습니다.",
+      "[옳음] 하인리히(H. W. Heinrich)의 도미노 이론은 재해 발생을 '유전적 요인 및 사회적 환경(1단계) ➔ 개인적 결함(2단계) ➔ 불안전한 행동 및 불안전한 상태(3단계) ➔ 사고(4단계) ➔ 재해·상해(5단계)'의 5단계 연쇄 반응으로 설명하였습니다."
+    ]
+  },
+  {
+    "id": "Q₂023₄",
+    "year": 2023,
+    "q_num": 4,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q4",
+    "topic": "재난관리 단계와 활동내용의 연결(위험구역 설정)",
+    "freq_key": "재난관리 4단계(예방·대비·대응·복구) 조치 구분",
+    "stem": "｢재난 및 안전관리 기본법｣상 재난관리 단계와 활동내용의 연결이 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "예방 단계 · 위험구역의 설정",
+      "대비 단계 · 재난현장 긴급통신수단의 마련",
+      "대응 단계 · 재난 예보·경보체계 구축·운영",
+      "복구 단계 · 특별재난지역 선포 및 지원"
+    ],
+    "ans": 1,
+    "q_expl": "｢재난 및 안전관리 기본법｣상 각 조항이 속한 단계를 묻는 문항입니다. '위험구역의 설정(법 제41조)'은 재난이 발생하거나 발생할 우려가 있는 경우 사람의 생명·신체에 대한 위해 방지를 위해 출입을 금지·제한하는 조치로서 예방 단계가 아니라 제5장 '대응 단계'에 속합니다.",
+    "c_expls": [
+      "[틀림 · 정답] '위험구역의 설정(법 제41조)'은 예방 단계가 아니라 제5장 '대응 단계'의 응급조치 사항입니다.",
+      "[옳음] 재난현장 긴급통신수단의 마련(법 제34조의8)은 제4장 '대비 단계'에 해당합니다.",
+      "[옳음] 재난 예보·경보체계 구축·운영(법 제38조의2)은 제5장 '대응 단계'에 해당합니다.",
+      "[옳음] 특별재난지역 선포 및 지원(법 제60조, 제61조)은 제6장 '복구 단계'에 해당합니다."
+    ]
+  },
+  {
+    "id": "Q₂024₃",
+    "year": 2024,
+    "q_num": 3,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q3",
+    "topic": "재난 및 사고 유형별 재난관리주관기관 매칭",
+    "freq_key": "재난관리주관기관 법정 매칭(시행령 별표 1의3)",
+    "stem": "｢재난 및 안전관리 기본법 시행령｣상 재난 및 사고 유형과 재난관리 주관기관의 연결이 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "저수지 사고 · 국토교통부",
+      "자연우주물체의 추락·충돌 · 과학기술정보통신부",
+      "공동구 재난(국토교통부가 관장하는 공동구는 제외한다) · 행정안전부",
+      "원자력안전 사고(파업에 따른 가동중단으로 한정한다) · 산업통상자원부"
+    ],
+    "ans": 1,
+    "q_expl": "｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 규정된 재난 및 사고 유형별 재난관리주관기관을 묻는 문항입니다. 농업용 '저수지 사고'의 재난관리주관기관은 국토교통부가 아니라 '농림축산식품부'(또는 행안부/관할 부처, 댐은 환경부)입니다.",
+    "c_expls": [
+      "[틀림 · 정답] ｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 '저수지 사고'의 재난관리주관기관은 국토교통부가 아니라 '농림축산식품부(농업용 저수지)' 및 '행정안전부'입니다.",
+      "[옳음] 자연우주물체(소행성·유성체)의 추락·충돌 및 우주전파 재난의 주관기관은 '과학기술정보통신부'입니다.",
+      "[옳음] 공동구 재난(국토교통부가 관장하는 공동구 제외)의 주관기관은 '행정안전부'입니다.",
+      "[옳음] 원자력안전 사고 중 파업에 따른 원전 가동중단으로 한정된 사고의 주관기관은 '산업통상자원부'입니다(일반 방사능 누출 등은 원자력안전위원회)."
+    ]
+  },
+  {
+    "id": "Q₂024₄",
+    "year": 2024,
+    "q_num": 4,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q4",
+    "topic": "하인리히 도미노 이론과 버드 수정 도미노 이론의 핵심 제거 단계",
+    "freq_key": "하인리히 및 버드의 도미노 재해이론",
+    "stem": "다음은 재해 발생 과정에 관한 이론이다. 각 이론에서 재해 발생을 방지하기 위해 제거해야 하는 단계가 옳게 나열된 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 하인리히(H. W. Heinrich)의 도미노 이론: 사회적 환경 및 유전적 요소→개인적 결함→불안전한 행동 및 상태→사고→재해<br/>ㄴ. 버드(F. Bird)의 수정 도미노 이론: 제어의 부족→ 기본원인→직접원인→사고→재해",
+    "choices": [
+      "ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 직접원인",
+      "ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 기본원인",
+      "ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 직접원인",
+      "ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 기본원인"
+    ],
+    "ans": 4,
+    "q_expl": "재해 예방을 위해 제거해야 할 핵심 도미노(제3단계 또는 핵심 관리 단계)를 비교하는 문항입니다. 하인리히(Heinrich)의 5단계 도미노에서는 제3단계인 '불안전한 행동 및 불안전한 상태(직접원인)'를 제거해야 사고와 재해를 막을 수 있다고 보았고, 버드(Bird)의 수정 도미노 이론에서는 안전관리상 '기본원인(근본원인, 제2단계)' 또는 제어의 부족을 제거해야 한다고 보았습니다.",
+    "c_expls": [
+      "[틀림] 하인리히 이론에서 제거해야 할 핵심 단계는 개인적 결함(2단계)이 아니라 제3단계인 '불안전한 행동 및 불안전한 상태'입니다.",
+      "[틀림] ㄱ이 틀렸습니다. 하인리히는 제3단계인 '불안전한 행동 및 상태' 제거를 핵심으로 보았습니다.",
+      "[틀림] ㄴ이 틀렸습니다. 버드의 수정 도미노 이론에서 사고 방지를 위해 근본적으로 제거해야 하는 단계는 '기본원인'입니다.",
+      "[옳음 · 정답] 하인리히 도미노 이론에서는 제3단계인 '불안전한 행동 및 상태'( ㄱ )를, 버드의 수정 도미노 이론에서는 제2단계인 '기본원인'( ㄴ )을 제거하는 것이 재해 예방의 핵심입니다."
+    ]
+  },
+  {
+    "id": "Q₂026₃",
+    "year": 2026,
+    "q_num": 3,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q3",
+    "topic": "분산관리방식과 통합관리방식(FEMA 및 콰란텔리 이론)",
+    "freq_key": "분산관리방식 vs 통합관리방식(FEMA·콰란텔리)",
+    "stem": "재난관리방식에서 유형별 분산관리방식과 통합관리방식에 관한 설명으로 옳은 것만을 <보기>에서 모두 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 통합관리방식의 장점은 업무 수행이 전문적이어서 업무의 과다를 방지할 수 있다.<br/>ㄴ. 통합관리방식의 단점은 업무와 책임이 하나 또는 소수의 조직에 집중된다는 것이다.<br/>ㄷ. FEMA(Federal Emergency Management Agency) 창설에 이론적 근거로 제시된 것이 통합관리방식이다.<br/>ㄹ. 콰란텔리(Quarantelli)는 유형별 분산관리방식이 통합관리방식으로 전환되어야 하는 근거로 재난개념의 변화, 재난대응의 유사성, 계획내용의 유사성, 대응자원의 공통성을 제시하고 있다.",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄱ, ㄷ",
+      "ㄴ, ㄷ",
+      "ㄴ, ㄷ, ㄹ"
+    ],
+    "ans": 4,
+    "q_expl": "재난관리 조직이론에서 유형별 분산관리방식과 통합관리방식의 장단점, 미국 연방재난관리청(FEMA, 1979년) 창설의 이론적 배경, 그리고 재난사회학자 콰란텔리(E. L. Quarantelli)의 전환 논거를 묻는 2026년 기출 문항입니다.",
+    "c_expls": [
+      "[틀림] ㄱ이 틀렸습니다. '업무 수행이 전문적이어서 특정 조직으로의 업무 과다(집중)를 방지할 수 있는 것'은 통합관리방식이 아니라 '유형별 분산관리방식'의 장점입니다.",
+      "[틀림] ㄱ(업무 수행이 전문적이어서 업무 과다를 방지할 수 있음)은 통합관리방식이 아니라 '유형별 분산관리방식'의 장점이며, 옳은 설명인 ㄴ, ㄷ, ㄹ 중 ㄴ과 ㄹ이 누락되어 틀렸습니다.",
+      "[틀림] ㄴ, ㄷ 외에 ㄹ(콰란텔리의 통합관리 전환 근거 4가지)도 옳은 설명입니다.",
+      "[옳음 · 정답] 통합관리방식의 단점은 권한·업무·책임이 하나 또는 소수 조직에 과도하게 집중된다는 점( ㄴ )이며, 1979년 미국 카터 행정부의 FEMA 창설 이론적 근거가 되었고( ㄷ ), 콰란텔리는 재난개념의 변화·재난대응의 유사성·계획내용의 유사성·대응자원의 공통성을 통합관리 전환의 4대 근거로 제시하였습니다( ㄹ )."
+    ]
+  },
+  {
+    "id": "Q₂026₅",
+    "year": 2026,
+    "q_num": 5,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q5",
+    "topic": "사회재난 유형별 재난관리주관기관 매칭",
+    "freq_key": "재난관리주관기관 법정 매칭(시행령 별표 1의3)",
+    "stem": "재난 및 안전관리 기본법령상 재난관리주관기관과 사회재난 유형이 바르게 연결된 것은?",
+    "stem_box": "",
+    "choices": [
+      "해양수산부- ｢농수산물 유통 및 가격안정에 관한 법률｣에 따른 수산물종합유통센터의 화재등으로 인해 발생하는 대규모 피해",
+      "외교부- ｢출입국관리법｣에 따른 외국인보호실의 화재등으로 인해 발생하는 대규모 피해",
+      "국토교통부- ｢수도법｣에 따른 수도의 화재등으로 발생하는 대규모 피해",
+      "산업통상부- ｢에너지법｣에 따른 전기 등 에너지의 중대한 수급차질로 인해 발생하는 대규모 피해"
+    ],
+    "ans": 1,
+    "q_expl": "｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따른 사회재난 유형과 재난관리주관기관의 연결을 묻는 2026년 기출 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] ｢농수산물 유통 및 가격안정에 관한 법률｣에 따른 수산물종합유통센터의 화재 등으로 인해 발생하는 대규모 피해의 재난관리주관기관은 '해양수산부'입니다.",
+      "[틀림] ｢출입국관리법｣에 따른 외국인보호실·보호소의 화재 등으로 인해 발생하는 대규모 피해의 주관기관은 외교부가 아니라 '법무부'입니다.",
+      "[틀림] ｢수도법｣에 따른 수도(상수도)의 화재·파손 등으로 발생하는 대규모 피해의 주관기관은 국토교통부가 아니라 '환경부'입니다.",
+      "[틀림] ｢에너지법｣에 따른 전기 등 에너지의 중대한 수급차질의 주관기관 명칭은 현행 정부조직법상 '산업통상자원부'(선지에는 산업통상부로 오기)입니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "A",
+    "text": "자연재난이란 태풍, 홍수, 호우, 강풍, 풍랑, 해일, 대설, 낙뢰, 가뭄, 지진 등으로 인하여 발생하는 재해를 말한다.",
+    "isCorrect": true,
+    "source": "재난분류 기출",
+    "explanation": "｢재난 및 안전관리 기본법｣ 제3조제1호 가목에 규정된 자연재난의 정확한 법정 정의입니다.",
+    "origQId": "",
+    "id": "SCI₀1₀3₀01"
+  },
+  {
+    "grade": "A",
+    "text": "사회재난이란 화재, 붕괴, 폭발, 교통사고, 환경오염사고 등으로 인하여 발생하는 일정 규모 이상의 피해를 말한다.",
+    "isCorrect": true,
+    "source": "재난분류 기출",
+    "explanation": "｢재난 및 안전관리 기본법｣ 제3조제1호 나목에 규정된 사회재난의 정확한 법정 정의입니다.",
+    "origQId": "",
+    "id": "SCI₀1₀3₀02"
+  },
+  {
+    "grade": "S",
+    "text": "재난관리 4단계 중 재난현장 긴급통신수단의 구축 및 마련은 '대비 단계'에 해당한다.",
+    "isCorrect": true,
+    "source": "2018년 소방공채·경채 Q5 기출",
+    "explanation": "｢재난 및 안전관리 기본법｣상 긴급통신수단 마련, 재난안전통신망 구축, 위기관리 매뉴얼 작성, 재난대비훈련은 모두 '대비 단계'의 핵심 활동입니다.",
+    "origQId": "Q₂018₅",
+    "id": "SCI₀1₀3₀09"
+  },
+  {
+    "grade": "A",
+    "text": "존스(Jones)의 자연재해 분류 중 쓰나미(지진해일)는 기상학적 재해가 아니라 지구물리학적(지질학적) 재해에 해당한다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q5 기출",
+    "explanation": "번개, 폭풍, 토네이도는 대기 현상에 따른 기상학적 재해이나, 쓰나미는 해저 지진 등에 기인하므로 지구물리학적 재해로 분류됩니다.",
+    "origQId": "Q₂019₅",
+    "id": "SCI₀1₀3₀11"
+  },
+  {
+    "grade": "S",
+    "text": "｢재난 및 안전관리 기본법｣상 황사로 인하여 발생하는 재해는 자연재난에 해당하며, 미세먼지 및 감염병의 확산으로 인한 피해는 사회재난에 해당한다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q13 기출",
+    "explanation": "법 제3조제1호에 따라 황사는 자연재난(가목)이고, 미세먼지·감염병·가축전염병·화재·환경오염사고는 사회재난(나목)입니다.",
+    "origQId": "Q₂020₁3",
+    "id": "SCI₀1₀3₀17"
+  },
+  {
+    "grade": "S",
+    "text": "｢재난 및 안전관리 기본법｣상 재난유형에 따라 위기관리 매뉴얼을 작성·운용하고 재난대비훈련을 실시하는 것은 '대비 단계'에 해당한다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q14 기출",
+    "explanation": "위기관리 매뉴얼 작성·운용(제34조의5), 재난대비훈련(제35조), 재난관리자원 비축(제34조)은 모두 대비 단계의 법정 조치입니다.",
+    "origQId": "Q₂020₁4",
+    "id": "SCI₀1₀3₀18"
+  },
+  {
+    "grade": "S",
+    "text": "｢재난 및 안전관리 기본법｣상 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서는 '현장조치 행동매뉴얼'이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q2 기출",
+    "explanation": "위기관리 매뉴얼은 표준매뉴얼(국가 기준), 실무매뉴얼(주관기관 조치절차), 행동매뉴얼(현장 직접 수행기관 행동절차)의 3종으로 구분됩니다(법 제34조의5).",
+    "origQId": "Q₂022₂",
+    "id": "SCI₀1₀3₀22"
+  },
+  {
+    "grade": "A",
+    "text": "｢재난 및 안전관리 기본법｣상 국가재난관리기준의 제정·운용 및 재난안전통신망의 구축·운영은 모두 '대비 단계'의 관리 사항이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q10 기출",
+    "explanation": "국가재난관리기준 제정·운용(제34조의4)과 재난안전통신망 구축·운영(제34조의9)은 제4장(재난의 대비)에 규정되어 있습니다.",
+    "origQId": "Q₂022₁0",
+    "id": "SCI₀1₀3₀23"
+  },
+  {
+    "grade": "B",
+    "text": "｢재난 및 안전관리 기본법｣상 재난안전분야 종사자 교육은 예방 단계에, 재난 예보·경보체계 구축·운영은 대응 단계에 규정되어 있다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q10 기출",
+    "explanation": "종사자 교육(제29조의2)은 제3장 예방 단계, 재난 예보·경보체계 구축·운영(제38조의2)은 제5장 대응 단계 조문입니다.",
+    "origQId": "Q₂022₁0",
+    "id": "SCI₀1₀3₀24"
+  },
+  {
+    "grade": "S",
+    "text": "재난관리 방식 중 유형별 분산관리방식은 재난 발생 유형에 따라 소관 부처별로 업무가 나뉘어 전문성은 높으나, 유관기관 간 중복적 대응이 발생할 수 있다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q14 기출",
+    "explanation": "분산관리방식은 부처별 전문성은 뛰어나지만 자원의 중복 투자와 복합재난 시 지휘 혼선·할거주의가 단점으로 지적됩니다.",
+    "origQId": "Q₂022₁4",
+    "id": "SCI₀1₀3₀25"
+  },
+  {
+    "grade": "A",
+    "text": "아네스(Anesth)는 재난을 자연재난과 인적재난으로 구분하였고, 존스(Jones)는 자연재난, 준자연재난, 인적재난으로 구분하였다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q3 기출",
+    "explanation": "아네스의 2분법과 존스의 3분법(준자연재난 포함)은 재난학의 대표적인 학문적 분류 체계입니다.",
+    "origQId": "Q₂023₃",
+    "id": "SCI₀1₀3₀26"
+  },
+  {
+    "grade": "S",
+    "text": "｢재난 및 안전관리 기본법｣ 제3조제1호에 따른 재난은 자연재난, 사회재난, 해외재난의 3가지로 구분된다.",
+    "isCorrect": false,
+    "source": "2023년 소방공채·경채 Q3 기출",
+    "explanation": "법 제3조제1호는 재난을 '자연재난(가목)'과 '사회재난(나목)'의 2가지로만 분류합니다.",
+    "origQId": "Q₂023₃",
+    "id": "SCI₀1₀3₀27"
+  },
+  {
+    "grade": "S",
+    "text": "｢재난 및 안전관리 기본법｣상 위험구역의 설정(제41조)은 예방 단계가 아니라 '대응 단계'의 활동에 해당한다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q4 기출",
+    "explanation": "위험구역 설정, 대피명령, 통행제한 요청, 응급조치 등은 모두 제5장 '대응 단계'의 조치입니다.",
+    "origQId": "Q₂023₄",
+    "id": "SCI₀1₀3₀28"
+  },
+  {
+    "grade": "A",
+    "text": "｢재난 및 안전관리 기본법 시행령｣상 자연우주물체의 추락·충돌 재난의 주관기관은 과학기술정보통신부이며, 농업용 저수지 사고의 주관기관은 농림축산식품부이다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q3 기출",
+    "explanation": "시행령 별표 1의3에 따라 자연우주물체 추락·충돌은 과학기술정보통신부, 농업용 저수지 사고는 농림축산식품부가 주관합니다.",
+    "origQId": "Q₂024₃",
+    "id": "SCI₀1₀3₀29"
+  },
+  {
+    "grade": "S",
+    "text": "하인리히(Heinrich)의 도미노 이론은 '사회적 환경 및 유전적 요소 ➔ 개인적 결함 ➔ 불안전한 행동 및 상태 ➔ 사고 ➔ 재해'의 5단계로 구성되며, 재해 방지를 위해 제거해야 할 핵심 단계는 제3단계인 '불안전한 행동 및 상태'이다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q4 기출",
+    "explanation": "하인리히는 5개의 도미노 중 세 번째 도미노인 '불안전한 행동 및 불안전한 상태'를 제거하면 연쇄 반응이 끊어져 사고와 재해를 예방할 수 있다고 역설하였습니다.",
+    "origQId": "Q₂024₄",
+    "id": "SCI₀1₀3₀30"
+  },
+  {
+    "grade": "S",
+    "text": "버드(Bird)의 수정 도미노 이론은 '제어의 부족(관리 부족) ➔ 기본원인 ➔ 직접원인(징후) ➔ 사고(접촉) ➔ 재해(손실)'의 5단계로 구성된다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q4 기출",
+    "explanation": "버드는 경영·관리적 측면을 강조하여 제어의 부족과 기본원인을 도미노 앞단에 배치한 수정 도미노 이론을 제시하였습니다.",
+    "origQId": "Q₂024₄",
+    "id": "SCI₀1₀3₀31"
+  },
+  {
+    "grade": "S",
+    "text": "재난관리 방식 중 통합관리방식은 미국 연방재난관리청(FEMA) 창설의 이론적 근거가 되었으며, 단점으로는 업무와 책임이 하나 또는 소수의 조직에 집중된다는 점이 꼽힌다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q3 기출",
+    "explanation": "통합관리방식(All Hazards Approach)은 모든 재난 유형을 단일 조직(예: FEMA)에서 통합 관리하여 자원 중복을 막고 복합재난 대응력을 높이나, 단일 조직에 업무와 책임이 과중되는 단점이 있습니다.",
+    "origQId": "Q₂026₃",
+    "id": "SCI₀1₀3₀34"
+  },
+  {
+    "grade": "A",
+    "text": "콰란텔리(Quarantelli)는 유형별 분산관리방식이 통합관리방식으로 전환되어야 하는 근거로 재난개념의 변화, 재난대응의 유사성, 계획내용의 유사성, 대응자원의 공통성을 제시하였다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q3 기출",
+    "explanation": "콰란텔리는 재난 원인이 달라도 현장에서 요구되는 대피·구조·통신 등 대응 기능과 자원이 공통되므로 통합관리로 가야 한다고 주장하였습니다.",
+    "origQId": "Q₂026₃",
+    "id": "SCI₀1₀3₀35"
+  },
+  {
+    "grade": "A",
+    "text": "｢재난 및 안전관리 기본법 시행령｣상 수산물종합유통센터 화재의 주관기관은 해양수산부이고, 외국인보호실 화재는 법무부, 수도(상수도) 재난은 환경부가 주관한다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q5 기출",
+    "explanation": "시행령 별표 1의3에 따른 소관 시설별 재난관리주관기관 법정 분류입니다.",
+    "origQId": "Q₂026₅",
+    "id": "SCI₀1₀3₀37"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>

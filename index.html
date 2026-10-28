@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#FCF9F4">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="소방 3과목 기본서">
+  <title>소방 3과목 통합 기본서 · 소방학개론 · 소방관계법규 · 한국사</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="소방관계법규_기본서_및_기출하네스/assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-5 py-3.5" style="background-color:var(--ui-bar); border-color:var(--ui-border);">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <span class="font-bold flex items-center gap-1.5" style="color:var(--accent);">
+        📚 소방 합격 3과목 통합 기본서
+      </span>
+      <div class="flex items-center gap-3 font-bold" style="color:var(--text-sub);">
+        <a href="#subj-fire-intro" class="hover:underline">소방학개론</a>
+        <span>·</span>
+        <a href="#subj-fire-law" class="hover:underline">소방관계법규</a>
+        <span>·</span>
+        <a href="#subj-history" class="hover:underline">한국사</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-5 md:px-12 py-12 md:py-16">
+
+    <header class="mb-10 pb-8 border-b" style="border-color:var(--border-line);">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-bold mb-3" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--accent);">
+        <span>모바일 · 태블릿 · PC 통합 전자책</span>
+        <span>·</span>
+        <span>전 3과목 57개 장 수록</span>
+      </div>
+      <h1 class="text-2xl md:text-4xl font-extrabold leading-tight mb-3" style="color:var(--text-main);">
+        소방학개론 · 소방관계법규 · 한국사 통합 기본서
+      </h1>
+      <p class="text-sm md:text-base leading-relaxed" style="color:var(--text-sub);">
+        스마트폰에서 언제 어디서나 문단 독해와 실전 기출·OX 훈련을 이어갈 수 있도록 세 과목 기본서를 하나로 묶은 통합 열람 포털입니다. 각 과목의 전체 목차로 진입하거나 아래의 단원 바로가기를 눌러 즉시 학습을 시작할 수 있습니다.
+      </p>
+
+      <!-- 최근 읽은 단원 이어 읽기 박스 -->
+      <div id="recentChapterBox" class="hidden mt-6 p-4 rounded-lg border flex flex-col sm:flex-row sm:items-center justify-between gap-3" style="background-color:var(--bg-subtle); border-color:var(--border-strong);">
+        <div>
+          <div class="text-xs font-bold mb-0.5" style="color:var(--accent);">🔖 마지막으로 읽은 단원 이어보기</div>
+          <div id="recentChapterTitle" class="text-sm font-bold" style="color:var(--text-main);"></div>
+        </div>
+        <a id="recentChapterLink" href="#" class="inline-flex items-center justify-center px-4 py-2 rounded text-xs font-bold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+          이어서 읽기 &rarr;
+        </a>
+      </div>
+    </header>
+
+    <!-- 3과목 대표 진입 카드 -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+      <!-- 1. 소방학개론 -->
+      <div class="p-5 rounded-xl border flex flex-col justify-between" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+        <div>
+          <div class="flex items-center justify-between text-xs font-bold mb-2">
+            <span style="color:var(--accent);">제1과목 · 전 5편 17장</span>
+            <span style="color:var(--text-muted);">기출 212 · OX 369</span>
+          </div>
+          <h2 class="text-xl font-extrabold mb-2" style="color:var(--text-main);">소방학개론</h2>
+          <p class="text-xs leading-relaxed mb-5" style="color:var(--text-sub);">
+            소방조직·재난관리론, 연소·폭발 이론, 화재·소화약제론, 소방시설론, 위험물·특수가연물론 전 범위 기본서 및 기출 하네스
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="소방학개론_기본서_및_기출하네스/index.html" class="w-full py-2.5 px-4 rounded text-center text-xs font-bold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+            소방학개론 전체 목차 열기 &rarr;
+          </a>
+          <a href="소방학개론_기본서_및_기출하네스/01_01_소방의_역사_발전과_조직_인사원리.html" data-track-title="[소방학개론] 제1편 제1장 소방의 역사·발전 과정 및 소방조직·인사 원리" class="track-link w-full py-2 px-3 rounded border text-center text-xs font-bold transition" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
+            제1편 제1장 바로 읽기
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. 소방관계법규 -->
+      <div class="p-5 rounded-xl border flex flex-col justify-between" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+        <div>
+          <div class="flex items-center justify-between text-xs font-bold mb-2">
+            <span style="color:var(--accent);">제2과목 · 전 4편 19장</span>
+            <span style="color:var(--text-muted);">6대 법령 완비</span>
+          </div>
+          <h2 class="text-xl font-extrabold mb-2" style="color:var(--text-main);">소방관계법규</h2>
+          <p class="text-xs leading-relaxed mb-5" style="color:var(--text-sub);">
+            소방기본법, 화재조사법, 화재예방법, 소방시설법, 소방시설공사업법, 위험물안전관리법 조문 원리와 비교표·기출 하네스
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="소방관계법규_기본서_및_기출하네스/index.html" class="w-full py-2.5 px-4 rounded text-center text-xs font-bold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+            소방관계법규 전체 목차 열기 &rarr;
+          </a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_01_총칙_및_소방기관과_종합상황실.html" data-track-title="[소방관계법규] 제1편 제1장 총칙, 소방기관의 설치 및 119종합상황실" class="track-link w-full py-2 px-3 rounded border text-center text-xs font-bold transition" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
+            제1편 제1장 바로 읽기
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. 한국사 (한능검 2급) -->
+      <div class="p-5 rounded-xl border flex flex-col justify-between" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+        <div>
+          <div class="flex items-center justify-between text-xs font-bold mb-2">
+            <span style="color:var(--accent);">제3과목 · 전 7편 21장</span>
+            <span style="color:var(--text-muted);">빈출 OX 519제</span>
+          </div>
+          <h2 class="text-xl font-extrabold mb-2" style="color:var(--text-main);">한국사 (한능검)</h2>
+          <p class="text-xs leading-relaxed mb-5" style="color:var(--text-sub);">
+            선사시대와 고조선부터 남북국, 고려, 조선 전·후기, 개항기, 일제강점기 및 현대사까지 시대별 스토리 기본서 및 선지집
+          </p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a href="한국사_한능검2급_기본서_및_기출하네스/index.html" class="w-full py-2.5 px-4 rounded text-center text-xs font-bold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+            한국사 전체 목차 열기 &rarr;
+          </a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/01_01_구석기_신석기_도구와_생활상.html" data-track-title="[한국사] 제1편 제1장 구석기와 신석기 시대의 도구와 생활상" class="track-link w-full py-2 px-3 rounded border text-center text-xs font-bold transition" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
+            제1편 제1장 바로 읽기
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 과목별 전 단원 빠른 이동 -->
+    <div class="space-y-12">
+
+      <!-- 1. 소방학개론 전 단원 -->
+      <section id="subj-fire-intro" class="p-6 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b" style="border-color:var(--border-line);">
+          <div>
+            <span class="text-xs font-bold" style="color:var(--accent);">제1과목 · 전 17개 장 바로가기</span>
+            <h2 class="text-xl font-extrabold" style="color:var(--text-main);">소방학개론 단원 목록</h2>
+          </div>
+          <a href="소방학개론_기본서_및_기출하네스/index.html" class="text-xs font-bold hover:underline" style="color:var(--accent);">과목 상세 목차 &rarr;</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <a href="소방학개론_기본서_및_기출하네스/01_01_소방의_역사_발전과_조직_인사원리.html" data-track-title="[소방학개론] 01-01 소방의 역사·발전과 조직·인사원리" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-01. 소방의 역사·발전과 조직·인사원리</a>
+          <a href="소방학개론_기본서_및_기출하네스/01_02_재난의_분류_도미노이론과_재난관리단계.html" data-track-title="[소방학개론] 01-02 재난의 분류·도미노이론과 재난관리단계" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-02. 재난의 분류·도미노이론과 재난관리단계</a>
+          <a href="소방학개론_기본서_및_기출하네스/01_03_긴급구조통제단과_재난사태_특별재난지역.html" data-track-title="[소방학개론] 01-03 긴급구조통제단과 재난사태·특별재난지역" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-03. 긴급구조통제단과 재난사태·특별재난지역</a>
+          <a href="소방학개론_기본서_및_기출하네스/02_01_연소의_본질_화학양론과_인화점_발화점.html" data-track-title="[소방학개론] 02-01 연소의 본질·화학양론과 인화점·발화점" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-01. 연소의 본질·화학양론과 인화점·발화점</a>
+          <a href="소방학개론_기본서_및_기출하네스/02_02_연소범위_위험도_최소산소농도와_연소형태.html" data-track-title="[소방학개론] 02-02 연소범위·위험도·최소산소농도와 연소형태" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-02. 연소범위·위험도·최소산소농도와 연소형태</a>
+          <a href="소방학개론_기본서_및_기출하네스/02_03_열전달_자연발화와_연소생성물_독성가스.html" data-track-title="[소방학개론] 02-03 열전달·자연발화와 연소생성물·독성가스" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-03. 열전달·자연발화와 연소생성물·독성가스</a>
+          <a href="소방학개론_기본서_및_기출하네스/02_04_구획실_화재단계와_플래시오버_백드래프트.html" data-track-title="[소방학개론] 02-04 구획실 화재단계와 플래시오버·백드래프트" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-04. 구획실 화재단계와 플래시오버·백드래프트</a>
+          <a href="소방학개론_기본서_및_기출하네스/02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상.html" data-track-title="[소방학개론] 02-05 폭발동역학·분진폭발과 BLEVE·유류탱크현상" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-05. 폭발동역학·분진폭발과 BLEVE·유류탱크현상</a>
+          <a href="소방학개론_기본서_및_기출하네스/03_01_화재의_분류_소화원리와_화재조사_피해산정.html" data-track-title="[소방학개론] 03-01 화재의 분류·소화원리와 화재조사·피해산정" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-01. 화재의 분류·소화원리와 화재조사·피해산정</a>
+          <a href="소방학개론_기본서_및_기출하네스/03_02_물소화약제_첨가제와_포소화약제_혼합방식.html" data-track-title="[소방학개론] 03-02 물소화약제·첨가제와 포소화약제 혼합방식" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-02. 물소화약제·첨가제와 포소화약제 혼합방식</a>
+          <a href="소방학개론_기본서_및_기출하네스/03_03_가스계소화약제와_분말소화약제_1234종.html" data-track-title="[소방학개론] 03-03 가스계소화약제와 분말소화약제 1·2·3·4종" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-03. 가스계소화약제와 분말소화약제 1·2·3·4종</a>
+          <a href="소방학개론_기본서_및_기출하네스/04_01_소방시설_5대분류_피난구조와_소화활동설비.html" data-track-title="[소방학개론] 04-01 소방시설 5대분류·피난구조와 소화활동설비" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-01. 소방시설 5대분류·피난구조와 소화활동설비</a>
+          <a href="소방학개론_기본서_및_기출하네스/04_02_옥내소화전_펌프성능과_스프링클러설비.html" data-track-title="[소방학개론] 04-02 옥내소화전·펌프성능과 스프링클러설비" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-02. 옥내소화전·펌프성능과 스프링클러설비</a>
+          <a href="소방학개론_기본서_및_기출하네스/04_03_자동화재탐지설비_감지기와_방재연동.html" data-track-title="[소방학개론] 04-03 자동화재탐지설비 감지기와 방재연동" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-03. 자동화재탐지설비 감지기와 방재연동</a>
+          <a href="소방학개론_기본서_및_기출하네스/05_01_제1류_제2류_제3류_위험물과_반응식.html" data-track-title="[소방학개론] 05-01 제1류·제2류·제3류 위험물과 반응식" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-01. 제1류·제2류·제3류 위험물과 반응식</a>
+          <a href="소방학개론_기본서_및_기출하네스/05_02_제4류_제5류_제6류_위험물과_지정수량.html" data-track-title="[소방학개론] 05-02 제4류·제5류·제6류 위험물과 지정수량" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-02. 제4류·제5류·제6류 위험물과 지정수량</a>
+          <a href="소방학개론_기본서_및_기출하네스/05_03_위험물_저장_혼재_운반과_특수가연물.html" data-track-title="[소방학개론] 05-03 위험물 저장·혼재·운반과 특수가연물" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-03. 위험물 저장·혼재·운반과 특수가연물</a>
+        </div>
+      </section>
+
+      <!-- 2. 소방관계법규 전 단원 -->
+      <section id="subj-fire-law" class="p-6 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b" style="border-color:var(--border-line);">
+          <div>
+            <span class="text-xs font-bold" style="color:var(--accent);">제2과목 · 전 19개 장 바로가기</span>
+            <h2 class="text-xl font-extrabold" style="color:var(--text-main);">소방관계법규 단원 목록</h2>
+          </div>
+          <a href="소방관계법규_기본서_및_기출하네스/index.html" class="text-xs font-bold hover:underline" style="color:var(--accent);">과목 상세 목차 &rarr;</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <a href="소방관계법규_기본서_및_기출하네스/01_01_총칙_및_소방기관과_종합상황실.html" data-track-title="[소방관계법규] 01-01 총칙 및 소방기관과 종합상황실" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-01. 총칙 및 소방기관과 119종합상황실</a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_02_소방력기준_국고보조와_안전교육.html" data-track-title="[소방관계법규] 01-02 소방력기준·국고보조와 안전교육" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-02. 소방력기준·국고보조와 안전교육</a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_03_화재경계_우선통행과_소방활동.html" data-track-title="[소방관계법규] 01-03 화재경계·우선통행과 소방활동" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-03. 화재경계·우선통행과 소방활동</a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_04_강제처분_피난명령과_손실보상.html" data-track-title="[소방관계법규] 01-04 강제처분·피난명령과 손실보상" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-04. 강제처분·피난명령과 손실보상</a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_05_소방용수시설_비상소화장치와_안전원.html" data-track-title="[소방관계법규] 01-05 소방용수시설·비상소화장치와 안전원" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-05. 소방용수시설·비상소화장치와 안전원</a>
+          <a href="소방관계법규_기본서_및_기출하네스/01_06_소방의_화재조사에_관한_법률.html" data-track-title="[소방관계법규] 01-06 소방의 화재조사에 관한 법률" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-06. 소방의 화재조사에 관한 법률</a>
+          <a href="소방관계법규_기본서_및_기출하네스/02_01_화재예방기본계획과_화재안전조사.html" data-track-title="[소방관계법규] 02-01 화재예방기본계획과 화재안전조사" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-01. 화재예방기본계획과 화재안전조사</a>
+          <a href="소방관계법규_기본서_및_기출하네스/02_02_화재예방강화지구와_불사용설비.html" data-track-title="[소방관계법규] 02-02 화재예방강화지구와 불사용설비" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-02. 화재예방강화지구와 불사용설비</a>
+          <a href="소방관계법규_기본서_및_기출하네스/02_03_소방안전관리자_선임과_자위소방대.html" data-track-title="[소방관계법규] 02-03 소방안전관리자 선임과 자위소방대" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-03. 소방안전관리자 선임과 자위소방대</a>
+          <a href="소방관계법규_기본서_및_기출하네스/02_04_특수가연물_건설현장과_예방안전진단.html" data-track-title="[소방관계법규] 02-04 특수가연물·건설현장과 예방안전진단" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-04. 특수가연물·건설현장과 예방안전진단</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_01_특정소방대상물_분류와_수용인원_무창층.html" data-track-title="[소방관계법규] 03-01 특정소방대상물 분류와 수용인원·무창층" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-01. 특정소방대상물 분류와 수용인원·무창층</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_02_건축허가동의_성능위주설계와_내진설계.html" data-track-title="[소방관계법규] 03-02 건축허가동의·성능위주설계와 내진설계" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-02. 건축허가동의·성능위주설계와 내진설계</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_03_소방시설_설치기준과_주택용_임시소방시설.html" data-track-title="[소방관계법규] 03-03 소방시설 설치기준과 주택용·임시소방시설" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-03. 소방시설 설치기준과 주택용·임시소방시설</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_04_소방시설_설치면제와_소급적용_특례.html" data-track-title="[소방관계법규] 03-04 소방시설 설치면제와 소급적용 특례" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-04. 소방시설 설치면제와 소급적용 특례</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_05_방염성능기준_자체점검과_소방용품.html" data-track-title="[소방관계법규] 03-05 방염성능기준·자체점검과 소방용품" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-05. 방염성능기준·자체점검과 소방용품</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_06_소방시설업_등록과_착공_시공_감리.html" data-track-title="[소방관계법규] 03-06 소방시설업 등록과 착공·시공·감리" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-06. 소방시설업 등록과 착공·시공·감리</a>
+          <a href="소방관계법규_기본서_및_기출하네스/03_07_분리도급_완공검사와_하자보수_벌칙.html" data-track-title="[소방관계법규] 03-07 분리도급·완공검사와 하자보수·벌칙" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-07. 분리도급·완공검사와 하자보수·벌칙</a>
+          <a href="소방관계법규_기본서_및_기출하네스/04_01_위험물_정의_지정수량과_설치허가.html" data-track-title="[소방관계법규] 04-01 위험물 정의·지정수량과 설치허가" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-01. 위험물 정의·지정수량과 설치허가</a>
+          <a href="소방관계법규_기본서_및_기출하네스/04_02_제조소등의_안전거리와_위험물안전관리자.html" data-track-title="[소방관계법규] 04-02 제조소등의 안전거리와 위험물안전관리자" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-02. 제조소등의 안전거리와 위험물안전관리자</a>
+          <a href="소방관계법규_기본서_및_기출하네스/04_03_예방규정_정기점검과_위험물_운송관리.html" data-track-title="[소방관계법규] 04-03 예방규정·정기점검과 위험물 운송관리" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-03. 예방규정·정기점검과 위험물 운송관리</a>
+        </div>
+      </section>
+
+      <!-- 3. 한국사 전 단원 -->
+      <section id="subj-history" class="p-6 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b" style="border-color:var(--border-line);">
+          <div>
+            <span class="text-xs font-bold" style="color:var(--accent);">제3과목 · 전 21개 장 바로가기</span>
+            <h2 class="text-xl font-extrabold" style="color:var(--text-main);">한국사 (한능검 2급) 단원 목록</h2>
+          </div>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/index.html" class="text-xs font-bold hover:underline" style="color:var(--accent);">과목 상세 목차 &rarr;</a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+          <a href="한국사_한능검2급_기본서_및_기출하네스/01_01_구석기_신석기_도구와_생활상.html" data-track-title="[한국사] 01-01 구석기·신석기 도구와 생활상" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-01. 구석기·신석기 도구와 생활상</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/01_02_청동기_철기_문화와_고조선의_성립.html" data-track-title="[한국사] 01-02 청동기·철기 문화와 고조선의 성립" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-02. 청동기·철기 문화와 고조선의 성립</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/01_03_부여_고구려_옥저_동예_삼한의_풍습.html" data-track-title="[한국사] 01-03 부여·고구려·옥저·동예·삼한의 풍습" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">01-03. 부여·고구려·옥저·동예·삼한의 풍습</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/02_01_삼국의_성립과_전성기_영토확장.html" data-track-title="[한국사] 02-01 삼국의 성립과 전성기 영토확장" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-01. 삼국의 성립과 전성기 영토확장</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/02_02_통일신라와_발해의_통치체제.html" data-track-title="[한국사] 02-02 통일신라와 발해의 통치체제" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-02. 통일신라와 발해의 통치체제</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/02_03_고대_경제_사회_및_불교_유학사상.html" data-track-title="[한국사] 02-03 고대 경제·사회 및 불교·유학사상" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">02-03. 고대 경제·사회 및 불교·유학사상</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/03_01_고려_태조_왕건과_중앙_통치체제_정비.html" data-track-title="[한국사] 03-01 고려 태조 왕건과 중앙 통치체제 정비" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-01. 고려 태조 왕건과 중앙 통치체제 정비</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/03_02_문벌귀족_무신정변_및_대몽항쟁.html" data-track-title="[한국사] 03-02 문벌귀족·무신정변 및 대몽항쟁" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-02. 문벌귀족·무신정변 및 대몽항쟁</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/03_03_고려의_토지제도_대외교역_불교문화.html" data-track-title="[한국사] 03-03 고려의 토지제도·대외교역·불교문화" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">03-03. 고려의 토지제도·대외교역·불교문화</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/04_01_조선의_건국과_유교_통치기구_확립.html" data-track-title="[한국사] 04-01 조선의 건국과 유교 통치기구 확립" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-01. 조선의 건국과 유교 통치기구 확립</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/04_02_사림의_성장과_붕당정치의_형성.html" data-track-title="[한국사] 04-02 사림의 성장과 붕당정치의 형성" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-02. 사림의 성장과 붕당정치의 형성</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/04_03_임진왜란과_병자호란_양난의_극복.html" data-track-title="[한국사] 04-03 임진왜란과 병자호란 양난의 극복" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">04-03. 임진왜란과 병자호란 양난의 극복</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/05_01_붕당정치의_변질과_영정조_탕평책.html" data-track-title="[한국사] 05-01 붕당정치의 변질과 영·정조 탕평책" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-01. 붕당정치의 변질과 영·정조 탕평책</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/05_02_모내기법_상품화폐경제와_신분제_동요.html" data-track-title="[한국사] 05-02 모내기법·상품화폐경제와 신분제 동요" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-02. 모내기법·상품화폐경제와 신분제 동요</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/05_03_실학사상_발달과_세도정치기_농민봉기.html" data-track-title="[한국사] 05-03 실학사상 발달과 세도정치기 농민봉기" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">05-03. 실학사상 발달과 세도정치기 농민봉기</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/06_01_흥선대원군_개혁과_강화도조약_개항.html" data-track-title="[한국사] 06-01 흥선대원군 개혁과 강화도조약 개항" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">06-01. 흥선대원군 개혁과 강화도조약 개항</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/06_02_임오군란_갑신정변_동학농민운동_전개.html" data-track-title="[한국사] 06-02 임오군란·갑신정변·동학농민운동 전개" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">06-02. 임오군란·갑신정변·동학농민운동 전개</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/06_03_갑오개혁_독립협회_대한제국과_국권피탈.html" data-track-title="[한국사] 06-03 갑오개혁·독립협회·대한제국과 국권피탈" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">06-03. 갑오개혁·독립협회·대한제국과 국권피탈</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/07_01_일제_식민통치_3단계_변천과_31운동.html" data-track-title="[한국사] 07-01 일제 식민통치 3단계 변천과 3·1운동" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">07-01. 일제 식민통치 3단계 변천과 3·1운동</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/07_02_대한민국임시정부와_국내외_무장독립투쟁.html" data-track-title="[한국사] 07-02 대한민국임시정부와 국내외 무장독립투쟁" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">07-02. 대한민국임시정부와 국내외 무장독립투쟁</a>
+          <a href="한국사_한능검2급_기본서_및_기출하네스/07_03_광복_정부수립_625전쟁과_민주화과정.html" data-track-title="[한국사] 07-03 광복·정부수립·6·25전쟁과 민주화과정" class="track-link p-3 rounded border font-semibold transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">07-03. 광복·정부수립·6·25전쟁과 민주화과정</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="border-t py-10 text-center text-xs" style="border-color:var(--border-line); color:var(--text-muted);">
+    <p>소방 3과목 통합 기본서 · 소방학개론 · 소방관계법규 · 한국사</p>
+  </footer>
+
+  <script src="소방관계법규_기본서_및_기출하네스/assets/js/harness-core.js?v=5"></script>
+  <script>
+    (function () {
+      var KEY_URL = 'fk_recent_chapter_url';
+      var KEY_TITLE = 'fk_recent_chapter_title';
+      try {
+        var savedUrl = localStorage.getItem(KEY_URL);
+        var savedTitle = localStorage.getItem(KEY_TITLE);
+        var box = document.getElementById('recentChapterBox');
+        var titleEl = document.getElementById('recentChapterTitle');
+        var linkEl = document.getElementById('recentChapterLink');
+        if (savedUrl && savedTitle && box && titleEl && linkEl) {
+          titleEl.textContent = savedTitle;
+          linkEl.setAttribute('href', savedUrl);
+          box.classList.remove('hidden');
+        }
+        var links = document.querySelectorAll('.track-link');
+        links.forEach(function (a) {
+          a.addEventListener('click', function () {
+            var t = a.getAttribute('data-track-title') || a.textContent.trim();
+            var h = a.getAttribute('href');
+            if (h) {
+              localStorage.setItem(KEY_URL, h);
+              localStorage.setItem(KEY_TITLE, t);
+            }
+          });
+        });
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>

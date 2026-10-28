@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제2편 연소 및 폭발 이론 제5장. 폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상 · 소방학개론 기본서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+</head>
+<body class="antialiased selection:bg-emerald-600 selection:text-white">
+
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <div id="readingProgressBar"></div>
+  </div>
+
+  <nav class="sticky top-0 z-30 border-b backdrop-blur-md px-6 py-3.5">
+    <div class="max-w-4xl mx-auto flex items-center justify-between text-xs">
+      <a href="index.html" class="text-emerald-400 hover:text-emerald-200 font-bold flex items-center gap-1.5 transition">
+        <span>&larr;</span> 전체 목차
+      </a>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span class="text-slate-600">|</span>
+        <span class="text-emerald-300 font-bold">제2편 제5장. 폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상</span>
+        <span class="text-slate-600">|</span>
+        <a href="03_01_화재의_분류_소화원리와_화재조사_피해산정.html" class="hover:text-emerald-300 transition">다음 장: 제3편 제1장 &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <aside id="tocTriggerArea" class="fixed top-0 left-0 bottom-0 z-40 flex items-center">
+    <div class="h-28 w-8 border-r border-y rounded-r-md flex flex-col items-center justify-center cursor-pointer shadow-lg transition-colors">
+      <span class="text-[11px] font-bold tracking-widest [writing-mode:vertical-rl] rotate-180 select-none">
+        목차
+      </span>
+    </div>
+
+    <div id="tocSidebar" class="absolute top-0 left-0 w-80 h-full border-r backdrop-blur-xl p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-emerald-900/50 mb-6">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span class="text-sm font-bold text-white tracking-wider">제2편 제5장 목차</span>
+          </div>
+          <button id="pinBtn" onclick="HarnessEngine.togglePinTOC()" class="text-xs text-emerald-400 hover:text-emerald-200 border border-emerald-800 px-2 py-0.5 rounded transition">
+            고정
+          </button>
+        </div>
+
+        <nav class="space-y-4 text-xs">
+          <div>
+            <div class="font-bold text-emerald-400 py-1">제2편 연소 및 폭발 이론 · 제5장</div>
+            <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 물리적 폭발 vs 화학적 폭발 및 폭연(Deflagration) vs 폭굉(Detonation)</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 분진폭발(Dust Explosion)의 특성과 분해폭발·증기운폭발(UVCE)</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 비등액체팽창증기폭발(BLEVE)과 화구(Fireball) 현상</a></li>
+              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 유류탱크 화재의 3대 이상 현상 (보일오버 · 슬롭오버 · 프로스오버)</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
+              <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (13문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (21문항)</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="pt-4 border-t border-emerald-950 text-[11px] text-slate-500">
+        <a href="index.html" class="hover:text-emerald-400">&larr; 전체 목차로 돌아가기</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-12 py-16">
+
+    <header class="mb-14 pb-6 border-b border-emerald-900/40">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
+        <span>제2편 연소 및 폭발 이론</span>
+        <span>·</span>
+        <span>제5장</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        물리적 폭발과 화학적 폭발의 분류, 화염전파속도에 따른 폭연(Deflagration)과 폭굉(Detonation)의 차이, 분진폭발·분해폭발의 조건을 살펴보고, BLEVE와 유류탱크 화재 현상(보일오버·슬롭오버·프로스오버)을 완벽히 정리합니다.
+      </p>
+    </header>
+
+        <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 물리적 폭발 vs 화학적 폭발 및 폭연(Deflagration) vs 폭굉(Detonation)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            제2편의 마지막 장에서는 연소를 넘어 순식간에 엄청난 압력파로 구조물을 파괴하는 <strong>폭발(Explosion)</strong>과 대형 탱크 화재의 특수 현상을 정리합니다. 폭발은 왜 일어날까요? 에너지를 받은 기체가 찰나의 순간에 급격히 팽창하면서 주변 공기를 강하게 밀어내어 폭음과 압력파를 만들기 때문입니다. 이때 폭발이 일어나는 근본 원인에 따라, 물질의 분자 구조(화학적 성질)는 그대로인 채 오직 온도·압력 변화나 상변화(액체 ➔ 기체)만으로 용기가 터지는 <strong>물리적 폭발</strong>과, 급격한 산화·분해·중합 등 화학반응으로 새로운 가스와 반응열이 쏟아져 나와 터지는 <strong>화학적 폭발</strong>로 구분됩니다. 시험에서 가장 자주 묻는 분류 함정은 보일러의 <strong>수증기 폭발</strong>, 고압가스 용기 파열, 과전류에 의해 구리선이 순간 녹아 기화하는 <strong>전선 폭발</strong>, 그리고 액화가스 저장탱크가 열을 받아 파열하며 급격히 기화·팽창하는 <strong>BLEVE(비등액체팽창증기폭발)가 모두 '물리적 폭발'</strong>에 속한다는 점입니다!(반면 가스폭발, 분진폭발, 분해폭발, 중합폭발은 모두 <strong>화학적 폭발</strong>입니다.)
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>물리적 폭발 vs 화학적 폭발</strong>: 수증기 폭발·고압용기 파열·<strong>BLEVE</strong>·전선 폭발은 <strong>물리적 폭발</strong> / 가스·분진·분해·중합폭발은 <strong>화학적 폭발</strong></li>
+              <li><strong>폭연 vs 폭굉 비교</strong>: 폭연은 화염전파속도가 <strong>음속 이하(아음속, 0.1m/s에서 수십 m/s)</strong> / 폭굉은 <strong>음속 이상(초음속, 1,000m/s에서 3,500m/s)</strong>이며 <strong>충격파</strong> 동반</li>
+              <li><strong>폭굉유도거리(DID) 단축 조건</strong>: 관경이 <strong>작을수록(가늘수록)</strong>, 정상 연소속도가 <strong>빠를수록</strong>, 초기 압력이 <strong>높을수록</strong> DID가 짧아짐</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            화학적 폭발(예혼합 가스폭발 등)은 불꽃(화염면)이 미연소 가스를 향해 전파되는 속도인 <strong>화염전파속도</strong>가 소리의 속도(음속, 공기 중 약 340 m/s)보다 느리냐 빠르냐에 따라 <strong>폭연(Deflagration)</strong>과 <strong>폭굉(Detonation)</strong>이라는 두 단계로 나뉩니다. <strong>폭연</strong>은 화염전파속도가 <strong>음속보다 느린 아음속(초당 0.1미터에서 수십 미터)</strong>으로 진행되는 일반적 폭발 연소로서, 앞쪽 미연소 가스로 열이 전도되고 활성 라디칼이 분자 확산되면서 불이 번지며 충격파를 동반하지 않습니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            반면 <strong>폭굉(Detonation)</strong>은 화염전파속도가 <strong>음속을 돌파한 초음속(초당 1,000미터에서 3,500미터, 마하 3에서 마하 10 수준)</strong>으로 돌진하는 가장 파괴적인 폭발입니다! 폭굉에서는 강력한 <strong>충격파(Shock Wave)</strong>가 화염면 바로 앞에서 하나로 겹쳐진 채 나아가면서, 충격파가 앞쪽의 미연소 가스를 강제로 쥐어짜는 <strong>단열 압축</strong>을 일으켜 열전도 없이도 순식간에 발화점 이상으로 온도를 끌어올립니다. 처음에 폭연으로 시작된 불꽃이 배관 속을 달리다가 가속되어 폭굉으로 바뀌는 현상을 '폭연·폭굉 전이(DDT)'라 하고, 점화 지점부터 폭굉이 시작되는 지점까지의 거리를 <strong>폭굉유도거리(DID, Detonation Induction Distance)</strong>라 합니다. 이 폭굉유도거리(DID)가 짧다는 것은 그만큼 빨리 폭굉으로 변해 더 위험하다는 뜻인데, ① <strong>배관의 지름(관경)이 작을수록(가늘수록)</strong>, ② 배관 내부에 장애물이나 굴곡이 많아 <strong>난류가 심할수록</strong>, ③ 가스의 <strong>정상 연소속도가 빠르고 초기 압력이 높을수록</strong>, ④ <strong>점화원 에너지가 클수록</strong> 폭굉유도거리(DID)는 짧아집니다!
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">비교 항목</th>
+                <th style="width:38%;">폭연 (Deflagration)</th>
+                <th>폭굉 (Detonation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>화염전파속도</strong></td>
+                <td><strong>음속 이하 (아음속)</strong>: 약 0.1 m/s에서 수십 m/s</td>
+                <td><strong>음속 이상 (초음속)</strong>: 약 1,000 m/s에서 3,500 m/s</td>
+              </tr>
+              <tr>
+                <td><strong>에너지 전달 메커니즘</strong></td>
+                <td>열전도 및 활성 라디칼의 분자 확산에 의해 전파</td>
+                <td>강력한 <strong>충격파(Shock Wave)의 단열 압축</strong>에 의해 전파</td>
+              </tr>
+              <tr>
+                <td><strong>충격파 및 파괴력</strong></td>
+                <td>충격파 미발생 (압력 상승이 수 기압 수준)</td>
+                <td>충격파와 화염면이 일치 (압력이 수십 기압으로 급증, 파괴력 막대)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 분진폭발(Dust Explosion)의 특성과 분해폭발·증기운폭발(UVCE)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            기체뿐만 아니라 밀가루, 설탕, 사료, 석탄 가루, 플라스틱 분말, 알루미늄·마그네슘 가루처럼 <strong>가연성 고체 미립자(분진)</strong>가 공기 중에 구름처럼 일정 농도로 떠다닐 때 점화원을 만나면 맹렬한 <strong>분진폭발(Dust Explosion)</strong>이 일어납니다. 여기서 출제자가 가장 즐겨 쓰는 1순위 함정은 <strong>'모든 고체 가루는 분진폭발을 일으킨다(X)'</strong>입니다! 분진폭발도 결국 산소와 결합하는 급격한 산화반응이므로, 이미 산소와 끝까지 결합해 더 이상 탈 수 없는 산화물이나 불연성 무기물인 <strong>시멘트 가루, 모래(이산화규소, SiO<sub>2</sub>), 석회석·대리석 분말(탄산칼슘, CaCO<sub>3</sub>), 탄산나트륨, 소금</strong> 등은 아무리 곱게 갈아 공중에 뿌려도 <strong>절대 분진폭발을 일으키지 않습니다!</strong>
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>분진폭발 불가 물질(불연성 분진)</strong>: <strong>시멘트 가루 · 모래(SiO<sub>2</sub>) · 탄산칼슘(석회석) · 대리석 분말</strong> 등 이미 산화된 무기물은 분진폭발 불가!</li>
+              <li><strong>분진폭발 vs 가스폭발</strong>: 분진폭발은 가스폭발보다 <strong>최소발화에너지가 크고, 연소속도·폭발압력은 작으며, 2차·3차 연쇄 폭발과 다량의 CO</strong>를 발생시킴</li>
+              <li><strong>대표 분해폭발 물질</strong>: 산소 없이도 자체 분해로 폭발하는 <strong>아세틸렌(C<sub>2</sub>H<sub>2</sub>) · 산화에틸렌(C<sub>2</sub>H<sub>4</sub>O) · 히드라진</strong></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 가연성 고체 가루가 터지는 <strong>분진폭발</strong>은 기체가 터지는 <strong>가스폭발</strong>과 비교할 때 어떤 차이가 있을까요? 고체 알갱이는 기체 분자보다 훨씬 덩치가 크고 무겁습니다. 따라서 가스폭발에 비해 ① 처음 불을 붙이기 위해 필요한 <strong>최소발화에너지(MIE)가 수십 배에서 수백 배 더 크고</strong>, ② 불이 붙은 뒤의 <strong>연소속도와 최대 폭발압력은 가스폭발보다 작으며</strong>, ③ 입자 겉면만 타고 속은 덜 타는 불완전연소가 일어나 <strong>일산화탄소(CO) 중독 위험이 훨씬 크고</strong>, ④ 무엇보다 최초의 작은 1차 폭발 충격파로 인해 공장 바닥과 천장 철골 위에 수북이 쌓여 있던 분진들이 공중으로 일제히 털어져 올라오면서 더 거대한 <strong>2차·3차 연쇄 폭발</strong>을 일으켜 공장 전체를 붕괴시킨다는 치명적 특징이 있습니다!
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 공기(산소)가 전혀 섞이지 않은 순수한 단일 가스 상태에서도, 압력이나 열을 받으면 불안정한 화학 결합이 스스로 쪼개지면서 분해열로 폭발하는 현상을 <strong>분해폭발</strong>이라 합니다. 대표적인 분해폭발 물질은 탄소 간 삼중결합을 가진 <strong>아세틸렌(C<sub>2</sub>H<sub>2</sub>), 산화에틸렌(C<sub>2</sub>H<sub>4</sub>O), 히드라진(N<sub>2</sub>H<sub>4</sub>), 오존(O<sub>3</sub>)</strong>입니다(특히 아세틸렌은 구리·은·수은과 닿으면 작은 충격에도 터지는 금속아세틸라이드를 만들므로 구리 합금 배관 사용을 금지하고, 용기에 다공성 물질과 아세톤을 넣어 용해시켜 저장합니다). 또한 석유화학공장에서 다량의 가연성 가스가 대기 중으로 누출되어 거대한 구름을 형성한 뒤 바람을 타고 흘러가다 점화원을 만나 개방된 공간에서 터지는 현상은 <strong>개방공간 증기운폭발(UVCE)</strong>이라 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 비등액체팽창증기폭발(BLEVE)과 화구(Fireball) 현상</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            LPG 충전소나 석유화학단지의 구형 탱크처럼 <strong>상온에서 기체인 물질을 높은 압력으로 눌러 액체 상태로 저장한 액화가스 탱크</strong> 주변에 화재가 났을 때 일어나는 가장 파괴적인 재앙이 바로 <strong>BLEVE(Boiling Liquid Expanding Vapor Explosion, 비등액체팽창증기폭발)</strong>입니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>BLEVE의 본질적 분류</strong>: 과열된 액체가 용기 파열과 함께 급격히 기화·팽창하는 현상이므로 <strong>물리적 폭발(상변화 폭발)</strong>에 해당 (가연성 물질인 경우 직후에 <strong>화구 Fireball</strong> 동반)</li>
+              <li><strong>탱크 파열 부위</strong>: 액체로 냉각되지 못해 과열로 금속 강도가 급격히 약해지는 <strong>탱크 상부(기상부) 벽면</strong>에서 파열 시작</li>
+              <li><strong>BLEVE 방지 대책</strong>: 탱크 외벽에 <strong>냉각살수(물분무설비)</strong> 실시, 단열 <strong>내화피복</strong> 시공, <strong>안전밸브(압력방출장치)</strong> 및 방유제 설치</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            왜 탱크가 버티지 못하고 터질까요? 인과관계로 순서를 따라가 봅시다. ① 외부 화염이 액화가스 탱크를 감싸고 가열하면 내부 액체가 끓어오르며 탱크 내부 압력이 급상승합니다. ② 이때 액체와 맞닿아 있는 <strong>탱크 하부(액상부) 강판</strong>은 내부 액체가 끓으면서 열을 계속 빼앗아 가므로 금속 온도가 비교적 낮게 유지되지만, 액체가 줄어들어 기체만 차 있는 <strong>탱크 상부(기상부) 강판</strong>은 열을 식혀줄 액체가 없어 섭씨 600도 이상으로 벌겋게 달아오르며 <strong>강철의 인장강도가 절반 이하로 급격히 약화(연화)</strong>됩니다. ③ 마침내 내부 고압을 견디지 못한 <strong>탱크 상부 기상부 벽면이 찢어지며 파열</strong>되는 순간, 탱크 내부 압력이 순식간에 대기압 수준으로 뚝 떨어집니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            ④ 그 순간 대기압에서의 끓는점보다 훨씬 높은 온도로 달궈져 있던 내부의 과열액체가 압력이 풀리자마자 <strong>단 1초도 안 되는 사이에 폭발적으로 비등·기화하여 부피가 수백 배로 급팽창</strong>하면서 탱크 파편을 사방 수백 미터 밖으로 날려버립니다! 이 급격한 상변화(액체 ➔ 기체)에 의한 폭발 과정 자체는 물탱크가 터지는 것과 같은 원리이므로 <strong>물리적 폭발</strong>로 분류됩니다(만약 탱크 안의 액체가 물이나 액화질소 같은 불연성 물질이어도 BLEVE는 일어납니다!). 다만 LPG 같은 가연성 액화가스였던 경우에는 BLEVE 직후 공중으로 뿜어져 나온 거대한 가스 구름에 불이 붙어 하늘로 치솟는 불덩어리인 <strong>화구(Fireball, 화학적 연소)</strong>가 연이어 형성되면서 주변 일대를 초토화시킵니다. 이를 막으려면 탱크 상부 외벽이 과열되지 않도록 <strong>물분무설비 등으로 집중 냉각살수</strong>를 하거나 단열 <strong>내화피복</strong>을 입히고 안전밸브를 설치해야 합니다.
+          </p>
+        </div>
+      </div>
+
+      <div id="sec4">
+        <h2 class="text-xl font-bold text-white mb-3">4. 유류탱크 화재의 3대 이상 현상 (보일오버 · 슬롭오버 · 프로스오버)</h2>
+        <div class="para-block">
+          <p class="prose-body">
+            액화가스 탱크에서 BLEVE가 일어난다면, 원유나 중질유가 담긴 대형 액체 위험물 저장탱크에서는 끓는 기름이 탱크 밖으로 넘쳐흐르는 3가지 이상 현상인 <strong>보일오버(Boilover), 슬롭오버(Slopover), 프로스오버(Frothover)</strong>가 나타납니다. 이 세 현상은 원인과 발생 조건이 명확히 대비되어 시험에 단골로 출제됩니다. 첫째, 가장 파괴적인 <strong>보일오버(Boilover)</strong>는 <strong>원유(Crude Oil)</strong>처럼 가벼운 성분부터 무거운 성분까지 끓는점 범위가 매우 넓은 기름이 담긴 옥외탱크가 장시간 불탈 때 일어납니다. 액면에서 휘발성이 강한 가벼운 성분이 먼저 증발해 타버리면, 표면에 남은 <strong>뜨겁고 무거운 중질유 층(열파, Heat Wave, 섭씨 100도에서 300도 이상)</strong>이 서서히 아래로 가라앉다가 마침내 <strong>탱크 바닥에 가라앉아 있던 물(수분·에멀전 층)과 만나는 순간</strong>, 물이 수증기로 폭발적으로 기화하면서 부피가 약 <strong>1,700배</strong>로 급팽창해 피스톤처럼 탱크 안의 불타는 기름을 하늘 높이 분출시키는 현상입니다! 따라서 보일오버가 일어나려면 반드시 <strong>① 비점 범위가 넓은 유류(원유 등), ② 열파(Heat Wave)의 하강, ③ 탱크 바닥의 수분(물) 존재</strong>라는 3대 조건이 모두 갖추어져야 합니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>보일오버(Boilover) 3대 조건</strong>: ① <strong>원유 등 비점 범위가 넓은 유류</strong>, ② <strong>열파(Heat Wave)의 하강</strong>, ③ <strong>탱크 바닥의 수분(물) 존재</strong> (수증기 약 1,700배 팽창 분출)</li>
+              <li><strong>슬롭오버(Slopover)</strong>: 유류탱크 화재 시 <strong>외부에서 액면에 물이나 포 소화약제를 주수·방사</strong>할 때 표면의 뜨거운 유류가 거품을 내며 넘치는 현상</li>
+              <li><strong>프로스오버(Frothover)</strong>: <strong>화재가 아닌 상태</strong>에서 고온·고점도 유류(아스팔트 등) 내의 수분이 끓어 거품 형태로 넘쳐흐르는 현상</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            둘째, <strong>슬롭오버(Slopover)</strong>는 중질유 등 고점도 유류 탱크 화재가 진행 중일 때, 불을 끄려고 <strong>외부에서 불타는 액면(표면) 위로 물이나 포(Foam) 소화약제를 방사했을 때</strong> 일어납니다. 섭씨 100도 이상으로 달궈진 뜨거운 유류 표면층에 차가운 물이나 포 수용액이 닿는 순간, 표면에서 물이 급격히 수증기로 팽창하면서 불타는 기름이 거품을 내며 탱크 벽을 넘어 흘러넘치는 현상입니다. 즉 <strong>'탱크 바닥에 원래 고여 있던 물에 열파가 내려가 터짐 = 보일오버'</strong>이고, <strong>'소화 작업 중 외부에서 액면 위로 뿌린 물·포 때문에 표면에서 넘침 = 슬롭오버'</strong>입니다.
+          </p>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>프로스오버(Frothover)</strong>는 앞의 두 현상과 달리 <strong>화재가 발생한 상태가 아님에도(화염 없이!)</strong> 일어나는 현상입니다. 수분이 섞인 점성이 매우 높은 아스팔트나 중질유를 탱크 안에서 섭씨 100도 이상으로 가열할 때(또는 바닥에 물이 고인 탱크에 고온의 아스팔트를 부을 때), 내부의 수분이 기화하면서 끈적한 유류 속에서 거품을 내며 부풀어 올라 탱크 밖으로 조용히 넘쳐흐르는 현상을 말합니다. 따라서 시험에서 <strong>'화재와 무관하게 비화재 시 발생하는 현상'</strong>을 물으면 무조건 <strong>프로스오버</strong>를 골라야 합니다!
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">현상 명칭</th>
+                <th style="width:20%;">화재 동반 여부</th>
+                <th>발생 원인 및 메커니즘 구분 키워드</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>보일오버 (Boilover)</strong></td>
+                <td><strong>화재 시 발생</strong></td>
+                <td>원유 탱크 상부의 <strong>열파(Heat Wave)가 하강</strong>하여 <strong>탱크 바닥에 고인 물</strong>을 급격히 기화시켜 기름이 폭발적으로 분출</td>
+              </tr>
+              <tr>
+                <td><strong>슬롭오버 (Slopover)</strong></td>
+                <td><strong>화재 시 발생</strong></td>
+                <td>불타는 고온 유류 <strong>액면 위에 외부에서 물이나 포(Foam)를 방사</strong>했을 때 표면에서 수증기가 팽창해 유류가 넘침</td>
+              </tr>
+              <tr>
+                <td><strong>프로스오버 (Frothover)</strong></td>
+                <td><strong>비화재 시 발생</strong></td>
+                <td>화재 없이 고온·고점성 유류(아스팔트 등)를 가열·주입할 때 <strong>내부 수분이 증발하며 거품 형태로 넘침</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="para-block">
+          <p class="prose-body">
+            나아가 수험생들이 가장 어려워하는 '왜 가스폭발은 1차 폭발로 끝나는데, 밀가루·석탄·알루미늄 가루 같은 <strong>분진폭발은 연쇄적인 2차·3차 폭발</strong>로 이어져 공장 전체를 무너뜨릴까?'라는 메커니즘을 원인과 결과로 이해해 봅시다. 가스는 이미 공기 중에 균일하게 섞여 있어 한 번 화염이 지나가면 연료가 모두 소모됩니다. 하지만 분진은 평소 공장 바닥이나 기계 설비, 천장 대들보 위에 두껍게 가라앉아(퇴적분진) 있습니다. 이때 어딘가에서 작은 1차 국소 폭발이 일어나면, 그 폭발이 만들어낸 충격파(폭풍)가 공장 바닥과 천장에 쌓여 있던 엄청난 양의 가루들을 공중으로 확 쓸어 올려 거대한 분진 구름(부유분진)을 형성하고, 뒤따라온 화염이 그 분진 구름에 불을 붙여 1차 폭발보다 수십 배 강력한 <strong>2차·3차 연쇄 폭발</strong>을 일으키기 때문입니다. 또한 분진 입자는 가스 분자보다 덩어리가 커서 태우는 데 더 큰 점화에너지가 필요하고 불완전연소 비율이 높아 일산화탄소(CO) 중독 위험이 훨씬 크다는 점까지 자연스럽게 연결됩니다.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 폭연 vs 폭굉 충격파 구조 및 BLEVE·보일오버·슬롭오버 발생 메커니즘</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 물리적 vs 화학적 폭발 · 폭연 vs 폭굉 및 분진폭발 특성</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">물리적 폭발 vs 화학적 폭발</div>
+                <div>· <strong>물리적 폭발</strong>: 수증기 폭발, 고압용기 파열, 전선 폭발, <strong>BLEVE</strong><br/>· <strong>화학적 폭발</strong>: 가스·분진·분해·중합폭발</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">폭연(아음속) vs 폭굉(초음속·충격파)</div>
+                <div>· <strong>폭연</strong>: 음속 이하(0.1m/s에서 수십 m/s)<br/>· <strong>폭굉</strong>: 음속 이상(1,000m/s에서 3,500m/s), 충격파 단열 압축 (관경 작을수록 DID 단축)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">분진폭발 vs 가스폭발 비교</div>
+                <div>분진폭발이 <strong>최소발화에너지(MIE)는 더 크고</strong>, 연소속도·압력은 작으며, <strong>2차·3차 연쇄 폭발 및 다량의 CO</strong> 발생</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">분진폭발 불가 물질 &amp; 분해폭발 가스</div>
+                <div>· 분진폭발 불가: <strong>시멘트·모래(SiO<sub>2</sub>)·탄산칼슘(석회석)</strong><br/>· 분해폭발 가스: <strong>아세틸렌·산화에틸렌·히드라진</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 함정: <strong>수증기 폭발·고압용기 파열·전선 폭발·BLEVE</strong>는 화학반응이 없는 <strong>물리적 폭발</strong>! / <strong>슬롭오버</strong>(표면 주수 시 즉시 넘침) vs <strong>보일오버</strong>(중질유 바닥 물층이 열파에 가열되어 탱크 밖으로 분출)!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 액화가스 BLEVE 및 유류탱크 3대 이상 현상 (보일·슬롭·프로스오버)</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">비등액체팽창증기폭발 (BLEVE · 물리적 폭발)</div>
+                <ul class="schema-list">
+                  <li>외부 화재로 액화가스 탱크 <strong>상부 기상부 벽면이 과열·약화되어 파열</strong> ➔ 압력 급강하로 과열액체가 순식간에 기화·팽창 폭발 (가연성 시 직후 <strong>화구 Fireball</strong> 형성)</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">보일오버(Boilover) · 슬롭오버(Slopover) · 프로스오버(Frothover) 비교</div>
+                <ul class="schema-list">
+                  <li><strong>보일오버(화재 시)</strong>: <strong>원유</strong> 등 비점 범위 넓은 유류 + 상부 <strong>열파(Heat Wave) 하강</strong> + <strong>탱크 바닥의 물</strong>이 만나 약 1,700배 수증기 팽창 분출</li>
+                  <li><strong>슬롭오버(화재 시)</strong>: 화재 중인 고온 유류 <strong>액면 위에 외부에서 물·포를 방사</strong>할 때 표면에서 넘침 / <strong>프로스오버(비화재 시!)</strong>: 화재 없이 고온 유류 내 수분이 거품으로 넘침</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+      <aside class="sidenote">
+        <div class="sidenote-box">
+          <div class="sidenote-title">도해 요약</div>
+          <ul class="sidenote-list">
+            <li><strong>주제</strong>: 그림 1. 폭연 vs 폭굉 충격파 구조 및 BLEVE·보일오버·슬롭오버 발생 메커니즘</li>
+            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
+      <div id="statsContainer"></div>
+    </section>
+
+    <section class="mt-16 pt-8 border-t border-emerald-900/60" id="origQSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">실전 문제 풀이</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">실전 기출문제 (13문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">본문에서 학습한 원리와 기준 수치를 바탕으로 실제 기출문제를 풀고 선지별 정오 해설을 확인하십시오.</p>
+      </div>
+      <div id="origQuestions"></div>
+    </section>
+
+    <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
+      <div class="mb-8">
+        <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (21문항)</h2>
+        <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
+      </div>
+      <div id="quizList" class="space-y-4"></div>
+    </section>
+
+    <div class="mt-16 pt-8 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+      <a href="02_04_구획실_화재단계와_플래시오버_백드래프트.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--border-line); color:var(--text-sub);">
+        &larr; 이전 장 (제2편 제4장)
+      </a>
+      <a href="03_01_화재의_분류_소화원리와_화재조사_피해산정.html" class="px-5 py-2.5 rounded-lg border text-xs font-bold transition" style="border-color:var(--accent); color:var(--accent);">
+        다음 장 (제3편 제1장) &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-emerald-950 py-10 text-center text-xs text-slate-600">
+    <p>소방학개론 기본서 · 제2편 연소 및 폭발 이론 제5장</p>
+  </footer>
+
+  <script src="assets/js/harness-core.js?v=5"></script>
+  <script>
+    const STATS_DATA = {
+  "unitTitle": "제2편 연소 및 폭발 이론 제5장",
+  "totalQuestions": 13,
+  "themes": [
+    {
+      "name": "분진폭발의 메커니즘과 영향인자",
+      "qCount": 4,
+      "examCount": 8,
+      "years": "2018년 소방공채·경채 Q11, 2023년 소방공채·경채 Q9, 2023년 소방공채·경채 Q11, 2026년 소방공채·경채 Q17",
+      "summary": "가연성 고체 미립자의 부유 폭발(분진폭발) 정의"
+    },
+    {
+      "name": "물리적 폭발(증기폭발·BLEVE) vs 화학적 폭발 및 응축상 폭발",
+      "qCount": 3,
+      "examCount": 6,
+      "years": "2020년 소방공채·경채 Q11, 2021년 소방공채·경채 Q16, 2022년 소방공채·경채 Q6",
+      "summary": "폭발의 물리·화학적 분류 및 증기폭발·폭굉·블레비(BLEVE)"
+    },
+    {
+      "name": "블레비(BLEVE) 및 증기운폭발(UVCE) 메커니즘",
+      "qCount": 2,
+      "examCount": 4,
+      "years": "2021년 소방공채·경채 Q10, 2024년 소방공채·경채 Q6",
+      "summary": "블레비(BLEVE, 비등액체팽창증기폭발)의 메커니즘과 화구(Fireball) 규모"
+    },
+    {
+      "name": "폭연(Deflagration) vs 폭굉(Detonation) 및 전이 과정(DDT)",
+      "qCount": 2,
+      "examCount": 4,
+      "years": "2023년 소방공채·경채 Q10, 2024년 소방공채·경채 Q12",
+      "summary": "폭연(Deflagration)과 폭굉(Detonation)의 물리적 특성 비교"
+    },
+    {
+      "name": "유류탱크 화재 3대 특수현상(보일오버·슬롭오버·프로스오버)",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2024년 소방공채·경채 Q14",
+      "summary": "유류저장탱크 화재의 특수 현상(보일오버 vs 슬롭오버·프로스오버)"
+    },
+    {
+      "name": "폭발(연소)범위 및 최소발화에너지 변화 요인",
+      "qCount": 1,
+      "examCount": 2,
+      "years": "2019년 소방공채·경채 Q14",
+      "summary": "공기 중 산소농도 증가 시 가연성 가스 연소·폭발 특성의 변화"
+    }
+  ]
+};
+    const ORIG_Q_DATA = [
+  {
+    "id": "Q₂018₁1",
+    "year": 2018,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2018년 소방공채·경채 Q11",
+    "topic": "가연성 고체 미립자의 부유 폭발(분진폭발) 정의",
+    "freq_key": "분진폭발의 메커니즘과 영향인자",
+    "stem": "다음 설명에 해당하는 것은? 가연성 고체의 미분이 공기 중에 부유하고 있을 때에 어떤 점화원에 의해 에너지가 주어지면 폭발하는 현상을 말한다.",
+    "stem_box": "",
+    "choices": [
+      "가스폭발",
+      "분무폭발",
+      "분해폭발",
+      "분진폭발"
+    ],
+    "ans": 4,
+    "q_expl": "폭발 물질의 물리적 상태(기상·액상·고상)에 따른 분류 중 가연성 고체의 미분(밀가루, 석탄가루, 설탕, 알루미늄분 등)이 공기 중에 일정 농도로 부유하고 있을 때 점화원에 의해 폭발하는 '분진폭발(Dust Explosion)'을 묻는 기본 문항입니다.",
+    "c_expls": [
+      "[틀림] 가스폭발은 가연성 기체(가스)가 공기나 산소와 혼합되어 폭발범위 내에 있을 때 점화되어 일어나는 기상폭발입니다.",
+      "[틀림] 분무폭발은 가연성 액체의 미세한 액적(Mist, 안개 모양의 물방울)이 공기 중에 분산되어 있을 때 착화하여 일어나는 액상(응축상) 폭발입니다.",
+      "[틀림] 분해폭발은 아세틸렌·산화에틸렌 등이 산소 혼합 없이 자체 분해 반응열에 의해 일어나는 기상폭발입니다.",
+      "[옳음 · 정답] 가연성 고체의 미분(입자 크기 통상 100마이크로미터 이하)이 공기 중에 부유하고 있을 때 점화원에 의해 폭발하는 현상은 '분진폭발'입니다."
+    ]
+  },
+  {
+    "id": "Q₂019₁4",
+    "year": 2019,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2019년 소방공채·경채 Q14",
+    "topic": "공기 중 산소농도 증가 시 가연성 가스 연소·폭발 특성의 변화",
+    "freq_key": "폭발(연소)범위 및 최소발화에너지 변화 요인",
+    "stem": "가연성 가스를 공기 중에서 연소시키고자 할 때 공기 중의 산소농도가 증가하면 발생되는 현상으로 맞는 것만을 모두 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 연소속도가 빨라진다.<br/>ㄴ. 발화점이 높아진다.<br/>ㄷ. 화염의 온도가 높아진다.<br/>ㄹ. 폭발범위가 좁아진다.<br/>ㅁ. 점화에너지가 작아진다.",
+    "choices": [
+      "ㄱ, ㄴ, ㄹ",
+      "ㄱ, ㄷ, ㄹ",
+      "ㄱ, ㄷ, ㅁ",
+      "ㄴ, ㄷ, ㅁ"
+    ],
+    "ans": 3,
+    "q_expl": "공기 중 산소농도가 21퍼센트보다 증가할 때 나타나는 연소·폭발의 변화[연소속도 증가( ㄱ ), 발화점 저하(ㄴ 틀림), 화염온도 상승( ㄷ ), 폭발범위 확대(특히 상한계가 크게 상승하여 넓어짐, ㄹ 틀림), 최소발화에너지 감소( ㅁ )]를 묻는 S등급 문항입니다.",
+    "c_expls": [
+      "[틀림] ㄴ(발화점은 낮아짐)과 ㄹ(폭발범위는 넓어짐)이 틀렸습니다.",
+      "[틀림] 공기 중 산소농도가 증가하면 폭발상한계가 크게 상승하여 폭발범위가 좁아지는 것이 아니라 '넓어지므로' ㄹ이 틀렸고, 점화에너지가 작아지는 ㅁ이 누락되었습니다.",
+      "[옳음 · 정답] 공기 중 산소농도가 증가하면 산화반응이 활발해져 연소속도가 빨라지고( ㄱ ), 화염의 온도가 높아지며( ㄷ ), 점화에 필요한 최소발화에너지가 작아집니다( ㅁ ). 반면 발화점은 낮아지고 폭발범위는 넓어지므로 ㄱ, ㄷ, ㅁ이 정답입니다.",
+      "[틀림] 공기 중 산소농도가 증가하면 연소 반응성이 커져 발화점(착화온도)이 높아지는 것이 아니라 '낮아지므로' ㄴ이 틀렸습니다."
+    ]
+  },
+  {
+    "id": "Q₂020₁1",
+    "year": 2020,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2020년 소방공채·경채 Q11",
+    "topic": "폭발의 물리·화학적 분류 및 증기폭발·폭굉·블레비(BLEVE)",
+    "freq_key": "물리적 폭발(증기폭발·BLEVE) vs 화학적 폭발 및 응축상 폭발",
+    "stem": "폭발에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "증기폭발은 폭발물질의 물리적 상태에 따른 분류 중 기상폭발에 해당한다.",
+      "폭굉은 연소반응으로 발생한 화염의 전파 속도가 음속 보다 빠른 것을 말한다.",
+      "블레비(BLEVE)는 액화가스저장탱크 등에서 외부열원에 의해 과열되어 급격한 압력 상승의 원인으로 파열되는 현상이며, 폭발의 분류 중 물리적 폭발에 해당한다.",
+      "폭발은 물리적, 화학적 변화의 결과로 발생된 급격한 압력 상승에 의한 에너지가 외계로 전환되는 과정에서 파열, 폭음 등을 동반하는 현상을 말한다."
+    ],
+    "ans": 1,
+    "q_expl": "폭발의 원인별 분류(물리적 폭발 vs 화학적 폭발)와 상태별 분류[기상폭발(가스폭발, 분해폭발) vs 응축상폭발(액상: 분무폭발, 증기폭발, 혼합위험폭발 / 고상: 분진폭발, 전선폭발)]를 묻는 빈출 문항입니다. '증기폭발'은 액체가 급격히 기화하면서 발생하는 '액상(응축상) 폭발'이자 '물리적 폭발'입니다.",
+    "c_expls": [
+      "[틀림 · 정답] 증기폭발은 물이나 액화가스 등 액체가 급열되어 순간적으로 기화·팽창하며 발생하는 폭발로서, 물리적 상태에 따른 분류상 기상폭발이 아니라 '액상폭발(응축상폭발)'에 해당합니다(기상폭발은 혼합가스폭발과 가스분해폭발).",
+      "[옳음] 폭굉(Detonation)은 화염전파속도가 음속보다 빠른 초음속(초당 1,000미터에서 3,500미터) 연소파로서 충격파를 동반합니다.",
+      "[옳음] 블레비(BLEVE, 비등액체팽창증기폭발)는 액화가스 저장탱크가 외부 열원에 의해 과열되어 액체가 비등·기화하면서 용기가 파열되는 현상으로, 1차적인 탱크 파열 자체는 '물리적 폭발'에 해당합니다.",
+      "[옳음] 폭발은 물리적 또는 화학적 변화의 결과로 발생한 급격한 압력 상승 에너지가 외부로 방출되면서 파열·폭음·충격파를 동반하는 현상입니다."
+    ]
+  },
+  {
+    "id": "Q₂021₁0",
+    "year": 2021,
+    "q_num": 10,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q10",
+    "topic": "블레비(BLEVE, 비등액체팽창증기폭발)의 메커니즘과 화구(Fireball) 규모",
+    "freq_key": "블레비(BLEVE) 및 증기운폭발(UVCE) 메커니즘",
+    "stem": "블레비(BLEVE: Boiling Liquid Expanding Vapor Explosion) 현상의 특징으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "액화가스 저장탱크에서 일어날 수 있다는 점에서는 증기운 폭발과 같다.",
+      "액화가스 저장탱크에서 물리적 폭발이 순간적으로 화학적 폭발로 이어지는 현상이다.",
+      "블레비의 규모는 파열 시 액체의 기화량에는 차이가 있으나 탱크의 용량에 따른 차이는 없다.",
+      "직접 열을 받은 부분이 액화가스 저장탱크의 인장 강도를 초과할 경우 기상부에 면하는 지점에서 파열하게 된다."
+    ],
+    "ans": 3,
+    "q_expl": "액화가스 저장탱크 폭발 현상인 블레비(BLEVE)의 발생 원리와 피해 규모를 묻는 문항입니다. 블레비 발생 시 형성되는 파이어볼(화구)의 직경과 지속시간 등 폭발 규모는 저장탱크의 용량(내부 액화가스의 질량)이 클수록 비례하여 커집니다.",
+    "c_expls": [
+      "[옳음] 블레비(BLEVE)와 증기운폭발(UVCE)은 모두 LPG 등 가연성 액화가스 저장탱크 사고에서 발생할 수 있습니다.",
+      "[옳음] 가연성 액화가스 저장탱크에서 블레비가 일어나면 1차적인 탱크의 물리적 파열(물리적 폭발) 직후 분출된 가스가 착화하여 거대한 파이어볼(화구)을 형성하는 화학적 폭발로 이어집니다.",
+      "[틀림 · 정답] 블레비(BLEVE)의 폭발 규모(화구의 직경 D ∝ M^(1/3), 지속시간 t ∝ M^(1/3))는 탱크의 용량(저장된 액화가스의 질량 M)에 따라 큰 차이가 있습니다.",
+      "[옳음] 액화가스 탱크가 외부 화재에 노출되면 액상부는 액체의 증발잠열로 냉각되지만, 열용량이 작은 '기상부에 면하는 탱크 벽면'은 온도가 급상승하여 금속의 인장강도가 저하되므로 기상부 상단에서 먼저 균열·파열이 일어납니다."
+    ]
+  },
+  {
+    "id": "Q₂021₁6",
+    "year": 2021,
+    "q_num": 16,
+    "appearances": 2,
+    "source": "2021년 소방공채·경채 Q16",
+    "topic": "폭연과 폭굉, 분해폭발, 물리적 폭발 및 중합폭발 vs 분무폭발",
+    "freq_key": "물리적 폭발(증기폭발·BLEVE) vs 화학적 폭발 및 응축상 폭발",
+    "stem": "폭발에 대한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "폭연은 폭굉보다 폭발압력이 낮다.",
+      "분해폭발은 산소에 관계없이 단독으로 발열 분해반응을 하는 물질에서 발생한다.",
+      "물리적 폭발은 물질의 상태(기체, 액체, 고체)가 변하거나 온도, 압력 등 조건의 변화에 따라 발생한다.",
+      "중합폭발은 가연성 액체의 무적(霧滴, mist)이 일정 농도 이상으로 조연성 가스 중에 분산되어 있을 때 착화하여 발생한다."
+    ],
+    "ans": 4,
+    "q_expl": "각종 폭발 유형의 정의를 묻는 문항입니다. 가연성 액체의 미세한 무적(Mist, 액적)이 공기 중에 분산되어 있을 때 착화하여 일어나는 폭발은 중합폭발이 아니라 '분무폭발(Mist Explosion)'입니다(중합폭발은 시안화수소, 염화비닐, 산화에틸렌 등 단위체가 고분자로 중합할 때 발생하는 중합열에 의한 화학적 폭발).",
+    "c_expls": [
+      "[옳음] 아음속으로 전파되는 폭연(Deflagration)은 초음속 충격파를 동반하는 폭굉(Detonation)보다 폭발압력과 파괴력이 훨씬 낮습니다.",
+      "[옳음] 분해폭발은 아세틸렌, 산화에틸렌, 히드라진 등 분해열이 큰 물질이 산소 공급과 관계없이 단독으로 발열 분해반응을 일으켜 폭발하는 현상입니다.",
+      "[옳음] 물리적 폭발은 화학적 조성 변화 없이 물질의 상변화(액체 ➔ 기체)나 온도·압력 상승으로 용기가 파열되는 폭발입니다.",
+      "[틀림 · 정답] 가연성 액체의 무적(안개 모양의 미세 액적)이 조연성 가스(공기) 중에 분산되어 있을 때 착화하여 발생하는 폭발은 중합폭발이 아니라 '분무폭발'입니다."
+    ]
+  },
+  {
+    "id": "Q₂022₆",
+    "year": 2022,
+    "q_num": 6,
+    "appearances": 2,
+    "source": "2022년 소방공채·경채 Q6",
+    "topic": "분해폭발 물질(아세틸렌·산화에틸렌) 및 증기운폭발·증기폭발 구분",
+    "freq_key": "물리적 폭발(증기폭발·BLEVE) vs 화학적 폭발 및 응축상 폭발",
+    "stem": "폭발에 대한 일반적인 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "아세틸렌과 산화에틸렌은 분해폭발을 일으키기 쉬운 물질이다.",
+      "상온에서 탱크에 저장된 중유가 유출되면 자유공간 증기 운폭발이 일어난다.",
+      "밀폐공간에서 조연성가스가 폭발범위를 형성하면 점화 원에 의해 가스폭발이 일어난다.",
+      "다량의 고온물질이 물속에 투입되었을 때 물의 갑작 스러운 상변화에 의한 폭발현상을 반응폭주라 한다."
+    ],
+    "ans": 1,
+    "q_expl": "아세틸렌(C₂H₂), 산화에틸렌(C₂H₄O), 히드라진(N₂H₄) 등 대표적인 분해폭발성 가스와 증기운폭발(UVCE), 증기폭발의 정의를 묻는 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 아세틸렌과 산화에틸렌은 분자 내 결합에너지가 불안정하여 산소 없이도 압력이나 열에 의해 스스로 분해폭발을 일으키기 쉬운 대표적인 물질입니다.",
+      "[틀림] 자유공간 증기운폭발(UVCE)은 프로판, 부탄 등 휘발성이 매우 큰 '액화가스나 저비점 인화성 물질'이 대량 누출되어 가스 구름을 형성할 때 발생하며, 상온에서 증기압이 극히 낮고 인화점이 높은 '중유'가 유출되었다고 해서 상온 증기운폭발이 일어나지는 않습니다.",
+      "[틀림] 산소와 같은 '조연성 가스'는 스스로 타지 않는 불연성 가스이므로 단독으로 폭발범위를 형성하여 가스폭발을 일으킬 수 없으며, '가연성 가스'가 공기와 혼합되어 폭발범위를 형성해야 가스폭발이 일어납니다.",
+      "[틀림] 다량의 고온 용융물질이 물속에 투입되었을 때 물의 갑작스러운 상변화(급격한 기화)에 의해 일어나는 물리적 폭발 현상은 반응폭주가 아니라 '증기폭발(수증기폭발)'입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₉",
+    "year": 2023,
+    "q_num": 9,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q9",
+    "topic": "증기폭발·분진폭발 최소발화에너지·분해폭발·폭발범위 온도압력 영향",
+    "freq_key": "분진폭발의 메커니즘과 영향인자",
+    "stem": "폭발에 관한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>ㄱ. 증기폭발은 액체의 급속한 기화로 인해 체적이 팽창되어 발생하는 현상이다.<br/>ㄴ. 가스폭발은 분진폭발보다 최소발화에너지가 크다.<br/>ㄷ. 분해폭발은 공기나 산소와 섞이지 않더라도 가연성 가스 자체의 분해 반응열에 의해 폭발하는 현상이다.<br/>ㄹ. 폭발(연소)범위는 초기온도 및 압력이 상승할수록 분자 간 유효충돌할 가능성이 높아지기 때문에 넓어진다.",
+    "choices": [
+      "ㄱ, ㄴ",
+      "ㄷ, ㄹ",
+      "ㄱ, ㄴ, ㄹ",
+      "ㄱ, ㄷ, ㄹ"
+    ],
+    "ans": 4,
+    "q_expl": "폭발 전반의 핵심 원리를 묻는 2023년 기출 문항입니다. 특히 가스폭발과 분진폭발을 비교할 때, 고체 입자를 먼저 가열·열분해시켜야 하는 '분진폭발'이 기체 상태인 '가스폭발'보다 최소발화에너지(MIE)가 수십 배 이상 더 큽니다(즉, 가스폭발이 분진폭발보다 최소발화에너지가 훨씬 작음).",
+    "c_expls": [
+      "[틀림] ㄴ이 틀렸습니다. 가스폭발은 분진폭발보다 최소발화에너지가 훨씬 '작습니다'(가스폭발은 약 0.01에서 1mJ 수준인 반면, 분진폭발은 약 10에서 100mJ 이상 필요).",
+      "[틀림] ㄷ(분해폭발)과 ㄹ(초기온도·압력 상승 시 폭발범위 확대)뿐만 아니라 ㄱ(액체의 급속한 기화·팽창에 의한 증기폭발의 정의)도 옳은 설명이므로 ㄱ이 누락되었습니다.",
+      "[틀림] 고체 입자를 가열·기화시켜야 하는 '분진폭발'이 기체 상태인 '가스폭발'보다 최소발화에너지(MIE)가 훨씬 크므로 ㄴ(가스폭발이 분진폭발보다 최소발화에너지가 크다)은 틀렸습니다.",
+      "[옳음 · 정답] 증기폭발은 액체의 급속한 기화로 체적이 팽창하여 발생하는 물리적 폭발이고( ㄱ ), 분해폭발은 산소와 섞이지 않아도 자체 분해 반응열로 폭발하며( ㄷ ), 폭발범위는 초기 온도 및 압력이 상승할수록 분자 간 유효충돌 확률이 높아져 넓어집니다( ㄹ ). 따라서 ㄱ, ㄷ, ㄹ이 정답입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁0",
+    "year": 2023,
+    "q_num": 10,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q10",
+    "topic": "폭연(Deflagration)과 폭굉(Detonation)의 물리적 특성 비교",
+    "freq_key": "폭연(Deflagration) vs 폭굉(Detonation) 및 전이 과정(DDT)",
+    "stem": "폭연(deflagration)과 폭굉(detonation)에 관한 설명으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "예혼합가스의 초기압력이 높을수록 폭굉 유도거리가 길어 진다.",
+      "화염전파속도는 폭연의 경우 음속보다 느리며, 폭굉의 경우 음속보다 빠르다.",
+      "폭연은 폭굉으로 전이될 수 없으나 폭굉은 폭연으로 전이 될 수 있다.",
+      "폭연은 화염면에서 온도, 압력, 밀도의 변화가 불연속적 으로 나타난다."
+    ],
+    "ans": 2,
+    "q_expl": "화염전파속도가 음속보다 느린 '폭연(초당 0.1미터에서 수십 미터)'과 음속보다 빠른 초음속 충격파 연소인 '폭굉(초당 1,000미터에서 3,500미터)', 그리고 폭연에서 폭굉으로의 전이(DDT) 및 폭굉유도거리(DID)를 묻는 S등급 필수 문항입니다.",
+    "c_expls": [
+      "[틀림] 예혼합가스의 초기압력이 높을수록(또는 관경이 작거나 관 내부에 장애물·거칠기가 클수록, 점화에너지가 클수록) 화염 가속이 빨라져 폭굉유도거리(DID)는 '짧아집니다'.",
+      "[옳음 · 정답] 화염전파속도는 폭연(Deflagration)의 경우 미반응 가스 중의 음속보다 느리며(아음속), 폭굉(Detonation)의 경우 음속보다 빠릅니다(초음속).",
+      "[틀림] 배관 등에서 화염이 가속되면 압축파가 중첩되어 충격파를 형성하면서 '폭연이 폭굉으로 전이(DDT: Deflagration to Detonation Transition)'될 수 있습니다.",
+      "[틀림] 화염면(충격파면)에서 온도, 압력, 밀도의 변화가 불연속적(급격한 계단형 점프)으로 나타나는 것은 폭연이 아니라 충격파를 동반하는 '폭굉'입니다."
+    ]
+  },
+  {
+    "id": "Q₂023₁1",
+    "year": 2023,
+    "q_num": 11,
+    "appearances": 2,
+    "source": "2023년 소방공채·경채 Q11",
+    "topic": "분진폭발에 영향을 미치는 인자(입자직경·비표면적·발열량·휘발분)",
+    "freq_key": "분진폭발의 메커니즘과 영향인자",
+    "stem": "분진폭발에 영향을 미치는 인자에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "분진의 발열량이 클수록 폭발하기 쉽다.",
+      "분진의 부유성이 클수록 폭발이 용이해진다.",
+      "분진폭발은 분진의 입자직경에 영향을 받는다.",
+      "분진의 단위체적당 표면적이 작아지면 폭발이 용이해진다."
+    ],
+    "ans": 4,
+    "q_expl": "분진폭발이 잘 일어나는 조건[입자 직경이 작을수록(단위체적당 표면적·비표면적이 넓을수록), 발열량과 휘발분이 클수록, 부유성이 클수록, 수분(습도)과 회분이 적을수록]을 묻는 빈출 문항입니다.",
+    "c_expls": [
+      "[옳음] 분진의 연소 발열량이 클수록 주변 분진으로의 열전달이 활발해져 폭발하기 쉽습니다.",
+      "[옳음] 분진이 가라앉지 않고 공기 중에 잘 떠 있는 부유성이 클수록 가연성 분진운 형성이 쉬워 폭발이 용이해집니다.",
+      "[옳음] 분진폭발은 분진의 입자 직경(입도)에 큰 영향을 받으며, 입경이 작을수록 최소발화에너지와 폭발하한계가 낮아져 폭발 위험성이 증가합니다.",
+      "[틀림 · 정답] 분진의 단위체적당 표면적(비표면적)이 '커질수록(즉, 입자가 미세할수록)' 산소와의 접촉 면적이 넓어지고 열분해가 빨라져 폭발이 용이해집니다. 표면적이 작아지면 폭발이 어려워집니다."
+    ]
+  },
+  {
+    "id": "Q₂024₆",
+    "year": 2024,
+    "q_num": 6,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q6",
+    "topic": "블레비(BLEVE)의 발생 조건·평형 파괴·예방 대책",
+    "freq_key": "블레비(BLEVE) 및 증기운폭발(UVCE) 메커니즘",
+    "stem": "블레비(BLEVE)에 관한 설명으로 옳지 않은 것은?",
+    "stem_box": "",
+    "choices": [
+      "가연물이 비점 이상으로 가열될 때 발생한다.",
+      "저장탱크의 기계적 강도 이상의 압력이 형성될 때 발생한다.",
+      "저장탱크 균열로 인한 액상, 기상의 동적 평형 상태가 유지 된다.",
+      "저장탱크의 외부 표면에 열전도성이 작은 물질로 단열 조치하여 예방한다."
+    ],
+    "ans": 3,
+    "q_expl": "블레비(BLEVE, 비등액체팽창증기폭발)의 물리적 메커니즘과 예방 대책을 묻는 2024년 기출 문항입니다. 탱크에 균열이 발생하면 내부 압력이 대기압으로 급격히 떨어지면서 액상·기상의 동적 평형 상태가 '순식간에 파괴'되고, 과열 액체가 폭발적으로 돌비(급격한 비등·기화)하여 탱크 전체가 파열됩니다.",
+    "c_expls": [
+      "[옳음] 탱크 내부의 액화가스(가연물)가 대기압 하의 비점(끓는점) 이상으로 과열된 상태에서 용기가 파열될 때 발생합니다.",
+      "[옳음] 외부 화재 열원에 의해 탱크 내부 증기압이 상승하고 기상부 강판의 기계적 인장강도가 저하되어 내압이 기계적 강도를 초과할 때 발생합니다.",
+      "[틀림 · 정답] 저장탱크에 균열이 발생하여 내부 압력이 급강하하면 기존 액상과 기상의 동적 평형 상태가 유지되는 것이 아니라 '순간적으로 깨지면서(파괴되면서)' 과열 액체가 폭발적으로 기화·팽창합니다.",
+      "[옳음] 저장탱크 외부 표면에 열전도성이 작은 내화 단열재를 시공하거나 물분무설비로 탱크 외벽을 냉각살수하여 블레비를 예방합니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁2",
+    "year": 2024,
+    "q_num": 12,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q12",
+    "topic": "폭연에서 폭굉으로 전이되는 과정(DDT 단계)",
+    "freq_key": "폭연(Deflagration) vs 폭굉(Detonation) 및 전이 과정(DDT)",
+    "stem": "다음은 폭연에서 폭굉으로 전이되는 과정이다. ( ) 안에 들어갈 단계로 옳은 것은?",
+    "stem_box": "<strong class='text-emerald-300 block mb-1.5'>[제시문 및 보기 조건]</strong>착화→( ㄱ ) →( ㄴ ) →( ㄷ ) →폭굉파",
+    "choices": [
+      "( ㄱ ): 화염전파 / ( ㄴ ): 압축파 / ( ㄷ ): 충격파",
+      "( ㄱ ): 화염전파 / ( ㄴ ): 충격파 / ( ㄷ ): 압축파",
+      "( ㄱ ): 압축파 / ( ㄴ ): 화염전파 / ( ㄷ ): 충격파",
+      "( ㄱ ): 압축파 / ( ㄴ ): 충격파 / ( ㄷ ): 화염전파"
+    ],
+    "ans": 1,
+    "q_expl": "배관 내 예혼합가스에서 폭연(아음속 화염)이 폭굉(초음속 폭굉파)으로 발전하는 전이 과정[착화 ➔ 화염전파(폭연) ➔ 전방 미반응 가스 압축에 따른 압축파 형성 ➔ 압축파들의 중첩에 의한 충격파(Shock Wave) 형성 ➔ 충격파와 화염면이 결합한 폭굉파]을 묻는 2024년 기출 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 폭연에서 폭굉으로의 전이(DDT)는 '착화 ➔ 화염전파( ㄱ ) ➔ 압축파( ㄴ ) ➔ 충격파( ㄷ ) ➔ 폭굉파'의 순서로 진행됩니다.",
+      "[틀림] 약한 압축파들이 먼저 발생하고 이들이 중첩되어야 비로소 불연속면인 충격파가 형성되므로 '압축파 ➔ 충격파' 순서가 되어야 합니다.",
+      "[틀림] 착화 직후 먼저 화염전파가 시작되면서 전방의 가스를 밀어내어 압축파가 형성됩니다.",
+      "[틀림] 폭연에서 폭굉으로의 전이(DDT)는 '착화 ➔ 화염전파(ㄱ) ➔ 압축파 형성(ㄴ) ➔ 충격파 형성(ㄷ) ➔ 폭굉파' 순으로 진행되므로 단계 순서가 뒤바뀌었습니다."
+    ]
+  },
+  {
+    "id": "Q₂024₁4",
+    "year": 2024,
+    "q_num": 14,
+    "appearances": 2,
+    "source": "2024년 소방공채·경채 Q14",
+    "topic": "유류저장탱크 화재의 특수 현상(보일오버 vs 슬롭오버·프로스오버)",
+    "freq_key": "유류탱크 화재 3대 특수현상(보일오버·슬롭오버·프로스오버)",
+    "stem": "유류저장탱크 내 유류 표면에 화재 발생 시 뜨거운 열류 층이 형성되고 그 열파가 장시간에 걸쳐 바닥까지 전달되어 하부의 물이 비점 이상으로 가열되면서 부피가 팽창해 저장된 유류가 탱크 외부로 분출되었다. 이에 해당하는 현상으로 옳은 것은?",
+    "stem_box": "",
+    "choices": [
+      "보일오버(boil over)",
+      "슬롭오버(slop over)",
+      "프로스오버(froth over)",
+      "오일오버(oil over)"
+    ],
+    "ans": 1,
+    "q_expl": "원유·중유 등 유류저장탱크 화재 시 발생하는 3대 분출 현상[보일오버(Boilover: 장시간 연소 후 열파가 탱크 바닥의 물층에 도달하여 물이 급격히 기화·팽창하며 유류를 탱크 밖으로 폭출), 슬롭오버(Slopover: 화재 진압 시 뜨거운 유류 표면에 물이나 포를 주수했을 때 표면에서 물이 증발하며 유류가 넘쳐흐름), 프로스오버(Frothover: 화재가 아닌 상태에서 100도 이상의 고온 점성유 탱크 아래의 물이 거품을 내며 넘쳐흐름)]을 묻는 S등급 필수 문항입니다.",
+    "c_expls": [
+      "[옳음 · 정답] 유류탱크 표면 화재 시 뜨거운 열류층(Heat wave, 열파)이 형성되어 장시간에 걸쳐 바닥까지 전달됨으로써 탱크 하부에 고여 있던 물이 비점 이상으로 과열·기화(약 1,700배 부피 팽창)하여 유류를 폭발적으로 분출시키는 현상은 '보일오버(Boilover)'입니다.",
+      "[틀림] 슬롭오버(Slopover)는 연소 중인 뜨거운 유류 표면에 물이나 포 수용액을 방사했을 때 유면 상부에서 수분이 급격히 증발하면서 불붙은 유류가 탱크 벽을 타고 넘쳐흐르는 현상입니다.",
+      "[틀림] 프로스오버(Frothover)는 아스팔트 등 고점성 중질유를 섭씨 100도 이상으로 가열할 때(화재가 아닌 상태) 바닥의 수분이 기화하면서 점성유와 섞여 거품 형태로 넘쳐흐르는 현상입니다.",
+      "[틀림] 오일오버(Oil over)는 표준 소방학 유류탱크 3대 현상 용어가 아닌 오답 보기입니다."
+    ]
+  },
+  {
+    "id": "Q₂026₁7",
+    "year": 2026,
+    "q_num": 17,
+    "appearances": 2,
+    "source": "2026년 소방공채·경채 Q17",
+    "topic": "산화폭발·증기운폭발(UVCE)·증기폭발 및 분진폭발의 단계별 발생 순서",
+    "freq_key": "분진폭발의 메커니즘과 영향인자",
+    "stem": "폭발에 관한 설명으로 옳지 않은 것은? (단, 문제에서 제시한 사항 외의 것은 고려하지 않음)",
+    "stem_box": "",
+    "choices": [
+      "화학적 폭발의 한 종류인 산화 폭발에는 가스폭발, 분무 폭발, 그리고 분진폭발이 포함된다.",
+      "증기운폭발(UVCE)은 개방된 대기에 다량의 가연성 가스가 서서히 지속적으로 누출되면서 대기 중에 구름 형태로 모여 점화 시 순간적으로 모든 가스가 동시에 폭발하는 현상으로 급격한 화학적 변화에 의한 폭발이다.",
+      "증기폭발은 액화가스 등이 분출될 때 급격한 기화와 함께 비등 현상이 나타나므로 밀폐된 공간 속의 액체 물질이 빠르게 기화하면서 다량의 증기가 발생하고, 이에 따라 증기압이 높아져 용기 등의 내압을 초과하여 파열되는 폭발이다.",
+      "분진폭발은 먼저, 입자 표면에 마찰 등으로 열에너지가 발생하여 표면온도가 상승하여 발화된다. 그 후, 열분해로 가연성 기체가 발생해 공기와 혼합되며, 주변의 열전파로 주위 분진이 추가로 열분해되어 가연성 기체가 연쇄적으로 확산된다. 이어서, 압력이 상승하면서 폭발이 일어나고, 폭발 이후 2차·3차 폭발이 발생한다."
+    ],
+    "ans": 4,
+    "q_expl": "각종 폭발의 정의와 분진폭발의 단계별 진행 순서를 정밀하게 물은 2026년 기출 문항입니다. 분진폭발은 [1단계: 부유한 분진 입자 표면에 열에너지가 공급되어 표면온도 상승 ➔ 2단계: 입자 열분해(또는 건류)로 가연성 기체 발생 ➔ 3단계: 발생한 가연성 기체가 주변 공기와 혼합되어 가연성 혼합기 형성 ➔ 4단계: 점화원에 의해 발화·폭발(1차 폭발) 및 화염 생성 ➔ 5단계: 이 연소열(열전파)과 압력파가 주위 퇴적 분진을 비산시키고 추가 열분해시켜 2차·3차 연쇄 폭발로 확대]의 순서로 일어납니다. 선지 ④는 '열분해로 가연성 기체가 발생하여 공기와 혼합되기 전에 먼저 발화된다'고 순서를 뒤집어 서술하여 틀렸습니다.",
+    "c_expls": [
+      "[옳음] 화학적 폭발 중 산소와의 급격한 산화반응에 의한 산화폭발에는 기상의 가스폭발, 액상의 분무폭발, 고상의 분진폭발이 포함됩니다.",
+      "[옳음] 증기운폭발(UVCE)은 개방된 대기에 다량의 가연성 가스가 누출되어 구름 형태로 모인 뒤 점화 시 동시에 폭발하는 화학적 폭발입니다.",
+      "[옳음] 증기폭발은 밀폐 용기 내 액체 물질이 급격히 기화·비등하면서 증기압이 용기 내압 한계를 초과하여 파열되는 물리적 폭발입니다.",
+      "[틀림 · 정답] 분진폭발은 입자 표면온도가 상승한 뒤 먼저 '열분해로 가연성 기체가 발생하여 공기와 혼합된 후에 발화(착화)'가 일어나며, 이 1차 폭발의 열과 충격파가 주변 분진을 비산·열분해시켜 2차·3차 폭발로 이어집니다. 선지는 열분해 및 공기 혼합 이전에 먼저 발화가 일어난다고 순서를 잘못 서술하였습니다."
+    ]
+  }
+];
+    const QUIZ_DATA = [
+  {
+    "grade": "A",
+    "text": "저장탱크 외벽이 화염에 노출되어 액면 상부 기상부 강판의 강도가 저하되면서 발생한다.",
+    "isCorrect": true,
+    "source": "BLEVE 기출",
+    "explanation": "BLEVE는 화염에 의해 냉각되지 않는 기상부 강판 온도가 상승하여 인장강도가 파단 수준으로 떨어지면서 유발됩니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀01"
+  },
+  {
+    "grade": "A",
+    "text": "탱크 내부 액체의 급격한 비등과 팽창으로 압력이 급상승하여 용기가 파열된다.",
+    "isCorrect": true,
+    "source": "BLEVE 기출",
+    "explanation": "내부 액체가 비등 팽창하며 충격 압력을 발생시켜 용기를 물리적으로 파열시킵니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀02"
+  },
+  {
+    "grade": "S",
+    "text": "블레비(BLEVE)는 오직 가연성 인화성 가스에서만 발생하며 비인화성 액체에서는 발생하지 않는다.",
+    "isCorrect": false,
+    "source": "BLEVE 기출",
+    "explanation": "BLEVE는 용기 파열에 의한 물리적 폭발이므로 비인화성 액체(물 등)도 고온 고압 밀폐 상태에서 비등 팽창 시 용기가 파열되면서 BLEVE가 발생합니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀03"
+  },
+  {
+    "grade": "S",
+    "text": "파열 후 누출된 가연성 증기가 점화원에 의해 인화되면 대규모 파이어볼(Fireball)을 형성한다.",
+    "isCorrect": true,
+    "source": "BLEVE 기출",
+    "explanation": "파열 후 누출된 가연성 가스가 화염에 휩싸여 거대한 공 모양의 화구를 형성하는 파이어볼이 2차적으로 발생합니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀04"
+  },
+  {
+    "grade": "S",
+    "text": "보일오버(Boilover)는 탱크 바닥의 물이 고온의 열유층과 접촉하여 급격히 비등 증발하면서 유류를 비산시키는 현상이다.",
+    "isCorrect": true,
+    "source": "유류탱크 기출",
+    "explanation": "중질유 탱크 화재 시 열유층이 바닥수와 만나 1,700배 수증기 팽창을 일으키며 기름을 뿜어내는 정확한 정의입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀05"
+  },
+  {
+    "grade": "S",
+    "text": "슬롭오버(Slopover)는 유류 표면에 물을 주수했을 때 기름 전체가 끓어넘치는 현상으로 중질유에서는 발생하지 않는다.",
+    "isCorrect": false,
+    "source": "유류탱크 기출",
+    "explanation": "슬롭오버는 점성이 큰 중질유 표면에 소화수를 방수했을 때 표면 기름이 거품을 일으키며 넘치는 현상으로, 중질유에서 주로 발생합니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀06"
+  },
+  {
+    "grade": "S",
+    "text": "프로스오버(Frothover)는 화재가 발생한 상태에서 물이 유입되어 화염과 함께 분출하는 현상이다.",
+    "isCorrect": false,
+    "source": "유류탱크 기출",
+    "explanation": "프로스오버는 화재가 발생하지 않은 비화재 상태에서 바닥의 물이 가열 팽창하여 거품과 함께 넘치는 현상입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀07"
+  },
+  {
+    "grade": "S",
+    "text": "블레비(BLEVE)는 유류탱크 바닥의 수분이 원인이 되어 발생하는 현상이다.",
+    "isCorrect": false,
+    "source": "유류탱크 기출",
+    "explanation": "탱크 바닥의 수분이 원인이 되는 것은 보일오버입니다. BLEVE는 외벽 화염 노출에 따른 용기 파열 현상입니다.",
+    "origQId": "",
+    "id": "SCI₀2₀3₀08"
+  },
+  {
+    "grade": "S",
+    "text": "가연성 고체의 미분이 공기 중에 부유하고 있을 때 점화원에 의해 에너지가 주어지면 폭발하는 현상을 '분진폭발'이라 하며, 가연성 액체의 미세한 무적(Mist)이 공기 중에 분산되어 폭발하는 현상을 '분무폭발'이라 한다.",
+    "isCorrect": true,
+    "source": "2018년 소방공채·경채 Q11 기출",
+    "explanation": "고체 미립자가 부유하여 폭발하면 분진폭발, 액체 미립자(무적)가 분산되어 폭발하면 분무폭발입니다.",
+    "origQId": "Q₂018₁1",
+    "id": "SCI₀2₀3₀09"
+  },
+  {
+    "grade": "S",
+    "text": "공기 중 산소농도가 증가하면 가연성 가스의 연소속도가 빨라지고 화염온도가 높아지며 폭발범위가 넓어지고, 발화점과 최소발화에너지(점화에너지)는 낮아진다.",
+    "isCorrect": true,
+    "source": "2019년 소방공채·경채 Q14 기출",
+    "explanation": "산소농도 증가 시 연소가 매우 용이해지므로 속도·온도·폭발범위는 증가하고, 발화점·최소발화에너지는 감소합니다.",
+    "origQId": "Q₂019₁4",
+    "id": "SCI₀2₀3₀10"
+  },
+  {
+    "grade": "S",
+    "text": "증기폭발은 폭발물질의 물리적 상태에 따른 분류 중 기상폭발이 아니라 '액상폭발(응축상폭발)'에 해당하며, 폭발 원인에 따른 분류상 '물리적 폭발'에 해당한다.",
+    "isCorrect": true,
+    "source": "2020년 소방공채·경채 Q11 기출",
+    "explanation": "기상폭발에는 혼합가스폭발과 가스분해폭발이 속하며, 액체의 급격한 상변화(기화)로 일어나는 증기폭발과 분무폭발은 액상(응축상)폭발입니다.",
+    "origQId": "Q₂020₁1",
+    "id": "SCI₀2₀3₀11"
+  },
+  {
+    "grade": "S",
+    "text": "블레비(BLEVE)는 외부 화염에 노출된 액화가스 저장탱크의 기상부 벽면 금속 인장강도가 저하되어 파열되는 물리적 폭발 현상이며, 탱크의 용량이 클수록 파이어볼(화구) 등 폭발 규모가 커진다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q10 기출",
+    "explanation": "액상부는 비등잠열로 열을 흡수하지만 기상부 강판은 과열되어 인장강도가 급감하므로 기상부에서 파열되며, 폭발 규모는 탱크 용량에 비례합니다.",
+    "origQId": "Q₂021₁0",
+    "id": "SCI₀2₀3₀12"
+  },
+  {
+    "grade": "S",
+    "text": "분해폭발은 아세틸렌·산화에틸렌 등이 산소와 관계없이 단독으로 발열 분해반응을 일으켜 발생하며, 중합폭발은 시안화수소·염화비닐 등이 급격한 중합반응열에 의해 폭발하는 현상이다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q16 기출",
+    "explanation": "무적(액적)이 공기 중에 분산되어 폭발하는 것은 '분무폭발'이고, 단위체가 고분자로 결합하며 중합열로 폭발하는 것이 '중합폭발'입니다.",
+    "origQId": "Q₂021₁6",
+    "id": "SCI₀2₀3₀13"
+  },
+  {
+    "grade": "S",
+    "text": "아세틸렌과 산화에틸렌은 산소 없이도 자체 분해열에 의해 분해폭발을 일으키기 쉬운 대표적인 물질이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q6 기출",
+    "explanation": "아세틸렌(C2H2)과 산화에틸렌(C2H4O)은 분해폭발 위험성이 매우 커서 구리·은·수은 등과의 접촉을 피하고 희석제를 섞어 취급합니다.",
+    "origQId": "Q₂022₆",
+    "id": "SCI₀2₀3₀14"
+  },
+  {
+    "grade": "A",
+    "text": "다량의 고온 물질이 물속에 투입되었을 때 물의 갑작스러운 상변화(기화 팽창)에 의해 발생하는 물리적 폭발 현상은 '증기폭발'이다.",
+    "isCorrect": true,
+    "source": "2022년 소방공채·경채 Q6 기출",
+    "explanation": "화학반응 속도가 기하급수적으로 빨라지는 현상은 '반응폭주'이고, 고온 물질과 물의 접촉으로 급격히 수증기가 팽창하는 물리적 폭발은 '증기폭발'입니다.",
+    "origQId": "Q₂022₆",
+    "id": "SCI₀2₀3₀15"
+  },
+  {
+    "grade": "S",
+    "text": "가스폭발은 분진폭발보다 최소발화에너지(MIE)가 훨씬 작으며, 연소속도와 폭발압력은 분진폭발보다 크다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q9 기출",
+    "explanation": "분진폭발은 고체 입자가 열분해되어 가스를 발생시키는 단계가 필요하므로 가스폭발보다 최소발화에너지가 크고 불완전연소로 일산화탄소 발생량이 많습니다.",
+    "origQId": "Q₂023₉",
+    "id": "SCI₀2₀3₀16"
+  },
+  {
+    "grade": "S",
+    "text": "폭발(연소)범위는 일반적으로 초기 온도 및 압력이 상승할수록 분자 간 유효충돌 가능성이 높아지기 때문에 넓어진다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q9 기출",
+    "explanation": "온도와 압력이 상승하면 하한계는 다소 낮아지고 상한계가 크게 높아져 전체 폭발범위가 넓어집니다(단, 일산화탄소는 압력 상승 시 폭발범위가 좁아지는 예외 물질).",
+    "origQId": "Q₂023₉",
+    "id": "SCI₀2₀3₀17"
+  },
+  {
+    "grade": "S",
+    "text": "분진폭발은 분진의 입자직경이 작아 단위체적당 표면적(비표면적)이 클수록, 발열량과 휘발분이 많을수록, 부유성이 클수록 폭발이 용이해진다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q11 기출",
+    "explanation": "입자가 미세하여 비표면적이 넓을수록 산소와의 반응 면적이 커져 최소발화에너지가 감소하고 분진폭발 위험성이 급증합니다.",
+    "origQId": "Q₂023₁1",
+    "id": "SCI₀2₀3₀20"
+  },
+  {
+    "grade": "S",
+    "text": "블레비(BLEVE)는 액화가스가 대기압 비점 이상으로 가열된 상태에서 탱크 균열 시 액상·기상의 동적 평형 상태가 급격히 깨지면서 폭발적으로 기화·팽창하여 발생하며, 탱크 외벽 단열 조치나 물분무 냉각으로 예방한다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q6 기출",
+    "explanation": "탱크 균열 시 급격한 감압으로 기액 동적 평형이 파괴되면서 과열 액체가 순간 비등·기화하는 것이 블레비의 핵심 원리입니다.",
+    "origQId": "Q₂024₆",
+    "id": "SCI₀2₀3₀21"
+  },
+  {
+    "grade": "S",
+    "text": "예혼합가스에서 폭연이 폭굉으로 전이(DDT)되는 과정은 '착화 ➔ 화염전파 ➔ 압축파 ➔ 충격파 ➔ 폭굉파' 순서로 진행된다.",
+    "isCorrect": true,
+    "source": "2024년 소방공채·경채 Q12 기출",
+    "explanation": "착화 후 화염이 전파되면서 전방 미연소가스를 압축하여 압축파를 만들고, 압축파들이 중첩되어 충격파를 형성한 뒤 화염면과 결합하여 폭굉파가 됩니다.",
+    "origQId": "Q₂024₁2",
+    "id": "SCI₀2₀3₀22"
+  },
+  {
+    "grade": "S",
+    "text": "분진폭발은 입자 표면온도 상승 ➔ 열분해에 의한 가연성 기체 발생 및 공기와 혼합 ➔ 발화 및 1차 폭발 ➔ 충격파와 복사열에 의한 주위 분진 비산 및 2차·3차 연쇄 폭발의 순서로 진행된다.",
+    "isCorrect": true,
+    "source": "2026년 소방공채·경채 Q17 기출",
+    "explanation": "분진폭발은 고체 입자가 먼저 열분해되어 가연성 가스를 방출하고 공기와 혼합된 뒤에 발화·폭발하며, 충격파가 퇴적 분진을 날려 2차·3차 연쇄 폭발을 일으킵니다.",
+    "origQId": "Q₂026₁7",
+    "id": "SCI₀2₀3₀25"
+  }
+];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
+      HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);
+      HarnessEngine.renderQuizList('quizList', QUIZ_DATA);
+    });
+  </script>
+</body>
+</html>
