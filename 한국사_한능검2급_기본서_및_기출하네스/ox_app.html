@@ -532,10 +532,10 @@
 
   </div>
 
-  <script src="assets/js/history-ox-db.js?v=4"></script>
+  <script src="assets/js/history-ox-db.js?v=5"></script>
   <script>
     const OxApp = {
-      db: window.HISTORY_OX_DB || { units: [], items: [] },
+      db: window.HISTORY_OX_DB || { units: [], oxList: [] },
       partLabels: [["all", "전체 단원"], ["01", "1편 선사·고조선"], ["02", "2편 삼국·남북국"], ["03", "3편 고려"], ["04", "4편 조선전기"], ["05", "5편 조선후기"], ["06", "6편 근대개항"], ["07", "7편 일제·현대"]],
       currentPart: 'all',
       currentUnitId: '01_01',
@@ -545,6 +545,11 @@
       savedMap: {},
       touchStartX: 0,
       touchStartY: 0,
+
+      getAllOxItems() {
+        const raw = (this.db && (this.db.oxList || this.db.items)) ? (this.db.oxList || this.db.items) : [];
+        return raw.filter(it => it && it.tier !== 'ext');
+      },
 
       init() {
         this.loadPrefs();
@@ -556,7 +561,7 @@
         const params = new URLSearchParams(window.location.search);
         const unitParam = params.get('unit');
         const sortParam = params.get('sort');
-        if (unitParam && (unitParam === 'all' || this.db.units.some(u => u.unitId === unitParam))) {
+        if (unitParam && (unitParam === 'all' || (this.db.units && this.db.units.some(u => u.unitId === unitParam)))) {
           this.openUnitQuiz(unitParam);
         } else if (sortParam === 'shuffle') {
           this.openUnitQuiz('all');
@@ -605,14 +610,15 @@
       renderUnitList() {
         const container = document.getElementById('unitCardList');
         if (!container) return;
+        const allItems = this.getAllOxItems();
         const units = this.currentPart === 'all'
-          ? this.db.units
-          : this.db.units.filter(u => u.partId === this.currentPart);
+          ? (this.db.units || [])
+          : (this.db.units || []).filter(u => u.partId === this.currentPart);
 
         container.innerHTML = units.map(u => {
           const uIdx = this.db.units.indexOf(u) + 1;
           const themeCode = `THEME ${String(uIdx).padStart(2, '0')}`;
-          const count = this.db.items.filter(it => it.unitId === u.unitId).length;
+          const count = allItems.filter(it => it.unitId === u.unitId).length;
           return `
             <button type="button" class="unit-item-btn" onclick="OxApp.openUnitQuiz('${u.unitId}')">
               <div style="min-width:0;">
@@ -638,9 +644,10 @@
 
       openUnitQuiz(unitId) {
         this.currentUnitId = unitId;
+        const allItems = this.getAllOxItems();
         const pool = unitId === 'all'
-          ? this.db.items
-          : this.db.items.filter(it => it.unitId === unitId);
+          ? allItems
+          : allItems.filter(it => it.unitId === unitId);
         this.deck = this.shuffleArray(pool);
         this.currentIndex = 0;
         this.sessionAnswers = {};
