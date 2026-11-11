@@ -1,0 +1,684 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[인쇄·바인더 표지용] 한국사(한능검 심화) DAY 01부터 DAY 21까지 일자별 학습 및 기출변형 복습 인쇄 포털</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+    :root {
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      padding: 10px 20px;
+      border-bottom: 1px solid #3D3830;
+    }
+    .no-print-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .print-btn {
+      background: #10B981;
+      color: #06281E;
+      border: 1px solid #059669;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 7px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .nav-btn {
+      background: #2A2723;
+      color: #EAE5DC;
+      border: 1px solid #4A443B;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+    .book-sheet {
+      max-width: 940px;
+      margin: 28px auto 64px auto;
+      background: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 44px 48px 56px 48px;
+    }
+    .header-box {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 22.5px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      font-size: 12.8px;
+      color: var(--text-sub);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .s-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-top: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 10px 12px;
+    }
+    .s-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+    .s-card-val {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .bundle-box {
+      background: #F4EFE6;
+      border: 1.5px solid #8B2635;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+    }
+    .bundle-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #8B2635;
+      margin-bottom: 8px;
+    }
+    .bundle-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .bundle-btn {
+      display: inline-block;
+      background: #8B2635;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 6px 11px;
+      border-radius: 4px;
+    }
+    .bundle-btn.green {
+      background: #164E28;
+    }
+    .bundle-btn.navy {
+      background: #1E3A8A;
+    }
+    table.plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    table.plan-table th {
+      background: var(--bg-subtle);
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+      font-weight: 800;
+    }
+    table.plan-table td {
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--border-line);
+      vertical-align: middle;
+    }
+    .portal-open-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    @media print {
+      html, body {
+        background: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-col, .bundle-box {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+        <span style="font-size:13px; font-weight:700;">
+          📚 한국사(한능검 심화) DAY 01부터 DAY 21까지 일자별 인쇄 포털 (양면 인쇄 시 날짜·해설지 완전 분리 정렬)
+        </span>
+        <a href="../소방학개론_인쇄전용_교재/00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="nav-btn">🔥 소방학개론 인쇄포털 &rarr;</a>
+        <a href="../소방관계법규_인쇄전용_교재/00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="nav-btn">📕 소방관계법규 인쇄포털 &rarr;</a>
+      </div>
+      <button onclick="window.print()" class="print-btn">🖨️ 이 계획표 인쇄하기 (Ctrl+P)</button>
+    </div>
+  </div>
+
+  <main class="book-sheet">
+    <header class="header-box">
+      <div class="badge">한국사(한능검 심화) 단권화 워크북 · 스테이플러 일자별 소분 인쇄 전용 (양면 인쇄 시 해설지와 다음 일자 용지 분리 보장)</div>
+      <h1>한국사(한능검 심화) DAY 01부터 DAY 21까지 + 3일 학습 후 기출변형 복습 완주 플랜</h1>
+      <p class="lead">
+        전체 7편 21개 일자(DAY 01부터 DAY 21까지: 기본서 핵심 이론 201문단 + 5지선다 실전 기출 561문항 + 기출 OX 630제)를
+        <strong>3일 학습 직후 기출 변형 복습 모의고사(30문항, 총 7회 210문항)로 점검하는 시스템</strong>입니다.
+        모든 PDF는 양면 인쇄 시 <strong>문제지·해설지·다음 일자가 절대로 한 종이(앞뒷면)에 겹쳐 인쇄되지 않도록 짝수 페이지 패딩 정렬</strong>이 완료되어 있어, 인쇄 후 날짜별로 바로 덜어내어 스테이플러로 철할 수 있습니다.
+      </p>
+    </header>
+
+    <div class="bundle-box">
+      <div class="bundle-title">🖨️ [사이클 단위 양면 인쇄용 묶음 PDF] (3일 학습 교재 + 기출변형 복습 모의고사 · 모든 DAY와 해설지가 새 종이 앞면에서 시작하도록 정렬됨)</div>
+      <div class="bundle-links">
+        <a href="한국사_사이클01_DAY01부터_DAY03까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 01 · DAY 01부터 DAY 03까지 교재+복습 모의고사 (104쪽)</a>
+        <a href="한국사_사이클02_DAY04부터_DAY06까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 02 · DAY 04부터 DAY 06까지 교재+복습 모의고사 (134쪽)</a>
+        <a href="한국사_사이클03_DAY07부터_DAY09까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 03 · DAY 07부터 DAY 09까지 교재+복습 모의고사 (130쪽)</a>
+        <a href="한국사_사이클04_DAY10부터_DAY12까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 04 · DAY 10부터 DAY 12까지 교재+복습 모의고사 (124쪽)</a>
+        <a href="한국사_사이클05_DAY13부터_DAY15까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 05 · DAY 13부터 DAY 15까지 교재+복습 모의고사 (114쪽)</a>
+        <a href="한국사_사이클06_DAY16부터_DAY18까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 06 · DAY 16부터 DAY 18까지 교재+복습 모의고사 (132쪽)</a>
+        <a href="한국사_사이클07_DAY19부터_DAY21까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 07 · DAY 19부터 DAY 21까지 교재+복습 모의고사 (186쪽)</a>
+        <a href="한국사_전범위_DAY01부터_DAY21까지_복습모의고사포함_마스터합본.pdf" class="bundle-btn green">📗 전 범위 마스터 합본 PDF (보관·일괄 출력용)</a>
+      </div>
+    </div>
+
+    <div class="summary-cards">
+      <div class="s-card">
+        <div class="s-card-label">전체 진도 구성</div>
+        <div class="s-card-val">DAY 01부터 DAY 21까지 + 복습 7회</div>
+      </div>
+      <div class="s-card">
+        <div class="s-card-label">수록 실전 기출·변형</div>
+        <div class="s-card-val">기출 561제 + 변형 210제 + OX 630제</div>
+      </div>
+      <div class="s-card">
+        <div class="s-card-label">양면 인쇄 스테이플러 소분</div>
+        <div class="s-card-val">해설지·다음 일자 용지 분리 100%</div>
+      </div>
+      <div class="s-card">
+        <div class="s-card-label">1일 목표 소요 시간</div>
+        <div class="s-card-val">1시간 30분에서 2시간</div>
+      </div>
+    </div>
+
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th style="width:13%;">일자 구분</th>
+          <th style="width:9%;">DAY 코드</th>
+          <th>학습 단원명 및 당일 핵심 정복 포인트 (3일 학습 후 기출변형 복습)</th>
+          <th style="width:12%;">학습 분량</th>
+          <th style="width:9%; text-align:center;">완료 체크</th>
+          <th class="no-print-col" style="width:12%; text-align:center;">개별 열기·PDF</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 01</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 01<br/><span style="font-size:11px; color:var(--text-muted);">(01_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 선사 문화와 국가의 형성 · 구석기·신석기 도구와 생활상 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 01부터 DAY 03까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">주먹도끼(연천 전곡리)·슴베찌르개(단양 수양개)·막집(공주 석장리) vs 빗살무늬토기(서울 암사동)·덧무늬토기(양양 오산리)·가락바퀴/뼈바늘·탄화된 좁쌀(봉산 지탑리)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 14문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY01_01_01_구석기_신석기_도구와_생활상_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/01_DAY01_01_01_구석기_신석기_도구와_생활상_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 02</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 02<br/><span style="font-size:11px; color:var(--text-muted);">(01_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 선사 문화와 국가의 형성 · 청동기·철기 문화와 고조선의 성립 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 01부터 DAY 03까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">비파형동검·반달돌칼·고인돌·민무늬토기·탄화미(여주 흔암리·부여 송국리) vs 세형동검·거푸집·명도전/오수전·단군왕검·위만조선 중계무역·범금 8조</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 16문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY02_01_02_청동기_철기_문화와_고조선의_성립_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/02_DAY02_01_02_청동기_철기_문화와_고조선의_성립_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 03</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 03<br/><span style="font-size:11px; color:var(--text-muted);">(01_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 선사 문화와 국가의 형성 · 부여·고구려·옥저·동예·삼한의 풍습 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 01부터 DAY 03까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">부여(5부족·사출도·영고·1책12법·순장) vs 고구려(제가회의·서옥제·동맹·부경) vs 옥저(민며느리제·가족공동묘) vs 동예(무천·책화·단궁/과하마/반어피) vs 삼한(천군·소도·계절제)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 16문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY03_01_03_부여_고구려_옥저_동예_삼한의_풍습_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/03_DAY03_01_03_부여_고구려_옥저_동예_삼한의_풍습_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 01부터 DAY 03까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 01회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 01부터 DAY 03까지 (제1편 선사 문화와 국가의 형성) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 01, DAY 02, DAY 03 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY01부터_DAY03까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/04_DAY01부터_DAY03까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 04</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 04<br/><span style="font-size:11px; color:var(--text-muted);">(02_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 고대 삼국 및 남북국 시대 · 삼국의 성립과 전성기 영토 확장 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 04부터 DAY 06까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">고구려(소수림왕·광개토대왕 영락/호우명·장수왕 평양천도/충주고구려비·살수/안시성) vs 백제(근초고왕·무령왕 22담로·성왕 사비천도/관산성) vs 신라(지증왕·법흥왕·진흥왕 순수비)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 30문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY04_02_01_삼국의_성립과_전성기_영토확장_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/05_DAY04_02_01_삼국의_성립과_전성기_영토확장_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 05</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 05<br/><span style="font-size:11px; color:var(--text-muted);">(02_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 고대 삼국 및 남북국 시대 · 통일신라와 발해의 통치체제 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 04부터 DAY 06까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">나당전쟁(매소성·기벌포), 신문왕(관료전·녹읍폐지·9주5소경·9서당10정·국학), 성덕왕(정전)·원성왕(독서삼품과)·김헌창의 난·장보고, 발해(무왕 장문휴·문왕 3성6부/주자감·선왕 해동성국)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 35문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY05_02_02_통일신라와_발해의_통치체제_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/06_DAY05_02_02_통일신라와_발해의_통치체제_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 06</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 06<br/><span style="font-size:11px; color:var(--text-muted);">(02_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 고대 삼국 및 남북국 시대 · 고대 경제·사회 및 불교·유학 사상 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 04부터 DAY 06까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">골품제와 화백회의, 원효(일심·화쟁·아미타) vs 의상(화엄일승법계도·부석사) vs 혜초, 백제금동대향로·미륵사지/정림사지/불국사 석탑·석굴암·돌무지덧널무덤 vs 굴식돌방무덤</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY06_02_03_고대_경제_사회_및_불교_유학사상_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/07_DAY06_02_03_고대_경제_사회_및_불교_유학사상_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 04부터 DAY 06까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 02회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 04부터 DAY 06까지 (제2편 고대 삼국 및 남북국 시대) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 04, DAY 05, DAY 06 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY04부터_DAY06까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/08_DAY04부터_DAY06까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 07</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 07<br/><span style="font-size:11px; color:var(--text-muted);">(03_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 고려 귀족 사회의 형성과 변천 · 고려 태조 왕건과 중앙 통치체제 정비 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 07부터 DAY 09까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">태조 왕건(흑창·역분전·사심관·기인·훈요10조·정계), 광종(노비안검법·과거제·광덕/준풍), 성종(최승로 시무28조·12목), 2성6부·도병마사/식목도감·중추원/삼사·5도양계·향/부곡/소</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY07_03_01_고려_태조_왕건과_중앙_통치체제_정비_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/09_DAY07_03_01_고려_태조_왕건과_중앙_통치체제_정비_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 08</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 08<br/><span style="font-size:11px; color:var(--text-muted);">(03_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 고려 귀족 사회의 형성과 변천 · 문벌귀족, 무신정변 및 대몽항쟁 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 07부터 DAY 09까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">거란 침입(서희 강동6주·강감찬 귀주대첩)·여진(윤관 별무반 동북9성), 이자겸의 난·묘청 서경천도운동(칭제건원), 무신정변(중방·교정도감·정방·삼별초·만적), 대몽항쟁(처인성)·공민왕 개혁</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 23문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY08_03_02_문벌귀족_무신정변_및_대몽항쟁_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/10_DAY08_03_02_문벌귀족_무신정변_및_대몽항쟁_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 09</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 09<br/><span style="font-size:11px; color:var(--text-muted);">(03_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 고려 귀족 사회의 형성과 변천 · 고려의 토지제도, 대외교역 및 불교문화 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 07부터 DAY 09까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">전시과(시정 인품·개정 관직·경정 현직)와 과전법, 벽란도·화폐(건원중보·해동통보·활구), 의천(해동천태종·교관겸수) vs 지눌(수선사결사·돈오점수/정혜쌍수)·요세(백련결사), 삼국사기 vs 삼국유사·직지</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 35문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY09_03_03_고려의_토지제도_대외교역_불교문화_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/11_DAY09_03_03_고려의_토지제도_대외교역_불교문화_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 07부터 DAY 09까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 03회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 07부터 DAY 09까지 (제3편 고려 시대 전 범위) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 07, DAY 08, DAY 09 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY07부터_DAY09까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/12_DAY07부터_DAY09까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 10</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 10<br/><span style="font-size:11px; color:var(--text-muted);">(04_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 조선 전기의 정치와 사회 · 조선의 건국과 유교 통치기구 확립 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 10부터 DAY 12까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">태조(정도전 불씨잡변·조선경국전), 태종(6조직계제·사병혁파·호패법·신문고·계미자), 세종(의정부서사제·집현전·4군6진·공법 전분6등/연분9등), 세조(직전법·원각사지10층석탑), 성종(홍문관·경국대전)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 27문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY10_04_01_조선의_건국과_유교_통치기구_확립_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/13_DAY10_04_01_조선의_건국과_유교_통치기구_확립_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 11</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 11<br/><span style="font-size:11px; color:var(--text-muted);">(04_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 조선 전기의 정치와 사회 · 사림의 성장과 붕당정치의 형성 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 10부터 DAY 12까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">4대 사화(무오 김종직 조의제문·갑자 폐비윤씨·기묘 조광조 현량과/위훈삭제/소격서폐지·을사 외척), 서원(주세붕 백운동서원 ➔ 이황 소수서원 사액)과 향약, 이황(동인)과 이이(서인) 붕당 출현</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY11_04_02_사림의_성장과_붕당정치의_형성_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/14_DAY11_04_02_사림의_성장과_붕당정치의_형성_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 12</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 12<br/><span style="font-size:11px; color:var(--text-muted);">(04_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 조선 전기의 정치와 사회 · 임진왜란과 병자호란 양난의 극복 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 10부터 DAY 12까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">임진왜란(이순신 한산도/명량·권율 행주·김시민 진주·곽재우 의병·훈련도감 삼수병·속오군), 광해군(강홍립 사르후 중립외교·이원익 경기도 대동법), 인조반정·정묘호란·병자호란(남한산성·삼전도 굴욕)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY12_04_03_임진왜란과_병자호란_양난의_극복_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/15_DAY12_04_03_임진왜란과_병자호란_양난의_극복_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 10부터 DAY 12까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 04회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 10부터 DAY 12까지 (제4편 조선 전기) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 10, DAY 11, DAY 12 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY10부터_DAY12까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/16_DAY10부터_DAY12까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 13</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 13<br/><span style="font-size:11px; color:var(--text-muted);">(05_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 조선 후기의 사회 변동과 문화 · 붕당정치의 변질과 영·정조 탕평책 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 13부터 DAY 15까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">5군영 체제·비변사 최고기구화, 현종 예송(기해·갑인)과 숙종 환국(경신·기사·갑술·백두산정계비), 영조(완론탕평·탕평비·이인좌의 난·균역법·속대전) vs 정조(준론탕평·규장각·초계문신제·장용영·수원화성·신해통공·대전통편)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY13_05_01_붕당정치의_변질과_영정조_탕평책_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/17_DAY13_05_01_붕당정치의_변질과_영정조_탕평책_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 14</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 14<br/><span style="font-size:11px; color:var(--text-muted);">(05_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 조선 후기의 사회 변동과 문화 · 모내기법, 상품화폐경제와 신분제 동요 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 13부터 DAY 15까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">모내기법(이앙법·광작)·상품작물(인삼·담배·면화), 영정법(1결 미4두)·대동법(공인·방납폐단)·균역법(1필·결작2두·선무군관포), 사상(송상·만상·경강상인)·상평통보·설점수세제(덕대)·공노비 해방(1801)·서얼 통청운동</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 15문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY14_05_02_모내기법_상품화폐경제와_신분제_동요_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/18_DAY14_05_02_모내기법_상품화폐경제와_신분제_동요_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 15</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 15<br/><span style="font-size:11px; color:var(--text-muted);">(05_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 조선 후기의 사회 변동과 문화 · 실학사상 발달과 세도정치기 농민봉기 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 13부터 DAY 15까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">중농학파(유형원 균전론·이익 한전론/성호사설·정약용 여전론/정전제/목민심서) vs 중상학파(유수원 우서·홍대용 의산문답·박지원 열하일기·박제가 북학의), 김정호 대동여지도·진경산수화·풍속화, 홍경래의 난(1811) vs 임술농민봉기(1862 박규수·삼정이정청)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY15_05_03_실학사상_발달과_세도정치기_농민봉기_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/19_DAY15_05_03_실학사상_발달과_세도정치기_농민봉기_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 13부터 DAY 15까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 05회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 13부터 DAY 15까지 (제5편 조선 후기) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 13, DAY 14, DAY 15 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY13부터_DAY15까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/20_DAY13부터_DAY15까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 16</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 16<br/><span style="font-size:11px; color:var(--text-muted);">(06_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제6편 근대 개항과 자주 독립의 모색 · 흥선대원군 개혁과 강화도조약 개항 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 16부터 DAY 18까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">흥선대원군(비변사 축소/의정부·삼군부 부활, 대전회통, 경복궁 중건·당백전·원납전, 서원 47개소 외 철폐·호포제·사창제), 병인박해➔제너럴셔먼호➔병인양요(한성근·양헌수)➔오페르트 도굴➔신미양요(어재연 광성보)➔척화비, 강화도조약·조미수호통상조약·통리기무아문·위정척사</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY16_06_01_흥선대원군_개혁과_강화도조약_개항_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/21_DAY16_06_01_흥선대원군_개혁과_강화도조약_개항_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 17</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 17<br/><span style="font-size:11px; color:var(--text-muted);">(06_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제6편 근대 개항과 자주 독립의 모색 · 임오군란, 갑신정변 및 동학농민운동 전개 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 16부터 DAY 18까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">임오군란(구식군인·제물포조약·조청상민수륙무역장정), 갑신정변(급진개화파 우정총국·정강14개조 인민평등권/호조재정일원화·한성조약·톈진조약), 거문도사건(유길준/부들러 중립화론), 동학농민운동(고부봉기➔황토현/황룡촌➔전주화약/집강소➔우금치)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 20문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY17_06_02_임오군란_갑신정변_동학농민운동_전개_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/22_DAY17_06_02_임오군란_갑신정변_동학농민운동_전개_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 18</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 18<br/><span style="font-size:11px; color:var(--text-muted);">(06_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제6편 근대 개항과 자주 독립의 모색 · 갑오개혁, 독립협회, 대한제국과 국권피탈 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 16부터 DAY 18까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">1차 갑오(군국기무처·신분제폐지·은본위·과부재가) vs 2차 갑오(홍범14조·교육입국조서·지방23부) vs 을미개혁(단발령·태양력·건양), 독립협회(만민공동회·관민공동회 헌의6조), 대한제국(광무개혁·대한국국제·양전/지계), 을사늑약·항일의병·애국계몽(보안회·헌정연구회·대한자강회·신민회·국채보상)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 35문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY18_06_03_갑오개혁_독립협회_대한제국과_국권피탈_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/23_DAY18_06_03_갑오개혁_독립협회_대한제국과_국권피탈_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 16부터 DAY 18까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 06회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 16부터 DAY 18까지 (제6편 근대 개항기) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 16, DAY 17, DAY 18 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY16부터_DAY18까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/24_DAY16부터_DAY18까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 19</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 19<br/><span style="font-size:11px; color:var(--text-muted);">(07_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제7편 일제강점기 저항과 현대 사회의 발전 · 일제 식민통치 3단계 변천과 3·1 운동 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 19부터 DAY 21까지 중 1일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">1910년대 무단통치(헌병경찰·태형령·토지조사령·회사령 허가제·독립의군부/대한광복회), 3·1운동, 1920년대 문화통치(치안유지법·산미증식계획·회사령 신고제·물산장려·밀립대학·6·10만세·신간회 광주학생항일운동 지원), 1930년에서 40년대 민족말살(국가총동원법·황국신민서사·창씨개명·미곡공출·조선어학회사건)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 65문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY19_07_01_일제_식민통치_3단계_변천과_31운동_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/25_DAY19_07_01_일제_식민통치_3단계_변천과_31운동_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 20</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 20<br/><span style="font-size:11px; color:var(--text-muted);">(07_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제7편 일제강점기 저항과 현대 사회의 발전 · 대한민국임시정부와 국내외 무장독립투쟁 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 19부터 DAY 21까지 중 2일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">대한민국임시정부(상하이 수립·연통제/교통국·구미위원부·독립신문·국민대표회의 창조파/개조파·이봉창/윤봉길 한인애국단·충칭 한국광복군·건국강령), 봉오동(홍범도)·청산리(김좌진)➔간도/자유시참변➔3부(미쓰야협정), 1930년대 한중연합(양세봉 조선혁명군 영릉가/흥경성 vs 지청천 한국독립군 쌍성보/대전자령), 의열단(김원봉·신채호 조선혁명선언)➔민족혁명당➔조선의용대</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 22문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY20_07_02_대한민국임시정부와_국내외_무장독립투쟁_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/26_DAY20_07_02_대한민국임시정부와_국내외_무장독립투쟁_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">DAY 21</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 21<br/><span style="font-size:11px; color:var(--text-muted);">(07_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제7편 일제강점기 저항과 현대 사회의 발전 · 광복, 정부 수립, 6·25 전쟁과 민주화 과정 <span style="font-size:11px; font-weight:700; color:var(--accent);">[DAY 19부터 DAY 21까지 중 3일 차 학습]</span></div>
+                <div style="font-size:11.5px; color:var(--text-sub);">건준(여운형)➔모스크바3상➔좌우합작7원칙(여운형·김규식)➔남북협상(김구·김규식)➔5·10총선거 제헌국회(반민특위·농지개혁 유상매수/유상분배), 6·25전쟁·발췌개헌/사사오입개헌·4·19혁명(내각책임제), 박정희(한일협정·유신헌법)·5·18광주·6월민주항쟁(6·29선언·5년단임 직선제), 노태우(북방외교·유엔동시가입·남북기본합의서)·김영삼(금융실명제·OECD)·김대중(6·15남북공동선언)·노무현(10·4남북정상선언)</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;">이론 10문단<br/><strong style="color:var(--accent);">기출 54문항</strong> + OX 30제</td>
+              <td style="text-align:center; white-space:nowrap;">□ 이론<br/>□ 문제<br/>□ 해설</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY21_07_03_광복_정부수립_625전쟁과_민주화과정_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/27_DAY21_07_03_광복_정부수립_625전쟁과_민주화과정_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">DAY 19부터 DAY 21까지<br/><span style="font-size:11px;">[3일 학습 후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 07회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 19부터 DAY 21까지 (제7편 일제강점기와 현대사) 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 19, DAY 20, DAY 21 3일 학습 직후 사료·선지 크로스 변형 30문항(30분 제한)으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong><br/>(5지선다)</td>
+              <td style="text-align:center; white-space:nowrap;">□ 응시<br/>□ 오답</td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY19부터_DAY21까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/28_DAY19부터_DAY21까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
