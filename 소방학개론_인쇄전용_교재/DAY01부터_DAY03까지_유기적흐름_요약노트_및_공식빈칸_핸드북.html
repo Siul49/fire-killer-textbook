@@ -794,23 +794,23 @@
 <body>
 
   <!-- 상단 고정 컨트롤 바 (모바일/태블릿 터치 복습 & A4 양면 인쇄 겸용) -->
-  <nav class="no-print-bar">
+  <nav class="no-print-bar" id="hbTopBar">
     <div class="no-print-inner">
-      <div class="ctrl-group">
-        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">&larr; 인쇄 포털</a>
-        <a href="../소방학개론_기본서_및_기출하네스/index.html" class="ctrl-btn">📖 기본서 목차</a>
-        <a href="#hb_day_01_01" class="ctrl-btn">DAY 01</a>
-        <a href="#hb_day_01_02" class="ctrl-btn">DAY 02</a>
-        <a href="#hb_day_01_03" class="ctrl-btn">DAY 03</a>
-        <a href="#part2SubjSection" class="ctrl-btn">✍️ 주관식(39제)</a>
-        <a href="#part2OxSection" class="ctrl-btn">🔥 정예 OX(90제)</a>
-        <a href="#part3AnsSection" class="ctrl-btn">🔑 빠른 정답표</a>
+      <div class="ctrl-group ctrl-main-row">
+        <a href="../index.html" class="ctrl-btn">&larr; 목록</a>
+        <a href="#hb_day_01_01" class="ctrl-btn">D1</a>
+        <a href="#hb_day_01_02" class="ctrl-btn">D2</a>
+        <a href="#hb_day_01_03" class="ctrl-btn">D3</a>
+        <button id="btnKwBlankMode" onclick="HandbookApp.toggleKwBlankMode()" class="ctrl-btn" title="본문 핵심 키워드 빈칸모드 전환">🎯 빈칸</button>
+        <a href="#part2SubjSection" onclick="toggleHbSubjDeck(true)" class="ctrl-btn">✍️ 주관식</a>
+        <a href="#part2OxSection" onclick="toggleHbOxDeck(true)" class="ctrl-btn" style="background:#8B2635; border-color:#B83B4E; color:#fff;">⭕ OX 90</a>
+        <button id="btnHbMisc" onclick="HandbookApp.toggleMiscDrawer()" class="ctrl-btn" title="글자크기·다크모드·인쇄·정답표 설정">⚙️</button>
       </div>
-      <div class="ctrl-group">
-        <button id="btnKwBlankMode" onclick="HandbookApp.toggleKwBlankMode()" class="ctrl-btn" title="요약본 내 모든 굵은 핵심 키워드를 터치형 빈칸으로 전환합니다">
-          🎯 본문 키워드 빈칸모드 OFF
-        </button>
-        <button onclick="HandbookApp.toggleAllSubj(true)" class="ctrl-btn">주관식 정답 모두 펼치기</button>
+      <div class="ctrl-group ctrl-drawer-row" id="hbMiscDrawer">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 인쇄 포털</a>
+        <a href="../소방학개론_기본서_및_기출하네스/index.html" class="ctrl-btn">📖 기본서 목차</a>
+        <a href="#part3AnsSection" onclick="disableHbDecks()" class="ctrl-btn">🔑 빠른 정답표</a>
+        <button onclick="HandbookApp.toggleAllSubj(true)" class="ctrl-btn">주관식 정답 펼치기</button>
         <button onclick="HandbookApp.toggleAllSubj(false)" class="ctrl-btn">모두 가리기</button>
         <button onclick="HandbookApp.adjustFontSize(-0.5)" class="ctrl-btn">가-</button>
         <button onclick="HandbookApp.adjustFontSize(0.5)" class="ctrl-btn">가+</button>
@@ -5012,7 +5012,7 @@
         }
         const btn = document.getElementById('btnKwBlankMode');
         if (btn) {
-          btn.textContent = this.kwBlankMode ? '🎯 본문 키워드 빈칸모드 ON (터치 확인)' : '🎯 본문 키워드 빈칸모드 OFF';
+          btn.textContent = this.kwBlankMode ? '🎯 빈칸 ON' : '🎯 빈칸';
           btn.classList.toggle('active', this.kwBlankMode);
         }
       },
@@ -5238,5 +5238,100 @@
     })();
   </script>
 <!-- S26_HB_DECK_END -->
+
+  <style id="hbCompactTopBarStyle">
+    .no-print-bar {
+      padding: 5px 10px !important;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease !important;
+      will-change: transform;
+    }
+    .no-print-bar.fk-bar-hidden {
+      transform: translateY(-115%) !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    .no-print-inner {
+      display: block !important;
+    }
+    .ctrl-main-row {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 4px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    .ctrl-main-row::-webkit-scrollbar {
+      display: none !important;
+    }
+    .ctrl-main-row .ctrl-btn {
+      flex-shrink: 0 !important;
+      font-size: 11.5px !important;
+      padding: 5px 8px !important;
+      white-space: nowrap !important;
+    }
+    .ctrl-drawer-row {
+      display: none !important;
+      flex-wrap: wrap !important;
+      gap: 5px !important;
+      padding-top: 7px !important;
+      margin-top: 6px !important;
+      border-top: 1px solid #3D3830 !important;
+    }
+    .no-print-bar.fk-misc-open .ctrl-drawer-row {
+      display: flex !important;
+    }
+    .hb-prose-lead, .hb-item-list, .hb-ox-text, .s26-ox-stmt {
+      text-align: left !important;
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+    }
+    @media (max-width: 640px) {
+      .hb-cover-header {
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+      }
+      .hb-cover-title {
+        font-size: 16.5px !important;
+      }
+      .hb-cover-sub {
+        font-size: 11px !important;
+      }
+      .macro-story-box {
+        padding: 10px 12px !important;
+        margin-bottom: 14px !important;
+      }
+    }
+  </style>
+  <script id="hbCompactTopBarScript">
+    HandbookApp.toggleMiscDrawer = function() {
+      const bar = document.getElementById('hbTopBar') || document.querySelector('.no-print-bar');
+      if (!bar) return;
+      bar.classList.toggle('fk-misc-open');
+      const btn = document.getElementById('btnHbMisc');
+      if (btn) btn.classList.toggle('active', bar.classList.contains('fk-misc-open'));
+    };
+    (function() {
+      let lastY = window.scrollY || 0;
+      window.addEventListener('scroll', function() {
+        const curY = window.scrollY || 0;
+        const dy = curY - lastY;
+        const bar = document.getElementById('hbTopBar') || document.querySelector('.no-print-bar');
+        if (!bar) return;
+        if (curY <= 24) {
+          bar.classList.remove('fk-bar-hidden');
+        } else if (dy > 6 && curY > 36) {
+          bar.classList.add('fk-bar-hidden');
+          bar.classList.remove('fk-misc-open');
+        } else if (dy < -14) {
+          bar.classList.remove('fk-bar-hidden');
+        }
+        lastY = curY;
+      }, { passive: true });
+    })();
+  </script>
+
 </body>
 </html>
