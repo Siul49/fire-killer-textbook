@@ -4668,116 +4668,7 @@
       document.getElementById('fontSizeLabel').textContent = curSize + 'px';
     }
   </script>
-<!-- S26_ULTRA_SWIPE_START -->
-  <style>
-    .theory-map-row { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .theory-map-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      font-family: var(--font-sans); font-size: 11px; font-weight: 700;
-      color: #1E3A5F; background-color: #EDF3FA; border: 1px solid #B6CCE8;
-      border-radius: 4px; padding: 3.5px 8px; cursor: pointer;
-    }
-    .theory-map-btn:hover { background-color: #1E3A5F; color: #FFFFFF; }
-    .s26-swipe-bar {
-      display: none; background: linear-gradient(135deg, #1E1B18 0%, #2D2620 100%);
-      color: #F7F4EE; border: 1.5px solid #8B2635; border-radius: 10px;
-      padding: 12px 14px; margin-bottom: 14px; font-family: var(--font-sans);
-    }
-    body.s26-swipe-active .s26-swipe-bar { display: block; }
-    .s26-bar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-    .s26-badge { font-size: 11.5px; font-weight: 800; color: #FFD580; background: rgba(139,38,53,0.85); padding: 3px 9px; border-radius: 999px; }
-    .s26-status-txt { font-size: 12px; font-weight: 800; color: #EAE5DC; }
-    .s26-progress-track { width: 100%; height: 6px; background: #3A342D; border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
-    .s26-progress-fill { height: 100%; background: linear-gradient(90deg, #8B2635, #10B981); width: 4%; transition: width 0.22s ease; }
-    .s26-nav-row { display: flex; gap: 6px; }
-    .s26-nav-btn { flex: 1; font-family: var(--font-sans); font-size: 12.5px; font-weight: 800; padding: 9px 10px; border-radius: 7px; border: 1px solid #4A443B; background: #2C2824; color: #F5F2EB; cursor: pointer; }
-    .s26-nav-btn.primary { background: #8B2635; border-color: #A93545; color: #FFFFFF; }
-    .s26-QuickJump { margin-top: 8px; display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; }
-    .s26-qdot { min-width: 28px; height: 26px; border-radius: 5px; border: 1px solid #4A443B; background: #26231F; color: #B8B0A4; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
-    .s26-qdot.active { background: #8B2635; border-color: #FFD580; color: #FFFFFF; }
-    body.s26-swipe-active .questions-grid { display: block !important; column-count: 1 !important; }
-    body.s26-swipe-active .q-card { display: none !important; background: var(--bg-sheet); border: 1.5px solid var(--border-strong) !important; border-top: 4px solid var(--accent) !important; border-radius: 10px !important; padding: 16px 15px !important; }
-    body.s26-swipe-active .q-card.s26-current-card { display: block !important; }
-    #s26ReturnFloat {
-      position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
-      z-index: 9999; width: min(94vw, 400px); background: rgba(24,21,18,0.97);
-      color: #F7F4EE; border: 2px solid #8B2635; border-radius: 12px; padding: 12px 14px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.4); font-family: var(--font-sans); display: none;
-    }
-    #s26ReturnFloat.show-float { display: block; }
-    .s26-float-preview { font-size: 12px; line-height: 1.58; color: #EAE3D5; margin-bottom: 8px; }
-    .s26-return-btn { width: 100%; background: #8B2635; color: #FFFFFF; border: none; border-radius: 7px; padding: 8px 12px; font-size: 12px; font-weight: 800; cursor: pointer; }
-    @media print { .s26-swipe-bar, #s26ReturnFloat, .theory-map-row { display: none !important; } }
-  </style>
-  <div id="s26ReturnFloat" class="no-print-inline">
-    <div class="s26-float-preview" id="s26FloatPreviewText"></div>
-    <button type="button" class="s26-return-btn" onclick="document.getElementById('s26ReturnFloat').classList.remove('show-float')">📖 기본서 핵심 개념 확인 완료 (닫기)</button>
-  </div>
-  <script>
-    let s26SwipeOn = false;
-    let s26CurQ = 1;
-    const s26TotalQ = 30;
-    function toggleSwipeMode(forceState) {
-      s26SwipeOn = (typeof forceState === 'boolean') ? forceState : !s26SwipeOn;
-      document.body.classList.toggle('s26-swipe-active', s26SwipeOn);
-      const btn = document.getElementById('btnS26Swipe');
-      if (btn) {
-        btn.classList.toggle('active', s26SwipeOn);
-        btn.textContent = s26SwipeOn ? '📱 S26 슬라이드 모드 ON' : '📱 갤럭시 S26 슬라이드 풀기';
-      }
-      if (s26SwipeOn) {
-        const wrap = document.getElementById('s26QuickDots');
-        if (wrap && !wrap.children.length) {
-          for (let i = 1; i <= s26TotalQ; i++) {
-            const b = document.createElement('button');
-            b.type = 'button'; b.className = 's26-qdot'; b.id = 's26-dot-' + i; b.textContent = i;
-            b.onclick = function() { goToSwipeQ(i); };
-            wrap.appendChild(b);
-          }
-        }
-        goToSwipeQ(s26CurQ, false);
-      }
-    }
-    function goToSwipeQ(qnum, doScroll) {
-      if (qnum < 1) qnum = 1; if (qnum > s26TotalQ) qnum = s26TotalQ;
-      s26CurQ = qnum;
-      document.querySelectorAll('#part2 .q-card').forEach((c, idx) => c.classList.toggle('s26-current-card', (idx + 1) === s26CurQ));
-      const st = document.getElementById('s26StatusTxt');
-      if (st) st.textContent = '문항 ' + s26CurQ + ' / ' + s26TotalQ;
-      const fl = document.getElementById('s26ProgressFill');
-      if (fl) fl.style.width = Math.round((s26CurQ / s26TotalQ) * 100) + '%';
-      for (let i = 1; i <= s26TotalQ; i++) {
-        const d = document.getElementById('s26-dot-' + i);
-        if (d) d.classList.toggle('active', i === s26CurQ);
-      }
-      if (doScroll !== false) {
-        const bar = document.getElementById('s26SwipeBar');
-        if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-    function stepSwipeQ(delta) { goToSwipeQ(s26CurQ + delta, true); }
-    function jumpToTheory(targetId, qnum, btnEl) {
-      const preview = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const label = btnEl ? btnEl.textContent.trim() : '';
-      const fl = document.getElementById('s26ReturnFloat');
-      const ft = document.getElementById('s26FloatPreviewText');
-      if (ft) ft.innerHTML = '<strong style="color:#FFD580;">[' + label + ']</strong><br/>' + preview;
-      if (fl) fl.classList.add('show-float');
-    }
-    (function() {
-      let sx = 0, sy = 0;
-      document.addEventListener('touchstart', e => { if (s26SwipeOn && e.touches[0]) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } }, { passive: true });
-      document.addEventListener('touchend', e => {
-        if (!s26SwipeOn || !e.changedTouches[0]) return;
-        const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-        if (Math.abs(dx) > 54 && Math.abs(dx) > Math.abs(dy) * 1.4) stepSwipeQ(dx < 0 ? 1 : -1);
-      }, { passive: true });
-      window.addEventListener('DOMContentLoaded', () => { if (window.innerWidth <= 600) toggleSwipeMode(true); });
-    })();
-  </script>
-<!-- S26_ULTRA_SWIPE_END -->
-
-  <!-- FK_ONE_LINE_BAR_START -->
+<!-- FK_ONE_LINE_BAR_START -->
   <style id="fkOneLineBarStyle">
     body.layout-wide .prose-body,
     body.layout-oxford .prose-body,
@@ -4890,5 +4781,113 @@
   </script>
   <!-- FK_ONE_LINE_BAR_END -->
 
+<!-- S26_ULTRA_SWIPE_START -->
+  <style>
+    .theory-map-row { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .theory-map-btn {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: var(--font-sans); font-size: 11px; font-weight: 700;
+      color: #1E3A5F; background-color: #EDF3FA; border: 1px solid #B6CCE8;
+      border-radius: 4px; padding: 3.5px 8px; cursor: pointer;
+    }
+    .theory-map-btn:hover { background-color: #1E3A5F; color: #FFFFFF; }
+    .s26-swipe-bar {
+      display: none; background: linear-gradient(135deg, #1E1B18 0%, #2D2620 100%);
+      color: #F7F4EE; border: 1.5px solid #8B2635; border-radius: 10px;
+      padding: 12px 14px; margin-bottom: 14px; font-family: var(--font-sans);
+    }
+    body.s26-swipe-active .s26-swipe-bar { display: block; }
+    .s26-bar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .s26-badge { font-size: 11.5px; font-weight: 800; color: #FFD580; background: rgba(139,38,53,0.85); padding: 3px 9px; border-radius: 999px; }
+    .s26-status-txt { font-size: 12px; font-weight: 800; color: #EAE5DC; }
+    .s26-progress-track { width: 100%; height: 6px; background: #3A342D; border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
+    .s26-progress-fill { height: 100%; background: linear-gradient(90deg, #8B2635, #10B981); width: 4%; transition: width 0.22s ease; }
+    .s26-nav-row { display: flex; gap: 6px; }
+    .s26-nav-btn { flex: 1; font-family: var(--font-sans); font-size: 12.5px; font-weight: 800; padding: 9px 10px; border-radius: 7px; border: 1px solid #4A443B; background: #2C2824; color: #F5F2EB; cursor: pointer; }
+    .s26-nav-btn.primary { background: #8B2635; border-color: #A93545; color: #FFFFFF; }
+    .s26-QuickJump { margin-top: 8px; display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; }
+    .s26-qdot { min-width: 28px; height: 26px; border-radius: 5px; border: 1px solid #4A443B; background: #26231F; color: #B8B0A4; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
+    .s26-qdot.active { background: #8B2635; border-color: #FFD580; color: #FFFFFF; }
+    body.s26-swipe-active .questions-grid { display: block !important; column-count: 1 !important; }
+    body.s26-swipe-active .q-card { display: none !important; background: var(--bg-sheet); border: 1.5px solid var(--border-strong) !important; border-top: 4px solid var(--accent) !important; border-radius: 10px !important; padding: 16px 15px !important; }
+    body.s26-swipe-active .q-card.s26-current-card { display: block !important; }
+    #s26ReturnFloat {
+      position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+      z-index: 9999; width: min(94vw, 400px); background: rgba(24,21,18,0.97);
+      color: #F7F4EE; border: 2px solid #8B2635; border-radius: 12px; padding: 12px 14px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4); font-family: var(--font-sans); display: none;
+    }
+    #s26ReturnFloat.show-float { display: block; }
+    .s26-float-preview { font-size: 12px; line-height: 1.58; color: #EAE3D5; margin-bottom: 8px; }
+    .s26-return-btn { width: 100%; background: #8B2635; color: #FFFFFF; border: none; border-radius: 7px; padding: 8px 12px; font-size: 12px; font-weight: 800; cursor: pointer; }
+    @media print { .s26-swipe-bar, #s26ReturnFloat, .theory-map-row { display: none !important; } }
+  </style>
+  <div id="s26ReturnFloat" class="no-print-inline">
+    <div class="s26-float-preview" id="s26FloatPreviewText"></div>
+    <button type="button" class="s26-return-btn" onclick="document.getElementById('s26ReturnFloat').classList.remove('show-float')">📖 기본서 핵심 개념 확인 완료 (닫기)</button>
+  </div>
+  <script>
+    let s26SwipeOn = false;
+    let s26CurQ = 1;
+    const s26TotalQ = 30;
+    function toggleSwipeMode(forceState) {
+      s26SwipeOn = (typeof forceState === 'boolean') ? forceState : !s26SwipeOn;
+      document.body.classList.toggle('s26-swipe-active', s26SwipeOn);
+      const btn = document.getElementById('btnS26Swipe');
+      if (btn) {
+        btn.classList.toggle('active', s26SwipeOn);
+        btn.textContent = s26SwipeOn ? '📱 S26 슬라이드 모드 ON' : '📱 갤럭시 S26 슬라이드 풀기';
+      }
+      if (s26SwipeOn) {
+        const wrap = document.getElementById('s26QuickDots');
+        if (wrap && !wrap.children.length) {
+          for (let i = 1; i <= s26TotalQ; i++) {
+            const b = document.createElement('button');
+            b.type = 'button'; b.className = 's26-qdot'; b.id = 's26-dot-' + i; b.textContent = i;
+            b.onclick = function() { goToSwipeQ(i); };
+            wrap.appendChild(b);
+          }
+        }
+        goToSwipeQ(s26CurQ, false);
+      }
+    }
+    function goToSwipeQ(qnum, doScroll) {
+      if (qnum < 1) qnum = 1; if (qnum > s26TotalQ) qnum = s26TotalQ;
+      s26CurQ = qnum;
+      document.querySelectorAll('#part2 .q-card').forEach((c, idx) => c.classList.toggle('s26-current-card', (idx + 1) === s26CurQ));
+      const st = document.getElementById('s26StatusTxt');
+      if (st) st.textContent = '문항 ' + s26CurQ + ' / ' + s26TotalQ;
+      const fl = document.getElementById('s26ProgressFill');
+      if (fl) fl.style.width = Math.round((s26CurQ / s26TotalQ) * 100) + '%';
+      for (let i = 1; i <= s26TotalQ; i++) {
+        const d = document.getElementById('s26-dot-' + i);
+        if (d) d.classList.toggle('active', i === s26CurQ);
+      }
+      if (doScroll !== false) {
+        const bar = document.getElementById('s26SwipeBar');
+        if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    function stepSwipeQ(delta) { goToSwipeQ(s26CurQ + delta, true); }
+    function jumpToTheory(targetId, qnum, btnEl) {
+      const preview = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
+      const label = btnEl ? btnEl.textContent.trim() : '';
+      const fl = document.getElementById('s26ReturnFloat');
+      const ft = document.getElementById('s26FloatPreviewText');
+      if (ft) ft.innerHTML = '<strong style="color:#FFD580;">[' + label + ']</strong><br/>' + preview;
+      if (fl) fl.classList.add('show-float');
+    }
+    (function() {
+      let sx = 0, sy = 0;
+      document.addEventListener('touchstart', e => { if (s26SwipeOn && e.touches[0]) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } }, { passive: true });
+      document.addEventListener('touchend', e => {
+        if (!s26SwipeOn || !e.changedTouches[0]) return;
+        const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 54 && Math.abs(dx) > Math.abs(dy) * 1.4) stepSwipeQ(dx < 0 ? 1 : -1);
+      }, { passive: true });
+      window.addEventListener('DOMContentLoaded', () => { if (window.innerWidth <= 600) toggleSwipeMode(true); });
+    })();
+  </script>
+<!-- S26_ULTRA_SWIPE_END -->
 </body>
 </html>

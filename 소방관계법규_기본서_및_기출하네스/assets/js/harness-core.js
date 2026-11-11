@@ -557,20 +557,20 @@ const HarnessEngine = {
 
       targetPara.style.cssText += '; padding: 14px 16px; border-radius: 12px; border: 2px solid var(--accent); background-color: var(--accent-soft); transition: all 0.3s ease;';
 
+      const qnumParam = params.get('qnum') || '';
+      const qLabel = qnumParam ? `(${String(qnumParam).padStart(2, '0')}번) ` : '';
       const banner = document.createElement('div');
       banner.id = 'fkOxDeepLinkBanner';
-      banner.className = 'flex flex-wrap items-center justify-between gap-2 mb-2 pb-2 border-b';
-      banner.style.cssText = 'border-color: var(--border-strong); font-family: var(--font-sans) !important;';
+      banner.style.cssText = 'position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:9999; display:flex; align-items:center; gap:8px; background:transparent; font-family:var(--font-sans) !important;';
       banner.innerHTML = `
-        <span style="font-size:12.5px; font-weight:800; color:var(--accent);">🎯 방금 확인한 OX 문항 관련 기본서 본문 줄</span>
-        <a href="ox_app.html?v=4&resume=1" style="display:inline-flex; align-items:center; gap:4px; padding:5px 11px; border-radius:7px; background-color:var(--accent); color:#fff; font-size:12px; font-weight:800; text-decoration:none;">
-          &larr; 풀던 OX 문제로 돌아가기
+        <a href="ox_app.html?v=6&resume=1" style="display:inline-flex; align-items:center; justify-content:center; gap:6px; padding:11px 20px; border-radius:999px; background-color:#8B2635; color:#FFFFFF; font-size:13px; font-weight:800; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.45); border:1.5px solid rgba(255,255,255,0.22); white-space:nowrap;">
+          🔙 풀던 OX 문제${qLabel}슬라이드로 즉시 복귀
         </a>
       `;
-      targetPara.parentNode.insertBefore(banner, targetPara);
+      document.body.appendChild(banner);
 
       setTimeout(() => {
-        banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetPara.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 150);
     } catch (e) {}
   },
@@ -1181,7 +1181,7 @@ const HarnessEngine = {
         quickBox.className = 'mt-4 pt-3 border-t space-y-2';
         quickBox.style.borderColor = 'var(--border-line)';
         quickBox.innerHTML = `
-          <a href="ox_app.html?v=4&unit=${unitId}" class="block w-full py-2 px-3 rounded-lg text-center text-xs font-extrabold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+          <a href="ox_app.html?v=6&unit=${unitId}" class="block w-full py-2 px-3 rounded-lg text-center text-xs font-extrabold text-white transition" style="background-color:var(--accent); text-decoration:none;">
             ⚡ 이 단원 OX 타격 (정예 ${essCount} / 전체 ${totalUnitOx}) &rarr;
           </a>
           <div class="flex items-center justify-between gap-2 text-[11px] font-bold pt-1">
@@ -1209,10 +1209,10 @@ const HarnessEngine = {
             </p>
           </div>
           <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <a href="ox_app.html?v=4&unit=${unitId}" class="px-4 py-2.5 rounded-xl font-extrabold text-xs text-white transition" style="background-color:var(--accent); text-decoration:none;">
+            <a href="ox_app.html?v=6&unit=${unitId}" class="px-4 py-2.5 rounded-xl font-extrabold text-xs text-white transition" style="background-color:var(--accent); text-decoration:none;">
               ⚡ 전용 OX 앱 실행 (${totalUnitOx}제) &rarr;
             </a>
-            <a href="ox_app.html?v=4&sort=shuffle" class="px-3.5 py-2.5 rounded-xl font-bold text-xs border transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
+            <a href="ox_app.html?v=6&sort=shuffle" class="px-3.5 py-2.5 rounded-xl font-bold text-xs border transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
               🎲 전 단원 랜덤
             </a>
           </div>

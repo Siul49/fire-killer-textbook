@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1"""""">
+      <div id="sec1""""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정책</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1269,7 +1269,7 @@
         </div>
       </div>
 
-      <div id="sec2"""""">
+      <div id="sec2""""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 광종의 왕권 강화(노비안검법·과거제)와 성종의 유교 통치 체제 확립</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1281,7 +1281,7 @@
               <div class="sidenote-title">기출 출제 포인트</div>
               <ul class="sidenote-list">
               <li><strong>고려의 독자적 귀족 회의(재추 회의)</strong>: 중서문하성의 2품 이상 <strong>재신</strong> + 중추원의 2품 이상 <strong>추밀</strong>이 모여 국방·안보를 논의하는 <strong>도병마사(후기 도평의사사)</strong>와 국내 법제·격식을 제정하는 <strong>식목도감</strong> 운영</li>
-              <li><strong>대간(언론) vs 삼사(회계)</strong>: 중서문하성의 3품 이하 <strong>낭사 + 어사대 관원 = 대간(서경·간쟁·봉박)</strong> / 고려의 <strong>삼사(三司)</strong>는 화폐·곡식 출납 회계 기구(언론 기능 없음!)</li>
+              <li><strong>대간(언론) vs 삼사(회계)</strong>: 중서문하성의 3품 이하 <strong>낭사 + 어사대 관원 = 대간(서경·간쟁·봉박)</strong> / 고려의 <strong>삼사(三司, 고려의 삼사는 조선의 사헌부·사간원·홍문관 3사 언론 기구와 달리 단순 화폐·곡식 출납 회계만 담당한 재정 기구임)</strong>는 화폐·곡식 출납 회계 기구(언론 기능 없음!)</li>
               <li><strong>지방 5도 양계와 군사</strong>: 일반 행정구역 <strong>5도(안찰사)</strong> + 국경 군사구역 <strong>양계(병마사)</strong>, <strong>속현이 주현보다 많음(향리가 실무 담당)</strong>, 특수 행정구역 <strong>향·부곡·소(수공업)</strong> / 중앙군 <strong>2군 6위</strong> + 지방군 <strong>주현군·주진군</strong></li>
               </ul>
             </div>
@@ -1331,7 +1331,7 @@
         </div>
       </div>
 
-      <div id="sec3"""""">
+      <div id="sec3""""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 중앙 2성 6부·독자적 회의 기구(도병마사·식목도감)와 지방 5도 양계</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1397,7 +1397,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4"""""" class="space-y-6">
+      <div id="sec4""""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 태조·정종·광종 사료 단서와 고려 중앙·지방 기구·서경 지역사</h2>
 
         <div id="theory-sec4-p10" class="para-block">
@@ -4023,6 +4023,119 @@
       document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
     }
   </script>
+<!-- FK_ONE_LINE_BAR_START -->
+  <style id="fkOneLineBarStyle">
+    body.layout-wide .prose-body,
+    body.layout-oxford .prose-body,
+    .prose-body,
+    .q-stem,
+    .q-stem-box,
+    .q-choice-item,
+    .exp-summary,
+    .exp-choice-body,
+    .inline-exp-box,
+    .sidenote-box {
+      text-align: left !important;
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+    }
+    .no-print-bar {
+      padding: 5px 10px !important;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease !important;
+      will-change: transform;
+    }
+    .no-print-bar.fk-bar-hidden {
+      transform: translateY(-115%) !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    .no-print-inner {
+      display: block !important;
+    }
+    .no-print-inner > .ctrl-group:first-of-type {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 4px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    .no-print-inner > .ctrl-group:first-of-type::-webkit-scrollbar {
+      display: none !important;
+    }
+    .no-print-inner > .ctrl-group:first-of-type .ctrl-btn {
+      flex-shrink: 0 !important;
+      font-size: 11.2px !important;
+      padding: 4.5px 7.5px !important;
+      white-space: nowrap !important;
+    }
+    .no-print-inner > .ctrl-group:nth-of-type(2) {
+      display: none !important;
+      flex-wrap: wrap !important;
+      gap: 5px !important;
+      padding-top: 7px !important;
+      margin-top: 6px !important;
+      border-top: 1px solid #3D3830 !important;
+    }
+    .no-print-bar.fk-misc-open .no-print-inner > .ctrl-group:nth-of-type(2) {
+      display: flex !important;
+    }
+  </style>
+  <script id="fkOneLineBarScript">
+    function toggleMiscSettings() {
+      const bar = document.querySelector('.no-print-bar');
+      if (!bar) return;
+      bar.classList.toggle('fk-misc-open');
+      const btn = document.getElementById('btnFkMiscSettings');
+      if (btn) btn.classList.toggle('active', bar.classList.contains('fk-misc-open'));
+    }
+    (function() {
+      window.addEventListener('DOMContentLoaded', function() {
+        const g1 = document.querySelector('.no-print-inner > .ctrl-group:first-of-type');
+        if (g1) {
+          // Shorten portal button text for 1-line fit
+          const firstLink = g1.querySelector('a.ctrl-btn');
+          if (firstLink && firstLink.textContent.includes('인쇄 포털')) {
+            firstLink.innerHTML = '&larr; 포털';
+          }
+          // Ensure settings gear button exists in first row
+          if (!document.getElementById('btnFkMiscSettings')) {
+            const gear = document.createElement('button');
+            gear.id = 'btnFkMiscSettings';
+            gear.type = 'button';
+            gear.className = 'ctrl-btn';
+            gear.textContent = '⚙️ 설정';
+            gear.onclick = toggleMiscSettings;
+            g1.appendChild(gear);
+          }
+        }
+        if (typeof setPageMargin === 'function') setPageMargin('wide');
+        if (typeof setFontMode === 'function') setFontMode('serif');
+        if (typeof setTheoryLayout === 'function') setTheoryLayout('wide');
+      });
+
+      let lastY = window.scrollY || 0;
+      window.addEventListener('scroll', function() {
+        const curY = window.scrollY || 0;
+        const dy = curY - lastY;
+        const bar = document.querySelector('.no-print-bar');
+        if (!bar) return;
+        if (curY <= 24) {
+          bar.classList.remove('fk-bar-hidden');
+        } else if (dy > 6 && curY > 36) {
+          bar.classList.add('fk-bar-hidden');
+          bar.classList.remove('fk-misc-open');
+        } else if (dy < -14) {
+          bar.classList.remove('fk-bar-hidden');
+        }
+        lastY = curY;
+      }, { passive: true });
+    })();
+  </script>
+  <!-- FK_ONE_LINE_BAR_END -->
+
 <!-- S26_ULTRA_SWIPE_START -->
   <style>
     /* ==========================================================================
@@ -4664,7 +4777,7 @@
     const s26Solved = {};
     const s26OxSolved = {};
     const s26OxSaved = {};
-    const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "고려 태조 왕건은 민생 안정을 위해 조세를 10분의 1로 낮추는 취민유도 정책을 펴고 빈민 구제 기구인 흑창을 설치하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 2, "code": "기002", "stmt": "태조 왕건은 호족을 포섭하기 위해 혼인 정책·왕씨 사성·역분전 지급을 시행하고, 호족을 견제하기 위해 사심관 제도(경순왕 김부 임명)와 기인 제도를 실시하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 3, "code": "기003", "stmt": "태조 왕건은 호족 세력의 사병과 경제 기반을 무너뜨리기 위해 노비안검법을 전격 단행하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 4 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 4, "code": "기004", "stmt": "태조 왕건은 서경을 북진 정책의 전진 기지로 삼았으며, 북방의 거란과도 사신과 낙타를 교환하며 우호적인 외교 관계를 맺었다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 5, "code": "기005", "stmt": "태조 왕건은 관리의 규범인 ｢정계｣·｢계백료서｣를 반포하고, 후대 왕들이 지켜야 할 지침으로 불교 숭상·연등회와 팔관회 개최·서경 중시 등을 담은 ｢훈요 10조｣를 남겼다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 6, "code": "기006", "stmt": "고려 광종은 노비안검법(956)을 실시하여 호족이 불법으로 소유한 노비를 양인으로 해방시킴으로써 호족의 세력을 약화시키고 국가 재정을 확충하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 4 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 7, "code": "기007", "stmt": "광종은 후주 출신 귀화인 쌍기의 건의를 수용하여 과거제(958)를 실시하고, 백관의 공복을 자·단·비·녹의 4색으로 제정하여 왕권을 강화하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 8, "code": "기008", "stmt": "광종 때 처음 시행된 고려의 과거제에서는 문관을 뽑는 제술과·명경과와 함께 무관을 뽑는 무과(武科)가 정기적으로 치러졌다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 9, "code": "기009", "stmt": "광종은 스스로 황제를 칭하고 개경을 황도, 서경을 서도라 불렀으며 '광덕'·'준풍' 등의 독자적인 연호를 사용하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 10, "code": "기010", "stmt": "광종은 6두품 출신 유학자 최승로의 ｢시무 28조｣를 수용하여 전국 12목에 지방관을 처음으로 파견하였다.", "ans": false, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 11, "code": "기011", "stmt": "고려 성종은 최승로의 ｢시무 28조｣를 수용하여 유교를 통치 이념으로 삼고, 전국 12목에 처음으로 지방관(목사)을 파견하여 향리 제도를 정비하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 12, "code": "기012", "stmt": "성종은 중앙에 최고 교육 기관인 국자감을 설립하고 지방에 경학박사·의학박사를 파견하였으며, 의창·상평창을 설치하고 최초의 철전인 건원중보를 주조하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 13, "code": "기013", "stmt": "도병마사와 식목도감은 당나라의 3성 6부 제도를 그대로 모방하여 설치한 행정 집행 기구이다.", "ans": false, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 14, "code": "기014", "stmt": "도병마사는 중서문하성의 고관인 재신과 중추원의 추밀이 모여 국방·군사 문제를 논의한 기구로, 원 간섭기 충렬왕 때 도평의사사로 개편되었다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고려 통치 급소 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 15, "code": "기015", "stmt": "고려의 중추원(추밀원)은 왕명의 출납을 맡은 승선과 군사 기밀을 맡은 추밀로 구성되었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 16, "code": "기016", "stmt": "고려의 대간(臺諫)은 중서문하성의 낭사와 어사대의 관원으로 구성되어 서경, 간쟁, 봉박의 언론 권한을 행사하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 17, "code": "기017", "stmt": "고려의 삼사(三司)는 조선의 3사(사헌부·사간원·홍문관)와 동일하게 언론과 관리 감찰 기능을 수행하였다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 18, "code": "기018", "stmt": "고려는 전국을 5도 양계로 나누어 일반 행정 구역인 5도에는 안찰사를 파견하고, 국경 군사 구역인 양계(북계·동계)에는 병마사를 파견하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 19, "code": "기019", "stmt": "고려 시대에는 전국의 모든 군현에 수령(지방관)이 파견되었으며, 향·부곡·소와 같은 특수 행정 구역은 완전히 소멸하였다.", "ans": false, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "지방 행정 제도는 성종의 12목을 거쳐 거란 침입을 겪은 현종 때 '5도 양계(五道兩界)' 체제로 최종 완성 되었습니다. 개경 주변의 경기와 함께 일반 행정 구역인 5도에는 안찰사(按察使) 를 파견하여 도내의 주·군·현을 순찰하게 하였고, 북방 국경 지대인 북계와 동계의 군사 행정 구역인 양계에…"}, {"num": 20, "code": "기020", "stmt": "고려의 중앙군인 2군 6위는 국가로부터 군인전을 지급받고 군역을 세습하는 직업 군인으로 편성되었으며, 지방군으로는 5도의 주현군과 양계의 주진군이 있었다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "지방 행정 제도는 성종의 12목을 거쳐 거란 침입을 겪은 현종 때 '5도 양계(五道兩界)' 체제로 최종 완성 되었습니다. 개경 주변의 경기와 함께 일반 행정 구역인 5도에는 안찰사(按察使) 를 파견하여 도내의 주·군·현을 순찰하게 하였고, 북방 국경 지대인 북계와 동계의 군사 행정 구역인 양계에…"}, {"num": 21, "code": "기021", "stmt": "고려 태조 왕건은 신하들이 지켜야 할 도리를 훈계하기 위해 『정계』 1권과 『계백료서』 8편을 직접 지어 반포하고 후대 왕들에게 『훈요 10조』를 남겼다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 22, "code": "기022", "stmt": "고려 태조는 발해를 멸망시킨 거란이 사신과 낙타 50마리를 보내오자 사신을 섬으로 유배 보내고 낙타를 개경 만부교 아래에서 굶겨 죽이는 강경한 북진·반거란 정책을 펼쳤다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 23, "code": "기023", "stmt": "고려 태조는 귀순한 신라 경순왕 김부에게 경주를 식읍으로 하사하고 최초의 사심관으로 임명하여 부호장 이하 향리직 추천과 출신 지역 통제를 맡겼다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 24, "code": "기024", "stmt": "고려 태조는 후삼국 통일 과정에서 공을 세운 공신들에게 인품과 공로를 기준으로 역분전(役分田)을 지급하고 빈민 구휼을 위해 흑창(黑倉)을 설치하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 25, "code": "기025", "stmt": "고려 제3대 정종은 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성하였다.", "ans": true, "tid": "theory-sec4-p11", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 11 본문 보기", "tpreview": "뒤이어 제3대 정종 은 최광윤의 급보를 받고 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성 하였으며, 제4대 광종 은 후주 귀화인 쌍기 의 건의로 과거제(958년) 를 실시하고 채인범 등 중국 지식인을 적극 초빙( 채인범 묘지명 이 광종 대 과거제·…"}, {"num": 26, "code": "기026", "stmt": "고려 제4대 광종은 호족의 경제·군사적 기반을 약화시키기 위해 노비안검법(956)을 실시하고, 후주 귀화인 쌍기의 건의를 받아들여 과거제(958)를 시행하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 27, "code": "기027", "stmt": "고려 제6대 성종은 최승로의 시무 28조를 수용하여 유교 정치 이념을 확립하고, 전국 주요 거점에 12목을 설치하여 최초로 지방관을 파견하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 28, "code": "기028", "stmt": "고려의 중추원(후에 추밀원)은 군사 기밀을 담당하는 2품 이상의 추밀과 왕명 출납을 담당하는 3품의 승선으로 구성되었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 29, "code": "기029", "stmt": "고려의 어사대는 관리의 감찰과 풍속 교정을 담당하였으며, 중서문하성의 3품 이하 낭사와 함께 대간(臺諫)을 이루어 간쟁·봉박·서경권을 행사하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 30, "code": "기030", "stmt": "고려의 삼사(三司)는 사헌부, 사간원, 홍문관을 합쳐 부르는 언론 기구로서 국왕에게 경연을 진강하고 인사를 심사하는 서경권을 행사하였다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}];
+    const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "고려 태조 왕건은 민생 안정을 위해 조세를 10분의 1로 낮추는 취민유도 정책을 펴고 빈민 구제 기구인 흑창을 설치하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "태조 왕건은 후삼국 전란으로 피폐해진 농민 생활을 안정시키기 위해 취민유도(수확량의 1/10 징수)를 표방하고 고구려 진대법을 계승한 흑창(춘대추납)을 설치하였습니다. [기본서 맥락] 나아가 태조는 오랜 전쟁에 지친 농민들을 달래기 위해 세금을 합리적으로 낮추는 취민유도(取民有度, 조세를 수확량의 10분의 1로 감면) 정책을 펴고, 고구려 진대법을 계승한 빈민 구제 기구인 흑창(黑倉) 을 설치하였습니다."}, {"num": 2, "code": "기002", "stmt": "태조 왕건은 호족을 포섭하기 위해 혼인 정책·왕씨 사성·역분전 지급을 시행하고, 호족을 견제하기 위해 사심관 제도(경순왕 김부 임명)와 기인 제도를 실시하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "태조는 공신·호족에게 인품과 공로를 기준으로 역분전을 지급하는 한편, 중앙 고관을 출신지 사심관으로 임명해 연대 책임을 묻고 호족 자제를 개경에 인질로 머물게 하는 기인 제도로 지방 세력을 통제하였습니다."}, {"num": 3, "code": "기003", "stmt": "태조 왕건은 호족 세력의 사병과 경제 기반을 무너뜨리기 위해 노비안검법을 전격 단행하였다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "노비안검법을 실시한 왕은 4대 '광종(956)'입니다. 태조 왕건은 건국 초기 호족을 포섭(혼인·사성·역분전)하고 견제(사심관·기인)하는 통합 정책을 폈습니다. [기본서 맥락] 먼저 호족을 끌어안는 포섭책으로 전국 유력 호족의 딸 29명을 부인으로 맞이하는 중첩 혼인 정책 을 폈고, 유력 호족에게 왕건의 성인 '왕(王)씨' 성을 하사하는 사성 정책 으로 한 가족처럼 묶었으며, 통일 전쟁의 공로와 인품(충성도)을 기준으로 토지를 나누어 주는 역분전(役分田) 을 지급하였습니다."}, {"num": 4, "code": "기004", "stmt": "태조 왕건은 서경을 북진 정책의 전진 기지로 삼았으며, 북방의 거란과도 사신과 낙타를 교환하며 우호적인 외교 관계를 맺었다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "태조는 형제국 발해를 멸망시킨 거란을 무도한 나라로 규정하여, 거란이 보낸 사신을 유배 보내고 낙타 50마리를 만부교 다리 아래에서 굶겨 죽이는(만부교 사건) 강경한 북진 정책을 폈습니다."}, {"num": 5, "code": "기005", "stmt": "태조 왕건은 관리의 규범인 ｢정계｣·｢계백료서｣를 반포하고, 후대 왕들이 지켜야 할 지침으로 불교 숭상·연등회와 팔관회 개최·서경 중시 등을 담은 ｢훈요 10조｣를 남겼다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "태조는 관료 규범인 ｢정계｣와 ｢계백료서｣를 짓고, 승하 직전 박술희에게 ｢훈요 10조｣를 내려 불교·풍수지리·서경 중시·거란 배척 등의 통치 방향을 제시하였습니다. [기본서 맥락] 태조는 승하하기 전 관리들이 지켜야 할 규범인 ｢정계｣와 ｢계백료서｣ 를 지어 반포하고, 후대 왕들이 지켜야 할 10가지 유훈인 ｢훈요 10조｣ (불교 숭상과 사원 남설 금지, 도선의 풍수지리설 준수, 장자 계승 원칙, 거란과 같은 야만국의 풍속 배척, 서경 중시, 연등회·팔관회 개최 등)를 남겼습니다."}, {"num": 6, "code": "기006", "stmt": "고려 광종은 노비안검법(956)을 실시하여 호족이 불법으로 소유한 노비를 양인으로 해방시킴으로써 호족의 세력을 약화시키고 국가 재정을 확충하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 4 본문 보기", "tpreview": "광종은 노비안검법을 통해 호족의 사병과 노동력을 박탈하는 동시에, 조세와 역을 부담하는 양인 납세자의 수를 늘려 왕권과 국가 재정을 함께 강화하였습니다. [기본서 맥락] 후삼국 전쟁 과정에서 호족들이 양인(평민)들을 불법으로 노비로 삼아 세금 한 푼 내지 않는 사병(군사력)이자 농장 일꾼(경제력) 으로 부리고 있었기에, 노비의 신분을 조사(안검)하여 본래 양인이었던 자들을 해방시킴으로써 호족의 경제·군사적 기반을 약화시키는 동시에 국가에 조세와 역을 바치는 양인 납세자 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 7, "code": "기007", "stmt": "광종은 후주 출신 귀화인 쌍기의 건의를 수용하여 과거제(958)를 실시하고, 백관의 공복을 자·단·비·녹의 4색으로 제정하여 왕권을 강화하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "광종은 쌍기의 건의로 과거제를 도입해 유교 소양을 갖춘 신진 관료를 등용하고, 4색 공복 제정(960)으로 관료 기강을 확립하였습니다. [기본서 맥락] 과거제의 도입은 무력과 가문만 믿고 요직을 독점하던 개국 공신·호족 세력을 몰아내고, 오직 유교 학문과 실력으로 선발되어 국왕에게만 충성하는 신진 문신 관료층 을 등용하기 위한 두 번째 결정타였습니다(고려 과거제는 문관을 뽑는 제술과·명경과, 기술관을 뽑는 잡과, 승려를 뽑는 승과로 구성되었으며 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 8, "code": "기008", "stmt": "광종 때 처음 시행된 고려의 과거제에서는 문관을 뽑는 제술과·명경과와 함께 무관을 뽑는 무과(武科)가 정기적으로 치러졌다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려의 과거제는 제술과·명경과(문과), 잡과(기술관), 승과(승려)만 시행되었으며, '무과'는 고려 말 공양왕 때 잠깐 둔 것을 제외하면 실시되지 않았습니다(무과가 정기 시행된 것은 조선 시대입니다)."}, {"num": 9, "code": "기009", "stmt": "광종은 스스로 황제를 칭하고 개경을 황도, 서경을 서도라 불렀으며 '광덕'·'준풍' 등의 독자적인 연호를 사용하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "호족 세력을 숙청하고 전제 왕권을 확립한 광종은 칭제건원을 단행하여 '광덕', '준풍'이라는 자주적 연호를 사용하고 제위보를 설치하였습니다. [기본서 맥락] 과거제의 도입은 무력과 가문만 믿고 요직을 독점하던 개국 공신·호족 세력을 몰아내고, 오직 유교 학문과 실력으로 선발되어 국왕에게만 충성하는 신진 문신 관료층 을 등용하기 위한 두 번째 결정타였습니다(고려 과거제는 문관을 뽑는 제술과·명경과, 기술관을 뽑는 잡과, 승려를 뽑는 승과로 구성되었으며 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 10, "code": "기010", "stmt": "광종은 6두품 출신 유학자 최승로의 ｢시무 28조｣를 수용하여 전국 12목에 지방관을 처음으로 파견하였다.", "ans": false, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "최승로의 ｢시무 28조｣를 받아들여 12목에 최초로 지방관(목사)을 파견한 국왕은 광종이 아니라 6대 '성종'입니다. [기본서 맥락] 그리고 6대 성종(成宗) 은 신라 6두품 계통의 유학자인 최승로(崔承老)가 올린 ｢시무 28조(時務二十八條)｣ 를 수용하여 유교적 중앙집권 통치 체제를 완성하였습니다."}, {"num": 11, "code": "기011", "stmt": "고려 성종은 최승로의 ｢시무 28조｣를 수용하여 유교를 통치 이념으로 삼고, 전국 12목에 처음으로 지방관(목사)을 파견하여 향리 제도를 정비하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "성종은 '불교는 수신의 근본이요 유교는 치국의 근본'이라는 최승로의 건의를 수용해 유교 정치를 확립하고, 12목에 지방관을 파견해 토착 호족을 향리로 격하·편제하였습니다."}, {"num": 12, "code": "기012", "stmt": "성종은 중앙에 최고 교육 기관인 국자감을 설립하고 지방에 경학박사·의학박사를 파견하였으며, 의창·상평창을 설치하고 최초의 철전인 건원중보를 주조하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "성종 대의 유학 교육 진흥(국자감·경학박사)과 민생·화폐 정책(흑창을 확대한 의창, 물가 조절 상평창, 철전 건원중보 발행)은 기출 단골 선지입니다. [기본서 맥락] 아울러 중앙에 2성 6부제 와 최고 유교 교육 기관인 국자감(國子監) 을 설립하고 지방 12목에 경학박사·의학박사를 파견하였으며, 태조의 흑창을 확대한 의창(義倉) 과 물가 조절 기구인 상평창(常平倉) 을 두고 우리나라 최초의 철전(쇠돈)인 건원중보(乾元重寶, 996년, 뒷면에 '동국' 각인) 를 주조하였습니다."}, {"num": 13, "code": "기013", "stmt": "도병마사와 식목도감은 당나라의 3성 6부 제도를 그대로 모방하여 설치한 행정 집행 기구이다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "최빈출 오답 함정입니다. 도병마사와 식목도감은 당나라 제도를 모방한 기구가 아니라, 중서문하성의 재신과 중추원의 추밀(재추)이 모여 국방과 법제를 합의 결정하던 '고려만의 독자적 귀족 회의 기구'입니다."}, {"num": 14, "code": "기014", "stmt": "도병마사는 중서문하성의 고관인 재신과 중추원의 추밀이 모여 국방·군사 문제를 논의한 기구로, 원 간섭기 충렬왕 때 도평의사사로 개편되었다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고려 통치 급소 본문 보기", "tpreview": "양부 재추(2품 이상)가 모여 국방 문제를 합의하던 임시기구 도병마사는 고려 후기 충렬왕 때 최고 상설 정무 기구인 도평의사사로 확대 개편되었습니다. [기본서 맥락] 외적의 침입 등 국방·군사 문제를 논의할 때는 도병마사 (원 간섭기 충렬왕 때 최고 상설 정무 기구인 도평의사사 로 확대 개편됨)로 모였고, 국내의 법률 제정이나 시행 규칙·격식을 정할 때는 식목도감 으로 모여 귀족 연합 정치의 특징을 보여주었습니다."}, {"num": 15, "code": "기015", "stmt": "고려의 중추원(추밀원)은 왕명의 출납을 맡은 승선과 군사 기밀을 맡은 추밀로 구성되었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "송나라 추밀원 제도를 수용한 중추원은 2품 이상 추밀(군사 기밀)과 3품 이하 승선(왕명 출납)으로 구성되어 국왕의 측근 비서·안보 기구 역할을 수행하였습니다. [기본서 맥락] 여기에 송나라의 제도를 본뜬 중추원(추밀원) 이 왕명의 출납(승선)과 군사 기밀(추밀)을 담당하고, 어사대(御史臺) 가 관리의 비리를 감찰하였으며, 삼사(三司, 고려의 삼사는 조선의 사헌부·사간원·홍문관 3사 언론 기구와 달리 단순 화폐·곡식 출납 회계만 담당한 재정 기구임) 는 오직 화폐와 곡식의 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 16, "code": "기016", "stmt": "고려의 대간(臺諫)은 중서문하성의 낭사와 어사대의 관원으로 구성되어 서경, 간쟁, 봉박의 언론 권한을 행사하였다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고려 통치 급소 본문 보기", "tpreview": "중서문하성의 3품 이하 낭사와 감찰 기구인 어사대 관원은 대간을 이루어 관리 임명 동의권(서경), 왕에 대한 간언(간쟁), 부당한 왕명 거부(봉박)를 통해 왕권과 고관을 견제하였습니다."}, {"num": 17, "code": "기017", "stmt": "고려의 삼사(三司)는 조선의 3사(사헌부·사간원·홍문관)와 동일하게 언론과 관리 감찰 기능을 수행하였다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "명칭만 같을 뿐 기능이 완전히 다릅니다. 고려의 삼사는 화폐와 곡식의 출납 및 회계만을 담당한 단순 재정 기구이며, 언론 기능을 수행한 것은 고려의 대간과 조선의 3사입니다."}, {"num": 18, "code": "기018", "stmt": "고려는 전국을 5도 양계로 나누어 일반 행정 구역인 5도에는 안찰사를 파견하고, 국경 군사 구역인 양계(북계·동계)에는 병마사를 파견하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "현종 때 완성된 5도 양계 체제에서 5도에는 도내를 순찰하는 안찰사를, 북방 국경 지대인 양계에는 군정을 총괄하는 병마사를 파견하였습니다(두 관직을 서로 바꿔 내는 함정에 주의!)."}, {"num": 19, "code": "기019", "stmt": "고려 시대에는 전국의 모든 군현에 수령(지방관)이 파견되었으며, 향·부곡·소와 같은 특수 행정 구역은 완전히 소멸하였다.", "ans": false, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "모든 군현에 수령이 파견되고 향·부곡·소가 소멸한 것은 '조선 시대'입니다. 고려는 지방관이 파견된 주현보다 파견되지 않은 속현이 더 많았으며, 차별받는 특수 행정 구역인 향·부곡(농업)·소(수공업)가 존재하였습니다."}, {"num": 20, "code": "기020", "stmt": "고려의 중앙군인 2군 6위는 국가로부터 군인전을 지급받고 군역을 세습하는 직업 군인으로 편성되었으며, 지방군으로는 5도의 주현군과 양계의 주진군이 있었다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "중앙군 2군(응양군·용호군) 6위는 군인전을 받고 군적(군반씨족)을 세습한 상비 직업 군인이었으며, 지방군은 일반 농민으로 편성된 5도의 주현군과 국경 상비군인 양계의 주진군으로 나뉘었습니다."}, {"num": 21, "code": "기021", "stmt": "고려 태조 왕건은 신하들이 지켜야 할 도리를 훈계하기 위해 『정계』 1권과 『계백료서』 8편을 직접 지어 반포하고 후대 왕들에게 『훈요 10조』를 남겼다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "태조 왕건의 저술인 『정계』와 『계백료서』, 박술희에게 전수한 『훈요 10조』는 고려 태조를 판별하는 1순위 사료 단서입니다. [기본서 맥락] 먼저 태조 왕건 은 백성의 조세를 10분의 1로 감면하는 취민유도(흑창 설치) 를 실시하고, 관료들에게 신하의 도리를 훈계한 ｢정계(政誡)｣ 1권과 ｢계백료서(誡百寮書)｣ 8편 을 직접 지었으며, 후손들에게 남긴 ｢훈요 10조｣ 를 통해 불교 숭상(연등회·팔관회)·풍수지리설·서경 중시·거란 배척을 당부하였습니다."}, {"num": 22, "code": "기022", "stmt": "고려 태조는 발해를 멸망시킨 거란이 사신과 낙타 50마리를 보내오자 사신을 섬으로 유배 보내고 낙타를 개경 만부교 아래에서 굶겨 죽이는 강경한 북진·반거란 정책을 펼쳤다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "942년 만부교 사건, 서경(평양) 중시, 청천강에서 영흥만에 이르는 국경 확장은 태조 왕건의 고구려 계승 의식과 북진 정책을 보여줍니다. [기본서 맥락] 특히 942년 거란이 사신 30명과 낙타 50마리를 보내오자 \"거란은 발해를 멸망시킨 무도한 나라\"라며 사신을 섬으로 유배 보내고 낙타를 개경 만부교 아래에서 굶겨 죽인 만부교 사건 과, 후삼국 통일 공신들에게 인품과 공로에 따라 지급한 역분전(役分田) , 신라 마지막 왕인 경순왕 김부에게 경주를 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 23, "code": "기023", "stmt": "고려 태조는 귀순한 신라 경순왕 김부에게 경주를 식읍으로 하사하고 최초의 사심관으로 임명하여 부호장 이하 향리직 추천과 출신 지역 통제를 맡겼다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "사심관 제도(중앙 고관을 출신지 사심관으로 임명해 연대 책임 부여)와 기인 제도(향리의 자제를 개경에 볼모로 머물게 함)는 태조 왕건의 대표적인 지방 호족 견제책입니다. [기본서 맥락] 반대로 호족의 반란을 막는 견제책으로는 중앙의 고위 관리를 자기 출신 지역의 사심관(事審官) 으로 임명하여(신라 경순왕 김부를 최초의 경주 사심관으로 임명) 그 지방의 부호장 이하 향리 임명권을 주는 대신 반란이 일어나면 연대 책임을 물었고, 지방 호족의 자제를 뽑아 수도 개경에 인질로 머물게 하며 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 24, "code": "기024", "stmt": "고려 태조는 후삼국 통일 과정에서 공을 세운 공신들에게 인품과 공로를 기준으로 역분전(役分田)을 지급하고 빈민 구휼을 위해 흑창(黑倉)을 설치하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "태조는 조세를 10분의 1로 낮추는 취민유도 정책과 흑창(성종 때 의창으로 개편)을 시행하고, 940년 공신들에게 역분전을 지급하여 전시과 제도의 시초를 열었습니다. [기본서 맥락] 특히 942년 거란이 사신 30명과 낙타 50마리를 보내오자 \"거란은 발해를 멸망시킨 무도한 나라\"라며 사신을 섬으로 유배 보내고 낙타를 개경 만부교 아래에서 굶겨 죽인 만부교 사건 과, 후삼국 통일 공신들에게 인품과 공로에 따라 지급한 역분전(役分田) , 신라 마지막 왕인 경순왕 김부에게 경주를 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 25, "code": "기025", "stmt": "고려 제3대 정종은 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성하였다.", "ans": true, "tid": "theory-sec4-p11", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 11 본문 보기", "tpreview": "정종(재위 945년부터 949년까지) 때 최광윤의 급보에 따라 설치한 광군사(광군 30만)는 윤관의 별무반(숙종·예종, 여진 대비)과 혼동하지 않도록 주의해야 합니다. [기본서 맥락] 뒤이어 제3대 정종 은 최광윤의 급보를 받고 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성 하였으며, 제4대 광종 은 후주 귀화인 쌍기 의 건의로 과거제(958년) 를 실시하고 채인범 등 중국 지식인을 적극 초빙( 채인범 묘지명 이 광종 대 과거제·유학 등 앞뒤 맥락을 함께 기억해야 합니다."}, {"num": 26, "code": "기026", "stmt": "고려 제4대 광종은 호족의 경제·군사적 기반을 약화시키기 위해 노비안검법(956)을 실시하고, 후주 귀화인 쌍기의 건의를 받아들여 과거제(958)를 시행하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "광종은 노비안검법, 쌍기 과거제(채인범 등 귀화 지식인 우대), 백관 공복 제정(자·단·비·녹), 독자 연호 광덕·준풍 사용, 빈민 구제 기금 제위보 설치, 승려 균여 후원(귀법사)을 단행하였습니다."}, {"num": 27, "code": "기027", "stmt": "고려 제6대 성종은 최승로의 시무 28조를 수용하여 유교 정치 이념을 확립하고, 전국 주요 거점에 12목을 설치하여 최초로 지방관을 파견하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "성종은 최승로 시무 28조 수용(연등회·팔관회 축소, 불교 폐단 시정), 2성 6부 정비, 12목 설치·향리 격하, 국자감·비서성·수서원 설치, 상평창·의창 정비, 건원중보 주조를 이루었습니다."}, {"num": 28, "code": "기028", "stmt": "고려의 중추원(후에 추밀원)은 군사 기밀을 담당하는 2품 이상의 추밀과 왕명 출납을 담당하는 3품의 승선으로 구성되었다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려 중추원(추밀원)의 2품 이상 고관인 '추밀'은 중서문하성의 2품 이상 고관인 '재신'과 함께 재추 회의(도병마사·식목도감)에 참여하여 국방과 국가 중대사를 결정하였습니다."}, {"num": 29, "code": "기029", "stmt": "고려의 어사대는 관리의 감찰과 풍속 교정을 담당하였으며, 중서문하성의 3품 이하 낭사와 함께 대간(臺諫)을 이루어 간쟁·봉박·서경권을 행사하였다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고려 통치 급소 본문 보기", "tpreview": "고려는 조선처럼 별도의 사간원이 독립되어 있지 않고, 중서문하성의 낭사(간관)와 어사대(대관) 관원이 합쳐져 대간(성랑어사)으로서 왕권과 고위 관료를 견제하였습니다. [기본서 맥락] 대간은 비록 품계는 낮았으나 왕의 잘못을 논하는 간쟁(諫諍) , 잘못된 왕명을 돌려보내는 봉박(封駁) , 그리고 관리의 임명이나 법령 개폐에 동의권을 행사하는 서경(署經) 이라는 언론 3권을 행사하여 왕권과 고위 귀족의 독주를 견제하였습니다."}, {"num": 30, "code": "기030", "stmt": "고려의 삼사(三司)는 사헌부, 사간원, 홍문관을 합쳐 부르는 언론 기구로서 국왕에게 경연을 진강하고 인사를 심사하는 서경권을 행사하였다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "사헌부·사간원·홍문관으로 구성된 언론 3사는 '조선 시대'의 기구입니다! '고려의 삼사'는 송나라 삼사를 모방하여 설치한 '화폐와 곡식의 단순 출납·회계 기구'입니다(한능검 최고 빈출 함정!)."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
     let s26OxShuffledOnce = false;
@@ -5058,119 +5171,5 @@
     })();
   </script>
 <!-- S26_ULTRA_SWIPE_END -->
-
-  <!-- FK_ONE_LINE_BAR_START -->
-  <style id="fkOneLineBarStyle">
-    body.layout-wide .prose-body,
-    body.layout-oxford .prose-body,
-    .prose-body,
-    .q-stem,
-    .q-stem-box,
-    .q-choice-item,
-    .exp-summary,
-    .exp-choice-body,
-    .inline-exp-box,
-    .sidenote-box {
-      text-align: left !important;
-      word-break: keep-all !important;
-      overflow-wrap: break-word !important;
-    }
-    .no-print-bar {
-      padding: 5px 10px !important;
-      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease !important;
-      will-change: transform;
-    }
-    .no-print-bar.fk-bar-hidden {
-      transform: translateY(-115%) !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    .no-print-inner {
-      display: block !important;
-    }
-    .no-print-inner > .ctrl-group:first-of-type {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      gap: 4px !important;
-      overflow-x: auto !important;
-      scrollbar-width: none !important;
-      -ms-overflow-style: none !important;
-    }
-    .no-print-inner > .ctrl-group:first-of-type::-webkit-scrollbar {
-      display: none !important;
-    }
-    .no-print-inner > .ctrl-group:first-of-type .ctrl-btn {
-      flex-shrink: 0 !important;
-      font-size: 11.2px !important;
-      padding: 4.5px 7.5px !important;
-      white-space: nowrap !important;
-    }
-    .no-print-inner > .ctrl-group:nth-of-type(2) {
-      display: none !important;
-      flex-wrap: wrap !important;
-      gap: 5px !important;
-      padding-top: 7px !important;
-      margin-top: 6px !important;
-      border-top: 1px solid #3D3830 !important;
-    }
-    .no-print-bar.fk-misc-open .no-print-inner > .ctrl-group:nth-of-type(2) {
-      display: flex !important;
-    }
-  </style>
-  <script id="fkOneLineBarScript">
-    function toggleMiscSettings() {
-      const bar = document.querySelector('.no-print-bar');
-      if (!bar) return;
-      bar.classList.toggle('fk-misc-open');
-      const btn = document.getElementById('btnFkMiscSettings');
-      if (btn) btn.classList.toggle('active', bar.classList.contains('fk-misc-open'));
-    }
-    (function() {
-      window.addEventListener('DOMContentLoaded', function() {
-        const g1 = document.querySelector('.no-print-inner > .ctrl-group:first-of-type');
-        if (g1) {
-          // Shorten portal button text for 1-line fit
-          const firstLink = g1.querySelector('a.ctrl-btn');
-          if (firstLink && firstLink.textContent.includes('인쇄 포털')) {
-            firstLink.innerHTML = '&larr; 포털';
-          }
-          // Ensure settings gear button exists in first row
-          if (!document.getElementById('btnFkMiscSettings')) {
-            const gear = document.createElement('button');
-            gear.id = 'btnFkMiscSettings';
-            gear.type = 'button';
-            gear.className = 'ctrl-btn';
-            gear.textContent = '⚙️ 설정';
-            gear.onclick = toggleMiscSettings;
-            g1.appendChild(gear);
-          }
-        }
-        if (typeof setPageMargin === 'function') setPageMargin('wide');
-        if (typeof setFontMode === 'function') setFontMode('serif');
-        if (typeof setTheoryLayout === 'function') setTheoryLayout('wide');
-      });
-
-      let lastY = window.scrollY || 0;
-      window.addEventListener('scroll', function() {
-        const curY = window.scrollY || 0;
-        const dy = curY - lastY;
-        const bar = document.querySelector('.no-print-bar');
-        if (!bar) return;
-        if (curY <= 24) {
-          bar.classList.remove('fk-bar-hidden');
-        } else if (dy > 6 && curY > 36) {
-          bar.classList.add('fk-bar-hidden');
-          bar.classList.remove('fk-misc-open');
-        } else if (dy < -14) {
-          bar.classList.remove('fk-bar-hidden');
-        }
-        lastY = curY;
-      }, { passive: true });
-    })();
-  </script>
-  <!-- FK_ONE_LINE_BAR_END -->
-
 </body>
 </html>

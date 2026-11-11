@@ -532,7 +532,7 @@
 
   </div>
 
-  <script src="assets/js/fire-law-ox-db.js?v=5"></script>
+  <script src="assets/js/fire-law-ox-db.js?v=6"></script>
   <script>
     const OxApp = {
       db: window.FIRE_LAW_OX_DB || { units: [], oxList: [] },
@@ -548,7 +548,7 @@
 
       getAllOxItems() {
         const raw = (this.db && (this.db.oxList || this.db.items)) ? (this.db.oxList || this.db.items) : [];
-        return raw.filter(it => it && it.tier !== 'ext');
+        return raw.filter(Boolean);
       },
 
       init() {
@@ -557,14 +557,55 @@
         this.renderUnitList();
         this.bindSwipeAndKeys();
 
-        // URL 파라미터(?unit=02_01 등)로 진입 시 즉시 해당 단원 OX 랜덤 풀이 화면으로 직행
+        // URL 파라미터(?resume=1 또는 ?unit=02_01 등)로 진입 시 처리
         const params = new URLSearchParams(window.location.search);
+        const resumeParam = params.get('resume');
         const unitParam = params.get('unit');
         const sortParam = params.get('sort');
+        if (resumeParam === '1' && this.restoreSession()) {
+          return;
+        }
         if (unitParam && (unitParam === 'all' || (this.db.units && this.db.units.some(u => u.unitId === unitParam)))) {
           this.openUnitQuiz(unitParam);
         } else if (sortParam === 'shuffle') {
           this.openUnitQuiz('all');
+        }
+      },
+
+      saveSession() {
+        try {
+          const state = {
+            currentUnitId: this.currentUnitId,
+            deckIds: this.deck.map(it => it.id),
+            currentIndex: this.currentIndex,
+            sessionAnswers: this.sessionAnswers
+          };
+          sessionStorage.setItem('fk_law_ox_saved_v4_session', JSON.stringify(state));
+        } catch (e) {}
+      },
+
+      restoreSession() {
+        try {
+          const raw = sessionStorage.getItem('fk_law_ox_saved_v4_session');
+          if (!raw) return false;
+          const state = JSON.parse(raw);
+          if (!state || !Array.isArray(state.deckIds) || !state.deckIds.length) return false;
+          const allItems = this.getAllOxItems();
+          const mapById = {};
+          allItems.forEach(it => { mapById[it.id] = it; });
+          const restoredDeck = state.deckIds.map(id => mapById[id]).filter(Boolean);
+          if (!restoredDeck.length) return false;
+          this.currentUnitId = state.currentUnitId || '01_01';
+          this.deck = restoredDeck;
+          this.currentIndex = Math.min(Math.max(0, state.currentIndex || 0), restoredDeck.length - 1);
+          this.sessionAnswers = state.sessionAnswers || {};
+          document.getElementById('selectView').classList.remove('active');
+          document.getElementById('solveView').classList.add('active');
+          this.renderCard();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          return true;
+        } catch (e) {
+          return false;
         }
       },
 
@@ -670,7 +711,7 @@
 
       cleanStatement(txt) {
         if (!txt) return '';
-        return String(txt).replace(/^\[[^\]]+\]\s*/, '').trim();
+        return String(txt).replace(/^\[([^\]]+)\]\s*/, '<span style="color:var(--accent); font-weight:800; margin-right:4px;">[$1]</span>').trim();
       },
 
       buildDeepLinkUrl(item) {
@@ -678,7 +719,7 @@
         const fileName = unitObj ? unitObj.fileName : 'index.html';
         const paraIdx = typeof item.paraIdx === 'number' ? item.paraIdx : 0;
         const hlKey = encodeURIComponent(item.hlKey || '');
-        return `${fileName}?para=${paraIdx}&hl=${hlKey}&from=ox&oxid=${encodeURIComponent(item.id)}`;
+        return `${fileName}?para=${paraIdx}&hl=${hlKey}&from=ox&oxid=${encodeURIComponent(item.id)}&qnum=${this.currentIndex + 1}`;
       },
 
       renderCard() {
@@ -688,6 +729,8 @@
         const prevBtn = document.getElementById('btnPrevAbove');
         const nextBtn = document.getElementById('btnNextOrFinish');
         if (!mount || !this.deck.length) return;
+
+        this.saveSession();
 
         const item = this.deck[this.currentIndex];
         const unitObj = this.db.units.find(u => u.unitId === item.unitId);
