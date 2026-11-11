@@ -27,7 +27,7 @@
       --body-size: 13.6px;
       --line-height: 2.04;
       --para-gap: 24px;
-      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+      --theory-side-pad: 16px; /* 넓게(Wide) 여백 기본 고정 */
 
       /* Print-Friendly Editorial Ink Palette */
       --bg-desk: #DED8CC;
@@ -280,7 +280,7 @@
       font-size: var(--body-size) !important;
       line-height: var(--line-height) !important;
       color: var(--text-main) !important;
-      text-align: justify;
+      text-align: left;
       letter-spacing: -0.01em;
       text-indent: 0.65em;
       margin: 0 !important;
@@ -340,7 +340,7 @@
       font-size: var(--body-size) !important;
       line-height: var(--line-height) !important;
       color: var(--text-main) !important;
-      text-align: justify;
+      text-align: left;
       text-indent: 0.65em;
       margin: 0 !important;
       padding-right: 18px;
@@ -1178,11 +1178,14 @@
         <a href="#part1" class="ctrl-btn">1. 이론</a>
         <a href="#part2" class="ctrl-btn">2. 문제(54제)</a>
         <a href="#part3" class="ctrl-btn">3. 해설</a>
+        <button id="btnS26Swipe" onclick="toggleSwipeMode()" class="ctrl-btn" style="background:#1E3A5F; border-color:#3B82F6; color:#FFFFFF; font-weight:800; padding:5px 9px;">📱 S26 슬라이드 모드 ON</button>
+        <button id="btnS26OxDeck" onclick="toggleOxDeckMode()" class="ctrl-btn" style="background:#8B2635; border-color:#C85A6A; color:#FFFFFF; font-weight:800; padding:5px 9px;">⭕ OX 카드</button>
+        <button id="btnFkMiscSettings" onclick="toggleMiscSettings()" class="ctrl-btn" title="여백·서체·인쇄 상세 설정 열기/닫기">⚙️ 설정</button>
       </div>
 <div class="ctrl-group">
         <span class="ctrl-label">용지 여백:</span>
-        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
-        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn active">넓게</button>
         <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
 
         <span class="ctrl-label" style="margin-left:4px;">서체:</span>
@@ -1230,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""">
+      <div id="sec1"""">
         <h2 class="text-xl font-bold text-white mb-3">1. 8·15 광복과 대한민국 정부 수립(1948), 제헌 국회와 6·25 전쟁</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1265,7 +1268,7 @@
         </div>
       </div>
 
-      <div id="sec2""">
+      <div id="sec2"""">
         <h2 class="text-xl font-bold text-white mb-3">2. 4·19 혁명과 박정희 정부(유신 체제), 5·18 민주화운동과 6월 민주항쟁</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1325,7 +1328,7 @@
         </div>
       </div>
 
-      <div id="sec3""">
+      <div id="sec3"""">
         <h2 class="text-xl font-bold text-white mb-3">3. 민주주의의 정착과 외환 위기 극복, 남북 화해와 통일을 향한 발걸음</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1380,7 +1383,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""" class="space-y-6">
+      <div id="sec4"""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 신한공사·농지개혁법, 6·25 정밀 연표와 역대 정부(이승만부터 노무현까지) 총정리</h2>
 
         <div id="theory-sec4-p9" class="para-block">
@@ -7533,10 +7536,48 @@
       cursor: pointer;
     }
 
-    /* 갤럭시 S26 Ultra (412px × 892px) 및 모바일 뷰포트 최적화 */
-    @media only screen and (max-width: 600px) {
+    /* 갤럭시 S26 Ultra (412px × 892px) 및 모바일 뷰포트 최적화 + 웹소설 좌측정렬(강물현상 완전 제거) + 상단바 스크롤 자동숨김 */
+    body.layout-wide .prose-body,
+    body.layout-oxford .prose-body,
+    .prose-body,
+    .q-stem,
+    .q-stem-box,
+    .q-choice-item,
+    .exp-summary,
+    .exp-choice-body,
+    .inline-exp-box,
+    .sidenote-box {
+      text-align: left !important;
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+      line-break: strict;
+      letter-spacing: -0.012em;
+    }
+
+    .no-print-bar {
+      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+      will-change: transform;
+    }
+    .no-print-bar.fk-bar-hidden {
+      transform: translateY(-115%) !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    /* 잡다한 여백/서체/인쇄 버튼 그룹은 기본 숨김 처리하고 [⚙️ 설정] 토글 시에만 노출 */
+    .no-print-inner > .ctrl-group:nth-of-type(2) {
+      display: none !important;
+      padding-top: 6px;
+      margin-top: 6px;
+      border-top: 1px solid #38332C;
+      width: 100%;
+    }
+    .no-print-bar.fk-misc-open .no-print-inner > .ctrl-group:nth-of-type(2) {
+      display: flex !important;
+    }
+
+    @media only screen and (max-width: 768px) {
       .no-print-bar {
-        padding: 7px 10px;
+        padding: 6px 10px !important;
       }
       .book-sheet {
         max-width: 100% !important;
@@ -7928,9 +7969,29 @@
       }
     }
 
+    function toggleMiscSettings() {
+      const bar = document.querySelector('.no-print-bar');
+      if (!bar) return;
+      bar.classList.toggle('fk-misc-open');
+      const btn = document.getElementById('btnFkMiscSettings');
+      if (btn) btn.classList.toggle('active', bar.classList.contains('fk-misc-open'));
+    }
+
+    let fkSuppressBarShowUntil = 0;
+
+    function hideTopBarForReading() {
+      const bar = document.querySelector('.no-print-bar');
+      if (bar) {
+        bar.classList.add('fk-bar-hidden');
+        bar.classList.remove('fk-misc-open');
+      }
+      fkSuppressBarShowUntil = Date.now() + 950;
+    }
+
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      hideTopBarForReading();
       const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
       const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
       const floatEl = document.getElementById('s26ReturnFloat');
@@ -8067,6 +8128,7 @@
     function jumpToTheory(targetId, qnum, btnEl) {
       s26LastMode = 'q';
       s26LastQuizQ = qnum || s26CurQ;
+      hideTopBarForReading();
       const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
       const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
       const floatEl = document.getElementById('s26ReturnFloat');
@@ -8137,7 +8199,40 @@
         }
       });
 
+      // 상단 컨트롤 바 스크롤 시 자동 숨김 (아래로 스크롤 시 숨김, 위로 스크롤 또는 최상단 도달 시 노출)
+      let lastScrollY = window.scrollY || 0;
+      window.addEventListener('scroll', function() {
+        const curY = window.scrollY || 0;
+        const dy = curY - lastScrollY;
+        const bar = document.querySelector('.no-print-bar');
+        if (!bar) return;
+        if (Date.now() < fkSuppressBarShowUntil) {
+          bar.classList.add('fk-bar-hidden');
+          lastScrollY = curY;
+          return;
+        }
+        if (curY <= 24) {
+          bar.classList.remove('fk-bar-hidden');
+        } else if (dy > 6 && curY > 36) {
+          bar.classList.add('fk-bar-hidden');
+          bar.classList.remove('fk-misc-open');
+        } else if (dy < -14) {
+          bar.classList.remove('fk-bar-hidden');
+        }
+        lastScrollY = curY;
+      }, { passive: true });
+
       window.addEventListener('DOMContentLoaded', function() {
+        // 사용자 지정 기본 세팅 고정: 용지 여백 '넓게(wide)', 명조(serif), 와이드 1단(wide), 2단 고정, 13.6px
+        if (typeof setPageMargin === 'function') {
+          setPageMargin('wide');
+        }
+        if (typeof setFontMode === 'function') {
+          setFontMode('serif');
+        }
+        if (typeof setTheoryLayout === 'function') {
+          setTheoryLayout('wide');
+        }
         // 갤럭시 S26 Ultra(412px) 등 모바일 화면에서 열면 자동으로 슬라이드 모드 활성화
         if (window.innerWidth <= 600) {
           toggleSwipeMode(true);

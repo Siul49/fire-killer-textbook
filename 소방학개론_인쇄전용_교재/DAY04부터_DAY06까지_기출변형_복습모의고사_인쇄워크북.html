@@ -1005,6 +1005,7 @@
         <span style="color:#4A443B; margin:0 2px;">|</span>
         <span id="scoreDisplay" class="ctrl-btn score-pill">채점: 0 / 30문항 (0점)</span>
         <button onclick="resetQuiz()" class="ctrl-btn">🔄 초기화</button>
+        <button id="btnS26Swipe" onclick="toggleSwipeMode()" class="ctrl-btn" style="background:#8B2635; border-color:#A93545; color:#FFFFFF; font-weight:800;">📱 갤럭시 S26 슬라이드 풀기</button>
         <button id="btnInlineAll" onclick="toggleAllInlineExp()" class="ctrl-btn">💡 문제 밑 해설 전체 펼치기</button>
       </div>
 
@@ -1055,6 +1056,22 @@
         <span class="part-banner-title">PART 1 · 실전 기출 변형 모의고사 문제지 (총 30문항)</span>
         
       </div>
+      <!-- S26_ULTRA_SWIPE_START -->
+      <div class="s26-swipe-bar no-print-inline" id="s26SwipeBar">
+        <div class="s26-bar-top">
+          <span class="s26-badge">📱 Galaxy S26 Ultra 슬라이드 모의고사</span>
+          <span class="s26-status-txt" id="s26StatusTxt">문항 1 / 30</span>
+        </div>
+        <div class="s26-progress-track">
+          <div class="s26-progress-fill" id="s26ProgressFill"></div>
+        </div>
+        <div class="s26-nav-row">
+          <button type="button" class="s26-nav-btn" id="s26PrevBtn" onclick="stepSwipeQ(-1)">◀ 이전 문항 (우로 밀기)</button>
+          <button type="button" class="s26-nav-btn primary" id="s26NextBtn" onclick="stepSwipeQ(1)">다음 문항 (좌로 밀기) ▶</button>
+        </div>
+        <div class="s26-QuickJump" id="s26QuickDots"></div>
+      </div>
+<!-- S26_ULTRA_SWIPE_END -->
 
       <div class="questions-grid">
             
@@ -4819,5 +4836,84 @@
       document.getElementById('fontSizeLabel').textContent = curSize + 'px';
     }
   </script>
+<!-- S26_ULTRA_SWIPE_START -->
+  <style>
+    .s26-swipe-bar {
+      display: none; background: linear-gradient(135deg, #1E1B18 0%, #2D2620 100%);
+      color: #F7F4EE; border: 1.5px solid #8B2635; border-radius: 10px;
+      padding: 12px 14px; margin-bottom: 14px; font-family: var(--font-sans);
+    }
+    body.s26-swipe-active .s26-swipe-bar { display: block; }
+    .s26-bar-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .s26-badge { font-size: 11.5px; font-weight: 800; color: #FFD580; background: rgba(139,38,53,0.85); padding: 3px 9px; border-radius: 999px; }
+    .s26-status-txt { font-size: 12px; font-weight: 800; color: #EAE5DC; }
+    .s26-progress-track { width: 100%; height: 6px; background: #3A342D; border-radius: 999px; overflow: hidden; margin-bottom: 10px; }
+    .s26-progress-fill { height: 100%; background: linear-gradient(90deg, #8B2635, #10B981); width: 4%; transition: width 0.22s ease; }
+    .s26-nav-row { display: flex; gap: 6px; }
+    .s26-nav-btn { flex: 1; font-family: var(--font-sans); font-size: 12.5px; font-weight: 800; padding: 9px 10px; border-radius: 7px; border: 1px solid #4A443B; background: #2C2824; color: #F5F2EB; cursor: pointer; }
+    .s26-nav-btn.primary { background: #8B2635; border-color: #A93545; color: #FFFFFF; }
+    .s26-QuickJump { margin-top: 8px; display: flex; gap: 4px; overflow-x: auto; padding-bottom: 4px; }
+    .s26-qdot { min-width: 28px; height: 26px; border-radius: 5px; border: 1px solid #4A443B; background: #26231F; color: #B8B0A4; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; }
+    .s26-qdot.active { background: #8B2635; border-color: #FFD580; color: #FFFFFF; }
+    body.s26-swipe-active .questions-grid { display: block !important; column-count: 1 !important; }
+    body.s26-swipe-active .q-card { display: none !important; background: var(--bg-sheet); border: 1.5px solid var(--border-strong) !important; border-top: 4px solid var(--accent) !important; border-radius: 10px !important; padding: 16px 15px !important; }
+    body.s26-swipe-active .q-card.s26-current-card { display: block !important; }
+    @media print { .s26-swipe-bar { display: none !important; } }
+  </style>
+  <script>
+    let s26SwipeOn = false;
+    let s26CurQ = 1;
+    const s26TotalQ = 30;
+    function toggleSwipeMode(forceState) {
+      s26SwipeOn = (typeof forceState === 'boolean') ? forceState : !s26SwipeOn;
+      document.body.classList.toggle('s26-swipe-active', s26SwipeOn);
+      const btn = document.getElementById('btnS26Swipe');
+      if (btn) {
+        btn.classList.toggle('active', s26SwipeOn);
+        btn.textContent = s26SwipeOn ? '📱 S26 슬라이드 모드 ON' : '📱 갤럭시 S26 슬라이드 풀기';
+      }
+      if (s26SwipeOn) {
+        const wrap = document.getElementById('s26QuickDots');
+        if (wrap && !wrap.children.length) {
+          for (let i = 1; i <= s26TotalQ; i++) {
+            const b = document.createElement('button');
+            b.type = 'button'; b.className = 's26-qdot'; b.id = 's26-dot-' + i; b.textContent = i;
+            b.onclick = function() { goToSwipeQ(i); };
+            wrap.appendChild(b);
+          }
+        }
+        goToSwipeQ(s26CurQ, false);
+      }
+    }
+    function goToSwipeQ(qnum, doScroll) {
+      if (qnum < 1) qnum = 1; if (qnum > s26TotalQ) qnum = s26TotalQ;
+      s26CurQ = qnum;
+      document.querySelectorAll('#part2 .q-card').forEach((c, idx) => c.classList.toggle('s26-current-card', (idx + 1) === s26CurQ));
+      const st = document.getElementById('s26StatusTxt');
+      if (st) st.textContent = '문항 ' + s26CurQ + ' / ' + s26TotalQ;
+      const fl = document.getElementById('s26ProgressFill');
+      if (fl) fl.style.width = Math.round((s26CurQ / s26TotalQ) * 100) + '%';
+      for (let i = 1; i <= s26TotalQ; i++) {
+        const d = document.getElementById('s26-dot-' + i);
+        if (d) d.classList.toggle('active', i === s26CurQ);
+      }
+      if (doScroll !== false) {
+        const bar = document.getElementById('s26SwipeBar');
+        if (bar) bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    function stepSwipeQ(delta) { goToSwipeQ(s26CurQ + delta, true); }
+    (function() {
+      let sx = 0, sy = 0;
+      document.addEventListener('touchstart', e => { if (s26SwipeOn && e.touches[0]) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } }, { passive: true });
+      document.addEventListener('touchend', e => {
+        if (!s26SwipeOn || !e.changedTouches[0]) return;
+        const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 54 && Math.abs(dx) > Math.abs(dy) * 1.4) stepSwipeQ(dx < 0 ? 1 : -1);
+      }, { passive: true });
+      window.addEventListener('DOMContentLoaded', () => { if (window.innerWidth <= 600) toggleSwipeMode(true); });
+    })();
+  </script>
+<!-- S26_ULTRA_SWIPE_END -->
 </body>
 </html>

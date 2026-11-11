@@ -62,7 +62,7 @@
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
   --body-size: 17px;
   --line-height: 1.95;
-  --text-align-mode: justify;
+  --text-align-mode: left;
 }
 
 /* Night Warm E-Ink Dark Mode */
