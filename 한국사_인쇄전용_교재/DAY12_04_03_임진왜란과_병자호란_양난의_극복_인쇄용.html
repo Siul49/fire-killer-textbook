@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 임진왜란(1592년부터 1598년까지)의 전개와 수군·의병의 구국 항쟁</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1304,7 +1304,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 광해군의 전후 복구와 중립 외교, 인조반정과 정묘·병자호란</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1356,7 +1356,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 효종의 북벌 운동(나선 정벌)과 양난 이후 통치 체제 개편(비변사·5군영)</h2>
         <div id="theory-sec3-p6" class="para-block">
           <p class="prose-body">
@@ -1378,7 +1378,7 @@
           </p>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 임진왜란·호란 세부 전투·의병·무기·전주사고와 5군영 완성</h2>
 
         <div id="theory-sec4-p8" class="para-block">
@@ -1484,19 +1484,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY12 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY12 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4408,22 +4415,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4627,24 +4644,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "임진왜란 개전 초기 정발과 송상현이 부산진과 동래성에서 순절하고, 신립이 충주 탄금대 전투에서 패하자 선조는 의주로 피란하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 왜란 전야와 초기 : 3포 왜란(중종, 비변사 설치) ➔ 을묘왜변(명종, 비변사 상설화) ➔ 임진왜란(1592): 부산진(정발)·동래성(송상현) 순절 ➔ 신립 충주 탄금대 패전 ➔ 선조 의주 피란 수군·의병·3대 대첩 : 이순신의 옥포· 사천(거북선 최초 투입) · 한산도 대첩…"}, {"num": 2, "code": "기002", "stmt": "이순신은 사천 해전에서 거북선을 최초로 실전에 투입하였고, 한산도 대첩에서 학익진 전술로 왜 수군을 대파하여 제해권을 장악하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 광해군과 북인 정권 : 양안·호적 정리, 경기도 대동법 실시(1608) , 허준 ｢동의보감｣ 완성, 일본과 기유약조(1609) 체결, 강홍립 파견 실리적 중립 외교(1619) 인조반정(1623)과 정묘호란(1627) : 서인이 광해군의 폐모살제 와 중립 외교를 비판하며 반정 ➔…"}, {"num": 3, "code": "기003", "stmt": "임진왜란 당시 의령에서 곽재우가, 충청도에서 조헌·영규가, 함경도에서 정문부(북관대첩)가 의병을 일으켜 왜군을 격퇴하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 4, "code": "기004", "stmt": "김시민의 제1차 진주성 대첩과 권율의 행주 대첩은 이순신의 한산도 대첩과 함께 임진왜란 3대 대첩으로 꼽힌다.", "ans": true, "tid": "theory-sec1-tbl1", "tlabel": "📖 기본서 1. 임진왜란 핵심 비교표 바로가기", "tpreview": "전개 단계 및 시기 주요 전투 및 핵심 인물 전략적 결과 및 한능검 출제 포인트 왜란 전야 및 개전 초 (1592년 4월) · 전야: 3포 왜란(1510, 중종) ➔ 을묘왜변(1555, 명종) · 초기: 부산진( 정발 )·동래성( 송상현 ) ➔ 충주 탄금대(신립 패전) 3포 왜란 계기로 비변사 …"}, {"num": 5, "code": "기005", "stmt": "정유재란(1597) 당시 삼도수군통제사로 복귀한 이순신은 명량 대첩에서 승리하고, 퇴각하는 왜군을 추격한 노량 해전에서 순국하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 임진왜란 본문 3 본문 보기", "tpreview": "이후 휴전 회담이 진행되는 동안 조선은 유성룡(전후 반성록인 ｢징비록｣ 저술)의 건의로 명나라 장수 척계광의 ｢기효신서｣ 전법을 도입하여 조총을 쏘는 포수 , 활을 쏘는 사수 , 창칼을 쓰는 살수 의 삼수병(三手兵) 으로 구성된 상비 직업 군인 부대인 훈련도감(1593년) 을 설치하고, 지방에는…"}, {"num": 6, "code": "기006", "stmt": "임진왜란이 끝난 후 조선은 광해군 때 일본 에도 막부와 계해약조(1609)를 체결하여 국교를 재개하고 통신사를 파견하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "선조의 뒤를 이어 즉위한 광해군(재위 1608년부터 1623년까지) 은 왜란 때 의병을 이끈 북인(정인홍·이이첨) 정권과 함께 전후 복구에 총력을 기울였습니다. 먼저 양안(토지대장)과 호적을 재작성 하여 국가 재정을 확충하고, 불탄 창덕궁·창경궁 중건과 사고 정비를 단행하였으며, 허준이 전통 의…"}, {"num": 7, "code": "기007", "stmt": "광해군은 전후 복구를 위해 양안과 호적을 정비하고, 허준의 ｢동의보감｣을 완성하였으며 경기도에 대동법을 최초로 실시하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 8, "code": "기008", "stmt": "광해군은 방납의 폐단을 뿌리 뽑기 위해 즉위 직후 대동법을 전국 8도에 일제히 전면 실시하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 9, "code": "기009", "stmt": "광해군은 명과 후금 사이에서 도원수 강홍립에게 '형세를 보아 향배를 정하라'는 밀명을 내려 실리적인 중립 외교를 펼쳤다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "선조의 뒤를 이어 즉위한 광해군(재위 1608년부터 1623년까지) 은 왜란 때 의병을 이끈 북인(정인홍·이이첨) 정권과 함께 전후 복구에 총력을 기울였습니다. 먼저 양안(토지대장)과 호적을 재작성 하여 국가 재정을 확충하고, 불탄 창덕궁·창경궁 중건과 사고 정비를 단행하였으며, 허준이 전통 의…"}, {"num": 10, "code": "기010", "stmt": "인조반정(1623)으로 집권한 서인 세력은 광해군의 중립 외교를 비판하며 친명배금 정책을 추진하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 광해군과 북인 정권 : 양안·호적 정리, 경기도 대동법 실시(1608) , 허준 ｢동의보감｣ 완성, 일본과 기유약조(1609) 체결, 강홍립 파견 실리적 중립 외교(1619) 인조반정(1623)과 정묘호란(1627) : 서인이 광해군의 폐모살제 와 중립 외교를 비판하며 반정 ➔…"}, {"num": 11, "code": "기011", "stmt": "정묘호란(1627) 당시 인조는 남한산성으로 피란하여 항전하다가 삼전도에서 후금에게 항복하고 군신 관계를 맺었다.", "ans": false, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 임진왜란·… 본문 10 본문 보기", "tpreview": "한편 인조반정(1623년, 서인의 친명배금 정책과 이괄의 난[1624년]) 이후 일어난 정묘호란(1627년) 때는 인조가 강화도로 피란하는 가운데 의병장 정봉수가 평안도 철산 용골산성 에서, 이립이 의주 에서 후금군을 물리치고 형제 맹약을 맺었습니다. 그러나 국호를 '청(淸)'으로 바꾼 태종 홍…"}, {"num": 12, "code": "기012", "stmt": "정묘호란(1627) 때 정봉수는 철산 용골산성에서, 이립은 의주에서 의병을 일으켜 후금군에 맞서 싸웠다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 효종의 북벌 운동과 나선 정벌 : 서인(송시열·이완) 등용 및 어영청 강화 ➔ 청의 요청으로 흑룡강에 조총 부대를 파견해 러시아군을 격퇴한 나선 정벌(1654 변급·1658 신류) 비변사의 최고 기구화 : 3포 왜란 계기 설치(중종) ➔ 을묘왜변 상설화(명종) ➔ 양난을 거치며…"}, {"num": 13, "code": "기013", "stmt": "병자호란(1636) 직전 청의 군신 관계 요구에 맞서 최명길은 주화론을, 김상헌과 삼학사는 척화론을 주장하며 대립하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 효종의 북벌 운동과 나선 정벌 : 서인(송시열·이완) 등용 및 어영청 강화 ➔ 청의 요청으로 흑룡강에 조총 부대를 파견해 러시아군을 격퇴한 나선 정벌(1654 변급·1658 신류) 비변사의 최고 기구화 : 3포 왜란 계기 설치(중종) ➔ 을묘왜변 상설화(명종) ➔ 양난을 거치며…"}, {"num": 14, "code": "기014", "stmt": "병자호란 당시 인조는 남한산성에서 45일간 항전하다가 삼전도에서 청 태종에게 항복하고 청과 군신 관계를 체결하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 효종의 북벌 운동과 나선 정벌 : 서인(송시열·이완) 등용 및 어영청 강화 ➔ 청의 요청으로 흑룡강에 조총 부대를 파견해 러시아군을 격퇴한 나선 정벌(1654 변급·1658 신류) 비변사의 최고 기구화 : 3포 왜란 계기 설치(중종) ➔ 을묘왜변 상설화(명종) ➔ 양난을 거치며…"}, {"num": 15, "code": "기015", "stmt": "청에 인질로 갔다가 귀국한 소현세자는 아담 샬 등과 교유하며 서양의 과학 기술과 천주교 서적을 조선에 들여왔다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 효종의 북벌 운동과 나선 정벌 : 서인(송시열·이완) 등용 및 어영청 강화 ➔ 청의 요청으로 흑룡강에 조총 부대를 파견해 러시아군을 격퇴한 나선 정벌(1654 변급·1658 신류) 비변사의 최고 기구화 : 3포 왜란 계기 설치(중종) ➔ 을묘왜변 상설화(명종) ➔ 양난을 거치며…"}, {"num": 16, "code": "기016", "stmt": "효종은 송시열·이완 등을 등용하여 청나라를 정벌하자는 북벌 운동을 추진하고 어영청을 중심으로 군사력을 증강하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 효종의 북벌 운동 본문 6 본문 보기", "tpreview": "청나라에 인질로 잡혀갔다가 귀국하여 제17대 왕에 오른 효종(봉림대군) 은 송시열·송준길·이완 등 서인 세력을 등용하여 삼전도의 치욕을 씻고 명에 대한 의리를 지키기 위해 청나라를 정벌하자는 북벌(北伐) 운동 을 추진하였습니다. 북벌의 핵심 군영으로 어영청 을 대폭 확충하고 성곽을 수축하였으며 …"}, {"num": 17, "code": "기017", "stmt": "효종 때 양성된 조선 조총 부대는 청의 요청으로 두 차례(변급·신류) 흑룡강 유역에 출병하여 러시아군을 격퇴하였다(나선 정벌).", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 효종의 북벌 운동 본문 6 본문 보기", "tpreview": "청나라에 인질로 잡혀갔다가 귀국하여 제17대 왕에 오른 효종(봉림대군) 은 송시열·송준길·이완 등 서인 세력을 등용하여 삼전도의 치욕을 씻고 명에 대한 의리를 지키기 위해 청나라를 정벌하자는 북벌(北伐) 운동 을 추진하였습니다. 북벌의 핵심 군영으로 어영청 을 대폭 확충하고 성곽을 수축하였으며 …"}, {"num": 18, "code": "기018", "stmt": "비변사는 양난을 거치며 국정 전반을 총괄하는 최고 권력 기구로 비대화되어 의정부와 6조 중심의 행정 체계를 약화시켰다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 양난 급소 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 19, "code": "기019", "stmt": "임진왜란 중에 유성룡의 건의로 설치된 훈련도감은 포수·사수·살수의 삼수병으로 편성된 상비 직업 군인 부대였다.", "ans": true, "tid": "theory-sec1-tbl1", "tlabel": "📖 기본서 1. 임진왜란 핵심 비교표 바로가기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 20, "code": "기020", "stmt": "조선 후기 지방 방어를 위해 편성된 속오군은 천민인 노비를 철저히 배제하고 오직 양반과 상민만으로 구성되었다.", "ans": false, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 양난 급소 본문 보기", "tpreview": "60회부터 69회까지 양난 급소 임진왜란 연표·무기·귀화인 : 부산진(정발)· 동래성(송상현, ｢동래부순절도｣) ➔ 상주(이일)· 충주 탄금대(신립) 패전 ➔ 선조 의주 피란·광해군 분조, 전주사고 실록 보존 ➔ 이순신 옥포·사천(거북선)· 한산도 대첩 , 김시민 진주 대첩 , 조·명 연합군 평…"}, {"num": 21, "code": "기021", "stmt": "임진왜란이 발발한 직후 신립 장군은 충주 탄금대에서 배수의 진을 치고 조총으로 무장한 왜군에 맞서 싸웠으나 패배하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 왜란 전야와 초기 : 3포 왜란(중종, 비변사 설치) ➔ 을묘왜변(명종, 비변사 상설화) ➔ 임진왜란(1592): 부산진(정발)·동래성(송상현) 순절 ➔ 신립 충주 탄금대 패전 ➔ 선조 의주 피란 수군·의병·3대 대첩 : 이순신의 옥포· 사천(거북선 최초 투입) · 한산도 대첩…"}, {"num": 22, "code": "기022", "stmt": "임진왜란 당시 김시민 장군은 제1차 진주성 전투에서 군관과 백성들을 이끌고 왜군을 크게 물리쳐 호남으로 진출하려는 적의 기도를 꺾었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 광해군과 북인 정권 : 양안·호적 정리, 경기도 대동법 실시(1608) , 허준 ｢동의보감｣ 완성, 일본과 기유약조(1609) 체결, 강홍립 파견 실리적 중립 외교(1619) 인조반정(1623)과 정묘호란(1627) : 서인이 광해군의 폐모살제 와 중립 외교를 비판하며 반정 ➔…"}, {"num": 23, "code": "기023", "stmt": "임진왜란 때 화포장 이장손이 발명한 비격진천뢰는 완구(대완구)로 발사하면 일정 시간이 지난 뒤 폭발하여 성벽 너머의 적에게 큰 타격을 주었다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 임진왜란·… 본문 9 본문 보기", "tpreview": "바다에서는 이순신 이 옥포 해전을 시작으로 사천 해전(거북선 최초 투입), 당포·당항포 해전, 그리고 학익진 전법으로 왜선 59척을 격침한 한산도 대첩(1592. 7.) 을 거두어 남해 제해권을 장악하고 호남 곡창 지대와 서해 보급로를 사수하였습니다. 육지에서는 김시민 의 진주성 대첩(1592.…"}, {"num": 24, "code": "기024", "stmt": "임진왜란 당시 왜군의 선봉장으로 참전하였다가 조선의 문물에 감화되어 투항한 사야가는 선조로부터 김충선이라는 성명을 하사받고 조총 제작법과 화약 기술을 전수하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 임진왜란·… 본문 9 본문 보기", "tpreview": "바다에서는 이순신 이 옥포 해전을 시작으로 사천 해전(거북선 최초 투입), 당포·당항포 해전, 그리고 학익진 전법으로 왜선 59척을 격침한 한산도 대첩(1592. 7.) 을 거두어 남해 제해권을 장악하고 호남 곡창 지대와 서해 보급로를 사수하였습니다. 육지에서는 김시민 의 진주성 대첩(1592.…"}, {"num": 25, "code": "기025", "stmt": "임진왜란 때 춘추관·충주·성주 사고의 조선왕조실록이 모두 소실되자, 태인 선비 안의와 손홍록은 정읍 내장산으로 전주사고본 실록을 옮겨 끝까지 지켜냈다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 임진왜란·… 본문 8 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 26, "code": "기026", "stmt": "임진왜란 초기 이순신은 옥포 해전을 시작으로 사천 해전(거북선 첫 투입), 한산도 대첩(학익진 전술)에서 연승을 거두어 남해의 제해권을 장악하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 임진왜란·… 본문 9 본문 보기", "tpreview": "바다에서는 이순신 이 옥포 해전을 시작으로 사천 해전(거북선 최초 투입), 당포·당항포 해전, 그리고 학익진 전법으로 왜선 59척을 격침한 한산도 대첩(1592. 7.) 을 거두어 남해 제해권을 장악하고 호남 곡창 지대와 서해 보급로를 사수하였습니다. 육지에서는 김시민 의 진주성 대첩(1592.…"}, {"num": 27, "code": "기027", "stmt": "정유재란 당시 원균이 이끈 조선 수군이 칠천량 해전에서 궤멸되자, 삼도수군통제사로 재임명된 이순신은 남은 배 12척으로 명량 해전에서 대승을 거두었다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 임진왜란 본문 3 본문 보기", "tpreview": "이후 휴전 회담이 진행되는 동안 조선은 유성룡(전후 반성록인 ｢징비록｣ 저술)의 건의로 명나라 장수 척계광의 ｢기효신서｣ 전법을 도입하여 조총을 쏘는 포수 , 활을 쏘는 사수 , 창칼을 쓰는 살수 의 삼수병(三手兵) 으로 구성된 상비 직업 군인 부대인 훈련도감(1593년) 을 설치하고, 지방에는…"}, {"num": 28, "code": "기028", "stmt": "유성룡은 임진왜란이 끝난 뒤 전란의 원인과 경과, 그리고 군사 제도 정비의 필요성을 반성적으로 기록한 징비록을 저술하였다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 양난 급소 본문 보기", "tpreview": "60회부터 69회까지 양난 급소 임진왜란 연표·무기·귀화인 : 부산진(정발)· 동래성(송상현, ｢동래부순절도｣) ➔ 상주(이일)· 충주 탄금대(신립) 패전 ➔ 선조 의주 피란·광해군 분조, 전주사고 실록 보존 ➔ 이순신 옥포·사천(거북선)· 한산도 대첩 , 김시민 진주 대첩 , 조·명 연합군 평…"}, {"num": 29, "code": "기029", "stmt": "광해군은 임진왜란으로 소실된 궁궐 중 창덕궁과 경희궁을 중건하고, 허준이 완성한 동의보감을 간행하여 전란 후 백성들의 질병 치료에 힘썼다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "선조의 뒤를 이어 즉위한 광해군(재위 1608년부터 1623년까지) 은 왜란 때 의병을 이끈 북인(정인홍·이이첨) 정권과 함께 전후 복구에 총력을 기울였습니다. 먼저 양안(토지대장)과 호적을 재작성 하여 국가 재정을 확충하고, 불탄 창덕궁·창경궁 중건과 사고 정비를 단행하였으며, 허준이 전통 의…"}, {"num": 30, "code": "기030", "stmt": "광해군은 명과 후금 사이에서 실리적 중립 외교를 펼쳐 후금을 치기 위해 출병한 도원수 강홍립에게 형세를 보아 향배를 결정하라고 밀명을 내렸다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광해군의 전후 복구와 중립 외교, 인조반정과 … 본문 4 본문 보기", "tpreview": "선조의 뒤를 이어 즉위한 광해군(재위 1608년부터 1623년까지) 은 왜란 때 의병을 이끈 북인(정인홍·이이첨) 정권과 함께 전후 복구에 총력을 기울였습니다. 먼저 양안(토지대장)과 호적을 재작성 하여 국가 재정을 확충하고, 불탄 창덕궁·창경궁 중건과 사고 정비를 단행하였으며, 허준이 전통 의…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4763,18 +4790,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4925,9 +4948,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

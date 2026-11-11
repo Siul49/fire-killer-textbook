@@ -1242,7 +1242,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1"""""""">
+      <div id="sec1""""""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 벼농사의 시작과 계급의 탄생: 청동기 시대의 도구와 사회</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1279,7 +1279,7 @@
         </div>
       </div>
 
-      <div id="sec2"""""""">
+      <div id="sec2""""""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 철기의 보급과 한반도 독자적 청동기 문화의 개화</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1341,7 +1341,7 @@
         </div>
       </div>
 
-      <div id="sec3"""""""">
+      <div id="sec3""""""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 단군조선의 성립과 위만조선의 중계무역·8조법</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1402,7 +1402,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4"""""""" class="space-y-6">
+      <div id="sec4""""""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 청동기 거석 유적·환호 취락과 위만조선 항전 사료</h2>
 
         <div id="theory-sec4-p10" class="para-block">
@@ -1507,19 +1507,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY02 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY02 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -3839,22 +3846,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4058,24 +4075,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "청동기 시대에는 반달돌칼을 이용하여 곡식의 이삭을 수확하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 벼농사의 시작과 계급의 탄생: 청동기 시대의 … 본문 3 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 2, "code": "기002", "stmt": "청동기 시대에는 청동으로 만든 농기구를 보급하여 농업 생산력을 비약적으로 향상시켰다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 벼농사의 시작과 계급의 탄생: 청동기 시대의 … 본문 3 본문 보기", "tpreview": "여기서 시험에 매번 출제되는 가장 역설적인 인과관계를 반드시 짚어야 합니다. 청동기 시대에 왜 청동으로 만든 농기구는 단 하나도 존재하지 않았을까요? 구리에 주석이나 아연을 섞어 주조하는 청동은 원료 광석이 극도로 귀하고 제련이 까다로웠을 뿐 아니라, 무른 금속 성질 때문에 거친 땅을 파거나 돌…"}, {"num": 3, "code": "기003", "stmt": "비파형 동검, 미송리식 토기, 탁자식 고인돌은 고조선의 문화 범위를 짐작하게 하는 유물이다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 7 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 4, "code": "기004", "stmt": "세형동검과 거푸집이 출토된 것은 한반도 내에서 독자적인 청동기 제작이 이루어졌음을 보여준다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 5, "code": "기005", "stmt": "탁자식 고인돌은 청동기 시대 지배층 군장의 정치적 권력과 계급 발생을 상징한다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 단군조선의 성립과 위만조선의 중계무역·8조법 핵심 비… 바로가기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 6, "code": "기006", "stmt": "충남 부여 송국리와 경기 여주 흔암리 유적에서 탄화미가 출토되어 청동기 시대의 벼농사를 증명한다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 7, "code": "기007", "stmt": "붉은간토기와 민무늬 토기, 미송리식 토기는 청동기 시대의 대표적인 토기이다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 8, "code": "기008", "stmt": "울산 검단리 유적에서는 마을 주변에 도랑을 파서 외적의 침입을 방어한 환호 취락이 확인되었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 9, "code": "기009", "stmt": "울산 울주 대곡리 반구대 암각화에는 작살 맞은 고래와 사슴 등 사냥과 포획의 풍요를 기원한 그림이 새겨져 있다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 벼농사의 시작과 계급의 탄생: 청동기 시대의 … 본문 3 본문 보기", "tpreview": "여기서 시험에 매번 출제되는 가장 역설적인 인과관계를 반드시 짚어야 합니다. 청동기 시대에 왜 청동으로 만든 농기구는 단 하나도 존재하지 않았을까요? 구리에 주석이나 아연을 섞어 주조하는 청동은 원료 광석이 극도로 귀하고 제련이 까다로웠을 뿐 아니라, 무른 금속 성질 때문에 거친 땅을 파거나 돌…"}, {"num": 10, "code": "기010", "stmt": "철기 시대에는 철제 농기구의 보급으로 깊이갈이(심경)가 가능해져 농업 생산력이 크게 증대되었다.", "ans": true, "tid": "theory-sec2-tbl1", "tlabel": "📖 기본서 2. 철기의 보급과 한반도 독자적 청동기 문화의 개… 핵심… 바로가기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 11, "code": "기011", "stmt": "청동기 시대의 거친무늬 거울은 철기 시대로 접어들며 정교한 잔무늬 거울로 발전하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 12, "code": "기012", "stmt": "철기 시대에는 구덩이를 파고 나무 관을 묻는 널무덤과 항아리 두 개를 맞붙인 독무덤이 유행하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 철기의 보급과 한반도 독자적 청동기 문화의 개… 본문 6 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 13, "code": "기013", "stmt": "철기 시대 유적에서 출토된 명도전·반량전·오수전과 경남 창원 다호리 유적의 붓은 중국과의 교류 및 한자 사용을 증명한다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 철기의 보급과 한반도 독자적 청동기 문화의 개… 본문 6 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 14, "code": "기014", "stmt": "단군왕검이라는 호칭은 고조선이 제사와 정치가 일치된 제정일치 사회였음을 나타낸다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 7 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 15, "code": "기015", "stmt": "기원전 3세기경 고조선은 연나라 장수 진개의 침략을 받아 서쪽 영토를 상실하고 중심지를 평양(왕검성) 일대로 옮겼다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 빈출 급소 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 16, "code": "기016", "stmt": "고조선은 기원전 3세기 말 부왕, 준왕 등 강력한 왕이 등장하여 왕위를 세습하고 상·대부·장군 등의 관직을 두었다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 빈출 급소 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 17, "code": "기017", "stmt": "위만이 고조선으로 망명할 당시 상투를 틀고 조선인의 옷을 입고 있었으며, 집권 후에도 국호를 '조선'으로 유지하였다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 빈출 급소 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 18, "code": "기018", "stmt": "위만조선은 철기 문화를 본격 수용하여 주변 소국을 복속하고, 남방의 진(辰)과 중국 한(漢)나라 사이에서 중계무역의 이익을 독점하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 9 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 19, "code": "기019", "stmt": "기원전 108년 고조선은 한 무제의 침략에 맞서 우거왕과 성기 등이 왕검성에서 1년간 항전하였으나 지배층의 내분으로 멸망하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 단군조선의 성립과 위만조선의 중계무역·8조법 핵심 비… 바로가기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 20, "code": "기020", "stmt": "고조선의 8조법(범금 8조)에는 생명 존중, 농경과 사유재산 보호, 노비 계급의 존재 및 화폐 사용의 흔적이 담겨 있다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 9 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 21, "code": "기021", "stmt": "충남 부여 송국리와 경기 여주 흔암리 유적에서 출토된 탄화미는 청동기 시대에 일부 저습지에서 벼농사가 시작되었음을 증명한다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 22, "code": "기022", "stmt": "청동기 시대에는 청동 보습과 청동 낫 등 청동제 농기구를 대량 제작하여 벼 이삭을 수확하였다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 단군조선과 초기 세력 범위 : 단군왕검(제정일치) 건국(｢삼국유사｣·｢제왕운기｣·｢동국통감｣), 비파형 동검·탁자식 고인돌·미송리식 토기 분포와 일치 기원전 4세기에서 3세기 성장 : 왕호 사용 , 연(燕)나라와 대립(연 장수 진개의 침입으로 서쪽 2천 리 상실), 부왕·준왕 …"}, {"num": 23, "code": "기023", "stmt": "울산 울주 검단리 유적과 경남 진주 대평리 유적에서는 취락 주변에 도랑을 파고 나무 울타리를 두른 환호(環濠) 시설이 확인되었다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 청동기 거… 본문 10 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 24, "code": "기024", "stmt": "고창·화순·강화 고인돌 유적은 청동기 시대 군장의 권력과 경제력, 노동력 동원 능력을 보여주는 대표적인 거석 문화유산이다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 25, "code": "기025", "stmt": "양옆에 고리 모양 손잡이가 달린 미송리식 토기와 붉은간토기는 신석기 시대 해안가 패총에서 처음 제작된 토기이다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 벼농사의 시작과 계급의 탄생: 청동기 시대의 … 본문 3 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 26, "code": "기026", "stmt": "철기 시대에는 한반도 내에서 거푸집(용범)을 이용해 세형동검과 잔무늬 거울을 주조하는 독자적인 청동기 문화가 발전하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 27, "code": "기027", "stmt": "경남 창원 다호리 유적의 널무덤에서 출토된 붓과 손칼은 기원전 1세기 무렵 한반도 남부에서 한자를 사용하였음을 보여준다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 철기의 보급과 한반도 독자적 청동기 문화의 개… 본문 6 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 28, "code": "기028", "stmt": "명도전, 반량전, 오수전 등 한반도에서 출토된 중국 화폐는 초기 철기 시대 중국과의 활발한 교역을 실증한다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 철기의 보급과 한반도 독자적 청동기 문화의 개… 본문 6 본문 보기", "tpreview": "철기 시대에는 철제 농기구와 철제 무기가 보급되고, 한반도 독자적인 세형동검·잔무늬 거울을 거푸집으로 주조하였으며 명도전·반량전·오수전과 다호리 붓을 통해 중국과 교역하였습니다."}, {"num": 29, "code": "기029", "stmt": "고조선의 초기 세력 범위는 비파형 동검, 미송리식 토기, 탁자식 고인돌이 공통으로 분포하는 요령 지방과 대동강 유역이다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 7 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 30, "code": "기030", "stmt": "단군 신화는 일연의 『삼국유사』뿐만 아니라 이승휴의 『제왕운기』, 서거정의 『동국통감』, 『세종실록』 지리지 등에도 수록되어 있다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 단군조선의 성립과 위만조선의 중계무역·8조법 본문 7 본문 보기", "tpreview": "청동기 시대의 군장 사회들을 하나로 통합하며 우리 역사상 최초로 등장한 국가가 바로 고조선 (기원전 2333년 건국, 일연의 ｢삼국유사｣·이승휴의 ｢제왕운기｣·서거정의 ｢동국통감｣ 등에 기록)입니다. 단군 신화 속의 요소들은 당시 고조선 성립 과정의 역사적 사실을 압축한 상징입니다. 하늘에서 내…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4194,18 +4221,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4356,9 +4379,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

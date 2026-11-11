@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 농촌 모순의 근본 치유책: 중농학파(경세치용파: 유형원·이익·정약용)의 토지 개혁론</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1263,7 +1263,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 상공업 진흥을 외친 중상학파(이용후생파·북학파)와 국학·과학기술의 발달</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1343,7 +1343,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 60년 세도정치와 삼정의 문란, 홍경래의 난(1811)과 임술 농민 봉기(1862)</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1398,7 +1398,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 이수광·정제두·최한기·정약용(마과회통)과 황사영 백서·임술 농민 봉기</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1498,19 +1498,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY15 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY15 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4422,22 +4429,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4641,24 +4658,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "유형원은 『반계수록』에서 토지를 국유화한 뒤 사·농·공·상 신분에 따라 차등을 두어 분배하는 균전론을 주장하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 중농학파(경세치용파, 기호 남인 중심) : 지주전호제 타파 및 자영농 육성을 위한 토지 제도 개혁 에 초점 유형원 ➔ 이익 ➔ 정약용의 토지 개혁론 : ① 유형원(『반계수록』, 균전론) : 토지를 국유화한 뒤 사·농·공·상 신분에 따라 차등 지급 , 과거제 폐지·공거제 건의 ②…"}, {"num": 2, "code": "기002", "stmt": "이익은 『성호사설』에서 마을 단위로 토지를 공동 경작하고 일한 날수(노동량)에 따라 분배하는 여전론을 제시하였다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 중상학파(이용후생파·북학파, 서울 노론 중심) : ① 유수원(『우서』) : 사농공상 직업적 평등·합자 경영 ② 홍대용(『의산문답』) : 지전설·무한우주론 으로 중국 중심 화이관 극복 ③ 박지원(『열하일기』·『과농소초』) : 수레·선박·화폐·벽돌 사용, 상한선 설정 한전론 , 『…"}, {"num": 3, "code": "기003", "stmt": "정약용은 여전론과 정전제를 구상하고 『경세유표』·『목민심서』·『흠흠신서』를 저술하였으며, 수원 화성 축조에 쓰인 거중기를 설계하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 4, "code": "기004", "stmt": "유수원은 『우서』를 저술하여 사농공상의 직업적 평등과 전문화, 상인 간 합자 경영을 주장하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 5, "code": "기005", "stmt": "홍대용은 『의산문답』에서 지구가 하루에 한 바퀴 자전한다는 지전설과 무한우주론을 제시하여 중국 중심의 화이관을 비판하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 6, "code": "기006", "stmt": "박지원은 『열하일기』에서 수레와 선박의 이용을 강조하고 『양반전』·『허생전』 등 한문 소설을 통해 양반 사회의 위선을 풍자하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 7, "code": "기007", "stmt": "박제가는 『북학의』에서 재물을 우물물에 비유하며 백성들의 소비를 철저히 억제하고 무조건적인 절약을 강제해야 한다고 주장하였다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 8, "code": "기008", "stmt": "안정복은 이익의 학풍을 계승하여 단군·기자·마한으로 이어지는 우리 역사의 독자적 정통론을 세운 『동사강목』을 저술하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 9, "code": "기009", "stmt": "유득공은 『발해고』를 저술하여 통일신라와 발해를 아우르는 '남북국'이라는 용어를 최초로 사용하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 10, "code": "기010", "stmt": "이긍익의 『연려실기술』은 500여 종의 외국 서적을 인용하여 기전체로 서술한 역사서이고, 한치윤의 『해동역사』는 기사본말체로 쓴 조선 정치사이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 세도정치(1800년에서 1863년, 순조·헌종·철종)와 삼정의 문란 : 안동 김씨·풍양 조씨 외척이 비변사 독점, 매관매직 성행 ➔ 전정 (백지징세·도결), 군정 ( 황구첨정·백골징포 ·인징·족징), 환곡(가장 극심!) (고리대화: 반진·늑대·허류) 예언 사상과 새 종교 : 이…"}, {"num": 11, "code": "기011", "stmt": "김정희는 『금석과안록』을 통해 북한산비가 무학대사 비가 아니라 신라 진흥왕 순수비임을 고증하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 12, "code": "기012", "stmt": "김정호가 제작한 『대동여지도』는 최초로 100리척 축척을 도입한 채색 필사본 지도이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 세도정치(1800년에서 1863년, 순조·헌종·철종)와 삼정의 문란 : 안동 김씨·풍양 조씨 외척이 비변사 독점, 매관매직 성행 ➔ 전정 (백지징세·도결), 군정 ( 황구첨정·백골징포 ·인징·족징), 환곡(가장 극심!) (고리대화: 반진·늑대·허류) 예언 사상과 새 종교 : 이…"}, {"num": 13, "code": "기013", "stmt": "정약용의 형 정약전은 흑산도 유배지에서 해양 생물의 명칭과 생태를 조사하여 『자산어보』를 저술하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 세도정치(1800년에서 1863년, 순조·헌종·철종)와 삼정의 문란 : 안동 김씨·풍양 조씨 외척이 비변사 독점, 매관매직 성행 ➔ 전정 (백지징세·도결), 군정 ( 황구첨정·백골징포 ·인징·족징), 환곡(가장 극심!) (고리대화: 반진·늑대·허류) 예언 사상과 새 종교 : 이…"}, {"num": 14, "code": "기014", "stmt": "순조·헌종·철종의 3대 60여 년간 안동 김씨와 풍양 조씨 등 소수 외척 가문이 비변사를 독점하여 왕권이 약화되고 매관매직이 성행하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 60년 세도정치와 삼정의 문란, 홍경래의 난 본문 5 본문 보기", "tpreview": "1800년 정조가 갑작스럽게 승하하고 11세의 어린 순조 가 즉위하면서, 순조·헌종·철종의 3대 60여 년(1800년에서 1863년) 동안 국왕의 외가인 안동 김씨(김조순 일파)와 풍양 조씨 등 소수 외척 가문 이 최고 기구인 비변사 와 핵심 군영을 독점하고 국정을 좌지우지하는 세도정치(勢道政治…"}, {"num": 15, "code": "기015", "stmt": "세도정치기 군정의 문란으로 갓난아이에게 군포를 물리는 황구첨정과 죽은 사람에게 군포를 징수하는 백골징포가 자행되었다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 60년 세도정치와 삼정의 문란, 홍경래의 난 본문 5 본문 보기", "tpreview": "1800년 정조가 갑작스럽게 승하하고 11세의 어린 순조 가 즉위하면서, 순조·헌종·철종의 3대 60여 년(1800년에서 1863년) 동안 국왕의 외가인 안동 김씨(김조순 일파)와 풍양 조씨 등 소수 외척 가문 이 최고 기구인 비변사 와 핵심 군영을 독점하고 국정을 좌지우지하는 세도정치(勢道政治…"}, {"num": 16, "code": "기016", "stmt": "삼정의 문란 중 농민들에게 가장 큰 고통을 준 것은 빈민 구제 제도였던 환곡(황정)이 고리대로 변질된 것이었다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 60년 세도정치와 삼정의 문란, 홍경래의 난 본문 5 본문 보기", "tpreview": "1800년 정조가 갑작스럽게 승하하고 11세의 어린 순조 가 즉위하면서, 순조·헌종·철종의 3대 60여 년(1800년에서 1863년) 동안 국왕의 외가인 안동 김씨(김조순 일파)와 풍양 조씨 등 소수 외척 가문 이 최고 기구인 비변사 와 핵심 군영을 독점하고 국정을 좌지우지하는 세도정치(勢道政治…"}, {"num": 17, "code": "기017", "stmt": "1860년 경주의 몰락 양반 최제우는 서학(천주교)에 맞서 '사람이 곧 한울님'이라는 인내천 사상과 후천개벽을 내세우며 동학을 창시하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 실학·세도정치 급소 본문 보기", "tpreview": "60회부터 69회까지 실학·세도정치 급소 사상가 및 실학자 심화 : 이수광 ｢지봉유설｣ (천주실의·서양 소개), 양명학 정제두 (강화 학파·｢존언｣), 정약용 (여전론·정전제·1표 2서·거중기·홍역 의서 ｢마과회통｣ ), 최한기 (기학· ｢기측체의｣·｢인정｣·｢지구전요｣·｢지구전후도｣ ) 천주교…"}, {"num": 18, "code": "기018", "stmt": "1811년(순조 11년) 일어난 홍경래의 난은 경상 우병사 백낙신의 탐학에 반발하여 진주성을 점령한 사건이다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 실학·세도정치 급소 본문 보기", "tpreview": "60회부터 69회까지 실학·세도정치 급소 사상가 및 실학자 심화 : 이수광 ｢지봉유설｣ (천주실의·서양 소개), 양명학 정제두 (강화 학파·｢존언｣), 정약용 (여전론·정전제·1표 2서·거중기·홍역 의서 ｢마과회통｣ ), 최한기 (기학· ｢기측체의｣·｢인정｣·｢지구전요｣·｢지구전후도｣ ) 천주교…"}, {"num": 19, "code": "기019", "stmt": "홍경래의 난에는 몰락 양반뿐만 아니라 영세 상인, 광산 노동자, 빈농 등 다양한 계층이 합세하여 청천강 이북 지역을 한때 장악하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 60년 세도정치와 삼정의 문란, 홍경래의 난 핵심 비… 바로가기", "tpreview": "구분 홍경래의 난 (1811년, 순조 11년) 임술 농민 봉기 (1862년, 철종 13년) 발발 배경 및 원인 중앙 정부의 평안도(서북 지역) 출신에 대한 고위 관직 차별 대우 + 세도정치기 가혹한 세금 수탈과 대기근 세도정치기 삼정의 문란(특히 환곡의 고리대화와 도결) 극심 + 경상 우병사 백…"}, {"num": 20, "code": "기020", "stmt": "1862년 진주 농민 봉기를 계기로 삼남 지방 등 전국 70여 고을로 임술 농민 봉기가 확산되자, 조정은 박규수를 안핵사로 파견하고 삼정이정청을 설치하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 실학·세도정치 급소 본문 보기", "tpreview": "60회부터 69회까지 실학·세도정치 급소 사상가 및 실학자 심화 : 이수광 ｢지봉유설｣ (천주실의·서양 소개), 양명학 정제두 (강화 학파·｢존언｣), 정약용 (여전론·정전제·1표 2서·거중기·홍역 의서 ｢마과회통｣ ), 최한기 (기학· ｢기측체의｣·｢인정｣·｢지구전요｣·｢지구전후도｣ ) 천주교…"}, {"num": 21, "code": "기021", "stmt": "17세기 초 이수광은 명에 사신으로 다녀온 경험을 바탕으로 천주실의 등 서양 학문과 백과사전적 지식을 소개한 지봉유설을 편찬하여 실학 형성의 선구자 역할을 하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 이수광·정… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 실학·사상 및 세도정치기 문항에서는 실학의 선구자 이수광(｢지봉유설｣) , 강화 학파를 형성한 양명학자 정제두 , 19세기 기학(氣學)과 개화사상의 가교 최한기 , 정약용의 의학서 ｢마과회통｣ , 그리고 신유박해 당시 황사영 백서 사건(1801년)과 진주 임술 농민 봉…"}, {"num": 22, "code": "기022", "stmt": "중농학파(경세치용학파)의 선구자인 유형원은 반계수록에서 신분에 따라 토지를 차등 분배하고 세금을 단일화하자는 한전론을 주장하였다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 중농학파(경세치용파, 기호 남인 중심) : 지주전호제 타파 및 자영농 육성을 위한 토지 제도 개혁 에 초점 유형원 ➔ 이익 ➔ 정약용의 토지 개혁론 : ① 유형원(『반계수록』, 균전론) : 토지를 국유화한 뒤 사·농·공·상 신분에 따라 차등 지급 , 과거제 폐지·공거제 건의 ②…"}, {"num": 23, "code": "기023", "stmt": "이익은 성호사설에서 한 가구의 생계유지에 필요한 최소한의 토지를 영업전으로 정해 매매를 법으로 금지하자는 한전론을 제시하고, 나라를 좀먹는 6가지 폐단으로 6좀(육두)을 지적하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 중상학파(이용후생파·북학파, 서울 노론 중심) : ① 유수원(『우서』) : 사농공상 직업적 평등·합자 경영 ② 홍대용(『의산문답』) : 지전설·무한우주론 으로 중국 중심 화이관 극복 ③ 박지원(『열하일기』·『과농소초』) : 수레·선박·화폐·벽돌 사용, 상한선 설정 한전론 , 『…"}, {"num": 24, "code": "기024", "stmt": "정약용은 초기 저서인 원목과 탕론에서 통치자는 백성을 위해 존재한다는 민본 사상을 펼쳤으며, 토지 개혁론으로는 여전론에서 출발하여 현실적인 정전제로 발전시켰다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 25, "code": "기025", "stmt": "정약용은 천연두(마진)에 관한 의학서인 마과회통을 저술하면서 박제가와 함께 서양의 종두법(인두법·우두법 관련 지식)을 연구하여 수록하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 이수광·정… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 실학·사상 및 세도정치기 문항에서는 실학의 선구자 이수광(｢지봉유설｣) , 강화 학파를 형성한 양명학자 정제두 , 19세기 기학(氣學)과 개화사상의 가교 최한기 , 정약용의 의학서 ｢마과회통｣ , 그리고 신유박해 당시 황사영 백서 사건(1801년)과 진주 임술 농민 봉…"}, {"num": 26, "code": "기026", "stmt": "중상학파(이용후생학파)의 선구자인 유수원은 우서에서 사농공상의 직업적 평등과 상공업자의 전문화·조직화(합자 경영)를 주장하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 27, "code": "기027", "stmt": "홍대용은 의산문답에서 지구가 하루에 한 번 자전한다는 지전설과 무한 우주를 주장하여 중국 중심의 화이론적 세계관을 극복하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 28, "code": "기028", "stmt": "박지원은 청의 건륭제 칠순 축하 사절단을 따라 연경과 열하를 다녀온 뒤 열하일기를 저술하여 수레와 선박, 벽돌의 이용을 강조하고 양반전을 통해 무능한 양반층을 풍자하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 29, "code": "기029", "stmt": "박제가는 북학의에서 재물을 우물에 비유하여 퍼서 쓸수록 새 물이 솟아나듯 소비를 늘려야 생산이 자극된다는 소비 권장론을 펼치고 청과의 통상 확대를 주장하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 상공업 진흥을 외친 중상학파 본문 3 본문 보기", "tpreview": "18세기 후반 상공업의 중심지인 서울(한양)에 거주하던 노론 계열 학자들은 연행사(사신단)를 따라 청나라 수도 연경(베이징)을 다녀오면서, 오랑캐라고 멸시하던 청나라가 눈부신 상공업 번영과 선진 과학 기술을 누리고 있는 현실에 큰 충격을 받았습니다. 이에 백성의 삶을 풍요롭게 하려면 상공업과 기…"}, {"num": 30, "code": "기030", "stmt": "19세기 실학자 최한기는 서양의 자연과학과 경험주의 철학을 수용하여 기측체의를 저술하고, 지구의 자전과 공전을 설명한 지구전요를 편찬하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 이수광·정… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 실학·사상 및 세도정치기 문항에서는 실학의 선구자 이수광(｢지봉유설｣) , 강화 학파를 형성한 양명학자 정제두 , 19세기 기학(氣學)과 개화사상의 가교 최한기 , 정약용의 의학서 ｢마과회통｣ , 그리고 신유박해 당시 황사영 백서 사건(1801년)과 진주 임술 농민 봉…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4777,18 +4804,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4939,9 +4962,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

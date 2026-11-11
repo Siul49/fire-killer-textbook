@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 근대 개혁의 소용돌이: 제1차·제2차 갑오개혁과 을미개혁(1894년에서 1895년), 아관파천</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1264,7 +1264,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 독립협회(만민·관민공동회 헌의 6조)와 대한제국 수립·광무개혁(구본신참·지계)</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1322,7 +1322,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 일제의 국권 피탈 6단계 과정(1904년에서 1910년)과 항일 의병 전쟁·애국 계몽 운동</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1382,7 +1382,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 갑오·을미·독립협회·광무개혁 세부 기구와 찬양회·보안회·국채보상·신민회·주시경</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1488,19 +1488,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY18 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY18 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -5712,22 +5719,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -5931,24 +5948,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "제1차 갑오개혁(1894. 7) 당시 군국기무처가 주도하여 공·사 노비법을 일체 혁파하고 과부 재가 허용, 과거제 폐지, 은본위 화폐 제도를 단행하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 2, "code": "기002", "stmt": "제2차 갑오개혁 때 고종은 『홍범 14조』와 『교육입국조서』를 반포하고, 지방 행정 구역을 23부로 개편하였으며 재판소를 설치하여 사법권을 독립시켰다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 독립협회(1896년에서 1898년) : 서재필 『독립신문』 창간 ➔ 독립문·독립관 ➔ 만민공동회 (러시아 절영도 조차 저지·한러은행 폐쇄) ➔ 관민공동회 『헌의 6조』 결의 및 중추원 의회 개편 추진 ➔ 황국협회 습격 및 고종의 군대 동원으로 해산 대한제국 수립(1897)과 광…"}, {"num": 3, "code": "기003", "stmt": "태양력 사용, '건양' 연호 제정, 단발령 및 종두법 시행은 제1차 갑오개혁 당시 군국기무처에서 의결한 개혁안이다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 제1차 갑오개혁(1894. 7, 제1차 김홍집 내각) : 군국기무처 주도 ➔ 개국 기년, 궁내부 신설, 6조➔ 8아문 , 과거제 폐지, 탁지아문 재정 일원화, 은본위제·조세 금납제, 신분제(공·사 노비법) 폐지·과부 재가 허용·연좌제 폐지 제2차 갑오개혁(1894. 12, 김홍…"}, {"num": 4, "code": "기004", "stmt": "을미사변과 단발령에 반발하여 유인석·이소응 등 위정척사 유생들이 을미의병을 일으키자, 고종은 러시아 공사관으로 거처를 옮기는 아관파천(1896)을 단행하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 독립협회(1896년에서 1898년) : 서재필 『독립신문』 창간 ➔ 독립문·독립관 ➔ 만민공동회 (러시아 절영도 조차 저지·한러은행 폐쇄) ➔ 관민공동회 『헌의 6조』 결의 및 중추원 의회 개편 추진 ➔ 황국협회 습격 및 고종의 군대 동원으로 해산 대한제국 수립(1897)과 광…"}, {"num": 5, "code": "기005", "stmt": "독립협회는 만민공동회를 개최하여 러시아의 절영도 조차 요구를 저지하고 한러은행을 폐쇄시키는 등 자주 국권·이권 수호 운동을 전개하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 독립협회 본문 3 본문 보기", "tpreview": "아관파천으로 고종이 1년간 러시아 공사관에 머무는 동안 러시아를 비롯한 미·영·프·독·일 등 열강이 최혜국 대우를 내세워 광산 채굴권, 삼림 벌채권, 철도 부설권 등 조선의 알짜 이권을 마구잡이로 약탈해 갔습니다. 이러한 국권 상실의 위기 속에서 미국에서 돌아온 서재필 은 정부의 지원을 받아 1…"}, {"num": 6, "code": "기006", "stmt": "독립협회는 정부 대신들과 함께 관민공동회를 열어 『헌의 6조』를 채택하고 중추원 관제를 개편하여 우리나라 최초의 근대적 의회 설립을 추진하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 독립협회 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 7, "code": "기007", "stmt": "1899년 반포된 대한제국의 『대한국 국제』는 황제권을 제한하고 국민 주권과 삼권 분립의 입헌군주제를 명시한 근대 헌법이었다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대한제국·국권피탈 급소 본문 보기", "tpreview": "60회부터 69회까지 대한제국·국권피탈 급소 독립협회 & 1898년 운동 : 서재필 ｢독립신문｣(1896) ➔ 모화관을 개수해 독립관·독립문 건립 ➔ 만민 공동회(러시아 절영도 조차 요구 저지·한러은행 폐쇄 ) ➔ 관민 공동회(1898. 10., 백정 출신 박성춘 연설·헌의 6조·중추원 신관제 …"}, {"num": 8, "code": "기008", "stmt": "대한제국은 구본신참을 원칙으로 광무개혁을 추진하여 황제 직속 군 통수 기구인 원수부를 설치하고, 양전 사업을 실시해 근대적 토지 소유권 문서인 지계를 발급하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 국권 피탈 6단계(1904년에서 1910년) : ① 한일의정서 (1904. 2, 군용지 임의 사용) ➔ ② 제1차 한일 협약 (1904. 8, 고문 정치: 메가타 화폐 정리 사업·스티븐스) ➔ ③ 을사늑약 (1905. 11, 외교권 박탈·통감부 설치) ➔ ④ 한일 신협약[정미 …"}, {"num": 9, "code": "기009", "stmt": "대한제국은 1900년 칙령 제41호를 제정하여 울릉도를 울도군으로 승격시키고 독도(석도)를 관할 구역으로 명문화하였으며, 이범윤을 간도 관리사로 파견하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 국권 피탈 6단계(1904년에서 1910년) : ① 한일의정서 (1904. 2, 군용지 임의 사용) ➔ ② 제1차 한일 협약 (1904. 8, 고문 정치: 메가타 화폐 정리 사업·스티븐스) ➔ ③ 을사늑약 (1905. 11, 외교권 박탈·통감부 설치) ➔ ④ 한일 신협약[정미 …"}, {"num": 10, "code": "기010", "stmt": "1904년 러·일 전쟁 발발 직후 일제가 한일의정서를 강요하고 황무지 개간권을 요구하자, 보안회가 반대 운동을 벌여 황무지 개간권 요구를 철회시켰다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 9 본문 보기", "tpreview": "러일 전쟁(1904년) 발발 직후 일제가 황무지 개간권을 요구하자 송수만·심상진 등이 보안회(輔安會, 1904년) 를 조직해 이를 철회시켰고, 제1차 한일 협약으로 부임한 재정 고문 메가타는 화폐 정리 사업(1905년 : 기존 상평통보와 백동화를 갑·을·병으로 등급 매겨 불량 백동화[병종]는 교…"}, {"num": 11, "code": "기011", "stmt": "제1차 한일 협약(1904. 8)으로 파견된 일본인 재정 고문 메가타는 1905년 화폐 정리 사업을 단행하여 백동화와 상평통보를 일본 제일은행권으로 교환하게 하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 일제의 국권 피탈 6단계 과정 본문 5 본문 보기", "tpreview": "만주와 한반도의 패권을 놓고 러시아와 대립하던 일제는 대한제국의 국외 중립 선언(1904. 1)을 무시하고 1904년 2월 러·일 전쟁 을 도발한 뒤, 단계적인 조약 강요를 통해 대한제국의 국권을 침탈해 나갔습니다. ① 먼저 전쟁 발발 직후 한일의정서(1904. 2) 를 강제 체결하여 군사 전략…"}, {"num": 12, "code": "기012", "stmt": "1905년 체결된 을사늑약(제2차 한일 협약)으로 대한제국의 군대가 해산되고 각 부에 일본인 차관이 임명되는 차관 정치가 시작되었다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대한제국·국권피탈 급소 본문 보기", "tpreview": "60회부터 69회까지 대한제국·국권피탈 급소 독립협회 & 1898년 운동 : 서재필 ｢독립신문｣(1896) ➔ 모화관을 개수해 독립관·독립문 건립 ➔ 만민 공동회(러시아 절영도 조차 요구 저지·한러은행 폐쇄 ) ➔ 관민 공동회(1898. 10., 백정 출신 박성춘 연설·헌의 6조·중추원 신관제 …"}, {"num": 13, "code": "기013", "stmt": "을사늑약 체결에 항거하여 장지연은 황성신문에 『시일야방성대곡』을 게재하였고, 민영환·조병세는 자결하였으며, 나철·오기호는 오적암살단을 조직하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 일제의 국권 피탈 6단계 과정 본문 5 본문 보기", "tpreview": "만주와 한반도의 패권을 놓고 러시아와 대립하던 일제는 대한제국의 국외 중립 선언(1904. 1)을 무시하고 1904년 2월 러·일 전쟁 을 도발한 뒤, 단계적인 조약 강요를 통해 대한제국의 국권을 침탈해 나갔습니다. ① 먼저 전쟁 발발 직후 한일의정서(1904. 2) 를 강제 체결하여 군사 전략…"}, {"num": 14, "code": "기014", "stmt": "을사의병 당시 민종식(홍주성)과 최익현(태인) 등 유생 의병장뿐만 아니라 평민 출신 의병장인 신돌석이 태백산·울진 일대에서 유격전을 펼치며 활약하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 일제의 국권 피탈 6단계 과정 본문 5 본문 보기", "tpreview": "만주와 한반도의 패권을 놓고 러시아와 대립하던 일제는 대한제국의 국외 중립 선언(1904. 1)을 무시하고 1904년 2월 러·일 전쟁 을 도발한 뒤, 단계적인 조약 강요를 통해 대한제국의 국권을 침탈해 나갔습니다. ① 먼저 전쟁 발발 직후 한일의정서(1904. 2) 를 강제 체결하여 군사 전략…"}, {"num": 15, "code": "기015", "stmt": "고종이 을사늑약의 무효를 알리기 위해 1907년 네덜란드 헤이그에 이준·이상설·이위종 특사를 파견하자, 일제는 이를 구실로 고종을 강제 퇴위시키고 정미 7조약을 체결하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대한제국·국권피탈 급소 본문 보기", "tpreview": "60회부터 69회까지 대한제국·국권피탈 급소 독립협회 & 1898년 운동 : 서재필 ｢독립신문｣(1896) ➔ 모화관을 개수해 독립관·독립문 건립 ➔ 만민 공동회(러시아 절영도 조차 요구 저지·한러은행 폐쇄 ) ➔ 관민 공동회(1898. 10., 백정 출신 박성춘 연설·헌의 6조·중추원 신관제 …"}, {"num": 16, "code": "기016", "stmt": "1907년 대한제국 군대가 강제 해산되자 해산 군인들이 의병에 합류하여 정미의병으로 발전하였고, 13도 창의군(이인영·허위)을 결성해 서울 진공 작전을 전개하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대한제국·국권피탈 급소 본문 보기", "tpreview": "60회부터 69회까지 대한제국·국권피탈 급소 독립협회 & 1898년 운동 : 서재필 ｢독립신문｣(1896) ➔ 모화관을 개수해 독립관·독립문 건립 ➔ 만민 공동회(러시아 절영도 조차 요구 저지·한러은행 폐쇄 ) ➔ 관민 공동회(1898. 10., 백정 출신 박성춘 연설·헌의 6조·중추원 신관제 …"}, {"num": 17, "code": "기017", "stmt": "안창호·양기탁 등이 1907년 결성한 비밀 결사 신민회는 입헌군주제 수립을 목표로 일제에 타협적인 자치 운동을 전개하였다.", "ans": false, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 9 본문 보기", "tpreview": "러일 전쟁(1904년) 발발 직후 일제가 황무지 개간권을 요구하자 송수만·심상진 등이 보안회(輔安會, 1904년) 를 조직해 이를 철회시켰고, 제1차 한일 협약으로 부임한 재정 고문 메가타는 화폐 정리 사업(1905년 : 기존 상평통보와 백동화를 갑·을·병으로 등급 매겨 불량 백동화[병종]는 교…"}, {"num": 18, "code": "기018", "stmt": "1907년 대구에서 서상돈 등의 발의로 시작된 국채 보상 운동은 국채보상기성회와 양기탁·베델이 운영한 『대한매일신보』의 후원으로 전국에 확산되었다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 9 본문 보기", "tpreview": "러일 전쟁(1904년) 발발 직후 일제가 황무지 개간권을 요구하자 송수만·심상진 등이 보안회(輔安會, 1904년) 를 조직해 이를 철회시켰고, 제1차 한일 협약으로 부임한 재정 고문 메가타는 화폐 정리 사업(1905년 : 기존 상평통보와 백동화를 갑·을·병으로 등급 매겨 불량 백동화[병종]는 교…"}, {"num": 19, "code": "기019", "stmt": "1909년 10월 안중근 의사는 만주 하얼빈역에서 침략의 원흉인 초대 통감 이토 히로부미를 사살하고 동양 평화론을 집필하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 일제의 국권 피탈 6단계 과정 본문 5 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 20, "code": "기020", "stmt": "일제는 1907년 기유각서를 통해 대한제국의 외교권을 박탈하고 통감부를 설치하였다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 일제의 국권 피탈 6단계 과정 본문 5 본문 보기", "tpreview": "만주와 한반도의 패권을 놓고 러시아와 대립하던 일제는 대한제국의 국외 중립 선언(1904. 1)을 무시하고 1904년 2월 러·일 전쟁 을 도발한 뒤, 단계적인 조약 강요를 통해 대한제국의 국권을 침탈해 나갔습니다. ① 먼저 전쟁 발발 직후 한일의정서(1904. 2) 를 강제 체결하여 군사 전략…"}, {"num": 21, "code": "기021", "stmt": "1894년 6월 군국기무처가 주도한 제1차 갑오개혁에서는 개국 기년 사용, 6조의 8아문 개편, 과거제 폐지, 은본위 화폐제 및 재정의 탁지아문 일원화와 함께 공사 노비법 혁파(신분제 폐지)·과부 재가 허용이 단행되었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 22, "code": "기022", "stmt": "제2차 갑오개혁(1894. 12.부터)에서는 군국기무처를 폐지하고 고종이 『홍범 14조』와 『교육입국조서』를 반포하였으며, 재판소를 설치하여 사법권을 독립시키고 한성 사범 학교와 외국어 학교 관제를 마련하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 개항기 후반(1894년부터 1910년까지) 문항은 한능검 심화 시험에서 가장 높은 출제 비중(회당 6문항에서 8문항)을 차지하는 핵심 구간으로, 1·2차 갑오개혁과 을미개혁의 구분 , 독립 협회(관민 공동회 박성춘 연설)와 동시기 단체(찬양회·황국 중앙 총상회) , 대…"}, {"num": 23, "code": "기023", "stmt": "을미사변 직후 추진된 을미개혁(1895)에서는 '건양(建陽)' 연호 제정, 태양력(양력) 사용, 종두법 시행, 우체사 설치와 함께 단발령을 강행하여 유인석·이소응 등 유생들의 을미의병 봉기를 촉발하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 개항기 후반(1894년부터 1910년까지) 문항은 한능검 심화 시험에서 가장 높은 출제 비중(회당 6문항에서 8문항)을 차지하는 핵심 구간으로, 1·2차 갑오개혁과 을미개혁의 구분 , 독립 협회(관민 공동회 박성춘 연설)와 동시기 단체(찬양회·황국 중앙 총상회) , 대…"}, {"num": 24, "code": "기024", "stmt": "독립 협회는 청 사신을 맞이하던 모화관을 개수하여 독립관으로 삼고 독립문을 건립하였으며, 만민 공동회를 열어 러시아의 절영도(영도) 조차 요구를 저지하고 한러은행을 폐쇄시켰다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 8 본문 보기", "tpreview": "1896년 창립된 독립 협회 는 중국 사신을 영접하던 모화관을 개수해 독립관 으로 삼고 영은문 자리에 독립문 을 세웠으며, 만민 공동회를 열어 러시아의 부산 절영도(영도) 석탄고 기지 조차 요구와 군사·재정 고문 파견을 저지하고 한러은행을 폐쇄 시켰습니다. 특히 1898년 10월 종로에서 정부 …"}, {"num": 25, "code": "기025", "stmt": "1898년 10월 독립 협회가 서울 종로에서 정부 대신들과 함께 개최한 관민 공동회에서는 백정 출신 박성춘이 연사로 등단하여 연설하고, 국정 개혁안인 『헌의 6조』를 결의하여 중추원 신관제(의회 설립안) 반포를 이끌어냈다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 8 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 26, "code": "기026", "stmt": "1898년 서울 북촌의 양반 여성들은 여성의 교육권과 참정권·직업권을 주장한 우리나라 최초의 여성 인권 선언문인 「여권통문」을 발표하고, 최초의 근대 여성 단체인 찬양회를 조직하여 순성여학교를 설립하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 8 본문 보기", "tpreview": "1896년 창립된 독립 협회 는 중국 사신을 영접하던 모화관을 개수해 독립관 으로 삼고 영은문 자리에 독립문 을 세웠으며, 만민 공동회를 열어 러시아의 부산 절영도(영도) 석탄고 기지 조차 요구와 군사·재정 고문 파견을 저지하고 한러은행을 폐쇄 시켰습니다. 특히 1898년 10월 종로에서 정부 …"}, {"num": 27, "code": "기027", "stmt": "1898년 서울의 시전 상인들은 외국 상인의 도성 내 불법 상행위로부터 상권을 수호하기 위해 황국 중앙 총상회를 조직하고 철시 투쟁을 전개하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 8 본문 보기", "tpreview": "1896년 창립된 독립 협회 는 중국 사신을 영접하던 모화관을 개수해 독립관 으로 삼고 영은문 자리에 독립문 을 세웠으며, 만민 공동회를 열어 러시아의 부산 절영도(영도) 석탄고 기지 조차 요구와 군사·재정 고문 파견을 저지하고 한러은행을 폐쇄 시켰습니다. 특히 1898년 10월 종로에서 정부 …"}, {"num": 28, "code": "기028", "stmt": "1897년 환구단에서 황제로 즉위하며 대한제국을 선포한 고종은 전제 황권을 규정한 『대한국 국제』(1899)를 반포하고 황제 직속 군 통수 기구인 원수부를 설치하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 갑오·을미… 본문 8 본문 보기", "tpreview": "1896년 창립된 독립 협회 는 중국 사신을 영접하던 모화관을 개수해 독립관 으로 삼고 영은문 자리에 독립문 을 세웠으며, 만민 공동회를 열어 러시아의 부산 절영도(영도) 석탄고 기지 조차 요구와 군사·재정 고문 파견을 저지하고 한러은행을 폐쇄 시켰습니다. 특히 1898년 10월 종로에서 정부 …"}, {"num": 29, "code": "기029", "stmt": "대한제국은 광무개혁을 통해 양지아문을 설치하여 전국적인 양전 사업을 실시하고 지계아문을 통해 근대적 토지 소유권 증명 문서인 '지계(地契)'를 발급하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 국권 피탈 6단계(1904년에서 1910년) : ① 한일의정서 (1904. 2, 군용지 임의 사용) ➔ ② 제1차 한일 협약 (1904. 8, 고문 정치: 메가타 화폐 정리 사업·스티븐스) ➔ ③ 을사늑약 (1905. 11, 외교권 박탈·통감부 설치) ➔ ④ 한일 신협약[정미 …"}, {"num": 30, "code": "기030", "stmt": "대한제국은 독립 국가로서의 위상을 국제 사회에 알리기 위해 1900년 프랑스 파리 만국 박람회에 공식 참가하여 경복궁 근정전을 본뜬 대한제국관을 건립하고 물품을 전시하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대한제국·국권피탈 급소 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -6067,18 +6094,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -6229,9 +6252,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

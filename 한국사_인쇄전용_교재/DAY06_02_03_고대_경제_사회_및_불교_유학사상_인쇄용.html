@@ -1239,7 +1239,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1"""""""">
+      <div id="sec1""""""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 통일신라의 토지·수취 체제(신라 민정문서)와 골품제 신분 사회</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1276,7 +1276,7 @@
         </div>
       </div>
 
-      <div id="sec2"""""""">
+      <div id="sec2""""""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 불교 사상의 통합과 대중화: 원효·의상·혜초와 선종의 유행</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1328,7 +1328,7 @@
         </div>
       </div>
 
-      <div id="sec3"""""""">
+      <div id="sec3""""""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 고대의 유학·도교 문화와 삼국·남북국 고분·석탑 양식의 변천</h2>
         <div id="theory-sec3-p6" class="para-block">
           <p class="prose-body">
@@ -1390,7 +1390,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4"""""""" class="space-y-6">
+      <div id="sec4""""""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 고대 시장·목간·교육 기관과 승려 저술·탑파·불상 심화</h2>
 
         <div id="theory-sec4-p9" class="para-block">
@@ -1500,19 +1500,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY06 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY06 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4432,22 +4439,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4651,24 +4668,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "통일신라 신문왕은 관료전을 지급하고 녹읍을 폐지하였으며, 성덕왕은 일반 백성(정남)에게 정전을 지급하여 국가의 토지 지배력을 강화하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 2, "code": "기002", "stmt": "일본 정창원에서 발견된 신라 민정문서(촌락문서)는 촌주가 3년마다 인구, 가호, 토지(연수유답·촌주위답), 소·말, 뽕나무·잣나무·호두나무 수까지 조사하여 작성한 문서이다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 3, "code": "기003", "stmt": "신라 촌락문서에서는 인구를 연령과 성별에 따라 9등급으로 나누고, 가호(호)를 재산 규모에 따라 6등급으로 나누어 파악하였다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 원효(불교 통합·대중화) : 일심(一心) 사상 · 화쟁(和諍) 사상 , ｢대승기신론소｣·｢금강삼매경론｣·｢십문화쟁론｣ 저술, 무애가와 아미타 신앙(나무아미타불) 전파 의상(해동 화엄종 개창) : 당 유학 후 귀국, ｢화엄일승법계도｣ (일즉다 다즉일), 현세 구복적 관음 신앙 전…"}, {"num": 4, "code": "기004", "stmt": "신라의 골품제는 관등 승진의 상한선뿐만 아니라 가옥의 크기, 수레, 복색 등 일상생활까지 엄격히 규제하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 통일신라의 토지·수취 체제 본문 3 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 5, "code": "기005", "stmt": "신라의 6두품 귀족은 학문 능력이 뛰어나면 최고 관등인 이벌찬이나 집사부 시중(중시)까지 승진할 수 있었다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 통일신라의 토지·수취 체제 본문 3 본문 보기", "tpreview": "한편 신라가 중앙집권 국가로 성장하는 과정에서 지방 족장들을 세력 크기에 따라 편제하며 만들어낸 골품제(骨品制) 는 개인의 능력보다 혈통을 절대시한 폐쇄적 신분 제도였습니다. 왕족인 성골과 진골 아래에 6두품·5두품·4두품이 있었고(3두품부터 1두품까지는 평민화됨), 최고 관등인 1관등 이벌찬부…"}, {"num": 6, "code": "기006", "stmt": "신라의 귀족 회의체인 화백회의는 상대등이 의장을 맡았으며 다수결 원칙에 따라 국가 중대사를 결정하였다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 통일신라의 토지·수취 체제 본문 3 본문 보기", "tpreview": "한편 신라가 중앙집권 국가로 성장하는 과정에서 지방 족장들을 세력 크기에 따라 편제하며 만들어낸 골품제(骨品制) 는 개인의 능력보다 혈통을 절대시한 폐쇄적 신분 제도였습니다. 왕족인 성골과 진골 아래에 6두품·5두품·4두품이 있었고(3두품부터 1두품까지는 평민화됨), 최고 관등인 1관등 이벌찬부…"}, {"num": 7, "code": "기007", "stmt": "원효는 일심 사상과 화쟁 사상을 바탕으로 종파 간 대립을 조화시키고자 하였으며, ｢대승기신론소｣·｢금강삼매경론｣·｢십문화쟁론｣을 저술하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 불교 사상의 통합과 대중화: 원효·의상·혜초와… 본문 4 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 8, "code": "기008", "stmt": "원효는 무애가를 부르며 '나무아미타불'만 외우면 극락정토에 갈 수 있다는 아미타 신앙을 전파하여 불교 대중화에 크게 기여하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 불교 사상의 통합과 대중화: 원효·의상·혜초와… 본문 4 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 9, "code": "기009", "stmt": "의상은 당 유학 후 귀국하여 화엄종을 개창하고 영주 부석사와 양양 낙산사를 창건하였으며, ｢화엄일승법계도｣를 저술하고 관음 신앙을 전파하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 10, "code": "기010", "stmt": "혜초는 8세기 초 인도와 중앙아시아를 순례하고 기행문인 ｢왕오천축국전｣을 남겼으며, 원측은 당나라 현장의 문하에서 유식학을 연구하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 11, "code": "기011", "stmt": "고구려는 수도에 태학을 두어 귀족 자제를 교육하고 지방에 경당을 두어 평민 자제에게 한학과 활쏘기를 가르쳤으며, 백제는 오경박사를 두고 아직기와 왕인을 왜에 파견하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 6 본문 보기", "tpreview": "불교가 정신세계를 이끌었다면, 국가 제도를 움직인 실무 학문은 유학(儒學) 이었습니다. 고구려는 수도에 국립 대학인 태학(소수림왕) 을 세우고 지방에는 평민 자제들에게 경전과 활쏘기를 함께 가르치는 경당(扃堂) 을 두었습니다. 백제는 전문 학자인 오경박사·의박사·역박사 를 두고 일본에 아직기와 …"}, {"num": 12, "code": "기012", "stmt": "통일신라의 강수는 외교 문서인 '청방인문표'로 이름을 떨쳤고, 설총은 이두를 정리하고 신문왕에게 ｢화왕계｣를 지어 바쳤으며, 김대문은 ｢화랑세기｣·｢고승전｣을 저술하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 6 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 13, "code": "기013", "stmt": "최치원은 당의 빈공과에 급제하여 황소의 난 때 ｢토황소격문｣을 지어 이름을 떨치고 문집 ｢계원필경｣을 남겼으며, 신라 말 도선은 풍수지리설을 보급하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 6 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 14, "code": "기014", "stmt": "백제 부여 능산리 절터에서 출토된 백제 금동대향로와 산수무늬 벽돌, 무령왕릉 지석(매지권) 및 고구려 강서대묘 사신도는 도교 사상의 영향을 보여준다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고대 문화 급소 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 15, "code": "기015", "stmt": "고구려 초기의 장군총과 백제 한성기의 서울 석촌동 고분은 모두 계단식 돌무지무덤 양식으로 만들어져 백제 건국 세력이 고구려 계통임을 증명한다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 8 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 16, "code": "기016", "stmt": "신라 마립간 시기에 만들어진 경주 천마총과 황남대총은 굴식 돌방무덤 양식이어서 돌방 벽면에 천마도 등의 화려한 벽화가 그려져 있다.", "ans": false, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 8 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 17, "code": "기017", "stmt": "백제 웅진 시기에 축조된 공주 무령왕릉은 중국 남조(양나라)의 영향을 받은 벽돌무덤(전축분)이다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 8 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 18, "code": "기018", "stmt": "백제 무왕 때 창건된 익산 미륵사지 석탑은 목탑의 양식을 충실히 본뜬 우리나라 현존 최고·최대의 석탑이며, 보수 과정에서 금제 사리봉영기가 발견되었다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 19, "code": "기019", "stmt": "통일신라 경덕왕 때 건립된 불국사 3층 석탑(석가탑) 내부에서는 현존하는 세계 최고의 목판 인쇄물인 ｢무구정광대다라니경｣이 발견되었다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 고대의 유학·도교 문화와 삼국·남북국 고분·석… 본문 8 본문 보기", "tpreview": "통일신라는 문무왕의 삼국 통일 완수 직후 신문왕이 김흠돌의 난 진압, 관료전 지급·녹읍 폐지, 국학 설립, 9주 5소경과 9서당 10정 완비로 중대 전제 왕권을 확립하였습니다."}, {"num": 20, "code": "기020", "stmt": "신라 말기에는 참선을 중시하는 선종(9산선문)이 호족의 후원으로 유행하면서 승려의 사리를 모시는 승탑(쌍봉사 철감선사 승탑 등)과 탑비가 많이 세워졌다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 21, "code": "기021", "stmt": "신라는 지증왕 때 수도 금성(경주)에 동시와 이를 감독하는 동시전을 설치하였고, 통일 이후 효소왕 때 서시와 남시를 추가로 설치하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 9 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 22, "code": "기022", "stmt": "고구려는 장수왕의 평양 천도 이후 지방의 주요 거점에 미혼 평민 자제들에게까지 한학(경전 독서)과 무예(활쏘기)를 함께 가르치는 교육 기관인 경당(扃堂)을 두었다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 9 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 23, "code": "기023", "stmt": "충남 부여 쌍북리 유적에서 출토된 '구구단 목간'과 신라 함안 성산산성에서 출토된 꼬리표(하찰) 목간은 삼국 시대의 실용 학문과 지방 조세 행정을 보여주는 자료이다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 9 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 24, "code": "기024", "stmt": "일본 도다이사 쇼소인에서 발견된 통일신라 민정문서(신라 촌락문서)에는 서원경(청주) 부근 4개 촌락의 인구, 가호 등급, 토지 면적, 소·말 및 뽕나무·잣나무·호두나무 수가 기록되어 있으며 3년마다 촌주가 작성하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 25, "code": "기025", "stmt": "신라 진평왕 때의 승려 원광은 화랑 귀산과 추항에게 세속 5계를 일러주었으며, 고구려를 치기 위해 수나라에 군사를 요청하는 외교 문서인 『걸사표』를 지었다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "불교 사상사에서는 진평왕 대의 승려 원광(圓光) 이 화랑 귀산과 추항에게 세속 5계(사군이충·사친이효·교우이신·임전무퇴·살생유택) 를 내려주고 수나라에 고구려 정벌 군사를 요청하는 외교 문서인 ｢걸사표(乞師表)｣ 를 지었음을 기억해야 합니다. 원효 는 일심(一心)과 화쟁(和諍) 사상을 바탕으로 …"}, {"num": 26, "code": "기026", "stmt": "원효는 『금강삼매경론』, 『대승기신론소』, 『십문화쟁론』을 저술하여 일심(一心)과 화쟁(和諍) 사상을 정립하고, '나무아미타불'만 외우면 극락왕생할 수 있다는 아미타 신앙을 대중화하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 불교 사상의 통합과 대중화: 원효·의상·혜초와… 본문 4 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 27, "code": "기027", "stmt": "의상은 당에 유학하여 지엄 문하에서 화엄학을 공부하고 『화엄일승법계도』를 지었으며, 귀국 후 영주 부석사와 양양 낙산사를 창건하고 현세의 고난 구제를 설파하는 관음 신앙을 전파하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 28, "code": "기028", "stmt": "통일신라의 승려 혜초는 당에서 바닷길로 인도와 중앙아시아를 순례한 뒤 귀국하여 삼국 시대 고승들의 전기를 모은 『해동고승전』을 저술하였다.", "ans": false, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 29, "code": "기029", "stmt": "백제 무왕 때 건립된 익산 미륵사지 석탑은 목탑 양식을 충실히 반영한 우리나라 최고·최대의 석탑으로, 해체 수리 중 좌평 사택적덕의 딸이 사리를 봉안했다는 금제 사리봉영기가 출토되었다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 30, "code": "기030", "stmt": "신라 선덕여왕 때 건립된 경주 분황사 모전 석탑은 돌(안산암)을 벽돌 모양으로 작게 깎아 쌓아 올린 탑으로, 1층 탑신 네 면에 감실을 두고 양옆에 인왕상을 조각하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 고대 시장… 본문 10 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4787,18 +4814,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4949,9 +4972,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

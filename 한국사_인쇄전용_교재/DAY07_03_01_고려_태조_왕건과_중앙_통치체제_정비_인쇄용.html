@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정책</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1269,7 +1269,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 광종의 왕권 강화(노비안검법·과거제)와 성종의 유교 통치 체제 확립</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1331,7 +1331,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 중앙 2성 6부·독자적 회의 기구(도병마사·식목도감)와 지방 5도 양계</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1397,7 +1397,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 태조·정종·광종 사료 단서와 고려 중앙·지방 기구·서경 지역사</h2>
 
         <div id="theory-sec4-p10" class="para-block">
@@ -1507,19 +1507,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY07 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY07 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4431,22 +4438,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4650,24 +4667,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "고려 태조 왕건은 민생 안정을 위해 조세를 10분의 1로 낮추는 취민유도 정책을 펴고 빈민 구제 기구인 흑창을 설치하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 2, "code": "기002", "stmt": "태조 왕건은 호족을 포섭하기 위해 혼인 정책·왕씨 사성·역분전 지급을 시행하고, 호족을 견제하기 위해 사심관 제도(경순왕 김부 임명)와 기인 제도를 실시하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 3, "code": "기003", "stmt": "태조 왕건은 호족 세력의 사병과 경제 기반을 무너뜨리기 위해 노비안검법을 전격 단행하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 4 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 4, "code": "기004", "stmt": "태조 왕건은 서경을 북진 정책의 전진 기지로 삼았으며, 북방의 거란과도 사신과 낙타를 교환하며 우호적인 외교 관계를 맺었다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 5, "code": "기005", "stmt": "태조 왕건은 관리의 규범인 ｢정계｣·｢계백료서｣를 반포하고, 후대 왕들이 지켜야 할 지침으로 불교 숭상·연등회와 팔관회 개최·서경 중시 등을 담은 ｢훈요 10조｣를 남겼다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 6, "code": "기006", "stmt": "고려 광종은 노비안검법(956)을 실시하여 호족이 불법으로 소유한 노비를 양인으로 해방시킴으로써 호족의 세력을 약화시키고 국가 재정을 확충하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 4 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 7, "code": "기007", "stmt": "광종은 후주 출신 귀화인 쌍기의 건의를 수용하여 과거제(958)를 실시하고, 백관의 공복을 자·단·비·녹의 4색으로 제정하여 왕권을 강화하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 8, "code": "기008", "stmt": "광종 때 처음 시행된 고려의 과거제에서는 문관을 뽑는 제술과·명경과와 함께 무관을 뽑는 무과(武科)가 정기적으로 치러졌다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 9, "code": "기009", "stmt": "광종은 스스로 황제를 칭하고 개경을 황도, 서경을 서도라 불렀으며 '광덕'·'준풍' 등의 독자적인 연호를 사용하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 10, "code": "기010", "stmt": "광종은 6두품 출신 유학자 최승로의 ｢시무 28조｣를 수용하여 전국 12목에 지방관을 처음으로 파견하였다.", "ans": false, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 11, "code": "기011", "stmt": "고려 성종은 최승로의 ｢시무 28조｣를 수용하여 유교를 통치 이념으로 삼고, 전국 12목에 처음으로 지방관(목사)을 파견하여 향리 제도를 정비하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 12, "code": "기012", "stmt": "성종은 중앙에 최고 교육 기관인 국자감을 설립하고 지방에 경학박사·의학박사를 파견하였으며, 의창·상평창을 설치하고 최초의 철전인 건원중보를 주조하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 13, "code": "기013", "stmt": "도병마사와 식목도감은 당나라의 3성 6부 제도를 그대로 모방하여 설치한 행정 집행 기구이다.", "ans": false, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 14, "code": "기014", "stmt": "도병마사는 중서문하성의 고관인 재신과 중추원의 추밀이 모여 국방·군사 문제를 논의한 기구로, 원 간섭기 충렬왕 때 도평의사사로 개편되었다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 고려 통치 급소 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 15, "code": "기015", "stmt": "고려의 중추원(추밀원)은 왕명의 출납을 맡은 승선과 군사 기밀을 맡은 추밀로 구성되었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 16, "code": "기016", "stmt": "고려의 대간(臺諫)은 중서문하성의 낭사와 어사대의 관원으로 구성되어 서경, 간쟁, 봉박의 언론 권한을 행사하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 17, "code": "기017", "stmt": "고려의 삼사(三司)는 조선의 3사(사헌부·사간원·홍문관)와 동일하게 언론과 관리 감찰 기능을 수행하였다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 18, "code": "기018", "stmt": "고려는 전국을 5도 양계로 나누어 일반 행정 구역인 5도에는 안찰사를 파견하고, 국경 군사 구역인 양계(북계·동계)에는 병마사를 파견하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 19, "code": "기019", "stmt": "고려 시대에는 전국의 모든 군현에 수령(지방관)이 파견되었으며, 향·부곡·소와 같은 특수 행정 구역은 완전히 소멸하였다.", "ans": false, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "지방 행정 제도는 성종의 12목을 거쳐 거란 침입을 겪은 현종 때 '5도 양계(五道兩界)' 체제로 최종 완성 되었습니다. 개경 주변의 경기와 함께 일반 행정 구역인 5도에는 안찰사(按察使) 를 파견하여 도내의 주·군·현을 순찰하게 하였고, 북방 국경 지대인 북계와 동계의 군사 행정 구역인 양계에…"}, {"num": 20, "code": "기020", "stmt": "고려의 중앙군인 2군 6위는 국가로부터 군인전을 지급받고 군역을 세습하는 직업 군인으로 편성되었으며, 지방군으로는 5도의 주현군과 양계의 주진군이 있었다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 9 본문 보기", "tpreview": "지방 행정 제도는 성종의 12목을 거쳐 거란 침입을 겪은 현종 때 '5도 양계(五道兩界)' 체제로 최종 완성 되었습니다. 개경 주변의 경기와 함께 일반 행정 구역인 5도에는 안찰사(按察使) 를 파견하여 도내의 주·군·현을 순찰하게 하였고, 북방 국경 지대인 북계와 동계의 군사 행정 구역인 양계에…"}, {"num": 21, "code": "기021", "stmt": "고려 태조 왕건은 신하들이 지켜야 할 도리를 훈계하기 위해 『정계』 1권과 『계백료서』 8편을 직접 지어 반포하고 후대 왕들에게 『훈요 10조』를 남겼다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정… 본문 3 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 22, "code": "기022", "stmt": "고려 태조는 발해를 멸망시킨 거란이 사신과 낙타 50마리를 보내오자 사신을 섬으로 유배 보내고 낙타를 개경 만부교 아래에서 굶겨 죽이는 강경한 북진·반거란 정책을 펼쳤다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 23, "code": "기023", "stmt": "고려 태조는 귀순한 신라 경순왕 김부에게 경주를 식읍으로 하사하고 최초의 사심관으로 임명하여 부호장 이하 향리직 추천과 출신 지역 통제를 맡겼다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 24, "code": "기024", "stmt": "고려 태조는 후삼국 통일 과정에서 공을 세운 공신들에게 인품과 공로를 기준으로 역분전(役分田)을 지급하고 빈민 구휼을 위해 흑창(黑倉)을 설치하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 10 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 25, "code": "기025", "stmt": "고려 제3대 정종은 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성하였다.", "ans": true, "tid": "theory-sec4-p11", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 태조·정종… 본문 11 본문 보기", "tpreview": "뒤이어 제3대 정종 은 최광윤의 급보를 받고 거란의 침입에 대비하기 위해 중앙군 조직인 광군사(光軍司)를 설치하고 광군 30만 명을 편성 하였으며, 제4대 광종 은 후주 귀화인 쌍기 의 건의로 과거제(958년) 를 실시하고 채인범 등 중국 지식인을 적극 초빙( 채인범 묘지명 이 광종 대 과거제·…"}, {"num": 26, "code": "기026", "stmt": "고려 제4대 광종은 호족의 경제·군사적 기반을 약화시키기 위해 노비안검법(956)을 실시하고, 후주 귀화인 쌍기의 건의를 받아들여 과거제(958)를 시행하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 27, "code": "기027", "stmt": "고려 제6대 성종은 최승로의 시무 28조를 수용하여 유교 정치 이념을 확립하고, 전국 주요 거점에 12목을 설치하여 최초로 지방관을 파견하였다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 광종의 왕권 강화 본문 6 본문 보기", "tpreview": "고조선은 청동기 문화를 배경으로 단군왕검이 건국(제정일치)하였고, 기원전 2세기 위만의 집권 이후 철기 문화 수용과 중계 무역으로 번영하였으며 범금 8조로 사회 질서를 유지하였습니다."}, {"num": 28, "code": "기028", "stmt": "고려의 중추원(후에 추밀원)은 군사 기밀을 담당하는 2품 이상의 추밀과 왕명 출납을 담당하는 3품의 승선으로 구성되었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 중앙 2성 6부·독자적 회의 기구 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 29, "code": "기029", "stmt": "고려의 어사대는 관리의 감찰과 풍속 교정을 담당하였으며, 중서문하성의 3품 이하 낭사와 함께 대간(臺諫)을 이루어 간쟁·봉박·서경권을 행사하였다.", "ans": true, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 30, "code": "기030", "stmt": "고려의 삼사(三司)는 사헌부, 사간원, 홍문관을 합쳐 부르는 언론 기구로서 국왕에게 경연을 진강하고 인사를 심사하는 서경권을 행사하였다.", "ans": false, "tid": "theory-sec3-tbl2", "tlabel": "📖 기본서 3. 중앙 2성 6부·독자적 회의 기구 핵심 비교표 바로가기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4786,18 +4813,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4948,9 +4971,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

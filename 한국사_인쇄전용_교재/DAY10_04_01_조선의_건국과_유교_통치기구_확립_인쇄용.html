@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 조선의 건국(과전법·정도전)과 태종·세종의 통치 체제 확립</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1270,7 +1270,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 세조의 직전법과 성종의 ｢경국대전｣ 완성·수조권 변천</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1332,7 +1332,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 조선의 중앙 관제(언론 3사)와 지방 8도·군사·과거 제도</h2>
         <div id="theory-sec3-p6" class="para-block">
           <p class="prose-body">
@@ -1393,7 +1393,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 조선 초기 왕대별 편찬·과학 사업과 관청 별칭(은대·총마)·궁궐·도자기</h2>
 
         <div id="theory-sec4-p8" class="para-block">
@@ -1509,19 +1509,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY10 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY10 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4933,22 +4940,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -5152,24 +5169,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "신진사대부 세력은 조선 건국 직전인 1391년 과전법을 단행하여 권문세족의 농장을 몰수하고 경기 지방에 한해 수조권을 지급하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 조선 건국과 정도전 : 위화도 회군(1388) ➔ 과전법(1391, 경기 한정) ➔ 조선 건국(1392) ➔ 한양 천도(1394) / 정도전: ｢조선경국전｣·｢경제문감｣(재상 중심 정치)·｢불씨잡변｣(불교 비판) 태종(이방원) : 제1·2차 왕자의 난, 6조 직계제 (왕권 강화…"}, {"num": 2, "code": "기002", "stmt": "정도전은 ｢불씨잡변｣을 저술하여 불교를 비판하고, ｢조선경국전｣과 ｢경제문감｣을 통해 재상 중심의 정치를 주장하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 조선 건국과 정도전 : 위화도 회군(1388) ➔ 과전법(1391, 경기 한정) ➔ 조선 건국(1392) ➔ 한양 천도(1394) / 정도전: ｢조선경국전｣·｢경제문감｣(재상 중심 정치)·｢불씨잡변｣(불교 비판) 태종(이방원) : 제1·2차 왕자의 난, 6조 직계제 (왕권 강화…"}, {"num": 3, "code": "기003", "stmt": "태종은 사병을 혁파하고 6조 판서가 의정부를 거치지 않고 국왕에게 직접 보고하는 6조 직계제를 실시하여 왕권을 강화하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 4, "code": "기004", "stmt": "태종은 조세와 군역 자원을 파악하기 위해 16세 이상 남정에게 호패를 차게 하는 호패법을 실시하고 신문고를 설치하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 세조의 왕권 강화 : 계유정난(1453) ➔ 6조 직계제 부활 , 집현전·경연 폐지 , 직전법(현직 관리에게만 수조권 지급, 수신전·휼양전 폐지) 실시, 진관 체제 확립, ｢경국대전｣ 편찬 착수 성종의 체제 완성 : ｢경국대전｣ 완성·반포(1485) , 집현전을 계승한 홍문관 …"}, {"num": 5, "code": "기005", "stmt": "세종은 왕권 강화를 위해 6조 직계제를 고수하고 집현전과 경연을 전면 폐지하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 세조의 직전법과 성종의 ｢경국대전｣ 완성·수조… 본문 4 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 6, "code": "기006", "stmt": "세종은 최윤덕을 파견하여 압록강 유역에 4군을 설치하고, 김종서를 파견하여 두만강 유역에 6진을 개척하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 조선의 건국 본문 3 본문 보기", "tpreview": "태종이 다져 놓은 안정된 왕권 위에서 4대 세종(世宗) 은 왕권과 신권의 조화를 추구하는 유교 민본 정치의 황금기를 열었습니다. 세종은 6조 판서가 업무를 먼저 의정부의 3정승에게 보고하면 정승들이 합의로 심의한 뒤 국왕에게 올려 재가를 받는 '의정부 서사제(議政府署事制)' 를 실시하였고, 궁중…"}, {"num": 7, "code": "기007", "stmt": "세종은 이종무를 보내 쓰시마섬(대마도)을 정벌한 뒤, 왜의 요청으로 부산포·제포·염포 등 3포를 개항하고 계해약조를 체결하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 조선의 건국 본문 3 본문 보기", "tpreview": "태종이 다져 놓은 안정된 왕권 위에서 4대 세종(世宗) 은 왕권과 신권의 조화를 추구하는 유교 민본 정치의 황금기를 열었습니다. 세종은 6조 판서가 업무를 먼저 의정부의 3정승에게 보고하면 정승들이 합의로 심의한 뒤 국왕에게 올려 재가를 받는 '의정부 서사제(議政府署事制)' 를 실시하였고, 궁중…"}, {"num": 8, "code": "기008", "stmt": "세종은 토지 비옥도에 따라 6등급(전분6등법), 풍흉에 따라 9등급(연분9등법)으로 나누어 전세를 거두는 공법(貢法)을 제정하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 조선의 건국 본문 3 본문 보기", "tpreview": "태종이 다져 놓은 안정된 왕권 위에서 4대 세종(世宗) 은 왕권과 신권의 조화를 추구하는 유교 민본 정치의 황금기를 열었습니다. 세종은 6조 판서가 업무를 먼저 의정부의 3정승에게 보고하면 정승들이 합의로 심의한 뒤 국왕에게 올려 재가를 받는 '의정부 서사제(議政府署事制)' 를 실시하였고, 궁중…"}, {"num": 9, "code": "기009", "stmt": "세종 대에는 우리 풍토에 맞는 농서인 ｢농사직설｣과 한양을 기준으로 천체 운동을 계산한 역법서인 ｢칠정산｣이 편찬되었다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 조선의 건국 본문 3 본문 보기", "tpreview": "태종이 다져 놓은 안정된 왕권 위에서 4대 세종(世宗) 은 왕권과 신권의 조화를 추구하는 유교 민본 정치의 황금기를 열었습니다. 세종은 6조 판서가 업무를 먼저 의정부의 3정승에게 보고하면 정승들이 합의로 심의한 뒤 국왕에게 올려 재가를 받는 '의정부 서사제(議政府署事制)' 를 실시하였고, 궁중…"}, {"num": 10, "code": "기010", "stmt": "세조는 과전법의 세습 토지인 수신전과 휼양전을 폐지하고, 오직 현직 관리에게만 수조권을 지급하는 직전법을 실시하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 세조의 직전법과 성종의 ｢경국대전｣ 완성·수조… 본문 4 본문 보기", "tpreview": "세종 사후 문종이 일찍 승하하고 12세의 어린 단종 이 즉위하여 김종서·황보인 등 의정부 대신들에게 권력이 집중되자, 수양대군이 1453년 정변( 계유정난 )을 일으켜 김종서 등을 제거하고 단종을 몰아낸 뒤 7대 세조(世祖) 로 즉위하였습니다. 세조는 신하들의 권력을 누르고 왕권을 강화하기 위해…"}, {"num": 11, "code": "기011", "stmt": "세조 때 확립된 지방 방어 체제인 진관 체제는 각 도의 거점 주진 밑에 여러 고을을 묶어 수령이 독자적으로 방어하는 체제이다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 세조의 직전법과 성종의 ｢경국대전｣ 완성·수조… 본문 4 본문 보기", "tpreview": "세종 사후 문종이 일찍 승하하고 12세의 어린 단종 이 즉위하여 김종서·황보인 등 의정부 대신들에게 권력이 집중되자, 수양대군이 1453년 정변( 계유정난 )을 일으켜 김종서 등을 제거하고 단종을 몰아낸 뒤 7대 세조(世祖) 로 즉위하였습니다. 세조는 신하들의 권력을 누르고 왕권을 강화하기 위해…"}, {"num": 12, "code": "기012", "stmt": "성종은 집현전을 계승한 홍문관을 설치하고, 조선의 최고 기본 법전인 ｢경국대전｣을 완성하여 반포하였다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 13, "code": "기013", "stmt": "성종 때 시행된 관수관급제는 현직 관리가 농민에게서 직접 조세를 거두도록 권한을 강화한 제도이다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 14, "code": "기014", "stmt": "조선의 3사는 사헌부, 사간원, 홍문관으로 구성되어 왕권과 대신의 권력 독점을 견제하는 언론 기능을 담당하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 조선의 중앙 관제 본문 6 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 15, "code": "기015", "stmt": "의금부는 조선 시대 관리들의 비리를 감찰하고 5품 이하 관리 임명에 서경권을 행사하던 언론 기구였다.", "ans": false, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 10 본문 보기", "tpreview": "아울러 중앙 관청 문항에서는 승정원(承政院) 이 국왕의 비서 기관으로서 왕명 출납을 맡아 이·호·예·병·형·공 6조와 직결되는 6승지(도승지·좌승지·우승지·좌부승지·우부승지·동부승지) 를 두었으며, 별칭으로 '은대(銀臺)' 또는 '후원(喉院)'이라 불려 ｢은대계회도｣·｢은대조례｣ 가 사료로 제시…"}, {"num": 16, "code": "기016", "stmt": "승정원은 도승지 등 6승지가 왕명의 출납을 담당하던 국왕 비서 기관으로 ｢승정원일기｣를 기록하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 조선의 중앙 관제 본문 6 본문 보기", "tpreview": "｢경국대전｣으로 법제화된 조선의 중앙 정치 기구는 왕권과 신권의 조화와 견제를 정교하게 구현하였습니다. 최고 관부인 의정부(영의정·좌의정·우의정) 가 재상들의 합의로 국정을 총괄하고, 6조(이·호·예·병·형·공조) 가 실무 행정을 분담 집행하였습니다. 반면 국왕의 권력을 직접 뒷받침하는 기구로는…"}, {"num": 17, "code": "기017", "stmt": "한성부는 수도 한양의 행정과 치안을 담당함과 동시에 토지와 가옥에 관한 소송을 판결하는 사법 기능을 겸하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 조선의 중앙 관제 본문 6 본문 보기", "tpreview": "｢경국대전｣으로 법제화된 조선의 중앙 정치 기구는 왕권과 신권의 조화와 견제를 정교하게 구현하였습니다. 최고 관부인 의정부(영의정·좌의정·우의정) 가 재상들의 합의로 국정을 총괄하고, 6조(이·호·예·병·형·공조) 가 실무 행정을 분담 집행하였습니다. 반면 국왕의 권력을 직접 뒷받침하는 기구로는…"}, {"num": 18, "code": "기018", "stmt": "조선은 고려와 마찬가지로 주현보다 지방관이 파견되지 않는 속현이 더 많았으며 향·부곡·소를 그대로 유지하였다.", "ans": false, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 조선 초기 급소 본문 보기", "tpreview": "60회부터 69회까지 조선 초기 급소 왕대별 편찬·과학 : 태조( 천상열차분야지도 , 정도전 ｢조선경국전｣·｢경제문감｣·｢불씨잡변｣) / 태종( 주자소 계미자, 혼일강리역대국도지도, 경성·경원 무역소 ) / 세종( 갑인자, 농사직설, 삼강행실도, 박연 아악 정리 ) / 문종( ｢고려사｣[기전체]…"}, {"num": 19, "code": "기019", "stmt": "조선 시대 지방 사족들은 유향소(향청)를 통해 수령을 보좌하고 향리를 감찰하였으며, 중앙 정부는 서울에 경재소를 두어 유향소를 통제하였다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 조선 초기 급소 본문 보기", "tpreview": "60회부터 69회까지 조선 초기 급소 왕대별 편찬·과학 : 태조( 천상열차분야지도 , 정도전 ｢조선경국전｣·｢경제문감｣·｢불씨잡변｣) / 태종( 주자소 계미자, 혼일강리역대국도지도, 경성·경원 무역소 ) / 세종( 갑인자, 농사직설, 삼강행실도, 박연 아악 정리 ) / 문종( ｢고려사｣[기전체]…"}, {"num": 20, "code": "기020", "stmt": "조선 시대 과거 시험에서는 문과와 잡과만 시행되었고 무과(武科)는 끝까지 실시되지 않았다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 언론 3사 vs 왕권 강화 기구 : 3사 = 사헌부 (감찰) + 사간원 (간쟁) + 홍문관 (경연·자문, 옥당) / 왕권 보좌 = 승정원 (왕명 출납) + 의금부 (왕 직속 특별 사법) 고려 vs 조선 지방 제도 비교 : 조선은 전국 8도(관찰사) 일원화, 모든 군현에 수령 파…"}, {"num": 21, "code": "기021", "stmt": "조선 건국을 주도한 정도전은 재상 중심의 정치를 강조한 『조선경국전』과 『경제문감』, 불교의 폐단을 비판한 『불씨잡변』을 저술하고 경복궁의 주요 전각 이름을 지었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 조선 건국과 정도전 : 위화도 회군(1388) ➔ 과전법(1391, 경기 한정) ➔ 조선 건국(1392) ➔ 한양 천도(1394) / 정도전: ｢조선경국전｣·｢경제문감｣(재상 중심 정치)·｢불씨잡변｣(불교 비판) 태종(이방원) : 제1·2차 왕자의 난, 6조 직계제 (왕권 강화…"}, {"num": 22, "code": "기022", "stmt": "태조 이성계 때에는 새 왕조의 천명과 정통성을 과시하기 위해 고구려 평양성 천문도 탁본을 바탕으로 돌에 새긴 천문도인 『천상열차분야지도』(1395)를 제작하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 8 본문 보기", "tpreview": "제60회부터 제69회까지의 조선 초기 문항에서는 태조·태종·세종·문종·세조·성종 각 국왕의 재위 기간에 이루어진 편찬·과학·제도 사업 과 중앙 관청의 별칭(승정원=은대, 사헌부 감찰=총마) , 조선의 주요 궁궐(경복궁·창덕궁·경희궁·경운궁) , 그리고 고려부터 조선 후기까지의 도자기 변천사 가 …"}, {"num": 23, "code": "기023", "stmt": "태종은 6조 직계제를 실시하고 사병 혁파, 사간원 독립, 호패법과 신문고 설치를 단행하였으며, 주자소를 설치해 구리 활자인 계미자(1403)를 주조하고 여진과의 교역을 위해 경성·경원에 무역소를 설치하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 24, "code": "기024", "stmt": "세종은 의정부 서사제와 집현전(경연·서연)을 운영하고, 정초·변효문 등에게 우리 풍토에 맞는 최초의 농서인 『농사직설』을, 설순 등에게 유교 윤리서인 『삼강행실도』를 편찬하게 하였으며 박연으로 하여금 아악을 정리하게 하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 조선의 건국 본문 3 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 25, "code": "기025", "stmt": "조선 문종 때에는 세종 대부터 편찬해 오던 기전체 역사서 『고려사』와 편년체 역사서 『고려사절요』가 최종 완성되었고 신기전을 발사하는 화차가 대량 제작되었다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 9 본문 보기", "tpreview": "뒤이어 제5대 문종 때에는 세종 대부터 편찬해 오던 기전체 정사인 ｢고려사｣(김종서·정인지 등, 1451년) 와 편년체 역사서인 ｢고려사절요｣(김종서 등, 1452년) 가 최종 완성되었고 화차(신기전)가 대량 제작되었습니다. 계유정난(1453년)과 단종 복위 운동(사육신 사건, 1456년)을 제…"}, {"num": 26, "code": "기026", "stmt": "세조는 계유정난으로 권력을 잡고 즉위한 뒤 집현전과 경연을 폐지하고 6조 직계제를 부활시켰으며, 함길도 이징옥의 난과 이시애의 난을 진압하고 유향소를 폐지하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 9 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 27, "code": "기027", "stmt": "성종은 집현전을 계승한 홍문관을 설치해 경연을 부활시키고 유향소를 복설하였으며, 『경국대전』을 반포하고 『동국통감』, 『동국여지승람』, 『악학궤범』, 『국조오례의』, 『해동제국기』를 편찬하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 9 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 28, "code": "기028", "stmt": "조선의 승정원(承政院)은 국왕의 비서 기관으로서 왕명 출납을 관장하며 6조의 업무를 분담하는 도승지·좌승지 등 6승지를 두었고, 별칭으로 '은대(銀臺)'라 불렸다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 10 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 29, "code": "기029", "stmt": "조선의 사헌부(司憲府)는 백관을 감찰하고 기강과 풍속을 바로잡았으며, 사간원과 함께 5품 이하 관리 임명에 대한 서경권(署經權)을 행사하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 조선 초기… 본문 10 본문 보기", "tpreview": "아울러 중앙 관청 문항에서는 승정원(承政院) 이 국왕의 비서 기관으로서 왕명 출납을 맡아 이·호·예·병·형·공 6조와 직결되는 6승지(도승지·좌승지·우승지·좌부승지·우부승지·동부승지) 를 두었으며, 별칭으로 '은대(銀臺)' 또는 '후원(喉院)'이라 불려 ｢은대계회도｣·｢은대조례｣ 가 사료로 제시…"}, {"num": 30, "code": "기030", "stmt": "조선의 의금부는 시정을 논집하고 관리의 비리를 감찰하며 국왕에게 경연을 진강하는 언론 3사 중 하나였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 조선의 중앙 관제 본문 6 본문 보기", "tpreview": "｢경국대전｣으로 법제화된 조선의 중앙 정치 기구는 왕권과 신권의 조화와 견제를 정교하게 구현하였습니다. 최고 관부인 의정부(영의정·좌의정·우의정) 가 재상들의 합의로 국정을 총괄하고, 6조(이·호·예·병·형·공조) 가 실무 행정을 분담 집행하였습니다. 반면 국왕의 권력을 직접 뒷받침하는 기구로는…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -5288,18 +5315,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -5450,9 +5473,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

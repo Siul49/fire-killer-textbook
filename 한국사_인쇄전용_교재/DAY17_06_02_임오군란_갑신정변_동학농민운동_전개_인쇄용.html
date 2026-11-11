@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 개화 정책(통리기무아문·별기군)과 위정척사 4단계, 임오군란(1882)과 청의 간섭</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1301,7 +1301,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 개화파의 분화와 갑신정변(1884, 14개조 정강·톈진 조약), 거문도 사건과 중립화론</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1322,7 +1322,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 반봉건·반외세의 대서사시: 1894년 동학 농민 운동의 4단계 전개와 역사적 의의</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1382,7 +1382,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 1880년대 사절단(영선사·보빙사·박정양), 근대 교육·병원·상회사와 동학 경전·전개</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1482,19 +1482,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY17 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY17 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4206,22 +4213,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4425,24 +4442,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "조선 정부는 1880년 개화 정책을 총괄 추진하기 위해 통리기무아문(12사)을 설치하고, 1881년 신식 군대인 별기군을 창설하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 2, "code": "기002", "stmt": "1881년 청나라 톈진에 파견된 조사 시찰단은 귀국 후 근대식 무기 제조 공장인 기기창을 설립하였다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 3, "code": "기003", "stmt": "1870년대 강화도 조약 체결 당시 최익현은 일본이 서양 오랑캐와 다름없다는 왜양일체론(5불가소)을 내세우며 개항에 반대하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 4, "code": "기004", "stmt": "1881년 영남 유생 이만손 등은 김홍집이 가져온 『조선책략』 유포와 미국과의 수교 추진에 반발하여 영남 만인소를 올렸다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 5, "code": "기005", "stmt": "1882년 임오군란은 신식 군대인 별기군에 대한 우대와 구식 군인에 대한 13개월 급료 체불 및 모래 섞인 쌀 지급에 반발하여 일어났다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 6, "code": "기006", "stmt": "임오군란 당시 재집권한 흥선대원군은 통리기무아문과 별기군을 폐지하고 5군영과 삼군부를 부활시켰다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 7, "code": "기007", "stmt": "임오군란의 결과 체결된 제물포 조약으로 일본 상인의 내륙 통상권이 허용되었고, 조·청 상민 수륙 무역 장정으로 청군의 공사관 경비병 주둔이 허용되었다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 갑신정변(1884, 급진 개화파)과 14개조 혁신 정강 : 우정총국 개국 축하연 의거 ➔ ① 청에 잡혀간 대원군 귀환·조공 허례 폐지 / ② 문벌 폐지·인민 평등권 제정 / ③ 지조법 개혁 / ④ 국가 재정의 호조(戶曹) 일원화 / ⑤ 혜상공국·규장각 폐지 및 내각 제도(입헌군…"}, {"num": 8, "code": "기008", "stmt": "김옥균·박영효·홍영식·서광범 등 급진 개화파는 청·프 전쟁으로 조선 주둔 청군 일부가 철수한 틈을 타 우정총국 개국 축하연을 이용해 갑신정변(1884)을 일으켰다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 개화파의 분화와 갑신정변 본문 3 본문 보기", "tpreview": "임오군란 이후 청나라의 내정 간섭과 상권 침탈이 심화되자, 개화파 내부에서는 청에 대한 태도와 개혁 속도를 둘러싸고 노선이 갈라졌습니다. 김홍집·김윤식·어윤중 등 온건 개화파 는 청과의 전통적 사대 우호 관계를 유지하면서 서양의 과학 기술만 점진적으로 수용하자는 동도서기론(東道西器論, 청의 양무…"}, {"num": 9, "code": "기009", "stmt": "갑신정변 당시 발표된 14개조 혁신 정강에는 청에 대한 조공 허례 폐지, 문벌 폐지와 인민 평등권 제정, 지조법 개혁, 혜상공국 폐지, 국가 재정의 호조 일원화가 포함되었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 갑신정변(1884, 급진 개화파)과 14개조 혁신 정강 : 우정총국 개국 축하연 의거 ➔ ① 청에 잡혀간 대원군 귀환·조공 허례 폐지 / ② 문벌 폐지·인민 평등권 제정 / ③ 지조법 개혁 / ④ 국가 재정의 호조(戶曹) 일원화 / ⑤ 혜상공국·규장각 폐지 및 내각 제도(입헌군…"}, {"num": 10, "code": "기010", "stmt": "갑신정변 직후 청과 일본이 체결한 한성 조약에 따라 조선에서 청·일 양국 군대가 공동 철수하고 장래 조선 파병 시 상호 사전 통보하기로 합의하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 동학 농민 운동(1894) 4단계 순서 : ① 고부 봉기 (조병갑 만석보 탐학 ➔ 전봉준 사발통문 ➔ 안핵사 이용태 탄압) ② 제1차 봉기(반봉건) : 백산 봉기(4대 강령) ➔ 황토현·황룡촌 전투 승리 ➔ 전주성 점령 ③ 전주 화약과 집강소 자치 : 청·일 파병 ➔ 전주 화약…"}, {"num": 11, "code": "기011", "stmt": "1885년 영국이 러시아의 남하를 견제한다는 구실로 거문도를 불법 점령하자, 독일 부영사 부들러와 유길준은 조선 중립화론을 제기하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 동학 농민 운동(1894) 4단계 순서 : ① 고부 봉기 (조병갑 만석보 탐학 ➔ 전봉준 사발통문 ➔ 안핵사 이용태 탄압) ② 제1차 봉기(반봉건) : 백산 봉기(4대 강령) ➔ 황토현·황룡촌 전투 승리 ➔ 전주성 점령 ③ 전주 화약과 집강소 자치 : 청·일 파병 ➔ 전주 화약…"}, {"num": 12, "code": "기012", "stmt": "1889년 함경도 관찰사 조병식 등은 흉년과 쌀 유출을 막기 위해 조·일 통상 장정에 근거하여 방곡령을 선포하였으나 일본의 항의로 오히려 배상금을 물어주었다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 반봉건·반외세의 대서사시: 1894년 동학 농… 본문 5 본문 보기", "tpreview": "개항 이후 일본 상인들의 쌀 대량 유출과 영국산 면제품 유입으로 농촌 경제가 파탄(1883년 조·일 통상 장정에 근거해 1889년 함경도 관찰사 조병식 등이 곡물 유출을 막는 방곡령 을 선포했으나 1개월 전 통보 규정을 트집 잡은 일본에 오히려 배상금 지불)나고 민씨 정권의 매관매직과 수탈이 극…"}, {"num": 13, "code": "기013", "stmt": "동학 교도들은 1893년 충북 보은 집회에서 교조 신원을 넘어 '척왜양창의'와 '보국안민'의 정치적 구호를 내걸었다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 반봉건·반외세의 대서사시: 1894년 동학 농… 본문 5 본문 보기", "tpreview": "개항 이후 일본 상인들의 쌀 대량 유출과 영국산 면제품 유입으로 농촌 경제가 파탄(1883년 조·일 통상 장정에 근거해 1889년 함경도 관찰사 조병식 등이 곡물 유출을 막는 방곡령 을 선포했으나 1개월 전 통보 규정을 트집 잡은 일본에 오히려 배상금 지불)나고 민씨 정권의 매관매직과 수탈이 극…"}, {"num": 14, "code": "기014", "stmt": "1894년 1월 고부 군수 조병갑의 만석보 불법 수세 등 탐학에 맞서 전봉준 등이 사발통문을 돌려 고부 관아를 점령한 고부 농민 봉기가 일어났다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 반봉건·반외세의 대서사시: 1894년 동학 농… 본문 5 본문 보기", "tpreview": "개항 이후 일본 상인들의 쌀 대량 유출과 영국산 면제품 유입으로 농촌 경제가 파탄(1883년 조·일 통상 장정에 근거해 1889년 함경도 관찰사 조병식 등이 곡물 유출을 막는 방곡령 을 선포했으나 1개월 전 통보 규정을 트집 잡은 일본에 오히려 배상금 지불)나고 민씨 정권의 매관매직과 수탈이 극…"}, {"num": 15, "code": "기015", "stmt": "제1차 봉기에 나선 동학 농민군은 백산에서 4대 강령과 격문을 발표한 뒤 황토현 전투와 황룡촌 전투에서 승리하고 전주성을 점령하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 반봉건·반외세의 대서사시: 1894년 동학 농… 본문 5 본문 보기", "tpreview": "개항 이후 일본 상인들의 쌀 대량 유출과 영국산 면제품 유입으로 농촌 경제가 파탄(1883년 조·일 통상 장정에 근거해 1889년 함경도 관찰사 조병식 등이 곡물 유출을 막는 방곡령 을 선포했으나 1개월 전 통보 규정을 트집 잡은 일본에 오히려 배상금 지불)나고 민씨 정권의 매관매직과 수탈이 극…"}, {"num": 16, "code": "기016", "stmt": "동학 농민군은 공주 우금치 전투에서 패배한 직후 정부와 전주 화약을 체결하고 전라도 각지에 자치 기구인 집강소를 설치하였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 1880년대·동학 급소 본문 보기", "tpreview": "60회부터 69회까지 1880년대·동학 급소 군제 개편 & 대미·대청 사절 : 5군영 ➔ 2영(무위영·장어영, 1881) + 별기군 / 청 영선사 김윤식(톈진 기기국 ➔ 1883 기기창 설치) / 미국 보빙사(1883, 민영익·홍영식·서광범·유길준) / 초대 주미 전권 공사 박정양(1887, 청…"}, {"num": 17, "code": "기017", "stmt": "전주 화약 체결 이후 동학 농민군은 집강소를 통해 노비 문서 소각, 청상과부 개가 허용, 토지 평균 분작 등을 담은 폐정 개혁안 12조를 실천하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 1880년대·동학 급소 본문 보기", "tpreview": "60회부터 69회까지 1880년대·동학 급소 군제 개편 & 대미·대청 사절 : 5군영 ➔ 2영(무위영·장어영, 1881) + 별기군 / 청 영선사 김윤식(톈진 기기국 ➔ 1883 기기창 설치) / 미국 보빙사(1883, 민영익·홍영식·서광범·유길준) / 초대 주미 전권 공사 박정양(1887, 청…"}, {"num": 18, "code": "기018", "stmt": "일본군이 경복궁을 기습 점령하고 청일 전쟁을 도발하자, 동학 농민군은 외세 축출을 내걸고 남접(전봉준)과 북접(손병희)이 논산에서 합류하여 제2차 봉기에 나섰다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 1880년대·동학 급소 본문 보기", "tpreview": "60회부터 69회까지 1880년대·동학 급소 군제 개편 & 대미·대청 사절 : 5군영 ➔ 2영(무위영·장어영, 1881) + 별기군 / 청 영선사 김윤식(톈진 기기국 ➔ 1883 기기창 설치) / 미국 보빙사(1883, 민영익·홍영식·서광범·유길준) / 초대 주미 전권 공사 박정양(1887, 청…"}, {"num": 19, "code": "기019", "stmt": "제2차 봉기에 나선 동학 농민군은 공주 우금치 전투에서 일본군·관군 연합군을 격파하고 한양으로 입성하였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 1880년대·동학 급소 본문 보기", "tpreview": "60회부터 69회까지 1880년대·동학 급소 군제 개편 & 대미·대청 사절 : 5군영 ➔ 2영(무위영·장어영, 1881) + 별기군 / 청 영선사 김윤식(톈진 기기국 ➔ 1883 기기창 설치) / 미국 보빙사(1883, 민영익·홍영식·서광범·유길준) / 초대 주미 전권 공사 박정양(1887, 청…"}, {"num": 20, "code": "기020", "stmt": "동학 농민 운동의 반봉건 개혁 요구는 갑오개혁에 반영되어 신분제 폐지 등으로 이어졌고, 잔여 농민군은 이후 항일 의병 투쟁에 합류하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 1880년대·동학 급소 본문 보기", "tpreview": "60회부터 69회까지 1880년대·동학 급소 군제 개편 & 대미·대청 사절 : 5군영 ➔ 2영(무위영·장어영, 1881) + 별기군 / 청 영선사 김윤식(톈진 기기국 ➔ 1883 기기창 설치) / 미국 보빙사(1883, 민영익·홍영식·서광범·유길준) / 초대 주미 전권 공사 박정양(1887, 청…"}, {"num": 21, "code": "기021", "stmt": "1880년 제2차 수신사 김홍집이 『조선책략』을 들여온 직후 조선 정부는 개화 정책 총괄 기구로 통리기무아문(12사)을 설치하고, 1881년 기존 5군영을 무위영과 장어영의 2영으로 통폐합하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 22, "code": "기022", "stmt": "1881년 청나라 톈진에 파견된 영선사 김윤식 일행은 근대 무기·화약 제조술을 습득하고 돌아와 1883년 한성 삼청동에 최초의 근대식 무기 공장인 기기창(機器廠)을 설립하는 데 기여하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 1880년대 개화 정책 및 1894년 동학 농민 운동 문항에서는 통리기무아문 설치(1880. 12.) 직후의 군제 개편(2영[무위영·장어영] 통폐합 및 별기군 창설) , 3대 해외 사절단(조사 시찰단·영선사·보빙사)과 초대 주미 공사 박정양(｢미속습유｣) , 1880년…"}, {"num": 23, "code": "기023", "stmt": "1883년 조미 수호 통상 조약 비준서 교환과 미국 공사 부임에 대한 답례로 미국에 파견된 보빙사(민영익·홍영식·서광범·유길준 등)는 아서 대통령을 예방하고 근대 우편·교육 제도를 시찰하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 1880년대 개화 정책 및 1894년 동학 농민 운동 문항에서는 통리기무아문 설치(1880. 12.) 직후의 군제 개편(2영[무위영·장어영] 통폐합 및 별기군 창설) , 3대 해외 사절단(조사 시찰단·영선사·보빙사)과 초대 주미 공사 박정양(｢미속습유｣) , 1880년…"}, {"num": 24, "code": "기024", "stmt": "1887년 고종은 청나라가 사대 의전을 강요하며 내세운 '영약삼단'의 간섭을 무릅쓰고 박정양을 초대 주미 전권 공사로 파견하여 워싱턴에 상주 공사관을 개설하였으며, 박정양은 미국 문물 시찰기인 『미속습유』를 남겼다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 25, "code": "기025", "stmt": "1881년 일본의 근대 시설과 행정 제도를 파악하기 위해 박정양·어윤중·홍영식 등을 청나라 베이징에 조사 시찰단(신사유람단)으로 암행 파견하였다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 개화 기구 및 위정척사 4단계 : 통리기무아문(12사) · 별기군 · 조사 시찰단(일) · 영선사(청 ➔ 기기창) · 박문국(한성순보) / 위정척사: 60년대 이항로(통상 반대·척화주전) ➔ 70년대 최익현(개항 반대·왜양일체론) ➔ 80년대 이만손(영남 만인소·조선책략 비판)…"}, {"num": 26, "code": "기026", "stmt": "1883년에는 독일인 고문 묄렌도르프의 건의로 설립된 최초의 관립 영어 통역 학교인 동문학(同文學)과 함경도 덕원 주민·관민이 세운 최초의 근대 사립 학교인 원산 학사(元山學舍)가 문을 열었다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 8 본문 보기", "tpreview": "1880년대 근대 문물 수용에서도 시기 구분이 매우 중요합니다. 1883년에는 전환국(화폐 주조)·박문국(한성순보)·기기창(무기 제조)과 함께 독일인 고문 묄렌도르프의 건의로 외아문 산하에 최초의 관립 영어 통역관 양성 학교인 동문학(同文學, 1883년) 과 함경도 덕원 주민·상인들이 세운 최초…"}, {"num": 27, "code": "기027", "stmt": "1886년 설립된 관립 근대 학교인 육영 공원(育英公院)은 미국인 교사 헐버트 등을 초빙하여 근대 학문을 가르쳤으며, 헐버트는 육영 공원 교재로 최초의 순한글 세계 지리 교과서인 『사민필지』를 집필하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 8 본문 보기", "tpreview": "1880년대 근대 문물 수용에서도 시기 구분이 매우 중요합니다. 1883년에는 전환국(화폐 주조)·박문국(한성순보)·기기창(무기 제조)과 함께 독일인 고문 묄렌도르프의 건의로 외아문 산하에 최초의 관립 영어 통역관 양성 학교인 동문학(同文學, 1883년) 과 함경도 덕원 주민·상인들이 세운 최초…"}, {"num": 28, "code": "기028", "stmt": "1884년 갑신정변 당시 부상당한 민영익을 치료한 미국 선교사 알렌의 건의로 1885년 최초의 서양식 국립 병원인 광혜원(제중원)이 설립되었다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 8 본문 보기", "tpreview": "1880년대 근대 문물 수용에서도 시기 구분이 매우 중요합니다. 1883년에는 전환국(화폐 주조)·박문국(한성순보)·기기창(무기 제조)과 함께 독일인 고문 묄렌도르프의 건의로 외아문 산하에 최초의 관립 영어 통역관 양성 학교인 동문학(同文學, 1883년) 과 함경도 덕원 주민·상인들이 세운 최초…"}, {"num": 29, "code": "기029", "stmt": "1882년 조청 상민 수륙 무역 장정 체결 이후 외국 상인의 내륙 상권 침탈이 본격화되자, 조선 상인들은 자본을 모아 대동 상회(평양, 1883)와 장통 상회(서울) 등 근대적 상회사를 설립하여 맞섰다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 1880년… 본문 8 본문 보기", "tpreview": "1880년대 근대 문물 수용에서도 시기 구분이 매우 중요합니다. 1883년에는 전환국(화폐 주조)·박문국(한성순보)·기기창(무기 제조)과 함께 독일인 고문 묄렌도르프의 건의로 외아문 산하에 최초의 관립 영어 통역관 양성 학교인 동문학(同文學, 1883년) 과 함경도 덕원 주민·상인들이 세운 최초…"}, {"num": 30, "code": "기030", "stmt": "1882년 임오군란 직후 청의 알선으로 재집권한 민씨 정권은 청과 『조청 상민 수륙 무역 장정』을 체결하여 청 상인의 한성(양화진) 개잔과 내륙 통상권을 허용하였고, 일본과는 『제물포 조약』을 맺어 배상금 지불과 일본 공사관 경비병 주둔을 인정하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 갑신정변(1884, 급진 개화파)과 14개조 혁신 정강 : 우정총국 개국 축하연 의거 ➔ ① 청에 잡혀간 대원군 귀환·조공 허례 폐지 / ② 문벌 폐지·인민 평등권 제정 / ③ 지조법 개혁 / ④ 국가 재정의 호조(戶曹) 일원화 / ⑤ 혜상공국·규장각 폐지 및 내각 제도(입헌군…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4561,18 +4588,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4723,9 +4746,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

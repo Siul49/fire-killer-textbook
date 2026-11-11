@@ -188,7 +188,7 @@ const HarnessEngine = {
     );
     document.documentElement.style.setProperty(
       '--text-align-mode',
-      this.isAlignLeft ? 'left' : 'justify'
+      'left'
     );
     document.documentElement.style.setProperty('--body-size', this.bodySize + 'px');
     document.documentElement.style.setProperty('--line-height', String(this.lineHeight));
@@ -563,7 +563,7 @@ const HarnessEngine = {
       banner.style.cssText = 'border-color: var(--border-strong); font-family: var(--font-sans) !important;';
       banner.innerHTML = `
         <span style="font-size:12.5px; font-weight:800; color:var(--accent);">🎯 방금 확인한 OX 문항 관련 기본서 본문 줄</span>
-        <a href="ox_app.html?resume=1" style="display:inline-flex; align-items:center; gap:4px; padding:5px 11px; border-radius:7px; background-color:var(--accent); color:#fff; font-size:12px; font-weight:800; text-decoration:none;">
+        <a href="ox_app.html?v=4&resume=1" style="display:inline-flex; align-items:center; gap:4px; padding:5px 11px; border-radius:7px; background-color:var(--accent); color:#fff; font-size:12px; font-weight:800; text-decoration:none;">
           &larr; 풀던 OX 문제로 돌아가기
         </a>
       `;
@@ -1181,7 +1181,7 @@ const HarnessEngine = {
         quickBox.className = 'mt-4 pt-3 border-t space-y-2';
         quickBox.style.borderColor = 'var(--border-line)';
         quickBox.innerHTML = `
-          <a href="ox_app.html?unit=${unitId}" class="block w-full py-2 px-3 rounded-lg text-center text-xs font-extrabold text-white transition" style="background-color:var(--accent); text-decoration:none;">
+          <a href="ox_app.html?v=4&unit=${unitId}" class="block w-full py-2 px-3 rounded-lg text-center text-xs font-extrabold text-white transition" style="background-color:var(--accent); text-decoration:none;">
             ⚡ 이 단원 OX 타격 (정예 ${essCount} / 전체 ${totalUnitOx}) &rarr;
           </a>
           <div class="flex items-center justify-between gap-2 text-[11px] font-bold pt-1">
@@ -1209,10 +1209,10 @@ const HarnessEngine = {
             </p>
           </div>
           <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <a href="ox_app.html?unit=${unitId}" class="px-4 py-2.5 rounded-xl font-extrabold text-xs text-white transition" style="background-color:var(--accent); text-decoration:none;">
+            <a href="ox_app.html?v=4&unit=${unitId}" class="px-4 py-2.5 rounded-xl font-extrabold text-xs text-white transition" style="background-color:var(--accent); text-decoration:none;">
               ⚡ 전용 OX 앱 실행 (${totalUnitOx}제) &rarr;
             </a>
-            <a href="ox_app.html?sort=shuffle" class="px-3.5 py-2.5 rounded-xl font-bold text-xs border transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
+            <a href="ox_app.html?v=4&sort=shuffle" class="px-3.5 py-2.5 rounded-xl font-bold text-xs border transition" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main); text-decoration:none;">
               🎲 전 단원 랜덤
             </a>
           </div>

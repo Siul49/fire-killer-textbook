@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 현종 대 두 차례 예송(기해·갑인)과 숙종 대 세 차례 환국(일당전제화)</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1310,7 +1310,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 영조의 완론탕평과 민생·제도 개혁: 이조전랑 특권 폐지·균역법·속대전</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1333,7 +1333,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장용영·수원 화성·신해통공</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1384,7 +1384,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 숙종 3대 환국·경종 신임사화와 영조·정조 편찬서·화성 시설물 비교</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1484,19 +1484,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY13 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY13 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4408,22 +4415,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4627,24 +4644,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "현종 대 1차 기해예송(1659)에서 서인은 효종이 차남이라는 이유로 자의대비의 1년 복(기년설)을 주장하여 채택되었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 예송 논쟁(현종 대, 자의대비 복상 기간) : 1차 기해예송(1659, 효종 국상) = 서인 1년설 채택(서인 집권) vs 남인 3년설 / 2차 갑인예송(1674, 효종비 국상) = 서인 9개월설 vs 남인 1년설 채택(남인 집권) 숙종 대 3대 환국(일당전제화) : ① 경신환…"}, {"num": 2, "code": "기002", "stmt": "현종 대 효종비 인선왕후의 상으로 일어난 2차 갑인예송(1674)에서는 남인의 1년 복설이 채택되어 남인이 집권하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "발해는 대조영이 동모산에서 건국한 뒤 무왕(인안·장문휴 등주 공격), 문왕(대흥·상경 천도·3성 6부), 선왕(5경 15부 62주·해동성국)을 거치며 정당성 중심의 독자적 통치 체제를 운영하였습니다."}, {"num": 3, "code": "기003", "stmt": "숙종 대 세 차례의 환국(경신·기사·갑술)을 거치며 상대 붕당의 공존을 부정하고 한 당파가 권력을 독점하는 일당전제화가 나타났다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 영조의 완론탕평과 제도 개혁 : 이인좌의 난(1728) 진압, 성균관 탕평비 건립, 이조전랑 특권(통청권·자천권) 폐지 , 서원 300여 개소 대폭 정리 균역법(1750)과 민생 개혁 : 양인의 군포 부담을 1년 2필에서 1필로 감축 ➔ 부족 재정은 결작(지주에게 토지 1결당 …"}, {"num": 4, "code": "기004", "stmt": "숙종 때 경신환국(1680)으로 남인이 실각하고 서인이 집권한 후, 남인 처벌 수위를 놓고 서인이 노론(송시열)과 소론(윤증)으로 분열되었다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 조선 후기 정치사 문항에서는 숙종 대 세 차례 환국(경신·기사·갑술환국)의 구체적 계기와 송시열의 사사 , 경종 대 신임사화(1721년부터 1722년까지)와 영조 초 이인좌의 난(1728년) , 그리고 영조(청계천 준설·어제자성편)와 정조(현륭원·만석거·축만제·무예도보…"}, {"num": 5, "code": "기005", "stmt": "기사환국(1689)은 인현왕후가 복위되면서 남인이 축출되고 서인이 재집권한 사건이다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 예송 논쟁(현종 대, 자의대비 복상 기간) : 1차 기해예송(1659, 효종 국상) = 서인 1년설 채택(서인 집권) vs 남인 3년설 / 2차 갑인예송(1674, 효종비 국상) = 서인 9개월설 vs 남인 1년설 채택(남인 집권) 숙종 대 3대 환국(일당전제화) : ① 경신환…"}, {"num": 6, "code": "기006", "stmt": "숙종 대에는 백두산 일대의 국경을 정한 백두산정계비(1712)가 세워졌고, 안용복이 일본에 건너가 울릉도·독도가 조선 영토임을 확인받았다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 영조의 완론탕평과 제도 개혁 : 이인좌의 난(1728) 진압, 성균관 탕평비 건립, 이조전랑 특권(통청권·자천권) 폐지 , 서원 300여 개소 대폭 정리 균역법(1750)과 민생 개혁 : 양인의 군포 부담을 1년 2필에서 1필로 감축 ➔ 부족 재정은 결작(지주에게 토지 1결당 …"}, {"num": 7, "code": "기007", "stmt": "영조는 즉위 초 소론 강경파와 남인 일부가 일으킨 이인좌의 난(1728)을 진압하고 완론탕평을 본격적으로 추진하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 영조의 완론탕평과 민생·제도 개혁: 이조전랑 … 본문 3 본문 보기", "tpreview": "경종의 뒤를 이어 즉위한 제21대 영조(재위 1724년부터 1776년까지) 는 즉위 초 소론 강경파와 남인 일부가 일으킨 무장 반란인 이인좌의 난(1728년) 을 진압한 뒤, 붕당 간 피비린내 나는 정쟁을 종식하기 위해 노론과 소론의 온건파(탕평파)를 고루 등용하는 완론탕평(緩論蕩平) 을 강력히…"}, {"num": 8, "code": "기008", "stmt": "영조는 성균관에 탕평비를 건립하고, 붕당의 세력 기반이던 서원을 300여 개소 대폭 정리하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 영조의 완론탕평과 민생·제도 개혁: 이조전랑 … 본문 3 본문 보기", "tpreview": "경종의 뒤를 이어 즉위한 제21대 영조(재위 1724년부터 1776년까지) 는 즉위 초 소론 강경파와 남인 일부가 일으킨 무장 반란인 이인좌의 난(1728년) 을 진압한 뒤, 붕당 간 피비린내 나는 정쟁을 종식하기 위해 노론과 소론의 온건파(탕평파)를 고루 등용하는 완론탕평(緩論蕩平) 을 강력히…"}, {"num": 9, "code": "기009", "stmt": "영조는 붕당 간 균형을 위해 이조 전랑의 자천권과 3사 관원 통청권을 법적으로 더욱 강화하였다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 영조의 완론탕평과 민생·제도 개혁: 이조전랑 … 본문 3 본문 보기", "tpreview": "경종의 뒤를 이어 즉위한 제21대 영조(재위 1724년부터 1776년까지) 는 즉위 초 소론 강경파와 남인 일부가 일으킨 무장 반란인 이인좌의 난(1728년) 을 진압한 뒤, 붕당 간 피비린내 나는 정쟁을 종식하기 위해 노론과 소론의 온건파(탕평파)를 고루 등용하는 완론탕평(緩論蕩平) 을 강력히…"}, {"num": 10, "code": "기010", "stmt": "영조는 양인의 군포 부담을 1년 2필에서 1필로 줄이는 균역법(1750)을 실시하고, 부족한 재정은 결작·선무군관포·어염선세로 보충하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 11, "code": "기011", "stmt": "영조는 도성 내 홍수를 막기 위해 청계천 준설 사업(준천)을 시행하고, 신문고를 부활시켰으며 법전인 ｢속대전｣과 백과사전 ｢동국문헌비고｣를 편찬하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 정조의 준론탕평과 왕권 기구 : 시비곡직을 가려 노론·소론·남인(채제공·정약용) 등용, 규장각(서얼 출신 박제가·유득공·이덕무 검서관 기용) , 당하관 재교육 초계문신제 , 친위 군영 장용영(내영·외영) , 정약용 거중기 수원 화성 축조 신해통공(1791)과 편찬 사업 : 육의…"}, {"num": 12, "code": "기012", "stmt": "정조는 왕실 도서관인 규장각을 핵심 정책·학술 기구로 육성하고, 당하관 문신을 재교육하는 초계문신제를 실시하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장… 본문 5 본문 보기", "tpreview": "사도세자의 아들로 즉위한 제22대 정조(재위 1776년부터 1800년까지) 는 영조 대 완론탕평의 한계로 외척과 노론 벽파가 발호했던 폐단을 극복하기 위해, 당파의 옳고 그름(시비곡직)과 의리를 명확히 가려 노론 시파와 소론, 그리고 갑술환국 이후 소외되었던 남인(채제공·정약용 등)을 대거 등용…"}, {"num": 13, "code": "기013", "stmt": "정조는 박제가, 유득공, 이덕무 등 서얼 출신 실학자들을 규장각 검서관으로 파격 기용하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장… 본문 5 본문 보기", "tpreview": "사도세자의 아들로 즉위한 제22대 정조(재위 1776년부터 1800년까지) 는 영조 대 완론탕평의 한계로 외척과 노론 벽파가 발호했던 폐단을 극복하기 위해, 당파의 옳고 그름(시비곡직)과 의리를 명확히 가려 노론 시파와 소론, 그리고 갑술환국 이후 소외되었던 남인(채제공·정약용 등)을 대거 등용…"}, {"num": 14, "code": "기014", "stmt": "정조는 국왕의 군사적 기반을 강화하기 위해 친위 부대인 훈련도감을 창설하여 서울에 내영, 수원 화성에 외영을 두었다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장… 본문 5 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 15, "code": "기015", "stmt": "정조는 정약용이 고안한 거중기와 녹로 등을 활용하여 군사·상업 기능을 갖춘 계획도시 수원 화성을 축조하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장… 본문 5 본문 보기", "tpreview": "사도세자의 아들로 즉위한 제22대 정조(재위 1776년부터 1800년까지) 는 영조 대 완론탕평의 한계로 외척과 노론 벽파가 발호했던 폐단을 극복하기 위해, 당파의 옳고 그름(시비곡직)과 의리를 명확히 가려 노론 시파와 소론, 그리고 갑술환국 이후 소외되었던 남인(채제공·정약용 등)을 대거 등용…"}, {"num": 16, "code": "기016", "stmt": "정조는 신해통공(1791)을 단행하여 육의전을 포함한 모든 시전 상인의 금난전권을 전면 철폐하였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 환국·탕평 급소 본문 보기", "tpreview": "60회부터 69회까지 환국·탕평 급소 숙종 3대 환국 & 경종 : 경신환국(1680 : 허적 유악 사건, 남인 축출·서인 노론 소론 분화) ➔ 기사환국(1689 : 희빈 장씨 원자 정호, 인현왕후 폐위· 송시열 사사 , 남인 집권) ➔ 갑술환국(1694 : 인현왕후 복위, 서인 재집권) / 경종…"}, {"num": 17, "code": "기017", "stmt": "정조는 ｢경국대전｣과 ｢속대전｣을 통합한 새로운 법전인 ｢대전통편｣과 무예 훈련 교범인 ｢무예도보통지｣를 편찬하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 환국·탕평 급소 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 18, "code": "기018", "stmt": "정조는 지방 사족들의 향촌 지배력을 약화시키기 위해 수령이 직접 향약을 주관하도록 하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 환국·탕평 급소 본문 보기", "tpreview": "60회부터 69회까지 환국·탕평 급소 숙종 3대 환국 & 경종 : 경신환국(1680 : 허적 유악 사건, 남인 축출·서인 노론 소론 분화) ➔ 기사환국(1689 : 희빈 장씨 원자 정호, 인현왕후 폐위· 송시열 사사 , 남인 집권) ➔ 갑술환국(1694 : 인현왕후 복위, 서인 재집권) / 경종…"}, {"num": 19, "code": "기019", "stmt": "정조는 당대 유행하던 자유분방한 패관소품체 문장을 규제하고 순수한 고문으로 되돌리려는 문체반정(文體反正)을 실시하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 환국·탕평 급소 본문 보기", "tpreview": "60회부터 69회까지 환국·탕평 급소 숙종 3대 환국 & 경종 : 경신환국(1680 : 허적 유악 사건, 남인 축출·서인 노론 소론 분화) ➔ 기사환국(1689 : 희빈 장씨 원자 정호, 인현왕후 폐위· 송시열 사사 , 남인 집권) ➔ 갑술환국(1694 : 인현왕후 복위, 서인 재집권) / 경종…"}, {"num": 20, "code": "기020", "stmt": "조선 후기 영조 때 최종 완성·반포된 법전은 ｢대전회통(大典會通)｣이다.", "ans": false, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 조선 후기 정치사 문항에서는 숙종 대 세 차례 환국(경신·기사·갑술환국)의 구체적 계기와 송시열의 사사 , 경종 대 신임사화(1721년부터 1722년까지)와 영조 초 이인좌의 난(1728년) , 그리고 영조(청계천 준설·어제자성편)와 정조(현륭원·만석거·축만제·무예도보…"}, {"num": 21, "code": "기021", "stmt": "현종 때 효종과 효종비의 사망에 따른 자의대비(조대비)의 복상 기간을 둘러싸고 서인과 남인 사이에 두 차례의 예송(기해예송·갑인예송)이 전개되었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 예송 논쟁(현종 대, 자의대비 복상 기간) : 1차 기해예송(1659, 효종 국상) = 서인 1년설 채택(서인 집권) vs 남인 3년설 / 2차 갑인예송(1674, 효종비 국상) = 서인 9개월설 vs 남인 1년설 채택(남인 집권) 숙종 대 3대 환국(일당전제화) : ① 경신환…"}, {"num": 22, "code": "기022", "stmt": "숙종 때 경신환국 이후 집권한 서인은 남인에 대한 처벌 수위를 놓고 강경파인 노론(송시열 중심)과 온건파인 소론(윤증 중심)으로 분화되었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 영조의 완론탕평과 제도 개혁 : 이인좌의 난(1728) 진압, 성균관 탕평비 건립, 이조전랑 특권(통청권·자천권) 폐지 , 서원 300여 개소 대폭 정리 균역법(1750)과 민생 개혁 : 양인의 군포 부담을 1년 2필에서 1필로 감축 ➔ 부족 재정은 결작(지주에게 토지 1결당 …"}, {"num": 23, "code": "기023", "stmt": "숙종은 희빈 장씨가 낳은 아들을 원자로 책봉하는 문제에 반대한 서인을 몰아내고 남인을 등용하는 기사환국을 단행하였으며, 이때 송시열이 사사되었다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 조선 후기 정치사 문항에서는 숙종 대 세 차례 환국(경신·기사·갑술환국)의 구체적 계기와 송시열의 사사 , 경종 대 신임사화(1721년부터 1722년까지)와 영조 초 이인좌의 난(1728년) , 그리고 영조(청계천 준설·어제자성편)와 정조(현륭원·만석거·축만제·무예도보…"}, {"num": 24, "code": "기024", "stmt": "숙종은 백두산 일대의 국경 분쟁을 해결하기 위해 청의 목극등과 함께 현지를 답사한 뒤 서쪽은 압록강, 동쪽은 토문강을 경계로 하는 백두산정계비를 세웠다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 영조의 완론탕평과 제도 개혁 : 이인좌의 난(1728) 진압, 성균관 탕평비 건립, 이조전랑 특권(통청권·자천권) 폐지 , 서원 300여 개소 대폭 정리 균역법(1750)과 민생 개혁 : 양인의 군포 부담을 1년 2필에서 1필로 감축 ➔ 부족 재정은 결작(지주에게 토지 1결당 …"}, {"num": 25, "code": "기025", "stmt": "경종 때 연잉군(영조)의 왕세제 책봉과 대리청정을 둘러싸고 소론 강경파(김일경 등)가 노론 4대신(김창집·이이명 등)을 역모로 몰아 숙청한 사건을 신임사화라 한다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 8 본문 보기", "tpreview": "숙종을 이은 경종 때에는 후사가 없던 경종을 대신해 연잉군(훗날 영조)을 왕세제로 책봉하고 대리청정을 시키려던 노론 4대신(김창집·이이명·이건명·조태채)을 소론(김일경·목호룡의 3급수 고변)이 역모로 몰아 숙청한 신임사화(신임옥사, 1721년부터 1722년까지) 가 발생하였습니다. 이후 즉위한 …"}, {"num": 26, "code": "기026", "stmt": "영조는 붕당의 뿌리가 되는 인사권을 약화시키기 위해 전랑(이조 정랑·좌랑)이 자신의 후임자를 추천하던 자대권과 3사 관원을 선발하던 통청권을 혁파하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 영조의 완론탕평과 민생·제도 개혁: 이조전랑 … 본문 3 본문 보기", "tpreview": "경종의 뒤를 이어 즉위한 제21대 영조(재위 1724년부터 1776년까지) 는 즉위 초 소론 강경파와 남인 일부가 일으킨 무장 반란인 이인좌의 난(1728년) 을 진압한 뒤, 붕당 간 피비린내 나는 정쟁을 종식하기 위해 노론과 소론의 온건파(탕평파)를 고루 등용하는 완론탕평(緩論蕩平) 을 강력히…"}, {"num": 27, "code": "기027", "stmt": "영조는 백성들의 군역 부담을 줄이기 위해 양인 남성에게 1년에 군포 2필씩 거두던 것을 1필로 절반 감면하는 균역법을 시행하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 28, "code": "기028", "stmt": "영조는 도성 안을 흐르는 하천이 토사로 막혀 홍수 피해가 자주 발생하자 준천사를 설치하고 백성들을 고용하여 청계천 준설 공사를 단행하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 8 본문 보기", "tpreview": "숙종을 이은 경종 때에는 후사가 없던 경종을 대신해 연잉군(훗날 영조)을 왕세제로 책봉하고 대리청정을 시키려던 노론 4대신(김창집·이이명·이건명·조태채)을 소론(김일경·목호룡의 3급수 고변)이 역모로 몰아 숙청한 신임사화(신임옥사, 1721년부터 1722년까지) 가 발생하였습니다. 이후 즉위한 …"}, {"num": 29, "code": "기029", "stmt": "영조 대에는 가혹한 형벌인 압슬형과 낙형을 폐지하고 사형수에 대해 세 번 심리하는 삼복제를 엄격히 시행하였으며, 속대전과 동국문헌비고를 편찬하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 숙종 3대… 본문 8 본문 보기", "tpreview": "숙종을 이은 경종 때에는 후사가 없던 경종을 대신해 연잉군(훗날 영조)을 왕세제로 책봉하고 대리청정을 시키려던 노론 4대신(김창집·이이명·이건명·조태채)을 소론(김일경·목호룡의 3급수 고변)이 역모로 몰아 숙청한 신임사화(신임옥사, 1721년부터 1722년까지) 가 발생하였습니다. 이후 즉위한 …"}, {"num": 30, "code": "기030", "stmt": "정조는 왕실 도서관으로 출발한 규장각을 왕권 강화의 핵심 정치 기구로 육성하고, 당하관 문신들을 재교육하는 초계문신제를 실시하여 개혁 세력을 양성하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 정조의 준론탕평과 개혁 정치의 꽃: 규장각·장… 본문 5 본문 보기", "tpreview": "사도세자의 아들로 즉위한 제22대 정조(재위 1776년부터 1800년까지) 는 영조 대 완론탕평의 한계로 외척과 노론 벽파가 발호했던 폐단을 극복하기 위해, 당파의 옳고 그름(시비곡직)과 의리를 명확히 가려 노론 시파와 소론, 그리고 갑술환국 이후 소외되었던 남인(채제공·정약용 등)을 대거 등용…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4763,18 +4790,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4925,9 +4948,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

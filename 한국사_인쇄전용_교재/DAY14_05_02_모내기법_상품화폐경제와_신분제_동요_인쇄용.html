@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 농업 생산력의 혁명(모내기법·광작)과 수취 체제 3대 개편(영정법·대동법·균역법)</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1297,7 +1297,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 유통 경제의 폭발(공인·4대 사상·장시·포구)과 선대제 수공업·덕대 광업·전황</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1358,7 +1358,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 신분제의 급격한 동요(향전·통청운동·노비해방)와 가족 제도 및 서민 문화의 융성</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1380,7 +1380,7 @@
           </p>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 성시전도(한양 3대 시전), 임상옥·김만덕, 서민 예술과 진경산수·풍속화</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1480,19 +1480,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY14 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY14 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -3704,22 +3711,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -3923,24 +3940,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "조선 후기 모내기법(이앙법)의 전국적 확산으로 김매기 노동력이 대폭 절감되고 벼와 보리의 이모작이 가능해졌다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 2, "code": "기002", "stmt": "모내기법에 따른 광작의 성행으로 모든 농민이 고루 부유해져 농촌 사회의 빈부 격차가 해소되었다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 3, "code": "기003", "stmt": "조선 후기에는 담배, 인삼, 면화 등 상품 작물 재배가 성행하였고, 지대 납부 방식도 타조법에서 정액 지대인 도조법으로 전환되었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 모내기법(이앙법)과 광작 : 수리 시설 확충·『농가집성』 보급 ➔ 김매기 노동력 절감 + 벼·보리 이모작 ➔ 1인당 경작 면적을 넓히는 광작(廣作) 성행 ➔ 경영형 부농 성장 vs 임노동자 전락(농민층 양극화) 상품 작물과 도조법 : 판매용 인삼·담배·면화·고추·채소 재배 성행…"}, {"num": 4, "code": "기004", "stmt": "인조 때 시행된 영정법은 방납의 폐단을 막기 위해 가호 대신 토지 결수를 기준으로 쌀 12두를 징수한 법이다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 공인(貢人)과 4대 사상(私商) : 대동법 실시로 공인 등장 / 정조 신해통공 (육의전 제외 금난전권 폐지) / 지방 거상: 송상 (개성, 인삼·송방·사개치부법·중계무역) · 만상 (의주, 대청 개시/후시) · 내상 (동래 왜관, 대일 무역) · 경강상인 (한강, 세곡 운송·선…"}, {"num": 5, "code": "기005", "stmt": "대동법의 실시로 선혜청에서 대동미를 받아 관청 필요 물품을 조달하는 공인이 등장하면서 상품화폐경제가 크게 발달하였다.", "ans": true, "tid": "theory-sec2-tbl2", "tlabel": "📖 기본서 2. 유통 경제의 폭발 핵심 비교표 바로가기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 6, "code": "기006", "stmt": "영조 때 실시된 균역법은 군포를 1년 2필에서 1필로 줄이는 대신, 부족분을 메우기 위해 양반에게도 호포(군포)를 부과하였다.", "ans": false, "tid": "theory-sec1-tbl1", "tlabel": "📖 기본서 1. 농업 생산력의 혁명 핵심 비교표 바로가기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 7, "code": "기007", "stmt": "개성의 송상은 전국 주요 도시에 송방이라는 지점을 설치하고 인삼 재배·유통과 대외 중계무역을 주도하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 유통 경제의 폭발 본문 3 본문 보기", "tpreview": "대동법의 실시는 단순한 세금 개혁을 넘어 조선 후기 상품화폐경제와 수공업을 폭발시킨 최대의 기폭제가 되었습니다. 국가가 현물 특산물 대신 쌀·무명·동전(대동미·대동전)으로 세금을 걷게 되자, 선혜청으로부터 대동미를 지급받아 왕실과 관청에서 쓸 물품을 시장에서 대량으로 사들여 납품하는 어용 상인인…"}, {"num": 8, "code": "기008", "stmt": "의주의 만상은 부산 왜관을 거점으로 일본과의 무역을 독점하였고, 동래의 내상은 청나라와의 책문후시를 주도하였다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 유통 경제의 폭발 본문 3 본문 보기", "tpreview": "대동법의 실시는 단순한 세금 개혁을 넘어 조선 후기 상품화폐경제와 수공업을 폭발시킨 최대의 기폭제가 되었습니다. 국가가 현물 특산물 대신 쌀·무명·동전(대동미·대동전)으로 세금을 걷게 되자, 선혜청으로부터 대동미를 지급받아 왕실과 관청에서 쓸 물품을 시장에서 대량으로 사들여 납품하는 어용 상인인…"}, {"num": 9, "code": "기009", "stmt": "한강을 무대로 삼남 지방의 세곡과 어물·목재를 운송하고 대형 선박을 건조하며 성장한 사상은 경강상인이다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 유통 경제의 폭발 본문 3 본문 보기", "tpreview": "대동법의 실시는 단순한 세금 개혁을 넘어 조선 후기 상품화폐경제와 수공업을 폭발시킨 최대의 기폭제가 되었습니다. 국가가 현물 특산물 대신 쌀·무명·동전(대동미·대동전)으로 세금을 걷게 되자, 선혜청으로부터 대동미를 지급받아 왕실과 관청에서 쓸 물품을 시장에서 대량으로 사들여 납품하는 어용 상인인…"}, {"num": 10, "code": "기010", "stmt": "포구와 장시에서 상인들의 화물 위탁 판매·중개·보관·숙박 및 어음 발행 등 금융 업무를 담당한 상인은 객주와 여각이었다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 유통 경제의 폭발 본문 3 본문 보기", "tpreview": "대동법의 실시는 단순한 세금 개혁을 넘어 조선 후기 상품화폐경제와 수공업을 폭발시킨 최대의 기폭제가 되었습니다. 국가가 현물 특산물 대신 쌀·무명·동전(대동미·대동전)으로 세금을 걷게 되자, 선혜청으로부터 대동미를 지급받아 왕실과 관청에서 쓸 물품을 시장에서 대량으로 사들여 납품하는 어용 상인인…"}, {"num": 11, "code": "기011", "stmt": "조선 후기 수공업에서는 공인이나 대상인이 장인에게 원료와 자금을 미리 대주고 완제품을 독점 수매하는 선대제가 유행하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 양반 급증과 향전(鄕戰) : 부농층이 납속책·공명첩(백지 임명장)·족보 매입/위조 로 양반 획득 / 기존 사족(구향) vs 신흥 부농(신향) 간 향촌 주도권 다툼인 향전 발생 ➔ 유향소 약화 및 수령·향리 권한 강화 중인 통청 운동과 노비 해방 : 서얼 은 집단 상소( 통청 운…"}, {"num": 12, "code": "기012", "stmt": "18세기 후반 광산에서는 전문 경영인인 덕대가 상인 자본가인 물주에게 자금을 조달받아 채굴 노동자를 고용하여 광산을 운영하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 양반 급증과 향전(鄕戰) : 부농층이 납속책·공명첩(백지 임명장)·족보 매입/위조 로 양반 획득 / 기존 사족(구향) vs 신흥 부농(신향) 간 향촌 주도권 다툼인 향전 발생 ➔ 유향소 약화 및 수령·향리 권한 강화 중인 통청 운동과 노비 해방 : 서얼 은 집단 상소( 통청 운…"}, {"num": 13, "code": "기013", "stmt": "조선 후기 전황(錢荒)은 상평통보의 발행량이 너무 많아 화폐 가치가 폭락하고 물가가 폭등한 현상이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 양반 급증과 향전(鄕戰) : 부농층이 납속책·공명첩(백지 임명장)·족보 매입/위조 로 양반 획득 / 기존 사족(구향) vs 신흥 부농(신향) 간 향촌 주도권 다툼인 향전 발생 ➔ 유향소 약화 및 수령·향리 권한 강화 중인 통청 운동과 노비 해방 : 서얼 은 집단 상소( 통청 운…"}, {"num": 14, "code": "기014", "stmt": "조선 후기 부농과 상인들은 납속책과 이름이 비어 있는 임명장인 공명첩 매입, 족보 위조 등을 통해 양반 신분을 획득하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 신분제의 급격한 동요 본문 5 본문 보기", "tpreview": "상품화폐경제의 발달로 부를 축적한 서민층이 늘어나고 양난 이후 국가 재정이 궁핍해지면서 조선을 지탱하던 신분제는 뿌리부터 흔들렸습니다. 정부가 재정 확보를 위해 곡식이나 돈을 바치면 관직·신분을 주는 납속책(納粟策) 을 실시하고 수령자 이름이 비어 있는 백지 임명장인 공명첩(空名帖) 을 대량 판…"}, {"num": 15, "code": "기015", "stmt": "조선 후기 향촌에서 기존 사족인 구향과 신흥 부농층인 신향 간에 유향소 주도권을 둘러싼 향전이 벌어졌고, 그 결과 구향의 권력이 더욱 공고해졌다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 신분제의 급격한 동요 본문 5 본문 보기", "tpreview": "상품화폐경제의 발달로 부를 축적한 서민층이 늘어나고 양난 이후 국가 재정이 궁핍해지면서 조선을 지탱하던 신분제는 뿌리부터 흔들렸습니다. 정부가 재정 확보를 위해 곡식이나 돈을 바치면 관직·신분을 주는 납속책(納粟策) 을 실시하고 수령자 이름이 비어 있는 백지 임명장인 공명첩(空名帖) 을 대량 판…"}, {"num": 16, "code": "기016", "stmt": "서얼들은 집단 상소를 통한 통청 운동을 전개하여 정조 때 유득공·이덕무·박제가 등이 규장각 검서관에 등용되었고, 기술직 중인은 시사를 결성해 위항 문학을 꽃피웠다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 후기 경제·문화 급소 본문 보기", "tpreview": "60회부터 69회까지 후기 경제·문화 급소 상업·광업 사료 : 정조 대 박제가 ｢성시전도｣(한양 3대 시전 종루·이현·칠패) , 의주 만상 임상옥(청 홍삼 독점 무역) , 동래 내상(초량 왜관), 효종 설점수세제 ➔ 물주(자본)·덕대(전문 경영인) 여성 인물 & 실용서 : 제주 거상 김만덕 (정…"}, {"num": 17, "code": "기017", "stmt": "영조 때 확립된 노비종모법은 아버지가 양인이면 어머니가 노비라도 그 자녀를 양인으로 삼는 법이다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 후기 경제·문화 급소 본문 보기", "tpreview": "60회부터 69회까지 후기 경제·문화 급소 상업·광업 사료 : 정조 대 박제가 ｢성시전도｣(한양 3대 시전 종루·이현·칠패) , 의주 만상 임상옥(청 홍삼 독점 무역) , 동래 내상(초량 왜관), 효종 설점수세제 ➔ 물주(자본)·덕대(전문 경영인) 여성 인물 & 실용서 : 제주 거상 김만덕 (정…"}, {"num": 18, "code": "기018", "stmt": "1801년 순조 때 중앙 관청과 내수사 소속 공노비 6만 6천여 명의 노비 문서를 소각하고 양인으로 해방하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 후기 경제·문화 급소 본문 보기", "tpreview": "60회부터 69회까지 후기 경제·문화 급소 상업·광업 사료 : 정조 대 박제가 ｢성시전도｣(한양 3대 시전 종루·이현·칠패) , 의주 만상 임상옥(청 홍삼 독점 무역) , 동래 내상(초량 왜관), 효종 설점수세제 ➔ 물주(자본)·덕대(전문 경영인) 여성 인물 & 실용서 : 제주 거상 김만덕 (정…"}, {"num": 19, "code": "기019", "stmt": "조선 후기에는 성리학적 종법 질서가 약화되면서 아들과 딸에게 재산을 똑같이 나누어 주는 남녀 균분 상속과 윤회봉사가 정착되었다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 후기 경제·문화 급소 본문 보기", "tpreview": "60회부터 69회까지 후기 경제·문화 급소 상업·광업 사료 : 정조 대 박제가 ｢성시전도｣(한양 3대 시전 종루·이현·칠패) , 의주 만상 임상옥(청 홍삼 독점 무역) , 동래 내상(초량 왜관), 효종 설점수세제 ➔ 물주(자본)·덕대(전문 경영인) 여성 인물 & 실용서 : 제주 거상 김만덕 (정…"}, {"num": 20, "code": "기020", "stmt": "조선 후기에는 한글 소설·판소리·탈춤 등 서민 문화가 발달하였고, 정선의 진경산수화(『인왕제색도』)와 김홍도·신윤복의 풍속화가 유행하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 양반 급증과 향전(鄕戰) : 부농층이 납속책·공명첩(백지 임명장)·족보 매입/위조 로 양반 획득 / 기존 사족(구향) vs 신흥 부농(신향) 간 향촌 주도권 다툼인 향전 발생 ➔ 유향소 약화 및 수령·향리 권한 강화 중인 통청 운동과 노비 해방 : 서얼 은 집단 상소( 통청 운…"}, {"num": 21, "code": "기021", "stmt": "조선 후기 모내기법(이앙법)이 전국적으로 보급되면서 김매기 노동력이 절감되어 1인당 경작 면적을 넓히는 광작이 성행하였고, 이에 따라 부농과 임노동자로 농민층이 분화되었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 22, "code": "기022", "stmt": "조선 후기에는 소작농이 지주에게 수확량의 절반을 바치던 병작반수(타조법)에서 점차 일정 액수의 소작료만 내는 도조법으로 전환되는 경향이 나타났다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 공인(貢人)과 4대 사상(私商) : 대동법 실시로 공인 등장 / 정조 신해통공 (육의전 제외 금난전권 폐지) / 지방 거상: 송상 (개성, 인삼·송방·사개치부법·중계무역) · 만상 (의주, 대청 개시/후시) · 내상 (동래 왜관, 대일 무역) · 경강상인 (한강, 세곡 운송·선…"}, {"num": 23, "code": "기023", "stmt": "17세기 중엽 효종 때 정부는 늘어나는 은 광산 개발을 통제하고 세금을 거두기 위해 민간의 광산 채굴을 허용하고 세금을 징수하는 설점수세제를 시행하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 양반 급증과 향전(鄕戰) : 부농층이 납속책·공명첩(백지 임명장)·족보 매입/위조 로 양반 획득 / 기존 사족(구향) vs 신흥 부농(신향) 간 향촌 주도권 다툼인 향전 발생 ➔ 유향소 약화 및 수령·향리 권한 강화 중인 통청 운동과 노비 해방 : 서얼 은 집단 상소( 통청 운…"}, {"num": 24, "code": "기024", "stmt": "조선 후기 의주의 만상은 청과의 국경 무역(책문 후시 등)을 통해 거대한 부를 축적하였으며, 만상 출신의 거상 임상옥은 청 상인들의 불매 동맹을 깨뜨리고 인삼 무역권을 장악하였다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 성시전도 본문 7 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 25, "code": "기025", "stmt": "정조 때 제주도의 거상 김만덕은 흉년이 들자 자신의 전 재산을 털어 육지에서 곡식을 사들여 제주 도민들을 구휼하였으며, 그 공로로 의녀반수 벼슬을 받고 금강산을 유람하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 성시전도 본문 8 본문 보기", "tpreview": "사회·문화사에서는 정조 때 제주도에 대기근이 들자 유통업으로 모은 전 재산을 털어 육지 쌀을 사들여 제주 도민을 구휼하고 정조의 배려로 금강산을 유람한 여성 거상 김만덕(채제공이 ｢만덕전｣ 저술) 과, 19세기 초 의식주·태교·육아·조리법을 한글로 집대성한 여성 실학자 빙허각 이씨의 가정 백과사…"}, {"num": 26, "code": "기026", "stmt": "정조는 한양 시전 상점들의 번창한 모습을 화원들에게 그리게 한 뒤 신하들에게 시를 짓게 하였는데, 이때 박제가와 이덕무 등이 한양의 상업 경관을 묘사한 성시전도 시를 남겼다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 성시전도 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 조선 후기 경제·사회·문화 문항에서는 한양의 상업 번영을 노래한 박제가의 ｢성시전도｣와 한양 3대 시전(이현·종루·칠패) , 의주 만상 임상옥과 제주 거상 김만덕 , 광산 채굴 제도의 변화(설점수세제·덕대) , 그리고 서민 문화(전기수·세책가·시사)와 김홍도·신윤복·정…"}, {"num": 27, "code": "기027", "stmt": "숙종 때 주조되어 전국적으로 유통된 상평통보는 상품 화폐 경제의 발달을 촉진하였으나, 부유한 상인이나 지주들이 동전을 대량으로 쌓아두면서 화폐가 귀해지는 전황 현상이 발생하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 공인(貢人)과 4대 사상(私商) : 대동법 실시로 공인 등장 / 정조 신해통공 (육의전 제외 금난전권 폐지) / 지방 거상: 송상 (개성, 인삼·송방·사개치부법·중계무역) · 만상 (의주, 대청 개시/후시) · 내상 (동래 왜관, 대일 무역) · 경강상인 (한강, 세곡 운송·선…"}, {"num": 28, "code": "기028", "stmt": "조선 후기 포구나 큰 장시에서는 상품의 위탁 판매와 보관·숙박·금융(어음 발행) 업무를 담당하는 객주와 여각이 활발하게 활동하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 유통 경제의 폭발 본문 3 본문 보기", "tpreview": "대동법의 실시는 단순한 세금 개혁을 넘어 조선 후기 상품화폐경제와 수공업을 폭발시킨 최대의 기폭제가 되었습니다. 국가가 현물 특산물 대신 쌀·무명·동전(대동미·대동전)으로 세금을 걷게 되자, 선혜청으로부터 대동미를 지급받아 왕실과 관청에서 쓸 물품을 시장에서 대량으로 사들여 납품하는 어용 상인인…"}, {"num": 29, "code": "기029", "stmt": "조선 후기 부농층은 국가가 재정 확보를 위해 발행한 이름 비운 임명장인 공명첩을 매입하거나 족보를 위조·매입(모속)하여 합법적·비합법적으로 양반 신분을 획득하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 신분제의 급격한 동요 본문 5 본문 보기", "tpreview": "상품화폐경제의 발달로 부를 축적한 서민층이 늘어나고 양난 이후 국가 재정이 궁핍해지면서 조선을 지탱하던 신분제는 뿌리부터 흔들렸습니다. 정부가 재정 확보를 위해 곡식이나 돈을 바치면 관직·신분을 주는 납속책(納粟策) 을 실시하고 수령자 이름이 비어 있는 백지 임명장인 공명첩(空名帖) 을 대량 판…"}, {"num": 30, "code": "기030", "stmt": "정조 때 유득공·이덕무·박제가 등 서얼 출신들이 규장각 검서관으로 등용되는 등 서얼 집단의 지속적인 집단 상소(통청 운동)를 통해 관직 진출 제한이 점차 완화되었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 후기 경제·문화 급소 본문 보기", "tpreview": "60회부터 69회까지 후기 경제·문화 급소 상업·광업 사료 : 정조 대 박제가 ｢성시전도｣(한양 3대 시전 종루·이현·칠패) , 의주 만상 임상옥(청 홍삼 독점 무역) , 동래 내상(초량 왜관), 효종 설점수세제 ➔ 물주(자본)·덕대(전문 경영인) 여성 인물 & 실용서 : 제주 거상 김만덕 (정…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4059,18 +4086,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4221,9 +4244,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

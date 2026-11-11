@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 흥선대원군의 왕권 강화(비변사 폐지·경복궁 중건·서원 철폐)와 삼정 개혁(호포제·사창제)</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1263,7 +1263,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 서구 열강의 침략과 통상수교 거부 정책의 연쇄 전개: 병인양요·신미양요·척화비</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1318,7 +1318,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 통상개화론의 대두와 강화도 조약(1876)·조미 수호 통상 조약(1882)을 통한 문호 개방</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1373,7 +1373,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 박규수(환재집)의 생애, 양요 세부 전투(문수·정족산성·광성보)와 두모진 해관 사건</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1473,19 +1473,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY16 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY16 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4397,22 +4404,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4616,24 +4633,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "흥선대원군은 왕권을 강화하기 위해 세도 가문의 권력 기반이었던 비변사를 폐지하고 의정부(정치)와 삼군부(군사)의 기능을 부활시켰다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 2, "code": "기002", "stmt": "흥선대원군은 경복궁 중건 비용을 마련하기 위해 원납전을 징수하고 고액 화폐인 당백전을 발행하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 왕권 강화와 경복궁 중건 : 안동 김씨 세도 타파, 비변사 폐지 ➔ 의정부(정치)·삼군부(군사) 기능 부활, 『대전회통』·『육전조례』 편찬 / 경복궁 중건 (영건도감 설치, 강제 기부금 원납전 징수, 고액 화폐 당백전 발행 ➔ 물가 폭등 초래) 서원 철폐와 삼정 개혁 : 사액 …"}, {"num": 3, "code": "기003", "stmt": "흥선대원군은 지방 유생들의 지지를 얻기 위해 만동묘를 중수하고 전국의 사액 서원을 대폭 증설하였다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 왕권 강화와 경복궁 중건 : 안동 김씨 세도 타파, 비변사 폐지 ➔ 의정부(정치)·삼군부(군사) 기능 부활, 『대전회통』·『육전조례』 편찬 / 경복궁 중건 (영건도감 설치, 강제 기부금 원납전 징수, 고액 화폐 당백전 발행 ➔ 물가 폭등 초래) 서원 철폐와 삼정 개혁 : 사액 …"}, {"num": 4, "code": "기004", "stmt": "흥선대원군은 군정의 문란을 바로잡기 위해 양반에게도 호(집) 단위로 군포를 징수하는 호포제를 실시하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 통상수교 거부 6단계 연표(순서 필암기!) : 병인박해(1866. 1) ➔ 제너럴 셔먼호 사건(1866. 7, 평양 박규수) ➔ 병인양요(1866. 9, 프랑스) ➔ 오페르트 도굴 미수 사건(1868) ➔ 신미양요(1871. 4, 미국) ➔ 척화비 건립(1871) 병인양요(프랑…"}, {"num": 5, "code": "기005", "stmt": "흥선대원군은 환곡의 폐단을 시정하기 위해 향촌의 덕망 있고 부유한 주민이 자치적으로 곡식을 대여·관리하는 사창제를 실시하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 통상수교 거부 6단계 연표(순서 필암기!) : 병인박해(1866. 1) ➔ 제너럴 셔먼호 사건(1866. 7, 평양 박규수) ➔ 병인양요(1866. 9, 프랑스) ➔ 오페르트 도굴 미수 사건(1868) ➔ 신미양요(1871. 4, 미국) ➔ 척화비 건립(1871) 병인양요(프랑…"}, {"num": 6, "code": "기006", "stmt": "1866년 평양 대동강을 거슬러 올라와 통상을 요구하며 약탈과 살상을 저지른 미국 상선 제너럴 셔먼호를 평안도 관찰사 박규수와 평양 관민이 불태워 침몰시켰다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 서구 열강의 침략과 통상수교 거부 정책의 연쇄… 본문 3 본문 보기", "tpreview": "1860년 베이징이 영국·프랑스 연합군에 함락되고 러시아가 연해주를 차지하며 조선과 국경을 맞대게 되자 서양 열강의 통상 요구가 거세게 밀려왔습니다. 초기 흥선대원군은 남하하는 러시아를 견제하기 위해 프랑스 선교사를 통해 프랑스와의 교섭을 타진하기도 했으나, 교섭이 무산되고 보수 유생들의 천주교…"}, {"num": 7, "code": "기007", "stmt": "병인박해를 구실로 프랑스군이 침입한 병인양요(1866) 때 한성근 부대는 문수산성에서, 양헌수 부대는 정족산성에서 프랑스군을 격퇴하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 박규수 본문 8 본문 보기", "tpreview": "통상수교 거부 정책의 연표에서는 1866년 천주교도와 프랑스 선교사 9명을 처형한 병인박해(1866. 1.) 에 이어 대동강 제너럴 셔먼호 사건(1866. 7., 평안 감사 박규수) 이 일어났고, 병인박해를 구실로 프랑스 극동 함대 사령관 로즈 제독이 강화도를 침공한 병인양요(1866년 9월부터…"}, {"num": 8, "code": "기008", "stmt": "병인양요 당시 미군이 강화도 광성보를 공격하여 어재연 장군의 수자기와 외규장각 의궤를 약탈해 갔다.", "ans": false, "tid": "theory-sec2-tbl1", "tlabel": "📖 기본서 2. 서구 열강의 침략과 통상수교 거부 정책의 연쇄… 핵심… 바로가기", "tpreview": "구분 병인양요 (1866년 9월, 프랑스 침입) 신미양요 (1871년 4월, 미국 침입) 침략 배경 (구실) 병인박해(1866년 1월) 때 프랑스 선교사 9명 처형에 대한 보복 및 통상 요구 제너럴 셔먼호 사건(1866년 7월, 평양 대동강에서 박규수·평양 관민이 소각) 문책 및 통상 요구 주요…"}, {"num": 9, "code": "기009", "stmt": "1868년 독일 상인 오페르트가 통상 요구를 관철하기 위해 충남 덕산에 있는 흥선대원군의 아버지 남연군 묘 도굴을 시도한 사건은 병인양요와 신미양요 사이에 일어났다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 운요호 사건(1875) ➔ 강화도 조약(1876, 최초의 근대적·불평등 조약) : ① 제1관 자주국 명시 (청의 종주권 차단 목적) / ② 부산·원산·인천 3개 항구 개항 / ③ 제7관 해안 측량권 허용 / ④ 제10관 영사 재판권(치외법권) 인정 / 부록·무역규칙: 개항장 내…"}, {"num": 10, "code": "기010", "stmt": "흥선대원군은 1866년 병인양요에서 프랑스군을 격퇴한 직후 종로와 전국 각지에 척화비를 건립하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 운요호 사건(1875) ➔ 강화도 조약(1876, 최초의 근대적·불평등 조약) : ① 제1관 자주국 명시 (청의 종주권 차단 목적) / ② 부산·원산·인천 3개 항구 개항 / ③ 제7관 해안 측량권 허용 / ④ 제10관 영사 재판권(치외법권) 인정 / 부록·무역규칙: 개항장 내…"}, {"num": 11, "code": "기011", "stmt": "북학파 실학을 계승한 박규수와 역관 오경석, 의관 유홍기 등은 서양 문물을 수용해 부국강병을 이루자는 통상개화론을 형성하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 통상개화론의 대두와 강화도 조약 본문 5 본문 보기", "tpreview": "서원 철폐와 호포제, 경복궁 중건에 불만을 품은 유생들을 대표하여 1873년 최익현이 흥선대원군의 실정을 비판하는 상소(계유상소) 를 올리자, 성년이 된 고종이 친정(親政)을 선포 하고 흥선대원군이 10년 만에 권좌에서 물러났습니다. 때맞춰 북학파 실학 사상을 계승한 박규수 와 역관 오경석 , …"}, {"num": 12, "code": "기012", "stmt": "1875년 일본이 군함 운요호를 보내 강화도 초지진과 영종진을 공격한 운요호 사건을 계기로 이듬해 조·일 수호 조규(강화도 조약)가 체결되었다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 통상개화론의 대두와 강화도 조약 본문 5 본문 보기", "tpreview": "서원 철폐와 호포제, 경복궁 중건에 불만을 품은 유생들을 대표하여 1873년 최익현이 흥선대원군의 실정을 비판하는 상소(계유상소) 를 올리자, 성년이 된 고종이 친정(親政)을 선포 하고 흥선대원군이 10년 만에 권좌에서 물러났습니다. 때맞춰 북학파 실학 사상을 계승한 박규수 와 역관 오경석 , …"}, {"num": 13, "code": "기013", "stmt": "강화도 조약 제1관의 '조선국은 자주국이며 일본국과 평등한 권리를 보유한다'는 조항은 조선에 대한 청의 종주권과 간섭을 차단하려는 일본의 의도가 담긴 것이었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 14, "code": "기014", "stmt": "강화도 조약(1876)에는 부산 외 2개 항구(원산·인천) 개항, 일본의 조선 연해 해안 측량권 허용, 영사 재판권(치외법권) 인정 조항이 포함되었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 15, "code": "기015", "stmt": "1876년 체결된 강화도 조약에는 최혜국 대우와 거중 조정 조항이 최초로 규정되었다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 16, "code": "기016", "stmt": "강화도 조약의 부속 조약인 조·일 수호 조규 부록과 조·일 무역 규칙을 통해 개항장 내 일본 화폐 유통과 무관세, 양곡의 무제한 유출이 허용되었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 17, "code": "기017", "stmt": "1880년 제2차 수신사로 일본에 다녀온 김홍집은 러시아의 남하를 막기 위해 친중국·결일본·연미국을 권고한 황준헌의 『조선책략』을 고종에게 바쳤다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 18, "code": "기018", "stmt": "1882년 청의 알선으로 체결된 조·미 수호 통상 조약은 우리나라가 서양 국가와 맺은 최초의 근대적 조약으로, 거중 조정·관세 부과·영사 재판권·최혜국 대우가 포함되었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 19, "code": "기019", "stmt": "조선 정부는 조·미 수호 통상 조약 체결 직후인 1883년 미국에 답례 사절단으로 민영익·홍영식·유길준 등으로 구성된 보빙사를 파견하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 대원군·개항 급소 본문 보기", "tpreview": "60회부터 69회까지 대원군·개항 급소 환재 박규수 5대 이력 : 박지원의 손자( ｢환재집｣ ) ➔ 1862 진주 농민 봉기 안핵사(삼정이정청 건의) ➔ 1866 평안 감사로 제너럴 셔먼호 격침 지휘 ➔ 재동 사랑방에서 김옥균·박영효 등 초기 개화파 육성 ➔ 1876 강화도 조약 체결 주장 병인…"}, {"num": 20, "code": "기020", "stmt": "조선이 서양 열강과 수교한 순서는 영국이 가장 빨랐고, 그 뒤를 이어 미국과 조약을 체결하였다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 운요호 사건(1875) ➔ 강화도 조약(1876, 최초의 근대적·불평등 조약) : ① 제1관 자주국 명시 (청의 종주권 차단 목적) / ② 부산·원산·인천 3개 항구 개항 / ③ 제7관 해안 측량권 허용 / ④ 제10관 영사 재판권(치외법권) 인정 / 부록·무역규칙: 개항장 내…"}, {"num": 21, "code": "기021", "stmt": "1863년 고종이 어린 나이로 즉위하자 실권을 잡은 흥선 대원군은 안동 김씨 세도 가문을 축출하고 비변사를 혁파하여 의정부(정치)와 삼군부(군사)의 기능을 부활시켰다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "조선 시대는 경국대전과 의정부·6조·3사 체제를 확립하였고, 후기에는 모내기법(이앙법) 보급과 대동법·균역법 등 수취 체제 개편 및 5군영 군사 제도가 운영되었습니다."}, {"num": 22, "code": "기022", "stmt": "흥선 대원군은 임진왜란 때 불탄 경복궁을 중건하기 위해 원납전을 강제 징수하고 고액 화폐인 당백전을 남발하여 극심한 물가 폭등(인플레이션)을 초래하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 왕권 강화와 경복궁 중건 : 안동 김씨 세도 타파, 비변사 폐지 ➔ 의정부(정치)·삼군부(군사) 기능 부활, 『대전회통』·『육전조례』 편찬 / 경복궁 중건 (영건도감 설치, 강제 기부금 원납전 징수, 고액 화폐 당백전 발행 ➔ 물가 폭등 초래) 서원 철폐와 삼정 개혁 : 사액 …"}, {"num": 23, "code": "기023", "stmt": "흥선 대원군은 삼정의 문란을 바로잡기 위해 양전 사업을 실시하여 은결을 색출하고, 양반에게도 군포를 징수하는 호포제와 면민이 공동 출자해 운영하는 사창제를 시행하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 통상수교 거부 6단계 연표(순서 필암기!) : 병인박해(1866. 1) ➔ 제너럴 셔먼호 사건(1866. 7, 평양 박규수) ➔ 병인양요(1866. 9, 프랑스) ➔ 오페르트 도굴 미수 사건(1868) ➔ 신미양요(1871. 4, 미국) ➔ 척화비 건립(1871) 병인양요(프랑…"}, {"num": 24, "code": "기024", "stmt": "흥선 대원군은 면세와 면역의 특권을 누리며 백성을 수탈하고 붕당의 근거지가 되었던 전국의 서원 중 47개소만 남기고 600여 개소를 철폐하여 양반 유생들의 거센 반발을 샀다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 통상수교 거부 6단계 연표(순서 필암기!) : 병인박해(1866. 1) ➔ 제너럴 셔먼호 사건(1866. 7, 평양 박규수) ➔ 병인양요(1866. 9, 프랑스) ➔ 오페르트 도굴 미수 사건(1868) ➔ 신미양요(1871. 4, 미국) ➔ 척화비 건립(1871) 병인양요(프랑…"}, {"num": 25, "code": "기025", "stmt": "1866년 병인박해로 프랑스 선교사들이 처형된 직후, 같은 해 여름 미국 상선 제너럴 셔먼호가 대동강을 거슬러 올라와 통상을 요구하며 행패를 부리자 평안 감사 박규수와 평양 군민들이 화공으로 배를 불태웠다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 서구 열강의 침략과 통상수교 거부 정책의 연쇄… 본문 3 본문 보기", "tpreview": "1860년 베이징이 영국·프랑스 연합군에 함락되고 러시아가 연해주를 차지하며 조선과 국경을 맞대게 되자 서양 열강의 통상 요구가 거세게 밀려왔습니다. 초기 흥선대원군은 남하하는 러시아를 견제하기 위해 프랑스 선교사를 통해 프랑스와의 교섭을 타진하기도 했으나, 교섭이 무산되고 보수 유생들의 천주교…"}, {"num": 26, "code": "기026", "stmt": "1866년 가을 병인박해를 구실로 로즈 제독이 이끄는 프랑스 함대가 강화도를 침략한 병인양요 당시 한성근 부대는 문수산성에서, 양헌수 부대는 정족산성에서 프랑스군을 물리쳤다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 박규수 본문 8 본문 보기", "tpreview": "통상수교 거부 정책의 연표에서는 1866년 천주교도와 프랑스 선교사 9명을 처형한 병인박해(1866. 1.) 에 이어 대동강 제너럴 셔먼호 사건(1866. 7., 평안 감사 박규수) 이 일어났고, 병인박해를 구실로 프랑스 극동 함대 사령관 로즈 제독이 강화도를 침공한 병인양요(1866년 9월부터…"}, {"num": 27, "code": "기027", "stmt": "1868년 독일 상인 오페르트가 통상을 요구하기 위해 충남 예산 덕산에 있는 흥선 대원군의 아버지 남연군의 묘를 도굴하려다 실패한 사건이 일어나 서양에 대한 배외 감정이 극에 달하였다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 운요호 사건(1875) ➔ 강화도 조약(1876, 최초의 근대적·불평등 조약) : ① 제1관 자주국 명시 (청의 종주권 차단 목적) / ② 부산·원산·인천 3개 항구 개항 / ③ 제7관 해안 측량권 허용 / ④ 제10관 영사 재판권(치외법권) 인정 / 부록·무역규칙: 개항장 내…"}, {"num": 28, "code": "기028", "stmt": "1871년 제너럴 셔먼호 사건을 구실로 로저스 제독이 이끄는 미국 함대가 강화도를 침략한 신미양요 당시 어재연 부대는 광성보에서 끝까지 결사항전하다 순국하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 박규수 본문 8 본문 보기", "tpreview": "통상수교 거부 정책의 연표에서는 1866년 천주교도와 프랑스 선교사 9명을 처형한 병인박해(1866. 1.) 에 이어 대동강 제너럴 셔먼호 사건(1866. 7., 평안 감사 박규수) 이 일어났고, 병인박해를 구실로 프랑스 극동 함대 사령관 로즈 제독이 강화도를 침공한 병인양요(1866년 9월부터…"}, {"num": 29, "code": "기029", "stmt": "흥선 대원군이 서양 오랑캐가 침범하는데 싸우지 않는 것은 화친하는 것이요 화친을 주장하는 것은 나라를 파는 것이라는 내용의 척화비를 전국에 세운 것은 병인양요 직후이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 운요호 사건(1875) ➔ 강화도 조약(1876, 최초의 근대적·불평등 조약) : ① 제1관 자주국 명시 (청의 종주권 차단 목적) / ② 부산·원산·인천 3개 항구 개항 / ③ 제7관 해안 측량권 허용 / ④ 제10관 영사 재판권(치외법권) 인정 / 부록·무역규칙: 개항장 내…"}, {"num": 30, "code": "기030", "stmt": "1873년 동부승지 최익현이 흥선 대원군의 서원 철폐와 재정 파탄 등 실정을 비판하며 하야를 촉구하는 계유 상소를 올리자 고종이 친정을 선포하고 대원군이 물러났다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 통상개화론의 대두와 강화도 조약 본문 5 본문 보기", "tpreview": "서원 철폐와 호포제, 경복궁 중건에 불만을 품은 유생들을 대표하여 1873년 최익현이 흥선대원군의 실정을 비판하는 상소(계유상소) 를 올리자, 성년이 된 고종이 친정(親政)을 선포 하고 흥선대원군이 10년 만에 권좌에서 물러났습니다. 때맞춰 북학파 실학 사상을 계승한 박규수 와 역관 오경석 , …"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4752,18 +4779,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4914,9 +4937,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {

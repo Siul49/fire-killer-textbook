@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 훈구와 사림의 대립 및 4대 사화(무오·갑자·기묘·을사)의 전개</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1303,7 +1303,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 사림의 향촌 기반(서원과 향약)과 선조 대 사림의 최종 집권</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1325,7 +1325,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 붕당정치의 형성(동인·서인 ➔ 남인·북인)과 이황·이이의 성리학 학맥</h2>
         <div id="theory-sec3-p5" class="para-block">
           <p class="prose-body">
@@ -1376,7 +1376,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 4대 사화 사료 원문, 조광조(심곡서원), 기축옥사와 조선 전기 회화·건축</h2>
 
         <div id="theory-sec4-p7" class="para-block">
@@ -1476,19 +1476,26 @@
       </div>
 
       <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
-        <div class="s26-ox-top-header">
-          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
-            <span>&lt;</span>
-            <span>DAY11 · OX 카드</span>
-          </button>
-          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        <div class="s26-ox-webapp-inner">
+          <div class="s26-ox-top-header">
+            <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+              <span>&lt;</span>
+              <span>DAY11 · 랜덤 OX</span>
+            </button>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="s26-ox-save-pill" onclick="shuffleS26OxDeck()">🔀 랜덤 섞기</button>
+              <button type="button" class="s26-ox-save-pill" onclick="toggleOxDeckMode(false)">✕ 닫기</button>
+            </div>
+          </div>
+          <div style="margin:auto 0; width:100%;">
+            <div class="s26-ox-prev-row">
+              <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+              <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+            </div>
+            <div id="s26OxCardMount"></div>
+          </div>
+          <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
         </div>
-        <div class="s26-ox-prev-row">
-          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
-          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
-        </div>
-        <div id="s26OxCardMount"></div>
-        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4400,22 +4407,32 @@
     }
 
     /* ==========================================================================
-       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       SCREENSHOT-STYLE OX CARD DECK (FULL-SCREEN WEBAPP VIEW + RANDOM SHUFFLE)
        ========================================================================== */
     .s26-ox-deck-stage {
       display: none;
-      max-width: 460px;
-      margin: 14px auto 24px;
-      padding: 4px 2px;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: var(--bg-desk);
+      overflow-y: auto;
+      padding: 14px 16px 24px;
       font-family: var(--font-sans);
+    }
+    .s26-ox-webapp-inner {
+      width: 100%;
+      max-width: 460px;
+      min-height: calc(100dvh - 38px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    body.s26-ox-deck-active {
+      overflow: hidden !important;
     }
     body.s26-ox-deck-active .s26-ox-deck-stage {
       display: block !important;
-    }
-    body.s26-ox-deck-active #part2 .questions-grid,
-    body.s26-ox-deck-active #part2 .stats-block,
-    body.s26-ox-deck-active #part2 .s26-swipe-bar {
-      display: none !important;
     }
     .s26-ox-top-header {
       display: flex;
@@ -4619,24 +4636,34 @@
     const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "연산군 때 김일손이 스승 김종직의 ｢조의제문｣을 성종실록 사초에 수록한 것이 발단이 되어 무오사화(1498)가 일어났다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 2, "code": "기002", "stmt": "연산군의 생모인 폐비 윤씨 사사 사건의 전말이 폭로되면서 사림과 훈구 대신이 함께 숙청된 사건은 기묘사화이다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 무오사화(1498) vs 갑자사화(1504) : 연산군 대, 무오사화 = 김종직의 ｢조의제문｣ 사초 사건 (김일손) / 갑자사화 = 연산군 생모 폐비 윤씨 사사 사건 (훈구·사림 동시 숙청) 조광조 개혁과 기묘사화(1519) : 중종 대 조광조 등용 ➔ 천거제 현량과 실시, 도…"}, {"num": 3, "code": "기003", "stmt": "중종 때 등용된 조광조는 천거제인 현량과를 실시하고, 도교 초제를 주관하던 소격서를 폐지하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 4, "code": "기004", "stmt": "조광조가 중종반정 가짜 공신들의 훈작을 박탈하는 위훈삭제를 추진하자, 훈구파는 '주초위왕' 사건을 꾸며 기묘사화(1519)를 일으켰다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 서원(선현 제향 + 성리학 교육) : 중종 대 풍기 군수 주세붕이 세운 백운동 서원(최초 서원, 안향 배향) ➔ 명종 대 이황 건의로 '소수서원' 현판을 받은 최초의 사액서원 (서적·토지·노비 하사, 면세·면역 특권) 향약(향촌 자치 규약) : 전통 농촌 공동체 풍습 + 유교 …"}, {"num": 5, "code": "기005", "stmt": "명종 즉위 직후 인종의 외척인 대윤(윤임)과 명종의 외척인 소윤(윤원형)의 권력 다툼으로 을사사화(1545)가 발생하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 서원(선현 제향 + 성리학 교육) : 중종 대 풍기 군수 주세붕이 세운 백운동 서원(최초 서원, 안향 배향) ➔ 명종 대 이황 건의로 '소수서원' 현판을 받은 최초의 사액서원 (서적·토지·노비 하사, 면세·면역 특권) 향약(향촌 자치 규약) : 전통 농촌 공동체 풍습 + 유교 …"}, {"num": 6, "code": "기006", "stmt": "네 차례의 사화로 인해 사림 세력은 완전히 소멸하여 선조 대에는 훈구 공신 세력이 정권을 독점하였다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 사림의 향촌 기반 본문 3 본문 보기", "tpreview": "네 차례의 사화로 중앙의 사림 지도부가 거듭 희생되었음에도 불구하고, 사림파가 끝내 멸망하지 않고 16세기 후반 선조 때 중앙 정권을 완전히 장악할 수 있었던 비결은 향촌 사회에 뿌리내린 두 가지 재생산 기반인 서원(書院) 과 향약(鄕約) 에 있었습니다. 첫 번째 기반인 서원 은 선현을 제사 지…"}, {"num": 7, "code": "기007", "stmt": "풍기 군수 주세붕이 안향을 배향하기 위해 건립한 백운동 서원은 이황의 건의로 최초의 사액 서원인 소수서원이 되었다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 사림의 향촌 기반 본문 3 본문 보기", "tpreview": "네 차례의 사화로 중앙의 사림 지도부가 거듭 희생되었음에도 불구하고, 사림파가 끝내 멸망하지 않고 16세기 후반 선조 때 중앙 정권을 완전히 장악할 수 있었던 비결은 향촌 사회에 뿌리내린 두 가지 재생산 기반인 서원(書院) 과 향약(鄕約) 에 있었습니다. 첫 번째 기반인 서원 은 선현을 제사 지…"}, {"num": 8, "code": "기008", "stmt": "조선 시대 서원은 중앙 정부에서 교관을 직접 파견하여 운영한 국립 중등 교육 기관이었다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 무오사화(1498) vs 갑자사화(1504) : 연산군 대, 무오사화 = 김종직의 ｢조의제문｣ 사초 사건 (김일손) / 갑자사화 = 연산군 생모 폐비 윤씨 사사 사건 (훈구·사림 동시 숙청) 조광조 개혁과 기묘사화(1519) : 중종 대 조광조 등용 ➔ 천거제 현량과 실시, 도…"}, {"num": 9, "code": "기009", "stmt": "향약은 덕업상권·과실상규·예속상교·환난상휼을 덕목으로 삼아 사림이 농민을 교화하고 향촌 지배력을 강화하는 기반이 되었다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "기출 출제 포인트 붕당 형성과 분화(선조) : 척신 정치 청산 + 이조전랑(3사 통청권·후임자 자천권) 임명 갈등(김효원 vs 심의겸) ➔ 동인 vs 서인(1575) ➔ 기축옥사(1589)·정철 건저의 문제(1591)로 동인이 남인(온건파) vs 북인(강경파) 으로 분화 이황(동인·남인) vs …"}, {"num": 10, "code": "기010", "stmt": "선조 대 사림은 척신 정치 청산 문제와 이조 전랑 임명 문제를 둘러싸고 김효원 중심의 동인과 심의겸 중심의 서인으로 분화되었다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 8 본문 보기", "tpreview": "선조 대에 사림이 정국을 주도한 뒤에는 척신 정치 청산과 이조전랑 임명 문제를 둘러싸고 동인(김효원, 이황·조식·서경덕 문인) 과 서인(심의겸, 이이·성혼 문인) 으로 붕당이 형성(1575년)되었습니다. 특히 1589년 전라도 진안 죽도에서 대동계를 조직하고 \"천하는 공물(公物)이니 어찌 일정한…"}, {"num": 11, "code": "기011", "stmt": "이조 전랑은 정5품·정6품의 관직이었으나, 3사 관원을 선발하는 통청권과 자신의 후임자를 추천하는 자천권을 행사하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 붕당정치의 형성 본문 5 본문 보기", "tpreview": "선조 대에 사림이 정권을 독점하자, 명종 대의 외척(척신) 정치 청산 문제 에 대한 입장 차이와 인사권의 핵심 요직인 이조 전랑(吏曹銓郞) 임명 문제(1575년) 를 계기로 사림 내부가 두 붕당으로 분화되었습니다. 이조 전랑(정랑·좌랑)은 품계는 정5품·정6품에 불과했으나, 재상의 간섭 없이 3…"}, {"num": 12, "code": "기012", "stmt": "정여립 모반 사건(기축옥사)과 서인 정철의 건저의 문제를 계기로 서인이 남인과 북인으로 분열되었다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 붕당정치의 형성 본문 5 본문 보기", "tpreview": "선조 대에 사림이 정권을 독점하자, 명종 대의 외척(척신) 정치 청산 문제 에 대한 입장 차이와 인사권의 핵심 요직인 이조 전랑(吏曹銓郞) 임명 문제(1575년) 를 계기로 사림 내부가 두 붕당으로 분화되었습니다. 이조 전랑(정랑·좌랑)은 품계는 정5품·정6품에 불과했으나, 재상의 간섭 없이 3…"}, {"num": 13, "code": "기013", "stmt": "동인에서 갈라져 나온 북인은 조식·서경덕의 학풍을 계승하여 임진왜란 때 의병 활동을 주도하고 광해군 대에 집권하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 14, "code": "기014", "stmt": "퇴계 이황은 근원적 도덕 원리인 '이(理)'를 중시하는 주리론을 정립하고, 군주 스스로 성학을 구현할 것을 강조한 ｢성학십도｣를 저술하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 15, "code": "기015", "stmt": "이황의 성리학 사상은 임진왜란 이후 일본에 전파되어 일본 성리학 발전에 큰 영향을 끼쳤다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 16, "code": "기016", "stmt": "율곡 이이는 ｢성학십도｣를 저술하여 신하보다 군주 개인의 도덕적 수양만을 절대시하였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 17, "code": "기017", "stmt": "이이는 ｢동호문답｣을 저술하여 방납의 폐단을 시정하기 위해 공물을 쌀로 거두자는 수미법(收米法)을 주장하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 18, "code": "기018", "stmt": "이황의 학맥을 계승한 영남학파는 동인(이후 남인)을 형성하였고, 이이와 성혼의 학맥을 계승한 기호학파는 서인을 형성하였다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 붕당정치의 형성 본문 5 본문 보기", "tpreview": "선조 대에 사림이 정권을 독점하자, 명종 대의 외척(척신) 정치 청산 문제 에 대한 입장 차이와 인사권의 핵심 요직인 이조 전랑(吏曹銓郞) 임명 문제(1575년) 를 계기로 사림 내부가 두 붕당으로 분화되었습니다. 이조 전랑(정랑·좌랑)은 품계는 정5품·정6품에 불과했으나, 재상의 간섭 없이 3…"}, {"num": 19, "code": "기019", "stmt": "남명 조식은 실천적 덕목으로 '경(敬)'과 '의(義)'를 강조하였으며, 그의 문하에서 곽재우 등 임진왜란 의병장이 다수 배출되었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 20, "code": "기020", "stmt": "화담 서경덕은 '기(氣)'를 세계의 근본 물질로 파악하는 독창적인 기 철학을 전개하여 북인 학파 형성에 영향을 주었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}, {"num": 21, "code": "기021", "stmt": "연산군 때 일어난 무오사화(1498)는 『성종실록』 편찬 과정에서 김종직이 세조의 왕위 찬탈을 초나라 의제의 죽음에 빗대어 지은 「조의제문」을 제자 김일손이 사초(史草)에 수록한 것이 발단이 되었다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 7 본문 보기", "tpreview": "고려는 태조 왕건(기인·사심관), 광종(노비안검법·과거제), 성종(최승로 시무 28조·12목)을 거쳐 2성 6부·도병마사·식목도감과 5도 양계 체제를 확립하고 전시과 토지 제도를 운영하였습니다."}, {"num": 22, "code": "기022", "stmt": "연산군의 생모인 폐비 윤씨의 복위 및 추숭 문제에 반대한 훈구와 사림 세력이 함께 큰 화를 입은 사건은 갑자사화(1504)이다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 사림과 붕당 정치 형성 문항에서는 4대 사화(무오·갑자·기묘·을사사화)의 사료 원문과 발생 배경 , 조광조를 배향한 서원(용인 심곡서원)과 개혁 정치 , 선조 대 정여립 모반 사건과 기축옥사(1589년) , 그리고 이황·이이의 사상 및 조선 전기 대표 회화(안견·강희안…"}, {"num": 23, "code": "기023", "stmt": "중종반정 이후 등용된 정암 조광조(용인 심곡서원 배향)는 『소학』과 여씨향약 보급, 천거제인 현량과 실시, 도교 행사 기관인 소격서 폐지, 반정 공신의 거짓 공훈을 깎는 위훈 삭제를 추진하다가 기묘사화(1519)로 제거되었다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 7 본문 보기", "tpreview": "고대 사회는 신라 민정문서(3년마다 촌주 작성)와 골품제 신분 질서로 운영되었으며, 원효(대중 불교)·의상(화엄종)의 불교 사상과 삼국 고분·석탑·도교 문화가 꽃피웠습니다."}, {"num": 24, "code": "기024", "stmt": "명종 즉위 직후 문정왕후가 수렴청정을 하는 가운데 왕실 외척인 대윤(윤임, 인종의 외척)과 소윤(윤원형, 명종의 외척)의 권력 다툼으로 사림이 큰 화를 입은 사건은 을사사화(1545)이다.", "ans": true, "tid": "theory-sec4-p7", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 7 본문 보기", "tpreview": "제60회부터 제69회까지의 사림과 붕당 정치 형성 문항에서는 4대 사화(무오·갑자·기묘·을사사화)의 사료 원문과 발생 배경 , 조광조를 배향한 서원(용인 심곡서원)과 개혁 정치 , 선조 대 정여립 모반 사건과 기축옥사(1589년) , 그리고 이황·이이의 사상 및 조선 전기 대표 회화(안견·강희안…"}, {"num": 25, "code": "기025", "stmt": "중종 때 풍기 군수 주세붕이 안향을 배향하기 위해 세운 백운동 서원은 명종 때 이황의 건의로 '소수서원'이라는 현판과 서적·토지·노비를 하사받아 최초의 사액 서원이 되었다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 사림의 향촌 기반 본문 3 본문 보기", "tpreview": "네 차례의 사화로 중앙의 사림 지도부가 거듭 희생되었음에도 불구하고, 사림파가 끝내 멸망하지 않고 16세기 후반 선조 때 중앙 정권을 완전히 장악할 수 있었던 비결은 향촌 사회에 뿌리내린 두 가지 재생산 기반인 서원(書院) 과 향약(鄕約) 에 있었습니다. 첫 번째 기반인 서원 은 선현을 제사 지…"}, {"num": 26, "code": "기026", "stmt": "선조 때 사림이 중앙 정계를 장악한 뒤, 3사 관리를 추천하는 통청권과 후임자를 직접 천거하는 자대권(자천권)을 가진 이조전랑 임명 문제를 계기로 동인(김효원)과 서인(심의겸)으로 붕당이 나누어졌다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 3. 붕당정치의 형성 본문 5 본문 보기", "tpreview": "선조 대에 사림이 정권을 독점하자, 명종 대의 외척(척신) 정치 청산 문제 에 대한 입장 차이와 인사권의 핵심 요직인 이조 전랑(吏曹銓郞) 임명 문제(1575년) 를 계기로 사림 내부가 두 붕당으로 분화되었습니다. 이조 전랑(정랑·좌랑)은 품계는 정5품·정6품에 불과했으나, 재상의 간섭 없이 3…"}, {"num": 27, "code": "기027", "stmt": "1589년(선조 22) 동인 출신 정여립이 전라도 진안 죽도에서 대동계를 조직하고 반란을 꾀하였다는 '정여립 모반 사건'이 일어나자, 서인 정철이 수사를 주도하여 동인 1천여 명을 숙청한 기축옥사(己丑獄事)가 발생하였다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 8 본문 보기", "tpreview": "선조 대에 사림이 정국을 주도한 뒤에는 척신 정치 청산과 이조전랑 임명 문제를 둘러싸고 동인(김효원, 이황·조식·서경덕 문인) 과 서인(심의겸, 이이·성혼 문인) 으로 붕당이 형성(1575년)되었습니다. 특히 1589년 전라도 진안 죽도에서 대동계를 조직하고 \"천하는 공물(公物)이니 어찌 일정한…"}, {"num": 28, "code": "기028", "stmt": "기축옥사 이후 1591년 왕세자 책봉(건저 문제)을 건의했다가 선조의 노여움을 사 실각한 서인 정철에 대한 처벌 수위를 놓고 동인이 온건파인 남인(이황 학파)과 강경파인 북인(조식·서경덕 학파)으로 분화되었다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 8 본문 보기", "tpreview": "선조 대에 사림이 정국을 주도한 뒤에는 척신 정치 청산과 이조전랑 임명 문제를 둘러싸고 동인(김효원, 이황·조식·서경덕 문인) 과 서인(심의겸, 이이·성혼 문인) 으로 붕당이 형성(1575년)되었습니다. 특히 1589년 전라도 진안 죽도에서 대동계를 조직하고 \"천하는 공물(公物)이니 어찌 일정한…"}, {"num": 29, "code": "기029", "stmt": "퇴계 이황은 도덕적 원리인 '이(理)'의 능동성을 강조하는 주리론(이기호발설)과 수양 방법인 '경(敬)'을 중시하였으며, 기대승과 사단칠정 논쟁을 벌이고 어린 선조에게 군주의 도리를 도표로 정리한 『성학십도』를 바쳤다.", "ans": true, "tid": "theory-sec4-p8", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 4대 사화… 본문 8 본문 보기", "tpreview": "선조 대에 사림이 정국을 주도한 뒤에는 척신 정치 청산과 이조전랑 임명 문제를 둘러싸고 동인(김효원, 이황·조식·서경덕 문인) 과 서인(심의겸, 이이·성혼 문인) 으로 붕당이 형성(1575년)되었습니다. 특히 1589년 전라도 진안 죽도에서 대동계를 조직하고 \"천하는 공물(公物)이니 어찌 일정한…"}, {"num": 30, "code": "기030", "stmt": "율곡 이이는 현실적이고 경험적인 '기(氣)'의 역할을 중시하는 주기론(기발이승일도설)을 집대성하고, 선조에게 국정 개혁안을 담은 『성학집요』와 『동호문답』을 올렸으며 초학자 교재인 『격몽요결』과 해주 향약을 지었다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사화·성리학 급소 본문 보기", "tpreview": "60회부터 69회까지 사화·성리학 급소 4대 사화 결정적 단서 : 무오(1498 : 김종직 ｢조의제문｣ ·김일손 사초) ➔ 갑자(1504 : 폐비 윤씨 복위 사건) ➔ 기묘(1519 : 정암 조광조[용인 심곡서원] ·현량과·소격서 폐지· 위훈 삭제 ·주초위왕) ➔ 을사(1545 : 명종 대 문정…"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
-    function toggleOxDeckMode(forceState) {
-      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
-      if (s26OxDeckOn && s26SwipeOn) {
-        s26SwipeOn = false;
-        document.body.classList.remove('s26-swipe-active');
-        const bSwipe = document.getElementById('btnS26Swipe');
-        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+    let s26OxShuffledOnce = false;
+
+    function shuffleS26OxDeck() {
+      for (let i = s26OxDeckList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = s26OxDeckList[i];
+        s26OxDeckList[i] = s26OxDeckList[j];
+        s26OxDeckList[j] = tmp;
       }
+      s26CurOxIdx = 0;
+      s26OxShuffledOnce = true;
+      renderS26OxCard();
+    }
+
+    function toggleOxDeckMode(forceState, keepOrder) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
       document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
       const btnOx = document.getElementById('btnS26OxDeck');
       if (btnOx) {
         btnOx.classList.toggle('active', s26OxDeckOn);
-        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 웹앱 ON' : '⭕ OX 카드';
       }
       if (s26OxDeckOn) {
-        renderS26OxCard();
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (!s26OxShuffledOnce && !keepOrder) {
+          shuffleS26OxDeck();
+        } else {
+          renderS26OxCard();
+        }
       }
     }
 
@@ -4755,18 +4782,14 @@
     function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
       s26LastMode = 'ox';
       s26CurOxIdx = oxIdx;
+      s26OxDeckOn = false;
+      document.body.classList.remove('s26-ox-deck-active');
       hideTopBarForReading();
-      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
-      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
-      const floatEl = document.getElementById('s26ReturnFloat');
-      const floatTxt = document.getElementById('s26FloatPreviewText');
       const retBtn = document.getElementById('s26ReturnBtn');
-      if (floatTxt) {
-        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
-      }
       if (retBtn) {
         retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
       }
+      const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.add('show-float');
       const targetEl = document.getElementById(targetId) || document.getElementById('part1');
       if (targetEl) {
@@ -4917,9 +4940,8 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26LastMode === 'ox' && s26OxDeckOn) {
-        const stg = document.getElementById('s26OxDeckStage');
-        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (s26LastMode === 'ox') {
+        toggleOxDeckMode(true, true);
       } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {
