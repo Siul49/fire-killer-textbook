@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Killer 통합 디자인 시스템 및 출판 아키텍처 표준 명세서 (Single Source of Truth)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+    :root {
+      --bg-desk: #EAE3D5;
+      --bg-sheet: #FCF9F4;
+      --bg-subtle: #F4EFE6;
+      --bg-card: #FAF6EE;
+      --text-main: #22201D;
+      --text-sub: #544F47;
+      --text-muted: #8A8275;
+      --accent: #8B2635;
+      --accent-soft: #F7ECEE;
+      --navy-accent: #1E3A5F;
+      --navy-soft: #EBF1F8;
+      --gold-hl: rgba(212, 163, 68, 0.24);
+      --border-line: #DCD4C6;
+      --border-strong: #B8AE9E;
+      --correct-bg: #EAF3EC;
+      --correct-border: #86B893;
+      --correct-ink: #1B5E20;
+      --wrong-bg: #FDECEC;
+      --wrong-border: #E57373;
+      --wrong-ink: #B71C1C;
+      --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      --font-body: 'Noto Serif KR', 'Batang', Georgia, serif;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.68;
+      word-break: keep-all;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1E1C19;
+      color: #F4F0EA;
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .ctrl-btn {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 11px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+    }
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+    }
+    .book-sheet {
+      max-width: 1040px;
+      margin: 28px auto 64px auto;
+      padding: 48px 52px 60px 52px;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 40px rgba(28, 26, 23, 0.12);
+    }
+    .doc-header {
+      border-bottom: 2.5px solid var(--text-main);
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      border: 1px solid #DFB9BF;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .doc-title {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+    }
+    .doc-lead {
+      font-size: 13.8px;
+      color: var(--text-sub);
+      margin: 0;
+      line-height: 1.68;
+    }
+    .sec-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      background-color: var(--text-main);
+      color: #FAF7F2;
+      padding: 9px 16px;
+      margin: 30px 0 16px 0;
+      border-radius: 4px;
+    }
+    .sec-banner-title {
+      font-size: 15px;
+      font-weight: 800;
+    }
+    .sec-banner-sub {
+      font-size: 12px;
+      color: #D6CFC2;
+    }
+    h3.sub-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy-accent);
+      border-left: 4px solid var(--navy-accent);
+      padding-left: 10px;
+      margin: 20px 0 10px 0;
+    }
+    .prose-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+      line-height: 1.72;
+    }
+    .prose-serif-sample {
+      font-family: var(--font-body);
+      font-size: 15.5px;
+      line-height: 1.9;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-line);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+    .prose-serif-sample strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 60%, var(--gold-hl) 60%);
+      padding: 0 2px;
+    }
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .swatch-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      overflow: hidden;
+      font-size: 12px;
+    }
+    .swatch-color {
+      height: 44px;
+      border-bottom: 1px solid var(--border-line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 11.5px;
+    }
+    .swatch-info {
+      padding: 8px 10px;
+    }
+    .swatch-token {
+      font-weight: 800;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .swatch-desc {
+      color: var(--text-sub);
+      font-size: 11.5px;
+    }
+    table.spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 20px 0;
+      font-size: 12.8px;
+      line-height: 1.55;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    table.spec-table th {
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 800;
+      text-align: left;
+      padding: 8px 11px;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      border-left: 1px solid var(--border-line);
+      border-right: 1px solid var(--border-line);
+    }
+    table.spec-table td {
+      padding: 8px 11px;
+      border: 1px solid var(--border-line);
+      vertical-align: top;
+      background-color: #FFFFFF;
+    }
+    pre.code-block {
+      background-color: #1E1C19;
+      color: #EAE5DC;
+      padding: 14px 16px;
+      border-radius: 5px;
+      font-family: Consolas, Monaco, 'Courier New', monospace;
+      font-size: 12px;
+      line-height: 1.55;
+      overflow-x: auto;
+      margin: 10px 0 18px 0;
+    }
+    code.inline-code {
+      background-color: #EFECE6;
+      color: #8B2635;
+      font-weight: 700;
+      padding: 1.5px 5px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+    .diagram-box {
+      background: #FFFFFF;
+      border: 1.5px solid var(--navy-accent);
+      border-radius: 5px;
+      padding: 14px 18px;
+      margin: 12px 0 18px 0;
+      font-size: 13px;
+    }
+    @media print {
+      html, body { background: #FFFFFF !important; }
+      .no-print-bar { display: none !important; }
+      .book-sheet {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .swatch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .book-sheet { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 통합 내비게이션 바 -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <span class="ctrl-btn active">🎨 통합 디자인 시스템 명세서 (SSOT)</span>
+        <a href="index.html" class="ctrl-btn">🏠 프로젝트 메인 포털</a>
+        <a href="소방학개론_인쇄전용_교재/00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 소방학개론 인쇄포털</a>
+        <a href="소방관계법규_인쇄전용_교재/00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 소방관계법규 인쇄포털</a>
+        <a href="한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 한국사 인쇄포털</a>
+        
+        
+      </div>
+      <div class="ctrl-group">
+        <button onclick="window.print()" class="ctrl-btn print-primary">🖨️ 명세서 A4 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="book-sheet">
+    <header class="doc-header">
+      <div class="doc-badge">Fire Killer Design System &amp; Publishing Architecture v3.0 · 전 과목 단일 표준 (Single Source of Truth)</div>
+      <h1 class="doc-title">Fire Killer 통합 디자인 시스템 및 출판 아키텍처 표준 명세서</h1>
+      <p class="doc-lead">
+        본 문서는 <strong>소방학개론, 소방관계법규, 행정법총론, 한국사(한능검 심화)</strong> 등 본 프로젝트의 모든 수험 교재를 제작할 때 적용되는 <strong>① 옥스퍼드 &times; 리디북스 에디토리얼 기본서(단일 좌표계 날개 각주 그리드), ② 갤럭시 S26 Ultra 모바일 웹소설 리더 모드, ③ A4 2단 실전 기출 변형 모의고사(화면 즉시 채점 &amp; 클린 인쇄 이중 호환), ④ 양면 인쇄 시 스테이플러 소분을 보장하는 짝수 페이지 정렬(PyMuPDF) 파이프라인</strong>을 하나로 통합·정형화한 최종 마스터 명세서입니다.
+      </p>
+    </header>
+
+    <!-- =====================================================================
+         제1장. 컬러 팔레트 및 디자인 토큰 표준 (Color Tokens)
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제1장 · 컬러 팔레트 및 CSS 디자인 토큰 표준 (Warm Editorial Paper &amp; E-Ink Dark)</span>
+      <span class="sec-banner-sub">장시간 수험 독해 시 눈부심(Glare)을 차단하는 저채도 난색 종이 질감 및 북 잉크 대비 체계</span>
+    </div>
+
+    <p style="margin:0 0 12px 0; color:var(--text-sub);">
+      차가운 순백색(<code>#FFFFFF</code>) 화면에서 발생하는 시각적 피로를 원천 제거하기 위해, 모든 웹 기본서와 워크북은 <strong>옥스퍼드 대학출판부(OUP) 학술서와 리디북스 페이퍼의 난색 종이 토큰(Style A 확정본)</strong>을 표준으로 채택합니다. 단, <code>@media print</code>(실제 종이 인쇄 시)에는 토너 낭비 방지를 위해 시트 배경이 자동으로 <code>#FFFFFF</code>로 전환됩니다.
+    </p>
+
+    <div class="swatch-grid">
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#EAE3D5; color:#22201D;">#EAE3D5</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--bg-desk / --bg-Workspace</span>
+          <span class="swatch-desc">데스크 배경 (차분한 샌드 베이지)</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#FCF9F4; color:#22201D;">#FCF9F4 / #FAF7F2</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--bg-sheet</span>
+          <span class="swatch-desc">본문 종이 시트 (웜 에디토리얼 아이보리)</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#F4EFE6; color:#22201D;">#F4EFE6 / #F2ECE1</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--bg-subtle</span>
+          <span class="swatch-desc">표 헤더 · &lt;보기&gt; 박스 · 인라인 해설 배경</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#22201D; color:#FCF9F4;">#22201D / #1C1A17</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--text-main</span>
+          <span class="swatch-desc">본문 주 잉크 (순검정이 아닌 딥 차콜 잉크)</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#8B2635; color:#FFFFFF;">#8B2635</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--accent (Oxford Crimson)</span>
+          <span class="swatch-desc">핵심 강조 · 문항 배지 · 정답 포인트</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#1E3A5F; color:#FFFFFF;">#1E3A5F</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--navy-accent (Academic Navy)</span>
+          <span class="swatch-desc">단원 구분 배너 · 법령 조항 · 점수 배지</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#EAF3EC; color:#1B5E20; border:1px solid #86B893;">#EAF3EC / #1B5E20</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--correct-bg / --correct-ink</span>
+          <span class="swatch-desc">선지 클릭 정답 판정 및 정답 해설 하이라이트</span>
+        </div>
+      </div>
+      <div class="swatch-card">
+        <div class="swatch-color" style="background:#FDECEC; color:#B71C1C; border:1px solid #E57373;">#FDECEC / #B71C1C</div>
+        <div class="swatch-info">
+          <span class="swatch-token">--wrong-bg / --wrong-ink</span>
+          <span class="swatch-desc">선지 클릭 오답 판정 (취소선 동반)</span>
+        </div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:22%;">토큰 카테고리</th>
+          <th style="width:26%;">CSS 변수명</th>
+          <th style="width:26%;">주간 페이퍼 모드 (기본값)</th>
+          <th>야간 E-Ink 다크 모드 (<code>body.mode-night</code>)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>배경 및 시트 표면</strong></td>
+          <td><code>--bg-desk</code> / <code>--bg-sheet</code> / <code>--bg-subtle</code></td>
+          <td><code>#EAE3D5</code> / <code>#FCF9F4</code> / <code>#F4EFE6</code></td>
+          <td><code>#121211</code> / <code>#1B1B19</code> / <code>#242320</code></td>
+        </tr>
+        <tr>
+          <td><strong>타이포그래피 잉크</strong></td>
+          <td><code>--text-main</code> / <code>--text-sub</code> / <code>--text-muted</code></td>
+          <td><code>#22201D</code> / <code>#544F47</code> / <code>#8A8275</code></td>
+          <td><code>#E2DDD2</code> / <code>#B0AA9E</code> / <code>#787268</code></td>
+        </tr>
+        <tr>
+          <td><strong>포인트 및 형광펜</strong></td>
+          <td><code>--accent</code> / <code>--gold-hl</code></td>
+          <td><code>#8B2635</code> / <code>rgba(212, 163, 68, 0.24)</code></td>
+          <td><code>#D4A373</code> / <code>rgba(212, 163, 115, 0.22)</code></td>
+        </tr>
+        <tr>
+          <td><strong>경계선 및 구분선</strong></td>
+          <td><code>--border-line</code> / <code>--border-strong</code> / <code>--margin-rule</code></td>
+          <td><code>#E4DDD0</code> / <code>#C9BFA8</code> / <code>#DED6C6</code></td>
+          <td><code>#2E2D29</code> / <code>#42403A</code> / <code>#2E2D29</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- =====================================================================
+         제2장. 타이포그래피 아키텍처 및 렌더링 방어 규격
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제2장 · 타이포그래피 이원화 체계 및 마크다운·HTML 렌더링 방어 규격</span>
+      <span class="sec-banner-sub">Pretendard(구조·UI)와 Noto Serif KR / 리디바탕(본문·지문)의 역할 분리 및 굴림체 폴백 원천 차단</span>
+    </div>
+
+    <h3 class="sub-title">2.1 서체 이원화 원칙 및 Universal Font Guard</h3>
+    <div class="prose-box">
+      <strong>① UI · 구조 · 제목 · 표 헤더 · 날개 각주 (<code>--font-sans</code>)</strong>: 상단 컨트롤 바, 단원 배지, 소제목(<code>h1</code>, <code>h2</code>, <code>h3</code>), 우측 날개 각주(<code>.margin-note</code>), 빠른 정답표는 정보 식별력이 뛰어난 <strong>Pretendard Variable (프리텐다드)</strong>을 적용합니다.<br>
+      <strong>② 서술형 본문 문단 · 시험 문제 지문 · 선지 (<code>--font-body</code>)</strong>: 수험생이 실제 시험장 인쇄 시험지의 호흡과 문단 독해 감각을 체화할 수 있도록 본문 문단(<code>.prose-body</code>, <code>.book-p</code>)과 모의고사 발문·선지(<code>.q-stem</code>, <code>.q-choice-text</code>)에는 <strong>Noto Serif KR(본명조) 및 RIDIBatang(리디바탕)</strong>을 적용하고, 핵심 키워드(<code>&lt;strong&gt;</code>)에는 60% 하단 골드 형광펜 그라데이션(<code>--gold-hl</code>)을 입힙니다.<br>
+      <strong>③ 굴림체·바탕체 폴백 차단(Universal Font Guard)</strong>: Tailwind CSS의 <code>.font-mono</code>나 <code>code</code>, <code>svg text</code> 태그가 Windows 기본 굴림체로 렌더링되는 현상을 막기 위해 전 태그를 <code>var(--font-sans) !important</code>로 1차 잠근 뒤 본문 영역에만 <code>var(--font-body) !important</code>를 오버라이드합니다.
+    </div>
+
+    <div class="prose-serif-sample">
+      [본문 명조 렌더링 및 골드 하이라이트 샘플] 「위험물안전관리법 시행령」 별표 1에 따라 <strong>나이트로벤젠(C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub>)</strong>은 분자 내에 나이트로기(-NO<sub>2</sub>)가 1개 결합되어 있으나 자기반응성이 없으므로 제5류 위험물이 아닌 <strong>제4류 위험물 중 제3석유류(비수용성, 지정수량 2,000 L)</strong>로 분류된다.
+    </div>
+
+    <h3 class="sub-title">2.2 수험 문서 작성 시 3대 텍스트·수식 렌더링 방어 규칙 (AGENTS.md 제4장 연동)</h3>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:24%;">방어 규칙 명칭</th>
+          <th style="width:36%;">금지 표기 (오류 유발 패턴)</th>
+          <th>표준 강제 표기 (검증 스크립트 통과 기준)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>① 물결표(<code>~</code>) 및 숫자 하이픈(<code>-</code>) 범위 표기 전면 금지</strong></td>
+          <td><code>1~5년 차</code>, <code>01_01~01_03</code>, <code>20~30초</code>, <code>1-5등급</code><br/>(마크다운 취소선 오작동 및 가독성 저하 유발)</td>
+          <td><strong><code>1년에서 5년 차까지</code>, <code>01_01부터 01_03까지</code>, <code>20초에서 30초 내</code></strong>와 같이 한글 조사(<code>부터</code>, <code>까지</code>, <code>에서</code>)로 풀어쓰며, 생성 후 <code>assert "~" not in html</code> 및 <code>re.search(r"\d+\s*-\s*\d+", txt)</code> 검증을 강제합니다.</td>
+        </tr>
+        <tr>
+          <td><strong>② 볼드체(<code>**</code>) 괄호·따옴표 깨짐 방어</strong></td>
+          <td><code>**완강기(피난기구)**는</code>, <code>**'화기엄금'**을</code><br/>(CommonMark 파서에서 닫는 기호 직후 한글 조사 연결 시 볼드 풀림)</td>
+          <td>괄호·따옴표를 볼드 바깥으로 빼거나(<strong><code>**완강기**(피난기구)는</code></strong>), 조사까지 볼드 내부에 포함시키고 한 칸 띄어쓰기(<strong><code>**완강기(피난기구)는** </code></strong>)를 적용합니다.</td>
+        </tr>
+        <tr>
+          <td><strong>③ 독립 HTML 내 화학식·수식 네이티브 표기</strong></td>
+          <td>이스케이프되지 않은 LaTeX 백슬래시(<code>\xrightarrow</code> 등 파이썬 유니코드 에러 유발) 또는 숫자 빼기 하이픈(<code>81.0 - 2.5</code>)</td>
+          <td>외부 스크립트 의존 없이 오프라인·인쇄에서도 100% 렌더링되도록 <strong><code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code>, <code>&amp;minus;</code>(&minus;), <code>&amp;times;</code>(&times;), <code>&amp;divide;</code>(&divide;), <code>&amp;le;</code>(&le;), <code>➔</code></strong> 네이티브 HTML 엔티티를 사용합니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- =====================================================================
+         제3장. [모드 1] 웹·모바일 기본서 아키텍처 (옥스퍼드 날개 각주 & S26 Ultra)
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제3장 · [모드 1] 웹·모바일 기본서: 단일 좌표계(Single-Origin) 날개 각주 &amp; 갤럭시 S26 Ultra 반응형 규격</span>
+      <span class="sec-banner-sub">과목별 기본서(소방관계법규 20개 장 · 소방학개론 16개 장 · 한국사 21개 장) 공통 적용 레이아웃</span>
+    </div>
+
+    <div class="diagram-box">
+      <strong>📐 단일 좌표계(Single-Origin) 옥스퍼드 날개 각주 기하학 공식 (데스크톱 <code>min-width: 1120px</code>)</strong><br>
+      <code>.book-sheet (max-width: 1220px)</code> 내부에서 본문 컬럼(<code>.main-column</code>)의 폭을 <strong><code>760px</code></strong>로 고정하고, 세로 구분선과 날개 각주의 좌표를 모두 <code>.main-column</code>의 우측 끝(<code>100%</code>)을 단일 원점(Origin)으로 삼아 계산합니다.<br>
+      • <strong>본문 컬럼 폭 (<code>--main-col-width</code>)</strong> : <code>760px</code> (내부 <code>.para-block</code>은 패딩·보더 없이 무조건 <code>width: 100% = 760px</code> 유지)<br>
+      • <strong>세로 구분선 위치</strong> : <code>left: calc(100% + 36px)</code> (본문 우측 끝에서 정확히 <code>36px</code> 이격된 <code>1px</code> 실선)<br>
+      • <strong>우측 날개 각주 위치 (<code>.margin-note</code>)</strong> : <code>left: calc(100% + 36px + 28px) = calc(100% + 64px)</code>, 가로 폭 <strong><code>270px</code></strong><br>
+      ➔ <em>효익: 표나 박스, 인용구 깊이에 상관없이 세로 구분선과 날개 각주 텍스트가 단 1px도 겹치지 않음(Zero Overlap Guarantee).</em>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:24%;">뷰포트 구간</th>
+          <th style="width:26%;">대상 디바이스</th>
+          <th>레이아웃 및 날개 각주(<code>.margin-note</code>) 변환 동작</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Desktop Wide</strong><br/>(<code>min-width: 1120px</code>)</td>
+          <td>데스크톱 모니터 · 노트북</td>
+          <td>본문(<code>760px</code>) + 세로 실선(<code>+36px</code>) + 안전 여백(<code>+28px</code>) + 우측 날개 각주(<code>270px</code>) 2단 비대칭 에디토리얼 북 레이아웃 작동.</td>
+        </tr>
+        <tr>
+          <td><strong>Tablet &amp; Foldable</strong><br/>(<code>641px</code>부터 <code>1119px</code>까지)</td>
+          <td>태블릿 · 폴드 펼침 화면</td>
+          <td>우측 날개 각주가 절대 위치(<code>position: absolute</code>)에서 해제되어 해당 문단(<code>.para-block</code>) 바로 아래의 <strong>인라인 각주 박스(좌측 크림슨 보더 카드)</strong>로 자연스럽게 삽입됨.</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Web-Novel Mode</strong><br/>(<code>max-width: 640px</code>)</td>
+          <td><strong>갤럭시 S26 Ultra</strong><br/>(<code>412px &times; 892px</code> CSS 뷰포트)</td>
+          <td>시트 좌우 여백을 <code>padding: 36px 18px</code> 풀블리드로 전환하고, 글자 크기·줄간격·명조/고딕·주간/야간 E-Ink 모드를 상단 리더 바로 제어하는 <strong>웹소설 리더 모드</strong>로 작동.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- =====================================================================
+         제4장. [모드 2] A4 2단 실전 모의고사 & 인터랙티브·인쇄 이중 호환 워크북
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제4장 · [모드 2] A4 2단 실전 모의고사 &amp; 화면·인쇄 이중 호환(Dual-Mode) 워크북 규격</span>
+      <span class="sec-banner-sub">소방관계법규 7주기(210문항) · 소방학개론 7주기(210문항) · 한국사 7회(210문항) 전 권 공통 적용 표준</span>
+    </div>
+
+    <h3 class="sub-title">4.1 3단 파트(PART 1 · PART 2 · PART 3) 표준 문서 구조</h3>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:18%;">파트 구분</th>
+          <th style="width:28%;">핵심 DOM 컨테이너 및 클래스</th>
+          <th>필수 포함 요소 및 레이아웃 규칙</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>상단 컨트롤 바</strong><br/>(화면 전용)</td>
+          <td><code>.no-print-bar</code><br/><code>.no-print-inner</code></td>
+          <td>
+            • 좌측 그룹: 마스터북 링크, 기본서 목차 링크, <code>제1주기</code>부터 <code>제7주기</code>까지 전체 주기 탭, 해당 주기 단원(<code>01_01</code> 등) 링크, 실시간 점수판(<code>#scoreDisplay</code>), 초기화(<code>resetQuiz()</code>), 문제 밑 인라인 해설 전체 펼치기 토글(<code>toggleAllInlineExp()</code>)<br/>
+            • 우측 그룹: 인쇄 범위 필터(<code>전체</code> / <code>문제지만</code> / <code>해설지만</code>), 단수 토글(<code>2단 시험지</code> / <code>1단 워크북</code>), 폰트 크기 조절(<code>가-</code> / <code>가+</code>, 기본 <code>13.4px</code>), <code>🖨️ A4 인쇄 (Ctrl+P)</code> 버튼
+          </td>
+        </tr>
+        <tr>
+          <td><strong>PART 1</strong><br/>표지 헤더 &amp; 매트릭스</td>
+          <td><code>#part1</code><br/><code>.chapter-header</code><br/><code>.book-table</code></td>
+          <td>
+            • 상단 배지(<code>.chapter-badge</code>) + 우측 학습 기록 트래커(<code>응시일 | 제한시간 30분 | 점수 ___/100점</code>)<br/>
+            • 시험지 대제목(<code>.chapter-title</code>) 및 변형 설계 요약 리드문(<code>.chapter-lead</code>)<br/>
+            • 단원별 원본 기출 문항 수·변형 문항 번호·핵심 함정 타깃을 정리한 출제 매핑 매트릭스 표(<code>.book-table</code>)
+          </td>
+        </tr>
+        <tr>
+          <td><strong>PART 2</strong><br/>2단 실전 문제지</td>
+          <td><code>#part2</code><br/><code>.questions-grid</code><br/><code>.q-card</code></td>
+          <td>
+            • <code>body.q-cols-2 .questions-grid</code>: <code>grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; row-gap: 14px;</code><br/>
+            • 단원 전환 시 전체 폭(<code>grid-column: 1 / -1</code>) 영역 구분 배너(<code>.unit-divider-banner</code>) 삽입<br/>
+            • 각 문항 카드(<code>.q-card</code>)는 인쇄 시 페이지 중간 잘림을 막기 위해 <strong><code>page-break-inside: avoid; break-inside: avoid;</code></strong> 필수 적용<br/>
+            • 카드 내부 구성: 헤더(문항 번호 배지 + 단원 태그 + 변형 유형 태그 + 우측 <code>정답: ( &nbsp;&nbsp; )</code> 기입란) ➔ 원본 기출 매핑 줄(<code>.q-orig-line</code>) ➔ 발문(<code>.q-stem</code>) ➔ <code>&lt;보기&gt;</code> 박스(<code>.q-stem-box</code>) ➔ 4지선다(<code>.q-choice-item</code>) ➔ 화면 전용 인라인 즉시 해설(<code>.inline-exp-box.no-print-inline</code>)
+          </td>
+        </tr>
+        <tr>
+          <td><strong>PART 3</strong><br/>빠른 정답표 &amp; 정밀 해설</td>
+          <td><code>#part3.page-break-section</code><br/><code>.quick-ans-grid</code><br/><code>.explanations-grid</code></td>
+          <td>
+            • <strong><code>page-break-before: always; break-before: page;</code></strong>를 통해 인쇄 시 문제지와 분리된 <strong>새 페이지에서 시작</strong><br/>
+            • 상단: 10열 &times; 3행 구조의 빠른 정답 체크표(<code>.quick-ans-box</code>, 문항 번호·단원·정답 원문자 표시)<br/>
+            • 하단: 2단 해설 그리드(<code>.explanations-grid</code>) 내 30개 정밀 해설 카드(<code>.exp-card</code>, <code>break-inside: avoid</code>). 각 카드는 <strong><code>[변형 설계 및 핵심 총평]</code></strong> 박스와 4개 선지 전수의 <strong><code>[옳음]</code> / <code>[틀림]</code> / <code>[옳음 · 정답]</code> / <code>[틀림 · 정답]</code></strong> 상세 근거를 수록
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-title">4.2 화면 인터랙티브 채점 &amp; <code>@media print</code> 클린 시험지 자동 초기화 CSS 규격</h3>
+    <pre class="code-block">/* [표준 CSS] 인쇄(@media print) 시 화면 인터랙티브 요소 및 채점 흔적 100% 자동 클린업 */
+@page {
+  size: A4 portrait;
+  margin: 16mm 16mm 16mm 16mm;
+}
+@media print {
+  html, body { background-color: #FFFFFF !important; }
+  .no-print-bar, .no-print-inline { display: none !important; }
+  .book-sheet {
+    max-width: 100% !important; width: 100% !important;
+    margin: 0 !important; padding: 0 !important;
+    border: none !important; box-shadow: none !important;
+    background-color: #FFFFFF !important;
+  }
+  .page-break-section {
+    page-break-before: always !important; break-before: page !important;
+  }
+  /* 화면에서 선지를 클릭해 채점한 후 인쇄하더라도, 종이에는 항상 깨끗한 새 시험지로 출력 */
+  .q-choice-item {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--text-main) !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+  }
+}</pre>
+
+    <!-- =====================================================================
+         제5장. [모드 3] 양면 인쇄 스테이플러 소분 파이프라인 및 자동 감사(Audit) 하네스
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제5장 · [모드 3] 양면 인쇄 스테이플러 소분(Zero Sheet Overlap) 및 자동 감사(Audit) 하네스</span>
+      <span class="sec-banner-sub">문제지와 해설지, 앞 일자와 다음 일자가 한 종이(앞뒷면)에 겹치는 현상을 100% 원천 차단</span>
+    </div>
+
+    <div class="prose-box">
+      <strong>1. 양면 인쇄(Duplex Printing) 스테이플러 소분 정렬 (PyMuPDF <code>fitz</code> 후처리)</strong><br>
+      • <strong>문제지와 해설지 물리적 용지 분리</strong>: 각 파일 내 <code>PART 3</code>(빠른 정답표 및 해설지)가 시작되는 0-based 페이지 인덱스가 홀수(<code>p_part3 % 2 == 1</code>, 즉 앞쪽 문제지가 홀수 쪽인 종이 앞면에서 끝나 해설지가 같은 종이 뒷면인 짝수 쪽에 찍히는 상태)일 경우, <code>PART 3</code> 직전에 <strong><code>[문제지·해설지 양면 분리 여백 및 오답 노트]</code>(1쪽)</strong>를 자동 삽입하여 <strong>모든 해설지가 반드시 새 종이의 앞면(1-based 홀수 쪽)에서 시작</strong>하도록 정렬합니다.<br>
+      • <strong>일자(DAY)·회차 간 물리적 용지 분리</strong>: 각 개별 PDF의 전체 페이지 수가 홀수(<code>len(doc) % 2 == 1</code>)일 경우, 문서 맨 끝에 <strong><code>[다음 일자 스테이플러 소분 분리 여백]</code>(1쪽)</strong>을 자동 추가하여 <strong>모든 파일과 구간의 전체 페이지 수를 100% 짝수(<code>len(doc) % 2 == 0</code>)로 완성</strong>합니다.
+    </div>
+
+    <h3 class="sub-title">5.2 모의고사 및 교재 생성 시 필수 통과 자동 감사(Strict Harness Audit) 6대 체크리스트</h3>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:24%;">감사(Audit) 항목</th>
+          <th style="width:36%;">검증 코드 단언문 (Python Assertion)</th>
+          <th>통과 기준 및 목적</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>① 원본 기출 100% 전수 매핑 검증</strong></td>
+          <td><code>assert expected_ids == covered_ids</code></td>
+          <td>해당 주기·단원의 원본 기출문제(소방관계법규 358문항, 소방학개론 212문항, 한국사 300문항)가 단 1문제도 누락 없이 변형 문항에 매핑되었는지 검증</td>
+        </tr>
+        <tr>
+          <td><strong>② 문항·선지·정답 구조 무결성</strong></td>
+          <td><code>assert len(questions) == 30 and len(q["choices"]) == 4 and 1 &lt;= q["ans"] &lt;= 4</code></td>
+          <td>30문항 전체의 문항 번호 연속성, 4지선다(한국사는 5지선다) 개수 및 정답 인덱스 유효성 검증</td>
+        </tr>
+        <tr>
+          <td><strong>③ 발문 긍·부정과 정답 태그 일치</strong></td>
+          <td><code>if is_negative: assert "[틀림 · 정답]" in ans_ce else: assert "[옳음 · 정답]" in ans_ce</code></td>
+          <td>발문이 <code>옳지 않은 것은?</code>일 때 정답 선지 해설이 <code>[틀림 · 정답]</code>으로 시작하고, <code>옳은 것은?</code>일 때 <code>[옳음 · 정답]</code>으로 시작하는지 교차 검증 (정답 마킹 오류 원천 차단)</td>
+        </tr>
+        <tr>
+          <td><strong>④ 물결표(<code>~</code>) 및 숫자 하이픈(<code>-</code>) 제로 검증</strong></td>
+          <td><code>assert "~" not in html and not re.search(r"\d+\s*-\s*\d+", txt)</code></td>
+          <td>모든 지문, 보기, 선지, 해설 및 HTML 테이블 내 금지 범위 기호 0건 보장</td>
+        </tr>
+        <tr>
+          <td><strong>⑤ 양방향 내비게이션 링크 동기화</strong></td>
+          <td><code>assert all_cycle_links_present(html)</code></td>
+          <td>상단 컨트롤 바, 과목별 <code>index.html</code>, 그리고 4일 주기 마스터북 간의 이동 링크 100% 연결 보장</td>
+        </tr>
+        <tr>
+          <td><strong>⑥ 양면 인쇄 홀수 쪽 시작 &amp; 짝수 페이지 정렬</strong></td>
+          <td><code>assert exp_start_1based % 2 == 1 and len(doc) % 2 == 0</code></td>
+          <td>PDF 변환 시 모든 해설지와 각 일자(<code>DAY</code>)가 새 종이 앞면(홀수 쪽)에서 시작하고 총페이지가 짝수인지 검증</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</body>
+</html>

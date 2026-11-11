@@ -1236,7 +1236,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 한강 유역의 전략적 가치와 4세기 백제의 비상</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1268,7 +1268,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 고구려 소수림왕의 체제 재정비와 5세기 대제국의 남진</h2>
         <div id="theory-sec2-p3" class="para-block">
           <p class="prose-body">
@@ -1295,7 +1295,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강 독점·가야 병합</h2>
         <div id="theory-sec3-p6" class="para-block">
           <p class="prose-body">
@@ -1394,7 +1394,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 삼국의 통치 체제(관등·지방 5부·5방)와 가야 유적·외교 국서</h2>
 
         <div id="theory-sec4-p9" class="para-block">
@@ -1505,6 +1505,22 @@
           <button type="button" class="s26-nav-btn primary" id="s26NextBtn" onclick="stepSwipeQ(1)">다음 문항 (좌로 밀기) ▶</button>
         </div>
         <div class="s26-QuickJump" id="s26QuickDots"></div>
+      </div>
+
+      <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
+        <div class="s26-ox-top-header">
+          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+            <span>&lt;</span>
+            <span>DAY04 · OX 카드</span>
+          </button>
+          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        </div>
+        <div class="s26-ox-prev-row">
+          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+        </div>
+        <div id="s26OxCardMount"></div>
+        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -4812,7 +4828,7 @@
 <!-- S26_ULTRA_SWIPE_START -->
   <style>
     /* ==========================================================================
-       GALAXY S26 ULTRA (412px × 892px) HORIZONTAL SWIPE & THEORY MAPPING ENGINE
+       GALAXY S26 ULTRA (412px × 892px) HORIZONTAL SWIPE & OX CARD DECK ENGINE
        ========================================================================== */
     .q-choice-item {
       cursor: pointer;
@@ -5183,6 +5199,7 @@
 
     @media print {
       .s26-swipe-bar,
+      .s26-ox-deck-stage,
       #s26ReturnFloat,
       .inline-exp-box,
       .theory-map-row {
@@ -5196,6 +5213,203 @@
         padding: 4px 0 8px 0 !important;
       }
     }
+
+    /* ==========================================================================
+       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       ========================================================================== */
+    .s26-ox-deck-stage {
+      display: none;
+      max-width: 460px;
+      margin: 14px auto 24px;
+      padding: 4px 2px;
+      font-family: var(--font-sans);
+    }
+    body.s26-ox-deck-active .s26-ox-deck-stage {
+      display: block !important;
+    }
+    body.s26-ox-deck-active #part2 .questions-grid,
+    body.s26-ox-deck-active #part2 .stats-block,
+    body.s26-ox-deck-active #part2 .s26-swipe-bar {
+      display: none !important;
+    }
+    .s26-ox-top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px 12px;
+    }
+    .s26-ox-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 17px;
+      font-weight: 800;
+      padding: 2px 0;
+      cursor: pointer;
+    }
+    .s26-ox-prev-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .s26-ox-prev-link {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 2px 0;
+    }
+    .s26-ox-prev-link:disabled {
+      opacity: 0.32;
+      cursor: default;
+    }
+    .s26-ox-card-box {
+      background-color: var(--bg-sheet);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 22px 18px 18px;
+      box-shadow: 0 14px 34px rgba(20, 16, 12, 0.12);
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .s26-ox-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .s26-ox-num-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .s26-ox-num-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .s26-ox-c-badge {
+      width: 19px;
+      height: 19px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-size: 10.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s26-ox-digits {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .s26-ox-subcode {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.85;
+      padding-left: 2px;
+    }
+    .s26-ox-save-pill {
+      border: 1px solid var(--border-strong);
+      background: transparent;
+      color: var(--text-sub);
+      border-radius: 7px;
+      padding: 4px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .s26-ox-save-pill.saved {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .s26-ox-stmt {
+      font-family: var(--font-body);
+      font-size: 17.5px;
+      line-height: 1.76;
+      color: var(--text-main);
+      word-break: keep-all;
+      padding: 4px 2px 24px;
+      min-height: 145px;
+      flex: 1;
+    }
+    .s26-ox-hit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .s26-ox-big-btn {
+      height: 128px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+    .s26-ox-big-btn svg {
+      width: 54px;
+      height: 54px;
+      stroke: currentColor;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .s26-ox-big-btn.picked-right {
+      background: #EAF6EE !important;
+      border: 2.5px solid #1E5631 !important;
+      color: #1E5631 !important;
+    }
+    .s26-ox-big-btn.picked-wrong {
+      background: #FDEEEE !important;
+      border: 2.5px solid #9E2A2B !important;
+      color: #9E2A2B !important;
+    }
+    .s26-ox-big-btn.dimmed {
+      opacity: 0.4;
+    }
+    .s26-ox-feedback {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 11px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      font-size: 13.5px;
+      line-height: 1.62;
+    }
+    .s26-ox-bottom-counter {
+      text-align: center;
+      padding-top: 18px;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .s26-ox-bottom-counter strong {
+      color: var(--text-main);
+    }
   </style>
 
   <div id="s26ReturnFloat" class="no-print-inline">
@@ -5208,11 +5422,154 @@
 
   <script>
     let s26SwipeOn = false;
+    let s26OxDeckOn = false;
     let s26CurQ = 1;
+    let s26CurOxIdx = 0;
     const s26TotalQ = 30;
     let s26LastQuizQ = 1;
+    let s26LastMode = 'q'; // 'q' | 'ox'
     const s26Solved = {};
+    const s26OxSolved = {};
+    const s26OxSaved = {};
+    const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "백제 고이왕은 6좌평 16관등제를 마련하고 관리의 공복(자·비·청)을 제정하여 중앙집권 기틀을 다졌다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 2, "code": "기002", "stmt": "백제 근초고왕은 마한을 완전히 병합하고 평양성을 공격하여 고구려 고국원왕을 전사시켰으며, 왜왕에게 칠지도를 하사하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 3, "code": "기003", "stmt": "백제 침류왕은 중국 남조의 동진으로부터 승려 마라난타를 맞이하여 불교를 공인하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 4, "code": "기004", "stmt": "고구려 고국천왕은 부족적 5부를 행정적 5부로 개편하고 을파소의 건의로 빈민 구제 제도인 진대법을 시행하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 고구려 소수림왕의 체제 재정비와 5세기 대제국… 본문 3 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 5, "code": "기005", "stmt": "고구려 미천왕은 서안평을 점령하고 낙랑군과 대방군을 축출하여 대동강 유역을 완전히 확보하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 고구려 소수림왕의 체제 재정비와 5세기 대제국… 본문 3 본문 보기", "tpreview": "초기 고구려는 1세기 후반 태조왕 때 옥저를 정복하고 계루부 고씨의 왕위 독점 세습을 확립하였으며, 2세기 후반 고국천왕 때 5부족을 행정적 5부(동·서·남·북·내부)로 개편하고 왕위 부자상속을 확립하는 한편 귀곡의 장리(고리대)로부터 빈민을 구제하기 위해 봄에 곡식을 빌려주었다가 가을에 갚게 …"}, {"num": 6, "code": "기006", "stmt": "고구려 소수림왕은 전진에서 불교를 수용하여 공인하고, 태학을 설립하며 율령을 반포하여 국가 체제를 재정비하였다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 2. 고구려 소수림왕의 체제 재정비와 5세기 대제국… 본문 3 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 7, "code": "기007", "stmt": "광개토대왕은 독자 연호인 '영락'을 사용하였으며, 신라 내물 마립간의 요청으로 5만 군대를 파견해 왜군을 격퇴하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 8, "code": "기008", "stmt": "고구려 장수왕은 평양으로 천도(427)하고 남진 정책을 추진하여 백제 한성을 함락(개로왕 전사)하고 한강 유역 전체를 장악하였다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 9, "code": "기009", "stmt": "충주 고구려비는 백제 근초고왕의 한강 유역 진출을 기념하여 세운 비석이다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 2. 고구려 소수림왕의 체제 재정비와 5세기 대제국… 본문 5 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 10, "code": "기010", "stmt": "고구려 장수왕의 남진 정책에 대응하여 백제 비유왕과 신라 눌지 마립간이 나제동맹(433)을 맺었고, 이후 백제 동성왕과 신라 소지 마립간이 결혼동맹(493)으로 이를 강화하였다.", "ans": true, "tid": "theory-sec3-tbl1", "tlabel": "📖 기본서 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 핵심… 바로가기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 11, "code": "기011", "stmt": "백제 무령왕은 지방의 22담로에 왕족을 파견하여 지방 통제력을 강화하고 중국 남조의 양나라와 활발히 교류하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 12, "code": "기012", "stmt": "백제 성왕은 사비(부여)로 천도하고 국호를 '남부여'로 고쳐 중흥을 꾀하였으나, 관산성 전투에서 신라군에게 패하여 전사하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 13, "code": "기013", "stmt": "신라 내물 마립간은 김씨에 의한 왕위 독점 세습권을 확립하고 대군장을 뜻하는 '마립간' 칭호를 사용하였다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 삼국 통치·가야 급소 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 14, "code": "기014", "stmt": "신라 지증왕은 국호를 '신라', 군주 호칭을 '왕'으로 확정하고, 우경을 장려하였으며 이사부를 보내 우산국을 복속시켰다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 삼국 통치·가야 급소 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 15, "code": "기015", "stmt": "신라 법흥왕은 병부를 설치하고 율령을 반포하였으며, 이차돈의 순교를 계기로 불교를 공인하고 '건원' 연호를 사용하였다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 삼국 통치·가야 급소 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 16, "code": "기016", "stmt": "신라는 진흥왕 대에 이르러 비로소 불교를 처음으로 공인하였다.", "ans": false, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 삼국 통치·가야 급소 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 17, "code": "기017", "stmt": "전기 가야 연맹을 이끌던 김해 금관가야는 신라 법흥왕 때 병합되었고, 후기 가야 연맹을 이끌던 고령 대가야는 신라 진흥왕 때 정복되었다.", "ans": true, "tid": "theory-sec3-tbl1", "tlabel": "📖 기본서 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 핵심… 바로가기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 18, "code": "기018", "stmt": "신라 진흥왕은 백제 성왕과 연합해 한강 상류를 차지한 뒤 한강 하류까지 기습 장악하였으며, 정복지에 단양 신라 적성비와 4대 순수비를 세웠다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 8 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 19, "code": "기019", "stmt": "북한산 순수비, 창녕비, 황초령비, 마운령비는 백제 무령왕이 영토 확장을 기념하여 세운 비석이다.", "ans": false, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 8 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 20, "code": "기020", "stmt": "신라 진흥왕은 화랑도를 국가적 조직으로 개편하여 인재를 양성하고, 거칠부에게 명하여 역사서 ｢국사(國史)｣를 편찬하게 하였다.", "ans": true, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 8 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}, {"num": 21, "code": "기021", "stmt": "백제에서는 지배층이 왕을 '어라하'라 부르고 백성은 '건길지'라 불렀으며, 귀족 회의인 정사암 회의에서 재상(상좌평)을 선출하였다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 삼국의 통… 본문 9 본문 보기", "tpreview": "제60회부터 제69회까지의 한능검 심화 시험에서는 고구려·백제·신라 각국의 왕호, 귀족 회의, 중앙 관등제, 수도 및 지방 통치 조직(5부·5방) 을 묻는 단독 문항과, 백제 개로왕이 북위에 보낸 국서(472년) , 광개토 대왕의 관미성 함락 , 그리고 유네스코 세계유산으로 등재된 가야 고분군 …"}, {"num": 22, "code": "기022", "stmt": "백제는 고이왕 때 좌평을 비롯한 16관등제의 기틀을 마련하고 자색·비색·청색의 관리 복색을 제정하였으며, 6품 나솔 이상은 관모에 은화(은꽃) 관식을 꽂았다.", "ans": true, "tid": "theory-sec4-p9", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 삼국의 통… 본문 9 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 23, "code": "기023", "stmt": "백제는 사비 시기에 수도를 5부로, 지방을 5방으로 나누고 각 방에 달솔 관등의 방령(方領)을 파견하여 통치하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "475년 장수왕에게 수도 한성과 한강 유역을 빼앗기고 개로왕까지 전사한 백제는 문주왕 때 남쪽 금강 유역의 산성 도시인 웅진(공주)으로 긴급 천도 하였습니다. 갑작스러운 천도로 왕권이 흔들리자 동성왕(5세기 말) 은 신라 소지 마립간과 결혼동맹(493년) 을 맺어 나제동맹을 한층 강화하였고, 뒤…"}, {"num": 24, "code": "기024", "stmt": "고구려는 수도를 6부로 나누고 지방을 5방으로 편제하여 각 방에 방령을 파견하였다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "475년 장수왕에게 수도 한성과 한강 유역을 빼앗기고 개로왕까지 전사한 백제는 문주왕 때 남쪽 금강 유역의 산성 도시인 웅진(공주)으로 긴급 천도 하였습니다. 갑작스러운 천도로 왕권이 흔들리자 동성왕(5세기 말) 은 신라 소지 마립간과 결혼동맹(493년) 을 맺어 나제동맹을 한층 강화하였고, 뒤…"}, {"num": 25, "code": "기025", "stmt": "고구려 광개토 대왕은 백제 아신왕을 공격하여 한강 하구의 요충지인 관미성(關彌城) 등 58성 700촌을 함락시키고 항복을 받아냈다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 삼국의 통… 본문 10 본문 보기", "tpreview": "또한 5세기 고구려의 남진과 백제의 위기를 다룬 사료도 매우 중요합니다. 고구려 광개토 대왕 은 백제 아신왕을 공격하여 한강 하구의 전략 요충지인 관미성(關彌城) 을 비롯해 58성 700촌을 함락시키고 아신왕의 항복을 받았으며, 재위 18년에 태자 거련(巨連, 훗날의 장수왕) 을 세웠습니다. 뒤…"}, {"num": 26, "code": "기026", "stmt": "백제 개로왕(여경)은 장수왕의 남진 압박에 맞서기 위해 472년 북위(北魏)에 사신을 보내 고구려를 함께 공격하자고 요청하는 국서를 전달하였다.", "ans": true, "tid": "theory-sec4-p10", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 삼국의 통… 본문 10 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 27, "code": "기027", "stmt": "475년 고구려 장수왕에게 수도 한성을 빼앗긴 백제는 문주왕 때 금강 유역의 웅진(공주)으로 도읍을 옮겼다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "고구려는 고국천왕(부자상속·진대법)과 소수림왕(불교·태학·율령)을 거쳐 광개토대왕(영락 연호·신라 구원)과 장수왕(평양 천도·한강 전체 장악) 때 5세기 최대 전성기를 이룩하였습니다."}, {"num": 28, "code": "기028", "stmt": "백제 무령왕은 지방의 22담로에 왕족을 파견하여 지방 통제를 강화하고 중국 남조의 양(梁)나라와 활발히 교류하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "백제는 4세기 근초고왕 때 마한 병합·평양성 공격·요서 진출로 전성기를 누렸고, 웅진 천도 후 무령왕(22담로·벽돌무덤)과 성왕(사비 천도·남부여·22부)이 중흥을 꾀하였습니다."}, {"num": 29, "code": "기029", "stmt": "백제 성왕은 수도를 사비(부여)로 옮기고 국호를 '남부여'로 고쳤으며, 신라 진흥왕과 연합하여 한강 하류 유역을 일시 수복하였으나 관산성 전투에서 전사하였다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 3. 6세기 백제의 중흥 노력과 신라 진흥왕의 한강… 본문 6 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 30, "code": "기030", "stmt": "신라 법흥왕은 병부와 상대등을 설치하고 율령 반포(17관등·공복 제정), 불교 공인(이차돈 순교), 독자 연호 '건원' 사용, 금관가야 병합(532)을 이루었다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 삼국 통치·가야 급소 본문 보기", "tpreview": "신라는 지증왕(신라 국호·왕호·우경·우산국), 법흥왕(병부·율령·불교 공인·금관가야 병합)을 거쳐 6세기 진흥왕 때 화랑도 개편·한강 유역 장악·대가야 병합으로 전성기를 달성하였습니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
+
+    function toggleOxDeckMode(forceState) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
+      if (s26OxDeckOn && s26SwipeOn) {
+        s26SwipeOn = false;
+        document.body.classList.remove('s26-swipe-active');
+        const bSwipe = document.getElementById('btnS26Swipe');
+        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+      }
+      document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
+      const btnOx = document.getElementById('btnS26OxDeck');
+      if (btnOx) {
+        btnOx.classList.toggle('active', s26OxDeckOn);
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+      }
+      if (s26OxDeckOn) {
+        renderS26OxCard();
+        const stg = document.getElementById('s26OxDeckStage');
+        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function renderS26OxCard() {
+      const mount = document.getElementById('s26OxCardMount');
+      const cntEl = document.getElementById('s26OxBottomCounter');
+      const prevBtn = document.getElementById('s26OxPrevLink');
+      if (!mount || !s26OxDeckList.length) return;
+      if (s26CurOxIdx < 0) s26CurOxIdx = 0;
+      if (s26CurOxIdx >= s26OxDeckList.length) s26CurOxIdx = s26OxDeckList.length - 1;
+
+      const item = s26OxDeckList[s26CurOxIdx];
+      const numStr = String(item.num).padStart(2, '0');
+      const isSaved = !!s26OxSaved[item.num];
+      const ansRec = s26OxSolved[item.num];
+
+      if (prevBtn) prevBtn.disabled = (s26CurOxIdx === 0);
+      if (cntEl) cntEl.innerHTML = `<strong>${s26CurOxIdx + 1}</strong> / ${s26OxDeckList.length}`;
+
+      let oCls = 's26-ox-big-btn';
+      let xCls = 's26-ox-big-btn';
+      let fbHtml = '';
+
+      if (ansRec !== undefined) {
+        const isRight = ansRec === item.ans;
+        if (ansRec === true) {
+          oCls += isRight ? ' picked-right' : ' picked-wrong';
+          xCls += ' dimmed';
+        } else {
+          xCls += isRight ? ' picked-right' : ' picked-wrong';
+          oCls += ' dimmed';
+        }
+        const safePreview = (item.tpreview || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        fbHtml = `
+          <div class="s26-ox-feedback" style="border-left:4px solid ${isRight ? '#1E5631' : '#9E2A2B'};">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+              <strong style="color:${isRight ? '#1E5631' : '#9E2A2B'};">
+                ${isRight ? '✓ 정답입니다!' : '✕ 오답입니다!'} (정답: ${item.ans ? 'O' : 'X'})
+              </strong>
+              <button type="button" class="theory-map-btn" data-theory-id="${item.tid}" data-preview="${safePreview}" onclick="jumpToTheoryFromOx('${item.tid}', ${s26CurOxIdx}, this)" style="width:auto;">
+                ${item.tlabel}
+              </button>
+            </div>
+            <div style="color:var(--text-sub); font-size:12.5px;">${item.tpreview}</div>
+          </div>
+        `;
+      }
+
+      mount.innerHTML = `
+        <article class="s26-ox-card-box">
+          <div class="s26-ox-card-top">
+            <div class="s26-ox-num-wrap">
+              <div class="s26-ox-num-row">
+                <span class="s26-ox-c-badge">C</span>
+                <span class="s26-ox-digits">${numStr}</span>
+              </div>
+              <span class="s26-ox-subcode">${item.code}</span>
+            </div>
+            <button type="button" class="s26-ox-save-pill ${isSaved ? 'saved' : ''}" onclick="toggleS26OxSave(${item.num})">
+              ${isSaved ? '✓ 저장됨' : '+ 저장'}
+            </button>
+          </div>
+          <div class="s26-ox-stmt">${item.stmt}</div>
+          <div class="s26-ox-hit-grid">
+            <button type="button" class="${oCls}" onclick="answerS26OxCard(true)" aria-label="O">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
+            </button>
+            <button type="button" class="${xCls}" onclick="answerS26OxCard(false)" aria-label="X">
+              <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
+            </button>
+          </div>
+          ${fbHtml}
+        </article>
+      `;
+    }
+
+    function answerS26OxCard(pickO) {
+      const item = s26OxDeckList[s26CurOxIdx];
+      if (!item) return;
+      s26OxSolved[item.num] = pickO;
+      renderS26OxCard();
+    }
+
+    function toggleS26OxSave(oxNum) {
+      s26OxSaved[oxNum] = !s26OxSaved[oxNum];
+      renderS26OxCard();
+    }
+
+    function stepS26Ox(delta) {
+      const nextIdx = s26CurOxIdx + delta;
+      if (nextIdx >= 0 && nextIdx < s26OxDeckList.length) {
+        s26CurOxIdx = nextIdx;
+        renderS26OxCard();
+      }
+    }
+
+    function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
+      s26LastMode = 'ox';
+      s26CurOxIdx = oxIdx;
+      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
+      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
+      const floatEl = document.getElementById('s26ReturnFloat');
+      const floatTxt = document.getElementById('s26FloatPreviewText');
+      const retBtn = document.getElementById('s26ReturnBtn');
+      if (floatTxt) {
+        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
+      }
+      if (retBtn) {
+        retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
+      }
+      if (floatEl) floatEl.classList.add('show-float');
+      const targetEl = document.getElementById(targetId) || document.getElementById('part1');
+      if (targetEl) {
+        document.querySelectorAll('.theory-target-highlight').forEach(el => el.classList.remove('theory-target-highlight'));
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('theory-target-highlight');
+      }
+    }
 
     function initS26Dots() {
       const wrap = document.getElementById('s26QuickDots');
@@ -5231,6 +5588,12 @@
 
     function toggleSwipeMode(forceState) {
       s26SwipeOn = (typeof forceState === 'boolean') ? forceState : !s26SwipeOn;
+      if (s26SwipeOn && s26OxDeckOn) {
+        s26OxDeckOn = false;
+        document.body.classList.remove('s26-ox-deck-active');
+        const btnOx = document.getElementById('btnS26OxDeck');
+        if (btnOx) { btnOx.classList.remove('active'); btnOx.textContent = '⭕ OX 카드 슬라이드'; }
+      }
       document.body.classList.toggle('s26-swipe-active', s26SwipeOn);
       const btn = document.getElementById('btnS26Swipe');
       if (btn) {
@@ -5322,6 +5685,7 @@
     }
 
     function jumpToTheory(targetId, qnum, btnEl) {
+      s26LastMode = 'q';
       s26LastQuizQ = qnum || s26CurQ;
       const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
       const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
@@ -5347,7 +5711,10 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26SwipeOn) {
+      if (s26LastMode === 'ox' && s26OxDeckOn) {
+        const stg = document.getElementById('s26OxDeckStage');
+        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {
         const qcard = document.getElementById('q-card-' + s26LastQuizQ);
@@ -5360,25 +5727,34 @@
       let touchStartX = 0;
       let touchStartY = 0;
       document.addEventListener('touchstart', function(e) {
-        if (!s26SwipeOn || !e.touches || !e.touches[0]) return;
+        if ((!s26SwipeOn && !s26OxDeckOn) || !e.touches || !e.touches[0]) return;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
       }, { passive: true });
 
       document.addEventListener('touchend', function(e) {
-        if (!s26SwipeOn || !e.changedTouches || !e.changedTouches[0]) return;
+        if ((!s26SwipeOn && !s26OxDeckOn) || !e.changedTouches || !e.changedTouches[0]) return;
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
         if (Math.abs(dx) > 54 && Math.abs(dx) > Math.abs(dy) * 1.4) {
-          if (dx < 0) stepSwipeQ(1);
-          else stepSwipeQ(-1);
+          if (s26OxDeckOn) {
+            if (dx < 0) stepS26Ox(1);
+            else stepS26Ox(-1);
+          } else if (s26SwipeOn) {
+            if (dx < 0) stepSwipeQ(1);
+            else stepSwipeQ(-1);
+          }
         }
       }, { passive: true });
 
       document.addEventListener('keydown', function(e) {
-        if (!s26SwipeOn) return;
-        if (e.key === 'ArrowRight') stepSwipeQ(1);
-        else if (e.key === 'ArrowLeft') stepSwipeQ(-1);
+        if (s26OxDeckOn) {
+          if (e.key === 'ArrowRight') stepS26Ox(1);
+          else if (e.key === 'ArrowLeft') stepS26Ox(-1);
+        } else if (s26SwipeOn) {
+          if (e.key === 'ArrowRight') stepSwipeQ(1);
+          else if (e.key === 'ArrowLeft') stepSwipeQ(-1);
+        }
       });
 
       window.addEventListener('DOMContentLoaded', function() {

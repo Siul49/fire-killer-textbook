@@ -151,7 +151,7 @@ body {
    ========================================================================== */
 
 main {
-  max-width: 1220px !important;
+  max-width: 920px !important;
   margin: 2rem auto 3.5rem auto !important;
   background-color: var(--bg-sheet) !important;
   border: 1px solid var(--border-line) !important;
@@ -165,28 +165,33 @@ main {
 
 @media (min-width: 1120px) {
   main {
-    padding: 64px 56px 84px 64px !important;
+    padding: 64px 64px 84px 64px !important;
   }
 
-  /* Strict 760px Main Column Wrapper */
+  /* Centered 100% Main Column (Sidenotes Removed) */
   .main-column {
-    width: var(--main-col-width) !important;
-    max-width: var(--main-col-width) !important;
+    width: 100% !important;
+    max-width: 100% !important;
     position: relative !important;
   }
 
-  /* Style A Vertical Hairline Rule: Always 36px to the right of main-column */
   .main-column::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(100% + var(--line-gap));
-    width: 1px;
-    background-color: var(--margin-rule);
-    pointer-events: none;
-    transition: background-color 0.25s ease;
+    display: none !important;
   }
+}
+
+.sidenote,
+.novel-note-pill,
+.fn-ref,
+#fkNoteBottomSheet,
+#fkNoteModeBtn,
+#sec1 .book-table,
+#sec2 .book-table,
+#sec3 .book-table,
+#sec1 .table-scroll-wrap,
+#sec2 .table-scroll-wrap,
+#sec3 .table-scroll-wrap {
+  display: none !important;
 }
 
 @media (max-width: 640px) {
@@ -275,6 +280,91 @@ header p {
   font-weight: 700 !important;
   background: linear-gradient(transparent 60%, var(--gold-hl) 60%);
   padding: 0 2px;
+}
+
+/* ==========================================================================
+   2-B. READABILITY ENHANCEMENTS: LINE-SPLIT LIST ITEMS & FORMULA CALLOUTS
+   (Uses inline <span> with display:block so HTML5 <p class="prose-body"> never auto-closes)
+   ========================================================================== */
+
+.prose-body .prose-item {
+  display: block;
+  margin: 12px 0 4px 0;
+  padding: 0;
+  background: transparent;
+  border: none !important;
+  font-weight: 400;
+  line-height: 1.85 !important;
+  text-align: left !important;
+}
+
+.prose-body .prose-sub {
+  display: block;
+  margin: 4px 0 4px 16px;
+  padding: 0;
+  border: none !important;
+  font-weight: 400;
+  line-height: 1.8 !important;
+  text-align: left !important;
+}
+
+.prose-body .formula-box {
+  display: block;
+  margin: 10px 0 12px 0;
+  padding: 11px 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.96) !important;
+  font-weight: 400 !important;
+  color: var(--text-main) !important;
+  line-height: 1.76 !important;
+  text-align: left !important;
+  box-shadow: 0 2px 6px rgba(35, 30, 20, 0.04);
+}
+
+.prose-body .formula-box * {
+  font-family: var(--font-sans) !important;
+}
+
+.prose-body .formula-eq {
+  display: block;
+  font-size: calc(var(--body-size, 17px) * 1.04) !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  margin: 3px 0;
+  letter-spacing: 0.01em;
+}
+
+.prose-body .formula-ex {
+  display: block;
+  margin-top: 7px;
+  padding-top: 7px;
+  border-top: 1px dashed var(--border-strong);
+  font-size: calc(var(--body-size, 17px) * 0.92) !important;
+  font-weight: 400 !important;
+  color: var(--text-sub) !important;
+  line-height: 1.72 !important;
+}
+
+.prose-body .formula-badge {
+  display: inline-block;
+  font-family: var(--font-sans) !important;
+  font-size: 0.74rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background-color: var(--accent) !important;
+  padding: 1px 7px;
+  border-radius: 4px;
+  margin-right: 7px;
+  vertical-align: middle;
+  letter-spacing: 0.01em;
+}
+
+body.mode-night .prose-body .formula-badge {
+  color: #121211 !important;
 }
 
 /* Inline Footnote Reference Badge [주1] */
@@ -764,36 +854,14 @@ body.mode-novel #tocSidebar {
   flex-shrink: 0;
 }
 
-/* When in Novel Mode or Mobile (< 1120px) AND inline-notes is NOT forced open:
-   Show the sleek pill and hide the bulky .sidenote box (content opens in Bottom Sheet!) */
-@media (max-width: 1119px) {
-  body:not(.notes-inline-open) .main-column .sidenote {
-    display: none !important;
-  }
-  body:not(.notes-inline-open) .novel-note-pill {
-    display: flex !important;
-  }
-}
-
-body.mode-novel:not(.notes-inline-open) .main-column .sidenote {
+/* Sidenotes & Novel Note Pills Globally Disabled */
+.sidenote,
+.main-column .sidenote,
+body.mode-novel .main-column .sidenote,
+body.notes-inline-open .main-column .sidenote,
+.novel-note-pill,
+body.mode-novel .novel-note-pill {
   display: none !important;
-}
-
-body.mode-novel:not(.notes-inline-open) .novel-note-pill {
-  display: flex !important;
-}
-
-/* If user chooses '주석 본문 내 펼치기' (body.notes-inline-open) in Novel Mode */
-body.mode-novel.notes-inline-open .main-column .sidenote {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  width: 100% !important;
-  margin: 0.5rem 0 1.5rem 0 !important;
-  padding: 14px 16px !important;
-  background-color: var(--bg-subtle) !important;
-  border-left: 3px solid var(--accent) !important;
-  border-radius: 6px;
 }
 
 /* Bottom Sheet Modal for Sidenotes & Reader Settings on S26 Ultra / Novel Mode */
@@ -1040,4 +1108,241 @@ body.mode-novel.notes-inline-open .main-column .sidenote {
   color: var(--wrong-ink) !important;
   font-weight: 700 !important;
   text-align: center;
+}
+
+/* ==========================================================================
+   9. HIGH-DENSITY CHAPTER CHEAT SHEET (단원 압축 정리본)
+   ========================================================================== */
+
+.diagram-container.cheat-sheet-wrap {
+  background-color: var(--bg-sheet) !important;
+  border: 1.5px solid var(--border-strong) !important;
+  border-top: 3.5px solid var(--accent) !important;
+  border-radius: 8px !important;
+  padding: 18px 22px !important;
+  margin: 2.2rem 0 !important;
+  box-shadow: 0 4px 16px rgba(35, 30, 20, 0.05) !important;
+}
+
+.cheat-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1.5px solid var(--text-main);
+}
+
+.cheat-sheet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.96) !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  letter-spacing: -0.02em;
+}
+
+.cheat-sheet-sub {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.78) !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+}
+
+.cheat-part {
+  margin-bottom: 14px;
+}
+
+.cheat-part:last-child {
+  margin-bottom: 0;
+}
+
+.cheat-part-title {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.88) !important;
+  font-weight: 800 !important;
+  color: var(--text-main) !important;
+  background-color: var(--bg-subtle) !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.cheat-grid {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-line);
+}
+
+.cheat-row {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 14px;
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--border-line);
+  align-items: baseline;
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.91) !important;
+  line-height: 1.68 !important;
+}
+
+@media (max-width: 640px) {
+  .cheat-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+.cheat-key {
+  font-family: var(--font-sans) !important;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  letter-spacing: -0.02em;
+}
+
+.cheat-val {
+  font-family: var(--font-sans) !important;
+  color: var(--text-main) !important;
+  word-break: keep-all;
+}
+
+.cheat-val strong {
+  color: var(--text-main) !important;
+  font-weight: 700 !important;
+  background: linear-gradient(transparent 62%, var(--gold-hl) 62%);
+  padding: 0 1px;
+}
+
+.cheat-eq {
+  display: inline-block;
+  font-weight: 800 !important;
+  color: var(--accent) !important;
+  background-color: var(--accent-soft);
+  padding: 0 6px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+
+/* ==========================================================================
+   10. SUBJECTIVE FORMULA & KEY-NUMBER RECALL (주관식 빈칸 채우기 & 공식 단답형)
+   ========================================================================== */
+
+.subj-section-wrap {
+  background-color: var(--bg-sheet);
+  border: 1.5px solid var(--border-strong);
+  border-top: 3.5px solid var(--navy-ink, #1E3A5F);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+
+.subj-card {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.15s ease;
+}
+
+.subj-card:hover {
+  border-color: var(--border-strong);
+}
+
+.subj-eq-line {
+  font-family: var(--font-sans) !important;
+  font-size: calc(var(--body-size, 17px) * 0.96) !important;
+  font-weight: 800 !important;
+  color: var(--text-main);
+  background-color: var(--bg-sheet);
+  border: 1px solid var(--border-line);
+  border-radius: 6px;
+  padding: 9px 13px;
+  margin: 6px 0;
+  line-height: 1.72 !important;
+}
+
+.subj-ex-line,
+.subj-prose-line {
+  font-family: var(--font-body) !important;
+  font-size: calc(var(--body-size, 17px) * 0.94) !important;
+  line-height: 1.8 !important;
+  color: var(--text-main);
+  margin-top: 4px;
+}
+
+.subj-blank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: baseline;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  padding: 1px 8px;
+  margin: 1px 2px;
+  font-family: var(--font-sans) !important;
+  font-size: 0.92em !important;
+  font-weight: 800 !important;
+  border: 1.5px dashed var(--accent);
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  transition: all 0.14s ease;
+}
+
+.subj-blank:hover {
+  background-color: var(--accent);
+  color: #ffffff !important;
+}
+
+.subj-blank .subj-ph {
+  display: inline;
+}
+
+.subj-blank .subj-ans {
+  display: none;
+}
+
+.subj-blank.open {
+  border-style: solid;
+  border-color: var(--correct-border, #8CBE9B);
+  background-color: var(--correct-bg, #F2F8F4);
+  color: var(--correct-ink, #164E28) !important;
+}
+
+.subj-blank.open .subj-ph {
+  display: none;
+}
+
+.subj-blank.open .subj-ans {
+  display: inline;
+}
+
+@media print {
+  .subj-blank:not(.open) {
+    border: none !important;
+    border-bottom: 1.2px solid #181715 !important;
+    background: transparent !important;
+    color: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 14px !important;
+  }
+  .subj-blank:not(.open) .subj-ph {
+    visibility: hidden !important;
+  }
+  .subj-blank:not(.open)::before {
+    content: "[";
+    color: #181715 !important;
+    font-weight: 800;
+    margin-right: 4px;
+  }
+  .subj-blank:not(.open)::after {
+    content: "]";
+    color: #181715 !important;
+    font-weight: 800;
+    margin-left: 4px;
+  }
 }

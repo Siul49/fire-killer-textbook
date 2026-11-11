@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=6" />
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,9 +44,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 화재예방법 분법 배경과 3단계 계획(9·10·12월) 및 영향평가</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 화재안전조사 대상 선정(위원회 7명)·합동조사반과 사전통지(7일)</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 조치명령·손실보상(시가 기준)·결과 공개 및 벌칙·과태료</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 분법 배경·용어 대조(DAY 06)와 3단계 계획(DAY 01 확장)·영향평가</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 화재안전조사위원회(본부장·7명)·합동조사반 및 7일 사전통지</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 조치명령·시가 손실보상(DAY 04 비교)·공개 및 벌칙·감경</a>
           <a href="#diagramSection" class="block text-emerald-400 hover:text-white py-1 transition mt-2">단원 핵심 도해</a>
           <a href="#examStatsSection" class="block text-amber-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">
             출제 경향 및 핵심 쟁점 요약
@@ -55,7 +55,7 @@
             실전 기출문제 (18문항)
           </a>
           <a href="#quizSection" class="block text-teal-300 hover:text-white py-1 transition font-bold">
-            핵심 지문 OX 확인 (25문항)
+            핵심 지문 OX 확인 (54문항: 1회독 30 + 2회독확장 24)
           </a>
         </nav>
       </div>
@@ -69,238 +69,170 @@
 
     <header class="mb-14 pb-6 border-b border-emerald-900/40">
       <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
-        <span>제2편 화재의 예방 및 안전관리에 관한 법률 · 제1장</span>
+        <span>제2편 화재의 예방 및 안전관리에 관한 법률 · 제1장 · DAY 07 (제1편 사후 진압·조사에서 사전 예방으로 전환)</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
         화재예방 기본계획과 화재안전조사
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        기존 소방시설법에서 화재예방법이 분법된 입법 취지를 바탕으로, 5년 단위 화재예방 기본계획과 매년 수립하는 시행계획의 시한을 확인하고, 화재안전조사의 사전통지·위원회·중앙조사단·조치명령 및 손실보상 절차를 살펴봅니다.
+        어제(제1편 제6장 화재조사법) 밝혀낸 대형 참사들의 공통 원인인 '사람의 안전관리 실패'로부터 왜 소프트웨어 전담 법률인 화재예방법이 분법되었는지 도출하고, 제1편의 계획·손실보상 체계와 나란히 대조하며 3단계 예방계획(9월·10월·12월)과 화재안전조사·시가 보상 절차를 완성합니다.
       </p>
     </header>
 
-        <section class="space-y-12 mb-16">
+    <section class="space-y-12 mb-16">
       <div id="sec1">
-        <h2 class="text-xl font-bold text-white mb-3">1. 왜 하나의 법을 두 개(화재예방법·소방시설법)로 쪼갰을까? — 분법 배경과 3단계 계획(9·10·12월) 및 영향평가</h2>
+        <h2 class="text-xl font-bold text-white mb-3">1. 어제의 화재조사가 오늘의 분법을 낳았다 — 화재예방법의 탄생 배경, 4대 용어(제2조) 및 3단계 계획·영향평가</h2>
         <div class="para-block">
           <p class="prose-body">
-            제2편부터는 <strong>｢화재의 예방 및 안전관리에 관한 법률｣(약칭: 화재예방법)</strong>의 세계로 들어갑니다. 원래 우리나라 소방 법제는 오랫동안 '건물에 어떤 소방시설을 설치할 것인가(하드웨어)'와 '그 건물을 사람이 어떻게 안전하게 관리할 것인가(소프트웨어)'를 하나의 법률에 합쳐서 규율해 왔습니다. 그런데 제천 스포츠센터 화재, 밀양 세종병원 화재, 이천 물류창고 화재 등 대형 참사들을 조사해 보니 충격적인 공통점이 드러났습니다. 건물에 스프링클러나 감지기 같은 기계가 없어서 참사가 난 것이 아니라, <strong>누군가 귀찮다고 경보기를 꺼놓거나, 비상구에 물건을 쌓아두거나, 공사장에서 안전관리자 없이 용접을 하는 등 '사람의 안전관리 실패'</strong> 때문에 참사가 터졌던 것입니다. 그래서 기계·설비 설치 기준은 제3편의 ｢소방시설 설치 및 관리에 관한 법률｣에 남겨두고, <strong>오직 '사전 예방과 사람의 안전관리 의무'만을 떼어내어 전담 법률로 독립시킨 것</strong>이 바로 이 ｢화재예방법｣입니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-                <li><strong>기본계획(5년마다)</strong>: <strong>소방청장</strong>이 계획 시행 <strong>전년도 9월 30일까지</strong> 수립 (10월 31일까지 통보)</li>
-                <li><strong>시행계획(매년)</strong>: <strong>소방청장</strong>이 계획 시행 <strong>전년도 10월 31일까지</strong> 수립</li>
-                <li><strong>세부시행계획(매년)</strong>: 관계 중앙행정기관장·<strong>시·도지사</strong>가 시행 <strong>전년도 12월 31일까지</strong> 수립</li>
-                <li><strong>화재안전영향평가심의회</strong>: <strong>소방청장</strong> 소속 설치 / 소방청 공무원 위원은 <strong>소방정 이상</strong> 지명</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            먼저 이 법 제2조의 핵심 용어 정의를 ｢소방의 화재조사에 관한 법률｣과 비교해 두어야 합니다. 화재예방법에서 <strong>“예방”</strong>이란 화재발생을 사전에 제거·방지하기 위한 모든 활동을 말하고, <strong>“안전관리”</strong>란 화재로 인한 피해를 최소화하기 위한 예방·대비·대응 등의 활동을 말합니다. 특히 <strong>“화재안전조사”</strong>란 소방청장·소방본부장·소방서장(이하 <strong>소방관서장</strong>)이 소방대상물 등이 법령에 적합하게 유지·관리되고 있는지, 화재 발생 위험이 있는지 등을 확인하기 위해 현장 확인·문서 열람 등을 하는 사전 점검 활동입니다(반면 불이 난 후 발화원인·피해상황을 파악하기 위해 질문·감식·감정·실험을 하는 것은 ｢소방의 화재조사에 관한 법률｣상 <strong>'화재조사'</strong>이므로 두 정의를 바꾼 2024년 경채 Q15 함정에 주의하세요!). 또한 <strong>“화재예방안전진단”</strong>이란 화재 발생 시 사회·경제적으로 피해 규모가 클 것으로 예상되는 소방대상물(공항·항만·철도·도시철도·가스·발전소 등)에 대하여 화재위험요인을 조사하고 위험성을 평가하여 개선대책을 수립하는 것을 말합니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            국가 차원의 화재예방 마스터플랜인 <strong>기본계획·시행계획·세부시행계획(법 제4조, 시행령 제4조부터 제6조까지)</strong>에서는 <strong>'누가, 언제까지 수립하는가'</strong>라는 3단계 타임라인이 2025년 공채·경채 시험에 동시에 출제되었습니다. 첫째, <strong>소방청장</strong>은 관계 중앙행정기관의 장과 협의하여 화재의 예방 및 안전관리 <strong>기본계획(화재안전 분야 국제경쟁력 향상 등 포함)을 5년마다</strong> 수립·시행하되, 계획 시행 <strong>전년도 9월 30일까지</strong> 수립하여야 합니다. 둘째, <strong>소방청장</strong>은 그 기본계획을 실행하기 위한 연도별 <strong>시행계획을 매년</strong> 수립하되, 계획 시행 <strong>전년도 10월 31일까지</strong> 수립하여 기본계획과 함께 관계 중앙행정기관의 장과 시·도지사에게 통보해야 합니다. 셋째, 통보를 받은 관계 중앙행정기관의 장 및 <strong>시·도지사</strong>는 소관 업무나 지역 실정에 맞는 <strong>세부시행계획을 매년</strong> 수립하되, 새해가 시작되기 직전인 계획 시행 <strong>전년도 12월 31일까지</strong> 수립하여 소방청장에게 통보해야 합니다. 즉 가을부터 연말까지 <strong>'기본계획(소방청장·9월 30일) ➔ 시행계획(소방청장·10월 31일) ➔ 세부시행계획(시·도지사 등·12월 31일)'</strong>의 순서로 한 달 또는 두 달 간격으로 바통을 이어받는 구조입니다! 아울러 <strong>소방청장</strong>은 화재안전에 관련된 법령이나 정책의 타당성을 분석·평가하는 <strong>화재안전영향평가(법 제21조)</strong>를 실시할 수 있으며, 이를 전문적으로 심의하기 위해 소방청에 두는 <strong>화재안전영향평가심의회(법 제22조, 시행령 제22조)</strong>의 소방공무원 위원은 소방청 소속 <strong>소방정 이상</strong>의 소방공무원 중에서 소방청장이 지명합니다('소방준감 이상'으로 비튼 2025년 경채 Q22 기출 주의!).
+            제1편의 마지막 단원인 화재조사법을 통해 불이 꺼진 뒤 왜 발화 원인과 소방시설 작동 여부를 역추적하는지 살펴보았습니다. 제천 스포츠센터, 밀양 세종병원, 이천 물류창고 등 대형 화재 참사 현장을 과학적으로 조사해 보니 건물에 스프링클러나 감지기 같은 기계 설비가 아예 없어서가 아니라, 경보기를 임의로 꺼두거나 비상구에 물건을 적치하고 안전관리자 없이 용접을 강행하는 등 사람의 관리 실패가 참사를 키웠다는 공통점이 드러났습니다. 이에 따라 기존의 방대한 단일 법률에서 기계·설비 중심의 하드웨어 설치 기준은 제3편의 ｢소방시설 설치 및 관리에 관한 법률｣에 남겨 두고, 오직 <strong>사전 예방과 사람의 안전관리 의무</strong>라는 소프트웨어 영역만을 독립시켜 제정한 법률이 바로 <strong>｢화재의 예방 및 안전관리에 관한 법률｣</strong>입니다. 먼저 이 법 <strong>제2조</strong>가 정의하는 네 가지 핵심 용어를 사후 화재조사 개념과 대조하면 법령의 체계가 선명해집니다.
+            <span class="prose-item"><strong>① 화재예방법 4대 핵심 용어 정의 및 화재조사와의 경계 (법 제2조 · 제41조 제2항)</strong></span>
+            <span class="prose-sub">&bull; <strong>예방과 안전관리(법 제2조 제1항 제1호 · 제2호)</strong>: 예방이란 화재발생을 사전에 제거·방지하기 위한 모든 활동을 말하며, 안전관리란 <strong>화재로 인한 피해를 최소화하기 위한 예방·대비·대응 등의 활동</strong>을 뜻합니다.</span>
+            <span class="prose-sub">&bull; <strong>화재안전조사(구 소방특별조사, 법 제2조 제1항 제3호)</strong>: 발화 원인과 피해 파악을 위해 질문·감식·감정·실험을 하는 사후 화재조사와 달리, <strong>화재안전조사</strong>는 <strong>소방관서장</strong>(<strong>소방청장</strong>·소방본부장·소방서장)이 화재 발생 전에 소방대상물 등이 법령에 적합하게 유지·관리되고 있는지와 화재 위험 유무를 확인하기 위하여 <strong>현장 확인·문서 열람 등을 하는 사전 점검 활동</strong>입니다.</span>
+            <span class="prose-sub">&bull; <strong>화재예방안전진단(법 제2조 제1항 제4호 · 제41조 제2항)</strong>: <strong>화재예방안전진단</strong>이란 화재 발생 시 사회·경제적으로 피해 규모가 클 것으로 예상되는 공항·철도·항만 등 핵심 시설에 대하여 위험요인을 조사·평가하여 개선대책을 수립하는 정밀 사전 진단이며, 진단 범위에는 소방계획·피난계획 수립, 소방시설등의 유지·관리, 비상대응조직 및 교육훈련, 화재 위험성 평가에 관한 사항이 포함됩니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:26%;">구분 항목</th>
-                <th style="width:44%;">법정 주체 및 수립·구성 기준</th>
-                <th>출제 빈출 비교 및 함정 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>기본계획 (5년마다)</strong></td>
-                <td><strong>소방청장</strong>이 5년마다 수립 (시행 <strong>전년도 9월 30일까지</strong> 수립 · 10월 31일까지 통보)</td>
-                <td>10년마다(×) ➔ <strong>5년마다</strong>(○) / 국제경쟁력 향상 포함</td>
-              </tr>
-              <tr>
-                <td><strong>시행계획 · 세부시행계획</strong></td>
-                <td><strong>시행계획(매년)</strong>: <strong>소방청장</strong>(전년도 <strong>10월 31일까지</strong>) / <strong>세부시행계획(매년)</strong>: <strong>시·도지사 등</strong>(전년도 <strong>12월 31일까지</strong>)</td>
-                <td>수립 기한 3단계: <strong>9월 30일 ➔ 10월 31일 ➔ 12월 31일</strong></td>
-              </tr>
-              <tr>
-                <td><strong>화재안전조사위원회</strong></td>
-                <td><strong>소방본부장</strong>이 시·도 소방본부에 구성 (위원장 1명을 <strong>포함한 7명 이내</strong>, 위촉위원 임기 <strong>2년</strong>)</td>
-                <td>소방청장·소방서장이 아니라 오직 <strong>소방본부장</strong>이 구성!</td>
-              </tr>
-              <tr>
-                <td><strong>화재안전조사단 · 합동조사반</strong></td>
-                <td>필요시 조사단 편성·운영 가능(임의규정, 구 중앙조사단 21명 이내·현행 50명 이내) / 합동조사반: 안전원·기술원·화재보험협회 포함</td>
-                <td>상시 의무 편성(×) / 합동조사반에 <strong>한국소방시설협회는 제외</strong>!</td>
-              </tr>
-              <tr>
-                <td><strong>화재안전영향평가심의회</strong></td>
-                <td><strong>소방청장</strong> 소속 설치 / 소방청 소속 위원은 <strong>소방정 이상</strong>의 소방공무원 중 지명</td>
-                <td>소방준감 이상(×) ➔ <strong>소방정 이상</strong>(○)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            국가 예방정책의 시간표인 <strong>법 제4조</strong>(시행령 제4조부터 <strong>제6조</strong>까지)는 제1편 제1장에서 배웠던 소방기본법의 2단계 계획(10월 말 종합계획 수립 후 12월 말 세부계획 수립) 앞머리에 5년 주기의 중장기 마스터플랜을 한 단계 더 세운 정교한 3단계 바통 터치 구조를 취합니다. 중앙의 5년 기본계획을 연도별 시행계획보다 한 달 앞선 9월 말에 먼저 확정짓고, 이어서 10월 말과 12월 말로 실행 계획을 내려보내는 인과적 시간 순서입니다.
+            <span class="formula-box">
+              <span class="formula-badge">화재예방 3단계 국가계획 수립 주체 · 주기 및 시한 공식 (법 제4조 · 영 제4조부터 제6조까지)</span>
+              <span class="formula-eq">기본계획(소방청장 &middot; 5년 &middot; 전년도 9월 30일) &rarr; 시행계획(소방청장 &middot; 매년 &middot; 전년도 10월 31일) &rarr; 세부시행계획(중앙기관장&middot;시도지사 &middot; 매년 &middot; 전년도 12월 31일)</span>
+              <span class="formula-ex">💡 <strong>제1편 종합계획과 대조</strong> | 소방기본법 종합계획(10월 31일·12월 31일) 앞에 <strong>전년도 9월 30일까지</strong> 수립하는 5년 기본계획이 추가되며, 세부시행계획 수립 후 통보 대상은 행정안전부장관이 아닌 <strong>소방청장</strong>입니다!</span>
+            </span>
+            <span class="prose-item"><strong>② 3단계 예방계획 수립 체계와 화재안전영향평가심의회 (법 제4조 · 제21조 · 제22조)</strong></span>
+            <span class="prose-sub">&bull; <strong>기본계획 수립(법 제4조 · 영 제4조)</strong>: <strong>소방청장은</strong> 관계 중앙행정기관의 장과 협의하여 <strong>화재안전</strong> 기반 확충과 <strong>화재안전 분야 국제경쟁력 향상</strong> 등을 포함한 기본계획을 <strong>5년마다</strong> 계획 시행 <strong>전년도 9월 30일까지</strong> 수립하여야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>시행계획 및 세부시행계획(영 제5조 · 제6조)</strong>: <strong>소방청장</strong>은 기본계획을 실행하기 위한 연도별 시행계획을 매년 계획 시행 전년도 10월 31일까지 수립하여 기본계획과 함께 관계 중앙행정기관의 장과 시·도지사에게 통보하며(수립에 필요한 자료 제출 요청 가능), 통보받은 관계 중앙행정기관의 장 및 시·도지사는 매년 계획 시행 <strong>전년도 12월 31일까지</strong> 세부시행계획을 수립하여 다시 소방청장에게 통보합니다.</span>
+            <span class="prose-sub">&bull; <strong>화재안전영향평가 및 심의회(법 제21조 · 제22조 · 시행령 제22조)</strong>: 소방청장은 화재 발생 원인 분석 과정에서 화재안전 관련 법령이나 정책의 개선 필요성과 유발 위험요인을 과학적으로 분석·평가하는 화재안전영향평가(<strong>법 제21조</strong>)를 실시할 수 있으며, 이를 심의하기 위해 소방청장 소속으로 두는 <strong>화재안전영향평가심의회</strong>의 소방청 소속 공무원 위원은 <strong>시행령 제22조</strong>에 따라 <strong>소방정 이상</strong>의 소방공무원 중에서 소방청장이 지명합니다.</span>
+          </p>
         </div>
       </div>
 
       <div id="sec2">
-        <h2 class="text-xl font-bold text-white mb-3">2. 불 나기 전에 직접 찾아가 점검한다 — 화재안전조사 대상 선정(위원회 7명)·합동조사반과 사전통지(7일)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">2. 표적 단속은 막고 사전 점검의 실효성은 높이다 — 화재안전조사(제7조), 위원회·합동조사반(제10조·제11조) 및 7일 사전통지</h2>
         <div class="para-block">
           <p class="prose-body">
-            불이 나기 전에 소방관이 건물에 직접 찾아가 소방시설이 정상 작동하는지, 비상구는 잠겨 있지 않은지를 미리 점검하는 <strong>화재안전조사(구 소방특별조사, 법 제7조)</strong>는 현장과 관서를 지휘하는 <strong>소방관서장(소방청장·소방본부장·소방서장)</strong>이 실시합니다. 어떤 경우에 조사할까요? 관계인이 실시하는 자체점검 등이 불성실하다고 인정되는 경우, 국가적 행사 등 주요 행사가 개최되는 장소 및 주변을 점검할 필요가 있는 경우, 화재가 자주 발생하거나 인명·재산 피해가 클 것으로 예상되는 경우 등입니다. 다만 사생활의 평온을 보호하기 위하여 <strong>개인의 주거에 대하여는 관계인의 승낙이 있거나 화재 발생의 우려가 뚜렷하여 긴급한 필요가 있는 때에 한정</strong>하여 실시할 수 있습니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-                <li><strong>화재안전조사 실시권자</strong>: <strong>소방청장 · 소방본부장 · 소방서장</strong> (개인 주거는 관계인 승낙 또는 긴급 시에 한정)</li>
-                <li><strong>화재안전조사위원회(제10조)</strong>: 오직 <strong>소방본부장</strong>이 구성 (위원장 1명을 <strong>포함한 7명 이내</strong> — '제외한 7명' ×)</li>
-                <li><strong>사전통지·연기·결과통지</strong>: 조사 <strong>7일 전</strong> 서면 통지 ➔ 시작 <strong>3일 전까지</strong> 연기 신청 ➔ 결과는 반드시 <strong>서면 통지</strong>(구두 ×)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            그런데 만약 일선 조사관이 기분 내키는 대로 조사 대상을 고르면 표적 단속이나 봐주기 시비가 생길 수 있습니다. 이를 차단하고 조사 대상을 객관적·공정하게 선정하기 위하여 법 제10조는 <strong>화재안전조사위원회(구 소방특별조사위원회)</strong>를 두도록 했습니다. 여기서 시험에 가장 많이 나온 초특급 출제 포인트가 바로 <strong>"누가 화재안전조사위원회를 구성하는가?"</strong>입니다. 일선 소방서마다 위원회를 두면 지역 유착 우려가 있고 광역 단위의 일관된 기준을 세우기 어렵기 때문에, 소방청장이나 소방서장이 아니라 오직 광역 단위인 <strong>소방본부장이 시·도 소방본부에 화재안전조사위원회를 구성·운영</strong>합니다! 위원회는 <strong>위원장 1명을 포함한 7명 이내의 위원</strong>으로 성별을 고려하여 구성합니다('위원장 1명을 제외한 7명 이내'로 비튼 기출 함정 주의!). 반면 소방청장 등은 필요할 때 <strong>화재안전조사단</strong>을 편성하여 운영할 수 있으며('상시 편성하여 운영하여야 한다'는 의무 규정이 아니라 필요시 편성할 수 있는 임의 규정임), 효율적인 조사를 위해 관계 행정기관·공공기관 및 <strong>한국소방안전원, 한국소방산업기술원, 한국화재보험협회</strong> 등과 <strong>합동조사반</strong>을 편성할 수 있습니다(시행령 제11조 — 시공자 단체인 <strong>한국소방시설협회는 합동조사반 대상 기관이 아님</strong>에 주의!).
+            예방계획이 세워졌다면 이제 불이 나기 전에 소방관서장(청장·본부장·서장)이 건물 현장을 직접 찾아가 비상구 폐쇄나 설비 방치를 잡아내는 화재안전조사(구 소방특별조사, <strong>법 제7조</strong>)가 가동됩니다. 이때 사적인 주거 공간의 평온 보호와 표적 단속 방지를 위한 객관적 대상 선정 장치가 함께 맞물려 돌아갑니다.
+            <span class="prose-item"><strong>① 화재안전조사 개시 사유와 개인 주거 출입 제한 (법 제7조 제1항 · 제2항)</strong></span>
+            <span class="prose-sub">&bull; <strong>법정 개시 사유</strong>: 관계인의 자체점검 등이 불성실하다고 인정되거나, <strong>국가적</strong> 행사 등 주요 행사 개최 장소 및 주변 관계 지역을 조사할 필요가 있을 때, 화재가 자주 발생하였거나 발생할 우려가 뚜렷할 때, 또는 화재 발생 시 중대한 인명·재산 피해가 우려될 때 실시합니다.</span>
+            <span class="prose-sub">&bull; <strong>개인 주거 보호 한계</strong>: 사생활 침해를 막기 위해 <strong>개인의</strong> 주거에 대한 조사는 전면 금지도 상시 허용도 아닌, <strong>개인의 주거에 대하여는 관계인의 승낙이 있거나 화재 발생의 우려가 뚜렷하여 긴급한 필요가 있는 때에 한정</strong>하여 허용됩니다.</span>
+            <span class="prose-item"><strong>② 화재안전조사위원회(법 제10조) 대 조사단 · 합동조사반(법 제11조 · 영 제11조)</strong></span>
+            <span class="prose-sub">&bull; <strong>위원회 구성권자와 정원(법 제10조)</strong>: 자의적 단속을 막고 조사 대상을 객관적·공정하게 선정하기 위한 화재안전조사위원회(구 <strong>소방특별조사위원</strong>회)는 일선 유착을 피하고 광역 실정을 반영하기 위해 청장이나 서장이 아닌 오직 <strong>소방본부장이 시·도 소방본부에 화재안전조사위원회를 구성·운영</strong>하며, 위원장 1명을 포함한 7명 이내의 위원으로 성별을 고려해 구성합니다(위촉위원 임기 2년).</span>
+            <span class="prose-sub">&bull; <strong>조사단 임의 편성 및 합동조사반 제외 기관(법 제11조 · 시행령 제11조)</strong>: 소방관서장은 조사를 <strong>위하여</strong> 필요한 경우에 조사단을 편성·운영할 수 있고(상시 의무가 아닌 임의 규정), <strong>시행령 제11조</strong>에 따라 한국소방안전원·한국소방산업기술원·한국화재보험협회 등과 합동조사반을 꾸릴 수 있으되, 시공업자 단체인 <strong>한국소방시설협회</strong>는 스스로 시공한 대상을 조사하는 이해충돌이 발생하므로 합동조사반 참여 기관에서 제외됩니다.</span>
           </p>
         </div>
+
         <div class="para-block">
           <p class="prose-body">
-            화재안전조사의 절차(법 제8조, 제13조)도 관계인의 권익 보호와 현장 실효성 사이의 균형으로 이해하면 명쾌합니다. 첫째, 소방관서장은 조사를 하려면 원칙적으로 <strong>7일 전까지</strong> 관계인에게 조사대상, 조사기간 및 조사사유 등을 <strong>서면</strong>으로 알려야 합니다. 다만 화재·재난 발생 우려가 뚜렷하여 긴급하거나, <strong>사전에 알리면 증거 인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우에는 사전통지 없이 불시에 조사</strong>할 수 있습니다. 둘째, 사생활과 영업 보호를 위해 원칙적으로 <strong>관계인의 승낙 없이 해가 뜨기 전이나 해가 진 뒤(일출 전·일몰 후)에는 조사를 할 수 없으나</strong>, 야간 영업장처럼 공개된 시간(영업시간) 중에 조사해야만 목적을 달성할 수 있거나 화재 우려가 긴급한 경우에는 야간에도 조사할 수 있습니다. 셋째, 천재지변이나 질병 등으로 조사를 받기 곤란한 관계인은 <strong>조사 시작 3일 전까지</strong> 증명 서류를 첨부하여 <strong>연기를 신청</strong>할 수 있으며(연기를 승인한 후라도 연기기간이 끝나기 전에 연기사유가 소멸했거나 긴급 사유가 발생하면 관계인에게 통보하고 조사 가능), 조사를 마친 때에는 조사 결과를 관계인에게 반드시 <strong>서면으로 통지</strong>하여야 합니다('서면 또는 구두로 통지할 수 있다'는 선지는 틀림!).
+            실제 현장에 나가는 절차(<strong>법 제8조</strong>·<strong>제12조</strong>·<strong>제13조</strong> 및 시행령 제13조)는 관계인의 방어권·예측 가능성 보장과 심야·긴급 단속의 실효성 사이에서 정교한 기한 규칙을 세우고 있습니다.
+            <span class="formula-box">
+              <span class="formula-badge">화재안전조사 사전통지 · 연기 신청 · 야간 제한 및 결과 통지 절차 공식 (법 제8조 · 제13조)</span>
+              <span class="formula-eq">원칙 7일 전 서면 통지(긴급&middot;증거인멸 우려 시 생략) &rarr; 조사 시작 3일 전까지 연기 신청 &rarr; 결과는 반드시 서면 통지</span>
+              <span class="formula-ex">💡 <strong>야간 출입 예외</strong> | 일출 전·일몰 후에는 관계인 승낙 없이 조사할 수 없으나, 심야 영업장처럼 <strong>공개된 시간</strong> 내 조사로 목적 달성이 가능하거나 화재 우려가 뚜렷해 긴급한 때에는 야간 조사가 가능합니다!</span>
+            </span>
+            <span class="prose-item"><strong>③ 사전통지 · 시간 제한 · 조사 연기 및 결과 서면 통지 (법 제8조 · 제12조 · 제13조 · 영 제13조)</strong></span>
+            <span class="prose-sub">&bull; <strong>7일 전 사전통지 원칙과 불시 조사 예외(법 제8조)</strong>: 소방관서장은 조사를 하려면 <strong>원칙적으로</strong> 조사 7일 전까지 관계인에게 사유·기간 등을 서면으로 통지하여야 하나, 화재·재난 발생 <strong>우려가</strong> 뚜렷하여 긴급하거나 <strong>사전에 알리면 증거 인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우</strong>에는 사전통지 없이 불시에 조사할 수 있습니다.</span>
+            <span class="prose-sub">&bull; <strong>일출 전·일몰 후 제한 및 비밀 준수(법 제8조 · 제12조)</strong>: 관계인의 승낙 없이는 해가 뜨기 전이나 해가 진 뒤에 조사할 수 없되 건물 등이 <strong>공개된 시간</strong>(영업시간) 중에 조사해야 목적을 달성할 수 있거나 긴급할 때에는 예외가 인정되며, 조사 담당자는 정당한 업무를 방해하거나 직무상 알게 된 비밀을 누설·목적 외 사용하여서는 아니 됩니다(법 제12조).</span>
+            <span class="prose-sub">&bull; <strong>연기 신청과 결과 통지(시행령 제13조 · 법 제13조)</strong>: 천재지변·질병 등으로 조사를 받기 어려운 관계인은 <strong>조사 시작 3일 전까지</strong> 연기를 신청할 수 있고, 관서장은 <strong>연기를</strong> 승인한 뒤라도 기간 만료 전 사유가 소멸하거나 긴급 사유가 생기면 통보 후 조사를 진행할 수 있으며, 조사를 마친 <strong>때에는</strong> 경미한 사항이라도 구두가 아닌 <strong>서면으로 통지</strong>하여야 합니다.</span>
           </p>
         </div>
       </div>
 
       <div id="sec3">
-        <h2 class="text-xl font-bold text-white mb-3">3. 위험한 건물은 고치게 명령하고 억울한 손실은 '시가(時價)'로 보상한다 — 조치명령·손실보상·결과 공개 및 벌칙</h2>
+        <h2 class="text-xl font-bold text-white mb-3">3. 위험 건물은 개수시키고 적법한 희생은 시가로 보상하다 — 조치명령(제14조), 손실보상(제15조), 공개 및 벌칙·감경</h2>
         <div class="para-block">
           <p class="prose-body">
-            화재안전조사 결과 소방대상물의 위치·구조·설비 또는 관리 상황이 화재예방을 위해 보완될 필요가 있거나 화재 시 인명·재산 피해가 클 것으로 예상되면, <strong>소방관서장(청장·본부장·서장)</strong>은 관계인에게 그 소방대상물의 <strong>개수(改修)·이전·제거, 사용의 금지 또는 제한, 사용폐쇄, 공사의 정지 또는 중지, 그 밖에 필요한 조치</strong>를 명할 수 있습니다(법 제14조). 이때 조치명령을 받은 관계인이 ① 천재지변, ② <strong>관계인의 질병이나 장기출장</strong>, ③ <strong>경매 등의 사유로 소유권이 변동 중에 있는 경우</strong>, ④ <strong>운영하는 사업에 부도 또는 도산 등 중대한 위기가 발생하여 기간 내에 이행할 수 없는 경우</strong>에는 조치명령 이행기간의 연장을 신청할 수 있습니다(시행령 제15조, 2026년 경채 Q20 기출).
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-                <li><strong>조치명령 손실보상(제15조)</strong>: <strong>소방청장 또는 시·도지사</strong>가 <strong>시가(時價)</strong>로 보상 / 불복 시 통지 받은 날부터 <strong>30일 이내</strong> 관할 토지수용위원회에 재결 신청</li>
-                <li><strong>벌칙 구분(제50조)</strong>: 사용금지·개수명령 위반(<strong>3년/3천만 원</strong>) · 조사 업무 방해 및 비밀누설(<strong>1년/1천만 원</strong>) · 조사 거부·방해·기피(<strong>300만 원 벌금</strong>)</li>
-                <li><strong>과태료 감경(영 별표)</strong>: 초범으로서 <strong>3년 이상</strong> 해당 업종을 모범 영위한 경우 <strong>2분의 1 범위</strong> 감경 ('2년' ×)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            만약 건물주가 법령을 어긴 것이 아닌데도 공공의 안전을 위한 개수·이전·제거 명령으로 인해 손실을 입었다면 어떻게 해야 할까요? 법 제15조 및 시행령 제16조에 따라 예산 주체인 <strong>소방청장 또는 시·도지사</strong>가 그 손실을 보상하여야 하며, 이때 원가나 시가의 2배가 아니라 반드시 <strong>시가(時價, 현재 시장 가격)</strong>로 보상해야 합니다! 손실보상에 관하여는 소방청장 또는 시·도지사와 손실을 입은 자가 협의하여야 하며, 협의가 성립되지 아니한 경우에는 그 보상금액을 지급하거나 공탁하고 상대방에게 알려야 합니다. 지급 또는 공탁의 통지에 불복하는 자는 통지를 받은 날부터 <strong>30일 이내에 관할 토지수용위원회에 재결을 신청</strong>할 수 있습니다. 또한 소방관서장은 국민의 생명·재산 보호를 위해 화재안전조사 결과를 인터넷 등에 <strong>공개</strong>할 수 있으되(법 제16조), 관계인은 공개 통보를 받은 날부터 <strong>10일 이내</strong>에 이의신청을 할 수 있고 소방관서장은 접수일로부터 <strong>7일 이내</strong>에 심사 결과를 통지해야 합니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            마지막으로 벌칙(법 제50조)과 과태료(법 제52조)의 정확한 수위를 대조해 봅시다. 첫째, 개수·이전·사용금지 등 <strong>조치명령을 위반한 자</strong>는 <strong>3년 이하의 징역 또는 3천만 원 이하의 벌금</strong>에 처합니다. 둘째, 화재안전조사 업무를 수행하면서 관계인의 정당한 업무를 방해하거나 <strong>취득한 자료·비밀을 누설하거나 목적 외의 용도로 사용한 자(법 제12조 제2항 위반)</strong>는 구법 시절(300만 원 이하 벌금)보다 처벌이 대폭 강화되어 현행법상 <strong>1년 이하의 징역 또는 1천만 원 이하의 벌금(법 제50조 제2항 제1호)</strong>에 처합니다(반면 화재예방안전진단 업무 중 알게 된 비밀을 누설한 자는 <strong>300만 원 이하의 벌금</strong>). 셋째, <strong>화재안전조사를 정당한 사유 없이 거부·방해 또는 기피한 자</strong>는 과태료가 아니라 형벌인 <strong>300만 원 이하의 벌금(법 제50조 제3항 제1호)</strong>에 처합니다! 넷째, 과태료 부과권자가 개별기준의 <strong>2분의 1 범위에서 과태료를 감경</strong>할 수 있는 사유(시행령 별표 9: 사소한 부주의·오류, 위반상태 시정 노력, 타 법률에 따른 처분 등) 중 '처음 위반행위를 한 경우'의 모범 영위 기간 요건은 2년이 아니라 <strong>3년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우</strong>라는 점(2026년 경채 Q11 기출)까지 챙겨두면 빈틈이 없습니다.
+            화재안전조사를 마친 뒤 건물 구조나 설비·관리 상태를 방치하면 대형 인명·재산 피해로 이어질 우려가 클 때에는 강력한 행정 명령이 뒤따르고, 그 명령으로 인해 적법하던 재산에 특별한 희생이 발생했을 때에는 제1편 제4장에서 확립한 '처분은 관서장, 보상은 재정 주체' 공식에 따라 정당한 시가 보상이 작동합니다.
+            <span class="prose-item"><strong>① 개수 · 이전 · 사용금지 조치명령과 이행기간 연장 (법 제14조 · 시행령 제15조)</strong></span>
+            <span class="prose-sub">&bull; <strong>조치명령권자(법 제14조)</strong>: 시·도지사가 아닌 현장을 조사한 <strong>소방관서장</strong>이 관계인에게 소방대상물의 개수·이전·제거, 사용의 금지·제한, 사용폐쇄, 공사의 정지·중지 그 밖에 필요한 조치를 명할 수 있습니다.</span>
+            <span class="prose-sub">&bull; <strong>이행기간 연장 사유(시행령 제15조)</strong>: 천재지변, 관계인의 질병·장기출장, 경매 등으로 소유권이 변동 중인 경우, 또는 사업의 부도·도산 등 중대한 위기로 기한 내 이행할 수 없는 사정이 인정되면 이행기간 연장을 신청할 수 있습니다.</span>
+            <span class="prose-item"><strong>② 시가(時價) 손실보상 · 토지수용위원회 재결 및 조사 결과 공개 (법 제15조 · 제16조)</strong></span>
+            <span class="prose-sub">&bull; <strong>보상 주체와 시가 원칙(법 제15조 · 시행령 제16조)</strong>: 조치명령으로 인한 <strong>손실보상에</strong> 관하여는 소방서장이 아닌 예산 주체인 <strong>소방청장 또는 시·도지사</strong>(청장이나 시·<strong>도지사가</strong> 주체)가 손실을 입은 자와 협의하여 감가된 원가가 아닌 현재 시장 가치인 <strong>시가</strong>로 보상하여야 합니다(법 <strong>제15조</strong> 및 시행령 <strong>제16조</strong>).</span>
+            <span class="prose-sub">&bull; <strong>불복 재결 신청 및 공개 이의신청(영 제16조 · 법 제16조 · 영 제17조)</strong>: 보상금액에 관한 <strong>협의가</strong> 성립되지 아니하면 보상금액을 지급하거나 공탁하고 통지하며, 불복하는 자는 통지받은 날부터 <strong>30일 이내에 관할 토지수용위원회에 재결을 신청</strong>할 수 있습니다. 또한 관서장이 조사 결과를 공개하려 할 때 관계인은 사전 통보일부터 <strong>10일 이내</strong>에 이의신청을 할 수 있고 관서장은 접수일부터 7일 이내에 심사 결과를 통지해야 합니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:26%;">절차 및 처벌 구분</th>
-                <th style="width:44%;">화재안전조사 핵심 법정 기준 (제7조부터 제16조까지 · 제50조)</th>
-                <th>출제 빈출 비교 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>사전통지 · 연기 · 결과통지</strong></td>
-                <td>조사 <strong>7일 전까지</strong> 서면 통지 / 연기 신청은 시작 <strong>3일 전까지</strong> / 결과는 반드시 <strong>서면 통지</strong></td>
-                <td>사전통지 7일 전 vs 연기신청 3일 전 / 구두 결과통지 불가</td>
-              </tr>
-              <tr>
-                <td><strong>조치명령 손실보상 · 공개</strong></td>
-                <td><strong>소방청장 또는 시·도지사</strong>가 <strong>시가(時價)</strong>로 보상(불복 시 <strong>30일 이내</strong> 토지수용위원회 재결 신청) / 결과 공개 이의신청 <strong>10일 이내</strong>(결정 <strong>7일 이내</strong>)</td>
-                <td>원가(×)·시가의 2배(×) ➔ <strong>시가(時價) 보상</strong>(○)</td>
-              </tr>
-              <tr>
-                <td><strong>형사처벌 (징역·벌금)</strong></td>
-                <td>조치명령 위반(<strong>3년/3천만 원</strong>) · 조사 비밀누설·업무방해(<strong>1년/1천만 원</strong>) · <strong>화재안전조사 거부·방해·기피(300만 원 이하 벌금)</strong></td>
-                <td>조사 거부·방해는 과태료가 아니라 <strong>300만 원 이하 벌금</strong>!</td>
-              </tr>
-              <tr>
-                <td><strong>과태료 2분의 1 감경 요건</strong></td>
-                <td>사소한 부주의·오류, 시정 노력, 타 법 처분, 초범으로서 <strong>3년 이상</strong> 해당 업종 모범 영위 (체납 과태료 없을 것)</td>
-                <td>모범 영위 기간은 2년이 아니라 <strong>3년 이상</strong>!</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            끝으로 이 단원에서 등장하는 형벌(<strong>법 제50조</strong>)과 과태료(<strong>법 제52조</strong> 및 시행령 <strong>별표 9</strong>)의 경계를 제1편과 맞대어 정리하면 비밀누설죄와 조사 거부죄의 함정이 완벽히 차단됩니다.
+            <span class="formula-box">
+              <span class="formula-badge">화재안전조사 관련 벌칙 서열(법 제50조) 및 과태료 2분의 1 감경 요건(영 별표 9)</span>
+              <span class="formula-eq">조치명령 위반(3년&middot;3천만 원) &gt; 조사 비밀누설&middot;업무방해(1년&middot;1천만 원) &gt; 조사 거부&middot;예방안전진단 비밀누설(300만 원 벌금)</span>
+              <span class="formula-ex">💡 <strong>비밀누설 · 감경 비교</strong> | 공무원 등이 수행하는 <strong>화재안전조사</strong> 비밀누설은 1년 징역·1천만 원 벌금이지만, 민간 진단기관 등이 수행하는 <strong>화재예방안전진단</strong> 비밀누설은 300만 원 이하 벌금이며, 초범 모범 영위 과태료 감경 기준은 <strong>3년 이상</strong>입니다!</span>
+            </span>
+            <span class="prose-item"><strong>③ 벌칙 3층위 대 과태료 구분 및 모범 영위 감경 기준 (법 제50조 · 제52조 · 별표 9)</strong></span>
+            <span class="prose-sub">&bull; <strong>조치명령 위반 대 비밀누설 차등 처벌(법 제50조 제1항 · 제2항 · 제3항)</strong>: 개수·사용금지 등 조치명령 위반자는 <strong>3년 이하의 징역 또는 3천만 원 이하의 벌금</strong>에 처하고, 화재안전조사 중 정당한 업무를 방해하거나 취득 비밀을 누설·목적 외 사용한 자는 <strong>1년 이하의 징역 또는 1천만 원 이하의 벌금</strong>(<strong>법 제50조 제2항 제1호</strong>)에 처하는 반면, <strong>화재예방안전진단 업무 중 알게 된 비밀을 누설한 자는 300만 원 이하의 벌금</strong>에 처합니다.</span>
+            <span class="prose-sub">&bull; <strong>조사 거부·방해 형벌과 과태료 감경(법 제50조 제3항 · 법 제52조 · 별표 9)</strong>: 정당한 사유 없이 화재안전조사를 거부·방해·기피한 자 역시 과태료가 아닌 형벌인 <strong>300만 원 이하의 벌금</strong>에 처하며(제1편에서 거짓 신고자가 벌금이 <strong>아니라</strong> 500만 원 이하 <strong>과태료</strong> 대상이었던 것과 대비), 체납 없는 초범에 대한 과태료(법 제52조) 2분의 1 감경 사유 중 모범 영위 요건은 <strong>3년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우</strong>입니다(시행령 별표 9).</span>
+          </p>
         </div>
       </div>
     </section>
 
     <div class="para-block diagram-wrapper" id="diagramSection">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 화재예방 3단계 계획 수립 기한(9·10·12월)과 화재안전조사 핵심 절차</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-sheet-header">
+          <span class="cheat-sheet-badge">⚡ 제2편 제1장 초고밀도 압축 정리본 (화재예방 3단계 계획 · 화재안전조사 절차 · 시가 보상 및 벌칙)</span>
+          <span class="cheat-sheet-sub">시험장 직전 1분 스캔용 9월·10월·12월 기한 공식 · 위원회 대 합동조사반 · 벌칙 차등 총정리</span>
         </div>
-        <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 기본계획(5년) · 시행계획(매년) · 세부시행계획(매년) 수립 기한</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">기본계획 (5년마다 · 소방청장)</div>
-                <div>· 계획 시행 <strong>전년도 9월 30일까지</strong> 수립 (10월 31일까지 통보)<br/>· 화재안전 분야 국제경쟁력 향상 등 포함</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">시행계획 (매년 · 소방청장)</div>
-                <div>· 계획 시행 <strong>전년도 10월 31일까지</strong> 수립·통보<br/>· 기본계획 실행을 위한 연도별 계획</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">세부시행계획 (매년 · 시·도지사 등)</div>
-                <div>· 계획 시행 <strong>전년도 12월 31일까지</strong> 수립<br/>· 수립 후 <strong>소방청장에게 통보</strong></div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">화재안전조사위원회 vs 합동조사반</div>
-                <div>· 위원회: <strong>소방본부장</strong> 구성(위원장 포함 <strong>7명 이내</strong>)<br/>· 합동조사반: 안전원·기술원·화재보험협회(<strong>시설협회 제외</strong>)</div>
-              </div>
-            </div>
-            <div class="schema-alert">★ 핵심 기한: 기본계획(<strong>소방청장·전년도 9월 30일</strong>) ➔ 시행계획(<strong>소방청장·전년도 10월 31일</strong>) ➔ 세부시행계획(<strong>시·도지사 등·전년도 12월 31일</strong>)!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 화재안전조사 통지(7일) · 연기(3일) · 시가 보상 및 제재 구분</div>
-            <div class="space-y-2.5">
-              <div class="schema-box">
-                <div class="schema-box-title">사전통지(7일 전) · 연기 신청(3일 전) · 결과 서면 통지</div>
-                <ul class="schema-list">
-                  <li><strong>사전통지·연기</strong>: 조사 시작 <strong>7일 전</strong> 서면 통지(긴급·증거인멸 우려 시 생략) / 조사 시작 <strong>3일 전까지</strong> 연기 신청</li>
-                  <li><strong>결과 통지 및 공개</strong>: 결과는 반드시 <strong>서면 통지</strong>(구두 ×) / 결과 공개 시 <strong>10일 이내</strong> 이의신청 ➔ <strong>7일 이내</strong> 결정 통지</li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">조치명령 손실보상(시가) 및 벌칙·과태료 감경</div>
-                <ul class="schema-list">
-                  <li><strong>손실보상</strong>: <strong>소방청장·시·도지사</strong>가 <strong>시가(時價)</strong> 보상 / 불복 시 통지 받은 날부터 <strong>30일 이내</strong> 관할 토지수용위원회 재결 신청</li>
-                  <li><strong>제재 구분</strong>: 조사 거부·방해 = <strong>300만 원 벌금</strong> / 조사 비밀누설 = <strong>1년 징역·1천만 원 벌금</strong> / 과태료 1/2 감경 = 초범 <strong>3년 이상</strong> 모범 영위</li>
-                </ul>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01. 분법 체계 · 4대 용어(제2조) 및 3단계 예방계획 · 영향평가심의회 (제4조 · 제21조 · 제22조)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">화재안전조사 대 화재조사</div>
+              <div class="cheat-val"><span class="cheat-eq">화재안전조사</span> = 사전 적법 유지·화재위험 확인(<strong>현장 확인 · 문서 열람</strong>, 소방관서장) ↔ 사후 원인 규명(질문·감식·감정·실험)은 <strong>화재조사</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">3단계 예방계획 기한</div>
+              <div class="cheat-val">① <strong>기본계획</strong>: <span class="cheat-eq">소방청장 · 5년마다 · 전년도 9월 30일</span>(국제경쟁력 향상 포함) ➔ ② <strong>시행계획</strong>: <span class="cheat-eq">소방청장 · 매년 · 전년도 10월 31일</span> 수립·통보 ➔ ③ <strong>세부시행계획</strong>: 중앙기관장·시도지사 <span class="cheat-eq">전년도 12월 31일</span> 수립 후 <strong>소방청장</strong> 통보</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">화재안전영향평가심의회</div>
+              <div class="cheat-val"><span class="cheat-eq">소방청장</span> 소속 설치 (시·도지사 X) / 소방청 소속 공무원 위원은 <span class="cheat-eq">소방정 이상</span> 중에서 소방청장 지명 (소방준감 이상 X)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02. 화재안전조사 요건(제7조) · 위원회 · 합동조사반(제10조·제11조) 및 통지 절차(제8조·제13조)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">개인 주거 출입 한계</div>
+              <div class="cheat-val">실시권자: <strong>소방관서장(청장·본부장·서장)</strong> / 개인 주거는 <span class="cheat-eq">관계인 승낙</span> 또는 <span class="cheat-eq">화재 발생 우려가 뚜렷하여 긴급한 필요</span>가 있는 때에 한정</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">위원회 대 합동조사반</div>
+              <div class="cheat-val">· <strong>화재안전조사위원회(제10조)</strong>: 오직 <span class="cheat-eq">소방본부장</span>이 시·도 본부에 구성(위원장 1명 <strong>포함 7명 이내</strong>, 임기 2년)<br/>· <strong>조사단·합동조사반(제11조)</strong>: 필요시 임의 편성 / 안전원·기술원·화재보험협회 참여 (<span class="cheat-eq">한국소방시설협회 제외!</span>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">7일 통지 · 야간 · 3일 연기</div>
+              <div class="cheat-val">원칙 <span class="cheat-eq">7일 전 서면 사전통지</span>(긴급·증거인멸 우려 시 불시 가능) / 일출 전·일몰 후 금지(단, <strong>공개된 영업시간</strong>·긴급 시 가능) / <span class="cheat-eq">조사 시작 3일 전까지</span> 연기 신청 / 결과는 반드시 <span class="cheat-eq">서면 통지</span>(구두 X)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03. 조치명령 · 시가(時價) 손실보상(제14조·제15조) · 공개 이의신청(제16조) 및 벌칙·감경</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">조치명령 대 시가 보상</div>
+              <div class="cheat-val">조치명령권자: <span class="cheat-eq">소방관서장</span>(질병·장기출장·경매 변동·부도 시 연장 가능) ↔ 손실보상 주체: <span class="cheat-eq">소방청장 · 시·도지사</span>가 <span class="cheat-eq">시가(時價)</span> 보상 / 불복 시 통지일로부터 <span class="cheat-eq">30일 이내 관할 토지수용위원회</span> 재결 신청</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">조사 결과 공개 (10·7일)</div>
+              <div class="cheat-val">공개 사전 통보일로부터 <span class="cheat-eq">10일 이내 이의신청</span> ➔ 관서장은 접수일로부터 <span class="cheat-eq">7일 이내 심사 결과 통지</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">벌칙 3단계 (제50조)</div>
+              <div class="cheat-val"><span class="cheat-eq">3년·3천만 원</span>(조치명령 위반) &gt; <span class="cheat-eq">1년·1천만 원</span>(<strong>화재안전조사 비밀누설</strong>·업무방해) &gt; <span class="cheat-eq">300만 원 벌금</span>(<strong>조사 거부·방해·기피</strong> 및 <strong>화재예방안전진단 비밀누설</strong>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">과태료 2분의 1 감경</div>
+              <div class="cheat-val">체납 없는 초범으로서 사소한 부주의·위반 즉시 시정 또는 <span class="cheat-eq">3년 이상 해당 업종을 모범적으로 영위</span>한 사실이 인정되는 경우 (시행령 별표 9)</div>
             </div>
           </div>
         </div>
       </div>
-      <aside class="sidenote">
-        <div class="sidenote-box">
-          <div class="sidenote-title">도해 요약</div>
-          <ul class="sidenote-list">
-            <li><strong>주제</strong>: 화재예방 3단계 계획 수립 기한(9·10·12월)과 화재안전조사 핵심 절차</li>
-            <li><strong>핵심</strong>: 본문에서 다룬 법정 권한자와 수치 관계를 한눈에 대조하며 확인합니다.</li>
-          </ul>
-        </div>
-      </aside>
     </div>
 
     <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
@@ -319,7 +251,7 @@
 
     <section class="mt-16 pt-8 border-t border-emerald-900/60" id="quizSection">
       <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mt-1">핵심 지문 OX 확인 (25문항)</h2>
+        <h2 class="text-2xl font-bold text-white mt-1">핵심 공식·수치 주관식 (13문항) &amp; 정예 OX 확인 (정예 30문항 / 전체 54문항)</h2>
         <p class="text-xs text-slate-400 mt-1">
           기출 선택지 중 시험에서 자주 변형되는 핵심 문장입니다. O 또는 X를 선택하여 법령의 정확한 수치를 점검하십시오.
         </p>
@@ -333,14 +265,14 @@
     <p>소방관계법규 · 제2편 화재의 예방 및 안전관리에 관한 법률 제1장. 화재예방 기본계획과 화재안전조사</p>
   </footer>
 
-  <script src="assets/js/harness-core.js?v=5"></script>
+  <script src="assets/js/harness-core.js?v=6"></script>
   <script>
     const STATS_02_01 = {
   "unitTitle": "제2편 화재의 예방 및 안전관리에 관한 법률 제1장. 화재예방 기본계획과 화재안전조사",
   "totalUniqueQs": 18,
   "totalAppearances": 20,
   "totalChoices": 72,
-  "totalOx": 25,
+  "totalOx": 54,
   "themes": [
     {
       "name": "화재안전조사(구 소방특별조사) 절차·위원회·조치명령",
@@ -820,231 +752,839 @@
     const QUIZ_02_01 = [
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재안전조사를 실시하고자 하는 경우 원칙적으로 조사 7일 전까지 관계인에게 서면으로 통지하여야 한다.",
     "isCorrect": true,
     "source": "화재예방법 제9조 핵심 기출",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제9조에 따라 화재안전조사는 조사 7일 전까지 관계인에게 서면으로 사전통지하는 것이 원칙입니다.",
     "origQId": "",
-    "id": "LAW_02_01_001"
+    "id": "LAW_02_01_001",
+    "hlKey": "원칙적으로",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "화재 발생 우려가 뚜렷하여 긴급하거나 불시 조사가 불가피한 경우에도 반드시 7일 전에 사전통지하여야 한다.",
     "isCorrect": false,
     "source": "화재예방법 제9조 핵심 기출",
     "explanation": "화재 또는 재난이 발생할 우려가 뚜렷하여 긴급하게 조사할 필요가 있거나 사전에 알리면 조사 목적을 달성할 수 없는 경우에는 사전통지 없이 불시에 화재안전조사를 실시할 수 있습니다.",
     "origQId": "",
-    "id": "LAW_02_01_002"
+    "id": "LAW_02_01_002",
+    "hlKey": "우려가",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "개인의 주거에 대한 화재안전조사(구 소방특별조사)는 관계인의 승낙이 있거나 화재발생의 우려가 뚜렷하여 긴급한 필요가 있는 때에 한정하여 실시할 수 있다.",
     "isCorrect": true,
     "source": "2018년 소방경채 Q10",
     "explanation": "사생활 보호를 위해 개인 주거에 대한 조사는 관계인 승낙 또는 화재 발생 우려가 뚜렷하여 긴급한 필요가 있는 때로 엄격히 제한됩니다.",
     "origQId": "Q_02_01_2018_경채_10",
-    "id": "LAW_02_01_003"
+    "id": "LAW_02_01_003",
+    "hlKey": "개인의",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재안전조사(구 소방특별조사)의 대상을 객관적이고 공정하게 선정하기 위하여 구성하는 위원회는 소방본부장이 위원장 1명을 포함한 7명 이내의 위원으로 구성한다.",
     "isCorrect": true,
     "source": "2018년 소방경채 Q10",
     "explanation": "화재안전조사위원회는 시·도 소방본부장이 위원장 1명을 포함한 7명 이내의 위원으로 구성합니다(중앙화재안전조사단은 소방청장이 단장 포함 21명 이내로 편성).",
     "origQId": "Q_02_01_2018_경채_10",
-    "id": "LAW_02_01_004"
+    "id": "LAW_02_01_004",
+    "hlKey": "화재안전조사",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방청장, 소방본부장 또는 소방서장은 소방특별조사의 대상을 객관적이고 공정하게 선정하기 위하여 필요하면 소방특별조사위원회를 구성하여 소방특별조사 대상을 선정할 수 있다.",
     "isCorrect": false,
     "source": "2018년 소방경채 Q10 선지 3번",
     "explanation": "조사 대상을 객관적이고 공정하게 선정하기 위하여 화재안전조사위원회(구 소방특별조사위원회)를 구성하는 주체는 '소방본부장'입니다(소방청장이나 소방서장은 위원회 구성 주체가 아니며, 소방청에는 중앙화재안전조사단을 편성·운영합니다).",
     "origQId": "Q_02_01_2018_경채_10",
-    "id": "LAW_02_01_005"
+    "id": "LAW_02_01_005",
+    "hlKey": "소방청장",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재안전조사 결과에 따른 조치명령으로 인한 손실을 보상하는 경우에는 원가가 아니라 시가(時價)로 보상하여야 한다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q9",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제16조에 따라 조치명령으로 인한 손실보상은 시가(時價)로 보상합니다.",
     "origQId": "Q_02_01_2018_공채_9",
-    "id": "LAW_02_01_006"
+    "id": "LAW_02_01_006",
+    "hlKey": "제16조",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "현행 화재예방법상 화재안전조사 업무를 수행하면서 취득한 자료나 알게 된 비밀을 누설하거나 목적 외의 용도로 사용한 관계 공무원 및 전문가는 1년 이하의 징역 또는 1천만 원 이하의 벌금에 처한다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q9",
     "explanation": "현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제50조 제2항 제1호에 따라 화재안전조사 업무 수행 중 알게 된 비밀을 누설하거나 목적 외로 사용한 자(또는 관계인의 정당한 업무를 방해한 자)는 1년 이하의 징역 또는 1천만 원 이하의 벌금에 처합니다.",
     "origQId": "Q_02_01_2018_공채_9",
-    "id": "LAW_02_01_007"
+    "id": "LAW_02_01_007",
+    "hlKey": "제50조 제2항 제1호",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방특별조사는 원칙적으로 관계인의 승낙 없이 해가 뜨기 전이나 해가 진 뒤에 할 수 없다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q9 선지 2번",
     "explanation": "관계인의 승낙이 있거나 화재 발생 우려가 뚜렷하여 긴급한 필요가 있는 경우(또는 공개 시간 내 조사 목적 달성 가능 경우)를 제외하고는 해가 뜨기 전이나 해가 진 뒤에 조사를 할 수 없습니다.",
     "origQId": "Q_02_01_2018_공채_9",
-    "id": "LAW_02_01_008"
+    "id": "LAW_02_01_008",
+    "hlKey": "원칙적으로",
+    "paraIdx": 3,
+    "isEssential": false
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재 또는 구조·구급이 필요한 상황을 거짓으로 알린 사람은 벌금이 아니라 과태료 부과대상에 해당한다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q10",
     "explanation": "｢소방기본법｣ 제56조에 따라 거짓 신고자는 500만 원 이하의 과태료 부과대상입니다.",
     "origQId": "Q_02_01_2019_경채_10",
-    "id": "LAW_02_01_009"
+    "id": "LAW_02_01_009",
+    "hlKey": "아니라",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "화재안전조사 결과에 따른 조치명령 손실보상에서 보상금의 지급 또는 공탁의 통지에 불복하는 자는 통지를 받은 날부터 30일 이내에 관할 토지수용위원회에 재결을 신청할 수 있다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q13",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제16조 제4항에 따라 통지를 받은 날부터 30일 이내에 관할 토지수용위원회에 재결을 신청할 수 있습니다.",
     "origQId": "Q_02_01_2019_경채_13",
-    "id": "LAW_02_01_010"
+    "id": "LAW_02_01_010",
+    "hlKey": "제16조",
+    "paraIdx": 4,
+    "isEssential": false
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "국가적 행사 등 주요 행사가 개최되는 장소 및 그 주변의 관계 지역에 대하여 소방안전관리 실태를 점검할 필요가 있는 경우 소방특별조사를 실시할 수 있다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q18 선지 3번",
     "explanation": "국가적 행사 등 주요 행사가 개최되는 장소 및 그 주변의 관계 지역에 대하여 소방안전관리 실태를 점검할 필요가 있는 경우 조사를 실시할 수 있습니다.",
     "origQId": "Q_02_01_2019_경채_18",
-    "id": "LAW_02_01_011"
+    "id": "LAW_02_01_011",
+    "hlKey": "국가적",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방특별조사위원회는 위원장 1명을 제외한 7명 이내의 위원으로 성별을 고려하여 구성한다.",
     "isCorrect": false,
     "source": "2019년 소방경채 Q18 선지 4번",
     "explanation": "화재안전조사위원회(구 소방특별조사위원회)는 위원장 1명을 '제외한'이 아니라 위원장 1명을 '포함한' 7명 이내의 위원으로 성별을 고려하여 구성합니다.",
     "origQId": "Q_02_01_2019_경채_18",
-    "id": "LAW_02_01_012"
+    "id": "LAW_02_01_012",
+    "hlKey": "소방특별조사위원",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "국가는 화재안전 기반 확충을 위하여 화재안전정책에 관한 기본계획을 10년마다 수립·시행하여야 한다.",
     "isCorrect": false,
     "source": "2022년 소방경채 Q11 선지 1번",
     "explanation": "화재안전정책에 관한 기본계획(현행 화재의 예방 및 안전관리에 관한 기본계획)은 10년마다가 아니라 '5년마다' 수립·시행하여야 합니다.",
     "origQId": "Q_02_01_2022_경채_11",
-    "id": "LAW_02_01_013"
+    "id": "LAW_02_01_013",
+    "hlKey": "화재안전",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방청장은 기본계획 및 시행계획을 수립하기 위하여 필요한 경우에는 관계 중앙행정기관의 장 또는 시·도 지사에게 관련 자료의 제출을 요청할 수 있다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q11 선지 4번",
     "explanation": "소방청장은 기본계획 및 시행계획을 수립하기 위하여 필요한 경우에는 관계 중앙행정기관의 장 또는 시·도지사에게 관련 자료의 제출을 요청할 수 있습니다.",
     "origQId": "Q_02_01_2022_경채_11",
-    "id": "LAW_02_01_014"
+    "id": "LAW_02_01_014",
+    "hlKey": "소방청장은",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방청장은 소방특별조사를 위하여 상시 중앙소방특 별조사단을 편성하여 운영하여야 한다.",
     "isCorrect": false,
     "source": "2022년 소방경채 Q13 선지 2번",
     "explanation": "소방청장은 조사를 위하여 필요한 경우에 중앙조사단을 편성하여 운영'할 수 있다'(재량·필요시 편성)고 규정되어 있으며, '상시 편성하여 운영하여야 한다'는 의무 규정이 아닙니다.",
     "origQId": "Q_02_01_2022_경채_13",
-    "id": "LAW_02_01_015"
+    "id": "LAW_02_01_015",
+    "hlKey": "위하여",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재안전조사(구 소방특별조사)의 연기를 신청하려는 관계인은 조사 시작 3일 전까지 연기신청서를 소방관서장에게 제출하여야 하며, 조사를 마친 때에는 조사 결과를 관계인에게 서면으로 통지하여야 한다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q9",
     "explanation": "사전 통지는 7일 전 서면, 연기 신청은 조사 시작 3일 전까지, 조사 결과 통지는 서면 통지가 원칙입니다.",
     "origQId": "Q_02_01_2022_공채_9",
-    "id": "LAW_02_01_016"
+    "id": "LAW_02_01_016",
+    "hlKey": "화재안전조사",
+    "paraIdx": 0,
+    "isEssential": false
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방서장 등은 소방특별조사를 마친 때에는 그 조사 결과를 관계인에게 서면 또는 구두로 통지할 수 있다.",
     "isCorrect": false,
     "source": "2022년 소방공채 Q9 선지 1번",
     "explanation": "소방관서장은 조사를 마친 때에는 그 조사 결과를 관계인에게 '서면'으로 통지하여야 하며, 구두로 통지할 수 없습니다.",
     "origQId": "Q_02_01_2022_공채_9",
-    "id": "LAW_02_01_017"
+    "id": "LAW_02_01_017",
+    "hlKey": "때에는",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방특별조사의 연기를 승인한 경우라도 연기기간이 끝나기 전에 연기사유가 없어졌거나 긴급히 조사를 하여야 할 사유가 발생하였을 때에는 관계인에게 통 보하고 소방특별조사를 할 수 있다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q9 선지 3번",
     "explanation": "조사 연기를 승인한 경우라도 연기기간이 끝나기 전에 연기사유가 없어졌거나 긴급히 조사를 하여야 할 사유가 발생하였을 때에는 관계인에게 통보하고 조사를 할 수 있습니다.",
     "origQId": "Q_02_01_2022_공채_9",
-    "id": "LAW_02_01_018"
+    "id": "LAW_02_01_018",
+    "hlKey": "연기를",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재예방안전진단의 범위에는 소방계획 및 피난계획 수립, 소방시설등의 유지·관리, 비상대응조직 및 교육훈련, 화재 위험성 평가에 관한 사항이 포함된다.",
     "isCorrect": true,
     "source": "2023년 소방경채 Q23 · 소방공채 Q12",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제41조 제2항에 규정된 화재예방안전진단의 핵심 범위입니다.",
     "origQId": "Q_02_01_2023_경채_23",
-    "id": "LAW_02_01_019"
+    "id": "LAW_02_01_019",
+    "hlKey": "화재예방안전진단",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재예방법상 '화재예방안전진단'이란 화재가 발생할 경우 사회·경제적으로 피해 규모가 클 것으로 예상되는 소방대상물에 대하여 화재위험요인을 조사하고 그 위험성을 평가하여 개선대책을 수립하는 것을 말한다.",
     "isCorrect": true,
     "source": "2024년 소방경채 Q15",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제2조 제4호에 따른 화재예방안전진단의 법정 정의입니다.",
     "origQId": "Q_02_01_2024_경채_15",
-    "id": "LAW_02_01_020"
+    "id": "LAW_02_01_020",
+    "hlKey": "제2조",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재예방법령상 소방청장은 5년마다 수립하는 기본계획을 계획 시행 전년도 9월 30일까지 수립하고, 매년 수립하는 시행계획을 계획 시행 전년도 10월 31일까지 수립하며, 시·도지사는 세부시행계획을 계획 시행 전년도 12월 31일까지 수립해야 한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q14 · 소방공채 Q9",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제4조·제5조·제6조에 따른 3단계 수립 기한(9월 30일 ➔ 10월 31일 ➔ 12월 31일)입니다.",
     "origQId": "Q_02_01_2025_경채_14",
-    "id": "LAW_02_01_021"
+    "id": "LAW_02_01_021",
+    "hlKey": "제4조",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "화재안전조사를 효율적으로 실시하기 위하여 합동으로 조사반을 편성할 수 있는 법정 기관에는 한국소방안전원, 한국소방산업기술원, 한국화재보험협회가 포함된다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q15",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제11조에 규정된 합동조사반 편성 대상 기관입니다(한국소방시설협회는 제외).",
     "origQId": "Q_02_01_2025_경채_15",
-    "id": "LAW_02_01_022"
+    "id": "LAW_02_01_022",
+    "hlKey": "제11조",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "B",
+    "tier": "core",
     "text": "화재안전영향평가심의회의 소방공무원 위원은 소방청에서 화재안전 관련 업무를 수행하는 소방정 이상의 소방공무원 중에서 소방청장이 지명하는 사람으로 한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q22",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제22조에 따라 소방청 소속 위원의 계급 기준은 '소방준감 이상'이 아니라 '소방정 이상'입니다.",
     "origQId": "Q_02_01_2025_경채_22",
-    "id": "LAW_02_01_023"
+    "id": "LAW_02_01_023",
+    "hlKey": "제22조",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "화재예방법 시행령상 과태료 부과권자는 위반행위자가 처음 위반행위를 한 경우로서 3년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우 개별기준에 따른 과태료의 2분의 1 범위에서 그 금액을 줄여 부과할 수 있다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q11",
     "explanation": "처음 위반행위를 한 경우 모범 영위 기간 요건은 2년이 아니라 '3년 이상'입니다.",
     "origQId": "Q_02_01_2026_경채_11",
-    "id": "LAW_02_01_024"
+    "id": "LAW_02_01_024",
+    "hlKey": "과태료",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "화재안전조사 결과에 따른 조치명령을 받은 관계인이 장기출장인 경우, 경매 등으로 소유권이 변동 중에 있는 경우, 사업에 부도·도산 등 중대한 위기가 발생한 경우에는 조치명령 이행기간의 연장을 신청할 수 있다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q20",
     "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제15조에 규정된 조치명령 기간연장 사유입니다.",
     "origQId": "Q_02_01_2026_경채_20",
-    "id": "LAW_02_01_025"
+    "id": "LAW_02_01_025",
+    "hlKey": "제15조",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "시·도지사가 손실을 보상하는 경우에는 원가로 보상하여야 한다.",
+    "isCorrect": false,
+    "source": "2019년 소방경채 Q13 · 화재안전조사(구 소방특별조사) 조치명령에 따른 손실보상 절차",
+    "explanation": "조치명령으로 인한 손실을 보상하는 경우에는 원가가 아니라 '시가(時價)'로 보상하여야 합니다.",
+    "origQId": "Q_02_01_2019_경채_13",
+    "id": "EXT_02_01_001",
+    "hlKey": "도지사가",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "손실보상에 관하여는 시·도지사와 손실을 입은 자가 협의하여야 한다.",
+    "isCorrect": true,
+    "source": "2019년 소방경채 Q13 · 화재안전조사(구 소방특별조사) 조치명령에 따른 손실보상 절차",
+    "explanation": "손실보상에 관하여는 소방청장 또는 시·도지사와 손실을 입은 자가 협의하여야 합니다.",
+    "origQId": "Q_02_01_2019_경채_13",
+    "id": "EXT_02_01_002",
+    "hlKey": "손실보상에",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "보상금액에 관한 협의가 성립되지 아니한 경우에는 시·도지사는 그 보상금액을 지급하거나 공탁하고 이를 상대방에게 알려야 한다.",
+    "isCorrect": true,
+    "source": "2019년 소방경채 Q13 · 화재안전조사(구 소방특별조사) 조치명령에 따른 손실보상 절차",
+    "explanation": "보상금액에 관한 협의가 성립되지 아니한 경우에는 그 보상금액을 지급하거나 공탁하고 이를 상대방에게 알려야 합니다.",
+    "origQId": "Q_02_01_2019_경채_13",
+    "id": "EXT_02_01_003",
+    "hlKey": "협의가",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "소방청장은 기본계획을 시행하기 위하여 매년 시행계획을 수립·시행하여야 한다.",
+    "isCorrect": true,
+    "source": "2022년 소방경채 Q11 · 화재예방 기본계획(5년) 및 시행계획(매년)의 수립 체계",
+    "explanation": "소방청장은 기본계획을 시행하기 위하여 매년 시행계획을 수립·시행하여야 합니다.",
+    "origQId": "Q_02_01_2022_경채_11",
+    "id": "EXT_02_01_004",
+    "hlKey": "소방청장은",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "“화재안전조사”란 소방청장, 소방본부장 또는 소방서장이 화재원인, 피해상황, 대응활동 등을 파악하기 위하여 자료의 수집, 관계인등에 대한 질문, 현장 확인, 감식, 감정 및 실험 등을 하는 일련의 행위를 말한다.",
+    "isCorrect": false,
+    "source": "2024년 소방경채 Q15 · 화재의 예방 및 안전관리에 관한 법률상 용어의 정의",
+    "explanation": "화재원인, 피해상황, 대응활동 등을 파악하기 위해 자료 수집·질문·현장 확인·감식·감정·실험 등을 하는 일련의 행위는 '화재안전조사'가 아니라 ｢소방의 화재조사에 관한 법률｣상 '화재조사'의 정의입니다. '화재안전조사'란 소방대상물 등이 법령에 적합하게 유지·관리되고 있는지, 화재 발생 위험이 있는지 등을 확인하기 위하여 현장 확인·문서 열람 등을 하는 활동을 말합니다.",
+    "origQId": "Q_02_01_2024_경채_15",
+    "id": "EXT_02_01_005",
+    "hlKey": "화재안전조사",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "｢화재의 예방 및 안전관리에 관한 법률｣상 '화재안전조사'란 소방관서장이 화재가 발생한 후 발화원인, 피해상황, 대응활동 등을 파악하기 위하여 질문, 자료의 수집, 현장확인, 감식, 감정 및 실험을 하는 일련의 행위를 말한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제2조 제3호 (화재안전조사 정의 vs 화재조사 정의 구별)",
+    "explanation": "질문, 자료의 수집, 현장확인, 감식, 감정 및 실험을 하여 화재원인과 피해상황을 파악하는 행위는 ｢소방의 화재조사에 관한 법률｣상 '화재조사'의 정의입니다. ｢화재예방법｣상 '화재안전조사'는 소방대상물 등이 법령에 적합하게 유지·관리되고 있는지, 화재 발생 위험이 있는지 등을 사전에 확인하기 위하여 현장 확인·문서 열람 등을 하는 활동을 말합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_001",
+    "hlKey": "현장 확인·문서 열람 등을 하는 사전 점검 활동",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "소방청장은 화재의 예방 및 안전관리에 관한 기본계획을 5년마다 계획 시행 전년도 10월 31일까지 수립하여야 하며, 연도별 시행계획은 계획 시행 전년도 9월 30일까지 수립하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 제4조·제5조 (기본계획 9월 30일 vs 시행계획 10월 31일 교차 함정)",
+    "explanation": "기본계획과 시행계획의 수립 기한을 서로 맞바꾼 함정입니다. ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제4조 및 제5조에 따라 5년마다 수립하는 '기본계획'은 계획 시행 전년도 '9월 30일까지' 수립하고, 매년 수립하는 '시행계획'은 계획 시행 전년도 '10월 31일까지' 수립하여야 합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_002",
+    "hlKey": "전년도 9월 30일까지",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "관계 중앙행정기관의 장 및 시·도지사는 소관 업무나 지역 실정에 맞는 세부시행계획을 매년 계획 시행 당해 연도 1월 31일까지 수립하여 행정안전부장관에게 통보하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 제6조 (세부시행계획 수립 기한 12월 31일 및 통보 대상 소방청장)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제6조에 따라 관계 중앙행정기관의 장 및 시·도지사는 세부시행계획을 매년 계획 시행 '전년도 12월 31일까지' 수립하여 행정안전부장관이 아니라 '소방청장'에게 통보하여야 합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_003",
+    "hlKey": "전년도 12월 31일까지",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "소방청장 소속으로 두는 화재안전영향평가심의회의 소방공무원 위원은 소방청에서 화재안전 관련 업무를 수행하는 소방준감 이상의 소방공무원 중에서 소방청장이 지명하는 사람으로 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 제22조 (화재안전영향평가심의회 위원 계급 기준: 소방정 이상)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제22조에 따라 화재안전영향평가심의회의 소방청 소속 공무원 위원은 소방준감 이상이 아니라 '소방정 이상'의 소방공무원 중에서 소방청장이 지명합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_004",
+    "hlKey": "소방정 이상",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "시·도지사는 화재안전에 관련된 법령이나 정책의 타당성을 분석·평가하기 위하여 시·도에 화재안전영향평가심의회를 설치·운영한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제21조·제22조 (화재안전영향평가 및 심의회 설치 주체: 소방청장)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제21조 및 제22조에 따라 화재안전영향평가를 실시하고 화재안전영향평가심의회를 설치·운영하는 주체는 시·도지사가 아니라 '소방청장'입니다.",
+    "origQId": "",
+    "id": "PRED_02_01_005",
+    "hlKey": "화재안전영향평가심의회",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "개인의 주거에 대해서는 사생활의 평온을 보호하기 위하여 어떠한 경우에도 화재안전조사를 실시할 수 없다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제7조 제2항 (개인의 주거에 대한 화재안전조사 예외 허용 요건)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제7조 제2항에 따라 개인의 주거에 대하여는 '관계인의 승낙이 있거나 화재 발생의 우려가 뚜렷하여 긴급한 필요가 있는 때'에 한정하여 화재안전조사를 실시할 수 있습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_006",
+    "hlKey": "개인의 주거에 대하여는 관계인의 승낙이 있거나 화재 발생의 우려가 뚜렷하여 긴급한 필요가 있는 때에 한정",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사의 대상을 객관적이고 공정하게 선정하기 위하여 각 소방서장은 소방서에 화재안전조사위원회를 구성·운영한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제10조 제1항 (화재안전조사위원회 구성 주체: 시·도 소방본부장)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제10조 제1항에 따라 화재안전조사위원회는 소방청장이나 소방서장이 아니라 오직 '소방본부장'이 시·도 소방본부에 구성·운영합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_007",
+    "hlKey": "소방본부장이 시·도 소방본부에 화재안전조사위원회를 구성·운영",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사를 효율적으로 실시하기 위하여 소방관서장이 합동조사반을 편성할 수 있는 법정 기관에는 한국소방안전원, 한국소방산업기술원, 한국소방시설협회가 포함된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 제11조 (합동조사반 편성 기관: 한국소방시설협회 제외 함정)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제11조에 따라 합동조사반을 편성할 수 있는 법정 유관기관은 한국소방안전원, 한국소방산업기술원, 한국화재보험협회 등이며, 시공 사업자 단체인 '한국소방시설협회'는 포함되지 않습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_008",
+    "hlKey": "한국소방시설협회",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "소방관서장은 사전에 알리면 증거 인멸 등으로 화재안전조사의 목적을 달성할 수 없다고 인정되는 경우에는 조사 7일 전 서면 사전통지 없이 화재안전조사를 실시할 수 있다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 법 제8조 제1항 단서 (증거 인멸 우려 시 사전통지 생략 특례)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제8조 제1항 단서에 따라 화재·재난 발생 우려가 뚜렷하여 긴급하거나 사전에 알리면 증거 인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우에는 사전통지 없이 조사할 수 있습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_009",
+    "hlKey": "사전에 알리면 증거 인멸 등으로 조사 목적을 달성할 수 없다고 인정되는 경우",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "천재지변이나 질병 등으로 화재안전조사를 받기 곤란한 관계인은 조사 시작 7일 전까지 소방관서장에게 조사의 연기를 신청하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제13조 및 시행령 제13조 (사전통지 7일 전 vs 연기 신청 조사 시작 3일 전까지)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제13조에 따라 소방관서장의 사전통지는 조사 '7일 전까지'이지만, 관계인의 화재안전조사 연기 신청은 '조사 시작 3일 전까지' 하여야 합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_010",
+    "hlKey": "조사 시작 3일 전까지",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "화재안전조사 결과 경미한 지적사항만 있는 경우에는 소방관서장이 관계인에게 조사 결과를 구두로 통지할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제8조 제4항 (화재안전조사 결과의 서면 통지 의무)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제8조 제4항에 따라 소방관서장은 화재안전조사를 마친 때에는 그 조사 결과를 관계인에게 반드시 '서면으로 통지'하여야 하며, 구두 통지는 인정되지 않습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_011",
+    "hlKey": "서면으로 통지",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "공개된 시간(영업시간) 중에 조사하여야만 화재안전조사의 목적을 달성할 수 있는 경우에는 관계인의 승낙이 없더라도 해가 뜨기 전이나 해가 진 뒤에 화재안전조사를 실시할 수 있다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 법 제8조 제2항 단서 (야간 영업시간 중 일출 전·일몰 후 조사 허용)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제8조 제2항 단서에 따라 공개된 시간(영업시간) 중에 조사하여야만 조사 목적을 달성할 수 있는 경우나 화재 발생 우려가 뚜렷하여 긴급한 필요가 있는 경우에는 일출 전·일몰 후에도 관계인 승낙 없이 조사할 수 있습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_012",
+    "hlKey": "공개된 시간",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사 결과 소방대상물의 위치·구조·설비 또는 관리 상황이 화재예방을 위하여 보완될 필요가 있는 경우 시·도지사만이 관계인에게 그 소방대상물의 개수·이전·제거 또는 사용금지 등을 명할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제14조 제1항 및 제15조 (조치명령권자 소방관서장 vs 손실보상 주체 시·도지사)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제14조 제1항에 따라 화재안전조사 결과에 따른 개수·이전·제거·사용금지 등 조치명령 권한자는 시·도지사가 아니라 '소방관서장(소방청장·소방본부장·소방서장)'입니다(시·도지사는 제15조에 따른 조치명령 손실보상 주체임).",
+    "origQId": "",
+    "id": "PRED_02_01_013",
+    "hlKey": "소방관서장",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사 결과에 따른 개수·이전·제거 명령으로 인하여 손실을 입은 자가 있는 경우에는 소방서장이 그 손실을 원가로 보상하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제15조 및 시행령 제16조 (조치명령 손실보상 주체 및 시가 보상 원칙)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제15조 제1항 및 시행령 제16조 제1항에 따라 조치명령으로 인한 손실보상 주체는 소방서장이 아니라 '소방청장 또는 시·도지사'이며, 원가가 아니라 반드시 '시가(時價)'로 보상하여야 합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_014",
+    "hlKey": "시가",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "조치명령에 따른 손실보상금의 지급 또는 공탁의 통지에 불복하는 자는 통지를 받은 날부터 60일 이내에 중앙행정심판위원회에 재결을 신청할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 제16조 제4항 (보상금 불복 시 30일 이내 관할 토지수용위원회 재결 신청)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제16조 제4항에 따라 보상금 지급 또는 공탁 통지에 불복하는 자는 통지를 받은 날부터 60일이 아니라 '30일 이내'에 '관할 토지수용위원회'에 재결을 신청할 수 있습니다.",
+    "origQId": "",
+    "id": "PRED_02_01_015",
+    "hlKey": "30일 이내에 관할 토지수용위원회에 재결을 신청",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "소방관서장이 화재안전조사 결과를 공개하려는 경우 그 내용을 사전에 통보받은 관계인은 통보받은 날부터 7일 이내에 이의신청을 할 수 있으며, 소방관서장은 이의신청 접수일부터 10일 이내에 심사 결과를 통지하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제16조 및 시행령 제17조 (조사 결과 공개 이의신청 10일 이내 ➔ 심사 통지 7일 이내)",
+    "explanation": "🚨 [출제위원 착시 함정] 관계인의 이의신청 기한과 소방관서장의 심사 결과 통지 기한을 서로 뒤바꾼 함정입니다! 이의신청은 통보받은 날부터 '10일 이내', 심사 결과 통지는 접수일부터 '7일 이내'입니다. ｢화재의 예방 및 안전관리에 관한 법률｣ 제16조 및 같은 법 시행령 제17조에 따른 화재안전조사 결과 공개 시 사전 통보, 이의신청(10일 이내) 및 심사 결과 통지(7일 이내) 기한입니다.",
+    "origQId": "",
+    "id": "PRED_02_01_016",
+    "hlKey": "10일 이내",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사 결과에 따른 소방대상물의 개수·이전·제거, 사용의 금지 또는 제한 명령(법 제14조 제1항)을 위반한 자는 3년 이하의 징역 또는 3천만 원 이하의 벌금에 처한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 법 제50조 제1항 (개수·사용금지 등 조치명령 위반죄: 3년 이하 징역 또는 3천만 원 이하 벌금)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제50조 제1항에 따라 개수·이전·제거·사용금지 등 조치명령을 위반한 자는 3년 이하의 징역 또는 3천만 원 이하의 벌금에 처합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_017",
+    "hlKey": "3년 이하의 징역 또는 3천만 원 이하의 벌금",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전조사 업무를 수행하면서 취득한 자료나 알게 된 비밀을 다른 사람에게 누설하거나 목적 외의 용도로 사용한 사람은 300만 원 이하의 벌금에 처한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제50조 제2항 제1호 (화재안전조사 비밀누설죄: 1년 이하 징역 또는 1천만 원 이하 벌금)",
+    "explanation": "현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제50조 제2항 제1호에 따라 화재안전조사 업무 중 알게 된 비밀을 누설하거나 목적 외로 사용한 자(또는 관계인의 정당한 업무를 방해한 자)는 구법(300만 원 이하 벌금)과 달리 처벌이 강화되어 '1년 이하의 징역 또는 1천만 원 이하의 벌금'에 처합니다(참고: 제43조에 따른 화재예방안전진단 비밀 누설이 300만 원 이하 벌금임).",
+    "origQId": "",
+    "id": "PRED_02_01_018",
+    "hlKey": "1년 이하의 징역 또는 1천만 원 이하의 벌금",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "정당한 사유 없이 화재안전조사를 거부·방해 또는 기피한 자에게는 300만 원 이하의 과태료를 부과한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제50조 제3항 제1호 (화재안전조사 거부·방해·기피죄: 300만 원 이하 벌금 vs 과태료 구분)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제50조 제3항 제1호에 따라 정당한 사유 없이 화재안전조사를 거부·방해 또는 기피한 자는 과태료가 아니라 형벌인 '300만 원 이하의 벌금'에 처합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_019",
+    "hlKey": "300만 원 이하의 벌금",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "화재예방안전진단 업무를 수행하면서 알게 된 비밀을 누설하거나 목적 외의 용도로 사용한 사람은 화재안전조사 비밀누설죄와 동일하게 1년 이하의 징역 또는 1천만 원 이하의 벌금에 처한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제50조 제3항 (화재예방안전진단 비밀누설 300만 원 벌금 vs 화재안전조사 비밀누설 1년/1천만 원)",
+    "explanation": "🚨 [출제위원 착시 함정] 화재안전조사 비밀누설죄는 1년 이하 징역 또는 1천만 원 이하 벌금이지만, '화재예방안전진단' 비밀누설죄는 징역형 없이 '300만 원 이하의 벌금'(법 제50조 제3항)에 처합니다. ｢화재의 예방 및 안전관리에 관한 법률｣ 제50조 제3항에 따라 화재예방안전진단 비밀 누설은 300만 원 이하의 벌금에 처합니다(화재안전조사 비밀 누설이 1년 이하 징역 또는 1천만 원 이하 벌금인 것과 구별하여야 함).",
+    "origQId": "",
+    "id": "PRED_02_01_020",
+    "hlKey": "화재예방안전진단 업무 중 알게 된 비밀을 누설한 자는 300만 원 이하의 벌금",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣상 과태료 부과권자는 위반행위자가 처음 위반행위를 한 경우로서 2년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우 과태료 금액의 2분의 1 범위에서 감경할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 시행령 별표 9 (과태료 감경 요건 중 초범 모범 영위 기간: 3년 이상)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9에 따라 처음 위반행위를 한 경우로서 과태료를 2분의 1 범위에서 감경받기 위한 모범 영위 기간 요건은 2년 이상이 아니라 '3년 이상'입니다(2026년 소방경채 Q11 기출 포인트).",
+    "origQId": "",
+    "id": "PRED_02_01_021",
+    "hlKey": "3년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "｢화재의 예방 및 안전관리에 관한 법률｣에서 '예방'이란 화재발생을 사전에 제거·방지하기 위한 모든 활동을 말하고, '안전관리'란 화재로 인한 피해를 최소화하기 위한 예방·대비·대응 등의 활동을 말한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 법 제2조 제1호·제2호 (예방과 안전관리의 법정 정의)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣ 제2조 제1호 및 제2호에 규정된 '예방'과 '안전관리'의 법정 정의입니다.",
+    "origQId": "",
+    "id": "PRED_02_01_022",
+    "hlKey": "화재로 인한 피해를 최소화하기 위한 예방·대비·대응 등의 활동",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "｢화재의 예방 및 안전관리에 관한 법률｣은 기존 법률에서 기계·설비 중심의 소방시설 설치 기준은 ｢소방시설 설치 및 관리에 관한 법률｣에 두고, 사전 예방과 사람의 안전관리 의무를 전담하기 위하여 분법·제정되었다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 법 제1조 (화재예방법과 소방시설법의 분법 체계)",
+    "explanation": "｢화재의 예방 및 안전관리에 관한 법률｣의 분법 배경 및 체계적 지위에 관한 정확한 설명입니다.",
+    "origQId": "",
+    "id": "PRED_02_01_023",
+    "hlKey": "사전 예방과 사람의 안전관리 의무",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "시·도지사가 3년마다 수립·시행하는 화재의 예방 및 안전관리에 관한 기본계획에는 화재안전 분야의 국제경쟁력 향상에 관한 사항이 포함되어야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 법 제4조 제2항 (기본계획의 법정 포함 사항)",
+    "explanation": "🚨 [출제위원 착시 함정] 화재예방 기본계획의 수립 주체는 시·도지사가 아니라 '소방청장'이며, 수립 주기도 3년마다가 아니라 '5년마다'입니다. ｢화재의 예방 및 안전관리에 관한 법률｣ 제4조 제2항에 따라 기본계획에는 화재안전 분야의 국제경쟁력 향상에 관한 사항 등이 포함되어야 합니다.",
+    "origQId": "",
+    "id": "PRED_02_01_024",
+    "hlKey": "화재안전 분야 국제경쟁력 향상",
+    "paraIdx": 1,
+    "isEssential": false
   }
 ];
-
+    window.SUBJ_DATA = [
+  {
+    "id": "SUBJ_LAW_02_01_01",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "화재예방 3단계 국가계획 수립 주체 · 주기 및 시한 공식 (법 제4조 · 영 제4조부터 제6조까지)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"기본계획(소방청장 · 5년 · 전년도 9월 30일) → 시행계획(소방청장 · 매년 · 전년도 10월 31일) → 세부시행계획(중앙기관장·시도지사 · 매년 · 전년도 12월 31일)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">기본계획(소방청장 · 5년 · 전년도 9월 30일) → 시행계획(소방청장 · 매년 · 전년도 10월 31일) → 세부시행계획(중앙기관장·시도지사 · 매년 · 전년도 12월 31일)</span></span></div><div class=\"subj-ex-line\">💡 <strong>제1편 종합계획과 대조</strong> | 소방기본법 종합계획(10월 31일·12월 31일) 앞에 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"전년도 9월 30일까지\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">전년도 9월 30일까지</span></span> 수립하는 5년 기본계획이 추가되며, 세부시행계획 수립 후 통보 대상은 행정안전부장관이 아닌 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장</span></span>입니다!</div>",
+    "answerEq": "기본계획(소방청장 · 5년 · 전년도 9월 30일) → 시행계획(소방청장 · 매년 · 전년도 10월 31일) → 세부시행계획(중앙기관장·시도지사 · 매년 · 전년도 12월 31일) / 전년도 9월 30일까지 / 소방청장",
+    "fullFormula": "기본계획(소방청장 · 5년 · 전년도 9월 30일) → 시행계획(소방청장 · 매년 · 전년도 10월 31일) → 세부시행계획(중앙기관장·시도지사 · 매년 · 전년도 12월 31일)",
+    "explanation": "💡 제1편 종합계획과 대조 | 소방기본법 종합계획(10월 31일·12월 31일) 앞에 전년도 9월 30일까지 수립하는 5년 기본계획이 추가되며, 세부시행계획 수립 후 통보 대상은 행정안전부장관이 아닌 소방청장입니다!"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_02",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "화재안전조사 사전통지 · 연기 신청 · 야간 제한 및 결과 통지 절차 공식 (법 제8조 · 제13조)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"원칙 7일 전 서면 통지(긴급·증거인멸 우려 시 생략) → 조사 시작 3일 전까지 연기 신청 → 결과는 반드시 서면 통지\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">원칙 7일 전 서면 통지(긴급·증거인멸 우려 시 생략) → 조사 시작 3일 전까지 연기 신청 → 결과는 반드시 서면 통지</span></span></div><div class=\"subj-ex-line\">💡 <strong>야간 출입 예외</strong> | 일출 전·일몰 후에는 관계인 승낙 없이 조사할 수 없으나, 심야 영업장처럼 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"공개된 시간\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">공개된 시간</span></span> 내 조사로 목적 달성이 가능하거나 화재 우려가 뚜렷해 긴급한 때에는 야간 조사가 가능합니다!</div>",
+    "answerEq": "원칙 7일 전 서면 통지(긴급·증거인멸 우려 시 생략) → 조사 시작 3일 전까지 연기 신청 → 결과는 반드시 서면 통지 / 공개된 시간",
+    "fullFormula": "원칙 7일 전 서면 통지(긴급·증거인멸 우려 시 생략) → 조사 시작 3일 전까지 연기 신청 → 결과는 반드시 서면 통지",
+    "explanation": "💡 야간 출입 예외 | 일출 전·일몰 후에는 관계인 승낙 없이 조사할 수 없으나, 심야 영업장처럼 공개된 시간 내 조사로 목적 달성이 가능하거나 화재 우려가 뚜렷해 긴급한 때에는 야간 조사가 가능합니다!"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_03",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "화재안전조사 관련 벌칙 서열(법 제50조) 및 과태료 2분의 1 감경 요건(영 별표 9)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"조치명령 위반(3년·3천만 원) &gt; 조사 비밀누설·업무방해(1년·1천만 원) &gt; 조사 거부·예방안전진단 비밀누설(300만 원 벌금)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">조치명령 위반(3년·3천만 원) > 조사 비밀누설·업무방해(1년·1천만 원) > 조사 거부·예방안전진단 비밀누설(300만 원 벌금)</span></span></div><div class=\"subj-ex-line\">💡 <strong>비밀누설 · 감경 비교</strong> | 공무원 등이 수행하는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재안전조사\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">화재안전조사</span></span> 비밀누설은 1년 징역·1천만 원 벌금이지만, 민간 진단기관 등이 수행하는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재예방안전진단\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">화재예방안전진단</span></span> 비밀누설은 300만 원 이하 벌금이며, 초범 모범 영위 과태료 감경 기준은 <strong>3년 이상</strong>입니다!</div>",
+    "answerEq": "조치명령 위반(3년·3천만 원) > 조사 비밀누설·업무방해(1년·1천만 원) > 조사 거부·예방안전진단 비밀누설(300만 원 벌금) / 화재안전조사 / 화재예방안전진단",
+    "fullFormula": "조치명령 위반(3년·3천만 원) > 조사 비밀누설·업무방해(1년·1천만 원) > 조사 거부·예방안전진단 비밀누설(300만 원 벌금)",
+    "explanation": "💡 비밀누설 · 감경 비교 | 공무원 등이 수행하는 화재안전조사 비밀누설은 1년 징역·1천만 원 벌금이지만, 민간 진단기관 등이 수행하는 화재예방안전진단 비밀누설은 300만 원 이하 벌금이며, 초범 모범 영위 과태료 감경 기준은 3년 이상입니다!"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_04",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "화재안전조사 대 화재조사",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재안전조사\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">화재안전조사</span></span> = 사전 적법 유지·화재위험 확인(<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"현장 확인 · 문서 열람\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">현장 확인 · 문서 열람</span></span>, 소방관서장) ↔ 사후 원인 규명(질문·감식·감정·실험)은 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재조사\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">화재조사</span></span></div>",
+    "answerEq": "화재안전조사 / 현장 확인 · 문서 열람 / 화재조사",
+    "fullFormula": "",
+    "explanation": "화재안전조사 = 사전 적법 유지·화재위험 확인(현장 확인 · 문서 열람, 소방관서장) ↔ 사후 원인 규명(질문·감식·감정·실험)은 화재조사"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_05",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "3단계 예방계획 기한",
+    "promptHtml": "<div class=\"subj-prose-line\">① <strong>기본계획</strong>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장 · 5년마다 · 전년도 9월 30일\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장 · 5년마다 · 전년도 9월 30일</span></span>(국제경쟁력 향상 포함) ➔ ② <strong>시행계획</strong>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장 · 매년 · 전년도 10월 31일\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장 · 매년 · 전년도 10월 31일</span></span> 수립·통보 ➔ ③ <strong>세부시행계획</strong>: 중앙기관장·시도지사 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"전년도 12월 31일\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">전년도 12월 31일</span></span> 수립 후 <strong>소방청장</strong> 통보</div>",
+    "answerEq": "소방청장 · 5년마다 · 전년도 9월 30일 / 소방청장 · 매년 · 전년도 10월 31일 / 전년도 12월 31일",
+    "fullFormula": "",
+    "explanation": "① 기본계획: 소방청장 · 5년마다 · 전년도 9월 30일(국제경쟁력 향상 포함) ➔ ② 시행계획: 소방청장 · 매년 · 전년도 10월 31일 수립·통보 ➔ ③ 세부시행계획: 중앙기관장·시도지사 전년도 12월 31일 수립 후 소방청장 통보"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_06",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "화재안전영향평가심의회",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장</span></span> 소속 설치 (시·도지사 X) / 소방청 소속 공무원 위원은 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방정 이상\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">소방정 이상</span></span> 중에서 소방청장 지명 (소방준감 이상 X)</div>",
+    "answerEq": "소방청장 / 소방정 이상",
+    "fullFormula": "",
+    "explanation": "소방청장 소속 설치 (시·도지사 X) / 소방청 소속 공무원 위원은 소방정 이상 중에서 소방청장 지명 (소방준감 이상 X)"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_07",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "개인 주거 출입 한계",
+    "promptHtml": "<div class=\"subj-prose-line\">실시권자: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방관서장(청장·본부장·서장)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">소방관서장(청장·본부장·서장)</span></span> / 개인 주거는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"관계인 승낙\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">관계인 승낙</span></span> 또는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재 발생 우려가 뚜렷하여 긴급한 필요\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">화재 발생 우려가 뚜렷하여 긴급한 필요</span></span>가 있는 때에 한정</div>",
+    "answerEq": "관계인 승낙 / 화재 발생 우려가 뚜렷하여 긴급한 필요 / 소방관서장(청장·본부장·서장)",
+    "fullFormula": "",
+    "explanation": "실시권자: 소방관서장(청장·본부장·서장) / 개인 주거는 관계인 승낙 또는 화재 발생 우려가 뚜렷하여 긴급한 필요가 있는 때에 한정"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_08",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "위원회 대 합동조사반",
+    "promptHtml": "<div class=\"subj-prose-line\">· <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"화재안전조사위원회(제10조)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">화재안전조사위원회(제10조)</span></span>: 오직 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방본부장\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소방본부장</span></span>이 시·도 본부에 구성(위원장 1명 <strong>포함 7명 이내</strong>, 임기 2년)<br/>· <strong>조사단·합동조사반(제11조)</strong>: 필요시 임의 편성 / 안전원·기술원·화재보험협회 참여 (<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"한국소방시설협회 제외!\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">한국소방시설협회 제외!</span></span>)</div>",
+    "answerEq": "소방본부장 / 한국소방시설협회 제외! / 화재안전조사위원회(제10조)",
+    "fullFormula": "",
+    "explanation": "· 화재안전조사위원회(제10조): 오직 소방본부장이 시·도 본부에 구성(위원장 1명 포함 7명 이내, 임기 2년)· 조사단·합동조사반(제11조): 필요시 임의 편성 / 안전원·기술원·화재보험협회 참여 (한국소방시설협회 제외!)"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_09",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "7일 통지 · 야간 · 3일 연기",
+    "promptHtml": "<div class=\"subj-prose-line\">원칙 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"7일 전 서면 사전통지\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">7일 전 서면 사전통지</span></span>(긴급·증거인멸 우려 시 불시 가능) / 일출 전·일몰 후 금지(단, <strong>공개된 영업시간</strong>·긴급 시 가능) / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"조사 시작 3일 전까지\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">조사 시작 3일 전까지</span></span> 연기 신청 / 결과는 반드시 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"서면 통지\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">서면 통지</span></span>(구두 X)</div>",
+    "answerEq": "7일 전 서면 사전통지 / 조사 시작 3일 전까지 / 서면 통지",
+    "fullFormula": "",
+    "explanation": "원칙 7일 전 서면 사전통지(긴급·증거인멸 우려 시 불시 가능) / 일출 전·일몰 후 금지(단, 공개된 영업시간·긴급 시 가능) / 조사 시작 3일 전까지 연기 신청 / 결과는 반드시 서면 통지(구두 X)"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_10",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "조치명령 대 시가 보상",
+    "promptHtml": "<div class=\"subj-prose-line\">조치명령권자: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방관서장\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소방관서장</span></span>(질병·장기출장·경매 변동·부도 시 연장 가능) ↔ 손실보상 주체: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장 · 시·도지사\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장 · 시·도지사</span></span>가 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"시가(時價)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">시가(時價)</span></span> 보상 / 불복 시 통지일로부터 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"30일 이내 관할 토지수용위원회\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">30일 이내 관할 토지수용위원회</span></span> 재결 신청</div>",
+    "answerEq": "소방관서장 / 소방청장 · 시·도지사 / 시가(時價) / 30일 이내 관할 토지수용위원회",
+    "fullFormula": "",
+    "explanation": "조치명령권자: 소방관서장(질병·장기출장·경매 변동·부도 시 연장 가능) ↔ 손실보상 주체: 소방청장 · 시·도지사가 시가(時價) 보상 / 불복 시 통지일로부터 30일 이내 관할 토지수용위원회 재결 신청"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_11",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "조사 결과 공개 (10·7일)",
+    "promptHtml": "<div class=\"subj-prose-line\">공개 사전 통보일로부터 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"10일 이내 이의신청\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">10일 이내 이의신청</span></span> ➔ 관서장은 접수일로부터 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"7일 이내 심사 결과 통지\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">7일 이내 심사 결과 통지</span></span></div>",
+    "answerEq": "10일 이내 이의신청 / 7일 이내 심사 결과 통지",
+    "fullFormula": "",
+    "explanation": "공개 사전 통보일로부터 10일 이내 이의신청 ➔ 관서장은 접수일로부터 7일 이내 심사 결과 통지"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_12",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "벌칙 3단계 (제50조)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3년·3천만 원\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">3년·3천만 원</span></span>(조치명령 위반) &gt; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1년·1천만 원\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">1년·1천만 원</span></span>(<strong>화재안전조사 비밀누설</strong>·업무방해) &gt; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"300만 원 벌금\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">300만 원 벌금</span></span>(<strong>조사 거부·방해·기피</strong> 및 <strong>화재예방안전진단 비밀누설</strong>)</div>",
+    "answerEq": "3년·3천만 원 / 1년·1천만 원 / 300만 원 벌금",
+    "fullFormula": "",
+    "explanation": "3년·3천만 원(조치명령 위반) > 1년·1천만 원(화재안전조사 비밀누설·업무방해) > 300만 원 벌금(조사 거부·방해·기피 및 화재예방안전진단 비밀누설)"
+  },
+  {
+    "id": "SUBJ_LAW_02_01_13",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "과태료 2분의 1 감경",
+    "promptHtml": "<div class=\"subj-prose-line\">체납 없는 초범으로서 사소한 부주의·위반 즉시 시정 또는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3년 이상 해당 업종을 모범적으로 영위\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">3년 이상 해당 업종을 모범적으로 영위</span></span>한 사실이 인정되는 경우 (시행령 별표 9)</div>",
+    "answerEq": "3년 이상 해당 업종을 모범적으로 영위",
+    "fullFormula": "",
+    "explanation": "체납 없는 초범으로서 사소한 부주의·위반 즉시 시정 또는 3년 이상 해당 업종을 모범적으로 영위한 사실이 인정되는 경우 (시행령 별표 9)"
+  }
+];
     document.addEventListener('DOMContentLoaded', () => {
       HarnessEngine.renderUnitStats('statsContainer_02_01', STATS_02_01);
       HarnessEngine.renderOriginalQuestions('origQuestions_02_01', ORIG_Q_02_01);

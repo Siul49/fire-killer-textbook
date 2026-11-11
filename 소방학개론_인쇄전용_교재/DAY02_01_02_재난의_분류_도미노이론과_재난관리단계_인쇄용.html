@@ -1,0 +1,3181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 02 · 인쇄용] 제1편 소방조직 및 재난관리론 · 제2장 재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY01_01_01_소방의_역사_발전과_조직_인사원리_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 02</span>
+        <a href="DAY03_01_03_긴급구조통제단과_재난사태_특별재난지역_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(13제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 02 · 제1편 소방조직 및 재난관리론 · 제2장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(13문항)</span>
+            <span>□ OX 27제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 자연재난·사회재난의 법적 분류, 학자별 분류 및 주관기관</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>법 제3조 제1호 재난 분류</strong>: <strong>자연재난 · 사회재난</strong> 2분법 (해외재난 대분류 ×)</li>
+              <li><strong>자연재난 vs 사회재난 함정</strong>: <strong>황사·폭염·조류 대발생·자연우주물체</strong> = 자연재난 / <strong>감염병·가축전염병·미세먼지·인공우주물체</strong> = 사회재난</li>
+              <li><strong>학자별 재해 분류</strong>: <strong>아네스(2분법: 자연·인적)</strong> vs <strong>존스(3분법: 자연·준자연·인적 / 쓰나미 = 지구물리학적 재해!)</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            제1장에서 소방조직의 역사와 원리를 살펴보았다면, 제2장에서는 소방이 맞서 싸워야 할 대상인 <strong>재난(Disaster)</strong>의 분류 체계와 발생 메커니즘을 파헤칩니다. ｢재난 및 안전관리 기본법｣ 제3조 제1호는 국민의 생명·신체·재산과 국가에 피해를 주거나 줄 수 있는 재난을 발생 원인에 따라 오직 <strong>자연재난(가목)</strong>과 <strong>사회재난(나목)</strong>의 2가지로만 대별합니다(시험에서 '해외재난'을 포함하여 3가지로 구분된다고 하면 오답입니다!). 먼저 자연현상으로 인하여 발생하는 <strong>자연재난</strong>에는 태풍, 홍수, 호우, 강풍, 풍랑, 해일, 대설, 한파, 낙뢰, 가뭄, <strong>폭염</strong>, 지진, <strong>황사</strong>, <strong>조류(藻類: 적조·녹조) 대발생</strong>, 조수, 화산활동, 그리고 ｢우주개발 진흥법｣에 따른 <strong>소행성·유성체 등 자연우주물체의 추락·충돌</strong>이 속합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면 인간의 활동이나 기술적·사회적 요인으로 발생하는 <strong>사회재난</strong>에는 <strong>화재·붕괴·폭발·교통사고(항공사고 및 해상사고 포함)·화생방사고·환경오염사고</strong> 등으로 인하여 발생하는 대통령령 규모 이상의 피해, 에너지·통신·교통·금융·의료·수도 등 <strong>국가핵심기반의 마비</strong>, ｢감염병의 예방 및 관리에 관한 법률｣에 따른 <strong>감염병</strong> 또는 ｢가축전염병 예방법｣에 따른 <strong>가축전염병의 확산</strong>, ｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 <strong>미세먼지</strong> 등으로 인한 피해, 그리고 사람이 쏘아 올린 <strong>인공우주물체(인공위성·로켓 잔해 등)의 추락·충돌</strong>이 속합니다. 특히 어감상 자연재난처럼 느껴지는 <strong>'감염병·가축전염병·미세먼지·산불'이 법적으로 모두 사회재난</strong>이고, 반대로 <strong>'황사·폭염·조류(적조·녹조) 대발생·자연우주물체 추락'은 자연재난</strong>이라는 경계선을 집중 출제하므로 확실히 구별해야 합니다. 아울러 학문적 분류에서 <strong>아네스(Br. J. Anesth)</strong>는 재난을 <strong>자연재난과 인적(인위)재난의 2가지</strong>로 구분한 반면, <strong>존스(David K. Jones)</strong>는 자연 요인에 인간 활동이 가미된 제3의 영역을 더해 <strong>자연재난 · 준자연재난(스모그, 산성비, 토양 염분화, 오존층 파괴 등) · 인적(인위)재난의 3가지</strong>로 구분하였습니다. 또한 존스의 자연재해 세분류에서 <strong>번개(낙뢰)·폭풍·토네이도·홍수·가뭄은 대기 순환에 의한 '기상학적 재해'</strong>이나, 해저 지진이나 화산 폭발 등 지각 변동으로 발생하는 <strong>'쓰나미(지진해일)'는 기상학적 재해가 아니라 '지구물리학적(지질·지형학적) 재해'</strong>에 속한다는 점이 2019년 기출 정답이었습니다!
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            한편 ｢재난 및 안전관리 기본법 시행령｣ <strong>별표 1의3</strong>은 재난 및 사고 유형별로 어느 중앙행정기관이 컨트롤타워를 맡는지 <strong>재난관리주관기관</strong>을 지정하고 있으며, 최근 시험(2024년·2026년)에서 연속 출제되었습니다. 기출에 등장한 핵심 주관기관을 짝지어 보면, ① 농업생산기반시설 중 <strong>저수지 사고는 '농림축산식품부'</strong>(국토교통부 X, 댐 사고는 환경부), ② <strong>자연우주물체 및 인공우주물체의 추락·충돌, 우주전파 재난은 '과학기술정보통신부'</strong>, ③ <strong>공동구 재난은 국토교통부가 관장하는 공동구는 '국토교통부', 그 밖의 공동구는 '행정안전부'</strong>, ④ <strong>원자력안전 사고 중 파업에 따른 원전 가동중단으로 한정된 사고는 '산업통상자원부'</strong>(일반 방사능 누출 사고는 원자력안전위원회), ⑤ <strong>수산물종합유통센터의 화재 등은 '해양수산부'</strong>(2026년 정답), ⑥ ｢출입국관리법｣상 <strong>외국인보호실·보호소의 화재 등은 '법무부'</strong>(외교부 X), ⑦ ｢수도법｣에 따른 <strong>수도(상수도)의 화재·파손 등은 '환경부'</strong>(국토교통부 X), ⑧ ｢에너지법｣에 따른 <strong>전기 등 에너지의 중대한 수급차질은 '산업통상자원부'</strong>(2026년 기출에서는 부처 명칭을 '산업통상부'로 오기하여 오답 선지로 출제함)입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">분류 및 구분</th>
+                <th style="width:46%;">세부 재난 항목 및 법정 주관기관 (법 제3조 · 시행령 별표 1의3)</th>
+                <th>출제 빈출 함정 및 정오 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>자연재난 (법 제3조 가목)</strong></td>
+                <td>태풍·홍수·호우·대설·한파·가뭄·지진·화산 + <strong>폭염 · 황사 · 조류(적조·녹조) 대발생 · 자연우주물체(소행성) 추락·충돌</strong></td>
+                <td><strong>황사·폭염·조류 대발생·자연우주물체 = 자연재난!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>사회재난 (법 제3조 나목)</strong></td>
+                <td>화재·산불·붕괴·폭발·교통사고·환경오염·국가핵심기반 마비 + <strong>감염병·가축전염병 · 미세먼지 · 인공우주물체 추락·충돌</strong></td>
+                <td><strong>감염병·가축전염병·미세먼지·인공우주물체 = 사회재난!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>아네스 vs 존스 분류</strong></td>
+                <td><strong>아네스(2분법)</strong>: 자연재난 · 인적재난 / <strong>존스(3분법)</strong>: 자연재난 · 준자연재난 · 인적재난</td>
+                <td>존스 분류상 <strong>쓰나미(지진해일) = 지구물리학적 재해</strong> (기상학적 ×)</td>
+              </tr>
+              <tr>
+                <td><strong>재난관리주관기관 (별표 1의3)</strong></td>
+                <td>· <strong>농업용 저수지 사고</strong>: <strong>농림축산식품부</strong> / <strong>수도(상수도) 재난</strong>: <strong>환경부</strong><br/>· <strong>자연·인공우주물체 추락</strong>: <strong>과학기술정보통신부</strong> / <strong>공동구(국토부 관장 제외)</strong>: <strong>행정안전부</strong><br/>· <strong>수산물종합유통센터 화재</strong>: <strong>해양수산부</strong> / <strong>외국인보호실 화재</strong>: <strong>법무부</strong><br/>· <strong>파업에 따른 원전 가동중단 · 에너지 수급차질</strong>: <strong>산업통상자원부</strong></td>
+                <td>저수지=국토부(×), 수도=국토부(×), 외국인보호실=외교부(×), 산업통상부(× ➔ <strong>산업통상자원부</strong>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 하인리히·버드의 도미노 이론과 분산·통합관리(콰란텔리)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>하인리히 도미노 (1:29:300)</strong>: 유전·환경 ➔ 개인결함 ➔ <strong>불안전한 행동·상태(핵심 제거 단계!)</strong> ➔ 사고 ➔ 재해</li>
+              <li><strong>버드 수정 도미노 (1:10:30:600)</strong>: 제어(관리) 부족 ➔ <strong>기본원인(핵심 제거 단계! 2024년 Q4)</strong> ➔ 직접원인(징후) ➔ 사고(접촉) ➔ 재해(손실)</li>
+              <li><strong>통합관리방식 (FEMA·콰란텔리)</strong>: 단점은 <strong>하나·소수 조직에 업무·책임 집중</strong> / 전환 근거 4가지: <strong>재난개념 변화·재난대응 유사성·계획내용 유사성·대응자원 공통성</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            사회재난이나 산업재해는 왜 일어나는 것일까요? 사고는 우연히 발생하는 것이 아니라 앞선 원인 블록들이 연쇄적으로 쓰러지면서 일어나는 필연적 결과라고 설명한 안전공학의 고전이 바로 1930년대 <strong>하인리히(H. W. Heinrich)의 도미노 이론(5단계 사고 연쇄성 이론)</strong>입니다. 하인리히의 5단계 도미노는 <strong>① 제1단계: 사회적 환경 및 유전적 요소(선천적 결함) ➔ ② 제2단계: 개인적 결함 ➔ ③ 제3단계: 불안전한 행동 및 불안전한 상태(직접원인) ➔ ④ 제4단계: 사고(Accident) ➔ ⑤ 제5단계: 재해(상해, Injury)</strong>의 순서로 쓰러집니다. 하인리히는 전체 재해의 88퍼센트가 인간의 불안전한 행동, 10퍼센트가 불안전한 상태(기계·물리적 결함), 나머지 2퍼센트만이 불가항력이라고 분석하면서, 정 가운데 있는 <strong>제3단계 '불안전한 행동 및 불안전한 상태'</strong>라는 도미노 패만 뽑아내어 제거하면 설령 1·2단계가 쓰러지더라도 4단계(사고)와 5단계(재해)로 이어지지 않는다고 역설하였습니다! 아울러 그는 동일 원인으로 중상해(사망) 1건이 터지기 전에는 반드시 경상해 29건과 무상해 사고(아차사고) 300건이 선행한다는 <strong>1 : 29 : 300 법칙</strong>을 제시하였습니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면에 1960년대 이후 거대 기업 조직을 연구한 <strong>버드(F. E. Bird)</strong>는 "근로자가 왜 불안전한 행동을 했을까? 근본 원인은 경영진의 안전관리 통제 부족과 작업 피로·스트레스 같은 기본원인 때문이 아닌가!"라고 통찰하며 <strong>수정 도미노 이론(신도미노 이론)</strong>을 정립하였습니다. 버드의 5단계는 <strong>① 제1단계: 제어의 부족(관리의 부족, 통제 부족) ➔ ② 제2단계: 기본원인(기원, 인적·작업적 요인) ➔ ③ 제3단계: 직접원인(징후, 불안전한 행동·상태) ➔ ④ 제4단계: 사고(에너지와의 접촉) ➔ ⑤ 제5단계: 재해(상해 또는 재산 손실)</strong>로 구성되며, 물적 재산 손실까지 포함하여 중상 1 : 경상 10 : 무상해 재산손실 30 : 아차사고 600의 <strong>1 : 10 : 30 : 600 법칙</strong>을 제시했습니다. 특히 <strong>2024년 기출(Q4)</strong>에서 두 이론의 <strong>재해 발생 방지를 위해 제거해야 할 핵심 단계</strong>를 직접 비교하여 물었는데, <strong>하인리히 도미노 이론에서는 제3단계인 '불안전한 행동 및 상태'</strong>를, <strong>버드의 수정 도미노 이론에서는 제2단계인 '기본원인(근본원인)'</strong>을 제거해야 한다는 점을 세트로 정확히 기억해 두어야 합니다!
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 국가 차원에서 재난을 관리하는 행정 거버넌스는 <strong>유형별 분산관리방식</strong>과 <strong>통합관리방식(All Hazards Approach)</strong>으로 대조됩니다(2022년 Q14 · 2026년 Q3 기출). 첫째, <strong>유형별 분산관리방식</strong>은 재난의 발생 유형(화재, 홍수, 산불 등)에 따라 대응계획 및 책임 주관기관이 각각 다르게 배정되어 소관 부처별로 업무가 나뉘는 방식입니다. 따라서 <strong>장점은 업무 수행이 전문적이어서 특정 조직으로의 업무 과다(집중)를 방지할 수 있다</strong>는 점이나(2026년 Q3에서 이를 통합관리방식의 장점이라고 바꾸어 오답 보기로 출제함!), <strong>단점은 유관기관 간의 중복적 대응이나 자원 중복 투자, 관할권 마찰이 발생할 수 있다</strong>는 점입니다. 둘째, 1979년 미국 연방재난관리청(<strong>FEMA</strong>) 창설의 이론적 근거가 된 <strong>통합관리방식</strong>은 모든 재난 유형을 단일 총괄조직에서 포괄적으로 관리하는 방식으로, 복합재난 대응력과 지휘 일원화에 유리하나 <strong>단점으로는 권한·업무·책임이 하나 또는 소수의 조직에 과도하게 집중된다</strong>는 점이 꼽힙니다. 이때 재난사회학자 <strong>콰란텔리(E. L. Quarantelli)</strong>는 유형별 분산관리방식이 통합관리방식으로 전환되어야 하는 <strong>4대 근거</strong>로 <strong>① 재난개념의 변화, ② 재난대응의 유사성, ③ 계획내용의 유사성, ④ 대응자원의 공통성(재난 시 유사한 자원동원 체계와 자원유형이 필요함)</strong>을 제시하였습니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 재난관리 4단계(예방·대비·대응·복구)와 위기관리 매뉴얼 3종</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>예방단계 (제3장)</strong>: 안전점검, 재난예방 홍보, <strong>재난안전분야 종사자 교육</strong></li>
+              <li><strong>대비단계 (제4장)</strong>: <strong>국가재난관리기준 제정·운용, 위기관리 매뉴얼 작성·운용, 재난대비훈련, 자원 비축·관리, 긴급통신수단 마련, 재난안전통신망 구축·운영</strong></li>
+              <li><strong>대응단계 (제5장) vs 복구단계 (제6장)</strong>: <strong>재난 예보·경보체계 구축·운영, 위험구역 설정, 재난사태 선포 = 대응단계</strong> / 피해조사, 복구계획, <strong>특별재난지역 선포 = 복구단계</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            통합적 재난관리는 시간의 흐름에 따라 재난 발생 전의 <strong>① 예방(완화)단계</strong>와 <strong>② 대비단계</strong>, 그리고 재난 발생 후의 <strong>③ 대응단계</strong>와 <strong>④ 복구단계</strong>라는 4단계 주기로 순환합니다. 시험에서는 ｢재난 및 안전관리 기본법｣ 제3장(예방)·제4장(대비)·제5장(대응)·제6장(복구)에 편제된 실제 법 조문 제목이나 내용을 주고 어느 단계인지 묻는 문제가 가장 높은 빈도로 출제됩니다. 먼저 재난 발생 전 단계에서 <strong>① 예방단계(법 제3장)</strong>는 위험 요인 자체를 사전에 제거·억제하는 근본적·구조적 대책으로서, 국가안전관리기본계획 수립, 안전점검 및 정밀안전진단, 내진설계·방화구획 등 법령 정비, 재난예방 대국민 교육·홍보, 그리고 <strong>재난안전분야 종사자 교육(법 제29조의2)</strong>이 속합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면 <strong>② 대비단계(법 제4장, 제34조부터 제35조까지)</strong>는 "아무리 예방해도 재난이 터진다면 현장에서 어떻게 즉각 출동해 작전을 펼칠 것인가?"를 미리 준비해 두는 작전적·실행적 준비 단계입니다. 따라서 기출문제에서 단골 정답으로 나오는 <strong>국가재난관리기준의 제정·운용(제34조의4)</strong>, <strong>위기관리 매뉴얼의 작성·운용(제34조의5)</strong>, <strong>매년 재난대비훈련 계획 수립 및 합동 재난대비훈련 실시(제35조)</strong>, <strong>재난관리자원의 비축·관리(제34조)</strong>, 그리고 <strong>재난현장 긴급통신수단의 마련(제34조의8) 및 재난안전통신망의 구축·운영(제34조의9)</strong>은 모두 예방이나 복구가 아니라 <strong>대비단계</strong>의 관리 사항입니다! 이어 재난이 발생하거나 발생할 우려가 임박했을 때 작동하는 <strong>③ 대응단계(법 제5장)</strong>에는 <strong>재난 예보·경보체계 구축·운영(제38조의2 — '구축'이라는 단어 때문에 대비단계로 착각하기 쉬우나 법 제5장 대응단계에 규정되어 있음에 특히 주의! 2022년 Q10·2023년 Q4 기출)</strong>, <strong>위험구역의 설정(제41조 — 예방단계 X!)</strong>, <strong>재난사태 선포(제36조)</strong>, 대피명령·강제대피조치, 응급조치 및 긴급구조통제단 가동이 속합니다. 마지막으로 상황이 진정된 후 재해 이전 상태로 회복시키는 <strong>④ 복구단계(법 제6장)</strong>에는 <strong>피해상황 조사, 자체복구계획 수립·시행, 특별재난지역 선포 및 지원(제60조·제61조)</strong>이 속합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            끝으로 대비단계의 핵심 산출물인 <strong>국가 위기관리 매뉴얼(법 제34조의5)</strong>은 적용 범위와 구체성 수준에 따라 3단계 위계로 구성됩니다. 첫째, 최상위 기준 문서인 <strong>① 위기관리 표준매뉴얼</strong>은 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무·역할을 규정한 문서로, <strong>재난관리주관기관의 장이 작성</strong>하여 <strong>행정안전부장관의 승인</strong>을 받습니다. 둘째, 중간 연결고리인 <strong>② 위기대응 실무매뉴얼</strong>은 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서로, 재난관리주관기관의 장과 관계 기관의 장이 작성합니다. 셋째, 일선 현장의 지침서인 <strong>③ 현장조치 행동매뉴얼</strong>은 <strong>재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서</strong>로서(2022년 Q2 정답), 실무매뉴얼을 작성한 기관의 장이 지정한 현장 임무 수행 기관의 장이 작성합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">구분 단계 및 매뉴얼</th>
+                <th style="width:48%;">법정 핵심 관리 사항 및 문서 정의 (재난 및 안전관리 기본법)</th>
+                <th>출제 최빈출 비교 및 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 예방단계 (제3장)</strong></td>
+                <td>국가안전관리기본계획 수립, 안전점검·안전진단, <strong>재난안전분야 종사자 교육(제29조의2)</strong>, 재난예방 교육·홍보</td>
+                <td><strong>종사자 교육 = 예방단계</strong> (대비단계 ×)</td>
+              </tr>
+              <tr>
+                <td><strong>2. 대비단계 (제4장)</strong></td>
+                <td><strong>국가재난관리기준 제정·운용</strong>, <strong>위기관리 매뉴얼 작성·운용</strong>, <strong>재난대비훈련</strong>, <strong>자원 비축·관리</strong>, <strong>긴급통신수단 마련 · 재난안전통신망 구축·운영</strong></td>
+                <td><strong>긴급통신수단·재난안전통신망·국가재난관리기준·매뉴얼·훈련 = 대비단계!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3. 대응단계 (제5장)</strong></td>
+                <td><strong>재난 예보·경보체계 구축·운영(제38조의2)</strong>, <strong>위험구역의 설정(제41조)</strong>, <strong>재난사태 선포</strong>, 대피명령, 응급조치, 긴급구조</td>
+                <td><strong>예보·경보체계 구축·운영, 위험구역 설정, 재난사태 선포 = 대응단계!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>4. 복구단계 (제6장)</strong></td>
+                <td>피해상황 조사, 자체복구계획 수립·시행, <strong>특별재난지역 선포 및 지원(제60조·제61조)</strong></td>
+                <td><strong>특별재난지역 선포 = 복구단계!</strong> (재난사태 선포와 구분)</td>
+              </tr>
+              <tr>
+                <td><strong>위기관리 매뉴얼 3종<br/>(법 제34조의5)</strong></td>
+                <td>· <strong>위기관리 표준매뉴얼</strong>: 국가 차원 재난관리 체계·역할 (주관기관장 작성·행안부장관 승인)<br/>· <strong>위기대응 실무매뉴얼</strong>: 실제 재난대응 조치사항 및 절차<br/>· <strong>현장조치 행동매뉴얼</strong>: <strong>재난현장에서 임무를 직접 수행하는 기관의 구체적 행동조치 절차</strong></td>
+                <td>현장 직접 수행 기관의 구체적 행동절차 = <strong>현장조치 행동매뉴얼!</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 재난의 분류·주관기관, 하인리히·버드 도미노 이론 및 재난관리 4단계·매뉴얼 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 재난 분류 · 주관기관 및 하인리히 vs 버드 도미노 이론</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">자연재난 vs 사회재난 (법 제3조 제1호)</div>
+                <div>· <strong>자연재난</strong>: 태풍·호우·지진 + <strong>황사·폭염·조류 대발생·자연우주물체 추락</strong> (존스 분류: <strong>쓰나미=지구물리학적 재해</strong>)<br/>· <strong>사회재난</strong>: 화재·붕괴·환경오염·핵심기반 + <strong>감염병·가축전염병·미세먼지·인공우주물체 추락</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">빈출 재난관리주관기관 (시행령 별표 1의3)</div>
+                <div>· <strong>저수지 사고</strong>: 농림축산식품부 / <strong>수도 재난</strong>: 환경부<br/>· <strong>수산물종합유통센터</strong>: 해양수산부 / <strong>외국인보호실</strong>: 법무부<br/>· <strong>우주물체 추락</strong>: 과기정통부 / <strong>파업 원전중단·에너지</strong>: 산업통상자원부</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">하인리히 도미노 (1 : 29 : 300)</div>
+                <div>1.사회환경·유전 ➔ 2.개인적 결함 ➔ <strong>3.불안전한 행동·상태(핵심 제거 단계!)</strong> ➔ 4.사고 ➔ 5.재해(상해)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">버드 수정 도미노 (1 : 10 : 30 : 600)</div>
+                <div>1.제어(관리)의 부족 ➔ <strong>2.기본원인(기원 · 핵심 제거 단계!)</strong> ➔ 3.직접원인(징후) ➔ 4.사고(접촉) ➔ 5.재해(손실)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 제거 단계 비교(2024년 Q4): <strong>하인리히 = 제3단계(불안전한 행동 및 상태)</strong> vs <strong>버드 = 제2단계(기본원인)</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 분산·통합관리(콰란텔리) · 재난관리 4단계 및 위기관리 매뉴얼 3종</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">분산관리 vs 통합관리(FEMA) 및 콰란텔리의 전환 4대 근거</div>
+                <ul class="schema-list">
+                  <li><strong>분산관리</strong>: 유형별 부처 분담으로 <strong>전문성 확보·업무 과다 방지(장점)</strong> vs 유관기관 중복 대응(단점)</li>
+                  <li><strong>통합관리(FEMA)</strong>: 하나·소수 조직에 <strong>업무·책임 집중(단점)</strong> / 콰란텔리 전환 4대 근거: <strong>재난개념 변화·재난대응 유사성·계획내용 유사성·대응자원 공통성</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">재난관리 4단계 법정 조문 위치 및 위기관리 매뉴얼 3단계</div>
+                <ul class="schema-list">
+                  <li><strong>예방(제3장)</strong>: 안전점검, <strong>재난안전분야 종사자 교육</strong> / <strong>대비(제4장)</strong>: <strong>국가재난관리기준, 위기관리 매뉴얼, 재난대비훈련, 자원 비축, 긴급통신수단·재난안전통신망 구축·운영</strong></li>
+                  <li><strong>대응(제5장)</strong>: <strong>재난 예보·경보체계 구축·운영, 위험구역 설정, 재난사태 선포</strong> / <strong>복구(제6장)</strong>: 피해조사, 복구계획, <strong>특별재난지역 선포</strong></li>
+                  <li><strong>매뉴얼 3종</strong>: <strong>표준매뉴얼</strong>(국가 차원 체계·역할) ➔ <strong>실무매뉴얼</strong>(실제 작동 조치·절차) ➔ <strong>행동매뉴얼</strong>(현장 직접 수행기관 행동절차)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (13문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 13문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">재난관리의 단계별 주요 활동 중 ‘긴급통신수단 구축’이 해당되는 단계로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">대응 단계</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">대비 단계</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">예방 단계</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">복구 단계</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">존스(Jones)의 재해분류 중 기상학적 재해가 아닌 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">번개</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">폭풍</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">쓰나미</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">토네이도</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법｣상 재난의 분류가 다른 하나는?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">｢감염병의 예방 및 관리에 관한 법률｣에 따른 감염병의 확산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">황사로 인하여 발생하는 재해</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">환경오염사고로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 미세먼지 등으로 인한 피해</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법｣상 재난관리에 관한 내용으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">예방 · 재난 발생을 사전에 방지하기 위하여 매년 재난 대비훈련 계획을 수립하고, 관계 기관과 합동으로 재난 대비훈련을 실시한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">대비 · 재난을 효율적으로 관리하기 위하여 재난유형에 따라 위기관리 매뉴얼을 작성·운용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">대응 · 재난 피해지역을 재해 이전 상태로 회복시키기 위하여 피해상황을 조사하고, 자체복구계획을 수립· 시행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">복구 · 재난의 수습활동을 효율적으로 하기 위하여 재난관리자원의 비축·관리 및 긴급통신수단을 마련 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2022년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법｣상 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서는?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">재난대응 활동계획</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">현장조치 행동매뉴얼</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위기대응 실무매뉴얼</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">위기관리 표준매뉴얼</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2022년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법｣상 재난관리의 대비단계 관리 사항을 있는 대로 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 국가재난관리기준의 제정·운용<br/>ㄴ. 재난 예보·경보체계 구축·운영<br/>ㄷ. 재난안전분야 종사자 교육<br/>ㄹ. 재난안전통신망의 구축·운영</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">재난관리 방식 중 분산관리에 대한 일반적인 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">재난의 종류에 따라 대응방식의 차이와 대응계획 및 책임기관이 각각 다르게 배정된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">재난 시 유관기관 간의 중복적 대응이 있을 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">재난의 발생 유형에 따라 소관부처별로 업무가 나뉜다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">재난 시 유사한 자원동원 체계와 자원유형이 필요하다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">재난(재해)에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">아네스(Br. J. Anesth)는 재난을 크게 자연재난과 인적(인위) 재난으로 구분하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">존스(David K. Jones)는 재난을 크게 자연재난, 준자연재난, 인적(인위)재난으로 구분하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">｢재난 및 안전관리 기본법｣ 제3조 제1호에 따른 재난은 자연재난, 사회재난, 해외재난으로 구분된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">하인리히(H. W. Heinrich)의 도미노 이론은 재해발생과정을 유전적 요인 및 사회적 환경→개인적 결함→불안전 행동 및 불안전 상태→사고→재해(상해)라는 5개 요인의 연쇄 작용으로 설명하였다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2023년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법｣상 재난관리 단계와 활동내용의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">예방 단계 · 위험구역의 설정</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">대비 단계 · 재난현장 긴급통신수단의 마련</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">대응 단계 · 재난 예보·경보체계 구축·운영</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">복구 단계 · 특별재난지역 선포 및 지원</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2024년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢재난 및 안전관리 기본법 시행령｣상 재난 및 사고 유형과 재난관리 주관기관의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">저수지 사고 · 국토교통부</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">자연우주물체의 추락·충돌 · 과학기술정보통신부</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">공동구 재난(국토교통부가 관장하는 공동구는 제외한다) · 행정안전부</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">원자력안전 사고(파업에 따른 가동중단으로 한정한다) · 산업통상자원부</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2024년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음은 재해 발생 과정에 관한 이론이다. 각 이론에서 재해 발생을 방지하기 위해 제거해야 하는 단계가 옳게 나열된 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 하인리히(H. W. Heinrich)의 도미노 이론: 사회적 환경 및 유전적 요소→개인적 결함→불안전한 행동 및 상태→사고→재해<br/>ㄴ. 버드(F. Bird)의 수정 도미노 이론: 제어의 부족→ 기본원인→직접원인→사고→재해</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 직접원인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 기본원인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 직접원인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 기본원인</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2026년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">재난관리방식에서 유형별 분산관리방식과 통합관리방식에 관한 설명으로 옳은 것만을 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 통합관리방식의 장점은 업무 수행이 전문적이어서 업무의 과다를 방지할 수 있다.<br/>ㄴ. 통합관리방식의 단점은 업무와 책임이 하나 또는 소수의 조직에 집중된다는 것이다.<br/>ㄷ. FEMA(Federal Emergency Management Agency) 창설에 이론적 근거로 제시된 것이 통합관리방식이다.<br/>ㄹ. 콰란텔리(Quarantelli)는 유형별 분산관리방식이 통합관리방식으로 전환되어야 하는 근거로 재난개념의 변화, 재난대응의 유사성, 계획내용의 유사성, 대응자원의 공통성을 제시하고 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">재난 및 안전관리 기본법령상 재난관리주관기관과 사회재난 유형이 바르게 연결된 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">해양수산부 · ｢농수산물 유통 및 가격안정에 관한 법률｣에 따른 수산물종합유통센터의 화재등으로 인해 발생하는 대규모 피해</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">외교부 · ｢출입국관리법｣에 따른 외국인보호실의 화재등으로 인해 발생하는 대규모 피해</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">국토교통부 · ｢수도법｣에 따른 수도의 화재등으로 발생하는 대규모 피해</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">산업통상부 · ｢에너지법｣에 따른 전기 등 에너지의 중대한 수급차질로 인해 발생하는 대규모 피해</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 27제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자연재난이란 태풍, 홍수, 호우, 강풍, 풍랑, 해일, 대설, 낙뢰, 가뭄, 지진 등으로 인하여 발생하는 재해를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>사회재난이란 화재, 붕괴, 폭발, 교통사고, 환경오염사고 등으로 인하여 발생하는 일정 규모 이상의 피해를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>재난관리 4단계 중 재난현장 긴급통신수단의 구축 및 마련은 '대비 단계'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>존스(Jones)의 자연재해 분류 중 쓰나미(지진해일)는 기상학적 재해가 아니라 지구물리학적(지질학적) 재해에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 황사로 인하여 발생하는 재해는 자연재난에 해당하며, 미세먼지 및 감염병의 확산으로 인한 피해는 사회재난에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 재난유형에 따라 위기관리 매뉴얼을 작성·운용하고 재난대비훈련을 실시하는 것은 '대비 단계'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서는 '현장조치 행동매뉴얼'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 국가재난관리기준의 제정·운용 및 재난안전통신망의 구축·운영은 모두 '대비 단계'의 관리 사항이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 재난안전분야 종사자 교육은 예방 단계에, 재난 예보·경보체계 구축·운영은 대응 단계에 규정되어 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>재난관리 방식 중 유형별 분산관리방식은 재난 발생 유형에 따라 소관 부처별로 업무가 나뉘어 전문성은 높으나, 유관기관 간 중복적 대응이 발생할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>아네스(Anesth)는 재난을 자연재난과 인적재난으로 구분하였고, 존스(Jones)는 자연재난, 준자연재난, 인적재난으로 구분하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣ 제3조제1호에 따른 재난은 자연재난, 사회재난, 해외재난의 3가지로 구분된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 위험구역의 설정(제41조)은 예방 단계가 아니라 '대응 단계'의 활동에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣상 자연우주물체의 추락·충돌 재난의 주관기관은 과학기술정보통신부이며, 농업용 저수지 사고의 주관기관은 농림축산식품부이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>하인리히(Heinrich)의 도미노 이론은 '사회적 환경 및 유전적 요소 ➔ 개인적 결함 ➔ 불안전한 행동 및 상태 ➔ 사고 ➔ 재해'의 5단계로 구성되며, 재해 방지를 위해 제거해야 할 핵심 단계는 제3단계인 '불안전한 행동 및 상태'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>버드(Bird)의 수정 도미노 이론은 '제어의 부족 ➔ 기본원인 ➔ 직접원인 ➔ 사고 ➔ 재해'의 5단계로 구성되며, 재해 발생 방지를 위해 제거해야 하는 핵심 단계는 제2단계인 '기본원인'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>재난관리 방식 중 통합관리방식은 미국 연방재난관리청(FEMA) 창설의 이론적 근거가 되었으며, 단점으로는 업무와 책임이 하나 또는 소수의 조직에 집중된다는 점이 꼽힌다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>콰란텔리(Quarantelli)는 유형별 분산관리방식이 통합관리방식으로 전환되어야 하는 근거로 재난개념의 변화, 재난대응의 유사성, 계획내용의 유사성, 대응자원의 공통성을 제시하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣상 수산물종합유통센터 화재의 주관기관은 해양수산부이고, 외국인보호실 화재는 법무부, 수도(상수도) 재난은 환경부가 주관한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣상 재난유형별 위기관리 매뉴얼 작성과 재난대비훈련은 예방 단계에 해당하고, 재난관리자원 비축 및 긴급통신수단 마련은 복구 단계에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>복구 ·재난의 수습활동을 효율적으로 하기 위하여 재난관리자원의 비축·관리 및 긴급통신수단을 마련 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[재난관리 방식 중 분산관리] 재난 시 유사한 자원동원 체계와 자원유형이 필요하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현대 재난의 4대 특성 중 위험 요인이 단기간에 소멸하지 않고 장기간 잠복·축적되어 있다가 임계점을 넘을 때 대규모 재난으로 표출되는 특성을 '복잡성(상호작용성)'이라 하며, 하나의 재난이 다른 재난을 연쇄적으로 유발하며 증폭되는 특성을 '누적성'이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>존스(David K. Jones)의 자연재해 세분류에서 지진, 화산 폭발, 쓰나미(지진해일), 토네이도는 '지구물리학적 재해'에 속하고, 태풍, 홍수, 가뭄, 산사태, 번개(낙뢰)는 '기상학적 재해'에 속한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>존스(David K. Jones)의 재해 분류에서 스모그, 산성비, 토양 염분화, 오존층 파괴와 같이 자연적 요인에 인간의 산업 활동이 결합하여 발생하는 재해를 '생물학적 재해'라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법｣ 제3조제1호에 따르면 조류(적조·녹조) 대발생과 폭염은 사회재난에 해당하고, 가축전염병의 확산과 산불은 자연재난에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 다중밀집시설 대형화재 및 지하연계복합건축물 재난의 재난관리주관기관은 '소방청'이며, 다중운집인파사고의 재난관리주관기관은 '경찰청'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 방사능 누출 등 일반 원자력안전 사고의 재난관리주관기관은 '산업통상자원부'이고, 파업에 따른 원전 가동중단으로 한정된 사고의 주관기관은 '원자력안전위원회'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 유해화학물질 유출사고와 육상 조류(녹조) 대발생의 재난관리주관기관은 '환경부'이며, 댐 및 보(洑) 등 수자원시설 사고와 다목적댐 저수지 사고의 재난관리주관기관은 '국토교통부'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 모든 공동구 재난의 재난관리주관기관은 예외 없이 국토교통부이다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:② · 02:③ · 03:② · 04:② · 05:② · 06:② · 07:④ · 08:③ · 09:① · 10:① · 11:④ · 12:④ · 13:①</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 02 · 제1편 소방조직 및 재난관리론 · 제2장 (13문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q5</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">대응 단계</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 대응 단계는 실제 재난 발생 시 응급조치, 긴급구조, 재난사태 선포 등을 수행하는 단계입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">대비 단계</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 재난 발생 전 위기관리 매뉴얼을 작성하고 재난관리자원을 비축하며 '긴급통신수단을 구축·마련'하는 활동은 ｢재난 및 안전관리 기본법｣ 제34조의8에 따른 '대비 단계'의 핵심 과업입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">예방 단계</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 예방 단계는 안전점검, 안전관리규정 제정, 재난예방시설 관리 등 위험요인을 사전에 제거·억제하는 단계입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">복구 단계</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 복구 단계는 피해조사, 복구계획 수립·시행, 특별재난지역 선포 및 지원 등을 수행하는 단계입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q5</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 존스(David K.쓰나미(지진해일)는 해저 지진이나 지각 변동으로 발생하므로 기상학적 재해가 아니라 '지구물리학적(지질학적) 재해'에 속합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">번개</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 번개(낙뢰)는 대기 중 방전 현상으로 기상학적 재해에 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">폭풍</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 폭풍(태풍, 허리케인)은 대기 순환에 의한 기상학적 재해에 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">쓰나미</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 쓰나미(Tsunami, 지진해일)는 해저 지진이나 화산 폭발 등 지각 변동에 의해 발생하므로 존스(Jones)의 분류상 기상학적 재해가 아니라 '지구물리학적(지질학적) 재해'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">토네이도</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 토네이도(회오리바람)는 대기 불안정으로 발생하는 기상학적 재해에 속합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 황사(黃砂)는 태풍·홍수·지진·가뭄 등과 함께 '자연재난'에 속하며, 감염병·환경오염사고·미세먼지는 모두 '사회재난'에 속합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">｢감염병의 예방 및 관리에 관한 법률｣에 따른 감염병의 확산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [사회재난] ｢감염병의 예방 및 관리에 관한 법률｣에 따른 감염병의 확산은 법 제3조제1호 나목의 '사회재난'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">황사로 인하여 발생하는 재해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [자연재난 · 정답] '황사'로 인하여 발생하는 재해는 법 제3조제1호 가목의 '자연재난'에 해당하므로 나머지 셋과 분류가 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">환경오염사고로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [사회재난] 환경오염사고로 인하여 발생하는 대통령령으로 정하는 규모 이상의 피해는 '사회재난'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 미세먼지 등으로 인한 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [사회재난] ｢미세먼지 저감 및 관리에 관한 특별법｣에 따른 미세먼지 등으로 인한 피해는 '사회재난'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 재난유형에 따라 위기관리 매뉴얼을 작성·운용하는 것(제34조의5)과 재난대비훈련(제35조), 자원 비축 및 긴급통신수단 마련(제34조, 제34조의8)은 모두 '대비 단계'의 활동입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">예방 · 재난 발생을 사전에 방지하기 위하여 매년 재난 대비훈련 계획을 수립하고, 관계 기관과 합동으로 재난 대비훈련을 실시한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 매년 재난대비훈련 계획을 수립하고 관계 기관 합동으로 재난대비훈련을 실시하는 것(법 제35조)은 예방 단계가 아니라 '대비 단계'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">대비 · 재난을 효율적으로 관리하기 위하여 재난유형에 따라 위기관리 매뉴얼을 작성·운용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 재난을 효율적으로 관리하기 위하여 재난유형에 따라 위기관리 매뉴얼(표준·실무·행동매뉴얼)을 작성·운용하는 것(법 제34조의5)은 '대비 단계'의 대표적 활동입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">대응 · 재난 피해지역을 재해 이전 상태로 회복시키기 위하여 피해상황을 조사하고, 자체복구계획을 수립· 시행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 피해상황을 조사하고 자체복구계획을 수립·시행하는 것(법 제58조, 제59조)은 대응 단계가 아니라 '복구 단계'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">복구 · 재난의 수습활동을 효율적으로 하기 위하여 재난관리자원의 비축·관리 및 긴급통신수단을 마련 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 재난관리자원의 비축·관리(법 제34조) 및 긴급통신수단 마련(법 제34조의8)은 복구 단계가 아니라 '대비 단계'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">재난대응 활동계획</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 재난대응 활동계획은 지자체 등이 수립하는 계획이며, 위기관리 매뉴얼 3종 중 현장 임무 수행 기관의 행동절차를 담은 문서는 현장조치 행동매뉴얼입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">현장조치 행동매뉴얼</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 법 제34조의5제1항제3호에 따라 '재난현장에서 임무를 직접 수행하는 기관의 행동조치 절차를 구체적으로 수록한 문서'는 '현장조치 행동매뉴얼'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위기대응 실무매뉴얼</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 위기대응 실무매뉴얼(제2호)은 위기관리 표준매뉴얼에서 규정하는 기능과 역할에 따라 실제 재난대응에 필요한 조치사항 및 절차를 규정한 문서입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">위기관리 표준매뉴얼</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 위기관리 표준매뉴얼(제1호)은 국가적 차원에서 관리가 필요한 재난에 대하여 재난관리 체계와 관계 기관의 임무와 역할을 규정한 국가 위기관리의 기준 문서입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢재난 및 안전관리 기본법｣ <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(재난 예보·경보체계 구축·운영, 법 제38조의2)은 대비 단계가 아니라 제5장 '대응 단계'에 규정되어 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ㄱ(국가재난관리기준의 제정·운용, 법 제34조의4)과 ㄹ(재난안전통신망의 구축·운영, 법 제34조의9)은 모두 법 제4장 '재난의 대비'에 명시된 대비단계 관리 사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ(재난 예보·경보체계 구축·운영)은 ｢재난 및 안전관리 기본법｣ 제38조의2에 규정된 '대응 단계' 사항이므로 대비 단계(ㄱ 국가재난관리기준 제정·운용, ㄹ 재난안전통신망 구축·운영)에서 제외해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄴ(대응 단계)과 ㄷ(재난안전분야 종사자 교육, 법 제29조의2로 제3장 '예방 단계')은 대비 단계가 아닙니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 재난관리 행정모형인 '유형별 분산관리방식'과 '통합관리방식(All Hazards Approach)'을 비교하는 문항입니다. 재난의 유형이 달라도 대피·구조·구호 등 유사한 자원동원 체계와 공통된 대응 기능이 필요하다는 점은 분산관리가 아니라 '통합관리방식'으로 전환해야 하는 핵심 논거(콰란텔리의 주장)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">재난의 종류에 따라 대응방식의 차이와 대응계획 및 책임기관이 각각 다르게 배정된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 분산관리방식은 재난의 종류(화재, 홍수, 산불 등)에 따라 대응계획 및 책임 주관기관이 각각 다르게 배정됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">재난 시 유관기관 간의 중복적 대응이 있을 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 분산관리방식은 여러 부처가 각자 대응 자원을 보유하므로 복합재난 발생 시 유관기관 간 중복 투자나 중복 대응, 또는 관할권 마찰이 발생할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">재난의 발생 유형에 따라 소관부처별로 업무가 나뉜다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 분산관리방식은 재난 발생 유형에 따라 소관 부처별로 업무가 세분화되어 전문성이 높은 장점이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">재난 시 유사한 자원동원 체계와 자원유형이 필요하다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] '재난 시 유사한 자원동원 체계와 공통된 자원유형이 필요하다(대응자원의 공통성)'는 점은 분산관리의 특징이 아니라, 분산관리를 지양하고 '통합관리방식'을 채택해야 하는 핵심 근거입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 학자별 재난 분류[아네스(2분법: 자연·인위재난), 존스(3분법: 자연·준자연·인위재난)], 현행 ｢재난 및 안전관리 기본법｣ 제3조제1호의 2분법(자연재난·사회재난), 그리고 하인리히의 도미노 5단계를 종합한 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">아네스(Br. J. Anesth)는 재난을 크게 자연재난과 인적(인위) 재난으로 구분하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 아네스(Br. J. Anesth)는 재난을 발생 원인에 따라 자연재난과 인적(인위)재난의 2가지로 대별하였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">존스(David K. Jones)는 재난을 크게 자연재난, 준자연재난, 인적(인위)재난으로 구분하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 존스(David K. Jones)는 재난을 자연재난, 준자연재난(인간 활동이 가미된 자연재난), 인적(인위)재난의 3가지로 구분하였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">｢재난 및 안전관리 기본법｣ 제3조 제1호에 따른 재난은 자연재난, 사회재난, 해외재난으로 구분된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] ｢재난 및 안전관리 기본법｣ 제3조제1호에 따른 법정 재난은 '자연재난'과 '사회재난' 2가지로만 구분되며, '해외재난'은 제3조제1호의 대분류 항목에 포함되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">하인리히(H. W. Heinrich)의 도미노 이론은 재해발생과정을 유전적 요인 및 사회적 환경→개인적 결함→불안전 행동 및 불안전 상태→사고→재해(상해)라는 5개 요인의 연쇄 작용으로 설명하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 하인리히(H. W. Heinrich)의 도미노 이론은 재해 발생을 '유전적 요인 및 사회적 환경(1단계) ➔ 개인적 결함(2단계) ➔ 불안전한 행동 및 불안전한 상태(3단계) ➔ 사고(4단계) ➔ 재해·상해(5단계)'의 5단계 연쇄 반응으로 설명하였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '위험구역의 설정(법 제41조)'은 재난이 발생하거나 발생할 우려가 있는 경우 사람의 생명·신체에 대한 위해 방지를 위해 출입을 금지·제한하는 조치로서 예방 단계가 아니라 제5장 '대응 단계'에 속합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">예방 단계 · 위험구역의 설정</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '위험구역의 설정(법 제41조)'은 예방 단계가 아니라 제5장 '대응 단계'의 응급조치 사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">대비 단계 · 재난현장 긴급통신수단의 마련</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 재난현장 긴급통신수단의 마련(법 제34조의8)은 제4장 '대비 단계'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">대응 단계 · 재난 예보·경보체계 구축·운영</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 재난 예보·경보체계 구축·운영(법 제38조의2)은 제5장 '대응 단계'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">복구 단계 · 특별재난지역 선포 및 지원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 특별재난지역 선포 및 지원(법 제60조, 제61조)은 제6장 '복구 단계'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 농업용 '저수지 사고'의 재난관리주관기관은 국토교통부가 아니라 '농림축산식품부'(또는 행안부/관할 부처, 댐은 환경부)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">저수지 사고 · 국토교통부</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢재난 및 안전관리 기본법 시행령｣ 별표 1의3에 따라 '저수지 사고'의 재난관리주관기관은 국토교통부가 아니라 '농림축산식품부(농업용 저수지)' 및 '행정안전부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">자연우주물체의 추락·충돌 · 과학기술정보통신부</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 자연우주물체(소행성·유성체)의 추락·충돌 및 우주전파 재난의 주관기관은 '과학기술정보통신부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">공동구 재난(국토교통부가 관장하는 공동구는 제외한다) · 행정안전부</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 공동구 재난(국토교통부가 관장하는 공동구 제외)의 주관기관은 '행정안전부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">원자력안전 사고(파업에 따른 가동중단으로 한정한다) · 산업통상자원부</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 원자력안전 사고 중 파업에 따른 원전 가동중단으로 한정된 사고의 주관기관은 '산업통상자원부'입니다(일반 방사능 누출 등은 원자력안전위원회).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 재해 예방을 위해 제거해야 할 핵심 도미노(제3단계 또는 핵심 관리 단계)를 비교하는 문항입니다. 하인리히(Heinrich)의 5단계 도미노에서는 제3단계인 '불안전한 행동 및 불안전한 상태(직접원인)'를 제거해야 사고와 재해를 막을 수 있다고 보았고, 버드(Bird)의 수정 도미노 이론에서는 안전관리상 '기본원인(근본원인, 제2단계)' 또는 제어의 부족을 제거해야 한다고 보았습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 직접원인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 하인리히 이론에서 제거해야 할 핵심 단계는 개인적 결함(2단계)이 아니라 제3단계인 '불안전한 행동 및 불안전한 상태'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ(하인리히): 개인적 결함 / ㄴ(버드): 기본원인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ이 틀렸습니다. 하인리히는 제3단계인 '불안전한 행동 및 상태' 제거를 핵심으로 보았습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 직접원인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ이 틀렸습니다. 버드의 수정 도미노 이론에서 사고 방지를 위해 근본적으로 제거해야 하는 단계는 '기본원인'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ(하인리히): 불안전한 행동 및 상태 / ㄴ(버드): 기본원인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 하인리히 도미노 이론에서는 제3단계인 '불안전한 행동 및 상태'( ㄱ )를, 버드의 수정 도미노 이론에서는 제2단계인 '기본원인'( ㄴ )을 제거하는 것이 재해 예방의 핵심입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 재난관리 조직이론에서 유형별 분산관리방식과 통합관리방식의 장단점, 미국 연방재난관리청(FEMA, 1979년) 창설의 이론적 배경, 그리고 재난사회학자 콰란텔리(E. L.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ이 틀렸습니다. '업무 수행이 전문적이어서 특정 조직으로의 업무 과다(집중)를 방지할 수 있는 것'은 통합관리방식이 아니라 '유형별 분산관리방식'의 장점입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ(업무 수행이 전문적이어서 업무 과다를 방지할 수 있음)은 통합관리방식이 아니라 '유형별 분산관리방식'의 장점이며, 옳은 설명인 ㄴ, ㄷ, ㄹ 중 ㄴ과 ㄹ이 누락되어 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ, ㄷ 외에 ㄹ(콰란텔리의 통합관리 전환 근거 4가지)도 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 통합관리방식의 단점은 권한·업무·책임이 하나 또는 소수 조직에 과도하게 집중된다는 점( ㄴ )이며, 1979년 미국 카터 행정부의 FEMA 창설 이론적 근거가 되었고( ㄷ ), 콰란텔리는 재난개념의 변화·재난대응의 유사성·계획내용의 유사성·대응자원의 공통성을 통합관리 전환의 4대 근거로 제시하였습니다( ㄹ ).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q5</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">해양수산부 · ｢농수산물 유통 및 가격안정에 관한 법률｣에 따른 수산물종합유통센터의 화재등으로 인해 발생하는 대규모 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ｢농수산물 유통 및 가격안정에 관한 법률｣에 따른 수산물종합유통센터의 화재 등으로 인해 발생하는 대규모 피해의 재난관리주관기관은 '해양수산부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">외교부 · ｢출입국관리법｣에 따른 외국인보호실의 화재등으로 인해 발생하는 대규모 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ｢출입국관리법｣에 따른 외국인보호실·보호소의 화재 등으로 인해 발생하는 대규모 피해의 주관기관은 외교부가 아니라 '법무부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">국토교통부 · ｢수도법｣에 따른 수도의 화재등으로 발생하는 대규모 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ｢수도법｣에 따른 수도(상수도)의 화재·파손 등으로 발생하는 대규모 피해의 주관기관은 국토교통부가 아니라 '환경부'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">산업통상부 · ｢에너지법｣에 따른 전기 등 에너지의 중대한 수급차질로 인해 발생하는 대규모 피해</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ｢에너지법｣에 따른 전기 등 에너지의 중대한 수급차질의 주관기관 명칭은 현행 정부조직법상 '산업통상자원부'(선지에는 산업통상부로 오기)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 27제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢재난 및 안전관리 기본법｣ 제3조제1호 가목에 규정된 자연재난의 정확한 법정 정의입니다.
+            <span class="ox-exp-src">재난분류 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>｢재난 및 안전관리 기본법｣ 제3조제1호 나목에 규정된 사회재난의 정확한 법정 정의입니다.
+            <span class="ox-exp-src">재난분류 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢재난 및 안전관리 기본법｣상 긴급통신수단 마련, 재난안전통신망 구축, 위기관리 매뉴얼 작성, 재난대비훈련은 모두 '대비 단계'의 핵심 활동입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>번개, 폭풍, 토네이도는 대기 현상에 따른 기상학적 재해이나, 쓰나미는 해저 지진 등에 기인하므로 지구물리학적 재해로 분류됩니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>법 제3조제1호에 따라 황사는 자연재난(가목)이고, 미세먼지·감염병·가축전염병·화재·환경오염사고는 사회재난(나목)입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>위기관리 매뉴얼 작성·운용(제34조의5), 재난대비훈련(제35조), 재난관리자원 비축(제34조)은 모두 대비 단계의 법정 조치입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>위기관리 매뉴얼은 표준매뉴얼(국가 기준), 실무매뉴얼(주관기관 조치절차), 행동매뉴얼(현장 직접 수행기관 행동절차)의 3종으로 구분됩니다(법 제34조의5).
+            <span class="ox-exp-src">2022년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>국가재난관리기준 제정·운용(제34조의4)과 재난안전통신망 구축·운영(제34조의9)은 제4장(재난의 대비)에 규정되어 있습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>종사자 교육(제29조의2)은 제3장 예방 단계, 재난 예보·경보체계 구축·운영(제38조의2)은 제5장 대응 단계 조문입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>분산관리방식은 부처별 전문성은 뛰어나지만 자원의 중복 투자와 복합재난 시 지휘 혼선·할거주의가 단점으로 지적됩니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>아네스의 2분법과 존스의 3분법(준자연재난 포함)은 재난학의 대표적인 학문적 분류 체계입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>법 제3조제1호는 재난을 '자연재난(가목)'과 '사회재난(나목)'의 2가지로만 분류합니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>위험구역 설정, 대피명령, 통행제한 요청, 응급조치 등은 모두 제5장 '대응 단계'의 조치입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>시행령 별표 1의3에 따라 자연우주물체 추락·충돌은 과학기술정보통신부, 농업용 저수지 사고는 농림축산식품부가 주관합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>하인리히는 5개의 도미노 중 세 번째 도미노인 '불안전한 행동 및 불안전한 상태'를 제거하면 연쇄 반응이 끊어져 사고와 재해를 예방할 수 있다고 역설하였습니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>2024년 기출(Q4)에서 하인리히 도미노 이론의 제거 단계는 제3단계(불안전한 행동 및 상태), 버드 수정 도미노 이론의 제거 단계는 제2단계(기본원인)로 출제되었습니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>통합관리방식(All Hazards Approach)은 모든 재난 유형을 단일 조직(예: FEMA)에서 통합 관리하여 자원 중복을 막고 복합재난 대응력을 높이나, 단일 조직에 업무와 책임이 과중되는 단점이 있습니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>콰란텔리는 재난 원인이 달라도 현장에서 요구되는 대피·구조·통신 등 대응 기능과 자원이 공통되므로 통합관리로 가야 한다고 주장하였습니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>시행령 별표 1의3에 따른 소관 시설별 재난관리주관기관 법정 분류입니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>위기관리 매뉴얼 작성·운용(제34조의5), 재난대비훈련(제35조), 재난관리자원의 비축·관리(제34조) 및 긴급통신수단 마련(제34조의8)은 모두 예방이나 복구가 아니라 제4장 '대비 단계'에 해당합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>재난관리자원의 비축·관리(법 제34조) 및 긴급통신수단 마련(법 제34조의8)은 복구 단계가 아니라 '대비 단계'에 해당합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q14 · 재난관리 4단계별 세부 관리 사항 매칭</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>분산관리방식은 재난의 종류(화재, 홍수, 산불 등)에 따라 대응계획 및 책임 주관기관이 각각 다르게 배정됩니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q14 · 재난관리 방식 중 분산관리방식 vs 통합관리방식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>분산관리방식은 여러 부처가 각자 대응 자원을 보유하므로 복합재난 발생 시 유관기관 간 중복 투자나 중복 대응, 또는 관할권 마찰이 발생할 수 있습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q14 · 재난관리 방식 중 분산관리방식 vs 통합관리방식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>분산관리방식은 재난 발생 유형에 따라 소관 부처별로 업무가 세분화되어 전문성이 높은 장점이 있습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q14 · 재난관리 방식 중 분산관리방식 vs 통합관리방식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>'재난 시 유사한 자원동원 체계와 공통된 자원유형이 필요하다(대응자원의 공통성)'는 점은 분산관리의 특징이 아니라, 분산관리를 지양하고 '통합관리방식'을 채택해야 하는 핵심 근거입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q14 · 재난관리 방식 중 분산관리방식 vs 통합관리방식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 26 · O 옳음</span>아네스(Br. J. Anesth)는 재난을 발생 원인에 따라 자연재난과 인적(인위)재난의 2가지로 대별하였습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q3 · 재난의 분류 체계 및 하인리히 도미노 이론</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 27 · O 옳음</span>존스(David K. Jones)는 재난을 자연재난, 준자연재난(인간 활동이 가미된 자연재난), 인적(인위)재난의 3가지로 구분하였습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q3 · 재난의 분류 체계 및 하인리히 도미노 이론</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

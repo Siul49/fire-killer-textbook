@@ -1,0 +1,3946 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 16 · 인쇄용] 제3편 소방시설 설치 및 관리에 관한 법률 · 공사업법 · 제6장 소방시설업 등록과 착공·시공·공사감리 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY15_03_05_방염성능기준_자체점검과_소방용품_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 16</span>
+        <a href="DAY17_03_07_분리도급_완공검사와_하자보수_벌칙_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(21제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 16 · 제3편 소방시설 설치 및 관리에 관한 법률 · 공사업법 · 제6장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(21문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">소방시설업 등록과 착공·시공·공사감리</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 소방시설업의 4대 업종 등록, 결격사유·지위승계 및 과징금(3천만 원)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>소방시설업 4대 업종</strong>: <strong>설계업 · 공사업 · 공사감리업 · 방염처리업</strong> (<strong>소방시설관리업</strong>은 제외! / 하도급인은 발주자에서 제외!)</li>
+              <li><strong>등록권자 · 위임 · 지위승계</strong>: <strong>시·도지사</strong>에게 등록(등록 요건은 <strong>대통령령</strong>, 절차는 행안부령) / 상속·양수·합병·경매 인수일부터 <strong>30일 이내</strong> 승계 신고</li>
+              <li><strong>결격사유 · 과징금 · 2차 처분</strong>: 실형 종료·등록취소 후 <strong>2년 미경과</strong> 결격 / 과징금 <strong>3천만 원 이하</strong> / 동일 대상물 <strong>시공+감리 동시 수행 시 2차 등록취소</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            법령이 특정소방대상물마다 설치해야 할 소방시설을 아무리 촘촘하게 정해 두더라도, 정작 도면을 그리는 설계자나 배관을 용접하는 시공자, 그리고 현장을 감독하는 감리자가 무자격자라면 건물의 소방시설은 화재 순간 작동하지 않는 고철 덩어리가 되고 맙니다. 이처럼 소방시설의 설계·시공·감리 및 방염처리가 전문성과 책임을 갖춘 업자에 의해 이루어지도록 규율하는 법률이 바로 <strong>｢소방시설공사업법｣</strong>입니다. 이 법 제2조와 제4조에 따라 특정소방대상물의 소방시설공사등을 하려는 자는 업종별로 자본금(자산평가액), 기술인력 등 <strong>대통령령</strong>으로 정하는 등록기준을 갖추어 <strong>시·도지사에게 등록</strong>하여야 합니다(등록신청·등록증 발급·폐업신고·지위승계 신고의 구체적 절차는 <strong>행정안전부령</strong>으로 정함). 여기서 ｢소방시설공사업법｣이 규율하는 <strong>소방시설업의 4대 업종</strong>은 ① <strong>소방시설설계업</strong>(전문·일반), ② <strong>소방시설공사업</strong>(전문·일반), ③ <strong>소방공사감리업</strong>(전문·일반), ④ <strong>방염처리업</strong>(섬유류·합성수지류·합판목재류)입니다. 수험생이 첫 관문에서 반드시 구별해야 할 함정은 앞 장에서 배운 <strong>'소방시설관리업(자체점검 대행업)'은 이 법이 아니라 ｢소방시설 설치 및 관리에 관한 법률｣이 규율하는 업종</strong>이므로 공사업법상 소방시설업에 절대 포함되지 않는다는 점입니다! 또한 이 법에서 <strong>'발주자'</strong>란 소방시설의 설계·시공·감리 또는 방염을 소방시설업자에게 도급하는 자를 말하며, <strong>도급받은 공사를 하도급하는 자(수급인)는 발주자의 범위에서 제외</strong>됩니다(법 제2조 제4호).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그렇다면 어떤 사람이 소방시설업을 등록할 수 없을까요? 법 제5조에 따른 <strong>소방시설업 등록의 결격사유</strong>는 ① <strong>피성년후견인</strong>, ② 이 법, ｢소방기본법｣, ｢화재예방법｣, ｢소방시설법｣ 또는 ｢위험물안전관리법｣(소방 관련 5대 법령)에 따른 <strong>금고 이상의 실형</strong>을 선고받고 그 집행이 끝나거나 면제된 날부터 <strong>2년이 지나지 아니한 사람</strong>, ③ 위 소방 관련 5대 법령에 따른 금고 이상의 형의 집행유예를 선고받고 그 <strong>유예기간 중에 있는 사람</strong>, ④ 등록하려는 소방시설업의 <strong>등록이 취소된 날부터 2년이 지나지 아니한 사람</strong>, ⑤ 임원 중에 위 결격사유 해당자가 있는 법인입니다(따라서 등록이 취소된 날부터 '3년이 지난 사람'은 결격사유에 해당하지 않아 등록할 수 있습니다!). 일단 적법하게 등록을 마친 소방시설업자가 사망하여 상속인이 지위를 승계하거나 영업 양수·법인 합병, 또는 ｢민사집행법｣상 경매 등으로 소방시설의 전부를 인수하여 종전 업자의 지위를 승계하려는 경우에는 그 상속일·양수일·합병일·인수일부터 <strong>30일 이내</strong>에 행정안전부령으로 정하는 바에 따라 <strong>시·도지사에게 신고</strong>하여야 합니다(법 제7조). 만약 소방시설업자가 폐업신고를 하면 시·도지사는 등록을 말소하고 이를 공고하여야 합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            법규를 위반한 소방시설업자에 대한 행정처분(법 제9조·제10조 및 시행규칙 별표 1)에서도 핵심 숫자와 비교 포인트를 정확히 짚어 두어야 합니다. 먼저 시·도지사는 영업정지 처분이 이용자에게 심한 불편을 주거나 공익을 해칠 우려가 있을 때에는 영업정지 처분을 갈음하여 <strong>3천만 원 이하의 과징금</strong>을 부과할 수 있습니다(앞 장의 소방시설관리업 과징금 상한 2억 원 이하와 헷갈리지 않도록 <strong>공사업법 과징금 = 3천만 원 이하</strong>로 확실히 대비해 두십시오!). 또한 영업정지 처분을 받은 기간 중이라도 <strong>그 처분 전에 이미 도급계약을 체결하였거나 관계 법령에 따라 허가·인가 등을 받아 착공한 소방시설공사에 한하여는 시공·감리를 계속할 수 있는 예외</strong>가 인정됩니다(단, <strong>등록취소</strong> 처분을 받은 경우에는 즉시 영업을 멈추어야 함). 특히 2025년 공·경채에서 출제된 시행규칙 별표 1의 <strong>위반사항별 2차 행정처분 기준 비교</strong>를 보면, ① 도급받은 소방시설의 설계를 하도급한 경우, ② 공사업자가 시공능력 평가에 관한 서류를 거짓으로 제출한 경우, ③ 관계 공무원의 출입·검사를 정당한 사유 없이 방해한 경우는 모두 2차 행정처분이 <strong>'영업정지 3개월'</strong>로 동일하지만, <strong>'동일한 특정소방대상물에 대한 시공과 감리를 함께 한 경우'</strong>는 셀프 감리로 부실시공을 은폐하는 중대 범죄이므로 1차 영업정지 3개월에 이어 <strong>2차 위반 시 곧바로 '등록취소'</strong> 처분을 받게 됩니다!
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">구분 항목</th>
+                <th style="width:46%;">소방시설공사업법상 법정 기준 (법 제2조·제4조·제5조·제7조·제10조)</th>
+                <th>실전 기출 비교 · 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>소방시설업 4대 업종 · 발주자</strong></td>
+                <td>· 4대 업종: <strong>소방시설설계업 · 소방시설공사업 · 소방공사감리업 · 방염처리업</strong><br/>· 발주자: 설계·시공·감리·방염을 업자에게 도급하는 자(<strong>하도급하는 자는 제외</strong>)</td>
+                <td><strong>소방시설관리업</strong>은 공사업법 업종이 아님! / 하도급인은 발주자 제외</td>
+              </tr>
+              <tr>
+                <td><strong>등록권자 · 위임 · 지위승계</strong></td>
+                <td>· 등록권자: <strong>시·도지사</strong> / 등록 요건(자본금·기술인력): <strong>대통령령</strong>(별표 1)<br/>· 상속·양수·합병·경매 인수 시 승계일부터 <strong>30일 이내</strong> 시·도지사에게 신고</td>
+                <td>등록 요건을 행정안전부령으로 정한다는 선지는 오답(신청 절차만 행안부령)</td>
+              </tr>
+              <tr>
+                <td><strong>등록 결격사유 · 과징금</strong></td>
+                <td>· 결격사유: 피성년후견인, 소방 5대 법령 금고 이상 실형 종료 후 <strong>2년 미경과</strong>, 집행유예 기간 중, 등록취소 후 <strong>2년 미경과</strong><br/>· 영업정지 갈음 과징금: 시·도지사가 <strong>3천만 원 이하</strong> 부과 가능</td>
+                <td>취소 후 3년 경과자는 등록 가능(O) / 과징금 상한 <strong>3,000만 원</strong></td>
+              </tr>
+              <tr>
+                <td><strong>2차 행정처분 비교 (별표 1)</strong></td>
+                <td>· 동일 대상물 <strong>시공과 감리를 함께 한 경우</strong>: 1차 영업정지 3개월 ➔ <strong>2차 등록취소</strong><br/>· 설계 하도급 · 시공능력 서류 거짓 제출 · 출입 방해: <strong>2차 영업정지 3개월</strong>(동일)</td>
+                <td>시공+감리 동시 수행만 2차 처분이 <strong>등록취소</strong>로 가장 무거움(2025년 기출)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 어떤 공사를 할 때 소방서에 신고하는가 — 착공신고(신설·증설·제외)와 변경신고 중요사항</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>신설 착공신고 제외 품목</strong>: <strong>소화기구, 단독경보형 감지기, 자동화재속보설비, 유도표지, 피난기구, 인명구조기구, 예비전원 내장 비상조명등</strong> (단, <strong>비상경보설비·유도등 신설은 착공신고 대상!</strong> / <strong>위험물 제조소</strong> 공사 제외!)</li>
+              <li><strong>증설 착공신고 대상</strong>: 자탐·시각경보기·통합감시·<strong>화재알림설비의 경계구역</strong>, 비상콘센트 <strong>전용회로</strong>, 연결송수관 <strong>송수구역</strong>, <strong>연결살수설비의 살수구역</strong>(송수구역 X!)</li>
+              <li><strong>착공 변경신고 중요사항</strong>: 시공자, 설치 소방시설 종류, 책임시공·기술관리 소방기술자 등 (<strong>소방공사 감리원</strong>은 제외!)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            소방시설공사업자가 발주자로부터 특정소방대상물의 소방시설공사를 도급받았다면, 공사에 착수하기 전에 관할 <strong>소방본부장 또는 소방서장에게 착공신고</strong>를 하여야 합니다(법 제13조 제1항). 왜 영업 등록은 시·도지사에게 하면서 착공신고는 소방본부장이나 소방서장에게 할까요? 업체의 자본금과 기술인력을 심사하여 면허를 내주는 행정은 광역 지자체장(시·도지사)이 총괄하지만, 실제 관내 건물에서 어떤 배관과 설비가 시공되는지 도면을 확인하고 추후 완공검사를 나가는 현장 감독 업무는 일선 소방관서장(소방본부장·소방서장)이 맡아야 현장 밀착 관리가 가능하기 때문입니다. 여기서 첫 번째로 기억할 원칙은 ｢소방시설공사업법｣상 착공신고는 '특정소방대상물'이나 '다중이용업소'에 소방시설을 시공할 때 적용되는 절차이므로, <strong>｢위험물안전관리법｣에 따른 '위험물 제조소등'에 할로겐화합물 및 불활성기체 소화설비 등 소방시설을 신설하는 공사는 위험물안전관리법상 설치·변경허가 및 완공검사 체계를 따르므로 공사업법상 착공신고 대상에 해당하지 않는다</strong>는 점입니다(2022년 공채 Q13 정답 포인트!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그렇다면 특정소방대상물에 소방시설을 새로 설치할 때(<strong>신설 공사</strong>) 어떤 설비가 착공신고 대상이고 어떤 설비가 제외될까요? 시행령 제4조 제1호는 배관이나 전선 계통 시공이 수반되는 설비만 착공신고 대상으로 묶고, 단순 기구 거치형 설비는 신고 대상에서 제외하고 있습니다. 첫째, <strong>소화설비</strong>는 옥내·옥외소화전, 스프링클러·간이스프링클러·화재조기진압용 스프링클러, 물분무등소화설비, 상업용 주방자동소화장치를 신설하는 공사가 착공신고 대상이며, 손으로 들고 쓰는 <strong>소화기구</strong>(및 주거용 주방자동소화장치 등)는 제외됩니다. 둘째, <strong>경보설비</strong>는 <strong>비상경보설비, 비상방송설비, 자동화재탐지설비, 통합감시시설, 화재알림설비, 누전경보기, 가스누설경보기</strong>를 신설하는 공사가 모두 착공신고 대상이며, 경보설비 중 착공신고에서 제외되는 것은 천장에 단독으로 붙이는 <strong>단독경보형 감지기</strong>와 전화선만 연결하는 <strong>자동화재속보설비</strong> 2가지뿐입니다(2018년 공채 Q2에서 '비상경보설비 신설은 착공신고 대상이나 자동화재속보설비 신설은 제외'를 직접 물었으므로 <strong>비상경보설비(O) vs 자동화재속보설비(X)</strong>를 칼같이 구분해야 합니다!). 셋째, <strong>피난구조설비</strong>는 전기 배선 공사가 필요한 <strong>유도등, 피난유도선, 비상조명등(예비전원이 내장된 것은 제외)</strong>을 신설하는 공사가 착공신고 대상이며, <strong>피난기구, 인명구조기구, 유도표지, 예비전원이 내장된 비상조명등</strong>은 착공신고 대상에서 제외됩니다. 넷째, 소화용수설비와 소화활동설비(제연·연결송수관·연결살수·비상콘센트·무선통신보조·연소방지설비) 신설 공사는 모두 착공신고 대상입니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            기존 건축물에 설비를 늘리는 <strong>증설 공사</strong>(시행령 제4조 제2호)는 설비마다 '무엇(구역·회로)을 증설할 때 착공신고 대상이 되는지' 정확한 짝짓기가 시험(2026년 경채 Q31 등)에 출제됩니다. ① 옥내·옥외소화전설비는 호스릴 또는 소화전함을 증설하는 공사, ② 스프링클러·간이스프링클러·화재조기진압용 스프링클러 및 물분무등소화설비는 <strong>방호구역·유수검지장치 또는 일제개방밸브</strong>를 증설하는 공사, ③ <strong>연결송수관설비는 '송수구역'</strong>을 증설하는 공사이고, <strong>연결살수설비는 '살수구역'</strong>을 증설하는 공사입니다(선지에서 <strong>'연결살수설비의 송수구역을 증설하는 공사'</strong>라고 섞어 놓으면 틀린 지문입니다!), ④ <strong>자동화재탐지설비, 시각경보기, 통합감시시설 또는 화재알림설비는 '경계구역'</strong>을 증설하는 공사, ⑤ 제연설비는 <strong>제연구역</strong>을 증설하는 공사, ⑥ <strong>비상콘센트설비는 '전용회로'</strong>를 증설하는 공사, ⑦ 연소방지설비는 <strong>살수구역</strong>을 증설하는 공사가 착공신고 대상입니다. 나아가 착공신고를 한 뒤 공사업자가 변경신고를 해야 하는 <strong>'중요한 사항'</strong>(법 제13조 제2항 · 시행규칙 제12조의2)에는 ① <strong>시공자</strong>(공사업자), ② <strong>설치되는 소방시설의 종류</strong>(방식·설계도서 주요 변경), ③ <strong>책임시공 및 기술관리를 하는 소방기술자</strong> 등이 해당하며, <strong>'소방공사 감리원'</strong>은 공사업자가 아니라 감리업자가 배치·통보하는 인력이므로 공사업자의 착공 변경신고 사항에 포함되지 않습니다(2025년 경채 Q11 정답!).
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 현장을 지키는 소방기술자와 감리원 — 특급기술자 요건과 상주·일반 공사감리</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>소방기술자 인정·수첩</strong>: <strong>소방청장</strong>이 인정·발급 (위임 법령은 <strong>행정안전부령</strong> / 교육훈련기관은 전담인력 <strong>6명↑ · 전국 3개 이상 시·도</strong> 훈련장 확보)</li>
+              <li><strong>특급기술자 현행 요건(별표 4의2)</strong>: <strong>소방기술사·소방시설관리사 취득 후 3년↑</strong> / 건축기계·전기설비 등 기술사 <strong>5년↑</strong> / <strong>소방설비기사 7년↑</strong> / <strong>소방설비산업기사 10년↑</strong> (전기기사·학사학위자는 특급 불가!)</li>
+              <li><strong>상주 vs 일반 공사감리</strong>: 상주감리(일반 <strong>3만㎡↑</strong> [아파트 제외], 아파트 <strong>16층↑ 및 500세대↑</strong>, 40층↑·20만㎡↑는 <strong>특급감리원 중 소방기술사</strong>) / 일반감리원 <strong>주 1회↑</strong>, 일반감리 업무대행자는 <strong>주 2회↑</strong> 배치</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            실제 공사 현장에서 시공 품질을 책임지는 핵심 인력이 바로 <strong>소방기술자</strong>입니다. 전국적으로 통일된 기술 등급 체계를 유지하기 위하여 소방본부장·소방서장이 아닌 <strong>소방청장</strong>이 소방기술과 관련된 자격·학력 및 경력을 가진 사람을 소방기술자로 인정하고 <strong>자격수첩과 경력수첩을 발급</strong>할 수 있으며, 그 인정 범위와 수첩 발급 절차 등에 필요한 사항은 대통령령이 아니라 <strong>행정안전부령</strong>으로 정합니다(법 제28조, 거짓이나 부정한 방법으로 수첩을 발급받은 경우 소방청장은 그 자격을 반드시 취소하여야 함). 또한 소방청장이 소방기술자의 양성·인정 교육훈련을 위하여 <strong>교육훈련기관을 지정</strong>할 때 갖추어야 하는 요건(시행령 제15조의3, 2023년 경채 Q15)은 ① 교육훈련 과정에 적합한 교재와 매뉴얼을 보유할 것, ② 교육훈련 조직에 전담인력을 <strong>6명 이상</strong> 확보할 것, ③ <strong>전국 3개 이상의 시·도에 교육·훈련장을 확보</strong>할 것('2개 이상의 시·도'로 줄이는 함정 주의!), ④ 교육훈련 관리시스템을 구축하여 운영할 것입니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            특히 2026년 공·경채(Q33)에서 정면으로 출제된 시행규칙 별표 4의2의 <strong>개정된 특급기술자(기계·전기분야) 자격·경력 요건</strong>은 반드시 현행 수치로 업데이트해 두어야 합니다! 현행 시행규칙 별표 4의2에 따라 기계분야 또는 전기분야 <strong>특급기술자(및 특급감리원)</strong>가 될 수 있는 사람은 오직 다음 4가지 국가기술자격·전문자격 소지자뿐입니다. ① <strong>소방기술사 또는 소방시설관리사</strong> 자격을 취득한 후 <strong>3년 이상</strong> 소방 관련 업무를 수행한 사람(구법 5년 이상에서 3년 이상으로 단축 완화됨!), ② <strong>건축기계설비·건축전기설비·공조냉동기계·전기안전·발송배전기술사</strong> 등 관련 기술사 자격을 취득한 후 <strong>5년 이상</strong> 소방 관련 업무를 수행한 사람, ③ <strong>소방설비기사</strong> 해당 분야 자격을 취득한 후 <strong>7년 이상</strong> 소방 관련 업무를 수행한 사람(구법 8년 이상에서 7년 이상으로 완화됨!), ④ <strong>소방설비산업기사</strong> 해당 분야 자격을 취득한 후 <strong>10년 이상</strong> 소방 관련 업무를 수행한 사람(구법 11년 이상에서 10년 이상으로 완화됨!)입니다. 반면 <strong>일반 전기기사·기계기사 자격 소지자나 소방 관련 학력·경력자(박사·석사·학사 등)는 초급·중급·고급기술자까지만 인정될 뿐 현행법상 특급기술자는 될 수 없습니다</strong>(단, 2021년 공채 Q13은 개정 전 구법 기준[당시 관리사 5년·소방설비기사 8년·학사 12년]으로 출제되어 '소방설비기사 취득 후 8년 수행'이 정답이었는데, 8년 경력은 현행 7년 이상 기준도 당연히 충족합니다).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            공사업자는 공사 현장에 건물 규모와 설비에 맞는 소방기술자를 배치해야 합니다(시행령 별표 2의2). ① 연면적 20만 제곱미터 이상이거나 지하층 포함 40층 이상인 현장은 <strong>특급기술자</strong>, ② 연면적 3만 제곱미터 이상 20만 제곱미터 미만이거나 지하층 포함 16층 이상 40층 미만인 현장, 그리고 면적·층수와 무관하게 <strong>물분무등소화설비(호스릴 방식 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장은 '고급기술자 이상'의 소방기술자(기계·전기분야)를 배치</strong>하여야 합니다(2023년 공·경채 Q17에서 물분무등·제연설비 현장에 '초급기술자'를 배치한다고 하여 오답 출제!). 다만 발주자가 서면으로 승낙하는 경우 ① <strong>발주자가 공사 중단을 요청하는 경우</strong>, ② <strong>민원 또는 계절적 요인 등으로 해당 공정의 공사가 일정 기간 중단된 경우</strong>, ③ <strong>예산 부족 등 발주자의 책임 있는 사유 또는 천재지변 등 불가항력으로 공사가 일정 기간 중단된 경우</strong>에는 공사 중단 기간 동안 기술자를 현장에 배치하지 않을 수 있으나, <strong>'소방공사감리원이 공사 중단을 요청하는 경우'는 미배치 예외 사유에 해당하지 않습니다</strong>(2021년 공채 Q15 정답!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            마지막으로 시공의 적정성을 감독하는 <strong>소방공사감리</strong>(법 제16조·제17조 및 시행령 별표 3)를 살펴봅시다. 특정소방대상물의 공사감리자는 소방본부장·소방서장이 아니라 <strong>관계인 또는 발주자가 지정</strong>하며, 감리업자가 감리원을 배치하였을 때에는 소방본부장·소방서장의 동의를 받는 것이 아니라 <strong>신고(통보)</strong>하여야 합니다. 감리 방식은 <strong>상주 공사감리</strong>와 <strong>일반 공사감리</strong>로 나뉩니다. 첫째, <strong>상주 공사감리 대상</strong>은 ① <strong>연면적 3만 제곱미터 이상의 특정소방대상물(단, 아파트는 제외!)</strong>에 대한 소방시설 공사와 ② <strong>지하층을 포함한 층수가 16층 이상으로서 500세대 이상인 아파트</strong>에 대한 소방시설 공사(및 제연설비가 설치되는 터널 공사)입니다(아파트를 '300세대 이상'으로 바꾸는 함정 주의!). 상주 공사감리 대상인 경우 <strong>소방시설용 배관을 설치하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지</strong> 감리원을 현장에 상주 배치하여야 하며, 특히 <strong>연면적 20만 제곱미터 이상이거나 지하층을 포함한 층수가 40층 이상</strong>(예: 지하 5층·지상 35층인 복합건축물은 지하층 포함 40층에 해당!)인 현장에는 책임감리원으로 반드시 <strong>'특급감리원 중 소방기술사'</strong>를 배치하여야 합니다(2022년 공채 Q12 정답!). 또한 상주 공사감리원이 행정안전부령으로 정하는 기간 중 부득이한 사유로 <strong>1일 이상 현장을 이탈</strong>하는 경우에는 감리일지 등에 기록하여 <strong>발주청 또는 발주자의 확인</strong>을 받아야 합니다. 둘째, 상주 감리 대상이 아닌 <strong>일반 공사감리</strong>에서 <strong>일반 공사감리원 본인은 주 1회 이상</strong> 공사 현장에 배치되어 업무를 수행하고 감리일지에 기록해야 하며, 부득이한 사유로 <strong>14일 이내의 범위</strong>에서 업무를 수행할 수 없을 때는 감리업자가 <strong>업무대행자</strong>를 지정해야 하는데, 이때 <strong>지정된 일반 공사감리 업무대행자는 '주 2회 이상' 공사 현장에 배치되어 업무를 수행</strong>하고 그 내용을 감리원에게 통보 및 감리일지에 기록해야 합니다(시행령 별표 3 제2호 나목, 2026년 공·경채 Q32 핵심!).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">구분 항목</th>
+                <th style="width:46%;">법정 배치기준 및 감리 방법 (시행령 별표 2의2 · 별표 3 · 시행규칙 별표 4의2)</th>
+                <th>실전 기출 비교 · 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>특급기술자 자격·경력 요건</strong></td>
+                <td>① <strong>소방기술사·소방시설관리사 취득 후 3년 이상</strong> ② 건축기계·전기설비 등 기술사 <strong>5년 이상</strong> ③ <strong>소방설비기사 7년 이상</strong> ④ <strong>소방설비산업기사 10년 이상</strong></td>
+                <td>현행법상 일반 전기기사나 학사 학위자는 특급기술자 불가!(2026년 기출)</td>
+              </tr>
+              <tr>
+                <td><strong>공사현장 기술자 배치기준</strong></td>
+                <td>· 20만㎡↑ 또는 지하 포함 40층↑: <strong>특급기술자</strong><br/>· 3만㎡ 이상 20만㎡ 미만, 16층 이상 40층 미만, <strong>물분무등(호스릴 제외)·제연설비 설치 현장: 고급기술자 이상</strong></td>
+                <td>물분무등·제연설비 설치 공사장에 초급기술자 배치(X) ➔ <strong>고급기술자 이상(O)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>상주 공사감리 대상 · 기간</strong></td>
+                <td>· 대상: 일반 건물 <strong>연면적 3만㎡ 이상(아파트 제외)</strong> / 아파트 <strong>지하층 포함 16층 이상으로서 500세대 이상</strong><br/>· 기간: <strong>배관 설치·매립 시부터 완공검사증명서 발급 시까지</strong> (1일↑ 이탈 시 발주자 확인)</td>
+                <td><strong>지하층 포함 40층↑ 또는 20만㎡↑</strong> 책임감리원은 <strong>특급감리원 중 소방기술사</strong> 배치!</td>
+              </tr>
+              <tr>
+                <td><strong>일반 공사감리 · 업무대행자</strong></td>
+                <td>· 일반 공사감리원 본인: <strong>주 1회 이상</strong> 현장 배치 및 감리일지 기록<br/>· <strong>14일 이내</strong> 부득이한 사유 시 지정된 <strong>업무대행자: 주 2회 이상</strong> 현장 배치 및 통보·기록</td>
+                <td>일반감리원 본인은 <strong>주 1회 이상</strong>, 업무대행자는 <strong>주 2회 이상</strong> 배치(2026년 기출)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 소방시설업 4대 업종 등록 및 착공신고·기술자·공사감리 핵심 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방시설공사업법 4대 업종 등록 · 행정처분 및 착공신고(신설·증설·제외)</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">4대 업종 등록 · 결격 · 과징금</div>
+                <div>· <strong>설계업 · 공사업 · 공사감리업 · 방염처리업</strong> (관리업 제외!)<br/>· 시·도지사 등록(요건 대통령령) / 승계 <strong>30일 내</strong> 신고<br/>· 실형·취소 후 <strong>2년 미경과</strong> 결격 / 과징금 <strong>3천만 원 이하</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">2차 행정처분 비교 (별표 1)</div>
+                <div>· 동일 대상물 <strong>시공 + 감리 동시 수행 = 2차 등록취소!</strong><br/>· 설계 하도급 · 시공능력 거짓 서류 · 출입 방해 = <strong>2차 영업정지 3개월</strong>(동일)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">신설 착공신고 대상 vs 제외</div>
+                <div>· <strong>비상경보설비 · 유도등</strong> 신설은 착공신고 대상(O)<br/>· <strong>자동화재속보설비 · 단독경보형감지기 · 소화기구 · 유도표지 · 피난기구 · 위험물제조소</strong>는 제외(X)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">증설 착공신고 및 변경신고 중요사항</div>
+                <div>· 자탐·<strong>화재알림설비 경계구역</strong>, 비상콘센트 <strong>전용회로</strong>, 연결송수관 <strong>송수구역</strong>, <strong>연결살수 살수구역</strong> 증설<br/>· 변경신고: 시공자·소방시설종류·기술자 (<strong>감리원 제외!</strong>)</div>
+              </div>
+            </div>
+            <div class="schema-alert">※ 핵심 함정: 연결살수설비는 '송수구역'이 아니라 <strong>'살수구역'</strong> 증설이 착공신고 대상이며, 공사업자의 착공 변경신고 대상에 <strong>'소방공사 감리원'</strong>은 포함되지 않음!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 특급기술자 경력 요건(별표 4의2) 및 상주·일반 공사감리(별표 3) 비교</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">소방기술자 인정(소방청장) · 교육훈련기관 및 특급기술자 요건</div>
+                <ul class="schema-list">
+                  <li><strong>수첩 발급 · 교육기관</strong>: <strong>소방청장</strong> 인정·발급(행안부령) / 교육훈련기관은 전담인력 <strong>6명↑ · 전국 3개 이상 시·도</strong> 훈련장</li>
+                  <li><strong>특급기술자 요건</strong>: <strong>소방기술사·관리사 3년↑</strong> / 관련 기술사 <strong>5년↑</strong> / <strong>소방설비기사 7년↑</strong> / <strong>소방설비산업기사 10년↑</strong> (전기기사·학사 제외!)</li>
+                  <li><strong>물분무등(호스릴 제외)·제연설비 설치 공사장</strong>: <strong>고급기술자 이상</strong> 배치 / 발주자(감리원 X) 중단 요청 시 미배치 예외</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">상주 공사감리 vs 일반 공사감리 핵심 수치</div>
+                <ul class="schema-list">
+                  <li><strong>상주감리 대상</strong>: 일반 건물 <strong>연면적 3만㎡↑(아파트 제외)</strong>, 아파트 <strong>지하층 포함 16층↑ 및 500세대↑</strong> (배관 설치·매립 시부터 완공검사증명서 발급 시까지)</li>
+                  <li><strong>초고층·대형 책임감리원</strong>: <strong>지하층 포함 40층↑</strong>(예: 지하 5층+지상 35층) 또는 <strong>연면적 20만㎡↑</strong>는 <strong>특급감리원 중 소방기술사</strong> 배치</li>
+                  <li><strong>일반감리 배치</strong>: 일반감리원 본인은 <strong>주 1회 이상</strong>, 14일 이내 부득이한 사유로 지정된 <strong>업무대행자는 주 2회 이상</strong> 현장 배치!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (21문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 21문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 소방시설공사의 착공신고 대상으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">비상경보설비를 신설하는 특정소방대상물 신축공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">자동화재속보설비를 신설하는 특정소방대상물 신축공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연결송수관설비의 송수구역을 증설하는 특정소방대상물 증축공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자동화재탐지설비의 경계구역을 증설하는 특정소방대상물 증축공사</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣상 ‘소방시설업’의 영업에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방시설공사에 기본이 되는 공사계획, 설계도면, 설계설명서, 기술계산서 및 이와 관련된 서류를 작성하는 영업</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">설계도서에 따라 소방시설을 신설, 증설, 개설, 이전 및 정비하는 영업</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방안전관리 업무의 대행 또는 소방시설등의 점검 및 유지·관리하는 영업</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">방염대상물품에 대하여 방염처리하는 영업</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방공채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣상 ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>시·도지사는 소방시설공사업자가 소방시설 공사현 장에 감리원 배치기준을 위반한 경우로서 영업정지가 그 이용자에게 불편을 주거나 그 밖에 공익을 해칠 우려가 있을 때에는 영업정지처분을 갈음하여 ( ) 이하의 과징금을 부과할 수 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">2,000만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">2,500만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">3,000만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">3,500만원</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2021년 소방공채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행령, 시행규칙상 공사 감리에 관한 내용으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">감리업자가 감리원을 배치하였을 때에는 소방본부장 또는 소방서장의 동의를 받아야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장 또는 소방서장은 특정소방대상물에 대해서 감리업자를 공사감리자로 지정하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지하층을 포함한 층수가 16층 이상으로서 300세대 이상인 아파트에 대한 소방시설 공사는 상주공사감리 대상이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">상주공사감리 대상인 경우 소방시설용 배관을 설치 하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 소방공사감리현장에 감리원을 배치하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방공채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행규칙｣상 소방기술과 관련된 자격· 학력 및 경력의 인정범위에 관한 내용으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방공무원으로서 3년간 근무한 경력이 있는 사람은 중급감리원의 업무를 수행할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">학사학위를 취득한 후 소방 관련 업무를 10년간 수행한 사람은 특급기술자 업무를 수행할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방시설관리사 자격을 취득한 후 소방 관련 업무를 3년간 수행한 사람은 특급기술자 업무를 수행할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방설비기사 기계분야 자격을 취득한 후 소방 관련 업무를 8년간 수행한 사람은 해당분야 특급감리원의 업무를 수행할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2021년 소방공채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행령상 소방공사업자는 소방기술자를 소방공사 현장에 배치하는 것이 원칙이지만, 발주자가 서면으로 승낙하는 경우에는 해당 공사가 중단된 기간 동안 소방기술자를 공사 현장에 배치하지 않을 수 있도록 되어 있는 예외사항이 있다. 다음 중 예외사항으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">발주자가 공사 중단을 요청하는 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방공사감리원이 공사 중단을 요청하는 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">민원 또는 계절적 요인 등으로 해당 공정의 공사가 일정 기간 중단된 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">예산 부족 등 발주자의 책임 있는 사유 또는 천재지변 등 불가항력으로 공사가 일정 기간 중단된 경우</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방공채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣상 소방시설업 등록의 결격사유에 해당하지 않는 사람은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">피성년후견인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">등록하려는 소방시설업 등록이 취소된 날부터 3년이 지난 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">｢소방기본법｣에 따른 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢위험물안전관리법｣에 따른 금고 이상의 실형을 선고 받고, 그 집행이 끝나거나(집행이 끝난 것으로 보는 경우를 포함한다) 면제된 날부터 1년이 지난 사람</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2022년 소방공채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣ 별표 4 소방공사 감리원의 배치기준 및 배치기간에 따라 복합건축물(지하 5층, 지상 35층 규모)인 특정소방대상물 소방시설 공사현장의 소방 공사 책임감리원으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특급감리원 중 소방기술사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">특급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">고급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">중급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2022년 소방공채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 소방시설공사의 착공신고 대상으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">창고시설에 스프링클러설비의 방호구역을 증설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">공동주택에 자동화재탐지설비의 경계구역을 증설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위험물 제조소에 할로겐화합물 및 불활성기체 소화설비를 신설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">업무시설에 옥내소화전설비(호스릴옥내소화전설비를 포함한다)를 신설하는 공사</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2022년 소방공채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣에서 규정한 용어의 정의로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“소방시설공사업”이란 설계도서에 따라 소방시설을 신설, 증설, 개설, 이전 및 정비하는 영업을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“소방시설설계업”이란 소방시설공사에 기본이 되는 공사계획, 설계도면, 설계설명서, 기술계산서 및 이와 관련된 서류를 작성하는 영업을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“발주자”란 소방시설의 설계, 시공, 감리 및 방염을 소방시설업자에게 도급한 자 및 도급받은 공사를 하도 급하는 자를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“소방공사감리업”이란 소방시설공사에 관한 발주자의 권한을 대행하여 소방시설공사가 설계도서와 관계법령에 따라 적법하게 시공되는지를 확인하고, 품질·시공관리에 대한 기술지도를 하는 영업을 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2022년 소방공채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣상 소방시설업의 등록, 휴·폐업과 소방시설업자의 지위승계에 대한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특정소방대상물의 소방시설공사등을 하려는 자는 업 종별로 자본금, 기술인력 등 행정안전부령으로 정하는 요건을 갖추어 시·도지사에게 소방시설업을 등록하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방시설업자가 사망하여 그 상속인이 종전의 소방시 설업자의 지위를 승계하려는 경우에는 그 상속일, 양 수일 또는 합병일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 그 사실을 시·도지사에게 신고하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방시설업자는 소방시설업을 폐업하는 때에는 행정 안전부령으로 정하는 바에 따라 시·도지사에게 신고 하여야 하고 폐업신고를 받은 시·도지사는 소방시설 업 등록을 말소하고 그 사실을 행정안전부령으로 정 하는 바에 따라 공고하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢민사집행법｣에 따른 경매에 따라 소방시설업자의 소 방시설의 전부를 인수한 자가 종전의 소방시설업자의 지위를 승계하려는 경우에는 그 인수일부터 30일 이 내에 행정안전부령으로 정하는 바에 따라 그 사실을 시·도지사에게 신고하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2023년 소방경채 Q11 · 소방공채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣상 소방기술 경력 등의 인정 등에 관한 내용으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방본부장, 소방서장은 소방기술의 효율적인 활용과 소방 기술의 향상을 위하여 소방기술과 관련된 자격·학력 및 경력을 가진 사람을 소방기술자로 인정할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장, 소방서장은 소방기술과 관련된 자격·학력 및 경력을 인정받은 사람에게 소방기술 인정 자격수첩과 경력 수첩을 발급할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방기술과 관련된 자격·학력 및 경력의 인정 범위와 자격 수첩 및 경력수첩의 발급 절차 등에 관하여 필요한 사항은 대통령령으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장은 자격수첩 또는 경력수첩을 발급받은 사람이 거짓이나 그 밖의 부정한 방법으로 자격수첩 또는 경력 수첩을 발급받은 경우에 그 자격을 취소하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2023년 소방경채 Q14 · 소방공채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 상주 공사감리 대상을 설명한 것이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>•연면적 ( ㄱ ) 이상의 특정소방대상물(아파트는 제외한다) 에 대한 소방시설의 공사<br/>•지하층을 포함한 층수가 ( ㄴ ) 이상인 아파트에 대한 소방시설의 공사</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">(ㄱ): 3만 제곱미터 / (ㄴ): 16층 이상으로서 300세대</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">(ㄱ): 3만 제곱미터 / (ㄴ): 16층 이상으로서 500세대</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">(ㄱ): 5만 제곱미터 / (ㄴ): 16층 이상으로서 300세대</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">(ㄱ): 5만 제곱미터 / (ㄴ): 16층 이상으로서 500세대</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2023년 소방경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행규칙｣상 소방기술자 양성·인정 교육훈련기관의 지정 요건으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">교육과목별 교재 및 강사 매뉴얼을 갖출 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방기술자 양성·인정 교육훈련을 실시할 수 있는 전담 인력을 6명 이상 갖출 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">전국 2개 이상의 시·도에 이론교육과 실습교육이 가능한 교육·훈련장을 갖출 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">교육훈련의 신청·수료, 성과측정, 경력관리 등에 필요한 교육훈련 관리시스템을 구축·운영할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2023년 소방경채 Q17 · 소방공채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 소방기술자의 배치기준을 설명한 것으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">연면적 20만제곱미터 이상인 특정소방대상물의 공사 현장 에는 행정안전부령으로 정하는 특급기술자인 소방기술자 (기계분야 및 전기분야)를 배치하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지하층을 포함한 층수가 16층 이상 40층 미만인 특정소방대상물의 공사 현장에는 행정안전부령으로 정하는 고급 기술자 이상의 소방기술자(기계분야 및 전기분야)를 배치 하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연면적 5천제곱미터 이상 3만제곱미터 미만인 특정소방대상물(아파트는 제외)의 공사 현장에는 행정안전부령으로 정하는 중급기술자 이상의 소방기술자(기계분야 및 전기 분야)를 배치하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">물분무등소화설비(호스릴 방식의 소화설비는 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장에는 행정안전부령으로 정하는 초급기술자 이상의 소방기술자 (기계분야 및 전기분야)를 배치하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2024년 소방경채 Q12 · 소방공채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 상주 공사감리를 해야 하는 대상으로 옳은 것만을 <보기>에서 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 연면적 3만 제곱미터인 의료시설<br/>ㄴ. 지하층을 포함한 층수가 20층이고 1,000세대인 아파트<br/>ㄷ. 연면적 1만 제곱미터인 복합건축물<br/>ㄹ. 연면적 2만 제곱미터인 판매시설</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">17</span>
+              <span class="q-source">2025년 소방경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행령, 시행규칙상 공사 업자가 착공신고 후 변경신고를 하여야 하는 행정안전부령 으로 정하는 중요한 사항에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">시공자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방공사 감리원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">설치되는 소방시설의 종류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">책임시공 및 기술관리 소방기술자</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">18</span>
+              <span class="q-source">2025년 소방경채 Q12 · 소방공채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행규칙상 소방시설업의 위반사항에 따른 2차 행정처분 기준이 같은 것만을 <보기>에서 모두 고른 것은? (단, 일반기준에 따른 처분의 가중 및 감경은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 도급받은 소방시설의 설계를 하도급한 경우<br/>ㄴ. 동일한 특정소방대상물에 대한 시공과 감리를 함께 한 경우<br/>ㄷ. 공사업자가 시공능력 평가에 관한 서류를 거짓으로 제출한 경우<br/>ㄹ. 관계 공무원이 특정소방대상물에 출입하여 시설 등을 검사하고자 할 때 정당한 사유 없이 관계 공무원의 출입을 방해한 경우</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">19</span>
+              <span class="q-source">2026년 소방경채 Q31</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법 시행령｣상 소방시설공사의 착공신고 대상에 해당하지 않는 것은? (단, 위험물안전관리법령상 제조소등과 다중이용업소의 안전관리에 관한 특별법령에 따른 다중이용업소에서의 소방시설공사는 제외한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특정소방대상물에 화재알림설비의 경계구역을 증설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">특정소방대상물에 자동화재탐지설비의 경계구역을 증설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">특정소방대상물에 연결살수설비의 송수구역을 증설하는 공사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">특정소방대상물에 비상콘센트설비의 전용회로를 증설하는 공사</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">20</span>
+              <span class="q-source">2026년 소방경채 Q32 · 소방공채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행령상 〈보기〉‘㉠에서 ㉤’ 에서 소방공사 감리의 종류, 방법 및 대상에 관한 설명으로 옳은 것은 모두 몇 개인가? (단, 문제에서 제시된 사항 외의 것은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong><상주 공사감리 대상><br/>㉠연면적 3만제곱미터 이상의 특정소방대상물(아파트는 제외한다)에 대한 소방시설의 공사와 지하층을 포함한 층수가 16층 이상으로서 500세대 이상인 아파트에 대한 소방시설의 공사는 상주 공사감리 대상이다.<br/>㉡상주 공사감리 대상에서 상주 공사감리원이 행정안전부령으로 정하는 기간 중 부득이한 사유로 1일 이상 현장을 이탈하는 경우에는 감리일지 등에 기록하여 발주청 또는 발주자의 확인을 받아야 한다.<br/><일반 공사감리 대상><br/>㉢상주 공사감리에 해당하지 않는 소방시설의 공사에서 일반 공사감리원은 행정안전부령으로 정하는 기간 중에는 주 1회 이상 공사 현장에 배치되어 업무를 수행하고 감리일지에 기록해야 한다.<br/>㉣일반 공사감리의 경우 감리업자는 현장에 배치된 감리원이 부득이한 사유로 14일 이내의 범위에서 감리원의 업무를 수행할 수 없는 경우에는 업무대행자를 지정하여 그 업무를 수행하게 해야 한다.<br/>㉤감리원의 업무를 대행하기 위해 지정된 업무대행자는 주 2회 이상 공사 현장에 배치되어 업무를 수행하며, 그 업무수행 내용을 감리원에게 통보하고 감리일지에 기록해야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">2개</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">3개</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">4개</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">5개</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">21</span>
+              <span class="q-source">2026년 소방경채 Q33 · 소방공채 Q21</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설공사업법｣ 및 같은 법 시행규칙상 소방기술과 관련된 자격·학력 및 경력의 인정 범위와 관련하여, <보기>에서 소방전기분야 특급기술자에 대한 요건을 갖춘 사람은 모두 몇 명인가? (단, 보기의 “소방 관련 업무”와 “소방기술과 관련된 학력”은 소방관련법령에서 인정하는 “소방기술과 관련된 경력과 학력”에 해당하는 것으로 보며, 문제에서 제시한 사항 외의 것은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>•소방시설관리사 자격을 취득한 후 ‘3년 1개월’ 소방 관련 업무를 수행한 사람<br/>•건축전기설비기술사 자격을 취득한 후 ‘5년 1개월’ 소방 관련 업무를 수행한 사람<br/>•소방설비기사 전기분야의 자격을 취득한 후 ‘7년 1개월’ 소방 관련 업무를 수행한 사람<br/>•소방설비산업기사 전기분야의 자격을 취득한 후 ‘11년 1개월’ 소방 관련 업무를 수행한 사람<br/>•전기기사 자격을 취득한 후 ‘13년 1개월’ 소방 관련 업무를 수행한 사람<br/>•소방행정학과 학사 학위를 취득한 후 ‘11년 1개월’ 소방 관련 업무를 수행한 사람</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">3명</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">4명</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">5명</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">6명</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방시설공사업법상 소방시설업이란 소방시설설계업, 소방시설공사업, 소방공사감리업 및 방염처리업을 말하며, 소방시설관리업은 포함되지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방시설공사업법상 발주자란 소방시설의 설계, 시공, 감리 및 방염을 소방시설업자에게 도급하는 자를 말하며, 도급받은 공사를 하도급하는 자는 제외한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물의 소방시설공사등을 하려는 자는 업종별로 자본금, 기술인력 등 행정안전부령으로 정하는 요건을 갖추어 시·도지사에게 소방시설업을 등록하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>상속·양수·합병 또는 민사집행법에 따른 경매 등으로 종전의 소방시설업자의 지위를 승계하려는 자는 그 상속일·양수일·합병일 또는 인수일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 시·도지사에게 신고하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>피성년후견인, 소방시설업 등록이 취소된 날부터 2년이 지나지 아니한 자, 소방 관련 법령 위반으로 금고 이상의 실형을 선고받고 집행이 끝난 날부터 2년이 지나지 아니한 자는 소방시설업을 등록할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 소방시설업자에 대한 영업정지가 이용자에게 심한 불편을 주거나 공익을 해칠 우려가 있을 때에는 영업정지처분을 갈음하여 3천만 원 이하의 과징금을 부과할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>동일한 특정소방대상물에 대한 시공과 감리를 함께 한 경우의 2차 행정처분 기준은 등록취소이며, 도급받은 설계를 하도급하거나 시공능력 평가 서류를 거짓 제출하거나 관계 공무원의 출입을 방해한 경우의 2차 행정처분 기준은 영업정지 3개월이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내소화전설비, 비상경보설비, 피난구조설비 중 유도등을 신설하는 공사는 착공신고 대상에 해당하나, 자동화재속보설비, 단독경보형 감지기, 소화기구, 유도표지, 피난기구를 신설하는 공사는 착공신고 대상에서 제외된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 제조소에 할로겐화합물 및 불활성기체 소화설비를 신설하는 공사는 소방시설공사업법상 착공신고 대상에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물에 화재알림설비나 자동화재탐지설비의 경계구역을 증설하는 공사와 비상콘센트설비의 전용회로를 증설하는 공사는 착공신고 대상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물에 연결살수설비의 송수구역을 증설하는 공사는 착공신고 대상에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>공사업자가 착공신고 후 변경신고를 하여야 하는 중요한 사항에는 시공자, 설치되는 소방시설의 종류, 책임시공 및 기술관리 소방기술자의 변경 등이 있으며 소방공사 감리원은 포함되지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 소방기술과 관련된 자격·학력 및 경력을 가진 사람을 소방기술자로 인정하고 자격수첩과 경력수첩을 발급할 수 있으며, 그 인정 범위와 발급 절차는 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기술자 양성·인정 교육훈련기관으로 지정받으려면 교육훈련 조직에 전담인력을 6명 이상 확보하고 전국 3개 이상의 시·도에 교육·훈련장을 확보하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현행 소방시설공사업법 시행규칙상 소방시설관리사 자격을 취득한 후 3년 이상, 건축전기설비기술사 자격을 취득한 후 5년 이상, 소방설비기사 자격을 취득한 후 7년 이상, 소방설비산업기사 자격을 취득한 후 10년 이상 소방 관련 업무를 수행한 사람은 특급기술자의 요건을 갖춘다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물분무등소화설비(호스릴 방식 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장에는 고급기술자 이상의 소방기술자(기계분야 및 전기분야)를 배치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>발주자가 서면으로 승낙하는 경우 공사가 중단된 기간 동안 소방기술자를 공사 현장에 배치하지 않을 수 있는 예외 사유에는 '소방공사감리원이 공사 중단을 요청하는 경우'가 포함된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물의 공사감리자는 관계인 또는 발주자가 지정하며, 감리업자가 감리원을 배치하였을 때에는 소방본부장 또는 소방서장에게 신고(통보)하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>상주공사감리 대상은 연면적 3만 제곱미터 이상의 특정소방대상물(아파트 제외)에 대한 소방시설 공사와 지하층을 포함한 층수가 16층 이상으로서 500세대 이상인 아파트에 대한 소방시설 공사이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지하층을 포함한 층수가 16층 이상으로서 300세대 이상인 아파트에 대한 소방시설 공사는 상주공사감리 대상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>상주공사감리 대상인 경우 소방시설용 배관을 설치하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 소방공사감리현장에 감리원을 배치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연면적 20만 제곱미터 이상이거나 지하층을 포함한 층수가 40층 이상(예: 지하 5층, 지상 35층)인 특정소방대상물의 소방시설 공사현장에는 특급감리원 중 소방기술사를 책임감리원으로 배치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>상주 공사감리원이 부득이한 사유로 1일 이상 현장을 이탈하는 경우에는 감리일지 등에 기록하여 발주청 또는 발주자의 확인을 받아야 하며, 일반 공사감리원은 주 1회 이상 공사 현장에 배치되어 업무를 수행하고 감리일지에 기록해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>감리업자가 감리원을 배치하였을 때에는 소방본부장 또는 소방서장의 동의를 받아야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장 또는 소방서장은 특정소방대상물에 대해서 감리업자를 공사감리자로 지정하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방공무원으로서 3년간 근무한 경력이 있는 사람은 중급감리원의 업무를 수행할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>학사학위를 취득한 후 소방 관련 업무를 10년간 수행한 사람은 특급기술자 업무를 수행할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장은 소방기술의 효율적인 활용과 소방 기술의 향상을 위하여 소방기술과 관련된 자격·학력 및 경력을 가진 사람을 소방기술자로 인정할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장은 소방기술과 관련된 자격·학력 및 경력을 인정받은 사람에게 소방기술 인정 자격수첩과 경력 수첩을 발급할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방시설공사업법상 소방시설설계업, 소방시설공사업, 소방공사감리업은 각각 전문과 일반으로 구분되며, 방염처리업 역시 전문 방염처리업과 일반 방염처리업으로 구분하여 시·도지사에게 등록한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:② · 02:③ · 03:③ · 04:④ · 05:④ · 06:② · 07:② · 08:① · 09:③ · 10:③ · 11:① · 12:④ · 13:② · 14:③ · 15:④ · 16:① · 17:② · 18:③ · 19:③ · 20:④ · 21:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:X · 04:O · 05:O · 06:O · 07:O · 08:O · 09:X · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:O · 19:O · 20:X · 21:O · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 16 · 제3편 소방시설 설치 및 관리에 관한 법률 · 공사업법 · 제6장 (21문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">17번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">18번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">19번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">20번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">21번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q2</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 신설 공사 중 소화기구, 유도표지, 피난기구, 비상조명등, 인명구조기구 및 '자동화재속보설비'를 신설하는 공사는 착공신고 대상에서 제외됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">비상경보설비를 신설하는 특정소방대상물 신축공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 비상경보설비, 자동화재탐지설비, 비상방송설비, 통합감시시설, 누전경보기, 가스누설경보기 등을 신설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">자동화재속보설비를 신설하는 특정소방대상물 신축공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 경보설비 중 '자동화재속보설비'를 신설하는 공사는 소방시설공사 착공신고 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연결송수관설비의 송수구역을 증설하는 특정소방대상물 증축공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 연결송수관설비 또는 연결살수설비의 송수구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자동화재탐지설비의 경계구역을 증설하는 특정소방대상물 증축공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 자동화재탐지설비 또는 시각경보기의 경계구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제2조 제1호에 따른 '소방시설업'은 ① 소방시설설계업, ② 소방시설공사업, ③ 소방공사감리업, ④ 방염처리업 4가지를 말합니다. 소방시설등의 점검 및 유지·관리나 소방안전관리 업무의 대행을 하는 '소방시설관리업'은 ｢소방시설공사업법｣이 아니라 ｢소방시설 설치 및 관리에 관한 법률｣에서 규율하는 별도의 업종입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방시설공사에 기본이 되는 공사계획, 설계도면, 설계설명서, 기술계산서 및 이와 관련된 서류를 작성하는 영업</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 가목에 따른 '소방시설설계업'의 법정 정의로서 소방시설업에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">설계도서에 따라 소방시설을 신설, 증설, 개설, 이전 및 정비하는 영업</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 나목에 따른 '소방시설공사업'의 법정 정의로서 소방시설업에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방안전관리 업무의 대행 또는 소방시설등의 점검 및 유지·관리하는 영업</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 소방안전관리 업무의 대행 또는 소방시설등의 점검 및 유지·관리 영업을 하는 것은 '소방시설관리업'으로서 ｢소방시설 설치 및 관리에 관한 법률｣에 따른 업종이며, ｢소방시설공사업법｣상의 소방시설업(설계·공사·감리·방염처리업)에는 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">방염대상물품에 대하여 방염처리하는 영업</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 라목에 따른 '방염처리업'의 법정 정의로서 소방시설업(설계·공사·감리·방염처리업)에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제10조에 따라 시·도지사는 소방시설업자에 대한 영업정지가 이용자에게 불편을 주거나 공익을 해칠 우려가 있을 때에는 영업정지처분을 갈음하여 '3천만 원 이하'의 과징금을 부과할 수 있습니다. (참고로 ｢소방시설 설치 및 관리에 관한 법률｣상 소방시설관리업의 과징금 상한은 2억 원 이하입니다.)</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">2,000만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 2,000만 원이 아니라 3,000만 원 이하입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">2,500만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 2,500만 원이 아니라 3,000만 원 이하입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">3,000만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] ｢소방시설공사업법｣ 제10조 제1항에 따른 과징금 상한액은 '3,000만 원(3천만 원)' 이하입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">3,500만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 3,500만 원이 아니라 3,000만 원 이하입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 상주공사감리 대상인 경우 소방시설용 배관을 설치하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 감리원을 현장에 상주 배치하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">감리업자가 감리원을 배치하였을 때에는 소방본부장 또는 소방서장의 동의를 받아야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 감리업자가 감리원을 배치하였을 때에는 동의를 받는 것이 아니라 소방본부장 또는 소방서장에게 '신고(통보)'하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장 또는 소방서장은 특정소방대상물에 대해서 감리업자를 공사감리자로 지정하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 특정소방대상물의 공사감리자는 소방본부장·소방서장이 아니라 '관계인 또는 발주자'가 지정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지하층을 포함한 층수가 16층 이상으로서 300세대 이상인 아파트에 대한 소방시설 공사는 상주공사감리 대상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 아파트의 상주공사감리 기준은 지하층을 포함한 층수가 16층 이상으로서 300세대 이상이 아니라 '500세대 이상'인 아파트입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">상주공사감리 대상인 경우 소방시설용 배관을 설치 하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 소방공사감리현장에 감리원을 배치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 상주공사감리 대상인 경우 소방시설용 배관을 설치하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 소방공사감리현장에 감리원을 상주 배치하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소방설비기사 자격을 취득한 후 8년 이상 소방 관련 업무를 수행한 사람은 특급기술자 및 특급감리원의 업무를 수행할 수 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방공무원으로서 3년간 근무한 경력이 있는 사람은 중급감리원의 업무를 수행할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 소방공무원으로서 3년 이상 근무한 경력이 있는 사람은 초급기술자·초급감리원이 아니라 별도 자격 요건이 적용되며 중급감리원은 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">학사학위를 취득한 후 소방 관련 업무를 10년간 수행한 사람은 특급기술자 업무를 수행할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 소방 관련 학사학위를 취득한 후 특급기술자가 되려면 10년이 아니라 '12년 이상' 소방 관련 업무를 수행해야 합니다(석사 9년 이상, 박사 6년 이상).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방시설관리사 자격을 취득한 후 소방 관련 업무를 3년간 수행한 사람은 특급기술자 업무를 수행할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방시설관리사 자격을 취득한 후 특급기술자(또는 특급감리원)가 되려면 3년이 아니라(출제 당시 5년 이상, 현행 개정으로 관리사는 3년 이상으로 단축되었으나 출제 당시인 2021년에는 '5년 이상'이었음) 당시 기준에 미달했습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방설비기사 기계분야 자격을 취득한 후 소방 관련 업무를 8년간 수행한 사람은 해당분야 특급감리원의 업무를 수행할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 소방설비기사 기계분야 자격을 취득한 후 소방 관련 업무를 8년 이상 수행한 사람은 해당 분야 특급감리원(현행은 7년 이상으로 완화되어 8년이면 출제 당시와 현행 모두 충족)의 업무를 수행할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 공사 중단을 요청하는 주체는 감리원이 아니라 '발주자'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">발주자가 공사 중단을 요청하는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 발주자가 공사 중단을 요청하는 경우는 배치 예외 사유에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방공사감리원이 공사 중단을 요청하는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '소방공사감리원이 공사 중단을 요청하는 경우'는 법령상 소방기술자 현장 미배치 예외 사유에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">민원 또는 계절적 요인 등으로 해당 공정의 공사가 일정 기간 중단된 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 민원 또는 계절적 요인 등으로 해당 공정의 공사가 일정 기간 중단된 경우는 배치 예외 사유에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">예산 부족 등 발주자의 책임 있는 사유 또는 천재지변 등 불가항력으로 공사가 일정 기간 중단된 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 예산 부족 등 발주자의 책임 있는 사유 또는 천재지변 등 불가항력으로 공사가 일정 기간 중단된 경우는 배치 예외 사유에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q11</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">피성년후견인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방시설공사업법｣ 제5조 제1호에 따라 피성년후견인은 소방시설업의 등록 결격사유에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">등록하려는 소방시설업 등록이 취소된 날부터 3년이 지난 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 소방시설업 등록이 취소된 날부터 '2년'이 지나지 아니한 사람이 결격사유이므로, 취소된 날부터 3년이 지난 사람은 결격사유에 해당하지 않아 등록할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">｢소방기본법｣에 따른 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 이 법, ｢소방기본법｣, ｢화재예방법｣, ｢소방시설법｣ 또는 ｢위험물안전관리법｣에 따른 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 결격사유에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢위험물안전관리법｣에 따른 금고 이상의 실형을 선고 받고, 그 집행이 끝나거나(집행이 끝난 것으로 보는 경우를 포함한다) 면제된 날부터 1년이 지난 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢위험물안전관리법｣ 등에 따른 금고 이상의 실형을 선고받고 그 집행이 끝나거나 면제된 날부터 '2년'이 지나지 아니한 사람(1년이 지난 사람)은 결격사유에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법 시행령｣ 별표 3에 따라 연면적 20만 제곱미터 이상이거나 '지하층을 포함한 층수가 40층 이상'인 특정소방대상물의 공사현장에는 책임감리원으로 '특급감리원 중 소방기술사'를 배치하여야 합니다. 제시된 복합건축물은 지하 5층·지상 35층이므로 지하층을 포함한 층수가 40층(5 + 35 = 40층)에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특급감리원 중 소방기술사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 지하 5층, 지상 35층인 복합건축물은 지하층을 포함한 층수가 40층 이상이므로, 책임감리원으로 '특급감리원 중 소방기술사'를 배치하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">특급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 특급감리원 이상(기계·전기)은 연면적 3만 제곱미터 이상 20만 제곱미터 미만이거나 지하층 포함 16층 이상 40층 미만인 특정소방대상물의 배치기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">고급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 고급감리원 이상은 물분무등소화설비·제연설비 설치 대상 아파트 등의 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">중급감리원 이상의 소방공사 감리원(기계분야 및 전기분야)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 중급감리원 이상은 연면적 5천 제곱미터 이상 3만 제곱미터 미만 등의 기준입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제13조 및 시행령 제4조에 따른 착공신고는 '특정소방대상물'이나 '다중이용업소'에 소방시설을 시공할 때 적용되는 절차이며, ｢위험물안전관리법｣에 따른 '위험물 제조소등'(별도의 설치·변경허가 및 완공검사 체계 적용)에 설치하는 소방시설공사는 착공신고 대상에서 제외됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">창고시설에 스프링클러설비의 방호구역을 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 창고시설(특정소방대상물)에 스프링클러설비의 방호구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">공동주택에 자동화재탐지설비의 경계구역을 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 공동주택(특정소방대상물)에 자동화재탐지설비의 경계구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위험물 제조소에 할로겐화합물 및 불활성기체 소화설비를 신설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] '위험물 제조소등'은 ｢소방시설 설치 및 관리에 관한 법률｣상의 특정소방대상물이 아니라 ｢위험물안전관리법｣의 적용을 받으므로, 위험물 제조소등에 소방시설을 설치하는 공사는 ｢소방시설공사업법｣상 착공신고 대상이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">업무시설에 옥내소화전설비(호스릴옥내소화전설비를 포함한다)를 신설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 업무시설(특정소방대상물)에 옥내소화전설비(호스릴 포함)를 신설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제2조 제4호에 따라 '발주자'란 소방시설의 설계, 시공, 감리 및 방염을 소방시설업자에게 도급하는 자를 말하며, '도급받은 공사를 하도급하는 자(수급인)'는 발주자에서 제외됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“소방시설공사업”이란 설계도서에 따라 소방시설을 신설, 증설, 개설, 이전 및 정비하는 영업을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 나목에 규정된 '소방시설공사업'의 정확한 법정 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“소방시설설계업”이란 소방시설공사에 기본이 되는 공사계획, 설계도면, 설계설명서, 기술계산서 및 이와 관련된 서류를 작성하는 영업을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 가목에 규정된 '소방시설설계업'의 정확한 법정 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“발주자”란 소방시설의 설계, 시공, 감리 및 방염을 소방시설업자에게 도급한 자 및 도급받은 공사를 하도 급하는 자를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] '발주자'란 소방시설공사등을 소방시설업자에게 도급하는 자를 말하며, '도급받은 공사를 하도급하는 자는 제외한다'라고 명시되어 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“소방공사감리업”이란 소방시설공사에 관한 발주자의 권한을 대행하여 소방시설공사가 설계도서와 관계법령에 따라 적법하게 시공되는지를 확인하고, 품질·시공관리에 대한 기술지도를 하는 영업을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢소방시설공사업법｣ 제2조 제1항 제1호 다목에 규정된 '소방공사감리업'의 정확한 법정 정의입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제4조 제1항에 따라 소방시설업을 등록하려는 자가 갖추어야 하는 업종별 자본금(자산평가액), 기술인력 등의 등록기준은 행정안전부령이 아니라 '대통령령'으로 정합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특정소방대상물의 소방시설공사등을 하려는 자는 업 종별로 자본금, 기술인력 등 행정안전부령으로 정하는 요건을 갖추어 시·도지사에게 소방시설업을 등록하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 소방시설업의 업종별 자본금, 기술인력 등 등록 요건은 행정안전부령이 아니라 '대통령령'(시행령 별표 1)으로 정합니다(등록신청 절차 등은 행정안전부령).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방시설업자가 사망하여 그 상속인이 종전의 소방시 설업자의 지위를 승계하려는 경우에는 그 상속일, 양 수일 또는 합병일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 그 사실을 시·도지사에게 신고하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 상속·양수·합병으로 소방시설업자의 지위를 승계하려는 자는 상속일·양수일·합병일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 시·도지사에게 신고하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방시설업자는 소방시설업을 폐업하는 때에는 행정 안전부령으로 정하는 바에 따라 시·도지사에게 신고 하여야 하고 폐업신고를 받은 시·도지사는 소방시설 업 등록을 말소하고 그 사실을 행정안전부령으로 정 하는 바에 따라 공고하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 폐업신고를 받은 시·도지사는 등록을 말소하고 그 사실을 공고하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢민사집행법｣에 따른 경매에 따라 소방시설업자의 소 방시설의 전부를 인수한 자가 종전의 소방시설업자의 지위를 승계하려는 경우에는 그 인수일부터 30일 이 내에 행정안전부령으로 정하는 바에 따라 그 사실을 시·도지사에게 신고하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 경매 등으로 시설 전부를 인수하여 지위를 승계하려는 자는 인수일부터 30일 이내에 시·도지사에게 신고하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q11 · 소방공채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제28조에 따라 소방기술자의 자격·학력·경력을 인정하고 자격수첩·경력수첩을 발급하며 부정 발급 시 자격을 취소하는 권한자는 소방본부장·소방서장이 아니라 '소방청장'이며, 인정 범위와 발급 절차는 '행정안전부령'으로 정합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방본부장, 소방서장은 소방기술의 효율적인 활용과 소방 기술의 향상을 위하여 소방기술과 관련된 자격·학력 및 경력을 가진 사람을 소방기술자로 인정할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 소방기술자로 인정할 수 있는 권한자는 소방본부장·소방서장이 아니라 '소방청장'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장, 소방서장은 소방기술과 관련된 자격·학력 및 경력을 인정받은 사람에게 소방기술 인정 자격수첩과 경력 수첩을 발급할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 자격수첩과 경력수첩의 발급권자는 '소방청장'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방기술과 관련된 자격·학력 및 경력의 인정 범위와 자격 수첩 및 경력수첩의 발급 절차 등에 관하여 필요한 사항은 대통령령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 자격·학력·경력의 인정 범위와 자격수첩·경력수첩의 발급 절차 등에 필요한 사항은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장은 자격수첩 또는 경력수첩을 발급받은 사람이 거짓이나 그 밖의 부정한 방법으로 자격수첩 또는 경력 수첩을 발급받은 경우에 그 자격을 취소하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 소방청장은 자격수첩 또는 경력수첩을 발급받은 사람이 거짓이나 그 밖의 부정한 방법으로 발급받은 경우에는 그 자격을 취소하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q14 · 소방공채 Q6</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">(ㄱ): 3만 제곱미터 / (ㄴ): 16층 이상으로서 300세대</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 아파트의 세대수 기준은 300세대가 아니라 '500세대 이상'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">(ㄱ): 3만 제곱미터 / (ㄴ): 16층 이상으로서 500세대</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 상주 공사감리 대상은 연면적 '3만 제곱미터'( ㄱ ) 이상의 특정소방대상물(아파트 제외)과 지하층을 포함한 층수가 '16층 이상으로서 500세대'( ㄴ ) 이상인 아파트입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">(ㄱ): 5만 제곱미터 / (ㄴ): 16층 이상으로서 300세대</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ｢소방시설공사업법 시행령｣ 별표 3에 따라 상주 공사감리 대상은 아파트를 제외한 특정소방대상물의 경우 연면적 '3만 제곱미터 이상'(ㄱ)이고, 아파트는 지하층을 포함한 층수가 '16층 이상으로서 500세대 이상'(ㄴ)인 경우입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">(ㄱ): 5만 제곱미터 / (ㄴ): 16층 이상으로서 500세대</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 일반 특정소방대상물 연면적 기준은 5만 제곱미터가 아니라 '3만 제곱미터 이상'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법 시행규칙｣ 제24조의2에 따른 소방기술자 양성·인정 교육훈련기관의 지정 요건 중 교육·훈련장은 전국 2개 이상이 아니라 '전국 3개 이상의 시·도'에 갖추어야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">교육과목별 교재 및 강사 매뉴얼을 갖출 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 교육과목별 교재 및 강사 매뉴얼을 갖추어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방기술자 양성·인정 교육훈련을 실시할 수 있는 전담 인력을 6명 이상 갖출 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 교육훈련을 실시할 수 있는 전담 인력을 6명 이상 갖추어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">전국 2개 이상의 시·도에 이론교육과 실습교육이 가능한 교육·훈련장을 갖출 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 전국 2개 이상의 시·도가 아니라 '전국 3개 이상의 시·도'에 이론교육과 실습교육이 가능한 교육·훈련장을 갖추어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">교육훈련의 신청·수료, 성과측정, 경력관리 등에 필요한 교육훈련 관리시스템을 구축·운영할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢소방시설공사업법 시행규칙｣에 따라 실무교육 전문기관으로 지정받으려는 자는 교육훈련의 신청·수료, 성과측정, 경력관리 등에 필요한 교육훈련 관리시스템을 구축·운영하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q17 · 소방공채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 물분무등소화설비(호스릴 방식 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장에는 초급기술자가 아니라 '고급기술자 이상'의 소방기술자(기계분야 및 전기분야)를 배치하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">연면적 20만제곱미터 이상인 특정소방대상물의 공사 현장 에는 행정안전부령으로 정하는 특급기술자인 소방기술자 (기계분야 및 전기분야)를 배치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 연면적 20만 제곱미터 이상이거나 지하층 포함 40층 이상인 공사 현장에는 특급기술자(기계·전기)를 배치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지하층을 포함한 층수가 16층 이상 40층 미만인 특정소방대상물의 공사 현장에는 행정안전부령으로 정하는 고급 기술자 이상의 소방기술자(기계분야 및 전기분야)를 배치 하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 연면적 3만 제곱미터 이상 20만 제곱미터 미만이거나 지하층 포함 16층 이상 40층 미만인 공사 현장에는 고급기술자 이상(기계·전기)을 배치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연면적 5천제곱미터 이상 3만제곱미터 미만인 특정소방대상물(아파트는 제외)의 공사 현장에는 행정안전부령으로 정하는 중급기술자 이상의 소방기술자(기계분야 및 전기 분야)를 배치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 연면적 5천 제곱미터 이상 3만 제곱미터 미만(아파트 제외)이거나 지하층 포함 16층 미만인 아파트 공사 현장에는 중급기술자 이상(기계·전기)을 배치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">물분무등소화설비(호스릴 방식의 소화설비는 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장에는 행정안전부령으로 정하는 초급기술자 이상의 소방기술자 (기계분야 및 전기분야)를 배치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 물분무등소화설비(호스릴 방식 제외) 또는 제연설비가 설치되는 특정소방대상물의 공사 현장에는 초급기술자 이상이 아니라 '고급기술자 이상'의 소방기술자(기계분야 및 전기분야)를 배치하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q12 · 소방공채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법 시행령｣ 별표 3에 따른 상주 공사감리 대상(아파트 제외 특정소방대상물로서 연면적 3만 제곱미터 이상, 아파트는 지하층 포함 16층 이상으로서 500세대 이상)에 해당하는 것을 고르는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ㄱ(연면적 3만 제곱미터 이상인 의료시설)과 ㄴ(지하층 포함 20층이고 1,000세대인 아파트: 16층 이상 및 500세대 이상 충족)이 상주 공사감리 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ(연면적 1만 제곱미터인 복합건축물)은 3만 제곱미터 미만이므로 일반 공사감리 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄹ(연면적 2만 제곱미터인 판매시설)은 3만 제곱미터 미만이므로 일반 공사감리 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄷ과 ㄹ 모두 상주 공사감리 기준(연면적 3만 제곱미터 이상)에 미달합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 17</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법｣ 제13조 제2항 및 시행규칙 제12조의2에 따라 공사업자가 착공신고 한 사항 중 변경신고를 해야 하는 중요한 사항은 시공자, 설치되는 소방시설의 종류, 책임시공 및 기술관리 소방기술자 등 공사업자 측 사항입니다. '소방공사 감리원'의 변경은 공사업자가 아니라 감리업자가 통보하는 사항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">시공자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 시공자의 변경은 공사업자의 착공신고 변경신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방공사 감리원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '소방공사 감리원'은 감리업자가 배치하고 변경 시 소방관서장에게 통보하는 대상이므로, 공사업자가 해야 하는 착공신고 변경신고 사항에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">설치되는 소방시설의 종류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 설치되는 소방시설의 종류 변경은 공사업자의 착공신고 변경신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">책임시공 및 기술관리 소방기술자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 책임시공 및 기술관리 소방기술자의 변경은 공사업자의 착공신고 변경신고 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 18</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q12 · 소방공채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설공사업법 시행규칙｣ 별표 1에 따른 위반행위별 행정처분 개별기준(1차·2차·3차)을 비교하는 문항입니다. 동일한 특정소방대상물에 대한 시공과 감리를 함께 한 경우( ㄴ )는 1차 영업정지 3개월, 2차 '등록취소'이며, 설계 하도급( ㄱ ), 시공능력 평가서류 거짓 제출( ㄷ ), 관계 공무원 출입·검사 방해( ㄹ )는 2차 처분이 '영업정지 3개월'로 동일합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(시공과 감리를 함께 한 경우)은 2차 행정처분이 '등록취소'이므로 ㄱ(영업정지 3개월)과 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ, ㄹ뿐만 아니라 ㄱ(도급받은 소방시설의 설계를 하도급한 경우) 역시 2차 행정처분 기준이 '영업정지 3개월'로 동일하므로 ㄱ도 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] ㄱ(도급받은 소방시설의 설계를 하도급한 경우), ㄷ(시공능력 평가 서류를 거짓으로 제출한 경우), ㄹ(관계 공무원의 출입·검사를 정당한 사유 없이 방해한 경우)은 2차 행정처분 기준이 '영업정지 3개월'로 모두 같습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄱ, ㄷ, ㄹ의 2차 행정처분은 모두 '영업정지 3개월'로 같지만, ㄴ(동일 특정소방대상물의 시공과 감리를 함께 한 경우)은 2차 행정처분이 '등록취소'이므로 제외되어야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 19</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q31</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 옥내·옥외소화전설비, 스프링클러·간이스프링클러·물분무등소화설비, 연결송수관설비, '연결살수설비'는 송수구역이 아니라 '급수배관(또는 방호구역·살수구역)'을 증설하는 공사가 착공신고 대상이며, '송수구역'을 증설하는 공사는 연결송수관설비와 연결살수설비 중 시행령 문구(제4조 제2호 라목: 연결송수관설비 또는 연결살수설비의 송수구역 증설 vs 급수배관 증설)의 개정 사항을 확인해야 합니다. 현행 시행령 제4조 제2호에 따라 연결송수관설비는 송수구역, 연결살수설비는 '살수구역'을 증설하는 공사입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특정소방대상물에 화재알림설비의 경계구역을 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 자동화재탐지설비, 시각경보기, 통합감시시설 또는 '화재알림설비'의 경계구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">특정소방대상물에 자동화재탐지설비의 경계구역을 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 자동화재탐지설비의 경계구역을 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">특정소방대상물에 연결살수설비의 송수구역을 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] ｢소방시설공사업법 시행령｣ 제4조 제2호 개정에 따라 연결송수관설비는 송수구역을 증설하는 공사이나, 연결살수설비는 송수구역이 아니라 '살수구역'을 증설하는 공사가 착공신고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">특정소방대상물에 비상콘센트설비의 전용회로를 증설하는 공사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 비상콘센트설비의 전용회로를 증설하는 공사는 착공신고 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 20</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q32 · 소방공채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 시행령 별표 3 제1호 및 제2호에 따라 ㉠(상주 공사감리 대상), ㉡(상주 공사감리원 1일 이상 현장 이탈 시 감리일지 기록 및 발주청·발주자 확인), ㉢(일반 공사감리원 주 1회 이상 현장 배치 및 감리일지 기록), ㉣(일반 공사감리원 14일 이내 부득이한 사유로 업무 수행 불가 시 업무대행자 지정), 그리고 ㉤(일반 공사감리에서 지정된 업무대행자는 '주 2회 이상' 공사 현장에 배치되어 업무를 수행하며 그 업무수행 내용을 감리원에게 통보하고 감리일지에 기록)까지 5개 항목이 모두 법령 원문 그대로 옳습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">2개</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] <보기> ㉠부터 ㉤까지 5개 항목이 모두 옳으므로 2개는 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">3개</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] <보기> ㉠부터 ㉤까지 5개 항목이 모두 옳으므로 3개는 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">4개</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㉤의 일반 공사감리 업무대행자 역시 ｢소방시설공사업법 시행령｣ 별표 3 제2호 나목 4)에 따라 '주 2회 이상' 공사 현장에 배치되어 업무를 수행해야 하므로 ㉤도 옳은 설명이어서 총 5개가 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">5개</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ｢소방시설공사업법 시행령｣ 별표 3에 따라 ㉠(상주감리 대상: 일반 3만㎡ 이상, 아파트 16층 이상 및 500세대 이상), ㉡(상주감리원 1일 이상 이탈 시 기록 및 발주자 확인), ㉢(일반감리원 주 1회 이상 배치 및 기록), ㉣(일반감리 14일 이내 업무대행자 지정), ㉤(일반감리 업무대행자는 주 2회 이상 현장 배치 및 통보·기록) 총 '5개'가 모두 옳습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 21</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q33 · 소방공채 Q21</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 현행 별표 4의2상 소방전기분야 특급기술자 요건은 ① 소방기술사 또는 소방시설관리사 자격 취득 후 '3년 이상' 소방 관련 업무 수행, ② 건축전기설비기술사(또는 전기안전·발송배전기술사) 자격 취득 후 '5년 이상' 소방 관련 업무 수행, ③ 소방설비기사 전기분야 취득 후 '7년 이상'(구 8년에서 개정 완화) 소방 관련 업무 수행, ④ 소방설비산업기사 전기분야 취득 후 '10년 이상'(구 11년에서 완화) 소방 관련 업무 수행입니다. 반면 일반 전기기사나 학사 학위만으로는 특급기술자가 될 수 없습니다(학력·경력자는 초급·중급·고급까지만 인정되고 특급기술자는 기술사·관리사·소방설비기사·소방설비산업기사 자격 소지자만 가능).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">3명</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] <보기> 6명 중 소방시설관리사(3년 이상), 건축전기설비기술사(5년 이상), 소방설비기사 전기분야(7년 이상), 소방설비산업기사 전기분야(10년 이상) 총 4명이 특급기술자 요건을 충족하므로 3명은 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">4명</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] <보기> 6명 중 ① 소방시설관리사 취득 후 3년 1개월(3년 이상 충족, O), ② 건축전기설비기술사 취득 후 5년 1개월(5년 이상 충족, O), ③ 소방설비기사 전기분야 취득 후 7년 1개월(7년 이상 충족, O), ④ 소방설비산업기사 전기분야 취득 후 11년 1개월(10년 이상 충족, O) 총 '4명'이 소방전기분야 특급기술자 요건을 갖추었습니다. ⑤ 전기기사 자격자와 ⑥ 소방행정학과 학사 학위자는 특급기술자 인정 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">5명</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 일반 전기기사 자격자와 소방행정학과 학사 학위자는 현행 시행규칙 별표 4의2상 특급기술자 요건에 해당하지 않으므로 5명은 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">6명</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 다섯째(전기기사 자격자)와 여섯째(소방행정학과 학사 학위자) 2명은 현행법상 특급기술자가 될 수 없으므로 총 4명만 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:X · 04:O · 05:O · 06:O · 07:O · 08:O · 09:X · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:O · 19:O · 20:X · 21:O · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢소방시설공사업법｣ 제2조 제1호에 따라 소방시설업은 설계업·공사업·감리업·방염처리업 4종이며, 소방시설관리업은 ｢소방시설 설치 및 관리에 관한 법률｣상 업종입니다.
+            <span class="ox-exp-src">2018년 소방공채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>｢소방시설공사업법｣ 제2조 제4호에 따라 하도급인은 발주자의 범위에서 제외됩니다.
+            <span class="ox-exp-src">2022년 소방공채 Q14</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 03 · X 틀림</span>소방시설업의 업종별 자본금, 기술인력 등 등록 요건은 행정안전부령이 아니라 '대통령령'(시행령 별표 1)으로 정합니다(등록신청 절차 등은 행정안전부령).
+            <span class="ox-exp-src">2022년 소방공채 Q15 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>｢소방시설공사업법｣ 제7조에 따라 지위승계 신고 기한은 상속일·양수일·합병일·인수일부터 30일 이내입니다.
+            <span class="ox-exp-src">2022년 소방공채 Q15 선지 2·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>｢소방시설공사업법｣ 제5조에 따른 소방시설업 등록 결격사유 기간은 '2년'입니다(따라서 취소된 날부터 3년이 지난 사람은 등록 가능).
+            <span class="ox-exp-src">2022년 소방공채 Q11</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>｢소방시설공사업법｣ 제10조에 따른 소방시설업 과징금 상한은 3천만 원 이하입니다(소방시설관리업의 과징금 상한 2억 원 이하와 구분).
+            <span class="ox-exp-src">2019년 소방공채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢소방시설공사업법 시행규칙｣ 별표 1에 따른 위반행위별 2차 행정처분 기준입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q12 · 소방공채 Q7</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>｢소방시설공사업법 시행령｣ 제4조 제1호에 따라 비상경보설비·유도등 신설은 착공신고 대상이나, 자동화재속보설비·단독경보형 감지기·유도표지·소화기구·피난기구 신설은 제외됩니다.
+            <span class="ox-exp-src">2018년 소방공채 Q2</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 09 · X 틀림</span>｢위험물안전관리법｣에 따른 위험물 제조소등에 설치하는 소방시설공사는 별도의 설치·변경허가 및 완공검사 체계가 적용되므로 ｢소방시설공사업법｣상 착공신고 대상에서 제외됩니다.
+            <span class="ox-exp-src">2022년 소방공채 Q13 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>｢소방시설공사업법 시행령｣ 제4조 제2호에 따른 증설 공사 착공신고 대상입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q31</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>｢소방시설공사업법 시행령｣ 제4조 제2호에 따라 연결송수관설비는 '송수구역'을 증설하는 공사이나, 연결살수설비는 송수구역이 아니라 '살수구역'을 증설하는 공사가 착공신고 대상입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q31 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢소방시설공사업법 시행규칙｣ 제12조의2에 따른 공사업자의 착공 변경신고 대상이며, 소방공사 감리원은 감리업자가 통보하는 사항입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q11</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>｢소방시설공사업법｣ 제28조에 따라 소방기술자 인정 및 수첩 발급 주체는 소방청장이고 위임 법령은 행정안전부령입니다(거짓·부정 발급 시 소방청장이 자격 취소).
+            <span class="ox-exp-src">2023년 소방경채 Q11 · 소방공채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>｢소방시설공사업법 시행령｣ 제15조의3 별표 4의2에 따른 교육훈련기관 지정 요건(전담인력 6명 이상, 전국 3개 이상의 시·도에 교육·훈련장 확보)입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q15</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢소방시설공사업법 시행규칙｣ 별표 4의2에 따른 현행 특급기술자 자격·경력 요건입니다(전기기사나 소방 관련 학사 학위자는 특급기술자 불가).
+            <span class="ox-exp-src">2026년 소방경채 Q33 · 소방공채 Q21</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢소방시설공사업법 시행령｣ 별표 2의2에 따라 물분무등소화설비(호스릴 제외)·제연설비 설치 현장은 고급기술자 이상 배치 대상입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q17 · 소방공채 Q8</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 17 · X 틀림</span>｢소방시설공사업법 시행령｣ 제9조 제2항에 따른 미배치 예외 사유는 '발주자가 공사 중단을 요청하는 경우', '민원·계절적 요인', '예산 부족·천재지변' 등이며 감리원이 공사 중단을 요청하는 경우는 해당하지 않습니다.
+            <span class="ox-exp-src">2021년 소방공채 Q15 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>공사감리자는 소방본부장·소방서장이 아니라 관계인·발주자가 지정하며, 감리원 배치 시 동의를 받는 것이 아니라 소방관서장에게 신고(통보)합니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 선지 1·2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>｢소방시설공사업법 시행령｣ 별표 3에 따른 상주공사감리 대상의 핵심 수치(일반 3만 제곱미터 이상, 아파트 16층 이상 및 500세대 이상)입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 · 2026년 소방경채 Q32</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>아파트의 상주공사감리 기준은 지하층을 포함한 층수가 16층 이상으로서 300세대 이상이 아니라 '500세대 이상'인 아파트입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>상주공사감리 대상인 경우 소방시설용 배관을 설치하거나 매립하는 때부터 완공검사증명서를 발급받을 때까지 감리원을 상주 배치하여야 합니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>｢소방시설공사업법 시행령｣ 별표 3에 따라 연면적 20만 제곱미터 이상 또는 지하층 포함 40층 이상인 초고층·초대형 현장에는 특급감리원 중에서도 반드시 '소방기술사' 자격을 가진 사람을 배치해야 합니다.
+            <span class="ox-exp-src">2022년 소방공채 Q12</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>｢소방시설공사업법 시행령｣ 별표 3에 따른 상주 공사감리원 현장 이탈 절차 및 일반 공사감리원 배치 기준입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q32 · 소방공채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>감리업자가 감리원을 배치하였을 때에는 동의를 받는 것이 아니라 소방본부장 또는 소방서장에게 '신고(통보)'하여야 합니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 · 소방공사감리자의 지정 및 상주공사감리 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>특정소방대상물의 공사감리자는 소방본부장·소방서장이 아니라 '관계인 또는 발주자'가 지정합니다.
+            <span class="ox-exp-src">2021년 소방공채 Q11 · 소방공사감리자의 지정 및 상주공사감리 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>소방공무원으로서 3년 이상 근무한 경력이 있는 사람은 초급기술자·초급감리원이 아니라 별도 자격 요건이 적용되며 중급감리원은 해당하지 않습니다.
+            <span class="ox-exp-src">2021년 소방공채 Q13 · 소방기술자 및 감리원의 자격·학력·경력 인정범위</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>소방 관련 학사학위를 취득한 후 특급기술자가 되려면 10년이 아니라 '12년 이상' 소방 관련 업무를 수행해야 합니다(석사 9년 이상, 박사 6년 이상).
+            <span class="ox-exp-src">2021년 소방공채 Q13 · 소방기술자 및 감리원의 자격·학력·경력 인정범위</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>소방기술자로 인정할 수 있는 권한자는 소방본부장·소방서장이 아니라 '소방청장'입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q11 · 소방공채 Q4 · 소방기술자의 자격·학력·경력 인정 및 수첩 발급권자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>자격수첩과 경력수첩의 발급권자는 '소방청장'입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q11 · 소방공채 Q4 · 소방기술자의 자격·학력·경력 인정 및 수첩 발급권자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>소방시설설계업·공사업·감리업은 각각 전문과 일반으로 구분되지만, 방염처리업은 전문·일반이 아니라 ① 섬유류 방염업, ② 합성수지류 방염업, ③ 합판·목재류 방염업의 3종으로 구분됩니다.
+            <span class="ox-exp-src">적중예상 (소방시설공사업법 시행령 별표 1 미출제 업종 세분)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

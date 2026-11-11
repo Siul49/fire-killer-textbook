@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>소방관계법규 기출 OX 소거 앱 — 단원별 선택 & 몰입 타격</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/harness.css" />
+  <style>
+    :root {
+      --side-pad: 20px;
+      --quiz-font-size: 19px;
+      --expl-font-size: 15.5px;
+    }
+    @media (max-width: 640px) {
+      :root {
+        --side-pad: 12px;
+        --quiz-font-size: 17.5px;
+        --expl-font-size: 14.5px;
+      }
+    }
+
+    html body {
+      background-color: var(--bg-canvas) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* 좌우 커스터마이징 여백 래퍼 */
+    .ox-wrap {
+      width: 100%;
+      max-width: 1360px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--side-pad);
+      padding-right: var(--side-pad);
+      box-sizing: border-box;
+    }
+
+    /* 상단 네비게이션 스크롤 자동 숨김 */
+    #topStickyNav {
+      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      will-change: transform;
+    }
+    #topStickyNav.fk-nav-hidden {
+      transform: translateY(-110%);
+      pointer-events: none;
+    }
+
+    /* 지문 명조 가독성 */
+    .ox-statement {
+      font-family: var(--font-body) !important;
+      font-size: var(--quiz-font-size) !important;
+      line-height: 1.82 !important;
+      letter-spacing: -0.015em;
+      word-break: keep-all;
+      color: var(--text-main);
+    }
+
+    .ox-expl {
+      font-family: var(--font-sans) !important;
+      font-size: var(--expl-font-size) !important;
+      line-height: 1.72 !important;
+      word-break: keep-all;
+      color: var(--text-main);
+    }
+
+    /* 알약형 필터 버튼 */
+    .c-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-subtle);
+      color: var(--text-sub);
+      white-space: nowrap;
+      transition: all 0.14s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .c-pill:hover {
+      border-color: var(--border-strong);
+      color: var(--text-main);
+    }
+    .c-pill.active {
+      background-color: var(--accent) !important;
+      color: #ffffff !important;
+      border-color: var(--accent) !important;
+    }
+    body.mode-night .c-pill.active {
+      color: #121211 !important;
+    }
+
+    /* 단원 선택 카드 */
+    .unit-card {
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-sheet);
+      border-radius: 12px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .unit-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+    .unit-card.active {
+      border: 2px solid var(--accent);
+      background-color: var(--accent-soft);
+    }
+
+    /* 문제 풀이 스테이지 (스크린샷 구조 100% 반영 + Fire Killer 디자인 시스템) */
+    .solve-stage-wrap {
+      min-height: calc(100vh - 56px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px var(--side-pad) 24px;
+      box-sizing: border-box;
+    }
+    .solve-stage-inner {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    /* 상단 < THEME(단원명) 헤더 바 */
+    .fk-theme-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 2px 14px;
+      width: 100%;
+    }
+    .fk-theme-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      padding: 4px 0;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+    .fk-theme-back-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--text-main);
+      stroke-width: 2.3;
+      fill: none;
+    }
+
+    /* 카드 바로 위 좌측 '< 이전문제' & 우측 '다음문제 >' */
+    .fk-prev-above-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .fk-prev-link {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 2px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .fk-prev-link:hover {
+      color: var(--text-main);
+    }
+    .fk-prev-link:disabled {
+      opacity: 0.32;
+      cursor: default;
+    }
+
+    /* 메인 OX 카드 컨테이너 (내부에 번호배지 + 저장버튼 + 지문 + 하단 2열 대형 O/X 타격박스 내장) */
+    .fk-ox-card {
+      background-color: var(--bg-sheet);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 14px 36px rgba(20, 18, 15, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 440px;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+    body.mode-night .fk-ox-card {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48);
+    }
+
+    /* 카드 상단 헤더: 좌측 (🅒 03 + 기006) / 우측 (+ 저장) */
+    .fk-card-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .fk-num-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+    .fk-num-badge-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fk-c-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .fk-num-digits {
+      font-family: var(--font-sans);
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .fk-sub-code {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.85;
+      padding-left: 2px;
+    }
+
+    .fk-save-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border-strong);
+      background-color: transparent;
+      color: var(--text-sub);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .fk-save-btn.saved {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+    body.mode-night .fk-save-btn.saved {
+      color: #121211;
+    }
+
+    /* 카드 중앙 지문 영역 */
+    .fk-statement-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 4px 2px 28px;
+      min-height: 155px;
+    }
+
+    /* 카드 내부 하단 2열 대형 정사각형/직사각형 O / X 박스 */
+    .fk-inside-ox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .fk-ox-box-btn {
+      height: 132px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fk-ox-box-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+    .fk-ox-box-btn:active {
+      transform: scale(0.96);
+    }
+    .fk-ox-box-btn svg {
+      width: 56px;
+      height: 56px;
+      stroke: currentColor;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .fk-ox-box-btn.selected-correct {
+      background-color: var(--correct-bg) !important;
+      border: 2.5px solid var(--correct-ink) !important;
+      color: var(--correct-ink) !important;
+    }
+    .fk-ox-box-btn.selected-wrong {
+      background-color: var(--wrong-bg) !important;
+      border: 2.5px solid var(--wrong-ink) !important;
+      color: var(--wrong-ink) !important;
+    }
+    .fk-ox-box-btn.dimmed-other {
+      opacity: 0.42;
+    }
+
+    /* 화면 최하단 중앙 1 / N 카운터 */
+    .fk-bottom-counter-bar {
+      padding-top: 22px;
+      padding-bottom: 6px;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .fk-bottom-counter-bar strong {
+      color: var(--text-main);
+      font-weight: 900;
+    }
+
+    .trap-hl {
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .modal-backdrop {
+      background-color: rgba(15, 14, 13, 0.72);
+      backdrop-filter: blur(3px);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- 최상단 진행률 바 -->
+  <div class="fixed top-0 left-0 right-0 z-50 h-0.5 bg-transparent">
+    <div id="topProgressBar" class="h-full transition-all duration-150" style="width:0%; background-color:var(--accent);"></div>
+  </div>
+
+  <!-- 상단 네비게이션 바 (스크롤 시 자동 숨김 · 터치 시 재노출 · 설정 단일 버튼) -->
+  <nav id="topStickyNav" class="sticky top-0 z-40 border-b backdrop-blur-md py-2.5" style="background-color:var(--ui-bar); border-color:var(--ui-border);">
+    <div class="ox-wrap flex items-center justify-between gap-2">
+      <div class="flex items-center gap-1.5 min-w-0">
+        <a href="../index.html" class="c-pill" style="text-decoration:none;" title="통합 포털">&larr; 포털</a>
+        <a href="index.html" id="navBackTextbook" class="c-pill" style="text-decoration:none;" title="소방관계법규 기본서 목차">기본서 목차</a>
+        <span class="text-xs sm:text-sm font-extrabold tracking-tight ml-1 truncate" style="color:var(--accent);">소방관계법규 기출 OX</span>
+      </div>
+
+      <div class="flex items-center gap-1.5 shrink-0">
+        <span id="navGlobalProgress" class="hidden sm:inline text-xs font-bold px-2" style="color:var(--text-sub);">잔여 578문항</span>
+        <button id="btnSettingsToggle" onclick="OxApp.toggleSettingsModal()" class="c-pill" title="화면·글자·좌우간격 설정">⚙️ 설정</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ⚙️ 환경 설정 모달/시트 (테마 · 글자 크기 · 좌우 간격 · 초기화) -->
+  <div id="settingsModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop" onclick="if(event.target===this) OxApp.closeSettingsModal()">
+    <div class="w-full max-w-md rounded-2xl border p-5 shadow-2xl space-y-4" style="background-color:var(--bg-sheet); border-color:var(--border-strong);">
+      <div class="flex items-center justify-between pb-2.5 border-b" style="border-color:var(--border-line);">
+        <h3 class="text-sm font-extrabold" style="color:var(--text-main);">⚙️ 화면 · 글자 · 좌우 간격 설정</h3>
+        <button onclick="OxApp.closeSettingsModal()" class="c-pill">✕ 닫기</button>
+      </div>
+
+      <div class="space-y-3.5 text-xs">
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-bold" style="color:var(--text-sub);">배경 테마</span>
+          <button id="btnThemeToggle" onclick="OxApp.toggleNightMode()" class="c-pill">🌙 다크 모드 전환</button>
+        </div>
+
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-bold" style="color:var(--text-sub);">문제 글자 크기</span>
+          <div class="flex items-center gap-1.5">
+            <button onclick="OxApp.changeFontSize(-1)" class="c-pill">가 -</button>
+            <span id="lblFontSize" class="font-extrabold px-2" style="color:var(--accent);">19px</span>
+            <button onclick="OxApp.changeFontSize(1)" class="c-pill">가 +</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-2">
+          <span class="font-bold" style="color:var(--text-sub);">좌우 간격(여백)</span>
+          <div class="flex items-center gap-1.5">
+            <button onclick="OxApp.adjustSidePad(-4)" class="c-pill">좁게</button>
+            <input id="inpSidePad" type="range" min="0" max="64" step="2" value="20" oninput="OxApp.setSidePad(this.value)" style="width:90px; accent-color:var(--accent);" />
+            <span id="lblSidePad" class="font-extrabold" style="color:var(--accent); min-width:34px; text-align:center;">20px</span>
+            <button onclick="OxApp.adjustSidePad(4)" class="c-pill">넓게</button>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 pt-2 border-t" style="border-color:var(--border-line);">
+          <span class="font-bold" style="color:var(--text-sub);">학습 옵션</span>
+          <div class="flex items-center gap-3">
+            <label class="inline-flex items-center gap-1 font-bold cursor-pointer" style="color:var(--text-sub);">
+              <input type="checkbox" id="chkHideExcluded" checked onchange="OxApp.toggleHideExcluded(this.checked)" class="rounded" />
+              <span>소거 문항 자동 제외</span>
+            </label>
+            <label class="inline-flex items-center gap-1 font-bold cursor-pointer" style="color:var(--text-sub);">
+              <input type="checkbox" id="chkAutoNext" onchange="OxApp.toggleAutoNext(this.checked)" class="rounded" />
+              <span>정답 시 자동 다음</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 pt-2 border-t" style="border-color:var(--border-line);">
+          <span class="font-bold" style="color:var(--text-sub);">학습 기록 초기화</span>
+          <button onclick="OxApp.confirmResetStats()" class="c-pill" style="color:var(--wrong-ink);">풀이·오답 기록 초기화</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       [STAGE 1] 단원 선택 ➔ 어떤 문제들을 풀지 선택 화면 (#selectView)
+       ========================================================================= -->
+  <section id="selectView" class="ox-wrap py-5">
+    <!-- 3과목 OX 웹앱 1클릭 스위처 -->
+    <div id="subjectOxSwitcher" class="mb-3 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+      <div class="flex items-center gap-1.5 text-xs font-extrabold" style="color:var(--text-sub);">
+        <span>🎯 3과목 OX 훈련장 바로 전환</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <a href="../소방학개론_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">🔥 소방학개론 OX (945제)</a>
+        <span class="c-pill active" style="cursor:default;">⚖️ 소방관계법규 OX (1,041제) · 현재</span>
+        <a href="../한국사_한능검2급_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">📜 한국사 사료·OX (1,050제)</a>
+      </div>
+    </div>
+    <!-- 상단 요약 배너 -->
+    <div class="mb-5 p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+      <div>
+        <div class="text-xs font-extrabold mb-0.5" style="color:var(--accent);">STEP 1 &rarr; STEP 2 맞춤 타격 로비</div>
+        <h1 class="text-lg sm:text-xl font-extrabold tracking-tight" style="color:var(--text-main);">
+          어느 단원의 어떤 문제를 풀어볼지 선택하세요
+        </h1>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 text-xs">
+        <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+          <span style="color:var(--text-sub);">전체 잔여</span>
+          <strong id="globalStatRemaining" class="ml-1 font-extrabold" style="color:var(--accent);">1,041</strong>
+        </div>
+        <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+          <span style="color:var(--text-sub);">누적 오답</span>
+          <strong id="globalStatWrong" class="ml-1 font-extrabold" style="color:var(--wrong-ink);">0</strong>
+        </div>
+        <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+          <span style="color:var(--text-sub);">소거 완료</span>
+          <strong id="globalStatExcluded" class="ml-1 font-extrabold" style="color:var(--correct-ink);">0</strong>
+        </div>
+        <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+          <span style="color:var(--text-sub);">정답률</span>
+          <strong id="globalStatAcc" class="ml-1 font-extrabold" style="color:var(--text-main);">0%</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- PC 2단 마스터-디테일 그리드 (좌: 1단계 단원 선택 / 우: 2단계 문제 조건 선택 및 해당 단원 문제 목록) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+
+      <!-- [좌측 5칸] 1단계: 풀어볼 단원 선택 -->
+      <div class="lg:col-span-5 p-4 rounded-2xl border space-y-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-extrabold" style="color:var(--text-main);">1단계 · 풀어볼 단원 선택</h2>
+          <span class="text-xs font-bold" style="color:var(--text-muted);">총 20개 단원</span>
+        </div>
+
+        <!-- 편별 탭 -->
+        <div class="flex flex-wrap items-center gap-1 pb-2 border-b" style="border-color:var(--border-line);">
+          <button onclick="OxApp.setLobbyPart('all')" id="lobby_part_all" class="c-pill active">전체 단원</button>
+          <button onclick="OxApp.setLobbyPart('01')" id="lobby_part_01" class="c-pill">1편 기본·조사</button>
+          <button onclick="OxApp.setLobbyPart('02')" id="lobby_part_02" class="c-pill">2편 예방</button>
+          <button onclick="OxApp.setLobbyPart('03')" id="lobby_part_03" class="c-pill">3편 시설·공사</button>
+          <button onclick="OxApp.setLobbyPart('04')" id="lobby_part_04" class="c-pill">4편 위험물</button>
+        </div>
+
+        <!-- 단원 카드 리스트 -->
+        <div id="unitCardList" class="space-y-2 max-h-[62vh] overflow-y-auto pr-1"></div>
+      </div>
+
+      <!-- [우측 7칸] 2단계: 선택한 단원 내에서 어떤 문제들을 풀지 선택 + 관련 문제 미리보기 -->
+      <div id="step2UnitPanel" class="lg:col-span-7 p-4 sm:p-5 rounded-2xl border space-y-4" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+        <!-- 선택한 단원 헤더 -->
+        <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b" style="border-color:var(--border-line);">
+          <div>
+            <span id="selectedUnitPartBadge" class="text-xs font-extrabold" style="color:var(--accent);">제1편 소방기본법 및 화재조사법</span>
+            <h2 id="selectedUnitTitle" class="text-base sm:text-lg font-extrabold mt-0.5" style="color:var(--text-main);">
+              제1장. 총칙, 소방기관의 설치 및 119종합상황실
+            </h2>
+          </div>
+          <a id="selectedUnitBookLink" href="01_01_총칙_및_소방기관과_종합상황실.html" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);">
+            📖 이 단원 기본서 읽기 &nearr;
+          </a>
+        </div>
+
+        <!-- 단원 내 문제 필터 선택 패널 -->
+        <div class="p-3.5 rounded-xl border space-y-3" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+          <div class="text-xs font-extrabold" style="color:var(--text-main);">
+            2단계 · 이 단원에서 어떤 문제들을 풀지 선택하세요
+          </div>
+
+          <!-- (A) 풀이 상태별 선택 -->
+          <div class="space-y-1.5">
+            <div class="text-[11px] font-bold" style="color:var(--text-muted);">풀이 상태 기준</div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button onclick="OxApp.applyQuickStatus('all')" id="flt_status_all" class="c-pill active">
+                <span>잔여 문항</span><strong id="statRemaining">0</strong>
+              </button>
+              <button onclick="OxApp.applyQuickStatus('unsolved')" id="flt_status_unsolved" class="c-pill">
+                <span>미풀이</span><strong id="statUnsolved">0</strong>
+              </button>
+              <button onclick="OxApp.applyQuickStatus('wrong')" id="flt_status_wrong" class="c-pill">
+                <span>오답 노트</span><strong id="statWrong" style="color:var(--wrong-ink);">0</strong>
+              </button>
+              <button onclick="OxApp.applyQuickStatus('starred')" id="flt_status_starred" class="c-pill">
+                <span>★ 별표</span><strong id="statStarred">0</strong>
+              </button>
+              <button onclick="OxApp.applyQuickStatus('excluded')" id="flt_status_excluded" class="c-pill">
+                <span>✓ 소거됨</span><strong id="statExcluded">0</strong>
+              </button>
+            </div>
+          </div>
+
+          <!-- (B) 출제 함정·난이도 기준 -->
+          <div class="space-y-1.5">
+            <div class="text-[11px] font-bold" style="color:var(--text-muted);">출제 포인트 · 함정 유형 기준 (중복 선택 가능)</div>
+            <div class="flex flex-wrap items-center gap-1.5">
+              <button onclick="OxApp.resetUnitSubFilters()" id="btnResetSubFlt" class="c-pill active">전체 유형</button>
+              <button onclick="OxApp.toggleQuickGradeS()" id="btnQuickS" class="c-pill">🔥 S급 최빈출</button>
+              <button onclick="OxApp.toggleQuickTrap('권한자·주체')" id="flt_trap_권한자·주체" class="c-pill">권한자·주체</button>
+              <button onclick="OxApp.toggleQuickTrap('위임법령')" id="flt_trap_위임법령" class="c-pill">위임법령</button>
+              <button onclick="OxApp.toggleQuickTrap('수치·기한')" id="flt_trap_수치·기한" class="c-pill">수치·기한</button>
+              <button onclick="OxApp.toggleQuickTrap('기속·재량·예외')" id="flt_trap_기속·재량·예외" class="c-pill">기속·재량</button>
+              <button onclick="OxApp.toggleQuickTrap('법령·정의')" id="flt_trap_법령·정의" class="c-pill">법령·정의</button>
+            </div>
+          </div>
+
+          <!-- (C) 문제 풀 범위 & 순서 섞기 & 키워드 검색 -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t" style="border-color:var(--border-line);">
+            <div class="flex flex-wrap items-center gap-1">
+              <button onclick="OxApp.setFilter('tier', 'essential')" id="flt_tier_essential" class="c-pill active">🔥 핵심 정예(30선·중복압축)</button>
+              <button onclick="OxApp.setFilter('tier', 'all')" id="flt_tier_all" class="c-pill">전체 풀(1,041제)</button>
+              <button onclick="OxApp.setFilter('tier', 'core')" id="flt_tier_core" class="c-pill">기출 코어</button>
+              <button onclick="OxApp.setFilter('tier', 'ext')" id="flt_tier_ext" class="c-pill">기출 확장</button>
+              <button onclick="OxApp.setFilter('tier', 'pred')" id="flt_tier_pred" class="c-pill">🎯 적중 예상(미기출)</button>
+              <button onclick="OxApp.toggleShuffleMode()" id="btnShuffleToggle" class="c-pill">🔀 랜덤 셔플</button>
+            </div>
+
+            <div class="flex items-center gap-1 flex-grow sm:flex-grow-0">
+              <input type="text" id="inpSearchKeyword" oninput="OxApp.setSearchKeyword(this.value)" placeholder="단원 내 키워드 검색" class="px-2.5 py-1 rounded-lg border text-xs w-full sm:w-44" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main);" />
+              <button onclick="OxApp.clearSearch()" class="c-pill">✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 문제 풀기 시작 CTA 버튼 바 -->
+        <div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl border" style="background-color:var(--accent-soft); border-color:var(--border-strong);">
+          <div>
+            <div class="text-xs font-bold" style="color:var(--text-sub);">현재 선택된 조건에 해당하는 문항</div>
+            <div class="text-base font-extrabold" style="color:var(--accent);">
+              총 <span id="selectedMatchCount">35</span>문항 준비됨
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button id="btnStartSolveMain" onclick="OxApp.startQuizSession(0)" class="px-5 py-2.5 rounded-xl font-extrabold text-sm shadow-sm transition cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
+              🎯 선택한 문제 풀기 시작 &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 선택한 단원의 관련 문제 목록 프리뷰 (원하는 문제를 직접 눌러서 시작 가능) -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-extrabold" style="color:var(--text-sub);">
+              📋 선택한 단원 · 조건의 관련 문제 목록 (문항을 클릭하면 해당 문제부터 시작합니다)
+            </h3>
+          </div>
+          <div id="unitQuestionPreviewList" class="space-y-2 max-h-[42vh] overflow-y-auto pr-1"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       [STAGE 2] 몰입형 문제 풀이 화면 (#solveView — 스크린샷 100% 반영 + Fire Killer 디자인 시스템)
+       ========================================================================= -->
+  <section id="solveView" class="hidden">
+    <div class="solve-stage-wrap">
+      <div class="solve-stage-inner">
+
+        <!-- 최상단 < THEME(단원명) 헤더 -->
+        <div class="fk-theme-topbar">
+          <button onclick="OxApp.returnToSelectView()" class="fk-theme-back-btn" title="단원·문제 선택 화면으로 돌아가기">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span id="solveSessionUnitBadge" class="truncate max-w-[270px] sm:max-w-md">THEME 01</span>
+          </button>
+          <button onclick="OxApp.toggleNightMode()" class="c-pill" title="라이트/야간 모드 전환">🌓 테마</button>
+        </div>
+
+        <!-- 중앙 영역: 카드 바로 위 '< 이전문제' + 메인 OX 카드(내부에 번호배지·저장·지문·O/X 박스 포함) -->
+        <div class="w-full my-auto">
+          <div id="solveActionArea" class="fk-prev-above-row">
+            <button id="btnPrevAbove" onclick="OxApp.prevCard()" class="fk-prev-link">
+              &lt; 이전문제
+            </button>
+            <button id="btnNextOrFinish" onclick="OxApp.nextOrFinishCard()" class="fk-prev-link">
+              다음문제 &gt;
+            </button>
+          </div>
+
+          <!-- 중앙 문제 카드 마운트 -->
+          <div id="singleCardMount"></div>
+        </div>
+
+        <!-- 최하단 중앙 카운터 (1 / N) -->
+        <div id="solveSessionCounter" class="fk-bottom-counter-bar">
+          <strong>1</strong> / 35
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4지선다 기출 원문 팝업 모달 -->
+  <div id="origQuestionModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-4 modal-backdrop" onclick="if(event.target===this) OxApp.closeOrigModal()">
+    <div class="w-full max-w-2xl max-h-[86vh] overflow-y-auto rounded-2xl border p-4 sm:p-5 shadow-2xl" style="background-color:var(--bg-sheet); border-color:var(--border-strong);">
+      <div class="flex items-center justify-between gap-2 pb-2 mb-2.5 border-b" style="border-color:var(--border-line);">
+        <div class="truncate">
+          <span class="text-xs font-extrabold px-2 py-0.5 rounded" style="background-color:var(--accent-soft); color:var(--accent);" id="modalOrigSource">기출 원문</span>
+          <span class="text-xs font-bold ml-1" style="color:var(--text-sub);" id="modalOrigTopic"></span>
+        </div>
+        <button onclick="OxApp.closeOrigModal()" class="c-pill">✕ 닫기</button>
+      </div>
+
+      <div id="modalOrigBody" class="space-y-2.5"></div>
+
+      <div class="mt-4 pt-2.5 border-t flex items-center justify-between" style="border-color:var(--border-line);">
+        <a id="modalTextbookLink" href="#" class="text-xs font-extrabold underline" style="color:var(--accent);">
+          📖 해당 단원 기본서 해당 줄로 이동 &nearr;
+        </a>
+        <button onclick="OxApp.closeOrigModal()" class="c-pill active">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 데이터 로드 -->
+  <script src="assets/js/fire-law-ox-db.js"></script>
+  <script>
+    const OxApp = {
+      db: null,
+      stage: 'select', // 'select' | 'solve'
+      lobbyPart: 'all', // 좌측 단원 목록 편 필터
+      isShuffle: false,
+      autoNext: false,
+      hideExcluded: true,
+      fontSize: 19,
+      sidePad: 20,
+      lastScrollY: 0,
+
+      filters: {
+        unit: '01_01', // 기본 선택 단원 ('all' 또는 '01_01' ~ '04_03')
+        tier: 'essential',
+        grade: 'all',
+        status: 'all',
+        trap: 'all',
+        search: ''
+      },
+
+      userRecords: {},
+      filteredList: [],
+      currentIndex: 0,
+      sessionAnswers: {},
+
+      init() {
+        if (!window.FIRE_LAW_OX_DB) {
+          alert('기출 OX 데이터베이스를 불러오지 못했습니다.');
+          return;
+        }
+        this.db = window.FIRE_LAW_OX_DB;
+        this.loadPreferences();
+        this.loadUserRecords();
+
+        const resumed = this.checkUrlAndSessionResume();
+        this.initAutoHideNav();
+        this.bindKeyboardShortcuts();
+
+        if (!resumed) {
+          this.applyFilters();
+          this.showSelectView();
+        }
+      },
+
+      checkUrlAndSessionResume() {
+        try {
+          const params = new URLSearchParams(window.location.search);
+          const resumeFlag = params.get('resume') === '1';
+
+          if (resumeFlag) {
+            const savedSess = sessionStorage.getItem('fk_ox_active_session');
+            if (savedSess) {
+              const parsed = JSON.parse(savedSess);
+              if (parsed && parsed.filters) {
+                this.filters = Object.assign(this.filters, parsed.filters);
+                this.isShuffle = !!parsed.isShuffle;
+                this.applyFilters();
+                if (typeof parsed.currentIndex === 'number' && parsed.currentIndex < this.filteredList.length) {
+                  this.currentIndex = parsed.currentIndex;
+                }
+                this.enterSolveView();
+                return true;
+              }
+            }
+          }
+
+          const unitParam = params.get('unit');
+          const sortParam = params.get('sort');
+
+          if (unitParam && this.db.units.some(u => u.unitId === unitParam)) {
+            this.filters.unit = unitParam;
+            this.lobbyPart = unitParam.slice(0, 2);
+            const unitObj = this.db.units.find(u => u.unitId === unitParam);
+            const backBtn = document.getElementById('navBackTextbook');
+            if (backBtn && unitObj) {
+              backBtn.href = unitObj.fileName;
+              backBtn.innerHTML = `&larr; 단원 본문`;
+              backBtn.title = `${unitObj.unitTitle} 본문으로 돌아가기`;
+            }
+          }
+          if (sortParam === 'shuffle') {
+            this.isShuffle = true;
+          }
+        } catch (e) {}
+        return false;
+      },
+
+      saveActiveSession() {
+        try {
+          sessionStorage.setItem('fk_ox_active_session', JSON.stringify({
+            filters: this.filters,
+            isShuffle: this.isShuffle,
+            currentIndex: this.currentIndex
+          }));
+        } catch (e) {}
+      },
+
+      loadPreferences() {
+        try {
+          const savedNight = localStorage.getItem('fk_night_mode') === '1' || localStorage.getItem('fk_theme_mode') === 'night';
+          if (savedNight) document.body.classList.add('mode-night');
+          this.updateThemeBtnLabel();
+
+          const savedSize = parseInt(localStorage.getItem('fk_ox_font_size') || '19', 10);
+          if (!isNaN(savedSize) && savedSize >= 15 && savedSize <= 25) {
+            this.fontSize = savedSize;
+          }
+          this.applyFontSize();
+
+          const defaultPad = window.innerWidth <= 640 ? 12 : 20;
+          const savedPad = parseInt(localStorage.getItem('fk_side_pad') || String(defaultPad), 10);
+          if (!isNaN(savedPad) && savedPad >= 0 && savedPad <= 64) {
+            this.sidePad = savedPad;
+          }
+          this.applySidePad();
+
+          const savedHideEx = localStorage.getItem('fk_ox_hide_excluded');
+          if (savedHideEx !== null) {
+            this.hideExcluded = savedHideEx === '1';
+            const chk = document.getElementById('chkHideExcluded');
+            if (chk) chk.checked = this.hideExcluded;
+          }
+
+          const savedAutoNext = localStorage.getItem('fk_ox_auto_next') === '1';
+          this.autoNext = savedAutoNext;
+          const chkAuto = document.getElementById('chkAutoNext');
+          if (chkAuto) chkAuto.checked = this.autoNext;
+        } catch (e) {}
+      },
+
+      loadUserRecords() {
+        try {
+          const raw = localStorage.getItem('fk_fire_law_ox_records_v1');
+          if (raw) this.userRecords = JSON.parse(raw) || {};
+        } catch (e) {
+          this.userRecords = {};
+        }
+      },
+
+      saveUserRecords() {
+        try {
+          localStorage.setItem('fk_fire_law_ox_records_v1', JSON.stringify(this.userRecords));
+        } catch (e) {}
+      },
+
+      getRecord(oxId) {
+        if (!this.userRecords[oxId]) {
+          this.userRecords[oxId] = {
+            solved: false,
+            lastCorrect: null,
+            wrongCount: 0,
+            starred: false,
+            excluded: false
+          };
+        }
+        return this.userRecords[oxId];
+      },
+
+      toggleNightMode() {
+        const isNight = document.body.classList.toggle('mode-night');
+        try {
+          localStorage.setItem('fk_night_mode', isNight ? '1' : '0');
+          localStorage.setItem('fk_theme_mode', isNight ? 'night' : 'paper');
+        } catch (e) {}
+        this.updateThemeBtnLabel();
+      },
+
+      updateThemeBtnLabel() {
+        const btn = document.getElementById('btnThemeToggle');
+        if (!btn) return;
+        const isNight = document.body.classList.contains('mode-night');
+        btn.textContent = isNight ? '☀️ 라이트 모드로 전환' : '🌙 다크 모드로 전환';
+      },
+
+      changeFontSize(delta) {
+        this.fontSize = Math.min(25, Math.max(15, this.fontSize + delta));
+        try { localStorage.setItem('fk_ox_font_size', String(this.fontSize)); } catch (e) {}
+        this.applyFontSize();
+      },
+
+      applyFontSize() {
+        document.documentElement.style.setProperty('--quiz-font-size', this.fontSize + 'px');
+        document.documentElement.style.setProperty('--expl-font-size', Math.max(13.5, this.fontSize - 3) + 'px');
+        const lbl = document.getElementById('lblFontSize');
+        if (lbl) lbl.textContent = this.fontSize + 'px';
+      },
+
+      adjustSidePad(delta) {
+        this.setSidePad(Math.min(64, Math.max(0, this.sidePad + delta)));
+      },
+
+      setSidePad(val) {
+        const num = parseInt(val, 10);
+        if (isNaN(num)) return;
+        this.sidePad = Math.min(64, Math.max(0, num));
+        try { localStorage.setItem('fk_side_pad', String(this.sidePad)); } catch (e) {}
+        this.applySidePad();
+      },
+
+      applySidePad() {
+        document.documentElement.style.setProperty('--side-pad', this.sidePad + 'px');
+        const lbl = document.getElementById('lblSidePad');
+        const inp = document.getElementById('inpSidePad');
+        if (lbl) lbl.textContent = this.sidePad + 'px';
+        if (inp) inp.value = String(this.sidePad);
+      },
+
+      toggleSettingsModal() {
+        const m = document.getElementById('settingsModal');
+        if (!m) return;
+        m.classList.toggle('hidden');
+        m.classList.toggle('flex');
+      },
+
+      closeSettingsModal() {
+        const m = document.getElementById('settingsModal');
+        if (!m) return;
+        m.classList.add('hidden');
+        m.classList.remove('flex');
+      },
+
+      initAutoHideNav() {
+        const navEl = document.getElementById('topStickyNav');
+        if (!navEl) return;
+        this.lastScrollY = window.scrollY || 0;
+
+        window.addEventListener('scroll', () => {
+          const curY = window.scrollY || 0;
+          const diff = curY - this.lastScrollY;
+          if (diff > 10 && curY > 48) {
+            navEl.classList.add('fk-nav-hidden');
+          } else if (diff < -8 || curY <= 20) {
+            navEl.classList.remove('fk-nav-hidden');
+          }
+          this.lastScrollY = curY;
+        }, { passive: true });
+
+        document.addEventListener('click', (e) => {
+          const target = e.target;
+          if (!target) return;
+          if (target.closest('a, button, input, select, textarea, label, #topStickyNav, #settingsModal, #origQuestionModal, .unit-card')) {
+            return;
+          }
+          const sel = window.getSelection ? window.getSelection().toString() : '';
+          if (sel && sel.length > 0) return;
+
+          if (navEl.classList.contains('fk-nav-hidden')) {
+            navEl.classList.remove('fk-nav-hidden');
+          } else if ((window.scrollY || 0) > 48) {
+            navEl.classList.add('fk-nav-hidden');
+          }
+        });
+      },
+
+      /* =====================================================================
+         [STAGE 1] 단원 선택 및 단원 내 문제 필터링 로직
+         ===================================================================== */
+      showSelectView() {
+        this.stage = 'select';
+        document.getElementById('selectView').classList.remove('hidden');
+        document.getElementById('solveView').classList.add('hidden');
+        this.applyFilters();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      returnToSelectView() {
+        this.showSelectView();
+      },
+
+      setLobbyPart(partId) {
+        this.lobbyPart = partId;
+        ['all', '01', '02', '03', '04'].forEach(p => {
+          const btn = document.getElementById(`lobby_part_${p}`);
+          if (btn) btn.classList.toggle('active', p === partId);
+        });
+        this.renderUnitCardList();
+      },
+
+      selectUnit(unitId) {
+        this.filters.unit = unitId;
+        this.currentIndex = 0;
+        this.applyFilters();
+        if (window.innerWidth < 1024) {
+          const step2El = document.getElementById('step2UnitPanel');
+          if (step2El) step2El.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      },
+
+      renderUnitCardList() {
+        const mount = document.getElementById('unitCardList');
+        if (!mount) return;
+
+        // 1. 전 단원 통합 카드
+        let totalAll = this.db.oxList.length;
+        let remAll = 0;
+        let wrongAll = 0;
+        this.db.oxList.forEach(item => {
+          const r = this.userRecords[item.id];
+          if (!r || !r.excluded) remAll++;
+          if (r && r.solved && r.lastCorrect === false && !r.excluded) wrongAll++;
+        });
+
+        const cardsHtml = [];
+        if (this.lobbyPart === 'all') {
+          const isAllActive = this.filters.unit === 'all';
+          cardsHtml.push(`
+            <div onclick="OxApp.selectUnit('all')" class="unit-card ${isAllActive ? 'active' : ''}">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-extrabold" style="color:var(--accent);">전 단원 통합 모의 타격</span>
+                <span class="text-[11px] font-bold" style="color:var(--text-muted);">총 ${totalAll}문항</span>
+              </div>
+              <div class="text-sm font-extrabold mt-0.5" style="color:var(--text-main);">
+                소방관계법규 4대 분법 전 범위 (20개 단원)
+              </div>
+              <div class="flex items-center gap-3 mt-2 text-[11px] font-bold">
+                <span style="color:var(--text-sub);">잔여 <strong style="color:var(--accent);">${remAll}</strong></span>
+                <span style="color:var(--text-sub);">오답 <strong style="color:var(--wrong-ink);">${wrongAll}</strong></span>
+              </div>
+            </div>
+          `);
+        }
+
+        // 2. 개별 단원 카드
+        this.db.units.forEach(u => {
+          if (this.lobbyPart !== 'all' && u.partId !== this.lobbyPart) return;
+          const unitItems = this.db.oxList.filter(x => x.unitId === u.unitId);
+          const totalU = unitItems.length;
+          let remU = 0;
+          let wrongU = 0;
+          let solvedU = 0;
+          unitItems.forEach(item => {
+            const r = this.userRecords[item.id];
+            if (!r || !r.excluded) remU++;
+            if (r && r.solved) solvedU++;
+            if (r && r.solved && r.lastCorrect === false && !r.excluded) wrongU++;
+          });
+
+          const isActive = this.filters.unit === u.unitId;
+          cardsHtml.push(`
+            <div onclick="OxApp.selectUnit('${u.unitId}')" class="unit-card ${isActive ? 'active' : ''}">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[11px] font-extrabold" style="color:var(--accent);">${u.unitId.replace('_', '편 ')}장</span>
+                <span class="text-[11px] font-bold" style="color:var(--text-muted);">총 ${totalU}문항</span>
+              </div>
+              <div class="text-sm font-extrabold mt-0.5 leading-snug" style="color:var(--text-main);">
+                ${this.escapeHtml(u.shortTitle)}
+              </div>
+              <div class="flex items-center justify-between mt-2 text-[11px] font-bold">
+                <div class="flex items-center gap-2.5">
+                  <span style="color:var(--text-sub);">잔여 <strong style="color:var(--accent);">${remU}</strong></span>
+                  <span style="color:var(--text-sub);">풀이 <strong>${solvedU}</strong></span>
+                  ${wrongU > 0 ? `<span style="color:var(--wrong-ink);">오답 <strong>${wrongU}</strong></span>` : ''}
+                </div>
+                <span style="color:var(--accent);">선택 &rarr;</span>
+              </div>
+            </div>
+          `);
+        });
+
+        mount.innerHTML = cardsHtml.join('');
+      },
+
+      renderSelectedUnitDetail() {
+        const partBadge = document.getElementById('selectedUnitPartBadge');
+        const titleEl = document.getElementById('selectedUnitTitle');
+        const bookLink = document.getElementById('selectedUnitBookLink');
+        const matchCountEl = document.getElementById('selectedMatchCount');
+        const startBtn = document.getElementById('btnStartSolveMain');
+
+        if (this.filters.unit === 'all') {
+          if (partBadge) partBadge.textContent = '소방관계법규 전 범위 통합';
+          if (titleEl) titleEl.textContent = '전 단원 통합 (제1편부터 제4편까지 전체)';
+          if (bookLink) {
+            bookLink.href = 'index.html';
+            bookLink.innerHTML = '📖 기본서 전체 목차 열기 &nearr;';
+          }
+        } else {
+          const u = this.db.units.find(x => x.unitId === this.filters.unit);
+          if (u) {
+            if (partBadge) partBadge.textContent = u.partTitle;
+            if (titleEl) titleEl.textContent = u.unitTitle;
+            if (bookLink) {
+              bookLink.href = u.fileName;
+              bookLink.innerHTML = '📖 이 단원 기본서 읽기 &nearr;';
+            }
+          }
+        }
+
+        const count = this.filteredList.length;
+        if (matchCountEl) matchCountEl.textContent = count;
+        if (startBtn) {
+          startBtn.disabled = count === 0;
+          startBtn.style.opacity = count === 0 ? '0.45' : '1';
+          startBtn.innerHTML = count > 0
+            ? `🎯 선택한 문제 풀기 시작 (${count}문항) &rarr;`
+            : `조건에 맞는 문항이 없습니다`;
+        }
+
+        // 관련 문제 목록 프리뷰 렌더링
+        const previewMount = document.getElementById('unitQuestionPreviewList');
+        if (!previewMount) return;
+
+        if (count === 0) {
+          previewMount.innerHTML = `
+            <div class="p-6 rounded-xl border text-center space-y-2" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+              <div class="text-sm font-extrabold" style="color:var(--text-main);">해당 조건에 맞는 문항이 없습니다.</div>
+              <button onclick="OxApp.resetUnitSubFilters(); OxApp.applyQuickStatus('all');" class="c-pill active">이 단원 전체 문항 보기</button>
+            </div>
+          `;
+          return;
+        }
+
+        previewMount.innerHTML = this.filteredList.map((item, idx) => {
+          const rec = this.getRecord(item.id);
+          const statusBadge = rec.excluded
+            ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--correct-bg); color:var(--correct-ink);">✓ 소거</span>`
+            : rec.solved
+              ? (rec.lastCorrect
+                  ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--correct-bg); color:var(--correct-ink);">정답</span>`
+                  : `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--wrong-bg); color:var(--wrong-ink);">오답</span>`)
+              : `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold" style="background-color:var(--bg-subtle); color:var(--text-muted);">미풀이</span>`;
+
+          return `
+            <div onclick="OxApp.startQuizSession(${idx})" class="p-3 rounded-xl border transition cursor-pointer hover:shadow-sm" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-extrabold" style="color:var(--accent);">#${idx + 1}</span>
+                  ${item.tier === 'pred' ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent); color:#fff;">🎯 적중예상</span>` : ''}
+                  ${item.grade === 'S' ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent-soft); color:var(--accent);">S급</span>` : ''}
+                  ${statusBadge}
+                  <span class="text-[11px] font-bold" style="color:var(--text-muted);">${(item.trapTags || []).map(t => '#' + t).join(' ')}</span>
+                </div>
+                <span class="text-[11px] font-extrabold shrink-0" style="color:var(--accent);">여기서부터 풀기 &rarr;</span>
+              </div>
+              <div class="text-xs sm:text-sm line-clamp-2 leading-relaxed" style="color:var(--text-main); font-family:var(--font-body);">
+                ${this.escapeHtml(item.text)}
+              </div>
+            </div>
+          `;
+        }).join('');
+      },
+
+      applyQuickStatus(statusVal) {
+        this.filters.status = statusVal;
+        ['all', 'unsolved', 'wrong', 'starred', 'excluded'].forEach(st => {
+          const btn = document.getElementById(`flt_status_${st}`);
+          if (btn) btn.classList.toggle('active', st === statusVal);
+        });
+        this.applyFilters();
+      },
+
+      resetUnitSubFilters() {
+        this.filters.grade = 'all';
+        this.filters.trap = 'all';
+        const btnS = document.getElementById('btnQuickS');
+        if (btnS) btnS.classList.remove('active');
+        ['권한자·주체', '위임법령', '수치·기한', '기속·재량·예외'].forEach(tp => {
+          const b = document.getElementById(`flt_trap_${tp}`);
+          if (b) b.classList.remove('active');
+        });
+        const resetBtn = document.getElementById('btnResetSubFlt');
+        if (resetBtn) resetBtn.classList.add('active');
+        this.applyFilters();
+      },
+
+      updateSubFilterResetPill() {
+        const resetBtn = document.getElementById('btnResetSubFlt');
+        if (!resetBtn) return;
+        const isDefault = this.filters.grade === 'all' && this.filters.trap === 'all';
+        resetBtn.classList.toggle('active', isDefault);
+      },
+
+      toggleQuickGradeS() {
+        this.filters.grade = this.filters.grade === 'S' ? 'all' : 'S';
+        const btn = document.getElementById('btnQuickS');
+        if (btn) btn.classList.toggle('active', this.filters.grade === 'S');
+        this.updateSubFilterResetPill();
+        this.applyFilters();
+      },
+
+      toggleQuickTrap(trapName) {
+        this.filters.trap = this.filters.trap === trapName ? 'all' : trapName;
+        ['권한자·주체', '위임법령', '수치·기한', '기속·재량·예외'].forEach(tp => {
+          const btn = document.getElementById(`flt_trap_${tp}`);
+          if (btn) btn.classList.toggle('active', this.filters.trap === tp);
+        });
+        this.updateSubFilterResetPill();
+        this.applyFilters();
+      },
+
+      setFilter(key, val) {
+        this.filters[key] = val;
+        if (key === 'tier') {
+          ['essential', 'all', 'core', 'ext', 'pred'].forEach(v => {
+            const btn = document.getElementById(`flt_tier_${v}`);
+            if (btn) btn.classList.toggle('active', v === val);
+          });
+        }
+        this.applyFilters();
+      },
+
+      toggleShuffleMode() {
+        this.isShuffle = !this.isShuffle;
+        const btn = document.getElementById('btnShuffleToggle');
+        if (btn) btn.classList.toggle('active', this.isShuffle);
+        this.applyFilters();
+      },
+
+      setSearchKeyword(kw) {
+        this.filters.search = (kw || '').trim();
+        this.applyFilters();
+      },
+
+      clearSearch() {
+        const inp = document.getElementById('inpSearchKeyword');
+        if (inp) inp.value = '';
+        this.filters.search = '';
+        this.applyFilters();
+      },
+
+      toggleHideExcluded(checked) {
+        this.hideExcluded = checked;
+        try { localStorage.setItem('fk_ox_hide_excluded', checked ? '1' : '0'); } catch (e) {}
+        this.applyFilters();
+      },
+
+      toggleAutoNext(checked) {
+        this.autoNext = checked;
+        try { localStorage.setItem('fk_ox_auto_next', checked ? '1' : '0'); } catch (e) {}
+      },
+
+      applyFilters() {
+        const f = this.filters;
+        const kw = f.search.toLowerCase();
+
+        let list = this.db.oxList.filter(item => {
+          const rec = this.getRecord(item.id);
+          if (f.unit !== 'all' && item.unitId !== f.unit) return false;
+          if (f.tier === 'essential') {
+            if (item.isEssential === false) return false;
+          } else if (f.tier !== 'all' && item.tier !== f.tier) {
+            return false;
+          }
+          if (f.grade === 'S' && item.grade !== 'S') return false;
+          if (f.trap !== 'all' && (!item.trapTags || !item.trapTags.includes(f.trap))) return false;
+
+          if (f.status === 'excluded') {
+            if (!rec.excluded) return false;
+          } else {
+            if (this.hideExcluded && rec.excluded) return false;
+            if (f.status === 'unsolved' && rec.solved) return false;
+            if (f.status === 'wrong' && (!rec.solved || rec.lastCorrect !== false)) return false;
+            if (f.status === 'starred' && !rec.starred) return false;
+          }
+
+          if (kw) {
+            const hay = `${item.text} ${item.explanation} ${item.source}`.toLowerCase();
+            if (!hay.includes(kw)) return false;
+          }
+          return true;
+        });
+
+        if (this.isShuffle) {
+          list = [...list];
+          for (let i = list.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [list[i], list[j]] = [list[j], list[i]];
+          }
+        }
+
+        this.filteredList = list;
+        this.updateStatsDashboard();
+        this.renderUnitCardList();
+        this.renderSelectedUnitDetail();
+
+        if (this.stage === 'solve') {
+          if (this.currentIndex >= this.filteredList.length) {
+            this.currentIndex = Math.max(0, this.filteredList.length - 1);
+          }
+          this.renderCurrentSolveCard();
+        }
+      },
+
+      updateStatsDashboard() {
+        // 1. 전역 통계
+        let gRem = 0, gWrong = 0, gEx = 0, gSolved = 0, gCorr = 0;
+        this.db.oxList.forEach(item => {
+          const r = this.userRecords[item.id];
+          if (r && r.excluded) gEx++;
+          else gRem++;
+          if (r && r.solved) {
+            gSolved++;
+            if (r.lastCorrect) gCorr++;
+            else if (!r.excluded) gWrong++;
+          }
+        });
+        const gAcc = gSolved > 0 ? Math.round((gCorr / gSolved) * 100) : 0;
+        const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setTxt('globalStatRemaining', gRem);
+        setTxt('globalStatWrong', gWrong);
+        setTxt('globalStatExcluded', gEx);
+        setTxt('globalStatAcc', `${gAcc}%`);
+        setTxt('navGlobalProgress', `전체 잔여 ${gRem}문항`);
+
+        // 2. 현재 선택된 단원 기준 통계
+        const unitPool = this.filters.unit === 'all'
+          ? this.db.oxList
+          : this.db.oxList.filter(x => x.unitId === this.filters.unit);
+
+        let uRem = 0, uUnsolved = 0, uWrong = 0, uStar = 0, uEx = 0;
+        unitPool.forEach(item => {
+          const r = this.userRecords[item.id];
+          if (r && r.excluded) {
+            uEx++;
+          } else {
+            uRem++;
+            if (!r || !r.solved) uUnsolved++;
+          }
+          if (r && r.solved && r.lastCorrect === false && !r.excluded) uWrong++;
+          if (r && r.starred) uStar++;
+        });
+
+        setTxt('statRemaining', uRem);
+        setTxt('statUnsolved', uUnsolved);
+        setTxt('statWrong', uWrong);
+        setTxt('statStarred', uStar);
+        setTxt('statExcluded', uEx);
+      },
+
+      /* =====================================================================
+         [STAGE 2] 몰입형 문제 풀이 화면 (#solveView)
+         ===================================================================== */
+      startQuizSession(startIndex = 0) {
+        if (this.filteredList.length === 0) return;
+        this.currentIndex = Math.max(0, Math.min(startIndex, this.filteredList.length - 1));
+        this.sessionAnswers = {};
+        this.enterSolveView();
+      },
+
+      enterSolveView() {
+        this.stage = 'solve';
+        document.getElementById('selectView').classList.add('hidden');
+        document.getElementById('solveView').classList.remove('hidden');
+        this.saveActiveSession();
+        this.renderCurrentSolveCard();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      buildDeepLinkUrl(item) {
+        const unitObj = this.db.units.find(u => u.unitId === item.unitId);
+        const fileName = unitObj ? unitObj.fileName : 'index.html';
+        const paraIdx = typeof item.paraIdx === 'number' ? item.paraIdx : 0;
+        const hlKey = encodeURIComponent(item.hlKey || '');
+        return `${fileName}?para=${paraIdx}&hl=${hlKey}&from=ox&oxid=${encodeURIComponent(item.id)}`;
+      },
+
+      renderCurrentSolveCard() {
+        const mount = document.getElementById('singleCardMount');
+        const actionArea = document.getElementById('solveActionArea');
+        const unitBadge = document.getElementById('solveSessionUnitBadge');
+        const counterEl = document.getElementById('solveSessionCounter');
+        const prevBtn = document.getElementById('btnPrevAbove');
+        const nextBtn = document.getElementById('btnNextOrFinish');
+        if (!mount) return;
+
+        if (this.filteredList.length === 0) {
+          if (actionArea) actionArea.classList.add('hidden');
+          mount.innerHTML = `
+            <div class="p-8 rounded-2xl border text-center space-y-4 shadow-sm" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
+              <div class="text-3xl">🎉</div>
+              <h3 class="text-lg font-extrabold" style="color:var(--text-main);">선택한 조건의 문항을 모두 완료했습니다!</h3>
+              <p class="text-xs" style="color:var(--text-sub);">단원·문제 선택 화면으로 돌아가 다른 단원이나 오답 노트를 선택해 보세요.</p>
+              <button onclick="OxApp.returnToSelectView()" class="px-5 py-2.5 rounded-xl font-extrabold text-sm cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
+                &larr; 단원 · 문제 선택 화면으로 돌아가기
+              </button>
+            </div>
+          `;
+          return;
+        }
+
+        if (actionArea) actionArea.classList.remove('hidden');
+
+        const item = this.filteredList[this.currentIndex];
+        const rec = this.getRecord(item.id);
+        const unitObj = this.db.units.find(u => u.unitId === item.unitId);
+        const answered = this.sessionAnswers[item.id];
+        const isLast = this.currentIndex === this.filteredList.length - 1;
+        const numStr = String(this.currentIndex + 1).padStart(2, '0');
+        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^[A-Z]+_/, '기');
+
+        if (unitBadge) {
+          const uIdx = unitObj ? (this.db.units.indexOf(unitObj) + 1) : 1;
+          const themeCode = `THEME${String(uIdx).padStart(2, '0')}`;
+          unitBadge.textContent = unitObj ? `${themeCode} · ${unitObj.shortTitle || unitObj.unitTitle}` : themeCode;
+        }
+        if (counterEl) {
+          counterEl.innerHTML = `<strong>${this.currentIndex + 1}</strong> / ${this.filteredList.length}`;
+        }
+        if (prevBtn) {
+          prevBtn.disabled = this.currentIndex === 0;
+        }
+        if (nextBtn) {
+          nextBtn.innerHTML = isLast ? `풀이완료 &gt;` : `다음문제 &gt;`;
+          nextBtn.style.color = isLast ? 'var(--accent)' : 'var(--text-muted)';
+        }
+
+        // 상단 진행률 바
+        const pct = Math.round(((this.currentIndex + 1) / this.filteredList.length) * 100);
+        const bar = document.getElementById('topProgressBar');
+        if (bar) bar.style.width = `${pct}%`;
+
+        // 카드 내부 O/X 버튼 상태 클래스 계산
+        let oBtnCls = 'fk-ox-box-btn';
+        let xBtnCls = 'fk-ox-box-btn';
+        if (answered !== undefined) {
+          const isUserRight = answered.userChoice === item.isCorrect;
+          if (answered.userChoice === true) {
+            oBtnCls += isUserRight ? ' selected-correct' : ' selected-wrong';
+            xBtnCls += ' dimmed-other';
+          } else {
+            xBtnCls += isUserRight ? ' selected-correct' : ' selected-wrong';
+            oBtnCls += ' dimmed-other';
+          }
+        }
+
+        const deepLinkUrl = this.buildDeepLinkUrl(item);
+
+        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역
+        let feedbackHtml = '';
+        if (answered !== undefined) {
+          const isUserRight = answered.userChoice === item.isCorrect;
+          const statusTitle = isUserRight
+            ? `✓ 정답입니다! (정답: ${item.isCorrect ? 'O' : 'X'})`
+            : `✕ 오답입니다! (정답: ${item.isCorrect ? 'O' : 'X'})`;
+
+          feedbackHtml = `
+            <div class="mt-4 pt-3.5 border-t rounded-xl p-3.5" style="background-color:var(--bg-subtle); border-color:var(--border-strong); border-left:4px solid ${isUserRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'};">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="px-2.5 py-1 rounded-md text-xs font-extrabold" style="background-color:${isUserRight ? 'var(--correct-bg)' : 'var(--wrong-bg)'}; color:${isUserRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'}; border:1px solid ${isUserRight ? 'var(--correct-border)' : 'var(--wrong-border)'};">
+                  ${statusTitle}
+                </span>
+
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <a href="${deepLinkUrl}" onclick="OxApp.saveActiveSession()" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition" style="background-color:var(--accent); color:#ffffff; text-decoration:none;">
+                    📖 기본서 설명 파트 보기 &nearr;
+                  </a>
+                  ${item.origQId ? `
+                    <button onclick="OxApp.openOrigModal('${item.origQId}', '${item.id}')" class="c-pill">
+                      📄 기출 원문
+                    </button>
+                  ` : ''}
+                  <button onclick="OxApp.toggleExclude('${item.id}')" class="c-pill ${rec.excluded ? 'active' : ''}">
+                    ${rec.excluded ? '✓ 소거됨' : '✓ 소거'}
+                  </button>
+                </div>
+              </div>
+
+              <div class="ox-expl">
+                ${this.formatExplanation(item.explanation)}
+              </div>
+
+              <div class="mt-3 pt-2.5 border-t flex items-center justify-between gap-2" style="border-color:var(--border-line);">
+                <span class="text-[11px] font-bold" style="color:var(--text-muted);">${this.escapeHtml(item.source || '')}</span>
+                <button onclick="OxApp.nextOrFinishCard()" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
+                  ${isLast ? '풀이 완료 · 목록으로 &rarr;' : '다음 문제 &rarr;'}
+                </button>
+              </div>
+            </div>
+          `;
+        }
+
+        mount.innerHTML = `
+          <article class="fk-ox-card">
+            <!-- 카드 상단: 좌측 (🅒 03 + 기006) / 우측 (+ 저장) -->
+            <div class="fk-card-top-row">
+              <div class="fk-num-group">
+                <div class="fk-num-badge-line">
+                  <span class="fk-c-icon">C</span>
+                  <span class="fk-num-digits">${numStr}</span>
+                </div>
+                <span class="fk-sub-code">${this.escapeHtml(subCode)}${item.source ? ' · ' + this.escapeHtml(item.source) : ''}</span>
+              </div>
+
+              <button onclick="OxApp.toggleStar('${item.id}')" class="fk-save-btn ${rec.starred ? 'saved' : ''}" title="중요 문제 저장 (단축키 S)">
+                ${rec.starred ? '✓ 저장됨' : '+ 저장'}
+              </button>
+            </div>
+
+            <!-- 카드 중앙 지문 -->
+            <div class="fk-statement-area">
+              <div class="ox-statement">
+                ${this.escapeHtml(item.text)}
+              </div>
+            </div>
+
+            <!-- 카드 내부 하단 2열 대형 O / X 박스 -->
+            <div class="fk-inside-ox-grid">
+              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O 옳다">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
+              </button>
+              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X 틀리다">
+                <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
+              </button>
+            </div>
+
+            ${feedbackHtml}
+          </article>
+        `;
+      },
+
+      answerCurrentCard(userChoice) {
+        if (this.filteredList.length === 0) return;
+        const item = this.filteredList[this.currentIndex];
+        const rec = this.getRecord(item.id);
+        const isRight = userChoice === item.isCorrect;
+
+        rec.solved = true;
+        rec.lastCorrect = isRight;
+        if (!isRight) rec.wrongCount = (rec.wrongCount || 0) + 1;
+
+        this.sessionAnswers[item.id] = { userChoice };
+        this.saveUserRecords();
+        this.saveActiveSession();
+        this.updateStatsDashboard();
+        this.renderCurrentSolveCard();
+
+        if (this.autoNext && isRight) {
+          setTimeout(() => {
+            this.nextOrFinishCard();
+          }, 550);
+        }
+      },
+
+      prevCard() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.saveActiveSession();
+          this.renderCurrentSolveCard();
+        }
+      },
+
+      nextOrFinishCard() {
+        if (this.currentIndex < this.filteredList.length - 1) {
+          this.currentIndex++;
+          this.saveActiveSession();
+          this.renderCurrentSolveCard();
+        } else {
+          // 마지막 문제 이후에는 다시 단원·문제 선택 화면으로 복귀
+          this.returnToSelectView();
+        }
+      },
+
+      toggleStar(oxId) {
+        const rec = this.getRecord(oxId);
+        rec.starred = !rec.starred;
+        this.saveUserRecords();
+        this.updateStatsDashboard();
+        if (this.stage === 'solve') this.renderCurrentSolveCard();
+      },
+
+      toggleExclude(oxId) {
+        const rec = this.getRecord(oxId);
+        rec.excluded = !rec.excluded;
+        this.saveUserRecords();
+        this.updateStatsDashboard();
+        if (this.stage === 'solve') {
+          if (this.hideExcluded && rec.excluded) {
+            this.filteredList.splice(this.currentIndex, 1);
+            if (this.currentIndex >= this.filteredList.length) {
+              this.currentIndex = Math.max(0, this.filteredList.length - 1);
+            }
+          }
+          this.renderCurrentSolveCard();
+        }
+      },
+
+      openOrigModal(origQId, oxId) {
+        const oq = this.db.origMap[origQId];
+        if (!oq) return;
+
+        const modal = document.getElementById('origQuestionModal');
+        const srcEl = document.getElementById('modalOrigSource');
+        const topEl = document.getElementById('modalOrigTopic');
+        const bodyEl = document.getElementById('modalOrigBody');
+        const linkEl = document.getElementById('modalTextbookLink');
+
+        srcEl.textContent = oq.source || '기출 원문';
+        topEl.textContent = oq.topic || '';
+
+        const oxItem = oxId ? this.db.oxList.find(x => x.id === oxId) : null;
+        if (oxItem) {
+          linkEl.href = this.buildDeepLinkUrl(oxItem);
+          linkEl.onclick = () => this.saveActiveSession();
+        } else {
+          linkEl.href = oq.fileName || '#';
+        }
+
+        const circles = ['①', '②', '③', '④', '⑤'];
+        const stemBoxHtml = oq.stem_box ? `
+          <div class="p-2.5 rounded-lg border text-xs leading-relaxed whitespace-pre-line" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main);">
+            ${this.escapeHtml(oq.stem_box)}
+          </div>
+        ` : '';
+
+        const choicesHtml = (oq.choices || []).map((ch, idx) => {
+          const isAns = ((idx + 1) === oq.ans) || (idx === oq.answer);
+          const ce = (oq.c_expls && oq.c_expls[idx]) ? oq.c_expls[idx] : '';
+          return `
+            <div class="p-2.5 rounded-xl border transition" style="background-color:${isAns ? 'var(--accent-soft)' : 'var(--bg-subtle)'}; border-color:${isAns ? 'var(--accent)' : 'var(--border-line)'};">
+              <div class="text-xs sm:text-sm font-semibold leading-relaxed" style="color:var(--text-main);">
+                <span class="font-extrabold mr-1" style="color:${isAns ? 'var(--accent)' : 'var(--text-sub)'};">${circles[idx] || (idx + 1)}</span>
+                ${this.escapeHtml(ch)}
+                ${isAns ? `<span class="ml-1.5 px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent); color:#fff;">정답</span>` : ''}
+              </div>
+              ${ce ? `
+                <div class="mt-1.5 pt-1.5 border-t text-xs leading-relaxed" style="border-color:var(--border-line); color:var(--text-sub);">
+                  ${this.formatExplanation(ce)}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }).join('');
+
+        bodyEl.innerHTML = `
+          <div class="text-sm sm:text-base font-extrabold leading-snug" style="color:var(--text-main);">
+            ${this.escapeHtml(oq.stem || '')}
+          </div>
+          ${stemBoxHtml}
+          <div class="space-y-1.5 pt-1">
+            ${choicesHtml}
+          </div>
+        `;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      },
+
+      closeOrigModal() {
+        const modal = document.getElementById('origQuestionModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      },
+
+      confirmResetStats() {
+        if (!confirm('모든 풀이 기록, 오답 노트, 별표, 소거 내역을 초기화하시겠습니까?')) return;
+        this.userRecords = {};
+        this.sessionAnswers = {};
+        this.saveUserRecords();
+        this.applyFilters();
+        this.closeSettingsModal();
+      },
+
+      bindKeyboardShortcuts() {
+        window.addEventListener('keydown', (e) => {
+          if (e.target && ['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+          const modalOpen = !document.getElementById('origQuestionModal').classList.contains('hidden');
+          const settingsOpen = !document.getElementById('settingsModal').classList.contains('hidden');
+
+          if (e.key === 'Escape') {
+            if (modalOpen) { this.closeOrigModal(); return; }
+            if (settingsOpen) { this.closeSettingsModal(); return; }
+            if (this.stage === 'solve') { this.returnToSelectView(); return; }
+          }
+          if (modalOpen || settingsOpen || this.stage !== 'solve') return;
+
+          const k = e.key.toLowerCase();
+          if (k === '1' || k === 'o') {
+            e.preventDefault();
+            this.answerCurrentCard(true);
+          } else if (k === '2' || k === 'x') {
+            e.preventDefault();
+            this.answerCurrentCard(false);
+          } else if (e.key === ' ' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            this.nextOrFinishCard();
+          } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            this.prevCard();
+          } else if (k === 's') {
+            e.preventDefault();
+            const cur = this.filteredList[this.currentIndex];
+            if (cur) this.toggleStar(cur.id);
+          } else if (k === 'e') {
+            e.preventDefault();
+            const cur = this.filteredList[this.currentIndex];
+            if (cur) this.toggleExclude(cur.id);
+          } else if (k === 'q') {
+            e.preventDefault();
+            const cur = this.filteredList[this.currentIndex];
+            if (cur && cur.origQId) this.openOrigModal(cur.origQId, cur.id);
+          } else if (k === 'b') {
+            e.preventDefault();
+            const cur = this.filteredList[this.currentIndex];
+            if (cur) {
+              this.saveActiveSession();
+              window.location.href = this.buildDeepLinkUrl(cur);
+            }
+          }
+        });
+
+        // 모바일 터치 좌우 스와이프(Swipe) 제스처 바인딩
+        let sx = 0, sy = 0;
+        window.addEventListener('touchstart', (e) => {
+          if (this.stage !== 'solve' || !e.touches || !e.touches[0]) return;
+          sx = e.touches[0].clientX;
+          sy = e.touches[0].clientY;
+        }, { passive: true });
+        window.addEventListener('touchend', (e) => {
+          if (this.stage !== 'solve' || !e.changedTouches || !e.changedTouches[0]) return;
+          const dx = e.changedTouches[0].clientX - sx;
+          const dy = e.changedTouches[0].clientY - sy;
+          if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+            if (dx < 0) this.nextOrFinishCard();
+            else this.prevCard();
+          }
+        }, { passive: true });
+      },
+
+      escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      },
+
+      formatExplanation(str) {
+        let safe = this.escapeHtml(str);
+        safe = safe.replace(/'([^']+)'/g, '<span class="trap-hl">\'$1\'</span>');
+        safe = safe.replace(/(｢[^｣]+｣(?:\s*시행령|\s*시행규칙)?(?:\s*제\d+조(?:의\d+)?(?:\s*제\d+항)?(?:\s*제\d+호)?)?)/g, '<strong>$1</strong>');
+        return safe;
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => OxApp.init());
+  </script>
+</body>
+</html>

@@ -119,50 +119,254 @@
       background-color: var(--accent-soft);
     }
 
-    /* 문제 풀이 스테이지 (화면 정중앙 배치) */
+    /* 문제 풀이 스테이지 (스크린샷 구조 100% 반영 + Fire Killer 디자인 시스템) */
     .solve-stage-wrap {
-      min-height: calc(100vh - 64px);
+      min-height: calc(100vh - 56px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 20px var(--side-pad) 40px;
+      padding: 14px var(--side-pad) 24px;
       box-sizing: border-box;
     }
     .solve-stage-inner {
       width: 100%;
-      max-width: 780px;
+      max-width: 480px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
     }
 
-    /* O / X 타격 버튼 (문제 카드 바로 아래 배치) */
-    .ox-hit-btn {
-      transition: all 0.14s cubic-bezier(0.16, 1, 0.3, 1);
-      user-select: none;
+    /* 상단 < THEME(단원명) 헤더 바 */
+    .fk-theme-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 2px 14px;
+      width: 100%;
+    }
+    .fk-theme-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      padding: 4px 0;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       cursor: pointer;
     }
-    .ox-hit-btn:active {
-      transform: scale(0.97);
+    .fk-theme-back-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--text-main);
+      stroke-width: 2.3;
+      fill: none;
     }
-    .ox-hit-o {
-      background-color: var(--correct-bg);
-      border: 2px solid var(--correct-border);
-      color: var(--correct-ink);
+
+    /* 카드 바로 위 좌측 '< 이전문제' & 우측 '다음문제 >' */
+    .fk-prev-above-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px 10px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
     }
-    .ox-hit-o:hover, .ox-hit-o.selected {
-      background-color: var(--correct-ink);
+    .fk-prev-link {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 2px;
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .fk-prev-link:hover {
+      color: var(--text-main);
+    }
+    .fk-prev-link:disabled {
+      opacity: 0.32;
+      cursor: default;
+    }
+
+    /* 메인 OX 카드 컨테이너 (내부에 번호배지 + 저장버튼 + 지문 + 하단 2열 대형 O/X 타격박스 내장) */
+    .fk-ox-card {
+      background-color: var(--bg-sheet);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 14px 36px rgba(20, 18, 15, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 440px;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+    body.mode-night .fk-ox-card {
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48);
+    }
+
+    /* 카드 상단 헤더: 좌측 (🅒 03 + 기006) / 우측 (+ 저장) */
+    .fk-card-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .fk-num-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+    }
+    .fk-num-badge-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fk-c-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .fk-num-digits {
+      font-family: var(--font-sans);
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .fk-sub-code {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.85;
+      padding-left: 2px;
+    }
+
+    .fk-save-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      border: 1px solid var(--border-strong);
+      background-color: transparent;
+      color: var(--text-sub);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .fk-save-btn.saved {
+      background-color: var(--accent);
+      border-color: var(--accent);
       color: #ffffff;
-      border-color: var(--correct-ink);
     }
-    .ox-hit-x {
-      background-color: var(--wrong-bg);
-      border: 2px solid var(--wrong-border);
-      color: var(--wrong-ink);
+    body.mode-night .fk-save-btn.saved {
+      color: #121211;
     }
-    .ox-hit-x:hover, .ox-hit-x.selected {
-      background-color: var(--wrong-ink);
-      color: #ffffff;
-      border-color: var(--wrong-ink);
+
+    /* 카드 중앙 지문 영역 */
+    .fk-statement-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 4px 2px 28px;
+      min-height: 155px;
+    }
+
+    /* 카드 내부 하단 2열 대형 정사각형/직사각형 O / X 박스 */
+    .fk-inside-ox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .fk-ox-box-btn {
+      height: 132px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fk-ox-box-btn:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+    .fk-ox-box-btn:active {
+      transform: scale(0.96);
+    }
+    .fk-ox-box-btn svg {
+      width: 56px;
+      height: 56px;
+      stroke: currentColor;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .fk-ox-box-btn.selected-correct {
+      background-color: var(--correct-bg) !important;
+      border: 2.5px solid var(--correct-ink) !important;
+      color: var(--correct-ink) !important;
+    }
+    .fk-ox-box-btn.selected-wrong {
+      background-color: var(--wrong-bg) !important;
+      border: 2.5px solid var(--wrong-ink) !important;
+      color: var(--wrong-ink) !important;
+    }
+    .fk-ox-box-btn.dimmed-other {
+      opacity: 0.42;
+    }
+
+    /* 화면 최하단 중앙 1 / N 카운터 */
+    .fk-bottom-counter-bar {
+      padding-top: 22px;
+      padding-bottom: 6px;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .fk-bottom-counter-bar strong {
+      color: var(--text-main);
+      font-weight: 900;
     }
 
     .trap-hl {
@@ -432,53 +636,39 @@
   </section>
 
   <!-- =========================================================================
-       [STAGE 2] 몰입형 문제 풀이 화면 (#solveView — 화면 정중앙 문제 + 바로 아래 O/X)
+       [STAGE 2] 몰입형 문제 풀이 화면 (#solveView — 스크린샷 100% 반영 + Fire Killer 디자인 시스템)
        ========================================================================= -->
   <section id="solveView" class="hidden">
     <div class="solve-stage-wrap">
-      <div class="solve-stage-inner space-y-4">
+      <div class="solve-stage-inner">
 
-        <!-- 풀이 세션 상단 미니 헤더 (선택 화면 복귀 + 현재 단원명 + 진행률) -->
-        <div class="flex flex-wrap items-center justify-between gap-2 px-1">
-          <button onclick="OxApp.returnToSelectView()" class="c-pill" style="border-color:var(--border-strong); color:var(--text-main); font-weight:800;">
-            &larr; 단원·문제 선택 화면으로
+        <!-- 최상단 < THEME(단원명) 헤더 -->
+        <div class="fk-theme-topbar">
+          <button onclick="OxApp.returnToSelectView()" class="fk-theme-back-btn" title="단원·문제 선택 화면으로 돌아가기">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span id="solveSessionUnitBadge" class="truncate max-w-[270px] sm:max-w-md">THEME 01</span>
           </button>
-
-          <div class="flex items-center gap-2">
-            <span id="solveSessionUnitBadge" class="text-xs font-bold truncate max-w-[240px] sm:max-w-md" style="color:var(--text-sub);"></span>
-            <span id="solveSessionCounter" class="px-2.5 py-1 rounded-lg text-xs font-extrabold" style="background-color:var(--accent-soft); color:var(--accent);">
-              1 / 50
-            </span>
-          </div>
+          <button onclick="OxApp.toggleNightMode()" class="c-pill" title="라이트/야간 모드 전환">🌓 테마</button>
         </div>
 
-        <!-- 중앙 문제 카드 마운트 -->
-        <div id="singleCardMount"></div>
-
-        <!-- 문제 카드 바로 아래 O / X 판정 버튼 및 이전·다음 컨트롤 -->
-        <div id="solveActionArea" class="space-y-3 pt-1">
-          <div class="grid grid-cols-2 gap-3.5">
-            <button id="dockBtnO" onclick="OxApp.answerCurrentCard(true)" class="ox-hit-btn ox-hit-o py-4 rounded-2xl font-extrabold text-lg sm:text-xl flex items-center justify-center gap-2 shadow-sm">
-              <span>⭕</span><span>O (옳다)</span>
+        <!-- 중앙 영역: 카드 바로 위 '< 이전문제' + 메인 OX 카드(내부에 번호배지·저장·지문·O/X 박스 포함) -->
+        <div class="w-full my-auto">
+          <div id="solveActionArea" class="fk-prev-above-row">
+            <button id="btnPrevAbove" onclick="OxApp.prevCard()" class="fk-prev-link">
+              &lt; 이전문제
             </button>
-            <button id="dockBtnX" onclick="OxApp.answerCurrentCard(false)" class="ox-hit-btn ox-hit-x py-4 rounded-2xl font-extrabold text-lg sm:text-xl flex items-center justify-center gap-2 shadow-sm">
-              <span>❌</span><span>X (틀리다)</span>
+            <button id="btnNextOrFinish" onclick="OxApp.nextOrFinishCard()" class="fk-prev-link">
+              다음문제 &gt;
             </button>
           </div>
 
-          <div class="flex items-center justify-between gap-2 pt-1">
-            <button onclick="OxApp.prevCard()" class="px-4 py-2 rounded-xl border font-extrabold text-xs transition cursor-pointer" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main);">
-              &larr; 이전 문제
-            </button>
+          <!-- 중앙 문제 카드 마운트 -->
+          <div id="singleCardMount"></div>
+        </div>
 
-            <span class="hidden sm:inline text-[11px] font-medium" style="color:var(--text-muted);">
-              단축키: <strong>1/O</strong>(옳음) · <strong>2/X</strong>(틀림) · <strong>Space/&rarr;</strong>(다음) · <strong>B</strong>(기본서 줄 이동) · <strong>ESC</strong>(선택 화면)
-            </span>
-
-            <button id="btnNextOrFinish" onclick="OxApp.nextOrFinishCard()" class="px-4 py-2 rounded-xl border font-extrabold text-xs transition cursor-pointer" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-main);">
-              다음 문제 &rarr;
-            </button>
-          </div>
+        <!-- 최하단 중앙 카운터 (1 / N) -->
+        <div id="solveSessionCounter" class="fk-bottom-counter-bar">
+          <strong>1</strong> / 50
         </div>
 
       </div>
@@ -1175,6 +1365,7 @@
         const actionArea = document.getElementById('solveActionArea');
         const unitBadge = document.getElementById('solveSessionUnitBadge');
         const counterEl = document.getElementById('solveSessionCounter');
+        const prevBtn = document.getElementById('btnPrevAbove');
         const nextBtn = document.getElementById('btnNextOrFinish');
         if (!mount) return;
 
@@ -1200,17 +1391,23 @@
         const unitObj = this.db.units.find(u => u.unitId === item.unitId);
         const answered = this.sessionAnswers[item.id];
         const isLast = this.currentIndex === this.filteredList.length - 1;
+        const numStr = String(this.currentIndex + 1).padStart(2, '0');
+        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^H_/, '기');
 
         if (unitBadge) {
-          unitBadge.textContent = unitObj ? unitObj.unitTitle : '';
+          const uIdx = unitObj ? (this.db.units.indexOf(unitObj) + 1) : 1;
+          const themeCode = `THEME${String(uIdx).padStart(2, '0')}`;
+          unitBadge.textContent = unitObj ? `${themeCode} · ${unitObj.shortTitle || unitObj.unitTitle}` : themeCode;
         }
         if (counterEl) {
-          counterEl.textContent = `${this.currentIndex + 1} / ${this.filteredList.length}`;
+          counterEl.innerHTML = `<strong>${this.currentIndex + 1}</strong> / ${this.filteredList.length}`;
+        }
+        if (prevBtn) {
+          prevBtn.disabled = this.currentIndex === 0;
         }
         if (nextBtn) {
-          nextBtn.innerHTML = isLast ? `풀이 완료 · 선택 화면으로 &rarr;` : `다음 문제 &rarr;`;
-          nextBtn.style.borderColor = isLast ? 'var(--accent)' : 'var(--border-line)';
-          nextBtn.style.color = isLast ? 'var(--accent)' : 'var(--text-main)';
+          nextBtn.innerHTML = isLast ? `풀이완료 &gt;` : `다음문제 &gt;`;
+          nextBtn.style.color = isLast ? 'var(--accent)' : 'var(--text-muted)';
         }
 
         // 상단 진행률 바
@@ -1218,40 +1415,49 @@
         const bar = document.getElementById('topProgressBar');
         if (bar) bar.style.width = `${pct}%`;
 
-        // 하단 O/X 버튼 선택 하이라이트
-        const btnO = document.getElementById('dockBtnO');
-        const btnX = document.getElementById('dockBtnX');
-        if (btnO && btnX) {
-          btnO.classList.toggle('selected', answered !== undefined && answered.userChoice === true);
-          btnX.classList.toggle('selected', answered !== undefined && answered.userChoice === false);
+        // 카드 내부 O/X 버튼 상태 클래스 계산
+        let oBtnCls = 'fk-ox-box-btn';
+        let xBtnCls = 'fk-ox-box-btn';
+        if (answered !== undefined) {
+          const isUserRight = answered.userChoice === item.isCorrect;
+          if (answered.userChoice === true) {
+            oBtnCls += isUserRight ? ' selected-correct' : ' selected-wrong';
+            xBtnCls += ' dimmed-other';
+          } else {
+            xBtnCls += isUserRight ? ' selected-correct' : ' selected-wrong';
+            oBtnCls += ' dimmed-other';
+          }
         }
 
         const deepLinkUrl = this.buildDeepLinkUrl(item);
 
-        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역
+        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역 (카드 하단에 자연스럽게 펼쳐짐)
         let feedbackHtml = '';
         if (answered !== undefined) {
           const isUserRight = answered.userChoice === item.isCorrect;
           const statusTitle = isUserRight
             ? `✓ 정답입니다! (정답: ${item.isCorrect ? 'O' : 'X'})`
-            : `✕ 오답입니다! (정답: ${item.isCorrect ? 'O' : 'X'} — 기본서 관련 줄에서 정확한 원리를 확인해 보세요)`;
+            : `✕ 오답입니다! (정답: ${item.isCorrect ? 'O' : 'X'})`;
 
           feedbackHtml = `
-            <div class="mt-5 pt-4 border-t rounded-xl p-4" style="background-color:var(--bg-subtle); border-color:var(--border-strong); border-left:4px solid ${isUserRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'};">
-              <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <div class="mt-4 pt-3.5 border-t rounded-xl p-3.5" style="background-color:var(--bg-subtle); border-color:var(--border-strong); border-left:4px solid ${isUserRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'};">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span class="px-2.5 py-1 rounded-md text-xs font-extrabold" style="background-color:${isUserRight ? 'var(--correct-bg)' : 'var(--wrong-bg)'}; color:${isUserRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'}; border:1px solid ${isUserRight ? 'var(--correct-border)' : 'var(--wrong-border)'};">
                   ${statusTitle}
                 </span>
 
                 <div class="flex flex-wrap items-center gap-1.5">
                   <a href="${deepLinkUrl}" onclick="OxApp.saveActiveSession()" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition" style="background-color:var(--accent); color:#ffffff; text-decoration:none;">
-                    📖 기본서 관련 줄로 이동 &nearr;
+                    📖 기본서 설명 파트 보기 &nearr;
                   </a>
                   ${item.origQId ? `
                     <button onclick="OxApp.openOrigModal('${item.origQId}', '${item.id}')" class="c-pill">
-                      📜 사료 상세 분석
+                      📜 사료 원문
                     </button>
                   ` : ''}
+                  <button onclick="OxApp.toggleExclude('${item.id}')" class="c-pill ${rec.excluded ? 'active' : ''}">
+                    ${rec.excluded ? '✓ 소거됨' : '✓ 소거'}
+                  </button>
                 </div>
               </div>
 
@@ -1259,59 +1465,58 @@
                 ${this.formatExplanation(item.explanation)}
               </div>
 
-              ${isLast ? `
-                <div class="mt-4 pt-3 border-t flex items-center justify-between gap-2" style="border-color:var(--border-line);">
-                  <span class="text-xs font-extrabold" style="color:var(--accent);">🎉 선택한 세트의 마지막 문제입니다!</span>
-                  <button onclick="OxApp.returnToSelectView()" class="px-4 py-2 rounded-xl text-xs font-extrabold cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
-                    풀이 마치고 단원·문제 선택 화면으로 돌아가기 &rarr;
-                  </button>
-                </div>
-              ` : ''}
+              <div class="mt-3 pt-2.5 border-t flex items-center justify-between gap-2" style="border-color:var(--border-line);">
+                <span class="text-[11px] font-bold" style="color:var(--text-muted);">${this.escapeHtml(item.source || '')}</span>
+                <button onclick="OxApp.nextOrFinishCard()" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
+                  ${isLast ? '풀이 완료 · 목록으로 &rarr;' : '다음 문제 &rarr;'}
+                </button>
+              </div>
             </div>
           `;
         }
 
         mount.innerHTML = `
-          <article class="rounded-2xl border p-5 sm:p-7 shadow-sm transition-all" style="background-color:var(--bg-sheet); border-color:var(--border-strong);">
-            <!-- 상단 메타 바 -->
-            <div class="flex items-center justify-between gap-2 pb-3 mb-4 border-b" style="border-color:var(--border-line);">
-              <div class="flex items-center gap-1.5 min-w-0">
-                ${item.tier === 'pred' ? `<span class="px-2 py-0.5 rounded text-xs font-extrabold shrink-0" style="background-color:var(--accent); color:#fff;">🎯 적중예상</span>` : ''}
-                ${item.grade === 'S' ? `<span class="px-2 py-0.5 rounded text-xs font-extrabold shrink-0" style="background-color:var(--accent-soft); color:var(--accent);">S급 빈출</span>` : `<span class="px-2 py-0.5 rounded text-xs font-bold shrink-0" style="background-color:var(--bg-subtle); color:var(--text-sub);">A급</span>`}
-                <span class="text-xs font-bold truncate" style="color:var(--text-sub);">${this.escapeHtml(item.source || '')}</span>
+          <article class="fk-ox-card">
+            <!-- 카드 상단: 좌측 (🅒 03 + 기006) / 우측 (+ 저장) -->
+            <div class="fk-card-top-row">
+              <div class="fk-num-group">
+                <div class="fk-num-badge-line">
+                  <span class="fk-c-icon">C</span>
+                  <span class="fk-num-digits">${numStr}</span>
+                </div>
+                <span class="fk-sub-code">${this.escapeHtml(subCode)}${item.source ? ' · ' + this.escapeHtml(item.source) : ''}</span>
               </div>
 
-              <div class="flex items-center gap-1.5 shrink-0 flex-wrap">
+              <div class="flex items-center gap-1.5">
                 ${item.clueQuote ? `
-                  <button onclick="OxApp.toggleClueBox()" class="c-pill ${(item.tier === 'ext' || this.forceShowClue) ? 'active' : ''}" title="관련 사료 단서 박스 열기/닫기">
-                    📜 ${(item.tier === 'ext' || this.forceShowClue) ? '사료 단서 닫기' : '사료 단서 보기'}
+                  <button onclick="OxApp.toggleClueBox()" class="fk-save-btn ${(item.tier === 'ext' || this.forceShowClue) ? 'saved' : ''}" title="관련 사료 단서 보기">
+                    📜 사료
                   </button>
                 ` : ''}
-                <a href="${deepLinkUrl}" onclick="OxApp.saveActiveSession()" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);" title="기본서 관련 본문 줄로 즉시 이동 (단축키 B)">
-                  📖 기본서 줄 이동
-                </a>
-                ${item.origQId ? `<button onclick="OxApp.openOrigModal('${item.origQId}', '${item.id}')" class="c-pill" title="사료 상세 분석 (단축키 Q)">📜 사료 원문</button>` : ''}
-                <button onclick="OxApp.toggleStar('${item.id}')" class="c-pill ${rec.starred ? 'active' : ''}" title="중요 별표 (단축키 S)">
-                  ${rec.starred ? '★ 별표됨' : '☆ 별표'}
-                </button>
-                <button onclick="OxApp.toggleExclude('${item.id}')" class="c-pill ${rec.excluded ? 'active' : ''}" title="완전 숙지 지문 소거 (단축키 E)">
-                  ${rec.excluded ? '✓ 소거됨' : '✓ 소거'}
+                <button onclick="OxApp.toggleStar('${item.id}')" class="fk-save-btn ${rec.starred ? 'saved' : ''}" title="중요 문제 저장 (단축키 S)">
+                  ${rec.starred ? '✓ 저장됨' : '+ 저장'}
                 </button>
               </div>
             </div>
 
-            <!-- 함정 유형 태그 -->
-            <div class="flex items-center justify-between gap-2 mb-3 text-xs" style="color:var(--text-muted);">
-              <span class="font-bold" style="color:var(--accent);">${(item.trapTags || []).map(t => '#' + t).join(' ')}</span>
-              ${rec.wrongCount > 0 ? `<span class="font-extrabold" style="color:var(--wrong-ink);">누적 오답 ${rec.wrongCount}회</span>` : ''}
-            </div>
-
-            <!-- 📜 사료 단서 제시 ➔ O/X 판별 박스 -->
+            <!-- 📜 사료 단서 제시 박스 (있을 경우) -->
             ${this.buildClueBoxHtml(item, answered !== undefined)}
 
-            <!-- 본문 지문 (화면 중앙 집중 배치) -->
-            <div class="ox-statement py-2">
-              ${this.formatStatementHtml(item.text)}
+            <!-- 카드 중앙 지문 -->
+            <div class="fk-statement-area">
+              <div class="ox-statement">
+                ${this.formatStatementHtml(item.text)}
+              </div>
+            </div>
+
+            <!-- 카드 내부 하단 2열 대형 O / X 박스 (스크린샷과 100% 동일한 배치) -->
+            <div class="fk-inside-ox-grid">
+              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O 옳다">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
+              </button>
+              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X 틀리다">
+                <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
+              </button>
             </div>
 
             ${feedbackHtml}
@@ -1565,6 +1770,23 @@
             }
           }
         });
+
+        // 모바일 터치 좌우 스와이프(Swipe) 제스처 바인딩
+        let sx = 0, sy = 0;
+        window.addEventListener('touchstart', (e) => {
+          if (this.stage !== 'solve' || !e.touches || !e.touches[0]) return;
+          sx = e.touches[0].clientX;
+          sy = e.touches[0].clientY;
+        }, { passive: true });
+        window.addEventListener('touchend', (e) => {
+          if (this.stage !== 'solve' || !e.changedTouches || !e.changedTouches[0]) return;
+          const dx = e.changedTouches[0].clientX - sx;
+          const dy = e.changedTouches[0].clientY - sy;
+          if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+            if (dx < 0) this.nextOrFinishCard();
+            else this.prevCard();
+          }
+        }, { passive: true });
       },
 
       escapeHtml(str) {

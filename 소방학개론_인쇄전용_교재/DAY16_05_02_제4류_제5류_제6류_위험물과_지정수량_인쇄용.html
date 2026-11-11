@@ -1,0 +1,3212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 16 · 인쇄용] 제5편 위험물 및 특수가연물론 · 제2장 제4류·제5류·제6류 위험물의 성상, 지정수량 및 위험등급 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY15_05_01_제1류_제2류_제3류_위험물과_반응식_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 16</span>
+        <a href="DAY17_05_03_위험물_저장_혼재_운반과_특수가연물_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(14제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 16 · 제5편 위험물 및 특수가연물론 · 제2장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(14문항)</span>
+            <span>□ OX 24제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">제4류·제5류·제6류 위험물의 성상, 지정수량 및 위험등급</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+        
+        <div id="sec1" class="space-y-6">
+          <h2>제1절. 제4류 위험물(인화성 액체)의 공통 물성과 품명별 인화점·지정수량 체계 (시행령 별표 1)</h2>
+          
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제4류 공통 물성 4대 급소 (2019 Q6 · 2020 Q20 · 2022 Q8)</div><ul class="sidenote-list"><li><strong>액체비중 $<1$</strong> (물보다 가벼움, 단 $\text{CS}_2\cdot$나이트로벤젠·글리세린·아닐린은 $>1$)</li><li><strong>증기비중 $>1$</strong> (모두 공기보다 무거워 바닥 체류!)</li><li><strong>전기 부도체(비전도체)</strong> ➔ 정전기 축적 용이</li><li><strong>수용성 액체(아세톤·알코올·글리세린)</strong> ➔ <strong>내알코올포(알코올형포)</strong> 소화</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>제4류 위험물(인화성 액체)</strong>은 주유소, 화학공장, 일상생활 전반에서 가장 널리 취급되며 위험물 화재의 대다수를 차지하는 핵심 유별이다. 제4류 위험물의 5대 공통 물리·화학적 성질은 매 시험마다 선지의 정오를 가르는 기준이 된다. 첫째, 상온(섭씨 20도)에서 액체 상태이며 화염이나 스파크가 닿으면 쉽게 인화한다. 둘째, <strong>액체의 비중은 원칙적으로 물보다 가볍고(액체비중 $<1$)</strong> 물에 녹지 않는 비수용성이 많다(단, 예외적으로 물보다 무거운 액체인 <strong>이황화탄소[1.26], 클로로벤젠[1.1], 나이트로벤젠[1.2], 글리세린[1.26], 에틸렌글리콜[1.11], 아닐린[1.02]</strong> 등은 반드시 기억해야 하며, 특히 비수용성이면서 물보다 무겁고 발화점이 섭씨 90도로 가장 낮은 <strong>이황화탄소[$\text{CS}_2$]는 유독성·가연성 증기 발생을 억제하기 위해 물속에 잠기게 보관</strong>한다). 셋째, 액체는 물보다 가볍지만 기화된 <strong>증기의 비중은 모두 공기보다 무거워(증기비중 $>1$)</strong> 실내 바닥이나 지하 피트 등 낮은 곳(저소)에 체류하므로, 유증기 배출 설비는 반드시 바닥 가까이 낮은 곳에 설치해야 한다(시험에 '증기비중은 대부분 공기보다 가볍다'고 나오면 100퍼센트 오답이다!). 넷째, 비수용성 석유류는 전기가 통하지 않는 <strong>전기 부도체(비전도체)</strong> 성질이 강하여 배관 유동·여과·분출 시 <strong>정전기 축적이 매우 쉬우며</strong>('인화성 액체는 전기 전도체이다' = 오답!), 휘발유·경유 등은 연소하한계가 약 1퍼센트에서 2퍼센트 수준으로 매우 낮아 소량의 증기 누출만으로도 쉽게 인화·폭발한다. 다섯째, 소화 방법을 보면 일반 비수용성 유류에 물을 뿌리면 기름이 물 위에 떠서 화재가 확산되므로 포·이산화탄소·할론·분말 소화약제로 질식·부촉매소화를 하며, 특히 물에 녹는 <strong>수용성 액체(아세톤, 알코올류, 아세트산, 글리세린, 에틸렌글리콜, 피리딘 등)</strong> 화재 시에는 일반 포가 파괴되므로 반드시 <strong>내알코올포(알코올형포) 소화약제에 의한 질식소화 또는 다량의 물에 의한 희석소화</strong>를 실시해야 한다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제4류 품명 분류 1순위 함정 (2019 Q8 · 2025 Q15 · 2026 Q7)</div><ul class="sidenote-list"><li><strong>특수인화물(50L)</strong>: 발화점 $100^\circ\text{C}$ 이하 또는 인화점 $-20^\circ\text{C}$ 이하 &amp; 비점 $40^\circ\text{C}$ 이하</li><li><strong>제1석유류(200L/400L)</strong>: 1기압 <strong>인화점 $21^\circ\text{C}$ 미만</strong> (발화점 아님!)</li><li><strong>나이트로벤젠($\text{C}_6\text{H}_5\text{NO}_2$)</strong>: 제5류가 아니라 <strong>제4류 제3석유류 비수용성(2,000L)</strong>!</li><li><strong>글리세린·에틸렌글리콜</strong>: 알코올류가 아니라 <strong>제4류 제3석유류 수용성(4,000L)</strong>!</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>위험물안전관리법 시행령 별표 1</strong>에서 제4류 위험물의 7대 품명은 <strong>1기압에서의 인화점(발화점·비점)</strong>과 수용성 여부에 따라 지정수량이 체계적으로 나뉜다(수용성의 지정수량은 비수용성의 2배). ① <strong>특수인화물(지정수량 50리터)</strong>이란 이황화탄소, 디에틸에테르 그 밖에 1기압에서 <strong>발화점이 섭씨 100도 이하</strong>인 것(이황화탄소: 발화점 섭씨 90도) 또는 <strong>인화점이 섭씨 영하 20도 이하이고 비점(끓는점)이 섭씨 40도 이하</strong>인 것(디에틸에테르, 아세트알데히드, 산화프로필렌, 펜테인 등)을 말한다. ② <strong>제1석유류(비수용성 200리터 / 수용성 400리터)</strong>란 아세톤, 휘발유 그 밖에 1기압에서 <strong>인화점이 섭씨 21도 미만</strong>인 것을 말한다(비수용성: 휘발유·벤젠·톨루엔·자일렌·메틸에틸케톤 / 수용성: 아세톤·피리딘). ③ <strong>알코올류(지정수량 400리터)</strong>란 한 분자 내 탄소 원자의 수가 <strong>1개부터 3개까지인 포화 1가 알코올</strong>(메틸알코올·에틸알코올·프로필알코올, 함량 60중량퍼센트 이상)만을 말한다. ④ <strong>제2석유류(비수용성 1,000리터 / 수용성 2,000리터)</strong>란 등유, 경유 그 밖에 1기압에서 <strong>인화점이 섭씨 21도 이상 70도 미만</strong>인 것을 말한다(비수용성: 등유·경유·테레빈유·부틸알코올 / 수용성: 아세트산[초산]·폼산). ⑤ <strong>제3석유류(비수용성 2,000리터 / 수용성 4,000리터)</strong>란 중유, 크레오소트유 그 밖에 1기압에서 <strong>인화점이 섭씨 70도 이상 200도 미만</strong>인 것을 말한다. 특히 2026년 기출에서 정면으로 출제된 핵심 함정으로, 벤젠 고리에 나이트로기($-\text{NO}_2$)가 1개만 결합된 <strong>나이트로벤젠($\text{C}_6\text{H}_5\text{NO}_2$)은 명칭에 '나이트로'가 들어가지만 제5류 위험물이 아니라 제4류 제3석유류 비수용성(지정수량 2,000리터)</strong>이며, 3가 알코올인 <strong>글리세린[$\text{C}_3\text{H}_5(\text{OH})_3$]과 2가 알코올인 에틸렌글리콜은 알코올류가 아니라 제4류 제3석유류 수용성(지정수량 4,000리터)</strong>에 해당한다! ⑥ <strong>제4석유류(지정수량 6,000리터)</strong>는 기어유, 실린더유 등 1기압에서 <strong>인화점이 섭씨 200도 이상 250도 미만</strong>인 것이며, ⑦ <strong>동식물유류(지정수량 10,000리터)</strong>는 1기압에서 <strong>인화점이 섭씨 250도 미만</strong>인 동식물 추출 기름(요오드값 130 이상인 건성유[아마인유·들기름·동유]는 산화열 축적에 의한 자연발화 위험이 큼)이다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 제4류 위험물(인화성 액체) 7대 품명별 법정 인화점 기준·지정수량·대표 물질 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>제4류 품명</th>
+                  <th>1기압 인화점(발화점·비점) 법정 정의</th>
+                  <th>지정수량 (비수용 / 수용)</th>
+                  <th>대표 물질 및 수험 핵심 포인트 (2019 Q8 · 2025 Q15 · 2026 Q7)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300">1. 특수인화물</td>
+                  <td>발화점 $100^\circ\text{C}$ 이하 또는<br/><strong>인화점 $-20^\circ\text{C}$ 이하 &amp; 비점 $40^\circ\text{C}$ 이하</strong></td>
+                  <td><strong>50리터</strong></td>
+                  <td>· 비수용성: 이황화탄소($\text{CS}_2$, 물속 보관), 디에틸에테르, 펜테인<br/>· 수용성: 아세트알데히드, 산화프로필렌</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">2. 제1석유류</td>
+                  <td><strong>인화점 섭씨 21도 미만</strong></td>
+                  <td>비수용성 <strong>200리터</strong><br/>수용성 <strong>400리터</strong></td>
+                  <td>· 비수용성: 휘발유(가솔린), 벤젠, 톨루엔, 자일렌, 메틸에틸케톤<br/>· 수용성: <strong>아세톤($\text{CH}_3\text{COCH}_3$), 피리딘</strong> (내알코올포 소화)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">3. 알코올류</td>
+                  <td>탄소 수 <strong>1개에서 3개까지</strong> 포화 1가 알코올 ($60\text{wt}\%\uparrow$)</td>
+                  <td><strong>400리터</strong> (수용성)</td>
+                  <td>· 메틸알코올(메탄올), 에틸알코올(에탄올), 프로필알코올(프로판올)<br/>· ※ 부틸알코올($\text{C}_4$)은 제2석유류, 글리세린·에틸렌글리콜은 제3석유류!</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">4. 제2석유류</td>
+                  <td><strong>인화점 섭씨 21도 이상 70도 미만</strong></td>
+                  <td>비수용성 <strong>1,000리터</strong><br/>수용성 <strong>2,000리터</strong></td>
+                  <td>· 비수용성: 등유, 경유, 테레빈유, 장뇌유, 부틸알코올<br/>· 수용성: <strong>아세트산(초산), 폼산(개미산), 아크릴산</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">5. 제3석유류</td>
+                  <td><strong>인화점 섭씨 70도 이상 200도 미만</strong></td>
+                  <td>비수용성 <strong>2,000리터</strong><br/>수용성 <strong>4,000리터</strong></td>
+                  <td>· 비수용성: 중유, 크레오소트유, 아닐린, 클로로벤젠, <strong class="text-amber-300">나이트로벤젠(2,000L)</strong><br/>· 수용성: <strong class="text-amber-300">글리세린(4,000L), 에틸렌글리콜(4,000L)</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">6. 제4석유류</td>
+                  <td><strong>인화점 섭씨 200도 이상 250도 미만</strong></td>
+                  <td><strong>6,000리터</strong></td>
+                  <td>· 기어유, 실린더유, 윤활유, 모터유, 가소제</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">7. 동식물유류</td>
+                  <td><strong>인화점 섭씨 250도 미만</strong></td>
+                  <td><strong>10,000리터</strong></td>
+                  <td>· 건성유(요오드값 $130\uparrow$: 아마인유·들기름·동유 ➔ 산화열 자연발화)<br/>· 반건성유(100에서 130: 콩기름·참기름) / 불건성유($100\downarrow$: 올리브유·피마자유)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        <div id="sec2" class="space-y-6">
+          <h2>제2절. 제5류(자기반응성 물질)와 제6류(산화성 액체)의 성상 및 소화대책</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제5류 위험물 기출 핵심 (2018 Q4 · 2019 Q6 · 2020 Q10 · 2025 Q19)</div><ul class="sidenote-list"><li><strong>내부 산소 함유(자기연소)</strong> ➔ 외부 산소 차단(이산화탄소·포 등 <strong>질식소화 무효!</strong>)</li><li>유일한 적응 소화법: <strong>다량의 물에 의한 급속 주수 냉각소화</strong> (히드록실아민·질산에스테르류·유기과산화물 모두 동일!)</li><li>지정수량: <strong>10kg</strong>(유기과산화물·질산에스테르류) / <strong>100kg</strong>(히드록실아민류) / <strong>200kg</strong>(나이트로·아조화합물 등)</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>제5류 위험물(자기반응성 물질)</strong>은 고체 또는 액체로서 가열·충격·마찰에 의해 스스로 연소 또는 폭발을 일으킬 수 있는 물질이다. 제5류 위험물의 가장 본질적인 화학적 특징은 <strong>자기 분자 내부에 불타는 연료 성분(탄소·수소)과 산소를 공급하는 작용기(질산에스테르기 $-\text{ONO}_2$, 나이트로기 $-\text{NO}_2$, 과산화결합 $-\text{O}-\text{O}-$ 등)를 동시에 함유</strong>하고 있다는 점이다. 이처럼 외부 산소 공급이 없어도 자체 산소로 순식간에 분해·폭발하는 <strong>자기연소(내부연소)</strong> 물질이기 때문에, 제5류 화재 시 <strong>외부로부터의 산소 유입을 차단하는 질식소화(이산화탄소·할론·포·분말 등)는 아무런 효과가 없으며</strong>, 반드시 화재 초기부터 <strong>다량의 물로 온도를 분해 온도 이하로 낮추는 주수 냉각소화</strong>를 실시해야 한다! 또한 연소 속도가 극히 빠르고 폭발 및 질소산화물($\text{NO}_2$ 등) 유독가스 발생 위험이 크므로, 진압 시에는 항상 안전거리를 유지하고 엄폐물을 이용하며 밀폐 공간에서는 공기호흡기를 착용해야 한다. 제5류의 품명과 지정수량은 3단계로 나뉘어 ① 제1종 <strong>10킬로그램</strong>은 <strong>유기과산화물</strong>(과산화벤조일, 메틸에틸케톤퍼옥사이드 등 — 직사광선·충격을 피하고 물이나 희석제를 첨가해 안정화함)과 <strong>질산에스테르류</strong>(니트로글리세린, 니트로글리콜, <strong>니트로셀룰로오스</strong>[자연분해·마찰 폭발 방지를 위해 물 또는 에틸알코올로 습윤 보관]), ② <strong>100킬로그램</strong>은 <strong>히드록실아민($\text{NH}_2\text{OH}$) 및 히드록실아민염류</strong>(자기반응성물질이므로 이산화탄소 질식소화 불가, 다량의 물로 냉각소화!), ③ 제2종 <strong>200킬로그램</strong>은 <strong>나이트로화합물</strong>(트라이나이트로톨루엔[TNT], 피크르산, 다이나이트로벤젠 등 나이트로기가 2개 이상 결합된 물질 — 단, 나이트로기가 1개인 나이트로벤젠은 제4류 제3석유류임!), 나이트로소화합물, 아조화합물, 다이아조화합물, 하이드라진유도체이다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제6류 위험물 3종 핵심 포인트 (2025 Q16 · 2025 Q19 · 2026 Q7·Q8)</div><ul class="sidenote-list"><li>3대 품명 및 지정수량: <strong>과염소산 · 과산화수소($36\text{wt}\%\uparrow$) · 질산(비중 $1.49\uparrow$) ➔ 모두 300kg</strong></li><li>공통 성질: <strong>불연성 산화성 액체, 모두 산성(염기성 X!), 비중 $>1$, 수용성</strong></li><li>소화 주의: 유출 시 건조사·중화제 사용, 과산화수소·소량 화재는 다량의 물 희석소화 가능하나 <strong>과염소산 대량 화재 시 물 희석소화 금지!</strong></li></ul></div></aside>
+            <p class="prose-body">
+              마지막 유별인 <strong>제6류 위험물(산화성 액체)</strong>은 액체 상태의 강산화제로서 법정 품명은 <strong>① 과염소산($\text{HClO}_4$), ② 과산화수소($\text{H}_2\text{O}_2$), ③ 질산($\text{HNO}_3$)</strong> 단 3종뿐이며, <strong>지정수량은 3종 모두 300킬로그램</strong>으로 동일하다. 제6류 위험물의 공통 물리·화학적 성질을 보면, 첫째 그 자체는 연소하지 않는 <strong>불연성(비연소성) 액체</strong>이나 분해 시 산소($\text{O}_2$)를 방출하여 다른 가연물·유기물의 연소를 돕는 강산화제이다. 둘째, 액성은 염기성(알칼리성)이 아니라 <strong>3종 모두 산성</strong>(과염소산·질산은 강산성, 과산화수소는 약산성)을 띠며('불연성 물질로 분해 시 산소가 발생하며 대부분 염기성이다' = 2025년 Q16 정답 오답 선지!), <strong>모두 비중이 1보다 커서 물보다 무겁고</strong>(과염소산 1.67, 과산화수소 1.45, 질산 1.50) 수용성이다. 셋째, 시행령 별표 1 비고의 법정 위험물 성립 기준상 <strong>과산화수소는 농도가 36중량퍼센트 이상</strong>인 것만 위험물에 해당하고(직사광선에 의한 분해 방지를 위해 마개에 가스 배출 숨구멍이 뚫린 갈색 용기에 인산·요산 등 안정제를 넣어 보관), <strong>질산은 비중이 1.49 이상</strong>인 것만 위험물에 해당한다(햇빛에 의해 유독성 적갈색 이산화질소[$\text{NO}_2$] 가스로 분해되므로 갈색 용기에 보관). 넷째, 취급 및 소화 방법을 보면 부식성이 강하므로 용기가 파손·누설되지 않게 관리하고, 유출 사고 시에는 <strong>마른모래(건조사)·팽창질석</strong>으로 흡착하거나 탄산수소나트륨·소석회 등 알칼리성 <strong>중화제</strong>를 사용한다. 과산화수소 화재나 제6류의 <strong>소량 화재 시에는 다량의 물로 단번에 희석하는 소화방법</strong>을 사용할 수 있으나, <strong>과염소산($\text{HClO}_4$)의 대량 화재(소량 화재 제외) 시에는 물을 뿌리면 격렬한 수화열과 함께 산이 비산하여 폭발적 위험을 초래하므로 주수 희석소화를 금하고 건조사·팽창질석·탄산수소염류 분말 등</strong>을 사용해야 한다.
+            </p>
+            
+          </div></div>
+
+        <div id="sec3" class="space-y-6">
+          <h2>제3절. 위험등급(Ⅰ·Ⅱ·Ⅲ등급) 분류와 지정수량 배수 합산 실전 해법 (시행규칙 별표 18)</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">위험등급 Ⅰ·Ⅱ·Ⅲ 1초 판별 공식 (2024년 Q9)</div><ul class="sidenote-list"><li><strong>위험등급 Ⅰ</strong>: 제1류(50kg), 제3류(10·20[황린]·50kg), 제4류 특수인화물(50L), 제5류(10kg[유기과산화물 등]), <strong class="text-amber-300">제6류 전 품목(300kg: 과염소산·과산화수소·질산!)</strong></li><li><strong>위험등급 Ⅱ</strong>: 제1류(300kg), 제2류(100kg), 제3류(300kg), 제4류 제1석유류·알코올류, 제5류(100·200kg)</li><li><strong>위험등급 Ⅲ</strong>: 제1류(1,000kg), <strong>제2류 마그네슘·철분·금속분(500kg)</strong>·인화성고체(1,000kg), 제4류 제2·3·4석유류·동식물유류</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>위험물안전관리법 시행규칙 별표 18</strong>은 위험물의 운반용기 강도 및 최대 수납 용적을 차등 규제하기 위해 전 유별 위험물을 위험도가 높은 순서대로 <strong>위험등급 Ⅰ, 위험등급 Ⅱ, 위험등급 Ⅲ</strong>의 3단계로 분류한다. 시험에서는 품명·지정수량·위험등급 3가지를 짝지어 놓고 틀린 것을 고르는 문제가 출제되므로 정확한 구분 공식을 잡아야 한다. 첫째, 가장 위험한 <strong>위험등급 Ⅰ등급</strong>에는 각 유별에서 지정수량이 가장 작은 최상위 그룹인 ① <strong>제1류 제1종(지정수량 50킬로그램</strong>: 아염소산·염소산·과염소산염류, 무기과산화물), ② <strong>제3류 지정수량 10킬로그램·20킬로그램·50킬로그램</strong>(칼륨·나트륨·알킬알루미늄·알킬리튬[10킬로그램], <strong>황린[20킬로그램]</strong>, 기타 알칼리·알칼리토금속 및 유기금속화합물[50킬로그램]), ③ <strong>제4류 특수인화물(50리터)</strong>, ④ <strong>제5류 제1종(10킬로그램</strong>: <strong>유기과산화물</strong>, 질산에스테르류), 그리고 가장 중요한 특례로서 ⑤ <strong>제6류 위험물 전 품목(과염소산·과산화수소·질산: 지정수량은 300킬로그램이지만 위험성이 극히 높아 전 품목이 위험등급 Ⅰ등급에 해당!)</strong>이 속한다(2024년 기출에서 '과염소산 · 300킬로그램 · Ⅱ등급'을 오답 정답으로 출제한 핵심 함정!). 둘째, <strong>위험등급 Ⅱ등급</strong>에는 중간 그룹인 ① 제1류 제2종(300킬로그램: 브롬산·질산·요오드산염류), ② 제2류 황화린·적린·유황(100킬로그램), ③ 제3류 지정수량 300킬로그램(수소화물·인화물·탄화물), ④ 제4류 제1석유류(200리터·400리터) 및 알코올류(400리터), ⑤ 제5류 제2종(100킬로그램 히드록실아민류, 200킬로그램 나이트로·아조화합물 등)이 속한다. 셋째, 나머지 위험물인 제1류 제3종(1,000킬로그램), <strong>제2류 철분·금속분·마그네슘(500킬로그램)</strong> 및 인화성고체(1,000킬로그램), 제4류 제2·3·4석유류 및 동식물유류는 모두 <strong>위험등급 Ⅲ등급</strong>에 해당한다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">위험물 성립 커트라인 및 배수 계산 (2026년 Q8)</div><ul class="sidenote-list"><li><strong>질산</strong>: 비중 <strong>$1.49$ 이상</strong>만 위험물 (300kg)</li><li><strong>과산화수소</strong>: 농도 <strong>$36\text{wt}\%$ 이상</strong>만 위험물 (300kg)</li><li><strong>유황(황)</strong>: 순도 <strong>$60\text{wt}\%$ 이상</strong>만 위험물 (100kg)</li><li><strong>철분</strong>: $53\mu\text{m}$ 체 통과분 <strong>$50\text{wt}\%$ 이상</strong>만 위험물 (500kg)</li><li><strong>금속분</strong>: 구리·니켈 제외, $150\mu\text{m}$ 체 통과분 <strong>$50\text{wt}\%$ 이상</strong>만 위험물 (500kg)</li><li>※ 요건 충족 시 <strong>전체 질량</strong>을 지정수량으로 나누어 배수 산정!</li></ul></div></aside>
+            <p class="prose-body">
+              나아가 2026년 기출(Q8)에서 새롭게 등장한 고난도 유형은 <strong>시행령 별표 1 비고의 위험물 성립 커트라인(비중·순도·농도·입도)을 먼저 판별한 뒤 지정수량의 배수를 합산</strong>하는 계산 문제이다. 둘 이상의 위험물을 동일한 장소에 저장·취급할 때는 각 위험물의 수량을 해당 지정수량으로 나눈 배수를 모두 합산하되, 법정 커트라인에 미달하는 물질은 위험물이 아니므로 배수를 <strong>0배</strong>로 제외하고, 커트라인을 통과한 물질은 불순물이나 용매가 섞여 있더라도 <strong>해당 물질의 전체 질량(총량)을 기준으로 지정수량 배수를 계산</strong>한다! 실제 기출 사례(질산 1,200킬로그램[비중 1.59], 황 200킬로그램[불순물 100킬로그램 함유], 과산화수소 300킬로그램[용매 180킬로그램 함유], 철분 1,000킬로그램[53마이크로미터 표준체 통과분 560킬로그램])를 단계별로 풀어보면 다음과 같다.
+              1) <strong>질산 1,200킬로그램(비중 1.59)</strong>: 질산은 <strong>비중 1.49 이상</strong>이면 위험물에 해당하므로($1.59 \ge 1.49$ 충족), 지정수량 300킬로그램으로 나누어 <strong>$1,200 \div 300 = 4\text{배}$</strong>가 된다.
+              2) <strong>황(유황) 200킬로그램(불순물 100킬로그램 함유)</strong>: 유황은 불순물을 제외한 <strong>순도가 60중량퍼센트 이상</strong>이어야 위험물에 해당하는데, 순수 황이 $200 - 100 = 100\text{kg}$으로 순도가 $\frac{100}{200} \times 100 = 50\text{중량퍼센트}$(60중량퍼센트 미만)이므로 <strong>위험물에서 제외되어 $0\text{배}$</strong>이다!
+              3) <strong>과산화수소 300킬로그램(용매 180킬로그램 함유)</strong>: 과산화수소는 <strong>농도가 36중량퍼센트 이상</strong>이어야 위험물에 해당하는데, 순수 과산화수소가 $300 - 180 = 120\text{kg}$으로 농도가 $\frac{120}{300} \times 100 = 40\text{중량퍼센트}$($36\text{중량퍼센트}$ 이상 충족)이므로 위험물에 해당하며, 전체 질량 300킬로그램을 지정수량 300킬로그램으로 나누어 <strong>$300 \div 300 = 1\text{배}$</strong>가 된다.
+              4) <strong>철분 1,000킬로그램(53마이크로미터 표준체 통과분 560킬로그램)</strong>: 철분은 53마이크로미터 표준체 통과분이 <strong>50중량퍼센트 이상</strong>이어야 위험물에 해당하는데(50중량퍼센트 미만 제외), 통과분이 $\frac{560}{1,000} \times 100 = 56\text{중량퍼센트}$($50\text{중량퍼센트}$ 이상 충족)이므로 위험물에 해당하며, 전체 질량 1,000킬로그램을 지정수량 500킬로그램으로 나누어 <strong>$1,000 \div 500 = 2\text{배}$</strong>가 된다.
+              따라서 지정수량 배수의 총합은 <strong>$4\text{배} + 0\text{배} + 1\text{배} + 2\text{배} = 7\text{배}$</strong>이다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 전 유별(제1류부터 제6류까지) 지정수량·위험등급(Ⅰ·Ⅱ·Ⅲ등급) 및 위험물 성립 커트라인 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>위험등급 구분<br/>(시행규칙 별표 18)</th>
+                  <th>유별 해당 품목 및 법정 지정수량</th>
+                  <th>법정 위험물 성립 커트라인 (시행령 별표 1 비고 · 2026 Q8)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-amber-300">위험등급 Ⅰ등급<br/>(최상위 위험군)</td>
+                  <td>· <strong>제1류 제1종 (50kg)</strong>: 아염소산·염소산·과염소산염류, 무기과산화물<br/>· <strong>제3류 (10kg · 20kg · 50kg)</strong>: $\text{K}\cdot\text{Na}\cdot$알킬$\text{Al}\cdot$알킬$\text{Li}$(10kg), <strong>황린(20kg)</strong>, 기타 알칼리·알칼리토금속·유기금속화합물(50kg)<br/>· <strong>제4류 특수인화물 (50L)</strong>: 이황화탄소, 디에틸에테르 등<br/>· <strong>제5류 제1종 (10kg)</strong>: <strong>유기과산화물</strong>, 질산에스테르류<br/>· <strong class="text-amber-300">제6류 전 품목 (300kg): 과염소산, 과산화수소, 질산 (2024 Q9 핵심!)</strong></td>
+                  <td>· <strong>과산화수소(제6류)</strong>: 농도 <strong>36중량퍼센트 이상</strong>인 것만 위험물<br/>· <strong>질산(제6류)</strong>: 비중 <strong>1.49 이상</strong>인 것만 위험물<br/>· <strong>특수인화물(제4류)</strong>: 1기압 발화점 $100^\circ\text{C}$ 이하 또는 인화점 $-20^\circ\text{C}$ 이하 &amp; 비점 $40^\circ\text{C}$ 이하</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">위험등급 Ⅱ등급<br/>(중간 위험군)</td>
+                  <td>· <strong>제1류 제2종 (300kg)</strong>: 브롬산·질산·요오드산염류<br/>· <strong>제2류 (100kg)</strong>: 황화린, 적린, 유황<br/>· <strong>제3류 (300kg)</strong>: 금속의 수소화물·인화물, $\text{Ca}\cdot\text{Al}$의 탄화물<br/>· <strong>제4류 제1석유류 (200L/400L) 및 알코올류 (400L)</strong><br/>· <strong>제5류 제2종 (100kg · 200kg)</strong>: 히드록실아민류(100kg), 나이트로·아조화합물 등(200kg)</td>
+                  <td>· <strong>유황(제2류)</strong>: 순도 <strong>60중량퍼센트 이상</strong>인 것만 위험물<br/>· <strong>알코올류(제4류)</strong>: 탄소 수 1개에서 3개까지 포화 1가 알코올 <strong>60중량퍼센트 이상</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">위험등급 Ⅲ등급<br/>(일반 위험군)</td>
+                  <td>· <strong>제1류 제3종 (1,000kg)</strong>: 과망간산·중크롬산염류<br/>· <strong>제2류 (500kg · 1,000kg)</strong>: <strong>철분·금속분·마그네슘(500kg)</strong>, 인화성고체(1,000kg)<br/>· <strong>제4류 제2석유류(1,000L/2,000L) · 제3석유류(2,000L/4,000L) · 제4석유류(6,000L) · 동식물유류(10,000L)</strong></td>
+                  <td>· <strong>철분(제2류)</strong>: $53\mu\text{m}$ 표준체 통과분 <strong>50중량퍼센트 미만 제외</strong><br/>· <strong>금속분(제2류)</strong>: 구리·니켈분 및 $150\mu\text{m}$ 체 통과분 <strong>50중량퍼센트 미만 제외</strong><br/>· <strong>마그네슘(제2류)</strong>: $2\text{mm}$ 체 불통과 덩어리 및 직경 $2\text{mm}$ 이상 막대 제외</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        </section>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (14문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 14문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제5류 위험물의 소화대책으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">외부로부터의 산소 유입을 차단한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재 초기에는 다량의 물로 냉각소화하는 것이 효과적 이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">항상 안전거리를 유지하고 접근할 때에는 엄폐물을 이용 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">밀폐된 공간에서 화재 시 공기호흡기를 착용하여 질식 되지 않도록 주의한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 종류에 따른 일반적 성상을 나타낸 것으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">산화성 고체는 환원성 물질이며 황린과 철분을 포함한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">인화성 액체는 전기 전도체이며 휘발유와 등유를 포함 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">가연성 고체는 불연성 물질이며 질산염류와 무기과산 화물을 포함한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자기반응성 물질은 연소 또는 폭발을 일으킬 수 있는 물질이며 유기과산화물, 질산에스테르류를 포함한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물 지정수량이 다른 하나는?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">탄화칼슘</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">과염소산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">마그네슘</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">금속의 인화물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2019년 소방공채·경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음은 제1석유류에 대한 설명이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>제1석유류는 아세톤, 휘발유 그 밖에 1기압에서 ( 가 )이 섭씨 ( 나 )도 미만인 것이다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 발화점 / ( 나 ): 21</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 발화점 / ( 나 ): 25</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 인화점 / ( 나 ): 21</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 인화점 / ( 나 ): 25</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2020년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재진압 시 주수소화에 적응성 있는 위험물로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">황화린</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">질산에스테르류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">유기금속화합물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">알칼리금속의 과산화물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2020년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제4류 위험물에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">물보다 가볍고 물에 녹지 않는 것이 많다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">일반적으로 부도체 성질이 강하여 정전기 축적이 쉽다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">발생 증기는 가연성이며, 증기비중은 대부분 공기보다 가볍다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">사용량이 많은 휘발유, 경유 등은 연소하한계가 낮아 매우 인화하기 쉽다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2021년 소방공채·경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 종류에 따른 소화 방법으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제1류 위험물인 알칼리금속의 과산화물은 물을 사용 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제2류 위험물인 마그네슘은 건조사를 사용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제3류 위험물인 알킬알루미늄은 건조사를 사용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제4류 위험물인 알코올은 내알코올포(泡, foam)를 사용 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2022년 소방공채·경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물에 대한 일반적인 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제1류 위험물 중 질산염류는 연소속도가 빨라 폭발적 으로 연소한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제3류 위험물 중 황린은 가열, 충격, 마찰에 의해 분해 되어 산소가 발생하므로 가연물과의 접촉을 피한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제4류 위험물 중 제1석유류는 인화점 및 연소하한계가 낮아 적은 양으로도 화재의 위험이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제5류 위험물 중 유기과산화물은 공기 중에 노출되거나 수분과 접촉하면 발화의 위험이 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2024년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령, 시행규칙상 위험물의 지정수량과 위험등급의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">황린 · 20 kg · Ⅰ등급</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">마그네슘 · 500 kg · Ⅲ등급</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">유기과산화물 · 10 kg · Ⅰ등급</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">과염소산 · 300 kg · Ⅱ등급</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2025년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 성질 및 품명의 정의로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“인화성고체”라 함은 고형알코올 그 밖에 1기압에서 인화 점이 섭씨 40도 미만인 고체를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“제1석유류”라 함은 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 21도 미만인 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“특수인화물”이라 함은 이황화탄소, 디에틸에테르 그 밖에 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“자연발화성물질 및 금수성물질”이라 함은 고체 또는 액체 로서 공기 중에서 발화의 위험성이 있거나 산과 접촉하여 발화하거나 고압 수증기를 발생하는 위험성이 있는 것을 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제6류 위험물의 취급 시 유의 사항으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">유출사고 시에는 건조사 및 중화제를 사용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">불연성 물질로 분해 시 산소가 발생하며 대부분 염기성이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">저장하고 있는 용기는 파손되거나 액체가 누설되지 않도록 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소량 화재 시에는 다량의 물로 희석하는 소화방법을 사용 할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2025년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><보기>는 위험물과 해당 물질의 화재진압에 적응성이 있는 소화 방법을 연결한 것이다. 바르게 연결된 것만 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 황린(P4)<br/>· 물을 사용한 냉각소화<br/>ㄴ. 과산화나트륨(Na2O2)<br/>· 물을 사용한 냉각소화<br/>ㄷ. 삼황화린(P4S3)<br/>· 팽창질석 등을 사용한 질식소화<br/>ㄹ. 아세톤(CH3COCH3)<br/>· 알코올포소화약제에 의한 질식소화<br/>ㅁ. 히드록실아민(NH2OH)<br/>· 이산화탄소소화약제에 의한 질식소화<br/>ㅂ. 과염소산(HClO4)<br/>· 다량의 물에 의한 희석소화(소량 화재 제외)</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄹ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㅂ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ, ㅂ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물에 관한 설명으로 옳지 않은 것은? 위험물 유별 및 품명 소화방법 지정수량</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 표 복원: ①에서 ④ 위험물별 유별·품명·소화방법·지정수량 비교표]</strong>· <strong>① 과산화수소(H₂O₂)</strong>: 제6류 위험물(과산화수소) ｜ 다량의 물로 희석소화 ｜ 지정수량 300 kg<br/>· <strong>② 나이트로벤젠(C₆H₅NO₂)</strong>: 제5류 위험물(나이트로화합물) ｜ 다량의 물로 냉각소화 ｜ 제2종 100 kg <em>(※ 실제로는 제4류 제3석유류 비수용성 2,000 L임!)</em><br/>· <strong>③ 글리세린(C₃H₅(OH)₃)</strong>: 제4류 위험물(제3석유류 수용성) ｜ 알코올포로 질식, 다량의 물로 희석소화 ｜ 지정수량 4,000 L<br/>· <strong>④ 탄화칼슘(CaC₂)</strong>: 제3류 위험물(칼슘의 탄화물) ｜ 마른모래·팽창질석·팽창진주암·건조석회로 질식소화 ｜ 지정수량 300 kg</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">과산화수소(H2O2) · 제6류 위험물(과산화수소) · 다량의 물로 희석소화 · 지정수량 300 kg</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">나이트로벤젠(C6H5NO2) · 제5류 위험물(나이트로화합물) · 다량의 물로 냉각소화 · 제2종 100 kg</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">글리세린(C3H5(OH)3) · 제4류 위험물(제3석유류 수용성) · 알코올포로 질식 및 다량의 물로 희석소화 · 지정수량 4,000 L</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">탄화칼슘(CaC2) · 제3류 위험물(칼슘의 탄화물) · 마른모래·팽창질석·팽창진주암·건조석회로 질식소화 · 지정수량 300 kg</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2026년 소방공채·경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><보기>의 물질 중 위험물 지정수량의 배수를 모두 합한 값으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>·질산 1,200 kg(비중 1.59)<br/>·황 200 kg(활석 등 불연성 물질과 수분의 불순물이 100 kg 함유)<br/>·과산화수소 300 kg(용매 180 kg 함유)<br/>·철분 1,000 kg(철의 분말로서 53 µm의 표준체를 통과한 것이 560 kg)</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">3.52배</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">6.52배</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">7배</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">9배</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 24제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물(자기반응성물질)은 분자 내에 산소를 함유하고 있어 외부 산소 유입을 차단하는 질식소화는 효과가 없으며, 다량의 물로 냉각소화해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물(자기반응성물질)은 연소 또는 폭발을 일으킬 수 있는 물질로서 유기과산화물, 질산에스테르류, 니트로화합물, 아조화합물, 히드록실아민 등을 포함한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물의 지정수량에서 탄화칼슘(제3류), 금속의 인화물(제3류), 과염소산(제6류)은 모두 300킬로그램이며, 마그네슘·철분·금속분(제2류)은 500킬로그램이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 '제1석유류'란 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 21도 미만인 것을 말하며, '제2석유류'는 인화점이 섭씨 21도 이상 70도 미만인 것을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>질산에스테르류, 유기과산화물 등 제5류 위험물은 화재진압 시 다량의 물에 의한 주수(냉각)소화에 적응성이 있으나, 알칼리금속의 과산화물(제1류)과 유기금속화합물(제3류)은 금수성이므로 주수소화가 금지된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물(인화성 액체)은 액체비중이 대부분 물보다 가볍고 비수용성·부도체가 많으나, 발생 증기의 비중(증기비중)은 모두 공기보다 무거워 낮은 곳에 체류한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 알칼리금속의 과산화물(과산화나트륨 등)은 물과 반응하여 산소와 열을 발생시키므로 주수소화가 금지되며 건조사·팽창질석 등으로 질식소화해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 제1석유류는 인화점 및 연소하한계가 낮아 적은 양으로도 화재의 위험이 크며, 제1류 위험물인 질산염류는 그 자체는 타지 않는 불연성 산화제이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행규칙상 제6류 위험물(과염소산, 과산화수소, 질산)은 지정수량이 모두 300킬로그램이며, 위험등급은 모두 '위험등급 Ⅰ등급'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법령상 '인화성고체'는 1기압에서 인화점이 섭씨 40도 미만인 고체이고, '특수인화물'은 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제6류 위험물(과염소산, 과산화수소, 질산)은 모두 불연성·수용성 액체로서 비중이 1보다 크고 산성을 띠며, 유출 시 건조사나 알칼리성 중화제를 사용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물인 히드록실아민(NH2OH)은 자기반응성물질이므로 이산화탄소 소화약제에 의한 질식소화는 적응성이 없으며 다량의 물로 냉각소화해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>나이트로벤젠(니트로벤젠, C6H5NO2)은 명칭에 나이트로가 포함되어 있으나 제5류 위험물이 아니라 '제4류 위험물 중 제3석유류(비수용성, 지정수량 2,000리터)'에 해당하며, 글리세린은 '제4류 위험물 중 제3석유류(수용성, 지정수량 4,000리터)'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법령상 질산은 비중 1.49 이상, 과산화수소는 농도 36중량퍼센트 이상, 유황은 순도 60중량퍼센트 이상, 철분은 53마이크로미터 표준체 통과분이 50중량퍼센트 이상인 것만 위험물에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[제4류 위험물] 일반적으로 부도체 성질이 강하여 정전기 축적이 쉽다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[제4류 위험물] 발생 증기는 가연성이며, 증기비중은 대부분 공기보다 가볍다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[제4류 위험물] 사용량이 많은 휘발유, 경유 등은 연소하한계가 낮아 매우 인화하기 쉽다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 질산염류는 연소속도가 빨라 폭발적 으로 연소한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물 중 황린은 가열, 충격, 마찰에 의해 분해 되어 산소가 발생하므로 가연물과의 접촉을 피한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물 중 유기과산화물은 공기 중에 노출되거나 수분과 접촉하면 발화의 위험이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>유출사고 시에는 건조사 및 중화제를 사용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>불연성 물질로 분해 시 산소가 발생하며 대부분 염기성이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>저장하고 있는 용기는 파손되거나 액체가 누설되지 않도록 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 특수인화물이란 1기압에서 발화점이 100 ℃ 이하인 것 또는 인화점이 영하 20 ℃ 이하이거나 끓는점(비점)이 40 ℃ 이하인 것을 말하며, 이황화탄소(CS₂)는 끓는점이 40 ℃ 이하이므로 특수인화물에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 특수인화물인 디에틸에테르, 이황화탄소, 아세트알데히드, 산화프로필렌은 모두 물에 녹지 않는 비수용성 액체이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령 별표 1상 메틸알코올, 에틸알코올, 프로필알코올, 부틸알코올은 모두 제4류 위험물 중 '알코올류(지정수량 400 L)'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>글리세린(3가 알코올)과 에틸렌글리콜(2가 알코올)은 분자 내에 하이드록시기(-OH)를 가진 수용성 액체이므로 제4류 위험물 중 '알코올류(지정수량 400 L)'로 분류된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 아세트산(초산)과 폼산(개미산)은 수용성 액체이므로 지정수량은 1,000 L이고, 나이트로벤젠과 클로로벤젠은 비수용성 액체이므로 지정수량은 모두 2,000 L이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물은 모두 액체비중이 1보다 작아 물보다 가벼우므로 물 위에 뜬다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물인 피크르산(트라이나이트로페놀)은 충격과 마찰을 막기 위해 구리나 납으로 만든 튼튼한 금속 용기에 보관해야 한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:③ · 05:② · 06:③ · 07:① · 08:③ · 09:④ · 10:④ · 11:② · 12:① · 13:② · 14:③</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:X · 17:O · 18:X · 19:X · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 16 · 제5편 위험물 및 특수가연물론 · 제2장 (14문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제5류 위험물(유기과산화물, 질산에스테르류, 니트로화합물 등 자기반응성물질)은 분자 내부에 이미 충분한 산소를 함유하고 있어 외부로부터의 산소 유입을 차단하는 '질식소화'가 전혀 효과가 없으며, 다량의 물로 온도를 낮추는 '냉각소화'만 유효합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">외부로부터의 산소 유입을 차단한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제5류 위험물은 자체 분자 내에 산소를 가지고 연소(자기연소)하므로 외부로부터의 산소 유입을 차단하는 질식소화는 효과가 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재 초기에는 다량의 물로 냉각소화하는 것이 효과적 이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제5류 위험물 화재 초기에는 다량의 물로 분해 온도 이하로 낮추는 냉각소화가 가장 효과적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">항상 안전거리를 유지하고 접근할 때에는 엄폐물을 이용 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제5류 위험물은 연소 속도가 매우 빠르고 폭발 위험이 크므로 항상 안전거리를 유지하고 엄폐물을 이용하여 접근해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">밀폐된 공간에서 화재 시 공기호흡기를 착용하여 질식 되지 않도록 주의한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 연소 시 질소산화물(NO2 등) 등 유독가스가 다량 발생하므로 밀폐 공간 화재 시 공기호흡기를 반드시 착용해야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 위험물 유별 성상과 대표 품명을 종합적으로 비교하는 문항입니다. 산화성 고체(제1류)는 산화성 물질이며 질산염류·무기과산화물을 포함하고, 가연성 고체(제2류)는 환원성 물질이며 철분·적린·유황을 포함하며, 인화성 액체(제4류)는 전기 부도체(비전도체)이고, 자기반응성 물질(제5류)은 유기과산화물·질산에스테르류를 포함합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">산화성 고체는 환원성 물질이며 황린과 철분을 포함한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 산화성 고체(제1류)는 환원성이 아니라 '산화성(불연성)' 물질이며, 황린은 제3류, 철분은 제2류 위험물입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">인화성 액체는 전기 전도체이며 휘발유와 등유를 포함 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 인화성 액체(제4류)는 대부분 비수용성으로서 전기 전도체가 아니라 '전기 부도체(절연체)'이므로 유동·마찰 시 정전기가 축적되기 쉽습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">가연성 고체는 불연성 물질이며 질산염류와 무기과산 화물을 포함한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 가연성 고체(제2류)는 불연성이 아니라 '가연성(환원성)' 물질이며, 질산염류와 무기과산화물은 제2류가 아니라 '제1류 위험물'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자기반응성 물질은 연소 또는 폭발을 일으킬 수 있는 물질이며 유기과산화물, 질산에스테르류를 포함한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 자기반응성 물질(제5류)은 산소를 함유하여 가열·충격 시 스스로 연소 또는 폭발을 일으킬 수 있는 물질이며, 유기과산화물·질산에스테르류·니트로화합물 등을 포함합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 탄화칼슘(제3류), 과염소산(제6류), 금속의 인화물(제3류)은 모두 지정수량이 <code>300 kg</code>인 반면, 마그네슘(제2류)은 철분·금속분과 함께 지정수량이 <code>500 kg</code>입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">탄화칼슘</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제3류 위험물 중 칼슘 또는 알루미늄의 탄화물(탄화칼슘 등)의 지정수량은 <code>300 kg</code>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">과염소산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제6류 위험물(과염소산, 과산화수소, 질산)의 지정수량은 모두 <code>300 kg</code>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">마그네슘</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 제2류 위험물 중 마그네슘(및 철분·금속분)의 지정수량은 <code>500 kg</code>이므로 나머지 셋(<code>300 kg</code>)과 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">금속의 인화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제3류 위험물 중 금속의 인화물(인화칼슘 등)과 금속의 수소화물의 지정수량은 <code>300 kg</code>입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제4류 위험물 석유류의 구분 기준은 발화점이 아니라 <strong>1기압에서의 '인화점'</strong>이며, 제1석유류는 <strong>인화점이 섭씨 21도 미만</strong>인 액체(아세톤, 휘발유 등)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 발화점 / ( 나 ): 21</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제1석유류의 분류 기준은 발화점이 아니라 '인화점'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 발화점 / ( 나 ): 25</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 제4류 위험물 중 제1석유류의 분류 기준은 발화점이 아니라 1기압에서의 '인화점'(가)이며, 기준 온도는 섭씨 25도가 아니라 '섭씨 21도 미만'(나)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 인화점 / ( 나 ): 21</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] '제1석유류'란 아세톤, 휘발유 그 밖에 1기압에서 <strong>인화점</strong>( 가 )이 섭씨 <strong>21</strong>도( 나 ) 미만인 것을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 인화점 / ( 나 ): 25</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 온도 기준은 25도 미만이 아니라 '21도 미만'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 물과 반응하여 가연성·독성 가스를 발생시키거나 급격히 발열하는 물질(황화린, 유기금속화합물, 알칼리금속의 과산화물)은 주수소화가 엄격히 금지되나, 제5류 자기반응성물질인 '질산에스테르류'는 다량의 물을 뿌려 냉각소화(주수소화)해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">황화린</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제2류 위험물인 황화린(오황화린 등)은 물과 반응하여 맹독성·가연성 기체인 황화수소(H2S)를 발생시키므로 주수소화를 피하고 마른모래 등으로 질식소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">질산에스테르류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 제5류 위험물인 질산에스테르류(니트로글리세린, 니트로셀룰로오스 등)는 분자 내에 산소를 함유한 자기반응성물질로서 화재 시 다량의 물로 주수(냉각)소화하는 데 적응성이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">유기금속화합물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제3류 위험물인 유기금속화합물(알킬알루미늄 등)은 대표적인 금수성 물질로서 물과 반응하여 탄화수소 가스를 내며 폭발하므로 건조사·팽창질석으로 소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">알칼리금속의 과산화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제1류 위험물 중 알칼리금속의 과산화물(과산화나트륨 등)은 물과 반응하여 산소와 열을 내는 금수성 물질이므로 마른모래·팽창질석 등으로 질식소화합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제4류 위험물(인화성 액체)은 액체 상태의 비중은 대부분 물(1)보다 가벼워(0.6에서 0.9 수준) 물 위에 뜨지만, 기화된 <strong>증기 상태의 비중(증기비중 = 분자량/29)은 모두 공기(1)보다 무거워</strong> 바닥이나 낮은 곳(피트, 지하층)에 체류합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">물보다 가볍고 물에 녹지 않는 것이 많다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제4류 위험물은 이황화탄소·클로로벤젠·글리세린 등 일부를 제외하면 대부분 액체비중이 1보다 작아 물보다 가볍고 비수용성인 것이 많습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">일반적으로 부도체 성질이 강하여 정전기 축적이 쉽다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 일반적으로 전기 부도체 성질이 강하여 유동·여과·분출 시 정전기 축적이 매우 쉽습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">발생 증기는 가연성이며, 증기비중은 대부분 공기보다 가볍다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 제4류 위험물에서 발생하는 증기는 가연성이며, 분자량이 공기의 평균분자량(29)보다 크므로 <strong>증기비중은 공기보다 무거워(1보다 커서)</strong> 낮은 곳에 체류합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">사용량이 많은 휘발유, 경유 등은 연소하한계가 낮아 매우 인화하기 쉽다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 휘발유(연소범위 1.4퍼센트에서 7.6퍼센트), 경유 등은 연소하한계가 매우 낮아 소량의 증기만 누출되어도 인화하기 쉽습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제1류 위험물은 원칙적으로 다량의 물로 냉각소화하지만, 유일한 예외인 <strong>'알칼리금속의 과산화물'(과산화나트륨, 과산화칼륨 등)</strong>은 물과 반응하여 산소와 열을 방출하는 금수성 물질이므로 절대 물을 사용하면 안 되고 건조사·팽창질석·팽창진주암으로 질식소화해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제1류 위험물인 알칼리금속의 과산화물은 물을 사용 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제1류 위험물 중 '알칼리금속의 과산화물'은 물과 반응하여 산소와 발열을 일으키는 금수성 물질이므로 물을 사용하면 안 되며, 마른모래(건조사)·팽창질석·팽창진주암으로 피복(질식)소화해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제2류 위험물인 마그네슘은 건조사를 사용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제2류 위험물인 마그네슘은 물과 반응하면 수소가스를 발생시키므로 건조사나 금속화재용 분말약제를 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제3류 위험물인 알킬알루미늄은 건조사를 사용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제3류 위험물인 알킬알루미늄은 금수성·자연발화성 물질이므로 건조사·팽창질석 등을 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제4류 위험물인 알코올은 내알코올포(泡, foam)를 사용 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제4류 위험물인 알코올은 수용성 액체이므로 일반 포가 파괴되는 것을 막기 위해 내알코올포(알코올형포)를 사용합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제1류 질산염류는 불연성 산화제이고, 제3류 황린은 산소를 발생시키는 것이 아니라 공기 중 산소와 결합하여 자연발화(오산화인 연기 발생)하며, 제5류 유기과산화물은 수분과 접촉하면 위험한 것이 아니라 오히려 물을 섞어 희석·안정화시켜 저장합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제1류 위험물 중 질산염류는 연소속도가 빨라 폭발적 으로 연소한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제1류 위험물 중 질산염류는 그 자체는 연소하지 않는 '불연성 물질'입니다(연소속도가 빨라 폭발적으로 연소하는 것은 제5류 자기반응성물질의 특징임).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제3류 위험물 중 황린은 가열, 충격, 마찰에 의해 분해 되어 산소가 발생하므로 가연물과의 접촉을 피한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 가열·충격·마찰에 의해 분해되어 산소를 발생시키므로 가연물과의 접촉을 피해야 하는 것은 황린이 아니라 '제1류 산화성 고체'이며, 제3류 황린은 공기 중에 노출되면 스스로 산화하여 자연발화하므로 물속에 저장합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제4류 위험물 중 제1석유류는 인화점 및 연소하한계가 낮아 적은 양으로도 화재의 위험이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 제4류 위험물 중 제1석유류(휘발유, 아세톤 등)는 인화점(21도 미만) 및 연소하한계(약 1퍼센트에서 2퍼센트)가 매우 낮아 적은 양의 증기로도 화재·폭발의 위험이 큽니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제5류 위험물 중 유기과산화물은 공기 중에 노출되거나 수분과 접촉하면 발화의 위험이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 공기 중에 노출되거나 수분과 접촉하면 발화의 위험이 있는 것은 '제3류 자연발화성 및 금수성 물질'이며, 제5류 유기과산화물은 충격·가열·직사광선을 피하고 물을 첨가하여 안정화시키기도 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> <strong>제6류 위험물(과염소산, 과산화수소, 질산)</strong>은 지정수량이 <code>300 kg</code>이지만 위험성이 매우 높아 전 품목이 위험등급 Ⅱ등급이 아니라 <strong>'위험등급 Ⅰ등급'</strong>에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">황린 · 20 kg · Ⅰ등급</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제3류 황린은 지정수량이 <code>20 kg</code>이고, 위험등급은 가장 위험한 <strong>Ⅰ등급</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">마그네슘 · 500 kg · Ⅲ등급</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제2류 마그네슘(및 철분·금속분·인화성고체)은 지정수량이 <code>500 kg</code>(<code>인화성고체는 1,000 kg</code>)이고, 위험등급은 <strong>Ⅲ등급</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">유기과산화물 · 10 kg · Ⅰ등급</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제5류 유기과산화물(제1종)은 지정수량이 <code>10 kg</code>이고, 위험등급은 <strong>Ⅰ등급</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">과염소산 · 300 kg · Ⅱ등급</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 제6류 과염소산은 지정수량이 <code>300 kg</code>인 것은 맞으나, 제6류 위험물(과염소산·과산화수소·질산)은 모두 위험등급 Ⅱ등급이 아니라 <strong>'위험등급 Ⅰ등급'</strong>에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제3류 위험물인 '자연발화성물질 및 금수성물질'은 고체 또는 액체로서 공기 중에서 발화의 위험성이 있거나 <strong>'물'과 접촉하여 발화하거나 가연성 가스를 발생하는 위험성이 있는 것</strong>을 말합니다('산과 접촉하여 고압 수증기를 발생'한다는 설명은 허위 왜곡임).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“인화성고체”라 함은 고형알코올 그 밖에 1기압에서 인화 점이 섭씨 40도 미만인 고체를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] '인화성고체'(제2류)란 고형알코올 그 밖에 1기압에서 인화점이 섭씨 40도 미만인 고체를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“제1석유류”라 함은 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 21도 미만인 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] '제1석유류'(제4류)란 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 21도 미만인 것을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“특수인화물”이라 함은 이황화탄소, 디에틸에테르 그 밖에 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] '특수인화물'(제4류)이란 이황화탄소, 디에틸에테르 그 밖에 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“자연발화성물질 및 금수성물질”이라 함은 고체 또는 액체 로서 공기 중에서 발화의 위험성이 있거나 산과 접촉하여 발화하거나 고압 수증기를 발생하는 위험성이 있는 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] '자연발화성물질 및 금수성물질'(제3류)이란 고체 또는 액체로서 공기 중에서 발화의 위험성이 있거나 <strong>물과 접촉하여 발화하거나 가연성 가스를 발생하는 위험성</strong>이 있는 것을 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제6류 위험물(산화성 액체: 과염소산 <code>HClO4</code>, 과산화수소 <code>H2O2</code>, 질산 <code>HNO3</code>)은 모두 불연성 액체이면서 분해 시 산소를 방출하는 강산화제이며, 액성은 염기성(알칼리성)이 아니라 모두 <strong>'산성(특히 과염소산·질산은 강산성, 과산화수소는 약산성)'</strong>입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">유출사고 시에는 건조사 및 중화제를 사용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제6류 위험물 유출 사고 시에는 마른모래(건조사) 등으로 흡착·제거하거나 탄산수소나트륨·소석회 등 알칼리성 중화제를 사용하여 중화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">불연성 물질로 분해 시 산소가 발생하며 대부분 염기성이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 제6류 위험물은 불연성 물질로 분해 시 산소가 발생하는 것은 맞으나, 염기성이 아니라 과염소산·질산·과산화수소 모두 <strong>산성</strong> 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">저장하고 있는 용기는 파손되거나 액체가 누설되지 않도록 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 부식성이 매우 강한 액체이므로 내산성 용기를 사용하고 파손되거나 액체가 누설되지 않도록 주의해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소량 화재 시에는 다량의 물로 희석하는 소화방법을 사용 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 원칙적으로 마른모래 등으로 질식·흡착 소화하나, 소량 화재 시에는 다량의 물로 단번에 희석하는 소화방법을 사용할 수 있습니다(단, 과염소산 대량 화재 시 주수 주의).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 6가지 구체적 화학물질의 유별과 소화 적응성을 한 번에 묻는 고난도 종합 문항입니다.
+· ㄱ. <strong>황린(<code>P4</code>, 제3류 자연발화성)</strong>: 물속 저장 물질이므로 물을 사용한 냉각소화 <strong>[옳음]</strong>
+· ㄴ. <strong>과산화나트륨(<code>Na2O2</code>, 제1류 알칼리금속 과산화물)</strong>: 금수성 물질이므로 물 사용 금지 <strong>[틀림]</strong>
+· ㄷ. <strong>삼황화린(<code>P4S3</code>, 제2류 황화린)</strong>: 물과 반응해 황화수소를 내므로 팽창질석·마른모래 질식소화 <strong>[옳음]</strong>
+· ㄹ. <strong>아세톤(<code>CH3COCH3</code>, 제4류 수용성 제1석유류)</strong>: 알코올포 소화약제 질식소화 <strong>[옳음]</strong>
+· ㅁ. <strong>히드록실아민(<code>NH2OH</code>, 제5류 자기반응성물질)</strong>: 분자 내 산소 함유(또는 자체 분해폭발) 물질이므로 이산화탄소 질식소화 불가, 다량의 물로 냉각소화 <strong>[틀림]</strong>
+· ㅂ. <strong>과염소산(<code>HClO4</code>, 제6류 산화성 액체)</strong>: 소량 화재를 제외한 대량 화재 시 물을 뿌리면 심한 발열·비산 위험이 있어 주수 금지(건조사·팽창질석 사용) <strong>[틀림]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 적응성이 있는 소화 방법으로 바르게 연결된 것은 황린( ㄱ ), 삼황화린( ㄷ ), 아세톤( ㄹ )이므로 ㄱ, ㄷ, ㄹ이 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㅁ(제5류 히드록실아민에 이산화탄소 질식소화)은 자기반응성물질에 질식소화가 무효하므로 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ(과산화나트륨 주수소화)과 ㅂ(과염소산 대량 화재 주수소화)이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄴ(과산화나트륨은 제1류 알칼리금속 과산화물로서 물과 반응해 산소와 열을 내는 금수성 물질이므로 물 냉각소화 불가)과 ㅂ(과염소산은 다량의 물 희석소화가 아니라 건조사·탄산수소염류 분말 등 사용)이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화학식과 물질명을 보고 유별·품명·소화방법·지정수량을 판별하는 <strong>[핵심 해설]</strong> <strong>나이트로벤젠(니트로벤젠, <code>C6H5NO2</code>)</strong>은 이름에 '나이트로(니트로)'가 들어가지만 니트로기가 1개뿐인 모노니트로화합물로서 폭발성 자기반응성이 없어 제5류 위험물이 아니라 <strong>'제4류 위험물 중 제3석유류(비수용성, 지정수량 2,000리터)'</strong>에 해당합니다(참고: 트리니트로벤젠, 트리니트로톨루엔처럼 니트로기가 2개 또는 3개 이상인 것이 제5류 니트로화합물임). 또한 시험지 표에서 ②번과 ③번의 행 구분이 밀려 인쇄되었으나, 나이트로벤젠을 '제5류 위험물 나이트로화합물(2종: 100 kg)'로 분류한 ②번이 명백한 오답입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">과산화수소(H2O2) · 제6류 위험물(과산화수소) · 다량의 물로 희석소화 · 지정수량 300 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 과산화수소(<code>H2O2</code>, 농도 36중량퍼센트 이상)는 제6류 위험물(산화성 액체)로서 다량의 물로 희석소화할 수 있으며 지정수량은 <code>300 kg</code>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">나이트로벤젠(C6H5NO2) · 제5류 위험물(나이트로화합물) · 다량의 물로 냉각소화 · 제2종 100 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 나이트로벤젠(<code>C6H5NO2</code>)은 제5류 위험물(나이트로화합물)이 아니라 <strong>제4류 위험물 중 제3석유류(비수용성, 지정수량 2,000리터)</strong>에 해당하며, 포·분말·이산화탄소 등으로 질식소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">글리세린(C3H5(OH)3) · 제4류 위험물(제3석유류 수용성) · 알코올포로 질식 및 다량의 물로 희석소화 · 지정수량 4,000 L</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 글리세린(<code>C3H5(OH)3</code>)은 제4류 위험물 중 제3석유류(수용성, 지정수량 <code>4,000 L</code>)에 해당하며 알코올포로 질식소화하거나 다량의 물로 희석소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">탄화칼슘(CaC2) · 제3류 위험물(칼슘의 탄화물) · 마른모래·팽창질석·팽창진주암·건조석회로 질식소화 · 지정수량 300 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 탄화칼슘(<code>CaC2</code>)은 제3류 위험물(칼슘의 탄화물, 지정수량 <code>300 kg</code>)에 해당하며 금수성이므로 마른모래·팽창질석·팽창진주암·건조석회로 질식소화합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 1 비고의 위험물 성립(제외) 기준과 지정수량을 결합한 최고난도 계산 문항입니다.
+1) <strong>질산 1,200 kg(비중 1.59)</strong>: 질산은 <strong>비중 1.49 이상</strong>인 것만 제6류 위험물에 해당합니다(<code>1.59 >= 1.49</code>이므로 위험물 해당). 지정수량은 <code>300 kg</code>이므로 배수는 <code>1,200 / 300 = 4배</code>입니다.
+2) <strong>황(유황) 200 kg(불순물 100 kg 함유)</strong>: 유황은 불순물을 제외한 <strong>순도가 60중량퍼센트 이상</strong>인 것만 제2류 위험물에 해당합니다(순수 황 질량은 <code>200 - 100 = 100 kg</code>으로 순도가 <code>50중량퍼센트</code>이므로 60중량퍼센트 미만이어서 <strong>위험물이 아님 = 0배</strong>).
+3) <strong>과산화수소 300 kg(용매 180 kg 함유)</strong>: 과산화수소는 <strong>농도가 36중량퍼센트 이상</strong>인 것만 제6류 위험물에 해당합니다(순수 과산화수소는 <code>300 - 180 = 120 kg</code>이므로 농도가 <code>120 / 300 = 40중량퍼센트 >= 36중량퍼센트</code>여서 <strong>위험물에 해당!</strong>). 지정수량은 <code>300 kg</code>이므로 배수는 <code>300 / 300 = 1배</code>입니다.
+4) <strong>철분 1,000 kg(53 마이크로미터 표준체 통과분이 560 kg)</strong>: 철분은 53마이크로미터 표준체를 통과하는 것이 <strong>50중량퍼센트 미만인 것은 제외</strong>합니다(통과분이 <code>560 / 1,000 = 56중량퍼센트 >= 50중량퍼센트</code>이므로 <strong>위험물에 해당!</strong>). 지정수량은 <code>500 kg</code>이므로 배수는 <code>1,000 / 500 = 2배</code>입니다.
+· <strong>총 지정수량 배수 합계</strong>: <code>4배(질산) + 0배(황) + 1배(과산화수소) + 2배(철분) = 7배</code>.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">3.52배</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 위험물 해당 여부 및 지정수량 기준을 잘못 적용한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">6.52배</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 황(순도 50wt%로 60wt% 미만이므로 0배)을 제외하고 과산화수소와 철분의 전체 질량이 아닌 용질·통과분 질량만으로 배수를 잘못 나누어 합산한 오답 수치입니다(정확한 합계는 4 + 0 + 1 + 2 = 7배).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">7배</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 질산(비중 1.49 이상 충족 ➔ <code>1,200 / 300 = 4배</code>), 황(순도 50중량퍼센트로 60중량퍼센트 미만 ➔ 위험물 제외 <code>0배</code>), 과산화수소(농도 40중량퍼센트로 36중량퍼센트 이상 충족 ➔ <code>300 / 300 = 1배</code>), 철분(53마이크로미터 통과분 56중량퍼센트로 50중량퍼센트 이상 충족 ➔ <code>1,000 / 500 = 2배</code>)을 모두 합하면 <code>4 + 0 + 1 + 2 = 7배</code>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">9배</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 순도 50중량퍼센트인 황 <code>200 kg</code>(<code>200 / 100 = 2배</code>)까지 위험물로 포함시켜 <code>7 + 2 = 9배</code>로 오산한 함정 선지입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 24제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:X · 17:O · 18:X · 19:X · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>제5류 위험물은 자기연소 물질이므로 질식소화 불가, 다량의 물에 의한 냉각소화 적용이 대원칙입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>제5류 위험물 품명(유기과산화물, 질산에스테르류, 니트로·니트로소·아조·디아조·히드라진 유도체, 히드록실아민 등)은 제1류 무기과산화물·질산염류와 정확히 구분해야 합니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>300킬로그램 그룹(제1류 제2종, 제3류 탄화물·인화물·수소화물, 제6류 전 품목)과 500킬로그램 그룹(제2류 철분·금속분·마그네슘)은 지정수량 구별 문제의 핵심입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>제4류 석유류 인화점 기준: 제1석유류(21도 미만), 제2석유류(21도 이상 70도 미만), 제3석유류(70도 이상 200도 미만), 제4석유류(200도 이상 250도 미만).
+            <span class="ox-exp-src">2019년 소방공채·경채 Q8 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>제1류 중 알칼리금속 과산화물만 예외적으로 금수성이며, 제5류는 전 품목 다량의 물에 의한 냉각소화가 원칙입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>'액체는 물보다 가볍고, 증기는 공기보다 무겁다'는 제4류 위험물의 가장 중요한 성상 명제입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>제1류 위험물의 유일한 금수성 예외인 '알칼리금속의 과산화물'은 매년 반복 출제되는 1순위 함정입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>제1류의 불연성·산소 방출 성질과 제5류의 자기연소·폭발 성질, 제3류의 자연발화·금수성을 뒤섞는 선지 왜곡을 주의해야 합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q8 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>위험등급 Ⅰ등급 대상: ① 제1류 제1종(50킬로그램), ② 제3류 칼륨·나트륨·알킬알루미늄·황린 등(10에서 50킬로그램), ③ 제4류 특수인화물(50리터), ④ 제5류 제1종(10킬로그램), ⑤ 제6류 전 품목(300킬로그램).
+            <span class="ox-exp-src">2024년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>인화성고체(인화점 40도 미만)와 특수인화물(발화점 100도 이하 또는 인화점 영하 20도 이하이고 비점 40도 이하)의 수치 조건은 정확히 암기해야 합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>제6류 3종(과염소산·과산화수소·질산)은 모두 불연성 산화성 액체, 산성, 비중 1 이상(물보다 무거움), 지정수량 300킬로그램, 위험등급 Ⅰ등급이라는 공통점을 가집니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>히드록실아민 및 히드록실아민염류는 제5류 위험물(지정수량 100킬로그램)로서 질식소화가 불가능하고 다량의 물로 냉각소화해야 합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>니트로벤젠(비수용성 제3석유류, 2,000리터)과 글리세린·에틸렌글리콜(수용성 제3석유류, 4,000리터), 아닐린(비수용성 제3석유류, 2,000리터)은 제4류 제3석유류의 핵심 대표 물질입니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>별표 1 비고의 위험물 성립 커트라인 수치(질산 비중 1.49, 과산화수소 36중량퍼센트, 유황 순도 60중량퍼센트, 철분 53마이크로미터 체 50중량퍼센트 이상)는 배수 계산과 결합되는 핵심 기준입니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q8 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>일반적으로 전기 부도체 성질이 강하여 유동·여과·분출 시 정전기 축적이 매우 쉽습니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q20 · 제4류 위험물(인화성 액체)의 공통 성질(액체비중 1 미만·증기비중 1 초과)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 16 · X 틀림</span>제4류 위험물에서 발생하는 증기는 가연성이며, 분자량이 공기의 평균분자량(29)보다 크므로 <strong>증기비중은 공기보다 무거워(1보다 커서)</strong> 낮은 곳에 체류합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q20 · 제4류 위험물(인화성 액체)의 공통 성질(액체비중 1 미만·증기비중 1 초과)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>휘발유(연소범위 1.4퍼센트에서 7.6퍼센트), 경유 등은 연소하한계가 매우 낮아 소량의 증기만 누출되어도 인화하기 쉽습니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q20 · 제4류 위험물(인화성 액체)의 공통 성질(액체비중 1 미만·증기비중 1 초과)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>제1류 위험물 중 질산염류는 그 자체는 연소하지 않는 '불연성 물질'입니다(연소속도가 빨라 폭발적으로 연소하는 것은 제5류 자기반응성물질의 특징임).
+            <span class="ox-exp-src">2022년 소방공채·경채 Q8 · 제1류 질산염류·제3류 황린·제4류 제1석유류·제5류 유기과산화물의 성상 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 19 · X 틀림</span>가열·충격·마찰에 의해 분해되어 산소를 발생시키므로 가연물과의 접촉을 피해야 하는 것은 황린이 아니라 '제1류 산화성 고체'이며, 제3류 황린은 공기 중에 노출되면 스스로 산화하여 자연발화하므로 물속에 저장합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q8 · 제1류 질산염류·제3류 황린·제4류 제1석유류·제5류 유기과산화물의 성상 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>공기 중에 노출되거나 수분과 접촉하면 발화의 위험이 있는 것은 '제3류 자연발화성 및 금수성 물질'이며, 제5류 유기과산화물은 충격·가열·직사광선을 피하고 물을 첨가하여 안정화시키기도 합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q8 · 제1류 질산염류·제3류 황린·제4류 제1석유류·제5류 유기과산화물의 성상 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>제6류 위험물 유출 사고 시에는 마른모래(건조사) 등으로 흡착·제거하거나 탄산수소나트륨·소석회 등 알칼리성 중화제를 사용하여 중화합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q16 · 제6류 위험물(산화성 액체: 과염소산·과산화수소·질산)의 성상 및 취급·소화 방법</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 22 · X 틀림</span>제6류 위험물은 불연성 물질로 분해 시 산소가 발생하는 것은 맞으나, 염기성이 아니라 과염소산·질산·과산화수소 모두 <strong>산성</strong> 물질입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q16 · 제6류 위험물(산화성 액체: 과염소산·과산화수소·질산)의 성상 및 취급·소화 방법</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>부식성이 매우 강한 액체이므로 내산성 용기를 사용하고 파손되거나 액체가 누설되지 않도록 주의해야 합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q16 · 제6류 위험물(산화성 액체: 과염소산·과산화수소·질산)의 성상 및 취급·소화 방법</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>원칙적으로 마른모래 등으로 질식·흡착 소화하나, 소량 화재 시에는 다량의 물로 단번에 희석하는 소화방법을 사용할 수 있습니다(단, 과염소산 대량 화재 시 주수 주의).
+            <span class="ox-exp-src">2025년 소방공채·경채 Q16 · 제6류 위험물(산화성 액체: 과염소산·과산화수소·질산)의 성상 및 취급·소화 방법</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

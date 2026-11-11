@@ -1,0 +1,3360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 20 · 인쇄용] 제4편 위험물안전관리법 · 제3장 예방규정, 정기점검, 자체소방대 및 위험물 운송관리 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY19_04_02_제조소등의_안전거리와_위험물안전관리자_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 20</span>
+        
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(15제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 20 · 제4편 위험물안전관리법 · 제3장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(15문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">예방규정, 정기점검, 자체소방대 및 위험물 운송관리</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 예방규정 작성 대상(10·100·150·200배)과 정기점검·구조안전점검(12년)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>예방규정 작성 대상(영 제15조, 시·도지사 제출)</strong>: 제조소·일반취급소(<strong>10배↑</strong>), <strong>옥외저장소(100배↑)</strong>, <strong>옥내저장소(150배↑)</strong>, 옥외탱크저장소(<strong>200배↑</strong>), <strong>암반탱크·이송취급소(배수 불문 전부)</strong></li>
+                <li><strong>정기점검 대상(영 제16조)</strong>: <strong>예방규정 대상 전부 + 지하탱크저장소(배수 무관) + 이동탱크저장소(배수 무관, 5배도 해당!) + 지하매설탱크가 있는 제조소·주유·일반취급소</strong> (<strong>옥내탱크·간이탱크 및 100배 옥내저장소는 제외!</strong>)</li>
+                <li><strong>정기점검 제출 및 구조안전점검(규칙 제65조)</strong>: 연 1회 이상 점검 후 <strong>30일 이내 시·도지사에게 제출</strong>(3년 보존) / 50만L 이상 옥외탱크는 완공 후 원칙 <strong>12년 이내</strong>(13년 ×) 1회 이상 구조안전점검</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            지정수량의 수십 배에서 수백 배에 달하는 위험물을 다루는 대규모 시설에서는 안전관리자 한 사람의 역량에만 의존할 수 없으므로, 사업장 전체의 안전관리 조직과 순찰·점검 요령, 비상시 행동 매뉴얼을 문서로 명문화해야 합니다. 이처럼 대규모 제조소등의 관계인이 화재 예방과 긴급 대처를 위해 스스로 정하여 사용을 시작하기 전에 <strong>시·도지사에게 제출</strong>하여야 하는 자체 안전수칙이 바로 <strong>예방규정(豫防規程)</strong>입니다(법 제17조 제1항, 변경한 때에도 시·도지사에게 제출하며 시·도지사는 화재 예방을 위해 예방규정의 변경을 명할 수 있음). 왜 시설마다 예방규정 작성 배수가 다를까요? 위험물을 직접 가열·가공하는 제조소·취급소가 가장 위험하므로 낮은 배수(10배)부터 규제를 적용하고, 단순 저장시설은 설비의 밀폐성과 안전성에 따라 기준 배수가 높아집니다. 구체적으로 ｢위험물안전관리법 시행령｣ 제15조에 따라 관계인이 예방규정을 정하여야 하는 제조소등 6종은 ① 지정수량의 <strong>10배 이상</strong>의 위험물을 취급하는 <strong>제조소</strong>, ② 지정수량의 <strong>10배 이상</strong>의 위험물을 취급하는 <strong>일반취급소</strong>(단, 제4류 위험물 중 인화점이 섭씨 40도 이상인 것만을 지정수량의 30배 이하로 보일러 등으로 소비하는 일반취급소 등은 제외), ③ 지정수량의 <strong>100배 이상</strong>의 위험물을 저장하는 <strong>옥외저장소</strong>(2018년 공채 기출: 50배 이상이라 하면 오답!), ④ 지정수량의 <strong>150배 이상</strong>의 위험물을 저장하는 <strong>옥내저장소</strong>(2022년 공채 기출: 옥내저장소 150배와 옥외저장소 100배를 서로 바꾸면 오답!), ⑤ 지정수량의 <strong>200배 이상</strong>의 위험물을 저장하는 <strong>옥외탱크저장소</strong>, ⑥ 지정수량의 배수와 관계없이 모든 <strong>암반탱크저장소</strong> 및 장거리 배관으로 위험물을 보내는 모든 <strong>이송취급소</strong>입니다. 즉 <strong>'제조·일반 10배 · 옥외저장 100배 · 옥내저장 150배 · 옥외탱크 200배 · 암반·이송 전부'</strong>라는 배수 공식을 정확히 각인해 두어야 합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            이어서 법 제18조 및 시행령 제16조에 따라 관계인이 안전관리자나 탱크안전성능시험자로 하여금 <strong>연 1회 이상</strong> 시설의 기술기준 적합 여부를 물리적으로 점검하게 해야 하는 <strong>정기점검 대상 제조소등</strong>은 위 예방규정 대상과 직결됩니다. 바로 <strong>① 예방규정을 정하여야 하는 제조소등 전부</strong>에 더하여, 땅속에 묻혀 있거나 도로를 주행하기 때문에 부식·누출·전복 위험이 상시 존재하는 3가지 시설인 <strong>② 지하탱크저장소(배수 불문), ③ 이동탱크저장소(배수 불문, 2025년 기출: 지정수량의 5배를 저장하는 이동탱크저장소도 정기점검 대상!), ④ 위험물을 취급하는 탱크로서 지하에 매설된 탱크(지하매설탱크)가 있는 제조소·주유취급소·일반취급소</strong>를 합친 것입니다. 반대로 <strong>옥내탱크저장소</strong>나 간이탱크저장소(2021년 공채 Q19 정답!), 그리고 기준 배수(150배 이상)에 미달하는 <strong>지정수량 100배의 옥내저장소</strong>(2025년 공채·경채 Q36 정답!)는 정기점검 대상에 해당하지 않습니다. 정기점검을 한 제조소등의 관계인은 <strong>점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출</strong>하여야 하고 점검기록을 <strong>3년간 보존</strong>하여야 합니다(법 제18조 제1항·제2항, 2026년 경채 Q36 / 정기점검 대상 중 최대수량 50만 리터 이상인 특정·준특정옥외탱크저장소의 관계인은 소방본부장 또는 소방서장으로부터 정기검사를 받아야 함). 아울러 옥외탱크저장소 중 저장 또는 취급하는 액체위험물의 최대수량이 <strong>50만 리터 이상</strong>인 것(특정·준특정옥외저장탱크)에 대해서는 일반 정기점검 외에 설치허가에 따른 완공검사합격확인증을 발급받은 날부터 원칙적으로 <strong>12년 이내에 1회 이상</strong>(연장 승인 특례 제외) 특정·준특정옥외저장탱크의 구조 등에 관한 안전점검을 실시하여야 합니다(시행규칙 제65조 제1항 단서, 2026년 경채 Q36: 13년 이내라 하면 오답!).
+          </p>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 자체소방대 설치 대상(제4류 3천 배·옥외탱크 50만 배)과 화학소방자동차 기준</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>자체소방대 설치 대상 사업소(영 제18조)</strong>: 제4류 위험물 최대수량 합이 <strong>지정수량 3천 배 이상인 제조소·일반취급소</strong> 또는 최대수량이 <strong>지정수량 50만 배 이상인 제4류 위험물을 저장하는 옥외탱크저장소</strong> (<strong>옥내탱크저장소는 제외!</strong>)</li>
+                <li><strong>화학소방차·대원 수(영 별표 8, 1대당 5인)</strong>: 제조·일반취급소 12만 배 미만(<strong>1대/5인</strong>), 12만 배 이상 24만 배 미만(<strong>2대/10인</strong>), <strong>24만 배 이상 48만 배 미만(3대/15인)</strong>, 48만 배 이상(<strong>4대/20인</strong>) / 50만 배 이상 옥외탱크저장소(<strong>2대/10인</strong>)</li>
+                <li><strong>화학소방차 소화능력·약제 비치량(규칙 별표 21)</strong>: 포수용액 방사차(<strong>매분 2,000L↑</strong>, 24만L분 비치), 분말 방사차(<strong>매초 35kg↑, 1,400kg↑ 비치</strong>), <strong>할로겐화합물 방사차(매초 40kg↑, 1,000kg↑ 비치)</strong>, 이산화탄소 방사차(<strong>매초 40kg↑, 3,000kg↑ 비치</strong>), 제독차(가성소다·규조토 각 50kg↑)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            정유공장이나 대규모 석유화학단지, 초대형 저유소에서 유류 화재가 발생하면 일반 물로는 진압할 수 없고 대량의 포(거품)나 분말을 방사하는 화학소방자동차가 골든타임 내에 즉시 투입되어야 합니다. 이에 법 제19조 및 시행령 제18조(구 제17조)는 다량의 인화성 액체(제4류 위험물)를 저장·취급하는 사업소에 관할 소방서만 기다리지 않고 스스로 화학소방자동차와 전담 대원을 갖춘 <strong>자체소방대(自體消防隊)</strong>를 설치하도록 의무화하고 있습니다. 구체적으로 자체소방대를 설치하여야 하는 사업소는 <strong>① 최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 제조소 또는 일반취급소</strong>(보일러·버너 등으로 위험물을 소비하는 일반취급소 등 제외)가 있는 사업소와, 2018년 고양 저유소 화재 이후 추가된 <strong>② 최대수량이 지정수량의 50만 배 이상인 제4류 위험물을 저장하는 “옥외탱크저장소”</strong>가 있는 사업소입니다(2022년 공채 Q17: 저장소 중 자체소방대 설치 대상은 지정수량 50만 배 이상 제4류 위험물을 저장하는 <strong>'옥외탱크저장소'</strong>이며, <strong>'옥내탱크저장소'는 50만 배 이상이라도 자체소방대 설치 대상이 아님!</strong>).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            시행령 별표 8에 따라 자체소방대에 두어야 하는 <strong>화학소방자동차 및 자체소방대원의 수</strong>는 화학소방자동차 1대당 자체소방대원 5인의 비율로 편성됩니다(2018년 공채 Q15). 제조소 또는 일반취급소에서 취급하는 제4류 위험물 최대수량의 합이 ① 지정수량 <strong>12만 배 미만(3천 배 이상 12만 배 미만)인 사업소는 화학소방자동차 1대와 자체소방대원 5인</strong>, ② <strong>12만 배 이상 24만 배 미만인 사업소는 2대와 10인</strong>, ③ <strong>24만 배 이상 48만 배 미만인 사업소는 3대와 15인</strong>(2018년 공채 Q15 정답: ㉠=3, ㉡=15), ④ <strong>48만 배 이상인 사업소는 4대와 20인</strong>을 두어야 하며, ⑤ 지정수량 <strong>50만 배 이상인 제4류 위험물 옥외탱크저장소가 있는 사업소는 화학소방자동차 2대와 자체소방대원 10인</strong>을 두어야 합니다(전체 화학소방자동차 대수의 3분의 2 이상은 포수용액 방사차로 두어야 함). 나아가 시행규칙 별표 21이 정하는 <strong>화학소방자동차의 종류별 소화능력 및 비치 약제량 기준</strong>(2023년 공채·경채 Q38)은 ① <strong>포수용액 방사차</strong>: 포수용액 방사능력 <strong>매분 2,000리터 이상</strong>(1,000리터 이상 ×!) 및 포수용액 24만 리터 이상에 상당하는 양의 소화약제 비치, ② <strong>분말 방사차</strong>: 분말 방사능력 <strong>매초 35킬로그램 이상</strong> 및 <strong>1,400킬로그램 이상</strong>의 분말 비치(1,000킬로그램 이상 ×!), ③ <strong>할로겐화합물 방사차</strong>: 할로겐화합물 방사능력 <strong>매초 40킬로그램 이상</strong> 및 <strong>1,000킬로그램 이상</strong>의 할로겐화합물 비치(2023년 Q38 정답!), ④ <strong>이산화탄소 방사차</strong>: 이산화탄소 방사능력 <strong>매초 40킬로그램 이상</strong> 및 <strong>3,000킬로그램 이상</strong>의 이산화탄소 비치(1,000킬로그램 이상 ×!), ⑤ <strong>제독차</strong>: 가성소다 및 규조토를 각각 50킬로그램 이상 비치할 것입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">제도 구분</th>
+                <th style="width:48%;">법정 의무 대상 · 배수 및 설비 기준 (시행령 제15조·제16조·제18조·별표 8, 규칙 별표 21)</th>
+                <th>실전 기출 비교 · 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>예방규정 작성 대상<br/>(시·도지사에게 제출)</strong></td>
+                <td>· 제조소 · 일반취급소: 지정수량 <strong>10배 이상</strong><br/>· <strong>옥외저장소: 100배 이상</strong> / <strong>옥내저장소: 150배 이상</strong> / 옥외탱크저장소: <strong>200배 이상</strong><br/>· <strong>암반탱크저장소 · 이송취급소: 배수 무관 전수 대상</strong></td>
+                <td>옥외저장소 50배(X, <strong>100배</strong>) / 옥내(150배)와 옥외(100배) 뒤바꾸기 주의</td>
+              </tr>
+              <tr>
+                <td><strong>정기점검 · 구조안전점검<br/>(30일 내 시·도지사 제출)</strong></td>
+                <td>· <strong>정기점검 대상</strong>: 예방규정 대상 전부 + <strong>지하탱크저장소 + 이동탱크저장소</strong> + 지하매설탱크가 있는 제조소·주유·일반취급소 (연 1회 이상, 30일 내 시·도지사 제출, 3년 보존)<br/>· <strong>구조안전점검</strong>: 액체위험물 <strong>50만L 이상 옥외탱크</strong>는 완공 후 원칙 <strong>12년 이내</strong> 1회 이상</td>
+                <td><strong>옥내탱크·간이탱크</strong> 및 <strong>100배 옥내저장소</strong>는 정기점검 제외 / 구조안전점검 13년 이내(X, <strong>12년 이내</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>자체소방대 설치 대상 및<br/>화학소방차·대원 편성</strong></td>
+                <td>· <strong>제4류 제조소·일반취급소(3천 배↑)</strong>: 12만 배 미만(<strong>1대/5인</strong>), 12만 배 이상 24만 배 미만(<strong>2대/10인</strong>), <strong>24만 배 이상 48만 배 미만(3대/15인)</strong>, 48만 배 이상(<strong>4대/20인</strong>)<br/>· <strong>제4류 옥외탱크저장소(50만 배↑)</strong>: 화학소방차 <strong>2대</strong> · 자체소방대원 <strong>10인</strong></td>
+                <td>50만 배 이상 <strong>옥내탱크저장소</strong>는 자체소방대 대상 아님(<strong>옥외탱크저장소만 해당!</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>화학소방자동차 소화능력<br/>및 비치 약제량</strong></td>
+                <td>· <strong>포수용액 차</strong>: <strong>매분 2,000L↑</strong> (24만L분) / <strong>분말 차</strong>: <strong>매초 35kg↑, 1,400kg↑ 비치</strong><br/>· <strong>할로겐화합물 차</strong>: <strong>매초 40kg↑, 1,000kg↑ 비치</strong> / <strong>이산화탄소 차</strong>: <strong>매초 40kg↑, 3,000kg↑ 비치</strong></td>
+                <td>포 매분 1,000L(X, <strong>2,000L</strong>), 분말 1,000kg(X, <strong>1,400kg</strong>), 이산화탄소 1,000kg(X, <strong>3,000kg</strong>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 위험물 저장·운반(수납률·주의사항)·운송책임자 및 탱크시험자·벌칙 비교</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>저장·취급 및 운반 수납률(별표 18·별표 19)</strong>: 옥내저장소 용기 적재 높이(기계하역 <strong>6m</strong>, 3·4석유류·동식물유류 <strong>4m</strong>, 기타 <strong>3m</strong>) / 주유취급소 주차금지(주유 시 주입구 <strong>1m 이내</strong>, 전용탱크 주입 시 주입구 <strong>3m 이내</strong>·통기관 끝 <strong>1.5m 이내</strong>) / 운반 수납률: <strong>고체 95% 이하, 액체 98% 이하(55℃ 누설 방지)</strong>, 단 <strong>알킬알루미늄등은 90% 이하(50℃에서 5% 이상 공간용적)</strong></li>
+                <li><strong>운반용기 외부 주의사항 표시(별표 19)</strong>: <strong>제6류(과염소산 등) = '가연물접촉주의' 1가지</strong> / <strong>제1류 알칼리금속 과산화물 = '화기·충격주의', '물기엄금', '가연물접촉주의' 3가지</strong> / 제3류 자연발화성 = '공기접촉엄금'·'화기엄금' / 제5류 = '화기엄금'·'충격주의'</li>
+                <li><strong>운송책임자 · 탱크시험자 변경신고 · 벌칙</strong>: 운송책임자 감독 대상 = 오직 <strong>알킬알루미늄·알킬리튬</strong> / 탱크시험자 변경신고 중요사항 = 소재지·기술능력·대표자·상호 변경(<strong>보유장비 변경 제외!</strong>) / <strong>저장·취급 중요기준 위반 = 1,500만 원 벌금(제36조)</strong> vs 운반 중요기준 위반·안전관리자 감독 불이행·무자격자 무참여 취급 = <strong>1,000만 원 벌금(제37조)</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            위험물의 저장·취급 세부 기준(시행규칙 별표 18)과 용기에 담아 화물차로 나르는 <strong>운반(運搬)</strong> 기준(시행규칙 별표 19), 그리고 탱크로리로 나르는 <strong>운송(運送)</strong> 기준을 차례대로 정리해 봅시다. 첫째, 2026년 경채 Q34에서 출제된 별표 18의 저장·취급 기준에 따르면, ① <strong>옥내저장소에서 위험물을 저장할 때 용기를 겹쳐 쌓는 높이</strong>는 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에는 <strong>6미터</strong>, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류를 수납하는 용기만을 겹쳐 쌓는 경우에는 <strong>4미터</strong>, 그 밖의 경우에는 <strong>3미터</strong>를 초과하지 아니하여야 하며, ② <strong>주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 접속된 탱크의 주입구로부터 1미터 이내</strong>의 부분에, 이동저장탱크로부터 <strong>전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3미터 이내의 부분 및 전용탱크 통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분에 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니하여야 합니다(2026년 경채 Q34 정답: 주유 시 주입구로부터 4미터 이내, 통기관 끝으로부터 2미터 이내라 하면 오답!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            둘째, 위험물을 운반용기에 담아 화물차로 나르는 <strong>운반기준</strong>(별표 19)을 보면, 하나의 외장용기에는 다른 종류의 위험물을 수납하지 말아야 하고, <strong>고체 위험물은 운반용기 내용적의 95퍼센트 이하</strong>의 수납률로 수납하며, <strong>액체 위험물은 운반용기 내용적의 98퍼센트 이하의 수납률로 수납하되 섭씨 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지</strong>하여야 합니다. 다만 자연발화성물질 중 <strong>알킬알루미늄등은 운반용기 내용적의 90퍼센트 이하의 수납률로 수납하되 섭씨 50도의 온도에서 5퍼센트 이상의 공간용적을 유지</strong>하여야 합니다(2023년 공채·경채 Q40 정답: 알킬알루미늄등을 95퍼센트 이하·섭씨 55도에서 10퍼센트 이상이라 하면 오답! 또한 화물차 운반용기 적재 높이는 원칙 3미터 이하, 제3·4석유류·동식물유류 기계 하역 구조 용기는 4미터 이하). 셋째, 운반용기 외부에 표시해야 하는 <strong>유별 주의사항</strong>(별표 19, 2025년 경채 Q39 · 2026년 경채 Q34)은 제조소 게시판과 세부 문구가 다르므로 정확히 구분해야 합니다. ① 불연성 강산화제인 <strong>제6류 위험물(과염소산·과산화수소·질산)</strong>을 수납한 운반용기 외부에는 오직 <strong>“가연물접촉주의” 1가지만 표시</strong>합니다(2025년 경채 Q39 정답: 화기주의나 충격주의는 표시하지 않음!), ② <strong>제1류 위험물 중 알칼리금속의 과산화물</strong>은 산화성 고체이면서 물과 반응하므로 <strong>“화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 3가지를 모두 표시</strong>하며(그 밖의 제1류는 “화기·충격주의” 및 “가연물접촉주의”), ③ 제2류 위험물은 “화기주의”(인화성고체는 “화기엄금”), ④ 제3류 중 자연발화성물질은 “공기접촉엄금” 및 “화기엄금”(금수성물질은 “물기엄금”), ⑤ 제4류 위험물은 “화기엄금”, ⑥ 제5류 위험물은 “화기엄금” 및 “충격주의”를 표시합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            셋째, 이동탱크저장소(탱크로리)에 의하여 위험물을 운송할 때에는 위험물취급자격자이거나 안전교육 수료자인 위험물운송자가 운송해야 하는데, 특히 사고 시 대폭발 위험이 극심하여 <strong>운송책임자의 감독 또는 지원을 받아 운송하여야 하는 위험물</strong>(시행령 제18조)은 제3류 위험물 중 오직 <strong>알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것</strong>뿐입니다(2018년 공채 Q13 · 2024년 공채·경채 Q24: 마그네슘·적린·유황·아세트알데히드·유기과산화물·질산염류 등은 모두 대상 아님!). 넷째, 시행규칙 제61조 제1항에 따라 <strong>탱크안전성능시험자가 변경일로부터 30일 이내에 시·도지사에게 변경신고를 해야 하는 중요사항</strong>은 <strong>① 영업소 소재지의 변경, ② 기술능력의 변경, ③ 법인의 대표자나 상호 또는 명칭의 변경</strong> 3가지이며, <strong>'보유장비의 변경'은 이에 해당하지 않습니다</strong>(2024년 경채 Q28 정답!). 마지막으로 2026년 경채 Q38에서 출제된 <strong>위험물안전관리법상 벌칙 수위(제35조 vs 제36조 vs 제37조)</strong>를 비교해 보면, ① 정기점검 미실시·허위 기록, 정기검사 미이행, 자체소방대 미설치, 긴급 사용정지·제한명령 위반은 <strong>1년 이하의 징역 또는 1천만 원 이하의 벌금(법 제35조)</strong>, ② <strong>제조소등에서의 위험물의 저장 또는 취급에 관한 중요기준을 따르지 아니한 자(2026년 경채 Q38 정답!)</strong>, 무허가 변경, 완공검사 미필 사용, 사용정지명령 위반, 위험물안전관리자 미선임, 예방규정 미작성 사용·변경명령 위반은 <strong>1천500만 원 이하의 벌금(법 제36조)</strong>, ③ <strong>위험물의 운반에 관한 중요기준을 따르지 아니한 자</strong>, 작업자에게 <strong>안전관리와 감독을 하지 아니한 위험물안전관리자</strong>, 무자격자가 <strong>안전관리자 또는 대리자가 참여하지 아니한 상태에서 위험물을 취급한 경우 그 위험물을 취급한 자</strong>, 예방규정 미제출자는 <strong>1천만 원 이하의 벌금(법 제37조)</strong>에 처해집니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">구분 항목</th>
+                <th style="width:48%;">법정 세부 기준 및 수치 (별표 18 · 별표 19 · 영 제18조 · 규칙 제61조 · 법 제35조부터 제37조까지)</th>
+                <th>실전 기출 비교 · 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>옥내 적재 높이 ·<br/>주유소 주차금지 거리</strong></td>
+                <td>· <strong>옥내저장소 용기 적재 높이</strong>: 기계 하역 구조 용기 <strong>6m</strong>, 제3·4석유류·동식물유류 용기 <strong>4m</strong>, 그 밖의 경우 <strong>3m 이하</strong><br/>· <strong>주유취급소 주차·점검·세정 금지 거리</strong>: 주유 시 고정주유설비·접속탱크 주입구로부터 <strong>1m 이내</strong> / 전용탱크 주입 시 주입구로부터 <strong>3m 이내</strong> 및 통기관 끝으로부터 수평거리 <strong>1.5m 이내</strong></td>
+                <td>주유 시 주입구 4m 이내·통기관 2m 이내(X, <strong>1m 이내 · 1.5m 이내</strong>, 2026년 Q34)</td>
+              </tr>
+              <tr>
+                <td><strong>운반용기 수납률 ·<br/>외부 주의사항 표시</strong></td>
+                <td>· <strong>운반 수납률</strong>: <strong>고체 95% 이하</strong> / <strong>액체 98% 이하(55℃ 누설 방지)</strong> / <strong>알킬알루미늄등 90% 이하(50℃에서 5% 이상 공간용적)</strong><br/>· <strong>운반용기 외부 주의사항</strong>: <strong>제6류(과염소산 등) = "가연물접촉주의"</strong> / <strong>제1류 알칼리금속 과산화물 = "화기·충격주의", "물기엄금", "가연물접촉주의"</strong> / 제3류 자연발화성 = "공기접촉엄금"·"화기엄금" / 제5류 = "화기엄금"·"충격주의"</td>
+                <td>알킬알루미늄등 수납률 95%·55℃·10%(X, <strong>90%·50℃·5%</strong>) / 과염소산은 오직 <strong>"가연물접촉주의"</strong> 1가지만 표시!</td>
+              </tr>
+              <tr>
+                <td><strong>운송책임자 감독 대상 ·<br/>탱크시험자 변경신고</strong></td>
+                <td>· <strong>운송책임자 감독·지원 의무 위험물</strong>: 제3류 중 <strong>알킬알루미늄 · 알킬리튬</strong> 및 그 함유 혼합물<br/>· <strong>탱크시험자 변경신고 중요사항(30일 내)</strong>: ① 영업소 소재지, ② 기술능력, ③ 대표자·상호·명칭 변경</td>
+                <td>운송책임자에 아세트알데히드·유기과산화물·적린(X) / 탱크시험자 변경신고에 <strong>보유장비 변경은 제외!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>벌금 수위 비교<br/>(1,500만 vs 1,000만)</strong></td>
+                <td>· <strong>1,500만 원 이하 벌금(법 제36조)</strong>: <strong>제조소등 저장·취급 중요기준 위반</strong>, 무허가 변경, 완공검사 미필 사용, 사용정지명령 위반, 안전관리자 미선임, 예방규정 미작성·변경명령 위반<br/>· <strong>1,000만 원 이하 벌금(법 제37조)</strong>: <strong>운반 중요기준 위반</strong>, <strong>안전관리자의 안전관리·감독 불이행</strong>, <strong>무자격자의 무참여 위험물 취급</strong>, 예방규정 미제출 (정기점검 미실시·자체소방대 미설치는 제35조 1년/1천만)</td>
+                <td><strong>저장·취급 중요기준 위반(1,500만)</strong> vs <strong>운반 중요기준 위반·안전관리자 감독 불이행·무참여 취급(1,000만)</strong> (2026년 Q38)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 예방규정·정기점검 대상 비교 및 자체소방대·운반·운송 핵심 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 예방규정 작성·제출 대상 지정수량 배수 기준 (시·도지사 제출)</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">지정수량 10배 이상</div>
+                <div><strong>제조소</strong> · <strong>일반취급소</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">지정수량 100배 이상</div>
+                <div><strong>옥외저장소</strong> (50배 아님!)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">지정수량 150배 이상</div>
+                <div><strong>옥내저장소</strong> (100배 아님!)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">지정수량 200배 이상</div>
+                <div><strong>옥외탱크저장소</strong></div>
+              </div>
+            </div>
+            <div class="schema-box" style="margin-top:10px;">
+              <div class="schema-box-title">★ 지정수량 배수 무관 전수 작성 대상 2종 및 자체소방대 기준</div>
+              <div>· <strong>예방규정 배수 무관</strong>: <strong>암반탱크저장소 · 이송취급소</strong><br/>· <strong>자체소방대 대상</strong>: 제4류 <strong>3천 배↑ 제조·일반취급소</strong>(12만·24만·48만 배 기준 1대에서 4대까지, 5인에서 20인까지) 및 제4류 <strong>50만 배↑ 옥외탱크저장소</strong>(2대/10인, <strong>옥내탱크 제외!</strong>)</div>
+            </div>
+            <div class="schema-alert">★ 정기점검: 예방규정 대상 전부 + <strong>지하탱크·이동탱크(배수 무관)</strong> + 지하매설탱크가 있는 제조·주유·일반취급소 (<strong>30일 내 시·도지사 제출</strong>, 50만L↑ 옥외탱크 구조안전점검은 <strong>12년 이내</strong>)</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 위험물 운반 · 운송책임자 · 벌금(1,500만 vs 1,000만) 핵심 요약</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">운반용기 수납률 및 외부 주의사항 표시 (별표 19)</div>
+                <ul class="schema-list">
+                  <li>수납률: <strong>고체 95% 이하 · 액체 98% 이하(55℃)</strong> · <strong>알킬알루미늄등 90% 이하(50℃, 5%↑ 공간)</strong></li>
+                  <li>외부 표시: <strong>제6류(과염소산) = '가연물접촉주의'</strong> / <strong>알칼리금속 과산화물 = '화기·충격주의' + '물기엄금' + '가연물접촉주의'</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">운송책임자 감독 대상 · 탱크시험자 변경신고 · 벌칙 비교</div>
+                <ul class="schema-list">
+                  <li>운송책임자 감독: 제3류 중 <strong>알킬알루미늄 · 알킬리튬</strong>만 해당 / 탱크시험자 변경신고에 <strong>보유장비 변경 제외!</strong></li>
+                  <li>벌금: <strong>저장·취급 중요기준 위반·안전관리자 미선임(1,500만 벌금)</strong> vs <strong>운반 중요기준 위반·안전관리자 감독 불이행·무참여 취급(1,000만 벌금)</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (15문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 15문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 관계인이 예방규정을 정하여야 하는 제조소등으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">지정수량의 10배 이상의 위험물을 취급하는 제조소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지정수량의 50배 이상의 위험물을 저장하는 옥외저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지정수량의 150배 이상의 위험물을 저장하는 옥내저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">암반탱크저장소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 운송책임자의 감독 또는 지원을 받아 운송하여야 하는 위험물로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">알킬알루미늄, 알킬리튬</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">마그네슘, 염소류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">적린, 금속분</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">유황, 황산</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2018년 소방공채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음은 자체소방대에 두는 화학소방자동차와 자체소방 대원의 수에 관한 규정이다. 빈칸에 들어갈 숫자가 바르게 짝지어진 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>제조소 또는 일반취급소에서 취급하는 제4류 위험물의 최대수량의 합이 지정수량의 24만 배 이상 48만 배 미만인 사업소에는 화학소방자동차 ( ㉠ )대와 자체소방대원 ( ㉡ )인을 두어야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( ㉠ ): 2 / ( ㉡ ): 10</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( ㉠ ): 2 / ( ㉡ ): 15</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( ㉠ ): 3 / ( ㉡ ): 10</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( ㉠ ): 3 / ( ㉡ ): 15</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2021년 소방공채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 정기점검 대상인 저장소로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">옥내탱크저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지하탱크저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">이동탱크저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">암반탱크저장소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2022년 소방공채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 관계인이 예방규정을 정하여야 하는 제조소등에 대한 기준이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>⦁지정수량의 ( ㄱ )배 이상의 위험물을 취급하는 제조소<br/>⦁지정수량의 ( ㄴ )배 이상의 위험물을 저장하는 옥내저장소<br/>⦁지정수량의 ( ㄷ )배 이상의 위험물을 저장하는 옥외저장소<br/>⦁지정수량의 ( ㄹ )배 이상의 위험물을 저장하는 옥외탱크저장소</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( ㄱ ): 10 / ( ㄴ ): 150 / ( ㄷ ): 100 / ( ㄹ ): 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( ㄱ ): 50 / ( ㄴ ): 150 / ( ㄷ ): 100 / ( ㄹ ): 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( ㄱ ): 10 / ( ㄴ ): 100 / ( ㄷ ): 150 / ( ㄹ ): 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( ㄱ ): 50 / ( ㄴ ): 100 / ( ㄷ ): 150 / ( ㄹ ): 250</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2022년 소방공채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 다량의 위험물을 저장· 취급하는 제조소등에서 자체소방대를 설치하여야 하는 사업소로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">최대수량의 합이 지정수량의 3천배 이상인 제4류 위험 물을 취급하는 제조소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">최대수량의 합이 지정수량의 3천배 이상인 제4류 위험 물을 취급하는 일반취급소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">최대수량이 지정수량의 50만배 이상인 제4류 위험물을 저장하는 옥내탱크저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">최대수량이 지정수량의 50만배 이상인 제4류 위험물을 저장하는 옥외탱크저장소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2023년 소방경채 Q38 · 소방공채 Q24</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 화학소방자동차에 갖추 어야 하는 소화능력 또는 설비의 기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">포수용액 방사차: 포수용액의 방사능력이 매분 1,000 L 이상일 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분말 방사차: 1,000 kg 이상의 분말을 비치할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">할로겐화합물 방사차: 할로겐화합물의 방사능력이 매초 40 kg 이상일 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">이산화탄소 방사차: 1,000 kg 이상의 이산화탄소를 비치 할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방경채 Q40 · 소방공채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험물의 운반에 관한 기준 중 적재방법에 대한 내용으로 옳지 않은 것은? (다만, 덩어리 상태의 유황을 운반하기 위하여 적재하는 경우 또는 위험물을 동일구내에 있는 제조소등의 상호간에 운반하기 위하여 적재하는 경우는 제외한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">하나의 외장용기에는 다른 종류의 위험물을 수납하지 아니할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">고체 위험물은 운반용기 내용적의 95 % 이하의 수납율로 수납할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">액체 위험물은 운반용기 내용적의 98 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자연발화물질 중 알킬알루미늄등은 운반용기 내용적의 95 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 10 % 이상의 공간용적을 유지하도록 할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2024년 소방경채 Q24 · 소방공채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령상 운송책임자의 감독 및 지원을 받아 운송해야 하는 위험물로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">아세트알데히드</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">유기과산화물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">알킬리튬</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">질산염류</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2024년 소방경채 Q28</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 탱크안전성능시험자가 변경사항을 신고해야 하는 중요사항으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">영업소 소재지의 변경</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">기술능력의 변경</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">보유장비의 변경</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">상호 또는 명칭의 변경</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방경채 Q36 · 소방공채 Q22</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령상 정기점검을 하여야 하는 제조소등에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">지정수량의 10배의 위험물을 취급하는 제조소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지정수량의 100배의 위험물을 저장하는 옥내저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지정수량의 150배의 위험물을 저장하는 옥외저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">지정수량의 5배의 위험물을 저장하는 이동탱크저장소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2025년 소방경채 Q39</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행규칙상 과염소산을 운반하고자 수납할 때 그 운반용기의 외부에 표기해야 하는 주의사항으로 옳은 것만을 <보기>에서 모두 고른 것은? (다만, UN의 위험물 운송에 관한 권고에서 정한 기준 또는 소방청장 이 정하여 고시하는 기준은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 가연물접촉주의<br/>ㄴ. 공기접촉엄금<br/>ㄷ. 화기엄금<br/>ㄹ. 화기주의<br/>ㅁ. 충격주의<br/>ㅂ. 물기엄금</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄹ, ㅁ, ㅂ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방경채 Q34</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험물의 저장 및 취급의 기준과 위험물의 운반에 관한 기준에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">옥내저장소에서 위험물을 저장하는 경우, 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에 있어서는 6 m, 제4류 위험물 중 제3석유류·제4석유류 및 동식물 유류를 수납하는 용기만을 겹쳐 쌓는 경우에 있어서는 4 m, 그 밖의 경우에 있어서는 3 m 높이를 초과하여 용기를 겹쳐 쌓지 아니하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제1류 위험물 중 알칼리금속의 과산화물 또는 이를 함유한 것을 운반하고자 수납할 때는 그 운반용기의 외부에 “화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 주의사 항을 표시하여 적재하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">고체위험물은 운반용기 내용적의 95％ 이하의 수납율로 수납하여야 하고, 액체위험물은 운반용기 내용적의 98％ 이하의 수납율로 수납하되, 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것(단, 자연발화성물질 중 알킬알루미늄등은 제외한다)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4 m 이내의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3 m 이내의 부분 및 전용탱크 통기관의 끝부분으로부터 수평거리 2 m 이내의 부분에 있어서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2026년 소방경채 Q36</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령, 시행규칙상 정기 점검에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">정기점검 대상이 되는 제조소등의 관계인은 당해 제조소 등에 대하여 연 1회 이상 정기점검을 실시하여야 하며, 정기점검을 한 제조소등의 관계인은 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지하탱크저장소, 이동탱크저장소, 위험물을 취급하는 탱크 로서 지하에 매설된 탱크가 있는 제조소·주유취급소는 정기점검 대상이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위험물안전관리법령상 예방규정을 정하여야 하는 제조소 등은 모두 정기점검 대상이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">옥외탱크저장소 중 저장 또는 취급하는 액체위험물의 최대수량이 50만리터 이상인 것에 대해서는 정기점검 외에 설치허가에 따른 완공검사합격확인증을 발급받은 날부터 13년 이내에 1회 이상 특정·준특정옥외저장탱크의 구조 등에 관한 안전점검을 해야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2026년 소방경채 Q38</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣상 벌칙 기준이 나머지와 다른 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">위험물의 운반에 관한 중요기준을 따르지 아니한 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제조소등에서의 위험물의 저장 또는 취급에 관한 중요 기준에 따르지 아니한 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제조소등에서 위험물을 취급하는 작업을 하는 때에, 작업자 에게 위험물의 취급에 관한 안전관리와 감독을 하지 아니한 위험물안전관리자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제조소등에 있어서 위험물취급자격자가 아닌 자가 위험 물안전관리자 또는 그 대리자가 참여하지 아니한 상태에서 위험물을 취급한 경우, 그 위험물을 취급한 자</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령상 관계인이 예방규정을 정하여 시·도지사에게 제출하여야 하는 제조소등은 지정수량 10배 이상의 제조소·일반취급소, 100배 이상의 옥외저장소, 150배 이상의 옥내저장소, 200배 이상의 옥외탱크저장소 및 지정수량 배수와 관계없는 모든 암반탱크저장소·이송취급소이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량의 50배 이상의 위험물을 저장하는 옥외저장소의 관계인은 예방규정을 정하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정기점검 대상인 제조소등은 예방규정을 정하여야 하는 제조소등 전부와 지하탱크저장소, 이동탱크저장소 및 지하에 매설된 탱크가 있는 제조소·주유취급소·일반취급소이며, 옥내탱크저장소와 간이탱크저장소는 정기점검 대상에 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량의 100배의 위험물을 저장하는 옥내저장소는 정기점검을 하여야 하는 제조소등에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정기점검 대상이 되는 제조소등의 관계인은 연 1회 이상 정기점검을 실시하고 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 하며, 점검기록을 3년간 보존하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥외탱크저장소 중 저장 또는 취급하는 액체위험물의 최대수량이 50만 리터 이상인 것에 대해서는 정기점검 외에 설치허가에 따른 완공검사합격확인증을 발급받은 날부터 13년 이내에 1회 이상 특정·준특정옥외저장탱크의 구조 등에 관한 안전점검을 해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령상 자체소방대를 설치하여야 하는 사업소는 최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 제조소·일반취급소 또는 최대수량이 지정수량의 50만 배 이상인 제4류 위험물을 저장하는 옥외탱크저장소가 있는 사업소이며, 옥내탱크저장소는 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제조소 또는 일반취급소에서 취급하는 제4류 위험물의 최대수량의 합이 지정수량의 12만 배 미만인 사업소는 화학소방자동차 1대와 자체소방대원 5인, 12만 배 이상 24만 배 미만은 2대와 10인, 24만 배 이상 48만 배 미만은 3대와 15인, 48만 배 이상은 4대와 20인을 두어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화학소방자동차 중 포수용액 방사차는 포수용액 방사능력이 매분 2,000리터 이상이어야 하고, 분말 방사차는 매초 35킬로그램 이상 및 1,400킬로그램 이상의 분말을 비치해야 하며, 할로겐화합물 방사차는 매초 40킬로그램 이상 및 1,000킬로그램 이상 비치, 이산화탄소 방사차는 매초 40킬로그램 이상 및 3,000킬로그램 이상을 비치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화학소방자동차 중 포수용액 방사차는 방사능력이 매분 1,000리터 이상이어야 하고, 분말 방사차는 1,000킬로그램 이상의 분말을 비치하며, 이산화탄소 방사차는 1,000킬로그램 이상의 이산화탄소를 비치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내저장소에서 위험물을 저장할 때 용기를 겹쳐 쌓는 높이는 기계에 의하여 하역하는 구조로 된 용기만은 6미터, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류 수납 용기만은 4미터, 그 밖의 경우에는 3미터를 초과하지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 접속된 탱크의 주입구로부터 4미터 이내의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3미터 이내 및 전용탱크 통기관의 끝부분으로부터 수평거리 2미터 이내의 부분에 다른 자동차 등의 주차를 금지하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 운반 시 하나의 외장용기에는 다른 종류의 위험물을 수납하지 아니하며, 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 내용적의 98퍼센트 이하의 수납율로 수납하되 섭씨 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자연발화성물질 중 알킬알루미늄등은 운반용기 내용적의 95퍼센트 이하의 수납율로 수납하되, 섭씨 55도의 온도에서 10퍼센트 이상의 공간용적을 유지하도록 하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제6류 위험물인 과염소산을 운반하고자 수납할 때 운반용기의 외부에 표기해야 하는 주의사항은 '가연물접촉주의' 1가지이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 알칼리금속의 과산화물 또는 이를 함유한 것을 운반하고자 수납할 때는 그 운반용기의 외부에 '화기·충격주의', '물기엄금' 및 '가연물접촉주의' 주의사항을 표시하여 적재하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령상 이동탱크저장소에 의하여 위험물을 운송할 때 운송책임자의 감독 또는 지원을 받아 운송하여야 하는 위험물은 제3류 위험물 중 알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>탱크안전성능시험자가 변경일로부터 30일 이내에 시·도지사에게 변경사항을 신고해야 하는 중요사항은 영업소 소재지의 변경, 기술능력의 변경, 법인의 대표자나 상호 또는 명칭의 변경이며, 보유장비의 변경은 이에 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정기점검을 실시하지 아니하거나 점검기록을 허위로 작성한 자 및 자체소방대를 두지 아니한 관계인은 1년 이하의 징역 또는 1천만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제조소등에서의 위험물의 저장 또는 취급에 관한 중요기준에 따르지 아니한 자는 1천500만 원 이하의 벌금에 처하고, 위험물의 운반에 관한 중요기준을 따르지 아니한 자는 1천만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제조소등에서 위험물을 취급하는 작업을 할 때 작업자에게 안전관리와 감독을 하지 아니한 위험물안전관리자와, 위험물취급자격자가 아닌 자가 위험물안전관리자 또는 대리자가 참여하지 아니한 상태에서 위험물을 취급한 경우 그 위험물을 취급한 자는 각각 1천만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이동탱크저장소에 의하여 위험물을 운송하는 자는 국가기술자격법에 따른 위험물 분야의 자격을 취득한 자이거나 한국소방안전원이 실시하는 위험물운송자 강습교육을 수료한 자이어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내저장소에서 위험물을 저장하는 경우, 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에 있어서는 6 m, 제4류 위험물 중 제3석유류·제4석유류 및 동식물 유류를 수납하는 용기만을 겹쳐 쌓는 경우에 있어서는 4 m, 그 밖의 경우에 있어서는 3 m 높이를 초과하여 용기를 겹쳐 쌓지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정기점검 대상이 되는 제조소등의 관계인은 당해 제조소 등에 대하여 연 1회 이상 정기점검을 실시하여야 하며, 정기점검을 한 제조소등의 관계인은 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 인화점이 섭씨 40도 이상인 경유만을 지정수량의 20배로 보일러로 소비하는 일반취급소의 관계인은 예방규정을 정하여 시·도지사에게 제출하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량의 100배 이상의 위험물을 저장하는 옥내저장소와 지정수량의 150배 이상의 위험물을 저장하는 옥외저장소의 관계인은 예방규정을 정하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 보일러나 버너 등으로 소비하는 일반취급소가 있는 사업소에는 반드시 자체소방대를 설치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>최대수량이 지정수량의 50만 배 이상인 제4류 위험물을 저장하는 옥외탱크저장소가 있는 사업소의 자체소방대에는 화학소방자동차 4대와 자체소방대원 20인 이상을 두어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>알칼리금속의 과산화물을 제외한 제1류 위험물을 운반용기에 수납하여 적재할 때에는 운반용기 외부에 '화기·충격주의', '물기주의' 및 '가연물접촉주의' 3가지 주의사항을 모두 표시하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이동탱크저장소에 의하여 제4류 위험물 중 특수인화물인 아세트알데히드나 제5류 위험물인 유기과산화물을 운송할 때에는 운송책임자의 감독 또는 지원을 받아 운송하여야 한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:② · 02:① · 03:④ · 04:① · 05:① · 06:③ · 07:③ · 08:④ · 09:③ · 10:③ · 11:② · 12:① · 13:④ · 14:④ · 15:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:X · 07:O · 08:O · 09:O · 10:X · 11:O · 12:X · 13:O · 14:X · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:O · 24:O · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 20 · 제4편 위험물안전관리법 · 제3장 (15문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제17조 제1항 및 같은 법 시행령 제15조에 따라 관계인이 예방규정을 정하여야 하는 제조소등은 ① 지정수량 10배 이상의 위험물을 취급하는 제조소·일반취급소, ② 지정수량 100배 이상의 위험물을 저장하는 옥외저장소, ③ 지정수량 150배 이상의 위험물을 저장하는 옥내저장소, ④ 지정수량 200배 이상의 위험물을 저장하는 옥외탱크저장소, ⑤ 암반탱크저장소, ⑥ 이송취급소입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">지정수량의 10배 이상의 위험물을 취급하는 제조소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢위험물안전관리법 시행령｣ 제15조 제1호에 따라 지정수량의 10배 이상의 위험물을 취급하는 제조소 및 일반취급소는 예방규정 작성 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지정수량의 50배 이상의 위험물을 저장하는 옥외저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] ｢위험물안전관리법 시행령｣ 제15조 제2호에 따라 옥외저장소는 지정수량의 50배 이상이 아니라 '지정수량의 100배 이상'의 위험물을 저장하는 경우에 예방규정을 정하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지정수량의 150배 이상의 위험물을 저장하는 옥내저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ｢위험물안전관리법 시행령｣ 제15조 제3호에 따라 지정수량의 150배 이상의 위험물을 저장하는 옥내저장소는 예방규정 작성 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">암반탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢위험물안전관리법 시행령｣ 제15조 제5호 및 제6호에 따라 암반탱크저장소와 이송취급소는 지정수량 배수와 관계없이 모두 예방규정 작성 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제21조 제1항 및 같은 법 시행령 제18조에 따라 이동탱크저장소에 의하여 위험물을 운송할 때 위험물운송자 외에 운송책임자의 감독 또는 지원을 받아야 하는 위험물은 제3류 위험물 중 '알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">알킬알루미늄, 알킬리튬</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ｢위험물안전관리법 시행령｣ 제18조에 따라 알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것은 운송책임자의 감독 또는 지원을 받아 운송하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">마그네슘, 염소류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 마그네슘(제2류 가연성 고체) 등은 운송책임자 감독·지원 의무 대상 위험물에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">적린, 금속분</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 적린 및 금속분(제2류 가연성 고체)은 운송책임자 감독·지원 의무 대상 위험물에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">유황, 황산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 유황(제2류 가연성 고체) 등은 운송책임자 감독·지원 의무 대상 위험물에 해당하지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 제17조 제2항 및 별표 8에 따라 제조소 또는 일반취급소에서 취급하는 제4류 위험물의 최대수량의 합이 ① 지정수량 12만 배 미만은 화학소방자동차 1대·자체소방대원 5인, ② 12만 배 이상 24만 배 미만은 2대·10인, ③ 24만 배 이상 48만 배 미만은 '3대·15인', ④ 48만 배 이상은 4대·20인을 두어야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( ㉠ ): 2 / ( ㉡ ): 10</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 화학소방자동차 2대와 자체소방대원 10인은 제4류 위험물 최대수량의 합이 '지정수량 12만 배 이상 24만 배 미만'인 사업소의 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( ㉠ ): 2 / ( ㉡ ): 15</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 화학소방자동차 1대당 자체소방대원 5인의 비율로 편성되므로 2대·15인은 법령에 없는 조합입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( ㉠ ): 3 / ( ㉡ ): 10</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 화학소방자동차 3대를 두는 사업소에는 자체소방대원 15인을 두어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( ㉠ ): 3 / ( ㉡ ): 15</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ｢위험물안전관리법 시행령｣ 별표 8에 따라 지정수량의 24만 배 이상 48만 배 미만인 사업소에는 화학소방자동차 3대( ㉠ )와 자체소방대원 15인( ㉡ )을 두어야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제18조 제1항 및 같은 법 시행령 제16조에 따른 정기점검 대상은 ① 예방규정을 정하여야 하는 제조소등(제조소·일반취급소 10배 이상, 옥외저장소 100배 이상, 옥내저장소 150배 이상, 옥외탱크저장소 200배 이상, 암반탱크저장소, 이송취급소), ② 지하탱크저장소, ③ 이동탱크저장소, ④ 지하에 매설된 탱크가 있는 제조소·주유취급소·일반취급소입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">옥내탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '옥내탱크저장소'는 예방규정 작성 대상에도 포함되지 않고 ｢위험물안전관리법 시행령｣ 제16조의 정기점검 대상에도 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지하탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 지하탱크저장소는 지정수량 배수와 관계없이 정기점검 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">이동탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 이동탱크저장소는 지정수량 배수와 관계없이 정기점검 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">암반탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 암반탱크저장소는 예방규정 작성 대상이자 정기점검 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 제15조에 따라 관계인이 예방규정을 정하여야 하는 지정수량 배수는 제조소·일반취급소 '10배 이상'( ㄱ ), 옥내저장소 '150배 이상'( ㄴ ), 옥외저장소 '100배 이상'( ㄷ ), 옥외탱크저장소 '200배 이상'( ㄹ )입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( ㄱ ): 10 / ( ㄴ ): 150 / ( ㄷ ): 100 / ( ㄹ ): 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제조소 10배( ㄱ ), 옥내저장소 150배( ㄴ ), 옥외저장소 100배( ㄷ ), 옥외탱크저장소 200배( ㄹ )가 법정 기준에 정확히 부합합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( ㄱ ): 50 / ( ㄴ ): 150 / ( ㄷ ): 100 / ( ㄹ ): 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 제조소의 기준은 50배 이상이 아니라 '10배 이상'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( ㄱ ): 10 / ( ㄴ ): 100 / ( ㄷ ): 150 / ( ㄹ ): 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 옥내저장소(150배 이상)와 옥외저장소(100배 이상)의 배수가 서로 바뀌었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( ㄱ ): 50 / ( ㄴ ): 100 / ( ㄷ ): 150 / ( ㄹ ): 250</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제조소(10배), 옥내저장소(150배), 옥외저장소(100배), 옥외탱크저장소(200배) 수치가 모두 법정 기준과 다릅니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제19조 및 같은 법 시행령 제17조 제1항에 따라 자체소방대를 설치하여야 하는 사업소는 ① 최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 제조소 또는 일반취급소가 있는 사업소, ② 최대수량이 지정수량의 50만 배 이상인 제4류 위험물을 저장하는 '옥외탱크저장소'가 있는 사업소입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">최대수량의 합이 지정수량의 3천배 이상인 제4류 위험 물을 취급하는 제조소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 제조소가 있는 사업소는 자체소방대 설치 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">최대수량의 합이 지정수량의 3천배 이상인 제4류 위험 물을 취급하는 일반취급소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 최대수량의 합이 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 일반취급소(보일러 소비 등 일부 제외)가 있는 사업소는 자체소방대 설치 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">최대수량이 지정수량의 50만배 이상인 제4류 위험물을 저장하는 옥내탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 저장소 중 자체소방대를 설치하여야 하는 대상은 지정수량 50만 배 이상 제4류 위험물을 저장하는 '옥외탱크저장소'이며, '옥내탱크저장소'는 자체소방대 설치 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">최대수량이 지정수량의 50만배 이상인 제4류 위험물을 저장하는 옥외탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 최대수량이 지정수량의 50만 배 이상인 제4류 위험물을 저장하는 옥외탱크저장소가 있는 사업소는 자체소방대 설치 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q38 · 소방공채 Q24</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 제69조 및 별표 21에 따른 화학소방자동차의 소화능력 및 설비 기준은 ① 포수용액 방사차(매분 2,000리터 이상, 24만 리터 이상의 포수용액 방사 약제 비치), ② 분말 방사차(매초 35킬로그램 이상, 1,400킬로그램 이상 분말 비치), ③ 할로겐화합물 방사차(매초 40킬로그램 이상, 1,000킬로그램 이상 할로겐화합물 비치), ④ 이산화탄소 방사차(매초 40킬로그램 이상, 3,000킬로그램 이상 이산화탄소 비치), ⑤ 제독차(가성소다·규조토 각각 50킬로그램 이상 비치)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">포수용액 방사차: 포수용액의 방사능력이 매분 1,000 L 이상일 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 포수용액 방사차는 포수용액의 방사능력이 매분 1,000리터 이상이 아니라 '매분 2,000리터 이상'이어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분말 방사차: 1,000 kg 이상의 분말을 비치할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 분말 방사차는 방사능력이 매초 35킬로그램 이상이고 1,000킬로그램이 아니라 '1,400킬로그램 이상'의 분말을 비치하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">할로겐화합물 방사차: 할로겐화합물의 방사능력이 매초 40 kg 이상일 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 할로겐화합물 방사차는 할로겐화합물의 방사능력이 '매초 40킬로그램 이상'이어야 하고 1,000킬로그램 이상의 할로겐화합물을 비치하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">이산화탄소 방사차: 1,000 kg 이상의 이산화탄소를 비치 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 이산화탄소 방사차는 방사능력이 매초 40킬로그램 이상이고 1,000킬로그램이 아니라 '3,000킬로그램 이상'의 이산화탄소를 비치하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q40 · 소방공채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 19(위험물의 운반에 관한 기준)에 따라 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하(섭씨 55도에서 누설 방지 공간용적 유지)로 수납하되, 자연발화성물질 중 '알킬알루미늄등'은 운반용기 내용적의 '90퍼센트 이하'의 수납율로 수납하고 '섭씨 50도의 온도에서 5퍼센트 이상'의 공간용적을 유지하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">하나의 외장용기에는 다른 종류의 위험물을 수납하지 아니할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 원칙적으로 하나의 외장용기에는 다른 종류의 위험물을 함께 수납하지 아니하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">고체 위험물은 운반용기 내용적의 95 % 이하의 수납율로 수납할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 고체 위험물은 운반용기 내용적의 95퍼센트 이하의 수납율로 수납하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">액체 위험물은 운반용기 내용적의 98 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 액체 위험물은 운반용기 내용적의 98퍼센트 이하의 수납율로 수납하되, 섭씨 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자연발화물질 중 알킬알루미늄등은 운반용기 내용적의 95 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 10 % 이상의 공간용적을 유지하도록 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 자연발화성물질 중 알킬알루미늄등은 운반용기 내용적의 95퍼센트가 아니라 '90퍼센트 이하'의 수납율로 수납하되, 섭씨 55도가 아니라 '섭씨 50도의 온도에서 5퍼센트 이상'의 공간용적을 유지하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q24 · 소방공채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제21조 제1항 및 같은 법 시행령 제18조에 따라 이동탱크저장소로 운송할 때 운송책임자의 감독 또는 지원을 받아야 하는 위험물은 제3류 위험물 중 '알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">아세트알데히드</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 아세트알데히드(제4류 특수인화물)는 운송책임자 감독·지원 의무 대상이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">유기과산화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 유기과산화물(제5류 자기반응성 물질)은 운송책임자 감독·지원 의무 대상이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">알킬리튬</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] '알킬리튬'(및 알킬알루미늄)은 ｢위험물안전관리법 시행령｣ 제18조에 따라 운송책임자의 감독 또는 지원을 받아 운송해야 하는 위험물입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">질산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 질산염류(제1류 산화성 고체)는 운송책임자 감독·지원 의무 대상이 아닙니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q28</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제16조 제3항 및 같은 법 시행규칙 제61조 제1항에 따라 탱크안전성능시험자가 변경일로부터 30일 이내에 시·도지사에게 신고하여야 하는 중요사항은 ① 영업소 소재지의 변경, ② 기술능력의 변경, ③ 법인의 대표자나 상호 또는 명칭의 변경 3가지이며, 보유장비의 변경은 이에 해당하지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">영업소 소재지의 변경</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 영업소 소재지의 변경은 변경신고 대상인 중요사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">기술능력의 변경</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢위험물안전관리법 시행규칙｣ 제44조에 따라 기술능력의 변경은 소재지·상호·대표자 변경과 함께 변경일부터 30일 이내에 시·도지사에게 신고해야 하는 중요사항에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">보유장비의 변경</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] '보유장비의 변경'은 ｢위험물안전관리법 시행규칙｣ 제61조 제1항에서 정하는 탱크안전성능시험자의 변경신고 중요사항에 포함되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">상호 또는 명칭의 변경</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 법인의 대표자나 상호 또는 명칭의 변경은 변경신고 대상인 중요사항입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q36 · 소방공채 Q22</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 제16조에 따라 정기점검 대상은 예방규정 작성 대상(제조소·일반취급소 10배 이상, 옥외저장소 100배 이상, 옥내저장소 150배 이상, 옥외탱크저장소 200배 이상, 암반탱크저장소, 이송취급소) 및 지하탱크저장소, 이동탱크저장소, 지하 매설 탱크가 있는 제조소·주유취급소·일반취급소입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">지정수량의 10배의 위험물을 취급하는 제조소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 지정수량의 10배의 위험물을 취급하는 제조소는 지정수량 10배 이상이므로 예방규정 및 정기점검 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지정수량의 100배의 위험물을 저장하는 옥내저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 옥내저장소는 '지정수량의 150배 이상'일 때 예방규정 및 정기점검 대상이 되므로, 지정수량의 100배를 저장하는 옥내저장소는 정기점검 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지정수량의 150배의 위험물을 저장하는 옥외저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 옥외저장소는 지정수량의 100배 이상이면 예방규정 및 정기점검 대상이 되므로, 150배를 저장하는 옥외저장소는 정기점검 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">지정수량의 5배의 위험물을 저장하는 이동탱크저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 이동탱크저장소는 지정수량의 배수(5배 여부)와 관계없이 모두 정기점검 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q39</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 과염소산은 제6류 위험물(산화성 액체)입니다. ｢위험물안전관리법 시행규칙｣ 별표 19(위험물의 운반에 관한 기준)에 따라 제6류 위험물의 운반용기 외부에 표시해야 하는 주의사항은 '가연물접촉주의'( ㄱ ) 1가지입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제6류 위험물(산화성 액체: 과염소산, 과산화수소, 질산)의 운반용기 외부에는 '가연물접촉주의'( ㄱ )를 표시하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] '공기접촉엄금'( ㄴ ) 및 '화기엄금'( ㄷ )은 제3류 위험물 중 자연발화성 물질의 운반용기 외부에 표시하는 주의사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] '화기엄금'( ㄷ ) 및 '충격주의'( ㅁ )는 제5류 위험물(자기반응성 물질)의 운반용기 외부에 표시하는 주의사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ, ㅁ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] '가연물접촉주의'( ㄱ ), '화기·충격주의'(ㄹ, ㅁ), '물기엄금'( ㅂ )은 제1류 위험물 중 알칼리금속의 과산화물 운반용기 외부에 표시하는 주의사항입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q34</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 주유취급소에서 자동차 등에 주유할 때는 고정주유설비 또는 접속된 탱크 주입구로부터 '1미터 이내'의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때는 전용탱크 주입구로부터 '3미터 이내' 및 전용탱크 통기관 끝부분으로부터 수평거리 '1.5미터 이내'의 부분에 다른 자동차 등의 주차를 금지하고 점검·정비 또는 세정을 하지 아니하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">옥내저장소에서 위험물을 저장하는 경우, 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에 있어서는 6 m, 제4류 위험물 중 제3석유류·제4석유류 및 동식물 유류를 수납하는 용기만을 겹쳐 쌓는 경우에 있어서는 4 m, 그 밖의 경우에 있어서는 3 m 높이를 초과하여 용기를 겹쳐 쌓지 아니하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 옥내저장소에서 용기를 겹쳐 쌓는 높이는 기계에 의하여 하역하는 구조로 된 용기만은 6미터, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류 용기만은 4미터, 그 밖의 경우에는 3미터를 초과하지 아니하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제1류 위험물 중 알칼리금속의 과산화물 또는 이를 함유한 것을 운반하고자 수납할 때는 그 운반용기의 외부에 “화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 주의사 항을 표시하여 적재하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제1류 위험물 중 알칼리금속의 과산화물을 운반할 때는 운반용기 외부에 '화기·충격주의', '물기엄금' 및 '가연물접촉주의'를 표시하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">고체위험물은 운반용기 내용적의 95％ 이하의 수납율로 수납하여야 하고, 액체위험물은 운반용기 내용적의 98％ 이하의 수납율로 수납하되, 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것(단, 자연발화성물질 중 알킬알루미늄등은 제외한다)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 고체위험물은 운반용기 내용적의 95퍼센트 이하, 액체위험물은 98퍼센트 이하의 수납율로 수납하되 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4 m 이내의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3 m 이내의 부분 및 전용탱크 통기관의 끝부분으로부터 수평거리 2 m 이내의 부분에 있어서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 주유취급소에서 주유할 때는 고정주유설비 또는 접속된 탱크 주입구로부터 4미터가 아니라 '1미터 이내'의 부분에, 전용탱크에 위험물을 주입할 때는 전용탱크 주입구로부터 '3미터 이내' 및 전용탱크 통기관 끝부분으로부터 수평거리 2미터가 아니라 '1.5미터 이내'의 부분에 다른 자동차 등의 주차를 금지하고 점검·정비 또는 세정을 하지 아니하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q36</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제18조 및 같은 법 시행규칙 제65조에 따라 정기점검은 연 1회 이상 실시하고 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 합니다. 다만 액체위험물의 최대수량이 50만 리터 이상인 옥외탱크저장소(특정·준특정옥외저장탱크)는 정기점검 외에 완공검사합격확인증을 발급받은 날부터 '12년 이내'에 1회 이상 구조 등에 관한 안전점검을 실시하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">정기점검 대상이 되는 제조소등의 관계인은 당해 제조소 등에 대하여 연 1회 이상 정기점검을 실시하여야 하며, 정기점검을 한 제조소등의 관계인은 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 정기점검 대상 제조소등의 관계인은 연 1회 이상 정기점검을 실시하고, 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지하탱크저장소, 이동탱크저장소, 위험물을 취급하는 탱크 로서 지하에 매설된 탱크가 있는 제조소·주유취급소는 정기점검 대상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 지하탱크저장소, 이동탱크저장소, 지하 매설 탱크가 있는 제조소·주유취급소·일반취급소는 정기점검 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위험물안전관리법령상 예방규정을 정하여야 하는 제조소 등은 모두 정기점검 대상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 예방규정을 정하여야 하는 제조소등은 모두 정기점검 대상에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">옥외탱크저장소 중 저장 또는 취급하는 액체위험물의 최대수량이 50만리터 이상인 것에 대해서는 정기점검 외에 설치허가에 따른 완공검사합격확인증을 발급받은 날부터 13년 이내에 1회 이상 특정·준특정옥외저장탱크의 구조 등에 관한 안전점검을 해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 액체위험물의 최대수량이 50만 리터 이상인 옥외탱크저장소는 완공검사합격확인증을 발급받은 날부터 13년 이내가 아니라 원칙적으로 '12년 이내'(연장 승인 특례를 제외함)에 1회 이상 특정·준특정옥외저장탱크의 구조 등에 관한 안전점검을 해야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q38</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제36조(1천500만 원 이하의 벌금)와 제37조(1천만 원 이하의 벌금)의 구성요건을 구별하는 문항입니다. 제조소등에서의 위험물의 저장 또는 취급에 관한 중요기준에 따르지 아니한 자(제36조 제2호)는 '1천500만 원 이하의 벌금'에 처하고, 위험물의 운반에 관한 중요기준 위반자(제37조 제3호), 위험물안전관리자의 안전관리·감독 불이행(제37조 제1호), 무자격자의 무참여 위험물 취급(제37조 제2호)은 모두 '1천만 원 이하의 벌금'에 처합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">위험물의 운반에 관한 중요기준을 따르지 아니한 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [1천만 원 이하의 벌금] 위험물의 운반에 관한 중요기준을 따르지 아니한 자는 법 제37조 제3호에 따라 1천만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제조소등에서의 위험물의 저장 또는 취급에 관한 중요 기준에 따르지 아니한 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [1천500만 원 이하의 벌금 · 정답] 제조소등에서의 위험물의 저장 또는 취급에 관한 중요기준에 따르지 아니한 자는 법 제36조 제2호에 따라 '1천500만 원 이하의 벌금'에 처하므로 나머지와 벌칙 기준이 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제조소등에서 위험물을 취급하는 작업을 하는 때에, 작업자 에게 위험물의 취급에 관한 안전관리와 감독을 하지 아니한 위험물안전관리자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [1천만 원 이하의 벌금] 위험물을 취급하는 작업을 할 때 작업자에게 안전관리와 감독을 하지 아니한 위험물안전관리자는 법 제37조 제1호에 따라 1천만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제조소등에 있어서 위험물취급자격자가 아닌 자가 위험 물안전관리자 또는 그 대리자가 참여하지 아니한 상태에서 위험물을 취급한 경우, 그 위험물을 취급한 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [1천만 원 이하의 벌금] 위험물취급자격자가 아닌 자가 위험물안전관리자 또는 대리자가 참여하지 아니한 상태에서 위험물을 취급한 경우 그 위험물을 취급한 자는 법 제37조 제2호에 따라 1천만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:X · 07:O · 08:O · 09:O · 10:X · 11:O · 12:X · 13:O · 14:X · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:O · 24:O · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢위험물안전관리법 시행령｣ 제15조에 따른 예방규정 작성 대상 6종의 정확한 배수 기준(제조·일반 10배, 옥외저장 100배, 옥내저장 150배, 옥외탱크 200배, 암반·이송 전부)입니다.
+            <span class="ox-exp-src">2018년 소방공채 Q12 · 2022년 소방공채 Q16</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>옥외저장소는 지정수량의 50배 이상이 아니라 '지정수량의 100배 이상'의 위험물을 저장하는 경우에 예방규정을 정하여야 합니다.
+            <span class="ox-exp-src">2018년 소방공채 Q12 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢위험물안전관리법 시행령｣ 제16조에 따른 정기점검 대상 범위입니다. 지하탱크저장소와 이동탱크저장소는 지정수량 배수(예: 5배)와 관계없이 모두 정기점검 대상이나, 옥내탱크저장소와 간이탱크저장소는 제외됩니다.
+            <span class="ox-exp-src">2021년 소방공채 Q19 · 2026년 소방경채 Q36</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>옥내저장소는 '지정수량의 150배 이상'일 때 예방규정 및 정기점검 대상이 되므로, 지정수량 100배를 저장하는 옥내저장소는 정기점검 대상이 아닙니다(지정수량 150배 옥외저장소나 지정수량 5배 이동탱크저장소는 정기점검 대상).
+            <span class="ox-exp-src">2025년 소방경채 Q36 · 소방공채 Q22 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>｢위험물안전관리법｣ 제18조 및 시행규칙 제65조에 따른 정기점검 주기(연 1회 이상), 결과 제출(30일 이내 시·도지사에게 제출), 기록 보존(3년) 기준입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q36 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 06 · X 틀림</span>액체위험물 최대수량이 50만 리터 이상인 옥외탱크저장소(특정·준특정옥외저장탱크)는 완공검사합격확인증을 발급받은 날부터 13년 이내가 아니라 원칙적으로 '12년 이내'에 1회 이상 구조 등에 관한 안전점검을 해야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q36 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢위험물안전관리법 시행령｣ 제18조(구 제17조)에 따라 저장소 중 자체소방대 설치 대상은 지정수량 50만 배 이상 제4류 위험물을 저장하는 '옥외탱크저장소'(화학소방차 2대·대원 10인)이며, '옥내탱크저장소'는 제외됩니다.
+            <span class="ox-exp-src">2022년 소방공채 Q17</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 8에 따른 자체소방대 화학소방자동차 및 자체소방대원 편성 기준입니다.
+            <span class="ox-exp-src">2018년 소방공채 Q15</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 21에 따른 화학소방자동차의 종류별 방사능력 및 비치 약제량 기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q38 · 소방공채 Q24</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 10 · X 틀림</span>포수용액 방사차는 매분 '2,000리터 이상', 분말 방사차는 분말 '1,400킬로그램 이상', 이산화탄소 방사차는 이산화탄소 '3,000킬로그램 이상'을 비치하여야 합니다(할로겐화합물 방사차가 매초 40kg 이상·1,000kg 이상 비치).
+            <span class="ox-exp-src">2023년 소방경채 Q38 · 소방공채 Q24 선지 1·2·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 18에 따른 옥내저장소 용기 적재 높이(6m / 4m / 3m) 기준입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q34 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>주유취급소에서 주유할 때는 고정주유설비 또는 접속된 탱크 주입구로부터 4미터가 아니라 '1미터 이내'의 부분에, 전용탱크에 위험물을 주입할 때는 전용탱크 주입구로부터 '3미터 이내' 및 전용탱크 통기관 끝부분으로부터 수평거리 2미터가 아니라 '1.5미터 이내'의 부분에 다른 자동차 등의 주차를 금지하고 점검·정비 또는 세정을 하지 아니하여야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q34 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 19에 따른 고체(95% 이하) 및 액체(98% 이하, 55℃ 기준) 위험물의 운반용기 수납율 기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q40 · 2026년 소방경채 Q34</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>자연발화성물질 중 알킬알루미늄등은 운반용기 내용적의 95퍼센트가 아니라 '90퍼센트 이하'의 수납율로 수납하되, 섭씨 55도가 아니라 '섭씨 50도의 온도에서 5퍼센트 이상'의 공간용적을 유지하여야 합니다.
+            <span class="ox-exp-src">2023년 소방경채 Q40 · 소방공채 Q25 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 19에 따라 제6류 산화성 액체(과염소산·과산화수소·질산)의 운반용기 외부에는 '가연물접촉주의'만 표시합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q39</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 19에 따라 제1류 알칼리금속의 과산화물 운반용기 외부에는 3가지 주의사항('화기·충격주의', '물기엄금', '가연물접촉주의')을 모두 표시합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q39 · 2026년 소방경채 Q34 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>｢위험물안전관리법 시행령｣ 제18조에 따른 운송책임자 감독·지원 의무 대상 위험물이며, 마그네슘·적린·유황·아세트알데히드·유기과산화물·질산염류 등은 해당하지 않습니다.
+            <span class="ox-exp-src">2018년 소방공채 Q13 · 2024년 소방경채 Q24</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 제61조 제1항에 따른 탱크안전성능시험자의 변경신고 중요사항 3가지이며, 보유장비의 변경은 제외됩니다.
+            <span class="ox-exp-src">2024년 소방경채 Q28</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>｢위험물안전관리법｣ 제35조에 따라 정기점검 미실시·허위 기록, 정기검사 미이행, 자체소방대 미설치, 긴급 사용정지·제한명령 위반자는 1년 이하의 징역 또는 1천만 원 이하의 벌금에 처합니다.
+            <span class="ox-exp-src">위험물안전관리법 제35조 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢위험물안전관리법｣ 제36조 제2호(제조소등 저장·취급 중요기준 위반 = 1천500만 원 이하 벌금)와 제37조 제3호(운반 중요기준 위반 = 1천만 원 이하 벌금)의 핵심 구분입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q38</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>｢위험물안전관리법｣ 제37조 제1호 및 제2호에 따라 안전관리자의 안전관리·감독 불이행과 무자격자의 무참여 위험물 취급은 모두 1천만 원 이하의 벌금에 처합니다(안전관리자 미선임은 법 제36조에 따라 1천500만 원 이하 벌금).
+            <span class="ox-exp-src">2026년 소방경채 Q38 선지 3·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>｢위험물안전관리법｣ 제20조 제2항에 따른 이동탱크저장소 위험물운송자의 자격 요건입니다.
+            <span class="ox-exp-src">위험물안전관리법 제20조 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>옥내저장소에서 용기를 겹쳐 쌓는 높이는 기계에 의하여 하역하는 구조로 된 용기만은 6미터, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류 용기만은 4미터, 그 밖의 경우에는 3미터를 초과하지 아니하여야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q34 · 위험물의 저장·취급 기준(용기 적재 높이·주유취급소 주차금지 거리) 및 운반 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>정기점검 대상 제조소등의 관계인은 연 1회 이상 정기점검을 실시하고, 점검을 한 날부터 30일 이내에 점검결과를 시·도지사에게 제출하여야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q36 · 정기점검 결과 제출(30일 이내) 및 특정·준특정옥외저장탱크 구조안전점검 주기(12년 이내)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>시행령 제15조 제2호 단서에 따라 지정수량의 10배 이상 위험물을 취급하는 일반취급소라도 '제4류 위험물 중 인화점이 섭씨 40도 이상인 것만을 지정수량의 30배 이하로 보일러 등으로 소비하는 일반취급소' 등은 예방규정 작성 대상에서 제외됩니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 제15조 제2호 보일러 소비 일반취급소 예방규정 제외)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>옥내저장소와 옥외저장소의 기준 배수가 서로 뒤바뀌었습니다! 예방규정 작성 기준은 '옥외저장소가 지정수량 100배 이상', '옥내저장소가 지정수량 150배 이상'입니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 제15조 옥내저장소 150배 vs 옥외저장소 100배 역전)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>시행령 제18조에 따라 지정수량 3천 배 이상인 제4류 위험물을 취급하는 일반취급소라도 '보일러·버너 또는 이와 유사한 장치로 위험물을 소비하는 일반취급소' 등은 자체소방대 설치 대상에서 제외됩니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 제18조 자체소방대 설치 제외 일반취급소 단서)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>화학소방자동차 4대와 자체소방대원 20인은 '지정수량 48만 배 이상인 제조소 또는 일반취급소' 기준이며, '지정수량 50만 배 이상인 제4류 위험물 옥외탱크저장소'가 있는 사업소에는 화학소방자동차 '2대'와 자체소방대원 '10인'을 두어야 합니다!
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 별표 8 50만 배 이상 옥외탱크저장소 자체소방대 편성)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>제조소등의 게시판과 달리 '운반용기 외부 표시'에는 '물기주의'라는 문구가 존재하지 않습니다! 알칼리금속의 과산화물은 '화기·충격주의', '물기엄금', '가연물접촉주의' 3가지를 표시하지만, 그 밖의 제1류 위험물은 '화기·충격주의' 및 '가연물접촉주의' 2가지만 표시합니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행규칙 별표 19 일반 제1류 운반용기 외부 주의사항)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>이동탱크저장소로 운송할 때 운송책임자의 감독 또는 지원을 받아야 하는 위험물은 오직 제3류 위험물 중 '알킬알루미늄, 알킬리튬 또는 이들 중 어느 하나 이상을 함유한 것'뿐이며, 아세트알데히드나 유기과산화물은 해당하지 않습니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 제19조 운송책임자 감독·지원 대상 알킬알루미늄·알킬리튬 한정)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

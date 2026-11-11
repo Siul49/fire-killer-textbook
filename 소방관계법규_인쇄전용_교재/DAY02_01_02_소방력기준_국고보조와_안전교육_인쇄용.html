@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 02 · 인쇄용] 제1편 소방기본법 · 제2장 소방력의 기준, 국고보조 및 소방안전교육 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY01_01_01_총칙_및_소방기관과_종합상황실_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 02</span>
+        <a href="DAY03_01_03_화재경계_우선통행과_소방활동_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(13제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 02 · 제1편 소방기본법 · 제2장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(13문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">소방력의 기준, 국고보조 및 소방안전교육</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 그릇(소방기관) 안에 무엇을 채울까? — 소방력의 기준·국고보조 및 소방자동차 교통안전</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>소방력의 기준 (제8조)</strong>: 기준은 <strong>행정안전부령</strong> / 확충계획 수립·시행은 <strong>시·도지사</strong></li>
+                <li><strong>국고보조 (제9조·시행령 제2조)</strong>: 경비의 <strong>일부</strong> 보조 / 대상·보조율은 <strong>대통령령</strong>, 장비 규격·종류는 <strong>행정안전부령</strong> (<strong>소방용수시설 설치는 제외!</strong>)</li>
+                <li><strong>교통안전·지휘훈련</strong>: 운행기록 <strong>6개월</strong> 보관·분석 주체는 <strong>소방청장·소방본부장</strong>(서장 제외) / 현장지휘훈련 대상은 <strong>소방위부터 소방정까지</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            제1장에서 우리는 소방본부와 소방서라는 '그릇(소방기관)'의 설치를 대통령령으로 정한다는 점을 배웠습니다. 그렇다면 그 그릇 안에 채워 넣을 실제 내용물, 즉 소방관 인력과 소방차·장비의 배치 기준인 <strong>소방력의 기준</strong>은 어디서 정할까요? ｢소방기본법｣ 제8조 제1항은 소방기관이 소방업무를 수행하는 데 필요한 인력과 장비 등에 관한 기준을 <strong>행정안전부령</strong>(｢소방력 기준에 관한 규칙｣)으로 정하도록 규정하고 있습니다. 관서 설치는 무거운 '대통령령'으로 정하면서, 그 안에 들어갈 인력과 장비 기준은 한 단계 가벼운 '행정안전부령'에 맡긴 데에는 분명한 이유가 있습니다. 신도시가 개발되어 인구가 급증하거나 대규모 화학공단이 들어서면 해당 소방서에 배치할 구급차 대수와 대원 정원을 그때그때 발 빠르게 늘려주어야 하므로, 수시로 변하는 현장 수요에 기민하게 대응할 수 있도록 개정이 유연한 <strong>행정안전부령</strong>에 위임한 것입니다. 이렇게 기준선이 정해지면 실제로 지자체 예산을 편성해 관할 구역의 부족한 인력과 장비를 채워 넣는 <strong>소방력 확충계획을 수립하여 시행하여야 하는 의무자는 시·도지사</strong>이며(제8조 제2항), 소방자동차 등 소방장비의 분류·표준화와 관리 등에 필요한 사항은 별도 법률인 <strong>｢소방장비관리법｣</strong>으로 정합니다(제8조 제3항).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그런데 관할 구역의 소방력 확충을 전적으로 시·도 예산에만 맡겨두면 심각한 지역 격차가 발생합니다. 세수가 넉넉한 대도시와 재정자립도가 낮은 농어촌 도(道) 지역의 예산 차이가 커서, 재정이 열악한 지자체는 수십억 원짜리 소방헬기나 특수 화학차를 제때 구비하지 못해 주민들의 안전이 위협받을 수 있기 때문입니다. 이를 해결하기 위해 ｢소방기본법｣ 제9조 제1항은 <strong>국가가 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 일부를 보조(국고보조)</strong>하도록 규정하고 있습니다(시험에서 '경비의 전부를 보조한다'고 나오면 무조건 오답입니다). 이때 어떤 사업에 국가 예산을 얼마나 보태줄지(<strong>국고보조 대상사업의 범위와 기준보조율</strong>)는 국가 재정 배분과 직결되므로 <strong>대통령령</strong>(시행령 제2조)으로 정하고, 보조금으로 구입할 소방활동장비와 설비의 세부 <strong>종류 및 규격</strong>은 실무 기술 기준이므로 <strong>행정안전부령</strong>(시행규칙 제5조의2 및 별표 1의2)으로 정합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            특히 시험에서 가장 자주 묻는 ｢소방기본법 시행령｣ 제2조 제1항의 <strong>국고보조 대상사업 범위</strong>는 ① <strong>소방활동장비와 설비의 구입 및 설치</strong>(가목 소방자동차, 나목 소방헬리콥터 및 소방정, 다목 소방전용통신설비 및 전산설비, 라목 그 밖에 방화복 등 소방활동에 필요한 소방장비)와 ② <strong>소방관서용 청사의 건축</strong> 두 가지뿐입니다. 여기서 출제자가 가장 즐겨 쓰는 1순위 함정이 바로 소화전·급수탑·저수조 같은 <strong>'소방용수시설의 설치'</strong>를 국고보조 대상에 슬쩍 끼워 넣는 것입니다(2020년 소방경채 Q3 정답). 소방용수시설의 설치 및 유지·관리는 ｢소방기본법｣ 제10조에 따른 시·도지사의 고유 의무 사업일 뿐 시행령 제2조의 국고보조 대상사업이 아니므로 반드시 구별해야 합니다. 아울러 ｢소방기본법 시행규칙｣ 별표 1의2에 규정된 국고보조 대상 장비의 세부 규격 중 2023년 공채·경채 시험에 동시 출제된 4대 핵심 수치인 <strong>구조정(150마력 이상, 4톤 이상 10톤 이하)</strong>, <strong>배연차 중형(170마력 이상)</strong>, <strong>특수구급차(90마력 이상, 일반구급차는 60마력 이상)</strong>, <strong>소방헬리콥터(5인승 이상 17인승 이하: 소형 5인승에서 7인승, 중형 8인승에서 14인승, 대형 15인승에서 17인승)</strong>도 정확히 눈에 익혀 두어야 합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 어렵게 확충한 소방자동차가 긴급 출동 도중 교차로 충돌 등 교통사고를 당하면 대원도 다치고 화재 진압도 실패하게 됩니다. 이를 예방하기 위해 <strong>소방청장</strong>은 <strong>소방자동차 교통안전 분석 시스템</strong>을 구축·운영하여야 하며(제21조의3 제1항), 시스템 구축·운영과 데이터 보관·활용 등에 필요한 세부 사항은 <strong>행정안전부령</strong>으로 정합니다(제21조의3 제4항). 이에 따른 ｢소방기본법 시행규칙｣ 제13조 및 제13조의2에 의하면, <strong>소방청장, 소방본부장 및 소방서장</strong>은 소속 소방자동차(소방펌프차, 물탱크차, 화학차, 고가차, 굴절차, 무인방수차, 배연차, 구조차, 구급차 등)에 운행기록장치를 장착·운용하고 그 운행기록 데이터를 <strong>6개월 동안 저장·관리</strong>해야 합니다. 다만 수집된 운행기록 데이터 중 과속, 급감속, 급출발 등의 기록을 <strong>점검·분석</strong>하여 교통안전정책 수립이나 교육·훈련에 활용하는 주체는 정책 기능을 수행하는 <strong>소방청장 및 소방본부장</strong>이며, 일선 현장 집행 기관인 <strong>소방서장은 점검·분석 의무 주체에 포함되지 않는다</strong>는 점(시행규칙 제13조의3, 2025년 공채·경채 기출 정답)을 날카롭게 구별해야 합니다. 또한 현장 지휘 역량을 높이기 위해 <strong>소방청장, 소방본부장 또는 소방서장</strong>이 실시하는 <strong>현장지휘훈련</strong>(제20조 및 시행규칙 제9조 제1항·별표 3의2, 2년마다 1회 이상·2주 이상)의 의무 대상 계급은 일선 대원(소방장 이하)이나 고위 정책직(소방준감 이상)을 제외하고, 실제로 현장에서 지휘 마이크를 잡는 초·중급 간부인 <strong>소방위·소방경·소방령·소방정</strong>(소방위부터 소방정까지 4개 계급)입니다.
+          </p>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 역사는 국가가 보존하고, 안전체험은 지역마다! — 소방박물관·소방체험관·한국119청소년단</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>소방박물관 (제5조)</strong>: <strong>소방청장</strong> 설립·운영 / 세부 사항은 <strong>행정안전부령</strong></li>
+                <li><strong>소방체험관 (제5조)</strong>: <strong>시·도지사</strong> 설립·운영 / 행정안전부령 기준에 따라 <strong>시·도의 조례</strong>로 정함</li>
+                <li><strong>한국119청소년단 (제17조의6)</strong>: <strong>소방청장</strong> 설립·운영 / 민법상 <strong>사단법인</strong> 규정 준용</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            소방력과 장비를 튼튼히 갖추는 것만큼 중요한 것이 국민들이 화재의 위험성을 알고 대피 요령을 몸에 익히는 안전문화 조성입니다. 이를 위해 ｢소방기본법｣ 제5조 제1항은 이름이 비슷해 보이지만 성격과 설립 주체가 완전히 다른 두 가지 시설, 즉 <strong>소방박물관</strong>과 <strong>소방체험관</strong>을 규정하고 있습니다. 왜 이 두 시설의 설립권자와 위임 법령이 다를까요? 먼저 <strong>소방박물관</strong>은 조선시대 금화도감 유물부터 근현대 소방차까지 대한민국 전체의 소방 역사를 한데 모아 보존·전시하는 국가적 상징 시설입니다. 전국에 1곳만 있어도 충분한 국립 시설이므로 당연히 중앙의 <strong>소방청장이 설립하여 운영</strong>하며, 그 설립과 운영에 필요한 사항도 중앙부처 법령인 <strong>행정안전부령</strong>으로 정합니다(제5조 제2항 전단).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면 <strong>소방체험관</strong>(화재 현장에서의 피난 등을 체험할 수 있는 체험관)은 지역의 유치원생, 초등학생, 시민들이 직접 찾아가 연기 미로를 탈출하고 완강기를 타보며 화재 대피를 몸으로 연습하는 생활 밀착형 교육장입니다. 부산에 사는 초등학생이 안전체험을 하러 서울까지 올라갈 수는 없으니 각 광역 지자체마다 골고루 설치되어야 합니다. 따라서 소방체험관은 각 지역을 책임지는 <strong>시·도지사가 설립하여 운영</strong>하며, 설립과 운영에 필요한 사항도 행정안전부령으로 정하는 기준에 따라 각 지역의 실정에 맞게 <strong>시·도의 조례</strong>로 정하는 것입니다(제5조 제2항 후단). 이 원리를 이해하면 <strong>'역사 유물 보존(소방박물관) = 소방청장 + 행정안전부령'</strong>, <strong>'지역 주민 실습(소방체험관) = 시·도지사 + 시·도의 조례'</strong>라는 공식이 저절로 머리에 자리 잡습니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 어린이와 청소년들을 미래의 안전 리더로 키우기 위해 <strong>소방청장</strong>은 청소년을 단원으로 하는 <strong>한국119청소년단</strong>을 설립·운영할 수 있습니다(제17조의6 제1항). 여기서 시험에 자주 나오는 법적 성격 비교 포인트가 있습니다. 한국119청소년단은 청소년 단원들과 지도교사들이 모여서 만든 '사람의 결합체'이므로 ｢민법｣ 중 <strong>사단법인에 관한 규정</strong>을 준용합니다(제17조의6 제5항). 반면에 제5장에서 배울 <strong>한국소방안전원</strong>은 안전 교육과 연구를 위한 기금·재산 출연을 바탕으로 세워진 전문 기관이므로 ｢민법｣ 중 <strong>재단법인에 관한 규정</strong>을 준용합니다. '한국119청소년단 및 소방산업공제조합 = 사단법인 준용', '한국소방안전원 = 재단법인 준용'으로 대비해 두면 출제자의 바꿔치기 함정을 가볍게 피할 수 있습니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 안전교육도 전문가가 맡는다 — 소방안전교육·훈련과 소방안전교육사 제도</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>소방안전교육사 배치 (별표 2의3)</strong>: <strong>소방청 2명 이상 · 소방본부 2명 이상 · 소방서 1명 이상</strong> · 안전원 본회 2명(지부 1명) 이상 (학교·소방학교 제외!)</li>
+                <li><strong>자격 부여 및 직무 (제17조의2)</strong>: <strong>소방청장</strong>이 시험 실시(30일 전 공고) 및 자격 부여 / 기획·진행·분석·평가 및 교수업무</li>
+                <li><strong>응시자격 경력 (별표 2의2)</strong>: 소방공무원·보육교사·안전관리 산업기사·2급 응급구조사 <strong>3년 이상</strong> / 간호사·1급 응급구조사 <strong>1년 이상</strong> / 의용소방대원 <strong>5년 이상</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            건물(소방체험관)과 조직(한국119청소년단)을 만들었다면, 이제 실제로 국민들을 찾아가 가르치는 <strong>소방안전교육 및 훈련(제17조)</strong>이 이루어져야 합니다. <strong>소방청장, 소방본부장 또는 소방서장</strong>은 화재를 예방하고 화재 발생 시 인명과 재산 피해를 최소화하기 위하여 행정안전부령으로 정하는 바에 따라 자력으로 대피하기 어려운 재난 약자를 대상으로 소방안전에 관한 교육과 훈련을 실시할 수 있습니다(제17조 제2항). 현행 ｢소방기본법｣ 제17조 제2항 각 호에 열거된 6대 법정 교육·훈련 대상은 ① ｢영유아보육법｣에 따른 <strong>어린이집의 영유아</strong>, ② ｢유아교육법｣에 따른 <strong>유치원의 유아</strong>, ③ ｢초·중등교육법｣에 따른 <strong>학교의 학생</strong>, ④ ｢장애인복지법｣에 따른 <strong>장애인복지시설에 거주하거나 이용하는 장애인</strong>, ⑤ ｢아동복지법｣에 따른 <strong>아동복지시설에 거주하거나 이용하는 아동</strong>, ⑥ ｢노인복지법｣에 따른 <strong>노인복지시설에 거주하거나 이용하는 노인</strong>입니다. (참고로 2022년 소방경채 Q6 출제 당시에는 제1호부터 제3호까지만 규정되어 있었고, 현행법 기준으로 보더라도 제4호는 '장애인복지시설에 거주·이용하는 장애인'으로 한정하고 있어 단순히 '장애인복지법 제2조에 따른 장애인'이라고만 적은 선지가 오답이 된다는 점까지 함께 알아두면 완벽합니다.)
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그런데 다섯 살짜리 유치원생이나 복지시설 어르신의 눈높이에 맞춰 화재 대피를 가르치는 일은, 단순히 불을 잘 끄는 베테랑 진압대원이라고 해서 누구나 쉽게 할 수 있는 일이 아닙니다. 교육학 지식과 소방 전문성을 겸비한 교육 전문가가 필요하기 때문에 도입된 국가자격 제도가 바로 <strong>소방안전교육사</strong>입니다(제17조의2). 소방안전교육사는 소방안전교육의 <strong>기획·진행·분석·평가 및 교수업무</strong>를 수행하며, 국가 단위 자격증이니만큼 시험을 실시하고 합격자에게 자격을 부여하는 권한자는 <strong>소방청장</strong>입니다(시험 시행일 <strong>30일 전까지</strong> 공고, 시험위원회는 소방청에 설치). 아이들과 국민을 직접 가르치는 직무이므로 피성년후견인 또는 피한정후견인, 금고 이상의 실형을 선고받고 집행이 끝나거나 면제된 날부터 2년이 지나지 아니한 사람, 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람 등은 결격사유(제17조의3)에 해당하여 소방안전교육사가 될 수 없으며(현행법상 미성년자는 결격사유에서 삭제됨), 시험에서 부정행위를 한 사람은 처분일로부터 <strong>2년간</strong> 응시자격이 정지됩니다(제17조의4).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            마지막으로 시험에서 가장 자주 출제되는 <strong>소방안전교육사의 배치기준(시행령 제7조의11 및 별표 2의3)</strong>과 <strong>응시자격 경력 연수(시행령 제7조의2 및 별표 2의2)</strong>를 살펴봅시다. 왜 <strong>소방청에는 2명 이상, 소방본부에도 2명 이상</strong>을 두면서, 일선 <strong>소방서에는 1명 이상</strong>만 두도록 정했을까요? 중앙의 소방청과 광역 시·도 소방본부는 전국 및 시·도 단위의 교육 과정을 기획·개발하고 평가하는 본부 조직이므로 최소한 복수 인원(<strong>2명 이상</strong>)이 협업해야 하지만, 전국 240곳이 넘는 일선 소방서는 현장 교육을 집행하는 기관이므로 최소 인원인 <strong>1명 이상</strong>으로 정한 것입니다(그 밖에 한국소방안전원은 본회 2명 이상·시도지부 1명 이상 배치하며, 초등학교 등 일반 교육기관이나 소방학교에는 배치 의무가 없습니다). 또한 응시자격에서 요구하는 실무 경력 연수는 직종별 전문성에 따라 <strong>1년·3년·5년</strong>으로 나뉘는데, 아래 비교 표를 통해 한눈에 정리해 두시기 바랍니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">구분 항목</th>
+                <th style="width:42%;">법정 기준 및 필수 경력 연수</th>
+                <th>핵심 비교 및 기출 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>소방안전교육사 배치기준<br/>(시행령 별표 2의3)</strong></td>
+                <td>· <strong>소방청 2명 이상</strong> / <strong>소방본부 2명 이상</strong><br/>· <strong>소방서 1명 이상</strong><br/>· 한국소방안전원 본회 2명 이상 (시·도지부 1명 이상)</td>
+                <td>· 청(2)·본부(2)·서(1) 숫자 조합 필수 암기<br/>· <strong>초등학교 등 일반 교육기관 및 소방학교는 배치 의무 없음!</strong></td>
+              </tr>
+              <tr>
+                <td><strong>응시자격: 경력 불요(0년)<br/>(시행령 별표 2의2)</strong></td>
+                <td>· 유치원·초·중등 <strong>교원 자격</strong> 취득자 / <strong>어린이집 원장</strong> 자격자<br/>· 안전관리 분야 기술사, 소방시설관리사, 소방설비기사·산업기사<br/>· 소방 관련 학과에서 소방안전교육 관련 과목 <strong>6학점 이상</strong> 이수자</td>
+                <td>· 이미 교육·소방 최고 전문성을 갖춘 자격자는 별도 실무 경력 기간 없이 즉시 응시 가능</td>
+              </tr>
+              <tr>
+                <td><strong>응시자격: 1년 vs 3년 vs 5년<br/>(시행령 별표 2의2)</strong></td>
+                <td>· <strong>1년 이상</strong>: <strong>간호사</strong>, <strong>1급 응급구조사</strong><br/>· <strong>3년 이상</strong>: <strong>소방공무원</strong>(또는 소방학교 2주 이상 전문교육 이수), <strong>보육교사</strong>, <strong>안전관리 산업기사 이상</strong>, <strong>2급 응급구조사</strong><br/>· <strong>5년 이상</strong>: <strong>의용소방대원</strong></td>
+                <td>· <strong>간호조무사</strong>는 응시자격 자체가 없음 (간호사 1년 이상)<br/>· 1급 응급구조사(1년) vs 2급 응급구조사(3년) 구분<br/>· 소방공무원·보육교사는 2년이 아니라 <strong>3년 이상</strong>!</td>
+              </tr>
+              <tr>
+                <td><strong>국고보조 소방장비 규격<br/>(시행규칙 별표 1의2)</strong></td>
+                <td>· <strong>구조정</strong>: <strong>150마력 이상</strong> (4톤 이상 10톤 이하)<br/>· <strong>배연차(중형)</strong>: <strong>170마력 이상</strong> / <strong>구급차(특수)</strong>: <strong>90마력 이상</strong><br/>· <strong>소방헬리콥터</strong>: <strong>5인승에서 17인승까지</strong></td>
+                <td>· 구조정(150마력 이상)을 특수구급차 기준(90마력 이상)으로 바꿔치기한 2023년 기출 함정 주의</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 소방력 확충·국고보조 체계 및 안전문화·소방안전교육사 핵심 구조</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방력 기준 · 국고보조 및 소방자동차 교통안전 체계</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">소방력 기준 (제8조) 및 현장지휘훈련 (제20조)</div>
+                <div>· <strong>소방력 기준</strong>: <strong>행정안전부령</strong> / <strong>확충계획 수립·시행</strong>: <strong>시·도지사</strong><br/>· <strong>현장지휘훈련 대상</strong>: <strong>소방위·소방경·소방령·소방정</strong> (2년마다 1회·2주 이상)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소방자동차 교통안전 분석 시스템 (제21조의3)</div>
+                <div>· 시스템 구축·운영: <strong>소방청장</strong> (세부사항은 <strong>행정안전부령</strong>)<br/>· 운행기록 <strong>6개월</strong> 보관(청장·본부장·서장) / <strong>점검·분석은 청장·본부장만!</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소방장비 국고보조 위임 체계 (제9조·시행령 제2조)</div>
+                <div>· 국가가 시·도 소방업무 경비의 <strong>일부</strong>를 보조<br/>· 보조 대상·기준보조율: <strong>대통령령</strong> / 장비 종류·규격: <strong>행정안전부령</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">국고보조 대상사업 vs 제외 사업 (시행령 제2조)</div>
+                <div>· <strong>보조 대상</strong>: 소방자동차, 헬기·소방정, 전용통신·전산설비, 방화복 등, 청사 건축<br/>· <strong>보조 제외(시·도지사 고유 사무)</strong>: <strong>소방용수시설 설치 (제10조)</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 함정: <strong>소방용수시설 설치</strong>는 국고보조 대상이 아니며, 운행기록 데이터 <strong>점검·분석 주체</strong>에 일선 <strong>소방서장</strong>은 포함되지 않음!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방박물관·체험관 및 소방안전교육사 배치·응시자격</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">안전문화 시설 설립권자 및 위임 법령 비교 (제5조·제17조의6)</div>
+                <ul class="schema-list">
+                  <li><strong>소방박물관</strong>: <strong>소방청장</strong> 설립·운영 (설립·운영 사항은 <strong>행정안전부령</strong>)</li>
+                  <li><strong>소방체험관</strong>: <strong>시·도지사</strong> 설립·운영 (행정안전부령 기준에 따라 <strong>시·도의 조례</strong>로 정함)</li>
+                  <li><strong>한국119청소년단</strong>: <strong>소방청장</strong> 설립·운영 (민법 중 <strong>사단법인</strong> 규정 준용 ↔ 한국소방안전원은 재단법인 준용)</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소방안전교육사 배치기준 (별표 2의3) 및 응시자격 경력 (별표 2의2)</div>
+                <ul class="schema-list">
+                  <li><strong>의무 배치 인원</strong>: <strong>소방청 2명 이상 · 소방본부 2명 이상 · 소방서 1명 이상</strong> · 한국소방안전원 본회 2명(지부 1명) 이상</li>
+                  <li><strong>응시자격 경력</strong>: 간호사·1급 응급구조사(<strong>1년 이상</strong>) / 소방공무원·보육교사·안전관리 산업기사·2급 응급구조사(<strong>3년 이상</strong>) / 의용소방대원(<strong>5년 이상</strong>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (13문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 13문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2019년 소방경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방박물관 등의 설립과 운영에 관한 설명이다. ( ) 안의 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>소방의 역사와 안전문화를 발전시키고 국민의 안전의식을 높이기 위하여 ( 가 )은/는 소방박물관을, ( 나 )은/는 소방체험관(화재 현장에서의 피난 등을 체험할 수 있는 체험관을 말한다)을 설립하여 운영할 수 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 소방청장 / ( 나 ): 시·도지사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 소방청장 / ( 나 ): 소방본부장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 시·도지사 / ( 나 ): 소방본부장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 시·도지사 / ( 나 ): 소방청장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 소방안전교육사의 배치대상별 배치기준에 관한 설명이다. ( ) 안의 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>소방안전교육사의 배치대상별 배치기준에 따르면 소방청 ( 가 )명 이상, 소방본부 ( 나 )명 이상, 소방서 ( 다 )명 이상이다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 1 / ( 나 ): 1 / ( 다 ): 1</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 1 / ( 나 ): 2 / ( 다 ): 2</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 2 / ( 나 ): 1 / ( 다 ): 2</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 2 / ( 나 ): 2 / ( 다 ): 1</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방력의 기준 등에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방업무를 수행하는 데에 필요한 소방력에 관한 기준은 대통령령으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방청장은 소방력의 기준에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립하여 시행하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 따로 법률에서 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 일부를 보조하고, 보조 대상사업의 범위와 기준 보조율은 행정안전부령으로 정한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2019년 소방공채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 소방안전교육사시험 응시자격에 대한 설명으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. ｢영유아보육법｣ 제21조에 따라 보육교사 자격을 취득한 후 2년 이상의 보육업무 경력이 있는 사람<br/>ㄴ. ｢국가기술자격법｣ 제2조제3호에 따른 국가기술자 격의 직무분야 중 안전관리 분야의 산업기사 자격을 취득한 후 안전관리 분야에 3년 이상 종사한 사람<br/>ㄷ. ｢의료법｣ 제7조에 따라 간호조무사 자격을 취득한 후 간호업무 분야에 2년 이상 종사한 사람<br/>ㄹ. ｢응급의료에 관한 법률｣ 제36조제3항에 따라 2급 응급구조사 자격을 취득한 후 응급의료 업무 분야에 3년 이상 종사한 사람<br/>ㅁ. ｢소방공무원법｣ 제2조에 따른 소방공무원으로 2년 이상 근무한 경력이 있는 사람<br/>ㅂ. ｢의용소방대 설치 및 운영에 관한 법률｣ 제3조에 따라 의용소방대원으로 임명된 후 5년 이상 의용소 방대 활동을 한 경력이 있는 사람</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄹ, ㅂ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄷ, ㄹ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄹ, ㅁ, ㅂ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2020년 소방경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 소방안전교육사와 관련된 규정의 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방안전교육사는 소방안전교육의 기획·진행·분석· 평가 및 교수업무를 수행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 소방안전교육사가 될 수 없다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">초등학교 등 교육기관에는 소방안전교육사를 1명 이상 배치하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢유아교육법｣에 따라 교원의 자격을 취득한 사람은 소방안전교육사 시험에 응시할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2020년 소방경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 소방장비 등 국고보조 대상사업의 범위에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방자동차 구입</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방용수시설 설치</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방헬리콥터 및 소방정 구입</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방전용통신설비 및 전산설비 설치</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2021년 소방경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방 관련 시설 등의 설립 또는 설치에 관한 법적 근거로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방체험관: 대통령령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">119종합상황실: 대통령령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방박물관: 행정안전부령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">비상소화장치: 시·도 조례</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2021년 소방경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 소방장비 등에 대한 국고보조의 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">보조 대상사업의 범위와 기준보조율은 대통령령으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방활동장비 및 설비의 종류와 규격은 행정안전부령 으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 전부를 보조한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">국고보조 대상사업에 해당하는 소방활동장비로는 소방 자동차, 소방헬리콥터 및 소방정 등이 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2022년 소방경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 제17조제2항에 따르면 소방청장, 소방본부장 또는 소방서장은 화재를 예방하고 화재 발생 시 인명과 재산 피해를 최소화하기 위하여 행정안전부령으로 정하는 바에 따라 소방안전에 관한 교육과 훈련을 실시할 수 있다. 그 대상으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">｢장애인복지법｣ 제2조에 따른 장애인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">｢유아교육법｣ 제2조에 따른 유치원의 유아</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">｢초·중등교육법｣ 제2조에 따른 학교의 학생</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢영유아보육법｣ 제2조에 따른 어린이집의 영유아</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2023년 소방경채 Q3 · 소방공채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행규칙｣상 국고보조의 대상이 되는 소방활동 장비의 종류와 규격으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">구조정: 90마력 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">배연차(중형) : 170마력 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">구급차(특수) : 90마력 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방헬리콥터: 5에서 17인승</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2024년 소방경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방박물관 등의 설립과 운영에 관한 내용 이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>•소방의 역사와 안전문화를 발전시키고 국민의 안전의식을 높이기 위하여 ( ㄱ )은/는 소방박물관을, ( ㄴ )은/는 소방체험관을 설립하여 운영할 수 있다.<br/>•소방박물관의 설립과 운영에 필요한 사항은 ( ㄷ )( 으 )로 정하고, 소방체험관의 설립과 운영에 필요한 사항은 ( ㄷ )( 으 )로 정하는 기준에 따라 ( ㄹ )( 으 )로 정한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">(ㄱ): 시·도지사 / (ㄴ): 소방청장 / (ㄷ): 행정안전부령 / (ㄹ): 시·도의 조례</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">(ㄱ): 시·도지사 / (ㄴ): 소방청장 / (ㄷ): 시·도의 조례 / (ㄹ): 행정안전부령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">(ㄱ): 소방청장 / (ㄴ): 시·도지사 / (ㄷ): 시·도의 조례 / (ㄹ): 행정안전부령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">(ㄱ): 소방청장 / (ㄴ): 시·도지사 / (ㄷ): 행정안전부령 / (ㄹ): 시·도의 조례</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024년 소방경채 Q6 · 소방공채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행규칙｣상 현장지휘훈련을 받아야 할 소방 공무원의 계급으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방위</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방준감</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방총감</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2025년 소방경채 Q4 · 소방공채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령, 시행규칙상 소방자동차 교통안전 분석 시스템 구축·운영에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방청장, 소방본부장 및 소방서장은 소방자동차 운행기록 장치에 기록된 데이터를 6개월 동안 저장·관리해야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방자동차 교통안전 분석 시스템의 구축·운영, 운행기록 장치 데이터 및 전산자료의 보관·활용 등에 필요한 사항은 행정안전부령으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방화학차, 소방고가차, 무인방수차, 구조차는 행정안전부령으로 정하는 기준에 적합한 운행기록장치를 장착하고 운용해야 하는 소방자동차에 해당한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장, 소방본부장 및 소방서장은 운행기록장치 데이터 중 과속, 급감속, 급출발 등의 운행기록을 점검·분석해야 하고, 분석 결과를 소방자동차의 안전한 소방활동 수행에 필요한 교통안전정책의 수립, 교육·훈련 등에 활용할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기관이 소방업무를 수행하는 데에 필요한 인력과 장비 등에 관한 기준(소방력의 기준)은 대통령령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 소방력의 기준에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립하여 시행하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 따로 법률(｢소방장비관리법｣)로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 전부를 보조한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>국고보조 대상사업의 범위와 기준보조율은 대통령령으로 정하고, 국고보조 대상이 되는 소방활동장비와 설비의 종류 및 규격은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행령｣상 국고보조 대상사업에는 소방자동차, 소방헬리콥터 및 소방정, 소방전용통신설비 및 전산설비, 소방관서용 청사의 건축 등이 포함되며, 소방용수시설 설치는 제외된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행규칙｣ 별표 1의2에 따라 국고보조의 대상이 되는 구조정의 규격은 150마력 이상(4톤 이상 10톤 이하)이며, 특수구급차는 90마력 이상, 배연차(중형)는 170마력 이상, 소방헬리콥터는 5인승에서 17인승까지이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행규칙｣상 화재 등 재난 현장에서의 현장지휘훈련을 받아야 할 소방공무원의 계급은 소방위·소방경·소방령·소방정이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장, 소방본부장 및 소방서장은 소방자동차 운행기록장치에 기록된 데이터를 6개월 동안 저장·관리해야 하며, 교통안전 분석 시스템의 구축·운영 등에 필요한 사항은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방화학차, 소방고가차, 무인방수차, 구조차는 행정안전부령으로 정하는 기준에 적합한 운행기록장치를 장착하고 운용해야 하는 소방자동차에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장, 소방본부장 및 소방서장은 운행기록장치 데이터 중 과속, 급감속, 급출발 등의 운행기록을 점검·분석해야 하고, 분석 결과를 교통안전정책의 수립, 교육·훈련 등에 활용할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방의 역사와 안전문화를 발전시키고 국민의 안전의식을 높이기 위하여 소방청장은 소방박물관을, 시·도지사는 소방체험관을 설립하여 운영할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방박물관의 설립과 운영에 필요한 사항은 행정안전부령으로 정하고, 소방체험관의 설립과 운영에 필요한 사항은 행정안전부령으로 정하는 기준에 따라 시·도의 조례로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 어린이 및 청소년의 안전의식을 높이기 위하여 한국119청소년단을 설립·운영할 수 있으며, 한국119청소년단에 관하여는 민법 중 사단법인에 관한 규정을 준용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장, 소방본부장 또는 소방서장은 화재를 예방하고 피해를 최소화하기 위하여 어린이집의 영유아, 유치원의 유아, 학교의 학생 등을 대상으로 소방안전에 관한 교육과 훈련을 실시할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방안전교육사는 소방청장이 실시하는 시험에 합격한 사람에게 자격을 부여하며, 소방안전교육의 기획·진행·분석·평가 및 교수업무를 수행한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 소방안전교육사가 될 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행령｣ 별표 2의3에 따른 소방안전교육사의 배치기준은 소방청 2명 이상, 소방본부 2명 이상, 소방서 1명 이상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>초등학교 등 교육기관에는 소방안전교육사를 1명 이상 배치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢유아교육법｣ 또는 ｢초·중등교육법｣에 따라 교원의 자격을 취득한 사람은 별도의 실무경력 기간 없이 소방안전교육사 시험에 응시할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>보육교사 자격을 취득한 후 3년 이상의 보육업무 경력이 있는 사람, 소방공무원으로 3년 이상 근무한 경력이 있는 사람, 안전관리 분야 산업기사 이상 자격을 취득한 후 3년 이상 종사한 사람은 소방안전교육사 시험에 응시할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>간호사 또는 1급 응급구조사 자격을 취득한 후 해당 업무에 1년 이상 종사한 사람과 의용소방대원으로 임명된 후 5년 이상 활동한 경력이 있는 사람은 소방안전교육사 시험에 응시할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방업무를 수행하는 데에 필요한 소방력에 관한 기준은 대통령령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 행정안전부령으로 정하는 소방력의 기준에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립하여 시행하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 대통령령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 일부를 보조하며, 보조 대상사업의 범위와 기준보조율은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 소방자동차의 교통사고 예방과 교통안전 강화를 위하여 소방자동차 교통안전 분석 시스템을 구축·운영하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장, 소방본부장 및 소방서장은 소방자동차 운행기록장치에 기록된 데이터를 1년 동안 저장·관리하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법｣상 소방박물관의 설립과 운영에 필요한 사항은 대통령령으로 정하고, 소방체험관의 설립과 운영에 필요한 사항은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장이 설립·운영하는 한국119청소년단에 관하여 이 법에서 규정한 것을 제외하고는 ｢민법｣ 중 재단법인에 관한 규정을 준용한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:② · 05:③ · 06:② · 07:③ · 08:③ · 09:① · 10:① · 11:④ · 12:② · 13:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:X · 02:O · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 02 · 제1편 소방기본법 · 제2장 (13문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q3</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 소방청장 / ( 나 ): 시·도지사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ｢소방기본법｣ 제5조 제1항에 따라 국가 단위의 역사 보존 시설인 '소방박물관'은 소방청장이, 주민 밀착형 체험 시설인 '소방체험관'은 시·도지사가 설립하여 운영할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 소방청장 / ( 나 ): 소방본부장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 소방체험관의 설립·운영 주체는 소방본부장이 아니라 '시·도지사'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 시·도지사 / ( 나 ): 소방본부장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방박물관은 소방청장이, 소방체험관은 시·도지사가 설립·운영합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 시·도지사 / ( 나 ): 소방청장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 소방박물관(소방청장)과 소방체험관(시·도지사)의 설립 주체가 서로 뒤바뀌었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법 시행령｣에 따른 소방안전교육사의 기관별 최소 배치 인원(소방청 2명 이상, 소방본부 2명 이상, 소방서 1명 이상)을 묻는 수치 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 1 / ( 나 ): 1 / ( 다 ): 1</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 소방청과 소방본부는 각각 1명 이상이 아니라 '2명 이상' 배치해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 1 / ( 나 ): 2 / ( 다 ): 2</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 소방청은 2명 이상이고, 소방서는 2명 이상이 아니라 '1명 이상'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 2 / ( 나 ): 1 / ( 다 ): 2</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방본부는 2명 이상, 소방서는 1명 이상 배치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 2 / ( 나 ): 2 / ( 다 ): 1</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 법령상 소방안전교육사의 배치 기준은 소방청 2명 이상(가=2), 소방본부 2명 이상(나=2), 소방서 1명 이상(다=1)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제8조(소방력의 기준 등) 및 제9조(소방장비 등에 대한 국고보조)의 위임 법령과 권한 주체를 종합적으로 묻는 핵심 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방업무를 수행하는 데에 필요한 소방력에 관한 기준은 대통령령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법｣ 제8조 제1항에 따라 소방업무를 수행하는 데 필요한 인력과 장비 등에 관한 기준(소방력의 기준)은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방청장은 소방력의 기준에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립하여 시행하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 같은 법 제8조 제2항에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립·시행하여야 하는 의무자는 소방청장이 아니라 '시·도지사'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 따로 법률에서 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 같은 법 제8조 제3항에 따라 소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 따로 법률(｢소방장비관리법｣)로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 일부를 보조하고, 보조 대상사업의 범위와 기준 보조율은 행정안전부령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 같은 법 제9조 제2항에 따라 국고보조 대상사업의 범위와 기준보조율은 행정안전부령이 아니라 '대통령령'(시행령 제2조)으로 정합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소방안전교육사 시험 응시자격 중 자격별 필수 실무경력 연수(보육교사 3년, 안전관리 산업기사 3년, 간호사 1년·간호조무사는 제외, 2급 응급구조사 3년, 소방공무원 3년, 의용소방대원 5년)를 판별하는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법 시행령｣상 소방안전교육사 응시자격 기준에서 ㄱ(보육교사 자격 취득 후 2년이 아니라 '3년 이상' 보육업무 경력 필요), ㄷ(간호조무사가 아니라 '간호사' 자격 취득 후 1년 이상 간호업무 경력 필요), ㅁ(소방공무원으로 2년이 아니라 '3년 이상' 근무한 경력 필요) 모두 법정 경력·자격 요건에 미달하여 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법 시행령｣상 ㄴ(안전관리 분야 산업기사 이상 자격 취득 후 3년 이상 실무 종사), ㄹ(2급 응급구조사 자격 취득 후 3년 이상 응급구조 업무 종사, 참고로 1급 응급구조사는 1년 이상), ㅂ(의용소방대원으로 임명된 후 5년 이상 활동한 경력)이 모두 소방안전교육사 응시자격에 정확히 부합합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄷ(간호사 1년 이상이어야 함)과 ㅁ(소방공무원 3년 이상이어야 함)이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄹ, ㅁ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㅁ(소방공무원 근무 경력은 2년이 아니라 3년 이상)이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방안전교육사는 소방안전교육의 기획·진행·분석· 평가 및 교수업무를 수행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 소방안전교육사는 소방안전교육의 기획·진행·분석·평가 및 교수업무를 수행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 소방안전교육사가 될 수 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 결격사유에 해당하여 소방안전교육사가 될 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">초등학교 등 교육기관에는 소방안전교육사를 1명 이상 배치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 소방안전교육사의 법정 배치대상은 소방청(2명 이상), 소방본부(2명 이상), 소방서(1명 이상) 및 한국소방안전원·한국소방산업기술원 등이며, 초등학교 등 일반 학교에는 배치 의무가 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢유아교육법｣에 따라 교원의 자격을 취득한 사람은 소방안전교육사 시험에 응시할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢유아교육법｣ 및 ｢초·중등교육법｣에 따라 교원의 자격을 취득한 사람은 별도 경력 기간 없이 소방안전교육사 시험에 응시할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q3</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방자동차 구입</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 소방자동차의 구입은 ｢소방기본법 시행령｣ 제2조 제1항 제1호 가목에 따른 국고보조 대상사업입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방용수시설 설치</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 소화전·급수탑·저수조 등 '소방용수시설의 설치 및 유지·관리'는 ｢소방기본법｣ 제10조에 따른 시·도지사의 고유 의무 사업으로서 시행령 제2조 제1항의 국고보조 대상사업에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방헬리콥터 및 소방정 구입</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 소방헬리콥터 및 소방정의 구입은 시행령 제2조 제1항 제1호 나목에 따른 국고보조 대상사업입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방전용통신설비 및 전산설비 설치</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 소방전용통신설비 및 전산설비의 구입·설치는 시행령 제2조 제1항 제1호 다목에 따른 국고보조 대상사업입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소방박물관(행정안전부령), 소방체험관(시·도의 조례), 119종합상황실(행정안전부령), 비상소화장치(대통령령 및 시·도의 조례/소방청장 고시)의 위임 법령을 정확히 구분하는 고난도 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방체험관: 대통령령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법｣ 제5조 제2항에 따라 소방체험관의 설립과 운영에 필요한 사항은 행정안전부령으로 정하는 기준에 따라 '시·도의 조례'로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">119종합상황실: 대통령령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 같은 법 제4조 제3항에 따라 119종합상황실의 설치·운영에 필요한 사항은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방박물관: 행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 같은 법 제5조 제2항 전단에 따라 국립 시설인 '소방박물관'의 설립과 운영에 필요한 사항은 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">비상소화장치: 시·도 조례</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 같은 법 제10조 제1항 및 제3항에 따라 비상소화장치의 설치 대상 지역은 '대통령령'으로 정하고, 설치 및 유지·관리 기준은 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q10</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">보조 대상사업의 범위와 기준보조율은 대통령령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제9조 제2항에 따라 국고보조 대상사업의 범위와 기준보조율은 대통령령(시행령 제2조)으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방활동장비 및 설비의 종류와 규격은 행정안전부령 으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방기본법 시행령｣ 제2조 제2항에 따라 국고보조 대상이 되는 소방활동장비와 설비의 종류 및 규격은 행정안전부령(시행규칙 제5조의2 및 별표 1의2)으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 전부를 보조한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] ｢소방기본법｣ 제9조 제1항에 따라 국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 전부가 아니라 '일부'를 보조합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">국고보조 대상사업에 해당하는 소방활동장비로는 소방 자동차, 소방헬리콥터 및 소방정 등이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 시행령 제2조 제1항에 따라 소방자동차, 소방헬리콥터 및 소방정, 소방전용통신설비 및 전산설비, 방화복 등 소방장비, 소방관서용 청사의 건축이 국고보조 대상사업에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> (2022년 출제 당시에는 영유아·유아·학생 3개 호만 규정되어 있었으며, 이후 법 개정으로 제4호 '장애인복지시설에 거주하거나 이용하는 장애인', 제5호 '아동복지시설 거주·이용 아동', 제6호 '노인복지시설 거주·이용 노인'이 추가되었으나, 현행법 기준으로도 시설 거주·이용 요건 없이 단순히 '장애인복지법 제2조에 따른 장애인'이라고 한 ①번이 법문과 달라 정답이 됩니다.)</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">｢장애인복지법｣ 제2조에 따른 장애인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법｣ 제17조 제2항 제4호는 '｢장애인복지법｣ 제58조에 따른 장애인복지시설에 거주하거나 해당 시설을 이용하는 장애인'을 대상으로 규정하고 있으므로, 시설 거주·이용 요건 없이 포괄적으로 '｢장애인복지법｣ 제2조에 따른 장애인'이라고 한 본 선지는 옳지 않습니다(2022년 출제 당시에는 장애인 관련 호 자체가 없었음).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">｢유아교육법｣ 제2조에 따른 유치원의 유아</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 법 제17조 제2항 제2호에 따른 ｢유아교육법｣ 제2조에 따른 유치원의 유아는 법정 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">｢초·중등교육법｣ 제2조에 따른 학교의 학생</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 제17조 제2항 제3호에 따른 ｢초·중등교육법｣ 제2조에 따른 학교의 학생은 법정 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢영유아보육법｣ 제2조에 따른 어린이집의 영유아</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 법 제17조 제2항 제1호에 따른 ｢영유아보육법｣ 제2조에 따른 어린이집의 영유아는 법정 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q3 · 소방공채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">구조정: 90마력 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법 시행규칙｣ 별표 1의2에 따라 국고보조 대상이 되는 '구조정'의 규격은 90마력 이상이 아니라 '150마력 이상'(4톤 이상 10톤 이하)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">배연차(중형) : 170마력 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 배연차(중형)의 국고보조 규격은 170마력 이상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">구급차(특수) : 90마력 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 구급차(특수)의 국고보조 규격은 90마력 이상입니다(일반구급차는 60마력 이상).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방헬리콥터: 5에서 17인승</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 소방헬리콥터의 국고보조 규격은 5인승에서 17인승까지(소형 5인승에서 7인승, 중형 8인승에서 14인승, 대형 15인승에서 17인승)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제5조 제1항 및 제2항의 전체 구조(ㄱ 소방청장=소방박물관=ㄷ 행정안전부령, ㄴ 시·도지사=소방체험관=ㄹ 시·도의 조례)를 한 번에 물어본 종합 빈칸 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">(ㄱ): 시·도지사 / (ㄴ): 소방청장 / (ㄷ): 행정안전부령 / (ㄹ): 시·도의 조례</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ(소방박물관 설립권자)은 소방청장이고, ㄴ(소방체험관 설립권자)은 시·도지사입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">(ㄱ): 시·도지사 / (ㄴ): 소방청장 / (ㄷ): 시·도의 조례 / (ㄹ): 행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ·ㄴ의 주체와 ㄷ·ㄹ의 법령이 모두 뒤바뀌었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">(ㄱ): 소방청장 / (ㄴ): 시·도지사 / (ㄷ): 시·도의 조례 / (ㄹ): 행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄷ(소방박물관 위임 법령)은 행정안전부령이고, ㄹ(소방체험관 위임 법령)은 시·도의 조례입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">(ㄱ): 소방청장 / (ㄴ): 시·도지사 / (ㄷ): 행정안전부령 / (ㄹ): 시·도의 조례</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ｢소방기본법｣ 제5조에 따라 ㄱ(소방청장)은 소방박물관을, ㄴ(시·도지사)은 소방체험관을 설립·운영할 수 있으며, 박물관은 ㄷ(행정안전부령)으로, 체험관은 ㄷ(행정안전부령)으로 정하는 기준에 따라 ㄹ(시·도의 조례)로 정합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q6 · 소방공채 Q4</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 소방장 이하의 계급(소방사·소방교·소방장)은 현장지휘훈련 대상 계급에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방위</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법 시행규칙｣ 제9조 제1항 및 별표 3의2에 따라 현장지휘훈련을 받아야 할 소방공무원의 계급은 '소방위·소방경·소방령·소방정' 4개 계급이므로 ②번 소방위가 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방준감</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방준감 이상의 계급은 시행규칙 별표 3의2의 현장지휘훈련 대상 계급(소방위부터 소방정까지)에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방총감</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 소방총감은 현장지휘훈련 대상 계급에 해당하지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q4 · 소방공채 Q3</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방청장, 소방본부장 및 소방서장은 소방자동차 운행기록 장치에 기록된 데이터를 6개월 동안 저장·관리해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행규칙｣ 제13조 제1항에 따라 소방청장, 소방본부장 및 소방서장은 소방자동차 운행기록장치에 기록된 데이터를 6개월 동안 저장·관리해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방자동차 교통안전 분석 시스템의 구축·운영, 운행기록 장치 데이터 및 전산자료의 보관·활용 등에 필요한 사항은 행정안전부령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방기본법｣ 제21조의3 제4항에 따라 소방자동차 교통안전 분석 시스템의 구축·운영, 운행기록장치 데이터 및 전산자료의 보관·활용 등에 필요한 사항은 행정안전부령으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방화학차, 소방고가차, 무인방수차, 구조차는 행정안전부령으로 정하는 기준에 적합한 운행기록장치를 장착하고 운용해야 하는 소방자동차에 해당한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 시행규칙 제13조의2 제1항에 따라 소방펌프차, 물탱크차, 화학차, 고가차, 굴절차, 무인방수차, 배연차, 구조차, 구급차 등은 운행기록장치를 장착·운용해야 하는 소방자동차에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장, 소방본부장 및 소방서장은 운행기록장치 데이터 중 과속, 급감속, 급출발 등의 운행기록을 점검·분석해야 하고, 분석 결과를 소방자동차의 안전한 소방활동 수행에 필요한 교통안전정책의 수립, 교육·훈련 등에 활용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 같은 법 시행규칙 제13조의3 제1항·제2항에 따라 운행기록장치 데이터 중 과속, 급감속, 급출발 등의 운행기록을 점검·분석하고 그 결과를 교통안전정책 수립, 교육·훈련 등에 활용할 수 있는 주체는 '소방청장 및 소방본부장'이며, 일선 '소방서장'은 점검·분석 의무 주체에 포함되지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:X · 02:O · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 01 · X 틀림</span>｢소방기본법｣ 제8조 제1항에 따라 소방업무를 수행하는 데 필요한 인력과 장비 등에 관한 기준(소방력의 기준)은 대통령령이 아니라 '행정안전부령'(｢소방력 기준에 관한 규칙｣)으로 정합니다.
+            <span class="ox-exp-src">2019년 소방경채 Q9 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>｢소방기본법｣ 제8조 제2항에 따라 관할구역의 소방력 확충계획을 수립·시행하여야 하는 의무자는 소방청장이 아니라 '시·도지사'입니다.
+            <span class="ox-exp-src">2019년 소방경채 Q9</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢소방기본법｣ 제8조 제3항에 따라 소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 따로 법률(｢소방장비관리법｣)로 정합니다.
+            <span class="ox-exp-src">2019년 소방경채 Q9 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>｢소방기본법｣ 제9조 제1항에 따라 국가는 소방장비의 구입 등 시·도의 소방업무에 필요한 경비의 전부가 아니라 '일부'를 보조합니다.
+            <span class="ox-exp-src">2021년 소방경채 Q10 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>｢소방기본법｣ 제9조 제2항 및 같은 법 시행령 제2조 제2항에 따라 보조 대상사업의 범위와 기준보조율은 대통령령으로, 장비의 종류 및 규격은 행정안전부령으로 정합니다.
+            <span class="ox-exp-src">2021년 소방경채 Q10 선지 1·2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>｢소방기본법 시행령｣ 제2조 제1항에 따른 국고보조 대상사업에서 소화전·급수탑·저수조 등 '소방용수시설의 설치(법 제10조 시·도지사 고유 사무)'는 제외됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q3</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢소방기본법 시행규칙｣ 별표 1의2의 국고보조 대상 소방활동장비 규격 기준입니다(구조정을 90마력 이상으로 바꾸면 오답).
+            <span class="ox-exp-src">2023년 소방경채 Q3 · 소방공채 Q2</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>｢소방기본법 시행규칙｣ 제9조 제1항 및 별표 3의2에 따라 현장지휘훈련(2년마다 1회 이상, 2주 이상) 대상 계급은 소방위부터 소방정까지 4개 계급입니다.
+            <span class="ox-exp-src">2024년 소방경채 Q6 · 소방공채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>｢소방기본법｣ 제21조의3 제4항 및 같은 법 시행규칙 제13조 제1항에 따른 정확한 규정입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q4 · 소방공채 Q3 선지 1·2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>｢소방기본법 시행규칙｣ 제13조의2 제1항에 따라 소방펌프차, 물탱크차, 화학차, 고가차, 굴절차, 무인방수차, 배연차, 구조차, 구급차 등은 운행기록장치를 장착·운용해야 합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q4 · 소방공채 Q3 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>｢소방기본법 시행규칙｣ 제13조의3 제1항·제2항에 따라 과속·급감속·급출발 등의 운행기록을 점검·분석하고 활용하는 주체는 '소방청장 및 소방본부장'이며, '소방서장'은 포함되지 않습니다.
+            <span class="ox-exp-src">2025년 소방경채 Q4 · 소방공채 Q3 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢소방기본법｣ 제5조 제1항에 따라 소방박물관은 소방청장이, 소방체험관은 시·도지사가 설립·운영합니다.
+            <span class="ox-exp-src">2019년 소방경채 Q3 · 2024년 소방경채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>｢소방기본법｣ 제5조 제2항의 위임 체계(소방박물관=행정안전부령, 소방체험관=시·도의 조례)는 빈출 핵심 조문입니다.
+            <span class="ox-exp-src">2021년 소방경채 Q9 · 2024년 소방경채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>｢소방기본법｣ 제17조의6 제1항 및 제5항에 따라 한국119청소년단은 소방청장이 설립·운영하며, 민법 중 사단법인 규정을 준용합니다(한국소방안전원은 재단법인 준용).
+            <span class="ox-exp-src">소방기본법 제17조의6 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢소방기본법｣ 제17조 제2항에 따른 소방안전 교육·훈련 실시 주체(청장·본부장·서장)와 법정 대상(어린이집 영유아, 유치원 유아, 학교 학생, 장애인·아동·노인복지시설 거주·이용자) 규정입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q6</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢소방기본법｣ 제17조의2 제1항 및 제2항에 따른 소방안전교육사의 자격 부여 주체(소방청장)와 5대 법정 직무입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q1 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>｢소방기본법｣ 제17조의3 제3호에 따라 금고 이상의 형의 집행유예를 선고받고 그 유예기간 중에 있는 사람은 결격사유에 해당합니다.
+            <span class="ox-exp-src">2020년 소방경채 Q1 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>｢소방기본법 시행령｣ 별표 2의3에 따라 소방청 2명 이상, 소방본부 2명 이상, 소방서 1명 이상, 한국소방안전원 본회 2명 이상(시도지부 1명 이상)을 배치해야 합니다.
+            <span class="ox-exp-src">2019년 소방경채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 19 · X 틀림</span>소방안전교육사의 법정 배치대상은 소방청, 소방본부, 소방서, 한국소방안전원 등이며, 초등학교 등 일반 교육기관에는 배치 의무가 없습니다.
+            <span class="ox-exp-src">2020년 소방경채 Q1 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢소방기본법 시행령｣ 별표 2의2에 따라 유치원·초·중등 교원 자격 취득자나 어린이집 원장 자격자는 별도 경력 연수 요건 없이 응시할 수 있습니다.
+            <span class="ox-exp-src">2020년 소방경채 Q1 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>｢소방기본법 시행령｣ 별표 2의2에서 보육교사, 소방공무원, 안전관리 산업기사, 2급 응급구조사는 모두 '3년 이상'의 경력을 요구합니다.
+            <span class="ox-exp-src">2019년 소방공채 Q12</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>간호사 및 1급 응급구조사는 1년 이상(간호조무사는 응시자격 없음), 의용소방대원은 5년 이상 경력이 있으면 소방안전교육사 시험에 응시할 수 있습니다.
+            <span class="ox-exp-src">2019년 소방공채 Q12</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>｢소방기본법｣ 제8조 제1항에 따라 소방업무를 수행하는 데 필요한 인력과 장비 등에 관한 기준(소방력의 기준)은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+            <span class="ox-exp-src">2019년 소방경채 Q9 · 소방력의 기준 및 소방장비 국고보조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>｢소방기본법｣ 제8조 제2항에 따라 소방력의 기준에 따라 관할구역의 소방력을 확충하기 위하여 필요한 계획을 수립·시행하여야 하는 의무 주체는 소방청장이 아니라 '시·도지사'입니다.
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제8조 제2항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>｢소방기본법｣ 제8조 제3항에 따라 소방자동차 등 소방장비의 분류·표준화와 그 관리 등에 필요한 사항은 대통령령이 아니라 '따로 법률'(｢소방장비관리법｣)로 정합니다.
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제8조 제3항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>｢소방기본법｣ 제9조 제2항에 따라 국고보조 대상사업의 범위와 기준보조율은 행정안전부령이 아니라 '대통령령'(시행령 제2조)으로 정합니다(장비의 종류와 규격이 행정안전부령).
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제9조 제2항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>｢소방기본법｣ 제21조의3 제1항에 따라 소방자동차 교통안전 분석 시스템을 구축·운영하여야 하는 주체는 시·도지사가 아니라 '소방청장'입니다.
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제21조의3 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>｢소방기본법 시행규칙｣ 제13조 제1항에 따라 소방자동차 운행기록장치에 기록된 데이터는 1년이 아니라 '6개월 동안' 저장·관리하여야 합니다.
+            <span class="ox-exp-src">적중 예상 · 소방기본법 시행규칙 제13조 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>｢소방기본법｣ 제5조 제2항에 따라 소방박물관의 설립·운영에 필요한 사항은 '행정안전부령'으로 정하고, 소방체험관의 설립·운영에 필요한 사항은 행정안전부령으로 정하는 기준에 따라 '시·도의 조례'로 정합니다.
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제5조 제2항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>｢소방기본법｣ 제17조의6 제5항에 따라 한국119청소년단은 단원들로 구성된 인적 결합체이므로 ｢민법｣ 중 재단법인이 아니라 '사단법인'에 관한 규정을 준용합니다(한국소방안전원이 재단법인 규정 준용).
+            <span class="ox-exp-src">적중 예상 · 소방기본법 제17조의6 제5항</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

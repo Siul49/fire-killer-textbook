@@ -1,0 +1,3037 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 17 · 인쇄용] 제5편 위험물 및 특수가연물론 · 3장 위험물의 저장·취급·혼재·운반 기준 및 특수가연물 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY16_05_02_제4류_제5류_제6류_위험물과_지정수량_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 17</span>
+        
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(12제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 17 · 제5편 위험물 및 특수가연물론 · 3장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(12문항)</span>
+            <span>□ OX 28제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">위험물의 저장·취급·혼재·운반 기준 및 특수가연물</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+        
+        <div id="sec1" class="space-y-6">
+          <h2>제1절. 위험물 유별 혼재 기준(16·245·34)과 옥내·옥외저장소 저장 기준 (시행령 별표 2 · 시행규칙 별표 18·19)</h2>
+          
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">혼재 기준 및 동일장소 저장 금기 (2024년 Q14)</div><ul class="sidenote-list"><li><strong>운반 혼재 허용 (16 · 245 · 34)</strong>: <strong>1류↔6류</strong> / <strong>2류↔4류↔5류</strong> / <strong>3류↔4류</strong> (지정수량 $\frac{1}{10}$ 이하는 혼재 규정 미적용)</li><li><strong>제3류 내부 동시 저장 금지</strong>: 물속에 저장하는 <strong>황린</strong>과 <strong>금수성 물질</strong>은 동일 저장소에 함께 저장 금지!</li></ul></div></aside>
+            <p class="prose-body">
+              성질이 서로 상극인 위험물(예: 산소를 방출하는 제1류 산화제와 불이 잘 붙는 제4류 인화성 액체)을 같은 창고나 같은 차량에 함께 두면 용기 파손 시 혼촉 발화·폭발로 이어진다. 이에 <strong>위험물안전관리법 시행규칙 별표 18(저장기준) 및 별표 19·별표 20(운반기준)</strong>은 <strong>유별을 달리하는 위험물은 동일한 저장소나 동일한 차량에 함께 적재하지 못하는 것(혼재 금지)을 대원칙</strong>으로 삼되, 지정수량의 <strong>10분의 1 이하</strong>인 소량 위험물이거나 상호 접촉 시 반응 위험이 낮은 법정 조합에 한하여 예외적으로 혼재를 허용한다. 먼저 <strong>운반 시 유별 상호 간 혼재 허용 조합</strong>은 화학적 성질에 따라 <strong>'16 · 245 · 34'</strong> 세 가지 그룹으로 정리된다. ① <strong>제1류(산화성 고체)와 제6류(산화성 액체)</strong>는 둘 다 불연성 산화제이므로 상호 혼재가 가능하고(<strong>16</strong>), ② <strong>제2류(가연성 고체)·제4류(인화성 액체)·제5류(자기반응성 물질)</strong>는 모두 가연물 계열이므로 세 유별 상호 간에 양방향으로 혼재가 가능하며(<strong>245</strong>), ③ <strong>제3류(자연발화·금수성)와 제4류(인화성 액체)</strong>는 나트륨을 석유 속에 보관하듯 서로 혼재가 가능하다(<strong>34</strong>). 또한 지정수량의 <strong>10배를 초과하는 저장소</strong>에서 유별마다 정리하여 서로 <strong>1미터 이상</strong>의 간격을 두는 경우 허용되는 저장 혼재 조합은 ① <strong>제1류(알칼리금속의 과산화물 제외)와 제6류</strong>, ② <strong>제1류와 제5류 중 질산구아니딘 등</strong>, ③ <strong>제2류 중 인화성고체와 제4류</strong>, ④ <strong>제3류 중 알킬알루미늄등과 제4류(제1석유류 및 알코올류에 한함)</strong>, ⑤ <strong>제4류 중 유기과산화물 함유물과 제5류 중 유기과산화물 함유물</strong>이다. 반대로 <strong>동일한 제3류 위험물 안에서도 절대 같은 저장소에 함께 저장할 수 없는 치명적 금기 조합</strong>이 있는데, 바로 <strong>물속에 저장하는 '황린'과 물이 닿으면 폭발하는 '금수성 물질(칼륨·나트륨·탄화칼슘 등)'</strong>이다! 소화 방법이 정반대이므로 법령은 황린(그 밖에 물속에 저장하는 물품)과 금수성 물질을 동일한 저장소(칸막이로 구획된 저장소에서는 동일한 실)에서 함께 저장하지 못하도록 엄격히 금지한다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34)</div><ul class="sidenote-list"><li>옥내저장소 온도: <strong>$55^\circ\text{C}$ 이하</strong></li><li>옥내·옥외 <strong>선반(랙) 저장 높이</strong>: <strong>$6\text{m}$ 이하</strong> ('10m 이하' X!)</li><li>옥내 용기 겹쳐 쌓기: 기계하역 <strong>$6\text{m}$</strong> / 3·4석유류·동식물유류 <strong>$4\text{m}$</strong> / 기타 <strong>$3\text{m}$ 이하</strong></li><li><strong>옥외저장소 가능 품목</strong>: <strong>제2류 유황 · 제4류(특수인화물 및 인화점 $0^\circ\text{C}$ 미만 제1석유류 제외) · 제6류</strong> (제1류 염소산염류 저장 불가!)</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>옥내저장소</strong>와 <strong>옥외저장소</strong>의 온도·적재 높이 및 저장 가능 품목 제한도 매년 반복 출제된다. 첫째, <strong>옥내저장소</strong>에서는 용기에 수납하여 저장하는 위험물의 온도가 <strong>섭씨 55도를 넘지 아니하도록</strong> 필요한 조치를 강구해야 하며, 보냉장치가 있는 이동저장탱크에 저장하는 <strong>아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점(끓는점) 이하</strong>로 유지해야 한다. 둘째, 옥내저장소나 옥외저장소에서 위험물을 수납한 용기를 <strong>선반(랙, Rack)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야(즉, 6미터 이하로 저장)</strong> 한다('선반에 10미터 이하로 저장한다'는 선지는 2024년 Q14의 정답 오답 선지!). 셋째, 옥내저장소에서 바닥에 위험물 용기를 포개어 쌓는 <strong>겹쳐 쌓기 높이 한도</strong>는 3단계로 나뉘어 ① <strong>기계에 의하여 하역하는 구조로 된 용기</strong>만을 겹쳐 쌓는 경우에는 <strong>6미터 이하</strong>, ② <strong>제4류 위험물 중 제3석유류·제4석유류 및 동식물유류</strong>를 수납하는 용기만을 겹쳐 쌓는 경우에는 <strong>4미터 이하</strong>, ③ 그 밖의 경우에는 <strong>3미터 이하</strong>로 제한된다. 넷째, 지붕과 벽이 없는 야외 노지인 <strong>옥외저장소</strong>에 일반 용기(국제해상위험물규칙 IMDG Code 적합 용기 제외)로 저장할 수 있는 법정 위험물은 <strong>시행령 별표 2 제7호</strong>에 따라 오직 ① <strong>제2류 위험물 중 유황</strong>(및 인화점이 섭씨 0도 이상인 인화성고체), ② <strong>제4류 위험물 중 인화점이 섭씨 0도 이상인 제1석유류·알코올류·제2석유류·제3석유류·제4석유류 및 동식물유류</strong>, ③ <strong>제6류 위험물</strong>, ④ 제2류·제4류·제6류 중 시·도 조례로 정하는 위험물뿐이다. 따라서 홀수 유별인 <strong>제1류 위험물(염소산염류 등), 제3류 위험물, 제5류 위험물</strong>과 제4류 중 <strong>특수인화물 및 인화점 섭씨 0도 미만인 제1석유류(휘발유·아세톤·벤젠 등)</strong>는 일반 옥외저장소에 절대 저장할 수 없다!
+            </p>
+            
+          </div></div>
+
+        <div id="sec2" class="space-y-6">
+          <h2>제2절. 위험물 운반용기 수납률(95%·98%·90%), 외부 주의사항 표시 및 주유취급소 기준 (시행규칙 별표 18·19)</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34)</div><ul class="sidenote-list"><li>1. <strong>고체 위험물</strong>: 내용적의 <strong>95% 이하</strong></li><li>2. <strong>액체 위험물</strong>: 내용적의 <strong>98% 이하</strong> ($55^\circ\text{C}$에서 누설 없을 것)</li><li>3. <strong>알킬알루미늄등</strong>: 내용적의 <strong>90% 이하</strong> (<strong>$50^\circ\text{C}$에서 5% 이상 공간용적</strong> 유지)</li></ul></div></aside>
+            <p class="prose-body">
+              위험물을 운반용기에 수납하여 적재·운반할 때에는 하나의 외장용기에 다른 종류의 위험물을 함께 수납하지 아니하여야 하며, 온도 상승 시 열팽창에 의한 용기 파열과 누설을 막기 위해 성상별 <strong>법정 수납률과 공간용적 기준(시행규칙 별표 19)</strong>을 준수해야 한다. 첫째, <strong>고체 위험물</strong>은 운반용기 내용적의 <strong>95퍼센트 이하</strong>의 수납률로 수납한다. 둘째, <strong>액체 위험물</strong>은 운반용기 내용적의 <strong>98퍼센트 이하</strong>의 수납률로 수납하되, <strong>섭씨 55도의 온도에서 누설되지 아니하도록</strong> 충분한 공간용적을 유지해야 한다. 셋째, 가장 위험한 <strong>자연발화성물질 중 알킬알루미늄등</strong>은 운반용기 내용적의 <strong>90퍼센트 이하</strong>의 수납률로 수납하되, <strong>섭씨 50도의 온도에서 5퍼센트 이상의 공간용적</strong>을 유지하도록 해야 한다(2023년 Q25에서 알킬알루미늄등을 '95퍼센트 이하·55도·10퍼센트 이상'으로 왜곡하여 정답 오답 선지로 출제!). 또한 운반용기를 차량에 포개어 적재할 때에는 수납구가 위를 향하게 하고 <strong>높이 3미터 이하</strong>로 쌓아야 한다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34)</div><ul class="sidenote-list"><li><strong>제6류(과염소산 등) 주의사항</strong>: 오직 <strong>‘가연물접촉주의’</strong>만 표시! ('화기엄금' X)</li><li><strong>제1류 알칼리금속 과산화물</strong>: <strong>화기·충격주의 + 물기엄금 + 가연물접촉주의</strong></li><li><strong>주유취급소 주차·정비·세정 금지 거리</strong>: 고정주유설비 <strong>$4\text{m}$ 이내</strong> / 전용탱크 주입구 <strong>$3\text{m}$ 이내</strong> / 통기관 끝부분 수평거리 <strong>$1.5\text{m}$ 이내</strong> ('2m 이내' X!)</li></ul></div></aside>
+            <p class="prose-body">
+              또한 위험물을 수납한 운반용기 외부에는 위험물의 품명·수량·화학적 명칭과 함께 유별 물리·화학적 성질에 따른 <strong>법정 주의사항</strong>을 정확히 표시해야 한다. ① <strong>제1류(산화성 고체)</strong>는 <strong>화기·충격주의</strong> 및 <strong>가연물접촉주의</strong>를 표시하되, 금수성을 겸비한 <strong>제1류 중 알칼리금속의 과산화물(과산화나트륨 등) 또는 이를 함유한 것</strong>은 <strong>“화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 3가지를 모두 표시</strong>해야 한다. ② <strong>제2류(가연성 고체)</strong>는 <strong>화기주의</strong>를 표시하되, 철분·금속분·마그네슘은 <strong>물기엄금</strong>을 추가하고 인화성고체는 <strong>화기엄금</strong>을 표시한다. ③ <strong>제3류</strong> 중 자연발화성물질은 <strong>화기엄금 및 공기접촉엄금</strong>을, 금수성물질은 <strong>물기엄금</strong>(가연성 액체계는 화기엄금 추가)을 표시한다. ④ <strong>제4류(인화성 액체)</strong>는 <strong>화기엄금</strong>을, ⑤ <strong>제5류(자기반응성물질)</strong>는 <strong>화기엄금 및 충격주의</strong>를 표시한다. ⑥ 특히 2025년 기출(Q39)에서 단독 문항으로 출제된 <strong>제6류 위험물(과염소산·과산화수소·질산)</strong>은 그 자체는 타지 않는 불연성 산화성 액체이므로 화기엄금이나 충격주의가 아니라 오직 <strong>“가연물접촉주의” 단 하나만 표시</strong>한다! 아울러 2026년 기출(Q34)에서 함께 다뤄진 <strong>주유취급소의 주유 및 위험물 주입 시 주차·점검·정비·세정 금지 이격거리(시행규칙 별표 18)</strong>를 보면, 자동차 등에 주유할 때에는 <strong>고정주유설비로부터 4미터 이내</strong>의 부분, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 <strong>전용탱크의 주입구로부터 3미터 이내</strong>의 부분 및 <strong>전용탱크 통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분(2미터 이내 아님!)에서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니하여야 한다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 위험물 유별 혼재 허용 매트릭스(16·245·34), 운반용기 수납률 및 외부 주의사항 표시 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>유별 구분</th>
+                  <th>운반 시 혼재 허용 유별<br/>(암기 공식: 16 · 245 · 34)</th>
+                  <th>운반용기 외부 법정 주의사항 표시<br/>(시행규칙 별표 19 · 2025 Q39 · 2026 Q34)</th>
+                  <th>운반용기 수납률 및 핵심 저장 제한<br/>(2023 Q22·Q25 · 2024 Q14)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300">제1류<br/>(산화성 고체)</td>
+                  <td><strong>제6류</strong>와 혼재 가능 (<strong>16</strong>)</td>
+                  <td>· 일반: <strong>화기·충격주의, 가연물접촉주의</strong><br/>· 알칼리금속 과산화물: <strong>+ 물기엄금</strong> 추가</td>
+                  <td>· 고체 수납률: 내용적의 <strong>95% 이하</strong><br/>· 일반 옥외저장소 저장 불가</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제2류<br/>(가연성 고체)</td>
+                  <td><strong>제4류, 제5류</strong>와 혼재 가능 (<strong>245</strong>)</td>
+                  <td>· 일반: <strong>화기주의</strong> (인화성고체는 <strong>화기엄금</strong>)<br/>· 철분·금속분·마그네슘: <strong>+ 물기엄금</strong> 추가</td>
+                  <td>· 고체 수납률: 내용적의 <strong>95% 이하</strong><br/>· 옥외저장소는 <strong>유황</strong>(및 $0^\circ\text{C}\uparrow$ 인화성고체)만 가능</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제3류<br/>(자연발화·금수성)</td>
+                  <td><strong>제4류</strong>와 혼재 가능 (<strong>34</strong>)</td>
+                  <td>· 자연발화성: <strong>화기엄금, 공기접촉엄금</strong><br/>· 금수성: <strong>물기엄금</strong> (가연성 액체계는 화기엄금 추가)</td>
+                  <td>· <strong>알킬알루미늄등: 90% 이하 ($50^\circ\text{C}$, 공간 5%↑)</strong><br/>· <strong>황린과 금수성물질 동일 저장소 저장 금지!</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제4류<br/>(인화성 액체)</td>
+                  <td><strong>제2류, 제3류, 제5류</strong>와<br/>모두 혼재 가능 (<strong>245 · 34</strong>)</td>
+                  <td>· 전 품목: <strong>화기엄금</strong></td>
+                  <td>· 액체 수납률: <strong>98% 이하 ($55^\circ\text{C}$에서 누설 없을 것)</strong><br/>· 옥외저장소: 특수인화물·$0^\circ\text{C}$ 미만 제1석유류 제외</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제5류<br/>(자기반응성)</td>
+                  <td><strong>제2류, 제4류</strong>와 혼재 가능 (<strong>245</strong>)</td>
+                  <td>· 전 품목: <strong>화기엄금, 충격주의</strong></td>
+                  <td>· 고체 <strong>95% 이하</strong> / 액체 <strong>98% 이하($55^\circ\text{C}$)</strong><br/>· 일반 옥외저장소 저장 불가</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제6류<br/>(산화성 액체)</td>
+                  <td><strong>제1류</strong>와 혼재 가능 (<strong>16</strong>)</td>
+                  <td class="text-amber-300 font-bold">· 과염소산·과산화수소·질산:<br/>&nbsp;&nbsp;오직 <strong>‘가연물접촉주의’</strong>만 표시!</td>
+                  <td>· 액체 수납률: <strong>98% 이하 ($55^\circ\text{C}$에서 누설 없을 것)</strong><br/>· 일반 옥외저장소 저장 가능</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        <div id="sec3" class="space-y-6">
+          <h2>제3절. 화재예방법령상 특수가연물 기준수량과 실내·실외 저장·취급 기준 (시행령 별표 2·별표 3·별표 9)</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4)</div><ul class="sidenote-list"><li><strong>200kg</strong>: <strong>면화류</strong></li><li><strong>400kg</strong>: <strong>나무껍질 및 대팻밥</strong></li><li><strong>1,000kg</strong>: <strong>넝마 및 종이부스러기 · 사류 · 볏짚류</strong></li><li><strong>3,000kg</strong>: <strong>가연성고체류 · 기타 합성수지류</strong></li><li><strong>10,000kg</strong>: <strong>석탄·목탄류</strong> (발전용은 적용 제외)</li><li>체적($\text{m}^3$): <strong>가연성액체류($2\text{m}^3$) · 목재가공품($10\text{m}^3$) · 발포합성수지($20\text{m}^3$)</strong></li></ul></div></aside>
+            <p class="prose-body">
+              <strong>화재의 예방 및 안전관리에 관한 법률 시행령 별표 2</strong>는 위험물안전관리법상 위험물에 해당하지 않더라도 화재가 발생할 경우 불길이 급격히 번지고 진압이 곤란한 고무류·플라스틱류·면화류·석탄류 등 10대 가연물을 <strong>특수가연물</strong>로 지정하고 품명별 <strong>기준수량</strong>을 규정하고 있다. 시험에서는 품명과 기준수량의 짝짓기나 저장 배수 합산 문제가 자주 출제되므로 질량($\text{kg}$) 단위 7종과 체적($\text{m}^3$) 단위 3종을 정확히 구분해야 한다. 첫째, <strong>질량(킬로그램) 기준 품목</strong>을 작은 수치부터 보면 ① <strong>면화류</strong>(불연성·난연성이 아닌 면류·마류·양모 등): <strong>200킬로그램 이상</strong>(시험에서 '면화류 1,000킬로그램'으로 속이는 함정이 최빈출!), ② <strong>나무껍질 및 대팻밥</strong>: <strong>400킬로그램 이상</strong>, ③ <strong>넝마 및 종이부스러기 · 사류(실) · 볏짚류</strong>: 세 품목 모두 각각 <strong>1,000킬로그램 이상</strong>('넝마 및 종이부스러기 400킬로그램'으로 속이는 함정 주의!), ④ <strong>가연성고체류 · 합성수지류(발포시킨 것 제외)</strong>: 두 품목 모두 각각 <strong>3,000킬로그램 이상</strong>, ⑤ <strong>석탄·목탄류</strong>: <strong>10,000킬로그램(10톤) 이상</strong>(단, 석탄·목탄류를 <strong>발전용</strong>으로 저장하는 경우에는 특수가연물 저장·취급 기준을 적용하지 아니한다)이다. 둘째, <strong>체적(세제곱미터) 기준 품목</strong>은 ① <strong>가연성액체류</strong>: <strong>2세제곱미터 이상</strong>, ② <strong>목재가공품 및 나무부스러기</strong>: <strong>10세제곱미터 이상</strong>, ③ <strong>발포시킨 합성수지류(스티로폼 등)</strong>: <strong>20세제곱미터 이상</strong>이다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17)</div><ul class="sidenote-list"><li><strong>높이·바닥면적</strong>: 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 <strong>$15\text{m}$ 이하 · $200\text{m}^2$(석탄·목탄 $300\text{m}^2$) 이하</strong></li><li><strong>바닥면적 사이 간격</strong>: 실내 <strong>$1.2\text{m}$</strong>(또는 높이의 $\frac{1}{2}$) 이상 / 실외 <strong>$3\text{m}$</strong>(또는 높이의 $\frac{1}{2}$) 이상</li><li><strong>실외 대지경계선 이격</strong>: 최소 <strong>$6\text{m}$ 이상</strong> (단, 쌓는 높이보다 <strong>$1\text{m}$ 이상</strong> 높은 내화구조 벽체 설치 시 예외)</li><li><strong>표지 색상</strong>: 일반은 <strong>흰색 바탕·검은색 문자</strong> / ‘화기엄금’은 <strong>붉은색 바탕·백색 문자</strong> ($0.3\text{m}\times 0.6\text{m}\uparrow$)</li><li><strong>위반 시 과태료</strong>: 현행 화재예방법상 <strong>1차 100만 · 2차 200만 · 3차 이상 300만 원</strong> (구법 20·50·100·100만 원)</li></ul></div></aside>
+            <p class="prose-body">
+              나아가 <strong>화재의 예방 및 안전관리에 관한 법률 시행령 별표 3</strong>에 규정된 특수가연물의 저장·취급 기준과 표지 규격은 최근 개정으로 대폭 강화된 실내·실외 이격거리 수치까지 완벽히 장악해야 한다. 첫째, <strong>쌓는 높이와 바닥면적</strong>을 보면 원칙적으로 쌓는 높이는 <strong>10미터 이하</strong>, 쌓는 부분의 바닥면적은 <strong>50제곱미터 이하(석탄·목탄류의 경우에는 200제곱미터 이하)</strong>가 되도록 해야 한다. 다만, <strong>살수설비를 설치하거나 방사능력 범위에 해당 특수가연물이 포함되도록 대형수동식소화기를 설치하는 경우</strong>에는 쌓는 높이를 <strong>15미터 이하</strong>, 쌓는 부분의 바닥면적을 <strong>200제곱미터 이하(석탄·목탄류의 경우에는 300제곱미터 이하)</strong>로 완화할 수 있다(참고로 구 소방기본법 결합 기출에서 자주 함께 묻는 기간 수치로, 화재경계지구 안의 관계인에 대한 훈련·교육 사전 통보는 <strong>10일 전</strong>까지이며, 손실보상심의위원회를 거친 보상금 지급 결정은 청구서를 받은 날부터 <strong>60일 이내</strong>, 결정 통지는 결정일부터 <strong>10일 이내</strong>, 보상금 지급은 통지한 날부터 <strong>30일 이내</strong>이다). 둘째, 2024년 기출(Q17)에서 출제된 현행 <strong>실내·실외 저장 구조 및 이격거리(통로 간격)</strong>를 보면, ① <strong>쌓는 부분 바닥면적의 사이(통로 간격)</strong>는 <strong>실내의 경우 1.2미터(구법 1미터에서 1.2미터로 강화!) 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로, <strong>실외의 경우 3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 한다. ② <strong>실내에 쌓아 저장하는 경우</strong> 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 불가!)여야 하고 내화구조의 벽·기둥과 최소 <strong>0.5미터 이상</strong> 간격을 두며, 다른 종류의 특수가연물과 같은 공간에 보관하지 않되 <strong>내화구조의 벽</strong>(방화구조 불가!)으로 분리하는 경우는 예외로 한다. ③ <strong>실외에 쌓아 저장하는 경우</strong> 쌓는 부분이 대지경계선·도로 및 인접 건축물과 최소 <strong>6미터 이상</strong> 간격을 두어야 하나, <strong>쌓는 높이보다 1미터 이상</strong>(0.9미터 아님!) 높은 내화구조 벽체를 설치한 경우는 그러하지 아니하다. 셋째, <strong>특수가연물 표지</strong>는 한 변의 길이가 <strong>0.3미터 이상</strong>, 다른 한 변의 길이가 <strong>0.6미터 이상</strong>인 직사각형으로 하되, 일반 부분의 <strong>바탕은 흰색(백색)·문자는 검은색(흑색)</strong>으로 하고 <strong>“화기엄금” 표시 부분만 바탕은 붉은색(적색)·문자는 백색</strong>으로 표시한다. 마지막으로 특수가연물의 저장·취급 기준을 위반한 자에게는 현행 <strong>화재예방법 제52조 제1항 제2호 및 시행령 별표 9</strong>에 따라 <strong>300만 원 이하의 과태료(개별기준: 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원</strong>; 참고로 2022년 기출 당시 구 소방기본법 시행령 기준은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었음)를 부과한다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 화재예방법 시행령 별표 2·별표 3 특수가연물 품명별 기준수량 및 실내·실외 저장·취급·표지 기준 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>구분 영역</th>
+                  <th>세부 품목 또는 규제 항목</th>
+                  <th>법정 기준 수치 및 기출 함정 방어 포인트 (2018년에서 2024년까지 기출)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="2">1. 품명별 기준수량<br/>(시행령 별표 2)</td>
+                  <td class="font-bold text-slate-200">질량($\text{kg}$) 단위 7종</td>
+                  <td>· <strong>면화류: 200kg 이상</strong> / <strong>나무껍질 및 대팻밥: 400kg 이상</strong><br/>· <strong>넝마 및 종이부스러기 · 사류 · 볏짚류: 각 1,000kg 이상</strong><br/>· <strong>가연성고체류 · 합성수지류(발포 외): 각 3,000kg 이상</strong> / <strong>석탄·목탄류: 10,000kg 이상</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">체적($\text{m}^3$) 단위 3종</td>
+                  <td>· <strong>가연성액체류: $2\text{m}^3$ 이상</strong> / <strong>목재가공품 및 나무부스러기: $10\text{m}^3$ 이상</strong> / <strong>발포시킨 합성수지류: $20\text{m}^3$ 이상</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="3">2. 저장·취급 기준<br/>(시행령 별표 3)</td>
+                  <td class="font-bold text-slate-200">쌓는 높이 및 바닥면적</td>
+                  <td>· <strong>원칙</strong>: 높이 <strong>10m 이하</strong> / 바닥면적 <strong>$50\text{m}^2$ 이하</strong> (석탄·목탄류는 <strong>$200\text{m}^2$ 이하</strong>)<br/>· <strong>살수설비·대형수동식소화기 설치 시</strong>: 높이 <strong>15m 이하</strong> / 바닥면적 <strong>$200\text{m}^2$ 이하</strong> (석탄·목탄류 <strong>$300\text{m}^2$ 이하</strong>)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-amber-300">쌓는 부분 바닥면적 사이 간격</td>
+                  <td>· <strong>실내 저장</strong>: <strong>1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong> ('1미터' X! 2024 Q17)<br/>· <strong>실외 저장</strong>: <strong>3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">실내 구조 및 실외 이격거리</td>
+                  <td>· <strong>실내</strong>: 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 X), 내화구조의 벽으로 타 품목과 분리, 벽·기둥과 <strong>$0.5\text{m}\uparrow$</strong> 이격<br/>· <strong>실외</strong>: 대지경계선·도로·인접 건축물과 <strong>6m 이상</strong> 이격 (단, 쌓는 높이보다 <strong>1m 이상</strong> 높은 내화구조 벽체 설치 시 예외)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="2">3. 표지 및 제재<br/>(별표 3 · 별표 9)</td>
+                  <td class="font-bold text-slate-200">특수가연물 표지 규격·색상</td>
+                  <td>· 규격: 한 변 <strong>$0.3\text{m}$ 이상</strong> × 다른 한 변 <strong>$0.6\text{m}$ 이상</strong> 직사각형<br/>· 색상: 일반 바탕은 <strong>흰색·문자는 검은색</strong> / ‘화기엄금’ 바탕은 <strong>붉은색·문자는 백색</strong> (2023 Q10)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">저장·취급 기준 위반 과태료</td>
+                  <td>· 현행 화재예방법(제52조·별표 9): <strong>1차 100만 원 / 2차 200만 원 / 3차 이상 300만 원</strong><br/>· (구 소방기본법 시행령 기준: 1회 20만 원 / 2회 50만 원 / 3회 100만 원 / 4회 이상 100만 원, 2022 Q5)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        </section>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (12문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 12문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2023 소방공채 Q22 · 경채 Q35 (위험물 저장기준 교차기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 지정수량 이상의 위험물을 옥외저장소에 저장할 수 있는 것으로 옳지 않은 것은? (다만, ｢국제해사기구에 관한 협약｣에 의하여 설치된 국제해사기구가 채택한 ｢국제해상위험물규칙｣(IMDG Code)에 적합한 용기에 수납된 위험물은 제외한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제1류 위험물 중 염소산염류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제2류 위험물 중 유황</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제4류 위험물 중 알코올류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제6류 위험물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2023 소방공채 Q25 · 경채 Q40 (위험물 운반·수납기준 교차기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험물의 운반에 관한 기준 중 적재방법에 대한 내용으로 옳지 않은 것은? (다만, 덩어리 상태의 유황을 운반하기 위하여 적재하는 경우 또는 위험물을 동일구내에 있는 제조소등의 상호간에 운반하기 위하여 적재하는 경우는 제외한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">하나의 외장용기에는 다른 종류의 위험물을 수납하지 아니할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">고체 위험물은 운반용기 내용적의 95 % 이하의 수납율로 수납할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">액체 위험물은 운반용기 내용적의 98 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자연발화물질 중 알킬알루미늄등은 운반용기 내용적의 95 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 10 % 이상의 공간용적을 유지하도록 할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험물의 저장기준에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제3류 위험물 중 황린 그 밖에 물속에 저장하는 물품과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 55 ℃를 넘지 아니하도록 필요한 조치를 강구하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10 m 이하의 높이로 저장하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점 이하로 유지하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2025 소방경채 Q39 (위험물 운반용기 외부 주의사항 교차기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행규칙상 과염소산을 운반하고자 수납할 때 그 운반용기의 외부에 표기해야 하는 주의사항으로 옳은 것만을 <보기>에서 모두 고른 것은? (다만, UN의 위험물 운송에 관한 권고에서 정한 기준 또는 소방청장이 정하여 고시하는 기준은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 가연물접촉주의<br/>ㄴ. 공기접촉엄금<br/>ㄷ. 화기엄금<br/>ㄹ. 화기주의<br/>ㅁ. 충격주의<br/>ㅂ. 물기엄금</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄹ, ㅁ, ㅂ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험물의 저장 및 취급의 기준과 위험물의 운반에 관한 기준에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">옥내저장소에서 위험물을 저장하는 경우, 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에 있어서는 6 m, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류를 수납하는 용기만을 겹쳐 쌓는 경우에 있어서는 4 m, 그 밖의 경우에 있어서는 3 m 높이를 초과하여 용기를 겹쳐 쌓지 아니하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제1류 위험물 중 알칼리금속의 과산화물 또는 이를 함유한 것을 운반하고자 수납할 때는 그 운반용기의 외부에 “화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 주의사항을 표시하여 적재하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">고체위험물은 운반용기 내용적의 95％ 이하의 수납율로 수납하여야 하고, 액체위험물은 운반용기 내용적의 98％ 이하의 수납율로 수납하되, 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것(단, 자연발화성물질 중 알킬알루미늄등은 제외한다)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4 m 이내의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3 m 이내의 부분 및 전용탱크 통기관의 끝부분으로부터 수평거리 2 m 이내의 부분에 있어서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2018 하반기 경채 Q2 (특수가연물 품명·기준수량 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣(현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣)상 규정하고 있는 특수가연물의 품명과 기준수량의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">면화류: 1,000 kg 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">사류: 1,000 kg 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">볏짚류: 1,000 kg 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">넝마 및 종이부스러기: 1,000 kg 이상</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2018 하반기 경채 Q11 (특수가연물 쌓는 높이·바닥면적 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣(현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 포함)상 규정하고 있는 설명으로 ( ) 안에 들어갈 숫자를 옳게 연결한 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>가. 화재경계지구에서 소방본부장 또는 소방서장은 소방상 필요한 훈련 및 교육을 실시하고자 하는 때에는 화재경계지구 안의 관계인에게 훈련 또는 교육 ( ㉠ )일 전까지 그 사실을 통보하여야 한다.<br/>나. 특수가연물의 쌓는 높이는 ( ㉡ )미터 이하가 되도록 하고, 쌓는 부분의 바닥면적은 50제곱미터(석탄·목탄류의 경우에는 200제곱미터) 이하가 되도록 할<br/>것. 다만, 살수설비를 설치하거나, 방사능력 범위에 해당 특수가연물이 포함되도록 대형 수동식소화기를 설치하는 경우에는 쌓는 높이를 ( ㉢ )미터 이하, 쌓는 부분의 바닥면적을 200제곱미터(석탄·목탄류의 경우에는 300제곱미터) 이하로 할 수 있다.<br/>다. 소방청장 등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 ( ㉣ )일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.<br/>라. 소방청장 등은 보상금 지급여부 및 보상금액 결정일부터 ( ㉤ )일 이내에 행정안전부령으로 정하는 바에 따라 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우에는 특별한 사유가 없으면 통지한 날부터 ( ㉥ )일 이내에 보상금을 지급하여야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">㉠: 7 / ㉡: 7 / ㉢: 14 / ㉣: 40 / ㉤: 15 / ㉥: 30</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">㉠: 7 / ㉡: 10 / ㉢: 15 / ㉣: 60 / ㉤: 15 / ㉥: 20</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">㉠: 10 / ㉡: 7 / ㉢: 14 / ㉣: 40 / ㉤: 10 / ㉥: 20</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">㉠: 10 / ㉡: 10 / ㉢: 15 / ㉣: 60 / ㉤: 10 / ㉥: 30</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2020 소방경채 Q5 (특수가연물 살수설비 완화 수치 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣(현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣)상 화재가 발생하는 경우 불길이 빠르게 번지는 고무류·면화류 등 대통령령으로 정하는 특수가연물의 저장 및 취급기준 중 다음 ( ) 안에 들어갈 숫자로 옳은 것은? (단, 석탄·목탄류의 경우는 제외한다.) 살수설비를 설치하거나, 방사능력 범위에 해당 특수가연물이 포함되도록 대형수동식소화기를 설치하는 경우에는 쌓는 높이를 ( 가 )미터 이하, 쌓는 부분의 바닥면적을 ( 나 )제곱미터 이하로 할 수 있다.</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ) 10, ( 나 ) 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ) 10, ( 나 ) 300</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ) 15, ( 나 ) 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ) 15, ( 나 ) 300</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2021 소방경채 Q4 (특수가연물 품명·기준수량 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣(현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣)상 특수가연물의 품명과 수량으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">넝마 및 종이부스러기: 400킬로그램 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">가연성고체류: 3,000킬로그램 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">석탄·목탄류: 10,000킬로그램 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">가연성액체류: 2세제곱미터 이상</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2022 소방공채 Q5 (특수가연물 저장·취급기준 위반 과태료 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣ 별표 3(현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9)의 과태료 부과 개별기준에 대한 내용 중 위반행위의 횟수에 따라 가중된 과태료 부과 처분의 금액으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>• <strong>위반행위</strong>: 특수가연물의 저장 및 취급의 기준을 위반한 경우<br/>• <strong>과태료 금액(단위: 만 원)</strong>: 1회 위반 ( <strong>ㄱ</strong> ) / 2회 위반 ( <strong>ㄴ</strong> ) / 3회 위반 ( <strong>ㄷ</strong> ) / 4회 이상 위반 ( <strong>ㄹ</strong> )</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ: 50 / ㄴ: 100 / ㄷ: 150 / ㄹ: 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ: 20 / ㄴ: 50 / ㄷ: 100 / ㄹ: 100</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ: 50 / ㄴ: 100 / ㄷ: 100 / ㄹ: 200</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ: 20 / ㄴ: 50 / ㄷ: 100 / ㄹ: 150</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재의 예방 및 안전관리에 관한 법률 시행령｣상 특수가연물의 저장 및 취급 기준에서 특수가연물 표지에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특수가연물 표지 중 화기엄금 표시 부분의 바탕은 붉은색으로, 문자는 백색으로 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 할 것. 다만, “화기엄금” 표시 부분은 제외한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">특수가연물을 저장 또는 취급하는 장소에는 품명, 최대저장수량, 단위부피당 질량 또는 단위체적당 질량, 관리책임자 성명·직책, 연락처 및 화기취급의 금지표시가 포함된 특수가연물 표지를 설치해야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출)</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재의 예방 및 안전관리에 관한 법률 시행령｣상 화재의 확대가 빠른 특수가연물의 저장 및 취급 기준으로 옳은 것은? (단, 석탄·목탄류를 발전용(發電用)으로 저장하는 경우는 제외한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">쌓는 부분 바닥면적의 사이는 실내의 경우 1미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">쌓는 부분 바닥면적의 사이는 실외의 경우 3미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 28제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량의 10배를 초과하는 위험물을 저장할 때 제1류 위험물(알칼리금속의 과산화물 제외)과 제6류 위험물은 유별마다 정리하여 1미터 이상 간격을 두면 동일한 저장소에서 함께 저장할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 운반 시 유별 상호 간 혼재가 허용되는 조합은 '제1류와 제6류', '제2류·제4류·제5류 상호 간', '제3류와 제4류'이며, 지정수량의 10분의 1 이하인 위험물에 대하여는 혼재 금지 규정을 적용하지 아니한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령상 국제해상위험물규칙(IMDG Code) 용기가 아닌 일반 용기로 옥외저장소에 저장할 수 있는 위험물은 제2류 중 유황, 제4류(특수인화물 및 인화점 섭씨 0도 미만 제1석유류 제외), 제6류 위험물 등이며 제1류 염소산염류는 저장할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 운반 시 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하(섭씨 55도에서 누설되지 않는 공간용적 유지)로 수납하며, 알킬알루미늄등은 90퍼센트 이하로 수납하되 섭씨 50도의 온도에서 5퍼센트 이상의 공간용적을 유지해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물 중 물속에 저장하는 황린과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 하며, 옥내저장소에서 용기에 수납하여 저장하는 위험물의 온도는 섭씨 55도를 넘지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내저장소 또는 옥외저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 운반용기 외부 주의사항 표시에서 제6류 위험물(과염소산·과산화수소·질산)은 '가연물접촉주의'만 표시하며, 제1류 알칼리금속의 과산화물은 '화기·충격주의, 물기엄금, 가연물접촉주의'를 모두 표시한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내저장소에서 위험물 용기를 겹쳐 쌓는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터, 제4류 중 제3석유류·제4석유류 및 동식물유류 수납 용기는 4미터, 그 밖의 경우는 3미터 높이를 초과하지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주유취급소에서 자동차 등에 주유할 때에는 고정주유설비로부터 4미터 이내, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크 주입구로부터 3미터 이내 및 전용탱크 통기관 끝부분으로부터 수평거리 1.5미터 이내의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특수가연물의 기준수량에서 면화류는 200킬로그램 이상이고, 나무껍질 및 대팻밥은 400킬로그램 이상이며, 넝마 및 종이부스러기·사류·볏짚류는 모두 1,000킬로그램 이상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특수가연물 중 '가연성액체류'의 기준수량은 2세제곱미터 이상이고, '목재가공품 및 나무부스러기'는 10세제곱미터 이상이며, '발포시킨 합성수지류'는 20세제곱미터 이상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>석탄 및 목탄류를 발전용으로 저장하는 경우에는 특수가연물 저장·취급 기준을 적용하지 아니한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특수가연물의 쌓는 높이는 원칙적으로 10미터 이하, 바닥면적은 50제곱미터(석탄·목탄류는 200제곱미터) 이하로 하되, 살수설비 또는 대형수동식소화기를 설치하는 경우 높이를 15미터 이하, 바닥면적을 200제곱미터(석탄·목탄류는 300제곱미터) 이하로 완화할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>석탄·목탄류를 제외한 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 쌓는 높이는 15미터 이하, 쌓는 부분의 바닥면적은 200제곱미터 이하로 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현행 화재의 예방 및 안전관리에 관한 법률상 특수가연물의 저장 및 취급 기준을 위반한 자에게는 300만 원 이하의 과태료를 부과하며, 시행령 별표 9상 개별기준은 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 하되, 바탕은 흰색·문자는 검은색으로 하고 '화기엄금' 표시 부분만 바탕을 붉은색·문자를 백색으로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현행 화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물을 쌓는 부분 바닥면적의 사이는 실내의 경우 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상', 실외의 경우 '3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'으로 간격을 두어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특수가연물을 실외에 쌓아 저장하는 경우 대지경계선·도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하나, 쌓는 높이보다 1미터 이상 높은 내화구조 벽체를 설치한 경우는 그러하지 아니하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[｢위험물안전관리법 시행규칙｣상 위험물의 저장기준] 옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10 m 이하의 높이로 저장하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[｢화재의 예방 및 안전관리] 특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 할 것. 다만, “화기엄금” 표시 부분은 제외한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[｢화재의 예방 및 안전관리] 실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[｢화재의 예방 및 안전관리] 실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>인화성 액체(이황화탄소 제외)의 옥외탱크저장소 주위에 설치하는 방유제의 용량은 방유제 안에 설치된 탱크가 2기 이상일 때에는 모든 탱크 용량 합계의 110퍼센트 이상으로 해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>인화성 액체 옥외탱크저장소의 방유제는 높이 0.5 m 이상 3 m 이하, 면적 80,000 m² 이하, 방유제 내 탱크 수 10기 이하로 설치하며, 방유제 내에 10,000 L 탱크 1기와 20,000 L 탱크 1기가 함께 설치된 경우 방유제의 용량은 두 탱크 합계의 110%인 33,000 L 이상이어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 취급소 중 점포에서 위험물을 용기에 담아 판매하는 판매취급소는 지정수량의 배수에 따라 구분하여, 지정수량의 15배 이하를 취급하는 곳은 제1종 판매취급소, 15배 초과 30배 이하를 취급하는 곳은 제2종 판매취급소라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일반 옥외저장소에는 제1류 위험물 중 염소산염류, 제2류 위험물 중 유황, 제4류 위험물 중 제2석유류, 제6류 위험물을 저장할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>간이탱크저장소의 간이저장탱크는 1기의 용량이 600 L 이하이고 최대 3기까지 설치할 수 있으므로, 휘발유 전용 600 L 간이저장탱크 2기와 경유 전용 600 L 간이저장탱크 1기를 함께 설치할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이동탱크저장소(탱크로리)의 탱크는 두께 3.2 mm 이상의 강판으로 제작하고, 내부에는 액체의 출렁임을 막기 위해 2,000 L 이하마다 두께 1.6 mm 이상의 강판으로 칸막이를 설치해야 하며, 칸막이한 부분의 용량이 4,000 L 이상인 경우에는 진행 방향과 평행하게 방파판을 설치해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법상 위험물을 이동탱크저장소(탱크로리)에 저장하여 옮기는 것을 '운반'이라 하고, 운반용기(드럼통 등)에 수납하여 화물자동차 등에 실어 옮기는 것을 '이송'이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 운반용기의 수납 기준상 고체 위험물은 내용적의 98퍼센트 이하, 액체 위험물은 내용적의 95퍼센트 이하로 수납해야 한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:① · 05:④ · 06:① · 07:④ · 08:③ · 09:① · 10:② · 11:③ · 12:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 17 · 제5편 위험물 및 특수가연물론 · 3장 (12문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023 소방공채 Q22 · 경채 Q35 (위험물 저장기준 교차기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 2 제7호에 따라 일반 용기로 <strong>옥외저장소</strong>에 저장할 수 있는 위험물은 ① <strong>제2류 위험물 중 유황</strong>, ② <strong>제4류 위험물 중 인화점 0도 이상인 제1석유류·알코올류·제2석유류·제3석유류·제4석유류·동식물유류</strong>, ③ <strong>제6류 위험물</strong>, ④ 제2류·제4류 중 보온을 위해 저장하는 것뿐입니다. 제1류 위험물(염소산염류 등), 제3류 위험물, 제5류 위험물, 제4류 중 특수인화물 및 인화점 0도 미만 제1석유류는 옥외저장소에 저장할 수 없습니다(단, IMDG Code 용기에 수납한 경우는 전 유별 가능).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제1류 위험물 중 염소산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제1류 위험물 중 염소산염류는 빗물(수분)이나 직사광선, 이물질 혼입 시 분해·폭발 위험이 있어 일반 옥외저장소에 저장할 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제2류 위험물 중 유황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제2류 위험물 중 유황(황)은 비수용성이고 안정하여 옥외저장소에 저장할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제4류 위험물 중 알코올류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제4류 위험물 중 알코올류(및 인화점 0도 이상 제1석유류, 제2·3·4석유류, 동식물유류)는 옥외저장소에 저장할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제6류 위험물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제6류 위험물(과염소산·과산화수소·질산)은 옥외저장소에 저장할 수 있는 법정 위험물에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023 소방공채 Q25 · 경채 Q40 (위험물 운반·수납기준 교차기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 19에 따른 운반용기 수납률 기준은 ① <strong>고체 위험물</strong>: 내용적의 <strong>95퍼센트 이하</strong>, ② <strong>액체 위험물</strong>: 내용적의 <strong>98퍼센트 이하</strong>(55도에서 누설되지 않는 공간용적 유지), ③ <strong>자연발화성물질 중 알킬알루미늄등</strong>: 내용적의 <strong>90퍼센트 이하</strong>로 수납하되 <strong>50도의 온도에서 5퍼센트 이상의 공간용적</strong>을 유지하도록 규정하고 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">하나의 외장용기에는 다른 종류의 위험물을 수납하지 아니할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 혼촉 발화를 막기 위해 원칙적으로 하나의 외장용기에는 다른 종류의 위험물을 함께 수납하지 아니하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">고체 위험물은 운반용기 내용적의 95 % 이하의 수납율로 수납할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 고체 위험물은 운반용기 내용적의 95퍼센트 이하의 수납률로 수납해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">액체 위험물은 운반용기 내용적의 98 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 액체 위험물은 운반용기 내용적의 98퍼센트 이하의 수납률로 수납하되, 55도의 온도에서 열팽창으로 누설되지 않도록 충분한 공간용적을 유지해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자연발화물질 중 알킬알루미늄등은 운반용기 내용적의 95 % 이하의 수납율로 수납하되, 55 ℃의 온도에서 10 % 이상의 공간용적을 유지하도록 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 자연발화성물질 중 알킬알루미늄등은 운반용기 내용적의 <strong>90퍼센트 이하</strong>의 수납률로 수납하되, <strong>50도의 온도에서 5퍼센트 이상의 공간용적</strong>을 유지해야 합니다(95퍼센트, 55도, 10퍼센트 모두 틀림).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18(위험물의 저장기준)에 따르면, <strong>옥내저장소나 옥외저장소에서 위험물을 수납한 용기를 선반(랙, Rack)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야(즉, 6미터 이하로 저장)</strong> 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제3류 위험물 중 황린 그 밖에 물속에 저장하는 물품과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 같은 제3류 위험물이라도 물속에 저장하는 황린과 물과 만나면 폭발하는 금수성물질(칼륨·나트륨·탄화칼슘 등)은 소화 방법이 정반대이므로 동일한 저장소에 함께 저장하면 안 됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 55 ℃를 넘지 아니하도록 필요한 조치를 강구하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 섭씨 55도를 넘지 아니하도록 환기·냉방 등 필요한 조치를 강구해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10 m 이하의 높이로 저장하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 <strong>6미터 이하의 높이(6미터를 초과하지 아니할 것)</strong>로 저장하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점 이하로 유지하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 증기압 상승을 막기 위해 당해 위험물의 비점(끓는점) 이하로 유지해야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2025 소방경채 Q39 (위험물 운반용기 외부 주의사항 교차기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> · <strong>제1류(산화성 고체)</strong>: 화기·충격주의, 가연물접촉주의 (단, 알칼리금속 과산화물은 <strong>물기엄금</strong> 추가)
+· <strong>제2류(가연성 고체)</strong>: 화기주의 (철분·금속분·마그네슘은 <strong>물기엄금</strong> 추가, 인화성고체는 <strong>화기엄금</strong>)
+· <strong>제3류</strong>: 자연발화성 = <strong>화기엄금 및 공기접촉엄금</strong>, 금수성 = <strong>물기엄금</strong> (가연성 액체계는 화기엄금 추가)
+· <strong>제4류(인화성 액체)</strong>: <strong>화기엄금</strong>
+· <strong>제5류(자기반응성물질)</strong>: <strong>화기엄금 및 충격주의</strong>
+· <strong>제6류(산화성 액체 · 과염소산·과산화수소·질산)</strong>: 불연성 액체 산화제이므로 오직 <strong>'가연물접촉주의'( ㄱ )</strong> 하나만 표시합니다!</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제6류 위험물인 과염소산은 불연성 산화성 액체로서 가연물과 접촉 시 발화·폭발 위험이 있으므로 운반용기 외부에 <strong>'가연물접촉주의'( ㄱ )</strong>만 표기합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] '공기접촉엄금'( ㄴ ) 및 '화기엄금'( ㄷ )은 제3류 자연발화성물질(황린 등)에 표기하는 주의사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] '화기엄금'( ㄷ ) 및 '충격주의'( ㅁ )는 제5류 자기반응성물질에 표기하는 주의사항입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ, ㅁ, ㅂ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] '화기·충격주의', '물기엄금', '가연물접촉주의'(ㄱ, ㄹ, ㅁ, ㅂ)는 제1류 위험물 중 알칼리금속의 과산화물에 표기하는 주의사항입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18에 따른 위험물의 저장·취급 및 운반 종합 기준입니다. 주유취급소에서 다른 자동차의 주차 및 점검·정비·세정을 금지하는 범위는 ① 고정주유설비로부터 <strong>4미터 이내</strong>의 부분, ② 전용탱크의 <strong>주입구로부터 3미터 이내</strong>의 부분, ③ 전용탱크 <strong>통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분입니다(고정주유설비에 접속된 탱크 주입구가 아니라 고정주유설비 자체로부터 4미터 이내이며, 통기관 끝부분으로부터는 2미터가 아니라 <strong>1.5미터 이내</strong>임).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">옥내저장소에서 위험물을 저장하는 경우, 기계에 의하여 하역하는 구조로 된 용기만을 겹쳐 쌓는 경우에 있어서는 6 m, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류를 수납하는 용기만을 겹쳐 쌓는 경우에 있어서는 4 m, 그 밖의 경우에 있어서는 3 m 높이를 초과하여 용기를 겹쳐 쌓지 아니하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 <strong>6미터</strong>, 제4류 중 제3·4석유류 및 동식물유류 수납 용기 <strong>4미터</strong>, 그 밖의 경우 <strong>3미터</strong> 이하입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제1류 위험물 중 알칼리금속의 과산화물 또는 이를 함유한 것을 운반하고자 수납할 때는 그 운반용기의 외부에 “화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 주의사항을 표시하여 적재하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">고체위험물은 운반용기 내용적의 95％ 이하의 수납율로 수납하여야 하고, 액체위험물은 운반용기 내용적의 98％ 이하의 수납율로 수납하되, 55도의 온도에서 누설되지 아니하도록 충분한 공간용적을 유지하도록 할 것(단, 자연발화성물질 중 알킬알루미늄등은 제외한다)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 운반용기 수납률은 고체 위험물 <strong>95퍼센트 이하</strong>, 액체 위험물 <strong>98퍼센트 이하</strong>(55도 누설 방지 공간 유지)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">주유취급소에서 자동차 등에 주유할 때에는 고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4 m 이내의 부분에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크의 주입구로부터 3 m 이내의 부분 및 전용탱크 통기관의 끝부분으로부터 수평거리 2 m 이내의 부분에 있어서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 주유취급소에서 주차 및 점검·정비·세정이 금지되는 통기관 끝부분으로부터의 수평거리는 2미터 이내가 아니라 <strong>1.5미터 이내</strong>이며, 주유 시에는 고정주유설비로부터 <strong>4미터 이내</strong>, 전용탱크 주입 시에는 전용탱크 주입구로부터 <strong>3미터 이내</strong>입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018 하반기 경채 Q2 (특수가연물 품명·기준수량 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> <strong>면화류</strong>는 불길이 가장 빠르게 번지므로 기준수량이 1,000킬로그램이 아니라 <strong><code>200 kg</code> 이상</strong>입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">면화류: 1,000 kg 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] <strong>면화류</strong>(불연성 또는 난연성이 아닌 면류·마류·양모 등)의 특수가연물 기준수량은 1,000킬로그램 이상이 아니라 <strong><code>200 kg</code> 이상</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">사류: 1,000 kg 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] <strong>사류</strong>(불연성 또는 난연성이 아닌 실)의 기준수량은 <strong><code>1,000 kg</code> 이상</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">볏짚류: 1,000 kg 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] <strong>볏짚류</strong>(건초, 짚, 마른 북데기 등)의 기준수량은 <strong><code>1,000 kg</code> 이상</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">넝마 및 종이부스러기: 1,000 kg 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] <strong>넝마 및 종이부스러기</strong>의 기준수량은 <strong><code>1,000 kg</code> 이상</strong>입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018 하반기 경채 Q11 (특수가연물 쌓는 높이·바닥면적 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 특수가연물의 원칙적 쌓는 높이는 <strong>10미터 이하</strong>(㉡ = 10)이고, 살수설비 또는 대형수동식소화기를 설치한 경우 완화되는 쌓는 높이는 <strong>15미터 이하</strong>(㉢ = 15)입니다. 또한 화재경계지구 훈련 사전 통보는 <strong>10일 전</strong>(㉠ = 10), 손실보상 결정은 청구서 접수 후 <strong>60일 이내</strong>(㉣ = 60), 결정 통지는 결정일부터 <strong>10일 이내</strong>(㉤ = 10), 보상금 지급은 통지일부터 <strong>30일 이내</strong>(㉥ = 30)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">㉠: 7 / ㉡: 7 / ㉢: 14 / ㉣: 40 / ㉤: 15 / ㉥: 30</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 화재경계지구 훈련 통보는 10일 전(㉠=10), 특수가연물 원칙 높이는 10미터(㉡=10), 완화 높이는 15미터(㉢=15), 손실보상 결정은 60일(㉣=60), 결정 통지는 10일(㉤=10)이므로 ㉥(30일)을 제외한 ㉠에서 ㉤까지가 법정 기준과 어긋납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">㉠: 7 / ㉡: 10 / ㉢: 15 / ㉣: 60 / ㉤: 15 / ㉥: 20</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㉠(7일 -> 10일), ㉤(15일 -> 10일), ㉥(20일 -> 30일)이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">㉠: 10 / ㉡: 7 / ㉢: 14 / ㉣: 40 / ㉤: 10 / ㉥: 20</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㉠(10일)과 ㉤(10일)은 맞으나, 특수가연물 원칙 높이 ㉡(10미터), 완화 높이 ㉢(15미터), 손실보상 결정 기한 ㉣(60일), 지급 기한 ㉥(30일)이 법정 기준과 어긋납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">㉠: 10 / ㉡: 10 / ㉢: 15 / ㉣: 60 / ㉤: 10 / ㉥: 30</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 화재경계지구 훈련 통보 <strong>10일 전</strong>( ㉠ ), 특수가연물 기본 높이 <strong>10미터 이하</strong>( ㉡ ), 살수설비 등 설치 시 완화 높이 <strong>15미터 이하</strong>( ㉢ ), 손실보상 결정 <strong>60일 이내</strong>( ㉣ ), 결정 통지 <strong>10일 이내</strong>( ㉤ ), 보상금 지급 <strong>30일 이내</strong>( ㉥ )로 모두 옳게 연결되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020 소방경채 Q5 (특수가연물 살수설비 완화 수치 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 석탄·목탄류를 제외한 일반 특수가연물의 경우 기본 쌓는 높이는 <code>10 m</code> 이하, 바닥면적은 <code>50 m²</code> 이하이지만, <strong>살수설비를 설치하거나 대형수동식소화기를 설치하는 경우</strong>에는 쌓는 높이를 <strong><code>15 m</code> 이하</strong>(가 = 15), 쌓는 부분의 바닥면적을 <strong><code>200 m²</code> 이하</strong>(나 = 200)로 완화할 수 있습니다(석탄·목탄류였다면 나 = 300).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ) 10, ( 나 ) 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 10미터는 살수설비 등을 설치하지 않은 일반 원칙 높이입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ) 10, ( 나 ) 300</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 10미터는 일반 높이이고, 300제곱미터는 석탄·목탄류의 완화 바닥면적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ) 15, ( 나 ) 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 살수설비 또는 대형수동식소화기 설치 시(석탄·목탄류 제외) 쌓는 높이는 <strong>15미터 이하</strong>( 가 ), 바닥면적은 <strong>200제곱미터 이하</strong>( 나 )로 할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ) 15, ( 나 ) 300</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 300제곱미터는 석탄·목탄류의 경우에 적용되는 완화 바닥면적입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021 소방경채 Q4 (특수가연물 품명·기준수량 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 특수가연물 중 기준수량이 <code>400 kg</code> 이상인 품목은 <strong>'나무껍질 및 대팻밥'</strong>뿐이며, <strong>'넝마 및 종이부스러기'</strong>는 사류·볏짚류와 함께 기준수량이 <strong><code>1,000 kg</code> 이상</strong>입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">넝마 및 종이부스러기: 400킬로그램 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '넝마 및 종이부스러기'의 기준수량은 400킬로그램 이상이 아니라 <strong>1,000킬로그램 이상</strong>입니다(400킬로그램 이상은 '나무껍질 및 대팻밥'임).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">가연성고체류: 3,000킬로그램 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 가연성고체류(및 발포시킨 것 외의 합성수지류)의 기준수량은 <strong>3,000킬로그램 이상</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">석탄·목탄류: 10,000킬로그램 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 석탄·목탄류의 기준수량은 <strong>10,000킬로그램(10톤) 이상</strong>입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">가연성액체류: 2세제곱미터 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 가연성액체류의 기준수량은 <strong>2세제곱미터 이상</strong>입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022 소방공채 Q5 (특수가연물 저장·취급기준 위반 과태료 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 출제 당시 구 ｢소방기본법 시행령｣ 별표 3에 따르면 특수가연물의 저장 및 취급 기준을 위반한 경우 과태료 금액은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다. 단, 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제1항 제2호(300만 원 이하의 과태료) 및 같은 법 시행령 별표 9 제2호 라목에서는 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원으로 상향 개정되었으므로 현행 수치를 반드시 함께 숙지해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ: 50 / ㄴ: 100 / ㄷ: 150 / ㄹ: 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 일치하지 않으며, 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9 기준(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)과도 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ: 20 / ㄴ: 50 / ㄷ: 100 / ㄹ: 100</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3상 특수가연물 저장·취급기준 위반 과태료는 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다 (현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9에서는 1차 100만 원, 2차 200만 원, 3차 이상 300만 원으로 상향 개정됨).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ: 50 / ㄴ: 100 / ㄷ: 100 / ㄹ: 200</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 2022년 출제 당시 구 시행령 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 비교할 때 1회(50만 원), 2회(100만 원), 4회 이상(200만 원) 수치가 모두 어긋납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ: 20 / ㄴ: 50 / ㄷ: 100 / ㄹ: 150</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 2022년 출제 당시 구 시행령 별표 3 기준상 4회 이상 위반 시 과태료(ㄹ)는 150만 원이 아니라 3회 위반과 동일한 '100만 원'이었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3에 따른 <strong>특수가연물 표지</strong> 기준입니다. 특수가연물 표지의 일반 부분(화기엄금 제외)은 가독성을 위해 <strong>바탕은 흰색(백색)으로, 문자는 검은색(흑색)</strong>으로 해야 합니다(선지 ③은 바탕과 문자 색상을 정반대로 뒤집음).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특수가연물 표지 중 화기엄금 표시 부분의 바탕은 붉은색으로, 문자는 백색으로 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 특수가연물 표지 중 '화기엄금' 표시 부분의 바탕은 <strong>붉은색(적색)</strong>으로, 문자는 <strong>백색(흰색)</strong>으로 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 특수가연물 표지는 한 변의 길이가 <strong>0.3미터 이상</strong>, 다른 한 변의 길이가 <strong>0.6미터 이상</strong>인 직사각형으로 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 할 것. 다만, “화기엄금” 표시 부분은 제외한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 특수가연물 표지의 바탕은 <strong>흰색(백색)</strong>으로, 문자는 <strong>검은색(흑색)</strong>으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">특수가연물을 저장 또는 취급하는 장소에는 품명, 최대저장수량, 단위부피당 질량 또는 단위체적당 질량, 관리책임자 성명·직책, 연락처 및 화기취급의 금지표시가 포함된 특수가연물 표지를 설치해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출)</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 1) <strong>실외 대지경계선·도로·인접 건축물과의 간격</strong>: 최소 <strong>6미터 이상</strong> 간격을 두어야 하며, 다만 쌓는 높이보다 <strong>1미터 이상</strong>(0.9미터 아님!) 높은 내화구조 벽체를 설치한 경우는 예외로 합니다.
+2) <strong>실내 저장 구조 및 격리</strong>: 실내에 쌓아 저장하는 경우 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 불가!)여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않아야 하되, <strong>내화구조의 벽</strong>(방화구조 아님!)으로 분리하는 경우는 예외로 합니다.
+3) <strong>쌓는 부분 바닥면적 사이의 간격(통로 폭)</strong>: · <strong>실내</strong>: <strong>1.2미터</strong>(구법 1미터에서 1.2미터로 강화됨!) 또는 쌓는 높이의 2분의 1 중 큰 값 이상 · <strong>실외</strong>: <strong>3미터</strong> 또는 쌓는 높이의 2분의 1 중 큰 값 이상</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 <strong>1미터 이상</strong> 높아야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조 또는 불연재료</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">쌓는 부분 바닥면적의 사이는 실내의 경우 1미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 쌓는 부분 바닥면적의 사이는 실내의 경우 1미터가 아니라 <strong>1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다(구 소방기본법 시절 1미터에서 화재예방법 제정 시 1.2미터로 강화됨).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">쌓는 부분 바닥면적의 사이는 실외의 경우 3미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 쌓는 부분 바닥면적의 사이는 <strong>실외의 경우 3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 28제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>제1류 산화성고체(알칼리금속 과산화물 제외)와 제6류 산화성액체는 둘 다 불연성 산화제로서 상호 반응 위험이 낮아 혼재가 허용됩니다.
+            <span class="ox-exp-src">위험물 혼재기준 핵심</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>유별 혼재 허용 공식(16 · 245 · 34)과 지정수량 10분의 1 이하 면제 기준은 위험물 운반·저장 파트의 핵심 원칙입니다.
+            <span class="ox-exp-src">위험물 운반 혼재기준 핵심</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>옥외저장소 저장 가능 품목(제2류 유황, 제4류 인화점 0도 이상 제1석유류·알코올류·제2·3·4석유류·동식물유류, 제6류)은 필수 암기 사항입니다.
+            <span class="ox-exp-src">2023 소방공채 Q22 · 경채 Q35 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>운반용기 수납률 3대 수치(고체 95퍼센트, 액체 98퍼센트/55도, 알킬알루미늄등 90퍼센트/50도·5퍼센트 공간)는 숫자 바꿔치기 1순위 지문입니다.
+            <span class="ox-exp-src">2023 소방공채 Q25 · 경채 Q40 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>황린(수중 저장·물 소화)과 금수성물질(물 접촉 시 폭발)의 동일 저장소 저장 금지 원칙과 옥내저장소 섭씨 55도 이하 온도 제한은 핵심 저장기준입니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>선반(랙) 저장 시 높이 제한은 옥내·옥외저장소 모두 '6미터 이하(6미터 초과 금지)'입니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>제6류는 불연성 산화성 액체이므로 오직 '가연물접촉주의' 하나만 표시하며, 제1류 알칼리금속 과산화물은 금수성을 겸비하여 '물기엄금'까지 3가지를 표시합니다.
+            <span class="ox-exp-src">2025 소방경채 Q39 · 2026 소방경채 Q34 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>옥내저장소 용기 적재 높이 3단계(기계하역 6미터, 3·4석유류·동식물유류 4미터, 기타 3미터)는 필수 수치입니다.
+            <span class="ox-exp-src">2026 소방경채 Q34 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>주유취급소 주차·정비·세정 금지 거리(고정주유설비 4미터, 전용탱크 주입구 3미터, 통기관 끝부분 수평거리 1.5미터 이내)에서 통기관 거리를 2미터로 속이는 함정에 주의해야 합니다.
+            <span class="ox-exp-src">2026 소방경채 Q34 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>특수가연물 질량 기준수량: 면화류(200킬로그램), 나무껍질·대팻밥(400킬로그램), 넝마·종이부스러기·사류·볏짚류(1,000킬로그램), 가연성고체류·기타 합성수지류(3,000킬로그램), 석탄·목탄류(10,000킬로그램).
+            <span class="ox-exp-src">2018 하반기 경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>특수가연물 중 체적(세제곱미터) 단위 3종(가연성액체류 2세제곱미터, 목재가공품·나무부스러기 10세제곱미터, 발포합성수지류 20세제곱미터)과 가연성고체류(3,000킬로그램)·석탄·목탄류(10,000킬로그램) 기준수량입니다.
+            <span class="ox-exp-src">2021 소방경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>석탄·목탄류 중 발전용으로 저장·취급하는 것은 법령상 특수가연물 저장·취급 기준 적용 제외 대상에 해당합니다.
+            <span class="ox-exp-src">화재예방법 시행령 별표 3 핵심</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>특수가연물 높이(10미터 ➔ 완화 시 15미터)와 바닥면적(일반 50 ➔ 200제곱미터 / 석탄·목탄류 200 ➔ 300제곱미터)은 최빈출 수치입니다.
+            <span class="ox-exp-src">2018 하반기 경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>석탄·목탄류 제외 조건이 주어졌으므로 완화 바닥면적은 300제곱미터가 아니라 200제곱미터 이하입니다.
+            <span class="ox-exp-src">2020 소방경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>구 소방기본법 시절(1회 20만·2회 50만·3회 100만·4회 이상 100만 원)에서 현행 화재예방법 제52조 제1항 제2호 및 시행령 별표 9(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)로 상향 개정되었습니다.
+            <span class="ox-exp-src">2022 소방공채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>특수가연물 표지 규격(0.3미터 이상 × 0.6미터 이상)과 색상(일반: 백색 바탕·흑색 문자 / 화기엄금: 적색 바탕·백색 문자)은 빈출 포인트입니다.
+            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>화재예방법 시행령 별표 3에서 실내 간격이 구법 1미터에서 '1.2미터(또는 높이의 2분의 1 중 큰 값)'로 강화되었습니다.
+            <span class="ox-exp-src">2024 소방경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>실외 저장 시 대지경계선 이격거리(6미터 이상)와 예외 벽체 기준(쌓는 높이보다 1미터 이상 높은 내화구조 벽체; 0.9미터 아님)은 최신 기출 핵심 지문입니다.
+            <span class="ox-exp-src">2024 소방경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>같은 제3류 위험물이라도 물속에 저장하는 황린과 물과 만나면 폭발하는 금수성물질(칼륨·나트륨·탄화칼슘 등)은 소화 방법이 정반대이므로 동일한 저장소에 함께 저장하면 안 됩니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 섭씨 55도를 넘지 아니하도록 환기·냉방 등 필요한 조치를 강구해야 합니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 <strong>6미터 이하의 높이(6미터를 초과하지 아니할 것)</strong>로 저장하여야 합니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 증기압 상승을 막기 위해 당해 위험물의 비점(끓는점) 이하로 유지해야 합니다.
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 <strong>6미터</strong>, 제4류 중 제3·4석유류 및 동식물유류 수납 용기 <strong>4미터</strong>, 그 밖의 경우 <strong>3미터</strong> 이하입니다.
+            <span class="ox-exp-src">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출) · 옥내저장소 용기 겹쳐 쌓기 높이(6m·4m·3m), 운반 주의사항 및 주유취급소 이격거리</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.
+            <span class="ox-exp-src">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출) · 옥내저장소 용기 겹쳐 쌓기 높이(6m·4m·3m), 운반 주의사항 및 주유취급소 이격거리</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>특수가연물 표지의 바탕은 <strong>흰색(백색)</strong>으로, 문자는 <strong>검은색(흑색)</strong>으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림).
+            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출) · 화재예방법령상 특수가연물 표지의 규격(0.3m×0.6m)·바탕색(흰색)·문자색(검은색) 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 26 · O 옳음</span>특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.
+            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출) · 화재예방법령상 특수가연물 표지의 규격(0.3m×0.6m)·바탕색(흰색)·문자색(검은색) 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 <strong>1미터 이상</strong> 높아야 합니다.
+            <span class="ox-exp-src">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조 또는 불연재료</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.
+            <span class="ox-exp-src">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

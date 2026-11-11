@@ -1,0 +1,3501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 01 · 인쇄용] 제1편 소방조직 및 재난관리론 · 제1장 소방의 역사·발전 과정 및 소방조직·인사 원리 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        
+        <span class="ctrl-btn active">DAY 01</span>
+        <a href="DAY02_01_02_재난의_분류_도미노이론과_재난관리단계_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(16제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 01 · 제1편 소방조직 및 재난관리론 · 제1장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(16문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">소방의 역사·발전 과정 및 소방조직·인사 원리</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 삼국·고려·조선시대의 금화제도와 금화도감·수성금화도감</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>고려시대</strong>: 소방을 <strong>소재(消災)</strong>라 칭하고 <strong>금화원(금화제도)</strong> 시행 (상설 소방관서는 미설치)</li>
+              <li><strong>조선 세종 8년(1426년)</strong>: <strong>2월 금화도감</strong>(최초 독립 소방관서) 설치 ➔ 같은 해 <strong>6월 수성금화도감</strong>으로 통합 개편 (세조 때 <strong>수성금화사</strong>, 성종 때 상비군 <strong>멸화군 50명</strong>)</li>
+              <li><strong>갑오개혁(1894년)</strong>: 경무청 설치 및 법제상 <strong>'소방(消防)'</strong> 용어 최초 사용</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            소방학개론의 첫 페이지는 '우리나라에서 국가가 국민의 생명과 재산을 화재로부터 지키기 위해 어떤 제도와 조직을 발전시켜 왔는가'라는 역사적 인과관계에서 출발합니다. 기와집과 초가집 같은 목조건축물이 처마를 맞대고 빼곡히 들어선 전통 도시에서 화재는 한 번 번지면 도성 전체를 잿더미로 만드는 국가적 재앙이었습니다. 삼국시대에는 아직 전문 소방관서가 존재하지 않았고 화재 예방을 기원하는 의식이나 방화 처벌 수준에 머물렀으나, <strong>고려시대</strong>에 들어서면 불을 끄고 재앙을 물리친다는 뜻으로 소방을 <strong>'소재(消災)'</strong>라 불렀으며, 오늘날 소방행정의 근원이라 볼 수 있는 <strong>금화원(禁火員) 및 금화제도</strong>를 운영하여 관아와 창고의 불씨 관리를 엄격히 감독하고 실화자를 처벌하였습니다(참고로 고려 우왕 때 최무선의 건의로 화약을 제조하기 위해 설치한 관서는 '화통도감'입니다).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그렇다면 우리나라 역사상 <strong>최초의 독립된 중앙 상설 소방관서</strong>는 언제, 왜 탄생했을까요? 바로 <strong>조선 세종 8년(1426년) 2월</strong>입니다. 그해 한양 도성에 강풍을 타고 대화재가 잇따라 발생하여 한성부 민가 2천여 호와 관아가 불타고 수십 명의 백성이 목숨을 잃는 대참사가 일어났습니다. 이에 큰 충격을 받은 세종대왕은 병조 산하에 화재 예방과 진압만을 전담하는 독자적인 소방관청인 <strong>금화도감(禁火都監)</strong>을 전격 설치하였습니다. 이어 4개월 뒤인 <strong>같은 해(세종 8년, 1426년) 6월</strong>에는 도성의 성곽·도로·교량 수축을 맡던 성문도감(수성도감)과 금화도감을 병합하여 <strong>수성금화도감(修城禁火都監)</strong>으로 확대 개편하였습니다(시험에서 '수성금화도감이 먼저 설치된 뒤 금화도감으로 환원되었다'고 순서를 뒤집으면 오답입니다!). 이후 세조 6년(1460년)에는 공조 산하의 <strong>수성금화사(修城禁火司)</strong>로 개편되었고, 성종 12년(1481년)에는 낮에는 연기를, 밤에는 불빛을 감시하며 24시간 교대로 상시 출동하는 최초의 상비 소방대인 <strong>멸화군(滅火軍, 금화군·정원 50명)</strong>을 두었으며 『경국대전』에 금화 규정을 법제화하였습니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            또한 조선시대의 화재 대응 인프라와 민간 방화 제도를 살펴보면, 도성 한복판인 종루(보신각)에 올라 사방의 화재를 감시하고 불이 나면 종을 쳐서 알리는 <strong>망화루(望火樓)</strong>를 운영하였으며, 민간에서는 다섯 집(5가)을 한 통(1통)으로 묶어 공동으로 우물을 파고 물통을 준비하여 화재 시 서로 돕게 한 자치 방화 조직인 <strong>오가작통제(五家作統制)</strong>를 시행하였습니다. 궁궐 전각과 관아 앞에는 방화수를 가득 담아두는 넓적한 무쇠·돌 항아리인 <strong>드무</strong>를 비치하였고(화마가 물에 비친 제 얼굴을 보고 놀라 도망가라는 상징적 의미와 초기 소화용수 확보 목적), 불길이 거세지면 오늘날의 파괴소방(제거소화)처럼 이웃 초가지붕을 끌어내려 연소 확대를 차단하는 쇠갈고리(철파)와 대나무 물총(수총기)을 사용하였습니다. 그러다 개항기인 <strong>1894년 갑오개혁</strong> 때 내무아문 산하에 경무청이 설치되고 이듬해 ｢경무청관제직장｣이 제정되면서, 우리나라 법제 속에 비로소 <strong>'소방(消防)'</strong>이라는 용어가 공식적으로 처음 사용되었습니다(갑오개혁 당시 소방업무는 경무청에 배속되어 경찰과 통합 관리되었으며 독립된 소방청이 설치된 것은 아닙니다).
+          </p>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 경성소방서와 해방 이후 대한민국 소방행정·민간조직 변천</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>일제강점기 소방서</strong>: <strong>1925년 경성소방서</strong>(최초 소방서) ➔ <strong>1939년 부산·평양 소방서</strong> 개소 ➔ 1944년 용산·인천·함흥 증설</li>
+              <li><strong>민간 조직 변천</strong>: 소방조 ➔ <strong>경방단(1939) ➔ 소방대(1946) ➔ 방공단(1951)/의용소방대(1958) ➔ 청원소방원(1983)</strong></li>
+              <li><strong>해방 후 4대 체제</strong>: 미군정 <strong>자치소방(1946)</strong> ➔ 정부수립 <strong>국가소방(1948)</strong> ➔ 서울·부산 <strong>이원적 체제(1972)</strong> ➔ 전국 시·도 <strong>광역자치소방(1992)</strong> ➔ <strong>국가직 일원화(2020)</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            일제강점기에 들어서면서 소방 업무는 조선총독부 경찰관서 산하로 편입되었고, <strong>1925년 4월</strong> 우리나라 최초의 근대식 상설 소방서인 <strong>경성소방서</strong>가 설치되었습니다(시험에서 '1915년에 최초의 소방본부인 경성소방서가 설치되었다'고 연도와 기관 성격을 바꾸어 내므로 주의해야 합니다!). 이후 <strong>1939년 부산 및 평양</strong>에 소방서가 개소되었고(2025년 기출에서 이를 '1938년'으로 바꾸어 출제함), 1944년 용산·인천·함흥에 소방서가 증설되었습니다. 한편 관설 소방서와 별도로 운영된 <strong>민간·준민간 소방조직의 변천 순서</strong>는 개항기·일제강점기 초중반의 <strong>소방조(消防組)</strong> ➔ 중일전쟁 이후 일제 말기 전시 방공 체제로 개편된 <strong>경방단(警防團, 1939년)</strong> ➔ 해방 직후의 민간 <strong>소방대(1946년)</strong> ➔ 한국전쟁기의 <strong>방공단(1951년, 이후 1958년 소방법 제정으로 의용소방대 법제화)</strong> ➔ 대규모 사업장 자체 방호를 위해 도입된 <strong>청원소방원(1983년)</strong> 순서로 이어집니다(2025년 기출: <strong>경방단 ➔ 소방대 ➔ 방공단 ➔ 청원소방원</strong>).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            1945년 해방 이후 오늘날까지 대한민국 소방행정체제가 겪은 굵직한 전환 과정은 시험에서 시기순 배열과 사건 연도 매칭으로 매회 출제됩니다. ① <strong>미군정기 자치소방체제(1946년에서 1948년)</strong>: 미군정은 <strong>1946년</strong> 미국식 제도를 본떠 경찰로부터 소방을 독립시키고 중앙에는 <strong>중앙소방위원회</strong>, 지방에는 <strong>도소방위원회</strong>와 소방부를 설치하여 독자적인 자치소방제도를 시행하였으며, 이듬해인 <strong>1947년</strong>에는 중앙소방위원회의 집행기구로 <strong>중앙소방청</strong>을 설치하였습니다. ② <strong>정부 수립 후 국가소방체제(1948년에서 1971년)</strong>: 그러나 <strong>1948년 대한민국 정부 수립</strong>과 동시에 치안 유지를 우선시하면서 미군정기의 자치소방을 폐지하고 <strong>내무부 치안국 소방과</strong>로 흡수하여 다시 경찰 행정에 통합된 <strong>국가소방체제</strong>로 전환하였습니다(1948년 정부 수립 때 경찰에서 분리되었다거나 전국에 소방본부가 설치되었다거나 소방법이 제정되었다는 선지는 모두 오답이며, 우리나라 최초의 단독 법률인 <strong>｢소방법｣은 1958년</strong>에 제정·공포되었습니다!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            ③ <strong>국가·자치 이원적 소방체제(1972년에서 1991년)</strong>: 1971년 12월 서울 대연각호텔 대화재 참사를 계기로 대도시 소방력 강화가 시급해지자, <strong>1972년 서울과 부산</strong>에 처음으로 시 소속 소방본부를 설치하여 대도시(서울·부산 및 이후 직할시)는 자치소방으로, 그 밖의 도·시·군 지역은 국가소방으로 운영하는 <strong>이원화 시기</strong>가 열렸습니다. 이 시기인 <strong>1975년</strong>에는 내무부 민방위본부에 <strong>소방국</strong>이 설치되면서 중앙 소방조직이 경찰(치안본부)에서 완전히 분리되었고, <strong>1978년 중앙소방학교</strong>가 개교하였습니다. ④ <strong>전국 광역자치소방체제(1992년에서 2020년 3월) 및 국가직 일원화(2020년 4월 이후)</strong>: 지방자치제 부활에 발맞추어 <strong>1992년 1월 1일</strong> 전국 모든 시·도에 소방본부가 설치되면서 소방사무가 시·도 광역사무로 전면 전환되었습니다. 따라서 1995년 삼풍백화점 붕괴나 <strong>2003년 대구지하철 화재 당시의 소방행정체제는 모두 '광역자치소방체제'</strong>였습니다. 이후 대형 재난 대응력 강화를 위해 <strong>2004년 소방방재청</strong> 개청 ➔ <strong>2014년 국민안전처 중앙소방본부</strong> 개편 ➔ <strong>2017년 7월 행정안전부 산하 독립 외청인 소방청</strong> 출범을 거쳐, 시·도별 재정 격차를 해소하고 국가 단위 총력 대응을 구현하기 위해 마침내 <strong>2020년 4월 1일 전국 소방공무원 신분이 국가직으로 일원화</strong>되었습니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">시대 및 핵심 연도</th>
+                <th style="width:44%;">주요 소방관서·법령 및 행정체제 변천</th>
+                <th>출제 빈출 비교 및 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>고려시대</strong></td>
+                <td>소방을 <strong>소재(消災)</strong>라 칭함, <strong>금화원(금화제도)</strong> 운영 (우왕 때 화약 관서인 화통도감 신설)</td>
+                <td>독립된 상설 소방관서는 아직 없었음</td>
+              </tr>
+              <tr>
+                <td><strong>조선 세종 8년 (1426)</strong></td>
+                <td><strong>2월 금화도감</strong>(최초 독립 소방관서) 설치 ➔ 같은 해 <strong>6월 수성금화도감</strong>으로 통합 개편</td>
+                <td>세조 때 수성금화사, 성종 때 상비군 <strong>멸화군</strong>, 민간 <strong>오가작통제</strong></td>
+              </tr>
+              <tr>
+                <td><strong>갑오개혁 (1894년에서 1895년)</strong></td>
+                <td>내무아문 산하 경무청 설치 및 관제에서 <strong>'소방(消防)'</strong> 용어 최초 사용</td>
+                <td>독립 소방청이 아니라 경찰(경무청)에 배속됨</td>
+              </tr>
+              <tr>
+                <td><strong>일제강점기 (1925 / 1939)</strong></td>
+                <td><strong>1925년 최초의 소방서인 경성소방서</strong> 설치 ➔ <strong>1939년 부산·평양 소방서</strong> 개소 (1944년 용산·인천·함흥 증설)</td>
+                <td>1915년·소방본부(X) / 부산·평양 1938년(X) ➔ <strong>1939년(O)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>미군정기 (1946 / 1947)</strong></td>
+                <td><strong>1946년 중앙·도소방위원회</strong> 설치(경찰 분리·<strong>자치소방체제</strong>) ➔ <strong>1947년 중앙소방청</strong>(집행기구) 설치</td>
+                <td>1945년 동시 설치(X) ➔ <strong>1946년 위원회, 1947년 소방청</strong></td>
+              </tr>
+              <tr>
+                <td><strong>정부수립 (1948) / 1958</strong></td>
+                <td><strong>1948년 내무부 치안국 소방과</strong>(경찰 재통합·<strong>국가소방체제</strong>) / <strong>1958년 최초 단독 ｢소방법｣ 제정</strong></td>
+                <td>1948년 경찰 분리·소방본부 설치·소방법 제정(모두 X!)</td>
+              </tr>
+              <tr>
+                <td><strong>이원화 (1972년에서 1991년)</strong></td>
+                <td><strong>1972년 서울·부산 소방본부</strong> 설치(국가·자치 이원화), <strong>1975년 내무부 민방위본부 소방국</strong>, 1978년 중앙소방학교</td>
+                <td>1978년 중앙소방학교 설립 당시는 <strong>이원적 소방체제</strong></td>
+              </tr>
+              <tr>
+                <td><strong>광역화 (1992년)부터 현대까지</strong></td>
+                <td><strong>1992년 전국 시·도 소방본부(광역자치소방)</strong> ➔ <strong>2004년 소방방재청</strong> ➔ 2014년 국민안전처 ➔ <strong>2017년 소방청</strong> ➔ <strong>2020년 국가직화</strong></td>
+                <td>2003년 대구지하철 참사 당시는 <strong>광역자치소방체제</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 소방조직의 원리(가외성)·인사제도 및 법정 4대 소방신호</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>소방조직 원리·특성</strong>: 계층제·조정·<strong>명령 통일</strong>·통솔 범위 (명령 분산 ×) / 업무 특성: <strong>가외성·긴급성·신속대응성·전문성</strong></li>
+              <li><strong>소방공무원 신분·임용</strong>: 경력직 중 <strong>특정직 공무원</strong> / 시보임용: <strong>소방장 이하 6개월 · 소방위 이상 1년</strong> (<strong>정직·감봉·휴직·직위해제 기간은 시보 기간 불산입!</strong>)</li>
+              <li><strong>4대 소방신호 (시행규칙 별표 4)</strong>: <strong>경계·발화·해제·훈련신호</strong> (비상소집 시 <strong>훈련신호</strong> 사용 가능)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            현대 소방행정조직은 일반 사무 행정조직과 달리 24시간 불확실한 재난 현장에 즉각 투입되어야 하므로 <strong>가외성(Redundancy), 긴급성, 신속·대응성, 전문성(24시간 상시성)</strong>이라는 4대 업무적 특성을 지닙니다(2025년 기출). 특히 행정학자 마틴 랜도(Landau)가 강조한 <strong>가외성(중첩성·여분성)</strong>은 단 한 번의 실패가 곧 시민의 사망으로 이어지는 재난 현장의 특성상, 주펌프가 고장 나거나 동시다발 화재가 터져도 즉시 대응할 수 있도록 <strong>예비 펌프·예비 차량·교대 인력 등 여분의 자원을 중첩 확보하여 조직의 신뢰성과 안전성을 높이는 특성</strong>입니다. 또한 소방조직 편성의 기본 원리로는 권한과 책임을 상하 피라미드로 배열하는 <strong>계층제의 원리</strong>, 하위 부서 간 노력을 질서 있게 통합하는 <strong>조정의 원리</strong>, 기능별로 업무를 나누는 <strong>분업·전문화의 원리</strong>와 함께, 긴박한 화재 현장의 지휘 혼선을 막기 위해 한 명의 대원은 직근 상관 단 한 명에게서만 명령을 받아야 한다는 <strong>명령 통일의 원리(Unity of Command)</strong>, 그리고 지휘관 1인이 직접 효과적으로 통솔할 수 있는 부하의 수를 적정하게 유지해야 한다는 <strong>통솔 범위의 원리(Span of Control)</strong>가 적용됩니다(시험에서 '명령 분산의 원리'가 나오면 무조건 오답입니다!). 아울러 민간 자율 안전관리 조직으로서 주유취급소 등 위험물 제조소등에는 위험물안전관리자를, 소방안전관리대상물에는 소방안전관리자를, 시·도에는 소방업무를 보조하는 의용소방대를 두며, <strong>지정수량 3천 배 이상의 제4류 위험물을 취급하는 제조소·일반취급소(또는 50만 배 이상 옥외탱크저장소)</strong>가 있는 대규모 사업소에는 <strong>자체소방대</strong>를 설치합니다(모든 제4류 제조소에 자체소방대를 둔다는 선지는 오답입니다).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            다음으로 ｢국가공무원법｣ 및 ｢소방공무원법｣상 인사·임용·징계 제도의 핵심 조문을 정리해 봅시다. 소방공무원은 공무원 분류상 특수경력직이 아니라 <strong>경력직 공무원 중 '특정직 공무원'</strong>에 해당합니다. 임용권자는 <strong>대통령령</strong>으로 정하는 바에 따라 소속 소방공무원의 인사기록을 작성·보관하여야 하며(제18조), 소방청장은 소방청과 시·도 간 및 시·도 상호 간에 인사교류계획을 수립·실시할 수 있습니다(제17조). 또한 <strong>소방준감 이하 계급으로의 승진은 승진심사</strong>에 의하되, <strong>소방령 이하 계급으로의 승진은 대통령령으로 정하는 비율에 따라 승진심사와 승진시험을 병행</strong>할 수 있습니다(제12조). 특히 2026년 시험에서 정면 출제된 <strong>시보임용(제9조)</strong> 규정에 따르면, 신규채용 시 <strong>소방장 이하는 6개월간, 소방위 이상은 1년간 시보로 임용</strong>하며 그 기간이 만료된 다음 날에 정규 소방공무원으로 임용합니다. 이때 정상 근무한 시보 기간은 승진소요최저연수에 산입되지만, <strong>휴직기간·직위해제기간 및 징계에 의한 '정직 처분 또는 감봉 처분을 받은 기간'은 모두 시보임용 기간에 포함하지 아니합니다</strong>(감봉 처분 기간을 시보 기간에 포함한다고 하면 오답입니다!). 한편 공무원의 징계는 <strong>중징계(파면·해임·강등·정직)</strong>와 <strong>경징계(감봉·견책)</strong>로 구분되므로, '정직'은 경징계가 아니라 중징계에 속합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            마지막으로 화재예방, 소방활동 또는 소방훈련을 위하여 사용되는 <strong>소방신호의 종류와 방법</strong>은 ｢소방기본법｣ 제20조 및 같은 법 시행규칙 제10조·<strong>별표 4</strong>에 규정되어 있습니다. 법정 <strong>4대 소방신호</strong>는 ① 화재예방상 필요하거나 화재위험경보 시 발령하는 <strong>경계신호</strong>, ② 화재가 발생하였을 때 알리는 <strong>발화신호</strong>, ③ 소화활동이 필요 없다고 인정되는 때 알리는 <strong>해제신호</strong>, ④ 훈련상 필요하다고 인정되는 때 발령하는 <strong>훈련신호</strong>의 4가지입니다('비상신호·대피신호'나 재난관리 단계 명칭인 '예방·대비·대응·복구신호'는 법정 소방신호가 아니며, <strong>소방대의 비상소집을 하는 경우에는 훈련신호를 사용</strong>할 수 있습니다!). 신호 전달 수단으로는 <strong>타종신호, 사이렌신호, 그 밖의 신호(통풍대·게시판·기)</strong>가 있으며('음성신호'는 법정 수단이 아님), <strong>사이렌신호</strong>의 경우 <strong>경계신호는 '5초 간격을 두고 30초씩 3회'</strong>, 다급한 <strong>발화신호는 '5초 간격을 두고 5초씩 3회'</strong>, <strong>해제신호는 '1분간 1회'</strong>, <strong>훈련신호는 '10초 간격을 두고 1분씩 3회'</strong> 울립니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">신호 종별 (별표 4)</th>
+                <th style="width:28%;">타종신호 (종 치기)</th>
+                <th style="width:28%;">사이렌신호</th>
+                <th>그 밖의 신호 및 비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 경계신호</strong><br/><span class="text-xs text-slate-400">(예방·화재위험경보 시)</span></td>
+                <td><strong>1타와 연 2타를 반복</strong><br/>(○ ― ○ ― ○○)</td>
+                <td><strong>5초 간격</strong>을 두고 <strong>30초씩 3회</strong></td>
+                <td><strong>통풍대 · 게시판</strong><br/>(타종과 사이렌 섞지 말 것!)</td>
+              </tr>
+              <tr>
+                <td><strong>2. 발화신호</strong><br/><span class="text-xs text-slate-400">(화재 발생 시)</span></td>
+                <td><strong>난타(亂打)</strong><br/>(○○○○―)</td>
+                <td><strong>5초 간격</strong>을 두고 <strong>5초씩 3회</strong></td>
+                <td>가장 급박하므로 짧고 강하게 끊어 울림</td>
+              </tr>
+              <tr>
+                <td><strong>3. 해제신호</strong><br/><span class="text-xs text-slate-400">(소화활동 종료 시)</span></td>
+                <td><strong>상당한 간격</strong>을 두고 <strong>1타씩 반복</strong></td>
+                <td><strong>1분간 1회</strong></td>
+                <td><strong>기(旗)</strong> / 게시판 철거·통풍대 및 기를 내림</td>
+              </tr>
+              <tr>
+                <td><strong>4. 훈련신호</strong><br/><span class="text-xs text-slate-400">(소방훈련·비상소집 시)</span></td>
+                <td><strong>연 3타 반복</strong><br/>(○○○ ― ○○○)</td>
+                <td><strong>10초 간격</strong>을 두고 <strong>1분씩 3회</strong></td>
+                <td><strong>소방대 비상소집 시 훈련신호 사용 가능</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 시대별 한국 소방관서 변천 계통도 및 소방조직·인사·소방신호 핵심 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 한국 소방 역사의 결정적 전환점 및 민간 조직 변천</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">고려 소재·금화원 ➔ 조선 세종 8년(1426)</div>
+                <div>· 고려: 소방을 <strong>소재(消災)</strong>라 칭함, <strong>금화원</strong> 운영<br/>· <strong>1426년 2월 금화도감</strong>(최초 독립 소방관서) ➔ <strong>6월 수성금화도감</strong> 통합 (성종 때 상비군 <strong>멸화군</strong>, 민간 <strong>오가작통제</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">1894년 갑오개혁 ➔ 일제강점기 소방서</div>
+                <div>· <strong>1894년 갑오개혁</strong>: 경무청 설치·<strong>'소방'</strong> 용어 최초 등장<br/>· <strong>1925년 경성소방서</strong>(최초 소방서) ➔ <strong>1939년 부산·평양 소방서</strong> ➔ 1944년 용산·인천·함흥 증설</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">민간 소방조직 시대순 변천</div>
+                <div>개항·일제 초 <strong>소방조</strong> ➔ 일제 말 <strong>경방단(1939)</strong> ➔ 해방 후 <strong>소방대(1946)</strong> ➔ <strong>방공단(1951)/의용소방대(1958)</strong> ➔ <strong>청원소방원(1983)</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">해방 후 행정체제 및 중앙 조직 연표</div>
+                <div><strong>1946 자치소방(중앙·도소방위원회)</strong> ➔ <strong>1948 국가소방(내무부 치안국)</strong> · <strong>1958 소방법 제정</strong> ➔ <strong>1972 이원화(서울·부산) · 1975 내무부 소방국</strong> ➔ <strong>1992 광역자치소방</strong> ➔ <strong>2004 소방방재청 ➔ 2014 국민안전처 ➔ 2017 소방청 ➔ 2020 국가직화</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 연도 함정 주의: <strong>1426년 2월 금화도감 · 6월 수성금화도감</strong> / <strong>1925년 경성소방서 · 1939년 부산·평양</strong> / <strong>1946년 중앙소방위원회 · 1947년 중앙소방청</strong> / <strong>1958년 소방법 제정</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방조직 원리·특성 · 소방공무원 인사제도 및 법정 4대 소방신호</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">소방조직 원리·특성 및 공무원 인사·징계 (특정직 공무원)</div>
+                <ul class="schema-list">
+                  <li><strong>조직 원리·특성</strong>: 계층제·조정·<strong>명령 통일</strong>·통솔 범위 (명령 분산 ×) / 업무 특성: <strong>가외성(예비 자원 중첩)·긴급성·신속대응성·전문성</strong></li>
+                  <li><strong>시보임용·징계</strong>: <strong>소방장 이하 6개월 · 소방위 이상 1년</strong> (<strong>휴직·직위해제·정직·감봉 기간은 시보 기간 불산입!</strong>) / 중징계(파면·해임·강등·<strong>정직</strong>) vs 경징계(감봉·견책)</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">법정 4대 소방신호의 타종 · 사이렌 비교 (소방기본법 시행규칙 별표 4)</div>
+                <ul class="schema-list">
+                  <li><strong>경계신호</strong>: 타종(<strong>1타와 연 2타 반복</strong>) / 사이렌(<strong>5초 간격 30초씩 3회</strong>) / 통풍대·게시판</li>
+                  <li><strong>발화신호</strong>: 타종(<strong>난타</strong>) / 사이렌(<strong>5초 간격 5초씩 3회</strong>)</li>
+                  <li><strong>해제신호</strong>: 타종(<strong>상당한 간격 1타씩 반복</strong>) / 사이렌(<strong>1분간 1회</strong>) · <strong>훈련신호(비상소집 사용 가능)</strong>: 타종(<strong>연 3타 반복</strong>) / 사이렌(<strong>10초 간격 1분씩 3회</strong>)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (16문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 16문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방의 발전과정에 대한 설명 중 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">최초의 소방관서는 금화도감이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">일제강점기에 최초의 소방서가 설치되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">갑오개혁 이후 ‘소방’이라는 용어를 처음 사용하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">대한민국 정부수립과 동시에 소방본부가 설치되었다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">해방 이후의 소방조직 변천과정을 과거부터 현재까지 옳게 나열한 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 중앙에는 중앙소방위원회를 두고, 지방에는 도소방위원회를 두어 독립된 자치소방제도를 시행하였다.<br/>ㄴ. 소방행정이 경찰행정 사무에 포함되어 시·군까지 일괄적으로 관리하는 국가소방체제로 전환되었다.<br/>ㄷ. 서울과 부산은 소방본부를 설치하였고, 다른 지역은 국가소방체제로 국가소방과 자치소방의 이원화 시기였다.<br/>ㄹ. 소방사무가 시·도 사무로 전환되어 전국 시·도에 소방본부가 설치되었다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ→ ㄴ→ ㄷ→ ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ→ ㄴ→ ㄹ→ ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ→ ㄱ→ ㄷ→ ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ→ ㄱ→ ㄹ→ ㄷ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방 역사에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">조선 시대인 1426년(세종 8년) 금화도감이 설치되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">일제강점기인1925년 최초의 소방서가 설치되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">미군정 시대인1946년 중앙소방위원회가 설치되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">대한민국 정부 수립 이후인1948년 소방법이 제정·공포 되었다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2021년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방 역사에 대한 설명으로 옳은 것만을 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 고려시대에는 소방(消防)을 소재(消災)라 하였으며, 화통도감을 신설하였다.<br/>ㄴ. 조선시대 세종 8년에 금화도감을 설치하였다.<br/>ㄷ. 1915년에 우리나라 최초 소방본부인 경성소방서를 설치하였다.<br/>ㄹ. 1945년에 중앙소방위원회 및 중앙소방청을 설치하였다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2023년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방행정체제의 변천과정에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">중앙소방위원회 설치(1946) 당시에는 자치소방체제였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">정부수립(1948) 당시에는 국가소방체제였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">중앙소방학교 설립(1978) 당시에는 국가소방과 자치소방의 이원적 체제였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">대구지하철 화재 발생(2003) 당시에는 국가소방체제였다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2024년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방 조직의 설치가 시기순으로 옳게 나열된 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">내무부 소방과 · 내무부 소방국 · 도 소방위원회 · 시·도 소방본부</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">도 소방위원회 · 내무부 소방국 · 시·도 소방본부 · 소방 방재청</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">중앙소방위원회 · 내무부 소방국 · 도 소방위원회 · 소방 방재청</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">내무부 소방국 · 중앙소방위원회 · 소방방재청 · 소방청</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2024년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방행정조직의 발전 과정에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">1426년(세종 8년)에 독자적인 소방 관리를 위해 금화도감을 설치하였으며 이후 성문도감과 병합하여 수성금화도감으로 개편하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">1894년에 경무청이 설치되고, ‘소방’이란 용어가 처음으로 사용되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">1948년에 대한민국 정부가 수립되고 국가 소방체제로 전환하면서 소방행정조직이 경찰에서 분리되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">2017년에 ｢정부조직법｣ 개정으로 국민안전처를 해체하고 소방청을 개설하였다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2025년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방의 변천 과정에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">고려 시대: 소방을 소재(消災)라 하였고, 우리나라 소방 행정의 근원이라 볼 수 있는 금화원 제도를 시행하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">조선 시대: 5가를 1통으로 묶어 우물을 파고 물통을 준비 하도록 하는 5가 작통제를 시행하였다. 아울러 세종 8년 (1426년) 2월에 금화도감을 설치하였고, 6월에는 수성금화 도감으로 개편하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">일제 강점기: 1925년 최초의 소방서인 경성소방서가 설치되었다. 이후 1938년 부산 및 평양에 소방서가 개소되었으며, 1944년 용산·인천·함흥에 소방서가 증설되었다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">미군정 시대: 1946년 소방부 및 소방위원회를 설치하고, 소방조직 및 업무를 경찰로부터 독립하여 자치소방체제로 전환하였다. 1947년 중앙소방위원회의 집행기구로 소방청이 설치되었다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2025년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">민간 소방조직은 지속적으로 변천되어 왔다. 민간 소방 조직의 변천 순서로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">경방단 → 소방대 → 방공단 → 청원소방원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">방공단 → 청원소방원 → 경방단 → 소방대</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방대 → 방공단 → 청원소방원 → 경방단</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">청원소방원 → 경방단 → 소방대 → 방공단</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2018년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">민간 소방조직의 설치에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">주유취급소에는 위험물안전관리자를 선임해야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방안전관리대상물에는 소방안전관리자를 선임해야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방업무를 체계적으로 보조하기 위해 의용소방대를 설치한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제4류 위험물을 저장·취급하는 제조소에는 반드시 자체 소방대를 설치해야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2018년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재예방, 소방활동 또는 소방훈련을 위하여 사용되는 소방신호에 해당하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">대응 신호</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">경계 신호</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">복구 신호</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">대비 신호</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2020년 소방공채·경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">우리나라 소방행정에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">미군정 시대에는 소방행정을 경찰에서 분리하여 자치 소방행정체제를 도입하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">1972년 전국 시·도에 소방본부를 설치·운영하고 광역소방행정체제로 전환하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방공무원은 공무원 분류상 경력직 공무원 중 특수 경력직 공무원에 해당한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방공무원의 징계 중 경징계에는 정직, 감봉, 견책이 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2021년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방조직의 원리에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">조정의 원리</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">계층제의 원리</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">명령 분산의 원리</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">통솔 범위의 원리</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2023년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행규칙상 화재예방, 소방활동 또는 소방훈련을 위하여 사용되는 소방신호의 종류와 방법에 관한 내용으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방신호의 방법으로는 타종신호, 싸이렌신호, 음성신호가 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방대의 비상소집을 하는 경우에는 훈련신호를 사용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">타종신호로 하는 경우 경계신호는 5초 간격을 두고 30초씩 3회로 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방신호의 종류에는 비상신호, 훈련신호, 해제신호, 경계 신호가 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2025년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방행정조직의 업무적 특성을 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 가외성<br/>ㄴ. 긴급성<br/>ㄷ. 신속·대응성<br/>ㄹ. 전문성</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2026년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방공무원법｣상 임용 및 인사관리에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">임용권자(임용권을 위임받은 사람을 포함)는 대통령령으로 정하는 바에 따라 소속 소방공무원의 인사기록을 작성· 보관하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방준감 이하 계급으로의 승진은 승진심사에 의하여 한다. 다만, 소방령 이하 계급으로의 승진은 대통령령으로 정하는 비율에 따라 승진심사와 승진시험을 병행할 수 있다. 특별 유공자 등의 특별승진은 예외로 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방청장은 소방공무원의 능력을 발전시키고 소방사무의 연계성을 높이기 위하여 소방청과 시·도 간 및 시·도 상호 간에 인사교류가 필요하다고 인정하면 인사교류계획을 수립하여 이를 실시할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방공무원을 신규채용할 때에는 소방장 이하는 6개월간 시보로 임용하고, 소방위 이상은 1년간 시보로 임용하며, 그 기간이 만료된 다음 날에 정규 소방공무원으로 임용 한다. 정직 처분을 받은 기간은 시보임용 기간에 포함하지 아니하나, 감봉 처분을 받은 기간은 시보임용 기간에 포함 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>삼국시대에는 화재를 예방하기 위한 전문 소방관서가 설치되어 운영되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>고려시대에는 화재를 예방하고 재앙을 없앤다는 의미로 소방을 소재(消災)라 불렀으며, 소방행정의 근원이라 볼 수 있는 금화원(금화제도)을 시행하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>조선 세종 8년(1426년) 2월에 우리나라 최초의 독자적인 소방관서인 금화도감을 설치하였으며, 같은 해 6월 성문도감(수성도감)과 병합하여 수성금화도감으로 개편하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>세종 8년에 수성금화도감이 먼저 창설된 이후 금화도감으로 명칭이 환원되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>조선시대에는 5가를 1통으로 묶어 우물을 파고 물통을 준비하도록 하는 오가작통제를 시행하였으며, 상비 소방대인 멸화군을 운영하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1894년 갑오개혁으로 경무청이 설치되었으며, 이후 관제 개편 과정에서 근대적 의미의 '소방(消防)'이라는 용어가 처음으로 사용되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일제강점기인 1915년에 우리나라 최초의 소방본부인 경성소방서가 설치되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일제강점기인 1925년 경성소방서가 설치된 이후, 1939년에 부산 및 평양에 소방서가 개소되었고 1944년에 용산·인천·함흥에 소방서가 증설되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>우리나라 민간 관련 소방조직은 일제 말기 전시체제부터 '경방단(1939년) ➔ 소방대(1946년) ➔ 방공단(1951년) ➔ 청원소방원(1983년)' 순서로 변천하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>미군정 시대인 1946년 중앙소방위원회와 도소방위원회를 설치하여 경찰로부터 독립된 자치소방체제를 도입하였고, 1947년 중앙소방위원회의 집행기구로 중앙소방청을 설치하였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1948년 대한민국 정부가 수립되면서 소방행정조직이 경찰에서 분리되고 전국 시·도에 소방본부가 설치되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대한민국 정부 수립 직후인 1948년에 우리나라 최초의 단독 법률인 ｢소방법｣이 제정·공포되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1972년 서울과 부산에 소방본부가 설치되면서 대도시 자치소방과 일반 지역 국가소방이 병존하는 이원적 체제가 시작되었으며, 1978년 중앙소방학교 설립 당시에도 이원적 체제였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1992년 전국 시·도에 소방본부가 설치되어 광역자치소방체제로 전환되었으므로, 2003년 대구지하철 화재 발생 당시 우리나라의 소방행정은 광역자치소방체제였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>우리나라 소방 조직은 '도 소방위원회(1946년) ➔ 내무부 소방국(1975년) ➔ 전국 시·도 소방본부(1992년) ➔ 소방방재청(2004년) ➔ 국민안전처(2014년) ➔ 소방청(2017년)' 순으로 설치되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주유취급소에는 위험물안전관리자를, 소방안전관리대상물에는 소방안전관리자를 선임해야 하나, 제4류 위험물을 저장·취급하는 모든 제조소에 수량과 관계없이 자체소방대를 설치해야 하는 것은 아니다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방조직의 기본 원리에는 계층제의 원리, 명령 통일의 원리, 통솔 범위의 원리, 조정의 원리, 분업·전문화의 원리가 포함되며, '명령 분산의 원리'는 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>예측 불가능한 대형 재난에 대비하여 예비 장비와 교대 인력 등 여유 자원을 중첩 확보하는 가외성(Redundancy)을 비롯하여 긴급성, 신속·대응성, 전문성은 소방행정조직의 업무적 특성에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방공무원은 공무원 분류상 경력직 공무원 중 특정직 공무원에 해당하며, 징계 중 정직은 파면·해임·강등과 함께 중징계에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방공무원법｣상 신규채용 시 소방장 이하는 6개월간, 소방위 이상은 1년간 시보로 임용하며, 휴직기간·직위해제기간 및 정직 처분 또는 감봉 처분을 받은 기간은 모두 시보임용 기간에 포함하지 아니한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방공무원법｣상 소방준감 이하 계급으로의 승진은 승진심사에 의하되, 소방령 이하 계급으로의 승진은 대통령령으로 정하는 비율에 따라 승진심사와 승진시험을 병행할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행규칙｣상 화재예방, 소방활동 또는 소방훈련을 위하여 사용되는 법정 소방신호의 종류는 경계신호, 발화신호, 해제신호, 훈련신호의 4가지이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행규칙｣ 별표 4에 따라 소방대의 비상소집을 하는 경우에는 훈련신호를 사용할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[우리나라 소방의 발전과정] 대한민국 정부수립과 동시에 소방본부가 설치되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대한민국 정부 수립 이후인 1948년 소방법이 제정·공포되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[우리나라 소방행정체제의 변천과정] 대구지하철 화재 발생(2003) 당시에는 국가소방체제였다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방행정조직의 발전 과정] 1948년에 대한민국 정부가 수립되고 국가 소방체제로 전환하면서 소방행정조직이 경찰에서 분리되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[우리나라 소방의 변천 과정] 일제강점기: 1925년 최초의 소방서인 경성소방서가 설치되었다. 이후 1938년 부산 및 평양에 소방서가 개소되었으며, 1944년 용산·인천·함흥에 소방서가 증설되었다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물을 저장·취급하는 제조소에는 반드시 자체소방대를 설치해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방공무원의 징계 중 경징계에는 정직, 감봉, 견책이 있다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:④ · 02:① · 03:④ · 04:① · 05:④ · 06:② · 07:③ · 08:③ · 09:① · 10:④ · 11:② · 12:① · 13:③ · 14:② · 15:④ · 16:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:X · 02:O · 03:O · 04:X · 05:O · 06:O · 07:X · 08:O · 09:O · 10:O · 11:X · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 01 · 제1편 소방조직 및 재난관리론 · 제1장 (16문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 광역 자치소방본부 설치는 정부 수립 직후가 아니라 1972년 서울·부산을 시작으로 1992년 전국 시·도에 완비되었습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">최초의 소방관서는 금화도감이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 조선 세종 8년(1426년) 2월, 한양 대화재를 계기로 병조 산하에 우리나라 최초의 독립 소방관서인 금화도감이 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">일제강점기에 최초의 소방서가 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 일제강점기인 1925년 4월 1일 우리나라 최초의 근대적 상설 소방서인 경성소방서가 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">갑오개혁 이후 ‘소방’이라는 용어를 처음 사용하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 1894년 갑오개혁 이후 1895년 제정된 ｢경무청관제직장｣에서 근대적 의미의 '소방(消防)'이라는 행정 용어가 최초로 사용되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">대한민국 정부수립과 동시에 소방본부가 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 1948년 대한민국 정부 수립 당시에는 미군정기의 자치소방체제를 폐지하고 내무부 치안국 소방과 산하의 국가소방체제(경찰 통합)로 환원되었으며, 시·도 소방본부는 1972년 서울·부산에 처음 설치된 이후 1992년 광역자치소방체제 전환 시 전국에 설치되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q9</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ→ ㄴ→ ㄷ→ ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ㄱ(1946년 미군정기 중앙·도소방위원회 자치소방) ➔ ㄴ(1948년 정부수립 후 경찰 소속 국가소방) ➔ ㄷ(1972년 서울·부산 소방본부 설치로 국가·자치 이원화) ➔ ㄹ(1992년 전국 시·도 소방본부 설치 및 광역자치소방 전환) 순서가 정확합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ→ ㄴ→ ㄹ→ ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ(1972년 서울·부산 소방본부 이원화 시기)이 ㄹ(1992년 전국 시·도 소방본부 광역화 시기)보다 먼저입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ→ ㄱ→ ㄷ→ ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄱ(1946년 미군정 자치소방)이 ㄴ(1948년 정부수립 국가소방)보다 앞선 시기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ→ ㄱ→ ㄹ→ ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 1946년 미군정 자치소방( ㄱ )이 가장 먼저 시행되었으며, 이후 국가소방( ㄴ ), 이원화( ㄷ ), 광역자치소방( ㄹ ) 순으로 전개되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 대한민국 단독 ｢소방법｣(법률 제485호)은 정부 수립 연도인 1948년이 아니라 10년 뒤인 1958년에 제정·공포되었습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">조선 시대인 1426년(세종 8년) 금화도감이 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 조선 세종 8년(1426년) 2월에 우리나라 최초의 소방관청인 금화도감이 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">일제강점기인1925년 최초의 소방서가 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 일제강점기인 1925년 4월에 우리나라 최초의 근대 소방서인 경성소방서가 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">미군정 시대인1946년 중앙소방위원회가 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 미군정기인 1946년 5월 10일 자치소방체제 구축을 위해 중앙소방위원회와 도소방위원회가 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">대한민국 정부 수립 이후인1948년 소방법이 제정·공포 되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 우리나라 최초의 근대적 단독 법률인 ｢소방법｣(법률 제485호)은 1948년이 아니라 1958년 3월 11일에 제정·공포되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 고려시대 소재(消災) 개념과 조선 세종 8년 금화도감 설치의 정확성을 묻고, 경성소방서 설치 연도(1925년) 및 미군정 중앙소방위원회 설치 연도(1946년)의 숫자 왜곡 함정을 판별하는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ㄱ(고려시대에는 재앙을 물리친다는 뜻으로 소방을 '소재'라 불렀고, 우왕 때 최무선의 건의로 화통도감을 신설함)과 ㄴ(조선 세종 8년인 1426년 금화도감 설치)만 옳게 짝지어진 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ이 틀렸습니다. 경성소방서는 1915년이 아니라 1925년에 설치되었으며, 당시 소방본부가 아니라 최초의 '소방서'였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄷ(1915년 ➔ 1925년)과 ㄹ(1945년 ➔ 1946년 중앙소방위원회, 1947년 중앙소방청)이 모두 연도 함정으로 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄷ과 ㄹ이 연도 및 기관 성격 오기로 틀린 설명입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 2003년 대구지하철 화재 당시에는 1992년 이후 정착된 광역자치소방체제였습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">중앙소방위원회 설치(1946) 당시에는 자치소방체제였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 중앙소방위원회가 설치된 1946년(미군정기)은 경찰에서 독립된 자치소방체제 시기(1946년에서 1948년)였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">정부수립(1948) 당시에는 국가소방체제였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 대한민국 정부가 수립된 1948년은 내무부 치안국 산하로 편입된 국가소방체제 시기(1948년에서 1971년)였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">중앙소방학교 설립(1978) 당시에는 국가소방과 자치소방의 이원적 체제였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 중앙소방학교가 개교한 1978년은 서울·부산 등 대도시 자치소방과 일반 지역 국가소방이 병존하던 이원적 체제 시기(1972년에서 1991년)였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">대구지하철 화재 발생(2003) 당시에는 국가소방체제였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 대구지하철 참사가 발생한 2003년은 1992년 전국 시·도 소방본부 설치 이후이므로 국가소방체제가 아니라 '광역자치소방체제' 시기였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">내무부 소방과 · 내무부 소방국 · 도 소방위원회 · 시·도 소방본부</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 도 소방위원회(1946년)가 내무부 치안국 소방과(1948년) 및 내무부 소방국(1975년)보다 먼저 설치되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">도 소방위원회 · 내무부 소방국 · 시·도 소방본부 · 소방 방재청</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 도 소방위원회(1946년) ➔ 내무부 소방국(1975년) ➔ 전국 시·도 소방본부(1992년) ➔ 소방방재청(2004년) 순서로 시기순 배열이 정확합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">중앙소방위원회 · 내무부 소방국 · 도 소방위원회 · 소방 방재청</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 도 소방위원회(1946년)는 중앙소방위원회와 같은 해에 설치되었으므로 내무부 소방국(1975년)보다 앞섭니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">내무부 소방국 · 중앙소방위원회 · 소방방재청 · 소방청</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 중앙소방위원회(1946년)가 내무부 소방국(1975년)보다 먼저 설치되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q2</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 1948년 대한민국 정부 수립 당시 소방이 경찰에서 분리된 것이 아니라, 반대로 미군정기의 자치소방을 폐지하고 다시 경찰(내무부 치안국)로 통합되었다는 역사적 사실을 정확히 짚어내는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">1426년(세종 8년)에 독자적인 소방 관리를 위해 금화도감을 설치하였으며 이후 성문도감과 병합하여 수성금화도감으로 개편하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 1426년(세종 8년) 2월 금화도감이 설치되었고, 같은 해 6월 성문도감(수성도감)과 병합되어 수성금화도감으로 개편되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">1894년에 경무청이 설치되고, ‘소방’이란 용어가 처음으로 사용되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 1894년 갑오개혁으로 경무청이 설치되었으며, 이후 관제에서 '소방'이라는 용어가 최초로 사용되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">1948년에 대한민국 정부가 수립되고 국가 소방체제로 전환하면서 소방행정조직이 경찰에서 분리되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 1948년 대한민국 정부 수립 당시에는 미군정기에 경찰에서 분리되었던 소방조직이 다시 내무부 치안국 소방과로 흡수되어 경찰에 재통합되었습니다. 경찰에서 완전히 분리된 독자 부서화는 1975년 내무부 민방위본부 소방국 설치 이후입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">2017년에 ｢정부조직법｣ 개정으로 국민안전처를 해체하고 소방청을 개설하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 2017년 7월 ｢정부조직법｣ 개정으로 국민안전처를 해체하고 행정안전부 외청인 독립 중앙행정기관으로 소방청을 개청하였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 부산 및 평양 소방서 개소 연도는 1938년이 아니라 1939년입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">고려 시대: 소방을 소재(消災)라 하였고, 우리나라 소방 행정의 근원이라 볼 수 있는 금화원 제도를 시행하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 고려시대에는 소방을 재앙을 없앤다는 뜻의 소재(消災)라 하였고, 금화원 등 금화제도를 시행하여 소방행정의 기틀을 마련하였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">조선 시대: 5가를 1통으로 묶어 우물을 파고 물통을 준비 하도록 하는 5가 작통제를 시행하였다. 아울러 세종 8년 (1426년) 2월에 금화도감을 설치하였고, 6월에는 수성금화 도감으로 개편하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 조선시대에는 5집을 1통으로 묶어 우물을 파고 방화수를 비축하게 한 오가작통법을 시행하였으며, 세종 8년(1426년) 2월 금화도감 설치 후 6월 수성금화도감으로 개편하였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">일제 강점기: 1925년 최초의 소방서인 경성소방서가 설치되었다. 이후 1938년 부산 및 평양에 소방서가 개소되었으며, 1944년 용산·인천·함흥에 소방서가 증설되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 일제강점기인 1925년 최초의 경성소방서가 설치된 이후, 부산 및 평양에 소방서가 개소된 연도는 1938년이 아니라 '1939년'입니다(이후 1944년 용산·인천·함흥 증설).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">미군정 시대: 1946년 소방부 및 소방위원회를 설치하고, 소방조직 및 업무를 경찰로부터 독립하여 자치소방체제로 전환하였다. 1947년 중앙소방위원회의 집행기구로 소방청이 설치되었다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 미군정기인 1946년 소방부 및 소방위원회를 설치하여 자치소방체제로 전환하였고, 1947년 중앙소방위원회의 집행기구로 중앙소방청을 설치하였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q4</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">경방단 → 소방대 → 방공단 → 청원소방원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 일제 말기 전시 방공을 위해 소방조를 개편한 경방단(1939년) ➔ 해방 후 개편된 민간 소방대(1946년) ➔ 6·25 전쟁기 방공단(1951년) ➔ 직장 자체 방호를 위해 도입된 청원소방원(1983년) 순서가 정확합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">방공단 → 청원소방원 → 경방단 → 소방대</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 방공단(1951년)이나 청원소방원(1983년)은 일제강점기 경방단(1939년)보다 훨씬 뒤에 등장한 조직입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방대 → 방공단 → 청원소방원 → 경방단</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 경방단(1939년)이 해방 직후의 소방대(1946년)보다 앞섭니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">청원소방원 → 경방단 → 소방대 → 방공단</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 청원소방원(1983년)은 제시된 조직 중 가장 마지막에 도입된 제도입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q2</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 제18조에 따라 자체소방대는 모든 제4류 위험물 제조소가 아니라, 지정수량의 3천 배 이상인 제4류 위험물을 취급하는 일반취급소나 제조소 등 법정 대규모 사업소에 한하여 설치 의무가 부여됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">주유취급소에는 위험물안전관리자를 선임해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢위험물안전관리법｣ 제15조에 따라 주유취급소를 포함한 제조소등의 관계인은 위험물안전관리자를 선임해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방안전관리대상물에는 소방안전관리자를 선임해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢화재의 예방 및 안전관리에 관한 법률｣ 제24조에 따라 소방안전관리대상물의 관계인은 소방안전관리자를 선임해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방업무를 체계적으로 보조하기 위해 의용소방대를 설치한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ｢의용소방대 설치 및 운영에 관한 법률｣에 따라 소방업무를 체계적으로 보조하기 위하여 특별시·광역시·특별자치시·도·특별자치도에 의용소방대를 설치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제4류 위험물을 저장·취급하는 제조소에는 반드시 자체 소방대를 설치해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 제4류 위험물을 저장·취급하는 모든 제조소에 자체소방대를 두는 것이 아니라, ｢위험물안전관리법 시행령｣ 제18조에 따라 '제4류 위험물을 지정수량의 3천 배 이상 취급하는 제조소 또는 일반취급소' 등 대통령령이 정하는 대규모 사업소에만 설치 의무가 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법 시행규칙｣ 제10조 및 별표 4에 규정된 소방신호의 4대 종류[경계신호, 발화신호, 해제신호, 훈련신호]를 재난관리 4단계(예방·대비·대응·복구)와 섞어 출제한 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">대응 신호</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] '대응 신호'라는 소방신호는 존재하지 않으며, 대응은 재난관리 4단계 중 하나입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">경계 신호</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법 시행규칙｣ 제10조제1항에 따른 소방신호의 종류는 경계신호, 발화신호, 해제신호, 훈련신호의 4가지이므로 '경계 신호'가 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">복구 신호</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] '복구 신호'는 법정 소방신호에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">대비 신호</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] '대비 신호'는 법정 소방신호에 해당하지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소방공무원은 특수경력직이 아니라 경력직 공무원 중 '특정직 공무원'이며, 정직은 경징계가 아니라 중징계(파면·해임·강등·정직)에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">미군정 시대에는 소방행정을 경찰에서 분리하여 자치 소방행정체제를 도입하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 미군정기(1946년에서 1948년)에는 중앙소방위원회와 도소방위원회를 설치하여 소방행정을 경찰에서 분리하고 자치소방행정체제를 도입하였습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">1972년 전국 시·도에 소방본부를 설치·운영하고 광역소방행정체제로 전환하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 1972년에는 서울과 부산에만 소방본부가 설치(이원적 체제 시작)되었으며, 전국 시·도에 소방본부를 설치하여 전면 광역소방행정체제로 전환한 것은 '1992년'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방공무원은 공무원 분류상 경력직 공무원 중 특수 경력직 공무원에 해당한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방공무원은 공무원 분류상 특수경력직(정무직·별정직)이 아니라, 경력직 공무원(일반직·특정직) 중 '특정직 공무원'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방공무원의 징계 중 경징계에는 정직, 감봉, 견책이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 공무원의 징계는 중징계(파면·해임·강등·정직)와 경징계(감봉·견책)로 구분되므로, '정직'은 경징계가 아니라 중징계입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 현장 지휘 혼선을 막기 위해 명령은 한 사람의 상관에게서만 받아야 한다는 '명령 통일의 원리'가 적용되며, '명령 분산의 원리'는 존재하지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">조정의 원리</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 조정의 원리는 조직의 공동 목표 달성을 위해 하위 부서 간 행동과 노력을 질서 있게 통합하는 조직 원리입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">계층제의 원리</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 계층제의 원리는 권한과 책임의 정도에 따라 상하 직위를 피라미드 형태로 배열하는 조직 원리입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">명령 분산의 원리</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 소방조직은 일사불란한 현장 지휘를 위해 한 사람의 부하가 한 사람의 직속 상관에게서만 명령을 받아야 하는 '명령 통일의 원리(Unity of Command)'를 따르며, '명령 분산의 원리'는 잘못된 개념입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">통솔 범위의 원리</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 통솔 범위의 원리는 한 명의 지휘관이 직접적이고 효과적으로 지휘·감독할 수 있는 부하의 수를 적정하게 유지해야 한다는 원리입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방신호의 방법으로는 타종신호, 싸이렌신호, 음성신호가 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법 시행규칙｣ 별표 4에 따른 소방신호의 방법은 타종신호, 사이렌신호, 깃발신호, 게시판 등이 있으며 '음성신호'는 법정 방법에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방대의 비상소집을 하는 경우에는 훈련신호를 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법 시행규칙｣ 제10조제2항 및 별표 4 비고 제3호에 따라 '소방대의 비상소집을 하는 경우에는 훈련신호를 사용할 수 있다'고 명시되어 있으므로 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">타종신호로 하는 경우 경계신호는 5초 간격을 두고 30초씩 3회로 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 별표 4에서 '5초 간격을 두고 30초씩 3회'로 울리는 것은 타종신호가 아니라 '사이렌신호'의 경계신호 방법입니다(타종신호의 경계신호는 1타씩 반복하고 중간에 2연타).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방신호의 종류에는 비상신호, 훈련신호, 해제신호, 경계 신호가 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 소방신호의 4대 종류는 '경계신호, 발화신호, 해제신호, 훈련신호'이며, '비상신호'가 아니라 '발화신호'가 정확한 법정 명칭입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 특히 '가외성(Redundancy)'은 예측 불가능한 대형 재난과 동시다발 화재에 대비하여 평시 필요량보다 여유 있는 예비 소방력(예비펌프, 예비차량, 교대인력)을 확보해야 하는 소방조직의 핵심 특성입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄷ뿐만 아니라 ㄴ(긴급성)과 ㄹ(전문성)도 모두 소방행정조직의 핵심 특성입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 소방행정조직의 특성에는 ㄱ(가외성)과 ㄴ(긴급성)뿐만 아니라 ㄷ(신속·대응성)과 ㄹ(전문성·24시간 상시성)도 모두 포함되므로 ㄷ, ㄹ이 누락되어 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄱ(가외성)을 누락하였습니다. 가외성은 대형 재난 대비를 위해 여유 자원을 중첩 확보하는 소방행정의 대표적 특성입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 가외성( ㄱ ), 긴급성( ㄴ ), 신속·대응성( ㄷ ), 전문성( ㄹ ) 모두 소방행정조직의 필수적인 업무적 특성에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방공무원법｣ 제9조제3항에 따라 휴직기간, 직위해제기간 및 징계에 의한 '정직 처분 또는 감봉 처분을 받은 기간'은 모두 시보임용 기간에 산입하지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">임용권자(임용권을 위임받은 사람을 포함)는 대통령령으로 정하는 바에 따라 소속 소방공무원의 인사기록을 작성· 보관하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방공무원법｣ 제18조에 따라 임용권자는 대통령령으로 정하는 바에 따라 소속 소방공무원의 인사기록을 작성·보관하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방준감 이하 계급으로의 승진은 승진심사에 의하여 한다. 다만, 소방령 이하 계급으로의 승진은 대통령령으로 정하는 비율에 따라 승진심사와 승진시험을 병행할 수 있다. 특별 유공자 등의 특별승진은 예외로 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방공무원법｣ 제12조에 따라 소방준감 이하 계급으로의 승진은 승진심사에 의하되, 소방령 이하 계급으로의 승진은 대통령령으로 정하는 비율에 따라 승진심사와 승진시험을 병행할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방청장은 소방공무원의 능력을 발전시키고 소방사무의 연계성을 높이기 위하여 소방청과 시·도 간 및 시·도 상호 간에 인사교류가 필요하다고 인정하면 인사교류계획을 수립하여 이를 실시할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ｢소방공무원법｣ 제17조에 따라 소방청장은 소방청과 시·도 간 및 시·도 상호 간 인사교류가 필요하다고 인정하면 인사교류계획을 수립·실시할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방공무원을 신규채용할 때에는 소방장 이하는 6개월간 시보로 임용하고, 소방위 이상은 1년간 시보로 임용하며, 그 기간이 만료된 다음 날에 정규 소방공무원으로 임용 한다. 정직 처분을 받은 기간은 시보임용 기간에 포함하지 아니하나, 감봉 처분을 받은 기간은 시보임용 기간에 포함 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] ｢소방공무원법｣ 제9조제1항 및 제3항에 따라 소방장 이하는 6개월, 소방위 이상은 1년간 시보로 임용하며, 휴직기간·직위해제기간 및 징계에 의한 '정직 처분 또는 감봉 처분을 받은 기간'은 모두 시보임용 기간에 포함하지 아니합니다. 따라서 감봉 처분 기간을 포함한다고 한 서술은 명백한 오답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:X · 02:O · 03:O · 04:X · 05:O · 06:O · 07:X · 08:O · 09:O · 10:O · 11:X · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 01 · X 틀림</span>삼국시대에는 독립된 전문 소방관서가 존재하지 않았으며, 우리나라 최초의 독립 상설 소방관서는 조선 세종 8년(1426년)에 설치된 금화도감입니다.
+            <span class="ox-exp-src">소방역사 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>고려시대에는 불을 끄고 재앙을 물리친다는 뜻의 소재(消災)라는 용어를 사용하였고 금화원 등 금화제도를 운영하였습니다.
+            <span class="ox-exp-src">2021년 Q4 · 2025년 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>세종 8년(1426년) 2월 한양 대화재 직후 금화도감을 설치한 뒤, 같은 해 6월 수성금화도감으로 통합 개편하였습니다.
+            <span class="ox-exp-src">2018년 Q1 · 2024년 Q2 · 2025년 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>1426년(세종 8년) 2월 금화도감이 먼저 설치되었고, 같은 해 6월 수성도감과 합쳐져 수성금화도감으로 개편된 것입니다.
+            <span class="ox-exp-src">조선 소방제도 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>조선시대에는 민간 자치 방화 조직으로 오가작통제를 시행하였고, 성종 때에는 24시간 상시 화재를 감시·진압하는 상비군인 멸화군(50명)을 운영하였습니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>갑오개혁(1894년)으로 내무아문 산하 경무청이 설치되었고, 1895년 ｢경무청관제직장｣에서 '소방'이라는 행정 용어가 최초로 법제화되었습니다.
+            <span class="ox-exp-src">2018년 Q1 · 2024년 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 07 · X 틀림</span>경성소방서는 1915년이 아니라 1925년에 설치되었으며, 소방본부가 아닌 우리나라 최초의 근대식 상설 '소방서'입니다.
+            <span class="ox-exp-src">2020년 Q4 · 2021년 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>1925년 경성소방서 개서 이후 부산·평양 소방서가 개소된 연도는 1939년입니다(2025년 기출에서는 이를 1938년으로 바꾸어 오답 선지로 출제함).
+            <span class="ox-exp-src">2025년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>일제강점기 초기 소방조가 1939년 전시 방공을 위한 경방단으로 개편되었고, 해방 후 소방대(1946년), 6·25 전쟁기 방공단(1951년, 이후 1958년 의용소방대 법제화), 1983년 청원소방원 순으로 이어졌습니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>1946년 미군정은 중앙·도소방위원회를 두어 자치소방체제를 시행하였고, 1947년 집행기구로 중앙소방청을 설치하였습니다(1945년 해방 직후 동시 설치되었다는 선지는 오답).
+            <span class="ox-exp-src">2019년 Q9 · 2023년 Q1 · 2025년 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>1948년 정부 수립 당시에는 미군정기의 자치소방을 폐지하고 내무부 치안국 소방과로 흡수하여 경찰에 재통합된 국가소방체제로 전환되었으며, 전국 시·도 소방본부 완비는 1992년입니다.
+            <span class="ox-exp-src">2018년 Q1 · 2024년 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>우리나라 최초의 단독 법률인 ｢소방법｣(법률 제485호)은 1948년이 아니라 10년 뒤인 1958년에 제정·공포되었습니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>1972년 서울·부산 소방본부 설치부터 1991년까지는 국가소방과 자치소방의 이원적 체제 시기였으므로 1978년 중앙소방학교 개교 당시 역시 이원적 체제였습니다.
+            <span class="ox-exp-src">2019년 Q9 · 2023년 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>1992년부터 전국 시·도 광역자치소방체제가 시행되었으므로 2003년 대구지하철 참사 당시 국가소방체제였다고 하면 오답입니다.
+            <span class="ox-exp-src">2019년 Q9 · 2020년 Q8 · 2023년 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>주요 소방 조직의 역사적 설치 연도 순서를 정확히 나열한 설명입니다.
+            <span class="ox-exp-src">2024년 Q1 · Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>자체소방대는 모든 제4류 제조소가 아니라 '제4류 위험물을 지정수량의 3천 배 이상 취급하는 제조소 또는 일반취급소(또는 50만 배 이상 옥외탱크저장소)'가 있는 사업소에 설치합니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>재난 현장의 일사불란한 지휘를 위해 한 명의 대원은 직속 상관 한 명에게서만 명령을 받아야 한다는 '명령 통일의 원리'가 적용됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>가외성, 긴급성, 신속·대응성, 전문성(24시간 상시성)은 일반 행정조직과 구별되는 소방행정조직의 핵심 특성입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>소방공무원은 경력직 중 특정직 공무원이며, 징계는 중징계(파면·해임·강등·정직)와 경징계(감봉·견책)로 나뉩니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q8 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢소방공무원법｣ 제9조제1항 및 제3항에 따라 정직 처분 기간뿐만 아니라 감봉 처분을 받은 기간도 시보임용 기간에 산입하지 않습니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>｢소방공무원법｣ 제12조에 따른 법정 승진 기준이며, 소방청장은 소방청과 시·도 간 및 시·도 상호 간 인사교류계획을 수립·실시할 수 있습니다(제17조).
+            <span class="ox-exp-src">2026년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>｢소방기본법 시행규칙｣ 제10조제1항에 따른 4대 소방신호는 경계·발화·해제·훈련신호이며, 비상신호·대응신호·복구신호·대비신호 등은 해당하지 않습니다.
+            <span class="ox-exp-src">2018년 Q3 · 2023년 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>｢소방기본법 시행규칙｣ 별표 4 비고 제3호에 따라 소방대의 비상소집을 하는 경우에는 훈련신호를 사용할 수 있습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>1948년 대한민국 정부 수립 당시에는 미군정기의 자치소방체제를 폐지하고 내무부 치안국 소방과 산하의 국가소방체제(경찰 통합)로 환원되었으며, 시·도 소방본부는 1972년 서울·부산에 처음 설치된 이후 1992년 광역자치소방체제 전환 시 전국에 설치되었습니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q1 · 시대별 소방관서 및 용어 변천</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>우리나라 최초의 근대적 단독 법률인 ｢소방법｣(법률 제485호)은 1948년이 아니라 1958년 3월 11일에 제정·공포되었습니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q4 · 연도별 주요 소방 역사 사건 판별</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>대구지하철 참사가 발생한 2003년은 1992년 전국 시·도 소방본부 설치 이후이므로 국가소방체제가 아니라 '광역자치소방체제' 시기였습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q1 · 시대별 사건 당시의 소방행정체제 구분</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>1948년 대한민국 정부 수립 당시에는 미군정기에 경찰에서 분리되었던 소방조직이 다시 내무부 치안국 소방과로 흡수되어 경찰에 재통합되었습니다. 경찰에서 완전히 분리된 독자 부서화는 1975년 내무부 민방위본부 소방국 설치 이후입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q2 · 소방행정조직의 발전 과정과 경찰 분리 시점</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>일제강점기인 1925년 최초의 경성소방서가 설치된 이후, 부산 및 평양에 소방서가 개소된 연도는 1938년이 아니라 '1939년'입니다(이후 1944년 용산·인천·함흥 증설).
+            <span class="ox-exp-src">2025년 소방공채·경채 Q1 · 시대별 소방 변천사 및 일제강점기 소방서 개소 연도</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>제4류 위험물을 저장·취급하는 모든 제조소에 자체소방대를 두는 것이 아니라, ｢위험물안전관리법 시행령｣ 제18조에 따라 '제4류 위험물을 지정수량의 3천 배 이상 취급하는 제조소 또는 일반취급소' 등 대통령령이 정하는 대규모 사업소에만 설치 의무가 있습니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q2 · 민간 소방조직 및 자체소방대 설치 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>공무원의 징계는 중징계(파면·해임·강등·정직)와 경징계(감봉·견책)로 구분되므로, '정직'은 경징계가 아니라 중징계입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q8 · 소방행정 체제 및 소방공무원 인사·징계 제도</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

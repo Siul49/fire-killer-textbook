@@ -1,0 +1,2465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 14 · 인쇄용] 제4편 소방시설론 · 제3장 자동화재탐지설비 경계구역, 열·연기감지기 및 방재 연동제어 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY13_04_02_옥내소화전_펌프성능과_스프링클러설비_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 14</span>
+        <a href="DAY15_05_01_제1류_제2류_제3류_위험물과_반응식_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(6제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 14 · 제4편 소방시설론 · 제3장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(6문항)</span>
+            <span>□ OX 16제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">자동화재탐지설비 경계구역, 열·연기감지기 및 방재 연동제어</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+        
+        <div id="sec1" class="space-y-6">
+          <h2>제1절. 자동화재탐지설비의 경계구역 산정 기준 (NFPC 203 제4조 · NFTC 203 제2.1)</h2>
+          
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수평 경계구역 핵심 수치 (NFPC 203 제4조)</div><ul class="sidenote-list"><li>원칙: 2개 이상 건물·층 금지 (단, <strong>2개 층 합계 $500\text{m}^2$ 이하</strong>는 허용)</li><li>기본 면적·길이: <strong>$600\text{m}^2$ 이하</strong>, 한 변 <strong>$50\text{m}$ 이하</strong></li><li>주된 출입구에서 내부 전체 투시 시: <strong>$1,000\text{m}^2$ 이하</strong> (한 변 $50\text{m}$ 유지)</li></ul></div></aside>
+            <p class="prose-body">
+              <strong>자동화재탐지설비</strong>는 건축물 내부에서 발생하는 초기 화재의 열, 연기, 불꽃을 감지기(감지부)가 자동으로 포착하여 수신기(판단부)에 전달하고, 지구음향장치와 시각경보장치(경보부)를 통해 재실자에게 신속히 피난을 유도하는 경보설비의 중추 신경망이다. 만약 수만 제곱미터에 달하는 대형 건축물 전체를 단 하나의 감시 회로로 묶어 버린다면, 수신기에 화재 신호가 들어왔을 때 어느 층 어느 구역에서 불이 났는지 찾는 데만 골든타임을 허비하게 된다. 반대로 구역을 너무 잘게 쪼개면 배선 공사와 수신기 회로 비용이 기하급수적으로 치솟는다. 이러한 신속한 발화 위치 특정과 경제적 설비 구현의 균형점으로 제정된 법적 단위가 바로 <strong>자동화재탐지설비 및 시각경보장치의 화재안전성능기준</strong>(NFPC 203) 제4조의 <strong>경계구역</strong>(1회선이 유효하게 화재를 감지할 수 있는 구역) 설정 기준이다. 수평적 원칙으로 하나의 경계구역은 <strong>둘 이상의 건축물</strong> 또는 <strong>둘 이상의 층에 걸치지 아니하여야</strong> 한다(다만, <strong>2개 층의 바닥면적 합계가 500제곱미터 이하</strong>인 소규모 구획의 경우에만 예외적으로 2개 층을 하나의 경계구역으로 묶을 수 있으며, 3개 층 이상은 면적과 무관하게 절대 불가하다). 또한 하나의 경계구역 바닥면적은 <strong>600제곱미터 이하</strong>로 하고 한 변의 길이는 <strong>50미터 이하</strong>로 하되, 해당 특정소방대상물의 <strong>주된 출입구에서 내부 전체가 보이는 경우</strong>에는 한 변의 길이 50미터 범위 안에서 바닥면적을 <strong>1,000제곱미터 이하</strong>까지 완화할 수 있다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수직·특례 경계구역 핵심 수치</div><ul class="sidenote-list"><li>계단·경사로 수직 경계구역: 높이 <strong>$45\text{m}$ 이하</strong> (지하 2층 이상일 때 지하층 별도 구획)</li><li>외기 상시 개방 부분: 외기 면으로부터 <strong>$5\text{m}$ 미만</strong> 면적 제외</li><li>지하구 경계구역 길이: <strong>$700\text{m}$ 이하</strong></li></ul></div></aside>
+            <p class="prose-body">
+              연기와 열기가 굴뚝 효과(Stack effect)를 타고 수직으로 급격히 치솟는 공간은 일반 거실의 수평 경계구역과 완전히 분리하여 감시해야 한다. 따라서 계단(직통계단 외의 것에 한함), 경사로, 엘리베이터 권상기실·린넨슈트·파이프 피트 및 덕트 기타 이와 유사한 수직 관통 부분에 대하여는 별도로 경계구역을 설정하되, 하나의 수직 경계구역은 <strong>높이 45미터 이하</strong>로 하고, <strong>지하층의 계단 및 경사로</strong>(단, 지하층의 층수가 1개 층일 경우는 제외)는 지상층과 분리하여 또 별도로 하나의 경계구역으로 설정해야 한다. 또한 외기에 면하여 상시 개방된 부분이 있는 차고·주차장·창고 등에 있어서는 외기에 면하는 각 부분으로부터 <strong>5미터 미만</strong>의 범위 안에 있는 부분은 연기가 밖으로 흩어져 감지가 어려우므로 경계구역 면적 산정에서 제외하며, 스프링클러설비·물분무등소화설비 또는 제연설비의 화재감지장치로서 화재감지기를 설치한 경우의 경계구역은 방재 연동의 일치를 위해 해당 소화설비의 <strong>방사구역 또는 제연구역과 동일하게 설정</strong>할 수 있다. 아울러 전력·통신용 지하구의 경우에는 하나의 경계구역 길이를 <strong>700미터 이하</strong>로 설정한다.
+            </p>
+            
+          </div></div>
+
+        <div id="sec2" class="space-y-6">
+          <h2>제2절. 화재감지기(열·연기·불꽃)의 분류와 작동 원리 (NFPC 203 제3조 · NFTC 203 제2.4)</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17)</div><ul class="sidenote-list"><li><strong>차동식</strong>: 주위 온도가 <strong>일정 상승률 이상</strong>일 때 작동</li><li>&nbsp;&nbsp;- <strong>스포트형</strong>: <strong>일국소</strong>에서의 열효과에 의해 작동 (리크구멍)</li><li>&nbsp;&nbsp;- <strong>분포형</strong>: <strong>넓은 범위 내에서의 열효과 누적</strong>에 의해 작동 ➔ <strong>공기관식 · 열전대식(제벡 효과) · 열반도체식</strong> 3종</li><li><strong>정온식</strong>: 일국소 주위 온도가 <strong>일정 온도 이상</strong>일 때 작동 (스포트형·감지선형)</li><li><strong>보상식</strong>: 차동식 + 정온식 겸비 (스포트형)</li></ul></div></aside>
+            <p class="prose-body">
+              화재가 발생하면 가연물에서 먼저 미세한 연소 입자(연기)가 피어오르고, 이어서 화염(불꽃)과 대류열이 천장으로 치솟는다. 화재감지기는 무엇을 감지하느냐에 따라 크게 <strong>열감지기(차동식·정온식·보상식·열아날로그식), 연기감지기(이온화식·광전식), 불꽃감지기(자외선식·적외선식), 복합형 감지기</strong>로 분류되며, <strong>NFPC 203 제3조</strong>에 규정된 법정 정의와 물리적 작동 원리를 정확히 구분하는 것이 출제 1순위이다. 먼저 <strong>열감지기</strong> 중 <strong>차동식 감지기</strong>는 주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동하는 감지기로, 감지 범위에 따라 두 가지로 나뉜다. ① <strong>차동식 스포트형 감지기</strong>는 <strong>일국소(한 지점)에서의 열효과</strong>에 의하여 작동하는 감지기로, 감열실 내부 공기가 급격히 팽창할 때 다이아프램(파상판)이 밀려 올라가 접점을 닫되, 난방이나 계절 변화에 따른 완만한 온도 상승 시에는 팽창 공기를 미세한 <strong>리크구멍</strong>(Leak hole)으로 배출하여 비화재보(오작동)를 막는다. ② <strong>차동식 분포형 감지기</strong>는 <strong>넓은 범위 내에서의 열효과 누적</strong>에 의하여 작동하는 감지기로, 천장이 넓거나 높은 공간에 설치하며 감지 소자의 원리에 따라 <strong>공기관식</strong>(긴 동관 내부 공기의 팽창 압력으로 다이아프램을 작동), <strong>열전대식</strong>(서로 다른 두 금속 접점의 온도차로 기전력이 발생하는 <strong>제벡 효과[Seebeck effect]</strong> 이용), <strong>열반도체식</strong>(열에 의한 반도체 소자의 기전력 이용) 3가지로 세분된다. 반면 <strong>정온식 감지기</strong>는 일국소의 주위 온도가 <strong>일정 온도 이상</strong>이 되는 경우에 작동하는 감지기로(외관이 전선으로 된 <strong>감지선형</strong>과 바이메탈의 열팽창계수 차이에 의한 만곡 등을 이용하는 <strong>스포트형</strong>이 있음), 주방이나 보일러실처럼 평상시 온도 변화가 심해 차동식을 쓰면 오작동이 나는 장소에 설치한다. 그리고 차동식(온도 상승률 감지)과 정온식(일정 온도 도달 감지)의 기능을 하나로 결합하여 두 조건 중 어느 하나만 충족해도 작동하는 열감지기가 바로 <strong>보상식 스포트형 감지기</strong>이다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">연기감지기 · 불꽃감지기 핵심 포인트</div><ul class="sidenote-list"><li><strong>이온화식</strong>: 아메리슘($^{241}\text{Am}$) $\alpha$선에 의한 <strong>이온전류 감소</strong> 이용</li><li><strong>광전식</strong>: 빛의 <strong>산란</strong>(스포트형) 또는 <strong>감광·차폐</strong>(분리형·공기흡입형) 이용 (열감지기 아님! 2018년 Q20 · 2023년 Q23 · 2024년 Q18)</li><li><strong>불꽃감지기</strong>: 화염의 자외선($\text{UV}$)$\cdot$적외선($\text{IR}$) 감지 (고층 대공간·터널 적응)</li></ul></div></aside>
+            <p class="prose-body">
+              열보다 먼저 확산되는 연소 생성물이나 복사선을 포착하는 <strong>연기감지기</strong>와 <strong>불꽃감지기</strong>는 인명 대피가 시급한 계단·복도·취침시설이나 층고가 높은 대공간에서 결정적인 역할을 수행한다. <strong>연기감지기</strong>는 작동 원리에 따라 <strong>이온화식</strong>과 <strong>광전식</strong>으로 나뉜다(시험에서 '광전식'을 열감지기나 차동식 분포형의 일종으로 끼워 넣는 함정이 가장 빈번하다!). 첫째, <strong>이온화식 스포트형 감지기</strong>는 이온실 내부에 극미량의 방사성 동위원소인 <strong>아메리슘($^{241}\text{Am}$)</strong>을 넣어 방출되는 알파($\alpha$)선으로 공기를 이온화시켜 평상시 미세 전류가 흐르게 두었다가, 화재로 연기 입자가 유입되어 이온과 결합하면 이동 속도가 느려져 <strong>이온전류가 감소하는 현상</strong>을 감지한다. 눈에 보이지 않는 아주 작은 연소 초기 입자(0.01에서 1마이크로미터 크기) 감지에 탁월하다. 둘째, <strong>광전식 감지기</strong>는 연기 입자에 의한 빛의 <strong>산란(산란광식)</strong> 또는 <strong>차폐(감광식)</strong>를 이용한다. 일반 거실·복도 천장에 다는 <strong>광전식 스포트형</strong>은 암상자 내부에서 발광다이오드($\text{LED}$)의 빛이 평상시에는 수광소자(광전셀)에 닿지 않도록 굴절시켜 두었다가, 연기 입자가 들어와 빛이 부딪히며 흩어지는 <strong>산란광</strong>이 수광소자에 입사될 때 작동한다. 반면 송광부와 수광부를 멀리 마주 보게 설치하는 <strong>광전식 분리형</strong>이나 <strong>광전식 공기흡입형</strong>은 광축 사이에 연기가 끼어 수광부로 들어오는 빛의 양이 줄어드는 <strong>감광(차폐) 현상</strong>을 이용한다. 마지막으로 <strong>불꽃감지기</strong>는 화염에서 직접 방출되는 <strong>자외선($\text{UV}$)</strong>이나 <strong>적외선($\text{IR}$, 이산화탄소 공명방사 파장대인 약 4.3마이크로미터 대역의 불꽃 깜빡임 주파수 등)</strong>의 복사에너지 변화를 빛의 속도로 감지하므로, 열이나 연기가 천장까지 올라가는 데 오랜 시간이 걸리는 고층 체육관·전시장·문화집회시설 및 폭발성 위험물 저장소에 최적으로 사용된다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 화재감지기(열감지기·연기감지기·불꽃감지기)의 법정 정의 및 작동 원리 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>대분류</th>
+                  <th>세부 종류</th>
+                  <th>NFPC 203 제3조 법정 정의 (2024년 Q17)</th>
+                  <th>물리·화학적 작동 메커니즘 및 세부 구분 (2018 Q20 · 2023 Q23)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="4">열감지기<br/>(Heat Detector)</td>
+                  <td class="font-bold text-slate-200">차동식 스포트형</td>
+                  <td>주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동 (<strong>일국소</strong>에서의 열효과에 의해 작동)</td>
+                  <td>· 감열실 공기 팽창 ➔ 다이아프램이 접점 폐쇄<br/>· <strong>리크구멍(Leak hole)</strong>으로 완만한 온도 상승 시 비화재보 방지</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">차동식 분포형</td>
+                  <td>주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동 (<strong>넓은 범위 내에서의 열효과 누적</strong>에 의해 작동)</td>
+                  <td>· <strong>공기관식</strong>: 동관 내부 공기 팽창압 이용<br/>· <strong>열전대식</strong>: 이종 금속 접점 열기전력(<strong>제벡 효과</strong>) 이용<br/>· <strong>열반도체식</strong>: 반도체 열기전력 이용 (※ 광전식은 제외!)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">정온식<br/>(스포트형·감지선형)</td>
+                  <td>일국소의 주위 온도가 <strong>일정 온도 이상</strong>이 되는 경우에 작동 (전선 형태는 감지선형, 그 밖은 스포트형)</td>
+                  <td>· 바이메탈 만곡, 가용절연물 용융, 액체 팽창 등 이용<br/>· 주방·보일러실 등 평상시 급격한 온도 변화 장소에 설치</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">보상식 스포트형</td>
+                  <td><strong>차동식과 정온식의 성능을 겸비</strong>하여 두 조건 중 어느 하나만 충족해도 작동</td>
+                  <td>· 급격한 온도 상승(차동식)과 완만한 고온 축적(정온식)을 모두 포착</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="2">연기감지기<br/>(Smoke Detector)</td>
+                  <td class="font-bold text-slate-200">이온화식 스포트형</td>
+                  <td>일국소의 주위 공기가 일정 농도의 연기를 포함하게 되는 경우에 이온전류 변화로 작동</td>
+                  <td>· 방사성 동위원소 <strong>아메리슘($^{241}\text{Am}$)</strong>의 알파($\alpha$)선 전리작용 이용<br/>· 연기 입자 유입 시 <strong>이온전류 감소</strong> 감지 (초기 미립자 연기 우수)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">광전식<br/>(스포트·분리·공기흡입)</td>
+                  <td>주위 공기가 일정 농도의 연기를 포함하게 되는 경우에 광전소자에 입사되는 광량 변화로 작동</td>
+                  <td>· <strong>광전식 스포트형</strong>: 연기 입자에 의한 <strong>산란광</strong> 증가 감지<br/>· <strong>광전식 분리형·공기흡입형</strong>: 연기 차폐에 의한 <strong>감광률</strong> 증가 감지</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">불꽃감지기<br/>(Flame Detector)</td>
+                  <td class="font-bold text-slate-200">자외선식 · 적외선식 · 복합식</td>
+                  <td>화염에서 방사되는 자외선 또는 적외선의 변화가 일정량 이상이 되는 경우에 작동</td>
+                  <td>· 화염의 자외선($\text{UV}$) 또는 적외선($\text{IR}$, $\text{CO}_2$ 공명방사 파장) 감지<br/>· 층고가 높은 대공간, 터널, 폭발성 위험물 시설에 최적</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        <div id="sec3" class="space-y-6">
+          <h2>제3절. 수신기(P형·R형), 화재알림설비 및 우선경보방식 (NFPC 203 · NFPC 207 · NFTC 202·203)</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수신기 및 화재알림설비 기출 급소</div><ul class="sidenote-list"><li><strong>P형 수신기 (2024년 Q18)</strong>: 경계구역별 <strong>1대 1 접점방식</strong> 수신 (중소형 건물)</li><li><strong>R형 수신기 (2024년 Q18)</strong>: <strong>중계기</strong>를 통한 <strong>다중전송방식(주소형 통신)</strong> 수신 ('R형이 1대 1 접점방식' = X!)</li><li><strong>화재알림설비 (NFPC 207, 2025년 Q25)</strong>: 화재알림형 감지기·단독경보형감지기·중계기·수신기·원격감시서버로 구성 ('화재알림형 비상경보장치'라는 용어는 없음!)</li></ul></div></aside>
+            <p class="prose-body">
+              감지기나 수동 <strong>발신기</strong>(수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치)에서 보낸 신호를 받아 화재 여부를 판단하고 경보·방재 설비를 연동시키는 두뇌 장치가 바로 <strong>수신기</strong>이다. 수신기는 신호 전송 방식에 따라 <strong>P형(Proprietary) 수신기</strong>와 <strong>R형(Record/Multiplex) 수신기</strong>로 양분되며, 두 방식의 신호 체계를 뒤바꾸는 선지가 자주 출제된다. <strong>P형 수신기</strong>는 감지기 또는 발신기로부터 발하는 화재신호를 경계구역별로 각각 독립된 전선을 통해 <strong>1대 1 접점방식(고유신호)</strong>으로 직접 수신하여 화재 발생 구역을 표시등으로 나타내는 수신기이다. 구조가 직관적이고 유지관리가 쉬워 중소규모 건축물에 널리 쓰이지만, 경계구역 수가 늘어날수록 수신기로 들어오는 전선 가닥수가 비례하여 급증한다는 한계가 있다. 이를 해결하기 위해 개발된 <strong>R형 수신기</strong>는 감지기 또는 발신기에서 발하는 신호를 현장의 <strong>중계기</strong>(Repeater)가 먼저 수집한 뒤, 이를 <strong>다중전송방식(고유 주소형 디지털 통신 신호)</strong>으로 변환하여 소수의 통신선만으로 수신기에 전송·기록·표시하는 수신기이다. R형 수신기는 선로 수를 획기적으로 줄일 뿐만 아니라 스프링클러, 제연설비, 방화셔터 등을 정밀하게 개별 제어할 수 있어 초고층·대형 복합 건축물에 필수적으로 채택된다. 또한 수신기가 화재신호를 수신하면 음향장치(지구경종·사이렌)와 함께 <strong>시각경보기</strong>(청각장애인에게 <strong>점멸 형태의 빛</strong>으로 시각경보를 하는 장치, 바닥으로부터 2미터 이상 2.5미터 이하 설치) 및 <strong>비상방송설비</strong>(수신기에 화재신호가 도달하면 음성 방송으로 화재 사실을 알리는 설비)가 즉시 연동하여 작동한다. 아울러 전통시장 등 화재 취약 구역에서 관계인과 소방관서에 실시간으로 화재정보를 통보하기 위해 제정된 <strong>화재알림설비의 화재안전성능기준</strong>(NFPC 207) 제3조에서는 ① <strong>발신기</strong>, ② <strong>화재알림형 감지기</strong>, ③ <strong>화재알림형 단독경보형감지기</strong>(열·연기·불꽃 등을 자동 감지하여 <strong>자체에 내장된 음향장치로 경보</strong>하고 화재정보값 및 화재신호 등을 유무선으로 송수신하는 감지기), ④ <strong>화재알림형 중계기</strong>(화재알림형 감지기·발신기 또는 전기적 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치), ⑤ <strong>화재알림형 수신기</strong>, ⑥ <strong>원격감시서버</strong>(원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호·상태신호 등을 원격으로 감시하기 위한 서버)를 규정하고 있으며, 법령상 <strong>'화재알림형 비상경보장치'라는 용어는 존재하지 않는다</strong>.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">현행 우선경보방식 계산 공식 (2026년 Q25)</div><ul class="sidenote-list"><li><strong>5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과)</strong>: 발화층 + <strong>직상 1개 층</strong> (1층 발화 시 지하 전 층 추가)</li><li><strong>11층 이상 [공동주택 16층 이상]</strong>: 발화층 + <strong>직상 4개 층</strong> (1층 발화 시 지하 전 층 추가)</li><li><strong>실전 적용 (지상 20층 건물, 지상 2층 발화)</strong>: <strong>지상 2층 + 지상 3·4·5·6층</strong> (지상 1층·지하층 제외!)</li></ul></div></aside>
+            <p class="prose-body">
+              마지막으로 자동화재탐지설비(NFTC 203)와 비상방송설비(NFTC 202)에서 가장 중요한 최신 개정 출제 포인트가 바로 <strong>우선경보방식</strong>의 경보 대상 층 산정 기준이다. 층수가 5층 미만이거나 연면적이 3,000제곱미터 이하인 소규모 건축물은 화재 시 전 층에 동시에 경보를 울리는 <strong>일제경보방식</strong>을 적용한다. 그러나 <strong>층수가 5층 이상으로서 연면적이 3,000제곱미터를 초과하는 특정소방대상물</strong>에서 전 층에 동시에 사이렌을 울리면 모든 층의 재실자가 한꺼번에 피난계단으로 몰려 압사 사고와 병목 현상(패닉)이 발생할 위험이 크다. 따라서 위험도가 가장 높은 발화층과 그 직상부 층부터 순차적으로 대피시키는 <strong>우선경보방식</strong>을 적용하는데, 2022년 말 화재안전기술기준(NFTC 202·203) 개정으로 <strong>11층 이상(공동주택은 16층 이상) 고층 건축물의 직상 경보 범위가 기존 1개 층에서 '직상 4개 층'으로 대폭 확대</strong>되었다. 현행 기준을 정확히 나누어 보면, 첫째 <strong>층수가 5층 이상 10층 이하(공동주택은 5층 이상 15층 이하)로서 연면적 3,000제곱미터를 초과</strong>하는 경우에는 ① 지상 2층 이상 발화 시 <strong>발화층 및 그 직상층</strong>, ② 지상 1층 발화 시 <strong>발화층(1층), 그 직상층(2층) 및 지하층 전 층</strong>, ③ 지하층 발화 시 <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보를 발한다. 둘째, <strong>층수가 11층 이상(공동주택은 16층 이상)로서 연면적 3,000제곱미터를 초과</strong>하는 경우에는 ① 지상 2층 이상 발화 시 <strong>발화층 및 그 직상 4개 층</strong>, ② 지상 1층 발화 시 <strong>발화층(1층), 그 직상 4개 층(2층·3층·4층·5층) 및 지하층 전 층</strong>, ③ 지하층 발화 시 <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보를 발한다. 예를 들어 <strong>지하 3층·지상 20층인 건물(11층 이상 대상)의 지상 2층에서 화재가 발생</strong>했다면, 발화층인 <strong>지상 2층</strong>과 그 직상 4개 층인 <strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>(총 5개 층)에만 우선경보를 발해야 하며, 직하층인 지상 1층이나 지하층은 경보 대상에 포함되지 않는다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 수신기(P형·R형) 방식 비교 및 현행 우선경보방식(NFTC 202·203) 층수·발화위치별 경보 대상 층 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>구분 영역</th>
+                  <th>세부 기준 및 조건</th>
+                  <th>신호 전송 방식 또는 발화 층별 의무 경보 대상 층 (기출 1순위)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="2">수신기 방식 비교<br/>(2024년 Q18)</td>
+                  <td class="font-bold text-slate-200">P형 수신기 (Proprietary)</td>
+                  <td>· 감지기·발신기로부터 경계구역별로 <strong>1대 1 접점방식(고유신호)</strong>으로 직접 수신<br/>· 구조 단순·유지보수 용이, 경계구역 증가 시 배선 수 급증 (중소형 건물용)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">R형 수신기 (Record/Multiplex)</td>
+                  <td>· 감지기·발신기 신호를 <strong>중계기(Repeater)</strong>를 거쳐 <strong>다중전송방식(주소형 통신 신호)</strong>으로 수신·기록<br/>· 선로 수 대폭 절감 및 복합 방재 연동 용이 (초고층·대형 건물용)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="3">우선경보방식 I<br/><strong>5층 이상 10층 이하</strong><br/>(공동주택 15층 이하)<br/>[연면적 $3,000\text{m}^2$ 초과]</td>
+                  <td class="font-bold text-slate-200">지상 2층 이상에서 발화 시</td>
+                  <td>· <strong>발화층 및 그 직상층(1개 층)</strong>에 경보</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">지상 1층에서 발화 시</td>
+                  <td>· <strong>발화층(1층), 그 직상층(2층) 및 지하층 전 층</strong>에 경보</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">지하층에서 발화 시</td>
+                  <td>· <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300" rowspan="3">우선경보방식 II<br/><strong>11층 이상</strong><br/>(공동주택 <strong>16층 이상</strong>)<br/>[2026년 Q25 기출]</td>
+                  <td class="font-bold text-amber-300">지상 2층 이상에서 발화 시</td>
+                  <td>· <strong>발화층 및 그 직상 4개 층</strong>에 경보<br/>&nbsp;&nbsp;(예: 지상 20층 건물의 지상 2층 발화 ➔ <strong>지상 2층, 3층, 4층, 5층, 6층</strong> 경보 / 1층·지하층 제외!)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">지상 1층에서 발화 시</td>
+                  <td>· <strong>발화층(1층), 그 직상 4개 층(2층·3층·4층·5층) 및 지하층 전 층</strong>에 경보</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-slate-200">지하층에서 발화 시</td>
+                  <td>· <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 자동화재탐지설비 경계구역 설정 기준 및 감지기·수신기·비상방송 연동 계통도</span>
+        </div>
+                <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 자동화재탐지설비 수평·수직 경계구역 기준 및 열·연기감지기 작동 원리</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">수평 · 수직 경계구역 핵심 수치</div>
+                <div>· 수평: <strong>600 m<sup>2</sup> 이하</strong>(출입구 투시 시 <strong>1,000 m<sup>2</sup></strong>), 한 변 <strong>50 m 이하</strong>(2개층 합 500 m<sup>2</sup> 통합)<br/>· 수직: <strong>45 m 이하</strong>(아파트 <strong>10층 이하</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">차동식 스포트형 vs 분포형 3종</div>
+                <div>· 스포트형: 다이어프램 + <strong>리크구멍(비화재보 방지)</strong><br/>· 분포형: <strong>공기관식 · 열전대식(제벡효과) · 열반도체식</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">정온식 vs 보상식 열감지기</div>
+                <div>· <strong>정온식</strong>: 일정 온도 도달 시 바이메탈 만곡(주방·보일러실)<br/>· <strong>보상식</strong>: 차동+정온 겸용(<strong>스포트형만 존재</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">이온화식 vs 광전식 연기감지기</div>
+                <div>· <strong>이온화식</strong>: 아메리슘(<sup>241</sup>Am) <strong>이온전류 감소</strong><br/>· <strong>광전식</strong>: 적외선 <strong>산란광 또는 감광률</strong> 감지</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 수평·수직 경계구역: 수평 <strong>600㎡ 이하(출입구 투시 시 1,000㎡ 이하)·한 변 50m 이하</strong> / 수직(계단·경사로) <strong>높이 45m 이하</strong> / 교차회로 방식 적용 설비: <strong>준비작동식·일제살수식·가스계·분말</strong> (습식·건식 제외)!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 P형·R형 수신기 · 시각경보기 및 비상방송 우선경보방식(NFPC 최신 기준)</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">P형(접점식) vs R형(다중전송식) 수신기 &amp; 시각경보기 설치 높이</div>
+                <ul class="schema-list">
+                  <li><strong>P형</strong>: 일대일 개별 선로(소규모) vs <strong>R형</strong>: 중계기 디지털 주소 다중전송(배선 가닥수 절감, 고층·대형 건물 적합)</li>
+                  <li><strong>시각경보기</strong>: 바닥으로부터 <strong>2 m 이상 2.5 m 이하</strong> 설치 (천장 높이 2 m 이하면 천장에서 <strong>0.15 m 이내</strong>)</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">비상방송 우선경보방식 대상 및 발화 층별 경보 범위 · 화재알림설비(NFPC 207)</div>
+                <ul class="schema-list">
+                  <li>적용 대상: <strong>11층 이상(공동주택 16층 이상) 또는 지하 3층 이상</strong> / <strong>화재알림설비</strong>: 경보 + 관계인 통보 + <strong>119 자동 신고</strong></li>
+                  <li>경보 층: ① <strong>2층 이상 발화 = 발화층 + 직상 4개 층</strong> / ② <strong>1층 발화 = 1층 + 직상 4개 층 + 지하층 전체</strong> / ③ <strong>지하 발화 = 발화층 + 직상층 + 기타 지하층 전체</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (6문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 6문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">열감지기의 종류가 아닌 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">보상식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">정온식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">광전식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">차동식</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2023년 소방공채·경채 Q23</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">차동식 분포형 감지기의 종류에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">공기관식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">열전대식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">열반도체식</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">광전식</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2024년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">주위 온도가 일정 상승률 이상 되는 경우에 작동하는 감지기로서 넓은 범위 내에서 열효과 누적에 의해 작동하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">차동식 분포형 감지기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">차동식 스포트형 감지기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">정온식 스포트형 감지기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">정온식 감지선형 감지기</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2024년 소방공채·경채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방시설 중 경보설비에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">시각경보기는 청각장애인에게 점멸 형태로 시각경보를 하는 장치이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">R형 수신기는 감지기 또는 발신기에서 1 : 1 접점방식으로 전송된 신호를 수신한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">비상방송설비는 수신기에 화재신호가 도달하면 방송으로 화재 사실을 알리는 설비이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">이온화식 감지기와 광전식 감지기는 연기를 감지하여 화재신호를 발하는 장치이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2025년 소방공채·경채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재알림설비에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“발신기”란 수동누름버튼 등의 작동으로 화재신호를 수신 기에 발신하는 장치를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“원격감시서버”란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“화재알림형 비상경보장치”란 화재알림형 감지기, 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것 으로 화재발생 상황을 경보하는 장치를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“화재알림형 중계기”란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2026년 소방공채·경채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">지하 3층, 지상 20층인 건물의 지상 2층에서 화재가 발생한 경우, 비상방송설비를 통해 화재경보를 발하여야 하는 층을 모두 나열한 것은? (단, 해당 건물은 현행 화재안전기술기준이 적용된 건물임)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">지상 2층, 지상 3층</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지하 전 층, 지상 1층, 지상 2층, 지상 3층</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지상 2층, 지상 3층, 지상 4층, 지상 5층, 지상 6층</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">지상 1층, 지상 2층, 지상 3층, 지상 4층, 지상 5층, 지상 6층</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 16제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재탐지설비의 하나의 경계구역은 둘 이상의 건축물 또는 둘 이상의 층에 걸치지 아니하여야 하나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에는 2개 층을 하나의 경계구역으로 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>하나의 경계구역의 바닥면적은 600제곱미터 이하, 한 변의 길이는 50미터 이하로 하되, 주된 출입구에서 내부 전체가 보이는 경우에는 한 변의 길이 50미터 범위 내에서 1,000제곱미터 이하로 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>계단 및 경사로의 수직 경계구역은 높이 45미터 이하를 하나의 경계구역으로 하며, 지하구의 경우 하나의 경계구역 길이는 700미터 이하로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재감지기 중 차동식, 정온식, 보상식은 열감지기에 해당하며, 이온화식과 광전식은 연기감지기에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>차동식 분포형 감지기는 넓은 범위 내에서의 열효과 누적에 의하여 작동하며, 그 종류에는 공기관식, 열전대식, 열반도체식이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주위 온도가 일정 상승률 이상이 되는 경우에 작동하는 감지기로서 넓은 범위 내에서 열효과 누적에 의해 작동하는 것은 '차동식 분포형 감지기'이며, 일국소에서의 열효과에 의해 작동하는 것은 '차동식 스포트형 감지기'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재탐지설비에서 감지기 또는 발신기로부터 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 중계기를 통해 다중전송(주소형 통신) 방식으로 신호를 수신하는 것은 'R형 수신기'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재알림설비의 화재안전성능기준(NFPC 207)상 '화재알림형 중계기'는 화재알림형 감지기·발신기 등의 화재정보값 또는 화재신호를 받아 화재알림형 수신기에 전송하는 장치이며, '원격감시서버'는 원격지에서 이를 감시하기 위한 서버이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현행 화재안전기술기준(NFTC 202, 203)상 층수가 11층 이상(공동주택은 16층 이상)인 특정소방대상물의 지상 2층 이상에서 화재가 발생한 경우, 우선경보방식에 따라 '발화층 및 그 직상 4개 층'에 경보를 발하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방시설 중 경보설비] 시각경보기는 청각장애인에게 점멸 형태로 시각경보를 하는 장치이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방시설 중 경보설비] R형 수신기는 감지기 또는 발신기에서 1 : 1 접점방식으로 전송된 신호를 수신한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방시설 중 경보설비] 비상방송설비는 수신기에 화재신호가 도달하면 방송으로 화재 사실을 알리는 설비이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방시설 중 경보설비] 이온화식 감지기와 광전식 감지기는 연기를 감지하여 화재신호를 발하는 장치이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[화재알림설비] “발신기”란 수동누름버튼 등의 작동으로 화재신호를 수신 기에 발신하는 장치를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>“원격감시서버”란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[화재알림설비] “화재알림형 중계기”란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재탐지설비(NFPC 203)에서 하나의 경계구역 면적은 600 m² 이하(주된 출입구에서 내부 전체가 보이는 경우 1,000 m² 이하)로 하고 한 변의 길이는 50 m 이하로 하되, 2개 이상의 층의 바닥면적 합계가 600 m² 이하인 경우에는 2개 층을 하나의 경계구역으로 설정할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>하나의 경계구역 면적은 원칙적으로 600 m² 이하이고 한 변의 길이는 50 m 이하이나, 주된 출입구에서 내부 전체가 보이는 경우에는 바닥면적을 1,000 m² 이하, 한 변의 길이를 100 m 이하까지 완화할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>계단·경사로·엘리베이터 승강로 등 수직 관통 부분의 경계구역은 높이 45 m 이하마다 별도로 설정하며, 전력·통신용 지하구의 하나의 경계구역 길이는 700 m 이하로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>차동식 분포형 감지기 중 공기관식은 하나의 검출부분에 연결하는 공기관의 길이를 100 m 이하로 하고, 감지구역마다 공기관의 노출부분은 20 m 이하가 되도록 하며, 공기관 상호 간의 거리는 9 m 이하(내화구조는 6 m 이하)로 설치한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>차동식 분포형 감지기 중 열전대식은 서로 다른 두 금속 접점의 온도차에 의해 열기전력이 발생하는 제벡 효과(Seebeck effect)를 이용하며, 하나의 검출부에 접속하는 열전대부는 4개 이상 20개 이하로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단독경보형감지기(NFPC 201)는 구획된 각 실마다 설치하되 바닥면적이 150 m²를 초과하는 경우에는 150 m²마다 1개 이상을 설치해야 하며, 이웃하는 실내의 바닥면적이 각각 50 m² 미만이고 벽체 상부의 일부가 개방되어 공기가 상호 유통되는 경우에는 이를 1개의 실로 본다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재탐지설비의 발신기는 각 부분으로부터 수평거리 25 m 이하가 되도록 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치하며, 지구음향장치의 음량은 중심으로부터 1 m 떨어진 위치에서 90 dB 이상이 되도록 해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>감지기의 부착높이가 8 m 이상 15 m 미만인 장소에는 차동식 스포트형 감지기와 정온식 스포트형 감지기를 설치할 수 있으며, 부착높이가 20 m 이상인 장소에는 차동식 분포형 감지기를 설치할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>감지기의 부착높이가 20 m 이상인 장소에 설치할 수 있는 감지기는 이온화식 1종, 광전식(스포트형·분리형·공기흡입형) 1종, 불꽃감지기이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연기감지기는 천장 또는 반자의 벽이나 보에 바짝 밀착하여 설치해야 하며, 불꽃감지기를 제외한 스포트형 감지기는 60도까지 경사지게 부착할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>준비작동식 스프링클러설비나 가스계 소화설비의 감지기 회로에 불꽃감지기, 정온식 스포트형 감지기, 차동식 분포형 감지기, 복합형 감지기, 광전식 분리형·공기흡입형 감지기, 아날로그방식 감지기를 설치한 경우에는 교차회로방식을 적용하지 아니할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재탐지설비 및 비상방송설비의 비상전원은 감시 상태를 60분간 지속한 후 유효하게 20분 이상(단, 층수가 30층 이상 49층 이하는 40분 이상, 50층 이상은 60분 이상) 경보할 수 있는 축전지설비 등으로 설치해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자동화재속보설비(NFPC 204)는 자동화재탐지설비의 수신기로부터 화재신호를 수신하거나 수동으로 동작시키는 경우 10초 이내에 소방관서에 자동적으로 신호를 발하여 통보하되, 3회 이상 속보할 수 있어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연면적 5,000 m²이고 지하 2층·지상 8층인 업무시설의 지상 3층에서 화재가 발생한 경우, 우선경보방식에 따라 지상 3층(발화층)과 그 직상 4개 층(지상 4·5·6·7층)에 경보를 발해야 한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:③ · 02:④ · 03:① · 04:② · 05:③ · 06:③</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:X · 19:O · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 14 · 제4편 소방시설론 · 제3장 (6문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재감지기 중 '열감지기'에는 차동식(온도 상승률 감지), 정온식(일정 온도 도달 감지), 보상식(차동식+정온식 기능 결합) 및 열아날로그식이 있으며, '광전식'과 '이온화식'은 연소 입자를 감지하는 '연기감지기'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">보상식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 보상식 감지기는 차동식과 정온식의 기능을 겸비한 열감지기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">정온식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 정온식 감지기는 주위 온도가 일정 온도 이상이 될 때 작동하는 열감지기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">광전식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 광전식 감지기는 연기 입자에 의한 빛의 산란(광전식 스포트형) 또는 감광(광전식 분리형)을 이용하는 '연기감지기'이지 열감지기가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">차동식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 차동식 감지기는 주위 온도가 일정 상승률 이상이 될 때 작동하는 열감지기입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q23</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 넓은 범위의 열효과 누적에 의해 작동하는 '차동식 분포형 감지기'는 감지 소자에 따라 공기관식(다이아프램·리크구멍), 열전대식(제벡 효과에 의한 열기전력), 열반도체식 3가지로 나뉩니다. 광전식은 연기감지기입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">공기관식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 공기관식 감지기는 공기관 내부 공기의 팽창 압력으로 다이아프램을 밀어 접점을 닫는 차동식 분포형 감지기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">열전대식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 열전대식 감지기는 서로 다른 두 금속 접점의 온도차로 발생하는 열기전력을 이용하는 차동식 분포형 감지기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">열반도체식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 열반도체식 감지기는 열에 의한 반도체 소자의 기전력 변화를 이용하는 차동식 분포형 감지기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">광전식</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 광전식 감지기는 차동식 분포형(열감지기)이 아니라 빛의 산란·차폐를 이용하는 '연기감지기'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ① '주위 온도가 일정 상승률 이상이 되는 경우에 작동'하면 <strong>차동식</strong>(일정 온도 이상이면 정온식), ② '넓은 범위에서의 열효과 누적에 의해 작동'하면 <strong>분포형</strong>(일국소의 열효과에 의해 작동하면 스포트형)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">차동식 분포형 감지기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 주위 온도가 일정 상승률 이상이 되는 경우에 작동(차동식)하고 넓은 범위 내에서 열효과 누적에 의해 작동(분포형)하는 감지기는 '차동식 분포형 감지기'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">차동식 스포트형 감지기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 차동식 스포트형 감지기는 주위 온도가 일정 상승률 이상이 될 때 작동하되, 넓은 범위가 아니라 '일국소(한 지점)에서의 열효과'에 의해 작동합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">정온식 스포트형 감지기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 정온식 스포트형 감지기는 일국소의 주위 온도가 '일정 온도 이상'이 되는 경우에 작동합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">정온식 감지선형 감지기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 정온식 감지선형 감지기는 일국소의 주위 온도가 '일정 온도 이상'이 되는 경우에 전선 형태의 감지선이 단락되어 작동합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 자동화재탐지설비의 수신기 중 감지기 또는 발신기에서 경계구역별로 '1대 1 접점방식(고유신호)'으로 전송된 신호를 수신하는 것은 R형이 아니라 <strong>P형(Proprietary) 수신기</strong>입니다. <strong>R형(Record/Multiplex) 수신기</strong>는 중계기를 거쳐 '다중전송방식(주소형 디지털 통신 신호)'으로 신호를 수신하여 선로 수를 획기적으로 줄인 대형 건물용 수신기입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">시각경보기는 청각장애인에게 점멸 형태로 시각경보를 하는 장치이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">R형 수신기는 감지기 또는 발신기에서 1 : 1 접점방식으로 전송된 신호를 수신한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">비상방송설비는 수신기에 화재신호가 도달하면 방송으로 화재 사실을 알리는 설비이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">이온화식 감지기와 광전식 감지기는 연기를 감지하여 화재신호를 발하는 장치이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재알림설비에는 '화재알림형 비상경보장치'라는 용어는 존재하지 않으며, 대신 '화재알림형 단독경보형감지기(화재에 의하여 생성되는 열, 연기 또는 불꽃 등을 자동으로 감지하여 자체에 내장된 음향장치로 경보하고, 화재정보값 및 화재신호 등을 유무선으로 송수신하는 감지기)' 등이 규정되어 있습니다. 또한 선지 ③의 '발신기, 표시등, 지구음향장치를 내장한 것'은 비상경보설비의 '단독경보형감지기'나 '비상경보장치(발신기세트)'에 화재알림형 감지기를 임의로 합성한 허위 정의입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“발신기”란 수동누름버튼 등의 작동으로 화재신호를 수신 기에 발신하는 장치를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] '발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“원격감시서버”란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] '원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“화재알림형 비상경보장치”란 화재알림형 감지기, 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것 으로 화재발생 상황을 경보하는 장치를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] NFPC 207에는 '화재알림형 비상경보장치'라는 정의가 없으며, 감지기까지 하나의 함에 내장하여 경보하는 장치가 아닙니다(화재알림설비는 화재알림형 수신기, 화재알림형 감지기, 화재알림형 중계기, 화재알림형 단독경보형감지기, 원격감시서버 등으로 구성됨).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“화재알림형 중계기”란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] '화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 2022년 말 개정·시행된 현행 ｢비상방송설비의 화재안전기술기준(NFTC 202)｣ 및 ｢자동화재탐지설비 및 시각경보장치의 화재안전기술기준(NFTC 203)｣의 <strong>우선경보방식</strong> 기준을 묻는 최신 실전 문항입니다. 과거에는 5층 이상(연면적 3,000제곱미터 초과)일 때 발화층 및 직상층만 경보했으나, 초고층·대형 건물 피난 안전 강화를 위해 <strong>11층 이상(공동주택은 16층 이상)인 특정소방대상물</strong>의 우선경보 기준이 <strong>'발화층 및 그 직상 4개 층'</strong>으로 대폭 확대되었습니다.
+· 대상 건물: 지하 3층, <strong>지상 20층</strong>(11층 이상에 해당하므로 발화층 + 직상 4개 층 경보 대상) · 발화 위치: <strong>지상 2층</strong>에서 화재 발생 · 경보 대상 층: 발화층(<strong>지상 2층</strong>) 및 그 직상 4개 층(<strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>). (참고: 지상 1층에서 발화했다면 지하 전 층도 포함되지만, 지상 2층 발화이므로 지하층과 지상 1층은 제외됨!)</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">지상 2층, 지상 3층</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 지상 2층, 지상 3층(발화층 및 직상층)만 경보하는 것은 5층 이상 10층 이하(연면적 3,000제곱미터 초과)인 건물에 적용되는 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지하 전 층, 지상 1층, 지상 2층, 지상 3층</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 지하 전 층이 함께 경보되는 경우는 '지상 1층' 또는 '지하층'에서 화재가 발생했을 때입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지상 2층, 지상 3층, 지상 4층, 지상 5층, 지상 6층</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 지상 20층 건물은 11층 이상인 특정소방대상물에 해당하므로, 지상 2층에서 화재가 발생한 경우 발화층(지상 2층) 및 그 직상 4개 층(지상 3층, 지상 4층, 지상 5층, 지상 6층)에 화재경보를 발하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">지상 1층, 지상 2층, 지상 3층, 지상 4층, 지상 5층, 지상 6층</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 지상 2층 발화 시 직하층인 지상 1층은 우선경보 대상 층에 포함되지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 16제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:X · 19:O · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>하나의 경계구역은 원칙적으로 2개 이상의 층에 걸칠 수 없으나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에만 예외적으로 허용됩니다(3개 층 이상은 절대 불가).
+            <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>수평 경계구역의 기본 기준(600제곱미터 이하, 한 변 50미터 이하)과 주된 출입구 내부 투시 시 완화 기준(1,000제곱미터 이하)입니다.
+            <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>수직 경계구역(높이 45미터 이하)과 지하구 경계구역(길이 700미터 이하)의 법정 수치입니다.
+            <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>감지기의 기본 분류(열: 차동·정온·보상 / 연기: 이온화·광전 / 불꽃: 자외선·적외선)는 매년 반복 출제됩니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>차동식 분포형 3종(공기관식·열전대식·열반도체식)은 연기감지기인 광전식·이온화식과 섞어 출제됩니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q23 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>일정 상승률 이상 = 차동식(일정 온도 이상 = 정온식), 넓은 범위 열효과 누적 = 분포형(일국소 열효과 = 스포트형)의 법정 정의 조합을 정확히 구분해야 합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>P형(1대 1 접점방식, 중·소형 건물용)과 R형(중계기 및 다중전송방식, 대형·고층 건물용)의 신호 전송 방식을 바꿔 내는 함정에 주의해야 합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>화재알림설비는 화재알림형 감지기·단독경보형감지기·중계기·수신기·원격감시서버 등으로 구성되며, '화재알림형 비상경보장치'라는 법정 용어는 존재하지 않습니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>우선경보방식 기준: ① 5층 이상 10층 이하(연면적 3,000제곱미터 초과) = 발화층 + 직상층(1층 발화 시 지하 전 층 포함), ② 11층 이상(공동주택 16층 이상) = 발화층 + 직상 4개 층(1층 발화 시 지하 전 층 포함).
+            <span class="ox-exp-src">2026년 소방공채·경채 Q25 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>'발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조).
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>'원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>'화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

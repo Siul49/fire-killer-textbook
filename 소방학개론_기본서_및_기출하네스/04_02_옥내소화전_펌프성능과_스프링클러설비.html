@@ -6,7 +6,7 @@
   <title>제4편 소방시설론 제2장. 옥내소화전 가압송수장치·펌프 현상 및 5대 스프링클러설비 · 소방학개론 기본서</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=6" />
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -51,14 +51,13 @@
           <div>
             <div class="font-bold text-emerald-400 py-1">제4편 소방시설론 · 제2장</div>
             <ul class="pl-3 space-y-1.5 text-slate-400 border-l border-emerald-900/60 mt-1">
-              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 옥내소화전설비의 수리 기준과 충압펌프·물올림장치의 공학적 역할</a></li>
-              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 소방펌프 성능시험 3대 기준과 수격현상(Water Hammering)·공동현상(Cavitation)</a></li>
-              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 5대 스프링클러설비(습식·건식·준비작동식·일제살수식·부압식) 완벽 비교</a></li>
-              <li><a href="#sec4" class="hover:text-emerald-300 transition">4. 알람밸브 리타딩 체임버(Retarding Chamber)와 슈퍼바이저리 패널</a></li>
-              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 도해</a></li>
+              <li><a href="#sec1" class="hover:text-emerald-300 transition">1. 옥내소화전·호스릴·옥외소화전 수리 기준과 충압펌프·물올림장치·4대 가압송수방식</a></li>
+              <li><a href="#sec2" class="hover:text-emerald-300 transition">2. 소방펌프 성능시험 3대 기준·이상현상(수격·공동·서징) 및 상사법칙·직병렬 운전</a></li>
+              <li><a href="#sec3" class="hover:text-emerald-300 transition">3. 5대 스프링클러설비 비교·부속장치(리타딩 체임버·슈퍼바이저리 패널) 및 헤드·배관 기준</a></li>
+              <li><a href="#diagramBox" class="hover:text-emerald-300 transition">단원 핵심 압축 정리본</a></li>
               <li><a href="#examStatsSection" class="hover:text-emerald-300 transition">출제 경향 및 쟁점 요약</a></li>
               <li><a href="#origQSection" class="hover:text-emerald-300 transition">실전 기출문제 (9문항)</a></li>
-              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 OX 확인 (14문항)</a></li>
+              <li><a href="#oxQuizSection" class="hover:text-emerald-300 transition">핵심 지문 및 2회독 확장 OX 확인 (38문항)</a></li>
             </ul>
           </div>
         </nav>
@@ -86,269 +85,170 @@
       </p>
     </header>
 
-        <section class="space-y-12 mb-16">
+    <section class="space-y-12 mb-16">
       <div id="sec1">
-        <h2 class="text-xl font-bold text-white mb-3">1. 옥내소화전설비의 수리 기준과 충압펌프·물올림장치의 공학적 역할</h2>
+        <h2 class="text-xl font-bold text-white mb-3">1. 옥내소화전·호스릴·옥외소화전 수리 기준과 충압펌프·물올림장치·4대 가압송수방식</h2>
         <div class="para-block">
           <p class="prose-body">
-            앞 장에서 소방시설의 5대 분류를 살펴보았다면, 이번 장에서는 그중 가장 핵심적인 수계 소화설비인 <strong>옥내소화전설비</strong>와 <strong>스프링클러설비</strong>의 수리(Hydraulic) 기준과 작동 메커니즘을 파헤칩니다. 건물 복도 벽면의 철제 함을 열면 호스와 노즐이 들어 있는 <strong>옥내소화전설비</strong>는 화재 초기 단계에 건물 관계인이나 자위소방대가 직접 호스를 끌고 가 불을 끄는 설비입니다. ｢옥내소화전설비의 화재안전성능기준(NFPC 102)｣에 따라 어느 층에 있어서나 해당 층의 옥내소화전(설치 개수가 2개 이상인 경우에는 <strong>최대 2개</strong>, 과거 5개에서 개정됨에 각별히 주의!)을 동시에 사용할 때 각 노즐 선단의 <strong>방수압력은 0.17 MPa(메가파스칼) 이상 0.7 MPa 이하</strong>여야 하고, <strong>방수량은 분당 130 L(L/min) 이상</strong>이어야 합니다. 왜 방수압력에 상한선(0.7 MPa 이하)까지 두었을까요? 수압이 0.7 MPa를 넘으면 노즐 반동력이 너무 세져서 일반인이 호스를 잡고 있다가 놓쳐 크게 다치기 때문입니다(따라서 0.7 MPa 초과 시에는 호스접결구 인입측에 반드시 감압장치를 달아야 합니다!). 또한 20분 이상 방수해야 하므로 법정 <strong>유효수량은 설치 개수(최대 2개) &times; 2.6 m<sup>3</sup>(130 L/min &times; 20분 = 2,600 L)</strong>입니다(단, 30층 이상 49층 이하는 40분분인 5.2 m<sup>3</sup>, 50층 이상은 60분분인 7.8 m<sup>3</sup>를 곱합니다).
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>옥내소화전 핵심 수치</strong>: 노즐 선단 방수압력 <strong>0.17MPa 이상 0.7MPa 이하</strong>(0.7MPa 초과 시 호스접결구 인입측에 감압장치 설치), 방수량 <strong>분당 130L 이상</strong>, 수원 산정 최대 개수 <strong>2개</strong>(개당 2.6㎥)</li>
-              <li><strong>충압펌프(Jockey Pump)</strong>: 배관 누수 시 압력 보충 및 주펌프 빈번 기동 방지 목적, <strong>기동압력은 주펌프 기동점보다 0.05MPa 이상 높게</strong>, 토출량 <strong>분당 60L 이하</strong></li>
-              <li><strong>물올림장치 설치 조건</strong>: <strong>전동기 또는 내연기관에 따른 펌프가 수원(수면)보다 높은 곳에 설치된 경우</strong>에만 필수 (유효수량 <strong>100L 이상</strong>, 수원이 펌프보다 높으면 면제)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            평상시 건물 배관 안에는 불이 나자마자 물이 쏟아질 수 있도록 높은 수압이 걸려 있습니다. 그런데 밸브 이음새 등에서 물이 한두 방울씩 미세하게 새어 나가 수압이 조금 떨어질 때마다 수백 마력짜리 대용량 <strong>주펌프(Main Pump)</strong>가 덜컥 켜지면 어떻게 될까요? 엄청난 수압 충격(수격현상)으로 배관이 터지고 전력 소모와 모터 마모가 감당할 수 없게 됩니다. 이를 막기 위해 주펌프 옆에 나란히 세워 두는 날씬한 소형 보조 펌프가 바로 <strong>충압펌프(Jockey Pump)</strong>입니다! 충압펌프는 <strong>평상시 배관의 미세한 누수로 줄어든 압력만 살짝 보충해 주어 주펌프가 공연히 자주 켜지는 것(빈번한 기동)을 방지</strong>합니다. 따라서 수압이 떨어질 때 주펌프가 눈치채기 전에 충압펌프가 먼저 켜져서 압력을 채워 넣어야 하므로, <strong>충압펌프의 기동압력은 주펌프의 기동압력보다 최소 0.05 MPa 이상 높게 설정</strong>해야 하며, 충압펌프의 정격토출압력은 그 설비의 가장 높은 호스접결구의 자연낙차압력에 <strong>0.2 MPa를 더한 값 이상</strong>으로, 토출량은 정상 누수량보다 적어 기동이 잦지 않도록 <strong>분당 60 L 이하</strong>로 합니다.
+            앞선 제4편 제1장에서 소방시설 5대 분류 체계를 살펴보았다면, 이번 장에서는 가장 핵심적인 수계 <strong>소화설비</strong>의 양대 축인 <strong>옥내소화전</strong>설비와 스프링클러설비의 수리(Hydraulic) 기준 및 가압송수 메커니즘을 파헤칩니다. 건물 복도 벽면의 철제 함을 열면 호스와 노즐이 들어 있는 옥내소화전설비는 화재 초기 단계에 건물 관계인이나 자위소방대가 직접 호스를 전개하여 소화하는 초기 진압 설비로서, 표준형·호스릴형·옥외소화전의 수리 기준을 대조하여 정리해야 합니다.
+            <span class="prose-item"><strong>① 표준 옥내소화전 · 호스릴옥내소화전 · 옥외소화전 수리 기준 비교</strong></span>
+            <span class="prose-sub">&bull; <strong>표준 옥내소화전(NFPC 102)</strong>: 어느 층에서나 해당 층 옥내소화전(2개 이상 설치 시 동시 사용 최대 <strong>2개</strong>, 과거 5개에서 개정)을 동시 개방할 때 각 노즐 선단의 방수압력은 <strong>0.17 MPa 이상 0.7 MPa 이하</strong>여야 합니다(수압이 0.7 MPa를 초과하면 노즐 반동력이 과도해져 작업자가 호스를 놓쳐 부상을 입으므로 호스접결구 인입측에 반드시 <strong>감압장치</strong>를 설치!). 분당 방수량은 <strong>130 L/min 이상</strong>, 호스 구경은 <strong>40 mm</strong>, 각 부분으로부터 호스접결구까지의 수평거리는 <strong>25 m 이하</strong>이며, 법정 유효수량은 설치 개수(최대 2개)에 20분 방수량인 <strong>2.6세제곱미터(2.6 m<sup>3</sup> = 130 L/min &times; 20분)</strong>를 곱한 양 이상으로 하되, 30층 이상 49층 이하는 40분분인 <strong>5.2세제곱미터(5.2 m<sup>3</sup>)</strong>, 50층 이상 초고층은 60분분인 <strong>7.8세제곱미터(7.8 m<sup>3</sup>)</strong>를 곱한 양 이상으로 확보합니다.</span>
+            <span class="prose-sub">&bull; <strong>호스릴옥내소화전</strong>: 노약자도 혼자 쉽게 전개할 수 있도록 드럼에 감긴 호스 구경 <strong>25 mm</strong>를 사용하며, 방수압력 <strong>0.17 MPa 이상 0.7 MPa 이하</strong>, 방수량 <strong>60 L/min 이상</strong>, 유효수량 설치 개수(최대 2개) &times; <strong>1.2 m<sup>3</sup>(60 L/min &times; 20분)</strong>, 수평거리 <strong>15 m 이하</strong>를 적용합니다.</span>
+            <span class="prose-sub">&bull; <strong>옥외소화전(NFPC 109)</strong>: 건물 외부 지상 1층·2층 화재 방어 및 인접 건물 연소 차단용 설비로서 대구경 호스 <strong>65 mm</strong>를 사용하며, 방수압력 <strong>0.25 MPa 이상 0.7 MPa 이하</strong>, 방수량 <strong>350 L/min 이상</strong>, 유효수량 설치 개수(최대 2개) &times; <strong>7.0 m<sup>3</sup>(350 L/min &times; 20분)</strong>, 수평거리 <strong>40 m 이하</strong>(호스접결구는 지면으로부터 높이 0.5 m 이상 1.0 m 이하)로 설치합니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            한편 지하 기계실 바닥에 펌프가 있고 그보다 더 낮은 지하 피트(Pit)에 물탱크(수원)가 있는 경우처럼, <strong>펌프의 위치가 수원의 수면보다 높은 곳</strong>에 설치되어 있으면 어떤 문제가 생길까요? 중력 때문에 펌프 케이싱 안과 흡입배관에 차 있던 물이 아래쪽 수조로 스르르 빠져나가 배관 안에 공기가 차버리는 <strong>낙수(落水) 현상</strong>이 일어납니다! 원심펌프는 날개(임펠러)로 물을 원심력으로 밀어내는 구조여서, 펌프 안에 물 대신 공기가 차 있으면 임펠러가 아무리 헛돌아도 물을 한 방울도 빨아올리지 못합니다(공회전). 따라서 <strong>펌프가 수원의 수면보다 높은 곳에 설치된 경우에는 평상시 펌프와 흡입배관에 항상 물을 가득 채워주는 '물올림장치(전용 물올림탱크 유효수량 100 L 이상, 급수배관 15 mm 이상, 물올림관 25 mm 이상, 오버플로관 50 mm 이상)'와 흡입배관 맨 아래쪽 끝에서 물이 수조로 역류해 빠지는 것을 막고 이물질을 걸러주는 '후드밸브(Foot Valve)'를 반드시 설치</strong>해야 합니다! 반대로 수원이 펌프보다 높은 곳에 있어 중력만으로 물이 펌프 안에 저절로 꽉 차 있는 경우(정압 흡입 조건)에는 물올림장치를 설치하지 않아도 됩니다.
+            평상시 건물 배관 안에는 화재 즉시 물이 방수되도록 높은 수압이 걸려 있는데, 미세 누수나 흡입배관 낙수(落水), 체절운전 마찰열로 인한 고장을 막기 위한 부속 설비와 4대 가압송수방식(펌프·고가수조·압력수조·가압수조)의 양정 산출식을 정확히 구분해야 합니다.
+            <span class="formula-box">
+              <span class="formula-badge">펌프 전양정 vs 고가수조 필요 낙차 산정식</span>
+              <span class="formula-eq">펌프 전양정 H = h<sub>1</sub>(마찰손실) + h<sub>2</sub>(실양정) + 17 m &nbsp;|&nbsp; 고가수조 필요 낙차 H = h<sub>1</sub> + 17 m (실양정 h<sub>2</sub> 제외!)</span>
+              <span class="formula-ex">💡 <strong>압력수조 공식 및 충전 비율</strong> | 건물 옥상 중력 위치에너지를 쓰는 <strong>고가수조</strong>는 수조 설치 높이 자체가 이미 실양정이므로 <span class="chem">h<sub>2</sub></span>를 별도로 더하지 않으며(환산수두는 옥내 17 m, 옥외 25 m, 스프링클러 10 m), 밀폐 탱크에 물 최대 <strong>2/3 이하</strong> + 압축공기 <strong>1/3 이상</strong>을 채워 밀어내는 <strong>압력수조</strong>의 필요 압력은 <span class="chem">P = p<sub>1</sub>(호스 마찰) + p<sub>2</sub>(배관 마찰) + p<sub>3</sub>(낙차 환산압) + 0.17 MPa</span>입니다.</span>
+            </span>
+            <span class="prose-item"><strong>② 충압펌프 · 물올림장치 · 순환배관 핵심 설치 기준과 물리적 이유</strong></span>
+            <span class="prose-sub">&bull; <strong>충압펌프(Jockey Pump)</strong>: 밸브 틈새의 미세한 누수로 수압이 조금 떨어질 때마다 대용량 주펌프가 덜컥 기동하면 수격 충격으로 배관이 파손되고 전력 소모가 극심해지므로, 미세 압력 손실만 보충하여 주펌프의 빈번한 기동을 방지합니다. 주펌프가 눈치채기 전에 먼저 켜져야 하므로 <strong>충압펌프 기동압력은 주펌프 기동압력보다 최소 0.05 MPa 이상 높게 설정</strong>하고, 정격토출압력은 최고위 호스접결구 자연낙차압력보다 <strong>0.2 MPa 더 크게</strong>, 토출량은 정상 누수량 이하인 분당 <strong>60 L/min 이하</strong>로 제한합니다.</span>
+            <span class="prose-sub">&bull; <strong>물올림장치(Priming Tank) 및 후드밸브</strong>: 지하 피트 수조보다 <strong>펌프가 수원의 수면보다 높은 곳(부압 흡입 조건)</strong>에 설치되면 중력에 의해 케이싱 내부 물이 수조로 빠져나가는 낙수 현상으로 공기가 차서 원심펌프 임펠러가 물을 빨아올리지 못하고 헛도는 공회전이 발생합니다. 이를 막기 위해 전용 탱크 유효수량 <strong>100 L 이상</strong>(급수배관 15 mm·물올림관 25 mm·오버플로우배수관 50 mm 이상)의 <strong>물올림장치</strong>와 흡입관 말단 역류 방지용 <strong>후드밸브(Foot Valve)</strong>를 의무 설치합니다(수원이 펌프보다 높은 정압 흡입 조건에서는 물올림장치 미설치 / 산·알칼리 소화기는 수계 화학반응식 소화기).</span>
+            <span class="prose-sub">&bull; <strong>순환배관 및 릴리프밸브(안전밸브)</strong>: 출구 밸브가 잠긴 채 펌프가 공회전하는 체절운전(토출량 0) 시 임펠러 마찰열로 펌프 내부 물이 끓어오르는 <strong>수온 상승(과열)을 방지</strong>하기 위해 체절압력 미만에서 개방되는 릴리프밸브와 순환배관을 설치합니다.</span>
           </p>
         </div>
       </div>
 
       <div id="sec2">
-        <h2 class="text-xl font-bold text-white mb-3">2. 소방펌프 성능시험 3대 기준과 수격현상(Water Hammering)·공동현상(Cavitation)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">2. 소방펌프 성능시험 3대 기준·이상현상(수격·공동·서징) 및 상사법칙·직병렬 운전</h2>
         <div class="para-block">
           <p class="prose-body">
-            설치된 소방펌프가 실제 화재 시 설계된 압력과 유량을 제대로 뿜어내는지 점검하기 위해 펌프 토출측에 유량계가 달린 <strong>성능시험배관</strong>을 설치하고 3단계 운전 시험(성능곡선 검증)을 실시합니다. ① <strong>체절운전(토출량 0% 운전)</strong>: 출구 밸브를 완전히 잠가 물이 한 방울도 나가지 않는 상태(유량 0)에서 펌프를 돌릴 때, 배관이 터지지 않도록 <strong>체절압력은 정격토출압력의 140% 이하</strong>여야 합니다(이때 잠긴 펌프 안에서 물이 계속 마찰열을 받아 끓어오르는 것을 막기 위해 체절압력 미만에서 자동으로 열려 뜨거운 물을 빼주는 <strong>순환배관 및 릴리프밸브[안전밸브]</strong>가 작동합니다!). ② <strong>정격부하운전(정격토출량 100% 운전)</strong>: 설계된 정격토출량(100%)을 방수할 때 압력은 <strong>정격토출압력의 100% 이상</strong>이어야 합니다. ③ <strong>최대운전(정격토출량의 150% 운전)</strong>: 호스를 여러 개 열어 정격유량의 1.5배(150%)를 최대로 뽑아낼 때에도 압력이 너무 죽지 않고 <strong>정격토출압력의 65% 이상</strong>을 유지해야 합격입니다!
+            설치된 <strong>소방펌프</strong>가 화재 시 설계된 유량과 압력을 정상 토출하는지 검증하기 위해 펌프 토출측 체크밸브 이전에서 분기하는 <strong>성능시험배관</strong>을 설치하며, 유량측정장치(유량계)에서 난류 오차가 발생하지 않도록 유량계 기준 <strong>전단 직관부에 개폐밸브를, 후단에 유량조절밸브를 배치</strong>하여 <strong>펌프의</strong> 성능시험 3대 운전점과 3대 유체역학 이상 현상을 점검합니다.
+            <span class="formula-box">
+              <span class="formula-badge">소방펌프 성능시험 3대 운전점 기준</span>
+              <span class="formula-eq">체절운전(유량 0%) &le; 정격압력 140% &nbsp;|&nbsp; 정격운전(유량 100%) &ge; 정격압력 100% &nbsp;|&nbsp; 최대운전(유량 150%) &ge; 정격압력 65%</span>
+              <span class="formula-ex">💡 <strong>3단계 검증의 물리적 의미</strong> | 밸브를 완전히 잠근 체절운전 시 배관 파열 방지를 위해 정격토출압력의 140%를 넘지 않아야 하고, 정격토출량 150%의 최대운전 시에도 압력이 정격토출압력의 65% 이상을 유지해야 합격입니다.</span>
+            </span>
+            <span class="formula-box">
+              <span class="formula-badge">공동현상(캐비테이션) 방지 유효흡입수두 조건식</span>
+              <span class="formula-eq">유효흡입수두 NPSH<sub>a</sub> = H<sub>a</sub>(대기압) &plusmn; H<sub>s</sub>(압입+, 흡상&minus;) &minus; H<sub>v</sub>(포화증기압) &minus; H<sub>f</sub>(마찰손실) &ge; NPSH<sub>r</sub>(필요흡입수두)</span>
+              <span class="formula-ex">💡 <strong>방지 대책</strong> | 항상 시스템의 <span class="chem"><strong>NPSH</strong><sub>a</sub> &ge; NPSH<sub>r</sub></span> 조건(여유치 1.3배 확보)을 유지하고, 펌프 설치 높이를 낮춰 흡입양정을 단축하며 흡입배관 관경을 확대해 마찰손실(<span class="chem">H<sub>f</sub></span>)을 줄이고 임펠러 회전수를 낮춥니다.</span>
+            </span>
+            <span class="prose-item"><strong>① 펌프 및 관로의 3대 유체역학 이상 현상과 방지 대책</strong></span>
+            <span class="prose-sub">&bull; <strong>수격현상(Water Hammering, 수격작용)</strong>: 밸브 급폐쇄나 펌프 급정지로 배관 내 유속이 급변할 때 흐르던 물의 <strong>운동에너지가 압력에너지(충격파)로 급격히 전환</strong>되어 배관과 밸브를 파열시키는 현상으로서, 관경 확대(유속 감소)·밸브 완만 개폐·충격 완화용 <strong>스모렌스키 체크밸브</strong> 및 <strong>수격방지기(서지탱크·에어챔버)</strong> 설치로 방지합니다.</span>
+            <span class="prose-sub">&bull; <strong>공동현상(Cavitation, 캐비테이션)</strong>: 펌프 흡입측의 국부 정압이 그 수온에서의 물의 <strong>포화증기압 이하</strong>로 떨어져 수증기 기포가 무수히 발생했다가 고압부에서 급격히 붕괴하며 임펠러 표면 침식(스펀지화)·격렬한 진동·소음·양정 및 효율 급감을 유발하는 현상입니다.</span>
+            <span class="prose-sub">&bull; <strong>서징현상(Surging, 맥동현상)</strong>: 유량 대 양정 성능곡선이 우상향 후 하강하는 산 모양(산형 특성곡선)을 가질 때 배관 내 토출 압력과 유량이 주기적으로 출렁이며 진동하는 현상으로서 우하향 특성 펌프 채택 및 회전수 제어로 방지합니다.</span>
           </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>펌프 성능시험 3대 수치</strong>: <strong>체절운전(유량 0%) 시 정격압력의 140% 이하</strong> · <strong>정격운전(100%) 시 100% 이상</strong> · <strong>최대운전(150%) 시 65% 이상</strong></li>
-              <li><strong>수격현상(Water Hammering)</strong>: 밸브 급폐쇄·펌프 급정지 시 운동에너지가 압력파로 급변 ➔ <strong>수격방지기 · 스모렌스키 체크밸브 · 서지탱크</strong>로 방지</li>
-              <li><strong>공동현상(Cavitation)</strong>: 펌프 내 압력이 <strong>물의 포화증기압 이하</strong>로 떨어져 기포 발생·임펠러 침식 ➔ <strong>유효흡입수두 ≥ 필요흡입수두</strong>, 흡입양정 단축·흡입관경 확대로 방지</li>
-              </ul>
-            </div>
-          </aside>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            소방펌프와 배관계에서 시험에 가장 많이 출제되는 2대 유체역학 이상 현상이 바로 <strong>수격현상(Water Hammering)</strong>과 <strong>공동현상(Cavitation)</strong>입니다. 먼저 <strong>수격현상(수격작용)</strong>은 배관 속을 무서운 속도로 달려 올라가던 물이 <strong>밸브의 급격한 폐쇄나 펌프의 급정지(정전 등)로 인해 갑자기 가로막혀 멈출 때</strong>, 흐르던 물의 <strong>운동에너지가 갈 곳을 잃고 순간적으로 엄청난 압력에너지(충격파)로 바뀌면서</strong> 배관 내벽을 쇠망치로 내리치듯 쾅쾅 때려 배관과 밸브를 파열시키는 현상입니다. 이를 막으려면 어떻게 해야 할까요? 배관 직경을 키워 물의 유속을 낮추고, 밸브를 천천히 여닫으며, 고층 수직배관의 역류를 막는 체크밸브는 물이 거꾸로 쏟아지기 직전에 스프링 힘으로 부드럽게 닫히는 <strong>스모렌스키 체크밸브(Smolensky Check Valve)</strong>를 쓰고, 충격파를 흡수하는 공기주머니인 <strong>수격방지기(Water Hammer Arrestor)나 서지탱크(압력챔버)</strong>를 설치해야 합니다.
+            소방펌프를 구동하는 전동기의 소요 동력 산출식, 임펠러 회전수 변화에 따른 유량·양정·축동력의 상사법칙, 그리고 동일 사양 펌프 2대의 직·병렬 합성 운전 특성을 수식으로 명확히 정리합니다.
+            <span class="formula-box">
+              <span class="formula-badge">소방펌프 수동력 및 소요 축동력 공식</span>
+              <span class="formula-eq">수동력 P<sub>w</sub> = 9.8 &times; Q &times; H [kW] &nbsp;|&nbsp; 소요 축동력 P<sub>s</sub> = (9.8 &times; Q[m<sup>3</sup>/s] &times; H[m]) &divide; &eta; [kW]</span>
+              <span class="formula-ex">💡 <strong>실전 계산 예제 풀이</strong> | 토출유량 분당 1.2 m<sup>3</sup>(초당 환산 <span class="chem">Q = 1.2 &divide; 60 = 0.02 m<sup>3</sup>/s</span>), 전양정 <span class="chem">H = 50 m</span>, 펌프 효율 <span class="chem">&eta; = 0.98(98%)</span>일 때 전동기 필요 <strong>축동력</strong>은 <span class="chem">(9.8 &times; 0.02 &times; 50) &divide; 0.98 = <strong>10 kW</strong></span>(전달계수 <span class="chem">K</span> 주어지면 분자에 곱함)입니다.</span>
+            </span>
+            <span class="formula-box">
+              <span class="formula-badge">펌프 회전수(N) 상사법칙 비례식</span>
+              <span class="formula-eq">유량 Q &prop; N<sup>1</sup> &nbsp;|&nbsp; 양정 H &prop; N<sup>2</sup> &nbsp;|&nbsp; 소요 축동력 P &prop; N<sup>3</sup> &nbsp;(회전수 2배 증가 시 유량 2배 · 양정 4배 · 축동력 8배)</span>
+              <span class="formula-ex">💡 <strong>직렬 운전 vs 병렬 운전 대조</strong> | 임펠러 회전수를 바꾸는 <strong>상사법칙</strong>과 별개로, 동일 특성 펌프 2대를 직렬로 이은 <strong>직렬 운전</strong> 시에는 유량은 일정하고 이론 양정이 <strong>2배</strong>로 상승(고층 수직 송수에 유리)하며, 나란히 연결한 <strong>병렬 운전</strong> 시에는 양정은 일정하고 이론 유량이 <strong>2배</strong>로 증가(대유량 공급에 유리)합니다.</span>
+            </span>
           </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            반면 <strong>공동현상(캐비테이션, Cavitation)</strong>은 왜 일어날까요? 높은 산 위에 올라가면 기압이 낮아져 물이 100℃가 아닌 80℃나 상온에서도 끓어오릅니다. 마찬가지로 펌프가 아래쪽 수조의 물을 너무 무리하게 빨아올리거나(흡입양정이 너무 높거나) 흡입배관이 좁아 마찰손실이 커지면, <strong>펌프 흡입구 안쪽의 국부 압력이 그 온도에서의 '물의 포화증기압'보다 더 낮아지면서 차가운 물이 펌프 안에서 저절로 부글부글 끓어올라 수많은 수증기 기포(공동, Cavity)가 생겨납니다!</strong> 이 기포들이 임펠러 날개를 따라 고압부로 이동하는 순간 수천 기압의 충격파를 내며 일제히 터지는데, 이때 금속 날개 표면을 스펀지처럼 구멍 내어 갉아먹고(침식·부식) 심한 소음·진동과 함께 양정·효율을 급격히 떨어뜨립니다. 따라서 공동현상을 방지하려면 펌프 입구의 여유 압력인 <strong>유효흡입수두(NPSH<sub>av</sub>)를 펌프가 요구하는 필요흡입수두(NPSH<sub>re</sub>)보다 항상 크게(NPSH<sub>av</sub> &ge; 1.3 &times; NPSH<sub>re</sub>)</strong> 유지해야 하며, 현장 대책으로는 <strong>펌프 설치 위치를 수면 가까이 낮춰 흡입양정을 짧게 하고, 흡입배관의 관경을 크게 하고 길이를 짧게 하여 마찰손실을 줄이며, 펌프 회전수(비속도)를 낮추거나 양흡입 펌프를 사용</strong>해야 합니다.
-          </p>
-        </div>
-
-        <div class="overflow-x-auto my-6">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:18%;">구분</th>
-                <th style="width:41%;">수격현상 (Water Hammering)</th>
-                <th>공동현상 (Cavitation, 캐비테이션)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>발생 원인</strong></td>
-                <td>밸브 급폐쇄·펌프 급정지로 유속이 급변할 때 <strong>운동에너지가 압력에너지로 전환</strong>되어 충격파 발생</td>
-                <td>펌프 흡입측 정압이 <strong>액체의 포화증기압보다 낮아져</strong> 기포가 생성된 후 고압부에서 파괴되며 충격 발생</td>
-              </tr>
-              <tr>
-                <td><strong>주요 피해</strong></td>
-                <td>배관 파열, 밸브·이음쇠 파손, 심한 충격 소음 및 진동</td>
-                <td><strong>임펠러(회전차) 침식(Pitting)</strong>, 양정·효율 급감, 소음·진동</td>
-              </tr>
-              <tr>
-                <td><strong>핵심 방지 대책</strong></td>
-                <td>① 배관 내 유속 감소(관경 확대)<br/>② 밸브 완만 개폐 및 <strong>스모렌스키 체크밸브</strong> 설치<br/>③ <strong>수격방지기 · 서지탱크(압력챔버)</strong> 설치</td>
-                <td>① <strong>유효흡입수두(NPSH<sub>av</sub>) &gt; 필요흡입수두(NPSH<sub>re</sub>)</strong> 유지<br/>② <strong>펌프 설치 위치를 낮춰 흡입양정 단축</strong><br/>③ 흡입배관 관경 확대·만곡부 최소화, 회전수 감소</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
 
       <div id="sec3">
-        <h2 class="text-xl font-bold text-white mb-3">3. 5대 스프링클러설비(습식·건식·준비작동식·일제살수식·부압식) 완벽 비교</h2>
+        <h2 class="text-xl font-bold text-white mb-3">3. 5대 스프링클러설비 비교·부속장치(리타딩 체임버·슈퍼바이저리 패널) 및 헤드·배관 기준</h2>
         <div class="para-block">
           <p class="prose-body">
-            사람이 호스를 끌고 갈 필요 없이 천장에 매달린 헤드가 열을 감지해 스스로 물을 뿜어내는 초기 진압의 제왕이 바로 <strong>스프링클러설비</strong>입니다(헤드 1개당 표준 방수량 <strong>80 L/min 이상</strong>, 방수압력 <strong>0.1 MPa 이상 1.2 MPa 이하</strong>). 스프링클러설비는 중간 관문인 <strong>유수검지장치(알람밸브·드라이밸브·프리액션밸브 등)</strong>를 경계로 하여, 펌프 쪽 배관인 <strong>1차측(항상 가압수가 대기 중)</strong>과 천장 헤드 쪽 배관인 <strong>2차측</strong>에 평상시 무엇을 채워 두는지, 그리고 어떤 헤드와 감지기를 조합하는지에 따라 <strong>5가지 방식</strong>으로 진화해 왔습니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>개방형 헤드 유일 사용</strong>: 5대 스프링클러 중 <strong>일제살수식</strong>만 <strong>개방형 헤드</strong> 사용 (나머지 습식·건식·준비작동식·부압식 4종은 모두 <strong>폐쇄형 헤드</strong> 사용)</li>
-              <li><strong>화재감지기 연동 3종</strong>: <strong>준비작동식 · 일제살수식 · 부압식</strong>은 전용 <strong>화재감지기</strong>와 연동하여 밸브 개방 (<strong>습식·건식은 감지기 불필요</strong>, 헤드 감열체 개방만으로 작동)</li>
-              <li><strong>2차측 배관 충전 상태</strong>: <strong>습식</strong>(가압수) · <strong>건식</strong>(압축공기) · <strong>준비작동식·일제살수식</strong>(대기압 또는 저압 공기) · <strong>부압식</strong>(부압의 물)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            왜 5가지 방식이 필요하게 되었는지 인과관계로 따라가 봅시다! 첫째, 가장 기본이 되는 <strong>습식(Wet Pipe)</strong>은 알람밸브 위쪽인 <strong>2차측 배관 끝(폐쇄형 헤드 바로 앞)까지 평상시 가압수가 꽉 차 있는 방식</strong>입니다. 불이 나서 열기로 폐쇄형 헤드의 감열체(유리벌브나 퓨지블링크)가 톡 터지는 순간 1초의 지체도 없이 물이 쏟아져 나와 소화 속도가 가장 빠르고 구조가 가장 간단합니다. 하지만 치명적인 단점이 하나 있으니, 겨울철 난방이 안 되는 지하주차장에서는 2차측 천장 배관의 물이 꽁꽁 얼어붙어 동파된다는 점입니다! 둘째, 이 동파 문제를 해결하려고 만든 것이 <strong>건식(Dry Pipe)</strong>입니다. 건식은 2차측 배관에 물 대신 <strong>압축공기(또는 질소가스)</strong>를 빵빵하게 채워 넣어 드라이밸브의 클래퍼를 위에서 누르고 있습니다. 불이 나 폐쇄형 헤드가 터지면 압축공기가 먼저 쉭 빠져나간 뒤 수압이 클래퍼를 밀어 올리고 물이 나갑니다(헤드 감열체가 스스로 터지므로 별도의 화재감지기는 필요 없습니다).
+            사람이 직접 호스를 전개하는 옥내소화전과 달리 천장에서 화재 열기를 감지해 스스로 물을 뿌리는 자동 소화설비의 꽃이 <strong>스프링클러</strong>설비(NFPC 103)입니다. 헤드 1개당 표준 방수량은 <strong>80 L/min 이상</strong>, 선단 방수압력은 <strong>0.1 MPa 이상 1.2 MPa 이하</strong>이며, 유효수량은 용도별 기준개수(<span class="chem">N</span>, 예: 지하가·창고·백화점 30개, 아파트 10개)에 20분 방수량인 <strong>1.6세제곱미터(1.6 m<sup>3</sup> = 80 L/min &times; 20분)</strong>를 곱한 양 이상으로 확보합니다(30층 이상 49층 이하는 <span class="chem">N &times; 3.2 m<sup>3</sup></span>, 50층 이상은 <span class="chem">N &times; 4.8 m<sup>3</sup></span>). 2차측 배관 충전 매체와 헤드 개폐 형태에 따른 5대 방식과 유수검지장치 부속기기를 완벽히 구분해야 합니다.
+            <span class="prose-item"><strong>① 5대 스프링클러설비 2차측 상태 · 헤드 종류 · 감지기 연동 비교</strong></span>
+            <span class="prose-sub">&bull; <strong>습식(알람밸브)</strong>: 1차측과 2차측 배관 모두 가압수를 가득 채워 두며 폐쇄형 헤드를 사용하고 별도 화재감지기를 쓰지 않아, 화재 열기로 헤드 감열체가 터지는 즉시 살수되는 가장 신속·경제적인 방식입니다(동결 우려 없는 난방 구역 적용).</span>
+            <span class="prose-sub">&bull; <strong>건식(드라이밸브)</strong>: 겨울철 동파 우려가 있는 무난방 지하주차장 등에서 2차측 배관에 물 대신 압축공기(또는 질소)를 채워 두고 폐쇄형 헤드를 사용하는 방식으로서, 감지기는 쓰지 않으며 헤드 개방 후 1분 이내에 물이 방수되도록 설계합니다.</span>
+            <span class="prose-sub">&bull; <strong>준비작동식(프리액션밸브)</strong>: 평소 2차측을 대기압 공기로 비워 두고 폐쇄형 헤드를 사용하며, 1차로 교차회로 <strong>화재감지기</strong>가 작동해 프리액션밸브를 먼저 열어 배관에 충수한 뒤 2차로 화재 열기에 의해 폐쇄형 헤드까지 개방되어야 비로소 살수되는 2중 안전 구조로 동파와 오작동 수손 피해를 동시에 막습니다(이산화탄소 설비도 화재감지기·선택밸브·압력스위치 등으로 연동 구성).</span>
+            <span class="prose-sub">&bull; <strong>일제살수식(델류지밸브)</strong>: 5대 방식 중 유일하게 감열체가 뚫려 있는 <strong>개방형 스프링클러헤드</strong>를 사용하며, 화재감지기가 델류지밸브를 개방하는 즉시 담당 방호구역 전체 헤드에서 동시에 물이 폭포처럼 쏟아져 무대부 등 급격한 연소 확대 구역에 적용합니다.</span>
+            <span class="prose-sub">&bull; <strong>부압식(진공 프리액션밸브)</strong>: 1·2차측 모두 물을 채우고 폐쇄형 헤드를 쓰되 진공펌프로 2차측을 대기압보다 낮은 <strong>부압(음압)의 물</strong> 상태로 유지하여, 평상시 배관 균열이나 헤드 파손 시에도 물이 바닥으로 쏟아지는 수손 사고를 원천 차단하고 화재감지기 작동 시 즉시 정압으로 전환해 살수하는 첨단 방식입니다.</span>
+            <span class="prose-item"><strong>② 유수검지장치 3대 핵심 부속장치 짝짓기 구분</strong></span>
+            <span class="prose-sub">&bull; <strong>리타딩 체임버(지연실 — 습식 알람밸브)</strong>: 습식 설비에서 일시적인 수압 맥동으로 클래퍼가 살짝 들릴 때 유입되는 소량의 물을 배수시켜 압력스위치의 오경보(비화재보)를 지연·방지하는 완충 용기입니다.</span>
+            <span class="prose-sub">&bull; <strong>슈퍼바이저리패널(제어반 — 준비작동식 · 일제살수식)</strong>: 습식이 아니라 준비작동식·일제살수식 밸브 인근 벽면에 설치하여 화재감지기 신호 수신, 솔레노이드밸브 기동, 개폐표시형 밸브 탬퍼스위치 상태를 감시·제어합니다.</span>
+            <span class="prose-sub">&bull; <strong>액셀러레이터 · 익져스터(가속기 — 건식 드라이밸브)</strong>: 대형 건식 설비에서 헤드 개방 시 2차측 압축공기를 신속히 감압(액셀러레이터)하거나 대기 중으로 급속 방출(익져스터)하여 드라이밸브 개방 지연 시간을 단축시킵니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            셋째, 건식은 항상 2차측에 고압 공기를 유지해야 해서 관리가 까다롭고 방수 지연이 길다는 단점이 있어, 우리나라 지하주차장에 가장 널리 보급된 방식이 바로 <strong>준비작동식(Preaction)</strong>입니다! 준비작동식은 평상시 2차측 배관에 아무 압력 없는 <strong>대기압 공기(또는 저압 공기)</strong>만 두고 <strong>폐쇄형 헤드</strong>로 막아둡니다. 그러다 천장의 <strong>화재감지기(교차회로)</strong>가 먼저 연기와 열을 감지하면 프리액션밸브(준비작동식 유수검지장치)가 열려 2차측 배관까지 물이 콸콸 차오르며 '발사 준비(Preaction)'를 마치고, 이어서 불길의 열기로 <strong>폐쇄형 헤드 감열체까지 터져야 비로소 물이 쏟아지는 2중 안전 구조</strong>입니다(만약 실수로 지게차가 헤드를 쳐서 깨뜨려도 감지기가 작동하지 않았으므로 물이 쏟아지지 않습니다!). 넷째, <strong>일제살수식(Deluge)</strong>은 5가지 방식 중 유일하게 감열체 마개가 아예 뚫려 있는 <strong>개방형 헤드</strong>를 씁니다! 층고가 10 m에서 20 m에 달하는 대극장 무대부나 항공기 격납고는 불이 나도 열기가 천장 헤드까지 올라가 감열체를 녹이는 데 너무 오랜 시간이 걸리므로, <strong>화재감지기</strong>가 작동하는 즉시 일제개방밸브(델류지밸브)를 열어 그 구역의 모든 개방형 헤드에서 동시에 폭포수처럼 물벼락을 쏟아붓습니다. 다섯째, <strong>부압식(Negative Pressure)</strong>은 1차측과 2차측 모두 물을 채우고 <strong>폐쇄형 헤드</strong>를 쓰되, 진공펌프로 2차측 배관을 빨아들여 <strong>부압(음압, 대기압보다 낮은 진공 상태의 물)</strong>으로 묶어 둡니다. 덕분에 평상시 지진이나 충격으로 배관이나 헤드가 깨져도 물이 바닥으로 쏟아지지 않고 오히려 바깥 공기가 배관 안으로 빨려 들어가며, 실제 화재 시에는 <strong>화재감지기</strong>가 작동해 부압을 정압(가압수)으로 전환시켜 주므로 물 한 방울의 누수도 허용치 않는 반도체 클린룸·전산실·박물관에 최적화된 최고급 방식입니다.
-          </p>
-        </div>
-
-        <div class="overflow-x-auto my-6">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:16%;">설비 종류</th>
-                <th style="width:18%;">유수검지장치</th>
-                <th style="width:20%;">2차측 배관 상태</th>
-                <th style="width:15%;">사용 헤드</th>
-                <th style="width:15%;">화재감지기</th>
-                <th>주요 특징 및 적용 장소</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>1. 습식</strong></td>
-                <td>알람밸브<br/>(습식유수검지장치)</td>
-                <td><strong>가압수</strong></td>
-                <td>폐쇄형</td>
-                <td><strong>없음 (X)</strong></td>
-                <td>구조 가장 간단·신속 방수, <strong>동파 우려 없는 일반 난방 건축물</strong></td>
-              </tr>
-              <tr>
-                <td><strong>2. 건식</strong></td>
-                <td>드라이밸브<br/>(건식유수검지장치)</td>
-                <td><strong>압축공기</strong><br/>(또는 질소가스)</td>
-                <td>폐쇄형</td>
-                <td><strong>없음 (X)</strong></td>
-                <td>헤드 개방 시 공기 방출 후 방수(엑셀러레이터·익져스터 부착), <strong>옥외·냉동창고</strong></td>
-              </tr>
-              <tr>
-                <td><strong>3. 준비작동식</strong></td>
-                <td>프리액션밸브<br/>(준비작동식밸브)</td>
-                <td>대기압 공기<br/>(또는 저압공기)</td>
-                <td>폐쇄형</td>
-                <td><strong>있음 (O)</strong></td>
-                <td>감지기 작동(밸브 개방) 후 헤드 개방 시 방수, 동파 방지, <strong>지하주차장·백화점</strong></td>
-              </tr>
-              <tr>
-                <td><strong>4. 일제살수식</strong></td>
-                <td>델류지밸브<br/>(일제개방밸브)</td>
-                <td>대기압 공기<br/>(비충수)</td>
-                <td><strong>개방형 (유일!)</strong></td>
-                <td><strong>있음 (O)</strong></td>
-                <td>감지기 작동 시 전 헤드 동시 살수, <strong>층고 높은 무대부·항공기 격납고</strong></td>
-              </tr>
-              <tr>
-                <td><strong>5. 부압식</strong></td>
-                <td>프리액션밸브<br/>+ 진공펌프</td>
-                <td><strong>부압(진공)의 물</strong></td>
-                <td>폐쇄형</td>
-                <td><strong>있음 (O)</strong></td>
-                <td>평상시 헤드 파손 시에도 누수(수손 피해) 원천 방지, <strong>전산실·박물관</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div id="sec4">
-        <h2 class="text-xl font-bold text-white mb-3">4. 알람밸브 리타딩 체임버(Retarding Chamber)와 슈퍼바이저리 패널</h2>
-        <div class="para-block">
-          <p class="prose-body">
-            습식 스프링클러의 유수검지장치인 <strong>알람밸브</strong> 내부에는 1차측 물과 2차측 물을 가로막는 원판 모양의 뚜껑인 <strong>클래퍼(Clapper)</strong>가 있습니다. 평상시에는 물의 비압축성 덕분에 2차측 수압이 클래퍼를 단단히 누르고 있다가, 화재로 헤드가 터지면 2차측 수압이 빠지면서 1차측 가압수가 클래퍼를 벌컥 밀어 올립니다. 이때 클래퍼가 앉아 있던 자리(밸브 시트)에 파여 있는 둥근 홈(환상구)으로 물 일부가 새어 들어가 <strong>압력스위치(유수검지스위치)</strong>를 작동시켜 경보벨을 울리고 펌프를 돌립니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>리타딩 체임버(Retarding Chamber)</strong>: 습식 알람밸브에 설치하며, 배관 내 <strong>일시적인 수압 변동(수격 등) 시 클래퍼 미세 개방에 따른 오경보(비화재보)를 지연·방지</strong>하는 장치</li>
-              <li><strong>슈퍼바이저리 패널(Supervisory Panel)</strong>: 준비작동식·일제살수식 밸브 인근에 설치하여 감지기 신호 수신 ➔ 솔레노이드 기동 ➔ 탬퍼스위치·압력스위치 감시 및 경보 수행</li>
-              <li><strong>엑셀러레이터 · 익져스터</strong>: <strong>건식 스프링클러설비</strong>에서 2차측 압축공기를 신속히 방출하여 드라이밸브 개방 시간을 단축하는 가속 장치</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            그런데 불이 나지 않았는데도 밤사이 상수도 수압이 출렁이거나 충압펌프가 돌면서 일시적인 <strong>수압 변동(맥동 현상)</strong>이 생겨 클래퍼가 0.5초 동안 살짝 들썩였다가 닫히면 어떻게 될까요? 그때마다 환상구로 들어간 물 한 컵이 압력스위치를 눌러 한밤중에 건물 전체에 비상벨이 울리는 <strong>오경보(비화재보)</strong> 소동이 벌어질 것입니다! 이를 막기 위해 알람밸브와 압력스위치 가는 길목에 달아두는 약 1 L짜리 작은 금속 물통 모양의 완충 장치가 바로 <strong>리타딩 체임버(Retarding Chamber, 지연실)</strong>입니다! 수압 변동으로 클래퍼가 잠깐 들썩였을 때 들어온 소량의 물은 리타딩 체임버 통 안에 잠시 고였다가 바닥의 작은 배수구멍(드레인 오리피스)으로 조용히 빠져나가 버리고, 실제 화재로 헤드가 터져 물이 배수구멍으로 빠지는 양보다 훨씬 많이 계속 쏟아져 들어와 리타딩 체임버 통을 가득 채웠을 때만 위쪽 압력스위치를 눌러 경보를 울리게 함으로써 <strong>일시적 수압 변동에 의한 오작동을 완벽히 방지</strong>합니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            한편 준비작동식이나 일제살수식 밸브 바로 옆 벽면에 붙어 있는 네모난 현장 제어반인 <strong>슈퍼바이저리 패널(Supervisory Panel)</strong>은 화재감지기 신호를 받아 <strong>솔레노이드 밸브(전자밸브)를 격발시키고, 밸브 개방 여부(압력스위치)와 배관 개폐밸브가 잠겨 있는지 여부(탬퍼스위치, Tamper Switch)를 감시하여 중앙 방재실 수신기로 중계하며 자체 경보 사이렌까지 울려주는 핵심 제어 장치</strong>입니다. 아울러 <strong>건식 스프링클러설비</strong>에서 헤드가 터졌을 때 2차측 배관에 가득 찬 압축공기가 다 빠져나갈 때까지 물이 못 나가는 지연 시간을 줄이기 위해 부착하는 가속 장치 두 가지도 꼭 기억하십시오: 2차측 공기 압력이 조금만 떨어져도 이를 감지해 드라이밸브 중간실로 공기를 보내 클래퍼를 즉시 강제 개방시키는 <strong>엑셀러레이터(Accelerator)</strong>와, 2차측 압축공기를 대기 중으로 직접 빠르게 뽑아내어 버리는 <strong>익져스터(Exhauster)</strong>입니다(헤드 개방 후 <strong>1분 이내</strong>에 헤드 선단에서 물이 방수되도록 돕습니다).
+            마지막으로 폐쇄형 헤드의 열감도 지표와 설치 장소 최고주위온도별 표시온도 색상, 그리고 헤드 배치 수평거리와 배관 말단 시험 장치를 정리합니다.
+            <span class="formula-box">
+              <span class="formula-badge">스프링클러헤드 설치 장소별 최대 수평거리 서열 (NFPC 103)</span>
+              <span class="formula-eq">무대부·특수가연물(1.7 m 이하) &lt; 일반 거실(2.1 m) &lt; 내화구조(2.3 m) &lt; 랙식 창고(2.5 m) &lt; 아파트 세대(3.2 m)</span>
+              <span class="formula-ex">💡 <strong>살수 방해 방지 공간 및 덕트 하부 헤드</strong> | 살수 분포가 가려지지 않도록 헤드 반사판(디플렉터) 아래 <strong>0.45 m 이상(랙식 창고 0.3 m 이상)</strong> 수직 공간을 비워 두고, 폭이 <strong>1.2 m를 초과</strong>하는 공조 덕트나 선반 아래에는 살수 사각지대 해소를 위해 별도 헤드를 추가 설치합니다.</span>
+            </span>
+            <span class="prose-item"><strong>③ 헤드 반응시간지수(RTI) · 표시온도 색상 및 가지배관 · 시험밸브</strong></span>
+            <span class="prose-sub">&bull; <strong>반응시간지수(RTI) 및 주위온도별 표시온도</strong>: 감열체의 열적 관성을 뜻하는 <strong>반응시간지수</strong> 값이 작을수록 열에 빠르게 반응하는 조기반응형 헤드(표준형보다 민감)이며, 설치 장소 최고주위온도에 따른 <strong>표시온도</strong> 등급은 <strong>39℃ 미만 시 57℃ 이상 77℃ 미만(유리벌브 오렌지·적색, 프레임 무색)</strong>, <strong>39℃ 이상 64℃ 미만 시 79℃ 이상 107℃ 미만(벌브 황색·녹색, 프레임 백색)</strong>, <strong>64℃ 이상 106℃ 미만 시 121℃ 이상 149℃ 미만(청색)</strong>, <strong>106℃ 이상 시 163℃ 이상(보라·흑색)</strong>을 선정합니다.</span>
+            <span class="prose-sub">&bull; <strong>가지배관 헤드 수 · 말단시험밸브 · 청소구</strong>: 수압 균등 분배를 위해 토너먼트 배관을 금지하고 가지배관 한쪽마다 설치하는 헤드는 최대 <strong>8개 이하</strong>로 제한하며, 유수검지장치의 정상 작동 여부를 가장 불리한 배관 끝에서 시험하는 <strong>말단시험밸브</strong> 구경은 <strong>25 mm(헤드 1개 방수량과 동일한 유량계수 K=80 표준 오리피스 부착, 바닥 높이 1.5 m 이하)</strong>로 하고 교차배관 끝 이물질 제거용 청소구 구경은 <strong>40 mm 이상</strong>으로 설치합니다.</span>
           </p>
         </div>
       </div>
     </section>
 
     <div class="para-block diagram-wrapper" id="diagramBox">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 옥내소화전 가압송수장치 계통도 및 5대 스프링클러설비 작동 비교</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">⚡ 1분 속독 스캔</span>
+          <h3 class="cheat-title">제4편 제2장 · 옥내소화전 · 소방펌프 수리 현상 및 5대 스프링클러설비 초고밀도 압축 정리본</h3>
         </div>
-                <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 옥내소화전 수리 기준 · 충압펌프 · 물올림장치 및 펌프 성능시험·이상현상</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">옥내소화전 핵심 수리 기준</div>
-                <div>· 방수압력: <strong>0.17 MPa에서 0.7 MPa까지</strong><br/>· 방수량: <strong>130 L/min 이상</strong><br/>· 유효수량: 최대 <strong>2개 &times; 2.6 m<sup>3</sup></strong>(20분분)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">충압펌프 &amp; 물올림장치 (100 L 이상)</div>
-                <div>· 충압펌프: 주펌프 기동점보다 <strong>0.05 MPa 이상 높게</strong>, 60 L/min 이하<br/>· 물올림장치: <strong>펌프가 수원보다 높을 때만</strong> 필수</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">소방펌프 성능시험 3대 운전점</div>
-                <div>· <strong>체절(유량 0%)</strong>: 정격압력의 <strong>140% 이하</strong><br/>· <strong>정격(100%)</strong>: <strong>100% 이상</strong><br/>· <strong>최대(150%)</strong>: 정격압력의 <strong>65% 이상</strong></div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">수격현상 vs 공동현상(캐비테이션)</div>
-                <div>· <strong>수격</strong>: 급폐쇄 충격파(스모렌스키 체크밸브·수격방지기)<br/>· <strong>공동</strong>: 포화증기압 이하 기포(<strong>NPSH<sub>av</sub> &gt; NPSH<sub>re</sub></strong>)</div>
-              </div>
-            </div>
-            <div class="schema-alert">★ 펌프 성능시험 3점: <strong>체절운전(유량 0 · 정격양정의 140% 이하) ➔ 정격부하운전(정격유량 100% · 정격양정 100% 이상) ➔ 최대운전(정격유량의 150%에서 정격양정의 65% 이상)</strong>!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 5대 스프링클러설비(습식·건식·준비작동식·일제살수식·부압식) 및 부속장치</div>
-            <div class="space-y-2.5">
-              <div class="schema-box">
-                <div class="schema-box-title">5대 스프링클러설비 2차측 상태 · 헤드 · 감지기 유무 비교</div>
-                <ul class="schema-list">
-                  <li><strong>습식</strong>(가압수, 폐쇄형, 감지기 X) / <strong>건식</strong>(압축공기, 폐쇄형, 감지기 X, 엑셀러레이터·익져스터 부착)</li>
-                  <li><strong>준비작동식</strong>(대기압, 폐쇄형, <strong>감지기 O</strong>) / <strong>일제살수식</strong>(유일한 <strong>개방형 헤드! 감지기 O</strong>) / <strong>부압식</strong>(부압의 물, 폐쇄형, <strong>감지기 O</strong>)</li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">리타딩 체임버(Retarding Chamber) vs 슈퍼바이저리 패널(Supervisory Panel)</div>
-                <ul class="schema-list">
-                  <li><strong>리타딩 체임버(습식 알람밸브)</strong>: 일시적 수압 변동 시 클래퍼 미세 개방에 따른 <strong>오경보(비화재보) 지연·방지</strong></li>
-                  <li><strong>슈퍼바이저리 패널(준비작동식·일제살수식)</strong>: 감지기 신호 수신 ➔ 솔레노이드 기동 ➔ 탬퍼·압력스위치 감시 및 경보</li>
-                </ul>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01 · 옥내 · 호스릴 · 옥외소화전 수리 기준 및 4대 가압송수방식</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">옥내 · 호스릴 · 옥외 비교</div>
+              <div class="cheat-val"><strong>옥내</strong>(<strong>0.17에서 0.7 MPa · 130 L/min · N&times;2.6 m<sup>3</sup>[30층↑ 5.2, 50층↑ 7.8] · 25 m · 40 mm</strong>, 0.7 MPa 초과 시 감압장치) / <strong>호스릴</strong>(0.17 MPa·60 L/min·1.2 m<sup>3</sup>·15 m·25 mm) / <strong>옥외</strong>(<strong>0.25 MPa·350 L/min·7.0 m<sup>3</sup>·40 m·65 mm</strong>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">충압펌프 · 물올림 · 순환</div>
+              <div class="cheat-val"><strong>충압펌프</strong>(주펌프보다 <strong>0.05 MPa↑ 높게</strong> 기동, 토출량 <strong>60 L/min↓</strong>) / <strong>물올림장치</strong>(펌프가 수원보다 높을 때 필수, <strong>100 L↑</strong>) / <strong>순환배관·릴리프밸브</strong>(체절운전 수온 상승 방지)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">가압송수 양정 · 압력수조</div>
+              <div class="cheat-val"><span class="cheat-eq">펌프 H = h<sub>1</sub> + h<sub>2</sub> + 17 m | 고가수조 H = h<sub>1</sub> + 17 m (실양정 h<sub>2</sub> 제외!)</span> <strong>압력수조</strong> = 수조 부피에 <strong>물 최대 2/3 이하 + 압축공기 1/3 이상</strong> 충전 가압</div>
             </div>
           </div>
         </div>
-</div>
-      <aside class="sidenote">
-        <div class="sidenote-box">
-          <div class="sidenote-title">도해 요약</div>
-          <ul class="sidenote-list">
-            <li><strong>주제</strong>: 그림 1. 옥내소화전 가압송수장치 계통도 및 5대 스프링클러설비 작동 비교</li>
-            <li><strong>활용</strong>: 본문에서 살펴본 물리·화학적 인과관계와 법정 기준 수치를 도해의 흐름에 맞춰 다시 한번 점검하십시오.</li>
-          </ul>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02 · 소방펌프 성능시험 3점 · 유체 이상현상 및 축동력 · 상사법칙</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">성능시험 3점 · 밸브 순서</div>
+              <div class="cheat-val"><span class="cheat-eq">체절(0%) &le; 140% | 정격(100%) &ge; 100% | 최대(150%) &ge; 65%</span> 성능시험배관 유량계 기준 <strong>전단 직관부에 개폐밸브 · 후단에 유량조절밸브</strong> 설치</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">수격 · 공동 · 서징현상</div>
+              <div class="cheat-val"><span class="cheat-eq">공동 방지: NPSH<sub>a</sub> &ge; NPSH<sub>r</sub></span> <strong>수격</strong>(급폐쇄 충격파 ➔ 스모렌스키 체크밸브·수격방지기) · <strong>공동</strong>(포화증기압 이하 기포·임펠러 침식) · <strong>서징</strong>(산 모양 곡선 압력·유량 주기적 맥동)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">축동력 · 상사법칙 · 직병렬</div>
+              <div class="cheat-val"><span class="cheat-eq">축동력 P<sub>s</sub> = (9.8 &times; Q &times; H) &divide; &eta; | Q &prop; N<sup>1</sup>, H &prop; N<sup>2</sup>, P &prop; N<sup>3</sup></span> 회전수 2배 시 유량 <strong>2배</strong>·양정 <strong>4배</strong>·동력 <strong>8배</strong> / <strong>직렬 운전</strong>(양정 2배·유량 일정) vs <strong>병렬 운전</strong>(유량 2배·양정 일정)</div>
+            </div>
+          </div>
         </div>
-      </aside>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03 · 5대 스프링클러설비 · 부속장치 및 헤드 · 배관 법정 기준 (NFPC 103)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">기본 수리 · 5대 SP 비교</div>
+              <div class="cheat-val">헤드당 <strong>80 L/min↑ · 0.1에서 1.2 MPa · 수량 N&times;1.6 m<sup>3</sup></strong> / 유일한 <strong>개방형 헤드 = 일제살수식</strong>(나머지 4종 폐쇄형) / <strong>감지기 연동 3종 = 준비작동식·일제살수식·부압식</strong>(습식·건식은 감지기 X)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">3대 유수검지 부속장치</div>
+              <div class="cheat-val"><strong>리타딩 체임버</strong>(습식 알람밸브, 일시 수압 변동 오경보 지연·방지) · <strong>슈퍼바이저리패널</strong>(준비작동·일제살수 제어·탬퍼 감시) · <strong>액셀러레이터·익져스터</strong>(건식 압축공기 신속 배출 가속)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">RTI · 주위온도별 표시온도</div>
+              <div class="cheat-val"><strong>RTI 작을수록 민감(조기반응형)</strong> / 주위 <strong>39℃ 미만</strong> ➔ 표시 <strong>57℃ 이상 77℃ 미만(벌브 오렌지·적색, 프레임 무색)</strong> / 39℃ 이상 64℃ 미만 ➔ 79℃ 이상 107℃ 미만(황·녹색, 백색) / 64℃ 이상 106℃ 미만 ➔ 청색</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">헤드 수평거리 · 배관 부속</div>
+              <div class="cheat-val"><span class="cheat-eq">수평거리: 무대·특수(1.7 m) &lt; 일반(2.1) &lt; 내화(2.3) &lt; 랙(2.5) &lt; 아파트(3.2)</span> 가지배관 한쪽 헤드 <strong>8개 이하</strong> · 폭 <strong>1.2 m 초과</strong> 덕트 하부 헤드 추가 · <strong>말단시험밸브 25 mm(K=80)</strong> · <strong>청소구 40 mm↑</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
@@ -367,7 +267,7 @@
     <section class="mt-20 pt-10 border-t border-emerald-900/60" id="oxQuizSection">
       <div class="mb-8">
         <span class="text-xs font-bold text-emerald-400 tracking-wider">단원 복습</span>
-        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 OX 확인 (14문항)</h2>
+        <h2 class="text-2xl font-extrabold text-white mt-1">핵심 지문 및 2회독 확장 OX 확인 (38문항)</h2>
         <p class="text-sm text-slate-400 mt-1">기출 선지를 개별 문장으로 분해한 OX 문제를 통해 개념과 수치의 정확도를 최종 점검하십시오.</p>
       </div>
       <div id="quizList" class="space-y-4"></div>
@@ -388,7 +288,7 @@
     <p>소방학개론 기본서 · 제4편 소방시설론 제2장</p>
   </footer>
 
-  <script src="assets/js/harness-core.js?v=5"></script>
+  <script src="assets/js/harness-core.js?v=6"></script>
   <script>
     const STATS_DATA = {
   "unitTitle": "제4편 소방시설론 제2장",
@@ -666,7 +566,8 @@
     "source": "옥내소화전 기출",
     "explanation": "화재안전성능기준(NFPC 102) 제5조에 따른 옥내소화전 법정 방수압력 기준입니다.",
     "origQId": "",
-    "id": "SCI₀4₀2₀01"
+    "id": "SCI₀4₀2₀01",
+    "isEssential": false
   },
   {
     "grade": "B",
@@ -675,7 +576,8 @@
     "source": "옥내소화전 기출",
     "explanation": "옥내소화전 노즐 선단의 법정 방수량은 분당 130리터 이상입니다.",
     "origQId": "",
-    "id": "SCI₀4₀2₀02"
+    "id": "SCI₀4₀2₀02",
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -684,7 +586,10 @@
     "source": "스프링클러 기출",
     "explanation": "2차측 배관에 압축공기나 질소를 충전하여 동파를 방지하는 것은 건식 스프링클러설비입니다. 습식은 1차측과 2차측 모두 가압수가 차 있습니다.",
     "origQId": "",
-    "id": "SCI₀4₀2₀03"
+    "id": "SCI_04_02_002",
+    "paraIdx": 0,
+    "hlKey": "스프링클러",
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -693,7 +598,8 @@
     "source": "스프링클러 기출",
     "explanation": "준비작동식은 교차회로 감지기 작동 시 밸브가 개방되어 2차측 배관에 물이 공급되는 방식입니다.",
     "origQId": "",
-    "id": "SCI₀4₀2₀04"
+    "id": "SCI₀4₀2₀04",
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -702,7 +608,10 @@
     "source": "2018년 소방공채·경채 Q18 기출",
     "explanation": "일제살수식은 개방형 헤드를 사용하여 일제개방밸브가 열리면 구역 전체 헤드에서 동시에 살수됩니다.",
     "origQId": "Q₂018₁8",
-    "id": "SCI₀4₀2₀05"
+    "id": "SCI_04_02_003",
+    "paraIdx": 0,
+    "hlKey": "스프링클러",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -711,7 +620,10 @@
     "source": "2019년 소방공채·경채 Q17 기출",
     "explanation": "감지기 연동 유무(준비작동·일제살수·부압 = 감지기 연동 / 습식·건식 = 감지기 미연동)는 폐쇄형·개방형 헤드 구분과 함께 1순위 비교 표 암기 사항입니다.",
     "origQId": "Q₂019₁7",
-    "id": "SCI₀4₀2₀06"
+    "id": "SCI_04_02_004",
+    "paraIdx": 0,
+    "hlKey": "스프링클러",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -720,7 +632,10 @@
     "source": "2020년 소방공채·경채 Q5 기출",
     "explanation": "리타딩(Retarding = 지연) 체임버는 클래퍼의 순간적 들림으로 유입된 소량의 물을 배수시켜 압력스위치의 오작동을 막습니다.",
     "origQId": "Q₂020₅",
-    "id": "SCI₀4₀2₀07"
+    "id": "SCI_04_02_005",
+    "paraIdx": 0,
+    "hlKey": "스프링클러",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -729,7 +644,10 @@
     "source": "2021년 소방공채·경채 Q3 기출",
     "explanation": "슈퍼바이저리패널은 감지기 작동 신호와 솔레노이드밸브 개방을 중계·표시하는 준비작동식·일제살수식용 보조제어반입니다.",
     "origQId": "Q₂021₃",
-    "id": "SCI₀4₀2₀08"
+    "id": "SCI_04_02_006",
+    "paraIdx": 4,
+    "hlKey": "준비작동식",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -738,16 +656,22 @@
     "source": "2021년 소방공채·경채 Q3 기출",
     "explanation": "체절운전 시 물이 배출되지 않고 임펠러만 회전하면 마찰열로 수온이 급상승하여 펌프가 손상되므로 순환배관과 릴리프밸브로 체절압력 미만에서 물을 방출시킵니다.",
     "origQId": "Q₂021₃",
-    "id": "SCI₀4₀2₀09"
+    "id": "SCI_04_02_007",
+    "paraIdx": 0,
+    "hlKey": "옥내소화전",
+    "isEssential": true
   },
   {
     "grade": "S",
     "text": "가압송수장치인 펌프가 수원의 수위보다 높은 곳에 설치된 자동기동방식 옥내소화전설비에는 물올림장치, 기동용수압개폐장치, 릴리프밸브(순환배관), 동력제어반이 설치된다.",
     "isCorrect": true,
     "source": "2022년 소방공채·경채 Q9 기출",
-    "explanation": "수원보다 펌프가 높으면 흡입관에 물이 빠질 수 있어 물올림장치(유효수량 100리터 이상, 급수배관 15밀리미터 이상, 물올림관 25밀리미터 이상)가 반드시 설치되어야 합니다.",
+    "explanation": "수원보다 펌프가 높으면 흡입관에 물이 빠질 수 있어 물올림장치(유효수량 100리터 이상, 급수배관 15밀리미터 이상, 물올림관 25밀리미터 이상)가 반드시 설치되어야 하며, 솔레노이드밸브는 옥내소화전 구성요소가 아닙니다.",
     "origQId": "Q₂022₉",
-    "id": "SCI₀4₀2₀10"
+    "id": "SCI_04_02_008",
+    "paraIdx": 0,
+    "hlKey": "옥내소화전",
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -756,7 +680,10 @@
     "source": "2023년 소방공채·경채 Q7 기출",
     "explanation": "관경 축소 및 유속 증가는 수격현상을 악화시키는 요인이므로, 관경 확대 및 유속 감소가 올바른 방지책입니다.",
     "origQId": "Q₂023₇",
-    "id": "SCI₀4₀2₀11"
+    "id": "SCI_04_02_009",
+    "paraIdx": 2,
+    "hlKey": "소방펌프",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -765,7 +692,10 @@
     "source": "2025년 소방공채·경채 Q23 기출",
     "explanation": "유효흡입수두(NPSHa)를 필요흡입수두(NPSHr)보다 크게 유지하기 위해 펌프 위치를 낮추고(흡입양정 축소), 흡입관경 확대 및 임펠러 회전수 감소를 적용합니다.",
     "origQId": "Q₂025₂3",
-    "id": "SCI₀4₀2₀12"
+    "id": "SCI_04_02_010",
+    "paraIdx": 2,
+    "hlKey": "소방펌프",
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -774,7 +704,10 @@
     "source": "2026년 소방공채·경채 Q22 기출",
     "explanation": "펌프 성능곡선 3대 공식(체절 0에서 140퍼센트 이하, 정격 100퍼센트에서 100퍼센트, 최대 150퍼센트에서 65퍼센트 이상)은 계산 문제로 직결되는 핵심 수치입니다.",
     "origQId": "Q₂026₂2",
-    "id": "SCI₀4₀2₀13"
+    "id": "SCI_04_02_011",
+    "paraIdx": 1,
+    "hlKey": "펌프의",
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -783,10 +716,528 @@
     "source": "2026년 소방공채·경채 Q24 기출",
     "explanation": "충압펌프의 정의와 설치 목적(주펌프 빈번 기동 방지 및 배관 압력 보충)은 기동용수압개폐장치의 정의와 구분하여 기억해야 합니다.",
     "origQId": "Q₂026₂4",
-    "id": "SCI₀4₀2₀14"
+    "id": "SCI_04_02_012",
+    "paraIdx": 0,
+    "hlKey": "옥내소화전",
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "표준 옥내소화전설비(NFPC 102)는 노즐 선단 방수압력 0.17 MPa 이상 0.7 MPa 이하, 분당 방수량 130 L/min 이상, 수원의 유효수량 N(최대 2개) × 2.6 m³ 이상, 수평거리 25 m 이하로 설치한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (표준 옥내소화전 4대 법정 수치)",
+    "explanation": "옥내소화전설비의 4대 기본 수치(0.17에서 0.7 MPa, 130 L/min, N×2.6 m³, 수평거리 25 m 이하, 호스 구경 40 mm 이상)는 모든 수계 소화설비 비교의 기준점입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_001",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 0,
+    "hlKey": "2.6세제곱미터",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "옥외소화전설비(NFPC 109)의 노즐 선단 방수압력은 0.17 MPa 이상이고 분당 방수량은 130 L/min 이상이며, 각 부분으로부터의 수평거리는 25 m 이하이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (옥외소화전 0.25 MPa · 350 L/min · 7 m³ · 40 m)",
+    "explanation": "제시된 수치는 옥내소화전 수치입니다! 건물 외부에서 대형 화세를 진압하는 '옥외소화전설비(NFPC 109)'는 노즐 선단 방수압력 0.25 MPa 이상 0.7 MPa 이하, 분당 방수량 350 L/min 이상, 유효수량 N(최대 2개) × 7 m³ 이상, 수평거리 40 m 이하, 호스 구경 65 mm입니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_002",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 0,
+    "hlKey": "옥외소화전",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "호스릴옥내소화전설비는 호스 구경 40 mm를 사용하며, 노즐 선단 방수압력은 0.17 MPa 이상, 분당 방수량은 130 L/min 이상, 수평거리는 25 m 이하이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (호스릴옥내소화전 vs 표준 옥내소화전 수치 혼동)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 방수압력(0.17 MPa 이상)만 같을 뿐 나머지 수치는 표준 옥내소화전 수치를 그대로 가져다 붙인 함정입니다! 호스릴옥내소화전은 호스 구경 '25 mm', 방수량 '60 L/min 이상', 유효수량 'N × 1.2 m³ 이상', 수평거리 '15 m 이하'입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_003",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 0,
+    "hlKey": "호스릴옥내소화전",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "옥내소화전설비의 가압송수장치를 고가수조 방식으로 할 때 필요한 낙차(수두, H) 산정 공식은 H = h₁(마찰손실수두) + h₂(배관의 실양정) + 17 m이고, 옥외소화전설비를 펌프 방식으로 할 때 필요한 전양정 공식은 H = h₁ + h₂ + 17 m이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (고가수조 낙차 실양정 제외 + 옥내 17m vs 옥외 25m 공식)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 두 군데가 동시에 틀렸습니다! 첫째, '고가수조 낙차(H)'는 수조 위치에서 최상층 방수구까지의 수직 높이가 낙차 그 자체이므로 공식에 실양정(h₂)이 들어가지 않으며 'H = h₁(마찰손실수두) + 17 m'입니다! 둘째, '옥외소화전설비'의 노즐 선단 최소 방수압력은 0.17 MPa이 아니라 '0.25 MPa(환산수두 25 m)'이므로 마지막에 17 m가 아니라 '25 m'를 더해야 합니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_004",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 1,
+    "hlKey": "고가수조",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "동일한 소방펌프에서 임펠러의 회전수(N)를 2배로 증가시키면 상사법칙에 따라 토출 유량(Q)은 2배, 양정(H)은 4배, 소요 축동력(P)은 8배로 증가한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (펌프 회전수 상사법칙 1·2·3제곱)",
+    "explanation": "원심펌프의 회전수(N)에 대한 상사법칙은 유량 Q ∝ N¹, 양정 H ∝ N², 축동력 P ∝ N³이므로, 회전수가 2배가 되면 유량은 2¹=2배, 양정은 2²=4배, 축동력은 2³=8배가 됩니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_005",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "paraIdx": 3,
+    "hlKey": "상사법칙",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "특성이 동일한 2대의 원심펌프를 직렬로 연결하여 운전하면 양정(H)은 1대일 때와 같고 이론 토출 유량(Q)이 2배로 증가하며, 병렬로 연결하여 운전하면 유량(Q)은 같고 이론 양정(H)이 2배로 증가한다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (펌프 직렬 운전 vs 병렬 운전 비교)",
+    "explanation": "직렬 운전과 병렬 운전의 효과가 서로 바뀌었습니다! 펌프 2대를 '직렬 운전'하면 유량(Q)은 일정하고 이론 양정(H)이 2배로 증가(고양정용)하며, '병렬 운전'하면 양정(H)은 일정하고 이론 유량(Q)이 2배로 증가(대유량용)합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_006",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "paraIdx": 3,
+    "hlKey": "직렬 운전",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "펌프가 분당 1.2 m³(초당 0.02 m³/s)의 물을 전양정 50 m로 송수할 때 펌프의 효율(η)이 0.98(98%)이라면, 필요한 펌프의 축동력[Ps = (9.8 × Q × H) ÷ η]은 10 kW이다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (소방펌프 수동력·축동력 정량 계산)",
+    "explanation": "초당 유량 Q = 1.2 ÷ 60 = 0.02 m³/s이므로, 수동력 Pw = 9.8 × 0.02 × 50 = 9.8 kW이고, 축동력 Ps = 9.8 ÷ 0.98 = 10 kW입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_007",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "paraIdx": 3,
+    "hlKey": "축동력",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "펌프의 공동현상(캐비테이션)을 방지하기 위한 조건은 필요흡입수두(NPSHr)가 유효흡입수두(NPSHa)보다 커야 하며(NPSHr > NPSHa), 흡입수의 수온이 높아질수록 유효흡입수두가 커져 공동현상이 예방된다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (유효흡입수두 NPSHa ≥ NPSHr 및 수온 영향)",
+    "explanation": "두 가지 모두 틀렸습니다! 공동현상을 방지하려면 외부에서 제공하는 유효흡입수두(NPSHa)가 펌프가 요구하는 필요흡입수두(NPSHr)보다 크거나 같아야(NPSHa ≥ NPSHr) 하며, 수온이 높아지면 물의 포화증기압 수두(Hv)가 커져서 유효흡입수두(NPSHa = Ha ± Hs - Hv - Hf)가 줄어들어 공동현상이 훨씬 잘 일어납니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_008",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "paraIdx": 2,
+    "hlKey": "NPSH",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "펌프의 유량-양정 특성곡선이 산 모양(우향 상승 후 하강하는 구간)을 가질 때 배관 내 압력과 유량이 주기적으로 출렁이며 진동하는 현상을 서징현상(Surging, 맥동현상)이라 한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (서징현상 Surging 정의)",
+    "explanation": "포화증기압 이하 기포 발생·붕괴에 의한 임펠러 침식은 공동현상(Cavitation), 급정지·밸브 급폐쇄 시 운동에너지가 압력 충격파로 바뀌는 현상은 수격현상(Water Hammering), 산 모양 특성곡선에 의한 주기적 압력·유량 요동은 서징현상(Surging)입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_009",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "paraIdx": 2,
+    "hlKey": "서징현상",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "스프링클러설비(NFPC 103)에서 수원의 유효수량은 기준개수(N) × 1.6 m³(80 L/min × 20분) 이상이며, 헤드 선단의 방수압력은 0.1 MPa 이상 1.2 MPa 이하, 분당 방수량은 80 L/min 이상이다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (스프링클러설비 수원·방수압력·방수량 기준)",
+    "explanation": "스프링클러설비의 3대 핵심 수치인 수원 N × 1.6 m³(30층에서 49층은 3.2 m³, 50층 이상은 4.8 m³), 방수압력 0.1 MPa 이상 1.2 MPa 이하, 분당 방수량 80 L/min 이상을 옥내소화전(0.17에서 0.7 MPa, 130 L/min, 2.6 m³)과 정확히 대조해야 합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_010",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 4,
+    "hlKey": "1.6세제곱미터",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "폐쇄형 스프링클러헤드 설치장소의 평상시 최고주위온도가 39 ℃ 미만일 때 헤드의 표시온도는 57 ℃ 이상 77 ℃ 미만이며, 유리벌브식 헤드(표시온도 68 ℃)의 액체 색상은 황색(Yellow)이고 퓨지블링크식 프레임 색상은 백색이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (스프링클러 헤드 표시온도 68℃ 적색·무색 vs 79℃ 황색·백색 스왑)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 표시온도 1단계(39℃ 미만 ➔ 표시온도 57℃에서 77℃ 미만)에 해당하는 유리벌브 액체 색상은 오렌지색(57℃)과 '적색(68℃)'이고 퓨지블링크 프레임 색상은 '무색'입니다! '황색(79℃)'과 '백색'은 2단계(최고주위온도 39℃ 이상 64℃ 미만 ➔ 표시온도 79℃에서 107℃ 미만)의 색상입니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_011",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 5,
+    "hlKey": "표시온도",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "폐쇄형 스프링클러헤드의 반응시간지수(RTI, Response Time Index) 값이 클수록 열에 대한 감도가 민감하여 화재 시 더 빠르게 개방되는 조기반응형 헤드이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (반응시간지수 RTI와 조기반응형 헤드)",
+    "explanation": "반대입니다! 반응시간지수(RTI)는 감열체의 열적 관성을 나타내므로, RTI 수치가 '작을수록(표준형 RTI ≥ 80, 조기반응형 RTI ≤ 50)' 열에 민감하게 반응하여 빠르게 개방되는 조기반응형 헤드입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_012",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "paraIdx": 5,
+    "hlKey": "반응시간지수",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "표준형 스프링클러헤드를 설치할 때 각 부분으로부터 하나의 헤드까지의 수평거리는 무대부 및 특수가연물 저장·취급 장소는 1.7 m 이하, 일반 건축물은 2.1 m 이하, 내화구조 건축물은 2.3 m 이하, 아파트(공동주택) 세대 내 거실은 3.2 m 이하이다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (스프링클러헤드 수평거리 1.7 · 2.1 · 2.3 · 3.2 m)",
+    "explanation": "스프링클러헤드 수평거리(배치 반경) 서열인 『무대부·특수가연물(1.7 m) < 일반(2.1 m) < 내화구조(2.3 m) < 랙식 창고(2.5 m) < 아파트 세대 내(3.2 m)』는 출제 빈도가 매우 높은 필수 수치입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_013",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 5,
+    "hlKey": "1.7 m 이하",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "스프링클러설비에서 유수검지장치의 작동 여부를 시험하기 위한 말단시험밸브의 구경은 40 mm 이상으로 하고, 교차배관 끝에 설치하는 청소구의 구경은 25 mm로 하며, 가지배관의 한쪽 끝에는 헤드를 최대 10개까지 설치할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (말단시험밸브 25mm vs 청소구 40mm vs 한쪽 가지배관 헤드 8개 이하)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 구경 숫자와 헤드 개수를 전부 맞바꾼 함정입니다! '말단시험밸브'의 구경이 '25 mm'이고, 교차배관 끝 '청소구'의 구경이 '40 mm 이상'이며, 토너먼트 배관이 아닌 한쪽 가지배관에 설치되는 헤드 수는 '8개 이하'입니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_014",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 5,
+    "hlKey": "말단시험밸브",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "스프링클러헤드의 살수가 방해받지 아니하도록 헤드의 반사판(디플렉터)으로부터 아래쪽으로 0.45 m 이상(랙식 창고는 0.3 m 이상)의 공간을 보유해야 하며, 폭이 0.6 m를 초과하는 덕트나 선반 등이 있는 경우에는 그 아래에도 헤드를 추가로 설치해야 한다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (스프링클러 살수 장애 덕트 폭 1.2m 초과 기준)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 앞부분 살수 공간(일반 0.45 m, 랙식 창고 0.3 m 이상)은 맞지만, 아래쪽에 추가 헤드를 설치해야 하는 살수 장애물(덕트·선반 등)의 폭 기준은 0.6 m 초과가 아니라 '1.2 m를 초과하는 경우'입니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_015",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 5,
+    "hlKey": "1.2 m를 초과",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "건식 스프링클러설비의 건식밸브에 설치하는 액셀러레이터(Accelerator)와 익져스터(Exhauster)는 일시적인 급수 압력 변동 시 경보 장치의 오작동(비화재보)을 방지하기 위한 지연 장치이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (리타딩 체임버 vs 액셀러레이터·익져스터)",
+    "explanation": "일시적 수압 변동 시 오작동을 방지하는 지연 장치는 습식 알람밸브에 설치하는 '리타딩 체임버(Retarding Chamber)'입니다! 건식밸브에 설치하는 액셀러레이터와 익져스터는 헤드 개방 시 2차측 압축공기를 빠르게 빼내어 밸브를 신속히 열어주는 '급속개방장치'입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_016",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "paraIdx": 4,
+    "hlKey": "액셀러레이터",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "부압식 스프링클러설비는 1차측과 2차측 배관 모두 물을 채우되 2차측 배관을 진공펌프로 부압(음압) 상태로 유지함으로써, 평상시 헤드나 배관이 파손되더라도 물이 쏟아지지 않아 수손 피해를 예방하는 방식이다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (부압식 스프링클러설비 원리)",
+    "explanation": "부압식 스프링클러는 폐쇄형 헤드와 화재감지기를 함께 사용하며, 평상시 2차측에 부압(진공압)의 물이 차 있어 동파 우려는 있으나 오작동·파손 시 수손 피해를 막고 방수 지연 시간도 줄인 방식입니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_017",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "paraIdx": 4,
+    "hlKey": "부압식",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "준비작동식 스프링클러설비에서 1차로 교차회로 화재감지기가 작동하면 준비작동식 유수검지장치(프리액션밸브)가 개방되어 헤드로부터 즉시 물이 살수된다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (준비작동식 감지기 작동 시 배관 충수 vs 즉시 살수)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 감지기 작동 즉시 헤드에서 물이 쏟아지는 것은 '개방형 헤드'를 쓰는 '일제살수식'입니다! '준비작동식'은 '폐쇄형 헤드'를 사용하므로 감지기가 작동해 밸브가 열려도 2차측 배관에 물만 차오를 뿐, 화재 열기로 폐쇄형 헤드의 감열체가 터지기 전까지는 살수되지 않습니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_018",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "paraIdx": 4,
+    "hlKey": "준비작동식",
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "소방펌프의 성능시험배관에 설치하는 유량측정장치의 전단 직관부에는 유량조절밸브를 설치하고, 후단에는 개폐밸브를 설치해야 한다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (성능시험배관 개폐밸브 전단·유량조절밸브 후단)",
+    "explanation": "전단과 후단의 밸브 위치가 바뀌었습니다! 유량측정장치로 들어가는 물의 흐름이 교란되지 않도록 유량측정장치 '전단(앞쪽)'에는 완전 개방하는 '개폐밸브'를 설치하고, '후단(뒤쪽)'에 유량을 0%·100%·150%로 조절하는 '유량조절밸브'를 설치합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_019",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 2,
+    "hlKey": "성능시험배관",
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "압력수조를 이용한 가압송수장치는 밀폐된 수조 내부에 물을 수조 부피의 최대 1/3 이하로 채우고 압축공기를 2/3 이상 채워 가압 송수하는 방식이다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (압력수조 물 2/3 이하 vs 공기 1/3 이상 분수 역전)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 물과 압축공기의 비율 분수가 거꾸로 뒤집혔습니다! 압력수조 내부에는 '물'을 최대 '2/3 이하'로 채우고, '압축공기'를 '1/3 이상' 채워야 합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_020",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 1,
+    "hlKey": "압력수조",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "층수가 30층 이상 49층 이하인 건축물에 설치하는 옥내소화전설비의 수원 유효수량은 N(최대 2개) × 2.6 m³ 이상으로 하고, 스프링클러설비의 수원 유효수량은 N(기준개수) × 4.8 m³ 이상으로 한다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·악질함정 (30층에서 49층 40분 수원 유효수량 옥내 5.2m³·스프링클러 3.2m³)",
+    "explanation": "🚨 [출제위원 착시 함정 주의] 층수별 방수시간(29층 이하 20분 ➔ 30층에서 49층 40분[2배] ➔ 50층 이상 60분[3배])을 엇갈리게 매칭했습니다! 30층 이상 49층 이하 건축물은 40분간 방수해야 하므로, 옥내소화전은 2.6 m³의 2배인 'N × 5.2 m³ 이상'이고, 스프링클러는 1.6 m³의 2배인 'N × 3.2 m³ 이상'입니다(N × 4.8 m³은 50층 이상 60분 기준)!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_021",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 0,
+    "hlKey": "5.2세제곱미터",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "자동기동방식의 펌프가 수원의 수위보다 높은 곳에 설치되어 있을 때 흡입관의 물이 빠져나가 공회전하는 것을 막기 위해 설치하는 물올림장치의 전용 물올림탱크 유효수량은 100 L 이상이어야 하며, 구경 15 mm 이상의 급수배관과 구경 25 mm 이상의 물올림관을 갖추어야 한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (물올림장치 100 L · 급수관 15 mm · 물올림관 25 mm)",
+    "explanation": "물올림장치의 3대 수치(전용 탱크 유효수량 100 L 이상, 급수배관 15 mm 이상, 물올림관 25 mm 이상)와 기동용수압개폐장치의 압력챔버 용적(100 L 이상)을 함께 기억해 두면 편리합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_022",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 1,
+    "hlKey": "물올림장치",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "스프링클러설비의 가지배관에 설치되는 헤드의 개수는 수리학적 균형을 위해 가지배관 한쪽마다 최대 15개 이하까지 설치할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장 (스프링클러 가지배관 한쪽 헤드 8개 이하)",
+    "explanation": "토너먼트 배관 금지와 함께 가지배관의 배열 기준상 교차배관으로부터 분기되는 가지배관의 한쪽에는 헤드를 '8개 이하'로 설치해야 합니다!",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_023",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 5,
+    "hlKey": "8개 이하",
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "text": "옥내소화전설비에서 어느 층에서나 호스접결구의 방수압력이 0.7 MPa을 초과할 경우에는 노즐 조작 시 반동력에 의한 위험을 막기 위해 호스접결구의 인입 측에 감압밸브 등 감압장치를 설치해야 한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (옥내소화전 0.7 MPa 초과 시 감압장치 설치)",
+    "explanation": "옥내소화전 방수압력 범위는 0.17 MPa 이상 0.7 MPa 이하(스프링클러는 0.1 MPa 이상 1.2 MPa 이하)이며, 상한선을 초과하면 감압장치를 설치해야 합니다.",
+    "origQId": "",
+    "id": "PRED_SCI_04_02_024",
+    "tier": "pred",
+    "trapTags": [
+      "소방시설·수치기준"
+    ],
+    "paraIdx": 0,
+    "hlKey": "감압장치",
+    "isEssential": true
   }
 ];
-
+    window.SUBJ_DATA = [
+  {
+    "id": "SUBJ_SCI_04_02_01",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "펌프 전양정 vs 고가수조 필요 낙차 산정식",
+    "promptHtml": "<div class=\"subj-eq-line\">펌프 전양정 H = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"h1(마찰손실) + h2(실양정) + 17 m | 고가수조 필요 낙차 H\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">h1(마찰손실) + h2(실양정) + 17 m | 고가수조 필요 낙차 H</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"h1 + 17 m (실양정 h2 제외!)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">h1 + 17 m (실양정 h2 제외!)</span></span></div><div class=\"subj-ex-line\">💡 <strong>압력수조 공식 및 충전 비율</strong> | 건물 옥상 중력 위치에너지를 쓰는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"고가수조\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">고가수조</span></span>는 수조 설치 높이 자체가 이미 실양정이므로 <span class=\"chem\">h<sub>2</sub></span>를 별도로 더하지 않으며(환산수두는 옥내 17 m, 옥외 25 m, 스프링클러 10 m), 밀폐 탱크에 물 최대 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2/3 이하\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">2/3 이하</span></span> + 압축공기 <strong>1/3 이상</strong>을 채워 밀어내는 <strong>압력수조</strong>의 필요 압력은 <span class=\"chem\">P = p<sub>1</sub>(호스 마찰) + p<sub>2</sub>(배관 마찰) + p<sub>3</sub>(낙차 환산압) + 0.17 MPa</span>입니다.</div>",
+    "answerEq": "h1(마찰손실) + h2(실양정) + 17 m | 고가수조 필요 낙차 H / h1 + 17 m (실양정 h2 제외!) / 고가수조 / 2/3 이하",
+    "fullFormula": "펌프 전양정 H = h1(마찰손실) + h2(실양정) + 17 m | 고가수조 필요 낙차 H = h1 + 17 m (실양정 h2 제외!)",
+    "explanation": "💡 압력수조 공식 및 충전 비율 | 건물 옥상 중력 위치에너지를 쓰는 고가수조는 수조 설치 높이 자체가 이미 실양정이므로 h2를 별도로 더하지 않으며(환산수두는 옥내 17 m, 옥외 25 m, 스프링클러 10 m), 밀폐 탱크에 물 최대 2/3 이하 + 압축공기 1/3 이상을 채워 밀어내는 압력수조의 필요 압력은 P = p1(호스 마찰) + p2(배관 마찰) + p3(낙차 환산압) + 0.17 MPa입니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_02",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "소방펌프 성능시험 3대 운전점 기준",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"체절운전(유량 0%) ≤ 정격압력 140%\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">체절운전(유량 0%) ≤ 정격압력 140%</span></span> &nbsp;|&nbsp; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"정격운전(유량 100%) ≥ 정격압력 100%\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">정격운전(유량 100%) ≥ 정격압력 100%</span></span> &nbsp;|&nbsp; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"최대운전(유량 150%) ≥ 정격압력 65%\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">최대운전(유량 150%) ≥ 정격압력 65%</span></span></div><div class=\"subj-ex-line\">💡 <strong>3단계 검증의 물리적 의미</strong> | 밸브를 완전히 잠근 체절운전 시 배관 파열 방지를 위해 정격토출압력의 140%를 넘지 않아야 하고, 정격토출량 150%의 최대운전 시에도 압력이 정격토출압력의 65% 이상을 유지해야 합격입니다.</div>",
+    "answerEq": "체절운전(유량 0%) ≤ 정격압력 140% / 정격운전(유량 100%) ≥ 정격압력 100% / 최대운전(유량 150%) ≥ 정격압력 65%",
+    "fullFormula": "체절운전(유량 0%) ≤ 정격압력 140% | 정격운전(유량 100%) ≥ 정격압력 100% | 최대운전(유량 150%) ≥ 정격압력 65%",
+    "explanation": "💡 3단계 검증의 물리적 의미 | 밸브를 완전히 잠근 체절운전 시 배관 파열 방지를 위해 정격토출압력의 140%를 넘지 않아야 하고, 정격토출량 150%의 최대운전 시에도 압력이 정격토출압력의 65% 이상을 유지해야 합격입니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_03",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "공동현상(캐비테이션) 방지 유효흡입수두 조건식",
+    "promptHtml": "<div class=\"subj-eq-line\">유효흡입수두 NPSHa = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"Ha(대기압) ± Hs(압입+, 흡상−) − Hv(포화증기압) − Hf(마찰손실) ≥ NPSHr(필요흡입수두)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">Ha(대기압) ± Hs(압입+, 흡상−) − Hv(포화증기압) − Hf(마찰손실) ≥ NPSHr(필요흡입수두)</span></span></div><div class=\"subj-ex-line\">💡 <strong>방지 대책</strong> | 항상 시스템의 <span class=\"chem\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"NPSH\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">NPSH</span></span><sub>a</sub> &ge; NPSH<sub>r</sub></span> 조건(여유치 1.3배 확보)을 유지하고, 펌프 설치 높이를 낮춰 흡입양정을 단축하며 흡입배관 관경을 확대해 마찰손실(<span class=\"chem\">H<sub>f</sub></span>)을 줄이고 임펠러 회전수를 낮춥니다.</div>",
+    "answerEq": "Ha(대기압) ± Hs(압입+, 흡상−) − Hv(포화증기압) − Hf(마찰손실) ≥ NPSHr(필요흡입수두) / NPSH",
+    "fullFormula": "유효흡입수두 NPSHa = Ha(대기압) ± Hs(압입+, 흡상−) − Hv(포화증기압) − Hf(마찰손실) ≥ NPSHr(필요흡입수두)",
+    "explanation": "💡 방지 대책 | 항상 시스템의 NPSHa ≥ NPSHr 조건(여유치 1.3배 확보)을 유지하고, 펌프 설치 높이를 낮춰 흡입양정을 단축하며 흡입배관 관경을 확대해 마찰손실(Hf)을 줄이고 임펠러 회전수를 낮춥니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_04",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "소방펌프 수동력 및 소요 축동력 공식",
+    "promptHtml": "<div class=\"subj-eq-line\">수동력 Pw = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"9.8 × Q × H [kW] | 소요 축동력 Ps\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">9.8 × Q × H [kW] | 소요 축동력 Ps</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"(9.8 × Q[m3/s] × H[m]) ÷ η [kW]\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">(9.8 × Q[m3/s] × H[m]) ÷ η [kW]</span></span></div><div class=\"subj-ex-line\">💡 <strong>실전 계산 예제 풀이</strong> | 토출유량 분당 1.2 m<sup>3</sup>(초당 환산 <span class=\"chem\">Q = 1.2 &divide; 60 = 0.02 m<sup>3</sup>/s</span>), 전양정 <span class=\"chem\">H = 50 m</span>, 펌프 효율 <span class=\"chem\">&eta; = 0.98(98%)</span>일 때 전동기 필요 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"축동력\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">축동력</span></span>은 <span class=\"chem\">(9.8 &times; 0.02 &times; 50) &divide; 0.98 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"10 kW\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">10 kW</span></span></span>(전달계수 <span class=\"chem\">K</span> 주어지면 분자에 곱함)입니다.</div>",
+    "answerEq": "9.8 × Q × H [kW] | 소요 축동력 Ps / (9.8 × Q[m3/s] × H[m]) ÷ η [kW] / 축동력 / 10 kW",
+    "fullFormula": "수동력 Pw = 9.8 × Q × H [kW] | 소요 축동력 Ps = (9.8 × Q[m3/s] × H[m]) ÷ η [kW]",
+    "explanation": "💡 실전 계산 예제 풀이 | 토출유량 분당 1.2 m3(초당 환산 Q = 1.2 ÷ 60 = 0.02 m3/s), 전양정 H = 50 m, 펌프 효율 η = 0.98(98%)일 때 전동기 필요 축동력은 (9.8 × 0.02 × 50) ÷ 0.98 = 10 kW(전달계수 K 주어지면 분자에 곱함)입니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_05",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "펌프 회전수(N) 상사법칙 비례식",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"유량 Q ∝ N1\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">유량 Q ∝ N1</span></span> &nbsp;|&nbsp; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"양정 H ∝ N2\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">양정 H ∝ N2</span></span> &nbsp;|&nbsp; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소요 축동력 P ∝ N3 (회전수 2배 증가 시 유량 2배 · 양정 4배 · 축동력 8배)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">소요 축동력 P ∝ N3 (회전수 2배 증가 시 유량 2배 · 양정 4배 · 축동력 8배)</span></span></div><div class=\"subj-ex-line\">💡 <strong>직렬 운전 vs 병렬 운전 대조</strong> | 임펠러 회전수를 바꾸는 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"상사법칙\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">상사법칙</span></span>과 별개로, 동일 특성 펌프 2대를 직렬로 이은 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"직렬 운전\"><span class=\"subj-ph\">[ 빈칸 5 · 정답 확인 ]</span><span class=\"subj-ans\">직렬 운전</span></span> 시에는 유량은 일정하고 이론 양정이 <strong>2배</strong>로 상승(고층 수직 송수에 유리)하며, 나란히 연결한 <strong>병렬 운전</strong> 시에는 양정은 일정하고 이론 유량이 <strong>2배</strong>로 증가(대유량 공급에 유리)합니다.</div>",
+    "answerEq": "유량 Q ∝ N1 / 양정 H ∝ N2 / 소요 축동력 P ∝ N3 (회전수 2배 증가 시 유량 2배 · 양정 4배 · 축동력 8배) / 상사법칙 / 직렬 운전",
+    "fullFormula": "유량 Q ∝ N1 | 양정 H ∝ N2 | 소요 축동력 P ∝ N3 (회전수 2배 증가 시 유량 2배 · 양정 4배 · 축동력 8배)",
+    "explanation": "💡 직렬 운전 vs 병렬 운전 대조 | 임펠러 회전수를 바꾸는 상사법칙과 별개로, 동일 특성 펌프 2대를 직렬로 이은 직렬 운전 시에는 유량은 일정하고 이론 양정이 2배로 상승(고층 수직 송수에 유리)하며, 나란히 연결한 병렬 운전 시에는 양정은 일정하고 이론 유량이 2배로 증가(대유량 공급에 유리)합니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_06",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "스프링클러헤드 설치 장소별 최대 수평거리 서열 (NFPC 103)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"무대부·특수가연물(1.7 m 이하) &lt; 일반 거실(2.1 m) &lt; 내화구조(2.3 m) &lt; 랙식 창고(2.5 m) &lt; 아파트 세대(3.2 m)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">무대부·특수가연물(1.7 m 이하) < 일반 거실(2.1 m) < 내화구조(2.3 m) < 랙식 창고(2.5 m) < 아파트 세대(3.2 m)</span></span></div><div class=\"subj-ex-line\">💡 <strong>살수 방해 방지 공간 및 덕트 하부 헤드</strong> | 살수 분포가 가려지지 않도록 헤드 반사판(디플렉터) 아래 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.45 m 이상(랙식 창고 0.3 m 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.45 m 이상(랙식 창고 0.3 m 이상)</span></span> 수직 공간을 비워 두고, 폭이 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1.2 m를 초과\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">1.2 m를 초과</span></span>하는 공조 덕트나 선반 아래에는 살수 사각지대 해소를 위해 별도 헤드를 추가 설치합니다.</div>",
+    "answerEq": "무대부·특수가연물(1.7 m 이하) < 일반 거실(2.1 m) < 내화구조(2.3 m) < 랙식 창고(2.5 m) < 아파트 세대(3.2 m) / 0.45 m 이상(랙식 창고 0.3 m 이상) / 1.2 m를 초과",
+    "fullFormula": "무대부·특수가연물(1.7 m 이하) < 일반 거실(2.1 m) < 내화구조(2.3 m) < 랙식 창고(2.5 m) < 아파트 세대(3.2 m)",
+    "explanation": "💡 살수 방해 방지 공간 및 덕트 하부 헤드 | 살수 분포가 가려지지 않도록 헤드 반사판(디플렉터) 아래 0.45 m 이상(랙식 창고 0.3 m 이상) 수직 공간을 비워 두고, 폭이 1.2 m를 초과하는 공조 덕트나 선반 아래에는 살수 사각지대 해소를 위해 별도 헤드를 추가 설치합니다."
+  },
+  {
+    "id": "SUBJ_SCI_04_02_07",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "옥내 · 호스릴 · 옥외 비교",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"옥내\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">옥내</span></span>(<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.17에서 0.7 MPa · 130 L/min · N×2.6 m3[30층↑ 5.2, 50층↑ 7.8] · 25 m · 40 mm\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.17에서 0.7 MPa · 130 L/min · N×2.6 m3[30층↑ 5.2, 50층↑ 7.8] · 25 m · 40 mm</span></span>, 0.7 MPa 초과 시 감압장치) / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"호스릴\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">호스릴</span></span>(0.17 MPa·60 L/min·1.2 m<sup>3</sup>·15 m·25 mm) / <strong>옥외</strong>(<strong>0.25 MPa·350 L/min·7.0 m<sup>3</sup>·40 m·65 mm</strong>)</div>",
+    "answerEq": "옥내 / 0.17에서 0.7 MPa · 130 L/min · N×2.6 m3[30층↑ 5.2, 50층↑ 7.8] · 25 m · 40 mm / 호스릴",
+    "fullFormula": "",
+    "explanation": "옥내(0.17에서 0.7 MPa · 130 L/min · N×2.6 m3[30층↑ 5.2, 50층↑ 7.8] · 25 m · 40 mm, 0.7 MPa 초과 시 감압장치) / 호스릴(0.17 MPa·60 L/min·1.2 m3·15 m·25 mm) / 옥외(0.25 MPa·350 L/min·7.0 m3·40 m·65 mm)"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_08",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "가압송수 양정 · 압력수조",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"펌프 H = h1 + h2 + 17 m | 고가수조 H = h1 + 17 m (실양정 h2 제외!)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">펌프 H = h1 + h2 + 17 m | 고가수조 H = h1 + 17 m (실양정 h2 제외!)</span></span> <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"압력수조\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">압력수조</span></span> = 수조 부피에 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"물 최대 2/3 이하 + 압축공기 1/3 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">물 최대 2/3 이하 + 압축공기 1/3 이상</span></span> 충전 가압</div>",
+    "answerEq": "펌프 H = h1 + h2 + 17 m | 고가수조 H = h1 + 17 m (실양정 h2 제외!) / 압력수조 / 물 최대 2/3 이하 + 압축공기 1/3 이상",
+    "fullFormula": "",
+    "explanation": "펌프 H = h1 + h2 + 17 m | 고가수조 H = h1 + 17 m (실양정 h2 제외!) 압력수조 = 수조 부피에 물 최대 2/3 이하 + 압축공기 1/3 이상 충전 가압"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_09",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "성능시험 3점 · 밸브 순서",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"체절(0%) ≤ 140% | 정격(100%) ≥ 100% | 최대(150%) ≥ 65%\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">체절(0%) ≤ 140% | 정격(100%) ≥ 100% | 최대(150%) ≥ 65%</span></span> 성능시험배관 유량계 기준 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"전단 직관부에 개폐밸브 · 후단에 유량조절밸브\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">전단 직관부에 개폐밸브 · 후단에 유량조절밸브</span></span> 설치</div>",
+    "answerEq": "체절(0%) ≤ 140% | 정격(100%) ≥ 100% | 최대(150%) ≥ 65% / 전단 직관부에 개폐밸브 · 후단에 유량조절밸브",
+    "fullFormula": "",
+    "explanation": "체절(0%) ≤ 140% | 정격(100%) ≥ 100% | 최대(150%) ≥ 65% 성능시험배관 유량계 기준 전단 직관부에 개폐밸브 · 후단에 유량조절밸브 설치"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_10",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "수격 · 공동 · 서징현상",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"공동 방지: NPSHa ≥ NPSHr\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">공동 방지: NPSHa ≥ NPSHr</span></span> <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"수격\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">수격</span></span>(급폐쇄 충격파 ➔ 스모렌스키 체크밸브·수격방지기) · <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"공동\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">공동</span></span>(포화증기압 이하 기포·임펠러 침식) · <strong>서징</strong>(산 모양 곡선 압력·유량 주기적 맥동)</div>",
+    "answerEq": "공동 방지: NPSHa ≥ NPSHr / 수격 / 공동",
+    "fullFormula": "",
+    "explanation": "공동 방지: NPSHa ≥ NPSHr 수격(급폐쇄 충격파 ➔ 스모렌스키 체크밸브·수격방지기) · 공동(포화증기압 이하 기포·임펠러 침식) · 서징(산 모양 곡선 압력·유량 주기적 맥동)"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_11",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "축동력 · 상사법칙 · 직병렬",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"축동력 Ps = (9.8 × Q × H) ÷ η | Q ∝ N1, H ∝ N2, P ∝ N3\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">축동력 Ps = (9.8 × Q × H) ÷ η | Q ∝ N1, H ∝ N2, P ∝ N3</span></span> 회전수 2배 시 유량 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2배\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">2배</span></span>·양정 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"4배\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">4배</span></span>·동력 <strong>8배</strong> / <strong>직렬 운전</strong>(양정 2배·유량 일정) vs <strong>병렬 운전</strong>(유량 2배·양정 일정)</div>",
+    "answerEq": "축동력 Ps = (9.8 × Q × H) ÷ η | Q ∝ N1, H ∝ N2, P ∝ N3 / 2배 / 4배",
+    "fullFormula": "",
+    "explanation": "축동력 Ps = (9.8 × Q × H) ÷ η | Q ∝ N1, H ∝ N2, P ∝ N3 회전수 2배 시 유량 2배·양정 4배·동력 8배 / 직렬 운전(양정 2배·유량 일정) vs 병렬 운전(유량 2배·양정 일정)"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_12",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "기본 수리 · 5대 SP 비교",
+    "promptHtml": "<div class=\"subj-prose-line\">헤드당 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"80 L/min↑ · 0.1에서 1.2 MPa · 수량 N×1.6 m3\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">80 L/min↑ · 0.1에서 1.2 MPa · 수량 N×1.6 m3</span></span> / 유일한 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"개방형 헤드 = 일제살수식\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">개방형 헤드 = 일제살수식</span></span>(나머지 4종 폐쇄형) / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"감지기 연동 3종 = 준비작동식·일제살수식·부압식\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">감지기 연동 3종 = 준비작동식·일제살수식·부압식</span></span>(습식·건식은 감지기 X)</div>",
+    "answerEq": "80 L/min↑ · 0.1에서 1.2 MPa · 수량 N×1.6 m3 / 개방형 헤드 = 일제살수식 / 감지기 연동 3종 = 준비작동식·일제살수식·부압식",
+    "fullFormula": "",
+    "explanation": "헤드당 80 L/min↑ · 0.1에서 1.2 MPa · 수량 N×1.6 m3 / 유일한 개방형 헤드 = 일제살수식(나머지 4종 폐쇄형) / 감지기 연동 3종 = 준비작동식·일제살수식·부압식(습식·건식은 감지기 X)"
+  },
+  {
+    "id": "SUBJ_SCI_04_02_13",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "헤드 수평거리 · 배관 부속",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"수평거리: 무대·특수(1.7 m) &lt; 일반(2.1) &lt; 내화(2.3) &lt; 랙(2.5) &lt; 아파트(3.2)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">수평거리: 무대·특수(1.7 m) < 일반(2.1) < 내화(2.3) < 랙(2.5) < 아파트(3.2)</span></span> 가지배관 한쪽 헤드 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"8개 이하\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">8개 이하</span></span> · 폭 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1.2 m 초과\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">1.2 m 초과</span></span> 덕트 하부 헤드 추가 · <strong>말단시험밸브 25 mm(K=80)</strong> · <strong>청소구 40 mm↑</strong></div>",
+    "answerEq": "수평거리: 무대·특수(1.7 m) < 일반(2.1) < 내화(2.3) < 랙(2.5) < 아파트(3.2) / 8개 이하 / 1.2 m 초과",
+    "fullFormula": "",
+    "explanation": "수평거리: 무대·특수(1.7 m) < 일반(2.1) < 내화(2.3) < 랙(2.5) < 아파트(3.2) 가지배관 한쪽 헤드 8개 이하 · 폭 1.2 m 초과 덕트 하부 헤드 추가 · 말단시험밸브 25 mm(K=80) · 청소구 40 mm↑"
+  }
+];
     document.addEventListener('DOMContentLoaded', () => {
       HarnessEngine.renderUnitStats('statsContainer', STATS_DATA);
       HarnessEngine.renderOriginalQuestions('origQuestions', ORIG_Q_DATA);

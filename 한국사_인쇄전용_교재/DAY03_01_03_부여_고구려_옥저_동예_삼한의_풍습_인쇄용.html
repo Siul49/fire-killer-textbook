@@ -1210,7 +1210,8 @@
         <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
         <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
 
-        <button id="btnS26Swipe" onclick="toggleSwipeMode()" class="ctrl-btn" style="background:#1E3A5F; border-color:#3B82F6; color:#FFFFFF; font-weight:800; padding:6px 11px;">📱 갤럭시 S26 슬라이드 풀기</button>
+        <button id="btnS26Swipe" onclick="toggleSwipeMode()" class="ctrl-btn" style="background:#1E3A5F; border-color:#3B82F6; color:#FFFFFF; font-weight:800; padding:6px 10px;">📱 갤럭시 S26 슬라이드 풀기</button>
+        <button id="btnS26OxDeck" onclick="toggleOxDeckMode()" class="ctrl-btn" style="background:#8B2635; border-color:#C85A6A; color:#FFFFFF; font-weight:800; padding:6px 10px;">⭕ OX 카드 슬라이드</button>
         <button id="printQuestionsOnly" onclick="printPart23Only()" class="ctrl-btn" style="background:#8B2635; border-color:#A93545; color:#FFFFFF; font-weight:800; padding:6px 11px; margin-left:4px;">🖨️ 문제·해설(PART 2·3)만 인쇄</button>
         <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
       </div>
@@ -1241,7 +1242,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1""""">
+      <div id="sec1"""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부여와 고구려</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1278,7 +1279,7 @@
         </div>
       </div>
 
-      <div id="sec2""""">
+      <div id="sec2"""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 동해안 군장 국가의 고립과 공동체 관습: 옥저와 동예</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1306,7 +1307,7 @@
         </div>
       </div>
 
-      <div id="sec3""""">
+      <div id="sec3"""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 남방 벼농사·철기 경제와 삼한의 제정분리 사회</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1417,7 +1418,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4""""" class="space-y-6">
+      <div id="sec4"""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 초기 국가 사료 원문 키워드와 삼한 소국·철 수출</h2>
 
         <div id="theory-sec4-p10" class="para-block">
@@ -1534,6 +1535,22 @@
           <button type="button" class="s26-nav-btn primary" id="s26NextBtn" onclick="stepSwipeQ(1)">다음 문항 (좌로 밀기) ▶</button>
         </div>
         <div class="s26-QuickJump" id="s26QuickDots"></div>
+      </div>
+
+      <div class="s26-ox-deck-stage no-print-inline" id="s26OxDeckStage">
+        <div class="s26-ox-top-header">
+          <button type="button" class="s26-ox-back-btn" onclick="toggleOxDeckMode(false)">
+            <span>&lt;</span>
+            <span>DAY03 · OX 카드</span>
+          </button>
+          <button type="button" class="s26-ox-save-pill" onclick="toggleSwipeMode(true)">5지선다로 전환</button>
+        </div>
+        <div class="s26-ox-prev-row">
+          <button type="button" class="s26-ox-prev-link" id="s26OxPrevLink" onclick="stepS26Ox(-1)">&lt; 이전문제</button>
+          <button type="button" class="s26-ox-prev-link" onclick="stepS26Ox(1)">다음문제 &gt;</button>
+        </div>
+        <div id="s26OxCardMount"></div>
+        <div class="s26-ox-bottom-counter" id="s26OxBottomCounter"><strong>1</strong> / 30</div>
       </div>
 <!-- S26_ULTRA_SWIPE_END -->
       <div class="questions-grid">
@@ -3441,7 +3458,7 @@
 <!-- S26_ULTRA_SWIPE_START -->
   <style>
     /* ==========================================================================
-       GALAXY S26 ULTRA (412px × 892px) HORIZONTAL SWIPE & THEORY MAPPING ENGINE
+       GALAXY S26 ULTRA (412px × 892px) HORIZONTAL SWIPE & OX CARD DECK ENGINE
        ========================================================================== */
     .q-choice-item {
       cursor: pointer;
@@ -3812,6 +3829,7 @@
 
     @media print {
       .s26-swipe-bar,
+      .s26-ox-deck-stage,
       #s26ReturnFloat,
       .inline-exp-box,
       .theory-map-row {
@@ -3825,6 +3843,203 @@
         padding: 4px 0 8px 0 !important;
       }
     }
+
+    /* ==========================================================================
+       SCREENSHOT-STYLE OX CARD DECK (FIRE KILLER DESIGN SYSTEM TOKENS)
+       ========================================================================== */
+    .s26-ox-deck-stage {
+      display: none;
+      max-width: 460px;
+      margin: 14px auto 24px;
+      padding: 4px 2px;
+      font-family: var(--font-sans);
+    }
+    body.s26-ox-deck-active .s26-ox-deck-stage {
+      display: block !important;
+    }
+    body.s26-ox-deck-active #part2 .questions-grid,
+    body.s26-ox-deck-active #part2 .stats-block,
+    body.s26-ox-deck-active #part2 .s26-swipe-bar {
+      display: none !important;
+    }
+    .s26-ox-top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px 12px;
+    }
+    .s26-ox-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: var(--text-main);
+      font-size: 17px;
+      font-weight: 800;
+      padding: 2px 0;
+      cursor: pointer;
+    }
+    .s26-ox-prev-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .s26-ox-prev-link {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 2px 0;
+    }
+    .s26-ox-prev-link:disabled {
+      opacity: 0.32;
+      cursor: default;
+    }
+    .s26-ox-card-box {
+      background-color: var(--bg-sheet);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 22px 18px 18px;
+      box-shadow: 0 14px 34px rgba(20, 16, 12, 0.12);
+      min-height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .s26-ox-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .s26-ox-num-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .s26-ox-num-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .s26-ox-c-badge {
+      width: 19px;
+      height: 19px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-size: 10.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s26-ox-digits {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .s26-ox-subcode {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.85;
+      padding-left: 2px;
+    }
+    .s26-ox-save-pill {
+      border: 1px solid var(--border-strong);
+      background: transparent;
+      color: var(--text-sub);
+      border-radius: 7px;
+      padding: 4px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .s26-ox-save-pill.saved {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .s26-ox-stmt {
+      font-family: var(--font-body);
+      font-size: 17.5px;
+      line-height: 1.76;
+      color: var(--text-main);
+      word-break: keep-all;
+      padding: 4px 2px 24px;
+      min-height: 145px;
+      flex: 1;
+    }
+    .s26-ox-hit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .s26-ox-big-btn {
+      height: 128px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-subtle);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+    .s26-ox-big-btn svg {
+      width: 54px;
+      height: 54px;
+      stroke: currentColor;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .s26-ox-big-btn.picked-right {
+      background: #EAF6EE !important;
+      border: 2.5px solid #1E5631 !important;
+      color: #1E5631 !important;
+    }
+    .s26-ox-big-btn.picked-wrong {
+      background: #FDEEEE !important;
+      border: 2.5px solid #9E2A2B !important;
+      color: #9E2A2B !important;
+    }
+    .s26-ox-big-btn.dimmed {
+      opacity: 0.4;
+    }
+    .s26-ox-feedback {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 11px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      font-size: 13.5px;
+      line-height: 1.62;
+    }
+    .s26-ox-bottom-counter {
+      text-align: center;
+      padding-top: 18px;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .s26-ox-bottom-counter strong {
+      color: var(--text-main);
+    }
   </style>
 
   <div id="s26ReturnFloat" class="no-print-inline">
@@ -3837,11 +4052,154 @@
 
   <script>
     let s26SwipeOn = false;
+    let s26OxDeckOn = false;
     let s26CurQ = 1;
+    let s26CurOxIdx = 0;
     const s26TotalQ = 16;
     let s26LastQuizQ = 1;
+    let s26LastMode = 'q'; // 'q' | 'ox'
     const s26Solved = {};
+    const s26OxSolved = {};
+    const s26OxSaved = {};
+    const s26OxDeckList = [{"num": 1, "code": "기001", "stmt": "부여에서는 마가, 우가, 저가, 구가 등의 대가들이 사출도를 다스렸으며, 흉년이 들면 왕에게 책임을 물어 왕을 바꾸거나 죽이기도 하였다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 2, "code": "기002", "stmt": "부여는 10월에 동맹이라는 제천행사를 열어 조상신을 제사 지냈다.", "ans": false, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 3, "code": "기003", "stmt": "부여에서는 지배자가 죽으면 최대 100여 명을 함께 묻는 순장 풍습과 소의 발굽으로 길흉을 점치는 우제점복이 있었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 4, "code": "기004", "stmt": "부여와 고구려에서는 도둑질한 자에게 12배를 배상하게 하는 1책 12법과 형이 죽으면 동생이 형수를 아내로 삼는 형사취수제가 시행되었다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 5, "code": "기005", "stmt": "고구려에서는 귀족 회의인 제가회의를 통해 국가 중대사를 결정하였으며, 대가들이 사자·조의·선인 등의 관리를 직접 거느렸다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "반면 부여에서 남쪽으로 내려온 주몽(동명성왕) 세력이 기원전 37년 압록강 지류의 졸본(이후 유리왕 때 국내성 으로 천도)에 세운 고구려 는 부여와 정반대의 척박한 산악 환경에 놓여 있었습니다. 큰 산과 깊은 골짜기만 가득하고 평야가 거의 없어 아무리 힘써 농사를 지어도 백성의 배를 채울 수 없…"}, {"num": 6, "code": "기006", "stmt": "고구려에서는 혼인 풍습으로 서옥제(데릴사위제)가 행해졌고, 집집마다 부경(桴京)이라는 작은 창고를 두어 약탈한 곡식을 저장하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 7, "code": "기007", "stmt": "고구려는 매년 10월에 제천행사인 동맹을 열어 나라 동쪽의 큰 굴(국동대혈)에서 시조와 수신(유화부인)에게 제사를 지냈다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 8, "code": "기008", "stmt": "옥저와 동예는 고구려의 압박 등으로 연맹왕국으로 성장하지 못하였으며, 왕이 없고 읍군·삼로라 불리는 군장이 부족을 다스렸다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 동해안 군장 국가의 고립과 공동체 관습: 옥저… 본문 4 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 9, "code": "기009", "stmt": "옥저에서는 어린 여자를 신랑 집에서 미리 데려다 기른 뒤 혼인하는 민며느리제(밑며느리제)가 있었으며, 소금과 어물을 고구려에 공납으로 바쳤다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 10, "code": "기010", "stmt": "시신을 가매장했다가 뼈만 추려 하나의 큰 나무 덧널(목곽)에 온 가족을 함께 안치하고 입구에 쌀 항아리를 매달아 두는 골장제는 동예의 풍습이다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 11, "code": "기011", "stmt": "동예에서는 다른 부족의 생활 영역(산천)을 침범하면 노비나 소, 말로 변상하게 하는 책화(責禍)와 다른 씨족과 혼인하는 족외혼 풍습이 있었다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 동해안 군장 국가의 고립과 공동체 관습: 옥저… 본문 6 본문 보기", "tpreview": "신석기 시대는 간석기(갈돌·갈판)와 토기(덧무늬·빗살무늬), 원시 수공업(가락바퀴·뼈바늘)이 등장하고 조·피·수수 밭농사와 정착 움집 생활을 시작한 씨족 평등 사회입니다."}, {"num": 12, "code": "기012", "stmt": "10월에 무천이라는 제천행사를 열고 단궁, 과하마, 반어피 등의 특산물로 유명했던 나라는 동예이다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 13, "code": "기013", "stmt": "강릉 포남동 등 동예의 주거지 유적에서는 출입구가 돌출된 철(凸)자형이나 여(呂)자형의 집터가 발굴된다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 동해안 군장 국가의 고립과 공동체 관습: 옥저… 본문 6 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 14, "code": "기014", "stmt": "삼한은 마한·진한·변한의 78개 소국으로 이루어졌으며, 마한의 목지국 지배자가 진왕(마한왕)으로 추대되어 삼한 전체를 주도하였다.", "ans": true, "tid": "theory-sec3-p7", "tlabel": "📖 기본서 제3절 · 3. 남방 벼농사·철기 경제와 삼한의 제정분리 사회 본문 7 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 15, "code": "기015", "stmt": "삼한에서는 신지·읍차가 정치를 담당하고, 제사장인 천군이 별읍인 소도(蘇塗)에서 하늘에 제사를 지내는 제정분리 사회였다.", "ans": true, "tid": "theory-sec4-tbl3", "tlabel": "📖 기본서 [필수 비교표] 제60회부터 제69회까지 초기 여러 나라 … 바로가기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 16, "code": "기016", "stmt": "삼한에서는 소도에 죄인이 도망쳐 들어오면 정치 군장인 신지나 읍차가 즉시 군사를 보내어 체포하였다.", "ans": false, "tid": "theory-sec3-p8", "tlabel": "📖 기본서 제3절 · 60회부터 69회까지 사료 급소 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 17, "code": "기017", "stmt": "삼한에서는 벼농사가 발달하여 김제 벽골제 등 저수지가 축조되었고, 씨 뿌리기가 끝난 5월 수릿날과 추수를 마친 10월 계절제에 하늘에 제사를 지냈다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 남방 벼농사·철기 경제와 삼한의 제정분리 사회 본문 9 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 18, "code": "기018", "stmt": "변한과 진한에서는 철이 많이 생산되어 덩이쇠(철정)를 화폐처럼 사용하고 낙랑과 왜 등에 철을 수출하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 남방 벼농사·철기 경제와 삼한의 제정분리 사회 본문 9 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 19, "code": "기019", "stmt": "삼한 가운데 마한은 백제로, 진한은 신라로, 변한은 가야 연맹으로 각각 통합·발전하였다.", "ans": true, "tid": "theory-sec3-p9", "tlabel": "📖 기본서 제3절 · 3. 남방 벼농사·철기 경제와 삼한의 제정분리 사회 본문 9 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 20, "code": "기020", "stmt": "형이 죽으면 동생이 형수를 아내로 맞이하는 형사취수제는 삼한의 대표적인 혼인 풍습이었다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "삼한은 정치적 지배자(신지·읍차)와 제사장(천군, 신성 지역 소도 관할)이 분리된 제정분리 사회로, 벼농사와 저수지 축조가 발달하고 5월 수릿날·10월 계절제를 열었으며 변한은 철을 수출하였습니다."}, {"num": 21, "code": "기021", "stmt": "부여에서는 왕 아래 가축의 이름을 딴 마가·우가·저가·구가 등 여러 가(加)들이 사출도(四出道)를 다스리는 5부족 연맹 체제를 이루었다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 기출 출제 포인트 본문 보기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 22, "code": "기022", "stmt": "『삼국지』 위서 동이전에 '은나라 달력(은력) 정월에 하늘에 제사 지내고 죄수를 풀어준다'고 기록된 제천 행사는 부여의 영고(12월)이다.", "ans": true, "tid": "theory-sec4-tbl3", "tlabel": "📖 기본서 [필수 비교표] 제60회부터 제69회까지 초기 여러 나라 … 바로가기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 23, "code": "기023", "stmt": "부여에는 국가에 전쟁이 일어났을 때 하늘에 제사 지내고 소를 죽여 그 발굽의 갈라진 모양으로 길흉을 점치는 우제점법(牛蹄占法)이 있었다.", "ans": true, "tid": "theory-sec4-tbl3", "tlabel": "📖 기본서 [필수 비교표] 제60회부터 제69회까지 초기 여러 나라 … 바로가기", "tpreview": "부여는 쑹화강 유역 평야 지대에서 반농반목 경제를 영위하며 마가·우가·저가·구가의 사출도 5부족 연맹체를 이루었고, 12월 제천행사 영고와 순장·우제점법을 행하였습니다."}, {"num": 24, "code": "기024", "stmt": "고구려에서는 신부가 어릴 때 신랑집에 가서 자란 뒤 성인이 되면 신랑집에서 신부집에 돈을 지불하고 혼인하는 서옥제 풍습이 있었다.", "ans": false, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 25, "code": "기025", "stmt": "고구려에서는 왕 아래 상가, 대로, 패자, 고추가 등의 관직이 있었으며, 국가의 중대사를 귀족 회의인 제가 회의에서 결정하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 26, "code": "기026", "stmt": "고구려에서는 매년 10월 제천 행사인 동맹을 열어 시조 주몽과 어머니 유화 부인에게 제사하고 나라 동쪽의 큰 굴(국동대혈)에서 수신(隧神)을 맞이하였다.", "ans": true, "tid": "theory-sec1-p3", "tlabel": "📖 기본서 제1절 · 1. 북방 5부족 연맹왕국의 환경과 통치 구조: 부… 본문 3 본문 보기", "tpreview": "초기 고구려는 압록강 유역 산악 지대에서 정복 활동을 전개하며 제가 회의와 부경 창고를 두었고, 신부 집 뒤편에 서옥을 짓는 서옥제와 10월 제천행사 동맹을 열었습니다."}, {"num": 27, "code": "기027", "stmt": "옥저와 동예는 중앙 집권적 왕국으로 발전하지 못하고 읍군(邑君), 삼로(三老)라 불리는 군장이 자기 부족을 다스렸다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 2. 동해안 군장 국가의 고립과 공동체 관습: 옥저… 본문 4 본문 보기", "tpreview": "청동기 시대는 벼농사 시작과 반달 돌칼 추수로 잉여 생산물이 축적되면서 사유 재산과 계급이 발생하고, 군장이 출현하여 고인돌·돌널무덤을 축조하고 비파형 동검을 사용한 시기입니다."}, {"num": 28, "code": "기028", "stmt": "옥저에서는 사람이 죽으면 가매장하였다가 뼈만 추려 가족 전체를 하나의 큰 나무 곽(목곽)에 안치하고 입구에 쌀을 담은 항아리를 매다는 장례 풍습이 있었다.", "ans": true, "tid": "theory-sec2-p5", "tlabel": "📖 기본서 제2절 · 기출 출제 포인트 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 29, "code": "기029", "stmt": "동예에서는 산천을 경계로 부족의 생활권을 엄격히 구분하여 다른 부족의 영역을 침범하면 노비나 소·말로 배상하게 하는 책화(責禍)가 있었다.", "ans": true, "tid": "theory-sec2-p6", "tlabel": "📖 기본서 제2절 · 2. 동해안 군장 국가의 고립과 공동체 관습: 옥저… 본문 6 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}, {"num": 30, "code": "기030", "stmt": "동예는 호랑이를 신으로 삼아 제사 지냈으며, 매년 10월 하늘에 제사 지내는 무천(舞天)을 열고 단궁·과하마·반어피 등 특산물을 생산하였다.", "ans": true, "tid": "theory-sec4-p11", "tlabel": "📖 기본서 제4절 · 4. [60회부터 69회까지 심화 보강] 초기 국가… 본문 11 본문 보기", "tpreview": "옥저와 동예는 고구려의 압박으로 왕이 없는 읍군·삼로 군장 국가에 머물렀으며, 옥저는 민며느리제와 골장제, 동예는 10월 무천·족외혼·책화·단궁·과하마·반어피가 유명합니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
+
+    function toggleOxDeckMode(forceState) {
+      s26OxDeckOn = (typeof forceState === 'boolean') ? forceState : !s26OxDeckOn;
+      if (s26OxDeckOn && s26SwipeOn) {
+        s26SwipeOn = false;
+        document.body.classList.remove('s26-swipe-active');
+        const bSwipe = document.getElementById('btnS26Swipe');
+        if (bSwipe) { bSwipe.classList.remove('active'); bSwipe.textContent = '📱 5지선다 슬라이드'; }
+      }
+      document.body.classList.toggle('s26-ox-deck-active', s26OxDeckOn);
+      const btnOx = document.getElementById('btnS26OxDeck');
+      if (btnOx) {
+        btnOx.classList.toggle('active', s26OxDeckOn);
+        btnOx.textContent = s26OxDeckOn ? '⭕ OX 카드모드 ON' : '⭕ OX 카드 슬라이드';
+      }
+      if (s26OxDeckOn) {
+        renderS26OxCard();
+        const stg = document.getElementById('s26OxDeckStage');
+        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function renderS26OxCard() {
+      const mount = document.getElementById('s26OxCardMount');
+      const cntEl = document.getElementById('s26OxBottomCounter');
+      const prevBtn = document.getElementById('s26OxPrevLink');
+      if (!mount || !s26OxDeckList.length) return;
+      if (s26CurOxIdx < 0) s26CurOxIdx = 0;
+      if (s26CurOxIdx >= s26OxDeckList.length) s26CurOxIdx = s26OxDeckList.length - 1;
+
+      const item = s26OxDeckList[s26CurOxIdx];
+      const numStr = String(item.num).padStart(2, '0');
+      const isSaved = !!s26OxSaved[item.num];
+      const ansRec = s26OxSolved[item.num];
+
+      if (prevBtn) prevBtn.disabled = (s26CurOxIdx === 0);
+      if (cntEl) cntEl.innerHTML = `<strong>${s26CurOxIdx + 1}</strong> / ${s26OxDeckList.length}`;
+
+      let oCls = 's26-ox-big-btn';
+      let xCls = 's26-ox-big-btn';
+      let fbHtml = '';
+
+      if (ansRec !== undefined) {
+        const isRight = ansRec === item.ans;
+        if (ansRec === true) {
+          oCls += isRight ? ' picked-right' : ' picked-wrong';
+          xCls += ' dimmed';
+        } else {
+          xCls += isRight ? ' picked-right' : ' picked-wrong';
+          oCls += ' dimmed';
+        }
+        const safePreview = (item.tpreview || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        fbHtml = `
+          <div class="s26-ox-feedback" style="border-left:4px solid ${isRight ? '#1E5631' : '#9E2A2B'};">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px;">
+              <strong style="color:${isRight ? '#1E5631' : '#9E2A2B'};">
+                ${isRight ? '✓ 정답입니다!' : '✕ 오답입니다!'} (정답: ${item.ans ? 'O' : 'X'})
+              </strong>
+              <button type="button" class="theory-map-btn" data-theory-id="${item.tid}" data-preview="${safePreview}" onclick="jumpToTheoryFromOx('${item.tid}', ${s26CurOxIdx}, this)" style="width:auto;">
+                ${item.tlabel}
+              </button>
+            </div>
+            <div style="color:var(--text-sub); font-size:12.5px;">${item.tpreview}</div>
+          </div>
+        `;
+      }
+
+      mount.innerHTML = `
+        <article class="s26-ox-card-box">
+          <div class="s26-ox-card-top">
+            <div class="s26-ox-num-wrap">
+              <div class="s26-ox-num-row">
+                <span class="s26-ox-c-badge">C</span>
+                <span class="s26-ox-digits">${numStr}</span>
+              </div>
+              <span class="s26-ox-subcode">${item.code}</span>
+            </div>
+            <button type="button" class="s26-ox-save-pill ${isSaved ? 'saved' : ''}" onclick="toggleS26OxSave(${item.num})">
+              ${isSaved ? '✓ 저장됨' : '+ 저장'}
+            </button>
+          </div>
+          <div class="s26-ox-stmt">${item.stmt}</div>
+          <div class="s26-ox-hit-grid">
+            <button type="button" class="${oCls}" onclick="answerS26OxCard(true)" aria-label="O">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
+            </button>
+            <button type="button" class="${xCls}" onclick="answerS26OxCard(false)" aria-label="X">
+              <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
+            </button>
+          </div>
+          ${fbHtml}
+        </article>
+      `;
+    }
+
+    function answerS26OxCard(pickO) {
+      const item = s26OxDeckList[s26CurOxIdx];
+      if (!item) return;
+      s26OxSolved[item.num] = pickO;
+      renderS26OxCard();
+    }
+
+    function toggleS26OxSave(oxNum) {
+      s26OxSaved[oxNum] = !s26OxSaved[oxNum];
+      renderS26OxCard();
+    }
+
+    function stepS26Ox(delta) {
+      const nextIdx = s26CurOxIdx + delta;
+      if (nextIdx >= 0 && nextIdx < s26OxDeckList.length) {
+        s26CurOxIdx = nextIdx;
+        renderS26OxCard();
+      }
+    }
+
+    function jumpToTheoryFromOx(targetId, oxIdx, btnEl) {
+      s26LastMode = 'ox';
+      s26CurOxIdx = oxIdx;
+      const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
+      const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
+      const floatEl = document.getElementById('s26ReturnFloat');
+      const floatTxt = document.getElementById('s26FloatPreviewText');
+      const retBtn = document.getElementById('s26ReturnBtn');
+      if (floatTxt) {
+        floatTxt.innerHTML = `<strong style="color:#FFD580;">[${labelTxt}]</strong><br/>` + previewTxt;
+      }
+      if (retBtn) {
+        retBtn.textContent = `🔙 풀던 OX 카드(${String(oxIdx + 1).padStart(2, '0')}번)로 즉시 복귀`;
+      }
+      if (floatEl) floatEl.classList.add('show-float');
+      const targetEl = document.getElementById(targetId) || document.getElementById('part1');
+      if (targetEl) {
+        document.querySelectorAll('.theory-target-highlight').forEach(el => el.classList.remove('theory-target-highlight'));
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.classList.add('theory-target-highlight');
+      }
+    }
 
     function initS26Dots() {
       const wrap = document.getElementById('s26QuickDots');
@@ -3860,6 +4218,12 @@
 
     function toggleSwipeMode(forceState) {
       s26SwipeOn = (typeof forceState === 'boolean') ? forceState : !s26SwipeOn;
+      if (s26SwipeOn && s26OxDeckOn) {
+        s26OxDeckOn = false;
+        document.body.classList.remove('s26-ox-deck-active');
+        const btnOx = document.getElementById('btnS26OxDeck');
+        if (btnOx) { btnOx.classList.remove('active'); btnOx.textContent = '⭕ OX 카드 슬라이드'; }
+      }
       document.body.classList.toggle('s26-swipe-active', s26SwipeOn);
       const btn = document.getElementById('btnS26Swipe');
       if (btn) {
@@ -3951,6 +4315,7 @@
     }
 
     function jumpToTheory(targetId, qnum, btnEl) {
+      s26LastMode = 'q';
       s26LastQuizQ = qnum || s26CurQ;
       const previewTxt = btnEl ? (btnEl.getAttribute('data-preview') || '') : '';
       const labelTxt = btnEl ? btnEl.textContent.trim() : '기본서 본문 확인';
@@ -3976,7 +4341,10 @@
     function returnToQuizCard() {
       const floatEl = document.getElementById('s26ReturnFloat');
       if (floatEl) floatEl.classList.remove('show-float');
-      if (s26SwipeOn) {
+      if (s26LastMode === 'ox' && s26OxDeckOn) {
+        const stg = document.getElementById('s26OxDeckStage');
+        if (stg) stg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else if (s26SwipeOn) {
         goToSwipeQ(s26LastQuizQ, true);
       } else {
         const qcard = document.getElementById('q-card-' + s26LastQuizQ);
@@ -3989,25 +4357,34 @@
       let touchStartX = 0;
       let touchStartY = 0;
       document.addEventListener('touchstart', function(e) {
-        if (!s26SwipeOn || !e.touches || !e.touches[0]) return;
+        if ((!s26SwipeOn && !s26OxDeckOn) || !e.touches || !e.touches[0]) return;
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
       }, { passive: true });
 
       document.addEventListener('touchend', function(e) {
-        if (!s26SwipeOn || !e.changedTouches || !e.changedTouches[0]) return;
+        if ((!s26SwipeOn && !s26OxDeckOn) || !e.changedTouches || !e.changedTouches[0]) return;
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
         if (Math.abs(dx) > 54 && Math.abs(dx) > Math.abs(dy) * 1.4) {
-          if (dx < 0) stepSwipeQ(1);
-          else stepSwipeQ(-1);
+          if (s26OxDeckOn) {
+            if (dx < 0) stepS26Ox(1);
+            else stepS26Ox(-1);
+          } else if (s26SwipeOn) {
+            if (dx < 0) stepSwipeQ(1);
+            else stepSwipeQ(-1);
+          }
         }
       }, { passive: true });
 
       document.addEventListener('keydown', function(e) {
-        if (!s26SwipeOn) return;
-        if (e.key === 'ArrowRight') stepSwipeQ(1);
-        else if (e.key === 'ArrowLeft') stepSwipeQ(-1);
+        if (s26OxDeckOn) {
+          if (e.key === 'ArrowRight') stepS26Ox(1);
+          else if (e.key === 'ArrowLeft') stepS26Ox(-1);
+        } else if (s26SwipeOn) {
+          if (e.key === 'ArrowRight') stepSwipeQ(1);
+          else if (e.key === 'ArrowLeft') stepSwipeQ(-1);
+        }
       });
 
       window.addEventListener('DOMContentLoaded', function() {

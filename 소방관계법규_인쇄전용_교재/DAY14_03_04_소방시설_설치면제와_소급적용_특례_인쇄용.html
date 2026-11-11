@@ -1,0 +1,3461 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 14 · 인쇄용] 제3편 소방시설 설치 및 관리에 관한 법률 · 제4장 임시·주택용 소방시설, 설치면제 및 소급적용 특례 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY13_03_03_소방시설_설치기준과_주택용_임시소방시설_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 14</span>
+        <a href="DAY15_03_05_방염성능기준_자체점검과_소방용품_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(16제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 14 · 제3편 소방시설 설치 및 관리에 관한 법률 · 제4장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(16문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">임시·주택용 소방시설, 설치면제 및 소급적용 특례</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 주택용 소방시설 2종, 차량용 소화기 및 건설현장 7대 임시소방시설(법 제10조·제11조·제15조)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>주택용 소방시설(법 제10조)</strong>: 단독주택 및 공동주택(<strong>아파트·기숙사 제외!</strong>)에 설치하는 <strong>소화기 및 단독경보형 감지기</strong> 2종 (주거용 주방자동소화장치·자동확산소화기·투척용 소화용구 제외!)</li>
+              <li><strong>차량용 소화기(법 제11조·규칙 별표 2)</strong>: <strong>5인승 이상 승용자동차</strong>·경형승합·중형 이하 특수자동차는 <strong>능력단위 1 이상 1개</strong>, 대형 이상 특수자동차는 <strong>능력단위 2 이상 1개(또는 1 이상 2개)</strong></li>
+              <li><strong>임시소방시설 7종(별표 8)</strong>: 소화기·방화포(모든 작업장), 간이소화장치(연면적 <strong>3,000㎡</strong> / 지하·무창·4층 이상 <strong>600㎡ 이상</strong>), 비상경보장치(연면적 <strong>400㎡</strong> / 지하·무창 <strong>150㎡ 이상</strong>), 간이피난유도선·비상조명등·가스누설경보기(지하·무창 <strong>150㎡ 이상</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            앞선 제3장에서 대형 건축물의 소방시설 기준을 살펴보았다면, 제4장에서는 우리 집과 자동차, 공사장, 그리고 중복 설치면제와 소급적용 특례를 알아봅니다. 통계적으로 화재 사망자가 가장 많이 발생하는 곳은 모두가 깊이 잠든 새벽 시간대의 단독주택과 빌라(연립·다세대주택)입니다. 그래서 <strong>｢소방시설 설치 및 관리에 관한 법률｣ 제10조</strong>는 <strong>단독주택(단독·다중·다가구주택)과 공동주택(연립주택 및 다세대주택에 한하며, 아파트 및 기숙사는 제외한다!)</strong>의 소유자에게 <strong>주택용 소방시설</strong>을 의무적으로 설치하도록 규정했습니다. 이때 법이 정한 <strong>주택용 소방시설의 범위는 오직 '소화기' 및 '단독경보형 감지기' 2가지뿐</strong>입니다(소화기는 세대별·층별 1개 이상, 단독경보형 감지기는 구획된 실마다 1개 이상 설치). 왜 아파트와 기숙사는 주택용 소방시설 설치 대상에서 제외되었을까요? 아파트와 기숙사는 이미 일반 특정소방대상물 기준에 따라 자동화재탐지설비나 스프링클러 등 훨씬 강력한 상위 설비가 들어가기 때문입니다. 특히 시험에서는 보기(2018년 Q2·Q6, 2026년 공·경채 Q28)에 <strong>주거용 주방자동소화장치, 가스자동소화장치, 자동확산소화기, 간이소화용구(투척용 소화용구), 시각경보기, 가스누설경보기</strong>를 섞어 넣어 주택용 소방시설인지 묻는데, 이들은 법정 주택용 소방시설 2종에 절대 포함되지 않는다는 점을 명심해야 합니다!
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            또한 자동차 화재를 초기에 진압하기 위해 <strong>법 제11조 및 시행규칙 별표 2</strong>의 <strong>차량용 소화기</strong> 의무 설치·비치 기준이 2024년 12월부로 대폭 확대되어 시험에 바로 출제되었습니다(2025년 공·경채 Q29). 과거에는 7인승 이상 자동차에만 비치 의무가 있었으나, 현행 법령은 <strong>5인승 이상의 승용자동차</strong>를 비롯하여 승합자동차, 화물자동차, 특수자동차 모두에 차량용 소화기를 사용하기 쉬운 곳에 설치·비치하도록 규정합니다. 구체적인 능력단위와 수량 기준을 보면, ① <strong>승용자동차, 경형승합자동차, 중형 이하의 특수자동차</strong>(및 경형·소형화물자동차)에는 <strong>능력단위 1 이상인 차량용 소화기 1개 이상</strong>을 설치·비치하고, ② <strong>대형 이상의 특수자동차</strong>(및 중형승합·중형화물자동차 등)에는 <strong>능력단위 2 이상인 소화기 1개 이상 또는 능력단위 1 이상인 소화기 2개 이상</strong>을 설치·비치하여야 합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            한편 건물이 완공되기 전인 신축·증축·개축·재축·이전·용도변경·대수선 공사 기간 중에는 본래의 소방시설이 아직 작동하지 않으므로, <strong>법 제15조 및 시행령 별표 8</strong>은 인화성·가연성 물품을 취급하거나 용접·용단 등 불꽃을 발생시키는 <strong>화재위험작업</strong>을 하기 전에 시공자가 설치 및 철거가 쉬운 <strong>7가지 임시소방시설</strong>을 설치하고 유지·관리하도록 의무화하고 있습니다(미설치 시 소방본부장·소방서장이 조치 명령 및 300만 원 이하 과태료 부과). ① <strong>소화기</strong>는 모든 화재위험작업현장에, ② <strong>방화포</strong>(용접·용단 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품으로서 <strong>소방청장</strong>이 정하는 성능을 갖춘 것)는 용접·용단 작업장에 면적과 무관하게 설치합니다. ③ <strong>간이소화장치</strong>는 공사장 <strong>연면적 3,000제곱미터 이상</strong>이거나 <strong>지하층·무창층 또는 4층 이상인 층의 바닥면적이 600제곱미터 이상</strong>인 작업장에 설치하며(따라서 연면적 2,500㎡이고 지하층 바닥면적이 200㎡인 작업장은 간이소화장치 대상이 아님! — 2020년 경채 Q17), 이미 <strong>옥내소화전설비 또는 대형수동식소화기</strong>가 설치된 경우에는 면제됩니다. ④ <strong>비상경보장치</strong>는 <strong>연면적 400제곱미터 이상</strong>이거나 <strong>지하층·무창층 바닥면적 150제곱미터 이상</strong>인 작업장에 설치하며(<strong>비상경보설비 또는 자동화재탐지설비</strong> 설치 시 면제), ⑤ <strong>간이피난유도선</strong>, ⑥ <strong>비상조명등</strong>, ⑦ <strong>가스누설경보기</strong> 3종은 모두 <strong>바닥면적 150제곱미터 이상인 지하층 또는 무창층</strong>의 화재위험작업현장에 설치합니다(피난유도선·피난구유도등·통로유도등·비상조명등 설치 시 면제).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">임시소방시설 (7종)</th>
+                <th style="width:44%;">공사장 의무 설치 면적 기준 (시행령 별표 8)</th>
+                <th>면제 대체 고정 소방시설 및 핵심 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. 소화기 / 2. 방화포</strong></td>
+                <td>· 소화기: <strong>모든 화재위험작업현장</strong><br/>· 방화포: 용접·용단 등 불티 발생 작업현장</td>
+                <td>방화포는 <strong>소방청장</strong>이 정하는 성능을 갖춘 천 또는 불연성 물품</td>
+              </tr>
+              <tr>
+                <td><strong>3. 간이소화장치</strong></td>
+                <td><strong>연면적 3,000㎡ 이상</strong> 또는 <strong>지하층·무창층·4층 이상 바닥면적 600㎡ 이상</strong></td>
+                <td><strong>옥내소화전설비</strong> 또는 <strong>대형수동식소화기</strong> 설치 시 면제 (연면적 2,000㎡·2,500㎡는 미대상!)</td>
+              </tr>
+              <tr>
+                <td><strong>4. 비상경보장치</strong></td>
+                <td><strong>연면적 400㎡ 이상</strong> 또는 <strong>지하층·무창층 바닥면적 150㎡ 이상</strong></td>
+                <td><strong>비상경보설비</strong> 또는 <strong>자동화재탐지설비</strong> 설치 시 면제 (연면적 300㎡는 미대상!)</td>
+              </tr>
+              <tr>
+                <td><strong>5. 간이피난유도선<br/>6. 비상조명등<br/>7. 가스누설경보기</strong></td>
+                <td><strong>바닥면적 150제곱미터 이상인 지하층 또는 무창층</strong>의 화재위험작업현장</td>
+                <td>피난유도선·피난구유도등·통로유도등·비상조명등 설치 시 면제 (바닥면적 100㎡는 미대상!)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. '상위 설비'가 있으면 '유사 하위 설비'는 면제한다 — 유사 소방시설의 설치 면제 기준(시행령 별표 5)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>간이스프링클러 면제 3종(별표 5)</strong>: 오직 <strong>스프링클러설비 · 물분무소화설비 · 미분무소화설비</strong> 설치 시에만 면제! (<strong>옥내소화전·포·분말소화설비 설치 시에는 면제 안 됨!</strong>)</li>
+              <li><strong>비상경보설비 면제</strong>: 자동화재탐지설비·비상방송설비 또는 <strong>단독경보형 감지기를 2개 이상 연동하여 설치</strong>한 경우 면제</li>
+              <li><strong>비상조명등·누전경보기 면제</strong>: 비상조명등은 <strong>피난구·통로유도등</strong> 설치 시, 누전경보기는 <strong>아크경보기·지락차단장치</strong> 설치 시 면제</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            완공된 건축물에서도 특정소방대상물의 기능과 성질이 유사하면서 성능이 더 우수한 상위 소방시설을 설치한 경우에는 중복 투자를 막기 위해 그 유효범위에서 하위 소방시설의 설치를 면제해 줍니다(<strong>법 제12조 제4항 및 시행령 별표 5</strong>). 여기서 시험에 가장 많이 출제되는 1순위 쟁점이 바로 <strong>간이스프링클러설비의 설치 면제 기준</strong>(2018년 경채 Q19, 2020년 경채 Q15, 2024년 공·경채 Q32)입니다!
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            <strong>시행령 별표 5</strong>에 따르면, <strong>간이스프링클러설비</strong>를 설치하여야 하는 특정소방대상물에 화재안전기준에 적합하게 설치했을 때 그 유효범위에서 간이스프링클러 설치가 면제되는 설비는 오직 <strong>① 스프링클러설비, ② 물분무소화설비, ③ 미분무소화설비</strong>라는 '수계 자동 살수 3형제'뿐입니다! 출제위원은 여기에 수동 설비인 <strong>옥내소화전설비</strong>나 화학 약제를 쓰는 <strong>포소화설비, 분말소화설비</strong>를 끼워 넣어 함정을 파는데, 옥내소화전·포·분말소화설비를 설치했다고 해서 간이스프링클러설비가 면제되지는 않는다는 점을 100퍼센트 정확히 구분해야 합니다! 반대로 <strong>옥내소화전설비</strong>를 설치해야 하는 대상물에 스프링클러설비, 간이스프링클러설비 또는 물분무등소화설비를 설치하면 유효범위에서 옥내소화전설비가 면제되고, <strong>스프링클러설비</strong>를 설치해야 하는 대상물에 물분무등소화설비(화재조기진압용 스프링클러 대상은 제외)를 설치하면 스프링클러설비가 면제됩니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            경보설비와 피난구조설비의 면제 기준(2020년 경채 Q15)도 정확히 숙지해야 합니다. 첫째, <strong>비상경보설비</strong>를 설치하여야 할 특정소방대상물에 <strong>자동화재탐지설비</strong>(또는 비상방송설비)를 설치하거나, 단독경보형 감지기 설치대상에 한하여 <strong>단독경보형 감지기를 2개 이상의 단독경보형 감지기와 연동하여 설치</strong>하는 경우에는 그 설비의 유효범위에서 비상경보설비 설치가 면제됩니다(단독경보형 감지기 대상에 자동화재탐지설비를 설치하면 단독경보형 감지기도 면제). 둘째, <strong>비상조명등</strong>을 설치하여야 하는 특정소방대상물에 평소와 비상시 모두 불이 켜지는 <strong>피난구유도등 또는 통로유도등</strong>을 화재안전기준에 적합하게 설치한 경우에는 그 유도등의 유효범위에서 비상조명등 설치가 면제됩니다. 셋째, <strong>누전경보기</strong>를 설치하여야 하는 특정소방대상물 또는 그 부분에 <strong>아크경보기 또는 전기 관련 법령에 따른 지락차단장치</strong>를 설치한 경우에는 그 설비의 유효범위에서 누전경보기 설치가 면제됩니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 강화된 소방시설기준의 소급적용 특례(법 제13조), 규정 정비 주기(3년) 및 자체점검 중대위반사항</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>강화 기준 소급적용(법 제13조·영 제17조)</strong>: 공통 4종(<strong>소화기구·비상경보·자동화재속보·피난구조설비</strong>) + 지하구·전기저장시설 + <strong>노유자·의료시설(스프링클러·간이스프링클러·자탐·속보·단독경보형 감지기)</strong> — <strong>비상방송·옥내소화전은 소급 제외!</strong></li>
+              <li><strong>소방시설 규정 정비(법 제12조)</strong>: 대상물 <strong>규모·용도 및 수용인원</strong> 고려 / <strong>소방청장</strong>이 <strong>3년에 1회 이상</strong> 정비</li>
+              <li><strong>자체점검 중대위반사항(영 제22조)</strong>: 수신기 고장, 펌프·동력제어반·전원 고장, 소화배관 폐쇄·차단, 방화문·자동방화셔터 훼손·철거 (<strong>소화용수설비 주변 불법 주정차는 제외!</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            법령이나 화재안전기준이 개정되어 소방시설 기준이 강화되더라도 이미 지어진 기존 특정소방대상물에는 원칙적으로 <strong>변경 전의 기준을 적용(불소급의 원칙)</strong>합니다. 그러나 장성 요양병원·밀양 세종병원 화재 참사 이후 국민의 생명 보호를 위해 <strong>법 제13조 제1항 단서 및 시행령 제17조</strong>는 기존 특정소방대상물에도 예외적으로 <strong>강화된 현행 기준을 소급하여 적용하는 4대 그룹</strong>을 명시하고 있습니다. 첫째, 모든 특정소방대상물에 공통으로 소급 적용되는 4대 기초 설비로서 ① <strong>소화기구</strong>, ② <strong>비상경보설비</strong>, ③ <strong>자동화재속보설비</strong>, ④ <strong>피난구조설비</strong>입니다. 둘째, 국가 기간망인 <strong>공동구 및 전력·통신사업용 지하구</strong>에 설치하여야 하는 소방시설과 <strong>전기저장시설(ESS)</strong>에 설치하여야 하는 소방시설입니다. 셋째, 시험에 가장 자주 출제되는 피난약자시설(2019년 경채 Q16)로서 <strong>노유자시설에 설치하는 간이스프링클러설비, 자동화재탐지설비 및 단독경보형 감지기(구법은 자동화재속보설비 포함)</strong>와 <strong>의료시설에 설치하는 스프링클러설비, 간이스프링클러설비, 자동화재탐지설비 및 자동화재속보설비</strong>입니다! 따라서 보기에 <strong>'노유자시설에 설치하는 비상방송설비'</strong>나 <strong>'옥내소화전설비·제연설비'</strong>가 나오면 소급적용 대상이 아니므로 즉시 오답으로 골라내야 합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            아울러 본 단원의 실전 기출문제에 수록된 핵심 법령 규정들도 빈틈없이 정리해 둡시다. 첫째, <strong>법 제12조 제2항·제3항</strong>(2021년 경채 Q20)에 따라 대통령령으로 특정소방대상물별 소방시설을 정할 때에는 특정소방대상물의 <strong>'규모·용도 및 수용인원'</strong>(위치·구조나 가연물의 종류 아님!) 등을 고려하여야 하며, <strong>소방청장</strong>은 건축 환경 및 화재위험특성 변화사항을 효과적으로 반영할 수 있도록 소방시설 규정을 <strong>3년에 1회 이상</strong> 정비하여야 합니다. 둘째, <strong>시행령 별표 2 및 별표 4</strong>(2026년 공·경채 Q29)에 따라 <strong>정수장·양수장</strong>은 공공업무시설로서 특정소방대상물 중 <strong>업무시설</strong>에 해당하며, 특정소방대상물 중 <strong>가스시설이 설치된 운동시설</strong>(및 문화집회·종교·판매·운수·의료·노유자·수련·숙박·창고시설 등)에는 <strong>가스누설경보기</strong>를 설치해야 하고, 화재위험도가 낮은 불연성 물품을 저장·취급하는 창고는 <strong>옥외소화전 및 연결살수설비</strong>를 설치하지 않을 수 있습니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            셋째, 자체점검 및 소방시설관리업 관련 기출(2022년 Q20, 2023년 Q30, 2024년 Q36)로서 ① 관계인이 자체점검 시 지체 없이 수리 등 필요한 조치를 해야 하는 <strong>대통령령으로 정하는 중대위반사항(시행령 제22조)</strong>은 <strong>화재수신기 고장</strong>으로 경보음이 자동으로 울리지 않거나 연동 작동이 불가능한 경우, <strong>소화펌프·동력(감시)제어반·소방시설용 전원 고장</strong> 또는 <strong>소화배관 등의 폐쇄·차단</strong>으로 소화수·소화약제가 자동 방출되지 않는 경우, <strong>방화문 또는 자동방화셔터가 훼손·철거</strong>되어 본래의 기능을 못하는 경우이며, <strong>'소화용수설비 주변 불법 주정차'는 자체점검 중대위반사항이 아닙니다!</strong> ② 또한 <strong>전문소방시설관리업의 보조 기술인력 등록기준(시행령 별표 9)</strong>은 주된 기술인력(특급점검자 1명 이상 등) 외에 <strong>초급·중급·고급점검자 이상의 기술인력 각 2명 이상</strong>(일반소방시설관리업은 중급 이상 1명·초급 이상 1명)이며, 소방시설 미설치나 임시소방시설 미설치 시 과태료 상한은 300만 원 이하(구 시행령 개별기준상 수신반·비상전원 차단·방치 과태료 200만 원, 현행법상 소방시설 폐쇄·차단 행위는 5년 이하 징역 또는 5천만 원 이하 벌금)입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:28%;">구분 항목</th>
+                <th style="width:44%;">법령상 핵심 기준 (시행령 별표 5 · 제17조 · 제22조)</th>
+                <th>출제 시 오답 함정 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>간이스프링클러 설치면제 (별표 5)</strong></td>
+                <td><strong>스프링클러설비 · 물분무소화설비 · 미분무소화설비</strong> 설치 시 유효범위에서 면제</td>
+                <td><strong>옥내소화전 · 포 · 분말소화설비</strong> 설치 시에는 면제되지 않음!</td>
+              </tr>
+              <tr>
+                <td><strong>비상경보 · 비상조명 · 누전경보기 면제</strong></td>
+                <td>· 비상경보 ➔ 자탐·비상방송 또는 <strong>단독경보형 감지기 2개 이상 연동</strong><br/>· 비상조명등 ➔ <strong>피난구·통로유도등</strong> / 누전경보기 ➔ <strong>아크경보기·지락차단장치</strong></td>
+                <td>유도등 유효범위에서 비상조명등 면제 인정</td>
+              </tr>
+              <tr>
+                <td><strong>강화 기준 소급적용 (법 제13조·영 제17조)</strong></td>
+                <td>· 전 대상물 공통(4종): <strong>소화기구 · 비상경보 · 자동화재속보 · 피난구조설비</strong><br/>· <strong>노유자·의료시설</strong>: 스프링클러(의료)·간이스프링클러·자탐·속보·단독경보형 감지기<br/>· 공동구·전력·통신 지하구 및 전기저장시설(ESS)</td>
+                <td>노유자·의료시설의 <strong>비상방송설비 · 옥내소화전 · 제연설비</strong>는 소급 대상 아님!</td>
+              </tr>
+              <tr>
+                <td><strong>자체점검 중대위반사항 (영 제22조) &amp; 관리업</strong></td>
+                <td>· 중대위반: 수신기 고장, 펌프·제어반·전원 고장, 소화배관 폐쇄·차단, 방화문·방화셔터 훼손·철거<br/>· 전문관리업 보조인력: <strong>초급·중급·고급점검자 각 2명 이상</strong></td>
+                <td><strong>소화용수설비 주변 불법 주정차</strong>는 자체점검 중대위반사항이 아님!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 주택용·차량용·임시소방시설 7종 및 유사 설비 면제·소급적용 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 주택용·차량용 소방시설 및 공사장 임시소방시설 7종 (별표 8)</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">주택용 소방시설 2종 (법 제10조)</div>
+                <div>· 대상: 단독주택 및 공동주택 (<strong>아파트·기숙사 제외!</strong>)<br/>· 종류: <strong>소화기 + 단독경보형 감지기</strong> (주방자동소화장치·자동확산소화기·투척용 제외!)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">차량용 소화기 비치 (법 제11조·규칙 별표 2)</div>
+                <div>· <strong>5인승 이상 승용차</strong>·경형승합·중형 이하 특수차: <strong>능력단위 1 이상 1개</strong><br/>· 대형 이상 특수차: <strong>능력단위 2 이상 1개(또는 1 이상 2개)</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">임시소방시설: 간이소화장치 &amp; 비상경보장치</div>
+                <div>· <strong>간이소화장치</strong>: 연면적 <strong>3,000㎡</strong> / 지하·무창·4층 이상 <strong>600㎡ 이상</strong> (옥내소화전·대형소화기로 면제)<br/>· <strong>비상경보장치</strong>: 연면적 <strong>400㎡</strong> / 지하·무창 <strong>150㎡ 이상</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">임시소방시설: 유도선·조명등·가스경보·방화포</div>
+                <div>· <strong>간이피난유도선·비상조명등·가스누설경보기</strong>: 지하·무창층 바닥면적 <strong>150㎡ 이상</strong><br/>· <strong>방화포</strong>: 용접·용단 작업장 (<strong>소방청장</strong> 성능 기준)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 소방시설 기준 결정 시 <strong>규모·용도 및 수용인원</strong>을 고려하며, <strong>소방청장</strong>은 소방시설 규정을 <strong>3년에 1회 이상</strong> 정비하여야 함!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 유사 소방시설 설치 면제(별표 5) 및 강화 기준 소급적용(제13조)</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">유사 소방시설 설치 면제 핵심 공식 (시행령 별표 5)</div>
+                <ul class="schema-list">
+                  <li><strong>간이스프링클러 면제</strong>: 오직 <strong>스프링클러설비 · 물분무소화설비 · 미분무소화설비</strong> 설치 시에만 면제 (옥내소화전·포·분말소화설비 X)</li>
+                  <li><strong>비상경보 면제</strong>: 자탐·비상방송 또는 <strong>단독경보형 감지기 2개 이상 연동</strong> / <strong>비상조명등 면제</strong>: 피난구·통로유도등 / <strong>누전경보기 면제</strong>: 아크경보기·지락차단장치</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">강화된 기준 소급적용 대상 (법 제13조 · 시행령 제17조)</div>
+                <ul class="schema-list">
+                  <li>① 공통 4종: <strong>소화기구, 비상경보설비, 자동화재속보설비, 피난구조설비</strong></li>
+                  <li>② 피난약자: <strong>노유자시설 · 의료시설</strong>의 스프링클러(의료)·간이스프링클러·자동화재탐지·자동화재속보·단독경보형 감지기 (<strong>비상방송·옥내소화전 제외!</strong>)</li>
+                  <li>③ 인프라: <strong>공동구, 전력·통신사업용 지하구</strong> 및 <strong>전기저장시설(ESS)</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (16문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 16문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률｣상 단독주택 및 공동주택(아파트 및 기숙사는 제외한다)의 소유자가 의무적으로 설치하여야 하는 주택용 소방시설로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소화기 및 시각경보기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소화기 및 간이소화용구</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소화기 및 자동확산소화기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소화기 및 단독경보형감지기</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률 시행령｣상 ‘유사한 소방시설의 설치 면제의 기준’에 대한 설명이다. ( ) 안의 내용으로 옳게 연결된 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>간이스프링클러를 설치하여야 하는 특정소방대상물에 ( ㉠ ), ( ㉡ ), 또는 미분무소화설비를 화재안전기준에 적합하게 설치한 경우에는 그 설비의 유효범위에서 설치가 면제된다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( ㉠ ): 스프링클러설비 / ( ㉡ ): 옥내소화전설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( ㉠ ): 포소화설비 / ( ㉡ ): 물분무소화설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( ㉠ ): 스프링클러설비 / ( ㉡ ): 물분무소화설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( ㉠ ): 포소화설비 / ( ㉡ ): 옥내소화전설비</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2018년 소방공채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률｣ 및 같은 법 시행령상 단독주택이나 공동주택(아파트 및 기숙사는 제외한다)의 소유자가 의무적으로 설치하여야 하는 소방시설로 옳은 것을 <보기>에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 소화기<br/>ㄴ. 주거용 주방자동소화장치<br/>ㄷ. 가스자동소화장치<br/>ㄹ. 단독경보형감지기<br/>ㅁ. 가스누설경보기</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2019년 소방경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률｣ 및 같은 법 시행령상 노유자시설 및 의료시설의 경우 강화된 소방시설기준의 적용대상이다. 이에 해당하는 소방설비의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">노유자시설에 설치하는 간이스프링클러설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">노유자시설에 설치하는 비상방송설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">의료시설에 설치하는 스프링클러설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">의료시설에 설치하는 자동화재탐지설비</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2020년 소방경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률 시행령｣상 특정소방대상물의 소방시설 설치면제 기준으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">간이스프링클러설비를 설치하여야 하는 특정소방대상물에 분말소화설비를 화재안전기준에 적합하게 설치한 경우 에는 그 설비의 유효범위에서 설치가 면제된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">비상경보설비를 설치하여야 할 특정소방대상물에 단독 경보형 감지기를 2개 이상의 단독경보형 감지기와 연동 하여 설치하는 경우에는 그 설비의 유효범위에서 설치가 면제된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">비상조명등을 설치하여야 하는 특정소방대상물에 피난 구유도등 또는 통로유도등을 화재안전기준에 적합하게 설치한 경우에는 그 유도등의 유효범위에서 설치가 면제된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">누전경보기를 설치하여야 하는 특정소방대상물 또는 그 부분에 아크경보기 또는 전기 관련 법령에 따른 지락차단장치를 설치한 경우에는 그 설비의 유효범 위에서 설치가 면제된다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2020년 소방경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">연면적 2,500 ㎡인 신축공사 작업현장의 바닥면적 200 ㎡인 지하층에서 용접작업을 하려고 한다. ｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률 시행령｣상 해당 작업 현장에 설치하여야 할 임시소방시설로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소화기</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">간이소화장치</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">비상경보장치</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">간이피난유도선</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2020년 소방경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률｣ 및 같은 법 시행령상 임시소방시설을 설치하여야 하는 공사와 임시소방시설의 설치기준으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특정소방대상물의 용도변경을 위한 공사를 시공하는 자는 공사 현장에서 인화성(引火性) 물품을 취급하는 작업을 하기 전에 설치 및 철거가 쉬운 임시소방시설을 설치하고 유지·관리하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">옥내소화전이 설치된 특정소방대상물의 용도변경을 위한 내부 인테리어 변경공사를 시공하는 자는 간이 소화장치를 설치해야만 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">무창층으로서 바닥면적 150 ㎡의 증축 작업현장에는 간이피난유도선을 설치해야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방서장은 용접·용단 등 불꽃을 발생시키거나 화기 (火氣)를 취급하는 작업현장에 임시소방시설 또는 소방시설이 설치 또는 유지·관리되지 아니할 때에는 해당 시공자에게 필요한 조치를 하도록 명할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2021년 소방경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률｣상 특정소방대상물별로 설치하여야 하는 소방시설의 정비 등에 대한 설명이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>◦제9조제1항에 따라 대통령령으로 소방시설을 정할 때에는 특정소방대상물의 ( 가 ) 등을 고려하여야 한다.<br/>◦소방청장은 건축 환경 및 화재위험특성 변화사항을 효과적으로 반영할 수 있도록 소방시설 규정을 ( 나 ) 이상 정비하여야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">(가): 규모·용도 및 수용인원 / (나): 3년에 1회</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">(가): 위치·구조 및 수용인원 / (나): 4년에 1회</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">(가): 규모·용도 및 가연물의 종류 및 양 / (나): 5년에 1회</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">(가): 위치·구조 및 가연물의 종류 및 양 / (나): 10년에 1회</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2022년 소방경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재예방, 소방시설 설치·유지 및 안전관리에 관한 법률 시행령｣ 별표10의 과태료 부과 개별기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방시설을 설치하지 않은 경우: 과태료 200만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">법 제10조의2 제1항을 위반하여 임시소방시설을 설치· 유지·관리하지 않은 경우: 과태료 200만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">수신반, 동력(감시)제어반 또는 소방시설용 비상전원 을 차단하거나, 고장난 상태로 방치하거나, 임의로 조 작하여 자동으로 작동이 되지 않도록 한 경우: 과태 료 200만원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방시설이 작동하는 경우 소화배관을 통하여 소화수 가 방수되지 않는 상태 또는 소화약제가 방출되지 않 는 상태로 방치한 경우: 과태료 300만원</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2023년 소방경채 Q30 · 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률 시행령｣상 전문소방시설관리업의 보조 기술인력 등록기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특급점검자 이상의 기술인력: 2명 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">중급·고급점검자 이상의 기술인력: 각 1명 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">초급·중급점검자 이상의 기술인력: 각 1명 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">초급·중급·고급점검자 이상의 기술인력: 각 2명 이상</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2024년 소방경채 Q32 · 소방공채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률 시행령｣상 특정소방대상물의 간이스프링클러설비 설치면제 기준이다. ( ) 안에 들어갈 설비에 해당하지 않는 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>간이스프링클러설비를 설치해야 하는 특정소방대상물에 ( ), ( ) 또는 ( )를 화재안전기준에 적합하게 설치한 경우에는 그 설비의 유효범위에서 설치가 면제된다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">옥내소화전설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">스프링클러설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">물분무소화설비</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">미분무소화설비</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024년 소방경채 Q36 · 소방공채 Q23</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률 시행령｣상 소화펌프 고장 등 대통령령으로 정하는 중대위반사항으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재수신기의 고장으로 화재경보음이 자동으로 울리지 않거나 화재수신기와 연동된 소방시설의 작동이 불가능한 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소화배관 등이 폐쇄·차단되어 소화수(消火水) 또는 소화 약제가 자동 방출되지 않는 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소화용수설비 주변 불법 주정차로 인하여 화재를 진압 하는 데 필요한 물을 공급하기 어려운 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">방화문 또는 자동방화셔터가 훼손되거나 철거되어 본래의 기능을 못 하는 경우</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2025년 소방경채 Q26 · 소방공채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률｣ 및 같은 법 시행령상 임시소방시설의 종류와 설치기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">간이소화장치는 연면적 2천제곱미터 이상인 공사의 화재 위험작업현장에 설치한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">가스누설경보기는 바닥면적이 100제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에 설치한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">비상경보장치는 연면적 300제곱미터 이상인 공사의 화재 위험작업현장에 설치한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">방화포는 용접·용단 등의 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품 으로서 소방청장이 정하는 성능을 갖추고 있어야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2025년 소방경채 Q29 · 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률｣ 및 같은 법 시행규칙상 차량용 소화기의 설치 또는 비치기준으로 옳은 것만을 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 대형 이상의 특수자동차는 능력단위 2 이상인 소화기 1개 이상 또는 능력단위 1 이상인 소화기 2개 이상을 사용하기 쉬운 곳에 설치한다.<br/>ㄴ. 중형 이하의 특수자동차는 능력단위 1 이상인 소화기 1개 이상을 사용하기 쉬운 곳에 설치한다.<br/>ㄷ. 경형승합자동차는 능력단위 1 이상의 소화기 1개 이상을 사용하기 쉬운 곳에 설치 또는 비치한다.<br/>ㄹ. 승용자동차는 능력단위 1 이상의 소화기 1개 이상을 사용하기 쉬운 곳에 설치 또는 비치한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2026년 소방경채 Q28 · 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률｣ 및 같은 법 시행령상 주택용 소방시설의 범위에 해당하는 것으로 옳은 것만을 <보기>에서 모두 고른 것은? (단, 조례로 정하는 사항은 고려하지 않는다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 단독경보형 감지기<br/>ㄴ. 주거용 주방자동소화장치<br/>ㄷ. 소화기<br/>ㄹ. 자동확산소화기<br/>ㅁ. 투척용 소화용구</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2026년 소방경채 Q29 · 소방공채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방시설 설치 및 관리에 관한 법률｣ 및 같은 법 시행령상의 내용에 관한 설명으로 옳은 것만을 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 특정소방대상물 중 가스시설이 설치된 운동시설은 가스누설경보기를 설치해야 한다.<br/>ㄴ. 양수장은 특정소방대상물 중 업무시설에 해당된다.<br/>ㄷ. 화재위험도가 낮은 불연성 물품을 저장하는 창고는 옥외소화전 및 연결살수설비를 설치하지 않을 수 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대통령령 또는 화재안전기준이 변경되어 강화된 경우 소화기구, 비상경보설비, 자동화재속보설비 및 피난구조설비는 기존의 특정소방대상물에도 강화된 기준을 소급 적용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>기존 노유자시설 및 의료시설에 설치하는 간이스프링클러설비, 자동화재탐지설비, 자동화재속보설비(의료시설은 스프링클러설비 포함, 노유자시설은 단독경보형 감지기 포함)는 법령 개정 시 강화된 기준을 소급 적용하나, 비상방송설비는 소급 적용 대상이 아니다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단독주택 및 공동주택(아파트 및 기숙사는 제외한다)의 소유자가 의무적으로 설치하여야 하는 주택용 소방시설은 소화기 및 단독경보형 감지기 2종뿐이며, 주거용 주방자동소화장치나 자동확산소화기는 주택용 소방시설에 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>간이스프링클러설비를 설치하여야 하는 특정소방대상물에 스프링클러설비, 물분무소화설비 또는 미분무소화설비를 화재안전기준에 적합하게 설치한 경우에는 그 설비의 유효범위에서 간이스프링클러설비의 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>간이스프링클러설비를 설치하여야 하는 특정소방대상물에 옥내소화전설비, 포소화설비 또는 분말소화설비를 화재안전기준에 적합하게 설치한 경우에는 그 설비의 유효범위에서 간이스프링클러설비 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>비상경보설비를 설치하여야 할 특정소방대상물에 단독경보형 감지기를 2개 이상의 단독경보형 감지기와 연동하여 설치하는 경우에는 그 설비의 유효범위에서 비상경보설비 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>비상조명등을 설치하여야 하는 특정소방대상물에 피난구유도등 또는 통로유도등을 화재안전기준에 적합하게 설치한 경우에는 그 유도등의 유효범위에서 비상조명등 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>누전경보기를 설치하여야 하는 특정소방대상물 또는 그 부분에 아크경보기 또는 전기 관련 법령에 따른 지락차단장치를 설치한 경우에는 그 설비의 유효범위에서 누전경보기 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>공사현장 임시소방시설 중 간이소화장치는 연면적 3천 제곱미터 이상이거나, 지하층·무창층 또는 4층 이상인 층의 바닥면적이 600제곱미터 이상인 화재위험작업현장에 설치한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물의 신축·증축·용도변경 등을 위한 공사를 시공하는 자는 공사 현장에서 인화성 물품을 취급하는 화재위험작업을 하기 전에 설치 및 철거가 쉬운 임시소방시설을 설치하고 유지·관리하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내소화전설비나 대형수동식소화기가 화재안전기준에 적합하게 설치되어 유효하게 작동하는 작업현장에서도 반드시 간이소화장치를 중복하여 설치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>임시소방시설 중 비상경보장치는 연면적 400제곱미터 이상이거나 바닥면적 150제곱미터 이상인 지하층·무창층에 설치하고, 가스누설경보기·간이피난유도선·비상조명등은 바닥면적 150제곱미터 이상인 지하층·무창층의 화재위험작업현장에 설치한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>방화포는 용접·용단 등의 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품으로서 소방청장이 정하는 성능을 갖추고 있어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대통령령으로 소방시설을 정할 때에는 특정소방대상물의 규모·용도 및 수용인원 등을 고려하여야 하며, 소방청장은 건축 환경 및 화재위험특성 변화사항을 효과적으로 반영할 수 있도록 소방시설 규정을 3년에 1회 이상 정비하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물의 관계인이 소방시설을 화재안전기준에 따라 설치·관리하지 아니하거나 시공자가 임시소방시설을 설치·유지·관리하지 아니한 경우에는 300만 원 이하의 과태료를 부과한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>전문소방시설관리업의 보조 기술인력 등록기준은 고급점검자 이상, 중급점검자 이상, 초급점검자 이상의 기술인력 각 2명 이상이며, 일반소방시설관리업은 중급점검자 이상 1명 이상 및 초급점검자 이상 1명 이상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재수신기 고장으로 경보음이 울리지 않는 경우, 소화배관 등이 폐쇄·차단되어 소화수·소화약제가 자동 방출되지 않는 경우, 방화문 또는 자동방화셔터가 훼손·철거되어 본래의 기능을 못하는 경우는 자체점검 시 지체 없이 수리해야 하는 중대위반사항에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소화용수설비 주변 불법 주정차로 인하여 화재를 진압하는 데 필요한 물을 공급하기 어려운 경우는 소방시설법 시행령상 자체점검 시 지체 없이 수리해야 하는 중대위반사항에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>승용자동차와 경형승합자동차 및 중형 이하의 특수자동차에는 능력단위 1 이상의 차량용 소화기 1개 이상을, 대형 이상의 특수자동차에는 능력단위 2 이상인 소화기 1개 이상(또는 능력단위 1 이상 2개 이상)을 사용하기 쉬운 곳에 설치 또는 비치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>특정소방대상물 중 가스시설이 설치된 운동시설에는 가스누설경보기를 설치하여야 하고, 양수장은 특정소방대상물 중 업무시설에 해당하며, 화재위험도가 낮은 불연성 물품을 저장하는 창고는 옥외소화전 및 연결살수설비를 설치하지 않을 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥내소화전이 설치된 특정소방대상물의 용도변경을 위한 내부 인테리어 변경공사를 시공하는 자는 간이 소화장치를 설치해야만 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>무창층으로서 바닥면적 150 ㎡의 증축 작업현장에는 간이피난유도선을 설치해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>간이소화장치는 연면적 2천제곱미터 이상인 공사의 화재 위험작업현장에 설치한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가스누설경보기는 바닥면적이 100제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에 설치한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방시설 설치 및 관리에 관한 법률｣ 제10조에 따라 단독주택 및 공동주택(아파트·기숙사 제외)에 의무적으로 설치해야 하는 주택용 소방시설에는 소화기, 단독경보형 감지기 및 간이소화용구(투척용 소화용구)가 포함된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>현행 ｢소방시설 설치 및 관리에 관한 법률｣상 승용자동차의 경우에는 7인승 이상의 승용자동차에 한하여 차량용 소화기를 설치 또는 비치할 의무가 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단독경보형 감지기 설치대상이 아닌 일반 특정소방대상물이라도 단독경보형 감지기를 2개 이상의 단독경보형 감지기와 연동하여 설치하는 경우에는 비상경보설비의 설치가 면제된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>기존의 노유자시설이나 의료시설에 설치하는 옥내소화전설비와 제연설비는 대통령령 또는 화재안전기준이 변경되어 강화되는 경우 기존의 특정소방대상물에도 강화된 기준을 소급하여 적용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대통령령으로 특정소방대상물에 설치하여야 하는 소방시설을 정할 때에는 특정소방대상물의 위치·구조 및 취급하는 가연물의 종류를 고려하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>행정안전부장관은 건축 환경 및 화재위험특성 변화사항을 효과적으로 반영할 수 있도록 소방시설에 관한 규정을 5년에 1회 이상 정비하여야 한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:④ · 02:③ · 03:① · 04:② · 05:① · 06:② · 07:② · 08:① · 09:③ · 10:④ · 11:① · 12:③ · 13:④ · 14:④ · 15:① · 16:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:X · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:X · 19:O · 20:O · 21:X · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 14 · 제3편 소방시설 설치 및 관리에 관한 법률 · 제4장 (16문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방경채 Q2</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률｣ 제10조에 따라 단독주택 및 공동주택(아파트 및 기숙사는 제외)의 소유자가 의무적으로 설치해야 하는 주택용 소방시설 2종은 '소화기' 및 '단독경보형 감지기'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소화기 및 시각경보기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 단독주택 및 공동주택(아파트·기숙사 제외)에 의무 설치하는 주택용 소방시설은 '소화기 및 단독경보형 감지기'이며, 시각경보기는 주택용 소방시설에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소화기 및 간이소화용구</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 간이소화용구는 법정 주택용 소방시설 2종에 포함되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소화기 및 자동확산소화기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 주택용 소방시설은 '소화기 및 단독경보형 감지기'를 말하며, 자동확산소화기는 법정 주택용 소방시설에 포함되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소화기 및 단독경보형감지기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 단독주택과 공동주택(아파트 및 기숙사 제외)에 의무적으로 설치해야 하는 주택용 소방시설은 '소화기 및 단독경보형 감지기'입니다(출제 원문 정답 표기 오류 보정: 법 제10조상 소화기 및 단독경보형 감지기임).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2018년 소방경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 5에 따라 간이스프링클러설비를 설치하여야 하는 특정소방대상물에 기능과 성능이 더 우수한 '스프링클러설비, 물분무소화설비 또는 미분무소화설비'를 화재안전기준에 적합하게 설치한 경우에는 그 설비의 유효범위에서 간이스프링클러설비 설치가 면제됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( ㉠ ): 스프링클러설비 / ( ㉡ ): 옥내소화전설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 옥내소화전설비는 수동 소화설비이므로 자동 소화설비인 간이스프링클러설비를 면제해 주지 못합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( ㉠ ): 포소화설비 / ( ㉡ ): 물분무소화설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 포소화설비는 간이스프링클러설비의 설치 면제 사유가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( ㉠ ): 스프링클러설비 / ( ㉡ ): 물분무소화설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 간이스프링클러설비를 설치해야 하는 특정소방대상물에 '스프링클러설비( ㉠ ), 물분무소화설비( ㉡ ) 또는 미분무소화설비'를 설치한 경우에는 유효범위에서 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( ㉠ ): 포소화설비 / ( ㉡ ): 옥내소화전설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 간이스프링클러설비를 설치해야 하는 대상물에 설치 시 면제되는 유사 설비는 '스프링클러설비, 물분무소화설비 또는 미분무소화설비'이며, 포소화설비나 옥내소화전설비는 면제 사유에 해당하지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률｣ 제10조에 따라 단독주택 및 공동주택(아파트·기숙사 제외)에 설치해야 하는 주택용 소방시설은 소화기( ㄱ )와 단독경보형 감지기( ㄹ ) 2가지입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 주택용 소방시설은 ㄱ(소화기)과 ㄹ(단독경보형 감지기)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 주거용 주방자동소화장치는 아파트등 및 30층 이상 오피스텔에 설치하는 설비입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ(주거용 주방자동소화장치)은 주택용 소방시설에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 주택용 소방시설은 '소화기(ㄱ) 및 단독경보형 감지기(ㄹ)' 2가지뿐이며, 주거용 주방자동소화장치(ㄴ), 가스자동소화장치(ㄷ), 가스누설경보기(ㅁ)는 모두 법정 주택용 소방시설이 아닙니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q16</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">노유자시설에 설치하는 간이스프링클러설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 노유자시설에 설치하는 간이스프링클러설비, 자동화재탐지설비 및 단독경보형 감지기(또는 자동화재속보설비)는 강화된 기준 소급적용 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">노유자시설에 설치하는 비상방송설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 노유자시설에 설치하는 '비상방송설비'는 강화된 소방시설기준의 소급적용 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">의료시설에 설치하는 스프링클러설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 의료시설에 설치하는 스프링클러설비, 간이스프링클러설비, 자동화재탐지설비 및 자동화재속보설비는 강화된 기준 소급적용 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">의료시설에 설치하는 자동화재탐지설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 의료시설에 설치하는 자동화재탐지설비는 강화된 기준 소급적용 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 간이스프링클러설비는 스프링클러설비, 물분무소화설비 또는 미분무소화설비를 설치한 경우에 면제되며, 분말소화설비를 설치한 경우에는 면제되지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">간이스프링클러설비를 설치하여야 하는 특정소방대상물에 분말소화설비를 화재안전기준에 적합하게 설치한 경우 에는 그 설비의 유효범위에서 설치가 면제된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 간이스프링클러설비를 설치해야 하는 특정소방대상물에 면제가 인정되는 설비는 '스프링클러설비, 물분무소화설비 또는 미분무소화설비'이며, 분말소화설비를 설치한 경우에는 면제되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">비상경보설비를 설치하여야 할 특정소방대상물에 단독 경보형 감지기를 2개 이상의 단독경보형 감지기와 연동 하여 설치하는 경우에는 그 설비의 유효범위에서 설치가 면제된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 비상경보설비를 설치해야 할 특정소방대상물(단독경보형 감지기 설치대상에 한함)에 단독경보형 감지기를 2개 이상 연동하여 설치하면 유효범위에서 비상경보설비 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">비상조명등을 설치하여야 하는 특정소방대상물에 피난 구유도등 또는 통로유도등을 화재안전기준에 적합하게 설치한 경우에는 그 유도등의 유효범위에서 설치가 면제된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 비상조명등을 설치해야 하는 특정소방대상물에 피난구유도등 또는 통로유도등을 화재안전기준에 적합하게 설치한 경우에는 그 유도등의 유효범위에서 비상조명등 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">누전경보기를 설치하여야 하는 특정소방대상물 또는 그 부분에 아크경보기 또는 전기 관련 법령에 따른 지락차단장치를 설치한 경우에는 그 설비의 유효범 위에서 설치가 면제된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 누전경보기를 설치해야 하는 특정소방대상물에 아크경보기 또는 전기 관련 법령에 따른 지락차단장치를 설치한 경우에는 유효범위에서 설치가 면제됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 연면적 2,500제곱미터인 신축공사 현장의 바닥면적 200제곱미터인 지하층에서 용접작업(화재위험작업)을 할 때 설치해야 할 임시소방시설을 판별하는 사례형 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소화기</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 8에 따라 소화기는 모든 건설현장 화재위험작업장에 의무적으로 설치해야 하는 임시소방시설입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">간이소화장치</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 간이소화장치는 ① 연면적 3,000제곱미터 이상이거나, ② 지하층·무창층 또는 4층 이상인 층의 바닥면적이 600제곱미터 이상인 경우에 설치합니다. 제시된 현장은 연면적 2,500제곱미터(3,000제곱미터 미만)이고 지하층 바닥면적이 200제곱미터(600제곱미터 미만)이므로 간이소화장치 설치 대상이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">비상경보장치</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 비상경보장치는 연면적 400제곱미터 이상이거나 바닥면적 150제곱미터 이상인 지하층·무창층(200제곱미터 해당)에 설치해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">간이피난유도선</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 간이피난유도선은 바닥면적 150제곱미터 이상인 지하층·무창층(200제곱미터 해당)에 설치해야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률｣ 제15조 및 시행령 별표 8에 따라 공사 현장에 간이소화장치와 동등 이상의 효력이 있는 '옥내소화전설비 또는 대형소화기' 등을 설치한 경우에는 간이소화장치를 설치하지 않을 수 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특정소방대상물의 용도변경을 위한 공사를 시공하는 자는 공사 현장에서 인화성(引火性) 물품을 취급하는 작업을 하기 전에 설치 및 철거가 쉬운 임시소방시설을 설치하고 유지·관리하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 특정소방대상물의 신축·증축·개축·재축·이전·용도변경 또는 대수선 공사를 시공하는 자는 화재위험작업을 하기 전에 임시소방시설을 설치하고 유지·관리하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">옥내소화전이 설치된 특정소방대상물의 용도변경을 위한 내부 인테리어 변경공사를 시공하는 자는 간이 소화장치를 설치해야만 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 이미 화재안전기준에 적합한 '옥내소화전설비'나 대형소화기가 설치되어 유효하게 작동하는 작업현장에는 간이소화장치의 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">무창층으로서 바닥면적 150 ㎡의 증축 작업현장에는 간이피난유도선을 설치해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 바닥면적 150제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에는 간이피난유도선을 설치해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방서장은 용접·용단 등 불꽃을 발생시키거나 화기 (火氣)를 취급하는 작업현장에 임시소방시설 또는 소방시설이 설치 또는 유지·관리되지 아니할 때에는 해당 시공자에게 필요한 조치를 하도록 명할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 소방본부장이나 소방서장은 화재위험작업현장에 임시소방시설이 설치·관리되지 아니할 때에는 해당 시공자에게 필요한 조치를 명할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률｣ 제12조 제2항 및 제3항에 따라 대통령령으로 소방시설을 정할 때에는 특정소방대상물의 '규모·용도 및 수용인원' 등을 고려하여야 하며, 소방청장은 건축 환경 및 화재위험특성 변화사항을 반영할 수 있도록 소방시설 규정을 '3년에 1회' 이상 정비하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">(가): 규모·용도 및 수용인원 / (나): 3년에 1회</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 특정소방대상물의 '규모·용도 및 수용인원'( 가 ) 등을 고려하여야 하며, 소방청장은 소방시설 규정을 '3년에 1회'( 나 ) 이상 정비하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">(가): 위치·구조 및 수용인원 / (나): 4년에 1회</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ｢소방시설 설치 및 관리에 관한 법률｣ 제11조에 따라 소방시설 기준을 정할 때에는 특정소방대상물의 '규모·용도 및 수용인원'(가)을 고려하며, 소방청장은 소방시설 규정을 4년이 아니라 '3년에 1회'(나) 이상 정비하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">(가): 규모·용도 및 가연물의 종류 및 양 / (나): 5년에 1회</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 특정소방대상물의 고려 요소는 '규모·용도 및 수용인원'(가)이며, 소방청장의 소방시설 규정 의무 정비 주기는 5년이 아니라 '3년에 1회'(나) 이상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">(가): 위치·구조 및 가연물의 종류 및 양 / (나): 10년에 1회</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 고려 요소는 위치·구조가 아니라 '규모·용도 및 수용인원'(가)이며, 소방시설 규정 의무 정비 주기는 10년이 아니라 '3년에 1회'(나) 이상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q20</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방시설을 설치하지 않은 경우: 과태료 200만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 특정소방대상물의 관계인이 소방시설을 화재안전기준에 따라 설치·관리하지 않은 경우 과태료 상한은 200만 원이 아니라 '300만 원 이하'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">법 제10조의2 제1항을 위반하여 임시소방시설을 설치· 유지·관리하지 않은 경우: 과태료 200만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 임시소방시설을 설치·유지·관리하지 않은 경우 과태료는 200만 원이 아니라 '300만 원 이하'(시정명령 위반 시 벌칙)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">수신반, 동력(감시)제어반 또는 소방시설용 비상전원 을 차단하거나, 고장난 상태로 방치하거나, 임의로 조 작하여 자동으로 작동이 되지 않도록 한 경우: 과태 료 200만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 출제 당시 구 시행령 별표 10 개별기준상 수신반, 동력(감시)제어반 또는 소방시설용 비상전원을 차단·방치·임의조작한 경우의 1차 과태료 금액(또는 구 기준)으로 출제된 선지입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방시설이 작동하는 경우 소화배관을 통하여 소화수 가 방수되지 않는 상태 또는 소화약제가 방출되지 않 는 상태로 방치한 경우: 과태료 300만원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 소화배관 폐쇄·차단으로 소화수가 방수되지 않거나 소화약제가 방출되지 않는 상태로 방치한 행위는 ｢소방시설 설치 및 관리에 관한 법률｣ 제56조에 따라 5년 이하의 징역 또는 5천만 원 이하의 벌금(구 과태료 기준상으로도 300만 원과 상이) 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q30 · 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 전문소방시설관리업은 주된 기술인력(특급점검자 1명 이상, 소방시설관리사 경력 5년 이상 등) 외에 보조 기술인력으로 '고급점검자 이상, 중급점검자 이상, 초급점검자 이상의 기술인력을 각각 2명 이상(총 6명 이상)' 두어야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특급점검자 이상의 기술인력: 2명 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 특급점검자는 보조 기술인력이 아니라 주된 기술인력(1명 이상)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">중급·고급점검자 이상의 기술인력: 각 1명 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 중급·고급 각 1명이 아니라 초급·중급·고급점검자 각 2명 이상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">초급·중급점검자 이상의 기술인력: 각 1명 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 일반소방시설관리업의 보조 기술인력이 '중급점검자 이상 1명 이상, 초급점검자 이상 1명 이상'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">초급·중급·고급점검자 이상의 기술인력: 각 2명 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 전문소방시설관리업의 보조 기술인력 등록기준은 초급·중급·고급점검자 이상의 기술인력 각 2명 이상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q32 · 소방공채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 5에 따라 간이스프링클러설비를 설치해야 하는 특정소방대상물에 설치 시 면제가 인정되는 3대 설비는 '스프링클러설비, 물분무소화설비, 미분무소화설비'이며, 옥내소화전설비는 포함되지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">옥내소화전설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '옥내소화전설비'를 설치한 경우에는 간이스프링클러설비 설치가 면제되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">스프링클러설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 스프링클러설비를 설치한 경우 유효범위에서 간이스프링클러설비 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">물분무소화설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 물분무소화설비를 설치한 경우 유효범위에서 간이스프링클러설비 설치가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">미분무소화설비</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 미분무소화설비를 설치한 경우 유효범위에서 간이스프링클러설비 설치가 면제됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q36 · 소방공채 Q23</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재수신기의 고장으로 화재경보음이 자동으로 울리지 않거나 화재수신기와 연동된 소방시설의 작동이 불가능한 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화재수신기의 고장으로 화재경보음이 자동으로 울리지 않거나 화재수신기와 연동된 소방시설의 작동이 불가능한 경우는 중대위반사항에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소화배관 등이 폐쇄·차단되어 소화수(消火水) 또는 소화 약제가 자동 방출되지 않는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소화펌프, 동력(감시)제어반 또는 소방시설용 전원의 고장으로 소화수 또는 소화약제가 자동 방출되지 않는 경우와 밸브 폐쇄·차단 등으로 소화수·소화약제가 자동 방출되지 않는 경우는 중대위반사항에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소화용수설비 주변 불법 주정차로 인하여 화재를 진압 하는 데 필요한 물을 공급하기 어려운 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] '소화용수설비 주변 불법 주정차'는 자체점검상의 소방시설 중대위반사항(수신기 고장, 펌프·제어반·전원 고장, 소화배관 폐쇄·차단, 방화문·자동방화셔터 훼손·철거)에 규정되어 있지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">방화문 또는 자동방화셔터가 훼손되거나 철거되어 본래의 기능을 못 하는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 방화문 또는 자동방화셔터가 훼손되거나 철거되어 본래의 기능을 못하는 경우는 중대위반사항에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q26 · 소방공채 Q17</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">간이소화장치는 연면적 2천제곱미터 이상인 공사의 화재 위험작업현장에 설치한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 간이소화장치는 연면적 2천 제곱미터가 아니라 '연면적 3천 제곱미터 이상'(또는 지하층·무창층·4층 이상 바닥면적 600제곱미터 이상)인 공사의 화재위험작업현장에 설치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">가스누설경보기는 바닥면적이 100제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에 설치한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 가스누설경보기는 바닥면적이 100제곱미터가 아니라 '바닥면적 150제곱미터 이상'인 지하층 또는 무창층의 화재위험작업현장에 설치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">비상경보장치는 연면적 300제곱미터 이상인 공사의 화재 위험작업현장에 설치한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 비상경보장치는 연면적 300제곱미터가 아니라 '연면적 400제곱미터 이상'(또는 바닥면적 150제곱미터 이상인 지하층·무창층)인 공사의 화재위험작업현장에 설치합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">방화포는 용접·용단 등의 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품 으로서 소방청장이 정하는 성능을 갖추고 있어야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 방화포는 용접·용단 등 불꽃을 발생시키는 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품으로서 소방청장이 정하는 성능을 갖추고 있어야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q29 · 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 2024년 12월 1일부로 시행된 개정 ｢소방시설 설치 및 관리에 관한 법률｣ 제11조 및 시행규칙 별표 2에 따라 5인승 이상 승용자동차를 포함한 모든 승용자동차, 승합자동차, 화물자동차, 특수자동차에 차량용 소화기를 의무 설치·비치해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄴ뿐만 아니라 ㄷ, ㄹ도 모두 현행 시행규칙 별표 2에 부합하는 옳은 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ｢소방시설 설치 및 관리에 관한 법률 시행규칙｣ 별표 2에 따라 ㄷ, ㄹ뿐만 아니라 ㄱ(대형 이상 특수자동차 기준)과 ㄴ(중형 이하 특수자동차 기준)도 모두 옳은 설치 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 2024년 12월 개정 시행된 규정에 따라 5인승 이상 '승용자동차'(ㄹ)에도 능력단위 1 이상의 소화기 1개 이상을 의무 설치·비치해야 하므로 ㄹ도 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ㄱ(대형 이상의 특수자동차: 능력단위 2 이상 1개 또는 능력단위 1 이상 2개), ㄴ(중형 이하의 특수자동차: 능력단위 1 이상 1개), ㄷ(경형승합자동차: 능력단위 1 이상 1개), ㄹ(승용자동차: 능력단위 1 이상 1개) 모두 ｢소방시설 설치 및 관리에 관한 법률 시행규칙｣ 별표 2에 정확히 부합합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q28 · 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방시설 설치 및 관리에 관한 법률｣ 제10조에 따라 단독주택 및 공동주택(아파트·기숙사 제외)에 설치해야 하는 주택용 소방시설은 '소화기' 및 '단독경보형 감지기' 2가지입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 법 제10조에 따른 주택용 소방시설은 ㄱ(단독경보형 감지기)과 ㄷ(소화기)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄴ(주거용 주방자동소화장치)과 ㄹ(자동확산소화기)은 주택용 소방시설이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 법정 주택용 소방시설은 '소화기(ㄷ) 및 단독경보형 감지기(ㄱ)' 2종뿐이며, 주거용 주방자동소화장치(ㄴ)와 자동확산소화기(ㄹ)는 주택용 소방시설에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 주거용 주방자동소화장치(ㄴ), 자동확산소화기(ㄹ), 투척용 소화용구(ㅁ)는 모두 법정 주택용 소방시설(소화기·단독경보형 감지기)에서 제외됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q29 · 소방공채 Q19</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄴ뿐만 아니라 ㄷ(화재위험도가 낮은 불연성 물품을 저장하는 창고에 대한 옥외소화전·연결살수설비 설치 면제 특례) 역시 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 규정된 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ, ㄷ 외에 ㄴ(정수장·양수장은 특정소방대상물 중 업무시설로 분류)도 시행령 별표 2에 부합하는 옳은 설명이므로 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ, ㄷ 외에 ㄱ(가스시설이 설치된 운동시설의 가스누설경보기 의무 설치)도 시행령 별표 4에 부합하는 옳은 설명이므로 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ㄱ(가스시설이 설치된 문화집회·종교·판매·운수·의료·노유자·수련·운동·숙박·창고시설 등에는 가스누설경보기를 설치해야 함), ㄴ(정수장·양수장은 공공업무시설로서 특정소방대상물 중 업무시설에 해당함), ㄷ(화재위험도가 낮은 불연성 물품을 저장·취급하는 창고는 소방시설 설치 대상에서 제외되므로 옥외소화전 및 연결살수설비를 설치하지 않을 수 있음) 모두 옳은 설명입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:X · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:X · 19:O · 20:O · 21:X · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률｣ 제13조 제1항 단서 및 시행령 제17조에 따라 소화기구, 비상경보설비, 자동화재속보설비, 피난구조설비 4종은 모든 기존 특정소방대상물에 강화된 기준이 소급 적용됩니다.
+            <span class="ox-exp-src">소방시설법 제13조 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조에 따라 노유자시설과 의료시설의 간이스프링클러·스프링클러·자동화재탐지·자동화재속보·단독경보형 감지기는 소급 적용 대상이나, 비상방송설비는 소급 적용 대상이 아닙니다.
+            <span class="ox-exp-src">2019년 소방경채 Q16</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률｣ 제10조 제1항에 따라 주택용 소방시설은 소화기 및 단독경보형 감지기 2종이며, 아파트 및 기숙사는 설치 대상에서 제외됩니다.
+            <span class="ox-exp-src">2018년 소방경채 Q2 · 2026년 소방경채 Q28</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 5에 따른 간이스프링클러설비 면제 기준(스프링클러·물분무·미분무소화설비 설치 시 면제)입니다.
+            <span class="ox-exp-src">2018년 소방경채 Q19 · 2024년 소방경채 Q32</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 05 · X 틀림</span>간이스프링클러설비를 설치해야 하는 특정소방대상물에 면제가 인정되는 설비는 오직 '스프링클러설비, 물분무소화설비 또는 미분무소화설비' 3종뿐이며, 옥내소화전설비·포소화설비·분말소화설비를 설치한 경우에는 면제되지 않습니다.
+            <span class="ox-exp-src">2020년 소방경채 Q15 · 2024년 소방경채 Q32</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>비상경보설비를 설치해야 할 특정소방대상물(단독경보형 감지기 설치대상에 한함)에 단독경보형 감지기를 2개 이상 연동하여 설치하면 유효범위에서 비상경보설비 설치가 면제됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q15</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 5에 따라 피난구유도등·통로유도등의 유효범위에서는 비상조명등 설치가 면제됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q15</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>누전경보기를 설치해야 하는 특정소방대상물에 아크경보기 또는 전기 관련 법령에 따른 지락차단장치를 설치한 경우에는 유효범위에서 누전경보기 설치가 면제됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q15</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 8에 따른 간이소화장치의 정확한 설치기준(연면적 3,000제곱미터 이상 또는 지하·무창·4층 이상 바닥면적 600제곱미터 이상)입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q17 · 2025년 소방경채 Q26</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률｣ 제15조 제1항에 따른 시공자의 임시소방시설 사전 설치 및 유지·관리 의무입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>이미 화재안전기준에 적합한 '옥내소화전설비'나 '대형수동식소화기'가 설치되어 유효하게 작동하는 작업현장에는 간이소화장치의 설치가 면제됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 8에 따른 임시소방시설 7종의 핵심 면적 공식입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q20 · 2025년 소방경채 Q26</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>방화포는 용접·용단 등 불꽃을 발생시키는 작업 시 발생하는 불티로부터 가연물이 점화되는 것을 방지해주는 천 또는 불연성 물품으로서 소방청장이 정하는 성능을 갖추고 있어야 합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q26 · 소방공채 Q17</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률｣ 제12조 제2항·제3항에 따른 소방시설 기준 결정 시 고려사항(규모·용도 및 수용인원) 및 소방청장의 규정 정비 주기(3년에 1회 이상)입니다.
+            <span class="ox-exp-src">2021년 소방경채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률｣ 제61조 제1항에 따라 소방시설 미설치·미관리 또는 임시소방시설 미설치 시 과태료 상한은 300만 원 이하입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 9에 따른 전문·일반 소방시설관리업의 보조 기술인력 기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q30 · 소방공채 Q18</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제22조에 따른 자체점검 중대위반사항입니다.
+            <span class="ox-exp-src">2024년 소방경채 Q36 · 소방공채 Q23</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>소화용수설비 주변 불법 주정차는 자체점검상의 소방시설 중대위반사항(수신기 고장, 펌프·제어반·전원 고장, 소화배관 폐쇄·차단, 방화문·자동방화셔터 훼손·철거)에 해당하지 않습니다.
+            <span class="ox-exp-src">2024년 소방경채 Q36 · 소방공채 Q23</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행규칙｣ 별표 2 개정에 따라 5인승 이상 승용자동차를 포함한 차량별 소화기 비치 기준입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q29 · 소방공채 Q18</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2 및 별표 4에 따른 정확한 규정입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q29 · 소방공채 Q19</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>이미 화재안전기준에 적합한 '옥내소화전설비'나 대형소화기가 설치되어 유효하게 작동하는 작업현장에는 간이소화장치의 설치가 면제됩니다.
+            <span class="ox-exp-src">2020년 소방경채 Q20 · 임시소방시설 설치 대상 공사 및 면제 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>바닥면적 150제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에는 간이피난유도선을 설치해야 합니다.
+            <span class="ox-exp-src">2020년 소방경채 Q20 · 임시소방시설 설치 대상 공사 및 면제 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>간이소화장치는 연면적 2천 제곱미터가 아니라 '연면적 3천 제곱미터 이상'(또는 지하층·무창층·4층 이상 바닥면적 600제곱미터 이상)인 공사의 화재위험작업현장에 설치합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q26 · 소방공채 Q17 · 임시소방시설의 종류 및 설치기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>가스누설경보기는 바닥면적이 100제곱미터가 아니라 '바닥면적 150제곱미터 이상'인 지하층 또는 무창층의 화재위험작업현장에 설치합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q26 · 소방공채 Q17 · 임시소방시설의 종류 및 설치기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>법정 주택용 소방시설은 오직 '소화기' 및 '단독경보형 감지기' 2종뿐이며, 간이소화용구(투척용 소화용구)·자동확산소화기·주거용 주방자동소화장치는 포함되지 않습니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 제10조 제1항 (주택용 소방시설 2종 한정 함정)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>과거 구법에서는 7인승 이상 승용자동차에만 비치 의무가 있었으나, 개정 현행법(2024년 12월 시행)은 '5인승 이상의 승용자동차'를 비롯하여 승합·화물·특수자동차 모두에 차량용 소화기를 설치·비치하도록 의무화했습니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 제11조 제1항 제1호 (5인승 이상 승용자동차 차량용 소화기 의무 확대)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>단독경보형 감지기를 2개 이상 연동하여 설치함으로써 비상경보설비가 면제되는 특례는 '단독경보형 감지기 설치대상에 한하여' 적용됩니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 시행령 별표 5 제6호 (단독경보형 감지기 설치대상에 한하여 연동 시 비상경보설비 면제)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>기존 노유자시설·의료시설이라도 '옥내소화전설비', '제연설비', '비상방송설비'는 강화된 기준의 소급 적용 대상이 아니므로 변경 전의 기준을 적용합니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 시행령 제17조 제2호 (옥내소화전설비·제연설비 소급 적용 제외 함정)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>법 제12조 제2항에 따라 대통령령으로 소방시설을 정할 때에는 특정소방대상물의 위치·구조나 가연물의 종류가 아니라 '규모·용도 및 수용인원' 등을 고려하여야 합니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 제12조 제2항 (소방시설 규정 시 고려사항: 규모·용도 및 수용인원)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>행정안전부장관이 아니라 '소방청장'이, 5년이 아니라 '3년에 1회 이상' 소방시설 규정을 정비하여야 합니다.
+            <span class="ox-exp-src">🎯 적중예상 · 소방시설법 제12조 제3항 (소방청장의 3년에 1회 이상 규정 정비 의무)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

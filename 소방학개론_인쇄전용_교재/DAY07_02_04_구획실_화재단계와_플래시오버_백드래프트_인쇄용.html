@@ -1,0 +1,3359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 07 · 인쇄용] 제2편 연소 및 폭발 이론 · 제4장 실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY06_02_03_열전달_자연발화와_연소생성물_독성가스_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 07</span>
+        <a href="DAY08_02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(15제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 07 · 제2편 연소 및 폭발 이론 · 제4장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(15문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 구획실 화재의 진행 4단계와 연료지배형 vs 환기지배형 화재</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>구획실 화재 4단계</strong>: <strong>발화기(초기) ➔ 성장기(연료지배형, 말기에 플래시오버!) ➔ 최성기(환기지배형, 내화구조 기준!) ➔ 감쇠기(열발산율 감소, 백드래프트 위험!)</strong></li>
+              <li><strong>플래시오버 전·후 전환</strong>: 플래시오버 <strong>이전(성장기)에는 연료지배형 화재</strong>가, 플래시오버 <strong>이후(최성기)에는 환기지배형 화재</strong>가 지배적임</li>
+              <li><strong>환기 불량 시 변화</strong>: 환기가 잘되지 않으면 연료지배형에서 <strong>환기지배형 화재로 바뀌며 불완전연소로 연기 발생이 크게 증가</strong>함</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            건축물의 방이나 거실처럼 사방이 벽과 천장으로 구획된 <strong>구획실(Compartment) 일반화재</strong>는 시간의 흐름에 따라 실내 온도와 열방출률이 변화하면서 <strong>① 발화기(초기) ➔ ② 성장기 ➔ ③ 최성기(전성기) ➔ ④ 감쇠기(감퇴기)</strong>의 4단계 생애주기를 거칩니다(기출: 2021년 Q20, 2024년 Q7). 먼저 <strong>발화기(초기)</strong>는 착화 후 건물 내의 가구 등이 국부적으로 독립 연소하는 시기로서, 실내 평균 온도는 완만하게 상승하며 아직 다른 동(棟)이나 인접 실로의 연소 확대 위험은 낮습니다. 이어지는 <strong>성장기</strong>는 화원 위쪽으로 수직 상승하는 열기둥인 <strong>화재플룸(Fire Plume)</strong>에 의해 천장 아래에 고온의 연기층이 축적되면서 화재 진행이 급속히 이루어지고 실내 온도가 가파르게 치솟는 단계입니다. 이때까지는 실내에 산소가 충분하여 <strong>연료지배형 화재</strong> 양상이 나타나며, 성장기 말기에 천장 연기층의 강한 복사열(약 20 kW/m<sup>2</sup>)로 인해 구획실 내 가연물 전체가 일시에 화염에 휩싸이는 <strong>플래시오버(Flashover)</strong>가 발생합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            플래시오버 직후에 진입하는 <strong>최성기(전성기, Fully Developed Stage)</strong>는 구획실 전체의 화염과 실내 온도(섭씨 800도에서 1,100도 이상)가 최고조에 도달하여 건축물 주요 구조부의 <strong>내화구조 기준(표준화재 시간·온도 곡선)을 설정하는 기준 단계</strong>입니다. 하지만 모든 가연물이 동시에 타오르다 보니 <strong>실내 산소가 부족해져(환기지배형 화재) 미연소 가연성 가스와 검은 연기가 다량 발생하고, 가연물 양 대비 실질적인 연소속도는 개구부 공기 유입량에 묶여 느려집니다(둔화·제한됨)</strong>. 마지막으로 가연물의 약 80% 이상이 소진되어 진입하는 <strong>감쇠기(감퇴기)</strong>에는 지붕이나 벽체, 대들보나 기둥이 무너져 내릴 수 있으며 <strong>열 발산율(열방출률)과 실내 온도가 감소하기 시작</strong>합니다(단, 밀폐된 감쇠기 구획실에서 화염이 꺼지고 고온의 훈소 상태가 되었을 때 갑작스럽게 산소가 유입되면 <strong>백드래프트[Backdraft]</strong>가 폭발할 위험이 매우 큽니다!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            구획실 화재를 연소 속도의 결정 인자에 따라 구분한 <strong>연료지배형 화재(Fuel Controlled Fire)</strong>와 <strong>환기지배형 화재(Ventilation Controlled Fire)</strong>의 비교는 시험에서 정반대로 섞어 내는 단골 테마입니다(기출: 2019년 Q10, 2023년 Q15, 2024년 Q15). ① 일반적으로 <strong>플래시오버 이전(초기·성장기)</strong>이나 큰 창문·개방된 공간에서는 구획실 내 가연물 연소에 필요한 <strong>공기(산소)가 충분히 공급되는 조건</strong>이므로, 가연물의 양과 표면적에 의해 연소속도가 결정되는 <strong>연료지배형 화재</strong>가 지배적입니다(환기지배형보다 산소 공급이 원활하여 완전연소에 가깝고 연소속도가 빠르며 고온·단시간형 화재가 됩니다). ② 반면 <strong>플래시오버 이후(최성기)</strong>이거나 밀폐된 내화구조물 및 개구부가 작은 콘크리트 지하층처럼 환기가 잘되지 않는 공간에서는 산소 공급이 부족하므로, 연료지배형에서 <strong>환기지배형 화재</strong>로 바뀌며 개구부를 통한 공기 유입량(환기요소 A&radic;H)이 연소속도를 지배합니다(불완전연소가 심해져 일산화탄소와 검은 연기 발생량이 크게 늘어납니다).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">비교 항목</th>
+                <th style="width:38%;">연료지배형 화재 (Fuel Controlled)</th>
+                <th>환기지배형 화재 (Ventilation Controlled)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>주요 발생 시점 및 장소</strong></td>
+                <td><strong>플래시오버 이전 (초기·성장기)</strong>, 큰 창문·개방된 공간</td>
+                <td><strong>플래시오버 이후 (최성기·감쇠기)</strong>, 내화구조물·지하층·밀폐 공간</td>
+              </tr>
+              <tr>
+                <td><strong>산소 공급 및 결정 요인</strong></td>
+                <td>산소 공급 충분 ➔ <strong>가연물의 양·종류·표면적</strong>이 연소속도 지배</td>
+                <td>산소 공급 부족 ➔ <strong>개구부 환기요소(A&radic;H)</strong>가 연소속도 지배</td>
+              </tr>
+              <tr>
+                <td><strong>연소 특성 및 생성물</strong></td>
+                <td>산소 원활·완전연소, 밝은 화염, <strong>연소속도 빠름(고온·단시간형)</strong></td>
+                <td><strong>불완전연소 심함</strong>, 다량의 검은 연기·일산화탄소(CO) 발생(저온·장시간형)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 화재하중·화재강도·화재가혹도와 카와고에(Kawagoe) 환기요소</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>화재강도 vs 화재하중</strong>: 단위 시간당 축적 열량·최고온도(<strong>질적 개념</strong>)는 <strong>화재강도</strong> / 단위 바닥면적당 등가 목재량·지속시간(<strong>양적 개념</strong>)은 <strong>화재하중</strong></li>
+              <li><strong>화재하중(kg/m<sup>2</sup>) 공식</strong>: Q = [ &Sigma;(각 가연물의 질량 kg &times; 단위발열량 kcal/kg) ] &divide; [ <strong>목재 단위발열량(4,500 kcal/kg) &times; 화재실 바닥면적(m<sup>2</sup>)</strong> ] (건축물 연면적이나 구획실 높이는 불필요!)</li>
+              <li><strong>개구부 환기요소 및 지속시간</strong>: 환기요소(<strong>A&radic;H</strong>)는 <strong>개구부 면적(A)에 비례</strong>하고 <strong>개구부 높이의 제곱근(&radic;H)에 비례</strong>함</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            구획실 화재가 건축 구조물에 미치는 열적 피해의 크기를 정량화할 때 <strong>화재강도(질적 개념), 화재하중(양적 개념), 화재가혹도(종합 개념)</strong>라는 세 가지 핵심 용어를 명확히 구분해야 합니다(기출: 2019년 Q3, 2020년 Q16·Q17, 2022년 Q4, 2023년 Q14, 2025년 Q13·Q14). 첫째, <strong>화재강도(Fire Intensity)</strong>는 <strong>'화재실의 단위 시간당 축적(또는 방출)되는 열의 양'</strong>을 의미하며, 화재실의 <strong>최고온도</strong>를 좌우하는 화재가혹도의 <strong>질적 개념</strong>입니다. 둘째, <strong>화재하중(Fire Load, 단위 kg/m<sup>2</sup>)</strong>은 화재실 단위 바닥면적당 적재된 가연물의 총 발열량을 목재로 환산한 등가 중량으로서, 화재의 <strong>지속시간</strong>을 좌우하는 화재가혹도의 <strong>양적 개념</strong>입니다. 셋째, <strong>화재가혹도(Fire Severity)</strong>는 화재 발생으로 당해 건물과 내부 수용재산 등을 파괴하거나 손상을 입히는 총체적 정도(시간·온도 곡선 아래의 면적 &asymp; 최고온도 &times; 지속시간)를 말합니다. 따라서 화재가혹도는 ① <strong>화재강도(최고온도)</strong>와 ② <strong>화재하중(지속시간)</strong>, ③ <strong>화재실의 개구부 환기요소(A&radic;H)</strong>뿐만 아니라, ④ <strong>화재실이나 화재구획 벽체·천장의 단열성</strong>에도 큰 영향을 받습니다(구획 벽체의 단열성이 클수록 열이 외부로 빠져나가지 못해 실내 최고온도와 화재가혹도가 크게 상승합니다!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            특히 계산 문제와 공식 판별 문제로 집중 출제되는 <strong>화재하중(Q, 단위 kg/m<sup>2</sup>) 산정 공식</strong>은 <strong>Q = [ &Sigma;(각 가연물의 양 G<sub>i</sub>[kg] &times; 가연물의 단위 발열량 H<sub>i</sub>[kcal/kg]) ] &divide; [ 목재의 단위발열량(4,500 kcal/kg) &times; 화재실의 바닥면적 A<sub>f</sub>(m<sup>2</sup>) ]</strong>입니다. 여기서 시험에 나오는 2가지 치명적 함정을 반드시 피해야 합니다(2023년 Q14, 2025년 Q14). ① 분모에 들어가는 면적은 *'건축물 전체의 연면적'*이나 구획실의 높이(체적)가 아니라 오직 <strong>'해당 화재실(구획실)의 바닥면적(가로 &times; 세로)'</strong>만 사용합니다! ② 분모의 상수 4,500은 *'목재의 화재하중(4,500 kg/m<sup>2</sup>)'*이 아니라 <strong>'목재의 단위발열량(4,500 kcal/kg)'</strong>입니다! 실제 기출 2문제를 바로 풀어 보면, 첫째(2020년 Q16), 바닥면적 200 m<sup>2</sup>인 창고에 의류 1,000 kg(5,000 kcal/kg)과 고무 2,000 kg(9,000 kcal/kg)이 있을 때 총 발열량은 (1,000 &times; 5,000) + (2,000 &times; 9,000) = 23,000,000 kcal이므로, 화재하중 Q = 23,000,000 &divide; (4,500 &times; 200) = 230 &divide; 9 &asymp; <strong>25.56 kg/m<sup>2</sup></strong>입니다. 둘째(2023년 Q14), 가로 10,000 mm(10 m), 세로 8,000 mm(8 m), 높이 3,000 mm(3 m는 무시!)인 구획실(바닥면적 A<sub>f</sub> = 10 &times; 8 = <strong>80 m<sup>2</sup></strong>)에 가연물 A(2,000 kcal/kg, 200 kg)와 가연물 B(9,000 kcal/kg, 100 kg)가 있을 때 총 발열량은 (2,000 &times; 200) + (9,000 &times; 100) = 1,300,000 kcal이므로, 화재하중 Q = 1,300,000 &divide; (4,500 &times; 80) = 1,300,000 &divide; 360,000 &asymp; <strong>3.61 kg/m<sup>2</sup></strong>입니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 환기지배형 화재에서 개구부를 통한 공기 유입량과 연소속도를 결정하는 <strong>카와고에(Kawagoe)의 환기요소(Ventilation Factor)</strong>는 <strong>A&radic;H</strong>로서, <strong>개구부 면적(A)에 비례하고 개구부 높이(H)의 제곱근(&radic;H)에 비례</strong>합니다(2020년 Q17에서 '개구부 면적의 제곱근에 비례하고 개구부 높이에 비례한다'고 반대로 비틀어 출제했습니다!). 분당 가연물 연소속도가 R = 5.5 &times; A&radic;H [kg/min]이므로, 구획실 내 총 등가 목재량(Q &times; A<sub>f</sub>)이 모두 타는 데 걸리는 <strong>환기지배형 화재의 지속시간(t<sub>d</sub>)</strong>은 <strong>t<sub>d</sub> &prop; (Q &times; A<sub>f</sub>) &divide; (A&radic;H)</strong>가 됩니다. 따라서 2025년 기출(Q13)에서 물었듯 환기지배형 내화구조물의 <strong>화재 지속시간을 산정하기 위한 인자</strong>에는 <strong>화재하중(가연물의 양·발열량), 화재실의 바닥면적(A<sub>f</sub>), 개구부 면적(A), 개구부 높이(H)</strong>가 포함되며, <strong>'화재실의 최고온도'</strong>는 질적 개념인 화재강도의 결과값이지 지속시간 산정 인자가 아닙니다!
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 플래시오버(롤오버)와 백드래프트의 메커니즘·징후 및 전술 대조</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>화재플룸 vs 롤오버</strong>: 화원 위쪽 수직 상승 열기둥은 <strong>화재플룸</strong> / 천장을 따라 미연소 가스가 구르듯 화염을 내며 퍼지는 현상은 <strong>롤오버</strong></li>
+              <li><strong>플래시오버 지연 조건</strong>: 실내 마감재로 <strong>준불연성이나 불연성의 내장재를 사용할 경우 플래시오버 발생까지의 소요시간이 길어짐</strong></li>
+              <li><strong>백드래프트 사전 징후(2024년 Q11)</strong>: 유리창 안쪽 <strong>타르 얼룩</strong>, 실내 <strong>소용돌이치는 연기</strong>, 화염 없이 <strong>뜨거운 창문·문손잡이</strong>, 틈새로 연기가 나갔다 <strong>다시 빨려 들어가는 호흡 현상</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            구획실 화재에서 발생하는 3대 특수 현상인 <strong>롤오버(Rollover), 플래시오버(Flashover), 백드래프트(Backdraft)</strong>의 물리적 메커니즘과 발생 조건 대조는 매 시험 빠지지 않는 핵심 중의 핵심입니다(기출: 2021년 Q5, 2023년 Q13, 2024년 Q11·Q15). 먼저 화원 상부로 부력에 의해 수직 상승하는 열기둥인 <strong>화재플룸(Fire Plume)</strong>과 달리, 천장 부근에 축적된 미연소 가연성 가스층이 실내 공기의 압력 차이로 천장을 따라 화재가 발생하지 않은 복도나 전면 쪽으로 마치 파도가 굴러다니는 것처럼 불꽃을 일으키며 뿜어져 나오는 현상을 <strong>롤오버(Rollover, 또는 플레임오버 Flameover)</strong>라 합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            롤오버에 이어 <strong>성장기 말기에서 최성기로 넘어가는 전이 시점</strong>(최성기와 감쇠기 사이가 아님!)에 발생하는 <strong>플래시오버(Flashover, 순발연소·전실화재)</strong>는 천장 아래 축적된 고온 연기·가스층(약 섭씨 500도에서 600도)이 바닥의 가연성 물질에 강력한 <strong>복사열(약 20 kW/m<sup>2</sup> 이상)</strong>을 공급하여, 구획실 내 모든 가연물 표면이 동시에 발화점에 도달해 일거에 불바다가 되는 현상입니다(충격파는 수반하지 않습니다). 개구부의 크기(환기요소 A&radic;H)는 공기 유입량과 열 축적 속도를 결정하므로 플래시오버 발생 여부 및 소요시간과 밀접한 관련이 있으며, 실내에 <strong>준불연성이나 불연성의 내장재를 사용할 경우</strong> 가연성 가스 방출과 열 축적이 억제되어 <strong>플래시오버 발생까지의 소요시간이 길어집니다</strong>(피난 여유 시간 증가).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면 <strong>백드래프트(Backdraft, 연기폭발)</strong>는 환기가 불량한 밀폐 구획실(산소가 부족한 <strong>환기지배형 화재 또는 감쇠기 훈소 상태</strong> — 연료지배형 화재가 아님!)에서 불완전연소에 의해 생성·축적된 고농도의 <strong>일산화탄소(CO) 및 미연소 열분해 가스가 가연물로 작용</strong>하다가, 출입문이나 창문 개방으로 <strong>산소(공기)가 일시적으로 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화하며 충격파(폭풍)와 화구(Fireball)를 분출하는 현상</strong>입니다. 현장 대원이 문을 열기 전 백드래프트 발생 가능성을 예측할 수 있는 <strong>4대 사전 징후</strong>(2024년 Q11)는 ① 불완전연소 산물로 인해 <strong>유리창 안쪽에 타르와 유사한 물질이 흘러내려 얼룩진 경우</strong>, ② 창문을 통해 보았을 때 <strong>건물 내에서 연기가 소용돌이치는 경우</strong>, ③ 산소 결핍으로 <strong>화염은 보이지 않지만 내부 축열로 창문과 문손잡이가 매우 뜨거운 경우</strong>, ④ 실내 산소 소모에 따른 감압으로 균열된 틈이나 문틈을 통해 연기가 밖으로 밀려 나갔다가 <strong>다시 실내로 빨려 들어가는(숨쉬기·호흡) 경우</strong>입니다(단순히 틈을 통해 밖으로 연기가 계속 밀려 나오기만 하는 것은 일반적인 양압 분출 상태이지 백드래프트 징후가 아닙니다!). 백드래프트 위험이 있을 때 출입문을 먼저 열거나 한 번에 완전히 개방하면 대원들이 폭발 화염에 직격당하므로, 반드시 <strong>지붕 등 건물 최상부를 먼저 개방하는 수직 환기 전술</strong>로 내부 가연성 가스와 열기를 배출하고 분무 주수로 내부를 냉각해야 합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">비교 항목</th>
+                <th style="width:39%;">플래시오버 (Flashover)</th>
+                <th>백드래프트 (Backdraft)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>주요 발생 시점 및 조건</strong></td>
+                <td><strong>성장기 말기 ➔ 최성기 전이 시점</strong> (연료지배형 ➔ 환기지배형 전환)</td>
+                <td><strong>감쇠기 (또는 환기지배형 밀폐 공간의 산소 부족 훈소 상태)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>직접적 유발 요인</strong></td>
+                <td>천장 상부 고온 연기층(500℃에서 600℃)의 <strong>강력한 복사열(20 kW/m<sup>2</sup>)</strong></td>
+                <td>출입문·창문 개방에 따른 <strong>신선한 산소(공기)의 급격한 다량 유입</strong></td>
+              </tr>
+              <tr>
+                <td><strong>주요 가연물 및 충격파</strong></td>
+                <td>구획실 내 모든 고체 가연물 표면 동시 착화 (<strong>충격파 미수반</strong>)</td>
+                <td>불완전연소로 축적된 <strong>일산화탄소(CO)·미연소 가스</strong> (<strong>충격파·폭풍 수반</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>예방 및 진압 전술</strong></td>
+                <td><strong>준불연·불연 내장재 사용</strong>(소요시간 지연), 천장 연기층 분무 냉각 주수</td>
+                <td>출입문 선개방 금지, <strong>지붕 등 건물 상부 선개방(수직 환기)</strong> 및 냉각 주수</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 구획실 화재 4단계 진행 곡선, 화재하중·환기요소 공식 및 플래시오버 vs 백드래프트</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 구획실 화재 진행 4단계 및 화재하중 · 화재강도 · 환기요소</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">1·2단계: 발화기(초기) ➔ 성장기</div>
+                <div>· <strong>연료지배형 화재</strong>(산소 충분, 연소속도 빠름)<br/>· 성장기 말 천장 복사열(20 kW/m<sup>2</sup>)로 <strong>플래시오버</strong> 발생</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">3·4단계: 최성기 ➔ 감쇠기(감퇴기)</div>
+                <div>· <strong>최성기</strong>: <strong>환기지배형 화재</strong>(산소 부족으로 연소속도 제한), 내화구조 기준<br/>· <strong>감쇠기</strong>: 열발산율 감소, 밀폐 훈소 시 <strong>백드래프트</strong> 위험</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">화재강도(질적) vs 화재하중(양적) 공식</div>
+                <div>· <strong>화재강도</strong>: 단위 시간당 축적 열량(최고온도)<br/>· <strong>화재하중(kg/m<sup>2</sup>)</strong> = &Sigma;(G<sub>i</sub> &times; H<sub>i</sub>) &divide; (<strong>4,500 kcal/kg &times; 화재실 바닥면적</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">카와고에 환기요소 및 화재가혹도</div>
+                <div>· 환기요소 <strong>A&radic;H</strong>: 개구부 <strong>면적(A)과 높이의 제곱근(&radic;H)에 비례</strong><br/>· <strong>화재가혹도</strong>는 구획실 벽체의 <strong>단열성</strong>이 클수록 증가함</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 대조: <strong>플래시오버</strong>는 <strong>성장기 ➔ 최성기 전이 시점</strong>(천장 연기층 복사열 20 kW/m<sup>2</sup>, 연료지배형 ➔ 환기지배형 전환) vs <strong>백드래프트</strong>는 <strong>감쇠기 밀폐 훈소 공간</strong>에서 축적된 <strong>일산화탄소(CO)</strong>가 급격한 산소 유입으로 폭발(대책: <strong>지붕 등 상부 수직 환기 선행</strong>)!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (15문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 15문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2019년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재 용어 중 화재실의 단위 시간당 축적되는 열의 양을 의미하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">훈소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재하중</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재강도</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재가혹도</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">연료지배형화재와 환기지배형화재에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">환기지배형화재는 공기공급이 충분하지 않으므로 불완 전연소가 심하다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">연료지배형화재는 공기공급이 충분한 조건에서 발생한 화재가 일반적이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연료지배형화재는 주로 큰 창문이나 개방된 공간에서, 환기지배형화재는 내화구조 및 콘크리트 지하층에서 발생하기 쉽다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">일반적으로 플래시오버 전에는 환기지배형화재가, 이후 에는 연료지배형화재가 지배적이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">바닥 면적이 200 ㎡인 구획된 창고에 의류 1,000 ㎏, 고무 2,000 ㎏이 적재되어 있을 때 화재하중은 약 몇 ㎏/㎡인가? (단, 의류, 고무, 목재의 단위 발열량은 각각 5,000 ㎉/㎏, 9,000 ㎉/㎏, 4,500 ㎉/㎏이고, 창고 내 의류 및 고무 외의 기타 가연물은 존재하지 않으며, 화재 시 완전연소로 가정한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">15.56</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">20.56</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">25.56</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">30.56</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재가혹도에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재가혹도란 화재발생으로 당해 건물과 내부 수용재산 등을 파괴하거나 손상을 입히는 정도를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">최고온도는 화재가혹도의 질적 개념으로 화재강도와 관련이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지속시간은 화재가혹도의 양적 개념으로 화재하중과 관련이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재가혹도에 영향을 미치는 환기요소는 개구부 면적의 제곱근에 비례하고 개구부 높이에 비례한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">백드래프트(back draft)에 대한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">불완전 연소에 의해 발생된 일산화탄소가 가연물로 작용하여 폭발하는 현상이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재 진압 시 지붕 등 상부를 개방하는 것보다 출입문을 먼저 개방하는 것이 효과적인 전술이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">밀폐된 실내에서 발생되는 현상으로, 출입문을 한 번에 완전히 개방하여 연기를 일순간에 배출해야 폭발력을 억제할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">연료지배형화재가 진행되고 있는 공간에 산소가 일시 적으로 다량 공급됨에 따라 가연성가스가 폭발적으로 연소하는 현상이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2021년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">실내 화재의 진행 과정을 설명한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">발화기 · 건물 내의 가구 등이 독립 연소하고 있으며 다른 동(棟)으로의 연소 위험은 없다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">성장기 · 화재의 진행이 급속히 이루어지고 개구부에 서는 검은 연기가 분출된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">최성기 · 산소가 부족하여 연소되지 않은 가스가 다량 발생된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">감퇴기 · 지붕이나 벽체, 대들보나 기둥도 무너져 떨어 지고 열 발산율은 증가하기 시작한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재가혹도(fire severity)에 대한 설명으로 옳지 않은 것은? (A는 개구부의 면적, H 는 개구부의 높이이다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재가혹도의 크기는 화재강도와 화재하중의 영향을 받는다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재실의 최고온도와 지속시간은 화재가혹도를 판단 하는 중요한 인자이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재실의 환기요소(A√ H)는 화재가혹도에 영향을 준다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재가혹도는 화재실이나 화재구획의 단열성에 영향 을 받지 않는다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재 시 구획실에서 발생하는 현상에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">개구부의 크기는 플래시오버 발생과 관련이 없다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">구획실의 창문과 문손잡이의 온도로 백드래프트의 발생 가능성을 예측할 수 없다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">준불연성이나 불연성의 내장재를 사용할 경우 플래시오버 발생까지의 소요시간이 길어진다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">구획실 내의 산소가 부족하여 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화 하는 현상은 플래시오버이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2023년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">그림은 구획실의 크기가 가로 10,000 mm, 세로 8,000 mm, 높이 3,000 mm이며 가연물 A와 가연물 B가 놓여 있는 상태를 나타낸다. 다음과 같은 조건일 때 구획실의 화재하중[kg/m2]은? (단, 주어지지 않은 조건은 무시하고, 소수점 셋째 자리에서 반올림한다.) 단위발열량[kcal/kg] 질량[kg] 목재 4,500 · 가연물 A 2,000 200 가연물 B 9,000 100</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 조건 표 복원: 구획실(가로 10,000 mm × 세로 8,000 mm × 높이 3,000 mm) 내부 가연물 조건]</strong>· <strong>목재</strong>: 단위발열량 4,500 kcal/kg<br/>· <strong>가연물 A</strong>: 단위발열량 2,000 kcal/kg, 질량 200 kg<br/>· <strong>가연물 B</strong>: 단위발열량 9,000 kcal/kg, 질량 100 kg</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">1.20</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">2.41</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">3.61</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">7.22</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2023년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">구획실 화재에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">플래시오버 이후에는 연료지배형 화재보다 환기지배형 화재가 지배적이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">환기가 잘되지 않으면 환기지배형 화재에서 연료지배형 화재로 바뀌며 연기 발생이 줄어든다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연료지배형 화재는 구획실 내 가연물의 연소에 필요한 산소가 충분히 공급되는 조건의 화재이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">성장기에는 천장 부분에서 축적된 뜨거운 가스층이 발화 원으로부터 떨어져 있는 가연성 물질에 복사열을 공급하여 플래시오버를 초래할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2024년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">실내 일반화재 진행 과정에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재 초기에는 실내 온도가 급격하게 상승하기 시작한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">성장기에는 급속한 연소 진행으로 환기지배형 화재 양상이 나타난다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">최성기에는 실내 화염이 최고조에 도달하나 실내 산소 부족으로 연소속도가 느려진다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">감쇠기에는 화염의 급격한 소멸로 훈소 상태가 되어 백드 래프트(back draft)의 위험이 없다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">백드래프트(back draft)의 발생 징후로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">유리창 안쪽에 타르와 유사한 물질이 흘러내려 얼룩진 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">창문을 통해 보았을 때 건물 내에서 연기가 소용돌이치는 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화염은 보이지 않지만 창문과 문손잡이가 뜨거운 경우</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">균열된 틈이나 작은 구멍을 통하여 건물 밖으로 연기가 밀려 나오는 경우</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2024년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">구획실 화재에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">플래시오버(flash over)는 최성기와 감쇠기 사이에서 발생 하며 충격파를 수반한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">굴뚝효과가 발생할 때는 개구부에 형성된 중성대 상부에서 공기가 유입되고, 중성대 하부에서 연기가 유출된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연료지배형 화재는 환기지배형 화재보다 산소 공급이 원활하고 연소속도가 빠르다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재플룸(fire plume)은 실내 공기의 압력 차이로 가연성 가스가 천장을 따라 화재가 발생하지 않은 복도 쪽으로 굴러다니는 것처럼 뿜어져 나오는 현상이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2025년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">내화구조물의 화재가혹도 판단을 위한 주요 요소 중 화재 지속시간을 산정하기 위한 인자로 옳지 않은 것은? (단, 환기 지배형 화재로 가정한다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재실의 바닥면적</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재실의 최고온도</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재실의 개구부 높이</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재실의 개구부 면적</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2025년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">건축물의 지하층에서 화재가 발생한 경우, 화재하중 산정 시 필요하지 않은 항목을 <보기>에서 있는 대로 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 각 가연물의 양[kg]<br/>ㄴ. 건축물의 연면적[m2]<br/>ㄷ. 목재의 화재하중[4,500 kg/m2]<br/>ㄹ. 가연물의 단위 발열량[kcal/kg]</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>플래시오버(Flashover)를 유발하는 가장 지배적인 열전달 방식은 상부 고온 가스층의 복사열이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>플래시오버의 주된 진압 대책은 급격한 개구부 개방을 통한 통풍 유도이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재 용어 중 화재실의 단위 시간당 축적되는 열의 양(최고온도와 관련 있는 질적 개념)을 '화재강도'라 하고, 단위 바닥면적당 가연물의 목재 환산 중량(지속시간과 관련 있는 양적 개념)을 '화재하중'이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>구획실 화재에서 일반적으로 플래시오버 이전(성장기)에는 연료지배형 화재가 지배적이고, 플래시오버 이후(최성기)에는 환기지배형 화재가 지배적이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>환기지배형 화재는 공기 공급이 충분하지 않아 불완전연소가 심하며, 주로 내화구조물이나 지하층에서 발생하기 쉽다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>바닥면적 200제곱미터인 창고에 의류 1,000킬로그램(5,000kcal/kg)과 고무 2,000킬로그램(9,000kcal/kg)이 적재된 경우, 목재(4,500kcal/kg) 기준 화재하중은 약 25.56kg/㎡이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재가혹도에서 최고온도는 질적 개념으로 화재강도와 관련이 있고, 지속시간은 양적 개념으로 화재하중과 관련이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재가혹도에 영향을 미치는 개구부의 환기요소는 개구부 면적(A)에 비례하고 개구부 높이(H)의 제곱근에 비례한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>백드래프트(Backdraft)는 환기지배형 화재(산소 부족 훈소 상태)가 진행되는 밀폐 공간에서 불완전연소로 축적된 일산화탄소 등 가연성 가스가 산소 일시 유입 시 폭발적으로 연소하는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>백드래프트 위험이 있는 화재 현장에서는 출입문을 먼저 열지 않고 지붕 등 건물 상부를 먼저 개방하는 수직 환기 전술과 내부 주수 냉각을 실시해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>실내 화재의 진행 과정 중 최성기에는 산소가 부족하여 미연소 가스가 다량 발생하고, 감퇴기(감쇠기)에는 가연물이 소진되어 열 발산율과 온도가 감소하기 시작한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재가혹도는 화재강도(최고온도), 화재하중(지속시간), 개구부의 환기요소뿐만 아니라 화재구획 벽체의 단열성에도 큰 영향을 받는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>구획실 내부에 준불연성이나 불연성의 내장재를 사용할 경우 플래시오버(Flashover) 발생까지의 소요시간이 길어진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가로 10미터, 세로 8미터, 높이 3미터인 구획실(바닥면적 80제곱미터)에 가연물 A(2,000kcal/kg, 200kg)와 B(9,000kcal/kg, 100kg)가 있을 때 목재(4,500kcal/kg) 기준 화재하중은 약 3.61kg/㎡이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>구획실 화재의 성장기에는 천장 부분에 축적된 뜨거운 가스층이 바닥의 가연성 물질에 강한 복사열을 공급하여 플래시오버를 초래할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>실내 일반화재의 최성기에는 화염이 최고조에 도달하나 실내 산소 부족(환기지배형)으로 연소속도가 느려지며, 감쇠기 훈소 상태에서는 산소 유입 시 백드래프트의 위험이 존재한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>백드래프트(Backdraft)의 발생 징후로는 유리창 안쪽의 타르 얼룩, 건물 내 소용돌이치는 연기, 화염은 보이지 않으나 뜨거운 문손잡이, 그리고 틈새로 연기가 배출되었다가 다시 안으로 빨려 들어가는 현상 등이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>굴뚝효과(정연돌효과)가 발생할 때는 중성대 하부에서 외부 공기가 유입되고, 중성대 상부에서 실내 연기가 외부로 유출된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>미연소 가연성 가스가 천장을 따라 굴러다니는 것처럼 불꽃을 일으키며 확산되는 현상은 화재플룸이 아니라 '롤오버(Rollover)'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일반적으로 플래시오버 전에는 환기지배형화재가, 이후 에는 연료지배형화재가 지배적이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재가혹도에 영향을 미치는 환기요소는 개구부 면적의 제곱근에 비례하고 개구부 높이에 비례한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[백드래프트] 화재 진압 시 지붕 등 상부를 개방하는 것보다 출입문을 먼저 개방하는 것이 효과적인 전술이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[백드래프트] 밀폐된 실내에서 발생되는 현상으로, 출입문을 한 번에 완전히 개방하여 연기를 일순간에 배출해야 폭발력을 억제할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[백드래프트] 연료지배형화재가 진행되고 있는 공간에 산소가 일시 적으로 다량 공급됨에 따라 가연성가스가 폭발적으로 연소하는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>감퇴기 ·지붕이나 벽체, 대들보나 기둥도 무너져 떨어 지고 열 발산율은 증가하기 시작한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재가혹도는 화재실이나 화재구획의 단열성에 영향 을 받지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[화재 시 구획실에서 발생하는 현상] 개구부의 크기는 플래시오버 발생과 관련이 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[화재 시 구획실에서 발생하는 현상] 구획실의 창문과 문손잡이의 온도로 백드래프트의 발생 가능성을 예측할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>구획실 내의 산소가 부족하여 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화 하는 현상은 플래시오버이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[구획실 화재] 환기가 잘되지 않으면 환기지배형 화재에서 연료지배형 화재로 바뀌며 연기 발생이 줄어든다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:③ · 02:④ · 03:③ · 04:④ · 05:① · 06:④ · 07:④ · 08:③ · 09:③ · 10:② · 11:③ · 12:④ · 13:③ · 14:② · 15:③</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 07 · 제2편 연소 및 폭발 이론 · 제4장 (15문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 구획실 화재의 질적 개념인 '화재강도(Fire Intensity: 단위 시간당 축적·방출되는 열량, 최고온도와 비례)'와 양적 개념인 '화재하중(Fire Load: 단위 바닥면적당 등가 목재 중량, 지속시간과 비례)', 그리고 두 개념을 결합한 '화재가혹도(Fire Severity = 최고온도 × 지속시간)'를 구분하는 핵심 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">훈소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 훈소(Smoldering)는 산소가 부족한 상태에서 화염 없이 연기만 내며 느리게 타는 연소 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재하중</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 화재하중(Fire Load)은 화재실 단위 바닥면적당 가연물의 총 발열량을 목재의 단위발열량(4,500kcal/kg)으로 환산한 값(kg/㎡)으로 화재의 양적 개념(지속시간 결정)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재강도</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 화재강도(Fire Intensity)는 화재실의 '단위 시간당 축적(또는 방출)되는 열의 양(열방출률, 최고온도)'을 의미하며 화재의 질적 개념입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재가혹도</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 화재가혹도(Fire Severity)는 화재로 인해 건물 구조체 등이 손상을 입는 총체적 정도로서 화재강도(최고온도)와 화재하중(지속시간)의 곱으로 표현됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 구획실 화재에서 플래시오버(Flashover) 전후의 화재 성상 변화를 묻는 초빈출 S등급 문항입니다. 플래시오버 이전(성장기)에는 실내 공기가 충분하여 가연물의 양과 표면적에 의해 연소속도가 결정되는 '연료지배형 화재'가 나타나고, 플래시오버 이후(최성기)에는 실내 가연물이 일제히 타면서 산소가 부족해져 개구부를 통한 공기 유입량에 의해 연소속도가 결정되는 '환기지배형 화재'가 지배적입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">환기지배형화재는 공기공급이 충분하지 않으므로 불완 전연소가 심하다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 환기지배형 화재는 가연물에 비해 공기(산소) 공급이 충분하지 못하므로 불완전연소가 심하고 일산화탄소와 검은 연기가 다량 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">연료지배형화재는 공기공급이 충분한 조건에서 발생한 화재가 일반적이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 연료지배형 화재는 개구부가 크거나 화재 초기여서 공기 공급이 충분한 조건에서 발생하는 일반적인 화재 양상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연료지배형화재는 주로 큰 창문이나 개방된 공간에서, 환기지배형화재는 내화구조 및 콘크리트 지하층에서 발생하기 쉽다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 연료지배형 화재는 큰 창문이나 개방 공간에서, 환기지배형 화재는 밀폐된 내화구조물이나 개구부가 작은 콘크리트 지하층에서 발생하기 쉽습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">일반적으로 플래시오버 전에는 환기지배형화재가, 이후 에는 연료지배형화재가 지배적이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 설명이 정반대로 바뀌었습니다. 일반적으로 플래시오버 '전(성장기)'에는 공기가 충분한 '연료지배형 화재'가 지배적이고, 플래시오버 '이후(최성기)'에는 산소가 부족해져 '환기지배형 화재'가 지배적입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재하중 공식[Q = ∑(Gi × Hi) ÷ (4,500 × A)]에 대입하여 목재 등가 중량(kg/㎡)을 산출하는 대표 계산 문항입니다.
+• 총 발열량 = (1,000 kg × 5,000 kcal/kg) + (2,000 kg × 9,000 kcal/kg) = 5,000,000 + 18,000,000 = 23,000,000 kcal
+• 분모(목재 단위발열량 × 바닥면적) = 4,500 kcal/kg × 200 m² = 900,000 kcal·m²/kg
+• 화재하중 = 23,000,000 ÷ 900,000 = 230 ÷ 9 ≈ 25.56 kg/m².</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">15.56</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 가연물 한 종류를 누락하거나 잘못 나눈 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">20.56</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 총 발열량(1,000 × 5,000 + 2,000 × 9,000 = 23,000,000 kcal)을 목재 단위발열량(4,500)과 바닥면적(200 m²)의 곱(900,000)으로 나누면 25.56 kg/m²가 되므로 20.56은 오답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">25.56</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 화재하중 공식에 대입하면 (1,000 × 5,000 + 2,000 × 9,000) / (4,500 × 200) = 23,000,000 / 900,000 ≈ 25.56 kg/m²이 정확히 산출됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">30.56</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 등가 가연물량(23,000,000 / 4,500 = 5,111.1 kg)을 바닥면적 200 m²로 나누면 25.56 kg/m²이므로 30.56은 오답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 구획실 화재가혹도의 정의, 최고온도(질적 개념·화재강도)와 지속시간(양적 개념·화재하중), 그리고 카와고에(Kawagoe)의 개구부 환기요소[A√H, 여기서 A는 개구부 면적, H는 개구부 높이]를 묻는 S등급 문항입니다. 환기요소는 '개구부 면적(A)에 비례하고 개구부 높이(H)의 제곱근(√H)에 비례'합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재가혹도란 화재발생으로 당해 건물과 내부 수용재산 등을 파괴하거나 손상을 입히는 정도를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화재가혹도(Fire Severity)란 화재 발생으로 건물 구조체와 내부 수용재산 등을 파괴하거나 손상을 입히는 정도를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">최고온도는 화재가혹도의 질적 개념으로 화재강도와 관련이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 최고온도는 화재가혹도의 질적 개념으로서 단위시간당 열방출률인 '화재강도'와 밀접한 관련이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지속시간은 화재가혹도의 양적 개념으로 화재하중과 관련이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 지속시간은 화재가혹도의 양적 개념으로서 단위면적당 가연물 에너지 총량인 '화재하중'과 밀접한 관련이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재가혹도에 영향을 미치는 환기요소는 개구부 면적의 제곱근에 비례하고 개구부 높이에 비례한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 환기요소 공식은 A√H이므로 개구부 면적(A)에 비례하고 개구부 높이의 제곱근(√H)에 비례합니다. 선지는 면적의 제곱근과 높이에 비례한다고 반대로 서술하여 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q5</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 밀폐된 구획실에서 산소 부족으로 불완전연소(훈소)가 진행되어 다량의 가연성 가스(일산화탄소 등)가 축적된 상태에서, 출입문 개방 등으로 산소가 일시적으로 다량 유입될 때 폭발적으로 연소하는 '백드래프트(Backdraft)'를 묻는 S등급 필수 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">불완전 연소에 의해 발생된 일산화탄소가 가연물로 작용하여 폭발하는 현상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 백드래프트는 환기 불량(산소 부족)에 따른 불완전연소로 실내에 고농도로 축적된 일산화탄소(CO) 및 미연소 열분해 가스가 가연물로 작용하여 외부 산소 유입 시 순간적으로 폭발하는 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재 진압 시 지붕 등 상부를 개방하는 것보다 출입문을 먼저 개방하는 것이 효과적인 전술이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 백드래프트 징후가 있을 때 출입문을 먼저 개방하면 급격한 산소 유입으로 대원들이 폭발 화염에 직격당하므로, 반드시 '지붕 등 상부를 먼저 개방(수직 환기)'하여 내부 가연성 가스와 열기를 배출해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">밀폐된 실내에서 발생되는 현상으로, 출입문을 한 번에 완전히 개방하여 연기를 일순간에 배출해야 폭발력을 억제할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 출입문을 한 번에 완전히 개방하면 다량의 산소가 유입되어 즉각 백드래프트가 발생하므로 매우 위험합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">연료지배형화재가 진행되고 있는 공간에 산소가 일시 적으로 다량 공급됨에 따라 가연성가스가 폭발적으로 연소하는 현상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 백드래프트는 공기가 충분한 연료지배형 화재가 아니라, 산소가 고갈된 '환기지배형 화재(또는 감쇠기 훈소 상태)'가 진행되는 밀폐 공간에서 발생합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 감퇴기(감쇠기)에는 가연물이 소진되어 열발산율과 실내 온도가 '감소'하기 시작합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">발화기 · 건물 내의 가구 등이 독립 연소하고 있으며 다른 동(棟)으로의 연소 위험은 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 발화기(초기)는 착화 후 건물 내 가구 등이 국부적으로 독립 연소하는 단계로서 아직 인접 실이나 다른 동으로의 연소 확대 위험은 낮습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">성장기 · 화재의 진행이 급속히 이루어지고 개구부에 서는 검은 연기가 분출된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 성장기는 화염이 천장으로 치솟고 복사열에 의해 화재가 급속히 확대(플래시오버 전후)되며 개구부로 검은 연기가 분출되는 단계입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">최성기 · 산소가 부족하여 연소되지 않은 가스가 다량 발생된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 최성기는 구획실 전체가 화염에 휩싸여 최고온도에 도달하나, 실내 산소가 부족해져(환기지배형) 미연소 가연성 가스가 다량 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">감퇴기 · 지붕이나 벽체, 대들보나 기둥도 무너져 떨어 지고 열 발산율은 증가하기 시작한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 감퇴기(감쇠기)에는 가연물이 대부분 소진되면서 지붕이나 벽체, 기둥이 무너져 내릴 수 있으나, 열 발산율(열방출률)과 실내 온도는 증가하는 것이 아니라 '감소하기 시작합니다'.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재구획의 단열성이 좋을수록(열전도율이 낮을수록) 열이 밖으로 빠져나가지 못해 실내 최고온도가 높아지므로 화재가혹도가 크게 증가합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재가혹도의 크기는 화재강도와 화재하중의 영향을 받는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화재가혹도의 크기는 질적 요소인 화재강도(최고온도)와 양적 요소인 화재하중(지속시간)의 영향을 모두 받습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재실의 최고온도와 지속시간은 화재가혹도를 판단 하는 중요한 인자이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 화재실의 최고온도와 지속시간은 화재가혹도를 결정하는 두 가지 핵심 척도입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재실의 환기요소(A√ H)는 화재가혹도에 영향을 준다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 화재실 개구부의 면적(A)과 높이(H)로 표현되는 환기요소(A√H)는 공기 유입량과 열방출량을 좌우하여 화재가혹도에 직접적인 영향을 줍니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재가혹도는 화재실이나 화재구획의 단열성에 영향 을 받지 않는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 화재구획(벽체·천장·바닥)의 단열성이 클수록 외부로의 열손실이 줄어들어 실내 온도가 더욱 상승하므로, 화재가혹도는 구획실의 단열성에 큰 영향을 받습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 실내 마감재로 준불연재나 불연재를 사용하면 열방출률과 화염 확산 속도가 억제되어 플래시오버 발생까지의 소요시간이 길어집니다(피난 가능 시간 확보).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">개구부의 크기는 플래시오버 발생과 관련이 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 개구부의 크기(환기요소 A√H)는 공기 유입량과 열손실량을 결정하므로 플래시오버 발생 여부 및 소요시간과 밀접한 관련이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">구획실의 창문과 문손잡이의 온도로 백드래프트의 발생 가능성을 예측할 수 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 구획실의 창문과 문손잡이가 뜨겁고 유리창 안쪽에 타르 얼룩이 맺히는 것은 백드래프트의 대표적인 사전 징후이므로 이로써 발생 가능성을 예측할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">준불연성이나 불연성의 내장재를 사용할 경우 플래시오버 발생까지의 소요시간이 길어진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 실내에 준불연성이나 불연성의 내장재를 사용할 경우 가연성 가스 발생과 열 축적이 지연되어 플래시오버 발생까지의 소요시간이 길어집니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">구획실 내의 산소가 부족하여 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화 하는 현상은 플래시오버이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 산소가 부족한 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화하는 현상은 플래시오버가 아니라 '백드래프트(Backdraft)'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 구획실 치수가 밀리미터(mm) 단위로 주어졌을 때 미터(m)로 환산하고, 높이(3m)는 바닥면적 계산에서 제외하는 함정을 피해야 하는 <strong>[핵심 해설]</strong> • 바닥면적 A = 가로 10 m(10,000 mm) × 세로 8 m(8,000 mm) = 80 m² (높이 3 m는 무관).
+• 총 발열량 = (2,000 × 200) + (9,000 × 100) = 400,000 + 900,000 = 1,300,000 kcal.
+• 화재하중 = 1,300,000 ÷ (4,500 × 80) = 1,300,000 ÷ 360,000 = 130 ÷ 36 ≈ 3.611 ≈ 3.61 kg/m².</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">1.20</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 높이(3m)까지 곱해 체적으로 나누는 등 공식을 잘못 적용한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">2.41</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 가연물 B만 계산하거나 수치를 잘못 대입한 값입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">3.61</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 바닥면적 A = 10 m × 8 m = 80 m²이므로, 화재하중 = (2,000 × 200 + 9,000 × 100) / (4,500 × 80) = 1,300,000 / 360,000 ≈ 3.61 kg/m²입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">7.22</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 바닥면적은 가로 10 m × 세로 8 m = 80 m²이므로 분모에 4,500 × 80 = 360,000을 대입하면 화재하중은 1,300,000 ÷ 360,000 ≈ 3.61 kg/m²가 됩니다(7.22는 산출된 화재하중 3.61을 2배로 잘못 계산한 값).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 환기가 잘되지 않으면 산소 공급이 부족해지므로 연료지배형 화재에서 '환기지배형 화재'로 바뀌며, 불완전연소가 심해져 연기 발생량이 크게 '증가'합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">플래시오버 이후에는 연료지배형 화재보다 환기지배형 화재가 지배적이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 플래시오버 이후(최성기)에는 구획실 내 모든 가연물이 동시에 연소하여 산소가 부족해지므로 연료지배형보다 환기지배형 화재가 지배적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">환기가 잘되지 않으면 환기지배형 화재에서 연료지배형 화재로 바뀌며 연기 발생이 줄어든다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 환기가 잘되지 않으면 산소가 부족해져 연료지배형 화재에서 '환기지배형 화재'로 바뀌며, 불완전연소로 인해 연기 발생이 크게 '늘어납니다'.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연료지배형 화재는 구획실 내 가연물의 연소에 필요한 산소가 충분히 공급되는 조건의 화재이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 연료지배형 화재는 구획실 내 가연물 연소에 필요한 산소가 충분히 공급되어 연료의 양과 표면적에 의해 연소속도가 좌우되는 화재입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">성장기에는 천장 부분에서 축적된 뜨거운 가스층이 발화 원으로부터 떨어져 있는 가연성 물질에 복사열을 공급하여 플래시오버를 초래할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 성장기에는 천장 아래에 축적된 고온의 연기·가스층이 바닥의 가연물에 강한 복사열(약 20 kW/m² 이상)을 공급하여 구획실 전체가 일시에 화염에 휩싸이는 플래시오버를 초래합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 최성기에는 실내 화염과 온도가 최고조에 도달하지만, 밀폐·반밀폐 구획실 특성상 산소 부족(환기지배형)으로 인해 가연물 양 대비 실질적인 연소속도는 개구부 공기 유입량에 묶여 제한됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재 초기에는 실내 온도가 급격하게 상승하기 시작한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 화재 초기(발화기)에는 국부적인 착화 단계로 실내 평균 온도는 완만하게 상승하며, 실내 온도가 급격하게 상승하는 단계는 '성장기(특히 플래시오버 시점)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">성장기에는 급속한 연소 진행으로 환기지배형 화재 양상이 나타난다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 성장기(플래시오버 이전)에는 실내에 산소가 충분하므로 환기지배형이 아니라 '연료지배형 화재' 양상이 나타납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">최성기에는 실내 화염이 최고조에 도달하나 실내 산소 부족으로 연소속도가 느려진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 최성기에는 구획실 전체가 불길에 휩싸여 실내 화염이 최고조에 도달하나, 실내 산소 부족(환기지배형 화재)으로 인해 연소속도가 둔화·제한됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">감쇠기에는 화염의 급격한 소멸로 훈소 상태가 되어 백드 래프트(back draft)의 위험이 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 감쇠기(감퇴기)에 산소 부족으로 화염이 사그라들고 고온의 훈소 상태가 되었을 때, 출입문 개방 등으로 산소가 급격히 유입되면 '백드래프트(Backdraft)'가 발생할 위험이 매우 큽니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q11</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">유리창 안쪽에 타르와 유사한 물질이 흘러내려 얼룩진 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 불완전연소로 생성된 고농도 탄소·타르 성분이 유리창 안쪽에 응축되어 흘러내려 얼룩진 경우는 백드래프트의 전형적인 징후입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">창문을 통해 보았을 때 건물 내에서 연기가 소용돌이치는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 산소 부족으로 화염은 꺼졌으나 내부 열기류에 의해 연기가 건물 안에서 소용돌이치는 경우는 백드래프트 징후입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화염은 보이지 않지만 창문과 문손잡이가 뜨거운 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 실내 산소 고갈로 불꽃(화염)은 보이지 않지만 내부 축열로 인해 창문과 문손잡이가 매우 뜨거운 경우는 백드래프트 징후입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">균열된 틈이나 작은 구멍을 통하여 건물 밖으로 연기가 밀려 나오는 경우</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 백드래프트 직전에는 실내 산소가 소모되면서 순간적인 감압이 발생하여 균열된 틈이나 문틈으로 연기가 밀려 나갔다가 '다시 실내로 빨려 들어가는(흡입되는) 현상'이 반복됩니다. 단순히 밖으로만 연기가 계속 밀려 나오는 것은 일반적인 양압 분출 상태입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 가연성 가스가 천장을 따라 구르듯 불꽃을 일으키며 복도 쪽으로 뿜어져 나오는 현상은 화재플룸이 아니라 '롤오버(Rollover, 플레임오버)'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">플래시오버(flash over)는 최성기와 감쇠기 사이에서 발생 하며 충격파를 수반한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 플래시오버는 최성기와 감쇠기 사이가 아니라 '성장기에서 최성기로 넘어가는 전이 시점'에 발생하며, 충격파(폭굉)를 수반하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">굴뚝효과가 발생할 때는 개구부에 형성된 중성대 상부에서 공기가 유입되고, 중성대 하부에서 연기가 유출된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 굴뚝효과(정연돌효과) 발생 시 중성대 '하부'에서 외부의 찬 공기가 유입되고, 중성대 '상부'에서 고온의 연기가 외부로 유출됩니다(상·하부가 반대로 서술됨).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연료지배형 화재는 환기지배형 화재보다 산소 공급이 원활하고 연소속도가 빠르다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 연료지배형 화재는 환기지배형 화재보다 산소 공급이 원활하여 완전연소에 가깝고 단위 가연물당 연소속도가 빠릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재플룸(fire plume)은 실내 공기의 압력 차이로 가연성 가스가 천장을 따라 화재가 발생하지 않은 복도 쪽으로 굴러다니는 것처럼 뿜어져 나오는 현상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 미연소 가연성 가스가 천장을 따라 굴러다니는 것처럼 화염을 형성하며 뿜어져 나오는 현상은 화재플룸이 아니라 '롤오버(Rollover)'입니다(화재플룸은 화원 상부로 부력에 의해 수직 상승하는 열기둥).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재실의 최고온도는 화재강도(질적 개념) 척도이며 지속시간 산정 인자가 아닙니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재실의 바닥면적</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화재실의 바닥면적(Af)은 화재하중 및 총 가연물 열량 산정의 기준 인자이므로 화재 지속시간 산정에 필요합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재실의 최고온도</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '화재실의 최고온도'는 화재가혹도의 두 축 중 '화재강도(질적 개념)'에 해당하는 결과값이지, 화재 지속시간(양적 개념)을 산정하기 위한 입력 인자가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재실의 개구부 높이</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 환기지배형 화재에서 개구부 높이(H)는 공기 유입 속도를 결정하는 환기요소(A√H)의 구성 인자이므로 화재 지속시간 산정에 필요합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재실의 개구부 면적</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 개구부 면적(A) 역시 환기요소(A√H)를 구성하여 연소율과 지속시간을 결정하는 핵심 인자입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 분모에 들어가는 면적(Af)은 건축물 전체의 연면적이 아니라 '해당 화재실(구획실)의 바닥면적'이며, 상수 4,500은 목재의 화재하중이 아니라 '목재의 단위발열량(4,500 kcal/kg)'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ(각 가연물의 양, kg)은 화재하중 산정의 필수 항목입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ(각 가연물의 양)과 ㄹ(가연물의 단위 발열량)은 분자(∑(Gi × Hi))를 구성하는 필수 항목입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 화재하중 산정 시 필요한 면적은 건축물 전체의 연면적이 아니라 '화재실의 바닥면적'이므로 ㄴ은 필요하지 않으며, 분모의 상수 4,500은 목재의 화재하중(kg/m²)이 아니라 '목재의 단위발열량(4,500 kcal/kg)'이므로 ㄷ 역시 틀린 항목입니다. 따라서 필요하지 않은 항목은 ㄴ, ㄷ입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄹ(가연물의 단위 발열량, kcal/kg)은 필수 항목입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>천장 고온 가스층의 복사열이 바닥 가연물로 쏟아져 일시 발화를 일으키는 것이 플래시오버의 본질입니다.
+            <span class="ox-exp-src">열전달 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>플래시오버의 주된 대책은 천장 고온 가스층에 분무 주수를 실시하여 열을 흡수하는 냉각 주수입니다.
+            <span class="ox-exp-src">백드래프트 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>화재강도는 질적 개념(최고온도), 화재하중은 양적 개념(지속시간)이며, 이 둘을 종합한 구조물 피해 정도가 화재가혹도입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>화재 초기·성장기(플래시오버 전)에는 산소가 충분하여 연료지배형이고, 플래시오버 이후 최성기에는 실내 산소가 고갈되어 개구부 환기량에 좌우되는 환기지배형이 됩니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>환기지배형 화재는 산소 부족으로 불완전연소 가스와 미연소 연기가 다량 축적되어 백드래프트의 원인이 됩니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>화재하중 = 총발열량(23,000,000kcal) / [목재단위발열량(4,500) × 바닥면적(200)] = 약 25.56kg/㎡입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>화재가혹도(면적 = 최고온도 × 지속시간)는 질적 인자인 최고온도(화재강도)와 양적 인자인 지속시간(화재하중)에 의해 결정됩니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>환기요소(Ventilation Factor)는 A√H로 정의되므로 개구부 면적에 비례하고 개구부 높이의 제곱근에 비례합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>백드래프트는 산소가 부족한 환기지배형 구획실에서 출입문 개방 등으로 산소가 급격히 공급될 때 일어나는 연기 폭발(Smoke Explosion) 현상입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>상부(지붕)를 개방하여 미연소 가스를 먼저 배출(수직 환기)해야 출입문 개방 시의 백드래프트 참사를 예방할 수 있습니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>감퇴기(감쇠기)는 가연물이 약 80퍼센트 이상 소모되어 열방출률(열 발산율)이 급격히 떨어지는 단계입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>구획실 벽체의 단열성이 높을수록 열 축적이 심해져 실내 최고온도와 화재가혹도가 커집니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>불연·준불연 내장재를 사용하면 열방출 속도가 느려져 플래시오버 도달 시간이 지연되므로 재실자의 피난 안전성이 향상됩니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>화재하중 산출 시 구획실의 높이는 고려하지 않고 바닥면적(10m × 8m = 80㎡)만 적용하여 1,300,000 / (4,500 × 80) = 약 3.61kg/㎡가 됩니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>천장 고온 연기층으로부터 바닥 가연물에 전달되는 복사열(약 20kW/㎡ 도달 시)이 플래시오버 발생의 핵심 메커니즘입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>성장기는 연료지배형, 최성기는 산소 부족에 따른 환기지배형이며, 감쇠기 밀폐 훈소 공간은 대표적인 백드래프트 위험 구간입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>백드래프트 직전에는 산소 소모로 인한 실내 압력 저하로 문틈의 연기가 안으로 다시 빨려 들어가는(숨쉬는 듯한) 현상이 나타납니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>중성대 위쪽은 실내 정압이 실외보다 높아 연기가 유출되고, 중성대 아래쪽은 실외 정압이 높아 외기가 유입됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>화재플룸(Fire Plume)은 화원 위쪽으로 부력에 의해 솟구치는 수직 열기류이고, 천장면을 따라 구르듯 화염이 전파되는 현상은 롤오버입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>설명이 정반대로 바뀌었습니다. 일반적으로 플래시오버 '전(성장기)'에는 공기가 충분한 '연료지배형 화재'가 지배적이고, 플래시오버 '이후(최성기)'에는 산소가 부족해져 '환기지배형 화재'가 지배적입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q10 · 연료지배형 화재와 환기지배형 화재의 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>환기요소 공식은 A√H이므로 개구부 면적(A)에 비례하고 개구부 높이의 제곱근(√H)에 비례합니다. 선지는 면적의 제곱근과 높이에 비례한다고 반대로 서술하여 틀렸습니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q17 · 화재가혹도(Fire Severity)와 개구부 환기요소 공식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 22 · X 틀림</span>백드래프트 징후가 있을 때 출입문을 먼저 개방하면 급격한 산소 유입으로 대원들이 폭발 화염에 직격당하므로, 반드시 '지붕 등 상부를 먼저 개방(수직 환기)'하여 내부 가연성 가스와 열기를 배출해야 합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q5 · 백드래프트(Backdraft)의 발생 메커니즘 및 진압 전술</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>출입문을 한 번에 완전히 개방하면 다량의 산소가 유입되어 즉각 백드래프트가 발생하므로 매우 위험합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q5 · 백드래프트(Backdraft)의 발생 메커니즘 및 진압 전술</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>백드래프트는 공기가 충분한 연료지배형 화재가 아니라, 산소가 고갈된 '환기지배형 화재(또는 감쇠기 훈소 상태)'가 진행되는 밀폐 공간에서 발생합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q5 · 백드래프트(Backdraft)의 발생 메커니즘 및 진압 전술</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>감퇴기(감쇠기)에는 가연물이 대부분 소진되면서 지붕이나 벽체, 기둥이 무너져 내릴 수 있으나, 열 발산율(열방출률)과 실내 온도는 증가하는 것이 아니라 '감소하기 시작합니다'.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q20 · 실내 구획실 화재의 4단계 진행 과정(발화기·성장기·최성기·감퇴기)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>화재구획(벽체·천장·바닥)의 단열성이 클수록 외부로의 열손실이 줄어들어 실내 온도가 더욱 상승하므로, 화재가혹도는 구획실의 단열성에 큰 영향을 받습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q4 · 화재가혹도(Fire Severity)의 영향인자 및 주벽 단열성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>개구부의 크기(환기요소 A√H)는 공기 유입량과 열손실량을 결정하므로 플래시오버 발생 여부 및 소요시간과 밀접한 관련이 있습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q13 · 구획실 화재 현상(플래시오버 소요시간 및 내장재·개구부 영향)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>구획실의 창문과 문손잡이가 뜨겁고 유리창 안쪽에 타르 얼룩이 맺히는 것은 백드래프트의 대표적인 사전 징후이므로 이로써 발생 가능성을 예측할 수 있습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q13 · 구획실 화재 현상(플래시오버 소요시간 및 내장재·개구부 영향)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>산소가 부족한 훈소 상태에서 공기가 갑자기 다량 공급될 때 가연성 가스가 순간적으로 폭발하듯 발화하는 현상은 플래시오버가 아니라 '백드래프트(Backdraft)'입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q13 · 구획실 화재 현상(플래시오버 소요시간 및 내장재·개구부 영향)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>환기가 잘되지 않으면 산소가 부족해져 연료지배형 화재에서 '환기지배형 화재'로 바뀌며, 불완전연소로 인해 연기 발생이 크게 '늘어납니다'.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q15 · 구획실 화재에서 플래시오버와 연료지배형·환기지배형 화재의 특성</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

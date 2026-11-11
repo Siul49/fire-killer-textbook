@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>학습 진도 및 커리큘럼 현황 대시보드</title>
+  <title>학습 진도 및 1차부터 4차까지 수험 커리큘럼 마스터 대시보드</title>
   <style>
     :root {
       --bg: #0f172a;
@@ -15,6 +15,7 @@
       --accent-red: #ef4444;
       --accent-amber: #f59e0b;
       --accent-emerald: #10b981;
+      --accent-purple: #a855f7;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -24,7 +25,7 @@
       line-height: 1.7;
       padding: 32px 20px;
     }
-    .container { max-width: 1040px; margin: 0 auto; }
+    .container { max-width: 1120px; margin: 0 auto; }
     header {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -48,7 +49,7 @@
       padding: 24px;
       margin-bottom: 24px;
     }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.92rem; }
     th, td { padding: 12px 14px; border-bottom: 1px solid var(--card-border); text-align: left; vertical-align: top; }
     th { background: rgba(15, 23, 42, 0.7); color: #93c5fd; font-weight: 700; white-space: nowrap; }
     a { color: #60a5fa; text-decoration: none; font-weight: 600; }
@@ -57,11 +58,12 @@
       display: inline-block;
       padding: 3px 10px;
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
     }
     .status-active { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
     .status-done { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .status-stage { background: rgba(168, 85, 247, 0.2); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.4); }
     .status-wait { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
     p { color: var(--text-sub); }
   </style>
@@ -69,45 +71,63 @@
 <body>
   <div class="container">
     <header>
-      <h1>학습 진도 및 커리큘럼 현황 대시보드</h1>
-      <p>에이전트가 현재 수험생의 커리큘럼 상태와 과목별·소단원별 학습 진도를 즉시 파악하고 업데이트하는 중앙 인덱스 문서입니다.</p>
+      <h1>학습 진도 및 1차부터 4차까지 수험 커리큘럼 마스터 대시보드</h1>
+      <p>에이전트가 현재 수험생의 커리큘럼 상태(1차 기출 코어 ➔ 2차 주변 확장 및 고난도 착시 함정 ➔ 3차 전 범위 교차 모의고사 ➔ 4차 오답 소거 단권화)와 과목별·소단원별 학습 진도를 즉시 파악하고 업데이트하는 중앙 인덱스 문서입니다.</p>
+      <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px;">
+        <a href="./index.html" style="display: inline-block; padding: 7px 14px; border-radius: 8px; background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5; font-size: 0.86rem; font-weight: 800; text-decoration: none;">🔥 3과목 통합 기본서 및 OX 포털 열기 &rarr;</a>
+        <a href="./소방학개론_인쇄전용_교재/00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" style="display: inline-block; padding: 7px 14px; border-radius: 8px; background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.5); color: #6ee7b7; font-size: 0.86rem; font-weight: 800; text-decoration: none;">📘 소방학개론 4일 주기(7사이클 + 총결산) 인쇄포털 &rarr;</a>
+        <a href="./소방관계법규_인쇄전용_교재/00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" style="display: inline-block; padding: 7px 14px; border-radius: 8px; background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.5); color: #93c5fd; font-size: 0.86rem; font-weight: 800; text-decoration: none;">⚖️ 소방관계법규 4일 주기(7사이클 + 총결산) 인쇄포털 &rarr;</a>
+        <a href="./한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html" style="display: inline-block; padding: 7px 14px; border-radius: 8px; background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.5); color: #fde68a; font-size: 0.86rem; font-weight: 800; text-decoration: none;">🖨️ 한국사 25일 인쇄전용 포털 (21장 + 변형 모의고사 7회) &rarr;</a>
+      </div>
     </header>
 
     <section>
-      <h2>1. 과목별 현재 커리큘럼 및 진행 상태</h2>
+      <h2>1. 과목별 현재 커리큘럼 및 1차·2차 구축 현황</h2>
       <table>
         <thead>
           <tr>
             <th>과목명</th>
             <th>진행 중인 커리큘럼 방식</th>
-            <th>현재 진도 위치</th>
+            <th>현재 구축 및 진도 상태</th>
             <th>최근 업데이트일</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>행정법총론</strong></td>
-            <td>유휘운 행정법 + 기출 선지 병행</td>
-            <td><span class="status-badge status-active">진행 중</span> 앞 단원(통칙부터 손해전보까지) 1회독 완료 후 <strong>행정소송 파트 진입 (취소소송 대상적격·단수처분·택시감차명령 등 기출 함정 선지 분석 진행)</strong></td>
-            <td>2026년 10월 23일</td>
-          </tr>
-          <tr>
             <td><strong>소방학개론</strong></td>
-            <td>단원별 기본서 + 2018년부터 2026년까지 전 기출 하네스 완비</td>
-            <td><span class="status-badge status-done">전 기출 DB 구축 완료</span> <strong>제1편부터 제5편까지 15개 소단원 전 문항(212문항·848선지 해설 + OX 369선지 원문 연동) 구축 완료</strong> 및 제1편 학습 진행 중</td>
-            <td>2026년 10월 20일</td>
+            <td>단원별 기본서(17장) + 1차·2차 분리형 OX 웹앱(945제) + 3+1 주기 인쇄교재</td>
+            <td>
+              <span class="status-badge status-done">1차·2차 대칭 완비</span>
+              <strong>전 5편 17장 기본서(절별 2회독 인접 확장 완비) · <a href="./소방학개론_기본서_및_기출하네스/2회독_18유닛_진도플랜_및_OX보강안.html">2회독 18유닛 진도플랜 및 OX 보강안</a> · <a href="./소방학개론_기본서_및_기출하네스/ox_app.html">V3 OX 웹앱(945문항: 1차 523 + 2차 422 · 7대 함정태그 정규화 완료)</a> · <a href="./소방학개론_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">전 범위 총결산 모의고사(30문항)</a></strong>
+            </td>
+            <td>2026년 11월 8일</td>
           </tr>
           <tr>
             <td><strong>소방관계법규</strong></td>
-            <td>압축 강의 + 단원별 기출 즉시 병행 (30분 단위 세션제)</td>
-            <td><span class="status-badge status-active">진행 중</span> <strong>제1편 소방기본법 1회독 6세션 마스터플랜 (제1세션 완료 ➔ 제2세션: 박물관·종합계획·소방력·국고보조·안전교육사 및 위임 법령 구분 진행 중)</strong></td>
-            <td>2026년 10월 27일</td>
+            <td>단원별 기본서(20장) + 1차·2차 분리형 OX 웹앱(1,041제) + 3+1 주기 인쇄교재</td>
+            <td>
+              <span class="status-badge status-done">1차·2차 대칭 완비</span>
+              <strong>전 4편 20장 기본서(60개 절 2회독 주변 조문·별표 확장 박스 및 단원 내 인라인 필터 완비) · <a href="./소방관계법규_기본서_및_기출하네스/2회독_20유닛_진도플랜_및_OX보강안.html">2회독 20유닛 진도플랜 및 OX 보강안</a> · <a href="./소방관계법규_기본서_및_기출하네스/ox_app.html">V3 OX 웹앱(1,041문항: 1차 578 + 2차 463 · 고난도 X함정 75.2% 업그레이드)</a> · <a href="./소방관계법규_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">전 범위 총결산 모의고사(30문항)</a></strong>
+            </td>
+            <td>2026년 11월 8일</td>
           </tr>
           <tr>
-            <td><strong>한국사 (검정제)</strong></td>
-            <td>시대별 핵심 사료 매칭 + 기출 회차 고속 풀이</td>
-            <td><span class="status-badge status-active">진행 중</span> 시대별 요약 및 기출 오답 점검 병행</td>
-            <td>2026년 10월 19일</td>
+            <td><strong>한국사 (한능검 2급)</strong></td>
+            <td>시대별 인쇄교재(21장) + 3+1 주기 변형 모의고사(7회 210문항) + 사료·OX 웹앱(1,050제)</td>
+            <td>
+              <span class="status-badge status-done">1차·2차 사료확장 완비</span>
+              <strong>전 7편 21장 <a href="./한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html">인쇄전용 교재 포털(기출 561문항 + 제4절 60회부터 69회까지 심화 보강)</a> · <a href="./한국사_한능검2급_기본서_및_기출하네스/ox_app.html">V3 사료·OX 웹앱(1,050문항 · 사료 105선 연동)</a> 구축 완료 (11월 28일 시험 대비)</strong>
+            </td>
+            <td>2026년 11월 8일</td>
+          </tr>
+          <tr>
+            <td><strong>행정법총론</strong></td>
+            <td>유휘운 행정법 코어 + 대법원 판례 결말·키워드 기출 선지 병행</td>
+            <td>
+              <span class="status-badge status-active">진행 중</span>
+              앞 단원(통칙부터 손해전보까지) 1회독 완료 후 <strong><a href="./과목별_학습기록/행정법총론/06_행정소송.html">행정소송 파트</a> 진입 (취소소송 대상적격·단수처분·택시감차명령 등 기출 함정 선지 분석 및 2차 유사 판례 비교 확장 진행)</strong>
+            </td>
+            <td>2026년 11월 8일</td>
           </tr>
           <tr>
             <td><strong>토익 (검정제)</strong></td>
@@ -120,7 +140,75 @@
     </section>
 
     <section>
-      <h2>2. 과목별·소단원별 학습 기록 문서 인덱스 (컨텍스트 분리형)</h2>
+      <h2>2. 1차부터 4차까지 전 과목 수험 마스터 로드맵 (단계별 목표 및 출제의도 타격 설계)</h2>
+      <p style="margin-bottom: 12px;">
+        단순 반복 회독이 아니라 회차가 올라갈수록 <strong>출제위원의 선지 변형 반경(기출 원문 ➔ 인접 조문·별표·공식 확장 ➔ 전 범위 교차 조합 ➔ 취약 함정 영구 소거)</strong>을 단계적으로 제압하도록 설계된 4단계 수험 공학 파이프라인입니다.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>단계</th>
+            <th>핵심 목표 (수험 보강 포인트)</th>
+            <th>소방학개론 · 소방관계법규</th>
+            <th>한국사 (한능검) · 행정법총론</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-badge status-done">1차 (기출 코어)</span></td>
+            <td><strong>9개년 기출 지문 100% 분해 및 기본서 원문 1대1 매핑</strong><br>(기출 정오 판별 기준점 확립 · 예상 득점 75점에서 80점대)</td>
+            <td>
+              • <strong>소방학개론</strong>: 공채·경채 기출 212문항 + 1차 코어·확장 OX 523제<br>
+              • <strong>소방관계법규</strong>: 6대 법령 기출 358문항 + 1차 코어·확장 OX 578제<br>
+              • <strong>3+1 인쇄본</strong>: DAY 01부터 DAY 21까지 3일 이론·기출 학습 후 4일 차 복습 모의고사(각 7회, 210문항)
+            </td>
+            <td>
+              • <strong>한국사</strong>: 7편 21장 필수 연대기 + 기출 561문항 + 코어 OX 630제 + 주기별 복습 모의고사 7회(210문항)<br>
+              • <strong>행정법총론</strong>: 통칙부터 행정구제까지 6대 단원 핵심 법리 및 최다 빈출 대법원 판례 정오 정리
+            </td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-done">2차 (주변 확장)</span></td>
+            <td><strong>기출 인접 미출제 조문·별표·계산식 타격 및 고난도 착시 함정 방어</strong><br>(신유형·준킬러 문항 방어력 극대화 · 예상 득점 90점에서 95점 이상)</td>
+            <td>
+              • <strong>소방학개론(18유닛)</strong>: 절별 <code>🎯 2회독 인접 확장</code> 박스 + 2회독 확장 OX 422제(X함정 74.2%, 총 945제) 완비<br>
+              • <strong>소방관계법규(20유닛)</strong>: 60개 절별 <code>🎯 2회독 주변 조문·별표 확장</code> 박스 + 고난도 착시 함정 리모델링 OX 463제(X함정 75.2%, 총 1,041제) 완비
+            </td>
+            <td>
+              • <strong>한국사</strong>: 각 장 제4절 최신 기출(60회부터 69회까지) 사료·문화유산 심화 보강 + 사료 추론 OX 420제 추가(총 1,050제)<br>
+              • <strong>행정법총론</strong>: 동일 쟁점 내 처분성 인정 판례와 부정 판례 1대1 대조 및 준용 조문 함정 비교
+            </td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-stage">3차 (전 범위 교차)</span></td>
+            <td><strong>단원 경계를 허문 전 범위 실전 모의고사 및 함정 태그별 약점 타격</strong><br>(단원 힌트 없는 시험장 실전 판별력 및 시간 단축 완성)</td>
+            <td>
+              • <strong>전 범위 총결산 모의고사</strong>: <a href="./소방학개론_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">소방학개론 총결산(30문항)</a> · <a href="./소방관계법규_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">소방관계법규 총결산(30문항)</a> 양면 인쇄 워크북 구동<br>
+              • <strong>함정 유형별 가로지르기</strong>: OX 웹앱에서 <code>권한·주체</code>, <code>수치·기간</code>, <code>위임·법령</code>, <code>연소·폭발·화재</code> 등 취약 함정 태그만 전 단원 통합 필터링 타격
+            </td>
+            <td>
+              • <strong>한국사</strong>: 11월 28일 시험 직전 7회분 변형 모의고사(210문항) 오답 재풀이로 2급(70점 이상) 조기 졸업 및 공부 시간 소방·행정법 전환<br>
+              • <strong>행정법총론</strong>: 전 단원 판례 섞어 풀기 및 소송요건·본안·구제수단 복합 사례형 선지 타격
+            </td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-wait">4차 (파이널 소거)</span></td>
+            <td><strong>아는 지문 영구 소거(Zero-Waste) 및 초압축 오답·수치·판례 단권화</strong><br>(시험 전날 전 과목 3시간 1회독 회전율 완성)</td>
+            <td>
+              • <strong>웹앱 오답·별표 집중 모드</strong>: 1차·2차 통합 1,986제(학개론 945 + 법규 1,041) 중 <code>오답(wrong)</code> 및 <code>별표(star)</code> 지문만 추출하여 100% 정답 도달 시까지 무한 소거<br>
+              • <strong>최종 수치·권한자 비교표 점검</strong>: 각 장 본문 핵심 비교표 및 2회독 주변 확장 박스만 1일 1과목 초고속 스캔
+            </td>
+            <td>
+              • <strong>한국사</strong>: 한능검 2급 취득 완료로 파이널 부담 제로(0)<br>
+              • <strong>행정법총론</strong>: <code>내가 틀린 개념</code>에 누적된 헷갈리는 판례 제목·결론 요약표와 숫자·기간 조문만 최종 암기
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>3. 과목별·소단원별 학습 기록 문서 인덱스 (컨텍스트 분리형)</h2>
       <p style="margin-bottom: 12px;">
         컨텍스트 낭비를 막기 위해 각 과목 폴더 하위에 <strong>소단원별 개별 HTML 문서</strong>를 생성하여 관리합니다. 각 소단원 문서 내부에는 <strong>[진행한 개념 / 주요 핵심 개념 / 내가 틀린 개념]</strong> 3대 영역이 기록됩니다.
       </p>
@@ -128,8 +216,8 @@
         <thead>
           <tr>
             <th>과목 폴더</th>
-            <th>현재 활성 소단원 문서</th>
-            <th>비고 및 확장 규칙</th>
+            <th>현재 활성 소단원 및 핵심 마스터 문서</th>
+            <th>비고 및 수록 범위</th>
           </tr>
         </thead>
         <tbody>
@@ -139,19 +227,34 @@
             <td>진도에 따라 소단원(소송요건, 본안심리, 판결 등) 문서를 세분화하여 기록</td>
           </tr>
           <tr>
-            <td><code>과목별_학습기록/소방학개론/</code> 및 <code>소방학개론_기본서_및_기출하네스/</code></td>
-            <td><a href="./소방학개론_기본서_및_기출하네스/index.html">소방학개론 단원별 기본서 및 전 기출 하네스 (index.html)</a>, <a href="./과목별_학습기록/소방학개론/01_연소이론.html">01_연소이론.html</a>, <a href="./과목별_학습기록/소방학개론/02_소방조직.html">02_소방조직.html</a></td>
-            <td>2018년부터 2026년까지 공채·경채(9급 소방사) 전 기출 212문항(848개 선지별 상세 해설) 및 369개 OX 실전 훈련(원문 바로가기 연동) 완료</td>
+            <td><code>소방학개론_기본서_및_기출하네스/</code></td>
+            <td>
+              <a href="./소방학개론_기본서_및_기출하네스/index.html">소방학개론 기본서 전체 목차</a> ·
+              <a href="./소방학개론_기본서_및_기출하네스/2회독_18유닛_진도플랜_및_OX보강안.html">2회독 18유닛 진도플랜</a> ·
+              <a href="./소방학개론_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">전 범위 총결산 모의고사</a> ·
+              <a href="./과목별_학습기록/소방학개론/01_연소이론.html">01_연소이론.html</a> ·
+              <a href="./과목별_학습기록/소방학개론/02_소방조직.html">02_소방조직.html</a>
+            </td>
+            <td>2018년부터 2026년까지 공채·경채 전 기출 212문항 + 1차·2차 통합 945개 OX 실전 훈련(원문 해당 줄 딥링크 연동) 완비</td>
           </tr>
           <tr>
-            <td><code>과목별_학습기록/소방관계법규/</code></td>
-            <td><a href="./과목별_학습기록/소방관계법규/01_소방기본법.html">01_소방기본법.html</a></td>
-            <td>소방기본법, 화재예방법, 소방시설법, 공사업법, 위험물안전관리법 소단원별 생성</td>
+            <td><code>소방관계법규_기본서_및_기출하네스/</code></td>
+            <td>
+              <a href="./소방관계법규_기본서_및_기출하네스/index.html">소방관계법규 기본서 전체 목차</a> ·
+              <a href="./소방관계법규_기본서_및_기출하네스/2회독_20유닛_진도플랜_및_OX보강안.html">2회독 20유닛 진도플랜</a> ·
+              <a href="./소방관계법규_인쇄전용_교재/전범위_총결산_기출변형_모의고사_인쇄워크북.html">전 범위 총결산 모의고사</a> ·
+              <a href="./과목별_학습기록/소방관계법규/01_소방기본법.html">01_소방기본법.html</a>
+            </td>
+            <td>6대 법령 전 기출 358문항 + 1차·2차 통합 1,041개 OX 실전 훈련(60개 절별 2회독 주변 조문·별표 확장 및 원문 딥링크 연동) 완비</td>
           </tr>
           <tr>
-            <td><code>과목별_학습기록/한국사/</code></td>
-            <td><a href="./과목별_학습기록/한국사/01_전근대사_핵심및오답.html">01_전근대사_핵심및오답.html</a></td>
-            <td>시대별 주요 사료 키워드 및 기출 틀린 선지 누적 기록</td>
+            <td><code>한국사_한능검2급_기본서_및_기출하네스/</code></td>
+            <td>
+              <a href="./한국사_한능검2급_기본서_및_기출하네스/index.html">한국사 기본서 전체 목차</a> ·
+              <a href="./한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html">25일 인쇄전용 포털</a> ·
+              <a href="./과목별_학습기록/한국사/01_전근대사_핵심및오답.html">01_전근대사_핵심및오답.html</a>
+            </td>
+            <td>제60회부터 제69회까지 최신 기출 심화 보강 + 사료·OX 1,050제 + 주기별 기출변형 모의고사 7회(210문항) 완비</td>
           </tr>
         </tbody>
       </table>

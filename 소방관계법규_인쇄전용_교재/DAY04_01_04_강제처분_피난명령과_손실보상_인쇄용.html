@@ -1,0 +1,3662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 04 · 인쇄용] 제1편 소방기본법 · 제4장 현장 강제처분, 피난명령 및 정당한 손실보상 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY03_01_03_화재경계_우선통행과_소방활동_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 04</span>
+        <a href="DAY05_01_05_소방용수시설_비상소화장치와_안전원_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(18제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 04 · 제1편 소방기본법 · 제4장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(18문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">현장 강제처분, 피난명령 및 정당한 손실보상</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 화재 현장을 지휘하는 5대 처분·명령권 — 소방활동구역·종사명령·강제처분·피난명령·긴급조치</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>소방활동구역 설정·허가 (제23조)</strong>: <strong>소방대장</strong> (무단 출입 시 <strong>200만 원 이하 과태료</strong>)</li>
+                <li><strong>4대 현장 명령·처분 (제24조부터 제27조까지)</strong>: 종사명령·강제처분·피난명령·위험시설 긴급조치 권한자는 모두 <strong>소방본부장 · 소방서장 · 소방대장</strong> 3인!</li>
+                <li><strong>비용 지급 (제24조·제25조)</strong>: 종사 비용 및 견인 지원 비용 지급 주체는 <strong>시·도지사</strong> (관계인·화재 유발자·절취자는 제외)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            제3장에서 사이렌을 울리며 달려온 소방대가 드디어 불타는 건물 앞에 도착했습니다. 현장에 도착하자마자 가장 먼저 해야 할 일은 무엇일까요? 구경꾼들과 주변 차량들이 위험한 화재 현장 안으로 들어오지 못하게 통제선(폴리스라인)을 치는 일입니다. 이를 위해 ｢소방기본법｣ 제23조 제1항은 현장을 지휘하는 <strong>소방대장</strong>에게 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에 <strong>소방활동구역을 정하여</strong> 소방활동에 필요한 사람으로서 대통령령(시행령 제8조)으로 정하는 사람 외에는 그 구역에 출입하는 것을 제한하거나 그 구역에서 나가게 할 수 있는 권한을 부여했습니다(소방대가 현장에 있지 아니하거나 소방대장의 요청이 있을 때에는 <strong>경찰공무원</strong>이 이 조치를 할 수 있습니다). 시행령 제8조에 따라 소방활동구역 출입이 허용되는 6대 대상자는 ① 소방활동구역 안에 있는 소방대상물의 <strong>소유자·관리자 또는 점유자(관계인)</strong>, ② <strong>전기·가스·수도·통신·교통</strong>의 업무에 종사하는 사람으로서 원활한 소방활동을 위하여 필요한 사람, ③ 의사·간호사 및 그 밖에 <strong>구조·구급업무</strong>에 종사하는 사람, ④ 취재인력 등 <strong>보도업무</strong>에 종사하는 사람, ⑤ <strong>수사업무</strong>에 종사하는 사람, ⑥ 그 밖에 <strong>소방대장이 소방활동을 위하여 출입을 허가한 사람</strong>입니다(시험에서 '시·도지사가 출입을 허가한 사람'으로 바꾸면 오답입니다!). 만약 이 출입 제한을 위반하여 소방활동구역을 무단 출입한 사람에게는 법 제56조 제2항에 따라 <strong>200만 원 이하의 과태료</strong>를 부과합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            통제선을 쳤다면 그다음에는 급박한 화재 현장에서 사람을 구하고 연소 확대를 막기 위한 <strong>4대 현장 명령·처분권(제24조부터 제27조까지)</strong>이 발동됩니다. 여기서 수험생이 가장 먼저 잡아야 할 절대 공식은 <strong>"제24조(소방활동 종사 명령), 제25조(강제처분 등), 제26조(피난 명령), 제27조(위험시설 등에 대한 긴급조치)의 권한자는 모두 예외 없이 '소방본부장, 소방서장 또는 소방대장' 3인이다!"</strong>라는 점입니다(행정안전부장관, 소방청장, 시·도지사는 현장에서 직접 지휘봉을 잡는 주체가 아니므로 이 4대 현장 처분권자에 절대 포함되지 않습니다!). 먼저 <strong>제24조(소방활동 종사 명령)</strong>에 따라 <strong>소방본부장, 소방서장 또는 소방대장</strong>은 현장에서 소방활동을 위하여 필요할 때 관할구역에 사는 사람 또는 그 현장에 있는 사람으로 하여금 사람을 구출하는 일 또는 불을 끄거나 번지지 아니하도록 하는 일을 하게 할 수 있으며, 이 경우 보호장구를 지급하는 등 안전을 위한 조치를 하여야 합니다. 이때 종사 명령에 따라 소방활동에 종사한 사람이 <strong>소방활동의 비용을 지급받는 주체는 예산을 쥔 시·도지사</strong>입니다(제24조 제2항 본문). 다만 당연한 의무가 있거나 귀책사유가 있는 3대 대상자인 ① <strong>화재가 발생한 해당 소방대상물의 관계인</strong>, ② <strong>고의 또는 과실로 화재를 발생시킨 사람</strong>, ③ <strong>화재 현장에서 물건을 가져간 사람</strong>에게는 시·도지사가 비용을 지급하지 아니합니다(제24조 제2항 단서).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            이어서 <strong>제25조(강제처분 등)</strong>에 따라 <strong>소방본부장, 소방서장 또는 소방대장</strong>은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토지를 일시적으로 사용하거나 그 사용의 제한 또는 소방활동에 필요한 처분을 할 수 있고(제1항), 나아가 죽어가는 사람을 구출하거나 불이 번지는 것을 막기 위하여 긴급할 때에는 그 외의(인근) 소방대상물과 토지에 대해서도 같은 처분을 할 수 있으며(제2항), 긴급 출동 시 소방자동차의 통행과 소방활동에 방해가 되는 <strong>주차 또는 정차된 차량 및 물건 등을 제거하거나 이동</strong>시킬 수 있습니다(제3항). 이때 주·정차된 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 <strong>비용을 지급하는 주체 역시 시·도지사</strong>입니다(제25조 제4항). 또한 <strong>제26조(피난 명령)</strong>에 따라 <strong>소방본부장, 소방서장 또는 소방대장</strong>은 사람의 생명을 위험하게 할 것으로 인정할 때 일정한 구역을 지정하여 그 구역 밖으로 피난할 것을 명할 수 있고(위반 시 법 제54조 제3호에 따라 <strong>100만 원 이하의 벌금</strong>), <strong>제27조(위험시설 등에 대한 긴급조치)</strong>에 따라 <strong>소방본부장, 소방서장 또는 소방대장</strong>은 소화용수 외에 <strong>댐·저수지 또는 수영장 등의 물을 사용하거나 수도의 개폐장치 등을 조작</strong>할 수 있으며(제1항), 화재 발생·확대를 막기 위하여 <strong>가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단</strong>하는 등 필요한 조치를 할 수 있습니다(제2항).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:28%;">현장 처분 및 명령 조문</th>
+                <th style="width:36%;">법정 권한자 (행정청·지휘관 비교)</th>
+                <th>비용·보상 주체 및 위반 시 제재 수위</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>소방활동구역 설정 (제23조)</strong></td>
+                <td><strong>소방대장</strong> (부재·요청 시 경찰공무원 대행)</td>
+                <td>· 출입 허가권자도 <strong>소방대장</strong> (시·도지사 아님!)<br/>· 출입 제한 위반 시: <strong>200만 원 이하의 과태료</strong> (제56조 제2항)</td>
+              </tr>
+              <tr>
+                <td><strong>소방활동 종사 명령 (제24조)</strong></td>
+                <td><strong>소방본부장 · 소방서장 · 소방대장</strong></td>
+                <td>· 보호장구 지급 의무: 명령권자(본부장·서장·대장)<br/>· 종사 비용 지급 주체: <strong>시·도지사</strong> (관계인·방화자·절취자 제외)</td>
+              </tr>
+              <tr>
+                <td><strong>강제처분 등 (제25조)</strong></td>
+                <td><strong>소방본부장 · 소방서장 · 소방대장</strong></td>
+                <td>· 제1항 처분 방해: <strong>3년 이하 징역 / 3천만 원 이하 벌금</strong> (제51조)<br/>· 제2항·제3항(주·정차 차량 제거·이동) 방해: <strong>300만 원 이하 벌금</strong> (제52조)<br/>· 견인차량·인력 지원 비용 지급: <strong>시·도지사</strong> (조례)</td>
+              </tr>
+              <tr>
+                <td><strong>피난 명령 (제26조)</strong></td>
+                <td><strong>소방본부장 · 소방서장 · 소방대장</strong> (경찰 대행 가능)</td>
+                <td>· 피난 명령 위반 시: <strong>100만 원 이하의 벌금</strong> (제54조 제3호)</td>
+              </tr>
+              <tr>
+                <td><strong>위험시설 등 긴급조치 (제27조)</strong></td>
+                <td><strong>소방본부장 · 소방서장 · 소방대장</strong> (시·도지사 아님!)</td>
+                <td>· 댐·수영장 물 사용·수도 개폐 조작 및 가스·전기·유류 공급 차단<br/>· 정당한 사유 없이 방해 시: <strong>100만 원 이하의 벌금</strong> (제54조 제4호·제5호)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 불 끄려다 부순 선량한 이웃의 재산과 사상자 보호 — 손실보상(제49조의2)과 사상자 보상</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>손실보상 주체 및 제외 (제49조의2)</strong>: <strong>소방청장 또는 시·도지사</strong> / <strong>불법 주·정차 차량</strong> 및 보관기간 경과 후 매각·폐기는 보상 제외</li>
+                <li><strong>손실보상심의위원회</strong>: 위원장 1명 포함 <strong>5명 이상 7명 이하</strong>, 임기 <strong>2년</strong>(1회 연임)</li>
+                <li><strong>시효 및 지급 기한 (3·5 / 60·10·30)</strong>: 안 날 <strong>3년</strong>·발생일 <strong>5년</strong> / 청구 후 <strong>60일 내 결정 ➔ 10일 내 통지 ➔ 30일 내 지급</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            앞서 제25조 강제처분이나 제27조 긴급조치, 제16조의3 생활안전활동에 따라 소방대가 불길이 번지는 것을 막기 위해 아무 잘못 없는 옆집 상가의 담장을 허물거나 가스·전기 공급을 차단하여 영업 손실을 입혔다면 그 피해는 누가 책임져야 할까요? 만약 출동한 소방관 개인의 돈으로 물어주라고 한다면 어느 소방관이 적극적인 현장 조치를 할 수 있겠습니까? 그래서 ｢소방기본법｣ 제49조의2 제1항은 <strong>소방청장 또는 시·도지사</strong>로 하여금 ① 생활안전활동에 따른 조치로 손실을 입은 자, ② 소방활동 종사 명령에 따른 소방활동 종사로 사망하거나 부상을 입은 자, ③ 적법한 강제처분(제25조 제1항부터 제3항까지)으로 손실을 입은 자, ④ 위험시설 등에 대한 긴급조치(제27조)로 손실을 입은 자, ⑤ 그 밖에 소방기관 또는 소방대의 적법한 소방업무·소방활동으로 손실을 입은 자에게 <strong>손실보상심의위원회의 심사·의결에 따라 정당한 보상</strong>을 하도록 규정하고 있습니다(물건의 멸실·훼손으로 인한 손실 외의 재산상 손실에 대해서는 직무집행과 <strong>상당한 인과관계</strong>가 있는 범위에서 보상합니다). 다만 <strong>법령을 위반하여 소방자동차의 통행과 소방활동에 지장을 초래한 불법 주·정차 차량 및 물건을 제25조 제3항에 따라 강제 제거·이동시킨 경우</strong>(제49조의2 제1항 제3호 단서)나, 제거·이동시킨 위험물·물건을 소유자가 찾아가지 않아 <strong>법정 보관기간 경과 후 매각하거나 폐기한 경우</strong>는 손실보상 대상에서 제외됩니다!
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            보상금 지급 여부와 금액을 공정하게 심사하기 위하여 소방청 및 시·도에 두는 <strong>손실보상심의위원회</strong>는 위원장 1명을 포함하여 <strong>5명 이상 7명 이하의 위원</strong>으로 구성하며, 위촉위원의 임기는 <strong>2년</strong>으로 하되 <strong>한 차례만 연임</strong>할 수 있습니다(시행령 제16조). 또한 피해 시민이 손실보상을 청구했을 때의 소멸시효와 처리 기한(<strong>3년·5년 / 60일·10일·30일</strong>)은 시험에 반복 출제되는 핵심 숫자입니다. 손실보상을 청구할 수 있는 권리는 손실이 있음을 <strong>안 날부터 3년</strong>, 손실이 <strong>발생한 날부터 5년</strong>간 행사하지 아니하면 시효의 완성으로 소멸합니다(법 제49조의2 제4항). 소방청장 또는 시·도지사는 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 <strong>60일 이내</strong>에 보상금 지급 여부 및 보상금액을 <strong>결정</strong>하여야 하고, 결정일부터 <strong>10일 이내</strong>에 결정 내용을 청구인에게 <strong>통지</strong>하며, 보상금을 지급하기로 결정한 경우에는 통지한 날부터 <strong>30일 이내</strong>에 보상금을 <strong>지급</strong>하여야 합니다(시행령 제19조 제3항·제4항).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            아울러 소방활동 종사 명령에 따라 소방활동에 종사하다가 사망하거나 부상을 입은 사상자에 대한 보상금액 등의 구체적인 기준은 ｢소방기본법 시행령｣ 별표 2의4(구 별표 2의3)에 규정되어 있습니다. 2025년 공채·경채 시험에 공통 출제된 별표의 4대 법정 기준 항목은 ① <strong>사망자의 보상금액 기준</strong>, ② <strong>부상등급별 보상금액 기준</strong>, ③ <strong>부상등급 및 요양급여의 기준</strong>(시험에서 '의료급여의 지급 기준'으로 바꾸어 오답 선지로 출제됨!), ④ <strong>보상금의 환수 기준</strong>입니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 어떤 행위가 징역·벌금이고 어떤 행위가 과태료일까? — 벌칙(제50조부터 제54조까지)과 과태료(제56조)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>강제처분 방해 구별</strong>: 제25조 제1항 방해는 <strong>3년/3천만 원(제51조)</strong> vs 제25조 제2항·제3항(<strong>주·정차 차량 제거·이동</strong>) 방해는 <strong>300만 원 벌금(제52조)</strong>!</li>
+                <li><strong>100만 원 이하 벌금 (제54조)</strong>: <strong>생활안전활동 방해</strong>, 관계인 초기조치 불이행, <strong>피난명령 위반</strong>, 물 사용·수도 개폐 조작·위험물질 차단 방해</li>
+                <li><strong>과태료 (제56조)</strong>: 거짓 신고·관계인 미신고(<strong>500만 원</strong>), <strong>소방활동구역 무단 출입</strong>·출동 지장(<strong>200만 원</strong>), 전용구역 방해(<strong>100만 원</strong>), 오인 출동(<strong>20만 원</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            제1편 소방기본법의 대미를 장식하는 킬러 주제는 바로 위반행위별 <strong>벌칙(징역·벌금)과 과태료의 상한 비교</strong>입니다. 왜 어떤 행위는 5천만 원 벌금이고, 어떤 행위는 300만 원이나 100만 원 벌금이며, 또 어떤 행위는 과태료일까요? 그 기준은 <strong>'화재 진압 작전과 인명 구출을 얼마나 직접적으로 파괴했는가'</strong>에 달려 있습니다. 먼저 가장 죄질이 무거운 <strong>제50조(5년 이하의 징역 또는 5천만 원 이하의 벌금)</strong>는 소방대의 핵심 작전을 정면으로 마비시키는 범죄들입니다. ① 출동한 소방대원에게 폭행·협박을 행사하여 화재진압·인명구조·구급활동을 방해한 사람, ② 출동하는 <strong>소방자동차의 출동을 고의로 방해</strong>한 사람, ③ 사람을 구출하는 일 또는 불을 끄거나 번지지 아니하도록 하는 일을 방해한 사람, ④ 소방장비를 파손하거나 효용을 해하여 화재진압·구조·구급을 방해한 사람, ⑤ 정당한 사유 없이 <strong>소방용수시설 또는 비상소화장치를 사용하거나 손괴·철거 등으로 그 효용을 해친 사람</strong>은 모두 최고형인 <strong>5년 이하의 징역 또는 5천만 원 이하의 벌금</strong>에 처합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그다음 단계에서 수험생들이 가장 주의해야 할 2026년 최신 기출 포인트가 바로 <strong>강제처분(제25조) 방해의 두 갈래 형량 차이(제51조 vs 제52조)</strong>입니다. 불이 난 해당 소방대상물 및 토지에 대한 본래적 강제처분(<strong>제25조 제1항</strong>)을 방해한 사람은 <strong>제51조에 따라 3년 이하의 징역 또는 3천만 원 이하의 벌금</strong>에 처합니다. 반면에 인근 제3자의 대상물·토지 처분(제25조 제2항)이나 긴급 출동 시 <strong>소방자동차의 통행과 소방활동에 방해가 되는 주·정차된 차량 및 물건을 제거·이동시키는 처분(제25조 제3항)을 방해</strong>하거나 정당한 사유 없이 따르지 아니한 자는 징역형 없이 <strong>제52조에 따라 300만 원 이하의 벌금</strong>에 처합니다(2026년 소방경채 Q9 정답!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 가장 가벼운 형벌인 <strong>제54조(100만 원 이하의 벌금)</strong>에 해당하는 4대 행위는 묶어서 통째로 외워야 합니다(2022년 Q10, 2023년 공·경채 Q1 공통 기출). ① 정당한 사유 없이 소방대의 <strong>생활안전활동을 방해</strong>한 자(제16조의3 제2항 위반), ② 화재 현장에서 정당한 사유 없이 소방대가 도착할 때까지 <strong>사람을 구출하는 조치 또는 불을 끄거나 번지지 아니하도록 하는 조치를 하지 아니한 관계인</strong>(제20조 제1항 위반), ③ <strong>제26조 제1항에 따른 피난 명령을 위반한 사람</strong>(2022년 기출에서 이를 200만 원 이하 벌금으로 속여 출제함!), ④ 정당한 사유 없이 제27조 제1항·제2항에 따른 <strong>물의 사용이나 수도 개폐장치의 사용·조작을 방해한 자 또는 위험물질 공급 차단 조치를 방해한 자</strong>는 모두 <strong>100만 원 이하의 벌금</strong>입니다. 반면 형벌(벌금)이 아닌 <strong>과태료(제56조 및 시행령 별표 3)</strong>는 금액별로 <strong>500만 원 이하</strong>(화재·구조·구급 거짓 신고자, 화재 등 위급 상황을 소방본부·소방서 등에 알리지 아니한 관계인), <strong>200만 원 이하</strong>(소방활동구역 무단 출입자, 사이렌 출동 소방차 진로 미양보 등 출동 지장 행위자, 한국119청소년단·한국소방안전원 유사명칭 사용자), <strong>100만 원 이하</strong>(소방자동차 전용구역 주차·진입 방해자), <strong>20만 원 이하</strong>(화재 오인 우려 불 피우기·연막소독 미신고로 소방자동차를 출동하게 한 자)로 나뉘며, 과태료 가중 부과기준은 <strong>최근 1년간</strong> 같은 위반행위로 처분받은 경우에 적용하고 시정 노력 등이 인정되면 <strong>2분의 1 범위</strong>에서 감경할 수 있습니다(2024년 공·경채 공통 기출).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">처벌 수위 구분</th>
+                <th style="width:48%;">소방기본법상 주요 위반행위 (제50조부터 제56조까지)</th>
+                <th>기출 함정 및 핵심 판별 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>5년 이하 징역 또는<br/>5천만 원 이하 벌금 (제50조)</strong></td>
+                <td>· 출동 소방대원 폭행·협박 등 화재진압·구조·구급 방해<br/>· 출동하는 <strong>소방자동차의 출동을 고의로 방해</strong>한 사람<br/>· 인명 구출·소화·연소방지 방해 / 소방장비 파손<br/>· 정당한 사유 없이 <strong>소방용수시설·비상소화장치 사용·효용 해침</strong></td>
+                <td>· 소방기본법상 최고 형량<br/>· 소화전 등 소방용수시설 무단 사용·파손도 5년/5천만 원!</td>
+              </tr>
+              <tr>
+                <td><strong>3년 이하 징역 또는<br/>3천만 원 이하 벌금 (제51조)</strong></td>
+                <td>· <strong>제25조 제1항에 따른 강제처분</strong>(화재 발생·연소 우려 대상물·토지 일시 사용·제한·처분)을 방해하거나 정당한 사유 없이 따르지 아니한 사람</td>
+                <td>· 제25조 제1항 본래 강제처분 방해 (제25조 제2항·제3항과 구별!)</td>
+              </tr>
+              <tr>
+                <td><strong>300만 원 이하 벌금 (제52조)</strong></td>
+                <td>· <strong>제25조 제2항·제3항에 따른 처분(긴급 출동 시 주·정차 차량 및 물건 제거·이동 등)을 방해</strong>하거나 정당한 사유 없이 따르지 아니한 자</td>
+                <td>· ★ 2026년 경채 Q9 정답: 주·정차 차량 제거·이동 방해 = <strong>300만 원 이하 벌금</strong></td>
+              </tr>
+              <tr>
+                <td><strong>100만 원 이하 벌금 (제54조)</strong></td>
+                <td>1. 정당한 사유 없이 <strong>생활안전활동을 방해</strong>한 자<br/>2. 소방대 도착 전 인명 구출·소화·연소방지 조치를 하지 아니한 <strong>관계인</strong><br/>3. <strong>제26조 제1항에 따른 피난 명령을 위반한 사람</strong><br/>4. 정당한 사유 없이 <strong>물 사용·수도 개폐장치 조작 방해</strong> 또는 위험물질 차단 조치 방해</td>
+                <td>· ★ 2022년·2023년 기출: <strong>피난명령 위반</strong>은 200만 원 벌금도, 과태료도 아닌 <strong>100만 원 이하 벌금</strong>!</td>
+              </tr>
+              <tr>
+                <td><strong>과태료 (제56조·별표 3)<br/>(500만 / 200만 / 100만 / 20만)</strong></td>
+                <td>· <strong>500만 원 이하</strong>: 거짓 신고자, <strong>위급 상황을 알리지 아니한 관계인</strong><br/>· <strong>200만 원 이하</strong>: <strong>소방활동구역 무단 출입자</strong>, 소방차 출동 지장(진로 미양보), 유사명칭 사용<br/>· <strong>100만 원 이하</strong>: <strong>소방자동차 전용구역 주차·진입 방해</strong> (1차 50만·2차 100만)<br/>· <strong>20만 원 이하</strong>: 오인 우려 불 피우기·연막소독 미신고로 소방차 출동 유발</td>
+                <td>· 가중 기준: <strong>최근 1년간</strong> (2년간 X)<br/>· 감경 범위: <strong>2분의 1 범위</strong> (3분의 1 X)<br/>· 관계인 화재 미신고 = <strong>500만 원 이하 과태료</strong>!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 현장 5대 처분·명령 권한자 구조 및 손실보상 절차(60일·10일·30일)</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 현장 소방활동 5대 처분·명령 권한자 및 비용·제재 비교</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">소방활동구역 설정·출입허가 (법 제23조)</div>
+                <div>· 설정 및 출입 허가권자: <strong>소방대장</strong> (부재·요청 시 경찰공무원 대행)<br/>· 무단 출입 위반자: <strong>200만 원 이하의 과태료</strong> (법 제56조 제2항)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소방활동 종사명령 (제24조) · 피난명령 (제26조)</div>
+                <div>· 명령권자: <strong>소방본부장 · 소방서장 · 소방대장</strong><br/>· 종사 비용 지급: <strong>시·도지사</strong> / <strong>피난명령 위반: 100만 원 이하 벌금</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">강제처분 등 (법 제25조 제1항부터 제4항까지)</div>
+                <div>· 처분권자: <strong>소방본부장 · 소방서장 · 소방대장</strong> (견인 지원 비용은 시·도지사)<br/>· 제1항 방해: <strong>3년/3천만 원</strong> vs 제2항·제3항(차량 이동) 방해: <strong>300만 원 벌금</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">위험시설 등에 대한 긴급조치 (법 제27조)</div>
+                <div>· 조치권자: <strong>소방본부장 · 소방서장 · 소방대장</strong> (시·도지사 아님!)<br/>· 댐·수영장 물 사용·수도 개폐 조작 및 가스·전기·유류 공급 차단 (방해 시 <strong>100만 원 벌금</strong>)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 공식: <strong>제24조(종사명령)·제25조(강제처분)·제26조(피난명령)·제27조(긴급조치)</strong>의 현장 권한자는 모두 <strong>소방본부장·소방서장·소방대장</strong> 3인이며, 비용·보상 지급 주체는 <strong>시·도지사</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 적법한 소방활동 손실보상 절차(3·5년 / 60·10·30일) 및 보상 제외</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">[보상 원칙] 손실보상심의위원회 (5명 이상 7명 이하, 임기 2년·1회 연임)</div>
+                <ul class="schema-list">
+                  <li><strong>소멸시효 (법 제49조의2 제4항)</strong>: 손실이 있음을 <strong>안 날부터 3년</strong>, 손실이 <strong>발생한 날부터 5년</strong></li>
+                  <li><strong>결정 ➔ 통지 ➔ 지급 (시행령 제19조)</strong>: 청구서 받은 날부터 <strong>60일 이내 결정</strong> ➔ 결정일부터 <strong>10일 이내 통지</strong> ➔ 통지한 날부터 <strong>30일 이내 지급</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">[보상 제외] 손실보상 및 종사 비용을 지급하지 아니하는 경우</div>
+                <ul class="schema-list">
+                  <li><strong>손실보상 제외</strong>: 법령을 위반하여 소방차 통행·소방활동에 지장을 초래한 <strong>불법 주·정차 차량·물건</strong>의 제거·이동 손실 및 보관기간 경과 후 매각·폐기</li>
+                  <li><strong>종사 비용 제외</strong>: 화재가 발생한 <strong>그 소방대상물의 관계인</strong>, <strong>고의·과실로 화재를 발생시킨 사람</strong>, <strong>화재 현장에서 물건을 가져간 사람</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (18문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 18문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요한 때에는 강제처분 등을 할 수 있다. 이와 같은 권한을 가진 자로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">행정안전부장관</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방서장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방대장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방청장 또는 시·도지사가 손실보상 심의위원회의 심사·의결에 따라 정당한 손실보상을 하여야 하는 대상으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">생활안전활동에 따른 조치로 인하여 손실을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등의 조치로 인하여 손실을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방활동 종사명령으로 인하여 사망하거나 부상을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방활동에 방해가 되는 불법 주차 차량을 제거하거나 이동시키는 처분으로 인하여 손실을 입은 자</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 손실보상에 관한 내용 중 소방청장 또는 시·도지사가 ‘손실보상심의위원회’의 심사·의결에 따라 정당한 보상을 하여야 하는 대상으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">생활안전활동에 따른 조치로 인하여 손실을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방활동 종사 명령에 따른 소방활동 종사로 인하여 사망하거나 부상을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위험물 또는 물건의 보관기간 경과 후 매각이나 폐기로 손실을 입은 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방기관 또는 소방대의 적법한 소방업무 또는 소방 활동으로 인하여 손실을 입은 자</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2019년 소방경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 소방활동구역의 출입자로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방활동구역 안에 있는 소방대상물의 관계인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">구조·구급업무에 종사하는 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">수사업무에 종사하는 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">시·도지사가 출입을 허가한 사람</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2019년 소방공채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 손실보상에 관한 설명 중 ( ) 안에 들어갈 숫자로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>◦손실보상을 청구할 수 있는 권리는 손실이 있음을 안 날부터 ( 가 )년, 손실이 발생한 날부터 ( 나 )년 간 행사하지 아니하면 시효의 완성으로 소멸한다.<br/>◦소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 ( 다 )일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.<br/>◦소방청장등은 결정일부터 ( 라 )일 이내에 행정안전부령으로 정하는 바에 따라 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우에는 특별한 사유가 없으면 통지한 날부터 ( 마 )일 이내에 보상금을 지급하여야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 3 / ( 나 ): 5 / ( 다 ): 60 / ( 라 ): 10 / ( 마 ): 30</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 5 / ( 나 ): 3 / ( 다 ): 60 / ( 라 ): 12 / ( 마 ): 20</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 3 / ( 나 ): 5 / ( 다 ): 50 / ( 라 ): 12 / ( 마 ): 30</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 5 / ( 나 ): 3 / ( 다 ): 50 / ( 라 ): 10 / ( 마 ): 20</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2019년 소방공채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방활동에 필요한 처분(강제처분 등)을 할 수 있는 처분권자로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>㉠소방서장<br/>㉡소방본부장<br/>㉢소방대장<br/>㉣소방청장<br/>㉤시·도지사</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄹ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2020년 소방경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 강제처분과 위험시설 등에 대한 긴급 조치에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방본부장, 소방서장 또는 소방대장은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토지를 일시적으로 사용하거나 그 사용의 제한 또는 소방활동에 필요한 처분을 할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장, 소방서장 또는 소방대장은 화재 진압 등 소방활동을 위하여 필요할 때에는 소방용수 외에 댐· 저수지 또는 수영장 등의 물을 사용하거나 수도(水道)의 개폐장치 등을 조작할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">시·도지사는 소방활동에 방해가 되는 주차 또는 정차된 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 비용을 지급할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">시·도지사는 화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등 필요한 조치를 할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2021년 소방경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 손실보상에 대한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">손실보상심의위원회 위원의 임기는 2년으로 하며, 한 차례만 연임할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">손실보상심의위원회는 위원장 1명을 포함하여 7명 이상 9명 이하의 위원으로 구성한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방청장등은 보상금을 지급하기로 결정한 경우에는 특별한 사유가 없으면 통지한 날부터 30일 이내에 보상금을 지급하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2021년 소방경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방활동 종사 명령에 따라 소방활동에 종사한 사람은 시·도지사로부터 소방활동 비용을 지급받을 수 있다. 소방활동 비용을 지급받을 수 있는 사람으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">과실로 화재를 발생시킨 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재 현장에서 물건을 가져간 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방대상물에 화재가 발생한 경우 그 관계인</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재 현장에서 불이 번지지 아니하도록 하는 일을 명령 받은 사람</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2021년 소방공채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방활동 종사 명령에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방본부장 또는 소방서장은 화재 현장에서 소방활동 종사 명령을 할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방활동 종사 명령은 관할구역에 사는 사람 또는 그 현장에 있는 사람을 대상으로 할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방활동에 종사한 사람은 소방본부장 또는 소방서장 으로부터 소방활동의 비용을 지급받을 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방본부장 또는 소방서장은 소방활동에 필요한 보호 장구를 지급하는 등 안전을 위한 조치를 하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2022년 소방경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방대장의 권한으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방활동에 필요한 소화전(消火栓)·급수탑(給水塔)·저 수조(貯水槽)를 설치하고 유지·관리하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방활동을 위하여 긴급하게 출동할 때에는 소방자동 차의 통행과 소방활동에 방해가 되는 주차 또는 정차된 차량 및 물건 등을 제거하거나 이동시킬 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위 험물질의 공급을 차단하는 등 필요한 조치를 할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장 에서 소방활동을 위하여 필요할 때에는 그 관할구역에 사는 사람 또는 그 현장에 있는 사람으로 하여금 사람 을 구출하는 일 또는 불을 끄거나 불이 번지지 아니하 도록 하는 일을 하게 할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2022년 소방경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 제25조제1항에 대한 내용이다. ( ) 안에 들어갈 말로 옳지 않은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>( ), ( ) 또는 ( )은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토 지를 일시적으로 사용하거나 그 사용의 제한 또는 소방 활동에 필요한 처분을 할 수 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방청장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방서장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방대장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2022년 소방경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 제53조 및 제54조의 벌칙 기준으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">정당한 사유 없이 물의 사용이나 수도의 개폐장치의 사 용 또는 조작을 하지 못하게 하거나 방해한 자: 100만 원 이하의 벌금</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">정당한 사유 없이 소방대가 현장에 도착할 때까지 사람을 구출하는 조치 또는 불을 끄거나 불이 번지지 아니하도록 하는 조치를 하지 아니한 사람: 100만원 이하의 벌금</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">불장난, 모닥불, 흡연, 화기(火氣) 취급, 풍등 등 소형 열기구 날리기, 그 밖에 화재예방상 위험하다고 인정 되는 행위의 금지 또는 제한에 대한 명령에 따르지 아 니하거나 이를 방해한 자: 200만원 이하의 벌금</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재, 재난·재해, 그 밖의 위급한 상황이 발생하여 사 람의 생명을 위험하게 할 것으로 인정할 때에는 일정 한 구역을 지정하여 그 구역에 있는 사람에게 그 구역 밖으로 피난할 것에 대한 명령을 위반한 사람: 200만원 이하의 벌금</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2023년 소방경채 Q1 · 소방공채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 벌칙 중 벌금의 상한이 나머지 셋과 다른 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">정당한 사유 없이 소방대의 생활안전활동을 방해한 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재진압 및 구조·구급 활동을 위하여 출동하는 소방자동 차의 출동을 방해한 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">정당한 사유 없이 화재진압 등 소방활동을 위하여 필요할 때 물의 사용이나 수도의 개폐장치의 사용 또는 조작을 하지 못하게 하거나 방해한 자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">정당한 사유 없이 소방대가 현장에 도착할 때까지 사람을 구출하는 조치 또는 불을 끄거나 불이 번지지 아니하도록 하는 조치를 하지 아니한 관계인</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2024년 소방경채 Q2 · 소방공채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 과태료 부과기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">정당한 사유 없이 관계인의 소방활동 등에 따른 법을 위반 하여 화재, 재난·재해, 그 밖의 위급한 상황을 소방본부, 소방서 또는 관계 행정기관에 알리지 아니한 관계인에게는 200만원 이하의 과태료를 부과한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방자동차 전용구역에 차를 주차하거나 전용구역에의 진입을 가로막는 등의 방해행위를 한 자에게는 100만원 이하의 과태료를 부과한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위반행위의 횟수에 따른 과태료의 가중된 부과기준은 최근 2년간 같은 위반행위로 과태료 부과처분을 받은 경우에 적용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">위반행위자가 법 위반상태를 시정하거나 해소하기 위하여 노력한 사실이 인정되는 경우, 부과권자는 개별기준에 따른 과태료의 3분의 1 범위에서 그 금액을 줄여 부과할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2025년 소방경채 Q5 · 소방공채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 소방활동 종사 사상자의 보상금액 등의 기준에 해당하는 것으로 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 보상금의 환수 기준<br/>ㄴ. 의료급여의 지급 기준<br/>ㄷ. 사망자의 보상금액 기준<br/>ㄹ. 부상등급별 보상금액 기준</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">17</span>
+              <span class="q-source">2026년 소방경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 손실보상에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">물건의 멸실·훼손으로 인한 손실 외의 재산상 손실에 대해 서는 직무집행과 상당한 인과관계가 있는 범위에서 보상 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">손실보상을 청구할 수 있는 권리는 손실이 있음을 안 날 부터 3년, 손실이 발생한 날부터 5년간 행사하지 아니하면 시효의 완성으로 소멸한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장등은 보상금 지급 여부 또는 각하 결정일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우 에는 특별한 사유가 없으면 통지한 날부터 60일 이내에 보상금을 지급하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">18</span>
+              <span class="q-source">2026년 소방경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣, ｢소방시설 설치 및 관리에 관한 법률｣ 및 ｢소방의 화재조사에 관한 법률｣상 300만원 이하의 벌금에 처하는 위반행위자만을 <보기>에서 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. ｢소방기본법｣상 소방본부장, 소방서장 또는 소방대장이 소방활동을 위하여 긴급하게 출동할 때에 소방자동차의 통행과 소방활동에 방해가 되는 주차 또는 정차된 차량 및 물건 등을 제거하거나 이동시키는 처분을 방해한 자 또는 정당한 사유 없이 그 처분에 따르지 아니한 자<br/>ㄴ. ｢소방시설 설치 및 관리에 관한 법률｣상 소방시설 관리사가 발급 또는 재발급받은 소방시설관리사증을 다른 사람에게 빌려주거나 빌리거나 이를 알선한 자<br/>ㄷ. ｢소방의 화재조사에 관한 법률｣상 화재조사관으로서 관계인의 정당한 업무를 방해하거나 화재조사를 수행하면서 알게 된 비밀을 다른 용도로 사용하거나 다른 사람에게 누설한 사람<br/>ㄹ. ｢소방의 화재조사에 관한 법률｣상 소방관서장이 화재조사를 위해 관계인등을 소방관서에 출석하게 하여 질문했을 때, 정당한 사유 없이 출석을 거부하거나 질문에 대하여 거짓으로 진술한 사람</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방대장은 화재, 재난·재해 등이 발생한 현장에 소방활동구역을 설정하여 소방활동에 필요한 사람 외에는 출입을 제한할 수 있으며, 그 밖에 소방대장이 소방활동을 위하여 출입을 허가한 사람은 출입할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방활동구역에는 구역 안에 있는 소방대상물의 관계인, 전기·가스·수도·통신·교통 업무 종사자, 의사·간호사 등 구조·구급업무 종사자, 취재인력 등 보도업무 종사자, 수사업무 종사자의 출입이 허용된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방활동구역에 출입 제한을 위반하여 무단으로 출입한 사람에게는 200만 원 이하의 과태료를 부과한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장 또는 소방대장은 화재 현장에서 관할구역에 사는 사람 또는 그 현장에 있는 사람을 대상으로 소방활동 종사 명령을 할 수 있으며, 이 경우 소방활동에 필요한 보호장구를 지급하는 등 안전을 위한 조치를 하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방활동 종사 명령에 따라 소방활동에 종사한 사람은 소방본부장 또는 소방서장으로부터 소방활동의 비용을 지급받을 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방활동 종사 명령에 따라 소방활동에 종사한 경우라도 화재가 발생한 해당 소방대상물의 관계인, 고의 또는 과실로 화재를 발생시킨 사람, 화재 현장에서 물건을 가져간 사람에게는 소방활동 비용을 지급하지 아니한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장 또는 소방대장은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토지를 일시적으로 사용하거나 그 사용의 제한 또는 소방활동에 필요한 처분(강제처분)을 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장 또는 소방대장은 소방활동을 위하여 긴급하게 출동할 때에는 소방자동차의 통행과 소방활동에 방해가 되는 주차 또는 정차된 차량 및 물건 등을 제거하거나 이동시킬 수 있으며, 시·도지사는 이를 위하여 견인차량과 인력 등을 지원한 자에게 조례로 정하는 바에 따라 비용을 지급할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등 필요한 조치를 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장 또는 시·도지사는 적법한 강제처분·긴급조치·생활안전활동 등으로 인하여 손실을 입은 자에게 손실보상심의위원회의 심사·의결에 따라 정당한 보상을 하여야 하나, 법령을 위반하여 소방자동차의 통행과 소방활동에 지장을 초래한 불법 주차 차량의 제거·이동 처분으로 인한 손실은 보상하지 아니한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제거하거나 이동시킨 위험물 또는 물건의 법정 보관기간 경과 후 매각이나 폐기로 손실을 입은 자에 대해서도 소방청장 또는 시·도지사는 손실보상심의위원회의 심사·의결에 따라 정당한 보상을 하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물건의 멸실·훼손으로 인한 손실 외의 재산상 손실에 대해서는 직무집행과 상당한 인과관계가 있는 범위에서 보상한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>손실보상심의위원회는 위원장 1명을 포함하여 5명 이상 7명 이하의 위원으로 구성하며, 위촉위원의 임기는 2년으로 하되 한 차례만 연임할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>손실보상을 청구할 수 있는 권리는 손실이 있음을 안 날부터 3년, 손실이 발생한 날부터 5년간 행사하지 아니하면 시효의 완성으로 소멸한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 보상금액을 결정하고, 결정일부터 10일 이내에 청구인에게 통지하며, 통지한 날부터 30일 이내에 보상금을 지급하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행령｣상 소방활동 종사 사상자의 보상금액 등의 기준에는 사망자의 보상금액 기준, 부상등급별 보상금액 기준, 부상등급 및 요양급여의 기준, 보상금의 환수 기준이 포함된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>출동한 소방대원에게 폭행·협박을 행사하여 화재진압·구조·구급활동을 방해한 사람, 출동하는 소방자동차의 출동을 방해한 사람, 정당한 사유 없이 소방용수시설 또는 비상소화장치를 사용하거나 효용을 해친 사람은 5년 이하의 징역 또는 5천만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법｣상 긴급하게 출동할 때 소방자동차의 통행과 소방활동에 방해가 되는 주차 또는 정차된 차량 및 물건 등을 제거하거나 이동시키는 처분(제25조 제3항)을 방해한 자 또는 정당한 사유 없이 그 처분에 따르지 아니한 자는 300만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정당한 사유 없이 소방대의 생활안전활동을 방해한 자, 소방대가 현장에 도착할 때까지 인명 구출 또는 소화·연소방지 조치를 하지 아니한 관계인, 정당한 사유 없이 물의 사용이나 수도 개폐장치의 사용·조작을 방해한 자는 모두 100만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재, 재난·재해 등이 발생하여 사람의 생명을 위험하게 할 것으로 인정할 때 일정한 구역을 지정하여 그 구역 밖으로 피난할 것에 대한 명령(제26조 제1항)을 위반한 사람은 200만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>정당한 사유 없이 화재, 재난·재해, 그 밖의 위급한 상황을 소방본부, 소방서 또는 관계 행정기관에 알리지 아니한 관계인에게는 200만 원 이하의 과태료를 부과한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위반행위의 횟수에 따른 과태료의 가중된 부과기준은 최근 2년간 같은 위반행위로 과태료 부과처분을 받은 경우에 적용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위반행위자가 법 위반상태를 시정하거나 해소하기 위하여 노력한 사실이 인정되는 경우, 부과권자는 개별기준에 따른 과태료의 3분의 1 범위에서 그 금액을 줄여 부과할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부장, 소방서장 또는 소방대장은 화재 진압 등 소방활동을 위하여 필요할 때에는 소방용수 외에 댐·저수지 또는 수영장 등의 물을 사용하거나 수도(水道)의 개폐장치 등을 조작할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 소방활동에 방해가 되는 주차 또는 정차된 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 비용을 지급할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장등은 보상금 지급 여부 또는 각하 결정일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우에는 특별한 사유가 없으면 통지한 날부터 60일 이내에 보상금을 지급하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방기본법 시행령｣ 제8조에 따라 화재 현장에 설정된 소방활동구역에는 관계인, 구조·구급업무 종사자, 보도업무 종사자, 수사업무 종사자 외에 시·도지사가 소방활동을 위하여 출입을 허가한 사람이 출입할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방대장이 정한 소방활동구역에 출입 제한을 위반하여 무단으로 출입한 사람은 100만 원 이하의 벌금에 처한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 화재, 재난·재해 등이 발생한 현장에서 소방활동을 위하여 필요할 때에는 관할구역에 사는 사람 또는 그 현장에 있는 사람으로 하여금 사람을 구출하는 일 또는 불을 끄거나 불이 번지지 아니하도록 하는 일을 하게 할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방활동 종사 명령에 따라 소방활동에 종사한 사람이 중대한 과실 없이 단순한 경과실로 화재를 발생시킨 사람인 경우에는 시·도지사로부터 소방활동의 비용을 지급받을 수 있다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:④ · 05:① · 06:① · 07:④ · 08:② · 09:④ · 10:③ · 11:① · 12:① · 13:④ · 14:② · 15:② · 16:③ · 17:④ · 18:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:X · 06:O · 07:O · 08:O · 09:X · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:O · 25:O · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 04 · 제1편 소방기본법 · 제4장 (18문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">17번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">18번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방경채 Q3</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">행정안전부장관</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법｣ 제25조(강제처분 등)의 권한자는 '소방본부장, 소방서장 또는 소방대장' 3인이며, 행정안전부장관이나 소방청장, 시·도지사는 직접적인 현장 강제처분권자가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소방본부장은 법 제25조에 따른 강제처분 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방서장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 소방서장은 법 제25조에 따른 강제처분 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방대장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 소방대장은 법 제25조에 따른 강제처분 권한자입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제49조의2 제1항 단서에 따라 법령을 위반하여 소방자동차의 통행과 소방활동에 지장을 초래한 불법 주정차 차량의 강제 제거·이동으로 인한 손실은 보상하지 아니함을 묻는 핵심 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">생활안전활동에 따른 조치로 인하여 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제49조의2 제1항 제1호에 따라 생활안전활동에 따른 조치로 손실을 입은 자는 정당한 손실보상 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등의 조치로 인하여 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 항 제4호에 따라 위험시설 등에 대한 긴급조치(가스·전기·유류 공급 차단 등)로 손실을 입은 자는 손실보상 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방활동 종사명령으로 인하여 사망하거나 부상을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 항 제2호에 따라 소방활동 종사명령으로 사망하거나 부상을 입은 자는 손실보상 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방활동에 방해가 되는 불법 주차 차량을 제거하거나 이동시키는 처분으로 인하여 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 같은 항 제3호 단서에 따라 법령을 위반하여 소방자동차의 통행과 소방활동에 지장을 초래한 경우(불법 주·정차 차량의 강제 제거·이동 처분)에는 손실을 보상하지 아니합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q5</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">생활안전활동에 따른 조치로 인하여 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 법 제49조의2 제1항 제1호에 따른 손실보상 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방활동 종사 명령에 따른 소방활동 종사로 인하여 사망하거나 부상을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방기본법｣ 제49조의2 제1항 제2호에 따라 소방활동 종사 명령에 따른 소방활동 종사로 인하여 사망하거나 부상을 입은 자는 적법한 손실보상 청구 대상에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위험물 또는 물건의 보관기간 경과 후 매각이나 폐기로 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 제거·이동시킨 위험물이나 물건을 소유자가 찾아가지 않아 법정 보관기간 경과 후 매각하거나 폐기한 경우는 법 제49조의2의 손실보상 대상에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방기관 또는 소방대의 적법한 소방업무 또는 소방 활동으로 인하여 손실을 입은 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 항 제5호에 따라 그 밖에 소방기관 또는 소방대의 적법한 소방업무 또는 소방활동으로 인하여 손실을 입은 자는 손실보상 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q6</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방활동구역 안에 있는 소방대상물의 관계인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행령｣ 제8조 제1호에 따라 소방활동구역 안에 있는 소방대상물의 소유자·관리자 또는 점유자(관계인)는 출입할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">구조·구급업무에 종사하는 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 조 제3호에 따라 의사·간호사 및 그 밖에 구조·구급업무에 종사하는 사람은 출입할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">수사업무에 종사하는 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 조 제4호·제5호에 따라 취재인력 등 보도업무에 종사하는 사람과 수사업무에 종사하는 사람은 출입할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">시·도지사가 출입을 허가한 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] ｢소방기본법 시행령｣ 제8조 제6호에 따라 그 밖에 소방활동을 위하여 출입을 허가할 수 있는 권한자는 시·도지사가 아니라 현장을 지휘하는 '소방대장'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제49조의2 및 시행령 제19조에 따른 손실보상의 5대 핵심 숫자(안 날부터 3년, 발생한 날부터 5년, 청구서 받은 날부터 60일 이내 결정, 결정일부터 10일 이내 통지, 통지일부터 30일 이내 지급)를 묻는 대표 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 3 / ( 나 ): 5 / ( 다 ): 60 / ( 라 ): 10 / ( 마 ): 30</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 손실보상 청구권의 소멸시효는 안 날부터 3년( 가 )·발생한 날부터 5년( 나 )이며, 보상금 지급 결정 기한은 60일 이내( 다 ), 결정 내용 통지 기한은 10일 이내( 라 ), 보상금 지급 기한은 30일 이내( 마 )입니다('3·5·60·10·30' 공식).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 5 / ( 나 ): 3 / ( 다 ): 60 / ( 라 ): 12 / ( 마 ): 20</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 안 날부터 3년, 발생한 날부터 5년이며, 통지는 10일 이내, 지급은 30일 이내입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 3 / ( 나 ): 5 / ( 다 ): 50 / ( 라 ): 12 / ( 마 ): 30</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 결정 기한은 50일이 아니라 60일 이내, 통지 기한은 12일이 아니라 10일 이내입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 5 / ( 나 ): 3 / ( 다 ): 50 / ( 라 ): 10 / ( 마 ): 20</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ｢소방기본법｣상 손실보상 청구권의 소멸시효는 안 날부터 3년(가)·있은 날부터 5년(나)이며, 결정 기한은 60일(다), 통지 기한은 10일(라), 지급 기한은 30일(마)이므로 제시된 수치(5년, 3년, 50일, 10일, 20일)는 법정 기준과 어긋납니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제25조의 강제처분권자 3인(소방본부장, 소방서장, 소방대장)만 골라내는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ｢소방기본법｣ 제25조에 따라 강제처분을 할 수 있는 권한자는 ㉠ 소방서장, ㉡ 소방본부장, ㉢ 소방대장 3인입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㉣ 소방청장은 현장 강제처분권자에 포함되지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㉤ 시·도지사는 강제처분권자가 아니라 적법한 강제처분 후 손실보상 책임자(소방청장 또는 시·도지사)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ｢소방기본법｣ 제24조 제1항에 따라 화재 현장에서 소방활동 종사 명령을 내릴 수 있는 주체는 '소방본부장, 소방서장 또는 소방대장' 3자뿐이므로, ㉣ 소방청장과 ㉤ 시·도지사는 종사 명령권자에서 제외됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q6</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방본부장, 소방서장 또는 소방대장은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토지를 일시적으로 사용하거나 그 사용의 제한 또는 소방활동에 필요한 처분을 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제25조 제1항에 따라 소방본부장, 소방서장 또는 소방대장은 사람을 구출하거나 불이 번지는 것을 막기 위하여 필요할 때에는 화재가 발생하거나 불이 번질 우려가 있는 소방대상물 및 토지를 일시적으로 사용하거나 사용 제한·처분을 할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장, 소방서장 또는 소방대장은 화재 진압 등 소방활동을 위하여 필요할 때에는 소방용수 외에 댐· 저수지 또는 수영장 등의 물을 사용하거나 수도(水道)의 개폐장치 등을 조작할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 법 제25조 제2항에 따라 소방본부장, 소방서장 또는 소방대장은 소방용수 외에 댐·저수지·수영장 등의 물을 사용하거나 수도의 개폐장치 등을 조작할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">시·도지사는 소방활동에 방해가 되는 주차 또는 정차된 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 비용을 지급할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 법 제25조 제4항에 따라 시·도지사는 주·정차 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 비용을 지급할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">시·도지사는 화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등 필요한 조치를 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 같은 법 제27조 제1항에 따라 화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위험물질의 공급을 차단하는 등 필요한 조치를 할 수 있는 권한자는 시·도지사가 아니라 '소방본부장, 소방서장 또는 소방대장'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q3</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">손실보상심의위원회 위원의 임기는 2년으로 하며, 한 차례만 연임할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행령｣ 제16조 제4항에 따라 손실보상심의위원회 위촉위원의 임기는 2년으로 하며, 한 차례만 연임할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">손실보상심의위원회는 위원장 1명을 포함하여 7명 이상 9명 이하의 위원으로 구성한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 같은 영 제16조 제1항에 따라 손실보상심의위원회는 위원장 1명을 포함하여 7명 이상 9명 이하가 아니라 '5명 이상 7명 이하'의 위원으로 구성합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방청장등은 보상금을 지급하기로 결정한 경우에는 특별한 사유가 없으면 통지한 날부터 30일 이내에 보상금을 지급하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 영 제19조 제4항에 따라 보상금을 지급하기로 결정한 경우에는 통지한 날부터 30일 이내에 보상금을 지급하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 영 제19조 제3항에 따라 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 금액을 결정하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q6</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">과실로 화재를 발생시킨 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 법 제24조 제2항 제2호에 따라 고의 또는 과실로 화재를 발생시킨 사람에게는 소방활동 비용을 지급하지 아니합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재 현장에서 물건을 가져간 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 같은 항 제3호에 따라 화재 현장에서 물건을 가져간(절취한) 사람에게는 비용을 지급하지 아니합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방대상물에 화재가 발생한 경우 그 관계인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 같은 항 제1호에 따라 화재가 발생한 해당 소방대상물의 관계인(소유자·관리자·점유자)에게는 비용을 지급하지 아니합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재 현장에서 불이 번지지 아니하도록 하는 일을 명령 받은 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 같은 법 제24조 제1항 및 제2항 본문에 따라 소방본부장·소방서장·소방대장으로부터 불을 끄거나 불이 번지지 아니하도록 하는 일을 명령받아 종사한 일반 주민은 시·도지사로부터 소방활동 비용을 지급받을 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q5</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방본부장 또는 소방서장은 화재 현장에서 소방활동 종사 명령을 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제24조 제1항에 따라 소방본부장, 소방서장 또는 소방대장은 화재 현장에서 소방활동 종사 명령을 할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방활동 종사 명령은 관할구역에 사는 사람 또는 그 현장에 있는 사람을 대상으로 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 종사 명령의 대상은 그 관할구역에 사는 사람 또는 그 현장에 있는 사람입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방활동에 종사한 사람은 소방본부장 또는 소방서장 으로부터 소방활동의 비용을 지급받을 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 같은 법 제24조 제2항에 따라 소방활동에 종사한 사람이 소방활동 비용을 지급받는 주체는 명령권자인 소방본부장·소방서장이 아니라 지자체장인 '시·도지사'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방본부장 또는 소방서장은 소방활동에 필요한 보호 장구를 지급하는 등 안전을 위한 조치를 하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 법 제24조 제3항에 따라 종사 명령을 한 소방본부장, 소방서장 또는 소방대장은 보호장구를 지급하는 등 안전을 위한 조치를 하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q7</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방활동에 필요한 소화전(消火栓)·급수탑(給水塔)·저 수조(貯水槽)를 설치하고 유지·관리하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법｣ 제10조 제1항에 따라 소방활동에 필요한 소화전·급수탑·저수조(소방용수시설)를 설치하고 유지·관리하여야 하는 의무자는 소방대장이 아니라 '시·도지사'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방활동을 위하여 긴급하게 출동할 때에는 소방자동 차의 통행과 소방활동에 방해가 되는 주차 또는 정차된 차량 및 물건 등을 제거하거나 이동시킬 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 법 제25조 제3항에 따른 주·정차 차량 강제 제거·이동은 소방본부장, 소방서장 또는 '소방대장'의 권한입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재 발생을 막거나 폭발 등으로 화재가 확대되는 것을 막기 위하여 가스·전기 또는 유류 등의 시설에 대하여 위 험물질의 공급을 차단하는 등 필요한 조치를 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 법 제27조 제1항에 따른 위험시설 긴급조치(가스·전기·유류 공급 차단)는 소방본부장, 소방서장 또는 '소방대장'의 권한입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장 에서 소방활동을 위하여 필요할 때에는 그 관할구역에 사는 사람 또는 그 현장에 있는 사람으로 하여금 사람 을 구출하는 일 또는 불을 끄거나 불이 번지지 아니하 도록 하는 일을 하게 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 법 제24조 제1항에 따른 소방활동 종사 명령은 소방본부장, 소방서장 또는 '소방대장'의 권한입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방청장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법｣ 제25조 제1항의 강제처분권자는 '소방본부장, 소방서장 또는 소방대장'이며, '소방청장'은 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방기본법｣ 제25조 제1항에 따라 소방본부장은 화재 현장에서 긴급 강제처분을 명할 수 있는 정당한 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방서장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ｢소방기본법｣ 제25조 제1항에 따라 소방서장은 화재 현장에서 긴급 강제처분을 명할 수 있는 정당한 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방대장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢소방기본법｣ 제25조 제1항에 따라 현장 지휘관인 소방대장은 긴급 강제처분을 명할 수 있는 정당한 권한자입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제26조 제1항에 따른 '피난 명령'을 위반한 사람은 200만 원 이하의 벌금이 아니라 법 제54조 제3호에 따라 '100만 원 이하의 벌금'에 처함을 묻는 핵심 벌칙 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">정당한 사유 없이 물의 사용이나 수도의 개폐장치의 사 용 또는 조작을 하지 못하게 하거나 방해한 자: 100만 원 이하의 벌금</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제54조 제4호에 따라 정당한 사유 없이 물의 사용이나 수도 개폐장치의 사용·조작을 하지 못하게 하거나 방해한 자는 100만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">정당한 사유 없이 소방대가 현장에 도착할 때까지 사람을 구출하는 조치 또는 불을 끄거나 불이 번지지 아니하도록 하는 조치를 하지 아니한 사람: 100만원 이하의 벌금</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 법 제54조 제2호에 따라 화재 현장에서 정당한 사유 없이 소방대가 도착할 때까지 인명 구출 또는 연소 방지 조치를 하지 아니한 관계인은 100만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">불장난, 모닥불, 흡연, 화기(火氣) 취급, 풍등 등 소형 열기구 날리기, 그 밖에 화재예방상 위험하다고 인정 되는 행위의 금지 또는 제한에 대한 명령에 따르지 아 니하거나 이를 방해한 자: 200만원 이하의 벌금</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 출제 당시 구 ｢소방기본법｣ 제53조 제1호(현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제51조로 이관)에 따라 불장난·모닥불·흡연·소형열기구 날리기 등 화재예방상 위험 행위의 금지·제한 명령을 위반한 자는 200만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재, 재난·재해, 그 밖의 위급한 상황이 발생하여 사 람의 생명을 위험하게 할 것으로 인정할 때에는 일정 한 구역을 지정하여 그 구역에 있는 사람에게 그 구역 밖으로 피난할 것에 대한 명령을 위반한 사람: 200만원 이하의 벌금</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] ｢소방기본법｣ 제26조 제1항에 따른 '피난 명령'을 위반한 사람은 200만 원 이하의 벌금이 아니라 같은 법 제54조 제3호에 따라 '100만 원 이하의 벌금'에 처합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q1 · 소방공채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제54조의 '100만 원 이하의 벌금' 3가지(생활안전활동 방해, 물 사용·수도 개폐장치 조작 방해, 관계인의 초기 구출·소화조치 불이행)와 제50조의 '5년 이하의 징역 또는 5천만 원 이하의 벌금'(출동하는 소방자동차의 출동 방해)을 구분하는 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">정당한 사유 없이 소방대의 생활안전활동을 방해한 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [100만 원 이하 벌금] ｢소방기본법｣ 제54조 제1호의2에 따라 정당한 사유 없이 소방대의 생활안전활동을 방해한 자는 100만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재진압 및 구조·구급 활동을 위하여 출동하는 소방자동 차의 출동을 방해한 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [5년 이하 징역 / 5천만 원 이하 벌금 · 정답] 같은 법 제50조 제1호의2에 따라 화재진압 및 구조·구급 활동을 위하여 출동하는 소방자동차의 출동을 방해한 사람은 '5년 이하의 징역 또는 5천만 원 이하의 벌금'에 처하므로 나머지 셋(100만 원 이하 벌금)과 상한이 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">정당한 사유 없이 화재진압 등 소방활동을 위하여 필요할 때 물의 사용이나 수도의 개폐장치의 사용 또는 조작을 하지 못하게 하거나 방해한 자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [100만 원 이하 벌금] 같은 법 제54조 제2호에 따라 물의 사용이나 수도 개폐장치의 사용·조작을 방해한 자는 100만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">정당한 사유 없이 소방대가 현장에 도착할 때까지 사람을 구출하는 조치 또는 불을 끄거나 불이 번지지 아니하도록 하는 조치를 하지 아니한 관계인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [100만 원 이하 벌금] 같은 법 제54조 제1호에 따라 소방대가 현장에 도착할 때까지 인명 구출 또는 연소 방지 조치를 하지 아니한 관계인은 100만 원 이하의 벌금에 처합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방경채 Q2 · 소방공채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제56조 및 시행령 별표 3에 따른 과태료 상한(화재 미신고 관계인 500만 원 이하, 전용구역 방해행위 100만 원 이하), 가중 적용 기간(최근 1년), 감경 범위(2분의 1)를 종합적으로 묻는 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">정당한 사유 없이 관계인의 소방활동 등에 따른 법을 위반 하여 화재, 재난·재해, 그 밖의 위급한 상황을 소방본부, 소방서 또는 관계 행정기관에 알리지 아니한 관계인에게는 200만원 이하의 과태료를 부과한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법｣ 제56조 제1항 제1호의3에 따라 화재·재난 등 위급한 상황을 소방본부·소방서 등에 지체 없이 알리지 아니한 관계인에게는 200만 원 이하가 아니라 '500만 원 이하의 과태료'를 부과합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방자동차 전용구역에 차를 주차하거나 전용구역에의 진입을 가로막는 등의 방해행위를 한 자에게는 100만원 이하의 과태료를 부과한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 같은 법 제56조 제1항 제1호의2 및 시행령 별표 3에 따라 소방자동차 전용구역에 주차하거나 진입을 가로막는 등의 방해행위를 한 자에게는 '100만 원 이하의 과태료'(1차 50만 원, 2차 이상 100만 원)를 부과합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위반행위의 횟수에 따른 과태료의 가중된 부과기준은 최근 2년간 같은 위반행위로 과태료 부과처분을 받은 경우에 적용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 시행령 별표 3 일반기준에 따라 위반행위 횟수에 따른 과태료 가중 부과기준은 최근 2년간이 아니라 '최근 1년간' 같은 위반행위로 과태료 부과처분을 받은 경우에 적용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">위반행위자가 법 위반상태를 시정하거나 해소하기 위하여 노력한 사실이 인정되는 경우, 부과권자는 개별기준에 따른 과태료의 3분의 1 범위에서 그 금액을 줄여 부과할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 위반행위자가 위반상태를 시정·해소하기 위해 노력한 사실이 인정되는 경우 부과권자는 과태료 금액의 3분의 1이 아니라 '2분의 1 범위에서' 그 금액을 줄여 부과할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q5 · 소방공채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법 시행령｣ 별표 2의3에 규정된 소방활동 종사 사상자의 보상금액 등 기준 항목(사망자 보상금액, 부상등급별 보상금액, 부상등급 및 요양급여 기준, 보상금 환수 기준)에서 '의료급여의 지급 기준'(요양급여가 맞음)을 가려내는 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법 시행령｣ 별표 2의3에 따른 보상금액 기준에는 ㄱ(보상금의 환수 기준)과 ㄷ(사망자의 보상금액 기준) 외에 ㄹ(부상등급별 보상금액 기준)도 포함되므로 ㄹ이 누락되어 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄴ('의료급여의 지급 기준'이 아니라 '요양급여의 지급 기준')이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 시행령 별표 2의3에 규정된 기준 항목은 ㄱ(보상금의 환수 기준), ㄷ(사망자의 보상금액 기준), ㄹ(부상등급별 보상금액 기준) 및 '부상등급 및 요양급여의 기준'이므로 ㄱ, ㄷ, ㄹ이 옳습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄴ(의료급여의 지급 기준)은 별표 2의3의 구분 항목이 아니며(실제 항목은 '요양비의 지급 기준'), ㄱ(보상금의 환수 기준)이 누락되어 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 17</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법 시행령｣ 제19조 제4항의 결정 내용 통지 기한(결정일부터 10일 이내)과 보상금 지급 기한(통지한 날부터 30일 이내)을 각각 '30일 이내 통지, 60일 이내 지급'으로 왜곡한 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">물건의 멸실·훼손으로 인한 손실 외의 재산상 손실에 대해 서는 직무집행과 상당한 인과관계가 있는 범위에서 보상 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행령｣ 제18조 제2항에 따라 물건의 멸실·훼손으로 인한 손실 외의 재산상 손실에 대해서는 직무집행과 상당한 인과관계가 있는 범위에서 보상합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">손실보상을 청구할 수 있는 권리는 손실이 있음을 안 날 부터 3년, 손실이 발생한 날부터 5년간 행사하지 아니하면 시효의 완성으로 소멸한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢소방기본법｣ 제49조의2 제4항에 따라 손실보상 청구권은 손실이 있음을 안 날부터 3년, 손실이 발생한 날부터 5년간 행사하지 아니하면 시효로 소멸합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방청장등은 손실보상심의위원회의 심사·의결을 거쳐 특별한 사유가 없으면 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 보상금액을 결정하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 시행령 제19조 제3항에 따라 보상금 지급 청구서를 받은 날부터 60일 이내에 보상금 지급 여부 및 금액을 결정하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장등은 보상금 지급 여부 또는 각하 결정일부터 30일 이내에 행정안전부령으로 정하는 바에 따라 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우 에는 특별한 사유가 없으면 통지한 날부터 60일 이내에 보상금을 지급하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 시행령 제19조 제4항에 따라 소방청장등은 결정일부터 30일이 아니라 '10일 이내'에 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우에는 통지한 날부터 60일이 아니라 '30일 이내'에 보상금을 지급하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 18</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제52조(주·정차 차량 강제 제거·이동 처분 방해 = 300만 원 이하 벌금)와 ｢소방의 화재조사에 관한 법률｣ 제20조(화재조사관의 업무 방해 및 비밀 누설 = 300만 원 이하 벌금)를 타 벌칙(소방시설관리사증 대여 = 1년 이하 징역 또는 1천만 원 이하 벌금, 화재조사 출석 거부·거짓 진술 = 200만 원 이하 과태료)과 비교한 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(소방시설관리사증 대여·알선)은 ｢소방시설법｣ 제50조에 따라 '1년 이하의 징역 또는 1천만 원 이하의 벌금'에 처합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ㄱ(｢소방기본법｣ 제52조 제2호: 긴급 출동 시 주·정차 차량 제거·이동 처분을 방해한 자 = 300만 원 이하의 벌금)과 ㄷ(｢소방의 화재조사에 관한 법률｣ 제20조: 관계인의 정당한 업무를 방해하거나 비밀을 누설한 화재조사관 = 300만 원 이하의 벌금)이 정확히 300만 원 이하의 벌금 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ은 1년 이하 징역 또는 1천만 원 이하 벌금입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄹ(화재조사 출석 거부 또는 거짓 진술)은 ｢소방의 화재조사에 관한 법률｣ 제21조 제1항에 따라 벌금이 아니라 '200만 원 이하의 과태료' 부과 대상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:X · 06:O · 07:O · 08:O · 09:X · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:O · 25:O · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢소방기본법｣ 제23조 제1항 및 같은 법 시행령 제8조 제6호에 따라 소방활동구역의 설정권자와 예외적 출입 허가권자는 모두 '소방대장'입니다(시·도지사가 허가한 사람으로 바꾸면 오답).
+            <span class="ox-exp-src">2019년 소방경채 Q6</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>｢소방기본법 시행령｣ 제8조 제1호부터 제5호까지에 규정된 소방활동구역 법정 출입 허용 대상자입니다.
+            <span class="ox-exp-src">2019년 소방경채 Q6 · 소방기본법 시행령 제8조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢소방기본법｣ 제23조 제1항을 위반하여 소방활동구역을 출입한 사람에게는 법 제56조 제2항에 따라 200만 원 이하의 과태료를 부과합니다.
+            <span class="ox-exp-src">소방기본법 제56조 제2항 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>｢소방기본법｣ 제24조 제1항 및 제3항에 따른 소방활동 종사 명령권자(본부장·서장·대장)와 안전조치 의무 규정입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q5 선지 1·2·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 05 · X 틀림</span>｢소방기본법｣ 제24조 제2항 본문에 따라 소방활동에 종사한 사람이 소방활동의 비용을 지급받는 주체는 소방본부장·소방서장이 아니라 '시·도지사'입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q5 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>｢소방기본법｣ 제24조 제2항 단서 각 호에 규정된 소방활동 종사 비용 지급 제외 3대 대상자입니다.
+            <span class="ox-exp-src">2021년 소방경채 Q6</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢소방기본법｣ 제25조 제1항의 강제처분권자는 '소방본부장, 소방서장 또는 소방대장' 3인입니다(행정안전부장관, 소방청장, 시·도지사는 제외).
+            <span class="ox-exp-src">2018년 소방경채 Q3 · 2019년 소방공채 Q15 · 2022년 소방경채 Q8</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>｢소방기본법｣ 제25조 제3항(주·정차 차량 제거·이동권자: 본부장·서장·대장) 및 제4항(견인 지원 비용 지급권자: 시·도지사) 규정입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q6 · 2022년 소방경채 Q7</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 09 · X 틀림</span>｢소방기본법｣ 제27조 제1항·제2항에 따라 소방용수 외에 댐·저수지·수영장 등의 물을 사용·수도 개폐장치를 조작하거나 가스·전기·유류 등 위험물질의 공급을 차단하는 긴급조치 권한자는 시·도지사가 아니라 '소방본부장, 소방서장 또는 소방대장'입니다.
+            <span class="ox-exp-src">2020년 소방경채 Q6 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>｢소방기본법｣ 제49조의2 제1항 본문 및 제3호 단서에 따른 정당한 손실보상 원칙과 불법 주·정차 차량 보상 제외 규정입니다.
+            <span class="ox-exp-src">2018년 소방공채 Q17</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>보관기간 경과 후 매각이나 폐기로 인한 손실은 ｢소방기본법｣ 제49조의2에 따른 손실보상 대상에 해당하지 않습니다.
+            <span class="ox-exp-src">2019년 소방경채 Q5 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢소방기본법 시행령｣ 제18조 제2항 원문입니다.
+            <span class="ox-exp-src">2026년 소방경채 Q6 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>｢소방기본법 시행령｣ 제16조 제1항 및 제4항에 따른 손실보상심의위원회 구성 인원(5명 이상 7명 이하)과 임기(2년, 1회 연임) 기준입니다(7명 이상 9명 이하로 바꾸면 오답).
+            <span class="ox-exp-src">2021년 소방경채 Q3</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>｢소방기본법｣ 제49조의2 제4항에 따른 손실보상 청구권의 소멸시효(안 날 3년, 발생한 날 5년)입니다.
+            <span class="ox-exp-src">2019년 소방공채 Q13 · 2026년 소방경채 Q6</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢소방기본법 시행령｣ 제19조 제3항 및 제4항에 따른 '60일 이내 결정 ➔ 10일 이내 통지 ➔ 30일 이내 지급' 절차입니다(2026년 경채에서 30일 이내 통지·60일 이내 지급으로 변형하여 오답 출제).
+            <span class="ox-exp-src">2019년 소방공채 Q13 · 2021년 소방경채 Q3 · 2026년 소방경채 Q6</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢소방기본법 시행령｣ 별표 2의4(구 별표 2의3)의 4대 법정 기준 항목입니다(시험에서 요양급여를 '의료급여의 지급 기준'으로 바꾸어 오답 출제).
+            <span class="ox-exp-src">2025년 소방경채 Q5 · 소방공채 Q4</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>｢소방기본법｣ 제50조에 따른 최고 형량(5년 이하 징역 또는 5천만 원 이하 벌금) 대상 행위들입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q1 · 소방공채 Q1</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>｢소방기본법｣ 제52조 제1호에 따라 제25조 제2항·제3항의 처분(주·정차 차량 제거·이동 등)을 방해한 자는 300만 원 이하의 벌금에 처합니다(참고: 제25조 제1항 처분 방해는 제51조에 따라 3년 이하 징역 또는 3천만 원 이하 벌금).
+            <span class="ox-exp-src">2026년 소방경채 Q9</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>｢소방기본법｣ 제54조 제1호의2, 제2호, 제4호에 규정된 '100만 원 이하의 벌금' 대상 행위들입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q10 · 2023년 소방경채 Q1</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>｢소방기본법｣ 제26조 제1항에 따른 피난 명령을 위반한 사람은 200만 원 이하의 벌금이 아니라 같은 법 제54조 제3호에 따라 '100만 원 이하의 벌금'에 처합니다.
+            <span class="ox-exp-src">2022년 소방경채 Q10 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>｢소방기본법｣ 제56조 제1항 제2호에 따라 위급한 상황을 소방본부·소방서 등에 알리지 아니한 관계인(및 화재·구조·구급 상황을 거짓으로 알린 사람)에게는 200만 원 이하가 아니라 '500만 원 이하의 과태료'를 부과합니다.
+            <span class="ox-exp-src">2024년 소방경채 Q2 · 소방공채 Q1 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 22 · X 틀림</span>｢소방기본법 시행령｣ 별표 3 일반기준에 따라 위반행위 횟수에 따른 과태료 가중 부과기준은 최근 2년간이 아니라 '최근 1년간' 같은 위반행위로 과태료 부과처분을 받은 경우에 적용합니다.
+            <span class="ox-exp-src">2024년 소방경채 Q2 · 소방공채 Q1 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>시행령 별표 3 일반기준에 따라 부과권자는 과태료 금액의 3분의 1이 아니라 '2분의 1 범위에서' 그 금액을 줄여 부과할 수 있습니다.
+            <span class="ox-exp-src">2024년 소방경채 Q2 · 소방공채 Q1 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>법 제25조 제2항에 따라 소방본부장, 소방서장 또는 소방대장은 소방용수 외에 댐·저수지·수영장 등의 물을 사용하거나 수도의 개폐장치 등을 조작할 수 있습니다.
+            <span class="ox-exp-src">2020년 소방경채 Q6 · 강제처분 및 위험시설 등에 대한 긴급조치 권한자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 25 · O 옳음</span>법 제25조 제4항에 따라 시·도지사는 주·정차 차량의 제거나 이동을 위하여 견인차량과 인력 등을 지원한 자에게 시·도의 조례로 정하는 바에 따라 비용을 지급할 수 있습니다.
+            <span class="ox-exp-src">2020년 소방경채 Q6 · 강제처분 및 위험시설 등에 대한 긴급조치 권한자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>시행령 제19조 제4항에 따라 소방청장등은 결정일부터 30일이 아니라 '10일 이내'에 결정 내용을 청구인에게 통지하고, 보상금을 지급하기로 결정한 경우에는 통지한 날부터 60일이 아니라 '30일 이내'에 보상금을 지급하여야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q6 · 손실보상의 인과관계 범위·소멸시효 및 통지·지급 기한</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>｢소방기본법 시행령｣ 제8조 제6호에 따라 법정 출입 허용 대상자 외에 소방활동구역의 출입을 허가하는 권한자는 시·도지사가 아니라 현장을 지휘하는 '소방대장'입니다.
+            <span class="ox-exp-src">🎯 적중예상 · 시행령 제8조 제6호 (소방활동구역 예외적 출입 허가권자)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>｢소방기본법｣ 제23조 제1항에 따른 출입 제한을 위반하여 소방활동구역을 출입한 사람에게는 벌금이 아니라 법 제56조 제1항에 따라 '200만 원 이하의 과태료'를 부과합니다(반면 제26조 피난 명령 위반자가 100만 원 이하의 벌금 대상임).
+            <span class="ox-exp-src">🎯 적중예상 · 법 제23조 제1항 및 제56조 (소방활동구역 무단 출입 과태료 vs 피난명령 위반 벌금 구분)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>｢소방기본법｣ 제24조 제1항에 따라 현장에서 소방활동 종사 명령을 내릴 수 있는 권한자는 '소방본부장, 소방서장 또는 소방대장' 3인이며, 시·도지사는 종사 명령권자가 아니라 종사 비용 지급 주체(제24조 제2항)입니다.
+            <span class="ox-exp-src">🎯 적중예상 · 법 제24조 제1항 및 제2항 (소방활동 종사 명령권자와 비용 지급 주체 비교)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>｢소방기본법｣ 제24조 제2항 제2호에 따라 '고의 또는 과실로 화재를 발생시킨 사람'에게는 경과실 여부를 불문하고 시·도지사가 소방활동 종사 비용을 지급하지 아니합니다.
+            <span class="ox-exp-src">🎯 적중예상 · 법 제24조 제2항 단서 (고의·과실 화재 유발자의 종사 비용 지급 제외)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

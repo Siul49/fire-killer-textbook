@@ -1,0 +1,3207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 05 · 인쇄용] 제2편 연소 및 폭발 이론 · 제2장 연소범위·위험도(H)·최소산소농도(MOC) 및 상별 연소 형태 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY04_02_01_연소의_본질_화학양론과_인화점_발화점_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 05</span>
+        <a href="DAY06_02_03_열전달_자연발화와_연소생성물_독성가스_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(13제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 05 · 제2편 연소 및 폭발 이론 · 제2장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(13문항)</span>
+            <span>□ OX 25제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">연소범위·위험도(H)·최소산소농도(MOC) 및 상별 연소 형태</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 연소범위(폭발한계)·위험도(H)와 르샤틀리에 식 및 최소산소농도(MOC)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>위험도(H) 및 탄화수소 서열</strong>: H = (UFL &minus; LFL) &divide; LFL ➔ 파라핀계는 탄소수가 많을수록 위험도 증가(<strong>메탄 2.0 &lt; 에탄 3.13 &lt; 프로판 3.52 &lt; 부탄 3.67</strong>)</li>
+              <li><strong>르샤틀리에 혼합가스 식</strong>: (100 &divide; L<sub>m</sub>) = (V<sub>1</sub> &divide; L<sub>1</sub>) + (V<sub>2</sub> &divide; L<sub>2</sub>) + (V<sub>3</sub> &divide; L<sub>3</sub>)</li>
+              <li><strong>최소산소농도(MOC) 결정 인자</strong>: 연소상한계가 아니라 <strong>연소하한계(LFL)</strong>와 <strong>완전연소 산소 몰수(n)</strong>의 곱(MOC = LFL &times; n)으로 결정됨</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            앞 장에서 가연성 액체 표면에 피어오른 증기 농도가 '연소하한계(LFL)'에 도달할 때의 온도를 인화점이라고 배웠습니다. 공기 중에 가연성 가스가 너무 조금 섞여 있으면(희박하면) 분자 간 거리가 멀어 연소열이 이웃 분자로 전달되지 못해 불이 꺼지고, 반대로 가연성 가스가 너무 가득 차 있으면(과농하면) 정작 반응할 산소가 부족해서 불이 붙지 못합니다. 이처럼 점화원을 주었을 때 화염이 전파될 수 있는 공기 중 가연성 가스의 부피 백분율(vol%) 최저 한계를 <strong>연소하한계(LFL, 폭발하한계)</strong>, 최고 한계를 <strong>연소상한계(UFL, 폭발상한계)</strong>라 하며, 두 한계 사이의 폭(UFL &minus; LFL)을 <strong>연소범위(폭발범위)</strong>라 부릅니다. 일반적으로 <strong>온도와 압력이 높아지거나 공기 중 산소 농도가 증가하면</strong> 분자들의 운동에너지와 충돌 빈도가 커져 하한계는 더 낮아지고 상한계는 더 높아지므로 <strong>연소범위가 넓어져 위험성이 증가</strong>합니다(단, 일산화탄소[CO]는 예외적으로 압력이 증가할 때 연소범위가 좁아지며, 질소나 이산화탄소 같은 불활성 가스를 주입하면 연소범위가 좁아집니다).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            어떤 가스의 <strong>연소범위 폭(UFL &minus; LFL)이 넓을수록</strong>, 그리고 <strong>연소하한계(LFL)가 낮을수록</strong> 미량만 누출되어도 즉시 폭발 농도에 진입하므로 훨씬 위험합니다. 이 위험성을 정량화한 지표가 <strong>위험도(H)</strong>로서, 공식은 <strong>H = (UFL &minus; LFL) &divide; LFL</strong>입니다(기출: 2020년 Q3, 2024년 Q16, 2025년 Q8). 시험에 반복 출제되는 표준 연소범위와 위험도(소수점 둘째 자리 반올림 값 포함)를 보면, ① <strong>아세틸렌(C<sub>2</sub>H<sub>2</sub>, 2.5%에서 81%까지)</strong>은 H = (81 &minus; 2.5) &divide; 2.5 = <strong>31.4</strong>로 기체 연료 중 연소범위가 가장 넓고 위험도가 압도적으로 높으며(액체 증기까지 포함하면 <strong>이황화탄소 CS<sub>2</sub> [1.2%에서 44%까지, H = 35.7]</strong>가 최고 수준), ② <strong>수소(H<sub>2</sub>, 4%에서 75%까지)</strong>는 H = (75 &minus; 4) &divide; 4 = <strong>17.75(약 17.8)</strong>, ③ <strong>일산화탄소(CO, 12.5%에서 74%까지)</strong>는 H = (74 &minus; 12.5) &divide; 12.5 = <strong>4.92(약 4.9)</strong>입니다. 또한 파라핀계 포화탄화수소 4종을 비교하면 ④ <strong>메탄(CH<sub>4</sub>, 5%에서 15%까지)</strong>은 H = (15 &minus; 5) &divide; 5 = <strong>2.0</strong>, ⑤ <strong>에탄(C<sub>2</sub>H<sub>6</sub>, 3%에서 12.4%까지)</strong>은 H = (12.4 &minus; 3) &divide; 3 &asymp; <strong>3.13</strong>, ⑥ <strong>프로판(C<sub>3</sub>H<sub>8</sub>, 2.1%에서 9.5%까지)</strong>은 H = (9.5 &minus; 2.1) &divide; 2.1 &asymp; <strong>3.52(약 3.5)</strong>, ⑦ <strong>부탄(C<sub>4</sub>H<sub>10</sub>, 1.8%에서 8.4%까지)</strong>은 H = (8.4 &minus; 1.8) &divide; 1.8 &asymp; <strong>3.67</strong>로서, 탄소수가 많아질수록 연소하한계가 낮아져 <strong>메탄(2.0) &lt; 에탄(3.13) &lt; 프로판(3.52) &lt; 부탄(3.67)</strong> 순으로 위험도가 커집니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            두 종류 이상의 가연성 가스가 섞여 있는 혼합가스의 연소하한계(L<sub>m</sub>)나 연소상한계(U<sub>m</sub>)를 구할 때는 <strong>르샤틀리에(Le Chatelier)의 식</strong>인 <strong>(100 &divide; L<sub>m</sub>) = (V<sub>1</sub> &divide; L<sub>1</sub>) + (V<sub>2</sub> &divide; L<sub>2</sub>) + (V<sub>3</sub> &divide; L<sub>3</sub>) + &middot;&middot;&middot;</strong>을 사용합니다(여기서 V<sub>1</sub> + V<sub>2</sub> + &middot;&middot;&middot; = 100%는 혼합가스 내 각 가연성 가스의 부피 백분율이고, L<sub>1</sub>, L<sub>2</sub>는 각 가스의 연소하한계입니다). 예를 들어 2024년 기출문제(Q24)처럼 혼합가스 내 체적이 V<sub>A</sub> = 20%(L<sub>A</sub> = 4%), V<sub>B</sub> = 40%(L<sub>B</sub> = 20%), V<sub>C</sub> = 40%(L<sub>C</sub> = 10%)로 섞여 있다면, (100 &divide; L<sub>m</sub>) = (20 &divide; 4) + (40 &divide; 20) + (40 &divide; 10) = 5 + 2 + 4 = 11이 되므로, 혼합가스의 연소하한계는 L<sub>m</sub> = 100 &divide; 11 &asymp; <strong>9.09%(약 9.1 vol%)</strong>로 산출됩니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            한편 가연성 가스가 연소범위 안에 있더라도 질소나 이산화탄소 같은 불활성 가스를 주입해 산소 농도를 일정 한계 밑으로 낮추면 화염이 전파되지 못하고 꺼지는데, 이처럼 화염 전파에 필요한 최저한의 임계 산소 부피 백분율(vol%)을 <strong>최소산소농도(MOC, Minimum Oxygen Concentration, 한계산소농도 LOC)</strong>라 합니다(기출: 2021년 Q13, 2022년 Q5, 2026년 Q15). 최소산소농도는 연소상한계가 아니라 <strong>'연소하한계(LFL)'와 '완전연소 반응식의 산소 몰수(n, 연료 1몰당 필요 산소 몰수)'에 의해 결정</strong>되며 공식은 <strong>MOC = LFL &times; n</strong>입니다! 예를 들어 ① <strong>메탄(CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O)</strong>은 LFL(5%) &times; 2 = <strong>10.0%</strong>, ② <strong>프로판(C<sub>3</sub>H<sub>8</sub> + 5O<sub>2</sub> &rarr; 3CO<sub>2</sub> + 4H<sub>2</sub>O)</strong>은 LFL(2.1%) &times; 5 = <strong>10.5%</strong>입니다. ③ 만약 2022년 기출(Q5)처럼 <strong>메틸알코올(CH<sub>3</sub>OH)</strong>의 연소상한계가 37%이고 연소범위 상·하한 폭이 30%로 주어지면, 먼저 LFL = 37% &minus; 30% = <strong>7%</strong>를 구한 뒤 완전연소 반응식(CH<sub>3</sub>OH + <strong>1.5</strong>O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O, 분자 내 산소 원자 1개가 있으므로 외부 산소는 1.5몰 필요)의 산소 몰수 1.5를 곱하여 MOC = 7% &times; 1.5 = <strong>10.5%</strong>를 구합니다. ④ 나아가 LFL 값을 직접 주지 않고 <strong>펜테인(C<sub>5</sub>H<sub>12</sub> + 8O<sub>2</sub> &rarr; 5CO<sub>2</sub> + 6H<sub>2</sub>O, 산소 8몰)</strong>의 MOC를 묻는 경우, 표준 존스 식(대기 산소 21% 기준 C<sub>st</sub> = 100 &divide; [1 + 4.76 &times; 8] &asymp; 2.56%, LFL = 0.55 &times; 2.56% &asymp; 1.4%)을 쓰면 MOC = 1.4% &times; 8 &asymp; <strong>11.2%</strong>가 되지만, 2026년 기출(Q15)처럼 <strong>'대기 중 산소농도를 20 vol%로 가정하고 각 단계 계산 결과를 모두 소수점 첫째 자리에서 반올림(정수화)한다'</strong>는 단서가 주어지면, 1단계 화학양론농도 C<sub>st</sub> = 100 &divide; [1 + (8 &divide; 0.20)] = 100 &divide; 41 &asymp; 2.439% &rarr; 반올림 시 <strong>2 vol%</strong>, 2단계 존스 식 LFL = 0.55 &times; 2 = 1.1% &rarr; 반올림 시 <strong>1 vol%</strong>, 3단계 MOC = 1 vol% &times; 8 = <strong>8 vol%</strong>로 도출됩니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">가연성 가스</th>
+                <th style="width:28%;">공기 중 연소범위 (LFL에서 UFL까지)</th>
+                <th style="width:22%;">위험도 [ H = (UFL &minus; LFL) &divide; LFL ]</th>
+                <th>산소 몰수(n) · 최소산소농도(MOC) 및 핵심 특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>아세틸렌 (C<sub>2</sub>H<sub>2</sub>)</strong></td>
+                <td><strong>2.5%에서 81.0%까지</strong></td>
+                <td><strong>H = 31.4</strong></td>
+                <td>n = 2.5몰 / 기체 중 연소범위 폭이 가장 넓고 자체 분해폭발 위험</td>
+              </tr>
+              <tr>
+                <td><strong>수소 (H<sub>2</sub>)</strong></td>
+                <td><strong>4.0%에서 75.0%까지</strong></td>
+                <td><strong>H = 17.75 (약 17.8)</strong></td>
+                <td>n = 0.5몰 / 분자량(2)이 가장 작아 확산속도·연소속도 최고</td>
+              </tr>
+              <tr>
+                <td><strong>일산화탄소 (CO)</strong></td>
+                <td><strong>12.5%에서 74.0%까지</strong></td>
+                <td><strong>H = 4.92 (약 4.9)</strong></td>
+                <td>n = 0.5몰 / 압력 증가 시 예외적으로 연소범위가 좁아짐</td>
+              </tr>
+              <tr>
+                <td><strong>메탄 (CH<sub>4</sub>)</strong></td>
+                <td><strong>5.0%에서 15.0%까지</strong></td>
+                <td><strong>H = 2.0</strong></td>
+                <td>n = 2몰 ➔ <strong>MOC = 5% &times; 2 = 10.0%</strong> (LNG 주성분)</td>
+              </tr>
+              <tr>
+                <td><strong>에탄 (C<sub>2</sub>H<sub>6</sub>)</strong></td>
+                <td><strong>3.0%에서 12.4%까지</strong></td>
+                <td><strong>H &asymp; 3.13</strong></td>
+                <td>n = 3.5몰 ➔ 존스 식 LFL &asymp; 3.1% / MOC = 3% &times; 3.5 = 10.5%</td>
+              </tr>
+              <tr>
+                <td><strong>프로판 (C<sub>3</sub>H<sub>8</sub>)</strong></td>
+                <td><strong>2.1%에서 9.5%까지</strong></td>
+                <td><strong>H &asymp; 3.52 (약 3.5)</strong></td>
+                <td>n = 5몰 ➔ <strong>MOC = 2.1% &times; 5 = 10.5%</strong> (LPG 주성분)</td>
+              </tr>
+              <tr>
+                <td><strong>부탄 (C<sub>4</sub>H<sub>10</sub>)</strong></td>
+                <td><strong>1.8%에서 8.4%까지</strong></td>
+                <td><strong>H &asymp; 3.67</strong></td>
+                <td>n = 6.5몰 / 탄화수소(메탄·에탄·프로판·부탄) 중 하한계 최소·위험도 최대</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 고체 및 액체 가연물의 연소 형태 (표면·분해·증발·자기연소)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>고체 표면연소(작열·무염연소)</strong>: <strong>숯 · 목탄 · 코크스 · 활성탄 · 금속분</strong> (화염 없이 고체 표면에서 산소와 직접 반응)</li>
+              <li><strong>고체 분해연소 vs 증발연소</strong>: 분해연소는 <strong>목재·종이·석탄·플라스틱(열경화성 수지)</strong> / 증발연소는 <strong>황(유황)·파라핀(양초)·나프탈렌</strong></li>
+              <li><strong>고체 자기연소(제5류 위험물)</strong>: 분자 내 산소를 함유한 <strong>피크르산(Picric Acid) · 니트로셀룰로오스 · TNT · 다이너마이트 · 셀룰로이드</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            가연물이 상온에서 고체냐, 액체냐, 기체냐에 따라 산소와 만나 불타는 과정(연소 형태)이 전혀 다릅니다. 특히 <strong>고체 가연물의 4대 연소 형태</strong>에 속하는 대표 물질을 짝짓는 문제는 소방학개론 역대 기출 최빈출 테마입니다(기출: 2018년 Q7, 2024년 Q5, 2025년 Q9). 첫째, <strong>표면연소(작열연소, Glowing Combustion, 무염연소)</strong>는 열을 가해도 열분해나 증발에 의한 가연성 기체를 전혀 내놓지 않는 고체가 고체 표면에서 산소와 직접 반응하면서 <strong>화염(불꽃) 없이</strong> 벌겋게 달아오르며 타는 형태입니다. 이미 휘발분이 다 빠져나간 탄소 덩어리인 <strong>숯, 목탄, 코크스, 활성탄, 그리고 금속분(마그네슘·철분·알루미늄분 등)</strong>이 여기에 해당합니다(기상 화염이 없는 3요소 연소이므로 할론이나 분말 같은 부촉매소화약제가 효과를 발휘하지 못합니다).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            둘째, <strong>분해연소</strong>는 복잡한 고분자 고체가 열을 받아 화학 결합이 끊어지는 '열분해'를 일으켜 가연성 가스를 방출하고, 그 가스가 산소와 섞여 불꽃을 내며 타는 형태입니다. <strong>목재, 종이, 섬유(면화), 석탄, 플라스틱(페놀수지·멜라민수지·요소수지 등 열경화성 수지)</strong>이 대표적입니다(참고로 장작[목재]이나 석탄을 태우면 초반에는 휘발성 열분해 가스가 뿜어져 나와 불꽃을 내는 '분해연소'를 하다가, 휘발분이 다 빠지고 숯이나 코크스만 남으면 후반부에는 불꽃 없이 타는 '표면연소'로 전이되며, 공기가 부족한 밀폐 공간에서 열분해 가스가 불꽃을 내지 못하고 연기만 피어오르며 느리게 타는 현상은 <strong>훈소[Smoldering]</strong>라 합니다). 셋째, <strong>증발연소</strong>는 액체에서만 일어나는 것이 아니라 고체에서도 일어나며, 고체가 열분해되지 않고 열을 받아 액체로 융해된 뒤 기화하거나 곧바로 승화하여 그 증기가 불타는 형태로서 <strong>황(유황), 파라핀(양초), 나프탈렌, 장뇌, 황린, 열가소성 수지(일부 분해 병행)</strong>가 해당합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            넷째, <strong>자기연소(내부연소)</strong>는 제3류 위험물이 아니라 분자 구조 내부에 이미 니트로기(&minus;NO<sub>2</sub>)나 질산에스테르기(&minus;ONO<sub>2</sub>) 형태의 산소를 풍부하게 품고 있는 <strong>제5류 위험물(자기반응성 물질)</strong>에서 나타나는 연소 형태입니다. 외부 공기(산소) 공급이 전혀 없는 밀폐 공간에서도 물질 자체 내의 산소를 소모하며 극히 빠른 속도로 연소·폭발하는 것이 특징이며, <strong>피크르산(Picric Acid, 트리니트로페놀), 트리니트로톨루엔(TNT), 니트로셀룰로오스(질화면), 니트로글리세린, 다이너마이트, 셀룰로이드</strong>가 대표적입니다. 한편 <strong>액체 가연물</strong>은 휘발유·등유·경유·알코올·아세톤처럼 액면에서 증발한 증기가 공기 중 산소와 혼합되어 타는 <strong>증발연소</strong>가 대부분이지만, <strong>중유(벙커C유)·아스팔트·글리세린·콜타르</strong>처럼 점도가 높고 비점이 높은 중질 액체는 증발하기 전에 열분해가 먼저 일어나 가연성 가스를 방출하는 <strong>액체 분해연소</strong>를 하며, 가열된 노즐로 미세한 기름방울(액적)을 뿜어 공기와 혼합해 태우는 보일러 버너는 <strong>액적연소(분무연소)</strong>를 합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">고체·액체 연소 형태</th>
+                <th style="width:42%;">연소 메커니즘 핵심 특징</th>
+                <th>대표 가연물 (기출 선지 매칭 1순위)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>표면연소 (작열·무염)</strong></td>
+                <td>열분해·증발 없이 고체 표면에서 산소와 직접 반응 (<strong>화염 없음</strong>)</td>
+                <td><strong>숯, 목탄, 코크스, 활성탄, 금속분(마그네슘·철분 등)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>분해연소</strong></td>
+                <td>열에 의해 분해되어 방출된 가연성 가스가 산소와 만나 화염 연소</td>
+                <td><strong>목재, 종이, 섬유, 석탄, 플라스틱(열경화성 수지)</strong> / 액체: <strong>중유·아스팔트·글리세린</strong></td>
+              </tr>
+              <tr>
+                <td><strong>증발연소</strong></td>
+                <td>열에 의해 융해·기화(또는 승화)한 증기가 산소와 혼합되어 연소</td>
+                <td>고체: <strong>황(유황), 파라핀(양초), 나프탈렌, 황린</strong> / 액체: <strong>휘발유·알코올·등유·경유</strong></td>
+              </tr>
+              <tr>
+                <td><strong>자기연소 (내부연소)</strong></td>
+                <td>분자 내 함유된 산소를 소모하여 외부 산소 없이도 빠르게 자체 연소</td>
+                <td><strong>제5류 위험물: 피크르산, 니트로셀룰로오스, TNT, 니트로글리세린, 셀룰로이드</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 기체 연료의 연소(역화·선화·황염), 연소속도 요인 및 액체 화재패턴</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>역화·선화·황염 조건</strong>: <strong>역화</strong>(연소속도 &gt; 분출속도, 노즐 속 연소), <strong>선화</strong>(연소속도 &lt; 분출속도, 불꽃 들뜸), <strong>황염</strong>(화학양론비보다 공기량이 적을 때 발생)</li>
+              <li><strong>층류 vs 난류 확산화염</strong>: 난류 확산화염의 높이는 분출속도에 비례하지 않고 <strong>노즐 직경에 비례</strong>함</li>
+              <li><strong>액체 화재패턴 4종</strong>: 쏟아진 본체 흔적 <strong>포어 패턴</strong>, 주변에 점처럼 튄 <strong>스플래시 패턴</strong>, 중심부 미연소 고리 <strong>도넛 패턴</strong>, 바닥 틈새 침투 <strong>틈새연소 패턴</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            기체 가연물은 이미 기체 상태이므로 녹거나 증발하는 과정 없이 산소와 섞이기만 하면 즉시 불이 붙으며, 노즐 밖으로 나온 연료 가스가 주변 공기와 경계면에서 확산하며 만나는 <strong>확산연소</strong>와 노즐 분출 전에 연료 가스와 일차 공기를 미리 혼합하는 <strong>예혼합연소</strong>로 나뉩니다(기출: 2021년 Q15, 2022년 Q16). 이때 연료노즐에서 분출되는 확산화염의 길이를 보면, 흐름이 조용한 <strong>층류(Laminar)인 경우에는 화염 높이가 분출 유속에 비례</strong>하여 길어지지만, 유속이 빨라져 흐름이 <strong>난류(Turbulent)가 되면 와류 혼합이 촉진되어 화염 높이는 분출 유속과 무관하게 일정해지고 오직 노즐 직경에만 비례</strong>합니다! 또한 화염이 미연소 혼합기 쪽으로 전파되는 <strong>연소속도(화염전파속도)에 영향을 미치는 요인</strong>으로는 ① <strong>가연성 물질의 종류</strong>(수소·아세틸렌 등이 빠름), ② <strong>공기 중 산소량(산소 농도)</strong>, ③ <strong>가연성 물질과 산화제의 당량비</strong>(이론 혼합비인 화학양론비 부근에서 연소속도가 최대가 됨), ④ <strong>촉매의 존재 유무와 농도</strong>, ⑤ <strong>초기 온도와 압력 및 난류 강도</strong>가 모두 해당합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            기체 연료노즐(가스 버너)에서는 가스가 밖으로 뿜어져 나오는 <strong>분출속도</strong>와 불꽃이 안쪽으로 타들어 가려는 <strong>연소속도</strong>의 대소 관계에 따라 비정상 연소 현상이 나타납니다. ① 가스 압력이 낮아지거나 노즐 구멍이 부식으로 커져 <strong>연료의 연소속도가 분출속도보다 빠를 때(연소속도 &gt; 분출속도)</strong>는 불꽃이 연료노즐 속으로 거꾸로 빨려 들어가 노즐 내부에서 타는 <strong>역화(Flashback)</strong>가 발생합니다. ② 반대로 가스를 너무 세게 틀어 <strong>연료기체의 연소속도가 분출속도보다 느릴 때(연소속도 &lt; 분출속도)</strong>는 불꽃이 노즐 끝에서 떨어져 위에 들뜨는 <strong>선화(Lifting, 리프팅)</strong>가 발생하며, 분출속도가 한계 이상으로 더 빨라지면 불꽃이 아예 꺼져버리는 <strong>블로오프(Blow off)</strong>에 이릅니다. ③ 또한 분출하는 기체연료와 공기의 <strong>화학양론비에서 공기량이 적을 때(산소 공급 부족)</strong>는 연료 중의 탄소 성분이 다 타지 못하고 미세한 그을음(탄소 입자)을 형성하여 고온에서 노란빛으로 백열하는 <strong>황염(Yellow Flame)</strong>이 발생합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            끝으로 화재 현장에서 인화성 액체(유류)가 바닥에 살포되어 연소할 때 나타나는 4대 탄화 흔적(화재패턴)의 구분도 정확히 알아두어야 합니다(기출: 2025년 Q6). ① 액체가 바닥의 낮은 곳으로 흘러 고이면서 살포된 본체 경계선을 따라 물웅덩이 모양으로 뚜렷한 탄화 경계를 남기는 것은 <strong>포어 패턴(Pour pattern, 유류 살포 패턴)</strong>이고, ② 인화성 액체가 쏟아지면서 주변으로 튀거나 연소열에 의해 액면에서 끓어올라 주변으로 튄 액적이 <strong>포어 패턴의 미연소 주변 바닥에서 국부적으로 점(점점이 흩뿌려진 형태)처럼 연소된 흔적</strong>은 <strong>스플래시 패턴(Splash pattern, 비산 패턴)</strong>입니다. ③ 또한 바닥에 고인 액체의 중심부는 액체 자체의 냉각(증발잠열) 작용으로 바닥 온도가 낮아 덜 타서 남고, 열기를 집중적으로 받은 가장자리 경계만 둥근 고리 모양으로 깊게 탄화되는 것은 <strong>도넛 패턴(Doughnut pattern)</strong>이며, ④ 바닥재의 이음매나 갈라진 틈새로 인화성 액체가 스며들어 그 틈을 따라 깊게 탄화된 흔적은 <strong>틈새연소 패턴(Seam burn pattern)</strong>이라 합니다.
+          </p>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 주요 가연성 가스의 연소범위·위험도·최소산소농도(MOC) 및 상별(고체·액체·기체) 연소 형태</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 연소범위 · 위험도(H) · 르샤틀리에 식 및 최소산소농도(MOC)</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">위험도(H) 공식 및 가스별 연소범위</div>
+                <div>· <strong>H = (UFL &minus; LFL) &divide; LFL</strong><br/>· 아세틸렌(<strong>2.5%에서 81%, H=31.4</strong>) · 수소(<strong>4%에서 75%, H=17.8</strong>) · 일산화탄소(<strong>12.5%에서 74%, H=4.9</strong>) · 프로판(<strong>2.1%에서 9.5%, H=3.5</strong>) · 메탄(<strong>5%에서 15%, H=2.0</strong>)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">르샤틀리에(Le Chatelier) 혼합가스 식</div>
+                <div>· <strong>(100 &divide; L<sub>m</sub>) = (V<sub>1</sub> &divide; L<sub>1</sub>) + (V<sub>2</sub> &divide; L<sub>2</sub>) + (V<sub>3</sub> &divide; L<sub>3</sub>)</strong><br/>· 혼합가스 부피비 합 V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub> = 100%</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">최소산소농도(MOC) 계산 공식</div>
+                <div>· <strong>MOC = LFL &times; 산소 몰수(n)</strong> (연소하한계로 결정!)<br/>· 메탄: 5% &times; 2 = <strong>10%</strong> / 프로판: 2.1% &times; 5 = <strong>10.5%</strong> / 메탄올(LFL 7%): 7% &times; 1.5 = <strong>10.5%</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">펜테인(C<sub>5</sub>H<sub>12</sub>, 산소 8몰) MOC 계산</div>
+                <div>· 표준(산소 21%): LFL &asymp; 1.4% ➔ MOC &asymp; <strong>11.2%</strong><br/>· 산소 20% 가정·단계별 소수점 첫째 자리 반올림: C<sub>st</sub>(2%) ➔ LFL(1%) &times; 8 = <strong>8 vol%</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 공식: <strong>위험도 H = (UFL &minus; LFL) &divide; LFL</strong> (메탄 2.0 &lt; 에탄 3.13 &lt; 프로판 3.52 &lt; 부탄 3.67) / <strong>MOC = LFL &times; 화학양론산소몰수(n)</strong> / 고체 연소: <strong>숯·목탄·코크스·금속분(표면) · 목재·종이·플라스틱(분해) · 유황·나프탈렌·파라핀(증발) · 피크르산·TNT(제5류 자기)</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 고체 4대 연소 형태 · 기체 노즐 연소(역화·선화·황염) 및 액체 화재패턴</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">고체 가연물의 4대 연소 형태 대표 물질 (시험 1순위 매칭!)</div>
+                <ul class="schema-list">
+                  <li><strong>표면연소(작열·무염)</strong>: <strong>숯, 목탄, 코크스, 활성탄, 금속분(마그네슘 등)</strong> — 화염 없이 표면에서 산소와 직접 반응</li>
+                  <li><strong>분해연소</strong>: <strong>목재, 종이, 석탄, 섬유, 플라스틱(열경화성 수지)</strong> (액체 중 <strong>중유·아스팔트·글리세린</strong>도 분해연소!)</li>
+                  <li><strong>증발연소</strong>: <strong>황(유황), 파라핀(양초), 나프탈렌, 황린</strong> / <strong>자기연소(제5류 위험물)</strong>: <strong>피크르산, 니트로셀룰로오스, TNT, 셀룰로이드</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">기체 노즐 이상 연소(역화·선화·황염) 및 인화성 액체 화재패턴</div>
+                <ul class="schema-list">
+                  <li><strong>역화(연소속도 &gt; 분출속도)</strong> · <strong>선화(연소속도 &lt; 분출속도)</strong> · <strong>황염(공기량 부족)</strong> / 난류 확산화염 높이는 분출속도와 무관(노즐 직경에 비례)</li>
+                  <li><strong>포어 패턴</strong>(흘러 고인 본체 탄화 경계) vs <strong>스플래시 패턴</strong>(주변 미연소 바닥에 튀어 점처럼 국부 연소된 흔적) vs <strong>도넛 패턴</strong>(중심부 미연소 고리)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (13문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 13문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><보기>에서 표면연소에 해당하는 것을 옳게 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 숯<br/>ㄴ. 목탄<br/>ㄷ. 코크스<br/>ㄹ. 플라스틱</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2020년 소방공채·경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가연성 가스 중 위험도가 가장 큰 물질은? (단, 연소범위는 메탄 5 %에서 15 %, 에탄 3 %에서 12.4 %, 프로판 2.1 %에서 9.5 %, 부탄 1.8 %에서 8.4 %이다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">메탄</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">에탄</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">프로판</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">부탄</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2021년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">최소산소농도(MOC : Minimum Oxygen Concentration)에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">연소상한계에 의해 최소산소농도가 결정된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">연소할 때 화염이 전파되는 데 필요한 임계산소농도를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">완전연소반응식의 산소 몰수에 의해 최소산소농도가 결정된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">프로판(C3H8) 1몰(mol)이 완전 연소하는 데 필요한 최소 산소농도는 10.5 %이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2021년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">연소속도에 영향을 미치는 요인을 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 가연성 물질의 종류<br/>ㄴ. 촉매의 존재 유무와 농도<br/>ㄷ. 공기 중 산소량<br/>ㄹ. 가연성 물질과 산화제의 당량비</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2022년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">메틸알코올(CH3OH)의 최소산소농도(MOC : Minimum Oxygen Concentration, %)로 옳은 것은? (CH3OH의 연소 상한계는 37 %, 연소범위의 상·하한 폭은 30 %이다.)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">5.0</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">8.5</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">10.5</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">14.0</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2022년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">기체상 연료노즐에서의 연소에 대한 일반적인 설명으로 옳은 것을 있는 대로 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 역화는 연료의 연소속도가 분출속도보다 빠를 때 불꽃이 연료노즐 속으로 빨려 들어가 연료노즐 속에서 연소하는 현상이다.<br/>ㄴ. 선화는 불꽃이 연료노즐 위에 들뜨는 현상으로 연료노즐에서 연료기체의 연소속도가 분출속도보다 느릴 때 발생하는 현상이다.<br/>ㄷ. 황염은 분출하는 기체연료와 공기의 화학양론비에서 공기량이 적을 때 발생한다.<br/>ㄹ. 연료노즐에서 흐름이 난류(turbulent)인 경우, 확산연소에서 화염의 높이는 분출 속도에 비례한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2024년 소방공채·경채 Q5</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">연소에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">작열연소: 화염이 없는 표면연소이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분해연소: 유황이나 나프탈렌이 열분해되면서 일어나는 연소이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">증발연소: 액체에서만 발생하는 연소형태로서 액면에서 비등하는 기체에서 발생한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자기연소: 제3류 위험물과 같이 물질 자체 내의 산소를 소모하는 연소로서 연소속도가 빠르다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2024년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음의 가연성 가스(A, B, C) 중 위험도가 낮은 것에서 높은 순서로 옳게 나열한 것은? A : 연소하한계= 2 vol%, 연소상한계= 22 vol% B : 연소하한계= 4 vol%, 연소상한계= 75 vol% C : 연소하한계= 1 vol%, 연소상한계= 44 vol%</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">A, B, C</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">A, C, B</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">B, A, C</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">C, B, A</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2024년 소방공채·경채 Q24</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가연성 가스 3종이 다음과 같이 혼합되어 있을 때 르샤틀리에(Le Chatelier)식에 따라 부피비로 계산된 혼합가스의 연소하한계[vol%]는?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>·혼합가스 내 각 성분의 체적(V) : VA = 20 vol%, VB = 40 vol%, VC = 40 vol%<br/>·각 성분의 연소하한계(L) : LA = 4 vol%, LB = 20 vol%, LC = 10 vol%</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">약 4.3</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">약 9.1</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">약 11.0</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">약 12.8</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2025년 소방공채·경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">인화성 액체에 의한 화재는 액체 가연물이 바닥에서 흐르거나, 살포된 부위가 집중적으로 소훼되고 탄화경계가 뚜렷이 나타나는 특징이 있다. <보기>에서 설명하는 화재패턴으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>인화성 액체가 쏟아지면서 주변으로 튀거나, 연소되면서 발생하는 열에 의해 가열되어 액면에서 끓고, 주변으로 튄 액체가 포어패턴(Pour pattern)의 미연소 부분에서 국부적으로 점처럼 연소된 흔적</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">도넛패턴(Doughnut pattern)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">스플래시패턴(Splash pattern)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">원형패턴(Circular shaped pattern)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">틈새연소패턴(Seam burn pattern)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방공채·경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험도(H) 값이 옳은 것만을 <보기>에서 모두 고른 것은? (단, 계산 결과는 소수점 둘째 자리에서 반올림한다.)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 수소(H2) : 17.8<br/>ㄴ. 프로페인(C3H8) : 3.5<br/>ㄷ. 일산화탄소(CO) : 4.9<br/>ㄹ. 아세틸렌(C2H2) : 31.4</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2025년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">고체 가연물인 피크르산(Picric Acid)의 연소 형태로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">훈소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">자기연소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">표면연소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">증발연소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">펜테인(C5H12)의 최소산소농도 계산값으로 옳은 것은? (단, 25 ℃, 1기압 조건이고, 대기 중 산소농도는 20 vol%로 가정하며, 각 단계의 계산결과는 모두 소수점 첫째 자리에서 반올림함)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">6 vol%</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">8 vol%</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">88 vol%</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">104 vol%</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 25제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>고체의 연소 형태 중 숯, 목탄, 코크스, 금속분은 가연성 가스 발생 없이 고체 표면에서 산소와 직접 반응하는 '표면연소(작열연소)'를 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>플라스틱, 목재, 종이는 열분해 과정 없이 고체 표면에서 직접 산소와 결합하는 표면연소를 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가연성 가스의 위험도(H)는 연소범위의 폭(상한계 빼기 하한계)을 연소하한계로 나눈 값이며, 메탄·에탄·프로판·부탄 중에서는 연소하한계가 가장 낮은 부탄의 위험도가 약 3.67로 가장 크다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>최소산소농도(MOC)는 연소상한계에 의해 결정되며, 가연성 혼합기가 연소할 때 화염이 전파되는 데 필요한 최소한의 임계 산소농도를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>프로판(C3H8)의 연소하한계가 2.1퍼센트일 때 완전연소에 필요한 최소산소농도(MOC)는 10.5퍼센트이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연소속도에 영향을 미치는 요인으로는 가연성 물질의 종류, 촉매의 존재 유무와 농도, 공기 중 산소량, 가연성 물질과 산화제의 당량비, 온도 등이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>메틸알코올(CH3OH)의 연소상한계가 37퍼센트이고 연소범위 폭이 30퍼센트일 때, 연소하한계는 7퍼센트이며 최소산소농도(MOC)는 10.5퍼센트이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>기체 연료노즐에서 연소속도가 분출속도보다 빠를 때 불꽃이 노즐 속으로 빨려 들어가는 현상을 '역화(Flashback)'라 하고, 분출속도가 연소속도보다 빠를 때 불꽃이 노즐 위에 들뜨는 현상을 '선화(Lifting)'라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>기체 연료노즐에서 분출하는 기체연료와 공기의 화학양론비에서 공기량이 적을 때 탄소 입자가 백열하여 '황염'이 발생한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연료노즐에서 흐름이 난류(Turbulent)인 경우 확산연소에서 화염의 높이는 분출속도에 비례한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>작열연소는 화염이 없는 표면연소이며, 고체 가연물 중 유황(황), 나프탈렌, 파라핀(양초)은 분해연소가 아니라 '증발연소'를 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물질 자체 내의 산소를 소모하며 빠르게 연소하는 자기연소(내부연소)는 제3류 위험물의 대표적인 연소 형태이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>연소범위가 A(2퍼센트에서 22퍼센트), B(4퍼센트에서 75퍼센트), C(1퍼센트에서 44퍼센트)인 가스의 위험도(H)는 각각 A는 10, B는 17.75, C는 43이므로 위험도가 낮은 순서는 A, B, C이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>혼합가스 각 성분의 체적비가 VA 20퍼센트(LA 4퍼센트), VB 40퍼센트(LB 20퍼센트), VC 40퍼센트(LC 10퍼센트)일 때 르샤틀리에(Le Chatelier) 식에 따른 혼합가스의 연소하한계는 약 9.1퍼센트이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>인화성 액체 화재에서 액체가 쏟아지면서 주변으로 튀거나 끓어올라 포어패턴(Pour pattern) 주변의 미연소 부분에 국부적으로 점처럼 연소된 흔적을 '스플래시패턴(Splash pattern)'이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주요 가연성 가스의 위험도(H)는 아세틸렌(31.4) &gt; 수소(17.8) &gt; 일산화탄소(4.9) &gt; 프로페인(3.5) 순으로 크다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제5류 위험물인 피크르산(트리니트로페놀), 트리니트로톨루엔(TNT), 니트로글리세린, 셀룰로이드의 연소 형태는 '자기연소(내부연소)'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>펜테인(C5H12)의 완전연소 반응식(C5H12 + 8O2 ➔ 5CO2 + 6H2O)에서 펜테인 1몰당 필요한 산소는 8몰이며, 대기 산소농도 20 vol% 가정 및 각 단계 소수점 첫째 자리 반올림 조건 적용 시 최소산소농도(MOC) 계산값은 8 vol%이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일반적으로 가연성 가스의 온도와 압력이 상승하면 연소범위가 넓어져 폭발 위험성이 커지나, 일산화탄소(CO)는 예외적으로 압력이 상승할 때 연소범위가 좁아진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[최소산소농도] 연소할 때 화염이 전파되는 데 필요한 임계산소농도를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>완전연소반응식의 산소 몰수에 의해 최소산소농도가 결정된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[최소산소농도] 프로판(C3H8) 1몰(mol)이 완전 연소하는 데 필요한 최소 산소농도는 10.5 %이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>분해연소: 유황이나 나프탈렌이 열분해되면서 일어나는 연소이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>증발연소: 액체에서만 발생하는 연소형태로서 액면에서 비등하는 기체에서 발생한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자기연소: 제3류 위험물과 같이 물질 자체 내의 산소를 소모하는 연소로서 연소속도가 빠르다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 특수인화물인 디에틸에테르(연소범위 1.9%에서 48%까지)와 이황화탄소(연소범위 1.2%에서 44%까지)를 비교하면, 연소범위의 폭(U - L)이 더 넓은 디에틸에테르가 이황화탄소보다 위험도(H)가 더 크다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>휘발유(가솔린)는 연소범위가 약 1.4%에서 48%까지로 매우 넓기 때문에 화재 위험성이 높다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가연성 혼합기에 불활성 가스를 첨가할 때 폭발범위를 축소시키는 소염 효과는 질소(N₂)가 이산화탄소(CO₂)보다 더 우수하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>메테인(CH₄) 혼합기에 불활성 가스로 이산화탄소(CO₂)를 주입할 때보다 질소(N₂)를 주입할 때의 최소산소농도(MOC)가 더 높으므로, 질식·소염 효과는 질소(N₂)가 이산화탄소(CO₂)보다 더 우수하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일반 탄화수소 가연성 가스는 초기 압력이 상승하면 연소하한계는 거의 변하지 않고 연소상한계가 크게 상승하여 연소범위가 넓어지며, 일산화탄소(CO) 역시 압력이 상승할수록 연소범위가 넓어진다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:① · 04:④ · 05:③ · 06:③ · 07:① · 08:① · 09:② · 10:② · 11:④ · 12:② · 13:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:X · 11:O · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 05 · 제2편 연소 및 폭발 이론 · 제2장 (13문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 고체 가연물의 연소 형태 중 가연성 가스를 발생시키지 않고 고체 표면에서 산소와 직접 반응하여 화염(불꽃) 없이 빛과 열을 내는 '표면연소(작열연소·무염연소)' 물질[숯, 목탄, 코크스, 금속분]을 묻는 S등급 필수 문항입니다. 플라스틱(열경화성 및 일반 합성수지)이나 목재, 종이, 석탄은 열분해 가스가 타는 '분해연소'를 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 숯( ㄱ ), 목탄( ㄴ ), 코크스( ㄷ )는 모두 휘발성 성분이 제거된 탄소 덩어리로서 열분해나 증발 과정 없이 고체 표면에서 산소와 직접 반응하는 대표적인 '표면연소(작열연소)' 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄹ(플라스틱)은 가열 시 열분해되어 가연성 가스를 방출하며 불꽃을 내고 타는 분해연소(일부 열가소성은 증발연소 병행) 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 숯(ㄱ), 목탄(ㄴ), 코크스(ㄷ), 금속분은 가연성 기체를 내뿜지 않고 표면에서 직접 산소와 반응하는 표면연소 물질이지만, ㄹ(플라스틱 등 열경화성·열가소성 수지)은 열분해 가스를 방출하여 타는 '분해연소' 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄱ( 숯 )이 누락되었고 ㄹ(플라스틱)이 잘못 포함되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 가연성 가스의 위험도 공식[H = (U • L) / L, 여기서 U는 연소상한계, L은 연소하한계]을 적용하여 각 가스의 위험도를 비교하는 빈출 계산 문항입니다. 파라핀계 탄화수소(메탄·에탄·프로판·부탄)는 탄소수가 많아질수록 연소하한계가 낮아져 위험도가 커집니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">메탄</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 메탄(CH₄)의 위험도 H = (15 − 5) / 5 = 2.0으로 네 물질 중 가장 작습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">에탄</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 에탄(C₂H₆)의 위험도 H = (12.4 − 3) / 3 ≈ 3.13입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">프로판</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 프로판(C₃H₈)의 위험도 H = (9.5 − 2.1) / 2.1 ≈ 3.52입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">부탄</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 부탄(C₄H₁₀)의 위험도 H = (8.4 − 1.8) / 1.8 ≈ 3.67로 연소하한계(1.8퍼센트)가 가장 낮아 위험도가 가장 큽니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 최소산소농도는 연소상한계(UFL)가 아니라 '연소하한계(LFL)'와 화학양론 산소 몰수에 의해 결정됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">연소상한계에 의해 최소산소농도가 결정된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 최소산소농도(MOC)는 연소상한계가 아니라 '연소하한계(LFL)'에 완전연소반응식의 산소 몰수를 곱하여 결정됩니다(MOC = LFL × O₂ 몰수).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">연소할 때 화염이 전파되는 데 필요한 임계산소농도를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 최소산소농도(MOC, 한계산소농도 LOC)는 가연성 혼합기가 연소할 때 화염이 전파되는 데 필요한 최소한의 임계 산소농도를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">완전연소반응식의 산소 몰수에 의해 최소산소농도가 결정된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 이론적 MOC 계산 시 완전연소반응식에서 연료 1몰당 필요한 산소의 화학양론 몰수가 비례상수로 사용됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">프로판(C3H8) 1몰(mol)이 완전 연소하는 데 필요한 최소 산소농도는 10.5 %이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 프로판(C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O)의 연소하한계는 약 2.1퍼센트이므로, MOC = 2.1% × 5 = 10.5%가 됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q15</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄴ 외에 ㄷ(산소량)과 ㄹ(당량비)도 연소속도를 좌우하는 핵심 인자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄹ(가연성 물질과 산화제의 당량비: 화학양론비에서 연소속도가 최대)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄱ(가연성 물질의 종류: 수소·아세틸렌 등은 연소속도가 매우 빠름)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 가연성 물질의 종류( ㄱ ), 촉매의 존재 유무와 농도( ㄴ ), 공기 중 산소량( ㄷ ), 가연성 물질과 산화제의 당량비( ㄹ ) 모두 연소속도에 직접적인 영향을 미치는 요인입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q5</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 연소상한계(37퍼센트)와 연소범위 폭(30퍼센트) 조건으로부터 먼저 연소하한계(LFL = 37 • 30 = 7%)를 구한 뒤, 메틸알코올 완전연소 반응식[CH₃OH + 1.5O₂ ➔ CO₂ + 2H₂O]의 산소 몰수(1.5몰)를 곱해 최소산소농도(MOC)를 산출하는 계산 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">5.0</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 메틸알코올(CH₃OH) 1몰 완전연소 시 산소 몰수(n=1.5)와 연소하한계(LFL = 37 − 30 = 7%)를 최소산소농도 공식(MOC = LFL × n = 7 × 1.5 = 10.5%)에 대입해야 하는데, 산소 몰수를 잘못 적용한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">8.5</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 최소산소농도는 MOC = LFL(7%) × 산소 몰수(1.5) = 10.5 vol%이므로 8.5는 공식 대입과 어긋나는 오답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">10.5</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 연소상한계가 37퍼센트이고 상·하한 폭이 30퍼센트이므로 연소하한계(LFL)는 37 − 30 = 7%입니다. 완전연소 반응식 CH₃OH + 1.5O₂ ➔ CO₂ + 2H₂O에서 메탄올 1몰당 산소 1.5몰이 필요하므로, MOC = 7% × 1.5 = 10.5%입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">14.0</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 산소 몰수를 2몰로 잘못 적용(7 × 2 = 14)한 함정 선지입니다(메탄올은 분자 내 산소 원자가 1개 있으므로 외부 산소는 1.5몰만 필요함).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 가스 버너 등 기체 연료노즐에서 발생하는 이상 연소 현상[역화(연소속도 > 분출속도), 선화·블로오프(연소속도 < 분출속도), 황염(공기 부족으로 탄소 입자 백열)]과 확산화염의 길이 특성(층류는 유속에 비례, 난류는 유속과 무관하고 노즐 직경에만 비례)을 묻는 심화 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄴ뿐만 아니라 ㄷ(황염 발생 원인)도 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄹ이 틀렸습니다. 흐름이 난류(Turbulent)인 확산연소에서 화염의 높이는 분출속도와 무관하고 노즐 직경에 비례합니다(분출속도에 비례하는 것은 층류 확산화염).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 역화(ㄱ: 연소속도 > 분출속도), 선화(ㄴ: 연소속도 < 분출속도), 황염(ㄷ: 공기량 부족 시 그을음·탄소 입자 생성으로 노란 불꽃 발생) 설명이 모두 옳고, ㄹ(난류 화염 높이)만 틀렸으므로 ㄱ, ㄴ, ㄷ이 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄹ은 층류(Laminar) 확산화염에 대한 설명이므로 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q5</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 연소 형태별 정의와 대표 물질[표면연소(작열연소): 숯·목탄·코크스·금속분 / 증발연소: 인화성 액체 및 황(유황)·나프탈렌·파라핀·양초 / 분해연소: 목재·종이·석탄·플라스틱 / 자기연소(내부연소): 제5류 위험물(니트로글리세린·셀룰로이드·피크르산)]을 정확히 매칭하는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">작열연소: 화염이 없는 표면연소이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 작열연소(Glowing Combustion)는 숯, 코크스 등이 가연성 기체를 발생시키지 않고 고체 표면에서 산소와 직접 반응하는 화염이 없는 '표면연소'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분해연소: 유황이나 나프탈렌이 열분해되면서 일어나는 연소이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 유황(황)이나 나프탈렌, 파라핀은 열분해되는 것이 아니라 고체가 액화·승화하여 증발된 증기가 타는 '증발연소' 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">증발연소: 액체에서만 발생하는 연소형태로서 액면에서 비등하는 기체에서 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 증발연소는 액체 가연물뿐만 아니라 황, 나프탈렌, 양초(파라핀)와 같은 '고체 가연물'에서도 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자기연소: 제3류 위험물과 같이 물질 자체 내의 산소를 소모하는 연소로서 연소속도가 빠르다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 물질 자체 내의 산소를 소모하여 연소하는 자기연소(내부연소) 물질은 제3류 위험물(자연발화성 및 금수성)이 아니라 '제5류 위험물(자기반응성 물질: 니트로화합물, 질산에스테르류 등)'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 위험도 공식[H = (U • L) / L]에 따라 A, B, C 세 가스의 위험도를 직접 계산하여 '낮은 것에서 높은 순서'로 나열하는 문항입니다.
+• HA = (22 • 2) / 2 = 10
+• HB = (75 • 4) / 4 = 71 / 4 = 17.75
+• HC = (44 • 1) / 1 = 43
+따라서 위험도가 낮은 것부터 나열하면 A(10) < B(17.75) < C(43)입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">A, B, C</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 위험도 계산 결과 A = (22 − 2)/2 = 10, B = (75 − 4)/4 = 17.75, C = (44 − 1)/1 = 43이므로, 위험도가 낮은 것에서 높은 순서는 'A, B, C'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">A, C, B</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] B(17.75)보다 C(43)의 위험도가 더 높습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">B, A, C</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] A(10)가 B(17.75)보다 위험도가 낮습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">C, B, A</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] C, B, A는 위험도가 높은 것에서 낮은 순서(역순)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q24</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 혼합가스의 연소하한계(Lm)를 구하는 르샤틀리에 공식[100 / Lm = VA/LA + VB/LB + VC/LC]에 대입하는 필수 계산 문항입니다.
+100 / Lm = (20 / 4) + (40 / 20) + (40 / 10) = 5 + 2 + 4 = 11
+따라서 Lm = 100 / 11 ≈ 9.09 ≈ 9.1 vol%입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">약 4.3</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 르샤틀리에 공식 100 / Lm = (20/4) + (40/20) + (40/10) = 5 + 2 + 4 = 11에서 Lm = 100 / 11 ≈ 9.1 vol%가 되며, 4.3은 분모·분자를 잘못 대입한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">약 9.1</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 르샤틀리에 식 Lm = 100 / (20/4 + 40/20 + 40/10) = 100 / (5 + 2 + 4) = 100 / 11 ≈ 9.09 vol%이므로 소수점 둘째 자리에서 반올림한 '약 9.1 vol%'가 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">약 11.0</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 분모 합계값인 11을 그대로 답으로 고른 함정 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">약 12.8</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 각 성분의 연소하한계를 단순 가중평균하지 않고 르샤틀리에 식(Lm = 100 / 11 ≈ 9.1 vol%)으로 계산해야 하므로 12.8은 오답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 액체가 쏟아진 본체 흔적인 포어 패턴(Pour pattern) 주변으로 액체가 튀거나 끓어올라 미연소 부분에 국부적으로 점처럼 연소된 흔적은 '스플래시 패턴(Splash pattern)'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">도넛패턴(Doughnut pattern)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 도넛패턴(Doughnut pattern)은 고인 액체 중심부는 액체의 냉각작용으로 덜 타서 남고 가장자리만 둥근 고리 모양으로 깊게 탄화되는 패턴입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">스플래시패턴(Splash pattern)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 스플래시패턴(Splash pattern)은 인화성 액체가 쏟아지면서 주변으로 튀거나 연소열로 끓어올라 본체(포어 패턴) 주변의 미연소 바닥에 점 모양으로 흩어져 국부 연소된 흔적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">원형패턴(Circular shaped pattern)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 원형패턴(Circular shaped pattern)은 바닥에 고인 액체나 복사열 등에 의해 둥근 형태로 탄화된 일반적인 패턴입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">틈새연소패턴(Seam burn pattern)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 틈새연소패턴(Seam burn pattern)은 바닥재의 이음매나 갈라진 틈새로 인화성 액체가 스며들어 그 틈을 따라 깊게 탄화된 흔적입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q8</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> • ㄱ. 수소(H₂, 4에서 75퍼센트): (75 • 4) / 4 = 71 / 4 = 17.75 ≈ 17.8
+• ㄴ. 프로페인(C₃H₈, 2.1에서 9.5퍼센트): (9.5 • 2.1) / 2.1 = 7.4 / 2.1 ≈ 3.52 ≈ 3.5
+• ㄷ. 일산화탄소(CO, 12.5에서 74퍼센트): (74 • 12.5) / 12.5 = 61.5 / 12.5 = 4.92 ≈ 4.9
+• ㄹ. 아세틸렌(C₂H₂, 2.5에서 81퍼센트): (81 • 2.5) / 2.5 = 78.5 / 2.5 = 31.4</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ, ㄹ뿐만 아니라 ㄴ, ㄷ도 모두 정확한 위험도 값입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 위험도 H = (U − L) / L 계산 시 ㄴ(프로페인 3.5)과 ㄷ(일산화탄소 4.9)뿐만 아니라 ㄱ(수소: (75 − 4)/4 = 17.8)과 ㄹ(아세틸렌: (81 − 2.5)/2.5 = 31.4)도 모두 옳은 값이므로 ㄱ, ㄹ이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄱ, ㄷ, ㄹ 외에 ㄴ(프로페인 연소범위 2.1에서 9.5퍼센트 기준 위험도 H = (9.5 − 2.1) / 2.1 ≈ 3.5)도 옳은 값이므로 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 수소(17.8), 프로페인(3.5), 일산화탄소(4.9), 아세틸렌(31.4) 네 가지 모두 표준 연소범위에 따른 위험도(H) 계산값이 정확합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 트리니트로페놀[C₆H₂(OH)(NO₂)₃]로도 불리는 피크르산(피크린산)은 제5류 위험물(자기반응성 물질 중 니트로화합물)로서 분자 내에 니트로기(−NO₂) 형태의 산소를 함유하고 있어 외부 산소 공급 없이도 스스로 연소하는 '자기연소(내부연소)'를 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">훈소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 훈소는 산소가 부족한 상태에서 연기만 내며 느리게 타는 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">자기연소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 피크르산(트리니트로페놀)은 제5류 위험물(자기반응성 물질)인 니트로화합물로서 분자 내에 산소를 포함하고 있어 '자기연소(내부연소)'를 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">표면연소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 표면연소는 숯, 목탄, 코크스, 금속분에서 일어나는 연소 형태입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">증발연소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 증발연소는 황, 나프탈렌, 파라핀 및 인화성 액체에서 일어나는 연소 형태입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 문제에서 연소하한계(LFL)를 직접 주지 않고, 대기 중 산소농도(20 vol% 가정)와 각 단계 소수점 첫째 자리 반올림(정수화) 조건을 주어 화학양론농도(Cst) ➔ 존스 식 연소하한계(LFL) ➔ 최소산소농도(MOC)를 순차 계산하게 한 <strong>[핵심 해설]</strong> • 1단계(완전연소 반응식): C₅H₁₂ + 8O₂ ➔ 5CO₂ + 6H₂O (펜테인 1몰당 산소 몰수 n = 8몰).
+• 2단계(화학양론농도 Cst): 대기 중 산소농도를 20 vol%(0.20)로 가정하였으므로 필요 공기 몰수는 8 ÷ 0.20 = 40몰입니다. 따라서 Cst = [1 ÷ (1 + 40)] × 100 = 100 ÷ 41 ≈ 2.439 vol% ➔ 소수점 첫째 자리에서 반올림하면 Cst = 2 vol%.
+• 3단계(존스 식 연소하한계 LFL): LFL = 0.55 × Cst = 0.55 × 2 = 1.1 vol% ➔ 소수점 첫째 자리에서 반올림하면 LFL = 1 vol%.
+• 4단계(최소산소농도 MOC): MOC = LFL × 산소 몰수(8) = 1 vol% × 8 = 8 vol%.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">6 vol%</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 펜테인(C₅H₁₂ + 8O₂)의 화학양론농도(100 ÷ 41 ≈ 2.4% ➔ 반올림 시 2 vol%)와 존스 식 연소하한계(0.55 × 2 = 1.1% ➔ 반올림 시 1 vol%)에 산소 몰수 8을 곱하면 MOC = 1 vol% × 8 = 8 vol%가 되므로 6 vol%는 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">8 vol%</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 펜테인 완전연소 반응식(C₅H₁₂ + 8O₂ ➔ 5CO₂ + 6H₂O)에서 산소 몰수는 8몰이며, 문제 조건(대기 중 산소 20 vol% 및 각 단계 소수점 첫째 자리 반올림)에 따라 도출된 연소하한계(1 vol%)에 산소 몰수 8을 곱하면 최소산소농도는 '8 vol%'가 됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">88 vol%</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 최소산소농도는 MOC = LFL(1.0 vol%) × 8 = 8 vol%이며, 88 vol%는 소수점 위치를 잘못 환산한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">104 vol%</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 최소산소농도는 대기 중 산소농도(21 vol%)보다 항상 낮아야 하며 정확한 계산값은 8 vol%이므로 104 vol%는 오답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 25제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:X · 11:O · 12:X · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>숯, 목탄, 코크스, 금속분은 휘발분이 없어 불꽃(화염)이 생기지 않는 무염 표면연소(연소의 3요소만 작용)를 합니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>플라스틱, 목재, 종이, 석탄은 열을 받으면 열분해되어 가연성 가스를 발생시키고 불꽃을 내며 타는 '분해연소' 물질입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>위험도 H = (UFL 빼기 LFL) ÷ LFL 공식에 따라 메탄(2.0) &lt; 에탄(3.13) &lt; 프로판(3.52) &lt; 부탄(3.67) 순으로 탄소수가 클수록 위험도가 증가합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q3 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>최소산소농도(MOC)는 연소상한계가 아니라 '연소하한계(LFL)'와 완전연소반응식의 산소 몰수의 곱(MOC = LFL × 산소 몰수)에 의해 결정됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>C3H8 + 5O2 ➔ 3CO2 + 4H2O 반응식에서 산소 몰수는 5이므로, MOC = 2.1퍼센트 × 5 = 10.5퍼센트입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>연소속도는 가연물의 종류, 산소 농도, 당량비(화학양론비 부근에서 최대), 온도, 정촉매·부촉매 유무에 따라 결정됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>CH3OH + 1.5O2 ➔ CO2 + 2H2O 반응식에서 산소 몰수는 1.5이므로 MOC = 하한계(7퍼센트) × 1.5 = 10.5퍼센트입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>역화는 연소속도 &gt; 분출속도일 때, 선화(들뜸) 및 블로오프(꺼짐)는 분출속도 &gt; 연소속도일 때 발생합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>공기량이 화학양론비보다 부족하면 불완전연소에 의해 생성된 미세 탄소 입자(그을음)가 고온 화염 속에서 백열하여 노란 불꽃인 황염이 발생합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 10 · X 틀림</span>층류 확산화염의 높이는 분출속도에 비례하지만, 난류 확산화염의 높이는 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>숯·코크스는 표면연소(작열연소), 유황·나프탈렌·파라핀은 증발연소, 목재·종이·석탄은 분해연소를 합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>분자 내 산소를 소모하여 자체 연소하는 자기연소(내부연소) 물질은 제3류 위험물이 아니라 '제5류 위험물(자기반응성 물질: 피크르산, TNT, 니트로셀룰로오스, 셀룰로이드 등)'입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q5 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>위험도 H = (상한계 빼기 하한계) ÷ 하한계 공식에 대입하면 A(10) &lt; B(17.75) &lt; C(43) 순으로 위험도가 커집니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>100 ÷ Lm = (20 ÷ 4) + (40 ÷ 20) + (40 ÷ 10) = 5 + 2 + 4 = 11이므로, Lm = 100 ÷ 11 = 약 9.1퍼센트가 됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q24 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>포어패턴(쏟아진 유류 본체 흔적), 도넛패턴(중심부 미연소 고리 흔적), 스플래시패턴(주변에 튄 점 모양 연소 흔적), 틈새연소패턴(바닥 틈새 침투 연소 흔적)은 인화성 액체 화재의 4대 감식 패턴입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>아세틸렌(2.5퍼센트에서 81퍼센트, H=31.4), 수소(4퍼센트에서 75퍼센트, H=17.8), 일산화탄소(12.5퍼센트에서 74퍼센트, H=4.9), 프로페인(2.1퍼센트에서 9.5퍼센트, H=3.5)은 필수 암기 수치입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q8 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>제5류 자기반응성 물질은 분자 구조 내에 산소를 함유하고 있어 외부 산소 없이도 급격히 타는 자기연소를 합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>화학양론농도 Cst = 100 ÷ 41 ≈ 2.4%(반올림 시 2 vol%), 존스 식 LFL = 0.55 × 2 = 1.1%(반올림 시 1 vol%), MOC = 1 vol% × 8 = 8 vol%가 산출됩니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>대부분의 가연성 기체는 온도와 압력이 높을수록 분자 운동이 활발해져 연소범위가 넓어지지만, 일산화탄소(CO)는 압력이 증가하면 오히려 연소범위가 좁아지는 예외 물질입니다.
+            <span class="ox-exp-src">연소범위 영향인자 핵심</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>최소산소농도(MOC, 한계산소농도 LOC)는 가연성 혼합기가 연소할 때 화염이 전파되는 데 필요한 최소한의 임계 산소농도를 말합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>이론적 MOC 계산 시 완전연소반응식에서 연료 1몰당 필요한 산소의 화학양론 몰수가 비례상수로 사용됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>프로판(C₃H₈ + 5O₂ ➔ 3CO₂ + 4H₂O)의 연소하한계는 약 2.1퍼센트이므로, MOC = 2.1% × 5 = 10.5%가 됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>유황(황)이나 나프탈렌, 파라핀은 열분해되는 것이 아니라 고체가 액화·승화하여 증발된 증기가 타는 '증발연소' 물질입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>증발연소는 액체 가연물뿐만 아니라 황, 나프탈렌, 양초(파라핀)와 같은 '고체 가연물'에서도 발생합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>물질 자체 내의 산소를 소모하여 연소하는 자기연소(내부연소) 물질은 제3류 위험물(자연발화성 및 금수성)이 아니라 '제5류 위험물(자기반응성 물질: 니트로화합물, 질산에스테르류 등)'입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

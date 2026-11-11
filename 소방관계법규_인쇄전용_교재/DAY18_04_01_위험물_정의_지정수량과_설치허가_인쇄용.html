@@ -1,0 +1,3758 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 18 · 인쇄용] 제4편 위험물안전관리법 · 제1장 위험물의 유별 성질, 지정수량 및 설치허가 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY17_03_07_분리도급_완공검사와_하자보수_벌칙_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 18</span>
+        <a href="DAY19_04_02_제조소등의_안전거리와_위험물안전관리자_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(19제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 18 · 제4편 위험물안전관리법 · 제1장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(19문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">위험물의 유별 성질, 지정수량 및 설치허가</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 위험물·지정수량·제조소등의 법정 정의와 설치허가·변경신고·사고조사 체계</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>위험물·지정수량 정의(법 제2조)</strong>: <strong>인화성 또는 발화성</strong> 성질 + <strong>대통령령</strong>으로 정하는 물품 / 지정수량은 설치허가 등의 <strong>최저의 기준</strong>(최대 ×)</li>
+                <li><strong>품명·수량·배수 변경신고(법 제6조 제2항)</strong>: 위치·구조 변경 없을 때 <strong>변경하고자 하는 날의 1일 전까지</strong> 시·도지사에게 신고 (농·축·수산용 난방·건조시설을 위한 <strong>지정수량 20배 이하의 저장소</strong>는 신고 면제 — 취급소 ×, 공동주택 중앙난방 ×)</li>
+                <li><strong>위험물 사고조사권자(법 제22조의2)</strong>: 누출·화재·폭발 사고 원인·피해 조사권자는 <strong>소방청장·소방본부장·소방서장</strong> (<strong>시·도지사 제외!</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            지금까지 배운 제1편부터 제3편까지의 법령이 일반 건물과 가연물에서 일어나는 화재를 다뤘다면, 제4편 <strong>｢위험물안전관리법｣</strong>은 휘발유나 나트륨, 질산처럼 작은 정전기 불꽃이나 충격, 심지어 공기나 물 한 방울만 닿아도 맹렬하게 폭발하거나 스스로 타오르는 화학물질을 특별히 규율합니다. 이 법 제2조 제1항 제1호에서 <strong>“위험물”</strong>이라 함은 <strong>인화성 또는 발화성</strong> 등의 성질을 가지는 것으로서 <strong>대통령령</strong>이 정하는 물품을 말합니다(2020년 공채 기출: 빈칸 가=인화성, 나=발화성, 다=대통령령 — 가연성·휘발성·행정안전부령 아님!). 그런데 실험실 비커에 담긴 알코올 몇 밀리리터까지 모두 관청의 허가를 받게 할 수는 없으므로, 위험물의 종류별로 위험성을 고려하여 <strong>대통령령</strong>이 정하는 수량으로서 제조소등의 설치허가 등에 있어서 <strong>최저의 기준</strong>이 되는 수량을 <strong>“지정수량(指定數量)”</strong>이라 정의합니다(제2조 제1항 제2호, 2020년 공채 기출: 최대의 기준 아님!). 즉 지정수량 이상부터 이 법의 설치허가 대상이 되고, <strong>지정수량 미만</strong>인 위험물의 저장 또는 취급에 관한 기술상의 기준은 <strong>시·도의 조례</strong>로 정하며(제4조), 위험물의 품명과 지정수량의 구체적인 기준은 모두 행정안전부령이 아니라 <strong>대통령령(시행령 별표 1)</strong>에 규정되어 있습니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            지정수량 이상의 위험물을 저장하거나 취급하려면 일반 창고에서 할 수 없고, 반드시 법정 기술기준을 갖춘 <strong>제조소등(제조소·저장소 및 취급소)</strong>에서만 하여야 합니다(다만 시·도의 조례가 정하는 바에 따라 관할 <strong>소방서장</strong>의 승인을 받아 <strong>90일 이내의 기간</strong> 동안 임시로 저장 또는 취급하는 경우는 예외입니다). 법 제2조에 따른 <strong>제조소등</strong>은 ① 위험물을 제조할 목적으로 지정수량 이상의 위험물을 취급하기 위하여 허가를 받은 <strong>제조소</strong>(1종), ② 지정수량 이상의 위험물을 저장하기 위한 대통령령이 정하는 장소로서 허가를 받은 옥내저장소·옥외탱크저장소·옥내탱크저장소·지하탱크저장소·간이탱크저장소·이동탱크저장소·옥외저장소·암반탱크저장소의 <strong>저장소</strong>(8종), ③ 지정수량 이상의 위험물을 제조 외의 목적으로 취급하기 위한 대통령령이 정하는 장소로서 허가를 받은 주유취급소·판매취급소(제1종 20배 이하, 제2종 40배 이하)·이송취급소·일반취급소의 <strong>취급소</strong>(4종)를 합친 총 13종의 시설을 말합니다. 이러한 제조소등을 설치하려는 자는 그 설치장소를 관할하는 <strong>시·도지사의 허가</strong>를 받아야 하며(제6조 제1항, 무허가 제조소등 설치 시 5년 이하 징역 또는 1억 원 이하 벌금), 영구적인 위험물 시설은 도시계획과 지역 안전에 장기적 영향을 미치므로 오직 <strong>시·도지사</strong>가 설치허가권과 완공검사권을 행사하고, 공사장 등에서 90일 이내 단기간 임시저장·취급을 승인하는 권한만 현장 관할 <strong>소방서장</strong>이 행사합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            설치허가를 받은 제조소등의 위치·구조 또는 설비를 변경하려는 때에는 다시 시·도지사의 변경허가를 받아야 하지만, 위치·구조 또는 설비의 변경 없이 당해 제조소등에서 저장하거나 취급하는 <strong>위험물의 품명·수량 또는 지정수량의 배수를 변경하고자 하는 자는 변경하고자 하는 날의 1일 전까지</strong> 행정안전부령이 정하는 바에 따라 <strong>시·도지사에게 신고</strong>하여야 합니다(제6조 제2항 본문, 2025년 경채 기출: 변경한 날부터 14일·30일 이내나 변경 14일 전까지 아님!). 다만, <strong>① 주택의 난방시설(공동주택의 중앙난방시설은 제외한다)을 위한 저장소 또는 취급소</strong>와 <strong>② 농예용·축산용 또는 수산용으로 필요한 난방시설 또는 건조시설을 위한 지정수량 20배 이하의 저장소</strong>는 설치허가 대상에서 제외될 뿐만 아니라, 신고를 하지 아니하고 위험물의 품명·수량 또는 지정수량의 배수를 변경할 수 있습니다(제6조 제1항·제2항 단서, 2019년 공채 기출: 농·축·수산용은 지정수량 30배 이하가 아니라 <strong>20배 이하</strong>이고, 취급소가 아니라 오직 <strong>'저장소'</strong>에 한하여 면제되며, 공동주택의 중앙난방시설은 면제되지 않음!). 아울러 위험물의 누출·화재·폭발 등의 사고가 발생한 경우 사고의 원인 및 피해 등을 조사할 수 있는 권한자는 현장 대응 기관인 <strong>소방청장, 소방본부장 또는 소방서장</strong>이며, 설치허가권자인 <strong>시·도지사는 위험물 사고조사권자에 포함되지 않는다</strong>는 점도 정확히 구분해 두어야 합니다(법 제22조의2, 2018년 공채 기출).
+          </p>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 제1류부터 제6류까지 위험물의 성질·품명·지정수량 및 제4류 인화점 기준</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>제1류 · 제6류 구분</strong>: 제1류 <strong>아염소산·염소산·과염소산염류·무기과산화물(50kg)</strong>, 브롬산·질산·요오드산염류(<strong>300kg</strong>), 과망간산·중크롬산염류(<strong>1,000kg</strong>), 아이오딘 산화물·염소화아이소사이아누르산 / 제6류 과염소산·과산화수소·질산(전부 <strong>300kg</strong>)</li>
+                <li><strong>제2류 · 제3류 · 제5류</strong>: 제2류 황화린·적린·유황(<strong>100kg</strong>, 유황 순도 <strong>60wt% 이상</strong>), 철분·금속분·마그네슘(<strong>500kg</strong>, 철분 <strong>53㎛ 체 50wt% 이상</strong> 통과), 인화성고체(<strong>1,000kg</strong>, 인화점 <strong>40℃ 미만</strong>) / 제3류 칼륨·나트륨·<strong>알킬알루미늄·알킬리튬(10kg)</strong>, <strong>황린(20kg)</strong>, 염소화규소화합물(300kg) / 제5류 유기과산화물·질산에스테르류(<strong>10kg</strong>), 아조화합물·질산구아니딘(200kg)</li>
+                <li><strong>제4류 인화점 및 고인화점위험물</strong>: 특수인화물(발화점 100℃ 이하 또는 인화점 영하 20℃ 이하 &amp; 비점 40℃ 이하, 50L), 제1석유류(<strong>21℃ 미만</strong>, 200L/400L), 제2석유류(<strong>21℃ 이상 70℃ 미만</strong>), 제3석유류(<strong>70℃ 이상 200℃ 미만</strong>), 제4석유류(<strong>200℃ 이상 250℃ 미만</strong>), 동식물유류(<strong>250℃ 미만</strong>) / <strong>고인화점위험물 = 인화점 100℃ 이상인 제4류 위험물</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            ｢위험물안전관리법 시행령｣ 별표 1은 모든 위험물을 물리·화학적 성질에 따라 <strong>제1류부터 제6류까지 6가지</strong>로 분류하고 있습니다. 어떤 물질은 산소를 내뿜어 불을 키우고, 어떤 물질은 물이 닿으면 가연성 가스를 발생시키며 폭발하기 때문에, 유별 성질을 알아야 올바른 저장 방법과 소화약제를 선택할 수 있기 때문입니다. 먼저 자기 자신은 타지 않는 불연성 물질이지만 분자 속에 산소를 풍부하게 품고 있어 다른 가연물의 연소를 맹렬하게 돕는 강산화제가 바로 <strong>제1류(산화성 고체)</strong>와 <strong>제6류(산화성 액체)</strong>입니다. 여기서 <strong>제1류 산화성 고체</strong>는 산화력과 위험도에 따라 지정수량이 3단계로 나뉘는데, 가장 위험한 제1종 산화성 고체인 <strong>아염소산염류·염소산염류·과염소산염류·무기과산화물은 50킬로그램</strong>, 중간인 제2종 산화성 고체인 <strong>브롬산염류·질산염류·요오드산염류는 300킬로그램</strong>, 비교적 안정한 제3종 산화성 고체인 <strong>과망간산염류·중크롬산염류는 1,000킬로그램</strong>이며, 그 밖에 대통령령으로 추가 지정된 품명으로 <strong>과요오드산·과요오드산염류·크롬, 납 또는 요오드의 산화물(아이오딘의 산화물)·아질산염류·차아염소산염류·염소화이소시아누르산(염소화아이소사이아누르산)·퍼옥소이황산염류·퍼옥소붕산염류</strong>가 제1류에 속합니다(2019년·2021년·2023년·2025년 기출: 특히 <strong>아염소산염류는 50킬로그램</strong>이고, 중크롬산염류는 1,000킬로그램으로 가장 크며, 아이오딘의 산화물과 염소화아이소사이아누르산은 제1류 품명!). 반면 액체 상태인 <strong>제6류 산화성 액체(과염소산, 과산화수소, 질산)</strong>는 품명을 불문하고 지정수량이 전부 <strong>300킬로그램</strong>으로 통일되어 있습니다(2023년 경채 기출: 질산·과염소산·과산화수소는 제6류 액체 300킬로그램이고, <strong>'과염소산염류'</strong>는 제1류 고체 50킬로그램!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            둘째, 비교적 낮은 온도에서 착화하기 쉽거나 연소 속도가 빠른 고체인 <strong>제2류 가연성 고체</strong>는 <strong>황화린·적린·유황이 100킬로그램</strong>, <strong>철분·금속분·마그네슘이 500킬로그램</strong>, 고형알코올 등 <strong>인화성 고체가 1,000킬로그램</strong>입니다. 이때 시행령 별표 1 비고는 제2류 품명의 성질과 입자 기준을 엄격히 정의하고 있는데(2022년 공채 기출), ① <strong>유황</strong>은 불순물이 활석 등 불연성 물질과 수분뿐인 것으로서 순도가 <strong>60중량퍼센트 이상</strong>인 것을 말하고, ② <strong>인화성 고체</strong>는 고형알코올 그 밖에 1기압에서 인화점이 <strong>섭씨 40도 미만</strong>인 고체를 말하며, ③ <strong>철분</strong>은 철의 분말로서 <strong>53마이크로미터의 표준체를 통과하는 것이 50중량퍼센트 미만인 것은 제외</strong>하므로 통과하는 미세 분말이 <strong>50중량퍼센트 이상</strong>인 것을 말합니다(50중량퍼센트 미만이라 하면 오답!). 셋째, 공기 중에 노출되면 스스로 발화하거나 물과 접촉하면 가연성 가스를 내뿜는 <strong>제3류 자연발화성 물질 및 금수성 물질</strong>은 극도로 위험하여 지정수량이 매우 작습니다. <strong>칼륨·나트륨·알킬알루미늄·알킬리튬이 10킬로그램</strong>, <strong>황린이 20킬로그램</strong>(2023년 경채 기출: 황린을 30킬로그램으로 속이거나 알킬알루미늄·알킬리튬과 혼동하지 않도록 주의!), 알칼리금속(칼륨·나트륨 제외)·알칼리토금속·유기금속화합물(알킬알루미늄·알킬리튬 제외)이 50킬로그램, 금속의 수소화물·금속의 인화물·칼슘 또는 알루미늄의 탄화물(카바이드) 및 대통령령 지정 품명인 <strong>염소화규소화합물</strong>이 300킬로그램입니다(2025년 기출). 다섯째, 한 분자 안에 가연성분과 산소를 동시에 지녀 외부 산소 공급 없이도 폭발적으로 분해·연소하는 <strong>제5류 자기반응성 물질</strong>은 <strong>유기과산화물·질산에스테르류(니트로글리세린·셀룰로이드 등)가 10킬로그램</strong>, 히드록실아민·히드록실아민염류가 100킬로그램, <strong>니트로화합물·니트로소화합물·아조화합물·디아조화합물·히드라진 유도체</strong> 및 대통령령 지정 품명인 <strong>금속아지화합물·질산구아니딘</strong>이 200킬로그램입니다(2021년·2025년 기출: 아조화합물과 질산구아니딘은 제3류가 아니라 제5류 자기반응성 물질!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            넷째, 전체 위험물 시설의 대다수를 차지하는 <strong>제4류 인화성 액체</strong>는 상온에서 액체이므로 지정수량 단위로 무게(킬로그램) 대신 <strong>부피(리터, L)</strong>를 사용하며, 1기압에서 액체 표면에 불꽃을 가까이 대었을 때 증기에 불이 붙는 최저 온도인 <strong>인화점</strong>에 따라 7가지 품명으로 세분화됩니다(2018년 공채 기출). ① <strong>특수인화물</strong>(이황화탄소, 디에틸에테르 등)은 1기압에서 <strong>발화점이 섭씨 100도 이하</strong>인 것 또는 <strong>인화점이 섭씨 영하 20도 이하이고 비점(끓는점)이 섭씨 40도 이하</strong>인 것으로서 지정수량은 <strong>50리터</strong>입니다. ② <strong>제1석유류</strong>(아세톤, 휘발유, 벤젠, 톨루엔 등)는 1기압에서 인화점이 <strong>섭씨 21도 미만</strong>인 것으로서(섭씨 70도 미만이라 하면 오답!) 비수용성은 <strong>200리터</strong>, 수용성(아세톤 등)은 <strong>400리터</strong>입니다. ③ <strong>알코올류</strong>는 한 분자를 구성하는 탄소 원자의 수가 <strong>1개부터 3개까지</strong>인 포화1가 알코올(변성알코올 포함, 함량 60중량퍼센트 이상)로서 지정수량은 <strong>400리터</strong>입니다. ④ <strong>제2석유류</strong>(등유, 경유 등)는 인화점이 <strong>섭씨 21도 이상 70도 미만</strong>인 것으로서 비수용성 <strong>1,000리터</strong>, 수용성 <strong>2,000리터</strong>이고, ⑤ <strong>제3석유류</strong>(중유, 클레오소트유 등)는 인화점이 <strong>섭씨 70도 이상 200도 미만</strong>인 것으로서 비수용성 <strong>2,000리터</strong>, 수용성 <strong>4,000리터</strong>이며, ⑥ <strong>제4석유류</strong>(기어유, 실린더유 등)는 인화점이 <strong>섭씨 200도 이상 250도 미만</strong>인 것으로서 <strong>6,000리터</strong>, ⑦ <strong>동식물유류</strong>는 동물의 지육 등 또는 식물의 종자나 과육으로부터 추출한 것으로서 1기압에서 인화점이 <strong>섭씨 250도 미만</strong>인 것이며 지정수량은 <strong>10,000리터</strong>입니다. 아울러 제조소 등에서 상온 취급 시 일부 완화된 시설기준을 적용받을 수 있는 <strong>“고인화점위험물”</strong>이란 <strong>인화점이 섭씨 100도 이상인 제4류 위험물</strong>을 말합니다(시행규칙 별표 4, 2019년 공채 기출: 인화점 250도 이상이나 70도 이상 200도 미만 아님!).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">유별 및 성질</th>
+                <th style="width:52%;">품명 · 인화점 기준 및 법정 지정수량 (시행령 별표 1)</th>
+                <th>핵심 기출 비교 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>제1류<br/>(산화성 고체)</strong></td>
+                <td><strong>아염소산염류·염소산염류·과염소산염류·무기과산화물(50kg)</strong> / 브롬산·질산·요오드산염류(<strong>300kg</strong>) / 과망간산·중크롬산염류(<strong>1,000kg</strong>)<br/>※ 추가 품명: 과요오드산(염류), 아이오딘·크롬·납 산화물, 아질산염류, 차아염소산염류, <strong>염소화아이소사이아누르산</strong>, 퍼옥소이황산·붕산염류</td>
+                <td><strong>아염소산염류는 50kg</strong>(제1종 산화성 고체) / 중크롬산염류는 1,000kg</td>
+              </tr>
+              <tr>
+                <td><strong>제2류<br/>(가연성 고체)</strong></td>
+                <td>황화린·적린·유황(<strong>100kg</strong>) / 철분·금속분·마그네슘(<strong>500kg</strong>) / 인화성 고체(<strong>1,000kg</strong>)</td>
+                <td>유황 순도 <strong>60wt% 이상</strong> / 인화성고체 인화점 <strong>40℃ 미만</strong> / 철분 <strong>53㎛ 체 50wt% 이상</strong> 통과(미만 제외)</td>
+              </tr>
+              <tr>
+                <td><strong>제3류<br/>(자연발화·금수성)</strong></td>
+                <td><strong>칼륨·나트륨·알킬알루미늄·알킬리튬(10kg)</strong> / <strong>황린(20kg)</strong> / 알칼리금속·알칼리토금속·유기금속화합물(<strong>50kg</strong>) / 금속의 수소화물·인화물, 칼슘·알루미늄 탄화물, <strong>염소화규소화합물(300kg)</strong></td>
+                <td>칼륨·나트륨·알킬알루미늄·알킬리튬(<strong>10kg</strong>) vs <strong>황린(20kg)</strong> / 염소화규소화합물은 제3류</td>
+              </tr>
+              <tr>
+                <td><strong>제4류<br/>(인화성 액체)</strong></td>
+                <td>특수인화물(발화점 ≤100℃ 또는 인화점 ≤영하 20℃ &amp; 비점 ≤40℃, <strong>50L</strong>) / 제1석유류(<strong>21℃ 미만, 200L/400L</strong>) / 알코올류(탄소수 1개에서 3개까지, <strong>400L</strong>) / 제2석유류(<strong>21℃ 이상 70℃ 미만, 1,000L/2,000L</strong>) / 제3석유류(<strong>70℃ 이상 200℃ 미만, 2,000L/4,000L</strong>) / 제4석유류(<strong>200℃ 이상 250℃ 미만, 6,000L</strong>) / 동식물유류(<strong>250℃ 미만, 10,000L</strong>)</td>
+                <td>제1석유류는 <strong>21℃ 미만</strong>(70℃ 미만 ×) / <strong>고인화점위험물 = 인화점 100℃ 이상인 제4류 위험물</strong></td>
+              </tr>
+              <tr>
+                <td><strong>제5류<br/>(자기반응성 물질)</strong></td>
+                <td><strong>유기과산화물·질산에스테르류(10kg)</strong> / 히드록실아민·히드록실아민염류(<strong>100kg</strong>) / 니트로·니트로소·<strong>아조·디아조화합물</strong>·히드라진 유도체·금속아지화합물·<strong>질산구아니딘(200kg)</strong></td>
+                <td>유기과산화물·질산에스테르류(<strong>10kg</strong>) / 아조화합물·질산구아니딘은 제5류</td>
+              </tr>
+              <tr>
+                <td><strong>제6류<br/>(산화성 액체)</strong></td>
+                <td><strong>과염소산 · 과산화수소 · 질산</strong>: 품명 불문 모두 <strong>300킬로그램</strong></td>
+                <td>과염소산염류(제1류 고체 50kg) vs 과염소산(제6류 액체 300kg)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 위험등급(Ⅰ·Ⅱ·Ⅲ) · 유별 저장·취급 기준 및 제조소·옥외탱크 보유공지·설비 기준</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>위험등급(별표 19)</strong>: 제1류 무기과산화물·제3류 칼륨·제4류 특수인화물·제5류 유기과산화물·제6류 전 품목 = <strong>위험등급 Ⅰ</strong> / <strong>제2류 적린·유황·철분·금속분·마그네슘 및 제4류 제1석유류·알코올류 = 위험등급 Ⅱ</strong></li>
+                <li><strong>유별 저장·취급 기준(별표 18)</strong>: 제1류(알칼리금속 과산화물 물 접촉 금지) · 제2류(산화제 접촉 금지, 철분·금속분·마그네슘 물·산 접촉 금지, 인화성고체 증기 억제) · 제3류(자연발화성 공기 접촉 금지, 금수성 물 접촉 금지) · 제4류(불티·불꽃·고온체 접근 금지, 증기 억제) · 제5·6류(가연물 접촉·분해 촉진 물품 접근·과열 회피)</li>
+                <li><strong>보유공지 및 설비 기준(별표 4·별표 6)</strong>: 제조소 보유공지(<strong>10배 이하 3m, 10배 초과 5m</strong>) 및 환기설비(<strong>자연배기방식</strong>, 지상 2m 이상 루프팬, 바닥 90㎡일 때 급기구 <strong>450㎠ 이상</strong>) / 옥외저장탱크 보유공지(500배 이하 3m, <strong>1,000배 초과 2,000배 이하 9m</strong> ➔ 물분무설비 방호 시 <strong>1/2 단축[최소 3m] = 4.5m</strong>) 및 배수관(<strong>원칙 옆판</strong>, 예외 밑판)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            ｢위험물안전관리법 시행규칙｣ 별표 19는 옥내저장소의 면적 제한이나 운반용기 수납 기준을 정할 때 위험물의 위험도에 따라 <strong>위험등급 Ⅰ, 위험등급 Ⅱ, 위험등급 Ⅲ</strong>의 3단계로 분류합니다(2023년 경채 기출). 가장 위험한 <strong>위험등급 Ⅰ</strong>에는 대체로 지정수량이 50 이하인 고위험 물질들이 속하는데, ① 제1류 중 <strong>아염소산염류·염소산염류·과염소산염류·무기과산화물</strong> 및 제1종 산화성 고체(지정수량 50킬로그램), ② 제3류 중 <strong>칼륨·나트륨·알킬알루미늄·알킬리튬·황린</strong> 및 제1종 자연발화성·금수성 물질(지정수량 10킬로그램에서 50킬로그램까지), ③ 제4류 중 오직 <strong>특수인화물(50리터)</strong>, ④ 제5류 중 <strong>유기과산화물·질산에스테르류</strong> 및 제1종 자기반응성 물질(10킬로그램), 그리고 지정수량이 300킬로그램임에도 부식성과 산화력이 극심한 ⑤ <strong>제6류 산화성 액체 전 품목(과염소산·과산화수소·질산)</strong>이 해당합니다. 다음으로 중간 단계인 <strong>위험등급 Ⅱ</strong>에는 ① 제1류 중 브롬산·질산·요오드산염류 및 제2종 산화성 고체(300킬로그램), ② <strong>제2류 중 황화린·적린·유황(100킬로그램) 및 철분·금속분·마그네슘(500킬로그램)</strong>(제2류에는 위험등급 Ⅰ이 아예 없고 적린 등은 모두 위험등급 Ⅱ에 해당!), ③ 제3류 중 금속의 수소화물·인화물 및 칼슘·알루미늄 탄화물(300킬로그램), ④ 제4류 중 <strong>제1석유류 및 알코올류</strong>, ⑤ 제5류 중 나머지 품목이 속하며, <strong>위험등급 Ⅲ</strong>에는 그 밖의 위험물(제1류 과망간산·중크롬산염류, 제2류 인화성 고체, 제4류 제2·3·4석유류 및 동식물유류)이 속합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            또한 시행규칙 별표 18은 유별 성질에 맞춘 <strong>위험물의 유별 저장·취급 공통기준</strong>을 규정하고 있는데, 기출문제에서는 각 유별의 주의사항을 서로 뒤바꾸어 출제하므로 정확히 매칭해야 합니다(2023년 공채·경채 공통 기출). <strong>① 제1류 위험물(산화성 고체)</strong>은 가연물과의 접촉·혼합이나 분해를 촉진하는 물품과의 접근 또는 과열·충격·마찰 등을 피하는 한편, <strong>알칼리금속의 과산화물</strong> 및 이를 함유한 것에 있어서는 <strong>물과의 접촉</strong>을 피하여야 합니다. <strong>② 제2류 위험물(가연성 고체)</strong>은 <strong>산화제와의 접촉·혼합</strong>이나 불티·불꽃·고온체와의 접근 또는 과열을 피하는 한편, <strong>철분·금속분·마그네슘</strong> 및 이를 함유한 것에 있어서는 <strong>물이나 산과의 접촉</strong>을 피하고 <strong>인화성 고체</strong>에 있어서는 함부로 증기를 발생시키지 아니하여야 합니다(이를 제3류 기준으로 서술하면 오답!). <strong>③ 제3류 위험물</strong> 중 <strong>자연발화성 물질</strong>에 있어서는 불티·불꽃 또는 고온체와의 접근·과열 또는 <strong>공기와의 접촉</strong>을 피하고, <strong>금수성 물질</strong>에 있어서는 <strong>물과의 접촉</strong>을 피하여야 합니다(이를 제2류 기준으로 서술하면 오답!). <strong>④ 제4류 위험물(인화성 액체)</strong>은 불티·불꽃·고온체와의 접근 또는 과열을 피하고, 함부로 증기를 발생시키지 아니하여야 하며, <strong>⑤ 제5류 위험물(자기반응성 물질)</strong>은 불티·불꽃·고온체와의 접근이나 과열·충격·마찰을 피하고, <strong>⑥ 제6류 위험물(산화성 액체)</strong>은 <strong>가연물과의 접촉·혼합이나 분해를 촉진하는 물품과의 접근 또는 과열</strong>을 피하여야 합니다(제6류 기준을 제4류 기준으로 서술하면 오답!). 한편 유별을 달리하는 위험물은 원칙적으로 같은 장소에 저장할 수 없으나, ① 제1류(알칼리금속 과산화물 제외)와 제6류, ② 제2류와 제4류, ③ 제3류 중 황린과 제4류, ④ 제4류와 제5류 등은 상호 간에 <strong>1미터 이상의 간격</strong>을 두는 경우 예외적으로 동시 저장이 허용됩니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 화재 시 연소 확대를 막고 소방차의 활동 공간을 확보하기 위한 <strong>보유공지(保有空地)</strong>와 주요 설비 기준도 계산 및 판별 문항으로 빈출됩니다. 첫째, <strong>위험물 제조소</strong>(시행규칙 별표 4)의 주위에 보유해야 하는 공지의 너비는 취급하는 위험물의 최대수량이 <strong>지정수량의 10배 이하인 경우에는 3미터 이상</strong>이고, <strong>지정수량의 10배를 초과하는 경우에는 5미터 이상</strong>입니다(2023년 공채·경채 기출: 최대수량이 지정수량의 20배인 제조소의 보유공지는 10배 초과이므로 <strong>5미터 이상</strong>!). 또한 제조소의 실내 공기를 신선한 공기로 교체하는 <strong>환기설비</strong>는 기계배기방식이 아니라 <strong>자연배기방식</strong>으로 하여야 하며(배출설비가 강제배기방식), 환기구는 지붕 위 또는 <strong>지상 2미터 이상의 높이</strong>에 회전식 고정벤틸레이터나 <strong>루프팬 방식</strong>으로 설치하고, 급기구는 낮은 곳에 설치하되 인화성 액체 취급 시 가는 눈의 구리망 등으로 인화방지망을 설치하며, 급기구의 면적은 바닥면적 150제곱미터마다 800제곱센티미터 이상(바닥면적 150제곱미터 미만일 때 60제곱미터 미만 150제곱센티미터, 60제곱미터 이상 90제곱미터 미만 300제곱센티미터, <strong>90제곱미터 이상 120제곱미터 미만은 450제곱센티미터 이상</strong>, 120제곱미터 이상 150제곱미터 미만 600제곱센티미터)으로 합니다(2021년 공채 기출: 바닥면적이 90제곱미터일 때 급기구 면적은 450제곱센티미터 이상!). 둘째, <strong>옥외탱크저장소</strong>(시행규칙 별표 6)의 보유공지 기본 너비는 저장하는 위험물의 최대수량이 지정수량의 <strong>500배 이하일 때 3미터 이상, 500배 초과 1,000배 이하일 때 5미터 이상, 1,000배 초과 2,000배 이하일 때 9미터 이상, 2,000배 초과 3,000배 이하일 때 12미터 이상, 3,000배 초과일 때 15미터 이상</strong>(탱크 수평단면 최대지름 또는 높이 이상, 단 30미터 이상이면 30미터)인데, 기준에 적합한 <strong>물분무설비로 방호조치</strong>를 하는 경우에는 그 공지 너비를 <strong>2분의 1 이상(최소 3미터 이상)으로 단축</strong>할 수 있습니다(2025년 공채·경채 기출: 비수용성 제1석유류[지정수량 200리터]를 400,000리터 저장하면 400,000 ÷ 200 = <strong>2,000배</strong>이므로 기본 보유공지 <strong>9미터</strong>에서 물분무설비 방호 시 2분의 1로 단축되어 <strong>4.5미터</strong>!). 아울러 옥외저장탱크는 폭발 등으로 내부 압력이 비정상적으로 상승할 때 내부 가스·증기를 <strong>상부로 방출할 수 있는 구조</strong>로 해야 하고, <strong>이황화탄소</strong>의 옥외저장탱크는 벽 및 바닥의 두께가 <strong>0.2미터 이상</strong>이고 누수가 되지 않는 철근콘크리트 수조에 넣어 보관해야 하며, 제3류 고체 금수성 물질의 옥외저장탱크에는 방수성 불연재료로 만든 피복설비를 설치해야 하고, 특히 옥외저장탱크의 <strong>배수관은 원칙적으로 탱크의 '옆판'에 설치</strong>하되 지진 등에 의해 손상받을 우려가 없는 방법으로 설치하는 경우에만 예외적으로 <strong>탱크의 '밑판'에 설치</strong>할 수 있습니다(2019년 공채 기출: 밑판 설치 원칙·옆판 설치 예외라 하면 오답!).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">구분</th>
+                <th style="width:48%;">법정 세부 기준 및 수치 (시행규칙 별표 4 · 별표 6 · 별표 18 · 별표 19)</th>
+                <th>기출 함정 및 계산 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>위험등급 분류<br/>(별표 19)</strong></td>
+                <td>· <strong>위험등급 Ⅰ</strong>: 제1류(50kg: 아염소산·염소산·과염소산염류·무기과산화물), 제3류(10kg·20kg·50kg: 칼륨·나트륨·알킬알루미늄·알킬리튬·황린 등), 제4류(<strong>특수인화물</strong>), 제5류(10kg: 유기과산화물·질산에스테르류), <strong>제6류 전 품목</strong><br/>· <strong>위험등급 Ⅱ</strong>: 제1류(300kg), <strong>제2류(황화린·적린·유황·철분·금속분·마그네슘)</strong>, 제3류(300kg), <strong>제4류(제1석유류·알코올류)</strong>, 제5류(나머지)<br/>· <strong>위험등급 Ⅲ</strong>: 그 밖의 위험물 (제1류 1,000kg, 제2류 인화성고체, 제4류 제2·3·4석유류·동식물유류)</td>
+                <td><strong>제2류 적린은 위험등급 Ⅱ</strong> (제2류에는 위험등급 Ⅰ 없음!) / 제4류 중 Ⅰ등급은 특수인화물뿐(제1석유류는 Ⅱ등급)</td>
+              </tr>
+              <tr>
+                <td><strong>유별 저장·취급 공통기준<br/>(별표 18)</strong></td>
+                <td>· <strong>제1류</strong>: 가연물 접촉·혼합, 분해 촉진 물품 접근, 과열·충격·마찰 회피 + <strong>알칼리금속 과산화물은 물 접촉 회피</strong><br/>· <strong>제2류</strong>: <strong>산화제 접촉·혼합 회피</strong> + <strong>철분·금속분·마그네슘은 물·산 접촉 회피</strong> + 인화성고체 증기 발생 억제<br/>· <strong>제3류</strong>: 자연발화성은 <strong>공기 접촉 회피</strong> + 금수성은 <strong>물 접촉 회피</strong><br/>· <strong>제4류</strong>: 불티·불꽃·고온체 접근·과열 회피 + 증기 발생 억제 / <strong>제5·6류</strong>: 가연물 접촉·분해 촉진 물품 접근·과열 회피</td>
+                <td>제2류 기준(산화제 회피·철분 물/산 회피)과 제3류 기준(공기·물 회피), 제4류와 제6류 기준 뒤바꾸기 주의</td>
+              </tr>
+              <tr>
+                <td><strong>제조소 보유공지 및<br/>환기설비 (별표 4)</strong></td>
+                <td>· <strong>제조소 보유공지</strong>: 지정수량 <strong>10배 이하 3m 이상</strong> / <strong>10배 초과 5m 이상</strong><br/>· <strong>제조소 환기설비</strong>: <strong>자연배기방식</strong>, 지상 <strong>2m 이상</strong> 루프팬 등, 낮은 곳 급기구 + 구리망 인화방지망, 급기구 면적 바닥 <strong>90㎡일 때 450㎠ 이상</strong>(60㎡ 이상 90㎡ 미만 300㎠, 90㎡ 이상 120㎡ 미만 450㎠, 150㎡마다 800㎠)</td>
+                <td>지정수량 20배 제조소 보유공지 = <strong>5m 이상</strong> / 환기설비를 '기계배기방식'이라 하면 오답!</td>
+              </tr>
+              <tr>
+                <td><strong>옥외탱크저장소 보유공지<br/>및 설비 (별표 6)</strong></td>
+                <td>· <strong>옥외저장탱크 보유공지</strong>: <strong>500배 이하 3m, 500배 초과 1,000배 이하 5m, 1,000배 초과 2,000배 이하 9m, 2,000배 초과 3,000배 이하 12m, 3,000배 초과 15m</strong> ➔ 물분무설비 방호 시 <strong>2분의 1 이상(최소 3m 이상)</strong> 단축<br/>· <strong>옥외저장탱크 설비</strong>: 압력 상승 시 상부 방출 구조, 이황화탄소는 벽·바닥 <strong>0.2m 이상</strong> 철근콘크리트 수조 보관, <strong>배수관은 원칙 '옆판' 설치(손상 우려 없을 때만 예외 '밑판' 설치)</strong></td>
+                <td>비수용성 제1석유류(200L) 40만L = <strong>2,000배</strong> ➔ 9m × 1/2 = <strong>4.5m</strong> / 배수관 밑판 원칙·옆판 예외라 하면 오답!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 제1류부터 제6류까지 위험물 성질·지정수량 및 제4류 인화점 분류 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 위험물 제조소등 3대 분류(1·8·4) 및 설치허가 · 완공검사 권한자</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">제조소등 3대 분류 (제조소 1 · 저장소 8 · 취급소 4)</div>
+                <div>· <strong>제조소(1종)</strong>: 위험물 제조 목적 지정수량 이상 취급<br/>· <strong>저장소(8종)</strong>: 옥내·옥외탱크·옥내탱크·지하탱크·간이탱크·이동탱크·옥외·암반탱크<br/>· <strong>취급소(4종)</strong>: 주유·판매(1종 20배 이하, 2종 40배 이하)·이송·일반취급소</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">설치허가 · 변경허가 · 완공검사 권한자</div>
+                <div>· 원칙: <strong>시·도지사</strong> (소방서장에게 권한 위임 가능)<br/>· 예외: <strong>이동탱크저장소(탱크로리)</strong>는 상치장소 관할 <strong>시·도지사</strong> 허가</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">임시저장 · 취급 승인 (90일 이내)</div>
+                <div>· 승인권자: 관할 <strong>소방서장</strong> (시·도지사 아님!)<br/>· 시·도 조례가 정하는 바에 따라 <strong>90일 이내</strong> 기간 동안 임시 저장·취급</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">지위승계 · 용도폐지 신고 (30일 vs 14일)</div>
+                <div>· 양도·상속·합병 <strong>지위승계 신고</strong>: 승계일로부터 <strong>30일 이내</strong><br/>· 제조소등 <strong>용도폐지 신고</strong>: 폐지한 날부터 <strong>14일 이내</strong> (품명·배수 변경은 <strong>1일 전까지</strong>)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 복수 위험물 지정수량 배수 합산: 각 위험물의 (저장량 ÷ 지정수량)의 합계가 <strong>1 이상</strong>이면 지정수량 이상으로 간주!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 제조소등 설치허가 ➔ 탱크안전성능검사 ➔ 완공검사 ➔ 사용개시 프로세스</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">[1단계] 설치허가 및 탱크안전성능검사 (완공검사 전 중간검사)</div>
+                <ul class="schema-list">
+                  <li>액체위험물 탱크 설치·변경 시 완공검사 전에 <strong>탱크안전성능검사(기초·지반, 충수·수압, 용접부, 암반탱크 검사)</strong> 합격 필수</li>
+                  <li><strong>100만 리터(100만 L) 이상</strong> 액체위험물 옥외탱크는 <strong>기초·지반검사 및 용접부검사</strong> 대상!</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">[2단계] 완공검사 합격증 교부 및 사용정지 명령·과징금(2억 원 이하)</div>
+                <ul class="schema-list">
+                  <li>공사 완료 후 <strong>시·도지사의 완공검사</strong>를 받고 합격증을 교부받은 후에만 사용 개시 가능</li>
+                  <li>사용정지 처분이 주민 불편을 초래할 경우 시·도지사는 <strong>2억 원 이하의 과징금</strong>으로 갈음 가능</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (19문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 19문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 용어에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">특수인화물: 이황화탄소, 디에틸에테르 그 밖에 1기압 에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제1석유류: 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만인 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제3석유류: 중유, 클레오소트유 그 밖에 1기압에서 인화 점이 섭씨 70도 이상 섭씨 200도 미만인 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">동식물유류: 동물의 지육 등 또는 식물의 종자나 과육 으로부터 추출한 것으로서 1기압에서 인화점이 섭씨 250도 미만인 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 누출·화재·폭발 등의 사고가 발생한 경우 사고의 원인 및 피해 등을 조사하여야 하는 자로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">시·도지사</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방청장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방본부장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방서장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방공채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 고인화점위험물을 상온 에서 취급하는 경우 제조소의 시설기준 중 일부 완화된 시설기준을 적용할 수 있는데, 고인화점위험물의 정의로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">인화점이 250 ℃ 이상인 인화성 액체</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">인화점이 100 ℃ 이상인 제4류 위험물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">인화점이 70 ℃ 이상 200 ℃ 미만인 제4류 위험물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">인화점이 70 ℃ 이상이고 가연성 액체량이 40중량퍼센트 이상인 제4류 위험물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2019년 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 옥외저장탱크의 위치·구조 및 설비 기준에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">옥외저장탱크는 위험물의 폭발 등에 의하여 탱크내의 압력이 비정상적으로 상승하는 경우에 내부의 가스 또는 증기를 상부로 방출할 수 있는 구조로 하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">이황화탄소의 옥외저장탱크는 벽 및 바닥의 두께가 0.2 m 이상이고 누수가 되지 아니하는 철근콘크리트의 수조에 넣어 보관하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">옥외저장탱크의 배수관은 탱크의 밑판에 설치하여야 한다. 다만, 탱크와 배수관과의 결합부분이 지진 등에 의하여 손상을 받을 우려가 없는 방법으로 배수관을 설치하는 경우에는 탱크의 옆판에 설치할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제3류 위험물 중 금수성물질(고체에 한한다)의 옥외저장 탱크에는 방수성의 불연재료로 만든 피복설비를 설치하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2019년 소방공채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 위험물의 지정수량이 가장 큰 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">브롬산염류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">아염소산염류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">과염소산염류</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">중크롬산염류</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2019년 소방공채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣상 신고를 하지 아니하고 위험물의 품명·수량 또는 지정수량의 배수를 변경할 수 있는 경우로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">농예용으로 필요한 건조시설을 위한 지정수량 20배 이하의 취급소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">축산용으로 필요한 난방시설을 위한 지정수량 20배 이하의 저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">수산용으로 필요한 건조시설을 위한 지정수량 30배 이하의 저장소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">공동주택의 중앙난방시설을 위한 지정수량 30배 이하의 취급소</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2020년 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣상 위험물에 대한 정의이다. ( ) 안에 들어갈 용어로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>“위험물”이라 함은 ( 가 ) 또는 ( 나 ) 등의 성질을 가지는 것으로서 ( 다 )이 정하는 물품을 말한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 인화성 / ( 나 ): 가연성 / ( 다 ): 대통령령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 인화성 / ( 나 ): 발화성 / ( 다 ): 대통령령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 휘발성 / ( 나 ): 가연성 / ( 다 ): 행정안전부령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 인화성 / ( 나 ): 휘발성 / ( 다 ): 행정안전부령</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2020년 소방공채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣상 용어의 정의에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“취급소”라 함은 지정수량 이상의 위험물을 제조외의 목적으로 취급하기 위한 대통령령이 정하는 장소로서 ｢위험물안전관리법｣에 따른 허가를 받은 장소를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“지정수량”이라 함은 위험물의 종류별로 위험성을 고려 하여 대통령령이 정하는 수량으로서 제조소등의 설치허가 등에 있어서 최대의 기준이 되는 수량을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“제조소등”이라 함은 제조소·저장소 및 취급소를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“저장소”라 함은 지정수량 이상의 위험물을 저장하기 위하여 대통령령이 정하는 장소로서 ｢위험물안전관리법｣에 따른 허가를 받은 장소를 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2021년 소방공채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 제조소의 환기설비의 기준에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">환기는 기계배기방식으로 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">환기구는 지상 2 m 이상의 높이에 루푸팬방식으로 설치 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">바닥면적이 90 m²일 경우 급기구의 면적은 450 cm² 이상으로 할 것</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">급기구는 낮은 곳에 설치하고 가는 눈의 구리망 등으로 인화방지망을 설치할 것</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2021년 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣ 및 같은 법 시행규칙상 위험물의 성질과 품명이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">가연성 고체: 적린, 금속분</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">산화성 액체: 과염소산, 질산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">산화성 고체: 요오드산염류, 과요오드산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자연발화성 및 금수성 물질: 황린, 아조화합물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2022년 소방공채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣ 별표 1에서 규정한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">유황: 순도가 60중량퍼센트 이상인 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">인화성고체: 고형알코올 그 밖에 1기압에서 인화점이 섭씨 40도 미만인 고체를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">철분: 철의 분말로서 53마이크로미터의 표준체를 통과 하는 것이 50중량퍼센트 미만인 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">가연성고체: 고체로서 화염에 의한 발화의 위험성 또는 인화의 위험성을 판단하기 위하여 고시로 정하는 시험 에서 고시로 정하는 성질과 상태를 나타내는 것을 말 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2023년 소방경채 Q32</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 제1류 위험물의 품명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">질산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">과염소산</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">과산화수소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">과염소산염류</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2023년 소방경채 Q33 · 소방공채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 제조소등에서의 위험물의 저장 및 취급에 관한 기준 중 위험물의 유별 저장·취급의 공통기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제1류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진 하는 물품과의 접근 또는 과열·충격·마찰 등을 피하는 한편, 알카리금속의 과산화물 및 이를 함유한 것에 있어 서는 물과의 접촉을 피하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제2류 위험물 중 자연발화성물질에 있어서는 불티·불꽃 또는 고온체와의 접근·과열 또는 공기와의 접촉을 피하고, 금수성물질에 있어서는 물과의 접촉을 피하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제3류 위험물은 산화제와의 접촉·혼합이나 불티·불꽃· 고온체와의 접근 또는 과열을 피하는 한편, 철분·금속분· 마그네슘 및 이를 함유한 것에 있어서는 물이나 산과의 접촉을 피하고 인화성 고체에 있어서는 함부로 증기를 발생시키지 아니하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제4류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진 하는 물품과의 접근 또는 과열을 피하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2023년 소방경채 Q36</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 위험등급Ⅱ의 위험물에 해당하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제3류 위험물 중 칼륨</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제2류 위험물 중 적린</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제4류 위험물 중 특수인화물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제1류 위험물 중 무기과산화물</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2023년 소방경채 Q37 · 소방공채 Q23</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행규칙｣상 제조소의 위치·구조 및 설비의 기준에 근거하여 취급하는 위험물의 최대수량이 지정수량의 20배인 경우, 제조소 주위에 보유하여야 하는 공지의 너비는?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">2 m 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">3 m 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">4 m 이상</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">5 m 이상</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2023년 소방경채 Q39</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법 시행령｣상 위험물 지정수량으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">유기과산화물: 10 kg</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">아염소산염류: 20 kg</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">황린: 30 kg</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">유황: 50 kg</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">17</span>
+              <span class="q-source">2025년 소방경채 Q34</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣상 제조소등의 위치·구조 또는 설비의 변경없이 취급하는 위험물의 품명을 변경하고자 할 때 시·도지사에게 신고하여야 하는 기준으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">변경한 날부터 14일 이내</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">변경한 날부터 30일 이내</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">변경하고자 하는 날의 1일 전까지</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">변경하고자 하는 날의 14일 전까지</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">18</span>
+              <span class="q-source">2025년 소방경채 Q35 · 소방공채 Q21</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령, 시행규칙상 <보기>의 옥외저장탱크의 주위에 보유하여야 하는 최소 공지의 너비로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>•위험물의 종류: 제4류 위험물 중 제1석유류(비수용성)<br/>•저장하는 위험물의 최대수량: 400,000리터<br/>•기준에 적합한 물분무설비에 의한 방호조치 여부: 있음</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">2.5미터</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">3.0미터</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">4.5미터</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">9.0미터</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">19</span>
+              <span class="q-source">2025년 소방경채 Q40 · 소방공채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법｣ 및 같은 법 시행령, 시행규칙상 위험물의 품명이 제3류 위험물에 해당하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">질산구아니딘</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">염소화규소화합물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">아이오딘의 산화물</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">염소화아이소사이아누르산</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법상 위험물이란 인화성 또는 발화성 등의 성질을 가지는 것으로서 대통령령이 정하는 물품을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>“지정수량”이라 함은 위험물의 종류별로 위험성을 고려하여 대통령령이 정하는 수량으로서 제조소등의 설치허가 등에 있어서 최대의 기준이 되는 수량을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량 미만의 위험물의 저장 또는 취급에 관한 기술상의 기준은 시·도의 조례로 정하며, 지정수량 이상의 위험물을 시·도의 조례가 정하는 바에 따라 관할 소방서장의 승인을 받아 90일 이내의 기간 동안 임시로 저장 또는 취급할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제조소등의 위치·구조 또는 설비의 변경 없이 저장하거나 취급하는 위험물의 품명·수량 또는 지정수량의 배수를 변경하고자 하는 자는 변경하고자 하는 날의 1일 전까지 시·도지사에게 신고하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>농예용·축산용 또는 수산용으로 필요한 난방시설 또는 건조시설을 위한 지정수량 20배 이하의 저장소는 설치허가 대상에서 제외되며, 신고를 하지 아니하고 위험물의 품명·수량 또는 지정수량의 배수를 변경할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>농예용으로 필요한 건조시설을 위한 지정수량 20배 이하의 취급소나 공동주택의 중앙난방시설을 위한 저장소·취급소는 신고를 하지 아니하고 위험물의 품명·수량 또는 지정수량의 배수를 변경할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물의 누출·화재·폭발 등의 사고가 발생한 경우 사고의 원인 및 피해 등을 조사할 수 있는 자는 소방청장, 소방본부장 또는 소방서장이며, 시·도지사는 포함되지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 아염소산염류·염소산염류·과염소산염류·무기과산화물의 지정수량은 50킬로그램이고, 브롬산염류·질산염류·요오드산염류의 지정수량은 300킬로그램이며, 과망간산염류·중크롬산염류의 지정수량은 1,000킬로그램이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>과염소산, 과산화수소, 질산은 제6류 위험물(산화성 액체)로서 지정수량이 모두 300킬로그램이고, 과염소산염류는 제1류 위험물(산화성 고체)로서 지정수량이 50킬로그램이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물 중 유황은 순도가 60중량퍼센트 이상인 것을 말하고, 인화성고체는 고형알코올 그 밖에 1기압에서 인화점이 섭씨 40도 미만인 고체를 말하며, 철분은 53마이크로미터의 표준체를 통과하는 것이 50중량퍼센트 미만인 것을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물의 지정수량은 제5류 유기과산화물·질산에스테르류 및 제3류 칼륨·나트륨·알킬알루미늄·알킬리튬이 10킬로그램, 제3류 황린이 20킬로그램, 제1류 무기과산화물·염소산염류·과염소산염류·아염소산염류가 50킬로그램, 제2류 황화린·적린·유황이 100킬로그램이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>황린과 염소화규소화합물은 제3류 위험물(자연발화성 및 금수성 물질)에 속하고, 아조화합물과 질산구아니딘은 제5류 위험물(자기반응성 물질)에 속하며, 아이오딘의 산화물과 염소화아이소사이아누르산은 제1류 위험물(산화성 고체)에 속한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 특수인화물이란 이황화탄소, 디에틸에테르 그 밖에 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것을 말하며, 지정수량은 50리터이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 제1석유류란 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만인 것을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행규칙상 상온에서 취급할 때 제조소의 완화된 시설기준을 적용할 수 있는 고인화점위험물이란 인화점이 섭씨 100도 이상인 제4류 위험물을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험등급 Ⅰ에는 제1류 중 아염소산염류·염소산염류·과염소산염류·무기과산화물, 제3류 중 칼륨·나트륨·알킬알루미늄·알킬리튬·황린, 제4류 중 특수인화물, 제5류 중 유기과산화물·질산에스테르류, 제6류 전 품목이 해당하며, 제2류 중 황화린·적린·유황·철분·금속분·마그네슘과 제4류 중 제1석유류·알코올류는 위험등급 Ⅱ에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진하는 물품과의 접근 또는 과열·충격·마찰 등을 피하는 한편, 알칼리금속의 과산화물 및 이를 함유한 것에 있어서는 물과의 접촉을 피하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물은 산화제와의 접촉·혼합이나 불티·불꽃·고온체와의 접근 또는 과열을 피하는 한편, 철분·금속분·마그네슘 및 이를 함유한 것에 있어서는 물이나 산과의 접촉을 피하고 인화성 고체에 있어서는 함부로 증기를 발생시키지 아니하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진하는 물품과의 접근 또는 과열을 피하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 제조소에서 취급하는 위험물의 최대수량이 지정수량의 10배 이하인 경우 보유공지의 너비는 3미터 이상이고, 지정수량의 10배를 초과하는 경우(예: 지정수량의 20배) 보유공지의 너비는 5미터 이상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 제조소의 환기설비는 기계배기방식으로 설치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물 제조소의 환기구는 지붕 위 또는 지상 2미터 이상의 높이에 회전식 고정벤틸레이터 또는 루프팬 방식으로 설치하고, 바닥면적이 90제곱미터일 경우 급기구의 면적은 450제곱센티미터 이상으로 하며, 급기구는 낮은 곳에 설치하고 가는 눈의 구리망 등으로 인화방지망을 설치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥외저장탱크의 배수관은 탱크의 밑판에 설치하여야 한다. 다만, 탱크와 배수관과의 결합부분이 지진 등에 의하여 손상을 받을 우려가 없는 방법으로 배수관을 설치하는 경우에는 탱크의 옆판에 설치할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥외저장탱크는 내부 압력이 비정상적으로 상승하는 경우 내부 가스 또는 증기를 상부로 방출할 수 있는 구조로 하고, 이황화탄소의 옥외저장탱크는 벽 및 바닥의 두께가 0.2미터 이상이고 누수가 되지 아니하는 철근콘크리트 수조에 넣어 보관하며, 제3류 고체 금수성물질의 옥외저장탱크에는 방수성의 불연재료로 만든 피복설비를 설치하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4류 위험물 중 비수용성 제1석유류(지정수량 200리터)를 최대 400,000리터 저장하는 옥외저장탱크(지정수량 2,000배)에 기준에 적합한 물분무설비로 방호조치를 한 경우, 주위에 보유하여야 하는 최소 공지의 너비는 4.5미터이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>옥외저장탱크는 위험물의 폭발 등에 의하여 탱크 내의 압력이 비정상적으로 상승하는 경우에 내부의 가스 또는 증기를 상부로 방출할 수 있는 구조로 하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물 중 자연발화성물질에 있어서는 불티·불꽃 또는 고온체와의 접근·과열 또는 공기와의 접촉을 피하고, 금수성물질에 있어서는 물과의 접촉을 피하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지정수량 미만의 위험물의 저장 또는 취급에 관한 기술상의 기준은 시·도의 조례로 정하며, 위험물의 구체적인 품명과 지정수량은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사의 설치허가를 받지 아니하고 제조소등을 설치한 자는 5년 이하의 징역 또는 1억 원 이하의 벌금에 처하며, 공사장 등에서 90일 이내의 기간 동안 지정수량 이상의 위험물을 임시로 저장·취급하려는 자는 시·도지사의 승인을 받아야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물 중 칼륨·나트륨을 제외한 알칼리금속과 알칼리토금속의 지정수량은 50킬로그램이며, 제5류 위험물 중 히드록실아민·히드록실아민염류의 지정수량은 200킬로그램이다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:② · 02:① · 03:② · 04:③ · 05:④ · 06:② · 07:② · 08:② · 09:① · 10:④ · 11:③ · 12:④ · 13:① · 14:② · 15:④ · 16:① · 17:③ · 18:③ · 19:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:O · 05:O · 06:X · 07:O · 08:O · 09:O · 10:X · 11:O · 12:O · 13:O · 14:X · 15:O · 16:O · 17:O · 18:X · 19:X · 20:O · 21:X · 22:O · 23:X · 24:O · 25:O · 26:O · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 18 · 제4편 위험물안전관리법 · 제1장 (19문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">17번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">18번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">19번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제1석유류는 아세톤·휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만이 아니라 '섭씨 21도 미만'인 것입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">특수인화물: 이황화탄소, 디에틸에테르 그 밖에 1기압 에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 특수인화물이란 이황화탄소, 디에틸에테르 그 밖에 1기압에서 발화점이 섭씨 100도 이하인 것 또는 인화점이 섭씨 영하 20도 이하이고 비점이 섭씨 40도 이하인 것을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제1석유류: 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만인 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 제1석유류란 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만이 아니라 '섭씨 21도 미만'인 것을 말합니다(제2석유류가 섭씨 21도 이상 70도 미만).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제3석유류: 중유, 클레오소트유 그 밖에 1기압에서 인화 점이 섭씨 70도 이상 섭씨 200도 미만인 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제3석유류란 중유, 클레오소트유 그 밖에 1기압에서 인화점이 섭씨 70도 이상 섭씨 200도 미만인 것을 말합니다(제4석유류는 섭씨 200도 이상 250도 미만).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">동식물유류: 동물의 지육 등 또는 식물의 종자나 과육 으로부터 추출한 것으로서 1기압에서 인화점이 섭씨 250도 미만인 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 동식물유류란 동물의 지육 등 또는 식물의 종자나 과육으로부터 추출한 것으로서 1기압에서 인화점이 섭씨 250도 미만인 것을 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제22조의2에 따라 위험물의 누출·화재·폭발 등의 사고가 발생한 경우 사고의 원인 및 피해 등을 조사할 수 있는 권한자는 '소방청장, 소방본부장 또는 소방서장'이며, 시·도지사는 사고조사 주체에 포함되지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">시·도지사</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '시·도지사'는 제조소등의 설치허가권자이나, 위험물 누출·화재·폭발 사고의 원인 및 피해 조사 주체(소방청장·소방본부장·소방서장)에는 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방청장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] ｢위험물안전관리법｣ 제22조의2에 따라 소방청장은 위험물 사고조사를 실시할 수 있는 법정 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방본부장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ｢위험물안전관리법｣ 제22조의2에 따라 소방본부장은 위험물 사고조사를 실시할 수 있는 법정 권한자입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방서장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢위험물안전관리법｣ 제22조의2에 따라 소방서장은 위험물 사고조사를 실시할 수 있는 법정 권한자입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 4에 따라 제조소·일반취급소·옥내저장소·옥외탱크저장소 등에서 완화된 시설기준을 적용받을 수 있는 '고인화점위험물'이란 '인화점이 섭씨 100도 이상인 제4류 위험물'을 말합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">인화점이 250 ℃ 이상인 인화성 액체</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 인화점이 섭씨 250도 이상인 액체는 아예 제4류 위험물에서 제외되는 경우가 많으며 고인화점위험물의 정의가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">인화점이 100 ℃ 이상인 제4류 위험물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 법령상 '고인화점위험물'이란 인화점이 섭씨 100도 이상인 제4류 위험물을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">인화점이 70 ℃ 이상 200 ℃ 미만인 제4류 위험물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 인화점이 섭씨 70도 이상 200도 미만인 것은 제3석유류의 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">인화점이 70 ℃ 이상이고 가연성 액체량이 40중량퍼센트 이상인 제4류 위험물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 가연성 액체량 40중량퍼센트 기준은 알코올류나 제2·3석유류의 비위험물 판정 기준과 관련된 수치입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 6에 따라 옥외저장탱크의 배수관은 지진 시 밑판 침하로 인한 파손을 방지하기 위해 원칙적으로 탱크의 '옆판'에 설치하여야 하며, 지진 등에 의해 손상받을 우려가 없는 방법으로 설치하는 경우에만 예외적으로 탱크의 '밑판'에 설치할 수 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">옥외저장탱크는 위험물의 폭발 등에 의하여 탱크내의 압력이 비정상적으로 상승하는 경우에 내부의 가스 또는 증기를 상부로 방출할 수 있는 구조로 하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 옥외저장탱크는 내부 압력이 비정상적으로 상승하는 경우 내부 가스 또는 증기를 상부로 방출할 수 있는 구조(지붕판을 옆판보다 얇게 하고 보강재를 접합하지 않는 구조 등)로 하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">이황화탄소의 옥외저장탱크는 벽 및 바닥의 두께가 0.2 m 이상이고 누수가 되지 아니하는 철근콘크리트의 수조에 넣어 보관하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 이황화탄소의 옥외저장탱크는 벽 및 바닥의 두께가 0.2미터 이상이고 누수가 되지 아니하는 철근콘크리트 수조에 넣어 물속에 보관하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">옥외저장탱크의 배수관은 탱크의 밑판에 설치하여야 한다. 다만, 탱크와 배수관과의 결합부분이 지진 등에 의하여 손상을 받을 우려가 없는 방법으로 배수관을 설치하는 경우에는 탱크의 옆판에 설치할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 옥외저장탱크의 배수관은 원칙적으로 탱크의 '옆판'에 설치하여야 하며, 다만 결합부분이 지진 등에 의하여 손상을 받을 우려가 없는 방법으로 설치하는 경우에 한하여 탱크의 '밑판'에 설치할 수 있습니다(원칙과 예외가 서로 뒤바뀜).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제3류 위험물 중 금수성물질(고체에 한한다)의 옥외저장 탱크에는 방수성의 불연재료로 만든 피복설비를 설치하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제3류 위험물 중 금수성물질(고체에 한함)의 옥외저장탱크에는 방수성의 불연재료로 만든 피복설비를 설치하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 1에 따른 제1류 위험물(산화성 고체)의 지정수량은 제1종 산화성 고체 50킬로그램, 제2종 산화성 고체 300킬로그램, 제3종 산화성 고체 1,000킬로그램입니다. 중크롬산염류는 제3종 산화성 고체로서 지정수량이 1,000킬로그램입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">브롬산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 브롬산염류는 제2종 산화성 고체로서 지정수량이 '300킬로그램'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">아염소산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 아염소산염류는 제1종 산화성 고체로서 지정수량이 '50킬로그램'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">과염소산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 과염소산염류는 제1종 산화성 고체로서 지정수량이 '50킬로그램'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">중크롬산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 중크롬산염류(및 질산염류 일부·과망간산염류)는 제3종 산화성 고체로서 지정수량이 '1,000킬로그램'이므로 네 보기의 물질 중 지정수량이 가장 큽니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제6조 제2항에 따라 제조소등의 위치·구조 또는 설비의 변경 없이 위험물의 품명·수량 또는 지정수량의 배수를 변경하려는 자는 변경하려는 날의 1일 전까지 시·도지사에게 신고해야 하나, ① 주택의 난방시설(공동주택의 중앙난방시설은 제외)을 위한 저장소 또는 취급소, ② 농예용·축산용 또는 수산용으로 필요한 난방시설 또는 건조시설을 위한 지정수량 '20배 이하의 저장소'는 변경신고 대상에서 제외됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">농예용으로 필요한 건조시설을 위한 지정수량 20배 이하의 취급소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 농예용·축산용·수산용 난방·건조시설은 지정수량 20배 이하의 '취급소'가 아니라 '저장소'에 한하여 변경신고가 면제됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">축산용으로 필요한 난방시설을 위한 지정수량 20배 이하의 저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 축산용으로 필요한 난방시설을 위한 지정수량 20배 이하의 '저장소'는 신고를 하지 아니하고 위험물의 품명·수량 또는 지정수량의 배수를 변경할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">수산용으로 필요한 건조시설을 위한 지정수량 30배 이하의 저장소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 지정수량 30배 이하가 아니라 '지정수량 20배 이하'의 저장소이어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">공동주택의 중앙난방시설을 위한 지정수량 30배 이하의 취급소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 주택의 난방시설 중 '공동주택의 중앙난방시설'은 면제 대상에서 명시적으로 제외되므로 반드시 변경신고를 하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제2조 제1항 제1호에 따라 '위험물'이라 함은 '인화성 또는 발화성' 등의 성질을 가지는 것으로서 '대통령령'이 정하는 물품을 말합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 인화성 / ( 나 ): 가연성 / ( 다 ): 대통령령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 인화성 또는 가연성이 아니라 '인화성 또는 발화성'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 인화성 / ( 나 ): 발화성 / ( 다 ): 대통령령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢위험물안전관리법｣ 제2조 제1항 제1호에 따른 빈칸은 가=인화성, 나=발화성, 다=대통령령입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 휘발성 / ( 나 ): 가연성 / ( 다 ): 행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ｢위험물안전관리법｣ 제2조 제1항 제1호에 따라 위험물이란 '인화성'(가) 또는 '발화성'(나) 등의 성질을 가지는 것으로서 '대통령령'(다)이 정하는 물품을 말하므로 휘발성·가연성·행정안전부령은 법정 정의와 어긋납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 인화성 / ( 나 ): 휘발성 / ( 다 ): 행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] (가) 인화성은 맞으나, (나)는 휘발성이 아니라 '발화성'이고 (다)는 행정안전부령이 아니라 '대통령령'이므로 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제2조 제1항 제2호에 따라 '지정수량'이라 함은 위험물의 종류별로 위험성을 고려하여 대통령령이 정하는 수량으로서 제조소등의 설치허가 등에 있어서 최대가 아니라 '최저의 기준'이 되는 수량을 말합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“취급소”라 함은 지정수량 이상의 위험물을 제조외의 목적으로 취급하기 위한 대통령령이 정하는 장소로서 ｢위험물안전관리법｣에 따른 허가를 받은 장소를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢위험물안전관리법｣ 제2조 제1항 제5호에 따른 '취급소'의 정확한 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“지정수량”이라 함은 위험물의 종류별로 위험성을 고려 하여 대통령령이 정하는 수량으로서 제조소등의 설치허가 등에 있어서 최대의 기준이 되는 수량을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '지정수량'이란 제조소등의 설치허가 등에 있어서 최대의 기준이 아니라 '최저의 기준'이 되는 수량을 말합니다(지정수량 이상부터 이 법의 허가 대상이 되고, 지정수량 미만은 시·도 위험물안전관리조례 적용).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“제조소등”이라 함은 제조소·저장소 및 취급소를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 조 제1항 제6호에 따라 '제조소등'이라 함은 제조소·저장소 및 취급소를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“저장소”라 함은 지정수량 이상의 위험물을 저장하기 위하여 대통령령이 정하는 장소로서 ｢위험물안전관리법｣에 따른 허가를 받은 장소를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 조 제1항 제4호에 따른 '저장소'의 정확한 정의입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 4에 따라 제조소의 환기설비(실내 공기를 신선한 공기로 교체하는 설비)는 '자연배기방식'으로 하여야 하며, 가연성 증기 등이 체류할 우려가 있는 장소의 배출설비(국소배기·전역배기)가 강제배기방식입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">환기는 기계배기방식으로 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제조소의 환기설비는 기계배기방식이 아니라 '자연배기방식'으로 하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">환기구는 지상 2 m 이상의 높이에 루푸팬방식으로 설치 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 환기구는 지붕 위 또는 지상 2미터 이상의 높이에 회전식 고정벤틸레이터 또는 루프팬 방식으로 설치하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">바닥면적이 90 m²일 경우 급기구의 면적은 450 cm² 이상으로 할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 급기구의 면적은 바닥면적 150제곱미터마다 800제곱센티미터 이상으로 하되, 바닥면적이 150제곱미터 미만인 경우에는 60제곱미터 이상 90제곱미터 미만은 300제곱센티미터 이상, 90제곱미터 이상 120제곱미터 미만(90제곱미터 해당)은 '450제곱센티미터 이상'으로 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">급기구는 낮은 곳에 설치하고 가는 눈의 구리망 등으로 인화방지망을 설치할 것</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 급기구는 낮은 곳에 설치하고 인화성 액체 위험물을 취급하는 제조소에는 가는 눈의 구리망 등으로 인화방지망을 설치하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '아조화합물'은 제3류 자연발화성 및 금수성 물질이 아니라 '제5류 자기반응성 물질'에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">가연성 고체: 적린, 금속분</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제2류 가연성 고체에는 황화린, 적린, 유황, 철분, 금속분, 마그네슘, 인화성고체가 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">산화성 액체: 과염소산, 질산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제6류 산화성 액체에는 과염소산, 과산화수소, 질산이 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">산화성 고체: 요오드산염류, 과요오드산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제1류 산화성 고체에는 염소산염류, 과염소산염류, 무기과산화물, 브롬산염류, 질산염류, 요오드산염류, 과망간산염류, 중크롬산염류 및 과요오드산 등이 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자연발화성 및 금수성 물질: 황린, 아조화합물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 황린은 제3류 자연발화성 및 금수성 물질에 속하지만, '아조화합물'은 제5류 위험물(자기반응성 물질)에 속합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '철분'이라 함은 철의 분말로서 53마이크로미터(300메시)의 표준체를 통과하는 것이 50중량퍼센트 미만인 것은 위험물에서 제외되므로, 통과하는 것이 '50중량퍼센트 이상'인 것을 말합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">유황: 순도가 60중량퍼센트 이상인 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 유황은 순도가 60중량퍼센트 이상인 것을 말합니다(불순물은 활석 등 불연성 물질과 수분에 한함).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">인화성고체: 고형알코올 그 밖에 1기압에서 인화점이 섭씨 40도 미만인 고체를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 인화성고체란 고형알코올 그 밖에 1기압에서 인화점이 섭씨 40도 미만인 고체를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">철분: 철의 분말로서 53마이크로미터의 표준체를 통과 하는 것이 50중량퍼센트 미만인 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] '철분'이란 철의 분말로서 53마이크로미터의 표준체를 통과하는 것이 50중량퍼센트 미만인 것은 제외하므로, 통과하는 것이 '50중량퍼센트 이상'인 것이 제2류 위험물인 철분에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">가연성고체: 고체로서 화염에 의한 발화의 위험성 또는 인화의 위험성을 판단하기 위하여 고시로 정하는 시험 에서 고시로 정하는 성질과 상태를 나타내는 것을 말 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 가연성고체란 고체로서 화염에 의한 발화의 위험성 또는 인화의 위험성을 판단하기 위하여 고시로 정하는 시험에서 고시로 정하는 성질과 상태를 나타내는 것을 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q32</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 질산, 과염소산, 과산화수소 3가지는 '제6류 산화성 액체' 위험물이고, '과염소산염류'는 '제1류 산화성 고체' 위험물입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">질산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 질산(비중 1.49 이상)은 제1류 위험물(산화성 고체)이 아니라 '제6류 위험물(산화성 액체)'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">과염소산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 과염소산은 제1류 위험물이 아니라 '제6류 위험물(산화성 액체)'에 해당합니다(과염소산염류만 제1류).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">과산화수소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 과산화수소(농도 36중량퍼센트 이상)는 제1류 위험물이 아니라 '제6류 위험물(산화성 액체)'에 해당합니다(무기과산화물만 제1류).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">과염소산염류</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] '과염소산염류'는 제1류 위험물(산화성 고체)에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q33 · 소방공채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제2류 가연성 고체와 제3류 자연발화성·금수성 물질의 저장 기준, 제4류 인화성 액체와 제6류 산화성 액체의 저장 기준이 서로 뒤바뀌어 출제되었습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제1류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진 하는 물품과의 접근 또는 과열·충격·마찰 등을 피하는 한편, 알카리금속의 과산화물 및 이를 함유한 것에 있어 서는 물과의 접촉을 피하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제1류 위험물(산화성 고체)은 가연물과의 접촉·혼합이나 분해를 촉진하는 물품과의 접근 또는 과열·충격·마찰 등을 피하는 한편, 알칼리금속의 과산화물 및 이를 함유한 것에 있어서는 물과의 접촉을 피하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제2류 위험물 중 자연발화성물질에 있어서는 불티·불꽃 또는 고온체와의 접근·과열 또는 공기와의 접촉을 피하고, 금수성물질에 있어서는 물과의 접촉을 피하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 자연발화성물질(공기 접촉 금지)과 금수성물질(물 접촉 금지)의 저장 기준은 제2류 위험물이 아니라 '제3류 위험물'의 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제3류 위험물은 산화제와의 접촉·혼합이나 불티·불꽃· 고온체와의 접근 또는 과열을 피하는 한편, 철분·금속분· 마그네슘 및 이를 함유한 것에 있어서는 물이나 산과의 접촉을 피하고 인화성 고체에 있어서는 함부로 증기를 발생시키지 아니하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 산화제와의 접촉·혼합을 피하고 철분·금속분·마그네슘에 물·산 접촉을 피하며 인화성고체에 증기 발생을 억제하는 것은 제3류 위험물이 아니라 '제2류 위험물(가연성 고체)'의 기준입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제4류 위험물은 가연물과의 접촉·혼합이나 분해를 촉진 하는 물품과의 접근 또는 과열을 피하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 가연물과의 접촉·혼합이나 분해 촉진 물품과의 접근·과열을 피하는 것은 제4류 위험물이 아니라 '제5류 위험물 또는 제6류 위험물'의 기준입니다(제4류 인화성 액체는 불티·불꽃·고온체와의 접근·과열을 피하고 증기 발생을 억제해야 함).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q36</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 19에 따른 위험등급(위험등급 Ⅰ: 지정수량 50 이하 등 고위험 물질 / 위험등급 Ⅱ: 지정수량 100에서 300 등 중위험 물질 / 위험등급 Ⅲ: 그 밖의 위험물)을 구분하는 문항입니다. 제2류 위험물 중 황화린·적린·유황은 '위험등급 Ⅱ'에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제3류 위험물 중 칼륨</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제3류 위험물 중 칼륨, 나트륨, 알킬알루미늄, 알킬리튬, 황린 및 제1종 자연발화성·금수성 물질은 '위험등급 Ⅰ'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제2류 위험물 중 적린</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 제2류 위험물 중 황화린, '적린', 유황, 철분, 금속분, 마그네슘 및 제1종 가연성 고체는 '위험등급 Ⅱ'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제4류 위험물 중 특수인화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제4류 위험물 중 '특수인화물'은 '위험등급 Ⅰ'에 해당합니다(제1석유류·알코올류는 위험등급 Ⅱ).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제1류 위험물 중 무기과산화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제1류 위험물 중 아염소산염류, 염소산염류, 과염소산염류, '무기과산화물' 및 제1종 산화성 고체는 '위험등급 Ⅰ'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q37 · 소방공채 Q23</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 4에 따라 제조소(및 일반취급소)에서 취급하는 위험물의 최대수량이 지정수량의 10배 이하인 경우에는 보유공지 너비가 '3미터 이상'이고, 지정수량의 10배를 초과하는 경우(20배 해당)에는 보유공지 너비가 '5미터 이상'이어야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">2 m 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢위험물안전관리법 시행규칙｣ 별표 4에 따라 제조소에서 취급하는 위험물의 최대수량이 지정수량의 10배를 초과하는 경우(문제는 20배) 보유해야 하는 공지의 너비는 2미터 이상이 아니라 '5미터 이상'(10배 이하는 3미터 이상)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">3 m 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 3미터 이상은 지정수량의 '10배 이하'인 제조소의 보유공지 너비입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">4 m 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 지정수량 10배를 초과하는 제조소(문제는 20배)의 주위에 보유해야 하는 공지의 너비는 4미터 이상이 아니라 '5미터 이상'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">5 m 이상</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 취급하는 위험물의 최대수량이 지정수량의 10배를 초과하는 제조소(지정수량 20배)의 주위에 보유하여야 하는 공지의 너비는 '5미터 이상'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방경채 Q39</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">유기과산화물: 10 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제5류 위험물 중 유기과산화물(및 질산에스테르류)의 지정수량은 '10킬로그램'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">아염소산염류: 20 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 제1류 위험물 중 아염소산염류의 지정수량은 20킬로그램이 아니라 '50킬로그램'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">황린: 30 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제3류 위험물 중 황린의 지정수량은 30킬로그램이 아니라 '20킬로그램'입니다(칼륨·나트륨·알킬알루미늄·알킬리튬은 10킬로그램).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">유황: 50 kg</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제2류 위험물 중 유황(및 적린·황화린)의 지정수량은 50킬로그램이 아니라 '100킬로그램'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 17</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q34</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법｣ 제6조 제2항에 따라 제조소등의 위치·구조 또는 설비의 변경 없이 당해 제조소등에서 저장하거나 취급하는 위험물의 품명·수량 또는 지정수량의 배수를 변경하고자 하는 자는 '변경하고자 하는 날의 1일 전까지' 시·도지사에게 신고하여야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">변경한 날부터 14일 이내</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 변경 후 14일 이내는 용도폐지 신고나 위험물안전관리자 선임신고 등의 기한입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">변경한 날부터 30일 이내</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ｢위험물안전관리법｣ 제6조 제2항에 따라 위치·구조·설비의 변경 없이 위험물의 품명·수량 또는 지정수량 배수를 변경할 때에는 '변경하고자 하는 날의 1일 전까지' 신고해야 하며, 변경한 날부터 30일 이내는 지위승계 신고 기한입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">변경하고자 하는 날의 1일 전까지</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 위치·구조·설비 변경 없는 품명·수량·배수 변경신고는 사전신고로서 '변경하고자 하는 날의 1일 전까지'(사용 중지 후 재개 신고는 14일 전까지) 시·도지사에게 신고하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">변경하고자 하는 날의 14일 전까지</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 변경하고자 하는 날의 14일 전까지는 3개월 이상 제조소등의 사용을 중지하거나 재개하려는 경우의 신고 기한입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 18</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q35 · 소방공채 Q21</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 6에 따른 옥외탱크저장소의 보유공지 너비와 물분무설비 방호조치 시의 완화 특례(2분의 1로 단축하되 최소 3미터 이상)를 결합한 계산 문항입니다. 제1석유류(비수용성, 지정수량 200리터)를 400,000리터 저장하므로 지정수량의 배수는 400,000 ÷ 200 = 2,000배입니다. 지정수량 1,000배 초과 2,000배 이하인 옥외저장탱크의 원칙적 보유공지 너비는 '9미터 이상'이며, 기준에 적합한 물분무설비로 방호조치를 한 경우 그 너비를 2분의 1로 단축(9미터 × 1/2 = 4.5미터)할 수 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">2.5미터</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 2.5미터는 최소 하한선(3미터 이상)에도 미달합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">3.0미터</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 3.0미터는 원래 보유공지가 5미터인 경우(500배 초과 1,000배 이하) 절반인 2.5미터 대신 하한선 3미터가 적용될 때의 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">4.5미터</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] ① 지정수량 배수: 제1석유류(비수용성) 지정수량은 200리터이므로 400,000 ÷ 200 = 2,000배입니다. ② 기본 보유공지(500배 이하 3m, 500배 초과 1,000배 이하 5m, 1,000배 초과 2,000배 이하 9m, 2,000배 초과 3,000배 이하 12m, 3,000배 초과 15m): 2,000배이므로 기본 너비는 9.0미터입니다. ③ 물분무설비 방호조치 특례: 기본 너비의 2분의 1 이상(최소 3미터 이상)으로 단축 가능하므로 9.0 × 0.5 = '4.5미터'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">9.0미터</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 9.0미터는 물분무설비 방호조치가 없을 때의 기본 보유공지 너비입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 19</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q40 · 소방공채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 1의 대통령령이 정하는 세부 품명(제1류·제3류·제5류)을 구분하는 문항입니다. '염소화규소화합물'은 제3류 위험물(금수성 물질)로 지정된 품명입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">질산구아니딘</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 질산구아니딘은 '제5류 위험물(자기반응성 물질)'에 속하는 품명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">염소화규소화합물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] '염소화규소화합물'은 물과 반응하여 염화수소 등을 발생시키는 물질로서 '제3류 위험물(자연발화성 및 금수성 물질)'에 속합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">아이오딘의 산화물</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 아이오딘(요오드)의 산화물 및 염소화아이소사이아누르산은 '제1류 위험물(산화성 고체)'에 속하는 품명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">염소화아이소사이아누르산</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 염소화아이소사이아누르산은 '제1류 위험물(산화성 고체)'에 속합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:O · 05:O · 06:X · 07:O · 08:O · 09:O · 10:X · 11:O · 12:O · 13:O · 14:X · 15:O · 16:O · 17:O · 18:X · 19:X · 20:O · 21:X · 22:O · 23:X · 24:O · 25:O · 26:O · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢위험물안전관리법｣ 제2조 제1항 제1호에 따른 위험물의 법정 정의입니다(행정안전부령 아님).
+            <span class="ox-exp-src">2020년 소방공채 Q18</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>'지정수량'이란 제조소등의 설치허가 등에 있어서 최대의 기준이 아니라 '최저의 기준'이 되는 수량을 말합니다(지정수량 이상부터 이 법의 허가 대상이 되고, 지정수량 미만은 시·도 위험물안전관리조례 적용).
+            <span class="ox-exp-src">2020년 소방공채 Q19 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢위험물안전관리법｣ 제4조 및 제5조 제2항 제1호에 따른 지정수량 미만 위험물의 조례 위임 및 90일 이내 임시저장·취급 승인(소방서장) 기준입니다.
+            <span class="ox-exp-src">위험물안전관리법 제4조·제5조 핵심 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>｢위험물안전관리법｣ 제6조 제2항에 따른 품명·수량·배수 변경신고 기한은 '변경하고자 하는 날의 1일 전까지'입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q34</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>｢위험물안전관리법｣ 제6조 제1항·제2항 단서에 따라 농·축·수산용 난방·건조시설을 위한 지정수량 20배 이하의 '저장소'(취급소 제외)와 주택의 난방시설(공동주택 중앙난방 제외)을 위한 저장소·취급소는 설치허가 및 품명·수량·배수 변경신고 대상에서 제외됩니다.
+            <span class="ox-exp-src">2019년 소방공채 Q20</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 06 · X 틀림</span>농·축·수산용 난방·건조시설은 지정수량 20배 이하의 '저장소'에 한하여 면제되므로 '취급소'는 제외되며, 주택의 난방시설 중 '공동주택의 중앙난방시설' 역시 면제 대상에서 명시적으로 제외됩니다.
+            <span class="ox-exp-src">2019년 소방공채 Q20 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢위험물안전관리법｣ 제22조의2에 따라 위험물 사고조사권자는 소방청장·소방본부장·소방서장이며, 설치허가권자인 시·도지사는 사고조사 주체에 포함되지 않습니다.
+            <span class="ox-exp-src">2018년 소방공채 Q14</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 1에 따른 제1류 산화성 고체의 등급별 지정수량(50kg / 300kg / 1,000kg)입니다. 특히 아염소산염류는 50킬로그램입니다.
+            <span class="ox-exp-src">2019년 소방공채 Q19 · 2023년 소방경채 Q39</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 1에 따라 과염소산·과산화수소·질산은 제6류 산화성 액체(300kg)이고, 과염소산염류는 제1류 산화성 고체(50kg)입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q18 · 2023년 소방경채 Q32</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 10 · X 틀림</span>'철분'이란 철의 분말로서 53마이크로미터의 표준체를 통과하는 것이 50중량퍼센트 미만인 것은 위험물에서 제외하므로, 통과하는 것이 '50중량퍼센트 이상'인 것이 제2류 위험물인 철분에 해당합니다.
+            <span class="ox-exp-src">2022년 소방공채 Q18 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 1에 따른 최빈출 고위험 물질의 지정수량(10kg / 20kg / 50kg / 100kg)입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q39</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 1에 따른 유별 지정 품명 구분입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q18 · 2025년 소방경채 Q40</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>｢위험물안전관리법 시행령｣ 별표 1 및 비고 제11호에 따른 특수인화물의 법정 정의와 지정수량(50리터)입니다.
+            <span class="ox-exp-src">2018년 소방공채 Q11</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>제1석유류란 아세톤, 휘발유 그 밖에 1기압에서 인화점이 섭씨 70도 미만이 아니라 '섭씨 21도 미만'인 것을 말합니다(제2석유류가 섭씨 21도 이상 70도 미만, 제3석유류가 섭씨 70도 이상 200도 미만, 제4석유류가 섭씨 200도 이상 250도 미만, 동식물유류가 섭씨 250도 미만).
+            <span class="ox-exp-src">2018년 소방공채 Q11 선지 2번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 4에 따른 고인화점위험물의 정확한 법정 정의(인화점이 섭씨 100도 이상인 제4류 위험물)입니다.
+            <span class="ox-exp-src">2019년 소방공채 Q16</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 19에 따른 위험등급 Ⅰ과 위험등급 Ⅱ의 핵심 분류 기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q36</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 18에 따른 제1류 위험물(산화성 고체)의 유별 저장·취급 공통기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q33 · 소방공채 Q20 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>산화제와의 접촉·혼합을 피하고 철분·금속분·마그네슘에 물·산 접촉을 피하며 인화성고체에 증기 발생을 억제하는 것은 제3류 위험물이 아니라 '제2류 위험물(가연성 고체)'의 기준입니다(제3류는 자연발화성에 공기 접촉 금지, 금수성에 물 접촉 금지).
+            <span class="ox-exp-src">2023년 소방경채 Q33 · 소방공채 Q20 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 19 · X 틀림</span>가연물과의 접촉·혼합이나 분해 촉진 물품과의 접근·과열을 피하는 것은 제4류 위험물이 아니라 '제6류 위험물(산화성 액체)'의 기준입니다(제4류 인화성 액체는 불티·불꽃·고온체와의 접근·과열을 피하고 함부로 증기를 발생시키지 않아야 함).
+            <span class="ox-exp-src">2023년 소방경채 Q33 · 소방공채 Q20 선지 4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 4에 따른 제조소 보유공지 기준(10배 이하 3m 이상, 10배 초과 5m 이상)입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q37 · 소방공채 Q23</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>｢위험물안전관리법 시행규칙｣ 별표 4에 따라 제조소의 환기설비는 기계배기방식이 아니라 '자연배기방식'으로 하여야 합니다(배출설비가 강제배기방식).
+            <span class="ox-exp-src">2021년 소방공채 Q17 선지 1번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 4에 따른 제조소 환기설비의 환기구 높이(지상 2m 이상 루프팬 등), 급기구 면적(90㎡ 이상 120㎡ 미만은 450㎠ 이상), 인화방지망 설치 기준입니다.
+            <span class="ox-exp-src">2021년 소방공채 Q17 선지 2·3·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>｢위험물안전관리법 시행규칙｣ 별표 6에 따라 옥외저장탱크의 배수관은 원칙적으로 탱크의 '옆판'에 설치하여야 하며, 결합부분이 지진 등에 의해 손상받을 우려가 없는 방법으로 설치하는 경우에 한하여 예외적으로 탱크의 '밑판'에 설치할 수 있습니다.
+            <span class="ox-exp-src">2019년 소방공채 Q18 선지 3번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 6에 따른 옥외저장탱크의 상부 방출 구조, 이황화탄소 수조(두께 0.2m 이상) 보관 및 금수성물질 방수성 불연재료 피복설비 기준입니다.
+            <span class="ox-exp-src">2019년 소방공채 Q18 선지 1·2·4번</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 25 · O 옳음</span>｢위험물안전관리법 시행규칙｣ 별표 6에 따라 지정수량 1,000배 초과 2,000배 이하인 옥외저장탱크의 기본 보유공지 너비는 9미터 이상(500배 이하 3m, 500배 초과 1,000배 이하 5m, 1,000배 초과 2,000배 이하 9m, 2,000배 초과 3,000배 이하 12m, 3,000배 초과 15m)이며, 기준에 적합한 물분무설비 방호조치 시 2분의 1 이상(최소 3미터 이상)으로 단축할 수 있으므로 9.0 × 0.5 = 4.5미터가 됩니다.
+            <span class="ox-exp-src">2025년 소방경채 Q35 · 소방공채 Q21</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 26 · O 옳음</span>옥외저장탱크는 내부 압력이 비정상적으로 상승하는 경우 내부 가스 또는 증기를 상부로 방출할 수 있는 구조(지붕판을 옆판보다 얇게 하고 보강재를 접합하지 않는 구조 등)로 하여야 합니다.
+            <span class="ox-exp-src">2019년 소방공채 Q18 · 옥외저장탱크의 위치·구조 및 설비 기준(배수관 위치 등)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>자연발화성물질(공기 접촉 금지)과 금수성물질(물 접촉 금지)의 저장 기준은 제2류 위험물이 아니라 '제3류 위험물'의 기준입니다.
+            <span class="ox-exp-src">2023년 소방경채 Q33 · 소방공채 Q20 · 위험물의 유별 저장·취급 공통기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>지정수량 미만 위험물의 저장·취급 기술기준은 시·도의 조례로 정하지만, 위험물의 구체적인 품명과 지정수량은 행정안전부령이 아니라 '대통령령(시행령 별표 1)'에 규정되어 있습니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 제2조·제4조 및 시행령 별표 1 위임령 구분)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>무허가 제조소등 설치 시 5년 이하의 징역 또는 1억 원 이하의 벌금에 처하는 것은 맞지만, 90일 이내의 기간 동안 지정수량 이상의 위험물을 임시로 저장·취급할 때 승인권을 행사하는 주체는 시·도지사가 아니라 '관할 소방서장'입니다.
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 제5조·제6조·제35조 허가권자 vs 임시저장 승인권자)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>제3류 중 알칼리금속(칼륨·나트륨 제외)·알칼리토금속·유기금속화합물(알킬알루미늄·알킬리튬 제외)의 지정수량은 50킬로그램이 맞지만, 제5류 중 히드록실아민·히드록실아민염류의 지정수량은 200킬로그램이 아니라 '100킬로그램'입니다(니트로·니트로소·아조·디아조화합물 등이 200kg).
+            <span class="ox-exp-src">적중예상 (위험물안전관리법 시행령 별표 1 제3류·제5류 지정수량 비교)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

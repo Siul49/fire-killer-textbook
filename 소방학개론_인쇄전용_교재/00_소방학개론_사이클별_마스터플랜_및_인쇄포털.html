@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[인쇄·바인더 표지용] 소방학개론 사이클별(3일 학습 + 기출변형 복습 모의고사) 인쇄 포털</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+    :root {
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      padding: 10px 20px;
+      border-bottom: 1px solid #3D3830;
+    }
+    .no-print-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .print-btn {
+      background: #10B981;
+      color: #06281E;
+      border: 1px solid #059669;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 7px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .nav-btn {
+      background: #2A2723;
+      color: #EAE5DC;
+      border: 1px solid #4A443B;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+    .book-sheet {
+      max-width: 940px;
+      margin: 28px auto 64px auto;
+      background: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 44px 48px 56px 48px;
+    }
+    .header-box {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 22.5px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      font-size: 12.8px;
+      color: var(--text-sub);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .s-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-top: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 10px 12px;
+    }
+    .s-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+    .s-card-val {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .bundle-box {
+      background: #F4EFE6;
+      border: 1.5px solid #8B2635;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+    }
+    .bundle-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #8B2635;
+      margin-bottom: 8px;
+    }
+    .bundle-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .bundle-btn {
+      display: inline-block;
+      background: #8B2635;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 6px 11px;
+      border-radius: 4px;
+    }
+    .bundle-btn.green {
+      background: #164E28;
+    }
+    .bundle-btn.navy {
+      background: #1E3A8A;
+    }
+    table.plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    table.plan-table th {
+      background: var(--bg-subtle);
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+      font-weight: 800;
+    }
+    table.plan-table td {
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--border-line);
+      vertical-align: middle;
+    }
+    .portal-open-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    @media print {
+      html, body {
+        background: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-col, .bundle-box {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+        <span style="font-size:13px; font-weight:700;">📚 소방학개론 사이클별 인쇄 포털 (DAY 01부터 DAY 17까지 · 사이클 단위 양면 인쇄 소분)</span>
+        <a href="../소방관계법규_인쇄전용_교재/00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="nav-btn">⚖️ 소방관계법규 인쇄포털 &rarr;</a>
+        <a href="../한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html" class="nav-btn">📜 한국사 인쇄포털 &rarr;</a>
+      </div>
+      <button onclick="window.print()" class="print-btn">🖨️ 이 계획표 인쇄하기 (Ctrl+P)</button>
+    </div>
+  </div>
+
+  <main class="book-sheet">
+    <header class="header-box">
+      <div class="badge">소방학개론 단권화 워크북 · 사이클(학습 + 기출변형 복습 모의고사) 단위 스테이플러 소분 인쇄 전용</div>
+      <h1>소방학개론 DAY 01부터 DAY 17까지 · 6개 사이클 학습 + 기출변형 복습 완주 플랜</h1>
+      <p class="lead">
+        전체 17개 일자(기출 212문항 + 단원 필수 기출 OX 431제)를 <strong>6개 사이클</strong>로 나누고, 각 사이클 학습 직후 <strong>기출 변형 복습 모의고사(30문항)</strong>로 점검합니다.
+        7일 단위 묶음은 폐지하였으며, 인쇄는 <strong>사이클 단위 묶음 PDF</strong> 한 권씩 진행합니다. 모든 PDF는 양면 인쇄 시 문제지·해설지·다음 일자가 한 종이(앞뒷면)에 겹치지 않도록 짝수 페이지로 정렬되어 있습니다.
+        DAY 14까지는 구버전(모의고사 없음) 본문이 이미 인쇄되어 있으므로, 해당 사이클은 복습 모의고사만 인쇄하고 그 이후 사이클부터 새 형식 전체를 인쇄합니다.
+      </p>
+    </header>
+
+    <div class="bundle-box">
+      <div class="bundle-title">🖨️ [사이클 단위 양면 인쇄용 묶음 PDF &amp; 휴대용 3일 유기적 흐름 요약 핸드북]</div>
+      <div class="bundle-links">
+        <a href="DAY01부터_DAY03까지_유기적흐름_요약노트_및_공식빈칸_핸드북.html" class="bundle-btn">📒 [NEW · 웹/모바일 터치 &amp; 인쇄 겸용] DAY 01부터 DAY 03까지 유기적 흐름 요약노트 + 공식 주관식 39제 + 정예 OX 90제 핸드북</a>
+        <a href="PDF_일괄출력본/04_보조_DAY01부터_DAY03까지_유기적흐름_요약노트_및_공식빈칸_핸드북.pdf" class="bundle-btn navy">📄 [PDF 바로 인쇄] DAY 01부터 DAY 03까지 요약+주관식 핸드북 (34쪽 짝수 정렬)</a>
+        <a href="소방학개론_사이클01_DAY01부터_DAY03까지_교재및복습모의고사.pdf" class="bundle-btn green">📕 사이클 01 · DAY 01부터 DAY 03까지 교재+복습 모의고사</a><a href="소방학개론_사이클02_DAY04부터_DAY06까지_교재및복습모의고사.pdf" class="bundle-btn green">📕 사이클 02 · DAY 04부터 DAY 06까지 교재+복습 모의고사</a><a href="소방학개론_사이클03_DAY07부터_DAY08까지_교재및복습모의고사.pdf" class="bundle-btn green">📕 사이클 03 · DAY 07부터 DAY 08까지 교재+복습 모의고사</a><a href="소방학개론_사이클04_DAY09부터_DAY11까지_교재및복습모의고사.pdf" class="bundle-btn green">📕 사이클 04 · DAY 09부터 DAY 11까지 교재+복습 모의고사</a><a href="소방학개론_사이클05_DAY12부터_DAY14까지_교재및복습모의고사.pdf" class="bundle-btn green">📕 사이클 05 · DAY 12부터 DAY 14까지 교재+복습 모의고사</a><a href="소방학개론_사이클06_DAY15부터_DAY17까지_교재및복습모의고사.pdf" class="bundle-btn">📕 사이클 06 · DAY 15부터 DAY 17까지 교재+복습 모의고사</a>
+      </div>
+    </div>
+
+    <div class="summary-cards">
+      <div class="s-card"><div class="s-card-label">전체 진도 구성</div><div class="s-card-val">DAY 17개 + 복습 6회</div></div>
+      <div class="s-card"><div class="s-card-label">수록 기출·OX</div><div class="s-card-val">기출 212제 + OX 431제</div></div>
+      <div class="s-card"><div class="s-card-label">구버전 인쇄 완료</div><div class="s-card-val">DAY 01부터 DAY 14까지</div></div>
+      <div class="s-card"><div class="s-card-label">인쇄 단위</div><div class="s-card-val">사이클 1권씩 (짝수 정렬)</div></div>
+    </div>
+
+    <table class="plan-table">
+      <thead>
+        <tr>
+          <th style="width:11%;">사이클</th>
+          <th style="width:9%;">DAY 코드</th>
+          <th>학습 단원명</th>
+          <th style="width:12%;">학습 분량</th>
+          <th style="width:13%; text-align:center;">인쇄 상태</th>
+          <th class="no-print-col" style="width:11%; text-align:center;">개별 열기·PDF</th>
+        </tr>
+      </thead>
+      <tbody>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 01</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 01<br/><span style="font-size:11px; color:var(--text-muted);">(01_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 소방조직 및 재난관리론 · 소방의 역사·발전 과정 및 소방조직·인사 원리</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 01부터 DAY 03까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 16문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY01_01_01_소방의_역사_발전과_조직_인사원리_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/01_DAY01_01_01_소방의_역사_발전과_조직_인사원리_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 01</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 02<br/><span style="font-size:11px; color:var(--text-muted);">(01_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 소방조직 및 재난관리론 · 재난의 분류, 도미노 이론 및 재난관리 4단계·매뉴얼</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 01부터 DAY 03까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 13문항</strong><br/>+ OX 27제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY02_01_02_재난의_분류_도미노이론과_재난관리단계_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/02_DAY02_01_02_재난의_분류_도미노이론과_재난관리단계_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 01</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 03<br/><span style="font-size:11px; color:var(--text-muted);">(01_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제1편 소방조직 및 재난관리론 · 긴급구조통제단, 현장지휘체계 및 재난사태·특별재난지역</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 01부터 DAY 03까지 중 3일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 11문항</strong><br/>+ OX 27제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY03_01_03_긴급구조통제단과_재난사태_특별재난지역_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/03_DAY03_01_03_긴급구조통제단과_재난사태_특별재난지역_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 01<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 01회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 01부터 DAY 03까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY01부터_DAY03까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/04_DAY01부터_DAY03까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 02</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 04<br/><span style="font-size:11px; color:var(--text-muted);">(02_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 연소 및 폭발 이론 · 연소의 본질, 완전연소 화학양론 및 인화점·발화점</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 04부터 DAY 06까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 14문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY04_02_01_연소의_본질_화학양론과_인화점_발화점_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/05_DAY04_02_01_연소의_본질_화학양론과_인화점_발화점_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 02</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 05<br/><span style="font-size:11px; color:var(--text-muted);">(02_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 연소 및 폭발 이론 · 연소범위·위험도(H)·최소산소농도(MOC) 및 상별 연소 형태</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 04부터 DAY 06까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 13문항</strong><br/>+ OX 25제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY05_02_02_연소범위_위험도_최소산소농도와_연소형태_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/06_DAY05_02_02_연소범위_위험도_최소산소농도와_연소형태_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 02</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 06<br/><span style="font-size:11px; color:var(--text-muted);">(02_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 연소 및 폭발 이론 · 열전달(전도·대류·복사), 자연발화 및 연소생성 독성가스</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 04부터 DAY 06까지 중 3일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 14문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY06_02_03_열전달_자연발화와_연소생성물_독성가스_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/07_DAY06_02_03_열전달_자연발화와_연소생성물_독성가스_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 02<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 02회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 04부터 DAY 06까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY04부터_DAY06까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/08_DAY04부터_DAY06까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 03</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 07<br/><span style="font-size:11px; color:var(--text-muted);">(02_04)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 연소 및 폭발 이론 · 실내 구획실 화재 4단계, 화재하중·가혹도 및 플래시오버·백드래프트</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 07부터 DAY 08까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 15문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY07_02_04_구획실_화재단계와_플래시오버_백드래프트_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/09_DAY07_02_04_구획실_화재단계와_플래시오버_백드래프트_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 03</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 08<br/><span style="font-size:11px; color:var(--text-muted);">(02_05)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제2편 연소 및 폭발 이론 · 폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 07부터 DAY 08까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 13문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY08_02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/10_DAY08_02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 03<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 03회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 07부터 DAY 08까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY07부터_DAY08까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/11_DAY07부터_DAY08까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 04</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 09<br/><span style="font-size:11px; color:var(--text-muted);">(03_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 화재 및 소화약제론 · 화재의 분류(A·B·C·D·K급), 소화원리 및 화재조사·피해산정</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 09부터 DAY 11까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 16문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY09_03_01_화재의_분류_소화원리와_화재조사_피해산정_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/12_DAY09_03_01_화재의_분류_소화원리와_화재조사_피해산정_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 04</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 10<br/><span style="font-size:11px; color:var(--text-muted);">(03_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 화재 및 소화약제론 · 물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 09부터 DAY 11까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 12문항</strong><br/>+ OX 26제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY10_03_02_물소화약제_첨가제와_포소화약제_혼합방식_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/13_DAY10_03_02_물소화약제_첨가제와_포소화약제_혼합방식_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 04</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 11<br/><span style="font-size:11px; color:var(--text-muted);">(03_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제3편 화재 및 소화약제론 · 가스계 소화약제(CO2·할론·청정·IG) 및 분말소화약제 1·2·3·4종</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 09부터 DAY 11까지 중 3일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 18문항</strong><br/>+ OX 30제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY11_03_03_가스계소화약제와_분말소화약제_1234종_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/14_DAY11_03_03_가스계소화약제와_분말소화약제_1234종_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 04<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 04회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 09부터 DAY 11까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY09부터_DAY11까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/15_DAY09부터_DAY11까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 05</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 12<br/><span style="font-size:11px; color:var(--text-muted);">(04_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 소방시설론 · 소방시설의 5대 분류, 피난구조설비 및 소화활동설비</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 12부터 DAY 14까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 7문항</strong><br/>+ OX 18제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY12_04_01_소방시설_5대분류_피난구조와_소화활동설비_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/16_DAY12_04_01_소방시설_5대분류_피난구조와_소화활동설비_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 05</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 13<br/><span style="font-size:11px; color:var(--text-muted);">(04_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 소방시설론 · 옥내소화전 가압송수장치·펌프 현상 및 5대 스프링클러설비</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 12부터 DAY 14까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 9문항</strong><br/>+ OX 15제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY13_04_02_옥내소화전_펌프성능과_스프링클러설비_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/17_DAY13_04_02_옥내소화전_펌프성능과_스프링클러설비_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 05</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 14<br/><span style="font-size:11px; color:var(--text-muted);">(04_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제4편 소방시설론 · 자동화재탐지설비 경계구역, 열·연기감지기 및 방재 연동제어</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 12부터 DAY 14까지 중 3일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 6문항</strong><br/>+ OX 16제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#736D63; font-weight:700;">본문 인쇄 완료(구버전)<br/>모의고사만 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY14_04_03_자동화재탐지설비_감지기와_방재연동_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/18_DAY14_04_03_자동화재탐지설비_감지기와_방재연동_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 05<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 05회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 12부터 DAY 14까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY12부터_DAY14까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/19_DAY12부터_DAY14까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 06</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 15<br/><span style="font-size:11px; color:var(--text-muted);">(05_01)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 위험물 및 특수가연물론 · 제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 15부터 DAY 17까지 중 1일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 9문항</strong><br/>+ OX 15제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#1E3A8A; font-weight:800;">새 형식 전체 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY15_05_01_제1류_제2류_제3류_위험물과_반응식_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/20_DAY15_05_01_제1류_제2류_제3류_위험물과_반응식_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 06</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 16<br/><span style="font-size:11px; color:var(--text-muted);">(05_02)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 위험물 및 특수가연물론 · 제4류·제5류·제6류 위험물의 성상, 지정수량 및 위험등급</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 15부터 DAY 17까지 중 2일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 14문항</strong><br/>+ OX 24제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#1E3A8A; font-weight:800;">새 형식 전체 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY16_05_02_제4류_제5류_제6류_위험물과_지정수량_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/21_DAY16_05_02_제4류_제5류_제6류_위험물과_지정수량_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="font-weight:800; color:var(--accent); white-space:nowrap;">사이클 06</td>
+              <td style="font-weight:700; white-space:nowrap;">DAY 17<br/><span style="font-size:11px; color:var(--text-muted);">(05_03)</span></td>
+              <td>
+                <div style="font-weight:800; color:var(--text-main); margin-bottom:2px;">제5편 위험물 및 특수가연물론 · 위험물의 저장·취급·혼재·운반 기준 및 특수가연물</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">DAY 15부터 DAY 17까지 중 3일 차 학습</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:var(--accent);">기출 12문항</strong><br/>+ OX 28제</td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#1E3A8A; font-weight:800;">새 형식 전체 인쇄</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY17_05_03_위험물_저장_혼재_운반과_특수가연물_인쇄용.html" class="portal-open-btn">📖 웹·인쇄</a>
+                <a href="PDF_일괄출력본/22_DAY17_05_03_위험물_저장_혼재_운반과_특수가연물_인쇄용.pdf" class="portal-open-btn" style="background:#1E3A8A; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">사이클 06<br/><span style="font-size:11px;">[학습 직후 복습]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">복습 06회</td>
+              <td>
+                <div style="font-weight:800; color:#164E28; margin-bottom:2px;">🎯 DAY 15부터 DAY 17까지 기출 변형 복습 모의고사 (30문항)</div>
+                <div style="font-size:11.5px; color:var(--text-sub);">사이클 학습 직후 발문 역전·선지 크로스 믹싱·조합형 변형 30문항으로 실전 복습 점검</div>
+              </td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="DAY15부터_DAY17까지_기출변형_복습모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/23_DAY15부터_DAY17까지_기출변형_복습모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+            <tr style="background-color:var(--bg-subtle);">
+              <td style="font-weight:800; color:#164E28; white-space:nowrap;">전 범위<br/><span style="font-size:11px;">[최종 총결산]</span></td>
+              <td style="font-weight:700; color:#164E28; white-space:nowrap;">총결산</td>
+              <td><div style="font-weight:800; color:#164E28;">🏁 소방학개론 전 범위 총결산 (3대 취약 축 총결산) 기출 변형 실전 모의고사 및 인쇄 워크북 (30문항)</div></td>
+              <td style="white-space:nowrap; font-size:12px;"><strong style="color:#164E28;">변형 30문항</strong></td>
+              <td style="text-align:center; white-space:nowrap; font-size:11.5px;"><span style="color:#164E28; font-weight:800;">인쇄 대상</span></td>
+              <td class="no-print-col" style="text-align:center; white-space:nowrap;">
+                <a href="전범위_총결산_기출변형_모의고사_인쇄워크북.html" class="portal-open-btn" style="background:#164E28;">📝 시험지</a>
+                <a href="PDF_일괄출력본/24_전범위_총결산_기출변형_모의고사.pdf" class="portal-open-btn" style="background:#065F46; margin-top:3px; display:inline-block;">📄 PDF</a>
+              </td>
+            </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

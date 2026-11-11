@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=6" />
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,9 +44,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 용어 정의(화재안전기준)와 30종 특정소방대상물·근린생활시설</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 지하구의 법정 규격, 내화구조 연결통로 및 무창층 판정 요건</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 용도별 수용인원 산정 공식(반올림 원칙)과 주요 설비 설치 기준</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 하드웨어 규제의 출발 — 용어 정의(법 제2조)와 근린생활시설 4대 경계선(별표 2)</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 지하구(DAY 08·09·10 결산), 연결통로(별표 2 비고) 및 무창층 5요건(영 제2조)</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 수용인원 산정 공식(영 제17조·별표 7 반올림)과 핵심 설비 연결(별표 4)</a>
           <a href="#diagramSection" class="block text-emerald-400 hover:text-white py-1 transition mt-2">단원 핵심 도해</a>
           <a href="#examStatsSection" class="block text-amber-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">
             출제 경향 및 핵심 쟁점 요약
@@ -55,7 +55,7 @@
             실전 기출문제 (21문항)
           </a>
           <a href="#quizSection" class="block text-teal-300 hover:text-white py-1 transition font-bold">
-            핵심 지문 OX 확인 (20문항)
+            핵심 지문 OX 확인 (51문항: 1회독 23 + 2회독확장 28)
           </a>
         </nav>
       </div>
@@ -69,246 +69,173 @@
 
     <header class="mb-14 pb-6 border-b border-emerald-900/40">
       <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
-        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제1장</span>
+        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제1장 · DAY 11 (하드웨어 설비 규제 진입)</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
         특정소방대상물의 분류, 수용인원 및 무창층 판정
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        건축물의 용도와 바닥면적에 따른 특정소방대상물 30종 분류 체계와 내화구조 연결통로 간주 기준을 파악하고, 피난·경보설비 산정의 출발점인 수용인원 계산 공식과 무창층 개구부의 5대 유효 요건을 정리합니다.
+        사람의 예방·안전관리 의무(제2편 화재예방법)를 넘어 건축물에 실제로 어떤 소방설비를 설치할지 결정하는 하드웨어 규제(제3편 소방시설법)의 출발점으로서, 30종 특정소방대상물과 근린생활시설 면적 경계선(별표 2), 지하구·연결통로·무창층 판정 요건, 그리고 수용인원 산정 공식(별표 7)을 인과 원리로 완성합니다.
       </p>
     </header>
 
-        <section class="space-y-12 mb-16">
+    <section class="space-y-12 mb-16">
       <div id="sec1">
-        <h2 class="text-xl font-bold text-white mb-3">1. 왜 똑같은 헬스장·교회인데 어떤 곳은 '근린생활시설'이 될까? — 용어 정의(법 제2조)와 30종 특정소방대상물 분류(시행령 별표 2)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">1. 소프트웨어 관리에서 하드웨어 설비로 — 핵심 용어 정의(법 제2조·제3조)와 30종 특정소방대상물·근린생활시설(시행령 별표 2)</h2>
         <div class="para-block">
           <p class="prose-body">
-            제2편 ｢화재예방법｣이 '사람(소방안전관리자·관계인)의 안전관리 의무'라는 소프트웨어를 다루었다면, 제3편 <strong>｢소방시설 설치 및 관리에 관한 법률｣(약칭: 소방시설법)</strong>은 '건물에 어떤 기계·설비(스프링클러·감지기 등)를 설치하고 유지·관리할 것인가'라는 하드웨어를 다룹니다. 먼저 <strong>법 제2조 제1항</strong>의 핵심 용어 정의부터 정확히 짚고 출발합시다. <strong>특정소방대상물</strong>이란 건축물 등의 규모·용도 및 수용인원 등을 고려하여 소방시설을 설치하여야 하는 소방대상물로서 <strong>대통령령(시행령 별표 2)</strong>으로 정하는 것을 말하며, <strong>소방용품</strong>이란 소방시설을 구성하거나 소방용으로 사용되는 제품 또는 기기로서 역시 <strong>대통령령(시행령 별표 3)</strong>으로 정하는 것을 말합니다. 특히 2022년 분법과 함께 <strong>화재안전기준</strong>이 두 가지로 세분화되어 시험에 단골로 출제되는데, 화재안전 확보를 위하여 재료·공간 및 설비 등에 요구되는 '안전성능'으로서 소방청장이 고시로 정하는 기준은 <strong>성능기준(화재안전성능기준, NFPC)</strong>이고, 이 성능기준을 충족하는 상세한 규격·특정한 수치 및 시험방법 등을 정한 기준은 <strong>기술기준(화재안전기술기준, NFTC)</strong>입니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>성능기준 vs 기술기준(법 제2조)</strong>: 안전성능(소방청장 고시) = <strong>성능기준(NFPC)</strong> vs 상세한 규격·특정한 수치·시험방법 = <strong>기술기준(NFTC)</strong></li>
-              <li><strong>근린생활시설 면적 경계(별표 2)</strong>: 소매점·의약품·자동차영업소 <strong>1,000㎡ 미만</strong>, 금융·사무·서점·학원·독서실·운동·고시원 <strong>500㎡ 미만</strong>, 공연장·종교집회장 <strong>300㎡ 미만</strong>, 단란주점 <strong>150㎡ 미만</strong>(<strong>유흥주점은 면적 불문 위락시설!</strong>)</li>
-              <li><strong>혼동 주의 용도</strong>: 유스호스텔 = <strong>수련시설</strong> / 동·식물원 및 관람석 1,000㎡ 이상 체육관 = <strong>문화 및 집회시설</strong> / 운전·정비학원·격납고 = <strong>항공기 및 자동차 관련시설</strong>(공항·관제탑 = <strong>운수시설</strong>)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            건물에 어떤 소방시설을 달아야 할지 정하려면 가장 먼저 "이 건물이 무슨 용도로 쓰이고 얼마나 큰가?"부터 분류해야 합니다. 동네 작은 구멍가게에 대형 백화점과 똑같은 수억 원짜리 스프링클러를 달라고 할 수는 없기 때문입니다. 그래서 <strong>시행령 별표 2</strong>는 소방시설 설치 대상이 되는 건축물 등을 총 <strong>30가지 용도의 특정소방대상물</strong>로 나누고, 규모가 작은 동네 생활 밀착형 시설은 완화된 기준을 적용받는 <strong>'근린생활시설'</strong>로 묶어주었습니다. 시험에서는 바로 <strong>"같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 몇 제곱미터 미만일 때 근린생활시설이 되고, 몇 제곱미터 이상이면 본래의 대형 용도로 승격되는가?"</strong>라는 네 가지 경계선 숫자(<strong>1,000제곱미터 · 500제곱미터 · 300제곱미터 · 150제곱미터</strong>)를 집중적으로 묻습니다. ① 물건을 진열해 놓고 손님들이 오가는 <strong>수퍼마켓·일용품 소매점, 의약품·의료기기 판매소 및 자동차영업소</strong>는 바닥면적 합계가 <strong>1,000제곱미터 미만</strong>이면 근린생활시설이고, 1,000제곱미터 이상이면 <strong>판매시설</strong> 등이 됩니다. ② 사람들이 머무르며 일하거나 배우고 운동하는 <strong>금융업소·사무소·부동산중개사무소·결혼상담소·출판사·서점, 학원·독서실, 체력단련장·골프연습장 등 운동시설, 장의사·동물병원</strong> 및 다중이용업 중 <strong>고시원업</strong>의 시설은 바닥면적 합계가 <strong>500제곱미터 미만</strong>일 때 근린생활시설입니다(500제곱미터 이상이면 각각 업무시설, 교육연구시설, 운동시설이 되며, 특히 <strong>고시원은 500제곱미터 이상일 때 '숙박시설'</strong>로 분류됩니다!). ③ 불을 끄고 객석에 관객이나 신도가 밀집하는 <strong>공연장(극장·영화관)·종교집회장(교회·성당·사찰)</strong>은 더 엄격해서 <strong>300제곱미터 미만</strong>일 때만 근린생활시설이고, 300제곱미터 이상이면 <strong>문화 및 집회시설</strong>이나 <strong>종교시설</strong>이 됩니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            ④ 술을 마시며 노래를 부르는 <strong>단란주점</strong>은 취객이 있어 대피가 가장 위험하므로 바닥면적 합계가 <strong>150제곱미터 미만</strong>일 때만 근린생활시설로 봐주고, 150제곱미터 이상이면 <strong>위락시설</strong>이 됩니다. 여기서 100퍼센트 출제되는 초특급 함정이 바로 <strong>유흥주점(유흥종사자를 두거나 유흥시설을 설치한 주점)</strong>입니다! 단란주점은 150제곱미터 미만이면 근린생활시설이 되지만, <strong>유흥주점(및 무도장·무도학원)은 바닥면적과 상관없이 무조건 '위락시설'</strong>로 분류됩니다! 반면 동네 <strong>의원·치과의원·한의원·침술원·접골원·조산원·산후조리원</strong>과 이용원·미용원·목욕장·세탁소·휴게음식점·일반음식점은 <strong>바닥면적에 관계없이 언제나 근린생활시설</strong>에 속합니다(병원·종합병원·요양병원 및 입원실이 있는 정신의료기관은 '의료시설'). 아울러 출제위원이 용도 이름을 꼬아 내는 4대 단골 함정도 반드시 구별해야 합니다. 첫째, 청소년이 묵는 <strong>유스호스텔</strong>은 숙박시설이 아니라 청소년수련원·야영장과 함께 <strong>수련시설</strong>입니다. 둘째, 일반 대중이 관람하는 <strong>동물원·식물원</strong>과 <strong>관람석 바닥면적 합계가 1,000제곱미터 이상인 체육관·운동장</strong>은 동·식물 관련시설이나 운동시설이 아니라 <strong>문화 및 집회시설</strong>입니다. 셋째, <strong>어린이회관·야외음악당·야외극장·관망탑</strong>은 문화 및 집회시설이 아니라 <strong>관광휴게시설</strong>입니다. 넷째, <strong>항공기격납고·세차장·폐차장·자동차검사장·운전학원·정비학원</strong>은 교육연구시설이나 운수시설이 아니라 <strong>항공기 및 자동차 관련시설</strong>에 해당합니다(반면 여객이 이용하는 <strong>공항시설 및 항공관제탑은 '운수시설'</strong>이고, <strong>고물상</strong>은 창고시설 등이라는 점을 명확히 대조해 두어야 합니다).
+            첫날 제1편 제1장에서 그렸던 대상물 4단계 동심원의 가장 바깥쪽 첫 번째 원은 건축물뿐만 아니라 차량, 항구에 매어둔 선박, 산림까지 포괄하는 소방대상물이었고, 앞선 제2편 화재예방법은 그 안에서 민간 안전관리자와 관계인이 수행할 예방·훈련이라는 소프트웨어적 의무를 다루었습니다. 오늘부터 진입하는 제3편 소방시설 설치 및 관리에 관한 법률은 산림이나 일반 선박을 덜어내고 건축물 등에 실제로 어떤 기계·전기 설비를 설치·유지할 것인가를 정하는 하드웨어 규제의 본령으로서, 법 제3조는 국가와 지방자치단체가 소방시설등의 설치·관리와 소방용품 품질 향상 및 전문인력 양성을 위한 정책을 수립·시행해야 할 책무를 명시하고 있습니다. 이어지는 법 <strong>제2조</strong> 제1항의 핵심 용어 정의와 위임 체계는 다음과 같이 정리됩니다.
+            <span class="prose-item"><strong>① 특정소방대상물 및 소방용품의 위임 법령 (법 제2조 제1항 제3호·제7호)</strong></span>
+            <span class="prose-sub">&bull; <strong>위임 대원칙</strong>: 건축물 등의 규모·용도 및 수용인원 등을 고려하여 소방시설을 설치하여야 하는 두 번째 동심원인 특정소방대상물(시행령 제5조·별표 2)과 소방시설등을 구성하거나 소방용으로 사용되는 제품 또는 기기인 <strong>소방용품은 모두 행정안전부령이 아닌 대통령령</strong>(시행령 제6조·별표 3)으로 정합니다.</span>
+            <span class="prose-item"><strong>② 화재안전기준의 이원화 체계 (법 제2조 제1항 제6호)</strong></span>
+            <span class="prose-sub">&bull; <strong>성능기준(NFPC)</strong>: 2022년 분법과 함께 이원화된 <strong>화재안전기준</strong> 중 화재안전 확보를 위하여 재료·공간 및 설비 등에 요구되는 <strong>안전성능으로서 소방청장이 고시로 정하는 기준이 성능기준</strong>입니다.</span>
+            <span class="prose-sub">&bull; <strong>기술기준(NFTC)</strong>: 위 성능기준을 충족하는 상세한 규격·특정한 수치 및 시험방법 등을 정하여 행정안전부령으로 정하는 절차에 따라 소방청장의 승인을 받은 기준이 기술기준입니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:28%;">구분 업종 및 시설명</th>
-                <th style="width:38%;">근린생활시설 기준 (같은 건축물 바닥면적 합계)</th>
-                <th>기준 면적 이상일 때의 분류 및 혼동 주의 용도</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>소매점 · 의약품 · 자동차영업소</strong></td>
-                <td>바닥면적 합계 <strong>1,000제곱미터 미만</strong></td>
-                <td>1,000㎡ 이상 시 <strong>판매시설</strong> 등</td>
-              </tr>
-              <tr>
-                <td><strong>금융·사무·서점 / 학원·독서실·운동 / 고시원</strong></td>
-                <td>바닥면적 합계 <strong>500제곱미터 미만</strong></td>
-                <td>500㎡ 이상 시 <strong>업무 / 교육연구 / 운동시설 / 숙박시설(고시원)</strong></td>
-              </tr>
-              <tr>
-                <td><strong>공연장 · 종교집회장</strong></td>
-                <td>바닥면적 합계 <strong>300제곱미터 미만</strong></td>
-                <td>300㎡ 이상 시 <strong>문화 및 집회시설 / 종교시설</strong></td>
-              </tr>
-              <tr>
-                <td><strong>단란주점 vs 유흥주점 / 의원·조산원·산후조리원</strong></td>
-                <td>단란주점: <strong>150제곱미터 미만</strong> / 의원·조산원·산후조리원: <strong>면적 무관 근린생활시설</strong></td>
-                <td>단란주점 150㎡ 이상 및 <strong>유흥주점(면적 불문)</strong>은 <strong>위락시설</strong></td>
-              </tr>
-              <tr>
-                <td><strong>시험 빈출 혼동 용도 4선</strong></td>
-                <td>· <strong>유스호스텔</strong> ➔ <strong>수련시설</strong> (숙박시설 X)<br/>· <strong>어린이회관·야외음악당·야외극장·관망탑</strong> ➔ <strong>관광휴게시설</strong></td>
-                <td>· <strong>동물원·식물원 / 관람석 1,000㎡ 이상 체육관</strong> ➔ <strong>문화 및 집회시설</strong><br/>· <strong>격납고·세차장·폐차장·운전·정비학원</strong> ➔ <strong>항공기·자동차시설</strong> (공항·관제탑은 <strong>운수시설</strong>)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            건물에 어떤 설비를 달아야 할지 정하려면 먼저 그 건물의 용도와 위험도를 가려야 합니다. 동네 작은 가게에 대형 백화점과 똑같은 고가 설비를 강제할 수는 없으므로, 시행령 별표 2는 설치 대상을 제1호 공동주택부터 제30호 복합건축물까지 총 30가지 용도로 나누면서 소규모 생활 밀착형 업종은 완화된 기준을 받는 근린생활시설로 묶어 주었습니다. 이때 같은 <strong>건축물에</strong> 해당 용도로 쓰는 바닥면적 합계의 네 가지 경계선 수치는 재실자의 밀집도와 대피 난이도에 정확히 반비례합니다.
+            <span class="formula-box">
+              <span class="formula-badge">근린생활시설 바닥면적 합계 4대 경계선 서열 (시행령 별표 2)</span>
+              <span class="formula-eq">소매·의약품·자동차 1,000㎡ 미만 &gt; 금융·사무·학원·운동·고시원 500㎡ 미만 &gt; 공연·종교 300㎡ 미만 &gt; 단란주점 150㎡ 미만</span>
+              <span class="formula-ex">💡 <strong>유흥 대 당연 근생 대조</strong> | 유흥주점·무도장·무도학원 = 면적 불문 위락시설 / 의원·조산원·산후조리원·일반음식점·목욕장 = 면적 불문 근린생활시설</span>
+            </span>
+            <span class="prose-item"><strong>① 바닥면적 합계별 근린생활시설 승격 경계선</strong></span>
+            <span class="prose-sub">&bull; <strong>1,000제곱미터 미만 구간</strong>: 낮 시간대 손님이 밝은 매장을 오가며 물건을 고르는 <strong>수퍼마켓·일용품 소매점, 의약품·의료기기 판매소 및 자동차영업소</strong>는 바닥면적 합계가 1,000제곱미터 미만이면 근린생활시설이고 1,000제곱미터 이상이면 판매시설 등으로 승격됩니다.</span>
+            <span class="prose-sub">&bull; <strong>500제곱미터 미만 구간</strong>: 사람들이 책상이나 기구 앞에 오래 머무르는 <strong>금융업소·사무소·부동산중개사무소·결혼상담소·출판사·서점, 학원·독서실, 체력단련장·골프연습장 등 운동시설, 장의사·동물병원 및 다중이용업 중 고시원업</strong>은 500제곱미터 미만일 때만 근린생활시설이 되며, 특히 취침이 이루어지는 고시원업은 500제곱미터 이상이 되는 순간 업무시설이 아니라 숙박시설로 분류됩니다.</span>
+            <span class="prose-sub">&bull; <strong>300제곱미터 미만 및 150제곱미터 미만 구간</strong>: 조명을 어둡게 끄거나 군중이 밀집하는 <strong>공연장·종교집회장</strong>은 300제곱미터 미만일 때만 근린생활시설(이상 시 문화 및 집회시설·종교시설)이고, 취객으로 피난이 지체되는 단란주점은 150제곱미터 미만일 때만 근린생활시설(이상 시 위락시설)이 됩니다. 반면에 유흥종사자를 두거나 유흥시설을 설치한 <strong>유흥주점과 무도장·무도학원은 바닥면적과 상관없이 무조건 위락시설</strong>로 직행합니다.</span>
+            <span class="prose-item"><strong>② 면적 무관 당연 근린생활시설과 4대 혼동 용도 족보</strong></span>
+            <span class="prose-sub">&bull; <strong>당연 근린생활시설 대 의료·창고시설</strong>: 외래 진료나 일상 편의를 제공하는 <strong>의원·치과의원·한의원·침술원·접골원·조산원·산후조리원</strong>과 이용원·미용원·목욕장·세탁소·휴게음식점·일반음식점은 바닥면적 규모와 상관없이 언제나 근린생활시설에 속하며, 병원·종합병원·요양병원 및 입원실 있는 정신의료기관은 의료시설, 물품을 보관하는 <strong>고물상</strong>은 창고시설에 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>수련시설 대 문화 및 집회시설</strong>: 청소년이 묵는 <strong>유스호스텔은</strong> 숙박시설이 아니라 청소년수련원·야영장과 함께 수련시설이며, 대중이 관람하는 동물원·식물원은 축사 같은 동·식물 <strong>관련시설이</strong> 아니라 <strong>관람석 바닥면적 합계가 1,000제곱미터 이상인 체육관·운동장</strong>과 함께 문화 및 집회시설로 분류됩니다(제2편 제3장에서 소방안전관리대상물 전 등급 제외 대상으로 배웠던 바로 그 동·식물원입니다).</span>
+            <span class="prose-sub">&bull; <strong>관광휴게시설 대 항공기·자동차 관련시설</strong>: <strong>어린이회관</strong>, 야외음악당, 야외극장, 관망탑은 문화 및 집회시설이 아닌 관광휴게시설이고, <strong>항공기</strong> 격납고·세차장·폐차장·자동차검사장·운전학원·<strong>정비학원은</strong> 교육연구시설이나 운수시설이 아닌 항공기 및 자동차 관련시설인 반면 여객이 이용하는 공항시설과 항공관제탑은 운수시설입니다.</span>
+          </p>
         </div>
       </div>
 
       <div id="sec2">
-        <h2 class="text-xl font-bold text-white mb-3">2. 지하구 규격, 구름다리(연결통로)로 이어진 두 건물, 그리고 '창문 없는 지상층(무창층)' 판정 기준</h2>
+        <h2 class="text-xl font-bold text-white mb-3">2. 지하구 4중 복습과 연결통로, 그리고 창문 막힌 지상층 — 지하구 규격(별표 2), 연결통로(별표 2 비고) 및 무창층(시행령 제2조)</h2>
         <div class="para-block">
           <p class="prose-body">
-            30가지 특정소방대상물 중 땅속에 설치된 특수 구조물인 <strong>지하구(시행령 별표 2 제29호)</strong>의 규격과 <strong>하나의 특정소방대상물로 보는 연결통로 기준(시행령 제3조)</strong>도 빈출 쟁점입니다. 도로 밑에 묻힌 작은 배수관까지 다 소방시설을 설치할 수는 없으므로, 법이 특정소방대상물인 '지하구'로 인정하려면 전력·통신용의 전선이나 가스·냉난방용의 배관 또는 이와 비슷한 것을 집합수용하기 위하여 설치한 지하 인공구조물로서 <strong>사람이 점검 또는 보수를 하기 위하여 출입이 가능한 것</strong>이어야 합니다. 특히 2018년 KT 아현국사 통신구 화재 참사를 계기로 법령이 강화되어, 현행 법령상 지하구는 ① <strong>전력 또는 통신사업용 지하 인공구조물로서 전력구(케이블 접속부가 없는 경우는 제외) 또는 통신구 방식으로 설치된 것(폭·높이·길이 규모와 상관없이 해당!)</strong>, ② <strong>그 밖의 지하 인공구조물로서 성인이 양팔을 벌려 지나갈 수 있는 폭 1.8미터 이상이고 고개를 숙이지 않고 서서 걸을 수 있는 높이 2미터 이상이며 길이가 50미터 이상인 것</strong>(참고: 개정 전 구법에서는 전력·통신사업용 지하구를 길이 500미터 이상으로 규정), ③ ｢국토의 계획 및 이용에 관한 법률｣에 따른 <strong>공동구</strong>로 명확히 규정되어 있습니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>지하구 규격(별표 2)</strong>: 전력·통신사업용은 전력구(접속부 없는 경우 제외)·통신구 방식이면 규모 무관 해당 / 그 밖의 지하 인공구조물은 <strong>폭 1.8m 이상 · 높이 2m 이상 · 길이 50m 이상</strong> (구법 전력·통신 500m 이상)</li>
-              <li><strong>내화구조 연결통로(제3조)</strong>: <strong>벽이 없는 구조 길이 6m 이하</strong>, <strong>벽이 있는 구조 길이 10m 이하</strong> 시 하나의 대상물 (벽 높이가 바닥에서 천장까지 높이의 <strong>1/2 이상</strong>이면 벽이 있는 구조)</li>
-              <li><strong>무창층(제2조)</strong>: <strong>지상층</strong> 중 유효 개구부(<strong>지름 50cm 이상 원 내접 · 바닥에서 밑부분까지 1.2m 이내</strong> 등) 면적 합계가 해당 층 바닥면적의 <strong>30분의 1 이하</strong>인 층</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            한편 병원 본관과 별관처럼 둘 이상의 특정소방대상물이 복도나 구름다리(연결통로)로 이어져 있을 때, 언제 합쳐서 <strong>하나의 특정소방대상물</strong>로 볼까요?(<strong>시행령 제3조</strong>) 판단 기준은 "한쪽 건물에서 난 불길이 통로를 타고 옆 건물로 쉽게 건너갈 수 있는가?"입니다. 따라서 ① <strong>내화구조가 아닌 연결통로</strong>로 연결된 경우나, ② <strong>지하보도·지하상가·터널 또는 지하구</strong>로 연결된 경우, ③ 공사현장에서 가설울타리 안의 둘 이상의 건축물을 동시에 시공하는 경우에는 통로 길이와 상관없이 무조건 <strong>하나의 특정소방대상물</strong>로 봅니다. 반면 콘크리트 같은 <strong>내화구조로 된 연결통로</strong>로 연결된 경우에는 통로 길이가 짧을 때만 하나로 보는데, 양옆이 뚫려 연기와 열기가 흩어지는 <strong>벽이 없는 구조는 길이가 6미터 이하</strong>인 경우, 양옆이 막혀 열기가 터널처럼 멀리 뻗어나가는 <strong>벽이 있는 구조는 길이가 10미터 이하</strong>인 경우에만 하나의 소방대상물로 봅니다! 이때 벽이 있는 구조와 없는 구조를 가르는 기준은 <strong>벽 높이가 연결통로 바닥에서 천장까지 높이의 2분의 1 이상이면 '벽이 있는 구조'</strong>로 보고, <strong>2분의 1 미만이면 '벽이 없는 구조'</strong>로 봅니다. 다만 연결통로에 컨베이어 등 작업시설이 설치되거나 피난 및 부속실 용도로 사용되는 경우로서 방화셔터나 스프링클러·드렌처설비 등으로 구획된 때에는 각각 별개의 대상물로 인정해 줍니다.
+            앞선 제2편에서 지하구는 2급 소방안전관리대상물(제3장)로, 또 전력·통신용 지하구 중 공동구가 화재예방강화지구가 아닌 소방안전 특별관리시설물(제4장)로 연달아 등장했습니다. 이제 제3편 소방시설법(시행령 별표 2 제28호)에서 그 지하구의 물리적 규격과 복수의 건물을 하나로 묶는 연결통로 기준(시행령 별표 2 비고 제2호)을 정확히 확정합니다.
+            <span class="prose-item"><strong>① 지하구의 법정 범위 (시행령 별표 2 제28호)</strong></span>
+            <span class="prose-sub">&bull; <strong>규모 무관 당연 지하구</strong>: 사람이 점검·보수를 위해 출입 가능한 지하 인공구조물 중 2018년 아현국사 화재 이후 강화된 규정에 따라 전력 또는 <strong>통신사업용</strong> 지하 인공구조물로서 <strong>전력구 또는 통신구 방식으로 설치된 것</strong>(전력구 중 케이블 접속부가 없는 경우는 제외)과 국토계획법상 공동구는 폭·높이·길이 규모와 상관없이 모두 지하구에 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>그 밖의 일반 지하 인공구조물</strong>: 전력·통신사업용 외의 일반 배관 지하 인공구조물은 성인이 양팔을 벌려 지나갈 수 있는 <strong>폭 1.8미터 이상이고 고개를 숙이지 않고 서서 걸을 수 있는 높이 2미터 이상이며 길이가 50미터 이상인 것</strong>이어야 지하구로 인정됩니다.</span>
+            <span class="prose-item"><strong>② 둘 이상의 특정소방대상물을 하나로 보는 연결통로 기준 (시행령 별표 2 비고 제2호)</strong></span>
+            <span class="prose-sub">&bull; <strong>통로 길이 무관 단일 간주</strong>: 불길과 열기를 막지 못하는 <strong>내화구조가 아닌 연결통로</strong>로 연결된 경우, 연기가 굴뚝처럼 번지는 지하보도·지하상가·터널·지하구로 연결된 경우, 또는 공사현장 가설울타리 안의 둘 이상 건축물을 동시 시공하는 경우에는 통로 길이와 상관없이 무조건 하나의 특정소방대상물로 봅니다.</span>
+            <span class="prose-sub">&bull; <strong>내화구조 연결통로의 길이·벽 높이 기준</strong>: 콘크리트 같은 <strong>내화구조로 된 연결통로</strong>는 열기가 흩어지는 <strong>벽이 없는 구조는 길이가 6미터 이하</strong>인 경우에만, 열기가 갇혀 멀리 뻗는 벽이 있는 구조는 길이가 10미터 이하인 경우에만 하나로 보며, 이때 <strong>벽 높이가 연결통로 바닥에서 천장까지 높이의 2분의 1 이상이면 벽이 있는 구조</strong>로 보고 2분의 1 미만이면 벽이 없는 구조로 봅니다(방화셔터나 스프링클러·드렌처설비 등으로 구획된 작업·피난·부속 통로는 별개 대상물 인정).</span>
           </p>
         </div>
+
         <div class="para-block">
           <p class="prose-body">
-            또한 땅 위에 있는 <strong>지상층</strong>인데도 고시원이나 백화점 매장처럼 외벽을 통유리나 간판으로 막아놓아 열리는 창문이 거의 없는 층은, 화재 시 유독가스가 빠져나가지 못해 조기에 플래시오버(Flashover)에 도달하고 소방관의 외부 진입조차 불가능합니다. 그래서 <strong>시행령 제2조 제1호</strong>는 <strong>지상층 중 피난 또는 소화활동상 유효한 개구부(창문 등)의 면적 합계가 해당 층 바닥면적의 30분의 1 이하가 되는 층을 무창층(無窓層)</strong>이라고 정의하며, 지하층과 맞먹는 엄격한 소방시설 설치 의무를 부과합니다(지하층은 원래 지하층이므로 무창층 판정 대상이 아닙니다!). 이때 아무 환기창이나 개구부로 쳐주지 않고 공기호흡기를 멘 소방대원이 진입하거나 재실자가 탈출할 수 있는 <strong>유효 개구부의 5대 필수 요건</strong>을 모두 갖추어야 합니다. ① <strong>크기</strong>: 개구부 크기가 <strong>지름 50센티미터 이상의 원이 내접(통과)</strong>할 수 있는 크기일 것, ② <strong>높이</strong>: 해당 층의 바닥면으로부터 개구부 밑부분까지의 높이가 <strong>1.2미터 이내</strong>일 것, ③ <strong>방향</strong>: 개구부가 <strong>도로 또는 차량이 진입할 수 있는 빈터</strong>를 향할 것, ④ <strong>개방성</strong>: 화재 시 건축물 <strong>내부 또는 외부에서 쉽게 열거나 부술 수 있는 구조</strong>일 것(쉽게 열리지 않는 구조는 제외!), ⑤ <strong>무장애</strong>: 개구부에 <strong>창살이나 그 밖의 장애물이 설치되지 아니할 것</strong>입니다.
+            또한 땅 위에 있는 지상층인데도 백화점 매장이나 고시원처럼 외벽을 통유리나 간판으로 막아 열리는 창문이 거의 없는 층은 화재 시 열기와 유독가스가 빠져나가지 못해 조기에 플래시오버에 도달하고 소방관의 외부 진입마저 불가능합니다. 그래서 시행령 제2조 제1호는 지하층을 제외한 <strong>지상층 중 피난 또는 소화활동상 유효한 개구부의 면적 합계가 해당 층 바닥면적의 30분의 1 이하가 되는 층을 무창층</strong>이라 정의하고 지하층에 맞먹는 엄격한 설비 의무를 부과합니다(지하층은 본래 지하층이므로 무창층 판정 대상 자체가 아닙니다).
+            <span class="formula-box">
+              <span class="formula-badge">무창층 판정 공식 및 내화 연결통로 경계식 (시행령 제2조 · 별표 2 비고)</span>
+              <span class="formula-eq">무창층(지상층 한정) ⇔ ∑(유효 개구부 면적) ≤ 해당 층 바닥면적 × (1 / 30)</span>
+              <span class="formula-ex">💡 <strong>실전 판정 수치</strong> | 개구부 원 지름 ≥ 50cm · 바닥면에서 밑부분 높이 ≤ 1.2m / 내화 연결통로 단일 간주 = 무벽(벽 높이 &lt; 1/2) 6m 이하 · 유벽(≥ 1/2) 10m 이하</span>
+            </span>
+            <span class="prose-item"><strong>③ 공기호흡기 장착 대원이 진입하는 유효 개구부의 5대 필수 요건 (시행령 제2조 제1호)</strong></span>
+            <span class="prose-sub">&bull; <strong>크기 및 높이 요건</strong>: 개구부 크기는 지름 50센티미터 이상의 원이 통과할 수 있을 것, 그리고 해당 층 바닥면으로부터 개구부 밑부분까지의 높이가 1.2미터 이내일 것을 동시에 충족해야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>방향·무장애·개방성 요건</strong>: 개구부가 <strong>도로 또는 차량이 진입할 수 있는 빈터</strong>를 향할 것, 화재 시 피난 또는 소화활동에 지장을 주는 창살이나 그 밖의 장애물이 설치되지 않을 것, 그리고 내부 또는 외부에서 쉽게 부수거나 열 수 있을 것까지 5가지 요건을 모두 갖춘 창문만 유효 개구부 면적에 산입합니다.</span>
           </p>
         </div>
       </div>
 
       <div id="sec3">
-        <h2 class="text-xl font-bold text-white mb-3">3. 이 건물 안에 사람이 최대 몇 명이나 들어갈까? — 수용인원 산정 공식(시행령 별표 3)과 주요 설비 설치 기준</h2>
+        <h2 class="text-xl font-bold text-white mb-3">3. 대피 인원이 설비 용량을 결정한다 — 수용인원 산정 공식(시행령 제17조·별표 7)과 주요 소방시설 기준(별표 4)</h2>
         <div class="para-block">
           <p class="prose-body">
-            건물에 피난기구나 경보설비 등을 설치할 때 기준이 되는 <strong>수용인원 산정 방법(시행령 별표 3)</strong>은 매년 빈칸 채우기와 실제 계산 문제로 출제되는 초핵심 테마입니다. 먼저 호텔·모텔 같은 <strong>숙박시설이 있는 특정소방대상물</strong>부터 봅시다. ① 침대가 있는 숙박시설은 <strong>해당 특정소방대상물의 종사자의 수에 침대의 수(2인용 침대는 2명으로 계산)를 더한 수</strong>로 산정합니다. ② 침대가 없는 온돌방 숙박시설은 한 사람이 이불 하나 펴고 누울 면적인 <strong>3제곱미터</strong>로 나누어, <strong>해당 특정소방대상물의 종사자의 수에 숙박시설 바닥면적의 합계를 3제곱미터로 나누어 얻은 수를 더한 수</strong>로 산정합니다(복도·계단 및 화장실의 바닥면적은 제외!).
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>숙박시설 수용인원(별표 3)</strong>: 침대 유 = <strong>종사자 수 + 침대 수</strong>(2인용은 2명) / 침대 무 = <strong>종사자 수 + (숙박 바닥면적 합계 ÷ 3㎡)</strong></li>
-              <li><strong>일반 시설 수용인원(1.9 · 4.6 · 3㎡)</strong>: <strong>강의·교무·상담·실습·휴게실 ÷ 1.9㎡</strong> / <strong>강당·문화집회·운동·종교시설 ÷ 4.6㎡</strong>(긴 의자는 정면 너비 ÷ <strong>0.45m</strong>) / <strong>그 밖의 대상물 ÷ 3㎡</strong></li>
-              <li><strong>소수점 처리 대원칙</strong>: 수용인원 계산 결과 소수점 이하의 수는 <strong>반올림</strong>한다! (단, 복도·계단·화장실 바닥면적은 제외)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            그렇다면 숙박시설 외의 일반 특정소방대상물은 바닥면적 합계를 몇 제곱미터로 나눌까요? 이 역시 공간의 밀집도를 떠올리면 세 가지 숫자(<strong>1.9제곱미터 · 4.6제곱미터 · 3제곱미터</strong>)가 헷갈리지 않습니다. 첫째, 책상과 의자를 놓고 사람들이 촘촘히 앉는 <strong>강의실·교무실·상담실·실습실·휴게실(앞 글자: '강·교·상·실·휴' 5형제 — 사무실은 아님 주의!)</strong> 용도로 쓰는 특정소방대상물은 해당 용도로 사용하는 바닥면적의 합계를 <strong>1.9제곱미터</strong>로 나누어 얻은 수로 합니다. 둘째, <strong>강당·문화 및 집회시설·운동시설·종교시설(앞 글자: '강·문·운·종' 4형제 — 판매시설·수련시설 아님 주의!)</strong>은 고정식 의자가 없는 경우 해당 용도로 사용하는 바닥면적의 합계를 <strong>4.6제곱미터</strong>로 나누어 얻은 수로 합니다(만약 관람석 등에 고정식 의자가 설치된 경우에는 그 의자의 수로 하고, 교회 장의자처럼 긴 의자의 경우에는 의자의 정면 너비를 <strong>0.45미터</strong>로 나누어 얻은 수로 합니다). 셋째, 백화점(판매시설)이나 일반 사무실 등 <strong>그 밖의 특정소방대상물</strong>은 해당 용도로 사용하는 바닥면적의 합계를 <strong>3제곱미터</strong>로 나누어 얻은 수로 합니다. 이때 반드시 주의할 법정 계산 규칙(<strong>시행령 별표 3 비고</strong>)은 바닥면적을 산정할 때 복도(준불연재료 이상의 것을 사용하여 바닥에서 천장까지 벽으로 구획한 것), 계단 및 화장실의 바닥면적은 포함하지 않으며, <strong>계산 결과 소수점 이하의 수는 '반올림'한다</strong>는 점입니다!
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            끝으로 본 단원 기출문제에서 특정소방대상물의 분류·수용인원과 결합하여 자주 출제되는 <strong>주요 소방시설 설치 기준(시행령 별표 4)</strong> 핵심 수치들도 함께 정리해 둡시다. ① <strong>단독경보형 감지기</strong>는 연면적 1,000제곱미터 미만의 아파트등·기숙사, <strong>연면적 600제곱미터 미만의 숙박시설</strong>, <strong>연면적 400제곱미터 미만의 노유자시설(유치원 등) 및 수련시설</strong>(수련시설은 숙박시설이 있는 것만 해당), 교육연구시설·수련시설 내에 있는 합숙소 또는 기숙사로서 연면적 2,000제곱미터 미만인 것에 설치합니다. ② <strong>제연설비</strong>는 지하가(터널 제외)로서 <strong>연면적 1,000제곱미터 이상</strong>인 것, 문화 및 집회시설·종교시설·운동시설로서 <strong>무대부의 바닥면적이 200제곱미터 이상</strong>인 것, 또는 영화상영관으로서 <strong>수용인원 100명 이상</strong>인 것에 설치합니다. ③ <strong>주거용 주방자동소화장치</strong>는 <strong>아파트등 및 30층 이상 오피스텔의 모든 층</strong>에 설치하고, 지하가 중 <strong>터널은 길이가 1,000미터 이상</strong>인 경우 옥내소화전설비를 설치하며, <strong>조산원·산후조리원</strong>은 연면적 600제곱미터 미만이면 간이스프링클러설비를, 600제곱미터 이상이면 모든 층에 스프링클러설비를 설치하고, 일반 창고시설은 바닥면적 합계 5,000제곱미터 이상(물류터미널은 3,000제곱미터 이상)일 때 모든 층에 스프링클러설비를 설치합니다. ④ 또한 도면 응용 문제(2026년 경채 Q21)에서 묻듯이 <strong>자동화재탐지설비</strong>(근린생활·업무·복합건축물 연면적 600제곱미터 이상), <strong>시각경보기</strong>(자탐 대상 중 근린생활·업무·방송통신시설 등), <strong>비상방송설비</strong>(연면적 <strong>3,500제곱미터 이상</strong>, 지상 11층 이상, 또는 지하 3층 이상), <strong>비상조명등</strong>(지하층 포함 5층 이상이고 연면적 3,000제곱미터 이상이거나, <strong>지하층·무창층 바닥면적 450제곱미터 이상</strong>인 경우 해당 지하층·무창층)의 기준을 유기적으로 연결해 두면 어떤 사례형 문제도 단번에 풀어낼 수 있습니다.
+            건물에 피난기구나 제연설비, 앞선 장에서 배운 특별관리시설물(영화상영관 수용인원 1천 명 이상) 기준을 적용하려면 그 공간에 최대 몇 명이 들어갈 수 있는지 계산하는 수용인원 산정 방법(시행령 제17조 및 별표 7)을 알아야 합니다. 취침자가 머무는 숙박시설과 일반 시설의 산정 공식은 재실 밀집도에 따라 정교하게 나뉩니다.
+            <span class="formula-box">
+              <span class="formula-badge">수용인원 산정 4대 공식 및 소수점 처리 규칙 (시행령 제17조 · 별표 7)</span>
+              <span class="formula-eq">숙박 = 종사자 + 침대 수(무침대 ÷ 3㎡) | 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 ÷ 0.45m) | 기타 ÷ 3㎡</span>
+              <span class="formula-ex">💡 <strong>별표 7 비고 대원칙</strong> | 준불연재료 이상 벽 구획 복도·계단·화장실 바닥면적 제외 / 계산 결과 소수점 이하의 수는 반올림! (예: 강의실 190㎡[100명] + 종교 230㎡[50명] = 150명)</span>
+            </span>
+            <span class="prose-item"><strong>① 숙박시설 대 일반 특정소방대상물 수용인원 산정 (시행령 별표 7)</strong></span>
+            <span class="prose-sub">&bull; <strong>침대 유무별 숙박시설</strong>: 침대가 있는 숙박시설은 바닥면적으로 나누지 않고 <strong>해당 특정소방대상물의 종사자의 수에 침대의 수를 더한 수</strong>(2인용 침대는 2명으로 계산)로 산정하며, 침대가 없는 온돌방 숙박시설은 <strong>해당 특정소방대상물의 종사자의 수에 숙박시설 바닥면적의 합계를 3제곱미터로 나누어 얻은 수를 더한 수</strong>로 산정합니다.</span>
+            <span class="prose-sub">&bull; <strong>밀집도별 일반 시설(1.9·4.6·3제곱미터)</strong>: 책상을 촘촘히 붙이는 <strong>강의실·교무실·상담실·실습실·휴게실</strong>(일반 사무실 제외)은 바닥면적 합계를 1.9제곱미터로 나누고, 무대·통로 여유가 넓은 <strong>강당·문화 및 집회시설·운동시설·종교시설</strong>(판매·수련시설 제외)은 고정식 의자가 없을 때 4.6제곱미터로 나누되 고정식 긴 의자는 <strong>의자의 정면 너비를 0.45미터</strong>로 나누어 얻은 수로 하며, 판매시설·일반 사무실 등 그 밖의 대상물은 3제곱미터로 나눕니다.</span>
+            <span class="prose-sub">&bull; <strong>비고 제외 면적 및 끝수 처리</strong>: 준불연재료 이상으로 바닥에서 천장까지 벽으로 구획한 복도, 계단 및 화장실 바닥면적은 산정에서 제외하며, <strong>계산 결과 소수점 이하의 수는 반올림한다</strong>는 규칙이 적용됩니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:28%;">대상 공간 및 용도 구분</th>
-                <th style="width:42%;">수용인원 산정 공식 (시행령 별표 3)</th>
-                <th>법정 계산 규칙 및 핵심 비교</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>숙박시설이 있는 대상물</strong></td>
-                <td>침대 있음: <strong>종사자 수 + 침대 수</strong>(2인용은 2명)<br/>침대 없음: <strong>종사자 수 + (숙박 바닥면적 합계 ÷ 3㎡)</strong></td>
-                <td>반드시 <strong>종사자의 수</strong>를 합산해야 함!</td>
-              </tr>
-              <tr>
-                <td><strong>강의실·교무실·상담실·실습실·휴게실</strong></td>
-                <td>해당 용도로 사용하는 바닥면적 합계 ÷ <strong>1.9제곱미터</strong></td>
-                <td><strong>'강·교·상·실·휴'</strong> (사무실은 3㎡ 나눔 주의!)</td>
-              </tr>
-              <tr>
-                <td><strong>강당·문화집회·운동·종교시설</strong></td>
-                <td>고정식 의자 없음: 바닥면적 합계 ÷ <strong>4.6제곱미터</strong><br/>긴 의자 설치 시: 의자 정면 너비 ÷ <strong>0.45미터</strong></td>
-                <td><strong>'강·문·운·종'</strong> (판매시설·수련시설은 3㎡ 나눔!)</td>
-              </tr>
-              <tr>
-                <td><strong>그 밖의 특정소방대상물 (판매·업무 등)</strong></td>
-                <td>해당 용도로 사용하는 바닥면적 합계 ÷ <strong>3제곱미터</strong></td>
-                <td>복도·계단·화장실 면적 제외 / <strong>소수점 이하 반올림!</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            끝으로 본 장의 용도 분류·무창층·수용인원 개념과 결합하여 실전 도면·사례형 기출문제에 직결되는 주요 소방시설 설치 기준(시행령 별표 4, 모레 제3장에서 전체 체계를 총정리할 핵심 수치들)을 미리 연결해 둡니다.
+            <span class="prose-item"><strong>② 용도·무창층·수용인원과 직결되는 주요 소방시설 기준 (시행령 별표 4)</strong></span>
+            <span class="prose-sub">&bull; <strong>단독경보형 감지기 소규모 경계</strong>: <strong>연면적 1,000제곱미터 미만의 아파트등·기숙사</strong>, <strong>연면적 600제곱미터 미만의 숙박시설</strong>, 연면적 400제곱미터 미만의 노유자시설(유치원 등) 및 숙박시설이 있는 수련시설, 연면적 2,000제곱미터 미만의 교육연구·수련시설 내 합숙소·기숙사 기출 기준과 직결됩니다(현행 개정 상세는 제3장에서 대조합니다).</span>
+            <span class="prose-sub">&bull; <strong>제연설비 및 주방·터널 설비</strong>: 제연설비는 <strong>지하가</strong> 중 터널을 제외한 연면적 1,000제곱미터 이상인 것, 문화집회·종교·운동시설 중 <strong>무대부의 바닥면적이 200제곱미터 이상</strong>인 것, 영화상영관 중 <strong>수용인원 100명 이상</strong>인 것에 설치하며, 주거용 주방자동소화장치는 <strong>아파트등 및 30층 이상 오피스텔의 모든 층</strong>에, 옥내소화전설비는 길이 1,000미터 이상인 터널에 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>스프링클러·비상방송·비상조명등</strong>: 당연 근린생활시설인 <strong>조산원</strong>·산후조리원은 연면적 600제곱미터 미만이면 간이스프링클러설비를, 600제곱미터 이상이면 모든 층에 스프링클러설비를 설치하고, <strong>일반 창고시설은 바닥면적 합계 5,000제곱미터 이상, 물류터미널은 3,000제곱미터 이상</strong>일 때 전 층에 스프링클러를 설치합니다. 또한 비상방송설비는 <strong>특정소방대상물</strong> 중 연면적 3,500제곱미터 이상·지상 11층 이상·지하 3개 층 이상에, 비상조명등은 <strong>지하층 포함 5층 이상이고 연면적 3,000제곱미터 이상</strong>인 건물의 모든 층 또는 <strong>지하층</strong>·무창층 바닥면적이 450제곱미터 이상인 해당 층과 길이 500미터 이상 터널에 설치합니다.</span>
+          </p>
         </div>
       </div>
     </section>
 
     <div class="para-block diagram-wrapper" id="diagramSection">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 특정소방대상물 분류·수용인원 산정 및 무창층·연결통로 핵심 요약</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">CORE CHEAT SHEET</span>
+          <span class="cheat-title">단원 핵심 압축 정리본 — 특정소방대상물 30종 · 지하구 · 연결통로 · 무창층 · 수용인원(별표 2·7)</span>
         </div>
-        <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 근린생활시설 면적 경계선 및 수용인원 산정 공식</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">근린생활시설 바닥면적 합계 기준 (별표 2)</div>
-                <ul class="schema-list">
-                  <li><strong>소매점·의약품·자동차영업소</strong>: 1,000㎡ 미만</li>
-                  <li><strong>금융·사무·서점·학원·독서실·운동·고시원</strong>: 500㎡ 미만</li>
-                  <li><strong>공연장·종교집회장</strong>: 300㎡ 미만</li>
-                  <li><strong>단란주점</strong>: 150㎡ 미만 (<strong>유흥주점은 면적 불문 위락시설!</strong>)</li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">수용인원 산정 공식 (소수점 이하 반올림!)</div>
-                <ul class="schema-list">
-                  <li><strong>숙박시설</strong>: 종사자 수 + 침대 수 (침대 없는 객실은 ÷ <strong>3㎡</strong>)</li>
-                  <li><strong>강의·교무·상담·실습·휴게실</strong>: 바닥면적 ÷ <strong>1.9㎡</strong></li>
-                  <li><strong>강당·문화집회·운동·종교시설</strong>: 바닥면적 ÷ <strong>4.6㎡</strong> (긴 의자 ÷ <strong>0.45m</strong>)</li>
-                  <li><strong>그 밖의 특정소방대상물(판매·사무실 등)</strong>: 바닥면적 ÷ <strong>3㎡</strong></li>
-                </ul>
-              </div>
-            </div>
-            <div class="schema-alert">★ 무창층 3대 수치: 지상층 중 유효 개구부 면적 합계가 바닥면적의 <strong>1/30 이하</strong> / 개구부 지름 <strong>50cm 이상 원 내접</strong> / 바닥면부터 개구부 밑부분까지 높이 <strong>1.2m 이내</strong>!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 지하구 규격 · 내화구조 연결통로 및 무창층 판정 요건</div>
-            <div class="space-y-2.5">
-              <div class="schema-badge-item">
-                <span class="schema-badge-icon">지하</span>
-                <div>
-                  <div class="schema-box-title">지하구 규격 및 내화구조 연결통로 하나 간주</div>
-                  <div>지하구: 전력·통신사업용(전력구·통신구 방식) 규모 무관, 그 외 <strong>폭 1.8m · 높이 2m · 길이 50m 이상</strong> / 내화 연결통로: <strong>벽 없음 6m 이하 · 벽 있음 10m 이하</strong>(벽 높이 <strong>1/2 이상</strong>)</div>
-                </div>
-              </div>
-              <div class="schema-badge-item">
-                <span class="schema-badge-icon">무창</span>
-                <div>
-                  <div class="schema-box-title">무창층 정의 (지상층만 해당 · 지하층 제외)</div>
-                  <div>지상층 중 유효 개구부 면적 합계가 해당 층 <strong>바닥면적의 30분의 1 이하</strong>가 되는 층</div>
-                </div>
-              </div>
-              <div class="schema-badge-item">
-                <span class="schema-badge-icon">개구</span>
-                <div>
-                  <div class="schema-box-title">유효 개구부 5대 필수 요건</div>
-                  <div><strong>지름 50cm 이상 원 내접</strong> · 바닥에서 밑부분까지 <strong>1.2m 이내</strong> · 도로/차량 진입 빈터 향함 · 내외부 쉽게 개방·파괴 가능 · 창살 등 장애물 없음</div>
-                </div>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01. 법 제2조 정의 · 근린생활시설 4대 경계선 및 혼동 용도 족보 (시행령 별표 2)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">법 제2조·제3조 정의·위임</div>
+              <div class="cheat-val"><span class="cheat-eq">특정소방대상물(별표 2) · 소방용품(별표 3) = 모두 대통령령!</span> 화재안전기준 이원화: 안전성능 고시 = <strong>성능기준(NFPC)</strong> ↔ 상세 규격·수치·시험방법 승인 = <strong>기술기준(NFTC)</strong> / 법 제3조: 국가·지자체의 설치·관리 정책 책무</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">근린생활시설 면적 4구간</div>
+              <div class="cheat-val"><span class="cheat-eq">1,000㎡ &gt; 500㎡ &gt; 300㎡ &gt; 150㎡ 미만</span> 소매점·의약품·자동차영업소 <strong>1,000㎡ 미만</strong> / 금융·사무·서점·학원·독서실·운동·<strong>고시원 500㎡ 미만</strong>(고시원 500㎡ 이상 = <strong>숙박시설!</strong>) / 공연장·종교집회장 <strong>300㎡ 미만</strong> / 단란주점 <strong>150㎡ 미만</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">면적 무관 근생 vs 위락</div>
+              <div class="cheat-val"><strong>의원·치과의원·한의원·침술원·접골원·조산원·산후조리원</strong>, 이용·미용·목욕·세탁·음식점 = <strong>면적 무관 근린생활시설</strong> ↔ <strong>유흥주점·무도장·무도학원</strong> = <strong>면적 불문 무조건 위락시설!</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">혼동 용도 4대 족보</div>
+              <div class="cheat-val"><strong>유스호스텔</strong> = 수련시설 / <strong>동물원·식물원</strong>·관람석 <strong>1,000㎡ 이상</strong> 체육관·운동장 = 문화 및 집회시설 / <strong>어린이회관·관망탑·야외극장</strong> = 관광휴게시설 / <strong>격납고·세차·폐차·운전·정비학원</strong> = 항공기·자동차시설 (공항·관제탑 = 운수시설, 고물상 = 창고시설)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02. 지하구 물리 규격 · 연결통로 단일 간주 및 무창층 판정 (시행령 제2조 · 별표 2)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">지하구 규격 (별표 2 제28호)</div>
+              <div class="cheat-val"><strong>전력·통신사업용(전력구[접속부 없는 것 제외]·통신구 방식)</strong> 및 <strong>공동구</strong> = <strong>규모 무관 지하구 해당</strong> ↔ 그 밖의 일반 지하 인공구조물 = <span class="cheat-eq">폭 1.8m 이상 + 높이 2m 이상 + 길이 50m 이상</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">연결통로 단일 간주 (비고)</div>
+              <div class="cheat-val"><strong>비내화 연결통로</strong> · 지하보도/지하상가/터널/지하구 · 가설울타리 내 동시시공 = <strong>길이 무관 하나</strong> ↔ <strong>내화구조 연결통로</strong> = <span class="cheat-eq">벽 없음(벽 높이 &lt; 1/2) 6m 이하 · 벽 있음(≥ 1/2) 10m 이하</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">무창층 &amp; 유효 개구부 5요건</div>
+              <div class="cheat-val">오직 <strong>지상층</strong>(지하층 제외!) 중 유효 개구부 합계 ≤ <span class="cheat-eq">바닥면적의 30분의 1 이하</span> / 5요건: <strong>지름 50cm 이상 원 통과</strong> · 바닥면에서 밑부분까지 <strong>1.2m 이내</strong> · 도로/빈터 향함 · 창살 등 장애물 없음 · 내외부 쉽게 개방·파괴 가능</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03. 수용인원 산정 공식(별표 7) 및 용도 결합 주요 소방시설(별표 4)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">숙박 vs 일반 수용인원</div>
+              <div class="cheat-val">숙박시설 = <span class="cheat-eq">종사자 수 + 침대 수(무침대 ÷ 3㎡)</span> / 일반: <strong>강·교·상·실·휴 ÷ 1.9㎡</strong> | <strong>강·문·운·종 ÷ 4.6㎡</strong>(긴 의자 정면 너비 <strong>÷ 0.45m</strong>) | 그 밖(판매·사무 등) <strong>÷ 3㎡</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">별표 7 제외 면적 · 반올림</div>
+              <div class="cheat-val">준불연재료 이상 바닥에서 천장까지 벽 구획 <strong>복도·계단·화장실 바닥면적 산정 제외</strong> / 계산 결과 <span class="cheat-eq">소수점 이하의 수는 반올림!</span> (버림·올림 아님)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">용도 결합 주요 설비 (별표 4)</div>
+              <div class="cheat-val">제연(지하가 <strong>1,000㎡</strong> · 무대부 <strong>200㎡</strong> · 영화관 <strong>100명 이상</strong>) / 주거용 주방자동소화(아파트등 + <strong>30층 이상 오피스텔</strong>) / 스프링클러(조산원·산후조리원 <strong>600㎡</strong>, 일반창고 <strong>5,000㎡</strong> vs 물류터미널 <strong>3,000㎡</strong>) / 비상조명등(<strong>5층+3,000㎡</strong> 또는 지하·무창 <strong>450㎡</strong>)</div>
             </div>
           </div>
         </div>
       </div>
-      <aside class="sidenote">
-        <div class="sidenote-box">
-          <div class="sidenote-title">도해 요약</div>
-          <ul class="sidenote-list">
-            <li><strong>주제</strong>: 특정소방대상물 분류·수용인원 산정 및 무창층·연결통로 기준</li>
-            <li><strong>핵심</strong>: 근린생활시설 면적 경계(1,000·500·300·150㎡)와 수용인원 나눔 수치(1.9·4.6·3㎡, 소수점 반올림)를 한눈에 비교합니다.</li>
-          </ul>
-        </div>
-      </aside>
     </div>
 
     <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
@@ -327,7 +254,7 @@
 
     <section class="mt-16 pt-8 border-t border-emerald-900/60" id="quizSection">
       <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mt-1">핵심 지문 OX 확인 (23문항)</h2>
+        <h2 class="text-2xl font-bold text-white mt-1">핵심 공식·수치 주관식 (13문항) &amp; 정예 OX 확인 (정예 30문항 / 전체 51문항)</h2>
         <p class="text-xs text-slate-400 mt-1">
           기출 선택지 중 시험에서 자주 변형되는 핵심 문장입니다. O 또는 X를 선택하여 법령의 정확한 수치를 점검하십시오.
         </p>
@@ -341,14 +268,14 @@
     <p>소방관계법규 · 제3편 소방시설 설치 및 관리에 관한 법률 제1장. 특정소방대상물의 분류, 수용인원 및 무창층 판정</p>
   </footer>
 
-  <script src="assets/js/harness-core.js?v=5"></script>
+  <script src="assets/js/harness-core.js?v=6"></script>
   <script>
     const STATS_03_01 = {
   "unitTitle": "제3편 소방시설 설치 및 관리에 관한 법률 제1장. 특정소방대상물의 분류, 수용인원 및 무창층 판정",
   "totalUniqueQs": 21,
   "totalAppearances": 26,
   "totalChoices": 84,
-  "totalOx": 23,
+  "totalOx": 51,
   "themes": [
     {
       "name": "무창층·지하구·연결통로 및 수용인원 산정",
@@ -491,7 +418,7 @@
       "문화 및 집회시설은 해당 용도로 사용하는 바닥면적의 합계를 3 ㎡로 나누어 얻은 수로 한다."
     ],
     "ans": 4,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 3에 따른 수용인원 산정 기준 면적(1.9제곱미터, 4.6제곱미터, 3제곱미터)을 구분하는 핵심 문항입니다. 강당, 문화 및 집회시설, 운동시설, 종교시설은 바닥면적 합계를 3제곱미터가 아니라 '4.6제곱미터'로 나누어 산정합니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조 및 별표 7에 따른 수용인원 산정 기준 면적(1.9제곱미터, 4.6제곱미터, 3제곱미터)을 구분하는 핵심 문항입니다. 강당, 문화 및 집회시설, 운동시설, 종교시설은 바닥면적 합계를 3제곱미터가 아니라 '4.6제곱미터'로 나누어 산정합니다.",
     "c_expls": [
       "[옳음] 침대가 있는 숙박시설은 종사자 수에 침대 수(2인용 침대는 2인으로 산정)를 합한 수로 합니다.",
       "[옳음] 침대가 없는 숙박시설은 종사자 수에 숙박시설 바닥면적 합계를 3제곱미터로 나누어 얻은 수를 합한 수로 합니다.",
@@ -591,7 +518,7 @@
       "(가): 9 m / (나): 12 m / (다): 3분의 1"
     ],
     "ans": 1,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제3조에 따라 둘 이상의 특정소방대상물이 내화구조로 된 연결통로로 연결된 경우 하나의 소방대상물로 보는 길이 기준(벽이 없는 구조 6미터 이하, 벽이 있는 구조 10미터 이하, 벽 높이 기준은 바닥에서 천장까지 높이의 2분의 1)을 묻는 빈출 문항입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2 비고 제2호에 따라 둘 이상의 특정소방대상물이 내화구조로 된 연결통로로 연결된 경우 하나의 소방대상물로 보는 길이 기준(벽이 없는 구조 6미터 이하, 벽이 있는 구조 10미터 이하, 벽 높이 기준은 바닥에서 천장까지 높이의 2분의 1)을 묻는 빈출 문항입니다.",
     "c_expls": [
       "[옳음 · 정답] 내화구조로 된 연결통로는 벽이 없는 구조로서 그 길이가 6미터 이하인 경우(가=6m), 벽이 있는 구조로서 그 길이가 10미터 이하인 경우(나=10m) 하나의 소방대상물로 보며, 벽 높이가 바닥에서 천장까지 높이의 2분의 1 이상(다=2분의 1)이면 벽이 있는 구조로 봅니다.",
       "[틀림] 7미터·12미터·3분의 1은 모두 법정 수치가 아닙니다.",
@@ -616,7 +543,7 @@
       "60명"
     ],
     "ans": 3,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 3에 따라 강의실 용도로 쓰이는 특정소방대상물의 수용인원은 바닥면적 합계(95제곱미터)를 1.9제곱미터로 나누어 산정합니다(95 ÷ 1.9 = 50명).",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조 및 별표 7에 따라 강의실 용도로 쓰이는 특정소방대상물의 수용인원은 바닥면적 합계(95제곱미터)를 1.9제곱미터로 나누어 산정합니다(95 ÷ 1.9 = 50명).",
     "c_expls": [
       "[틀림] 4.6제곱미터로 나눈 값(95 ÷ 4.6 ≈ 21명)으로, 강당·문화집회·운동·종교시설의 기준을 잘못 적용한 것입니다.",
       "[틀림] 3제곱미터로 나눈 값(95 ÷ 3 ≈ 32명)으로, 그 밖의 일반 시설 기준을 잘못 적용한 것입니다.",
@@ -716,7 +643,7 @@
       "440"
     ],
     "ans": 3,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 3에 따라 관람석이 없는 강당은 바닥면적을 4.6제곱미터로 나누고, 강의실 및 휴게실은 바닥면적을 1.9제곱미터로 나누어 합산합니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조 및 별표 7에 따라 관람석이 없는 강당은 바닥면적을 4.6제곱미터로 나누고, 강의실 및 휴게실은 바닥면적을 1.9제곱미터로 나누어 합산합니다.",
     "c_expls": [
       "[틀림] 강의실(570 ÷ 1.9 = 300명) + 휴게실(38 ÷ 1.9 = 20명) + 강당(460 ÷ 4.6 = 100명)을 합산한 총 수용인원은 380명이 아니라 '420명'입니다.",
       "[틀림] 강의실(300명)과 강당(100명)만 더하고 휴게실(38제곱미터 ÷ 1.9 = 20명)을 누락한 수치로서, 정확한 총 수용인원은 420명입니다.",
@@ -841,7 +768,7 @@
       "내화구조로 된 연결통로가 벽이 없는 구조로서 그 길이가 7 m인 경우"
     ],
     "ans": 4,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제3조에 따라 둘 이상의 특정소방대상물이 연결통로로 연결된 경우 하나의 특정소방대상물로 보는 경우(내화구조가 아닌 연결통로, 내화구조로서 벽 없는 구조 6미터 이하·벽 있는 구조 10미터 이하, 지하보도·지하상가·터널·지하구)를 묻는 문항입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2 비고 제2호에 따라 둘 이상의 특정소방대상물이 연결통로로 연결된 경우 하나의 특정소방대상물로 보는 경우(내화구조가 아닌 연결통로, 내화구조로서 벽 없는 구조 6미터 이하·벽 있는 구조 10미터 이하, 지하보도·지하상가·터널·지하구)를 묻는 문항입니다.",
     "c_expls": [
       "[옳음] 지하보도·지하상가·터널 또는 '지하구'로 연결된 경우에는 하나의 특정소방대상물로 봅니다.",
       "[옳음] 지하보도, 지하상가, 터널로 연결된 경우에는 하나의 특정소방대상물로 봅니다.",
@@ -868,7 +795,7 @@
     "ans": 3,
     "q_expl": "｢소방시설 설치 및 관리에 관한 법률｣ 제2조의 용어 정의 중 '화재안전기준'을 구성하는 '성능기준(NFPC)'과 '기술기준(NFTC)'의 정의를 맞바꾼 함정 문항입니다. 화재안전 확보를 위하여 재료·공간 및 설비 등에 요구되는 안전성능으로서 소방청장이 고시로 정하는 기준은 기술기준이 아니라 '성능기준'입니다.",
     "c_expls": [
-      "[옳음] ｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제4호에 따른 '소방용품'의 정확한 정의입니다.",
+      "[옳음] ｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제7호에 따른 '소방용품'의 정확한 정의입니다.",
       "[옳음] 같은 조 제1항 제3호에 따른 '특정소방대상물'의 정확한 정의입니다.",
       "[틀림 · 정답] 같은 조 제1항 제6호에 따라 화재안전 확보를 위하여 재료, 공간 및 설비 등에 요구되는 안전성능으로서 소방청장이 고시로 정하는 기준은 기술기준이 아니라 '성능기준(화재안전성능기준, NFPC)'이며, '기술기준(화재안전기술기준, NFTC)'은 성능기준을 충족하는 상세한 규격, 특정한 수치 및 시험방법 등을 정한 기준입니다.",
       "[옳음] 같은 조 제1항 제7호에 따른 '성능위주설계'의 정확한 정의입니다."
@@ -891,7 +818,7 @@
       "( 가 ): 교무실 / ( 나 ): 운동시설 / ( 다 ): 수련시설"
     ],
     "ans": 3,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 3에 따른 수용인원 산정 시 바닥면적을 1.9제곱미터로 나누는 시설(강의실·교무실·상담실·실습실·휴게실)과 4.6제곱미터로 나누는 시설(강당, 문화 및 집회시설, 운동시설, 종교시설)의 빈칸을 채우는 문항입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조 및 별표 7에 따른 수용인원 산정 시 바닥면적을 1.9제곱미터로 나누는 시설(강의실·교무실·상담실·실습실·휴게실)과 4.6제곱미터로 나누는 시설(강당, 문화 및 집회시설, 운동시설, 종교시설)의 빈칸을 채우는 문항입니다.",
     "c_expls": [
       "[틀림] 사무실과 판매시설은 그 밖의 특정소방대상물로서 바닥면적을 3제곱미터로 나누어 산정합니다.",
       "[틀림] 1.9제곱미터 기준에는 사무실이 아니라 '교무실'(가)이 들어가고, 4.6제곱미터 기준에는 판매·수련시설이 아니라 '운동시설'(나)과 '종교시설'(다)이 들어갑니다.",
@@ -903,186 +830,800 @@
     const QUIZ_03_01 = [
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 청소년활동 진흥법에 따른 유스호스텔은 숙박시설에 해당한다.",
     "isCorrect": false,
     "source": "2018년 소방경채 Q20",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 유스호스텔은 숙박시설이 아니라 청소년수련원·청소년야영장과 함께 '수련시설'로 분류됩니다.",
     "origQId": "Q_03_01_2018_경채_20",
-    "id": "LAW_03_01_001"
+    "id": "LAW_03_01_001",
+    "hlKey": "유스호스텔은",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 동물원과 식물원은 동·식물 관련시설이 아니라 문화 및 집회시설에 해당한다.",
     "isCorrect": true,
     "source": "2018년 소방경채 Q20",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 일반 대중이 관람하는 동물원·식물원은 문화 및 집회시설(동·식물원)에 해당합니다.",
     "origQId": "Q_03_01_2018_경채_20",
-    "id": "LAW_03_01_002"
+    "id": "LAW_03_01_002",
+    "hlKey": "관련시설이",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 어린이회관, 야외음악당, 야외극장, 관망탑은 관광휴게시설에 해당한다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q10",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 어린이회관, 야외음악당, 야외극장, 관망탑, 공원·유원지 또는 관광지에 부수되는 시설은 관광휴게시설입니다.",
     "origQId": "Q_03_01_2018_공채_10",
-    "id": "LAW_03_01_003"
+    "id": "LAW_03_01_003",
+    "hlKey": "어린이회관",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 자동차운전학원 및 정비학원은 교육연구시설이 아니라 항공기 및 자동차 관련시설에 해당한다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q10",
     "explanation": "일반 학원은 교육연구시설이지만 자동차운전학원·정비학원은 예외적으로 항공기 및 자동차 관련시설로 분류됩니다.",
     "origQId": "Q_03_01_2018_공채_10",
-    "id": "LAW_03_01_004"
+    "id": "LAW_03_01_004",
+    "hlKey": "정비학원은",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "무창층 판정 시 개구부는 크기가 지름 50센티미터 이상의 원이 통과(내접)할 수 있어야 하고, 해당 층의 바닥면으로부터 개구부 밑부분까지의 높이가 1.2미터 이내여야 한다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q14 · 2023년 소방경채 Q25",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제2조에 따라 지름 50센티미터 이상 원 통과 가능, 바닥면에서 개구부 밑부분까지 높이 1.2미터 이내, 도로 또는 차량 진입 빈터를 향할 것, 내부·외부에서 쉽게 열거나 부술 수 있을 것 등의 요건을 갖춘 개구부 면적 합계가 바닥면적의 30분의 1 이하이면 무창층이 됩니다.",
     "origQId": "Q_03_01_2019_경채_14",
-    "id": "LAW_03_01_005"
+    "id": "LAW_03_01_005",
+    "hlKey": "제2조",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "전력·통신사업용 외의 지하 인공구조물이 특정소방대상물 중 지하구에 해당하려면 폭 1.8미터 이상, 높이 2미터 이상, 길이 50미터 이상이어야 한다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q15 · 2024년 소방경채 Q35",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 일반 지하 인공구조물은 폭 1.8미터 이상, 높이 2미터 이상, 길이 50미터 이상일 때 지하구에 해당합니다(전력·통신사업용은 전력구·통신구 방식이면 규모 무관).",
     "origQId": "Q_03_01_2024_경채_35",
-    "id": "LAW_03_01_006"
+    "id": "LAW_03_01_006",
+    "hlKey": "통신사업용",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "수용인원 산정 시 강의실·교무실·상담실·실습실·휴게실은 바닥면적 합계를 1.9제곱미터로 나누고, 강당·문화 및 집회시설·운동시설·종교시설은 4.6제곱미터로 나누며, 그 밖의 시설은 3제곱미터로 나누어 산정한다(소수점 이하는 반올림).",
     "isCorrect": true,
     "source": "2019년 소방공채 Q7 · 2026년 소방경채 Q26",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 3에 따른 정확한 수용인원 산정 공식이며, 계산 결과 소수점 이하의 수는 반올림합니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제17조 및 별표 7에 따른 정확한 수용인원 산정 공식이며, 계산 결과 소수점 이하의 수는 반올림합니다.",
     "origQId": "Q_03_01_2026_경채_26",
-    "id": "LAW_03_01_007"
+    "id": "LAW_03_01_007",
+    "hlKey": "강의실",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "다중이용업 중 고시원업의 시설로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 500제곱미터 미만인 것은 근린생활시설에 해당하고, 500제곱미터 이상인 것은 숙박시설에 해당한다.",
     "isCorrect": true,
     "source": "2020년 소방경채 Q19",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 고시원은 바닥면적 합계 500제곱미터를 기준으로 500제곱미터 미만은 근린생활시설, 500제곱미터 이상은 숙박시설로 구분됩니다.",
     "origQId": "Q_03_01_2020_경채_19",
-    "id": "LAW_03_01_008"
+    "id": "LAW_03_01_008",
+    "hlKey": "다중이용업",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "연면적 600제곱미터 미만의 숙박시설과 연면적 400제곱미터 미만의 유치원(노유자시설)에는 단독경보형 감지기를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2020년 소방공채 Q11",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 단독경보형 감지기 의무 설치 대상입니다.",
     "origQId": "Q_03_01_2020_공채_11",
-    "id": "LAW_03_01_009"
+    "id": "LAW_03_01_009",
+    "hlKey": "연면적 600제곱미터 미만의 숙박시설",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "단란주점은 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 150제곱미터 미만인 경우에만 근린생활시설에 해당하고, 150제곱미터 이상이면 위락시설에 해당한다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q14 · 2025년 소방경채 Q30",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 단란주점은 150제곱미터 미만이 근린생활시설이고 150제곱미터 이상은 위락시설입니다(유흥주점은 면적 무관 위락시설).",
     "origQId": "Q_03_01_2021_경채_14",
-    "id": "LAW_03_01_010"
+    "id": "LAW_03_01_010",
+    "hlKey": "건축물에",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "둘 이상의 특정소방대상물이 내화구조로 된 연결통로로 연결된 경우, 벽이 없는 구조로서 길이가 6미터 이하이거나 벽이 있는 구조로서 길이가 10미터 이하인 경우에는 이를 하나의 특정소방대상물로 본다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q16",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제3조에 따른 연결통로 기준(벽 없는 구조 6미터 이하, 벽 있는 구조 10미터 이하, 벽 높이 기준 2분의 1)입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2 비고 제2호에 따른 연결통로 기준(벽 없는 구조 6미터 이하, 벽 있는 구조 10미터 이하, 벽 높이 기준 2분의 1)입니다.",
     "origQId": "Q_03_01_2021_경채_16",
-    "id": "LAW_03_01_011"
+    "id": "LAW_03_01_011",
+    "hlKey": "내화구조로 된 연결통로",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "터널을 제외한 지하가로서 연면적 1,000제곱미터 이상인 것과 문화 및 집회시설 중 영화상영관으로서 수용인원 100명 이상인 것에는 제연설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q15",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 제연설비 의무 설치 대상입니다(문화집회·종교·운동시설 무대부 바닥면적은 200제곱미터 이상).",
     "origQId": "Q_03_01_2022_경채_15",
-    "id": "LAW_03_01_012"
+    "id": "LAW_03_01_012",
+    "hlKey": "수용인원 100명 이상",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "아파트등 및 30층 이상 오피스텔의 모든 층에는 주거용 주방자동소화장치를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q10",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따라 아파트등 및 30층 이상 오피스텔의 모든 층에는 주거용 주방자동소화장치를 의무 설치해야 합니다.",
     "origQId": "Q_03_01_2022_공채_10",
-    "id": "LAW_03_01_013"
+    "id": "LAW_03_01_013",
+    "hlKey": "아파트등",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "지하가 중 터널로서 길이가 500미터인 터널에는 원칙적으로 옥내소화전설비를 설치하여야 한다.",
     "isCorrect": false,
     "source": "2022년 소방공채 Q10",
     "explanation": "지하가 중 터널은 길이가 500미터가 아니라 '1,000미터 이상'인 터널(또는 행정안전부령으로 정하는 터널)에 옥내소화전설비를 설치하여야 합니다.",
     "origQId": "Q_03_01_2022_공채_10",
-    "id": "LAW_03_01_014"
+    "id": "LAW_03_01_014",
+    "hlKey": "지하가",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "근린생활시설 중 조산원 및 산후조리원으로서 연면적 600제곱미터 이상인 시설은 간이스프링클러설비가 아니라 모든 층에 스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q10",
     "explanation": "근린생활시설 중 조산원 및 산후조리원은 연면적 '600제곱미터 미만'인 시설에 간이스프링클러설비를 설치하고, 연면적 600제곱미터 이상인 시설에는 모든 층에 스프링클러설비를 설치하여야 합니다.",
     "origQId": "Q_03_01_2022_공채_10",
-    "id": "LAW_03_01_015"
+    "id": "LAW_03_01_015",
+    "hlKey": "조산원",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "의약품 판매소, 의료기기 판매소 및 자동차영업소로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 1,000제곱미터 미만인 것은 근린생활시설에 해당한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q30 · 소방공채 Q19",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따라 의약품·의료기기 판매소 및 자동차영업소는 바닥면적 합계 1,000제곱미터 미만일 때 근린생활시설에 해당합니다.",
     "origQId": "Q_03_01_2025_경채_30",
-    "id": "LAW_03_01_016"
+    "id": "LAW_03_01_016",
+    "hlKey": "의약품",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물 중 연면적 3,500제곱미터 이상이거나 지하층을 제외한 층수가 11층 이상이거나 지하층의 층수가 3개 층 이상인 것에는 비상방송설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q21",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 비상방송설비의 3대 설치 기준(연면적 3,500제곱미터 이상, 지상 11층 이상, 지하 3층 이상)입니다.",
     "origQId": "Q_03_01_2026_경채_21",
-    "id": "LAW_03_01_017"
+    "id": "LAW_03_01_017",
+    "hlKey": "특정소방대상물",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "지하층 또는 무창층의 바닥면적이 450제곱미터 이상인 경우에는 해당 지하층 또는 무창층에 비상조명등을 설치하여야 한다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q21",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따라 지하층·무창층 바닥면적이 450제곱미터 이상이면 그 지하층·무창층에 비상조명등을 설치해야 합니다.",
     "origQId": "Q_03_01_2026_경채_21",
-    "id": "LAW_03_01_018"
+    "id": "LAW_03_01_018",
+    "hlKey": "지하층",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 항공기 격납고, 세차장, 폐차장, 운전학원·정비학원은 항공기 및 자동차 관련시설에 해당하며, 공항시설(항공관제탑 포함)은 운수시설에 해당한다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q22 · 소방공채 Q14",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에서 항공기격납고는 항공기 및 자동차 관련시설이고, 공항시설은 운수시설이므로 두 시설을 혼동하지 말아야 합니다.",
     "origQId": "Q_03_01_2026_경채_22",
-    "id": "LAW_03_01_019"
+    "id": "LAW_03_01_019",
+    "hlKey": "항공기",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "화재안전기준 중 성능기준이란 화재안전 확보를 위하여 재료, 공간 및 설비 등에 요구되는 안전성능으로서 소방청장이 고시로 정하는 기준을 말하며, 기술기준이란 성능기준을 충족하는 상세한 규격, 특정한 수치 및 시험방법 등을 정한 기준을 말한다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q24 · 소방공채 Q15",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제6호에 따른 화재안전성능기준(NFPC)과 화재안전기술기준(NFTC)의 정확한 법정 정의입니다.",
     "origQId": "Q_03_01_2026_경채_24",
-    "id": "LAW_03_01_020"
+    "id": "LAW_03_01_020",
+    "hlKey": "제2조",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "지하가 중 터널로서 길이가 500 ｍ인 터널에는 옥내소 화전설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "2022년 소방공채 Q10 · 특정소방대상물별 설치해야 하는 소방시설 기준",
+    "explanation": "지하가 중 터널은 길이가 500미터가 아니라 '1,000미터 이상'인 터널(또는 행정안전부령으로 정하는 터널)에 옥내소화전설비를 설치하여야 합니다.",
+    "origQId": "Q_03_01_2022_공채_10",
+    "id": "EXT_03_01_001",
+    "hlKey": "지하가",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "“소방용품”이란 소방시설등을 구성하거나 소방용으로 사용되는 제품 또는 기기로서 대통령령으로 정하는 것을 말한다.",
+    "isCorrect": true,
+    "source": "2026년 소방경채 Q24 · 소방공채 Q15 · 소방시설 설치 및 관리에 관한 법률상 용어의 정의",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제7호에 따른 '소방용품'의 정확한 정의입니다.",
+    "origQId": "Q_03_01_2026_경채_24",
+    "id": "EXT_03_01_002",
+    "hlKey": "소방용품",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "“화재안전기준”이란 소방시설 설치 및 관리를 위한 기준을 말하는 것으로, 그중 기술기준은 화재안전 확보를 위하여 재료, 공간 및 설비 등에 요구되는 안전성능으로서 소방 청장이 고시로 정하는 기준을 말한다.",
+    "isCorrect": false,
+    "source": "2026년 소방경채 Q24 · 소방공채 Q15 · 소방시설 설치 및 관리에 관한 법률상 용어의 정의",
+    "explanation": "같은 조 제1항 제6호에 따라 화재안전 확보를 위하여 재료, 공간 및 설비 등에 요구되는 안전성능으로서 소방청장이 고시로 정하는 기준은 기술기준이 아니라 '성능기준(화재안전성능기준, NFPC)'이며, '기술기준(화재안전기술기준, NFTC)'은 성능기준을 충족하는 상세한 규격, 특정한 수치 및 시험방법 등을 정한 기준입니다.",
+    "origQId": "Q_03_01_2026_경채_24",
+    "id": "EXT_03_01_003",
+    "hlKey": "화재안전기준",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "｢소방시설 설치 및 관리에 관한 법률｣상 ‘특정소방대상물’과 ‘소방용품’의 구체적인 범위는 모두 행정안전부령으로 정한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제2조 제1항 제3호·제4호 (특정소방대상물·소방용품 대통령령 위임)",
+    "explanation": "특정소방대상물(시행령 별표 2)과 소방용품(시행령 별표 3)은 모두 행정안전부령이 아니라 '대통령령'으로 정합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_001",
+    "hlKey": "소방용품은 모두 행정안전부령이 아닌 대통령령",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "화재안전기준 중 ‘성능기준’이란 상세한 규격·특정한 수치 및 시험방법 등을 정한 기준을 말하며, ‘기술기준’이란 화재안전 확보를 위하여 재료·공간 및 설비 등에 요구되는 안전성능으로서 소방청장이 고시로 정하는 기준을 말한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제2조 제1항 제6호 (성능기준 NFPC vs 기술기준 NFTC 정의 교차 함정)",
+    "explanation": "안전성능을 정한 기준이 '성능기준(NFPC)'이고, 성능기준을 충족하는 상세한 규격·특정한 수치 및 시험방법 등을 정한 기준이 '기술기준(NFTC)'입니다.",
+    "origQId": null,
+    "id": "PRED_03_01_002",
+    "hlKey": "안전성능으로서 소방청장이 고시로 정하는 기준이 성능기준",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "수퍼마켓과 일용품 등의 소매점으로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 500제곱미터 미만인 것은 근린생활시설에 해당하고, 500제곱미터 이상인 것은 판매시설에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제1호가목 (소매점 근린생활시설 1,000㎡ 경계)",
+    "explanation": "🚨 [출제위원 착시 함정] 수퍼마켓·일용품 소매점(및 의약품·의료기기 판매소, 자동차영업소)의 근린생활시설과 판매시설 구분 경계 면적은 500제곱미터가 아니라 '1,000제곱미터 미만'(근린생활시설)과 '1,000제곱미터 이상'(판매시설)입니다. 수퍼마켓·일용품 소매점, 의약품·의료기기 판매소 및 자동차영업소는 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 1,000제곱미터 미만일 때 근린생활시설에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_003",
+    "hlKey": "수퍼마켓·일용품 소매점, 의약품·의료기기 판매소 및 자동차영업소",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "금융업소·사무소·서점, 학원·독서실, 체력단련장·골프연습장, 장의사·동물병원으로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 500제곱미터 미만인 것은 근린생활시설에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제1호 (500㎡ 미만 근린생활시설 분류)",
+    "explanation": "금융업소·사무소·부동산중개사무소·결혼상담소·출판사·서점, 학원·독서실, 체력단련장 등 운동시설, 장의사·동물병원 및 고시원업의 시설은 같은 건축물에 해당 용도로 쓰는 바닥면적 합계가 500제곱미터 미만일 때 근린생활시설입니다.",
+    "origQId": null,
+    "id": "PRED_03_01_004",
+    "hlKey": "금융업소·사무소·부동산중개사무소·결혼상담소·출판사·서점, 학원·독서실, 체력단련장·골프연습장 등 운동시설, 장의사·동물병원 및 다중이용업 중 고시원업",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "공연장(극장·영화상영관)이나 종교집회장(교회·성당·사찰)으로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 400제곱미터인 것은 근린생활시설에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제1호나목·라목 (공연장·종교집회장 300㎡ 미만 기준)",
+    "explanation": "공연장과 종교집회장은 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 '300제곱미터 미만'일 때만 근린생활시설에 해당하며, 300제곱미터 이상(400제곱미터 포함)이면 각각 문화 및 집회시설과 종교시설로 분류됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_005",
+    "hlKey": "공연장·종교집회장",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "유흥주점이나 무도장·무도학원으로서 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 100제곱미터인 것은 150제곱미터 미만이므로 근린생활시설에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제4호나목·라목 (유흥주점·무도장·무도학원 면적 무관 위락시설)",
+    "explanation": "단란주점은 바닥면적 합계 150제곱미터 미만이면 근린생활시설이 되지만, 유흥주점·무도장·무도학원은 바닥면적과 관계없이 무조건 '위락시설'로 분류됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_006",
+    "hlKey": "유흥주점과 무도장·무도학원은 바닥면적과 상관없이 무조건 위락시설",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "의원·치과의원·한의원·조산원·산후조리원 및 일반음식점은 같은 건축물에 해당 용도로 쓰는 바닥면적의 합계가 1,000제곱미터 미만인 경우에만 근린생활시설에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제1호다목·마목·바목 (면적 제한 없는 당연 근린생활시설)",
+    "explanation": "🚨 [출제위원 착시 함정] 의원·치과의원·한의원·조산원·산후조리원 및 이용원·미용원·목욕장·세탁소·휴게음식점·일반음식점은 바닥면적 합계 규모와 관계없이 언제나 근린생활시설에 해당합니다. 의원·치과의원·한의원·조산원·산후조리원 및 이용원·미용원·목욕장·세탁소·휴게음식점·일반음식점은 바닥면적 규모에 상관없이 언제나 근린생활시설로 분류됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_007",
+    "hlKey": "의원·치과의원·한의원·침술원·접골원·조산원·산후조리원",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "체육관이나 운동장으로서 관람석의 바닥면적 합계가 500제곱미터 이상인 것은 특정소방대상물의 분류상 운동시설이 아니라 문화 및 집회시설(관람장)에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제2호다목 (관람석 1,000㎡ 이상 체육관·운동장의 문화 및 집회시설 분류)",
+    "explanation": "🚨 [출제위원 착시 함정] 체육관이나 운동장이 문화 및 집회시설(관람장)로 분류되는 관람석 바닥면적 합계 기준은 500제곱미터 이상이 아니라 '1,000제곱미터 이상'입니다. 일반 체육관·운동장은 운동시설이지만, 관람석의 바닥면적 합계가 1,000제곱미터 이상인 체육관·운동장은 다중 관람객의 피난 특성에 따라 '문화 및 집회시설(관람장)'로 분류됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_008",
+    "hlKey": "관람석 바닥면적 합계가 1,000제곱미터 이상인 체육관·운동장",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "특정소방대상물의 분류상 병원·종합병원·요양병원 및 입원실이 있는 정신의료기관은 의료시설에 해당하고, 고물상은 창고시설에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제7호·제16호 (의료시설 및 고물상 분류)",
+    "explanation": "병원·종합병원·요양병원 및 입원실이 있는 정신의료기관은 의료시설이며, 물품을 저장·보관하는 고물상은 창고시설 등으로 분류됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_009",
+    "hlKey": "고물상",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "전력 또는 통신사업용 지하 인공구조물로서 전력구 또는 통신구 방식으로 설치된 것도 일반 지하구와 동일하게 폭 1.8미터 이상, 높이 2미터 이상 및 길이 50미터 이상인 경우에만 특정소방대상물 중 지하구에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제28호가목 (전력구·통신구 방식 지하구 규모 무관)",
+    "explanation": "🚨 [출제위원 착시 함정] 현행 시행령 별표 2 제28호 가목에 따라 전력구(케이블 접속부가 없는 경우 제외) 또는 통신구 방식으로 설치된 것은 폭·높이·길이의 규모와 관계없이 지하구에 해당합니다. 현행 법령상 전력 또는 통신사업용 지하 인공구조물로서 전력구(케이블 접속부가 없는 경우 제외) 또는 통신구 방식으로 설치된 것은 사람이 점검·보수를 위해 출입이 가능하면 폭·높이·길이와 상관없이 지하구에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_010",
+    "hlKey": "전력구 또는 통신구 방식으로 설치된 것",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "가스·냉난방용의 배관을 집합수용하기 위하여 설치한 지하 인공구조물(공동구 제외)로서 사람이 점검·보수를 위해 출입이 가능하고 폭이 1.8미터 이상, 높이가 2미터 이상이며 길이가 30미터인 것은 특정소방대상물 중 지하구에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 제28호나목 (일반 지하 인공구조물 길이 50m 이상 기준)",
+    "explanation": "전력·통신사업용 외의 일반 지하 인공구조물이 지하구에 해당하려면 폭 1.8미터 이상, 높이 2미터 이상이고 '길이가 50미터 이상'이어야 하므로 길이 30미터는 지하구에 해당하지 않습니다.",
+    "origQId": null,
+    "id": "PRED_03_01_011",
+    "hlKey": "폭 1.8미터 이상이고 고개를 숙이지 않고 서서 걸을 수 있는 높이 2미터 이상이며 길이가 50미터 이상인 것",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "둘 이상의 특정소방대상물이 내화구조가 아닌 연결통로로 연결된 경우에는 그 연결통로의 길이가 6미터 이하인 경우에 한하여 이를 하나의 특정소방대상물로 본다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 비고 제2호 (비내화 연결통로 및 지하통로 길이 무관 단일 대상물)",
+    "explanation": "🚨 [출제위원 착시 함정] 6미터(벽 없는 구조) 또는 10미터(벽 있는 구조) 길이 기준은 '내화구조로 된 연결통로'에만 적용되며, '내화구조가 아닌 연결통로'로 연결된 경우에는 통로의 길이와 관계없이 무조건 하나의 특정소방대상물로 봅니다. 내화구조가 아닌 연결통로로 연결된 경우, 지하보도·지하상가·터널·지하구로 연결된 경우, 공사현장에서 가설울타리 안의 둘 이상의 건축물을 동시에 시공하는 경우에는 통로 길이와 상관없이 하나의 특정소방대상물로 봅니다.",
+    "origQId": null,
+    "id": "PRED_03_01_012",
+    "hlKey": "내화구조가 아닌 연결통로",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "내화구조로 된 연결통로의 벽 높이가 연결통로 바닥에서 천장까지 높이의 3분의 1 이상인 경우에는 벽이 있는 구조로 보고, 3분의 1 미만인 경우에는 벽이 없는 구조로 본다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 비고 제2호 (연결통로 벽 유무 판정 기준 2분의 1)",
+    "explanation": "🚨 [출제위원 착시 함정] 연결통로의 벽 유무 판정 기준은 바닥에서 천장까지 높이의 3분의 1이 아니라 '2분의 1 이상'(벽이 있는 구조)과 '2분의 1 미만'(벽이 없는 구조)입니다. 벽 높이가 연결통로 바닥에서 천장까지 높이의 2분의 1 이상이면 '벽이 있는 구조(10m 이하 시 하나의 대상물)'로 보고, 2분의 1 미만이면 '벽이 없는 구조(6m 이하 시 하나의 대상물)'로 봅니다.",
+    "origQId": null,
+    "id": "PRED_03_01_013",
+    "hlKey": "벽 높이가 연결통로 바닥에서 천장까지 높이의 2분의 1 이상이면 벽이 있는 구조",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "둘 이상의 특정소방대상물이 내화구조로 된 연결통로(벽 높이가 연결통로 바닥에서 천장까지 높이의 3분의 1인 구조)로서 길이가 8미터인 통로로 연결된 경우에는 이를 하나의 특정소방대상물로 본다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 2 비고 제2호 (벽이 없는 구조 6m 이하 판정 응용)",
+    "explanation": "벽 높이가 바닥에서 천장까지 높이의 3분의 1이면 2분의 1 미만이므로 '벽이 없는 구조'에 해당합니다. 벽이 없는 내화구조 연결통로는 길이가 '6미터 이하'일 때만 하나의 특정소방대상물로 보므로, 길이가 8미터인 경우에는 별개의 대상물로 봅니다.",
+    "origQId": null,
+    "id": "PRED_03_01_014",
+    "hlKey": "벽이 없는 구조는 길이가 6미터 이하",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "｢소방시설 설치 및 관리에 관한 법률 시행령｣상 ‘무창층’이란 지하층을 포함한 모든 층 중 피난 또는 소화활동상 유효한 개구부의 면적 합계가 해당 층의 바닥면적에 대하여 30분의 1 이하가 되는 층을 말한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제2조 제1호 (무창층 정의의 지상층 한정)",
+    "explanation": "무창층은 지하층을 포함한 층이 아니라 '지상층 중' 피난 또는 소화활동상 유효한 개구부의 면적 합계가 해당 층 바닥면적의 30분의 1 이하가 되는 층을 말합니다(지하층은 원래 지하층으로서 무창층 판정 대상이 아님).",
+    "origQId": null,
+    "id": "PRED_03_01_015",
+    "hlKey": "지상층 중 피난 또는 소화활동상 유효한 개구부의 면적 합계가 해당 층 바닥면적의 30분의 1 이하가 되는 층을 무창층",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "무창층 판정 시 피난 또는 소화활동상 유효한 개구부가 되려면 개구부가 도로 또는 차량이 진입할 수 있는 빈터를 향해야 하고, 화재 시 건축물 내부 또는 외부에서 쉽게 열거나 부술 수 있는 구조여야 하며, 개구부에 창살이나 그 밖의 장애물이 설치되지 아니하여야 한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제2조 제1호 각 목 및 시행규칙 제2조 (무창층 유효 개구부 요건)",
+    "explanation": "크기(지름 50cm 이상 원 내접), 높이(바닥면으로부터 밑부분까지 1.2m 이내), 방향(도로 또는 차량 진입 빈터), 개방성(내·외부에서 쉽게 열거나 부술 수 있는 구조), 무장애(창살 등 장애물 미설치)의 5대 요건을 모두 갖추어야 유효 개구부로 인정됩니다.",
+    "origQId": null,
+    "id": "PRED_03_01_016",
+    "hlKey": "도로 또는 차량이 진입할 수 있는 빈터",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "특정소방대상물의 지상 3층 바닥면적이 600제곱미터이고 피난·소화활동상 유효한 개구부의 면적 합계가 18제곱미터인 경우, 해당 지상 3층은 무창층에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제2조 제1호 (무창층 30분의 1 이하 계산 응용)",
+    "explanation": "바닥면적 600제곱미터의 30분의 1은 20제곱미터입니다. 유효 개구부의 면적 합계(18제곱미터)가 20제곱미터 이하이므로 해당 지상 3층은 무창층에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_017",
+    "hlKey": "유효 개구부의 5대 필수 요건",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "침대가 있는 숙박시설의 수용인원은 해당 특정소방대상물의 종사자의 수에 숙박시설 바닥면적의 합계를 3제곱미터로 나누어 얻은 수를 더한 수로 산정한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 제1호가목 (침대가 있는 숙박시설 수용인원 산정)",
+    "explanation": "🚨 [출제위원 착시 함정] 바닥면적 합계를 3제곱미터로 나누는 것은 '침대가 없는 숙박시설'의 기준이며, '침대가 있는 숙박시설'은 종사자의 수에 '침대의 수(2인용 침대는 2명으로 계산)'를 더한 수로 산정합니다. 침대가 있는 숙박시설은 바닥면적으로 나누지 않고 '종사자의 수 + 침대의 수(2인용 침대는 2명으로 계산)'로 수용인원을 산정합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_018",
+    "hlKey": "해당 특정소방대상물의 종사자의 수에 침대의 수를 더한 수",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "침대가 없는 숙박시설의 수용인원은 해당 특정소방대상물의 종사자의 수에 숙박시설 바닥면적(복도·계단 및 화장실의 바닥면적은 제외)의 합계를 3제곱미터로 나누어 얻은 수를 더한 수로 산정한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 제1호나목 (침대가 없는 숙박시설 수용인원 산정)",
+    "explanation": "침대가 없는 숙박시설은 '종사자의 수 + (숙박시설 바닥면적 합계 ÷ 3㎡)'로 산정합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_019",
+    "hlKey": "해당 특정소방대상물의 종사자의 수에 숙박시설 바닥면적의 합계를 3제곱미터로 나누어 얻은 수를 더한 수",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "수용인원 산정 시 일반 사무실과 백화점 등 판매시설은 해당 용도로 사용하는 바닥면적의 합계를 1.9제곱미터로 나누어 얻은 수로 산정한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 제2호가목·다목 (강·교·상·실·휴 1.9㎡ vs 사무실·판매시설 3㎡ 구분)",
+    "explanation": "바닥면적 합계를 1.9제곱미터로 나누는 대상은 '강의실·교무실·상담실·실습실·휴게실'의 5가지이며, 일반 사무실이나 판매시설 등 그 밖의 특정소방대상물은 '3제곱미터'로 나누어 산정합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_020",
+    "hlKey": "강의실·교무실·상담실·실습실·휴게실",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "강당, 문화 및 집회시설, 운동시설 및 종교시설의 관람석 등에 고정식 긴 의자가 설치된 경우 해당 부분의 수용인원은 의자의 정면 너비를 0.5미터로 나누어 얻은 수로 산정한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 제2호나목 단서 (긴 의자 정면 너비 0.45m 산정 기준)",
+    "explanation": "🚨 [출제위원 착시 함정] 고정식 긴 의자의 수용인원 산정 기준은 의자의 정면 너비를 0.5미터가 아니라 '0.45미터'로 나누어 얻은 수로 합니다. 강당·문화집회·운동·종교시설에 고정식 의자가 설치된 경우에는 그 의자의 수로 하고, 긴 의자의 경우에는 의자의 정면 너비를 0.45미터로 나누어 얻은 수로 합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_021",
+    "hlKey": "의자의 정면 너비를 0.45미터",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "수용인원 산정을 위하여 바닥면적의 합계를 계산할 때 복도, 계단 및 화장실의 바닥면적은 포함하지 아니하며, 계산 결과 소수점 이하의 수는 버린다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 비고 (복도·계단·화장실 제외 및 반올림 원칙)",
+    "explanation": "🚨 [출제위원 착시 함정] 수용인원 계산 결과 소수점 이하의 수는 버리는(절사하는) 것이 아니라 시행령 별표 7 비고에 따라 '반올림'합니다. 시행령 별표 7 비고에 따라 복도(준불연재료 이상으로 바닥에서 천장까지 구획), 계단 및 화장실의 바닥면적은 산정에서 제외하며, 계산 결과 소수점 이하의 수는 버림이 아니라 '반올림'합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_022",
+    "hlKey": "계산 결과 소수점 이하의 수는 반올림한다",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "복도·계단·화장실을 제외한 바닥면적 합계가 190제곱미터인 강의실과 바닥면적 합계가 230제곱미터인 종교시설(고정식 의자가 없는 경우)의 수용인원을 합산하면 총 150명이다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 7 제2호가목·나목 (수용인원 계산 실전 응용)",
+    "explanation": "강의실은 190㎡ ÷ 1.9㎡ = 100명이고, 고정식 의자가 없는 종교시설은 230㎡ ÷ 4.6㎡ = 50명이므로, 두 시설의 수용인원 합계는 150명입니다.",
+    "origQId": null,
+    "id": "PRED_03_01_023",
+    "hlKey": "강당·문화 및 집회시설·운동시설·종교시설",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "연면적 600제곱미터 미만의 아파트등 및 기숙사와 연면적 1,000제곱미터 미만의 숙박시설에는 단독경보형 감지기를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제2호라목 (단독경보형 감지기 용도별 연면적 기준)",
+    "explanation": "🚨 [출제위원 착시 함정] 아파트등·기숙사와 숙박시설의 연면적 기준을 서로 뒤바꾼 함정입니다! 단독경보형 감지기는 '연면적 1,000제곱미터 미만의 아파트등·기숙사'와 '연면적 600제곱미터 미만의 숙박시설'(및 400제곱미터 미만의 노유자시설·유치원 등)에 설치합니다. 단독경보형 감지기 설치 대상은 연면적 1,000㎡ 미만의 아파트등·기숙사, 연면적 600㎡ 미만의 숙박시설, 연면적 400㎡ 미만의 노유자시설 및 수련시설(숙박시설 있는 것), 교육연구·수련시설 내 합숙소·기숙사로서 연면적 2,000㎡ 미만인 것입니다.",
+    "origQId": null,
+    "id": "PRED_03_01_024",
+    "hlKey": "연면적 1,000제곱미터 미만의 아파트등·기숙사",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "문화 및 집회시설, 종교시설, 운동시설로서 무대부의 바닥면적이 300제곱미터 이상인 것에는 제연설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제5호가목 (무대부 바닥면적 200㎡ 이상 제연설비 설치)",
+    "explanation": "🚨 [출제위원 착시 함정] 무대부에 제연설비를 설치하여야 하는 바닥면적 기준은 300제곱미터 이상이 아니라 '200제곱미터 이상'입니다. 문화 및 집회시설, 종교시설, 운동시설로서 무대부의 바닥면적이 200제곱미터 이상인 것 또는 문화 및 집회시설 중 영화상영관으로서 수용인원 100명 이상인 것에는 제연설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_025",
+    "hlKey": "무대부의 바닥면적이 200제곱미터 이상",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "업무시설 중 오피스텔은 층수가 20층 이상인 경우에만 모든 층에 주거용 주방자동소화장치를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호바목 (30층 이상 오피스텔 주거용 주방자동소화장치)",
+    "explanation": "주거용 주방자동소화장치를 모든 층에 의무 설치해야 하는 대상은 아파트등 및 '30층 이상 오피스텔'입니다(20층 이상이 아님).",
+    "origQId": null,
+    "id": "PRED_03_01_026",
+    "hlKey": "아파트등 및 30층 이상 오피스텔의 모든 층",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "창고시설 중 일반 창고시설은 바닥면적 합계가 3,000제곱미터 이상인 경우에, 창고시설 중 물류터미널은 바닥면적 합계가 5,000제곱미터 이상인 경우에 모든 층에 스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호라목 (일반 창고시설 5,000㎡ vs 물류터미널 3,000㎡ 스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] 일반 창고시설과 물류터미널의 바닥면적 기준을 서로 뒤바꾼 함정입니다! 일반 창고시설은 바닥면적 합계 '5,000제곱미터 이상', 화재 위험이 높은 물류터미널은 더 완화된(강화된) '3,000제곱미터 이상'일 때 모든 층에 스프링클러설비를 설치합니다. 창고시설 중 일반 창고시설은 바닥면적 합계 5,000제곱미터 이상일 때, 화재 하중과 물동량이 집중되는 물류터미널은 바닥면적 합계 3,000제곱미터 이상일 때 모든 층에 스프링클러설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_027",
+    "hlKey": "일반 창고시설은 바닥면적 합계 5,000제곱미터 이상, 물류터미널은 3,000제곱미터 이상",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "지하층을 포함하는 층수가 5층 이상인 건축물로서 연면적이 3,000제곱미터 이상인 특정소방대상물에는 모든 층에 비상조명등을 설치하여야 한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제3호라목 (비상조명등 전 층 설치 기준 5층 이상 및 3,000㎡ 이상)",
+    "explanation": "비상조명등은 '지하층을 포함하는 층수가 5층 이상인 건축물로서 연면적 3,000제곱미터 이상인 것'의 모든 층, 또는 그 밖에 지하층·무창층의 바닥면적이 450제곱미터 이상인 경우 그 지하층·무창층, 터널 길이 500미터 이상인 터널에 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_01_028",
+    "hlKey": "지하층 포함 5층 이상이고 연면적 3,000제곱미터 이상",
+    "paraIdx": 5,
+    "isEssential": false
   }
 ];
-
+    window.SUBJ_DATA = [
+  {
+    "id": "SUBJ_LAW_03_01_01",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "근린생활시설 바닥면적 합계 4대 경계선 서열 (시행령 별표 2)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소매·의약품·자동차 1,000㎡ 미만 &gt; 금융·사무·학원·운동·고시원 500㎡ 미만 &gt; 공연·종교 300㎡ 미만 &gt; 단란주점 150㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소매·의약품·자동차 1,000㎡ 미만 > 금융·사무·학원·운동·고시원 500㎡ 미만 > 공연·종교 300㎡ 미만 > 단란주점 150㎡ 미만</span></span></div><div class=\"subj-ex-line\">💡 <strong>유흥 대 당연 근생 대조</strong> | 유흥주점·무도장·무도학원 = 면적 불문 위락시설 / 의원·조산원·산후조리원·일반음식점·목욕장 = 면적 불문 근린생활시설</div>",
+    "answerEq": "소매·의약품·자동차 1,000㎡ 미만 > 금융·사무·학원·운동·고시원 500㎡ 미만 > 공연·종교 300㎡ 미만 > 단란주점 150㎡ 미만",
+    "fullFormula": "소매·의약품·자동차 1,000㎡ 미만 > 금융·사무·학원·운동·고시원 500㎡ 미만 > 공연·종교 300㎡ 미만 > 단란주점 150㎡ 미만",
+    "explanation": "💡 유흥 대 당연 근생 대조 | 유흥주점·무도장·무도학원 = 면적 불문 위락시설 / 의원·조산원·산후조리원·일반음식점·목욕장 = 면적 불문 근린생활시설"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_02",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "무창층 판정 공식 및 내화 연결통로 경계식 (시행령 제2조 · 별표 2 비고)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"무창층(지상층 한정) ⇔ ∑(유효 개구부 면적) ≤ 해당 층 바닥면적 × (1 / 30)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">무창층(지상층 한정) ⇔ ∑(유효 개구부 면적) ≤ 해당 층 바닥면적 × (1 / 30)</span></span></div><div class=\"subj-ex-line\">💡 <strong>실전 판정 수치</strong> | 개구부 원 지름 ≥ 50cm · 바닥면에서 밑부분 높이 ≤ 1.2m / 내화 연결통로 단일 간주 = 무벽(벽 높이 &lt; 1/2) 6m 이하 · 유벽(≥ 1/2) 10m 이하</div>",
+    "answerEq": "무창층(지상층 한정) ⇔ ∑(유효 개구부 면적) ≤ 해당 층 바닥면적 × (1 / 30)",
+    "fullFormula": "무창층(지상층 한정) ⇔ ∑(유효 개구부 면적) ≤ 해당 층 바닥면적 × (1 / 30)",
+    "explanation": "💡 실전 판정 수치 | 개구부 원 지름 ≥ 50cm · 바닥면에서 밑부분 높이 ≤ 1.2m / 내화 연결통로 단일 간주 = 무벽(벽 높이 < 1/2) 6m 이하 · 유벽(≥ 1/2) 10m 이하"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_03",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "수용인원 산정 4대 공식 및 소수점 처리 규칙 (시행령 제17조 · 별표 7)",
+    "promptHtml": "<div class=\"subj-eq-line\">숙박 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"종사자 + 침대 수(무침대 ÷ 3㎡) | 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 ÷ 0.45m) | 기타 ÷ 3㎡\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">종사자 + 침대 수(무침대 ÷ 3㎡) | 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 ÷ 0.45m) | 기타 ÷ 3㎡</span></span></div><div class=\"subj-ex-line\">💡 <strong>별표 7 비고 대원칙</strong> | 준불연재료 이상 벽 구획 복도·계단·화장실 바닥면적 제외 / 계산 결과 소수점 이하의 수는 반올림! (예: 강의실 190㎡[100명] + 종교 230㎡[50명] = 150명)</div>",
+    "answerEq": "종사자 + 침대 수(무침대 ÷ 3㎡) | 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 ÷ 0.45m) | 기타 ÷ 3㎡",
+    "fullFormula": "숙박 = 종사자 + 침대 수(무침대 ÷ 3㎡) | 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 ÷ 0.45m) | 기타 ÷ 3㎡",
+    "explanation": "💡 별표 7 비고 대원칙 | 준불연재료 이상 벽 구획 복도·계단·화장실 바닥면적 제외 / 계산 결과 소수점 이하의 수는 반올림! (예: 강의실 190㎡[100명] + 종교 230㎡[50명] = 150명)"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_04",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "법 제2조·제3조 정의·위임",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"특정소방대상물(별표 2) · 소방용품(별표 3) = 모두 대통령령!\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">특정소방대상물(별표 2) · 소방용품(별표 3) = 모두 대통령령!</span></span> 화재안전기준 이원화: 안전성능 고시 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"성능기준(NFPC)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">성능기준(NFPC)</span></span> ↔ 상세 규격·수치·시험방법 승인 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"기술기준(NFTC)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">기술기준(NFTC)</span></span> / 법 제3조: 국가·지자체의 설치·관리 정책 책무</div>",
+    "answerEq": "특정소방대상물(별표 2) · 소방용품(별표 3) = 모두 대통령령! / 성능기준(NFPC) / 기술기준(NFTC)",
+    "fullFormula": "",
+    "explanation": "특정소방대상물(별표 2) · 소방용품(별표 3) = 모두 대통령령! 화재안전기준 이원화: 안전성능 고시 = 성능기준(NFPC) ↔ 상세 규격·수치·시험방법 승인 = 기술기준(NFTC) / 법 제3조: 국가·지자체의 설치·관리 정책 책무"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_05",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "근린생활시설 면적 4구간",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1,000㎡ &gt; 500㎡ &gt; 300㎡ &gt; 150㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">1,000㎡ > 500㎡ > 300㎡ > 150㎡ 미만</span></span> 소매점·의약품·자동차영업소 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1,000㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">1,000㎡ 미만</span></span> / 금융·사무·서점·학원·독서실·운동·<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"고시원 500㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">고시원 500㎡ 미만</span></span>(고시원 500㎡ 이상 = <strong>숙박시설!</strong>) / 공연장·종교집회장 <strong>300㎡ 미만</strong> / 단란주점 <strong>150㎡ 미만</strong></div>",
+    "answerEq": "1,000㎡ > 500㎡ > 300㎡ > 150㎡ 미만 / 1,000㎡ 미만 / 고시원 500㎡ 미만",
+    "fullFormula": "",
+    "explanation": "1,000㎡ > 500㎡ > 300㎡ > 150㎡ 미만 소매점·의약품·자동차영업소 1,000㎡ 미만 / 금융·사무·서점·학원·독서실·운동·고시원 500㎡ 미만(고시원 500㎡ 이상 = 숙박시설!) / 공연장·종교집회장 300㎡ 미만 / 단란주점 150㎡ 미만"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_06",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "면적 무관 근생 vs 위락",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"의원·치과의원·한의원·침술원·접골원·조산원·산후조리원\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">의원·치과의원·한의원·침술원·접골원·조산원·산후조리원</span></span>, 이용·미용·목욕·세탁·음식점 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"면적 무관 근린생활시설\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">면적 무관 근린생활시설</span></span> ↔ <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"유흥주점·무도장·무도학원\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">유흥주점·무도장·무도학원</span></span> = <strong>면적 불문 무조건 위락시설!</strong></div>",
+    "answerEq": "의원·치과의원·한의원·침술원·접골원·조산원·산후조리원 / 면적 무관 근린생활시설 / 유흥주점·무도장·무도학원",
+    "fullFormula": "",
+    "explanation": "의원·치과의원·한의원·침술원·접골원·조산원·산후조리원, 이용·미용·목욕·세탁·음식점 = 면적 무관 근린생활시설 ↔ 유흥주점·무도장·무도학원 = 면적 불문 무조건 위락시설!"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_07",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "혼동 용도 4대 족보",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"유스호스텔\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">유스호스텔</span></span> = 수련시설 / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"동물원·식물원\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">동물원·식물원</span></span>·관람석 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1,000㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">1,000㎡ 이상</span></span> 체육관·운동장 = 문화 및 집회시설 / <strong>어린이회관·관망탑·야외극장</strong> = 관광휴게시설 / <strong>격납고·세차·폐차·운전·정비학원</strong> = 항공기·자동차시설 (공항·관제탑 = 운수시설, 고물상 = 창고시설)</div>",
+    "answerEq": "유스호스텔 / 동물원·식물원 / 1,000㎡ 이상",
+    "fullFormula": "",
+    "explanation": "유스호스텔 = 수련시설 / 동물원·식물원·관람석 1,000㎡ 이상 체육관·운동장 = 문화 및 집회시설 / 어린이회관·관망탑·야외극장 = 관광휴게시설 / 격납고·세차·폐차·운전·정비학원 = 항공기·자동차시설 (공항·관제탑 = 운수시설, 고물상 = 창고시설)"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_08",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "지하구 규격 (별표 2 제28호)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"전력·통신사업용(전력구[접속부 없는 것 제외]·통신구 방식)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">전력·통신사업용(전력구[접속부 없는 것 제외]·통신구 방식)</span></span> 및 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"공동구\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">공동구</span></span> = <strong>규모 무관 지하구 해당</strong> ↔ 그 밖의 일반 지하 인공구조물 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"폭 1.8m 이상 + 높이 2m 이상 + 길이 50m 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">폭 1.8m 이상 + 높이 2m 이상 + 길이 50m 이상</span></span></div>",
+    "answerEq": "폭 1.8m 이상 + 높이 2m 이상 + 길이 50m 이상 / 전력·통신사업용(전력구[접속부 없는 것 제외]·통신구 방식) / 공동구",
+    "fullFormula": "",
+    "explanation": "전력·통신사업용(전력구[접속부 없는 것 제외]·통신구 방식) 및 공동구 = 규모 무관 지하구 해당 ↔ 그 밖의 일반 지하 인공구조물 = 폭 1.8m 이상 + 높이 2m 이상 + 길이 50m 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_09",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "연결통로 단일 간주 (비고)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"비내화 연결통로\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">비내화 연결통로</span></span> · 지하보도/지하상가/터널/지하구 · 가설울타리 내 동시시공 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"길이 무관 하나\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">길이 무관 하나</span></span> ↔ <strong>내화구조 연결통로</strong> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"벽 없음(벽 높이 &lt; 1/2) 6m 이하 · 벽 있음(≥ 1/2) 10m 이하\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">벽 없음(벽 높이 < 1/2) 6m 이하 · 벽 있음(≥ 1/2) 10m 이하</span></span></div>",
+    "answerEq": "벽 없음(벽 높이 < 1/2) 6m 이하 · 벽 있음(≥ 1/2) 10m 이하 / 비내화 연결통로 / 길이 무관 하나",
+    "fullFormula": "",
+    "explanation": "비내화 연결통로 · 지하보도/지하상가/터널/지하구 · 가설울타리 내 동시시공 = 길이 무관 하나 ↔ 내화구조 연결통로 = 벽 없음(벽 높이 < 1/2) 6m 이하 · 벽 있음(≥ 1/2) 10m 이하"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_10",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "무창층 & 유효 개구부 5요건",
+    "promptHtml": "<div class=\"subj-prose-line\">오직 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"지상층\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">지상층</span></span>(지하층 제외!) 중 유효 개구부 합계 ≤ <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"바닥면적의 30분의 1 이하\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">바닥면적의 30분의 1 이하</span></span> / 5요건: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"지름 50cm 이상 원 통과\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">지름 50cm 이상 원 통과</span></span> · 바닥면에서 밑부분까지 <strong>1.2m 이내</strong> · 도로/빈터 향함 · 창살 등 장애물 없음 · 내외부 쉽게 개방·파괴 가능</div>",
+    "answerEq": "바닥면적의 30분의 1 이하 / 지상층 / 지름 50cm 이상 원 통과",
+    "fullFormula": "",
+    "explanation": "오직 지상층(지하층 제외!) 중 유효 개구부 합계 ≤ 바닥면적의 30분의 1 이하 / 5요건: 지름 50cm 이상 원 통과 · 바닥면에서 밑부분까지 1.2m 이내 · 도로/빈터 향함 · 창살 등 장애물 없음 · 내외부 쉽게 개방·파괴 가능"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_11",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "숙박 vs 일반 수용인원",
+    "promptHtml": "<div class=\"subj-prose-line\">숙박시설 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"종사자 수 + 침대 수(무침대 ÷ 3㎡)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">종사자 수 + 침대 수(무침대 ÷ 3㎡)</span></span> / 일반: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"강·교·상·실·휴 ÷ 1.9㎡\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">강·교·상·실·휴 ÷ 1.9㎡</span></span> | <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"강·문·운·종 ÷ 4.6㎡\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">강·문·운·종 ÷ 4.6㎡</span></span>(긴 의자 정면 너비 <strong>÷ 0.45m</strong>) | 그 밖(판매·사무 등) <strong>÷ 3㎡</strong></div>",
+    "answerEq": "종사자 수 + 침대 수(무침대 ÷ 3㎡) / 강·교·상·실·휴 ÷ 1.9㎡ / 강·문·운·종 ÷ 4.6㎡",
+    "fullFormula": "",
+    "explanation": "숙박시설 = 종사자 수 + 침대 수(무침대 ÷ 3㎡) / 일반: 강·교·상·실·휴 ÷ 1.9㎡ | 강·문·운·종 ÷ 4.6㎡(긴 의자 정면 너비 ÷ 0.45m) | 그 밖(판매·사무 등) ÷ 3㎡"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_12",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "별표 7 제외 면적 · 반올림",
+    "promptHtml": "<div class=\"subj-prose-line\">준불연재료 이상 바닥에서 천장까지 벽 구획 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"복도·계단·화장실 바닥면적 산정 제외\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">복도·계단·화장실 바닥면적 산정 제외</span></span> / 계산 결과 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소수점 이하의 수는 반올림!\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소수점 이하의 수는 반올림!</span></span> (버림·올림 아님)</div>",
+    "answerEq": "소수점 이하의 수는 반올림! / 복도·계단·화장실 바닥면적 산정 제외",
+    "fullFormula": "",
+    "explanation": "준불연재료 이상 바닥에서 천장까지 벽 구획 복도·계단·화장실 바닥면적 산정 제외 / 계산 결과 소수점 이하의 수는 반올림! (버림·올림 아님)"
+  },
+  {
+    "id": "SUBJ_LAW_03_01_13",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "용도 결합 주요 설비 (별표 4)",
+    "promptHtml": "<div class=\"subj-prose-line\">제연(지하가 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1,000㎡\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">1,000㎡</span></span> · 무대부 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"200㎡\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">200㎡</span></span> · 영화관 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100명 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">100명 이상</span></span>) / 주거용 주방자동소화(아파트등 + <strong>30층 이상 오피스텔</strong>) / 스프링클러(조산원·산후조리원 <strong>600㎡</strong>, 일반창고 <strong>5,000㎡</strong> vs 물류터미널 <strong>3,000㎡</strong>) / 비상조명등(<strong>5층+3,000㎡</strong> 또는 지하·무창 <strong>450㎡</strong>)</div>",
+    "answerEq": "1,000㎡ / 200㎡ / 100명 이상",
+    "fullFormula": "",
+    "explanation": "제연(지하가 1,000㎡ · 무대부 200㎡ · 영화관 100명 이상) / 주거용 주방자동소화(아파트등 + 30층 이상 오피스텔) / 스프링클러(조산원·산후조리원 600㎡, 일반창고 5,000㎡ vs 물류터미널 3,000㎡) / 비상조명등(5층+3,000㎡ 또는 지하·무창 450㎡)"
+  }
+];
     document.addEventListener('DOMContentLoaded', () => {
       HarnessEngine.renderUnitStats('statsContainer_03_01', STATS_03_01);
       HarnessEngine.renderOriginalQuestions('origQuestions_03_01', ORIG_Q_03_01);

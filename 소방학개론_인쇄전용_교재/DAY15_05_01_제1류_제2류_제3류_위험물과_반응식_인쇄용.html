@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 15 · 인쇄용] 제5편 위험물 및 특수가연물론 · 제1장 제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY14_04_03_자동화재탐지설비_감지기와_방재연동_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 15</span>
+        <a href="DAY16_05_02_제4류_제5류_제6류_위험물과_지정수량_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(9제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 15 · 제5편 위험물 및 특수가연물론 · 제1장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(9문항)</span>
+            <span>□ OX 15제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">제1류·제2류·제3류 위험물의 화학적 성질, 물 반응식 및 소화방법</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+        
+        <div id="sec1" class="space-y-6">
+          <h2>제1절. 제1류(산화성 고체)와 제2류(가연성 고체)의 성상·지정수량·소화방법 (시행령 별표 1)</h2>
+          
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제1류 위험물 핵심 급소 (2018 Q14 · 2023 Q16 · 2024 Q25)</div><ul class="sidenote-list"><li>공통 성질: 자체는 <strong>불연성 무기화합물</strong>, 산소를 내놓는 <strong>강산화제(지연성)</strong>, 비중 $>1$</li><li>아염소산나트륨: 불연성·조해성·수용성, 무색·백색 결정성 분말</li><li>지정수량: <strong>50kg</strong>(아·염·과·무) / <strong>300kg</strong>(브·질·요) / <strong>1,000kg</strong>(과망·중크)</li><li>소화 예외: <strong>무기과산화물($\text{Na}_2\text{O}_2$ 등)</strong>은 물과 반응해 <strong>산소($\text{O}_2$)</strong>와 열 방출 ➔ <strong>주수 금지(건조사·팽창질석)</strong></li></ul></div></aside>
+            <p class="prose-body">
+              <strong>위험물안전관리법 시행령 별표 1</strong>은 화재·폭발 위험성이 큰 화학물질을 물리·화학적 성질에 따라 제1류부터 제6류까지 6개 유별로 분류한다. 그중 첫 번째인 <strong>제1류 위험물(산화성 고체)</strong>은 고체 상태의 산소 공급원으로서, 수험생이 가장 먼저 확립해야 할 핵심 성질은 <strong>그 자체는 타지 않는 불연성(비연소성) 무기화합물</strong>이라는 점이다. 자체는 불에 타지 않지만 분자 내부에 다량의 산소($\text{O}$) 원자를 함유하고 있어, 열·충격·마찰을 받으면 쉽게 분해되면서 산소($\text{O}_2$)를 방출하여 다른 가연물의 연소를 폭발적으로 돕는 <strong>강력한 산화제(지연성·조연성 물질)</strong>이다(따라서 '제1류 위험물은 강력한 환원제이다' 또는 '질산염류는 연소속도가 빨라 폭발적으로 연소한다'는 선지는 모두 오답이다!). 대부분의 제1류 위험물은 비중이 1보다 크고(물보다 무거움) 물에 잘 녹는 수용성이며, 특히 <strong>아염소산나트륨($\text{NaClO}_2$)</strong>은 불연성·조해성·수용성으로서 무색 또는 백색의 결정성 분말 형태를 띤다. 지정수량은 산소 방출 위험도에 따라 3단계로 나뉘어 ① 제1종 <strong>50킬로그램</strong>(아염소산염류·염소산염류·과염소산염류·무기과산화물), ② 제2종 <strong>300킬로그램</strong>(브롬산염류·질산염류·요오드산염류), ③ 제3종 <strong>1,000킬로그램</strong>(과망간산염류·중크롬산염류)으로 규정되어 있다. 소화 방법을 보면, 제1류는 분해 시 스스로 산소를 내놓으므로 원칙적으로 다량의 물을 뿌려 분해 온도 이하로 식히는 <strong>주수 냉각소화</strong>가 가장 효과적이다. 그러나 유일한 예외인 <strong>알칼리금속·알칼리토금속의 무기과산화물(과산화나트륨 $\text{Na}_2\text{O}_2$, 과산화칼륨 $\text{K}_2\text{O}_2$, 과산화마그네슘 $\text{MgO}_2$, 과산화바륨 $\text{BaO}_2$ 등)</strong>은 물과 접촉하는 순간 격렬하게 반응하여 반응열과 함께 <strong>산소($\text{O}_2$)</strong>를 방출하는 금수성 물질이므로 절대 물을 뿌리면 안 되며, 반드시 <strong>마른모래(건조사), 팽창질석, 팽창진주암, 탄산수소염류 분말</strong>로 덮는 질식소화를 실시해야 한다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">제2류 위험물 성립 기준 및 소화법 (2018 Q13 · 2022 Q7 · 2023 Q16·Q17)</div><ul class="sidenote-list"><li><strong>100kg</strong>: 황화린 · 적린 · 유황(순도 $60\text{wt}\%\uparrow$)</li><li><strong>500kg</strong>: 철분($53\mu\text{m}$ 체 통과 $50\text{wt}\%\uparrow$) · 금속분(구리·니켈 제외, $150\mu\text{m}$ 체 통과 $50\text{wt}\%\uparrow$) · 마그네슘($2\text{mm}$ 미만)</li><li><strong>1,000kg</strong>: 인화성고체(인화점 $40^\circ\text{C}$ 미만)</li><li><strong>소화 구분</strong>: 적린·유황은 <strong>물 냉각소화</strong> / 철분·금속분·마그네슘(열수 접촉 시 $\text{H}_2$ 발생, $\text{CO}_2\cdot$할론 금지!) 및 황화린($\text{H}_2\text{S}$ 발생)은 <strong>마른모래·팽창질석 질식소화</strong></li></ul></div></aside>
+            <p class="prose-body">
+              제1류가 산소를 내어주는 불연성 산화제라면, <strong>제2류 위험물(가연성 고체)</strong>은 산소와 결합하기 쉬운 <strong>환원성 물질</strong>로서 비교적 낮은 온도에서 불이 붙기 쉽고 연소속도가 빠르며 유독가스를 내는 가연성 고체이다. 모두 물보다 무겁고(비중 1 초과) 물에 녹지 않으며, 지정수량과 법정 성립 요건(비고 기준)은 3단계로 나뉜다. ① 지정수량 <strong>100킬로그램</strong> 그룹은 <strong>황화린</strong>(오황화린 $\text{P}_2\text{S}_5$, 삼황화린 $\text{P}_4\text{S}_3$, 칠황화린 $\text{P}_4\text{S}_7$), <strong>적린</strong>($\text{P}$), <strong>유황</strong>(황 $\text{S}$, 불순물을 제외한 <strong>순도가 60중량퍼센트 이상</strong>인 것만 위험물에 해당)이다. ② 지정수량 <strong>500킬로그램</strong> 그룹은 <strong>철분</strong>(철의 분말로서 <strong>53마이크로미터 표준체를 통과하는 것이 50중량퍼센트 미만인 것은 제외</strong>), <strong>금속분</strong>(알칼리금속·알칼리토금속·철분·마그네슘 외의 금속 분말로서 <strong>구리분·니켈분 및 150마이크로미터 체를 통과하는 것이 50중량퍼센트 미만인 것은 제외</strong>), <strong>마그네슘</strong>(<strong>2밀리미터 체를 통과하지 아니하는 덩어리 상태</strong> 또는 <strong>직경 2밀리미터 이상의 막대 모양</strong>은 제외)이다. ③ 지정수량 <strong>1,000킬로그램</strong>은 고형알코올 그 밖에 1기압에서 <strong>인화점이 섭씨 40도 미만인 고체</strong>를 뜻하는 <strong>인화성고체</strong>이다. 제2류의 소화 방법을 구분할 때는 물과의 반응성이 핵심 기준이 된다. 금수성이 아닌 <strong>적린, 유황, 인화성고체는 다량의 물(또는 안개상의 물)로 냉각소화</strong>할 수 있다(소량의 적린은 마른모래나 이산화탄소 소화약제도 일시적 효과가 있음). 반면 <strong>철분·금속분·마그네슘</strong>은 물(특히 마그네슘은 <strong>끓는 물[열수]</strong>)과 접촉하면 가연성 <strong>수소가스($\text{H}_2$)</strong>를 발생시킬 뿐만 아니라, 고온의 마그네슘 화재에 <strong>이산화탄소($\text{CO}_2$)를 방사하면 마그네슘이 이산화탄소의 산소를 빼앗아 탄소를 유리시키며 연소가 폭발적으로 확대($2\text{Mg} + \text{CO}_2 \rightarrow 2\text{MgO} + \text{C}$)</strong>되고 할론과도 반응하므로 물·이산화탄소·할론을 모두 사용할 수 없고 <strong>마른모래(건조사)·팽창질석·D급 금속화재용 분말</strong>로 소화해야 한다. 또한 <strong>황화린(오황화린·삼황화린)</strong> 역시 물과 반응하면 독성·가연성 <strong>황화수소($\text{H}_2\text{S}$)</strong> 가스를 발생시키므로 주수를 금하고 <strong>마른모래·팽창질석</strong> 등으로 질식소화한다.
+            </p>
+            
+          </div></div>
+
+        <div id="sec2" class="space-y-6">
+          <h2>제2절. 제3류 위험물(자연발화성 및 금수성 물질)의 보호액 및 적린 vs 황린 대조</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">황린(제3류) vs 적린(제2류) 핵심 대조 (2018 Q13 · 2023 Q16 · 2024 Q19)</div><ul class="sidenote-list"><li><strong>황린($\text{P}_4$)</strong>: <strong>제3류(20kg)</strong>, 발화점 <strong>$34^\circ\text{C}$</strong>(상온 노출 시 액화·자연발화), 맹독성, 이황화탄소($\text{CS}_2$) 용해, <strong>물속 저장 및 물 냉각소화</strong></li><li><strong>적린($\text{P}$)</strong>: <strong>제2류(100kg)</strong>, 발화점 <strong>$260^\circ\text{C}$</strong>, 무독성, $\text{CS}_2$ 불용, 공기 중 보관 및 <strong>물 냉각소화</strong></li></ul></div></aside>
+            <p class="prose-body">
+              <strong>제3류 위험물(자연발화성물질 및 금수성물질)</strong>은 법정 정의상 고체 또는 액체로서 <strong>공기 중에서 발화의 위험성이 있거나 물과 접촉하여 발화하거나 가연성 가스를 발생하는 위험성이 있는 것</strong>을 말한다. 지정수량은 4단계로 세분되어 ① <strong>10킬로그램</strong>(칼륨 $\text{K}$, 나트륨 $\text{Na}$, 알킬알루미늄, 알킬리튬), ② <strong>20킬로그램</strong>(황린 $\text{P}_4$), ③ <strong>50킬로그램</strong>(칼륨·나트륨을 제외한 알칼리금속[리튬 $\text{Li}$ 등] 및 알칼리토금속[칼슘 $\text{Ca}$, 바륨 $\text{Ba}$ 등], 알킬알루미늄·알킬리튬을 제외한 유기금속화합물), ④ <strong>300킬로그램</strong>(금속의 수소화물[$\text{NaH}, \text{LiAlH}_4$ 등], 금속의 인화물[$\text{Ca}_3\text{P}_2, \text{AlP}$ 등], 칼슘 또는 알루미늄의 탄화물[$\text{CaC}_2, \text{Al}_4\text{C}_3$])로 규정되어 있다. 특히 시험에서 제2류 가연성 고체와 제3류 위험물을 구분할 때 반드시 출제되는 단골 주제가 바로 인($\text{P}$)의 동소체인 <strong>적린(제2류, 지정수량 100킬로그램)과 황린(제3류, 지정수량 20킬로그램)의 비교</strong>이다. <strong>황린(백린, $\text{P}_4$)</strong>은 분자 구조가 불안정한 정사면체 결정으로서 융점이 약 섭씨 44도이고 <strong>발화점이 약 섭씨 34도</strong>에 불과하여, <strong>공기 중 상온에 노출되면 산화열에 의해 스스로 액화되면서 자연발화</strong>하여 오산화인($\text{P}_2\text{O}_5$)의 흰 연기를 내뿜는 맹독성 물질이다. 그러나 황린은 물과는 전혀 반응하지 않으므로(금수성이 아님!), 공기와 접촉하지 못하도록 평상시 <strong>물속(pH 9 내외의 약알칼리성 수중)에 잠기게 저장</strong>하며 화재 시에도 <strong>물을 이용한 냉각소화</strong>를 실시한다. 반면 황린을 공기를 차단한 채 섭씨 260도 내외로 가열하여 안정한 고분자 사슬 구조로 바꾼 <strong>적린(붉은 인, $\text{P}$)</strong>은 발화점이 약 섭씨 260도로 높고 독성이 없어 상온 공기 중에 보관하며 제2류 가연성 고체로 분류된다.
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">위험물 4대 보호액 공식 &amp; 금수성 소화 (2022 Q7 · 2023 Q17 · 2024 Q19)</div><ul class="sidenote-list"><li><strong>칼륨·나트륨(제3류)</strong>: <strong>석유(등유·경유)</strong> 속 보관</li><li><strong>황린(제3류) · 이황화탄소(제4류)</strong>: <strong>물(수중)</strong> 속 보관</li><li><strong>알킬알루미늄(제3류)</strong>: <strong>질소($\text{N}_2$) 등 불활성기체</strong> 봉입</li><li><strong>니트로셀룰로오스(제5류)</strong>: <strong>물 또는 에틸알코올</strong> 습윤 보관</li></ul></div></aside>
+            <p class="prose-body">
+              황린을 제외한 나머지 제3류 위험물은 수분과 닿으면 폭발적으로 가연성 가스를 내뿜는 금수성 물질이므로, 물질의 성상에 맞는 <strong>전용 보호액(또는 봉입 기체)</strong>과 <strong>금수성 전용 소화방법</strong>을 숙지해야 한다. 첫째, 물과 격렬히 반응하는 알칼리금속인 <strong>칼륨($\text{K}$), 나트륨($\text{Na}$), 리튬($\text{Li}$)</strong>은 산소와 수분이 없는 <strong>석유류(등유·경유·유동파라핀)</strong> 속에 담가 보관한다. 둘째, 공기나 수분과 닿는 즉시 폭발하는 <strong>알킬알루미늄·알킬리튬</strong>은 벤젠이나 헥산 등 불활성 유기용매에 희석한 뒤 강철 용기 내부에 <strong>질소($\text{N}_2$)·헬륨·아르곤 등 불활성 기체를 봉입</strong>하여 보관한다(참고로 제4류 특수인화물인 <strong>이황화탄소[$\text{CS}_2$]</strong>는 유독 증기 확산 방지를 위해 <strong>물속</strong>에 보관하고, 제5류 <strong>니트로셀룰로오스</strong>는 마찰 폭발 방지를 위해 <strong>물이나 알코올</strong>로 적셔 보관한다). 소화 방법을 보면, 제3류 중 <strong>오직 황린만 물을 이용한 냉각소화가 가능</strong>하며, 탄화칼슘·탄화알루미늄·알킬알루미늄·나트륨·칼륨 등 나머지 제3류 금수성 물질은 물, 수계 포, 이산화탄소, 할론 소화약제를 모두 사용할 수 없고 반드시 <strong>마른모래(건조사), 팽창질석, 팽창진주암, 건조석회</strong> 등으로 피복 질식소화해야 한다.
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 제1류·제2류·제3류 위험물 유별 성상·지정수량·보호액·소화방법 및 적린 vs 황린 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>유별 및 성질</th>
+                  <th>지정수량 등급별 대표 품명 (시행령 별표 1)</th>
+                  <th>공통 물성 및 보호액</th>
+                  <th>적응 소화방법 및 절대 금기 사항</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300">제1류 위험물<br/>(산화성 고체)</td>
+                  <td>· <strong>50kg</strong>: 아염소산·염소산·과염소산염류, <strong>무기과산화물</strong><br/>· <strong>300kg</strong>: 브롬산·질산·요오드산염류<br/>· <strong>1,000kg</strong>: 과망간산·중크롬산염류</td>
+                  <td>· 자체는 <strong>불연성 무기화합물</strong><br/>· 산소 방출 <strong>강산화제(지연성)</strong><br/>· 비중 $>1$, 대부분 수용성</td>
+                  <td>· 원칙: 다량의 물로 <strong>주수 냉각소화</strong><br/>· 예외: <strong>무기과산화물($\text{Na}_2\text{O}_2$ 등)</strong>은 물 반응 시 $\text{O}_2\cdot$열 발생 ➔ <strong>마른모래·팽창질석 질식소화</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제2류 위험물<br/>(가연성 고체)</td>
+                  <td>· <strong>100kg</strong>: 황화린, <strong>적린</strong>, 유황(순도 $60\text{wt}\%\uparrow$)<br/>· <strong>500kg</strong>: 철분($53\mu\text{m}$ 체 $50\text{wt}\%\uparrow$), 금속분($150\mu\text{m}$ 체 $50\text{wt}\%\uparrow$), 마그네슘<br/>· <strong>1,000kg</strong>: 인화성고체(인화점 $40^\circ\text{C}$ 미만)</td>
+                  <td>· <strong>환원성 가연물</strong>, 저온 착화 용이<br/>· 비중 $>1$, 물 불용성<br/>· <strong>적린</strong>: 발화점 $260^\circ\text{C}$, 무독성</td>
+                  <td>· <strong>적린·유황·인화성고체</strong>: <strong>물 냉각소화</strong> 가능<br/>· <strong>철분·금속분·마그네슘·황화린</strong>: 주수·$\text{CO}_2\cdot$할론 금지 ➔ <strong>마른모래·팽창질석 질식소화</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">제3류 위험물<br/>(자연발화성 및<br/>금수성 물질)</td>
+                  <td>· <strong>10kg</strong>: 칼륨, 나트륨, 알킬알루미늄, 알킬리튬<br/>· <strong>20kg</strong>: <strong>황린($\text{P}_4$)</strong><br/>· <strong>50kg</strong>: 기타 알칼리·알칼리토금속, 유기금속화합물<br/>· <strong>300kg</strong>: 금속의 수소화물·인화물, $\text{Ca}\cdot\text{Al}$의 탄화물</td>
+                  <td>· <strong>황린</strong>: 발화점 $34^\circ\text{C}$ 자연발화, 맹독성, <strong>물속 저장</strong><br/>· <strong>$\text{K}\cdot\text{Na}$</strong>: <strong>석유</strong> 속 저장<br/>· <strong>알킬$\text{Al}$</strong>: <strong>질소($\text{N}_2$)</strong> 봉입</td>
+                  <td>· 원칙(금수성 전체): 주수·$\text{CO}_2\cdot$할론 엄금 ➔ <strong>마른모래(건조사)·팽창질석·팽창진주암 질식소화</strong><br/>· 유일한 예외: <strong>황린($\text{P}_4$)만 물을 이용한 냉각소화</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        <div id="sec3" class="space-y-6">
+          <h2>제3절. 금수성·산화성 위험물의 물($\text{H}_2\text{O}$) 반응 화학식과 정량 계산</h2>
+
+          <div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">물 반응 생성 가스 1순위 대조 (2022 Q11 · 2024 Q25)</div><ul class="sidenote-list"><li><strong>과산화나트륨($\text{Na}_2\text{O}_2$) + 물</strong> ➔ <strong>산소($\text{O}_2$)</strong> (유일한 조연성)</li><li><strong>칼륨·나트륨·수소화물($\text{LiAlH}_4$) + 물</strong> ➔ <strong>수소($\text{H}_2$)</strong></li><li><strong>탄화칼슘($\text{CaC}_2$) + 물</strong> ➔ <strong>아세틸렌($\text{C}_2\text{H}_2$)</strong></li><li><strong>탄화알루미늄($\text{Al}_4\text{C}_3$) + 물</strong> ➔ <strong>메테인($\text{CH}_4$)</strong> ('아세틸렌' X!)</li></ul></div></aside>
+            <p class="prose-body">
+              금수성 및 산화성 위험물이 물($\text{H}_2\text{O}$)과 접촉할 때 <strong>어떤 기체가 몇 몰($\text{mol}$) 발생하는지</strong>를 묻는 반응식 및 화학양론 계산 문제는 소방학개론 위험물 파트의 최빈출 킬러 주제이다. 반응 원리는 금속 양이온이 물의 수산화이온($\text{OH}^-$)과 결합해 금속 수산화물이 되고, 물에서 남은 수소이온($\text{H}^+$)이 상대 음이온(탄소·인·황·알킬기 등)과 결합하여 기체로 날아가는 가수분해 메커니즘이다. 첫째, 물과 반응하여 가연성 가스가 아닌 <strong>조연성 기체 산소($\text{O}_2$)</strong>를 발생시키는 유일한 위험물은 제1류 <strong>무기과산화물(과산화나트륨 $\text{Na}_2\text{O}_2$, 과산화칼륨 $\text{K}_2\text{O}_2$)</strong>이다($2\text{Na}_2\text{O}_2 + 2\text{H}_2\text{O} \rightarrow 4\text{NaOH} + \text{O}_2\uparrow$). 둘째, 물과 반응하여 <strong>수소($\text{H}_2$) 가스</strong>를 발생시키는 물질은 <strong>순수 금속(칼륨 $\text{K}$, 나트륨 $\text{Na}$, 칼슘 $\text{Ca}$, 끓는 물과 반응하는 마그네슘 $\text{Mg}$)</strong>과 <strong>금속의 수소화물(수소화나트륨 $\text{NaH}$, 수소화칼슘 $\text{CaH}_2$, 수소화알루미늄리튬 $\text{LiAlH}_4$)</strong>이다($2\text{Na} + 2\text{H}_2\text{O} \rightarrow 2\text{NaOH} + \text{H}_2\uparrow$, $\text{LiAlH}_4 + 4\text{H}_2\text{O} \rightarrow \text{LiOH} + \text{Al(OH)}_3 + 4\text{H}_2\uparrow$). 셋째, 시험에서 가장 많이 뒤바꾸어 출제하는 쌍둥이가 바로 <strong>탄화칼슘($\text{CaC}_2$, 카바이드)과 탄화알루미늄($\text{Al}_4\text{C}_3$)</strong>이다. 탄소 원자 2개가 삼중결합한 <strong>탄화칼슘($\text{CaC}_2$) 1몰은 물 2몰과 반응하여 아세틸렌($\text{C}_2\text{H}_2$) 가스 1몰</strong>을 발생시키는 반면($\text{CaC}_2 + 2\text{H}_2\text{O} \rightarrow \text{Ca(OH)}_2 + \text{C}_2\text{H}_2\uparrow$), <strong>탄화알루미늄($\text{Al}_4\text{C}_3$) 1몰은 물 12몰과 반응하여 아세틸렌이 아닌 메테인($\text{CH}_4$) 가스 3몰</strong>을 발생시킨다($\text{Al}_4\text{C}_3 + 12\text{H}_2\text{O} \rightarrow 4\text{Al(OH)}_3 + 3\text{CH}_4\uparrow$).
+            </p>
+            
+          </div><div class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">알킬알루미늄 정량 계산 공식 (2026년 Q14)</div><ul class="sidenote-list"><li><strong>트라이메틸알루미늄[$(\text{CH}_3)_3\text{Al}$]</strong> 분자량 $= 72\text{g/mol}$</li><li><strong>$1\text{mol}(72\text{g}, 6.02\times 10^{23}\text{개})$ + 물 $3\text{mol}$ ➔ 메테인($\text{CH}_4$) $3\text{mol}$ ($67.2\text{L}$)</strong></li><li>물의 몰수($3\text{mol}$) $=$ 생성 메테인 몰수($3\text{mol}$)</li><li><strong>트라이에틸알루미늄</strong> + 물 $3\text{mol}$ ➔ <strong>에테인($\text{C}_2\text{H}_6$) $3\text{mol}$</strong></li><li><strong>인화칼슘($\text{Ca}_3\text{P}_2$)</strong> ➔ <strong>포스핀($\text{PH}_3$)</strong> / <strong>오황화인($\text{P}_2\text{S}_5$)</strong> ➔ <strong>황화수소($\text{H}_2\text{S}$)</strong></li></ul></div></aside>
+            <p class="prose-body">
+              넷째, 2022년과 2026년 기출에서 연속 출제된 <strong>알킬알루미늄($\text{R}_3\text{Al}$)의 화학양론적 물 반응</strong>은 반응 계수와 분자량·부피 계산까지 정확히 꿰뚫어야 한다. 알루미늄($\text{Al}$, 원자량 27)은 $+3$가 금속이므로 알킬기($\text{R}-$) 3개가 결합되어 있다. 따라서 단량체인 <strong>트라이메틸알루미늄[$(\text{CH}_3)_3\text{Al}$, 분자량 $= 15 \times 3 + 27 = 72\text{g/mol}$] 1몰($72\text{g}$, 분자 수 $6.02 \times 10^{23}$개)은 정확히 3몰의 물($3\text{H}_2\text{O}$)과 반응하여 수산화알루미늄[$\text{Al(OH)}_3$] 1몰과 메테인($\text{CH}_4$) 가스 3몰(표준상태 부피 $3 \times 22.4\text{L} = 67.2\text{L}$)을 생성</strong>한다:
+              $$(\text{CH}_3)_3\text{Al} + 3\text{H}_2\text{O} \longrightarrow \text{Al(OH)}_3 + 3\text{CH}_4\uparrow$$
+              이 반응식에서 볼 수 있듯이 ① 반응하는 <strong>물의 몰수(3몰)와 생성되는 메테인 가스의 몰수(3몰)는 항상 같으며</strong>, ② $144\text{g}$(2몰)의 트라이메틸알루미늄이 반응하면 $2 \times 3 = 6\text{mol}$의 메테인 가스가 생성되고, ③ 아보가드로수인 $6.02 \times 10^{23}$개(1몰)의 트라이메틸알루미늄이 반응하면 1몰($22.4\text{L}$)이 아니라 <strong>3몰인 $67.2\text{L}$의 메테인 가스</strong>가 생성된다! 마찬가지로 에틸기($\text{C}_2\text{H}_5-$) 3개가 붙은 <strong>트라이에틸알루미늄[$(\text{C}_2\text{H}_5)_3\text{Al}$] 1몰은 3몰의 물과 반응하여 에테인($\text{C}_2\text{H}_6$) 가스 3몰</strong>을 생성한다. 다섯째, 제3류 <strong>금속의 인화물(인화칼슘 $\text{Ca}_3\text{P}_2$, 인화알루미늄 $\text{AlP}$)</strong>이 물과 반응하면 인($\text{P}$)과 수소가 결합하여 맹독성·가연성 기체인 <strong>포스핀(인화수소, $\text{PH}_3$)</strong>을 발생시키며($\text{Ca}_3\text{P}_2 + 6\text{H}_2\text{O} \rightarrow 3\text{Ca(OH)}_2 + 2\text{PH}_3\uparrow$), 제2류 황화린 중 <strong>오황화인($\text{P}_2\text{S}_5$)</strong>이 물과 반응하면 황($\text{S}$)과 수소가 결합하여 계란 썩는 냄새가 나는 독성·가연성 기체인 <strong>황화수소($\text{H}_2\text{S}$)</strong>를 발생시킨다($\text{P}_2\text{S}_5 + 8\text{H}_2\text{O} \rightarrow 2\text{H}_3\text{PO}_4 + 5\text{H}_2\text{S}\uparrow$).
+            </p>
+            
+          </div>
+
+          <div class="para-block overflow-x-auto">
+            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 금수성 및 산화성 위험물의 물(H2O) 반응 화학식·생성 가스 및 화학양론 총정리</div>
+            <table class="book-table">
+              <thead>
+                <tr>
+                  <th>위험물 품명 및 화학식</th>
+                  <th>유별 (지정수량)</th>
+                  <th>물 반응 생성 기체</th>
+                  <th>표준 화학 반응식 및 정량 몰수·부피 포인트 (2022 Q11 · 2024 Q25 · 2026 Q14)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="font-bold text-emerald-300">과산화나트륨 ($\text{Na}_2\text{O}_2$)<br/>과산화칼륨 ($\text{K}_2\text{O}_2$)</td>
+                  <td>제1류 (50kg)<br/>무기과산화물</td>
+                  <td class="text-amber-300 font-bold"><strong>산소 ($\text{O}_2$)</strong><br/>(유일한 조연성 기체)</td>
+                  <td>· $2\text{Na}_2\text{O}_2 + 2\text{H}_2\text{O} \rightarrow 4\text{NaOH} + \text{O}_2\uparrow$ (과산화물 2몰당 산소 1몰 발생)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">칼륨($\text{K}$) · 나트륨($\text{Na}$)<br/>수소화알루미늄리튬($\text{LiAlH}_4$)<br/>마그네슘($\text{Mg}$, 끓는 물)</td>
+                  <td>제3류 (10kg / 300kg)<br/>제2류 (500kg)</td>
+                  <td><strong>수소 ($\text{H}_2$)</strong><br/>(가연성 기체)</td>
+                  <td>· $2\text{Na} + 2\text{H}_2\text{O} \rightarrow 2\text{NaOH} + \text{H}_2\uparrow$ (1가 금속 1몰당 수소 0.5몰)<br/>· $\text{LiAlH}_4 + 4\text{H}_2\text{O} \rightarrow \text{LiOH} + \text{Al(OH)}_3 + 4\text{H}_2\uparrow$ (1몰당 수소 4몰)<br/>· $\text{Mg} + 2\text{H}_2\text{O}(\text{열수}) \rightarrow \text{Mg(OH)}_2 + \text{H}_2\uparrow$ (1몰당 수소 1몰)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">탄화칼슘 ($\text{CaC}_2$, 카바이드)</td>
+                  <td>제3류 (300kg)<br/>칼슘의 탄화물</td>
+                  <td class="text-amber-300 font-bold"><strong>아세틸렌 ($\text{C}_2\text{H}_2$)</strong></td>
+                  <td>· $\text{CaC}_2 + 2\text{H}_2\text{O} \rightarrow \text{Ca(OH)}_2 + \text{C}_2\text{H}_2\uparrow$ (1몰당 물 2몰 반응, 아세틸렌 1몰)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">탄화알루미늄 ($\text{Al}_4\text{C}_3$)</td>
+                  <td>제3류 (300kg)<br/>알루미늄의 탄화물</td>
+                  <td class="text-amber-300 font-bold"><strong>메테인 ($\text{CH}_4$)</strong><br/>(아세틸렌 아님!)</td>
+                  <td>· $\text{Al}_4\text{C}_3 + 12\text{H}_2\text{O} \rightarrow 4\text{Al(OH)}_3 + 3\text{CH}_4\uparrow$ (1몰당 물 12몰 반응, 메테인 3몰)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">트라이메틸알루미늄<br/>[$(\text{CH}_3)_3\text{Al}$, 분자량 72]</td>
+                  <td>제3류 (10kg)<br/>알킬알루미늄</td>
+                  <td class="text-amber-300 font-bold"><strong>메테인 ($\text{CH}_4$)</strong></td>
+                  <td>· $(\text{CH}_3)_3\text{Al} + 3\text{H}_2\text{O} \rightarrow \text{Al(OH)}_3 + 3\text{CH}_4\uparrow$<br/>· <strong>1몰($72\text{g}, 6.02\times 10^{23}\text{개}$) + 물 3몰 ➔ 메테인 3몰(표준상태 $67.2\text{L}$)</strong></td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">트라이에틸알루미늄<br/>[$(\text{C}_2\text{H}_5)_3\text{Al}$, 분자량 114]</td>
+                  <td>제3류 (10kg)<br/>알킬알루미늄</td>
+                  <td><strong>에테인 ($\text{C}_2\text{H}_6$)</strong></td>
+                  <td>· $(\text{C}_2\text{H}_5)_3\text{Al} + 3\text{H}_2\text{O} \rightarrow \text{Al(OH)}_3 + 3\text{C}_2\text{H}_6\uparrow$ (1몰당 에테인 3몰, $67.2\text{L}$)</td>
+                </tr>
+                <tr>
+                  <td class="font-bold text-emerald-300">인화칼슘 ($\text{Ca}_3\text{P}_2$)<br/>오황화인 ($\text{P}_2\text{S}_5$)</td>
+                  <td>제3류 (300kg)<br/>제2류 (100kg)</td>
+                  <td><strong>포스핀 ($\text{PH}_3$)</strong><br/><strong>황화수소 ($\text{H}_2\text{S}$)</strong></td>
+                  <td>· $\text{Ca}_3\text{P}_2 + 6\text{H}_2\text{O} \rightarrow 3\text{Ca(OH)}_2 + 2\text{PH}_3\uparrow$ (1몰당 포스핀 2몰)<br/>· $\text{P}_2\text{S}_5 + 8\text{H}_2\text{O} \rightarrow 2\text{H}_3\text{PO}_4 + 5\text{H}_2\text{S}\uparrow$ (1몰당 황화수소 5몰)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></div>
+
+        </section>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (9문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 9문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢위험물안전관리법령｣상 위험물의 분류 중 가연성 고체가 아닌 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">황린</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">적린</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">유황</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">황화린</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제1류 위험물의 일반적 성질에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">불연성 물질이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">강력한 환원제이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">대부분 무기화합물이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">다른 가연물의 연소를 돕는 지연성 물질이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2022년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가연성 물질의 화재 시 소화방법으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">탄화칼슘은 물을 분무하여 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">아세톤은 알콜형포 소화약제로 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">나트륨은 할론 소화약제로 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">마그네슘은 이산화탄소 소화약제로 소화한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2022년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물과 물이 반응할 때 발생하는 가스로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">위험물: 탄화알루미늄 / 발생 가스: 아세틸렌</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">위험물: 인화칼슘 / 발생 가스: 포스핀</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">위험물: 수소화알루미늄리튬 / 발생 가스: 수소</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">위험물: 트리에틸알루미늄 / 발생 가스: 에테인</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2023년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 유별 특성 중 옳은 것만을 <보기>에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 아염소산나트륨은 불연성, 조해성, 수용성이며, 무색 또는 백색의 결정성 분말 형태이다.<br/>ㄴ. 마그네슘은 끓는 물과 접촉 시 수소가스를 발생시킨다.<br/>ㄷ. 황린은 공기 중 상온에 노출되면 액화되면서 자연발화를 일으킨다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2023년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 유별 소화방법으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">탄화칼슘 화재 시 다량의 물로 냉각소화할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">수용성 메틸알코올 화재에는 내알코올포를 사용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">알킬알루미늄은 마른모래, 팽창질석, 팽창진주암으로 소화 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">적린은 다량의 물로 냉각소화하며, 소량의 적린인 경우 에는 마른모래나 이산화탄소 소화약제도 일시적인 효과가 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2024년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">위험물의 소화방법에 관한 내용으로 옳은 것만을 <보기> 에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 황린: 물을 이용한 냉각소화<br/>ㄴ. 유황: 물을 이용한 냉각소화<br/>ㄷ. 경유, 휘발유: 포 소화약제를 이용한 질식소화<br/>ㄹ. 탄화알루미늄, 알킬알루미늄: 건조사, 팽창질석을 이용한 질식소화</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2024년 소방공채·경채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">물과 반응하여 산소를 발생시키는 위험물로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">칼륨</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">탄화칼슘</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">과산화나트륨</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">오황화인</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2026년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">단량체인 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응에 관한 설명으로 옳지 않은 것은? (단, 생성된 가스의 부피는 표준상태 조건을 따르며, Al의 원자량은 27 )</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">1 mol의 트라이메틸알루미늄은 3 mol의 물과 반응한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">144 g의 트라이메틸알루미늄은 6 mol의 메테인 가스를 생성한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">6.02×1023개의 트라이메틸알루미늄은 22.4 L의 메테인 가스를 생성한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">트라이메틸알루미늄과 물의 반응에서 물의 mol수와 생성 되는 메테인 가스의 mol수는 같다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 15제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>적린, 유황, 황화린, 철분, 금속분, 마그네슘, 인화성고체는 제2류 위험물(가연성 고체)에 해당하며, 황린은 제3류 위험물(자연발화성물질 및 금수성물질)에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물(산화성 고체)은 대부분 불연성 무기화합물로서 다른 가연물의 연소를 돕는 강력한 '산화제(지연성 물질)'이며, 제2류 위험물(가연성 고체)은 산소와 결합하기 쉬운 '환원성 물질'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>수용성 제1석유류인 아세톤 화재 시에는 알코올형포(내알코올포) 소화약제로 소화하며, 마그네슘이나 나트륨 화재에는 물, 이산화탄소, 할론 소화약제를 모두 사용할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물과 반응할 때 탄화칼슘(CaC2)은 아세틸렌(C2H2) 가스를 발생시키고, 탄화알루미늄(Al4C3)은 메테인(CH4) 가스를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물과 반응할 때 인화칼슘은 포스핀(PH3), 수소화알루미늄리튬은 수소(H2), 트리에틸알루미늄은 에테인(C2H6), 트리메틸알루미늄은 메테인(CH4) 가스를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 아염소산나트륨은 불연성·조해성·수용성의 결정성 분말이며, 제2류 마그네슘은 끓는 물(열수)과 접촉 시 수소가스를 발생시키고, 제3류 황린은 공기 중 상온에 노출되면 액화되면서 자연발화를 일으킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물인 적린과 유황은 금수성이 아니므로 다량의 물로 냉각소화할 수 있으나, 제3류 위험물인 탄화칼슘과 알킬알루미늄은 금수성이므로 마른모래·팽창질석·팽창진주암으로 소화해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물 중 황린은 금수성이 아니므로 물속에 보관하고 화재 시 물을 이용한 냉각소화를 실시하며, 탄화알루미늄과 알킬알루미늄은 금수성이므로 건조사·팽창질석을 이용한 질식소화를 실시한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>과산화나트륨(Na2O2) 등 제1류 무기과산화물은 물과 반응하여 산소(O2)를 발생시키고, 칼륨(K)은 수소(H2), 오황화인(P2S5)은 황화수소(H2S)를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단량체인 트라이메틸알루미늄[(CH3)3Al, 분자량 72] 1몰(6.02×10의 23제곱 개)은 3몰의 물(H2O)과 반응하여 수산화알루미늄[Al(OH)3] 1몰과 메테인(CH4) 가스 3몰(표준상태에서 67.2리터)을 생성한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[제1류 위험물의 일반적 성질] 다른 가연물의 연소를 돕는 지연성 물질이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1 mol의 트라이메틸알루미늄은 3 mol의 물과 반응한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>144 g의 트라이메틸알루미늄은 6 mol의 메테인 가스를 생성한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>6.02×1023개의 트라이메틸알루미늄은 22.4 L의 메테인 가스를 생성한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>트라이메틸알루미늄과 물의 반응에서 물의 mol수와 생성 되는 메테인 가스의 mol수는 같다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 알칼리금속의 과산화물(과산화나트륨·과산화칼륨)은 물에 녹지 않는 난용성이며, 알칼리토금속의 과산화물(과산화칼슘·과산화마그네슘·과산화바륨)은 물에 잘 녹는 수용성으로서 찬물과 즉시 반응하여 산소(O₂)를 방출한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물인 과산화나트륨(Na₂O₂) 화재 시 물을 뿌리면 산소가 발생하므로 주수소화를 금하고 이산화탄소(CO₂) 소화약제를 방사하여 질식소화해야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물 중 중크롬산암모늄[(NH₄)₂Cr₂O₇]은 가열하면 열분해되어 다량의 산소(O₂) 기체와 산화크롬(Cr₂O₃)을 생성한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물인 과망간산칼륨(KMnO₄, 지정수량 1,000 kg)은 흑자색의 결정으로서 글리세린, 에틸렌글리콜 또는 진한 황산과 접촉하면 상온에서도 격렬하게 반응하여 자연발화·폭발할 위험이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1류 위험물인 질산암모늄(NH₄NO₃, 지정수량 300 kg)은 흡습성과 조해성이 매우 강하고 물에 녹을 때 다량의 용해열을 방출하는 강한 발열 반응을 일으키므로 자연발화 위험이 크다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물인 황화린(지정수량 100 kg) 중 삼황화린(P₄S₃)은 찬물(냉수)과 격렬히 반응하여 가연성·맹독성의 포스핀(PH₃) 가스를 발생시키고, 오황화린(P₂S₅)은 찬물과 반응하지 않고 더운물(온수)과만 반응한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물인 마그네슘(Mg) 화재 시에는 이산화탄소(CO₂) 소화약제를 방사하여 산소를 차단하는 질식소화가 가장 효과적이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제2류 위험물인 유황(S, 지정수량 100 kg)은 불순물을 제외한 순도가 50중량퍼센트 이상인 고체를 말하며, 물에 녹지 않는 전기 부도체로서 연소 시 푸른 불꽃을 내며 자극성의 이산화황(SO₂)을 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>위험물안전관리법 시행령 별표 1 비고에 따라 제3류 위험물 중 황린(P₄)과 탄화칼슘(CaC₂)은 자연발화성과 금수성을 모두 지닌 물질로 분류되어 주수소화가 금지된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물인 알칼리금속(리튬, 나트륨, 칼륨)은 모두 비중이 1보다 커서 물보다 무겁기 때문에 물속에 가라앉아 수소 가스를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 알칼리금속인 리튬(Li), 나트륨(Na), 칼륨(K)은 원자번호가 커질수록 물과의 반응성이 커져 칼륨(K) &gt; 나트륨(Na) &gt; 리튬(Li) 순으로 격렬하게 반응하며, 녹는점(융점) 또한 칼륨(K) &gt; 나트륨(Na) &gt; 리튬(Li) 순으로 높다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물 중 칼륨, 나트륨, 리튬의 지정수량은 모두 10킬로그램으로 동일하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>행정안전부령으로 정하는 제3류 위험물인 염소화규소화합물(트라이클로로실란 SiHCl₃, 사염화규소 SiCl₄ 등, 지정수량 50 kg)은 물과 접촉하면 가수분해되어 독성·부식성이 강한 염화수소(HCl) 가스를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>인(P)의 동소체 중 황린(백린, P₄)은 독성이 매우 강하고 이황화탄소(CS₂)에 잘 녹으며 발화점이 약 34℃로 낮아 공기 중 상온에서 자연발화하는 반면, 적린(P)은 독성이 없고 이황화탄소에 녹지 않으며 발화점이 약 260℃로 높다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>탄화알루미늄(Al₄C₃, 분자량 144) 1몰(144 g)이 물과 완전히 반응하려면 물(H₂O) 12몰이 필요하며, 반응 결과 수산화알루미늄[Al(OH)₃] 4몰과 메테인(CH₄) 가스 3몰(표준상태 67.2 L)이 생성된다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:② · 03:② · 04:① · 05:④ · 06:① · 07:④ · 08:③ · 09:③</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:X · 15:O · 16:X · 17:X · 18:X · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:O · 29:O · 30:O</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 15 · 제5편 위험물 및 특수가연물론 · 제1장 (9문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 1에서 황화린, 적린, 유황, 철분, 금속분, 마그네슘, 인화성고체는 '제2류 위험물(가연성 고체)'에 해당하며, 자연발화성 물질인 '황린(P4)'은 '제3류 위험물(자연발화성물질 및 금수성물질)'에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">황린</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 황린(백린, P4)은 공기 중에서 자연발화(발화점 약 34도)하는 성질이 강하여 제2류 가연성 고체가 아니라 '제3류 위험물'로 분류됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">적린</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 적린(P)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">유황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 유황(S)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">황화린</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 황화린(오황화린·삼황화린·칠황화린)은 제2류 위험물(가연성 고체, 지정수량 100킬로그램)에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제1류 위험물(산화성 고체: 염소산염류, 과염소산염류, 무기과산화물, 질산염류 등)은 그 자체는 타지 않는 '불연성 무기화합물'이지만, 열분해 시 산소를 방출하여 다른 가연물의 연소를 돕는 '강력한 산화제(지연성·조연성 물질)'입니다(환원제는 산소를 받아들이며 자신이 산화·연소되는 제2류 가연성 고체 등의 성질임).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">불연성 물질이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제1류 위험물은 그 자체는 연소하지 않는 불연성 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">강력한 환원제이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 제1류 위험물은 산소를 내어주는 '강력한 산화제'이며, 환원제(제2류 가연성 고체 등)와 혼합되면 격렬하게 폭발할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">대부분 무기화합물이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제1류 위험물은 대부분 산소를 다량 함유한 무기화합물(염류·무기과산화물)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">다른 가연물의 연소를 돕는 지연성 물질이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 열이나 충격에 의해 분해되어 산소를 방출함으로써 다른 가연물의 연소를 돕는 지연성(조연성) 물질입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 금수성 물질이나 금속 화재에는 물, 이산화탄소, 할론 소화약제 모두 반응하여 폭발을 일으키므로 사용할 수 없으며, 수용성 제1석유류인 아세톤 화재에는 알코올형포(내알코올포)를 사용합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">탄화칼슘은 물을 분무하여 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제3류 위험물인 탄화칼슘(카바이드, CaC2)은 물과 반응하여 폭발성 아세틸렌(C2H2) 가스를 발생시키므로 물을 분무하면 안 되고 마른모래 등으로 질식소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">아세톤은 알콜형포 소화약제로 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 아세톤(CH3COCH3)은 수용성 제1석유류이므로 물에 녹지 않는 특수 비누막을 형성하는 '알코올형포(내알코올포) 소화약제'로 질식소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">나트륨은 할론 소화약제로 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제3류 나트륨(Na) 등 알칼리금속은 할론 소화약제의 할로겐 원소와 격렬하게 반응하여 폭발하므로 할론을 사용할 수 없고 마른모래·팽창질석·D급 분말을 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">마그네슘은 이산화탄소 소화약제로 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제2류 마그네슘(Mg) 화재에 이산화탄소(CO2)를 방사하면 고온의 마그네슘이 이산화탄소의 산소를 빼앗아 탄소를 유리시키며 연소가 더욱 확대(<code>2Mg + CO2 -> 2MgO + C</code>)되므로 사용할 수 없습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제3류 금수성 위험물이 물(H2O)과 반응할 때 생성되는 가연성 가스의 종류를 정확히 구별해야 합니다.
+· <strong>탄화칼슘(<code>CaC2</code>)</strong> + 물 ➔ <strong>아세틸렌(<code>C2H2</code>)</strong>
+· <strong>탄화알루미늄(<code>Al4C3</code>)</strong> + 물 ➔ <strong>메탄(메테인, <code>CH4</code>)</strong>
+· <strong>인화칼슘(<code>Ca3P2</code>)</strong> + 물 ➔ <strong>포스핀(인화수소, <code>PH3</code>)</strong>
+· <strong>금속의 수소화물(<code>LiAlH4</code>, <code>NaH</code> 등)</strong> + 물 ➔ <strong>수소(<code>H2</code>)</strong>
+· <strong>트리에틸알루미늄(<code>(C2H5)3Al</code>)</strong> + 물 ➔ <strong>에탄(에테인, <code>C2H6</code>)</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">위험물: 탄화알루미늄 / 발생 가스: 아세틸렌</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 탄화알루미늄(<code>Al4C3</code>)이 물과 반응(<code>Al4C3 + 12H2O -> 4Al(OH)3 + 3CH4</code>)할 때 발생하는 가스는 아세틸렌이 아니라 <strong>메탄(메테인, <code>CH4</code>)</strong>입니다. 아세틸렌(<code>C2H2</code>)이 발생하는 것은 '탄화칼슘(<code>CaC2</code>)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">위험물: 인화칼슘 / 발생 가스: 포스핀</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 인화칼슘(<code>Ca3P2</code>)이 물과 반응(<code>Ca3P2 + 6H2O -> 3Ca(OH)2 + 2PH3</code>)하면 맹독성·자연발화성 기체인 포스핀(인화수소, <code>PH3</code>)이 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">위험물: 수소화알루미늄리튬 / 발생 가스: 수소</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 수소화알루미늄리튬(<code>LiAlH4</code>)이 물과 반응(<code>LiAlH4 + 4H2O -> LiOH + Al(OH)3 + 4H2</code>)하면 수소(<code>H2</code>) 가스가 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">위험물: 트리에틸알루미늄 / 발생 가스: 에테인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 트리에틸알루미늄(<code>(C2H5)3Al</code>)이 물과 반응(<code>(C2H5)3Al + 3H2O -> Al(OH)3 + 3C2H6</code>)하면 에테인(에탄, <code>C2H6</code>) 가스가 발생합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 아염소산나트륨(NaClO2, 제1류)은 무색·백색 결정성 분말로 조해성·수용성·불연성이며, 마그네슘(Mg, 제2류)은 찬물과는 거의 반응하지 않으나 끓는 물(열수)과 반응하면 수소가스(<code>Mg + 2H2O -> Mg(OH)2 + H2</code>)를 발생시키며, 황린(P4, 제3류)은 융점이 약 44도, 발화점이 약 34도여서 상온 공기 중에 노출되면 산화열로 녹아 액화되면서 자연발화를 일으킵니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄷ(황린의 상온 노출 시 액화 및 자연발화 특성)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄴ(마그네슘의 끓는 물 접촉 시 수소가스 발생)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ과 ㄷ은 옳으나, 옳은 설명인 ㄱ(아염소산나트륨의 불연성·조해성·수용성 및 결정성 분말 성상)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 아염소산나트륨( ㄱ ), 마그네슘( ㄴ ), 황린( ㄷ )에 관한 설명이 모두 옳으므로 ㄱ, ㄴ, ㄷ이 정답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 탄화칼슘(CaC2)은 제3류 금수성 물질로서 물과 만나면 아세틸렌 가스를 발생시키므로 절대 주수소화할 수 없습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">탄화칼슘 화재 시 다량의 물로 냉각소화할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 탄화칼슘(CaC2)은 물과 반응하여 폭발성 아세틸렌 가스와 반응열을 내는 제3류 금수성 위험물이므로 다량의 물로 냉각소화할 수 없으며, 마른모래·팽창질석·팽창진주암으로 질식소화해야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">수용성 메틸알코올 화재에는 내알코올포를 사용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 수용성 알코올류인 메틸알코올 화재에는 수용성 액체에 거품이 녹지 않는 내알코올포(알코올형포)를 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">알킬알루미늄은 마른모래, 팽창질석, 팽창진주암으로 소화 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제3류 알킬알루미늄은 금수성·자연발화성이므로 마른모래, 팽창질석, 팽창진주암으로 질식소화합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">적린은 다량의 물로 냉각소화하며, 소량의 적린인 경우 에는 마른모래나 이산화탄소 소화약제도 일시적인 효과가 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제2류 적린(P)은 금수성이 아니므로 다량의 물로 냉각소화하며, 소량일 경우 마른모래나 이산화탄소도 일시적 효과가 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제3류 위험물 중 유일하게 금수성이 아닌 순수 자연발화성 물질인 <strong>황린(P4)</strong>은 평소에도 물속(수중)에 저장하므로 화재 시 <strong>물을 이용한 냉각소화</strong>가 가장 적합합니다. 또한 제2류 유황 역시 물을 이용한 냉각(무상주수)소화가 가능합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(유황의 물 냉각소화)과 ㄹ(금수성 물질의 건조사 질식소화)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄱ(황린의 물 냉각소화)과 ㄷ(석유류의 포 질식소화)이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄱ, ㄷ, ㄹ뿐만 아니라 제2류 가연성 고체인 ㄴ(유황 화재 시 물을 이용한 냉각소화, 유황은 금수성이 아님)도 옳은 소화방법이므로 ㄴ이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 황린의 물 냉각소화( ㄱ ), 유황의 물 냉각소화( ㄴ ), 경유·휘발유(비수용성 제4류)의 포 질식소화( ㄷ ), 탄화알루미늄·알킬알루미늄(제3류 금수성)의 건조사·팽창질석 질식소화( ㄹ )가 모두 옳으므로 ㄱ, ㄴ, ㄷ, ㄹ이 정답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 물과 반응할 때 가연성 가스가 아니라 조연성 가스인 <strong>산소(<code>O2</code>)</strong>를 발생시키는 물질은 제1류 위험물인 <strong>알칼리금속의 과산화물(과산화나트륨 <code>Na2O2</code>, 과산화칼륨 <code>K2O2</code> 등 무기과산화물)</strong>입니다(<code>2Na2O2 + 2H2O -> 4NaOH + O2</code>).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">칼륨</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제3류 칼륨(<code>K</code>)은 물과 반응(<code>2K + 2H2O -> 2KOH + H2</code>)하여 가연성 기체인 <strong>수소(<code>H2</code>)</strong>를 발생시킵니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">탄화칼슘</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 제3류 탄화칼슘(<code>CaC2</code>)은 물과 반응(<code>CaC2 + 2H2O -> Ca(OH)2 + C2H2</code>)하여 가연성 기체인 <strong>아세틸렌(<code>C2H2</code>)</strong>을 발생시킵니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">과산화나트륨</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 제1류 과산화나트륨(<code>Na2O2</code>)은 물과 반응(<code>2Na2O2 + 2H2O -> 4NaOH + O2</code>)하여 조연성 기체인 <strong>산소(<code>O2</code>)</strong>와 반응열을 발생시킵니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">오황화인</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제2류 오황화인(<code>P2S5</code>)은 물과 반응(<code>P2S5 + 8H2O -> 2H3PO4 + 5H2S</code>)하여 독성·가연성 기체인 <strong>황화수소(<code>H2S</code>)</strong>를 발생시킵니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제3류 위험물(유기금속화합물)인 단량체 **트라이메틸알루미늄(<code>(CH3)3Al</code>, 분자량 = <code>12*3 + 1*9 + 27 = 72 g/mol</code>)<strong>이 물(<code>H2O</code>)과 반응하는 화학반응식은 다음과 같습니다.
+(CH₃)₃Al + 3H₂O ➔ Al(OH)₃ + 3CH₄
+즉, </strong>1몰(<code>72 g</code>, 아보가드로수 <code>6.02 × 10²³</code>개)의 트라이메틸알루미늄<strong>은 </strong>3몰의 물(<code>H2O</code>)<strong>과 반응하여 </strong>3몰의 메테인(<code>CH4</code>) 가스**(표준상태 부피 <code>3 * 22.4 L = 67.2 L</code>)를 생성합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">1 mol의 트라이메틸알루미늄은 3 mol의 물과 반응한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화학반응식(<code>(CH3)3Al + 3H2O -> Al(OH)3 + 3CH4</code>)에 따라 <code>1 mol</code>의 트라이메틸알루미늄은 <code>3 mol</code>의 물과 반응합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">144 g의 트라이메틸알루미늄은 6 mol의 메테인 가스를 생성한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 트라이메틸알루미늄의 분자량은 <code>3 * 15 + 27 = 72 g/mol</code>이므로 <code>144 g</code>은 <code>2 mol</code>에 해당하며, <code>1 mol</code>당 <code>3 mol</code>의 메테인이 생성되므로 <code>2 mol</code>은 총 <code>6 mol</code>의 메테인 가스를 생성합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">6.02×1023개의 트라이메틸알루미늄은 22.4 L의 메테인 가스를 생성한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] <code>6.02 × 10²³</code>개의 트라이메틸알루미늄은 <code>1 mol</code>에 해당하며, 반응 시 메테인 가스가 <code>1 mol</code>이 아니라 <strong><code>3 mol</code></strong> 생성되므로 표준상태에서 <code>22.4 L</code>가 아닌 **<code>67.2 L</code>(<code>3 * 22.4 L</code>)**의 메테인 가스를 생성합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">트라이메틸알루미늄과 물의 반응에서 물의 mol수와 생성 되는 메테인 가스의 mol수는 같다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 반응식의 계수가 물(<code>3H2O</code>)과 메테인(<code>3CH4</code>) 모두 <code>3</code>으로 같으므로, 반응하는 물의 몰수와 생성되는 메테인 가스의 몰수는 같습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 15제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:X · 15:O · 16:X · 17:X · 18:X · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:O · 29:O · 30:O
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>적린·황화린(제2류, 지정수량 100킬로그램)과 황린(제3류, 지정수량 20킬로그램)·인화칼슘(제3류, 지정수량 300킬로그램)을 섞어 출제하는 것은 위험물 품명 분류의 단골 유형입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>제1류·제6류는 불연성 강산화제(산소 공급원)이고, 제2류·제3류·제4류는 가연성(환원성) 물질입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>금속·금수성 물질(마그네슘, 나트륨, 칼륨 등)은 물뿐만 아니라 이산화탄소나 할론과도 화학반응을 일으키므로 마른모래(건조사)·팽창질석 등을 사용해야 합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>같은 탄화물이라도 칼슘(CaC2)은 아세틸렌, 알루미늄(Al4C3)은 메테인을 발생시키는 차이점이 1순위 출제 포인트입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>금수성 물질의 물 반응 생성 가스 5종 세트는 화학식과 함께 반드시 암기해야 합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>아염소산나트륨의 조해성·불연성, 마그네슘의 열수 반응(수소 발생), 황린의 상온 자연발화(융점 44도, 발화점 34도)는 대표적 유별 특성입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>제2류 중 적린·유황·인화성고체는 주수소화가 가능하고, 철분·금속분·마그네슘·황화린은 주수소화가 금지됩니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>제3류 위험물 중 황린만 유일하게 수중 저장 및 주수 냉각소화 대상이고, 나머지 제3류는 금수성으로 주수 엄금입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>물 반응 시 산소(O2)가 나오는 유일한 그룹은 제1류 알칼리금속의 과산화물(무기과산화물)입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q25 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>알킬알루미늄(R3Al) 1몰은 항상 3몰의 물(3H2O)과 반응하여 3몰의 알케인 가스(3RH, 표준상태 67.2리터)를 발생시킵니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>열이나 충격에 의해 분해되어 산소를 방출함으로써 다른 가연물의 연소를 돕는 지연성(조연성) 물질입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q14 · 제1류 위험물(산화성 고체)의 일반적 성질(불연성·강산화제·지연성)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>화학반응식(`(CH3)3Al + 3H2O -&gt; Al(OH)3 + 3CH4`)에 따라 `1 mol`의 트라이메틸알루미늄은 `3 mol`의 물과 반응합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q14 · 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응식 및 메테인 발생량 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>트라이메틸알루미늄의 분자량은 `3 * 15 + 27 = 72 g/mol`이므로 `144 g`은 `2 mol`에 해당하며, `1 mol`당 `3 mol`의 메테인이 생성되므로 `2 mol`은 총 `6 mol`의 메테인 가스를 생성합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q14 · 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응식 및 메테인 발생량 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>`6.02 × 10²³`개의 트라이메틸알루미늄은 `1 mol`에 해당하며, 반응 시 메테인 가스가 `1 mol`이 아니라 <strong>`3 mol`</strong> 생성되므로 표준상태에서 `22.4 L`가 아닌 `67.2 L`(`3 * 22.4 L`)의 메테인 가스를 생성합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q14 · 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응식 및 메테인 발생량 계산</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>반응식의 계수가 물(`3H2O`)과 메테인(`3CH4`) 모두 `3`으로 같으므로, 반응하는 물의 몰수와 생성되는 메테인 가스의 몰수는 같습니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q14 · 트라이메틸알루미늄[(CH3)3Al]과 물의 화학양론적 반응식 및 메테인 발생량 계산</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

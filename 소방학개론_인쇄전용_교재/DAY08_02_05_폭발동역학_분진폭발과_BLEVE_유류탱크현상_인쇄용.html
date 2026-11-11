@@ -1,0 +1,3175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 08 · 인쇄용] 제2편 연소 및 폭발 이론 · 제5장 폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY07_02_04_구획실_화재단계와_플래시오버_백드래프트_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 08</span>
+        <a href="DAY09_03_01_화재의_분류_소화원리와_화재조사_피해산정_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(13제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 08 · 제2편 연소 및 폭발 이론 · 제5장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(13문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">폭발 동역학(폭연·폭굉·분진·분해폭발) 및 BLEVE·유류탱크 현상</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 폭발의 원인별·상태별 분류와 폭연(Deflagration) vs 폭굉(Detonation)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>상태별 분류 함정(2020년 Q11)</strong>: <strong>증기폭발</strong>과 <strong>분무폭발(액적 Mist 착화)</strong>은 기상폭발이 아니라 <strong>액상폭발(응축상폭발)</strong>에 해당!</li>
+              <li><strong>산화폭발·분해폭발·중합폭발</strong>: 산화폭발에는 <strong>가스·분무·분진폭발</strong>이 포함 / 분해폭발 대표 물질은 <strong>아세틸렌·산화에틸렌</strong></li>
+              <li><strong>폭연 vs 폭굉 및 DDT 단계</strong>: 폭연(음속 이하) vs 폭굉(음속 이상, 불연속적 변화) / 전이 순서: <strong>착화 ➔ 화염전파 ➔ 압축파 ➔ 충격파 ➔ 폭굉파</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            폭발(Explosion)이란 물리적 또는 화학적 변화의 결과로 발생한 급격한 압력 상승 에너지가 외계로 전환되는 과정에서 파열·폭음·충격파를 동반하는 현상을 말합니다(기출: 2020년 Q11, 2021년 Q16, 2022년 Q6, 2026년 Q17). 폭발은 먼저 <strong>발생 원인에 따라 물리적 폭발과 화학적 폭발</strong>로 나뉩니다. ① <strong>물리적 폭발</strong>은 물질의 화학적 조성 변화 없이 상태(기체·액체·고체)가 변하거나 온도·압력 변화로 용기 내압 한계를 초과해 파열되는 현상으로서, 다량의 고온 물질이 물속에 투입되거나 밀폐 용기 내 액화가스가 급격히 기화·팽창하며 터지는 <strong>증기폭발(수증기폭발)</strong>, 액화가스 저장탱크가 외부 열원에 의해 과열·파열되는 <strong>블레비(BLEVE, 1차 파열)</strong>, 고압가스 용기 파열, 과전류에 의한 <strong>전선 폭발</strong>이 해당합니다. ② <strong>화학적 폭발</strong>은 급격한 화학반응열과 생성 가스에 의한 폭발로서, 산소와의 급격한 결합으로 일어나는 <strong>산화폭발(기상의 가스폭발, 액상의 분무폭발, 고상의 분진폭발이 모두 포함됨!)</strong>, 산소와 섞이지 않더라도 가연성 가스 자체의 발열 분해반응에 의해 터지는 <strong>분해폭발(대표 물질: 아세틸렌[C<sub>2</sub>H<sub>2</sub>], 산화에틸렌[C<sub>2</sub>H<sub>4</sub>O], 히드라진[N<sub>2</sub>H<sub>4</sub>], 오존)</strong>, 그리고 시안화수소·염화비닐·산화에틸렌 등 단위체가 고분자로 결합할 때의 중합열로 터지는 <strong>중합폭발</strong>(급격한 화학반응 속도가 제어 불능으로 치솟는 현상은 <strong>반응폭주</strong>)로 구분됩니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            또한 폭발을 <strong>폭발물질의 물리적 상태(기상 vs 응축상[액상·고상])</strong>에 따라 분류하는 문제도 자주 출제됩니다. ① <strong>기상폭발</strong>에는 가연성 가스가 공기와 혼합되어 폭발범위를 형성할 때 터지는 <strong>혼합가스폭발</strong>과 단일 가스의 <strong>가스분해폭발</strong>이 속합니다(주의: 산소 같은 '조연성 가스'는 불연성이므로 단독으로 폭발범위를 형성하여 가스폭발을 일으킬 수 없습니다!). ② <strong>응축상폭발 중 액상폭발</strong>에는 가연성 액체의 미세한 <strong>무적(霧滴, Mist, 안개 모양의 액적)</strong>이 조연성 가스(공기) 중에 분산되어 있을 때 착화하여 발생하는 <strong>분무폭발</strong>(2021년 Q16에서 이를 중합폭발이라고 속여 출제!), 액체의 급속한 기화로 체적이 팽창해 발생하는 <strong>증기폭발</strong>(2020년 Q11에서 이를 기상폭발이라고 속여 출제!), 혼합위험폭발이 속하며, ③ <strong>응축상폭발 중 고상폭발</strong>에는 <strong>분진폭발</strong>과 <strong>전선폭발</strong>이 속합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            예혼합가스의 폭발 연소는 연소반응으로 발생한 화염의 전파속도가 음속(약 340 m/s)보다 느리냐 빠르냐에 따라 <strong>폭연(Deflagration)</strong>과 <strong>폭굉(Detonation)</strong>으로 나뉩니다(기출: 2023년 Q10, 2024년 Q12). <strong>폭연</strong>은 화염전파속도가 <strong>음속보다 느린 아음속(초당 0.1미터에서 수십 미터)</strong>으로서 열전도와 라디칼 확산에 의해 전파되며 폭굉보다 폭발압력이 낮습니다. 반면 <strong>폭굉</strong>은 화염전파속도가 <strong>음속보다 빠른 초음속(초당 1,000미터에서 3,500미터)</strong>으로서 강력한 <strong>충격파(Shock Wave)의 단열 압축</strong>에 의해 전파되며, 화염면(충격파면)에서 <strong>온도·압력·밀도의 변화가 불연속적(급격한 계단형 점프)</strong>으로 나타납니다(2023년 Q10에서 폭연이 불연속적으로 나타난다고 속여 출제!). 배관 내에서 폭연이 가속되어 폭굉으로 전이(<strong>DDT</strong>)되는 5단계 순서는 <strong>『착화 ➔ 화염전파(폭연) ➔ 압축파 형성 ➔ 충격파 형성 ➔ 폭굉파』</strong>의 순서로 진행되며(2024년 Q12), 예혼합가스의 <strong>초기 압력이 높을수록, 배관 지름(관경)이 작을수록, 관 내부 장애물·난류가 심할수록, 정상 연소속도와 점화에너지가 클수록</strong> 폭굉에 도달하는 거리인 <strong>폭굉유도거리(DID)는 짧아집니다</strong>.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">비교 항목</th>
+                <th style="width:38%;">폭연 (Deflagration)</th>
+                <th>폭굉 (Detonation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>화염전파속도</strong></td>
+                <td><strong>음속보다 느림 (아음속)</strong>: 약 0.1 m/s에서 수십 m/s</td>
+                <td><strong>음속보다 빠름 (초음속)</strong>: 약 1,000 m/s에서 3,500 m/s</td>
+              </tr>
+              <tr>
+                <td><strong>전파 메커니즘 및 파면 특성</strong></td>
+                <td>열전도 및 라디칼 확산 / 온도·압력 변화가 연속적</td>
+                <td><strong>충격파의 단열 압축</strong> / 파면에서 <strong>온도·압력·밀도 변화가 불연속적</strong></td>
+              </tr>
+              <tr>
+                <td><strong>폭발압력 및 전이(DDT)</strong></td>
+                <td>폭발압력이 상대적으로 낮음 (배관 가속 시 폭굉으로 전이 가능)</td>
+                <td>폭발압력이 수십 기압으로 극히 높음 (<strong>화염전파 ➔ 압축파 ➔ 충격파 ➔ 폭굉파</strong>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 분진폭발의 발생 순서·영향인자와 산소·온도·압력 효과 및 증기운폭발</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>분진폭발 진행 순서(2026년 Q17)</strong>: 입자 표면온도 상승 ➔ <strong>열분해로 가연성 기체 발생·공기 혼합 ➔ 발화·1차 폭발</strong> ➔ 주위 분진 비산·열분해 ➔ 2차·3차 폭발</li>
+              <li><strong>가스폭발 vs 분진폭발 MIE(2023년 Q9)</strong>: <strong>가스폭발은 분진폭발보다 최소발화에너지가 작다</strong> (분진폭발이 MIE가 훨씬 큼!)</li>
+              <li><strong>산소농도·온도·압력 상승 효과</strong>: 산소농도 증가 시 <strong>연소속도·화염온도 상승, 폭발범위 확대, 발화점·점화에너지 감소</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            밀가루, 설탕, 석탄 가루, 플라스틱 분말, 알루미늄·마그네슘 분말처럼 <strong>가연성 고체의 미분(통상 입자 크기 100 &mu;m 이하)이 공기 중에 부유하고 있을 때 점화원에 의해 에너지가 주어지면 폭발하는 현상</strong>을 <strong>분진폭발(Dust Explosion)</strong>이라 합니다(기출: 2018년 Q11, 2023년 Q9·Q11, 2026년 Q17). 단, 이미 산화된 불연성 무기물인 <strong>시멘트 가루, 모래(SiO<sub>2</sub>), 석회석·대리석 분말(CaCO<sub>3</sub>)</strong> 등은 분진폭발을 일으키지 않습니다. 특히 2026년 기출(Q17)에서 정밀하게 물은 <strong>분진폭발의 단계별 진행 순서</strong>를 정확히 이해해야 합니다. 고체 입자는 그 자체로 바로 불꽃이 붙는 것이 아니라, <strong>① 먼저 부유한 분진 입자 표면에 마찰이나 열원 등으로 열에너지가 공급되어 표면온도가 상승 ➔ ② 입자의 열분해(또는 건류)로 가연성 기체가 발생하여 주변 공기와 혼합 ➔ ③ 점화원에 의해 발화(착화)되면서 압력이 상승하여 1차 폭발 발생 ➔ ④ 1차 폭발의 열전파와 충격파(폭풍)로 바닥·천장의 퇴적 분진이 비산하고 추가 열분해되어 가연성 기체가 연쇄 확산되면서 더 거대한 2차·3차 폭발이 발생</strong>합니다(열분해로 가연성 기체가 발생해 공기와 혼합되기 전에 먼저 발화된다고 순서를 뒤집으면 오답입니다!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            기체 상태인 <strong>가스폭발</strong>과 고체 입자인 <strong>분진폭발</strong>을 비교하면, 분진폭발은 고체 입자를 먼저 가열·열분해시켜야 하므로 <strong>분진폭발이 가스폭발보다 최소발화에너지(MIE)가 수십 배 이상 큽니다(즉, 가스폭발은 분진폭발보다 최소발화에너지가 훨씬 작습니다!)</strong>. 반면 분진폭발은 가스폭발보다 연소속도와 폭발압력은 작지만, 불완전연소로 인해 다량의 일산화탄소(CO)가 발생하고 퇴적 분진의 비산으로 2차·3차 연쇄 폭발을 일으켜 피해 범위가 훨씬 넓습니다. <strong>분진폭발에 영향을 미치는 인자</strong>(2023년 Q11)를 보면 ① 분진의 <strong>발열량과 휘발분이 클수록</strong>, ② 공기 중에 잘 떠 있는 <strong>부유성이 클수록</strong>, ③ 분진의 <strong>입자 직경이 작아 단위체적당 표면적(비표면적)이 커질수록</strong>(단위체적당 표면적이 작아지면 폭발이 어려워짐!), ④ 주변 수분(습도)과 회분이 적을수록 폭발이 용이해집니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            한편 가연성 가스를 연소시킬 때 <strong>공기 중의 산소농도가 증가하거나 초기 온도·압력이 상승할 때의 변화</strong>도 빈출 포인트입니다(기출: 2019년 Q14, 2023년 Q9). ① 공기 중 산소농도가 증가하면 산화반응이 활발해져 <strong>연소속도가 빨라지고(ㄱ), 화염의 온도가 높아지며(ㄷ), 폭발(연소)범위가 넓어지고, 반대로 발화점(착화온도)은 낮아지며 점화에너지(최소발화에너지)는 작아집니다(ㅁ)</strong>. ② 또한 초기 온도 및 압력이 상승할수록 분자 간 유효충돌할 가능성이 높아지기 때문에 폭발(연소)범위는 넓어집니다. ③ 끝으로 <strong>자유공간(개방공간) 증기운폭발(UVCE)</strong>은 개방된 대기에 다량의 가연성 가스(프로판·부탄 등 휘발성이 큰 액화가스나 저비점 인화성 물질)가 누출되어 대기 중에 구름 형태로 모인 뒤 점화 시 순간적으로 모든 가스가 동시에 폭발하는 급격한 <strong>화학적 폭발</strong>입니다(상온에서 증기압이 극히 낮고 인화점이 높은 '중유'가 유출되었다고 해서 상온 증기운폭발이 일어나지는 않습니다!).
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 비등액체팽창증기폭발(BLEVE)과 유류탱크 3대 현상(보일·슬롭·프로스오버)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+              <li><strong>BLEVE 핵심 판별(2021년 Q10 · 2024년 Q6)</strong>: <strong>기상부에 면하는 지점</strong>에서 파열 / 균열 시 <strong>액상·기상의 동적 평형 상태가 파괴</strong>됨 / 폭발 규모(화구 크기)는 <strong>탱크의 용량에 비례</strong>하여 커짐</li>
+              <li><strong>보일오버(Boilover)</strong>: 유류 표면 화재 시 <strong>뜨거운 열류층(열파)이 장시간 바닥까지 전달</strong>되어 <strong>하부의 물이 비점 이상으로 가열·팽창(약 1,700배)</strong>해 유류가 분출</li>
+              <li><strong>슬롭오버 vs 프로스오버</strong>: 화재 시 <strong>액면에 물·포 주수로 표면에서 넘치면 슬롭오버</strong> / <strong>비화재 시</strong> 고온 점성유 내 수분이 거품으로 넘치면 <strong>프로스오버</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            액화가스 저장탱크와 원유·중질유 저장탱크에서 발생하는 특수 현상은 매회 1문항에서 2문항씩 출제되는 최고 중요도 테마입니다(기출: 2021년 Q10, 2024년 Q6·Q14). 먼저 <strong>블레비(BLEVE, Boiling Liquid Expanding Vapor Explosion, 비등액체팽창증기폭발)</strong>는 LPG 등 액화가스 저장탱크가 외부 화재 열원에 의해 가열되어 <strong>내부 가연물(액체)이 대기압 비점 이상으로 과열</strong>되고, <strong>저장탱크의 기계적 강도 이상의 내압이 형성될 때</strong> 파열되는 현상입니다. 이때 액상부에 면한 탱크 하부 벽면은 액체의 증발잠열로 냉각되지만, 열용량이 작은 <strong>기상부에 면하는 탱크 상부 지점</strong>은 직접 열을 받아 온도가 급상승하면서 금속의 인장강도가 급격히 저하되므로 <strong>기상부 벽면에서 먼저 균열·파열</strong>이 일어납니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            저장탱크에 균열이 발생하는 순간 내부 압력이 대기압으로 급강하하면서 기존에 유지되던 <strong>액상과 기상의 동적 평형 상태가 순간적으로 깨지고(유지되는 것이 아님!)</strong>, 과열된 액체가 일거에 폭발적으로 비등·기화하여 탱크를 산산조각 내는 <strong>물리적 폭발</strong>이 일어납니다. 만약 탱크 내부 물질이 LPG 같은 가연성 액화가스였다면, 1차적인 <strong>물리적 폭발(탱크 파열)이 순간적으로 화학적 폭발로 이어져</strong> 분출된 증기 구름이 착화하면서 거대한 <strong>화구(Fireball, 파이어볼)</strong>를 형성합니다. 이때 블레비의 폭발 규모(화구의 직경과 지속시간)는 파열 시 액체의 기화량뿐만 아니라 <strong>저장탱크의 용량(내부 액화가스 질량)이 클수록 비례하여 커집니다</strong>(2021년 Q10에서 '탱크의 용량에 따른 차이는 없다'고 속여 출제!). 블레비를 예방하려면 저장탱크 외부 표면에 열전도성이 작은 물질로 <strong>내화 단열 조치</strong>를 하거나 <strong>물분무설비 등으로 탱크 외벽을 냉각살수</strong>해야 합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            반면 원유나 중질유가 저장된 액체 위험물 저장탱크에서는 <strong>보일오버(Boilover), 슬롭오버(Slopover), 프로스오버(Frothover)</strong>의 3대 유류 넘침 현상을 정확히 구분해야 합니다(기출: 2024년 Q14). ① <strong>보일오버(Boilover)</strong>는 원유 등 비점 범위가 넓은 유류저장탱크 내 유류 표면에 화재가 발생했을 때, 경질분이 먼저 타고 남은 <strong>뜨거운 열류층(Heat Wave, 열파)이 형성되어 장시간에 걸쳐 바닥까지 전달</strong>됨으로써, 탱크 <strong>하부에 고여 있던 물(수분·에멀전 층)이 비점 이상으로 과열·기화하여 부피가 약 1,700배로 급팽창</strong>하면서 저장된 유류가 탱크 외부로 폭발적으로 분출되는 현상입니다. ② <strong>슬롭오버(Slopover)</strong>는 중질유 탱크 화재 진압 시 불타는 뜨거운 유류 <strong>액면(표면) 위에 외부에서 물이나 포(Foam) 소화약제를 주수·방사했을 때</strong> 유면 상부에서 수분이 급격히 증발하며 불붙은 유류가 탱크 벽을 넘어 흘러넘치는 현상입니다. ③ <strong>프로스오버(Frothover)</strong>는 앞의 두 현상과 달리 <strong>화재가 발생하지 않은 비화재 상태</strong>에서, 섭씨 100도 이상의 고온·고점성 유류(아스팔트 등) 내부나 바닥의 수분이 가열·기화하면서 점성유와 섞여 거품 형태로 부풀어 넘쳐흐르는 현상입니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">현상 명칭</th>
+                <th style="width:22%;">발생 탱크 및 조건</th>
+                <th>발생 메커니즘 및 기출 선지 판별 키워드</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>블레비 (BLEVE)</strong></td>
+                <td>액화가스 탱크<br/>(외부 화재 가열 시)</td>
+                <td><strong>기상부 벽면 과열·파열</strong> ➔ <strong>기액 동적 평형 파괴</strong>로 과열액체 급격 기화(<strong>물리적 폭발</strong>) ➔ 가연성 가스 착화 시 <strong>화구(Fireball, 용량에 비례)</strong> 형성</td>
+              </tr>
+              <tr>
+                <td><strong>보일오버 (Boilover)</strong></td>
+                <td>원유·중질유 탱크<br/>(<strong>장시간 화재 시</strong>)</td>
+                <td>유류 표면의 <strong>뜨거운 열류층(열파, Heat Wave)이 바닥까지 하강</strong> ➔ <strong>탱크 하부의 물</strong>이 과열·팽창(1,700배)하여 유류를 외부로 폭발적 분출</td>
+              </tr>
+              <tr>
+                <td><strong>슬롭오버 (Slopover)</strong></td>
+                <td>중질유 탱크<br/>(<strong>화재 중 주수 시</strong>)</td>
+                <td>연소 중인 고온 유류 <strong>표면(액면)에 물이나 포(Foam)를 방사</strong>했을 때 표면에서 수분이 증발하며 유류가 넘쳐흐름</td>
+              </tr>
+              <tr>
+                <td><strong>프로스오버 (Frothover)</strong></td>
+                <td>아스팔트·점성유<br/>(<strong>비화재 가열 시!</strong>)</td>
+                <td><strong>화재가 아닌 상태(화염 없음)</strong>에서 고온·고점성 유류 하부의 수분이 기화하여 거품 형태로 조용히 넘쳐흐름</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 폭발의 분류·폭연 vs 폭굉(DDT) 및 BLEVE·보일오버·슬롭오버·프로스오버 비교</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 폭발의 원인별·상태별 분류 및 폭연 vs 폭굉(DDT) · 분진폭발</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">물리적·화학적 및 상태별 폭발 분류</div>
+                <div>· <strong>물리적 폭발</strong>: <strong>증기폭발(액상폭발!) · BLEVE</strong> · 용기 파열 · 전선폭발<br/>· <strong>산화폭발</strong>: 가스(기상) · <strong>분무(액상, 무적 Mist)</strong> · 분진(고상)<br/>· <strong>분해폭발</strong>: <strong>아세틸렌 · 산화에틸렌</strong> · 히드라진</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">폭연(아음속) vs 폭굉(초음속) 및 DDT</div>
+                <div>· <strong>폭연</strong>: 음속 이하 / <strong>폭굉</strong>: 음속 이상, 충격파(파면 <strong>온도·압력·밀도 불연속</strong>)<br/>· 전이(DDT): <strong>착화 ➔ 화염전파 ➔ 압축파 ➔ 충격파 ➔ 폭굉파</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">분진폭발 단계 및 가스폭발과의 비교</div>
+                <div>· 순서: 표면온도 상승 ➔ <strong>열분해 가스 발생·공기 혼합 ➔ 1차 폭발</strong> ➔ 2·3차 폭발<br/>· <strong>가스폭발은 분진폭발보다 최소발화에너지(MIE)가 훨씬 작음!</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">분진폭발 조건 및 산소농도 증가 효과</div>
+                <div>· 입자 직경이 작아 <strong>단위체적당 표면적이 클수록</strong> 분진폭발 용이<br/>· 산소 증가 시: <strong>연소속도·화염온도·폭발범위 증가, 발화점·MIE 감소</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 함정: <strong>증기폭발</strong>은 기상폭발이 아니라 <strong>액상(응축상)·물리적 폭발</strong>! / 무적(Mist) 착화는 중합폭발이 아니라 <strong>분무폭발</strong>! / <strong>BLEVE</strong>는 탱크 <strong>기상부 벽면 파열 · 기액 동적 평형 파괴 · 탱크 용량에 비례하여 화구 규모 증가</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 유류저장탱크 3대 이상 현상 (보일오버 · 슬롭오버 · 프로스오버)</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">보일오버(Boilover) vs 슬롭오버(Slopover) vs 프로스오버(Frothover)</div>
+                <ul class="schema-list">
+                  <li><strong>보일오버(화재 시)</strong>: 유류 표면의 <strong>뜨거운 열류층(열파, Heat Wave)이 바닥까지 전달</strong>되어 <strong>하부의 물</strong>이 비점 이상 가열·팽창(1,700배)하며 유류 분출</li>
+                  <li><strong>슬롭오버(화재 시)</strong>: 연소 중인 고온 유류 <strong>액면에 외부에서 물·포를 방사</strong>할 때 표면에서 수증기 팽창으로 넘침 / <strong>프로스오버(비화재 시!)</strong>: 화재 없이 고온 점성유 내 수분이 거품으로 넘침</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (13문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 13문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음 설명에 해당하는 것은? 가연성 고체의 미분이 공기 중에 부유하고 있을 때에 어떤 점화원에 의해 에너지가 주어지면 폭발하는 현상을 말한다.</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">가스폭발</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분무폭발</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">분해폭발</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">분진폭발</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가연성 가스를 공기 중에서 연소시키고자 할 때 공기 중의 산소농도가 증가하면 발생되는 현상으로 맞는 것만을 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 연소속도가 빨라진다.<br/>ㄴ. 발화점이 높아진다.<br/>ㄷ. 화염의 온도가 높아진다.<br/>ㄹ. 폭발범위가 좁아진다.<br/>ㅁ. 점화에너지가 작아진다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭발에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">증기폭발은 폭발물질의 물리적 상태에 따른 분류 중 기상폭발에 해당한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">폭굉은 연소반응으로 발생한 화염의 전파 속도가 음속 보다 빠른 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">블레비(BLEVE)는 액화가스저장탱크 등에서 외부열원에 의해 과열되어 급격한 압력 상승의 원인으로 파열되는 현상이며, 폭발의 분류 중 물리적 폭발에 해당한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">폭발은 물리적, 화학적 변화의 결과로 발생된 급격한 압력 상승에 의한 에너지가 외계로 전환되는 과정에서 파열, 폭음 등을 동반하는 현상을 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2021년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">블레비(BLEVE: Boiling Liquid Expanding Vapor Explosion) 현상의 특징으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">액화가스 저장탱크에서 일어날 수 있다는 점에서는 증기운 폭발과 같다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">액화가스 저장탱크에서 물리적 폭발이 순간적으로 화학적 폭발로 이어지는 현상이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">블레비의 규모는 파열 시 액체의 기화량에는 차이가 있으나 탱크의 용량에 따른 차이는 없다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">직접 열을 받은 부분이 액화가스 저장탱크의 인장 강도를 초과할 경우 기상부에 면하는 지점에서 파열하게 된다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭발에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">폭연은 폭굉보다 폭발압력이 낮다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분해폭발은 산소에 관계없이 단독으로 발열 분해반응을 하는 물질에서 발생한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">물리적 폭발은 물질의 상태(기체, 액체, 고체)가 변하거나 온도, 압력 등 조건의 변화에 따라 발생한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">중합폭발은 가연성 액체의 무적(霧滴, mist)이 일정 농도 이상으로 조연성 가스 중에 분산되어 있을 때 착화하여 발생한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2022년 소방공채·경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭발에 대한 일반적인 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">아세틸렌과 산화에틸렌은 분해폭발을 일으키기 쉬운 물질이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">상온에서 탱크에 저장된 중유가 유출되면 자유공간 증기 운폭발이 일어난다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">밀폐공간에서 조연성가스가 폭발범위를 형성하면 점화 원에 의해 가스폭발이 일어난다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">다량의 고온물질이 물속에 투입되었을 때 물의 갑작 스러운 상변화에 의한 폭발현상을 반응폭주라 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2023년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭발에 관한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 증기폭발은 액체의 급속한 기화로 인해 체적이 팽창되어 발생하는 현상이다.<br/>ㄴ. 가스폭발은 분진폭발보다 최소발화에너지가 크다.<br/>ㄷ. 분해폭발은 공기나 산소와 섞이지 않더라도 가연성 가스 자체의 분해 반응열에 의해 폭발하는 현상이다.<br/>ㄹ. 폭발(연소)범위는 초기온도 및 압력이 상승할수록 분자 간 유효충돌할 가능성이 높아지기 때문에 넓어진다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭연(deflagration)과 폭굉(detonation)에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">예혼합가스의 초기압력이 높을수록 폭굉 유도거리가 길어 진다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화염전파속도는 폭연의 경우 음속보다 느리며, 폭굉의 경우 음속보다 빠르다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">폭연은 폭굉으로 전이될 수 없으나 폭굉은 폭연으로 전이 될 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">폭연은 화염면에서 온도, 압력, 밀도의 변화가 불연속적 으로 나타난다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2023년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">분진폭발에 영향을 미치는 인자에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">분진의 발열량이 클수록 폭발하기 쉽다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분진의 부유성이 클수록 폭발이 용이해진다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">분진폭발은 분진의 입자직경에 영향을 받는다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">분진의 단위체적당 표면적이 작아지면 폭발이 용이해진다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2024년 소방공채·경채 Q6</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">블레비(BLEVE)에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">가연물이 비점 이상으로 가열될 때 발생한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">저장탱크의 기계적 강도 이상의 압력이 형성될 때 발생한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">저장탱크 균열로 인한 액상, 기상의 동적 평형 상태가 유지 된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">저장탱크의 외부 표면에 열전도성이 작은 물질로 단열 조치하여 예방한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2024년 소방공채·경채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음은 폭연에서 폭굉으로 전이되는 과정이다. ( ) 안에 들어갈 단계로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>착화→( ㄱ ) →( ㄴ ) →( ㄷ ) →폭굉파</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( ㄱ ): 화염전파 / ( ㄴ ): 압축파 / ( ㄷ ): 충격파</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( ㄱ ): 화염전파 / ( ㄴ ): 충격파 / ( ㄷ ): 압축파</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( ㄱ ): 압축파 / ( ㄴ ): 화염전파 / ( ㄷ ): 충격파</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( ㄱ ): 압축파 / ( ㄴ ): 충격파 / ( ㄷ ): 화염전파</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024년 소방공채·경채 Q14</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">유류저장탱크 내 유류 표면에 화재 발생 시 뜨거운 열류 층이 형성되고 그 열파가 장시간에 걸쳐 바닥까지 전달되어 하부의 물이 비점 이상으로 가열되면서 부피가 팽창해 저장된 유류가 탱크 외부로 분출되었다. 이에 해당하는 현상으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">보일오버(boil over)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">슬롭오버(slop over)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">프로스오버(froth over)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">오일오버(oil over)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">폭발에 관한 설명으로 옳지 않은 것은? (단, 문제에서 제시한 사항 외의 것은 고려하지 않음)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화학적 폭발의 한 종류인 산화 폭발에는 가스폭발, 분무 폭발, 그리고 분진폭발이 포함된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">증기운폭발(UVCE)은 개방된 대기에 다량의 가연성 가스가 서서히 지속적으로 누출되면서 대기 중에 구름 형태로 모여 점화 시 순간적으로 모든 가스가 동시에 폭발하는 현상으로 급격한 화학적 변화에 의한 폭발이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">증기폭발은 액화가스 등이 분출될 때 급격한 기화와 함께 비등 현상이 나타나므로 밀폐된 공간 속의 액체 물질이 빠르게 기화하면서 다량의 증기가 발생하고, 이에 따라 증기압이 높아져 용기 등의 내압을 초과하여 파열되는 폭발이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">분진폭발은 먼저, 입자 표면에 마찰 등으로 열에너지가 발생하여 표면온도가 상승하여 발화된다. 그 후, 열분해로 가연성 기체가 발생해 공기와 혼합되며, 주변의 열전파로 주위 분진이 추가로 열분해되어 가연성 기체가 연쇄적으로 확산된다. 이어서, 압력이 상승하면서 폭발이 일어나고, 폭발 이후 2차·3차 폭발이 발생한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>탱크 내부 액체의 급격한 비등과 팽창으로 압력이 급상승하여 용기가 파열된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비(BLEVE)는 오직 가연성 인화성 가스에서만 발생하며 비인화성 액체에서는 발생하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>보일오버(Boilover)는 탱크 바닥의 물이 고온의 열유층과 접촉하여 급격히 비등 증발하면서 유류를 비산시키는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>슬롭오버(Slopover)는 유류 표면에 물을 주수했을 때 기름 전체가 끓어넘치는 현상으로 중질유에서는 발생하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>프로스오버(Frothover)는 화재가 발생한 상태에서 물이 유입되어 화염과 함께 분출하는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비(BLEVE)는 유류탱크 바닥의 수분이 원인이 되어 발생하는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가연성 고체의 미분이 공기 중에 부유하고 있을 때 점화원에 의해 에너지가 주어지면 폭발하는 현상을 '분진폭발'이라 하며, 가연성 액체의 미세한 무적(Mist)이 공기 중에 분산되어 폭발하는 현상을 '분무폭발'이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>공기 중 산소농도가 증가하면 가연성 가스의 연소속도가 빨라지고 화염온도가 높아지며 폭발범위가 넓어지고, 발화점과 최소발화에너지(점화에너지)는 낮아진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>증기폭발은 폭발물질의 물리적 상태에 따른 분류 중 기상폭발이 아니라 '액상폭발(응축상폭발)'에 해당하며, 폭발 원인에 따른 분류상 '물리적 폭발'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비(BLEVE)는 외부 화염에 노출된 액화가스 저장탱크의 기상부 벽면 금속 인장강도가 저하되어 파열되는 물리적 폭발 현상이며, 탱크의 용량이 클수록 파이어볼(화구) 등 폭발 규모가 커진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>분해폭발은 아세틸렌·산화에틸렌 등이 산소와 관계없이 단독으로 발열 분해반응을 일으켜 발생하며, 중합폭발은 시안화수소·염화비닐 등이 급격한 중합반응열에 의해 폭발하는 현상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>아세틸렌과 산화에틸렌은 산소 없이도 자체 분해열에 의해 분해폭발을 일으키기 쉬운 대표적인 물질이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>다량의 고온 물질이 물속에 투입되었을 때 물의 갑작스러운 상변화(기화 팽창)에 의해 발생하는 물리적 폭발 현상은 '증기폭발'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가스폭발은 분진폭발보다 최소발화에너지(MIE)가 훨씬 작으며, 연소속도와 폭발압력은 분진폭발보다 크다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>폭발(연소)범위는 일반적으로 초기 온도 및 압력이 상승할수록 분자 간 유효충돌 가능성이 높아지기 때문에 넓어진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>분진폭발은 분진의 입자직경이 작아 단위체적당 표면적(비표면적)이 클수록, 발열량과 휘발분이 많을수록, 부유성이 클수록 폭발이 용이해진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비(BLEVE)는 액화가스가 대기압 비점 이상으로 가열된 상태에서 탱크 균열 시 액상·기상의 동적 평형 상태가 급격히 깨지면서 폭발적으로 기화·팽창하여 발생하며, 탱크 외벽 단열 조치나 물분무 냉각으로 예방한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>예혼합가스에서 폭연이 폭굉으로 전이(DDT)되는 과정은 '착화 ➔ 화염전파 ➔ 압축파 ➔ 충격파 ➔ 폭굉파' 순서로 진행된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>분진폭발은 입자 표면온도 상승 ➔ 열분해에 의한 가연성 기체 발생 및 공기와 혼합 ➔ 발화 및 1차 폭발 ➔ 충격파와 복사열에 의한 주위 분진 비산 및 2차·3차 연쇄 폭발의 순서로 진행된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>폭굉은 연소반응으로 발생한 화염의 전파 속도가 음속 보다 빠른 것을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비(BLEVE)는 액화가스저장탱크 등에서 외부열원에 의해 과열되어 급격한 압력 상승의 원인으로 파열되는 현상이며, 폭발의 분류 중 물리적 폭발에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>폭발은 물리적, 화학적 변화의 결과로 발생된 급격한 압력 상승에 의한 에너지가 외계로 전환되는 과정에서 파열, 폭음 등을 동반하는 현상을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>블레비의 규모는 파열 시 액체의 기화량에는 차이가 있으나 탱크의 용량에 따른 차이는 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>중합폭발은 가연성 액체의 무적(霧滴, mist)이 일정 농도 이상으로 조연성 가스 중에 분산되어 있을 때 착화하여 발생한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>상온에서 탱크에 저장된 중유가 유출되면 자유공간 증기 운폭발이 일어난다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>밀폐공간에서 조연성가스가 폭발범위를 형성하면 점화 원에 의해 가스폭발이 일어난다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>예혼합가스의 초기압력이 높을수록 폭굉 유도거리가 길어 진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>폭연은 폭굉으로 전이될 수 없으나 폭굉은 폭연으로 전이 될 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>폭연은 화염면에서 온도, 압력, 밀도의 변화가 불연속적 으로 나타난다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[분진폭발에 영향을 미치는 인자] 분진의 단위체적당 표면적이 작아지면 폭발이 용이해진다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:④ · 02:③ · 03:① · 04:③ · 05:④ · 06:① · 07:④ · 08:② · 09:④ · 10:③ · 11:① · 12:① · 13:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:X · 06:X · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 08 · 제2편 연소 및 폭발 이론 · 제5장 (13문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q11</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">가스폭발</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 가스폭발은 가연성 기체(가스)가 공기나 산소와 혼합되어 폭발범위 내에 있을 때 점화되어 일어나는 기상폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분무폭발</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 분무폭발은 가연성 액체의 미세한 액적(Mist, 안개 모양의 물방울)이 공기 중에 분산되어 있을 때 착화하여 일어나는 액상(응축상) 폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">분해폭발</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 분해폭발은 아세틸렌·산화에틸렌 등이 산소 혼합 없이 자체 분해 반응열에 의해 일어나는 기상폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">분진폭발</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 가연성 고체의 미분(입자 크기 통상 100마이크로미터 이하)이 공기 중에 부유하고 있을 때 점화원에 의해 폭발하는 현상은 '분진폭발'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 공기 중 산소농도가 21퍼센트보다 증가할 때 나타나는 연소·폭발의 변화[연소속도 증가( ㄱ ), 발화점 저하(ㄴ 틀림), 화염온도 상승( ㄷ ), 폭발범위 확대(특히 상한계가 크게 상승하여 넓어짐, ㄹ 틀림), 최소발화에너지 감소( ㅁ )]를 묻는 S등급 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(발화점은 낮아짐)과 ㄹ(폭발범위는 넓어짐)이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 공기 중 산소농도가 증가하면 폭발상한계가 크게 상승하여 폭발범위가 좁아지는 것이 아니라 '넓어지므로' ㄹ이 틀렸고, 점화에너지가 작아지는 ㅁ이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 공기 중 산소농도가 증가하면 산화반응이 활발해져 연소속도가 빨라지고( ㄱ ), 화염의 온도가 높아지며( ㄷ ), 점화에 필요한 최소발화에너지가 작아집니다( ㅁ ). 반면 발화점은 낮아지고 폭발범위는 넓어지므로 ㄱ, ㄷ, ㅁ이 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 공기 중 산소농도가 증가하면 연소 반응성이 커져 발화점(착화온도)이 높아지는 것이 아니라 '낮아지므로' ㄴ이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '증기폭발'은 액체가 급격히 기화하면서 발생하는 '액상(응축상) 폭발'이자 '물리적 폭발'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">증기폭발은 폭발물질의 물리적 상태에 따른 분류 중 기상폭발에 해당한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 증기폭발은 물이나 액화가스 등 액체가 급열되어 순간적으로 기화·팽창하며 발생하는 폭발로서, 물리적 상태에 따른 분류상 기상폭발이 아니라 '액상폭발(응축상폭발)'에 해당합니다(기상폭발은 혼합가스폭발과 가스분해폭발).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">폭굉은 연소반응으로 발생한 화염의 전파 속도가 음속 보다 빠른 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 폭굉(Detonation)은 화염전파속도가 음속보다 빠른 초음속(초당 1,000미터에서 3,500미터) 연소파로서 충격파를 동반합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">블레비(BLEVE)는 액화가스저장탱크 등에서 외부열원에 의해 과열되어 급격한 압력 상승의 원인으로 파열되는 현상이며, 폭발의 분류 중 물리적 폭발에 해당한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 블레비(BLEVE, 비등액체팽창증기폭발)는 액화가스 저장탱크가 외부 열원에 의해 과열되어 액체가 비등·기화하면서 용기가 파열되는 현상으로, 1차적인 탱크 파열 자체는 '물리적 폭발'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">폭발은 물리적, 화학적 변화의 결과로 발생된 급격한 압력 상승에 의한 에너지가 외계로 전환되는 과정에서 파열, 폭음 등을 동반하는 현상을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 폭발은 물리적 또는 화학적 변화의 결과로 발생한 급격한 압력 상승 에너지가 외부로 방출되면서 파열·폭음·충격파를 동반하는 현상입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 블레비 발생 시 형성되는 파이어볼(화구)의 직경과 지속시간 등 폭발 규모는 저장탱크의 용량(내부 액화가스의 질량)이 클수록 비례하여 커집니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">액화가스 저장탱크에서 일어날 수 있다는 점에서는 증기운 폭발과 같다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 블레비(BLEVE)와 증기운폭발(UVCE)은 모두 LPG 등 가연성 액화가스 저장탱크 사고에서 발생할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">액화가스 저장탱크에서 물리적 폭발이 순간적으로 화학적 폭발로 이어지는 현상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 가연성 액화가스 저장탱크에서 블레비가 일어나면 1차적인 탱크의 물리적 파열(물리적 폭발) 직후 분출된 가스가 착화하여 거대한 파이어볼(화구)을 형성하는 화학적 폭발로 이어집니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">블레비의 규모는 파열 시 액체의 기화량에는 차이가 있으나 탱크의 용량에 따른 차이는 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 블레비(BLEVE)의 폭발 규모(화구의 직경 D ∝ M^(1/3), 지속시간 t ∝ M^(1/3))는 탱크의 용량(저장된 액화가스의 질량 M)에 따라 큰 차이가 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">직접 열을 받은 부분이 액화가스 저장탱크의 인장 강도를 초과할 경우 기상부에 면하는 지점에서 파열하게 된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 액화가스 탱크가 외부 화재에 노출되면 액상부는 액체의 증발잠열로 냉각되지만, 열용량이 작은 '기상부에 면하는 탱크 벽면'은 온도가 급상승하여 금속의 인장강도가 저하되므로 기상부 상단에서 먼저 균열·파열이 일어납니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 가연성 액체의 미세한 무적(Mist, 액적)이 공기 중에 분산되어 있을 때 착화하여 일어나는 폭발은 중합폭발이 아니라 '분무폭발(Mist Explosion)'입니다(중합폭발은 시안화수소, 염화비닐, 산화에틸렌 등 단위체가 고분자로 중합할 때 발생하는 중합열에 의한 화학적 폭발).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">폭연은 폭굉보다 폭발압력이 낮다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 아음속으로 전파되는 폭연(Deflagration)은 초음속 충격파를 동반하는 폭굉(Detonation)보다 폭발압력과 파괴력이 훨씬 낮습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분해폭발은 산소에 관계없이 단독으로 발열 분해반응을 하는 물질에서 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 분해폭발은 아세틸렌, 산화에틸렌, 히드라진 등 분해열이 큰 물질이 산소 공급과 관계없이 단독으로 발열 분해반응을 일으켜 폭발하는 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">물리적 폭발은 물질의 상태(기체, 액체, 고체)가 변하거나 온도, 압력 등 조건의 변화에 따라 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 물리적 폭발은 화학적 조성 변화 없이 물질의 상변화(액체 ➔ 기체)나 온도·압력 상승으로 용기가 파열되는 폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">중합폭발은 가연성 액체의 무적(霧滴, mist)이 일정 농도 이상으로 조연성 가스 중에 분산되어 있을 때 착화하여 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 가연성 액체의 무적(안개 모양의 미세 액적)이 조연성 가스(공기) 중에 분산되어 있을 때 착화하여 발생하는 폭발은 중합폭발이 아니라 '분무폭발'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q6</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">아세틸렌과 산화에틸렌은 분해폭발을 일으키기 쉬운 물질이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 아세틸렌과 산화에틸렌은 분자 내 결합에너지가 불안정하여 산소 없이도 압력이나 열에 의해 스스로 분해폭발을 일으키기 쉬운 대표적인 물질입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">상온에서 탱크에 저장된 중유가 유출되면 자유공간 증기 운폭발이 일어난다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 자유공간 증기운폭발(UVCE)은 프로판, 부탄 등 휘발성이 매우 큰 '액화가스나 저비점 인화성 물질'이 대량 누출되어 가스 구름을 형성할 때 발생하며, 상온에서 증기압이 극히 낮고 인화점이 높은 '중유'가 유출되었다고 해서 상온 증기운폭발이 일어나지는 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">밀폐공간에서 조연성가스가 폭발범위를 형성하면 점화 원에 의해 가스폭발이 일어난다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 산소와 같은 '조연성 가스'는 스스로 타지 않는 불연성 가스이므로 단독으로 폭발범위를 형성하여 가스폭발을 일으킬 수 없으며, '가연성 가스'가 공기와 혼합되어 폭발범위를 형성해야 가스폭발이 일어납니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">다량의 고온물질이 물속에 투입되었을 때 물의 갑작 스러운 상변화에 의한 폭발현상을 반응폭주라 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 다량의 고온 용융물질이 물속에 투입되었을 때 물의 갑작스러운 상변화(급격한 기화)에 의해 일어나는 물리적 폭발 현상은 반응폭주가 아니라 '증기폭발(수증기폭발)'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 특히 가스폭발과 분진폭발을 비교할 때, 고체 입자를 먼저 가열·열분해시켜야 하는 '분진폭발'이 기체 상태인 '가스폭발'보다 최소발화에너지(MIE)가 수십 배 이상 더 큽니다(즉, 가스폭발이 분진폭발보다 최소발화에너지가 훨씬 작음).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ이 틀렸습니다. 가스폭발은 분진폭발보다 최소발화에너지가 훨씬 '작습니다'(가스폭발은 약 0.01에서 1mJ 수준인 반면, 분진폭발은 약 10에서 100mJ 이상 필요).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ(분해폭발)과 ㄹ(초기온도·압력 상승 시 폭발범위 확대)뿐만 아니라 ㄱ(액체의 급속한 기화·팽창에 의한 증기폭발의 정의)도 옳은 설명이므로 ㄱ이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 고체 입자를 가열·기화시켜야 하는 '분진폭발'이 기체 상태인 '가스폭발'보다 최소발화에너지(MIE)가 훨씬 크므로 ㄴ(가스폭발이 분진폭발보다 최소발화에너지가 크다)은 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 증기폭발은 액체의 급속한 기화로 체적이 팽창하여 발생하는 물리적 폭발이고( ㄱ ), 분해폭발은 산소와 섞이지 않아도 자체 분해 반응열로 폭발하며( ㄷ ), 폭발범위는 초기 온도 및 압력이 상승할수록 분자 간 유효충돌 확률이 높아져 넓어집니다( ㄹ ). 따라서 ㄱ, ㄷ, ㄹ이 정답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 화염전파속도가 음속보다 느린 '폭연(초당 0.1미터에서 수십 미터)'과 음속보다 빠른 초음속 충격파 연소인 '폭굉(초당 1,000미터에서 3,500미터)', 그리고 폭연에서 폭굉으로의 전이(DDT) 및 폭굉유도거리(DID)를 묻는 S등급 필수 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">예혼합가스의 초기압력이 높을수록 폭굉 유도거리가 길어 진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 예혼합가스의 초기압력이 높을수록(또는 관경이 작거나 관 내부에 장애물·거칠기가 클수록, 점화에너지가 클수록) 화염 가속이 빨라져 폭굉유도거리(DID)는 '짧아집니다'.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화염전파속도는 폭연의 경우 음속보다 느리며, 폭굉의 경우 음속보다 빠르다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 화염전파속도는 폭연(Deflagration)의 경우 미반응 가스 중의 음속보다 느리며(아음속), 폭굉(Detonation)의 경우 음속보다 빠릅니다(초음속).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">폭연은 폭굉으로 전이될 수 없으나 폭굉은 폭연으로 전이 될 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 배관 등에서 화염이 가속되면 압축파가 중첩되어 충격파를 형성하면서 '폭연이 폭굉으로 전이(DDT: Deflagration to Detonation Transition)'될 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">폭연은 화염면에서 온도, 압력, 밀도의 변화가 불연속적 으로 나타난다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 화염면(충격파면)에서 온도, 압력, 밀도의 변화가 불연속적(급격한 계단형 점프)으로 나타나는 것은 폭연이 아니라 충격파를 동반하는 '폭굉'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q11</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">분진의 발열량이 클수록 폭발하기 쉽다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 분진의 연소 발열량이 클수록 주변 분진으로의 열전달이 활발해져 폭발하기 쉽습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분진의 부유성이 클수록 폭발이 용이해진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 분진이 가라앉지 않고 공기 중에 잘 떠 있는 부유성이 클수록 가연성 분진운 형성이 쉬워 폭발이 용이해집니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">분진폭발은 분진의 입자직경에 영향을 받는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 분진폭발은 분진의 입자 직경(입도)에 큰 영향을 받으며, 입경이 작을수록 최소발화에너지와 폭발하한계가 낮아져 폭발 위험성이 증가합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">분진의 단위체적당 표면적이 작아지면 폭발이 용이해진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 분진의 단위체적당 표면적(비표면적)이 '커질수록(즉, 입자가 미세할수록)' 산소와의 접촉 면적이 넓어지고 열분해가 빨라져 폭발이 용이해집니다. 표면적이 작아지면 폭발이 어려워집니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q6</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 탱크에 균열이 발생하면 내부 압력이 대기압으로 급격히 떨어지면서 액상·기상의 동적 평형 상태가 '순식간에 파괴'되고, 과열 액체가 폭발적으로 돌비(급격한 비등·기화)하여 탱크 전체가 파열됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">가연물이 비점 이상으로 가열될 때 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 탱크 내부의 액화가스(가연물)가 대기압 하의 비점(끓는점) 이상으로 과열된 상태에서 용기가 파열될 때 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">저장탱크의 기계적 강도 이상의 압력이 형성될 때 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 외부 화재 열원에 의해 탱크 내부 증기압이 상승하고 기상부 강판의 기계적 인장강도가 저하되어 내압이 기계적 강도를 초과할 때 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">저장탱크 균열로 인한 액상, 기상의 동적 평형 상태가 유지 된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 저장탱크에 균열이 발생하여 내부 압력이 급강하하면 기존 액상과 기상의 동적 평형 상태가 유지되는 것이 아니라 '순간적으로 깨지면서(파괴되면서)' 과열 액체가 폭발적으로 기화·팽창합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">저장탱크의 외부 표면에 열전도성이 작은 물질로 단열 조치하여 예방한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 저장탱크 외부 표면에 열전도성이 작은 내화 단열재를 시공하거나 물분무설비로 탱크 외벽을 냉각살수하여 블레비를 예방합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q12</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( ㄱ ): 화염전파 / ( ㄴ ): 압축파 / ( ㄷ ): 충격파</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 폭연에서 폭굉으로의 전이(DDT)는 '착화 ➔ 화염전파( ㄱ ) ➔ 압축파( ㄴ ) ➔ 충격파( ㄷ ) ➔ 폭굉파'의 순서로 진행됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( ㄱ ): 화염전파 / ( ㄴ ): 충격파 / ( ㄷ ): 압축파</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 약한 압축파들이 먼저 발생하고 이들이 중첩되어야 비로소 불연속면인 충격파가 형성되므로 '압축파 ➔ 충격파' 순서가 되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( ㄱ ): 압축파 / ( ㄴ ): 화염전파 / ( ㄷ ): 충격파</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 착화 직후 먼저 화염전파가 시작되면서 전방의 가스를 밀어내어 압축파가 형성됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( ㄱ ): 압축파 / ( ㄴ ): 충격파 / ( ㄷ ): 화염전파</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 폭연에서 폭굉으로의 전이(DDT)는 '착화 ➔ 화염전파(ㄱ) ➔ 압축파 형성(ㄴ) ➔ 충격파 형성(ㄷ) ➔ 폭굉파' 순으로 진행되므로 단계 순서가 뒤바뀌었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q14</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 원유·중유 등 유류저장탱크 화재 시 발생하는 3대 분출 현상[보일오버(Boilover: 장시간 연소 후 열파가 탱크 바닥의 물층에 도달하여 물이 급격히 기화·팽창하며 유류를 탱크 밖으로 폭출), 슬롭오버(Slopover: 화재 진압 시 뜨거운 유류 표면에 물이나 포를 주수했을 때 표면에서 물이 증발하며 유류가 넘쳐흐름), 프로스오버(Frothover: 화재가 아닌 상태에서 100도 이상의 고온 점성유 탱크 아래의 물이 거품을 내며 넘쳐흐름)]을 묻는 S등급 필수 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">보일오버(boil over)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 유류탱크 표면 화재 시 뜨거운 열류층(Heat wave, 열파)이 형성되어 장시간에 걸쳐 바닥까지 전달됨으로써 탱크 하부에 고여 있던 물이 비점 이상으로 과열·기화(약 1,700배 부피 팽창)하여 유류를 폭발적으로 분출시키는 현상은 '보일오버(Boilover)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">슬롭오버(slop over)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 슬롭오버(Slopover)는 연소 중인 뜨거운 유류 표면에 물이나 포 수용액을 방사했을 때 유면 상부에서 수분이 급격히 증발하면서 불붙은 유류가 탱크 벽을 타고 넘쳐흐르는 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">프로스오버(froth over)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 프로스오버(Frothover)는 아스팔트 등 고점성 중질유를 섭씨 100도 이상으로 가열할 때(화재가 아닌 상태) 바닥의 수분이 기화하면서 점성유와 섞여 거품 형태로 넘쳐흐르는 현상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">오일오버(oil over)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 오일오버(Oil over)는 표준 소방학 유류탱크 3대 현상 용어가 아닌 오답 보기입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 분진폭발은 [1단계: 부유한 분진 입자 표면에 열에너지가 공급되어 표면온도 상승 ➔ 2단계: 입자 열분해(또는 건류)로 가연성 기체 발생 ➔ 3단계: 발생한 가연성 기체가 주변 공기와 혼합되어 가연성 혼합기 형성 ➔ 4단계: 점화원에 의해 발화·폭발(1차 폭발) 및 화염 생성 ➔ 5단계: 이 연소열(열전파)과 압력파가 주위 퇴적 분진을 비산시키고 추가 열분해시켜 2차·3차 연쇄 폭발로 확대]의 순서로 일어납니다. 선지 ④는 '열분해로 가연성 기체가 발생하여 공기와 혼합되기 전에 먼저 발화된다'고 순서를 뒤집어 서술하여 틀렸습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화학적 폭발의 한 종류인 산화 폭발에는 가스폭발, 분무 폭발, 그리고 분진폭발이 포함된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화학적 폭발 중 산소와의 급격한 산화반응에 의한 산화폭발에는 기상의 가스폭발, 액상의 분무폭발, 고상의 분진폭발이 포함됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">증기운폭발(UVCE)은 개방된 대기에 다량의 가연성 가스가 서서히 지속적으로 누출되면서 대기 중에 구름 형태로 모여 점화 시 순간적으로 모든 가스가 동시에 폭발하는 현상으로 급격한 화학적 변화에 의한 폭발이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 증기운폭발(UVCE)은 개방된 대기에 다량의 가연성 가스가 누출되어 구름 형태로 모인 뒤 점화 시 동시에 폭발하는 화학적 폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">증기폭발은 액화가스 등이 분출될 때 급격한 기화와 함께 비등 현상이 나타나므로 밀폐된 공간 속의 액체 물질이 빠르게 기화하면서 다량의 증기가 발생하고, 이에 따라 증기압이 높아져 용기 등의 내압을 초과하여 파열되는 폭발이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 증기폭발은 밀폐 용기 내 액체 물질이 급격히 기화·비등하면서 증기압이 용기 내압 한계를 초과하여 파열되는 물리적 폭발입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">분진폭발은 먼저, 입자 표면에 마찰 등으로 열에너지가 발생하여 표면온도가 상승하여 발화된다. 그 후, 열분해로 가연성 기체가 발생해 공기와 혼합되며, 주변의 열전파로 주위 분진이 추가로 열분해되어 가연성 기체가 연쇄적으로 확산된다. 이어서, 압력이 상승하면서 폭발이 일어나고, 폭발 이후 2차·3차 폭발이 발생한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 분진폭발은 입자 표면온도가 상승한 뒤 먼저 '열분해로 가연성 기체가 발생하여 공기와 혼합된 후에 발화(착화)'가 일어나며, 이 1차 폭발의 열과 충격파가 주변 분진을 비산·열분해시켜 2차·3차 폭발로 이어집니다. 선지는 열분해 및 공기 혼합 이전에 먼저 발화가 일어난다고 순서를 잘못 서술하였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:X · 06:X · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:O · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>내부 액체가 비등 팽창하며 충격 압력을 발생시켜 용기를 물리적으로 파열시킵니다.
+            <span class="ox-exp-src">BLEVE 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>BLEVE는 용기 파열에 의한 물리적 폭발이므로 비인화성 액체(물 등)도 고온 고압 밀폐 상태에서 비등 팽창 시 용기가 파열되면서 BLEVE가 발생합니다.
+            <span class="ox-exp-src">BLEVE 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>중질유 탱크 화재 시 열유층이 바닥수와 만나 1,700배 수증기 팽창을 일으키며 기름을 뿜어내는 정확한 정의입니다.
+            <span class="ox-exp-src">유류탱크 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>슬롭오버는 점성이 큰 중질유 표면에 소화수를 방수했을 때 표면 기름이 거품을 일으키며 넘치는 현상으로, 중질유에서 주로 발생합니다.
+            <span class="ox-exp-src">유류탱크 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 05 · X 틀림</span>프로스오버는 화재가 발생하지 않은 비화재 상태에서 바닥의 물이 가열 팽창하여 거품과 함께 넘치는 현상입니다.
+            <span class="ox-exp-src">유류탱크 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 06 · X 틀림</span>탱크 바닥의 수분이 원인이 되는 것은 보일오버입니다. BLEVE는 외벽 화염 노출에 따른 용기 파열 현상입니다.
+            <span class="ox-exp-src">유류탱크 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>고체 미립자가 부유하여 폭발하면 분진폭발, 액체 미립자(무적)가 분산되어 폭발하면 분무폭발입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>산소농도 증가 시 연소가 매우 용이해지므로 속도·온도·폭발범위는 증가하고, 발화점·최소발화에너지는 감소합니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q14 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>기상폭발에는 혼합가스폭발과 가스분해폭발이 속하며, 액체의 급격한 상변화(기화)로 일어나는 증기폭발과 분무폭발은 액상(응축상)폭발입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>액상부는 비등잠열로 열을 흡수하지만 기상부 강판은 과열되어 인장강도가 급감하므로 기상부에서 파열되며, 폭발 규모는 탱크 용량에 비례합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>무적(액적)이 공기 중에 분산되어 폭발하는 것은 '분무폭발'이고, 단위체가 고분자로 결합하며 중합열로 폭발하는 것이 '중합폭발'입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>아세틸렌(C2H2)과 산화에틸렌(C2H4O)은 분해폭발 위험성이 매우 커서 구리·은·수은 등과의 접촉을 피하고 희석제를 섞어 취급합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>화학반응 속도가 기하급수적으로 빨라지는 현상은 '반응폭주'이고, 고온 물질과 물의 접촉으로 급격히 수증기가 팽창하는 물리적 폭발은 '증기폭발'입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>분진폭발은 고체 입자가 열분해되어 가스를 발생시키는 단계가 필요하므로 가스폭발보다 최소발화에너지가 크고 불완전연소로 일산화탄소 발생량이 많습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>온도와 압력이 상승하면 하한계는 다소 낮아지고 상한계가 크게 높아져 전체 폭발범위가 넓어집니다(단, 일산화탄소는 압력 상승 시 폭발범위가 좁아지는 예외 물질).
+            <span class="ox-exp-src">2023년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>입자가 미세하여 비표면적이 넓을수록 산소와의 반응 면적이 커져 최소발화에너지가 감소하고 분진폭발 위험성이 급증합니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>탱크 균열 시 급격한 감압으로 기액 동적 평형이 파괴되면서 과열 액체가 순간 비등·기화하는 것이 블레비의 핵심 원리입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q6 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>착화 후 화염이 전파되면서 전방 미연소가스를 압축하여 압축파를 만들고, 압축파들이 중첩되어 충격파를 형성한 뒤 화염면과 결합하여 폭굉파가 됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q12 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>분진폭발은 고체 입자가 먼저 열분해되어 가연성 가스를 방출하고 공기와 혼합된 뒤에 발화·폭발하며, 충격파가 퇴적 분진을 날려 2차·3차 연쇄 폭발을 일으킵니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>폭굉(Detonation)은 화염전파속도가 음속보다 빠른 초음속(초당 1,000미터에서 3,500미터) 연소파로서 충격파를 동반합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q11 · 폭발의 물리·화학적 분류 및 증기폭발·폭굉·블레비(BLEVE)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>블레비(BLEVE, 비등액체팽창증기폭발)는 액화가스 저장탱크가 외부 열원에 의해 과열되어 액체가 비등·기화하면서 용기가 파열되는 현상으로, 1차적인 탱크 파열 자체는 '물리적 폭발'에 해당합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q11 · 폭발의 물리·화학적 분류 및 증기폭발·폭굉·블레비(BLEVE)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>폭발은 물리적 또는 화학적 변화의 결과로 발생한 급격한 압력 상승 에너지가 외부로 방출되면서 파열·폭음·충격파를 동반하는 현상입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q11 · 폭발의 물리·화학적 분류 및 증기폭발·폭굉·블레비(BLEVE)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>블레비(BLEVE)의 폭발 규모(화구의 직경 D ∝ M^(1/3), 지속시간 t ∝ M^(1/3))는 탱크의 용량(저장된 액화가스의 질량 M)에 따라 큰 차이가 있습니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q10 · 블레비(BLEVE, 비등액체팽창증기폭발)의 메커니즘과 화구(Fireball) 규모</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>가연성 액체의 무적(안개 모양의 미세 액적)이 조연성 가스(공기) 중에 분산되어 있을 때 착화하여 발생하는 폭발은 중합폭발이 아니라 '분무폭발'입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q16 · 폭연과 폭굉, 분해폭발, 물리적 폭발 및 중합폭발 vs 분무폭발</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>자유공간 증기운폭발(UVCE)은 프로판, 부탄 등 휘발성이 매우 큰 '액화가스나 저비점 인화성 물질'이 대량 누출되어 가스 구름을 형성할 때 발생하며, 상온에서 증기압이 극히 낮고 인화점이 높은 '중유'가 유출되었다고 해서 상온 증기운폭발이 일어나지는 않습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q6 · 분해폭발 물질(아세틸렌·산화에틸렌) 및 증기운폭발·증기폭발 구분</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>산소와 같은 '조연성 가스'는 스스로 타지 않는 불연성 가스이므로 단독으로 폭발범위를 형성하여 가스폭발을 일으킬 수 없으며, '가연성 가스'가 공기와 혼합되어 폭발범위를 형성해야 가스폭발이 일어납니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q6 · 분해폭발 물질(아세틸렌·산화에틸렌) 및 증기운폭발·증기폭발 구분</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>예혼합가스의 초기압력이 높을수록(또는 관경이 작거나 관 내부에 장애물·거칠기가 클수록, 점화에너지가 클수록) 화염 가속이 빨라져 폭굉유도거리(DID)는 '짧아집니다'.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q10 · 폭연(Deflagration)과 폭굉(Detonation)의 물리적 특성 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>배관 등에서 화염이 가속되면 압축파가 중첩되어 충격파를 형성하면서 '폭연이 폭굉으로 전이(DDT: Deflagration to Detonation Transition)'될 수 있습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q10 · 폭연(Deflagration)과 폭굉(Detonation)의 물리적 특성 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>화염면(충격파면)에서 온도, 압력, 밀도의 변화가 불연속적(급격한 계단형 점프)으로 나타나는 것은 폭연이 아니라 충격파를 동반하는 '폭굉'입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q10 · 폭연(Deflagration)과 폭굉(Detonation)의 물리적 특성 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>분진의 단위체적당 표면적(비표면적)이 '커질수록(즉, 입자가 미세할수록)' 산소와의 접촉 면적이 넓어지고 열분해가 빨라져 폭발이 용이해집니다. 표면적이 작아지면 폭발이 어려워집니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q11 · 분진폭발에 영향을 미치는 인자(입자직경·비표면적·발열량·휘발분)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

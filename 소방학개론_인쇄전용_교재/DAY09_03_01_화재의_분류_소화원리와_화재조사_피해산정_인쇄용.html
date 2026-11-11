@@ -1,0 +1,3493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 09 · 인쇄용] 제3편 화재론 및 소화약제론 · 제1장 화재의 분류(A·B·C·D·K급), 소화원리 및 화재조사·피해산정 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY08_02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 09</span>
+        <a href="DAY10_03_02_물소화약제_첨가제와_포소화약제_혼합방식_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(16제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 09 · 제3편 화재론 및 소화약제론 · 제1장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(16문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">화재의 분류(A·B·C·D·K급), 소화원리 및 화재조사·피해산정</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 화재의 5대 급별 분류(A·B·C·D·K급)와 K급 주방화재 비누화 메커니즘</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>화재 급별 표지 색상</strong>: <strong>A급(일반) = 백색</strong> / <strong>B급(유류·가스) = 황색</strong> / <strong>C급(통전 전기) = 청색</strong> / <strong>D급(가연성 금속) = 무색</strong></li>
+                <li><strong>C급 vs A급 구분(2024년 Q13)</strong>: <strong>통전 중인 배전반</strong>은 <strong>C급</strong>이지만, <strong>전원이 차단된 콘센트</strong> 화재는 <strong>A급(일반화재)</strong>!</li>
+                <li><strong>K급 주방화재 핵심(2023년 Q12·2026년 Q9)</strong>: 식용유는 <strong>발화점이 끓는점(비점)보다 낮아</strong> 재발화가 쉬우며, 알칼리염(<span class="chem">K<sub>2</sub>CO<sub>3</sub>, NaHCO<sub>3</sub></span> 등)의 <strong>비누화 반응 + 냉각</strong>으로 소화 (<strong>별도의 K급 소화성능시험</strong> 적용)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            화재 현장에서 가장 먼저 이루어져야 할 전술적 판단은 <strong>"지금 무엇이 타고 있는가(가연물의 종류)"</strong>를 식별하는 일입니다(기출: 2020년 Q9, 2023년 Q12, 2024년 Q13, 2026년 Q9). 타는 물질의 물리·화학적 성질에 따라 열 축적 방식과 연소 반응이 전혀 다르기 때문에, 잘못된 소화약제를 투입하면 불이 꺼지기는커녕 폭발적인 화염 확산이나 감전 사고라는 치명적 역효과를 부릅니다. 예컨대 끓는 기름 불에 물을 끼얹으면 물이 기름 밑으로 가라앉으며 약 1,700배 수증기로 급팽창해 불붙은 기름을 사방으로 뿜어내고(슬롭오버), 나트륨 같은 금속 불에 물을 뿌리면 물이 분해되면서 폭발성 수소가스(H<sub>2</sub>)가 터져 나오며, 전기가 살아 있는 변압기에 물줄기를 쏘면 물을 타고 전류가 흘러 소방관이 감전됩니다. 이에 따라 국내 기준은 가연물의 특성과 소화 적응성에 맞추어 화재를 <strong>A급(일반화재), B급(유류·가스화재), C급(전기화재), D급(금속화재), K급(주방화재)</strong>의 5가지로 분류하고, 소화기 외부에 즉시 식별할 수 있는 <strong>표지 바탕색(백색·황색·청색·무색)</strong>과 그림 기호를 부여합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            첫째, <strong>A급 화재(일반화재, 표지 색상 백색)</strong>는 목재, 종이, 섬유, 석탄, 고무, 플라스틱처럼 다 타고 나면 <strong>'재(Ash)'를 남기는 일반 가연성 고체 화재</strong>입니다. 목재나 섬유 같은 고체는 산소 분압이 낮은 화재 초기에 불꽃 없이 연기만 내며 타는 <strong>무염착화(훈소연소, Smoldering)</strong>를 거친 뒤 발염착화로 진행될 수 있고 내부 심부까지 열이 축적되므로, 비열과 기화잠열이 큰 <strong>물이나 강화액, 제3종 분말(인산암모늄)</strong>을 이용한 냉각·방진소화가 가장 효과적입니다. 둘째, <strong>B급 화재(유류 및 가스화재, 표지 색상 황색)</strong>는 휘발유·경유·알코올 같은 인화성 액체(제4류 위험물)와 LPG·LNG 같은 가연성 가스 등 다 타도 <strong>재를 전혀 남기지 않고 무염착화 없이 즉시 발염착화로 이어지는 화재</strong>입니다(예: 난로에서 새어 나온 석유에 불이 붙은 화재). 유류 화재에 물을 봉상(줄기 형태)으로 부으면 비중이 작은 기름이 물 위로 떠올라 화염 면적이 넓어지므로, 반드시 포·이산화탄소·할론·청정약제·분말 소화약제로 산소를 차단하는 <strong>질식소화</strong>나 라디칼을 제거하는 <strong>부촉매(억제)소화</strong>를 수행해야 합니다. 셋째, <strong>C급 화재(전기화재, 표지 색상 청색)</strong>는 전류가 흐르고 있는 <strong>통전 중인</strong> 변압기, 배전반, 전기기계·기구의 화재로서, 감전 방지를 위해 반드시 <strong>전기 비전도성(절연성)</strong>을 갖춘 이산화탄소, 할론, 할로겐화합물 및 불활성기체, 분말 소화약제 또는 미세한 무상주수(안개주수)를 사용해야 합니다(단, <strong>전원이 차단된 콘센트나 가전제품 화재는 더 이상 C급이 아니라 A급 일반화재</strong>로 분류됩니다!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            넷째, <strong>D급 화재(금속화재, 표지 색상 무색)</strong>는 칼륨(K), 나트륨(Na), 마그네슘(Mg), 알루미늄(Al) 분말, 지르코늄(Zr) 등 가연성 금속 화재입니다. 이들 금속은 반응성이 극도로 높고 연소 온도가 섭씨 2,000도를 넘나들기 때문에, 물을 뿌리면 물 분자(H<sub>2</sub>O)에서 산소를 빼앗아 맹렬히 연소하면서 폭발성 <strong>수소가스(H<sub>2</sub>)</strong>를 발생시키고 고온에서 이산화탄소(CO<sub>2</sub>)나 일반 분말과도 반응하므로, 주수 소화를 절대 금하며 <strong>마른 모래(건조사), 팽창질석, 팽창진주암, 전용 금속소화기(염화나트륨계·구리분말·흑연계 등)</strong>로 덮어 산소를 물리적으로 차단해야 합니다. 다섯째, <strong>K급 화재(주방화재, Kitchen Fire)</strong>는 주방 조리기구에서 사용되는 <strong>식용유(대두유, 유채유, 옥수수유 등 동·식물유류)</strong> 화재입니다. 일반 석유류는 끓는점(비점)이 발화점보다 낮아 끓으면서 증발해 타지만, 식용유는 <strong>발화점(스스로 불이 붙는 온도, 약 섭씨 288도에서 385도)이 끓는점(비점, 약 섭씨 360도에서 400도 이상)보다 낮기 때문</strong>에 끓어오르기도 전에 스스로 발화하며, 외부 화염을 잠깐 껐더라도 식용유 내부 온도가 발화점 아래로 내려가지 않으면 공기 접촉 즉시 <strong>재발화</strong>합니다. 따라서 K급 소화기에는 탄산칼륨(K<sub>2</sub>CO<sub>3</sub>), 중탄산나트륨(NaHCO<sub>3</sub>), 유기산칼륨염 등 <strong>알칼리성 금속염 약제(강화액 계열)</strong>를 사용하여, 식용유(지방산 에스테르)와 알칼리염이 반응해 유류 표면에 쫀득한 불연성 거품 덮개를 형성하는 <strong>'비누화 반응(Saponification)'</strong>으로 유증기와 산소를 밀봉(질식)함과 동시에 기름 온도를 발화점 미만으로 급속 <strong>냉각</strong>시켜 재발화를 차단합니다. 아울러 K급 소화기의 소화성능시험은 일반 B급 시험을 따르는 것이 아니라 식용유 전용으로 규정된 <strong>별도의 K급 화재용 소화기 소화성능시험 기준</strong>에 따릅니다(2026년 Q9).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:12%">화재 급별</th>
+                <th style="width:15%">명칭 및 표지 색상</th>
+                <th style="width:28%">주요 대상 가연물 및 연소 특성</th>
+                <th style="width:45%">적응 소화원리·소화약제 및 핵심 기출 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A급</strong></td>
+                <td>일반화재<br/>(<strong class="text-emerald-400">백색</strong>)</td>
+                <td>목재, 종이, 섬유, 석탄, 고무, 플라스틱 등 연소 후 <strong>재(Ash)를 남기는 고체</strong> (훈소 후 발염착화 가능)</td>
+                <td>· <strong>주된 소화원리</strong>: <strong>냉각소화</strong> (물, 강화액, 제3종 인산암모늄 분말)<br/>· <strong>전원이 차단된 콘센트·배전반 화재</strong>는 C급이 아니라 <strong>A급 일반화재</strong>에 해당!</td>
+              </tr>
+              <tr>
+                <td><strong>B급</strong></td>
+                <td>유류·가스화재<br/>(<strong class="text-emerald-400">황색</strong>)</td>
+                <td>인화성 액체(석유류·알코올류 등), 가연성 가스 등 <strong>재를 남기지 않는 화재</strong> (무염착화 없이 즉시 발염착화)</td>
+                <td>· <strong>주된 소화원리</strong>: <strong>질식소화 · 부촉매(억제)소화</strong> (포, CO<sub>2</sub>, 할론, 청정약제, 분말)<br/>· 봉상주수 시 유류 확산 위험 (단, 미세 무상주수·물분무는 유화·질식·냉각으로 소화 가능)</td>
+              </tr>
+              <tr>
+                <td><strong>C급</strong></td>
+                <td>전기화재<br/>(<strong class="text-emerald-400">청색</strong>)</td>
+                <td><strong>통전 중인</strong> 변압기, 배전반, 제어반, 전기기계·기구 등의 화재</td>
+                <td>· <strong>필수 요건</strong>: 감전 방지를 위한 <strong>전기 비전도성(절연성)</strong> 확보<br/>· CO<sub>2</sub>, 할론, 할로겐화합물 및 불활성기체, 분말 소화약제, 무상(분무) 주수</td>
+              </tr>
+              <tr>
+                <td><strong>D급</strong></td>
+                <td>금속화재<br/>(<strong class="text-emerald-400">무색</strong>)</td>
+                <td>K, Na, Mg, Al 분말, Zr 등 금수성·가연성 금속 화재</td>
+                <td>· <strong>금기 약제</strong>: <strong>물·CO<sub>2</sub>·일반 분말 사용 절대 금지</strong> (물 접촉 시 폭발성 H<sub>2</sub> 가스 발생)<br/>· 마른 모래(건조사), 팽창질석, 팽창진주암, 전용 금속소화기(염화나트륨·흑연계 등) 피복 질식</td>
+              </tr>
+              <tr>
+                <td><strong>K급</strong></td>
+                <td>주방화재<br/>(조리기구 그림)</td>
+                <td>주방 조리기구의 <strong>동·식물유(식용유)</strong> 화재<br/>(<strong class="text-amber-300">발화점이 끓는점[비점]보다 낮아</strong> 재발화 극심)</td>
+                <td>· <strong>주된 소화원리</strong>: 알칼리염(K<sub>2</sub>CO<sub>3</sub>, NaHCO<sub>3</sub> 등)과 식용유의 <strong>비누화 반응(불연성 비누 거품층 질식) + 발화점 미만 냉각소화</strong><br/>· B급 시험과 구분되는 <strong>별도의 K급 전용 소화성능시험 기준</strong> 적용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 4대 소화 원리(냉각·질식·제거·부촉매)의 물리·화학적 작동 기전</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>산소 농도 21% ➔ 15% 이하 저하(2018년 Q16)</strong>: 산소공급원을 차단하거나 희석하는 물리적 소화 = <strong>질식소화</strong></li>
+                <li><strong>중질유 무상주수 효과(2022년 Q13)</strong>: 수증기 1,700배 팽창에 의한 <strong>질식소화</strong> + 에멀션 피막에 의한 <strong>유화소화</strong> + <strong>냉각소화</strong></li>
+                <li><strong>물리적 소화 vs 화학적 소화</strong>: 냉각·질식·제거(CO<sub>2</sub> 포함)는 <strong>물리적 소화</strong> / 할론·청정약제·분말의 라디칼 포획은 <strong>화학적 부촉매(억제)소화</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            연소가 지속되기 위해서는 <strong>가연물, 산소공급원, 점화원(열), 순조로운 연쇄반응</strong>이라는 '연소의 4요소(연소의 사면체)'가 모두 갖추어져야 합니다(기출: 2018년 Q16, 2022년 Q13). 따라서 '소화(Extinguishment)'란 이 4가지 요소 중 최소 한 가지 이상을 물리적 또는 화학적으로 제거하여 연소 평형을 깨뜨리는 작업이며, 제거하는 대상 요소에 따라 물리적 소화인 <strong>제거소화(가연물 차단), 질식소화(산소 차단), 냉각소화(열·점화원 차단)</strong>의 3가지와 유일한 화학적 소화인 <strong>부촉매·억제소화(연쇄반응 차단)</strong>의 4대 소화 원리로 귀결됩니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            첫째, <strong>냉각소화(Cooling)</strong>는 물리적 열 흡수를 통해 가연물과 화염의 온도를 인화점·발화점 미만으로 낮추어 활성화에너지 공급을 중단시키는 원리로서, 비열(1 cal/g&middot;℃)과 증발잠열(539 cal/g)이 가장 큰 <strong>물 소화약제</strong> 주수가 대표적입니다. 둘째, <strong>질식소화(Smothering)</strong>는 가연물 표면을 물리적으로 덮어 공기를 차단하거나(<strong>피복소화</strong>: 포 소화약제 도포, D급 마른 모래 피복), 불연성 가스를 방출하여 공기 중 산소 농도 21퍼센트를 연소하한계인 <strong>15퍼센트 이하</strong>로 희석·저하시키는 원리입니다(2018년 Q16). 구획실에 <strong>이산화탄소(CO<sub>2</sub>)나 불활성기체(IG-541 등)</strong>를 방출하는 것, 그리고 물이 섭씨 100도에서 수증기로 기화할 때 체적이 약 <strong>1,700배</strong>로 급팽창하며 주변 산소를 밀어내는 작용이 모두 질식소화에 속합니다. 특히 벙커C유 같은 <strong>비수용성 중질유 화재에 미세한 무상주수(물분무)</strong>를 하면, 수증기 팽창에 의한 <strong>질식소화</strong>와 더불어 유류 표면에 유중수적형(W/O) 에멀션(Emulsion) 불연성 막을 형성하여 유증기 증발을 막는 <strong>'유화소화(Emulsification)'</strong> 및 냉각소화 효과를 동시에 거둘 수 있습니다(2022년 Q13).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>제거소화(Removal / Starvation)</strong>는 연소의 바탕이 되는 가연물 자체를 화점 주변에서 치우거나 연료의 추가 공급을 원천 차단하는 물리적 소화 원리입니다. ① <strong>산불 현장에서 불길이 번지는 방향의 나무를 미리 베어내어 방화선(Fire Line)을 구축하는 작업</strong>, ② <strong>가스나 유류 배관 화재 시 중간 밸브를 잠가 연료 공급을 차단하는 조치</strong>, ③ <strong>유류탱크 화재 시 불이 붙지 않은 바닥 쪽 기름을 빈 탱크로 빼내는 작업</strong>, ④ 촛불을 입으로 불어 끄거나 유정 화재에서 폭풍으로 화염을 날려 버리는 <strong>'타격법'</strong>, ⑤ 수용성 위험물(알코올·아세톤 등)에 다량의 물을 부어 가연물 농도를 낮추는 <strong>'희석소화(Dilution)'</strong>가 이에 해당합니다. 넷째, <strong>부촉매소화(억제소화, Inhibition)</strong>는 화염 속 연쇄반응의 매개체인 활성 자유 라디칼(<strong>H&middot; 및 OH&middot;</strong>)을 화학적으로 포획하여 연소 연쇄반응을 끊는 유일한 <strong>화학적 소화 원리</strong>입니다. <strong>할론(Halon), 할로겐화합물 청정소화약제, 분말소화약제(제1·2·3·4종)</strong>가 열분해되면서 내놓는 할로겐 라디칼(Br&middot;, Cl&middot;, F&middot;)이나 알칼리 금속 이온(Na<sup>+</sup>, K<sup>+</sup>)이 H&middot;와 OH&middot;를 가로채어 활성화에너지 장벽을 높임으로써 순식간에 화염을 소멸시킵니다(반면 <strong>이산화탄소[CO<sub>2</sub>]는 화학적 부촉매 작용이 전혀 없으며 오직 물리적 질식 및 자체 기화 냉각소화만 수행</strong>합니다!).
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 화재조사 법령 체계·화재 분류·소실정도 및 재산피해액 산정 공식</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>대형·중요·특수화재 구분(2019년에서 2021년 기출)</strong>: 대형(사망 <strong>5명↑</strong>·사상 <strong>10명↑</strong>·피해 <strong>50억↑</strong>) / 중요(<strong>이재민 100명↑</strong>·관공서·학교·문화재) / 특수(<strong>방화·특이원인</strong>·외국공관·항공기·외항선·발전소)</li>
+                <li><strong>소실정도 vs 소실면적(2022년 Q1·2023년 Q18)</strong>: 소실정도(전소 70% 이상·반소 30% 이상 70% 미만·부분소 30% 미만)는 <strong>'입체면적'</strong> 기준 / 소실면적(㎡) 산정은 <strong>'소실 바닥면적'</strong> 기준!</li>
+                <li><strong>최종잔가율 및 피해액 공식(2023년 Q18·2025년 Q17)</strong>: 건물·부대설비·구축물·가재도구 최종잔가율 <strong>20%(상각계수 0.8)</strong>, 그 외 자산 <strong>10%</strong> / 단순 연기흡입자(비치료)는 부상자 제외</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            화재 진압 직후 소방관서는 ｢소방의 화재조사에 관한 법률｣ 및 소방청 훈령인 ｢화재조사 및 보고규정｣에 따라 관계 공무원이 화재 사실을 인지하는 즉시 과학적 <strong>화재조사(화재원인조사 + 화재피해조사)</strong>를 실시합니다(기출: 2018년 Q15, 2019년 Q19, 2020년 Q7·Q9, 2021년 Q7, 2022년 Q1·Q17, 2023년 Q18, 2025년 Q17·Q18, 2026년 Q10). 화재조사는 강제성을 지니며 주관적 선입견을 배제하고 다각도에서 객관적 증거를 좁혀 들어가는 <strong>'프리즘식 조사 원칙'</strong>에 따라 수행합니다(방화·실화 피의자에 대한 민·형사상 법적 책임 규명은 경찰 수사 영역이며 소방 화재조사의 직접 목적이 아닙니다). <strong>화재원인조사</strong>의 법정 5대 범위는 ① <strong>발화원인</strong>, ② <strong>발견·통보 및 초기 소화 상황</strong>, ③ <strong>연소경로 및 연소 확대 원인</strong>, ④ <strong>피난경로 및 피난상 장애요인</strong>, ⑤ <strong>소방·방화시설의 사용 또는 작동 상황</strong>이며, 피해 건물의 <strong>'화재보험 가입 여부'는 화재원인조사 범위에 포함되지 않습니다</strong>(2018년 Q15). 또한 목조건축물 화재 감식에서는 목재가 탈 때 표면에 형성되는 <strong>탄화층(숯층)이 열전도율이 낮은 단열재 역할</strong>을 하여 심부로의 연소 확대를 지연시키며, 벽면에 남는 <strong>V자형 탄화 패턴(V Pattern)의 아래쪽 꼭짓점이 발화지점</strong>을 가리킵니다. 아울러 대규모·특수 화재 조사를 위한 <strong>화재합동조사단 단원 자격</strong>(시행령 제7조제2항)은 ① 화재조사관, ② 화재조사 경력 <strong>3년 이상</strong> 소방공무원, ③ 대학 관련 분야 <strong>조교수 이상 3년 이상</strong> 재직자, ④ 국가기술자격 안전관리 분야 <strong>'산업기사 이상'</strong> 자격 취득자로 규정되어 있어, <strong>'기능사'는 단원 자격에서 제외</strong>됩니다(2025년 Q18).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            ｢화재조사 및 보고규정｣상 상급 상황실 보고 대상 화재는 <strong>대형화재, 중요화재, 특수화재</strong>로 구분됩니다. ① <strong>대형화재</strong>는 <strong>사망자 5명 이상</strong> 또는 <strong>사상자 10명 이상</strong>, 또는 <strong>재산피해액 50억 원 이상</strong>인 화재입니다(2019년 Q19). ② <strong>중요화재</strong>는 <strong>이재민 100명 이상</strong> 발생 화재(50명 이상 또는 특수화재로 속이는 함정 주의!), 관공서·학교·정부미 도정공장·문화재·지하철·지하가 등의 화재입니다. ③ <strong>특수화재</strong>는 <strong>특수사고·방화 등 화재원인이 특이하다고 인정되는 화재</strong>(2020년 Q7에서 중요화재로 속여 출제!), <strong>외국공관 및 그 사택의 화재</strong>, <strong>철도·항구에 매어 둔 외항선·항공기·발전소 및 변전소의 화재</strong>입니다(2021년 Q7). 또한 화세가 진압되어 <strong>연소 확대의 우려가 사라진 시간은 '초진 시간'</strong>이고, <strong>소방대에 의한 소화활동의 필요성이 완전히 사라진 시간은 '완진 시간'</strong>이며(2026년 Q10), 화재 현장에서 부상을 당한 후 <strong>72시간(3일) 이내에 사망</strong>한 경우에는 화재 사망자로 산정하되, <strong>병원 치료를 필요로 하지 않고 단순히 연기를 흡입한 사람은 부상자(경상) 산정에서 제외</strong>합니다. 화재건수 산정에서는 한 곳에서 발화한 화재, <strong>동일 누전점</strong>에서 발생하여 2개소 이상에 일어난 화재, 지진·낙뢰에 의한 동시다발 화재, <strong>동일범</strong>에 의한 방화·불장난은 <strong>1건</strong>으로 산정하지만, <strong>'누전점이 서로 다른 2개소 이상에서 발생한 화재'</strong>나 <strong>'동일범이 아닌 각기 다른 사람에 의한 방화·불장난'</strong>은 동일 소방대상물이라도 <strong>각각 별개의 건수(별건)</strong>로 산정합니다(2022년 Q17, 2026년 Q10).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            건축·구조물의 피해 규모 평가에서는 <strong>'소실정도(전소·반소·부분소)'</strong>의 기준 면적과 <strong>'소실면적(㎡)'</strong>의 기준 면적을 엄격히 구별해야 합니다(2022년 Q1, 2023년 Q18, 2026년 Q10). 건물의 <strong>소실정도</strong>는 해당 건물의 <strong>'입체면적'</strong>에 대한 소실 비율을 적용하여, 입체면적이 <strong>70퍼센트 이상</strong> 소실되었거나 그 미만이라도 잔존 부분에 보수를 가하여 재사용할 수 없는 경우를 <strong>'전소(全燒)'</strong>, 입체면적이 <strong>30퍼센트 이상 70퍼센트 미만</strong> 소실된 경우를 <strong>'반소(半燒)'</strong>, 입체면적이 <strong>30퍼센트 미만</strong> 소실된 경우를 <strong>'부분소(部分燒)'</strong>, 열기 없이 연기에 의해서만 그을림 피해를 입은 경우를 <strong>'그을음'</strong>으로 구분합니다. 반면 피해액 산정을 위한 건물의 <strong>소실면적(㎡) 산정</strong>은 입체면적이 아니라 <strong>'소실 바닥면적(수평투영면적)'</strong>을 기준으로 산정합니다!
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            마지막으로 화재 재산피해액(현금·유가증권·귀금속·골동품·미술품 등 사치품은 제외)은 정액법 감가상각을 반영한 화재 직전의 현재가액을 기준으로 산출하되, 내용연수가 경과하더라도 최소한의 잔존가치인 <strong>최종잔가율</strong>을 보장합니다. 최종잔가율은 <strong>건물·부대설비·구축물·가재도구는 20퍼센트(0.2, 따라서 최대 감가상각 계수는 0.8)</strong>이고, <strong>기계·기구, 차량·운반구 등 그 외의 자산은 10퍼센트(0.1, 상각 계수 0.9)</strong>입니다(2023년 Q18). 이에 따른 <strong>건물 피해산정 추정액 공식</strong>은 <strong>『신축단가 × 소실면적 × [1 − (0.8 × 경과연수 ÷ 내용연수)] × 손해율』</strong>입니다(여기서 손해율 = 화재로 인한 감가액 ÷ 재조달가액). 예를 들어 2025년 기출(Q17)처럼 신축단가 100만 원/㎡, 소실면적 50㎡, 경과연수 10년, 내용연수 40년, 손해율 50퍼센트(0.5)일 때 건물 피해추정액은 <strong>100만 원 × 50㎡ × [1 − (0.8 × 10 ÷ 40)] × 0.5 = 5,000만 원 × 0.8 × 0.5 = 2,000만 원</strong>이 됩니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%">구분 항목</th>
+                <th style="width:38%">세부 분류 및 법정 수치 기준</th>
+                <th style="width:42%">핵심 판단 기준 및 기출 함정 방어</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>대형 · 중요 · 특수화재</strong><br/>(상황실 보고 대상)</td>
+                <td>· <strong class="text-emerald-400">대형화재</strong>: 사망 <strong>5명↑</strong> / 사상 <strong>10명↑</strong> / 재산피해 <strong>50억 원↑</strong><br/>· <strong class="text-emerald-400">중요화재</strong>: <strong>이재민 100명↑</strong> / 관공서·학교·문화재·지하철 등<br/>· <strong class="text-emerald-400">특수화재</strong>: <strong>방화·특수사고 등 특이 원인</strong> / 외국공관 / 외항선·항공기·발전소·변전소</td>
+                <td>· 이재민 100명 이상은 <strong>중요화재</strong> (50명 이상 또는 특수화재로 오답 유도 주의)<br/>· 방화 등 화재원인이 특이한 화재는 <strong>특수화재</strong> (중요화재로 오답 유도 주의)</td>
+              </tr>
+              <tr>
+                <td><strong>화재건수 1건 산정</strong><br/>vs <strong class="text-amber-300">별건 산정</strong></td>
+                <td>· <strong>1건 산정</strong>: 1개소 발화, <strong>동일 누전점</strong>, 지진·낙뢰, <strong>동일범</strong> 방화·불장난<br/>· <strong>별건 산정</strong>: <strong>누전점이 다른 2개소↑</strong>, <strong>서로 다른 사람</strong>에 의한 방화·불장난</td>
+                <td>· "누전점이 다른 2개소 이상 화재"나 "동일범이 아닌 각기 다른 사람의 방화"를 1건으로 산정한다는 선지는 무조건 <strong>X</strong></td>
+              </tr>
+              <tr>
+                <td><strong>소실정도 구분</strong><br/>vs <strong>소실면적 산정</strong></td>
+                <td>· <strong>전소</strong>: 건물 <strong>입체면적 70% 이상</strong> (또는 잔존부 보수 재사용 불가)<br/>· <strong>반소</strong>: 입체면적 <strong>30% 이상 70% 미만</strong><br/>· <strong>부분소</strong>: 입체면적 <strong>30% 미만</strong></td>
+                <td>· 소실정도(전소·반소·부분소) 구분은 <strong>'입체면적'</strong> 기준!<br/>· 건물의 소실면적(㎡) 산정은 <strong>'소실 바닥면적(수평투영면적)'</strong> 기준!</td>
+              </tr>
+              <tr>
+                <td><strong>최종잔가율 및</strong><br/><strong>피해추정액 공식</strong></td>
+                <td>· <strong>건물·부대설비·구축물·가재도구</strong>: 최종잔가율 <strong class="text-emerald-400">20%</strong> (상각계수 <strong class="text-emerald-400">0.8</strong>)<br/>· <strong>그 외 자산(기계·차량·선박 등)</strong>: 최종잔가율 <strong class="text-amber-300">10%</strong> (상각계수 <strong class="text-amber-300">0.9</strong>)</td>
+                <td>· 공식: 신축단가 × 소실면적 × [1 − (0.8 × 경과연수 ÷ 내용연수)] × 손해율<br/>· 내용연수 경과 시에도 최종잔가율(20% 또는 10%)을 하한선으로 보장</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. A·B·C·D·K급 화재의 분류 체계, 4대 소화원리 및 화재조사·피해액 산정 핵심 도해</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 5대 화재 분류(A·B·C·D·K급) · 표지 색상 및 4대 소화원리</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">A급(백색) · B급(황색) · C급(청색)</div>
+                <div>· <strong>A급(백색)</strong>: 일반 고체(재 남김, 비통전 콘센트 포함), 물 냉각<br/>· <strong>B급(황색)</strong>: 유류·가스(재 없음), 포·분말 질식·부촉매<br/>· <strong>C급(청색)</strong>: 통전 전기, 비전도성 약제(CO<sub>2</sub>·분말·무상주수)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">D급(금속·무색) vs K급(주방 식용유)</div>
+                <div>· <strong>D급(무색)</strong>: 주수 금지(H<sub>2</sub> 폭발)! 건조사·팽창질석 피복 질식<br/>· <strong>K급(주방)</strong>: 식용유(<strong>발화점 &lt; 끓는점[비점]</strong>), 비누화 반응 + 냉각</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">물리적 소화 (제거 · 질식 · 냉각)</div>
+                <div>· <strong>제거</strong>: 산불 벌목 방화선, 가스 밸브 차단, 타격법, 희석<br/>· <strong>질식</strong>: 산소 15% 이하 저하, 포 피복, 중질유 무상주수(유화+질식)<br/>· <strong>냉각</strong>: 물의 높은 비열·증발잠열로 발화점 미만 냉각</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">화학적 소화 (억제 · 부촉매소화)</div>
+                <div><strong>할론·청정약제 및 분말(1·2·3·4종)</strong>이 화염 속 활성 자유 라디칼(<strong>H&middot;, OH&middot;</strong>)을 포획하여 연쇄반응 차단 (CO<sub>2</sub>는 물리적 소화!)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 화재 표지 색상: <strong>A급(백색·일반) · B급(황색·유류/가스) · C급(청색·통전 전기) · D급(무색·금속, 주수 절대 금지!) · K급(주방 식용유, 발화점이 끓는점[비점]보다 낮아 알칼리염 비누화 반응 + 냉각 필수, 별도 K급 시험 적용)</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 화재조사 법령 기준 · 화재 분류 및 소실정도·재산피해액 산정</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">원인조사 범위 · 합동조사단 자격 &amp; 대형·중요·특수화재</div>
+                <ul class="schema-list">
+                  <li><strong>화재보험 가입 여부</strong>는 원인조사 범위 제외 / 합동조사단 안전관리 자격은 <strong>산업기사 이상(기능사 제외)</strong></li>
+                  <li>대형(사망 5·사상 10·피해 50억) · <strong>중요(이재민 100명↑)</strong> · <strong>특수(방화·특이원인·외국공관·항공기·외항선·발전소)</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">소실정도(입체면적) vs 소실면적(바닥면적) &amp; 정액법 피해추정액 공식</div>
+                <ul class="schema-list">
+                  <li><strong>소실정도(입체면적 기준)</strong>: 전소(70% 이상) · 반소(30% 이상 70% 미만) · 부분소(30% 미만) / <strong>소실면적(㎡) = 소실 바닥면적</strong></li>
+                  <li>최종잔가율: <strong>건물·부대설비·구축물·가재도구 20%</strong>, 그 외 <strong>10%</strong> / 공식 = <strong>신축단가 × 소실면적 × [1 − (0.8 × 경과연수 ÷ 내용연수)] × 손해율</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (16문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 16문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 화재원인 조사의 범위에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재보험 가입 여부 등의 상황</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방시설의 사용 또는 작동 등의 상황</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">피난경로, 피난상의 장애요인 등의 상황</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재의 연소경로 및 확대원인 등의 상황</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2018년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음 설명에 해당하는 소화방법으로 옳은 것은? 일반적으로 공기 중의 산소농도 21%를 15% 이하로 희석하거나 저하시키면 연소 중인 가연물은 산소의 양이 부족하여 연소가 중단된다.</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">냉각소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">질식소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제거소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">유화소화</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재조사활동 중 소방본부 종합상황실이 소방청의 종합 상황실에 보고해야 하는 화재에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">사망자가 6명 발생한 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">사상자가 11명 발생한 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">재산피해액이 70억 원 발생한 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">이재민이 50명 발생한 화재</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재조사 및 보고규정｣상 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">방화는 중요화재에 해당한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재조사에는 화재원인조사와 화재피해조사가 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재조사는 관계 공무원이 화재 사실을 인지하는 즉시 실시하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재현장에서 부상을 당한 후 72시간 이내에 사망한 경우에는 당해 화재로 인한 사망자로 본다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2020년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재에 대한 옳은 설명을 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 낮은 산소분압에서 화재가 발생하였을 때 초기에 화염 없이 일어나는 연소를 훈소연소라 한다.<br/>ㄴ. 목조건축물 화재는 유류나 가스 화재와는 달리 일반적으로 무염착화 없이 발염착화로 이어진다.<br/>ㄷ. A급 화재는 일반화재로 면화류, 합성수지 등의 가연물에 의한 화재를 말한다.<br/>ㄹ. 전소란 건물의 70 % 이상이 소실된 화재를 말한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2021년 소방공채·경채 Q7</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재조사 및 보고규정｣상 특수화재에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">외국공관 및 그 사택의 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">이재민 100명 이상 발생 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">특수사고, 방화 등 화재원인이 특이하다고 인정되는 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">철도, 항구에 매어 둔 외항선, 항공기, 발전소 및 변전소의 화재</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방기관에서 실시하는 화재조사에 대한 일반적인 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재조사는 관계 공무원이 화재사실을 인지하는 즉시 실시한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재조사는 강제성을 지니며, 프리즘식으로 진행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재조사 시 건축·구조물 화재의 소실정도는 입체면적 에 대한 비율을 적용하여 구분한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">화재원인조사에는 소방·방화시설의 조사는 포함되지 않는다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2022년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">중질유화재 시 무상주수를 함으로써 기대할 수 있는 소화 효과로 올바르게 묶인 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">질식소화, 부촉매소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">질식소화, 유화소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">유화소화, 타격소화</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">피복소화, 타격소화</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2022년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재피해조사 산정기준 중 동일 소방대상물로서 한 건의 화재로 취급하는 기준에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">한 곳에서 발생한 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">누전점이 다른 2개소 이상에서 발생한 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지진, 낙뢰 등 자연환경에 의해 발생한 여러 화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">동일범에 의한 방화 또는 불장난으로 2개소 이상에서 발생한 화재</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2023년 소방공채·경채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">전기화재(C급화재) 및 주방화재(K급화재)에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">주방화재의 가연물 중 하나인 식용유의 발화점은 비점 보다 낮다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">도체 주위의 자기장 변화에 의해 발생된 유도전류는 전기 화재의 점화원으로 작용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">식용유로 인한 화재 시 유면상의 화염을 제거하면 복사열에 의한 기화를 차단하여 재발화를 방지할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">전기화재의 발생 원인 중 누전은 전류가 전선이나 기구 에서 절연 불량 등의 원인으로 정해진 전로(배선) 밖으로 흐르는 현상이다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2023년 소방공채·경채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢화재조사 및 보고규정｣에 관한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">건물의 소실면적 산정은 소실 입체면적으로 산정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">건물의 소실정도에서의 반소는 건물의 30 % 이상 70 % 미만이 소실된 것을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">건물 등 자산에 대한 최종잔가율은 건물·부대설비·구축물· 가재도구는 20 %로 하며, 그 이외의 자산은 10 %로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">발화일시의 결정은 관계인등의 화재발견 상황통보(인지) 시간 및 화재발생 건물의 구조, 재질 상태와 화기취급 등의 상황을 종합적으로 검토하여 결정한다. 다만, 자체진화 등 사후인지 화재로 그 결정이 곤란한 경우에는 발화시간을 추정할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2024년 소방공채·경채 Q13</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">일반화재에 해당하는 것만을 <보기>에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 통전 중인 배전반에서 불이 난 경우<br/>ㄴ. 외출 시 전원이 차단된 콘센트에서 불이 난 경우<br/>ㄷ. 실외 난로가 넘어지면서 새어 나온 석유에 불이 붙은 경우<br/>ㄹ. 실험실 시험대 위 나트륨 분말에서 불이 난 경우</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2025년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재 피해조사 시 <보기>와 같은 조건의 ‘건물 피해산정’ 추정액은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 용도 및 구조: 아파트, 철근콘크리트 구조<br/>ㄴ. 신축단가(m2 당) : 1,000,000원<br/>ㄷ. 경과연수: 10년<br/>ㄹ. 내용연수: 40년<br/>ㅁ. 소실면적: 50 m2<br/>ㅂ. 손해율: 50 %<br/>ㅅ. 잔가율: 80 %</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">16,000,000원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">20,000,000원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">24,000,000원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">28,000,000원</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2025년 소방공채·경채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소방의 화재조사 시 소방관서장이 화재합동조사단의 단원 으로 임명 또는 위촉할 수 있는 사람에 해당하지 않는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">화재조사관</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">화재조사 업무에 관한 경력이 4년인 소방공무원</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">국가기술자격의 직무분야 중 안전관리 분야에서 기능사 자격을 취득한 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">｢고등교육법｣ 제2조에 따른 학교 또는 이에 준하는 교육 기관에서 화재조사, 소방 또는 안전관리 등 관련 분야에 조교수로 4년 재직한 사람</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2026년 소방공채·경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">K급 화재(주방화재)에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">주방에서 동·식물유를 취급하는 조리기구에서 일어나는 화재를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">비누화 반응을 일으키는 NaHCO3를 주성분으로 하는 소화 약제를 사용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">K급 화재(주방화재)용 소화기의 소화성능시험은 B급 화재 (유류화재)용 소화기의 소화성능시험에 따른다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">식용유에 의한 화재 시 식용유의 발화점이 끓는점보다 낮아 화염을 제거한 후에도 재발화할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2026년 소방공채·경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">화재조사관의 화재조사 결과 보고서 작성에 관한 사항으로 옳지 않은 것만을 <보기>에서 모두 고른 것은? (단, ｢화재조사 및 보고규정｣을 따름)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 소방대에 의한 소화활동의 필요성이 사라진 시간을 초진 시간으로 작성한다.<br/>ㄴ. 병원 치료를 필요로 하지 않고 단순히 연기를 흡입한 사람은 경상으로 작성한다.<br/>ㄷ. 동일범이 아닌 각기 다른 사람에 의한 방화, 불장난은 동일 대상물에서 발화한 경우, 한 건의 화재로 보고서를 작성한다.<br/>ㄹ. 건물 입체면적의 40 %가 소실되었으며, 잔존부분을 보수하여 재사용할 수 있는 경우, 소실정도는 반소로 작성한다.<br/>ㅁ. 화재 증거물에 대한 감정을 화재감정기관 등에 의뢰한 경우, 소방관서장에게 사전 보고 후, 조사 결과 보고 일을 필요한 기간만큼 연장할 수 있다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재의 급별 분류 및 표지 바탕색 기준에서 일반화재(A급)는 백색, 유류·가스화재(B급)는 황색, 통전 중인 전기화재(C급)는 청색, 가연성 금속화재(D급)는 무색이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>K급 화재(주방화재)는 주수 냉각을 통한 유류 화염 확산 소화가 주원리이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>산불 현장에서 수목을 벌채하여 방화선을 구축하거나 가스 밸브를 차단하여 연료 공급을 중단시키는 것은 '제거소화'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>할론 1301이나 분말소화약제가 화염 속의 활성 자유 라디칼(H·, OH·)과 반응하여 연쇄반응을 차단하는 것은 물리적 냉각소화이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재원인조사의 범위에는 발화원인, 연소경로 및 확대원인, 피난경로 및 피난상 장애요인, 소방·방화시설의 사용 또는 작동 상황이 포함되며, 화재보험 가입 여부는 화재원인조사 범위에 해당하지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>일반적으로 공기 중의 산소농도 21퍼센트를 15퍼센트 이하로 희석하거나 저하시켜 연소를 중단시키는 소화방법은 '질식소화'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢화재조사 및 보고규정｣상 대형화재는 사망자 5명 이상, 사상자 10명 이상 또는 재산피해액 50억 원 이상인 화재를 말하며, 이재민 100명 이상 발생 화재는 중요화재에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢화재조사 및 보고규정｣상 방화 등 화재원인이 특이하다고 인정되는 화재, 외국공관 화재, 항공기·철도·외항선·발전소 화재는 중요화재가 아니라 '특수화재'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재조사는 관계 공무원이 화재 사실을 인지하는 즉시 실시하며, 화재현장에서 부상을 당한 후 72시간 이내에 사망한 경우에는 당해 화재로 인한 사망자로 본다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>낮은 산소분압에서 화재 초기에 화염 없이 연기만 내며 일어나는 연소를 '훈소연소'라 하며, 유류나 가스 화재는 무염착화 없이 즉시 발염착화로 이어진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>건물의 소실정도 구분에서 전소란 건물 입체면적의 70퍼센트 이상이 소실된 화재(또는 잔존부분 보수 재사용 불가)를 말하고, 반소는 30퍼센트 이상 70퍼센트 미만이 소실된 것을 말하며, 부분소는 30퍼센트 미만이 소실된 것을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢화재조사 및 보고규정｣상 이재민 100명 이상 발생 화재는 특수화재가 아니라 '중요화재'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>건축·구조물 화재의 소실정도(전소·반소·부분소)는 '입체면적'에 대한 비율을 적용하여 구분하고, 건물의 소실면적 산정은 '바닥면적'으로 산정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>비수용성 중질유 화재 시 무상주수(물분무)를 하면 수증기 팽창에 의한 '질식소화'와 유류 표면 에멀션(Emulsion) 층 형성에 의한 '유화소화' 및 냉각소화 효과를 기대할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢화재조사 및 보고규정｣상 동일 소방대상물에서 동일 누전점이나 지진·낙뢰, 또는 동일범의 방화로 2개소 이상에서 발생한 화재는 1건으로 취급하나, '누전점이 다른 2개소 이상에서 발생한 화재'는 별개의 건수로 산정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>주방화재(K급 화재)의 가연물인 식용유는 발화점이 끓는점(비점)보다 낮아 유면상의 화염을 제거한 후에도 잔열에 의해 스스로 재발화하기 쉽다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢화재조사 및 보고규정｣상 건물의 소실면적 산정은 '소실 바닥면적'으로 산정하며, 자산에 대한 최종잔가율은 건물·부대설비·구축물·가재도구는 20퍼센트, 그 이외의 자산은 10퍼센트로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>통전 중인 배전반 화재는 C급(전기화재)이지만, 전원이 차단된 콘센트에서 발생한 화재는 A급(일반화재)에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재피해조사에서 건물 피해산정 추정액은 '신축단가 × 소실면적 × [1 − (0.8 × 경과연수 / 내용연수)] × 손해율' 공식으로 산출하며, 신축단가 100만 원, 소실면적 50㎡, 경과연수 10년, 내용연수 40년, 손해율 50퍼센트일 때 피해추정액은 2,000만 원이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢소방의 화재조사에 관한 법률 시행령｣상 화재합동조사단의 단원 자격에는 화재조사관, 화재조사 경력 3년 이상 소방공무원, 관련 분야 조교수 이상 3년 이상 재직자, 안전관리 분야 '산업기사 이상' 자격 취득자가 해당하며 기능사는 제외된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[소방기관에서 실시하는 화재조사] 화재원인조사에는 소방·방화시설의 조사는 포함되지 않는다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[전기화재 및 주방화재] 식용유로 인한 화재 시 유면상의 화염을 제거하면 복사열에 의한 기화를 차단하여 재발화를 방지할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[｢화재조사 및 보고규정｣] 건물의 소실면적 산정은 소실 입체면적으로 산정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>K급 화재(주방화재)용 소화기의 소화성능시험은 B급 화재 (유류화재)용 소화기의 소화성능시험에 따른다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>전기화재(C급)의 발화 원인 중 노후된 콘센트나 플러그 칼날 사이의 절연물 표면에 수분·먼지·염분 등이 부착되어 미소 방전이 반복되면서 절연물이 탄화되어 도전로가 형성되는 현상을 아산화동 증식 발열(장기 초열) 현상이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>전선에 전류(I)가 흐를 때 도체의 저항(R)에 의해 발생하는 줄열(Joule's Heat)은 전류(I)에 정비례하고 도체의 저항(R)에 반비례하며 통전 시간(t)에 비례한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>전선의 절연 피복이 손상되어 양극(+)과 음극(-)의 도체가 서로 직접 접촉함으로써 저항이 급격히 커지고 전류가 차단되는 현상을 단락(합선, Short Circuit)이라 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>D급 가연성 금속화재 전용 소화약제 중 메트-L-X(Met-L-X) 분말은 탄산수소나트륨(NaHCO₃)을 주성분으로 하여 열분해 시 이산화탄소를 방출하고, 리스-X(Lith-X) 및 G-1 분말은 흑연(Graphite)을 주성분으로 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>나트륨(Na), 칼륨(K), 마그네슘(Mg) 같은 D급 금속화재에는 물은 사용할 수 없으나, 불연성 기체인 이산화탄소(CO₂)나 제3종 인산암모늄 분말소화약제는 안전하게 사용할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이산화탄소(CO₂) 소화약제와 불활성기체(IG-100, IG-541 등) 소화약제는 산소 농도를 낮추는 질식소화 효과와 활성 라디칼을 제거하는 화학적 부촉매 소화효과를 동시에 발휘한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:② · 03:④ · 04:① · 05:④ · 06:② · 07:④ · 08:② · 09:② · 10:③ · 11:① · 12:② · 13:② · 14:③ · 15:③ · 16:①</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 09 · 제3편 화재론 및 소화약제론 · 제1장 (16문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 구 ｢소방기본법 시행규칙｣ 및 현행 ｢소방의 화재조사에 관한 법률｣상 화재조사는 '화재원인조사(발화원인, 발견·통보·초기소화, 연소경로 및 확대원인, 피난경로·피난상 장애요인, 소방·방화시설의 사용 또는 작동 상황)'와 '화재피해조사(인명피해, 재산피해)'로 구분됩니다. 화재보험 가입 여부나 재산 가액은 화재원인조사가 아닌 피해조사(또는 기타 참고사항) 영역입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재보험 가입 여부 등의 상황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '화재보험 가입 여부 등의 상황'은 화재가 왜 발생하고 어떻게 확대되었는지를 규명하는 '화재원인조사'의 법정 범위에 해당하지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방시설의 사용 또는 작동 등의 상황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소방시설의 사용 또는 작동 등의 상황은 화재원인조사(연소 확대 및 대응 관련)의 법정 범위에 포함됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">피난경로, 피난상의 장애요인 등의 상황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 피난경로, 피난상의 장애요인 등의 상황은 화재원인조사의 법정 범위에 포함됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재의 연소경로 및 확대원인 등의 상황</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 화재의 연소경로 및 확대원인 등의 상황은 화재원인조사의 핵심 법정 범위입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q16</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">냉각소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 냉각소화는 물 등을 주수하여 가연물의 온도를 인화점·발화점 미만으로 낮추는 소화 방법입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">질식소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 공기 중 산소농도 21퍼센트를 불활성기체 등으로 희석하거나 포로 덮어 15퍼센트 이하로 저하시킴으로써 산소 부족으로 연소를 중단시키는 방법은 '질식소화'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제거소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제거소화는 가스 밸브를 잠그거나 산불 시 방화선(벌목)을 구축하여 가연물 자체를 없애는 소화 방법입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">유화소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 유화소화(에멀션 소화)는 중질유 화재 표면에 무상주수하여 물방울과 기름이 섞인 에멀션 층을 형성해 유증기 증발을 막는 소화 방법입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 이재민 발생 보고 기준은 50명이 아니라 '100명 이상'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">사망자가 6명 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 사망자가 5명 이상 발생한 화재(선지는 6명)는 대형화재로서 즉시 보고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">사상자가 11명 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 사상자가 10명 이상 발생한 화재(선지는 11명)는 대형화재로서 보고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">재산피해액이 70억 원 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 재산피해액이 50억 원 이상 발생한 화재(선지는 70억 원)는 대형화재로서 보고 대상입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">이재민이 50명 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 이재민 발생에 따른 중요화재 보고 기준은 '이재민 100명 이상 발생 화재'이므로, 이재민 50명 발생 화재는 보고 대상 기준에 미달합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q7</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재조사 및 보고규정｣에서 '특수사고, 방화 등 화재원인이 특이하다고 인정되는 화재'는 중요화재가 아니라 '특수화재'로 분류됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">방화는 중요화재에 해당한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢화재조사 및 보고규정｣상 '방화' 등 화재원인이 특이한 화재나 외국공관·항공기·철도·발전소 화재는 중요화재가 아니라 '특수화재'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재조사에는 화재원인조사와 화재피해조사가 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 화재조사는 발화·연소 원인을 밝히는 '화재원인조사'와 인명·재산 피해액을 산정하는 '화재피해조사'로 구분됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재조사는 관계 공무원이 화재 사실을 인지하는 즉시 실시하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 화재조사는 관계 공무원이 화재 사실을 인지하는 즉시 실시하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재현장에서 부상을 당한 후 72시간 이내에 사망한 경우에는 당해 화재로 인한 사망자로 본다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 화재현장에서 직접 사망한 자뿐만 아니라 화재로 부상을 당한 후 '72시간 이내에 사망한 경우'에도 당해 화재로 인한 사망자로 봅니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 목재와 같은 고체 셀룰로오스 가연물은 가열 시 열분해와 숯(탄화층) 형성으로 인해 초기에는 불꽃이 없는 '무염착화(훈소)'를 거쳐 온도가 더 상승하면 '발염착화'로 이어지는 경우가 일반적입니다(반면 유류나 가스는 증기가 즉시 불꽃을 내는 발염착화만 일어남).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 목조건축물 등 고체 셀룰로오스 가연물은 일반적으로 초기 '무염착화(훈소)'를 거쳐 발염착화로 이어지므로 ㄴ이 틀렸으며, 옳은 설명인 ㄷ과 ㄹ이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ(A급 일반화재 정의)과 ㄹ(전소: 70퍼센트 이상 소실) 외에 ㄱ(낮은 산소분압에서 화염 없이 일어나는 훈소연소의 정의)도 옳은 설명이므로 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ이 틀렸습니다. 유류·가스 화재가 무염착화 없이 즉시 발염착화로 이어지며, 목조건축물 화재는 초기에 무염착화(훈소)를 거쳐 발염착화로 전이될 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 낮은 산소분압에서 화염 없이 타는 훈소연소( ㄱ ), 면화류·합성수지·목재 등 재를 남기는 A급 일반화재( ㄷ ), 건물 입체면적 또는 바닥면적의 70퍼센트 이상이 소실된 전소( ㄹ ) 설명이 모두 옳으므로 ㄱ, ㄷ, ㄹ이 정답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q7</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">외국공관 및 그 사택의 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 외국공관 및 그 사택의 화재는 외교적 특수성이 있어 '특수화재'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">이재민 100명 이상 발생 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '이재민 100명 이상 발생 화재'는 특수화재가 아니라 '중요화재'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">특수사고, 방화 등 화재원인이 특이하다고 인정되는 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 특수사고, 방화 등 화재원인이 특이하다고 인정되는 화재는 '특수화재'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">철도, 항구에 매어 둔 외항선, 항공기, 발전소 및 변전소의 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 철도, 항구에 매어 둔 외항선, 항공기, 발전소 및 변전소의 화재는 '특수화재'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 2018년 15번과 동일하게 '소방·방화시설의 사용 또는 작동 상황'은 화재원인조사의 필수 포함 항목입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재조사는 관계 공무원이 화재사실을 인지하는 즉시 실시한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 화재조사는 관계 공무원이 화재사실을 인지하는 즉시 실시합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재조사는 강제성을 지니며, 프리즘식으로 진행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소방기관의 화재조사는 법령에 따른 공권력 행사로서 강제성을 지니며, 다각도에서 원인을 입체적으로 규명하는 프리즘식 조사 방식으로 진행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재조사 시 건축·구조물 화재의 소실정도는 입체면적 에 대한 비율을 적용하여 구분한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 건축·구조물 화재의 소실정도(전소·반소·부분소)는 건물의 '입체면적'에 대한 소실 비율을 적용하여 구분합니다(단, 소실면적 산정 자체는 바닥면적 기준).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">화재원인조사에는 소방·방화시설의 조사는 포함되지 않는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 화재원인조사에는 발화원인뿐만 아니라 연소 확대 및 피난에 영향을 미친 '소방·방화시설의 사용 또는 작동 등의 상황'에 대한 조사가 반드시 포함됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 중유 등 비수용성 중질유 화재 시 물을 안개 모양(무상·분무상)으로 주수하면, 첫째 물방울이 기화하며 약 1,700배 팽창하여 산소를 차단하는 '질식소화'와 냉각소화가 일어나고, 둘째 유류 표면에 물과 기름이 섞인 에멀션(유화층)이 형성되어 가연성 증기 발생을 억제하는 '유화소화(피복소화)' 효과를 동시에 거둘 수 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">질식소화, 부촉매소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 물은 화학적 연쇄반응을 끊는 부촉매소화 효과가 전혀 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">질식소화, 유화소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 중질유 화재에 무상주수(물분무)를 하면 수증기 팽창에 의한 '질식소화'와 유류 표면 에멀션 층 형성에 의한 '유화소화'(및 냉각소화) 효과를 기대할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">유화소화, 타격소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 타격소화(파괴소화)는 봉상주수의 강한 수압으로 불꽃을 때려 끄는 방식으로서 유류화재에 봉상주수를 하면 기름이 비산하여 화재가 확대되므로 절대 금지됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">피복소화, 타격소화</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 비수용성 중질유 화재에 무상주수할 때 나타나는 효과는 '유화소화(에멀션 형성)'와 '질식·냉각소화'이며, 타격소화는 유류를 비산시켜 화재를 확대하므로 사용할 수 없습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 동일 소방대상물 내라도 '누전점이 다른 2개소 이상에서 발생한 화재'는 발화원이 서로 독립적이므로 각각 별개의 화재(2건 이상)로 산정합니다(반면 동일 누전점에서 여러 곳으로 발화한 경우, 지진·낙뢰 등 동일 자연재해로 인한 다발 화재, 동일범에 의한 방화·불장난은 1건으로 취급).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">한 곳에서 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 한 곳(1개 발화점)에서 발생하여 연소 확대된 화재는 1건의 화재로 취급합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">누전점이 다른 2개소 이상에서 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '동일 누전점'에서 발생한 여러 곳의 화재는 1건으로 취급하지만, '누전점이 다른 2개소 이상에서 발생한 화재'는 각각 별개의 화재 건수로 산정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지진, 낙뢰 등 자연환경에 의해 발생한 여러 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 지진, 낙뢰 등 동일한 자연환경(자연재해)에 의해 동일 대상물에서 발생한 여러 화재는 1건의 화재로 취급합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">동일범에 의한 방화 또는 불장난으로 2개소 이상에서 발생한 화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 동일범(같은 사람)에 의한 방화 또는 불장난으로 동일 대상물 내 2개소 이상에서 발생한 화재는 1건의 화재로 취급합니다(단, 각기 다른 사람에 의한 방화는 별건으로 산정).
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 주방화재(K급 화재)의 가연물인 동·식물성 식용유는 '발화점(약 섭씨 288도에서 385도)이 비점(끓는점, 약 섭씨 360도에서 400도 이상)보다 낮다'는 결정적 특징을 지닙니다. 따라서 유면상의 화염만 일시적으로 제거하더라도 식용유 내부 온도가 여전히 발화점 이상으로 남아 있어 즉시 '재발화'하므로, 비누화 반응으로 유면을 밀봉하고 식용유 온도를 발화점 미만으로 급격히 냉각시키는 K급 소화기를 사용해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">주방화재의 가연물 중 하나인 식용유의 발화점은 비점 보다 낮다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 주방화재(K급)의 가연물인 식용유는 일반 인화성 액체와 달리 발화점이 비점(끓는점)보다 낮습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">도체 주위의 자기장 변화에 의해 발생된 유도전류는 전기 화재의 점화원으로 작용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 도체 주위의 자기장 변화에 의해 발생된 유도전류에 의한 발열은 전기화재(C급)의 점화원으로 작용할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">식용유로 인한 화재 시 유면상의 화염을 제거하면 복사열에 의한 기화를 차단하여 재발화를 방지할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 식용유는 발화점이 비점보다 낮고 열용량이 커서, 유면상의 화염만 제거하더라도 식용유 자체의 높은 온도(발화점 이상) 때문에 산소와 접촉하는 순간 스스로 '재발화'합니다. 따라서 화염 제거만으로는 재발화를 방지할 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">전기화재의 발생 원인 중 누전은 전류가 전선이나 기구 에서 절연 불량 등의 원인으로 정해진 전로(배선) 밖으로 흐르는 현상이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 누전(지락)은 절연 불량 등의 원인으로 전류가 정해진 전로(배선) 밖으로 흘러나가는 현상으로서 대표적인 전기화재 원인입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재조사 및 보고규정｣에서 건물의 '소실정도(전소·반소·부분소)'를 구분할 때는 입체면적 비율을 쓰지만, 건물의 '소실면적(㎡) 산정'은 입체면적이 아니라 '소실 바닥면적(수평투영면적)'으로 산정합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">건물의 소실면적 산정은 소실 입체면적으로 산정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 건물의 '소실면적 산정'은 소실 입체면적이 아니라 '소실 바닥면적'으로 산정합니다(입체면적은 전소·반소·부분소 등 소실정도 구분 시 적용).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">건물의 소실정도에서의 반소는 건물의 30 % 이상 70 % 미만이 소실된 것을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 건물의 소실정도에서 반소는 건물 입체면적의 30퍼센트 이상 70퍼센트 미만이 소실된 것을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">건물 등 자산에 대한 최종잔가율은 건물·부대설비·구축물· 가재도구는 20 %로 하며, 그 이외의 자산은 10 %로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 건물 등 자산 피해액 산정 시 적용하는 최종잔가율은 건물·부대설비·구축물·가재도구는 20퍼센트(상각률 계수 0.8), 그 이외의 자산은 10퍼센트(상각률 계수 0.9)로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">발화일시의 결정은 관계인등의 화재발견 상황통보(인지) 시간 및 화재발생 건물의 구조, 재질 상태와 화기취급 등의 상황을 종합적으로 검토하여 결정한다. 다만, 자체진화 등 사후인지 화재로 그 결정이 곤란한 경우에는 발화시간을 추정할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 발화일시는 화재발견 통보시간, 건물 구조·재질, 화기취급 상황 등을 종합 검토하여 결정하되, 자체진화 등 사후인지 화재로 결정이 곤란한 경우 발화시간을 추정할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q13</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 특히 C급 전기화재는 반드시 '전기가 통하고 있는(통전 중인) 전기설비' 화재여야 하며, '전원이 차단된 콘센트(플라스틱 절연물)'에서 난 불은 C급이 아니라 'A급 일반화재'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄱ(통전 중인 배전반 화재)은 전기가 흐르고 있으므로 'C급 화재(전기화재)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ㄴ(외출 시 전원이 차단된 콘센트에서 불이 난 경우)은 통전 상태가 아니므로 합성수지·절연물이 타는 'A급 화재(일반화재)'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄹ(실험실 나트륨 분말 화재)은 알칼리금속 화재이므로 'D급 화재(금속화재)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄱ은 C급(전기화재), ㄷ(새어 나온 석유 화재)은 B급(유류화재), ㄹ은 D급(금속화재)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재조사 및 보고규정｣상 건축물 화재 재산피해액 산정 공식을 적용하는 계산 문항입니다. 건물 피해산정 추정액 = 신축단가 × 소실면적 × [1 − (0.8 × 경과연수 ÷ 내용연수)] × 손해율 공식에 대입하면, 1,000,000원 × 50㎡ × [1 − (0.8 × 10 ÷ 40)] × 0.5 = 50,000,000원 × (1 − 0.2) × 0.5 = 50,000,000원 × 0.8 × 0.5 = 20,000,000원이 됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">16,000,000원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 상각 후 잔가율(0.8)이나 손해율(0.5) 적용을 누락한 오답 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">20,000,000원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 건물 피해추정액 = 1,000,000원/㎡ × 50㎡ × [1 − (0.8 × 10년 ÷ 40년)] × 0.5 = 50,000,000원 × 0.8 × 0.5 = 20,000,000원입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">24,000,000원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 감가상각률(0.2)만 곱하거나 계산식을 잘못 적용한 수치입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">28,000,000원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 손해율(50%)을 곱하지 않은 감가상각 후 건물 현재가액(40,000,000원)에 가까우나 오답입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 기능사 자격자는 해당하지 않습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">화재조사관</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 시행령 제7조제2항제1호에 따라 '화재조사관'은 단원이 될 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">화재조사 업무에 관한 경력이 4년인 소방공무원</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제2호에 따라 '화재조사 업무 경력이 3년 이상인 소방공무원'(선지는 4년)은 단원이 될 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">국가기술자격의 직무분야 중 안전관리 분야에서 기능사 자격을 취득한 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 제4호에 따라 국가기술자격 안전관리 분야에서는 기능사가 아니라 '산업기사 이상의 자격을 취득한 사람'이어야 화재합동조사단 단원으로 위촉할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">｢고등교육법｣ 제2조에 따른 학교 또는 이에 준하는 교육 기관에서 화재조사, 소방 또는 안전관리 등 관련 분야에 조교수로 4년 재직한 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제3호에 따라 고등교육법상 학교에서 관련 분야 '조교수 이상의 직에 3년 이상 재직한 사람'(선지는 4년)은 단원이 될 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> K급 화재용 소화기는 고온 식용유 화재의 재발화 방지 능력을 검증해야 하므로 B급(일반 유류화재) 소화성능시험이 아니라 별도의 전용 'K급 화재용 소화기 소화성능시험(식용유 조리기구 화재 시험)'을 따릅니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">주방에서 동·식물유를 취급하는 조리기구에서 일어나는 화재를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] K급 화재(Kitchen Fire)는 주방에서 동·식물유를 취급하는 튀김기 등 조리기구에서 일어나는 화재를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">비누화 반응을 일으키는 NaHCO3를 주성분으로 하는 소화 약제를 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 식용유(에스테르 화합물)와 반응하여 유면에 비누 거품층을 형성하는 비누화 반응(Saponification)을 일으키는 칼륨염·나트륨염(K₂CO₃, KHCO₃, NaHCO₃ 등 알칼리염류) 계열 소화약제를 사용할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">K급 화재(주방화재)용 소화기의 소화성능시험은 B급 화재 (유류화재)용 소화기의 소화성능시험에 따른다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] ｢소화기구의 형식승인 및 제품검사의 기술기준｣상 K급 화재용 소화기의 소화성능시험은 B급(휘발유·노르말헵탄) 소화성능시험에 따르는 것이 아니라, 식물성 식용유를 가열·발화시켜 재발화 여부까지 판정하는 별도의 'K급 화재용 소화기 소화성능시험' 기준에 따릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">식용유에 의한 화재 시 식용유의 발화점이 끓는점보다 낮아 화염을 제거한 후에도 재발화할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 식용유는 발화점이 끓는점(비점)보다 낮아 화염을 제거한 후에도 식용유 온도가 발화점 이상이면 다시 재발화할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q10</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> - ㄱ: '소방대에 의한 소화활동의 필요성이 사라진 시간'은 초진 시간이 아니라 '완진(진화완료) 시간'입니다(초진 시간은 화세가 진압되어 연소 확대 우려가 사라진 시간).
+- ㄴ: 병원 치료를 필요로 하지 않고 단순히 연기만 흡입한 사람은 부상자(경상)에서 '제외'합니다.
+- ㄷ: 동일범이 아닌 '각기 다른 사람에 의한 방화·불장난'은 동일 대상물이라도 각각 별개의 화재(여러 건)로 산정합니다.
+따라서 옳지 않은 것은 ㄱ, ㄴ, ㄷ입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ㄱ(완진 시간을 초진 시간으로 잘못 설명), ㄴ(치료 불필요 단순 연기흡입자는 부상자 제외), ㄷ(서로 다른 사람의 방화는 별건 산정) 세 가지가 모두 틀렸고, ㄹ(40퍼센트 소실 시 반소)과 ㅁ(감정 의뢰 시 보고 기한 연장 가능)은 옳으므로 틀린 것만을 고른 정답은 'ㄱ, ㄴ, ㄷ'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄹ은 30퍼센트 이상 70퍼센트 미만 소실이고 보수 재사용 가능하므로 '반소'가 맞습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 옳지 않은 설명을 고르는 문항인데, 틀린 설명인 ㄱ(소화활동 필요성이 사라진 시간은 초진이 아니라 '완진 시간')이 누락되었고 옳은 설명인 ㄹ(입체면적 30% 이상 70% 미만 소실은 반소)이 잘못 포함되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄱ, ㄴ, ㄷ은 규정에 어긋나는 틀린 설명이지만, ㄹ(반소의 기준)과 ㅁ(화재감정 의뢰 시 보고 기한 연장)은 규정에 부합하는 옳은 설명이므로 제외해야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:O · 20:O · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>A급(백색·냉각), B급(황색·질식 및 억제), C급(청색·비전도성 약제), D급(무색·특수 가연성 금속소화기 및 건조사 피복)의 4대 표지 바탕색은 필수 암기 사항입니다.
+            <span class="ox-exp-src">화재분류 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>주방 식용유 화재에 물을 봉상 주수하면 슬롭오버로 인해 기름이 비산·팽창하여 화재가 급격히 확대됩니다. 알칼리염류 K급 전용 약제를 통한 비누화 질식 및 냉각이 정석입니다.
+            <span class="ox-exp-src">화재분류 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>가연물 자체를 제거하거나 가연성 물질의 공급 경로를 원천 차단하는 물리적 소화원리는 제거소화입니다.
+            <span class="ox-exp-src">소화원리 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>활성 라디칼을 포획하여 연소의 연쇄반응을 화학적으로 억제하는 것은 '부촉매소화(억제소화)'입니다.
+            <span class="ox-exp-src">소화원리 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>화재원인조사는 발화·연소확대·피난장애·소방시설 작동 상황을 조사하며, 화재보험 가입 여부는 화재원인조사 범위가 아닙니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>산소공급원을 차단하거나 산소농도를 한계산소농도(통상 15퍼센트) 이하로 낮추는 물리적 소화원리는 질식소화입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>대형화재(사망 5명·사상 10명·재산피해 50억 원 이상)와 중요화재(이재민 100명 이상 등)의 기준 수치를 정확히 구분해야 합니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>이재민 100명 이상이나 관공서·학교·문화재 화재는 '중요화재'이고, 방화·외국공관·운송수단(항공기·철도·외항선)·발전소 화재는 '특수화재'입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>화재 부상 후 72시간(3일) 이내 사망자는 화재 사망자로 산정합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>목재·섬유 등 고체 화재는 무염착화(훈소) 후 발염착화로 진행될 수 있으나, 기체·액체 화재는 항상 발염착화로 시작됩니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>전소(70퍼센트 이상), 반소(30퍼센트 이상 70퍼센트 미만), 부분소(30퍼센트 미만)의 소실정도 기준은 빈출 수치입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>이재민 100명 이상 화재는 관공서·학교·문화재·지하철 화재와 함께 중요화재로 분류됩니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q7 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>소실정도(전소·반소·부분소 판정)는 입체면적 비율로 따지고, 피해액 계산을 위한 소실면적(㎡) 산정은 바닥면적(수평투영면적)으로 산정합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>중질유 화재에 봉상주수는 유류를 비산시켜 금지되지만, 미세한 무상주수는 유화(에멀션)작용과 질식·냉각작용으로 소화가 가능합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>동일 누전점은 1건, 서로 다른 누전점은 별건이며, 동일범 방화는 1건, 서로 다른 사람의 방화는 별건으로 취급합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>식용유는 발화점이 비점보다 낮으므로 단순 화염 제거만으로는 재발화를 막을 수 없으며, 비누화 피막 형성과 발화점 미만으로의 냉각이 필수적입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q12 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>소실면적은 바닥면적으로 산정하고 소실정도(전소·반소·부분소)는 입체면적으로 구분하며, 건물·가재도구의 최종잔가율은 20퍼센트입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>전기가 통하고 있는 상태에서만 C급 전기화재로 분류되며, 전원이 차단된 전기기구 화재는 A급 일반화재로 분류합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q13 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>1,000,000 × 50 × [1 − (0.8 × 10/40)] × 0.5 = 50,000,000 × 0.8 × 0.5 = 20,000,000원이 됩니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>시행령 제7조제2항은 안전관리 분야 국가기술자격 기준을 '산업기사 이상'으로 규정하고 있으므로 기능사는 위촉 대상이 아닙니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>K급 소화기는 식용유 전용 소화성능시험을 거치며, 알칼리염류 약제와 유류의 비누화 반응 및 냉각작용으로 재발화를 차단합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q9 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>초진(연소확대 우려 소멸)과 완진(소화활동 필요성 소멸)의 정의를 바꿔치기하는 함정에 유의해야 합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>단순 연기흡입(비치료)은 부상자에서 제외하며, 서로 다른 사람에 의한 방화는 각각 별건의 화재로 산정합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q10 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>화재조사는 발화·연소 원인을 밝히는 '화재원인조사'와 인명·재산 피해액을 산정하는 '화재피해조사'로 구분됩니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q7 · 화재조사 및 보고규정상 특수화재(방화)와 화재사망자(72시간 이내) 기준</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 25 · O 옳음</span>소방기관의 화재조사는 법령에 따른 공권력 행사로서 강제성을 지니며, 다각도에서 원인을 입체적으로 규명하는 프리즘식 조사 방식으로 진행합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q1 · 소방기관 화재조사의 성격·방식·입체면적 기준 및 원인조사 범위</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 26 · O 옳음</span>건축·구조물 화재의 소실정도(전소·반소·부분소)는 건물의 '입체면적'에 대한 소실 비율을 적용하여 구분합니다(단, 소실면적 산정 자체는 바닥면적 기준).
+            <span class="ox-exp-src">2022년 소방공채·경채 Q1 · 소방기관 화재조사의 성격·방식·입체면적 기준 및 원인조사 범위</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>화재원인조사에는 발화원인뿐만 아니라 연소 확대 및 피난에 영향을 미친 '소방·방화시설의 사용 또는 작동 등의 상황'에 대한 조사가 반드시 포함됩니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q1 · 소방기관 화재조사의 성격·방식·입체면적 기준 및 원인조사 범위</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>식용유는 발화점이 비점보다 낮고 열용량이 커서, 유면상의 화염만 제거하더라도 식용유 자체의 높은 온도(발화점 이상) 때문에 산소와 접촉하는 순간 스스로 '재발화'합니다. 따라서 화염 제거만으로는 재발화를 방지할 수 없습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q12 · 전기화재(C급) 및 주방 식용유 화재(K급)의 발화점·비점 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>건물의 '소실면적 산정'은 소실 입체면적이 아니라 '소실 바닥면적'으로 산정합니다(입체면적은 전소·반소·부분소 등 소실정도 구분 시 적용).
+            <span class="ox-exp-src">2023년 소방공채·경채 Q18 · 화재조사 및 보고규정상 소실면적 산정·반소 기준·최종잔가율</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>｢소화기구의 형식승인 및 제품검사의 기술기준｣상 K급 화재용 소화기의 소화성능시험은 B급(휘발유·노르말헵탄) 소화성능시험에 따르는 것이 아니라, 식물성 식용유를 가열·발화시켜 재발화 여부까지 판정하는 별도의 'K급 화재용 소화기 소화성능시험' 기준에 따릅니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q9 · K급 화재(주방화재)의 정의·비누화 반응 및 소화성능시험</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

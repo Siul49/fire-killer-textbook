@@ -1,0 +1,3315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 01 · 인쇄용] 제1편 소방기본법 · 제1장 총칙, 소방기관의 설치 및 119종합상황실 · 소방관계법규</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        
+        <span class="ctrl-btn active">DAY 01</span>
+        <a href="DAY02_01_02_소방력기준_국고보조와_안전교육_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(14제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 01 · 제1편 소방기본법 · 제1장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(14문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">총칙, 소방기관의 설치 및 119종합상황실</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 왜 소방기본법이 가장 먼저 등장할까? — 법의 목적(제1조)과 6대 법정 용어(제2조)의 경계</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>선박 범위(제2조 제1호)</strong>: <strong>항구에 매어둔 선박</strong>만 소방대상물에 해당 (운항 중인 선박 ×)</li>
+                <li><strong>관계인(제2조 제3호)</strong>: 소유자 · 관리자 · 점유자 3자 모두 포함</li>
+                <li><strong>소방대(제2조 제5호)</strong>: 소방공무원 · 의무소방원 · 의용소방대원 (<strong>자위소방대원 · 자체소방대원 ×</strong>)</li>
+                <li><strong>대상물 포함 관계</strong>: 소방대상물 &gt; 특정소방대상물 &gt; 소방안전관리대상물 &gt; 특별관리시설물(가스 제외)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            소방관계법규라는 거대한 집을 지을 때 가장 밑바탕이 되는 주춧돌이 바로 <strong>｢소방기본법｣</strong>입니다. 과거의 소방행정은 단순히 "불이 나면 달려가서 끈다"는 소극적인 질서 유지에 머물러 있었습니다. 하지만 현대 사회에서는 초고층 빌딩 화재부터 화학공장 폭발, 지진과 테러, 심지어 일상 속 응급환자 이송까지 재난의 얼굴이 비교할 수 없을 만큼 복잡해졌습니다. 그래서 <strong>｢소방기본법｣ 제1조(목적)</strong>는 화재를 예방·경계하거나 진압하는 것뿐만 아니라, 화재, 재난·재해, 그 밖의 위급한 상황에서의 <strong>구조·구급 활동</strong>을 통하여 국민의 생명·신체 및 재산을 보호함으로써 <strong>공공의 안녕 및 질서 유지와 복리증진</strong>에 이바지함을 목적으로 선언하고 있습니다. 즉 단순히 당장의 위험을 막는 소극적 경찰 작용(공공의 안녕 및 질서 유지)을 넘어, 국민이 안심하고 살아갈 수 있는 삶의 질(복리증진)까지 적극적인 행정 서비스로 책임지겠다는 국가의 선언인 셈입니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그렇다면 소방관이 보호하고 불을 꺼야 하는 대상은 어디까지일까요? <strong>｢소방기본법｣ 제2조 제1호</strong>는 이를 <strong>소방대상물</strong>이라 부르며 건축물, 차량, 선박(｢선박법｣ 제1조의2 제1항에 따른 선박으로서 <strong>항구에 매어둔 선박</strong>만 해당한다), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건으로 규정합니다. 여기서 누구나 한 번쯤 <strong>"왜 하필 선박 중에서 항구에 매어둔 선박만 소방대상물이라고 못 박았을까?"</strong>라는 의문이 들기 마련입니다. 이유는 지극히 현실적입니다. 망망대해를 항해(운항) 중인 배에서 불이 나면 육상의 소방펌프차나 고가사다리차가 바다 위로 달려갈 수 없으므로 경비정을 보유한 해양경찰청이 관할해야 합니다. 반대로 부두나 항구에 밧줄로 묶여 정박해 있는 선박은 육상 소방차량이 부두까지 진입해 호스를 연결하고 직접 진압할 수 있기 때문에 육상 소방의 관할인 '소방대상물'로 한정한 것입니다. 아울러 불이 난 건물만 통제해서는 옆 건물로 번지는 복사열과 불길을 막을 수 없으므로, 소방대상물이 있는 장소뿐만 아니라 <strong>그 이웃 지역</strong>으로서 예방·경계·진압·구조·구급 활동에 필요한 지역까지 묶어 <strong>관계지역</strong>(<strong>제2조 제2호</strong>)이라 부릅니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            이렇게 보호해야 할 대상(소방대상물)이 정해졌다면, 평소에 그 건물을 안전하게 관리하고 불이 났을 때 1차적으로 책임을 져야 할 민간 측 당사자가 있어야 합니다. <strong>법 제2조 제3호</strong>는 이 사람들을 <strong>관계인</strong>이라 부르며, 소방대상물의 <strong>소유자·관리자 또는 점유자</strong> 세 사람을 모두 포함시킵니다. 왜 건물주(소유자) 한 사람만 적지 않고 관리소장(관리자)과 세입자(점유자)까지 전부 관계인으로 묶어 두었을까요? 만약 소유자만 관계인으로 정해 두면, 건물주는 "나는 임대만 줬고 실제 영업은 세입자가 했다"며 발을 빼고, 세입자는 "내 소유 건물이 아니니 내 책임이 아니다"라며 서로 안전관리 의무를 떠넘기는 책임 공백이 생기기 때문입니다. 나아가 분법들과의 관계를 미리 연결해 두면 훨씬 이해가 쉬운데, 산림·차량·물건까지 모두 포괄하는 가장 넓은 그물이 ｢소방기본법｣ 제2조 제1호의 <strong>소방대상물</strong>이라면, 그중 대통령령으로 정한 건축물 등만 추려 스프링클러 같은 소방시설 설치 의무를 지우는 것이 ｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제3호의 <strong>특정소방대상물</strong>이고, 그중에서도 규모가 커서 전문 안전관리자를 반드시 선임해야 하는 건물이 ｢화재의 예방 및 안전관리에 관한 법률｣ 제24조 제1항의 <strong>소방안전관리대상물</strong>이며, 그중 공항·철도·항만 등 핵심 국가기반시설이 같은 법 시행령 제43조의 <strong>소방안전 특별관리시설물</strong>(가스시설 제외 시)입니다. 따라서 네 개념은 <strong>'소방대상물 &gt; 특정소방대상물 &gt; 소방안전관리대상물 &gt; 소방안전 특별관리시설물(가스 제외)'</strong>이라는 명확한 동심원 부분집합 관계를 이룹니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            민간에 건물을 지키는 '관계인'이 있다면, 공공 영역에는 불길이 치솟는 현장에 뛰어들어 강제처분 같은 공권력을 행사하며 불을 끄고 사람을 구하는 조직체가 있습니다. <strong>법 제2조 제5호</strong>는 이 공적 조직체를 <strong>소방대</strong>라 부르며, 오직 <strong>소방공무원</strong>(｢소방공무원법｣에 따른 소방공무원), <strong>의무소방원</strong>(｢의무소방대설치법｣ 제3조에 따라 임용된 의무소방원), <strong>의용소방대원</strong>(｢의용소방대 설치 및 운영에 관한 법률｣에 따른 의용소방대원)의 세 주체로만 구성된다고 엄격히 못 박고 있습니다. 여기서 수험생들이 자주 궁금해하는 점이 <strong>"백화점이나 병원에 있는 자위소방대나 화학공장의 자체소방대도 이름에 '소방대'가 들어가는데 왜 법정 소방대가 아닐까?"</strong>라는 부분입니다. 자위소방대(화재예방법)나 자체소방대(위험물안전관리법)는 어디까지나 민간 기업이나 건물주가 자기 사업장을 초기 방어하기 위해 사원들로 편성한 사적 자구 조직일 뿐입니다. 만약 이들에게 법정 '소방대'의 지위를 주면, 민간인 직원이 남의 집 문을 강제로 부수거나 도로 통행을 막는 공권력까지 행사하게 되는 모순이 발생하므로 법정 소방대에서 철저히 제외한 것입니다. 또한 시·도에서 화재 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 <strong>소방본부장</strong>(<strong>제2조 제4호</strong>)이라 하고, 소방본부장 또는 소방서장 등 재난 현장에서 소방대를 직접 지휘하는 현장 사령관을 가리켜 <strong>소방대장</strong>(<strong>제2조 제6호</strong>)이라 부릅니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:22%;">법정 용어 (제2조)</th>
+                <th style="width:48%;">법문상 정확한 정의 (｢소방기본법｣ 제2조 제1호부터 제6호까지)</th>
+                <th>출제 시 자주 묻는 구분 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>소방대상물</strong> (제1호)</td>
+                <td>건축물, 차량, <strong>항구에 매어둔 선박</strong>(｢선박법｣ 제1조의2 제1항), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건</td>
+                <td>운항 중인 선박은 제외 (항구에 매어둔 선박만 해당)</td>
+              </tr>
+              <tr>
+                <td><strong>관계지역</strong> (제2호)</td>
+                <td>소방대상물이 있는 장소 및 <strong>그 이웃 지역</strong>으로서 예방·경계·진압·구조·구급 활동에 필요한 지역</td>
+                <td>'특정소방대상물'이 아니며, 이웃 지역까지 포함</td>
+              </tr>
+              <tr>
+                <td><strong>관계인</strong> (제3호)</td>
+                <td>소방대상물의 <strong>소유자·관리자 또는 점유자</strong></td>
+                <td>소유자·관리자·점유자 3자 모두 포함</td>
+              </tr>
+              <tr>
+                <td><strong>소방본부장</strong> (제4호)</td>
+                <td>시·도에서 화재 예방·경계·진압·조사 및 구조·구급 등의 <strong>업무를 담당하는 부서의 장</strong></td>
+                <td>시·도지사나 소방서장이 아닌 시·도 담당 부서의 장</td>
+              </tr>
+              <tr>
+                <td><strong>소방대</strong> (제5호)</td>
+                <td><strong>소방공무원, 의무소방원, 의용소방대원</strong>으로 구성된 조직체</td>
+                <td>민간 조직인 <strong>자위소방대원·자체소방대원·청원경찰</strong> 제외</td>
+              </tr>
+              <tr>
+                <td><strong>소방대장</strong> (제6호)</td>
+                <td>소방본부장 또는 소방서장 등 <strong>현장에서 소방대를 지휘하는 사람</strong></td>
+                <td>법정 용어는 '현장지휘관'이나 '소방조장'이 아닌 <strong>소방대장</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 소방기관의 설치(제3조)와 국가 소방계획(제6조)·소방기술민원센터(제4조의3)</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>소방기관 설치(제3조)</strong>: <strong>대통령령</strong> 위임 / 평시 <strong>시·도지사</strong> 지휘·감독, 필요시 <strong>소방청장</strong> 직접 지휘·감독</li>
+                <li><strong>종합계획(제6조·영 제1조의3)</strong>: <strong>소방청장</strong>이 <strong>5년마다</strong>(시행 전년도 10월 31일까지) 수립 / <strong>세부계획</strong>은 <strong>시·도지사</strong>가 <strong>매년</strong>(12월 31일까지) 수립해 <strong>소방청장</strong>에게 제출</li>
+                <li><strong>소방기술민원센터(제4조의3·영 제1조의2)</strong>: <strong>소방청장 또는 소방본부장</strong>이 설치(18명 이내) 및 관계 기관 직원 파견 요청 가능 (각 소방서 설치 ×, 센터장 파견 요청 ×)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            앞서 살펴본 소방대원들이 소속되어 일하는 관청인 <strong>소방기관(소방본부·소방서 등)의 설치에 필요한 사항은 어디서 정할까요?</strong> <strong>｢소방기본법｣ 제3조 제1항</strong>은 시·도의 화재 예방·경계·진압 및 조사, 소방안전 교육·홍보와 구조·구급 등의 업무를 수행하는 소방기관의 설치에 필요한 사항을 <strong>대통령령</strong>(｢지방소방기관 설치에 관한 규정｣)으로 정하도록 위임하고 있습니다(이에 따라 시·도지사 직속으로 소방본부를 둡니다). 제2장에서 배울 '소방력의 기준(인력·장비 배치 기준)'은 행정안전부령으로 정하면서, 왜 '소방기관의 설치'는 한 단계 더 높은 대통령령으로 정하도록 했을까요? 소방본부나 소방서라는 공식 행정관서를 신설하고 관할 구역의 뼈대를 짜는 일은 대한민국 행정조직의 근간을 다루는 중대한 문제이기 때문에, 장관령(행정안전부령)이나 지자체 조례에 맡기지 않고 반드시 국무회의 심의를 거치는 <strong>대통령령</strong>으로 통일해 규율하는 것입니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            그렇다면 이렇게 설치된 시·도의 소방본부장과 소방서장은 평소 누구의 지휘를 받을까요? 우리나라 소방사무는 기본적으로 광역 지방자치단체의 행정 구역과 예산을 기반으로 돌아가므로, 소방업무를 수행하는 소방본부장 또는 소방서장은 원칙적으로 그 소재지를 관할하는 <strong>시·도지사의 지휘와 감독</strong>을 받습니다(<strong>제3조 제2항</strong>). 하지만 강원도 동해안 대형 산불이나 다수 시·도에 걸친 국가적 재난이 터졌을 때 각 시·도지사가 자기 지역만 챙기며 따로 지휘한다면 골든타임을 놓칠 수밖에 없습니다. 그래서 <strong>법 제3조 제3항</strong>은 화재 예방 및 대형 재난 등 필요한 경우 <strong>소방청장이 시·도 소방본부장 및 소방서장을 직접 지휘·감독</strong>할 수 있도록 명시하여, 평상시 지방 행정과의 조화(시·도지사 지휘)와 비상시 국가 단일 지휘 체계(소방청장 지휘)라는 두 마리 토끼를 모두 잡았습니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            소방기관이 세워지고 지휘 체계가 잡혔다면, 이제 어떤 방향으로 국가 소방정책을 이끌어 갈지 계획표를 짜야 합니다. 만약 서울, 부산, 전남이 아무런 국가적 기준 없이 제각각 소방계획을 세운다면 지역마다 장비 도입 방향이나 대응 체계가 달라져 전국 단위의 협동 작전이 불가능해집니다. 그래서 <strong>｢소방기본법｣ 제6조 제1항 및 시행령 제1조의3 제1항</strong>은 국가 소방의 최고 수장인 <strong>소방청장</strong>으로 하여금 관계 중앙행정기관의 장과의 협의를 거쳐 소방업무에 관한 <strong>종합계획을 5년마다(계획 시행 전년도 10월 31일까지) 수립·시행</strong>하도록 의무를 부여하고 있습니다. 확정된 종합계획은 관계 중앙행정기관의 장과 시·도지사에게 통보되어야 하며(제6조 제3항), 이를 통보받은 각 지역의 살림꾼인 <strong>시·도지사</strong>는 관할 지역의 특성을 고려하여 종합계획의 시행에 필요한 <strong>세부계획을 매년(계획 시행 전년도 12월 31일까지) 수립하여 소방청장에게 제출</strong>하여야 합니다(<strong>제6조 제4항 및 시행령 제1조의3 제3항</strong>). 시험에서는 이 제출 대상을 '행정안전부장관에게 제출한다(×)'거나 수립 주체를 뒤바꿔 출제하므로, <strong>'국가 5년 종합계획 = 소방청장(전년도 10월 31일) ➔ 지자체 매년 세부계획 = 시·도지사 수립 후 소방청장에게 제출(전년도 12월 31일)'</strong>의 흐름을 정확히 기억해 두어야 합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            아울러 국민들이 건축이나 영업을 하면서 가장 어려워하는 것이 복잡다단한 소방시설·소방공사·위험물 안전관리 법령 해석입니다. 이러한 민원을 한곳에서 종합적으로 접수하여 처리하기 위하여 <strong>소방청장 또는 소방본부장</strong>은 소방청 또는 소방본부에 각각 <strong>소방기술민원센터</strong>를 설치·운영할 수 있습니다(<strong>법 제4조의3 제1항 및 시행령 제1조의2 제1항</strong>, 일선 '소방서'에는 설치하지 않는다는 점에 주의하십시오). 소방기술민원센터는 <strong>센터장을 포함하여 18명 이내</strong>로 구성하며(시행령 제1조의2 제2항), 법령해석 민원 처리, 질의회신집·해설서 발간, 현장 확인 및 처리 등의 업무를 수행합니다. 이때 고도의 기술 상담을 위해 한국소방안전원이나 한국소방산업기술원 같은 관계 기관의 베테랑 직원을 파견받아야 할 때가 있는데, 타 기관의 장에게 대등한 행정기관장 자격으로 <strong>소속 공무원 또는 직원의 파견을 요청할 수 있는 권한자는 설치권자인 '소방청장 또는 소방본부장'</strong>이며(<strong>시행령 제1조의2 제4항</strong>), 내부 부서장에 불과한 '소방기술민원센터장'은 파견 요청권이 없습니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 재난 현장의 중추 신경망 — 119종합상황실(제4조)과 상급 기관 즉시 보고 임계치</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>119종합상황실(제4조)</strong>: 청장 · 본부장 · 서장이 각각 모두 설치 (<strong>시장·군수·구청장 ×</strong>) / 설치·운영 기준은 <strong>행정안전부령</strong></li>
+                <li><strong>일반 화재 보고(규칙 제3조 제2항)</strong>: 사망 <strong>5명</strong>, 사상 <strong>10명</strong>, 이재민 <strong>100명</strong>, 재산피해 <strong>50억 원</strong> 이상</li>
+                <li><strong>피해 규모 불문 즉시 보고</strong>: 지하철·지하구·문화재·관공서·학교·<strong>11층 이상</strong> 건축물·위험물 <strong>3천 배</strong>·선박 <strong>1천 톤</strong> 이상</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            평상시에는 앞서 본 5년·1년 단위의 계획으로 안전을 다지지만, 당장 오늘 밤 대형 화재가 터지면 1초라도 빨리 현장 정보를 수집해 출동 지령을 내리고 상급 기관에 전파할 '두뇌이자 신경망'이 필요합니다. 그 역할을 하는 곳이 바로 <strong>119종합상황실</strong>입니다. <strong>｢소방기본법｣ 제4조 제1항</strong>에 따라 <strong>소방청장, 소방본부장 및 소방서장</strong>은 화재, 재난·재해, 그 밖에 구조·구급이 필요한 상황이 발생하였을 때에 신속한 소방활동을 위한 <strong>① 정보의 수집·분석과 판단·전파, ② 상황관리, ③ 현장 지휘 및 조정·통제</strong> 등의 업무를 수행하기 위하여 소방청, 시·도 소방본부 및 소방서에 <strong>각각 119종합상황실을 설치·운영하여야</strong> 합니다(시행규칙 제2조 제1항). 여기서 왜 설치 주체가 시·도지사나 시장·군수·구청장이 아니라 <strong>'소방청장·소방본부장·소방서장'</strong>일까요? 119종합상황실은 일반 행정 결재를 하는 곳이 아니라 24시간 내내 무전기를 잡고 출동 대원들에게 작전 지휘·통제를 내리는 순수 소방 작전 기구이기 때문입니다. 또한 긴급 범죄나 교통 통제 등 경찰과의 실시간 공조를 위해 시·도 소방본부의 119종합상황실에는 <strong>대통령령</strong>으로 정하는 바에 따라 <strong>경찰공무원</strong>을 둘 수 있으며(<strong>법 제4조 제2항</strong>), 그 밖에 119종합상황실의 설치·운영에 필요한 세부 사항은 <strong>행정안전부령</strong>으로 정합니다(<strong>법 제4조 제3항</strong>). 아울러 상황실의 통신망이 끊기면 지령 자체가 마비되므로, <strong>소방청장 및 시·도지사</strong>는 <strong>소방정보통신망</strong>을 구축·운영할 수 있고 안정적 운영을 위해 서로 다른 사업자로부터 제공받는 방식으로 회선을 이중화할 수 있습니다(<strong>법 제4조의2</strong>).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            <strong>｢소방기본법 시행규칙｣ 제2조 제2항 및 제3항</strong>에 따라 119종합상황실에는 <strong>｢소방력 기준에 관한 규칙｣</strong>에 따른 전산·통신요원을 배치하고 유·무선통신시설을 갖추어 일 년 내내 멈추지 않는 <strong>24시간 운영체제</strong>를 유지하여야 합니다. 또한 119종합상황실의 실장(근무자 중 최고직위에 있는 사람)은 신고접수, 사고수습, 출동지령 및 지원요청, 상황 전파·보고, 현장 지휘 및 피해현황 파악, 정보수집·제공 업무를 수행하고 기록·관리하며(<strong>시행규칙 제3조 제1항</strong>), 일선에서 특정 기준 이상의 굵직한 화재나 재난이 발생하면 지체 없이 서면·모사전송(팩스) 또는 컴퓨터통신 등으로 직근 상급 종합상황실(<strong>소방서 종합상황실은 소방본부 종합상황실에, 소방본부 종합상황실은 소방청 종합상황실에</strong>)에 보고하여야 합니다(<strong>시행규칙 제3조 제2항</strong>). 이때 왜 모든 화재를 다 상급 기관까지 보고하지 않고 기준을 나누어 두었을까요? 전국에서 하루에도 수백 건씩 일어나는 작은 쓰레기통 화재나 경미한 상가 화재까지 전부 중앙의 소방청 종합상황실로 올라오면, 정작 국가가 총력 대응해야 할 대형 참사 정보가 묻혀버리는 '정보 마비'가 일어나기 때문입니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            그래서 <strong>｢소방기본법 시행규칙｣ 제3조 제2항 제1호</strong>는 상급 종합상황실 즉시 보고 대상 화재를 크게 두 부류로 나눕니다. 첫째는 <strong>'일반 화재인데 실제 발생한 피해 규모가 큰 경우(가목부터 다목까지)'</strong>로서, <strong>사망자가 5명 이상</strong> 발생하거나 <strong>사상자가 10명 이상</strong> 발생한 화재(가목), 집을 잃은 <strong>이재민이 100명 이상</strong> 발생한 화재(나목), 또는 <strong>재산피해액이 50억 원 이상</strong> 발생한 화재(다목)가 여기에 해당합니다(<strong>5명 · 10명 · 100명 · 50억 원</strong>). 둘째는 <strong>'사망자 수나 피해액이 아무리 적더라도 그 장소의 특성상 대형 참사나 국가적 마비로 번질 위험이 있어 무조건 즉시 보고해야 하는 특수 화재(라목부터 사목까지)'</strong>입니다. 여기에는 관공서·학교·정부미도정공장·문화재·<strong>지하철 또는 지하구</strong>의 화재(라목), 관광호텔·<strong>층수가 11층 이상인 건축물</strong>·지하상가·시장·백화점·대형점포(｢유통산업발전법｣상 대규모점포)·종합병원 화재(마목), <strong>지정수량 3천 배 이상</strong>의 위험물 제조소·저장소·취급소의 화재(바목), <strong>항구에 매어둔 총톤수 1천 톤 이상 선박</strong>·항공기·철도차량·발전소·가스시설 또는 화약류공장의 화재(사목)가 포함됩니다. 따라서 시험 문제에 "지하철 화재로 사망자 2명이 발생한 경우는 상급 상황실 보고 대상이 아니다"라는 선지가 나오면, 일반 인명피해 기준(사망 5명)에 속지 않고 '지하철(라목)은 피해 규모 불문 무조건 즉시 보고 대상!'이라는 원리로 단숨에 정오를 판별할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:26%;">보고 기준 분류</th>
+                <th style="width:44%;">상급 종합상황실 즉시 보고 대상 (｢소방기본법 시행규칙｣ 제3조 제2항 제1호)</th>
+                <th>핵심 암기 수치 및 주의점</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>인명피해 기준 (가목)</strong></td>
+                <td><strong>사망자 5명 이상</strong> 또는 <strong>사상자 10명 이상</strong> 발생한 화재</td>
+                <td>사망 5명 / 사상 10명 (일반 화재 적용)</td>
+              </tr>
+              <tr>
+                <td><strong>이재민·재산피해 (나·다목)</strong></td>
+                <td><strong>이재민 100명 이상</strong> 또는 <strong>재산피해액 50억 원 이상</strong> 발생한 화재</td>
+                <td>이재민 100명 / 재산피해 50억 원</td>
+              </tr>
+              <tr>
+                <td><strong>공공·교통·지하시설 (라목)</strong></td>
+                <td>관공서, 학교, 정부미도정공장, 문화재, <strong>지하철 또는 지하구</strong>의 화재</td>
+                <td>피해 규모 불문 즉시 보고 (지하철 사망 2명도 즉시 보고)</td>
+              </tr>
+              <tr>
+                <td><strong>고층·다중이용 건축물 (마목)</strong></td>
+                <td>관광호텔, <strong>층수가 11층 이상인 건축물</strong>, 지하상가, 시장, 백화점, 대규모점포, 종합병원 화재</td>
+                <td>피해 규모 불문 즉시 보고 (<strong>11층 이상</strong> 주의)</td>
+              </tr>
+              <tr>
+                <td><strong>위험물·선박·특수시설 (바·사목)</strong></td>
+                <td><strong>지정수량 3천 배 이상</strong> 위험물 제조소등, 항구에 매어둔 <strong>총톤수 1천 톤 이상 선박</strong>, 항공기, 철도차량, 발전소, 가스시설, 화약류공장 화재</td>
+                <td>위험물 <strong>3,000배 이상</strong> / 정박 선박 <strong>1,000톤 이상</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramSection">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 소방기본법 대상물 포함 관계 · 계획 수립 계통 및 119종합상황실 즉시 보고 체계</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 소방기관 설치 · 국가 소방계획 · 민원센터 및 대상물 포함 관계</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">[대통령령 위임] 소방기관 설치(제3조)</div>
+                <div>· 시·도지사 직속 소방본부 설치<br/>· 평시 <strong>시·도지사</strong> 지휘·감독 (필요시 <strong>소방청장</strong> 지휘·감독)</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">[대통령령 위임] 소방기술민원센터(제4조의3)</div>
+                <div>· <strong>소방청장 또는 소방본부장</strong>이 설치(18명 이내)<br/>· 관계 기관 직원 파견 요청도 <strong>청장·본부장</strong>이 행사</div>
+              </div>
+            </div>
+            <div class="schema-arrow-down">↓</div>
+            <div class="schema-box" style="margin-bottom:10px;">
+              <div class="schema-box-title">국가 소방계획 2단계 수립 체계 (제6조 · 시행령 제1조의3)</div>
+              <ul class="schema-list">
+                <li><strong>종합계획 (국가 총괄)</strong>: <strong>소방청장</strong>이 <strong>5년마다</strong> 수립·시행 (시행 전년도 <strong>10월 31일</strong>까지)</li>
+                <li><strong>세부계획 (지자체 집행)</strong>: <strong>시·도지사</strong>가 <strong>매년</strong> 수립하여 <strong>소방청장에게 제출</strong> (전년도 <strong>12월 31일</strong>까지)</li>
+              </ul>
+            </div>
+            <div class="schema-box">
+              <div class="schema-box-title">소방 3법 대상물의 동심원 포함 관계 (2026년 기출 1번)</div>
+              <ul class="schema-list">
+                <li><strong>소방대상물</strong>(기본법 제2조) ⊃ <strong>특정소방대상물</strong>(시설법 제2조) ⊃ <strong>소방안전관리대상물</strong>(예방법 제24조) ⊃ <strong>소방안전 특별관리시설물</strong>(예방법 시행령 제43조, 가스시설 제외)</li>
+              </ul>
+            </div>
+            <div class="schema-alert">※ 핵심 주의: 소방기관 설치는 <strong>대통령령</strong>, 119종합상황실 설치·운영 기준과 소방정보통신망 구축·운영 기준은 <strong>행정안전부령</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 119종합상황실 운영(제4조) 및 상급 기관 즉시 보고 임계치(규칙 제3조)</div>
+            <div class="space-y-2.5">
+              <div style="margin-bottom:8px; color:var(--text-sub); font-weight:600;">
+                청·본부·서 각각 설치(24시간 운영) / 서 상황실 ➔ 본부 상황실 ➔ 소방청 상황실 지체 없이 보고
+              </div>
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">!</span>
+                <div>
+                  <div class="schema-box-title">인명피해 기준 (시행규칙 제3조 제2항 제1호 가목)</div>
+                  <div><strong>사망자 5명 이상</strong> 또는 <strong>사상자 10명 이상</strong> 발생한 화재</div>
+                </div>
+              </div>
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">₩</span>
+                <div>
+                  <div class="schema-box-title">이재민 및 재산피해 기준 (나목 · 다목)</div>
+                  <div><strong>이재민 100명 이상</strong> 또는 <strong>재산피해액 50억 원 이상</strong> 발생한 화재</div>
+                </div>
+              </div>
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">건물</span>
+                <div>
+                  <div class="schema-box-title">특수 건축물·공공시설 기준 (라목 · 마목 — 피해 규모 불문)</div>
+                  <div>관공서, 학교, 문화재, <strong>지하철·지하구</strong>, 관광호텔, <strong>11층 이상 건축물</strong>, 지하상가, 시장, 백화점, 대규모점포, 종합병원 화재</div>
+                </div>
+              </div>
+              <div class="schema-badge-item">
+                <span class="schema-badge-icon">특수</span>
+                <div>
+                  <div class="schema-box-title">위험물·선박·교통시설 기준 (바목 · 사목 — 피해 규모 불문)</div>
+                  <div><strong>지정수량 3천 배 이상</strong> 위험물 제조소등, 항구에 매어둔 <strong>총톤수 1,000톤 이상 선박</strong>, 항공기, 철도차량, 발전소, 가스·화약류 화재</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (14문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 14문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방경채 Q9</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 규정하는 용어의 정의를 옳게 연결한 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>가. ( ㉠ )이란 건축물, 차량, 선박(｢선박법｣ 제1조의2 제1항에 따른 선박으로서 항구에 매어둔 선박만 해당한다), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건을 말한다.<br/>나. ( ㉡ )이란 소방대상물이 있는 장소 및 그 이웃 지역으로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.<br/>다. ( ㉢ )이란 소방대상물의 소유자·관리자 또는 점유자를 말한다.<br/>라. ( ㉣ )이란 특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.<br/>마. ( ㉤ )란 화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 소방공무원, 의무소방원, 의용소방대원으로 구성된 조직체를 말한다.<br/>바. ( ㉥ )이란 소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방대를 지휘하는 사람을 말한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">㉠ 소방대상물 · ㉡ 관계지역 · ㉢ 관계인 · ㉣ 소방본부장 · ㉤ 소방대 · ㉥ 소방조장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">㉠ 방호대상물 · ㉡ 경계지역 · ㉢ 입회인 · ㉣ 소방서장 · ㉤ 지역대 · ㉥ 소방대장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">㉠ 방호대상물 · ㉡ 경계지역 · ㉢ 입회인 · ㉣ 소방서장 · ㉤ 지역대 · ㉥ 소방조장</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">㉠ 소방대상물 · ㉡ 관계지역 · ㉢ 관계인 · ㉣ 소방본부장 · ㉤ 소방대 · ㉥ 소방대장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 용어의 정의로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“소방대상물”이란 건축물, 차량, 선박(｢선박법｣ 제1조 의2제1항에 따른 선박으로서 항구에 매어둔 선박만 해당한다), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“관계지역”이란 소방대상물이 있는 장소 및 그 이웃 지역으로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“소방본부장”이란 특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“소방대”란 화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 소방공무원, 의무소방원, 자위소방대원으로 구성된 조직체를 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방경채 Q10</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 “소방대장”에 대한 용어의 뜻으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방대상물의 소유자·관리자 또는 점유자</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방대를 지휘하는 사람</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 소방공 무원, 의무소방원, 자위소방대원으로 구성된 조직체</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방업무에 관한 종합계획의 수립·시행 등에 대한 설명이다. ( ) 안에 들어갈 내용으로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>( 가 )은 화재, 재난·재해, 그 밖의 위급한 상황으로부터 국민의 생명·신체 및 재산을 보호하기 위하여 소방업무에 관한 종합계획을 ( 나 )마다 수립·시행하여야 하고, 이에 필요한 재원을 확보하도록 노력하여야 한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ): 소방청장 / ( 나 ): 3년</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 가 ): 소방청장 / ( 나 ): 5년</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 가 ): 행정안전부장관 / ( 나 ): 3년</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 가 ): 행정안전부장관 / ( 나 ): 5년</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방경채 Q8</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 소방기관의 설치에 대한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">시·도에서 소방업무를 수행하기 위하여 시·도지사 직속으로 소방본부를 둔다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 행정안전부령으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방업무를 수행하는 소방본부장 또는 소방서장은 그 소재지를 관할하는 시·도지사의 지휘와 감독을 받는다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장은 화재 예방 및 대형 재난 등 필요한 경우 시·도 소방본부장 및 소방서장을 지휘·감독할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2021년 소방공채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 119종합상황실의 설치 및 운영목적에 대한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">상황관리</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">대응계획 실행 및 평가</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">현장 지휘 및 조정·통제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">정보의 수집·분석과 판단·전파</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 제3조 소방기관의 설치 등에 대한 내용이다. ( ) 안에 들어갈 말로 옳은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>시·도의 화재 예방·경계·진압 및 조사, 소방안전 교육·홍보와 화재, 재난·재해, 그 밖의 위급한 상황 에서의 구조·구급 등의 업무를 수행하는 소방기관의 설치에 필요한 사항은 ( )( 으 )로 정한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">대통령령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">행정안전부령</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">시·도의 조례</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청훈령</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2022년 소방경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 소방기술민원센터에 대한 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방기술민원센터는 센터장을 포함하여 18명 이내로 구성한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방기술민원센터는 소방기술민원과 관련된 업무로서 소방청장 또는 소방본부장이 필요하다고 인정하여 지시 하는 업무를 수행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방기술민원센터장은 소방기술민원센터의 업무수행을 위하여 필요하다고 인정하는 경우에는 관계 기관의 장에게 소속 공무원 또는 직원의 파견을 요청할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장은 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수 하여 처리할 수 있는 소방기술민원센터를 설치·운영 할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2022년 소방경채 Q3</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행령상 소방업무에 관한 종합 계획의 수립·시행 등의 내용으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방청장은 수립한 종합계획을 관계 중앙행정기관의 장, 시·도지사에게 통보하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">시·도지사는 관할 지역의 특성을 고려하여 종합계획의 시행에 필요한 세부계획을 매년 수립하여 행정안전부 장관에게 제출하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">종합계획에는 소방업무에 필요한 체계의 구축, 소방기 술의 연구·개발 및 보급, 소방전문인력 양성에 대한 사항이 포함되어야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방청장은 소방업무에 관한 종합계획을 관계 중앙행 정기관의 장과의 협의를 거쳐 계획 시행 전년도 10월 31일까지 수립하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2022년 소방공채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법 시행령｣상 소방기술민원센터의 설치·운영 기준으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방청장 및 본부장은 각 소방서에 소방기술민원센터를 설치·운영한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방기술민원센터는 소방기술민원과 관련된 현장 확인 및 처리업무를 수행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방기술민원센터는 소방기술민원과 관련된 질의회신집 및 해설서 발간의 업무를 수행한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방기술민원센터는 소방시설, 소방공사와 위험물 안전 관리 등과 관련된 법령해석 등의 민원을 처리한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣상 용어의 정의에 대한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“관계지역”이란 특정소방대상물이 있는 장소로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“현장지휘관”이란 소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방 대를 지휘하는 사람을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“소방서장”이란 특별시·광역시·특별자치시·도 또는 특별 자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“소방대”란 화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 관련 법령에 따라 소방공무원, 의무소방원 등으로 구성된 조직 체를 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2025년 소방경채 Q2 · 소방공채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행규칙상 119종합상황실의 설치·운영에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">소방청과 특별시·광역시·특별자치시·도 또는 특별자치도의 소방본부 및 소방서 중 하나 이상 설치·운영하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">소방청장, 소방본부장 또는 소방서장은 신속한 소방활동 을 위한 정보를 수집·전파하기 위하여 119종합상황실에 ｢소방청 119종합상황실 운영 규정｣에 의한 전산·통신요 원을 배치하고, 소방청장이 정하는 유·무선통신시설을 갖추어야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">소방본부에 설치하는 119종합상황실에는 ｢지방자치단체에 두는 국가공무원의 정원에 관한 법률｣에도 불구하고 대통 령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으며, 119종합상황실의 설치·운영에 필요한 사항은 대통령령 으로 정한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">119종합상황실의 실장은 하급소방기관에 대한 출동지령 또는 동급 이상의 소방기관 및 유관기관에 대한 지원요청, 재난상황의 수습에 필요한 정보수집 및 제공, 재난상황이 발생한 현장에 대한 지휘 및 피해현황의 파악 등의 업무 를 행하고, 그에 관한 내용을 기록·관리하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방경채 Q1 · 소방공채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣, ｢소방시설 설치 및 관리에 관한 법률｣, ｢화재의 예방 및 안전관리에 관한 법률｣ 및 같은 법 시행령상 <보기>의 ‘ㄱ에서 ㄹ’의 관계를 벤다이어그램으로 옳게 표현한 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. ｢소방기본법｣ 제2조 제1호의 “소방대상물”<br/>ㄴ. ｢소방시설 설치 및 관리에 관한 법률｣ 제2조 제1항 제3호의 “특정소방대상물”<br/>ㄷ. ｢화재의 예방 및 안전관리에 관한 법률｣ 제24조 제1항의 “소방안전관리대상물”<br/>ㄹ. ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 제43조의 “화재예방안전진단을 받아야 하는 소방안전 특별관리 시설물”(가스관련 시설은 제외)</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">[벤다이어그램 ①] ㄱ(소방대상물) ⊃ ㄴ(특정소방대상물) ⊃ ㄷ(소방안전관리대상물) ⊃ ㄹ(특별관리 시설물)의 동심원 포함 구조</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">[벤다이어그램 ②] ㄱ ⊃ ㄴ 내부에서 ㄷ과 ㄹ이 일부만 교집합을 이루는 구조</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">[벤다이어그램 ③] ㄴ(특정소방대상물)이 ㄱ(소방대상물)을 포함하는 역전 구조</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">[벤다이어그램 ④] ㄱ 내부에서 ㄴ, ㄷ, ㄹ이 서로 포함되지 않고 분리된 구조</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2026년 소방경채 Q2 · 소방공채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">｢소방기본법｣ 및 같은 법 시행규칙상 119종합상황실의 설치 권자 및 운영사항에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">119종합상황실은 24시간 운영체제를 유지하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">119종합상황실의 실장은 재난상황의 발생 신고접수, 재난 상황의 전파 및 보고, 재난상황이 발생한 현장에 대한 지휘 및 피해현황의 파악 등의 업무를 수행하고 그에 관한 내용을 기록·관리하여야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">지하철 화재로 사망자가 2인 발생한 재난상황의 경우, 119종합상황실의 실장은 그 사실을 지체 없이 서면·팩스 또는 컴퓨터통신 등으로 소방서 종합상황실인 경우에는 소방본부 종합상황실에, 소방본부 종합상황실인 경우에는 소방청 종합상황실에 각각 보고해야 한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">소방서장 및 시장·군수·구청장은 화재, 재난·재해, 그 밖에 구조·구급이 필요한 상황이 발생하였을 때에 신속한 소방 활동을 위한 정보의 수집·분석과 판단·전파, 상황관리, 현장 지휘 및 조정·통제 등의 업무를 수행하기 위하여 119종합상황실을 설치·운영하여야 한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방대상물이란 건축물, 차량, 선박(｢선박법｣ 제1조의2 제1항에 따른 선박으로서 항구에 매어둔 선박만 해당한다), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>“관계지역”이란 특정소방대상물이 있는 장소로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>관계인이란 소방대상물의 소유자·관리자 또는 점유자를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>“소방서장”이란 특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기본법상 소방대란 화재를 진압하고 구조·구급 활동 등을 하기 위하여 소방공무원, 의무소방원, 자위소방대원으로 구성된 조직체를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방대장이란 소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방대를 지휘하는 사람을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방관계법령상 대상물의 범위는 '소방대상물(소방기본법) &gt; 특정소방대상물(소방시설법) &gt; 소방안전관리대상물(화재예방법) &gt; 소방안전 특별관리시설물(가스시설 제외)' 순으로 포함 관계를 이룬다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도에서 소방업무를 수행하기 위하여 시·도지사 직속으로 소방본부를 둔다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방업무를 수행하는 소방본부장 또는 소방서장은 그 소재지를 관할하는 시·도지사의 지휘와 감독을 받으며, 소방청장은 화재 예방 및 대형 재난 등 필요한 경우 시·도 소방본부장 및 소방서장을 지휘·감독할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 화재, 재난·재해 등으로부터 국민의 생명·신체 및 재산을 보호하기 위하여 소방업무에 관한 종합계획을 5년마다 수립·시행하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 소방업무에 관한 종합계획을 관계 중앙행정기관의 장과의 협의를 거쳐 계획 시행 전년도 10월 31일까지 수립하여야 하며, 수립한 종합계획을 관계 중앙행정기관의 장 및 시·도지사에게 통보하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>시·도지사는 관할 지역의 특성을 고려하여 종합계획의 시행에 필요한 세부계획을 매년 수립하여 행정안전부장관에게 제출하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장 및 소방본부장은 각 소방서에 소방기술민원센터를 설치·운영한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기술민원센터는 센터장을 포함하여 18명 이내로 구성하며, 법령해석 민원 처리, 질의회신집·해설서 발간 및 현장 확인·처리 업무를 수행한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기술민원센터장은 소방기술민원센터의 업무수행을 위하여 필요하다고 인정하는 경우에는 관계 기관의 장에게 소속 공무원 또는 직원의 파견을 요청할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방서장 및 시장·군수·구청장은 신속한 소방활동을 위한 정보의 수집·분석과 판단·전파, 상황관리, 현장 지휘 및 조정·통제 등의 업무를 수행하기 위하여 119종합상황실을 설치·운영하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>119종합상황실은 소방청과 시·도의 소방본부 및 소방서 중 하나 이상에 선택적으로 설치·운영하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부에 설치하는 119종합상황실에는 대통령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으며, 119종합상황실의 설치·운영에 필요한 사항은 행정안전부령으로 정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>119종합상황실은 24시간 운영체제를 유지하여야 하며, ｢소방력 기준에 관한 규칙｣에 의한 전산·통신요원을 배치하고 소방청장이 정하는 유·무선통신시설을 갖추어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>119종합상황실의 실장은 재난상황의 발생 신고접수, 출동지령 또는 유관기관 지원요청, 상황 전파·보고, 현장 지휘 및 피해현황 파악 등의 업무를 수행하고 그 내용을 기록·관리하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>사망자가 5명 이상 발생하거나 사상자가 10명 이상 발생한 화재, 이재민이 100명 이상 발생한 화재, 재산피해액이 50억 원 이상 발생한 화재는 상급 소방기관 종합상황실 즉시 보고 대상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>지하철 화재로 사망자가 2명 발생한 경우, 일반 화재 보고 기준(사망 5명 이상)에 미달하므로 상급 종합상황실에 보고하지 않아도 된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>층수가 11층 이상인 건축물, 지정수량 3천 배 이상의 위험물 제조소·저장소·취급소, 항구에 매어둔 총톤수 1천 톤 이상 선박의 화재는 상급 종합상황실 즉시 보고 대상이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방기술민원센터는 소방기술민원과 관련된 업무로서 소방청장 또는 소방본부장이 필요하다고 인정하여 지시하는 업무를 수행한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수하여 처리할 수 있는 소방기술민원센터를 설치·운영할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청장은 수립한 종합계획을 관계 중앙행정기관의 장, 시·도지사에게 통보하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>종합계획에는 소방업무에 필요한 체계의 구축, 소방기술의 연구·개발 및 보급, 소방전문인력 양성에 대한 사항이 포함되어야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방청과 특별시·광역시·특별자치시·도 또는 특별자치도의 소방본부 및 소방서 중 하나 이상 설치·운영하여야 한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>소방본부에 설치하는 119종합상황실에는 ｢지방자치단체에 두는 국가공무원의 정원에 관한 법률｣에도 불구하고 대통령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으며, 119종합상황실의 설치·운영에 필요한 사항은 대통령령으로 정한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:④ · 02:④ · 03:② · 04:② · 05:② · 06:② · 07:① · 08:③ · 09:② · 10:① · 11:④ · 12:④ · 13:① · 14:④</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:X · 06:O · 07:O · 08:X · 09:O · 10:O · 11:O · 12:O · 13:X · 14:X · 15:O · 16:X · 17:X · 18:X · 19:O · 20:O · 21:O · 22:O · 23:X · 24:O · 25:O · 26:O · 27:O · 28:O · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 01 · 제1편 소방기본법 · 제1장 (14문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2018년 소방경채 Q9</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 항구에 매어둔 선박, 소유자·관리자·점유자(관계인), 소방공무원·의무소방원·의용소방대원(소방대), 현장에서 소방대를 지휘하는 사람(소방대장)의 키워드를 직관적으로 연결해야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">㉠ 소방대상물 · ㉡ 관계지역 · ㉢ 관계인 · ㉣ 소방본부장 · ㉤ 소방대 · ㉥ 소방조장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 바( ㉥ )의 현장에서 소방대를 지휘하는 사람은 소방조장이 아니라 '소방대장'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">㉠ 방호대상물 · ㉡ 경계지역 · ㉢ 입회인 · ㉣ 소방서장 · ㉤ 지역대 · ㉥ 소방대장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 방호대상물·경계지역·입회인·지역대는 모두 소방기본법상 법정 용어가 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">㉠ 방호대상물 · ㉡ 경계지역 · ㉢ 입회인 · ㉣ 소방서장 · ㉤ 지역대 · ㉥ 소방조장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 방호대상물·경계지역·입회인·지역대·소방조장은 모두 잘못된 명칭입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">㉠ 소방대상물 · ㉡ 관계지역 · ㉢ 관계인 · ㉣ 소방본부장 · ㉤ 소방대 · ㉥ 소방대장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ｢소방기본법｣ 제2조에 따른 ㉠ 소방대상물, ㉡ 관계지역, ㉢ 관계인, ㉣ 소방본부장, ㉤ 소방대, ㉥ 소방대장의 정의가 모두 정확하게 연결되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“소방대상물”이란 건축물, 차량, 선박(｢선박법｣ 제1조 의2제1항에 따른 선박으로서 항구에 매어둔 선박만 해당한다), 선박 건조 구조물, 산림, 그 밖의 인공 구조물 또는 물건을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제2조 제1호에 따른 소방대상물의 정확한 정의입니다(항구에 매어둔 선박만 해당).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“관계지역”이란 소방대상물이 있는 장소 및 그 이웃 지역으로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 법 제2조 제2호에 따른 관계지역의 정확한 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“소방본부장”이란 특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 제2조 제4호에 따른 소방본부장의 정확한 정의입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“소방대”란 화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 소방공무원, 의무소방원, 자위소방대원으로 구성된 조직체를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 같은 법 제2조 제5호에 따라 '소방대'는 소방공무원, 의무소방원, 의용소방대원 3종류로만 구성되며, '자위소방대원'은 소방대의 구성원에 포함되지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방경채 Q10</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방대상물의 소유자·관리자 또는 점유자</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 소방대상물의 소유자·관리자 또는 점유자는 '관계인'(법 제2조 제3호)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방대를 지휘하는 사람</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법｣ 제2조 제6호에 따라 '소방대장'이란 소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방대를 지휘하는 사람을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 소방공 무원, 의무소방원, 자위소방대원으로 구성된 조직체</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방공무원, 의무소방원, 의용소방대원으로 구성된 조직체는 '소방대'(법 제2조 제5호)이며, 게다가 선지에는 자위소방대원이 잘못 포함되어 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">특별시·광역시·특별자치시·도 또는 특별자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 시·도에서 화재 예방·경계·진압·조사 및 구조·구급 업무를 담당하는 부서의 장은 '소방본부장'(법 제2조 제4호)입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ): 소방청장 / ( 나 ): 3년</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 종합계획의 수립 주기는 3년이 아니라 '5년마다'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 가 ): 소방청장 / ( 나 ): 5년</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ｢소방기본법｣ 제6조 제1항에 따라 소방청장( 가 )은 소방업무에 관한 종합계획을 5년( 나 )마다 수립·시행하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 가 ): 행정안전부장관 / ( 나 ): 3년</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 수립권자는 행정안전부장관이 아니라 '소방청장'이며, 주기는 '5년'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 가 ): 행정안전부장관 / ( 나 ): 5년</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 종합계획의 수립 주체는 행정안전부장관이 아니라 '소방청장'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방경채 Q8</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">시·도에서 소방업무를 수행하기 위하여 시·도지사 직속으로 소방본부를 둔다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢지방소방기관 설치에 관한 규정｣(대통령령) 제4조에 따라 시·도에서 소방업무를 수행하기 위하여 시·도지사 직속으로 소방본부를 둡니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 행정안전부령으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] ｢소방기본법｣ 제3조 제1항에 따라 시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 행정안전부령이 아니라 '대통령령'으로 정합니다(행정안전부령으로 정하는 것은 제8조의 '소방력의 기준').
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방업무를 수행하는 소방본부장 또는 소방서장은 그 소재지를 관할하는 시·도지사의 지휘와 감독을 받는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 제3조 제2항에 따라 소방업무를 수행하는 소방본부장 또는 소방서장은 그 소재지를 관할하는 시·도지사의 지휘와 감독을 받습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장은 화재 예방 및 대형 재난 등 필요한 경우 시·도 소방본부장 및 소방서장을 지휘·감독할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 법 제3조 제3항에 따라 소방청장은 화재 예방 및 대형 재난 등 필요한 경우 시·도 소방본부장 및 소방서장을 지휘·감독할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제4조 제1항에 명시된 119종합상황실의 설치·운영 목적(정보의 수집·분석과 판단·전파, 상황관리, 현장 지휘 및 조정·통제)에 해당하지 않는 일반 행정 용어를 가려내는 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">상황관리</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 상황관리는 ｢소방기본법｣ 제4조 제1항에 명시된 119종합상황실의 핵심 운영 목적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">대응계획 실행 및 평가</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] '대응계획 실행 및 평가'는 ｢소방기본법｣ 제4조 제1항에 규정된 119종합상황실의 설치·운영 목적에 포함되어 있지 않습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">현장 지휘 및 조정·통제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 현장 지휘 및 조정·통제는 법 제4조 제1항에 명시된 운영 목적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">정보의 수집·분석과 판단·전파</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 신속한 소방활동을 위한 정보의 수집·분석과 판단·전파는 법 제4조 제1항에 명시된 운영 목적입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">대통령령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ｢소방기본법｣ 제3조 제1항에 따라 시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 '대통령령'(｢지방소방기관 설치에 관한 규정｣)으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">행정안전부령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 행정안전부령으로 정하는 것은 법 제8조의 '소방력의 기준'과 제4조의 '119종합상황실 설치·운영'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">시·도의 조례</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 시·도의 조례로 정하는 것은 소방체험관의 설립·운영 등입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청훈령</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ｢소방기본법｣ 제3조 제2항에 따라 시·도의 소방업무를 수행하는 소방기관의 설치에 필요한 사항은 소방청훈령이 아니라 '대통령령'(지방소방기관 설치에 관한 규정)으로 정합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방기술민원센터는 센터장을 포함하여 18명 이내로 구성한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행령｣ 제1조의2 제2항에 따라 소방기술민원센터는 센터장을 포함하여 18명 이내로 구성합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방기술민원센터는 소방기술민원과 관련된 업무로서 소방청장 또는 소방본부장이 필요하다고 인정하여 지시 하는 업무를 수행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소방기술민원센터는 소방기술민원과 관련된 업무로서 소방청장이 필요하다고 인정하여 지시하는 업무를 수행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방기술민원센터장은 소방기술민원센터의 업무수행을 위하여 필요하다고 인정하는 경우에는 관계 기관의 장에게 소속 공무원 또는 직원의 파견을 요청할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] ｢소방기본법 시행령｣ 제1조의2 제4항에 따라 소방기술민원센터의 업무 수행을 위하여 관계 기관의 장에게 소속 공무원 또는 직원의 파견을 요청할 수 있는 권한자는 소방기술민원센터장이 아니라 '소방청장 또는 소방본부장'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장은 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수 하여 처리할 수 있는 소방기술민원센터를 설치·운영 할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ｢소방기본법｣ 제4조의3 제1항에 따라 소방청장 또는 소방본부장은 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수·처리할 수 있는 소방기술민원센터를 설치·운영할 수 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2022년 소방경채 Q3</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢소방기본법｣ 제6조 및 시행령 제1조의3에 따른 종합계획 수립 기한(시행 전년도 10월 31일)과 시·도지사의 매년 세부계획 제출 대상(행정안전부장관이 아니라 '소방청장')을 묻는 핵심 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방청장은 수립한 종합계획을 관계 중앙행정기관의 장, 시·도지사에게 통보하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법｣ 제6조 제3항에 따라 소방청장은 수립한 종합계획을 관계 중앙행정기관의 장 및 시·도지사에게 통보하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">시·도지사는 관할 지역의 특성을 고려하여 종합계획의 시행에 필요한 세부계획을 매년 수립하여 행정안전부 장관에게 제출하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 같은 법 제6조 제4항 및 시행령 제1조의3 제3항에 따라 시·도지사는 종합계획의 시행에 필요한 세부계획을 매년(시행 전년도 12월 31일까지) 수립하여 행정안전부장관이 아니라 '소방청장'에게 제출하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">종합계획에는 소방업무에 필요한 체계의 구축, 소방기 술의 연구·개발 및 보급, 소방전문인력 양성에 대한 사항이 포함되어야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 제6조 제2항에 따라 종합계획에는 소방업무에 필요한 체계 구축, 소방기술 연구·개발 및 보급, 소방전문인력 양성 등이 포함되어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방청장은 소방업무에 관한 종합계획을 관계 중앙행 정기관의 장과의 협의를 거쳐 계획 시행 전년도 10월 31일까지 수립하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 같은 법 시행령 제1조의3 제1항에 따라 소방청장은 관계 중앙행정기관의 장과의 협의를 거쳐 종합계획 시행 전년도 10월 31일까지 종합계획을 수립하여야 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방청장 및 본부장은 각 소방서에 소방기술민원센터를 설치·운영한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] ｢소방기본법｣ 제4조의3 제1항 및 시행령 제1조의2 제1항에 따라 소방기술민원센터는 소방청장 또는 소방본부장이 '소방청 또는 소방본부'에 각각 설치·운영하며, 일선 '각 소방서'에 설치하는 것이 아닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방기술민원센터는 소방기술민원과 관련된 현장 확인 및 처리업무를 수행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 소방기술민원센터는 소방기술민원과 관련된 현장 확인 및 처리 업무를 수행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방기술민원센터는 소방기술민원과 관련된 질의회신집 및 해설서 발간의 업무를 수행한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 소방기술민원센터는 소방기술민원과 관련된 질의회신집 및 해설서 발간 업무를 수행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방기술민원센터는 소방시설, 소방공사와 위험물 안전 관리 등과 관련된 법령해석 등의 민원을 처리한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 소방기술민원센터는 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수하여 처리합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“관계지역”이란 특정소방대상물이 있는 장소로서 화재의 예방·경계·진압, 구조·구급 등의 활동에 필요한 지역을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법｣ 제2조 제2호의 '관계지역'은 특정소방대상물이 아니라 '소방대상물'이 있는 장소 및 '그 이웃 지역'으로서 예방·경계·진압·구조·구급 활동에 필요한 지역을 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“현장지휘관”이란 소방본부장 또는 소방서장 등 화재, 재난·재해, 그 밖의 위급한 상황이 발생한 현장에서 소방 대를 지휘하는 사람을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 화재, 재난·재해 현장에서 소방대를 지휘하는 사람의 법정 용어는 현장지휘관이 아니라 '소방대장'(제2조 제6호)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“소방서장”이란 특별시·광역시·특별자치시·도 또는 특별 자치도에서 화재의 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 특별시·광역시·특별자치시·도 또는 특별자치도에서 화재 예방·경계·진압·조사 및 구조·구급 업무를 담당하는 부서의 장은 소방서장이 아니라 '소방본부장'(제2조 제4호)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“소방대”란 화재를 진압하고 화재, 재난·재해, 그 밖의 위급한 상황에서 구조·구급 활동 등을 하기 위하여 관련 법령에 따라 소방공무원, 의무소방원 등으로 구성된 조직 체를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 같은 법 제2조 제5호에 따라 '소방대'란 화재를 진압하고 구조·구급 활동 등을 하기 위하여 소방공무원, 의무소방원, 의용소방대원으로 구성된 조직체를 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방경채 Q2 · 소방공채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">소방청과 특별시·광역시·특별자치시·도 또는 특별자치도의 소방본부 및 소방서 중 하나 이상 설치·운영하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ｢소방기본법｣ 제4조 제1항에 따라 119종합상황실은 소방청, 시·도의 소방본부 및 소방서 중 하나 이상에 선택적으로 설치하는 것이 아니라 소방청, 소방본부, 소방서 '각각 모두' 설치·운영하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">소방청장, 소방본부장 또는 소방서장은 신속한 소방활동 을 위한 정보를 수집·전파하기 위하여 119종합상황실에 ｢소방청 119종합상황실 운영 규정｣에 의한 전산·통신요 원을 배치하고, 소방청장이 정하는 유·무선통신시설을 갖추어야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ｢소방기본법 시행규칙｣ 제2조 제2항에 따라 119종합상황실에는 ｢소방력 기준에 관한 규칙｣(소방청 119종합상황실 운영 규정이 아님)에 의한 전산·통신요원을 배치하고, 소방청장이 정하는 유·무선통신시설을 갖추어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">소방본부에 설치하는 119종합상황실에는 ｢지방자치단체에 두는 국가공무원의 정원에 관한 법률｣에도 불구하고 대통 령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으며, 119종합상황실의 설치·운영에 필요한 사항은 대통령령 으로 정한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ｢소방기본법｣ 제4조 제2항에 따라 시·도 소방본부의 119종합상황실에는 대통령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으나, 제3항에 따라 119종합상황실의 설치·운영에 필요한 사항은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">119종합상황실의 실장은 하급소방기관에 대한 출동지령 또는 동급 이상의 소방기관 및 유관기관에 대한 지원요청, 재난상황의 수습에 필요한 정보수집 및 제공, 재난상황이 발생한 현장에 대한 지휘 및 피해현황의 파악 등의 업무 를 행하고, 그에 관한 내용을 기록·관리하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] ｢소방기본법 시행규칙｣ 제3조 제1항에 규정된 119종합상황실 실장의 법정 업무(출동지령, 지원요청, 정보수집·제공, 현장 지휘 및 피해현황 파악, 기록·관리)와 정확히 일치합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q1 · 소방공채 Q1</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소방 3법상 대상물의 범위 크기(ㄱ 소방대상물 > ㄴ 특정소방대상물 > ㄷ 소방안전관리대상물 > ㄹ 화재예방안전진단 대상 특별관리시설물)를 벤다이어그램 포함 관계로 묻는 <strong>[핵심 해설]</strong></div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">[벤다이어그램 ①] ㄱ(소방대상물) ⊃ ㄴ(특정소방대상물) ⊃ ㄷ(소방안전관리대상물) ⊃ ㄹ(특별관리 시설물)의 동심원 포함 구조</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 가장 넓은 개념은 건축물·차량·선박·산림 등을 모두 포괄하는 ｢소방기본법｣상 '소방대상물( ㄱ )'이며, 그중 소방시설을 설치해야 하는 건축물 등이 ｢소방시설법｣상 '특정소방대상물( ㄴ )', 그중 일정 규모 이상으로 안전관리자를 선임해야 하는 대상이 ｢화재예방법｣상 '소방안전관리대상물( ㄷ )', 그중 공항·철도·항만·도시철도 등 핵심 기반시설이 '소방안전 특별관리시설물(ㄹ, 가스시설 제외 시)'이므로 'ㄱ ⊃ ㄴ ⊃ ㄷ ⊃ ㄹ'의 동심원 포함 관계(①번 도식)가 성립합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">[벤다이어그램 ②] ㄱ ⊃ ㄴ 내부에서 ㄷ과 ㄹ이 일부만 교집합을 이루는 구조</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 소방대상물( ㄱ )이 특정소방대상물( ㄴ )을 포함하는 가장 큰 집합이어야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">[벤다이어그램 ③] ㄴ(특정소방대상물)이 ㄱ(소방대상물)을 포함하는 역전 구조</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 소방안전관리대상물( ㄷ )은 특정소방대상물( ㄴ )의 부분집합입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">[벤다이어그램 ④] ㄱ 내부에서 ㄴ, ㄷ, ㄹ이 서로 포함되지 않고 분리된 구조</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 가스관련 시설을 제외한 화재예방안전진단 대상 특별관리시설물( ㄹ )은 소방안전관리대상물( ㄷ )의 부분집합에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2026년 소방경채 Q2 · 소방공채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">119종합상황실은 24시간 운영체제를 유지하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ｢소방기본법 시행규칙｣ 제2조 제3항에 따라 119종합상황실은 24시간 운영체제를 유지하여야 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">119종합상황실의 실장은 재난상황의 발생 신고접수, 재난 상황의 전파 및 보고, 재난상황이 발생한 현장에 대한 지휘 및 피해현황의 파악 등의 업무를 수행하고 그에 관한 내용을 기록·관리하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 같은 법 시행규칙 제3조 제1항에 따른 119종합상황실 실장의 법정 업무(신고접수, 전파·보고, 현장 지휘 및 피해현황 파악, 기록·관리)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">지하철 화재로 사망자가 2인 발생한 재난상황의 경우, 119종합상황실의 실장은 그 사실을 지체 없이 서면·팩스 또는 컴퓨터통신 등으로 소방서 종합상황실인 경우에는 소방본부 종합상황실에, 소방본부 종합상황실인 경우에는 소방청 종합상황실에 각각 보고해야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 같은 법 시행규칙 제3조 제2항 제1호 라목에 따라 '지하철 또는 지하구 화재'는 인명피해 규모(사망 5명·사상 10명 이상)와 관계없이 그 자체로 상급 종합상황실(서 ➔ 본부 ➔ 청) 즉시 보고 대상 화재에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">소방서장 및 시장·군수·구청장은 화재, 재난·재해, 그 밖에 구조·구급이 필요한 상황이 발생하였을 때에 신속한 소방 활동을 위한 정보의 수집·분석과 판단·전파, 상황관리, 현장 지휘 및 조정·통제 등의 업무를 수행하기 위하여 119종합상황실을 설치·운영하여야 한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] ｢소방기본법｣ 제4조 제1항에 따라 119종합상황실을 설치·운영하여야 하는 권한자는 '소방청장, 소방본부장 및 소방서장'이며, '시장·군수·구청장'은 119종합상황실 설치권자가 아닙니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:X · 03:O · 04:X · 05:X · 06:O · 07:O · 08:X · 09:O · 10:O · 11:O · 12:O · 13:X · 14:X · 15:O · 16:X · 17:X · 18:X · 19:O · 20:O · 21:O · 22:O · 23:X · 24:O · 25:O · 26:O · 27:O · 28:O · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>｢소방기본법｣ 제2조 제1호에 따른 정확한 정의입니다. 운항 중인 선박은 제외되고 항구에 매어둔 선박만 소방대상물에 포함됩니다.
+            <span class="ox-exp-src">2018년 소방경채 Q9 · 소방기본법 제2조 제1호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>｢소방기본법｣ 제2조 제2호의 '관계지역'은 특정소방대상물이 아니라 '소방대상물'이 있는 장소 및 '그 이웃 지역'으로서 예방·경계·진압·구조·구급 활동에 필요한 지역을 말합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q1 · 소방기본법 제2조 제2호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>｢소방기본법｣ 제2조 제3호에 따라 소방대상물의 소유자·관리자 또는 점유자 3인을 모두 관계인이라 합니다.
+            <span class="ox-exp-src">2018년 소방경채 Q9 · 소방기본법 제2조 제3호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>시·도에서 화재 예방·경계·진압·조사 및 구조·구급 등의 업무를 담당하는 부서의 장은 소방서장이 아니라 '소방본부장'(｢소방기본법｣ 제2조 제4호)입니다.
+            <span class="ox-exp-src">2025년 소방경채 Q1 · 소방기본법 제2조 제4호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 05 · X 틀림</span>｢소방기본법｣ 제2조 제5호에 따라 소방대는 소방공무원, 의무소방원, '의용소방대원' 3종류로만 구성되며, 민간 조직인 자위소방대원이나 자체소방대원은 포함되지 않습니다.
+            <span class="ox-exp-src">2019년 소방경채 Q1 · 소방기본법 제2조 제5호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>｢소방기본법｣ 제2조 제6호에 따른 소방대장의 법정 정의입니다(2018년 기출에서는 '소방조장', 2025년 기출에서는 '현장지휘관'으로 변형하여 오답 출제).
+            <span class="ox-exp-src">2020년 소방경채 Q10 · 소방기본법 제2조 제6호</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>｢소방기본법｣ 제2조 제1호의 소방대상물이 가장 넓은 상위 개념이며, 특정소방대상물 ➔ 소방안전관리대상물 ➔ 화재예방안전진단 대상 특별관리시설물(가스 제외) 순으로 부분집합을 형성합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q1 · 소방공채 Q1</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 08 · X 틀림</span>｢소방기본법｣ 제3조 제1항에 따라 시·도의 소방기관 설치에 필요한 사항은 행정안전부령이 아니라 '대통령령'(｢지방소방기관 설치에 관한 규정｣)으로 정합니다.
+            <span class="ox-exp-src">2021년 소방경채 Q8 · 2022년 소방경채 Q1</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>｢지방소방기관 설치에 관한 규정｣(대통령령) 제4조에 따라 시·도에서 소방업무를 수행하기 위하여 시·도지사 직속으로 소방본부를 둡니다.
+            <span class="ox-exp-src">2021년 소방경채 Q8 · 지방소방기관 설치에 관한 규정 제4조</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>｢소방기본법｣ 제3조 제2항(평시 시·도지사 지휘·감독 원칙) 및 제3항(대형 재난 등 필요시 소방청장 직접 지휘·감독)의 정확한 규정입니다.
+            <span class="ox-exp-src">2021년 소방경채 Q8 · 소방기본법 제3조 제2항·제3항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>｢소방기본법｣ 제6조 제1항에 따라 국가 단위의 소방업무 종합계획은 소방청장이 5년마다 수립·시행합니다(행정안전부장관이나 3년 주기가 아님).
+            <span class="ox-exp-src">2020년 소방공채 Q2 · 소방기본법 제6조 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>｢소방기본법｣ 제6조 제3항 및 같은 법 시행령 제1조의3 제1항에 따른 종합계획 수립 기한(시행 전년도 10월 31일) 및 통보 절차입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q3 · 소방기본법 제6조 제3항·시행령 제1조의3</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 13 · X 틀림</span>｢소방기본법｣ 제6조 제4항 및 시행령 제1조의3 제3항에 따라 시·도지사는 세부계획을 매년(시행 전년도 12월 31일까지) 수립하여 행정안전부장관이 아니라 '소방청장'에게 제출하여야 합니다.
+            <span class="ox-exp-src">2022년 소방경채 Q3 · 소방기본법 제6조 제4항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>｢소방기본법｣ 제4조의3 제1항 및 같은 법 시행령 제1조의2 제1항에 따라 소방기술민원센터는 소방청장 또는 소방본부장이 '소방청 또는 소방본부'에 각각 설치·운영하며, 각 소방서에 설치하는 것이 아닙니다.
+            <span class="ox-exp-src">2022년 소방공채 Q2 · 소방기본법 제4조의3</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>｢소방기본법 시행령｣ 제1조의2 제2항 및 제3항에 따른 소방기술민원센터의 구성 인원(18명 이내)과 법정 업무입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q2 · 소방공채 Q2 · 시행령 제1조의2</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 16 · X 틀림</span>｢소방기본법 시행령｣ 제1조의2 제4항에 따라 관계 기관의 장에게 소속 공무원 또는 직원의 파견을 요청할 수 있는 권한자는 센터장이 아니라 '소방청장 또는 소방본부장'입니다.
+            <span class="ox-exp-src">2022년 소방경채 Q2 · 소방기본법 시행령 제1조의2 제4항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 17 · X 틀림</span>｢소방기본법｣ 제4조 제1항에 따라 119종합상황실의 설치·운영 의무자는 '소방청장, 소방본부장 및 소방서장'이며, 시장·군수·구청장은 설치권자가 아닙니다.
+            <span class="ox-exp-src">2026년 소방경채 Q2 · 소방공채 Q2 · 소방기본법 제4조 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>｢소방기본법｣ 제4조 제1항 및 시행규칙 제2조 제1항에 따라 119종합상황실은 소방청, 시·도의 소방본부 및 소방서에 '각각 모두' 설치·운영하여야 합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q2 · 소방공채 Q1 · 시행규칙 제2조 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>｢소방기본법｣ 제4조 제2항(경찰공무원 배치 근거=대통령령)과 제3항(설치·운영 기준=행정안전부령)의 위임 법령 차이를 정확히 구분해야 합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q2 · 소방공채 Q1 · 소방기본법 제4조 제2항·제3항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 20 · O 옳음</span>｢소방기본법 시행규칙｣ 제2조 제2항 및 제3항 원문입니다(2025년 기출에서는 '소방청 119종합상황실 운영 규정'으로 바꿔 오답을 출제함).
+            <span class="ox-exp-src">2025년 Q2 · 2026년 Q2 · 소방기본법 시행규칙 제2조 제2항·제3항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>｢소방기본법 시행규칙｣ 제3조 제1항 각 호에 규정된 119종합상황실 실장(근무자 중 최고직위자)의 6대 법정 업무입니다.
+            <span class="ox-exp-src">2025년 Q2 · 2026년 Q2 · 소방기본법 시행규칙 제3조 제1항</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>일반 화재의 상급 종합상황실 보고 임계 수치(사망 5명, 사상 10명, 이재민 100명, 재산피해액 50억 원 이상)는 최빈출 암기 기준입니다.
+            <span class="ox-exp-src">소방기본법 시행규칙 제3조 제2항 제1호 가·나·다목</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>｢소방기본법 시행규칙｣ 제3조 제2항 제1호 라목에 따라 관공서·학교·정부미도정공장·문화재·'지하철 또는 지하구'의 화재는 인명피해 규모와 관계없이 무조건 지체 없이 상급 종합상황실(소방서 ➔ 소방본부 ➔ 소방청)에 보고해야 합니다.
+            <span class="ox-exp-src">2026년 소방경채 Q2 · 소방공채 Q2 · 시행규칙 제3조 제2항 제1호 라목</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>피해 규모와 무관하게 즉시 보고해야 하는 특수 대상물의 3대 핵심 수치(건축물 11층 이상, 위험물 지정수량 3,000배 이상, 정박 선박 총톤수 1,000톤 이상)입니다.
+            <span class="ox-exp-src">소방기본법 시행규칙 제3조 제2항 제1호 마·바·사목</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 25 · O 옳음</span>소방기술민원센터는 소방기술민원과 관련된 업무로서 소방청장이 필요하다고 인정하여 지시하는 업무를 수행합니다.
+            <span class="ox-exp-src">2022년 소방경채 Q2 · 소방기술민원센터의 설치 및 파견 요청권자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 26 · O 옳음</span>｢소방기본법｣ 제4조의3 제1항에 따라 소방청장 또는 소방본부장은 소방시설, 소방공사 및 위험물 안전관리 등과 관련된 법령해석 등의 민원을 종합적으로 접수·처리할 수 있는 소방기술민원센터를 설치·운영할 수 있습니다.
+            <span class="ox-exp-src">2022년 소방경채 Q2 · 소방기술민원센터의 설치 및 파견 요청권자</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 27 · O 옳음</span>｢소방기본법｣ 제6조 제3항에 따라 소방청장은 수립한 종합계획을 관계 중앙행정기관의 장 및 시·도지사에게 통보하여야 합니다.
+            <span class="ox-exp-src">2022년 소방경채 Q3 · 소방업무 종합계획 및 세부계획의 수립·제출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 28 · O 옳음</span>｢소방기본법｣ 제6조 제2항에 따라 종합계획에는 소방업무에 필요한 체계 구축, 소방기술 연구·개발 및 보급, 소방전문인력 양성 등이 포함되어야 합니다.
+            <span class="ox-exp-src">2022년 소방경채 Q3 · 소방업무 종합계획 및 세부계획의 수립·제출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>｢소방기본법｣ 제4조 제1항에 따라 119종합상황실은 소방청, 시·도의 소방본부 및 소방서 중 하나 이상에 선택적으로 설치하는 것이 아니라 소방청, 소방본부, 소방서 '각각 모두' 설치·운영하여야 합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q2 · 소방공채 Q1 · 119종합상황실의 설치·운영 및 실장의 업무</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>｢소방기본법｣ 제4조 제2항에 따라 시·도 소방본부의 119종합상황실에는 대통령령으로 정하는 바에 따라 경찰공무원을 둘 수 있으나, 제3항에 따라 119종합상황실의 설치·운영에 필요한 사항은 대통령령이 아니라 '행정안전부령'으로 정합니다.
+            <span class="ox-exp-src">2025년 소방경채 Q2 · 소방공채 Q1 · 119종합상황실의 설치·운영 및 실장의 업무</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

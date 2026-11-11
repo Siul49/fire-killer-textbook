@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=6" />
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,9 +44,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 건축허가등의 동의 대상 범위와 동의 회신 절차 (5일·10일·4일·7일)</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 성능위주설계(PBD) 대상 범위와 내진설계 대상 소방시설 4종</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 증축·용도변경 소방시설 적용 특례와 소방시설공사업법 핵심 기준</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 도면 단계의 사전 통제 — 건축허가등의 동의 대상(영 제7조)과 기한(규칙 제3조)</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 성능위주설계(영 제9조 · DAY 09 특급 대조)와 내진설계 4종(법 제7조·영 제8조)</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 증축·용도변경 특례(영 제15조), 임시소방시설 및 공사업법 핵심 연결</a>
           <a href="#diagramSection" class="block text-emerald-400 hover:text-white py-1 transition mt-2">단원 핵심 도해</a>
           <a href="#examStatsSection" class="block text-amber-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">
             출제 경향 및 핵심 쟁점 요약
@@ -55,7 +55,7 @@
             실전 기출문제 (21문항)
           </a>
           <a href="#quizSection" class="block text-teal-300 hover:text-white py-1 transition font-bold">
-            핵심 지문 OX 확인 (25문항)
+            핵심 지문 OX 확인 (57문항: 1회독 33 + 2회독확장 24)
           </a>
         </nav>
       </div>
@@ -69,228 +69,163 @@
 
     <header class="mb-14 pb-6 border-b border-emerald-900/40">
       <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
-        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제2장</span>
+        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제2장 · DAY 12 (설계·허가 단계의 공학적 사전 통제)</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
         건축허가등의 동의, 성능위주설계 및 내진설계
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        건축허가 단계에서 소방관서장이 도면을 사전 검토하는 건축허가등의 동의 대상과 회신 기한을 파악하고, 초고층·대형 건축물의 성능위주설계 대상 범위, 지진에 대비한 내진설계 4종 소방시설 및 증축·용도변경 특례를 정리합니다.
+        어제 분류한 특정소방대상물을 실제로 건축허가 받을 때 소방본부장·소방서장이 설계도면을 사전 심사하는 건축허가등의 동의(법 제6조·영 제7조)를 출발점으로, 초고층·초대형 신축 건축물의 성능위주설계(영 제9조), 지진 대비 내진설계 4종(영 제8조), 그리고 증축·용도변경 기준 적용 특례(영 제15조)를 최신 개정 법령 기준으로 완성합니다.
       </p>
     </header>
 
-        <section class="space-y-12 mb-16">
+    <section class="space-y-12 mb-16">
       <div id="sec1">
-        <h2 class="text-xl font-bold text-white mb-3">1. 건물 다 짓고 허물 순 없으니 허가 전에 소방서장 동의부터 받아라 — 건축허가등의 동의(법 제6조, 시행령 제11조·제12조)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">1. 건물을 다 짓고 부술 수는 없다 — 건축허가등의 동의 대상(시행령 제7조)과 행정 기한(시행규칙 제3조)</h2>
         <div class="para-block">
           <p class="prose-body">
-            제1장에서 건물의 용도와 크기를 분류하는 법을 배웠으니, 이제 실제로 건물을 짓는 단계로 가봅시다. 건축주에게 건축허가를 내주는 권한자는 시장·군수·구청장 등(건축허가청)입니다. 그런데 시청 건축과 공무원이 건물의 구조와 디자인만 보고 허가를 내주었는데, 건물을 다 짓고 나서 소방관이 가보니 스프링클러 배관이 지나갈 공간도 없고 소방펌프실도 없다면 건물을 다시 뜯어고쳐야 하는 막대한 낭비가 벌어지겠지요. 이를 막기 위해 <strong>｢소방시설 설치 및 관리에 관한 법률｣ 제6조</strong>는 건축허가등의 권한이 있는 행정기관이 건축허가 등을 할 때 미리 그 건축물 등의 <strong>시공지 또는 소재지를 관할하는 소방본부장이나 소방서장의 동의(건축허가등의 동의)</strong>를 받도록 의무화하고 있습니다. 이때 동의를 받아야 하는 건축물 등의 구체적 범위는 <strong>대통령령(시행령 제11조)</strong>으로 정하고(행정안전부령 아님 주의!), 동의 요구 절차 및 제출 서류(건축물의 내부구조를 알 수 있는 설계도면 등)는 행정안전부령으로 정합니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>동의 절차 기한(시행령 제12조)</strong>: 회신 기한은 일반 <strong>5일 이내</strong>, 특급·성능위주설계 대상물은 <strong>10일 이내</strong> / 서류 보완 <strong>4일 이내</strong> / 허가취소 통보 <strong>7일 이내</strong></li>
-              <li><strong>동의 대상 층수·면적(시행령 제11조)</strong>: 층수 <strong>6층 이상</strong>(면적 무관) / 일반 건물 <strong>400㎡</strong>, 정신의료·장애인재활 <strong>300㎡</strong>, 노유자·수련·주차장 <strong>200㎡</strong>, 학교 <strong>100㎡ 이상</strong></li>
-              <li><strong>지하층·무창층 및 면적 무관</strong>: 지하·무창층 바닥면적 <strong>150㎡ 이상</strong>(공연장은 <strong>100㎡ 이상</strong>) / 승강기식 주차 <strong>20대 이상</strong> / 격납고·관망탑·관제탑·지하구·위험물 제조소등(<strong>면적 불문</strong>)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            건축허가를 기다리는 민원인의 지체를 막기 위해, 건축허가청으로부터 동의 요구서를 받은 소방본부장 또는 소방서장은 접수한 날부터 원칙적으로 <strong>5일 이내</strong>에 동의 여부를 회신하여야 합니다. 다만 30층 이상이거나 연면적 10만 제곱미터 이상인 <strong>특급 소방안전관리대상물이나 성능위주설계 대상물은 검토할 도면이 방대하므로 두 배인 10일 이내</strong>에 회신하도록 규정하고 있습니다(<strong>시행령 제12조</strong>). 만약 첨부 서류나 설계도서가 미비하여 보완이 필요한 경우에는 <strong>4일 이내</strong>의 기간을 정하여 보완을 요구할 수 있고(이 보완 기간은 회신 기간 5일·10일에 산입하지 아니함), 건축허가청이 건축허가 등을 취소하였을 때에는 취소한 날부터 <strong>7일 이내</strong>에 관할 소방본부장·소방서장에게 그 사실을 통보하여야 합니다(<strong>일반 5일 · 특급 10일 · 보완 4일 · 취소통보 7일</strong>).
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            그렇다면 어떤 규모의 건축물을 신축·증축·개축·재축·이전·용도변경·대수선할 때 소방본부장·소방서장의 동의를 받아야 할까요?(<strong>시행령 제11조</strong>) 먼저 높이와 상관없이 <strong>층수가 6층 이상인 건축물</strong>은 연면적이 얼마이든 무조건 동의 대상입니다(2024년 공·경채 빈출!). 층수가 6층 미만일 때에는 용도별 위험도에 따라 연면적 기준이 <strong>'400제곱미터 ➔ 300제곱미터 ➔ 200제곱미터 ➔ 100제곱미터'</strong>의 계단식으로 내려갑니다. ① 평범한 <strong>일반 건축물은 연면적 400제곱미터 이상</strong>일 때 동의 대상입니다. ② <strong>정신의료기관(입원실이 없는 정신건강의학과 의원은 제외) 및 장애인의료재활시설은 연면적 300제곱미터 이상</strong>일 때, ③ 어르신·아이들이 머무는 <strong>노유자시설·수련시설은 연면적 200제곱미터 이상</strong>일 때, ④ 학생들이 모이는 <strong>학교시설은 연면적 100제곱미터 이상</strong>만 되어도 동의 대상이 됩니다! 또한 화재 시 위험한 <strong>지하층 또는 무창층은 해당 층의 바닥면적이 150제곱미터 이상(공연장의 경우에는 100제곱미터 이상)</strong>인 층이 있으면 동의 대상이고, <strong>차고·주차장은 차고·주차 용도로 사용되는 바닥면적이 200제곱미터 이상이거나 승강기 등 기계장치에 의한 주차시설로서 자동차 20대 이상을 주차할 수 있는 시설</strong>이면 동의 대상입니다. 마지막으로 <strong>항공기격납고, 관망탑, 항공관제탑, 지하역사, 지하구, 위험물 제조소등, 가스시설</strong>은 단 1제곱미터라도 <strong>면적에 관계없이 무조건</strong> 동의를 받아야 합니다(단, 소화기구·단독경보형감지기·피난기구·유도표지·비상조명등만 설치하는 소규모 대상물 등은 동의 대상에서 제외되며, 과거 구법에서는 성능위주설계를 한 대상물을 제외하는 단서가 있었으나 현행 시행령에서는 삭제되어 동의 대상에 포함됩니다).
+            앞선 제1장에서 건물의 용도와 수용인원, 무창층을 가려내는 기준을 세웠으니 이제 첫 삽을 뜨기 직전인 건축허가 단계로 들어가 봅시다. 건축허가를 내주는 주체는 시장·군수·구청장 같은 건축허가청이지만, 외관과 구조만 보고 허가를 내주었다가 완공 후 법 제12조에 따른 소방시설 설치 공간이나 펌프실이 없어 건물을 다시 뜯어고친다면 막대한 사회적 낭비가 발생합니다(주택·차량 사각지대인 법 제10조·제11조와 달리 일반 특정소방대상물은 설계 단계부터 관할 소방관서가 개입합니다). 이를 차단하기 위해 법 제6조가 정한 동의 주체와 행정 기한 체계는 다음과 같습니다.
+            <span class="prose-item"><strong>① 소방동의 요구 주체 · 동의권자 및 위임 법령 (법 제6조 · 영 제7조 · 규칙 제3조)</strong></span>
+            <span class="prose-sub">&bull; <strong>권한 주체 대칭</strong>: <strong>건축허가등의 권한이 있는 행정기관</strong>은 허가·협의·사용승인을 할 때 미리 그 건축물 등의 <strong>시공지 또는 소재지를 관할하는 소방본부장이나 소방서장의 동의</strong>(시·도지사 동의 아님)를 받아야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>위임 법령 분담</strong>: 국민의 재산권과 직결되는 동의대상물의 구체적 범위는 대통령령인 <strong>시행령 제7조</strong>로 정하고, 건축물의 내부구조를 알 수 있는 설계도면 첨부 등 <strong>동의 요구 절차 및 제출 서류는 행정안전부령</strong>(<strong>시행규칙 제3조</strong>)으로 정합니다.</span>
+            <span class="prose-item"><strong>② 착공 지체를 막는 4대 행정 기한 공식 (시행규칙 제3조)</strong></span>
+            <span class="prose-sub">&bull; <strong>동의 여부 회신 기한(5일 대 10일)</strong>: 동의 요구서류를 접수한 소방본부장 또는 소방서장은 접수일부터 원칙적으로 5일 이내에 동의 여부를 회신하되, 검토할 도면이 방대한 특급 소방안전관리대상물에 해당하는 건축물은 두 배인 10일 이내에 회신하여야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>서류 보완(4일) 및 허가 취소 통보(7일)</strong>: 첨부서류나 설계도서가 미비할 때에는 <strong>4일 이내</strong>의 기간을 정하여 보완을 요구할 수 있으며(보완 기간은 회신 기간 불산입, 미보완 시 반려), 동의를 요구한 행정기관이 그 건축허가등을 취소하였을 때에는 <strong>취소한 날부터 7일 이내</strong>에 관할 소방본부장·소방서장에게 통보하여야 합니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:26%;">구분 대상물</th>
-                <th style="width:44%;">건축허가등의 동의 대상 규모 기준 (시행령 제11조)</th>
-                <th>절차 기한 및 핵심 출제 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>층수 기준 / 일반 건축물</strong></td>
-                <td>층수 <strong>6층 이상</strong>인 건축물(면적 무관) / 일반 건축물: <strong>연면적 400㎡ 이상</strong></td>
-                <td>회신 기한: 일반 <strong>5일 이내</strong>, 특급·성능위주 <strong>10일 이내</strong></td>
-              </tr>
-              <tr>
-                <td><strong>피난약자 · 학교시설(계단식)</strong></td>
-                <td>정신의료·장애인재활 <strong>300㎡ 이상</strong> / 노유자·수련시설 <strong>200㎡ 이상</strong> / 학교시설 <strong>100㎡ 이상</strong></td>
-                <td>일반(400㎡) ➔ 정신·재활(300㎡) ➔ 노유자·수련(200㎡) ➔ 학교(100㎡)</td>
-              </tr>
-              <tr>
-                <td><strong>지하층 · 무창층</strong></td>
-                <td>바닥면적 <strong>150㎡ 이상</strong> (단, <strong>공연장의 경우에는 100㎡ 이상</strong>)</td>
-                <td>서류 보완 요구 <strong>4일 이내</strong> / 허가취소 통보 <strong>7일 이내</strong></td>
-              </tr>
-              <tr>
-                <td><strong>차고·주차장 / 면적 무관 시설</strong></td>
-                <td>차고·주차장 바닥면적 <strong>200㎡ 이상</strong> 또는 기계식 주차 <strong>20대 이상</strong> / 격납고·관망탑·관제탑·지하역사·지하구·위험물 제조소등(<strong>면적 불문</strong>)</td>
-                <td>동의대상물 범위 위임 = <strong>대통령령</strong>(행정안전부령 X)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            그렇다면 어떤 건축물이 건축허가등의 동의 대상(시행령 제7조 제1항)에 해당할까요? 고가사다리차 한계 층수, 재실자의 자력 대피 능력에 따른 계단식 연면적, 그리고 최근 전기차·주차장 화재 위험을 반영한 면적 무관 대상까지 층위별로 명확히 구분해야 합니다.
+            <span class="formula-box">
+              <span class="formula-badge">건축허가등의 동의 기한 · 면적 서열 공식 (시행령 제7조 · 시행규칙 제3조)</span>
+              <span class="formula-eq">회신 5일(특급 10일)·보완 4일·취소통보 7일 | 6층 이상 또는 일반 400㎡·정신의료 300㎡·노유자 200㎡·학교 100㎡ 이상</span>
+              <span class="formula-ex">💡 <strong>개정 핵심 급소</strong> | 지하·무창층 = 바닥면적 150㎡(공연장 100㎡) 이상 / 차고·주차장·기계식 주차시설 = 현행법상 면적·대수 무관 전원 동의 대상!</span>
+            </span>
+            <span class="prose-item"><strong>③ 층수 기준 및 자력 대피 능력별 계단식 연면적 (시행령 제7조 제1항)</strong></span>
+            <span class="prose-sub">&bull; <strong>층수 및 400·300·200·100제곱미터 서열</strong>: <strong>층수가 6층 이상인 건축물</strong>은 연면적과 상관없이 무조건 동의 대상이며, 6층 미만일 때에는 일반 건축물 연면적 400제곱미터 이상, 정신의료기관(외래 근린생활시설인 <strong>입원실이 없는 정신건강의학과 의원은 제외</strong>하여 400제곱미터 적용) 및 장애인의료재활시설 300제곱미터 이상, 노유자시설·수련시설 200제곱미터 이상, 학교시설 100제곱미터 이상부터 동의 대상이 됩니다.</span>
+            <span class="prose-sub">&bull; <strong>지하층·무창층 바닥면적 기준</strong>: 앞선 장에서 배운 지하층 또는 무창층은 해당 층의 <strong>바닥면적이 150제곱미터 이상</strong>이되 어둡고 밀집된 <strong>공연장의 경우에는 100제곱미터 이상</strong>만 되어도 동의 대상입니다.</span>
+            <span class="prose-sub">&bull; <strong>면적·대수 무관 당연 동의 대상(최신 개정 반영)</strong>: 최근 시행령 개정으로 구법의 바닥면적 200제곱미터·기계식 20대 이상 제한이 삭제됨에 따라 현행법상 <strong>차고·주차장</strong> 또는 주차 용도 층이 있는 건축물과 기계식 주차시설은 면적·대수와 관계없이 모두 동의 대상이며, <strong>항공기 격납고, 관망탑, 항공관제탑</strong>, 방송용 송수신탑, 공동주택, 조산원·산후조리원, 숙박시설, 지하구, 위험물 저장 및 처리 시설, 풍력발전소·전기저장시설 역시 면적 무관 동의 대상입니다(과거 구법에는 <strong>성능위주설계를 한 대상물을 제외하는 단서가 있었으나 현행 시행령에서는 삭제되어 동의 대상에 포함</strong>됩니다).</span>
+          </p>
         </div>
       </div>
 
       <div id="sec2">
-        <h2 class="text-xl font-bold text-white mb-3">2. 초고층·대형 건축물의 '성능위주설계(PBD)'와 지진에 대비한 '내진설계 대상 소방시설 4종'</h2>
+        <h2 class="text-xl font-bold text-white mb-3">2. 초고층 시뮬레이션 설계와 지진 대비 배관 보호 — 성능위주설계(시행령 제9조)와 내진설계 4종(법 제7조·영 제8조)</h2>
         <div class="para-block">
           <p class="prose-body">
-            초고층 빌딩이나 초대형 복합건축물, 혹은 해저터널은 구조가 미로처럼 복잡하고 동시에 수만 명이 몰려 있기 때문에, 획일적인 법전 공식만으로는 화재 시 연기 확산과 피난 병목현상을 완벽히 통제할 수 없습니다. 그래서 <strong>법 제8조 및 시행령 제9조(별표 1의2)</strong>는 건축물 등의 재료·공간·이용자·화재 특성 등을 종합적으로 고려하여 공학적 방법(컴퓨터 화재·피난 시뮬레이션)으로 화재 위험성을 평가하고 설계하는 <strong>성능위주설계(Performance Based Design)</strong>를 의무화하고 있습니다. 이때 성능위주설계를 수행할 수 있는 자는 <strong>전문소방시설설계업을 등록한 자 중 소방기술사 2명 이상을 기술인력으로 보유한 자</strong>(또는 동등 이상의 기술인력이 있다고 인정되는 자)입니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>성능위주설계 대상(시행령 별표 1의2)</strong>: ① 연면적 <strong>10만 ㎡ 이상(아파트등 제외; 구법 20만 ㎡)</strong>, ② 일반 건물 <strong>30층(지하 포함) 이상 또는 높이 100m 이상(아파트등 제외)</strong>, ③ 아파트등 <strong>50층(지하 제외) 이상 또는 지상 높이 200m 이상</strong></li>
-              <li><strong>교통·영화관·터널</strong>: 연면적 <strong>3만 ㎡ 이상 철도·도시철도·공항시설</strong> / 하나의 건축물에 <strong>영화상영관 10개 이상</strong> / <strong>수저터널 또는 길이 5,000m 이상 터널</strong></li>
-              <li><strong>내진설계 대상 소방시설 4종(시행령 제16조)</strong>: <strong>옥내소화전설비 · 스프링클러설비 · 간이스프링클러설비 · 물분무등소화설비</strong> (옥외소화전·연결송수관·연결살수·제연·자탐 제외!)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            시험에서 매년 출제되는 <strong>성능위주설계 의무 대상 범위(시행령 제9조 및 별표 1의2)</strong>는 일반 건축물과 아파트등의 차이를 정밀하게 대조해야 합니다. 첫째, <strong>연면적 10만 제곱미터 이상인 특정소방대상물(단, 아파트등은 제외!</strong> 참고로 개정 전 구법 기출에서는 연면적 20만 제곱미터 이상이었으며 창고시설은 연면적 10만 제곱미터 이상 또는 지하층 2개 층 이상이고 지하층 바닥면적 합계 3만 제곱미터 이상으로 규정)입니다. 왜 대단지 아파트는 연면적 기준에서 빼주었을까요? 아파트는 면적이 넓어도 동일한 세대 구조가 반복되어 공학적 맞춤 설계가 필요 없기 때문입니다. 둘째, 고층 기준을 보면 <strong>일반 특정소방대상물(아파트등 제외)은 지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 100미터 이상</strong>인 것(구법 기출에서는 건축물 높이 100미터 이상; 특급 소방안전관리대상물 기준인 120미터 이상과 혼동 주의!)이고, <strong>아파트등은 지하층을 제외한 층수가 50층 이상이거나 지상으로부터 높이가 200미터 이상</strong>인 것입니다(따라서 지상 48층이라도 높이가 250미터인 신축 아파트는 200미터 이상 요건을 충족하여 성능위주설계 대상에 포함됩니다!). 셋째, <strong>연면적 3만 제곱미터 이상인 철도·도시철도 시설 및 공항시설</strong>, 넷째, 하나의 건축물에 ｢영화 및 비디오물의 진흥에 관한 법률｣에 따른 <strong>영화상영관이 10개 이상</strong>인 특정소방대상물, 다섯째, 지하가 중 터널로서 <strong>수저(水底)터널(길이 무관) 또는 길이가 5,000미터 이상인 터널</strong>입니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            한편 경주·포항 지진 이후 지진 진동으로 건물 내 수계 소화배관과 수조가 파열되어 초기 진화가 불가능해지는 사태를 막기 위해, <strong>법 제9조 및 시행령 제16조</strong>는 지진이 발생할 경우 소방시설이 정상적으로 작동될 수 있도록 소방청장이 정하여 고시하는 <strong>내진설계기준에 맞게 설치하여야 하는 소방시설</strong>을 딱 <strong>4가지</strong>로 한정하여 규정하고 있습니다. 바로 ① <strong>옥내소화전설비</strong>, ② <strong>스프링클러설비</strong>, ③ <strong>간이스프링클러설비</strong>, ④ <strong>물분무등소화설비</strong>입니다(앞 글자를 따서 <strong>'옥내 · 스 · 간이 · 물분무' 4종!</strong>). 시험에서는 이 4가지 사이에 이름이 비슷한 <strong>옥외소화전설비, 연결송수관설비, 연결살수설비, 제연설비, 자동화재탐지설비</strong>를 끼워 넣어 "다음 중 내진설계 대상 소방시설이 아닌 것은?" 또는 "모두 고른 것은?"(2018년 공채 Q8, 2022년 경채 Q16, 2024년 경채 Q34)으로 반복 출제하므로, <strong>연결송수관설비와 옥외소화전설비는 내진설계 대상이 아니며 간이스프링클러설비는 내진설계 대상에 포함된다</strong>는 사실을 100퍼센트 정확히 각인해 두어야 합니다!
+            초고층 마천루나 초대형 복합시설, 해저터널은 공간이 미로처럼 얽혀 있어 획일적인 법전 공식만으로는 연기 확산과 피난 병목을 통제할 수 없습니다. 그래서 법 제8조 및 시행령 제9조는 일정 규모 이상의 신축 특정소방대상물에 대하여 컴퓨터 화재·피난 시뮬레이션 등 공학적 방법으로 위험성을 평가해 맞춤 설계하는 성능위주설계를 의무화하였습니다. 제2편 제3장에서 배운 특급 소방안전관리대상물 기준과 1대1로 대조하면 숫자가 한 번에 정돈됩니다.
+            <span class="prose-item"><strong>① 성능위주설계 수행 자격 및 절차 (법 제8조 · 공사업법 시행령 별표 1의2)</strong></span>
+            <span class="prose-sub">&bull; <strong>설계자 자격 요건</strong>: 소방시설공사업법 시행령 제2조의3 및 별표 1의2에 따라 성능위주설계를 수행할 수 있는 자는 <strong>전문소방시설설계업을 등록한 자 중 소방기술사 2명 이상을 기술인력으로 보유한 자</strong>여야 하며, 건축허가 신청 전에 관할 소방서장에게 신고하여 성능위주설계평가단 검토·평가(요청일부터 20일 이내, 변경신고 14일 이내)를 거쳐야 합니다.</span>
+            <span class="prose-item"><strong>② 신축 특정소방대상물 성능위주설계 의무 범위 (시행령 제9조)</strong></span>
+            <span class="prose-sub">&bull; <strong>연면적 기준(일반 20만 대 창고 10만)</strong>: 일반 건축물은 특급(10만 제곱미터)의 두 배인 <strong>연면적 20만 제곱미터 이상인 특정소방대상물</strong>이되 반복 세대 구조인 아파트등은 제외되며, 화재하중이 집중되는 창고시설은 연면적 10만 제곱미터 이상이거나 지하층 2개 층 이상이고 지하층 바닥면적 합계 3만 제곱미터 이상일 때 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>고층·높이 기준(특급 기준과 완전 일치)</strong>: 아파트등은 <strong>지하층을 제외한 층수가 50층 이상이거나 지상으로부터 높이가 200미터 이상</strong>인 것, 아파트등을 제외한 일반 특정소방대상물은 <strong>지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 120미터 이상</strong>인 것입니다.</span>
+            <span class="prose-sub">&bull; <strong>교통·영화상영관·지하연계·터널 기준</strong>: <strong>연면적 3만 제곱미터 이상인 철도·도시철도 시설 및 공항시설</strong>(화재예방안전진단 대상 철도역사 5천·공항터미널 1천 제곱미터와 구별), 하나의 건축물에 <strong>영화상영관이 10개 이상</strong>인 것, 지하연계 복합건축물, 그리고 터널 중 물 밑을 지나는 <strong>수저터널 또는 길이가 5,000미터 이상인 터널</strong>(수저터널은 길이 무관)이 의무 대상입니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:26%;">제도 구분</th>
-                <th style="width:46%;">법정 의무 대상 기준 (시행령 별표 1의2 및 제16조)</th>
-                <th>출제자의 단골 함정 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>성능위주설계 (연면적·층수)</strong></td>
-                <td>· <strong>연면적 10만 ㎡ 이상</strong>(구법 20만 ㎡ 이상) 특정소방대상물 (<strong>아파트등 제외!</strong>)<br/>· 일반(아파트등 제외): <strong>지하층 포함 30층 이상</strong> 또는 <strong>높이 100m 이상</strong><br/>· 아파트등: <strong>지하층 제외 50층 이상</strong> 또는 <strong>지상 높이 200m 이상</strong></td>
-                <td>· 아파트등은 연면적 기준 제외!<br/>· 일반(30층·100m) vs 아파트등(50층·200m)<br/>· 지상 48층·높이 250m 아파트 ➔ <strong>대상(O)</strong></td>
-              </tr>
-              <tr>
-                <td><strong>성능위주설계 (교통·영화·터널)</strong></td>
-                <td>· <strong>연면적 3만 ㎡ 이상</strong> 철도·도시철도 시설 및 공항시설<br/>· 하나의 건축물에 <strong>영화상영관 10개 이상</strong><br/>· <strong>수저(물밑)터널</strong> 또는 <strong>길이 5,000m 이상</strong> 터널</td>
-                <td>영화상영관 7개(X) ➔ <strong>10개 이상(O)</strong><br/>수저터널은 길이 무관 / 일반 터널 5,000m 이상</td>
-              </tr>
-              <tr>
-                <td><strong>내진설계 대상 소방시설 4종</strong></td>
-                <td>① <strong>옥내소화전설비</strong> ② <strong>스프링클러설비</strong><br/>③ <strong>간이스프링클러설비</strong> ④ <strong>물분무등소화설비</strong></td>
-                <td><strong>옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐</strong>은 내진설계 대상 아님(X)!</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            한편 경주·포항 지진 당시 건물 안 수계 배관과 수조가 진동으로 파열되면서 지진 직후 발생하는 2차 화재에 무방비로 노출되는 문제가 드러났습니다. 이를 막기 위해 법 제7조 및 <strong>시행령 제8조</strong>는 지진 발생 시에도 설비가 정상 작동하도록 행정안전부장관이 아닌 <strong>소방청장이 정하는 내진설계기준에 맞게 설치하여야 하는 소방시설</strong>을 건물 내부 주력 소화설비 4종으로 못 박았습니다.
+            <span class="formula-box">
+              <span class="formula-badge">성능위주설계(신축) &amp; 내진설계 의무 4종 핵심 등식 (법 제7조·제8조 · 영 제8조·제9조)</span>
+              <span class="formula-eq">내진설계 4종(소방청장 고시) = 옥내소화전 + 스프링클러 + 간이스프링클러 + 물분무등소화설비</span>
+              <span class="formula-ex">💡 <strong>포함 대 제외 경계</strong> | 간이스프링클러설비 포함(O) ↔ 옥외소화전·연결송수관·연결살수·제연·자동화재탐지설비 제외(X) / 성능위주설계 = 전문설계업 + 소방기술사 2명 이상</span>
+            </span>
+            <span class="prose-item"><strong>③ 내진설계기준 의무 대상 4종과 비대상 경계선 (법 제7조 · 시행령 제8조)</strong></span>
+            <span class="prose-sub">&bull; <strong>내부 주력 소화설비 4종 한정</strong>: 내진설계 적용 대상은 옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비의 4종이며, 건물 외부 매설 설비나 소방차 펌프 의존 소화활동설비인 <strong>연결송수관설비와 옥외소화전설비는 내진설계 대상이 아니며 간이스프링클러설비는 내진설계 대상에 포함된다</strong>는 점을 정확히 구분해야 합니다.</span>
+          </p>
         </div>
       </div>
 
       <div id="sec3">
-        <h2 class="text-xl font-bold text-white mb-3">3. 증축·용도변경 시의 소방시설 기준 적용 특례(시행령 제18조)와 소방시설공사업법 핵심 기준</h2>
+        <h2 class="text-xl font-bold text-white mb-3">3. 기존 건물을 넓히거나 바꿀 때의 잣대 — 증축·용도변경 특례(시행령 제15조), 임시소방시설 및 공사업법 핵심 연결</h2>
         <div class="para-block">
           <p class="prose-body">
-            법령이나 화재안전기준이 변경되어 그 기준이 강화되는 경우, 기존의 특정소방대상물에는 원칙적으로 <strong>변경 전의 대통령령 또는 화재안전기준</strong>을 적용합니다(<strong>법 제13조제1항 불소급의 원칙</strong>; 단, 소화기구·비상경보설비·자동화재속보설비·피난구조설비 및 노유자·의료시설 등의 필수 설비는 강화된 기준을 소급 적용). 그렇다면 기존 건축물을 넓혀 짓거나(<strong>증축</strong>) 용도를 바꿀 때(<strong>용도변경</strong>)는 어느 범위까지 새 기준을 적용할까요?(<strong>시행령 제18조</strong>) 먼저 <strong>증축</strong>되는 경우에는 원칙적으로 <strong>기존 부분을 포함한 특정소방대상물의 전체에 대하여 증축 당시의 소방시설 설치 기준</strong>을 적용합니다! 다만 ① 기존 부분과 증축 부분이 내화구조로 된 바닥과 벽으로 구획되어 있거나, ② ｢건축법 시행령｣에 따른 <strong>방화문(구 갑종방화문 등) 또는 자동방화셔터로 구획</strong>되어 있는 경우, ③ 자동차 생산공장 등 화재 위험이 낮은 특정소방대상물 내부에 작업장 증설 목적으로 단층 일부를 2층으로 증축하거나 외부에 <strong>3면 이상에 벽이 없는 구조의 캐노피</strong>(기둥으로 받치거나 매달아 놓은 덮개)를 설치하는 경우, ④ 컨베이어 등 작업시설 설치로 방화문·방화셔터 구획이 곤란하여 개구부에 <strong>물막이설비(드렌처설비)</strong>를 설치한 경우에는 예외적으로 <strong>기존 부분에 대해서는 증축 당시의 기준을 적용하지 아니합니다</strong>.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>증축 vs 용도변경 원칙(시행령 제18조)</strong>: <strong>증축</strong>은 원칙 <strong>전체</strong>에 증축 당시 기준 적용(방화문·자동방화셔터·3면 개방 캐노피·드렌처 구획 시 기존 부분 배제) / <strong>용도변경</strong>은 원칙 <strong>용도변경 부분만</strong> 용도변경 당시 기준 적용</li>
-              <li><strong>용도변경 전체 종전 기준 적용</strong>: 연소 확대 요인 감소·피난 용이 변경 또는 공연장·판매·운수·물류터미널이 <strong>일정한 근무자 이용 용도</strong>로 변경 시 <strong>전체에 용도변경 전 기준 적용</strong></li>
-              <li><strong>공사업법 핵심 3선</strong>: 완공검사 현장확인 대상(연면적 1만㎡·11층 이상 등, <strong>아파트 제외!</strong>) / 분리도급 예외(연면적 <strong>1천㎡ 이하 비상경보설비</strong>, <strong>소방청장</strong> 인정) / 특수 설계 심의(<strong>중앙소방기술심의위원회</strong>)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            반면 특정소방대상물이 <strong>용도변경</strong>되는 경우에는 증축과 달리 원칙적으로 <strong>용도변경되는 부분에 대해서만 용도변경 당시의 소방시설 설치 기준</strong>을 적용합니다! 다만 예외적으로 ① 특정소방대상물의 구조·설비가 화재연소 확대 요인이 적어지거나 피난 또는 화재진압활동이 쉬워지도록 변경되는 경우, 또는 ② 문화 및 집회시설 중 공연장·집회장·관람장, 판매시설, 운수시설, 창고시설 중 물류터미널이 <strong>불특정 다수인이 이용하는 것이 아닌 일정한 근무자가 이용하는 용도로 변경</strong>되는 경우에는 오히려 화재 위험도가 낮아졌으므로 <strong>특정소방대상물 전체에 대하여 용도변경 전에 적용되던 기준</strong>을 적용합니다(2022년 경채 Q18 정답 선지!).
+            법령이나 화재안전기준이 개정되어 기준이 강화되더라도 이미 지어진 기존 특정소방대상물에는 법적 안정성을 위해 원칙적으로 변경 전 기준을 적용하되(<strong>법 제13조 제1항</strong> 불소급 원칙), 인명 보호 효과가 절대적인 <strong>소화기구·비상경보설비·자동화재속보설비·피난구조설비</strong> 및 노유자·의료시설 등의 필수 설비에는 강화된 기준을 소급 적용하며, 관계인은 법 제16조에 따라 피난시설·방화구획 및 방화시설을 폐쇄·훼손 없이 유지해야 합니다. 그렇다면 기존 건축물을 증축하거나 용도변경할 때는 어디까지 새 기준을 적용할까요(<strong>시행령 제15조</strong>)?
+            <span class="prose-item"><strong>① 증축 대 용도변경 시 소방시설 기준 적용 원칙과 예외 (시행령 제15조)</strong></span>
+            <span class="prose-sub">&bull; <strong>증축(원칙 전체 적용 · 방화구획 등 예외 배제)</strong>: 증축은 건물 전체의 총 화재하중이 커지므로 원칙적으로 기존 부분을 포함한 전체에 증축 당시 기준을 적용합니다. 다만 내화구조 바닥·벽으로 구획되어 있거나 건축법 시행령상 <strong>자동방화셔터</strong> 또는 <strong>60분+ 방화문 또는 60분 방화문</strong>으로 구획된 경우, 그리고 자동차 생산공장 등 화재 위험이 낮은 대상물 내부에 <strong>연면적 33제곱미터 이하의 직원 휴게실을 증축</strong>하거나 외부에 <strong>3면 이상에 벽이 없는 구조의 캐노피</strong>를 설치하는 경우에는 기존 부분에 증축 당시 기준을 적용하지 않습니다.</span>
+            <span class="prose-sub">&bull; <strong>용도변경(원칙 변경 부분만 · 위험 감소 시 전체 종전 기준)</strong>: 일부 층의 쓰임새만 바꾸는 용도변경은 원칙적으로 <strong>용도변경되는 부분에 대해서만</strong> 용도변경 당시 기준을 적용하되, 오히려 <strong>화재연소 확대 요인이 적어지거나 피난 또는 화재진압활동이 쉬워지도록 변경되는 경우</strong> 또는 천장·바닥·벽 등에 고정된 가연성 물질의 양이 줄어드는 경우(구법 기출상 공연·집회·판매 등이 불특정 다수인이 아닌 <strong>일정한 근무자가 이용하는 용도</strong>로 변경되는 경우)에는 전체에 용도변경 전 기준을 그대로 적용합니다.</span>
           </p>
         </div>
+
         <div class="para-block">
           <p class="prose-body">
-            아울러 본 단원의 기출문제에 함께 수록된 <strong>임시소방시설 설치 기준(시행령 별표 8)</strong> 및 <strong>｢소방시설공사업법｣ 핵심 3대 쟁점</strong>도 빠짐없이 챙겨 둡시다. 첫째, 건설현장 임시소방시설 중 <strong>간이소화장치</strong>는 연면적 3,000제곱미터 이상이거나 지하층·무창층·4층 이상인 층의 바닥면적이 <strong>600제곱미터 이상</strong>일 때 설치하고, <strong>비상경보장치·간이피난유도선·가스누설경보기·비상조명등</strong>은 연면적 <strong>400제곱미터 이상</strong>이거나 지하층·무창층 바닥면적이 <strong>150제곱미터 이상</strong>일 때 설치합니다(지하층 150제곱미터에 간이소화장치를 설치한다는 함정 주의!). 둘째, ｢소방시설공사업법 시행령｣상 소방본부장·소방서장이 <strong>완공검사를 위하여 현장확인을 해야 하는 특정소방대상물</strong>은 문화집회·종교·판매·노유자·수련·운동·숙박·창고·지하상가·다중이용업소, 가연성가스를 100톤 이상 저장·취급하는 시설, 그리고 <strong>연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물(단, 아파트는 제외!)</strong>입니다(2020년 공채 Q7). 셋째, 소방시설공사 <strong>분리도급의 예외</strong>는 <strong>연면적 1천 제곱미터 이하인 특정소방대상물에 비상경보설비를 설치하는 공사</strong>나 재개발·재건축·문화재수리 등으로서 성질상 분리도급이 곤란하다고 <strong>소방청장</strong>(시·도지사 아님!)이 인정하는 경우 등이며(2023년 Q16), 소방시설의 구조와 원리 등에서 특수한 특정소방대상물로서 화재안전기준을 따르지 아니하고 설계할 수 있는 경우는 지방위원회가 아니라 <strong>중앙소방기술심의위원회</strong>의 심의를 거쳐 인정된 경우이고, 일반소방시설설계업(기계·전기) 등록자도 <strong>위험물 제조소등</strong>에 설치되는 해당 분야 소방시설을 설계할 수 있습니다(2024년 Q10).
+            끝으로 본 장 실전 기출문제에서 설계·시공 단계와 묶여 자주 출제되는 공사장 임시소방시설(시행령 별표 8, 모레 제4장 심화)과 법 제18조 소방기술심의위원회 및 소방시설공사업법 핵심 3대 기준을 함께 연결해 둡니다.
+            <span class="prose-item"><strong>② 임시소방시설 핵심 규모 및 소방시설공사업법 3대 연결 급소</strong></span>
+            <span class="prose-sub">&bull; <strong>임시소방시설 면적 대조(별표 8)</strong>: 물을 뿜는 <strong>간이소화장치</strong>는 <strong>연면적 3,000제곱미터 이상이거나 지하층·무창층·4층 이상인 층의 바닥면적이 600제곱미터 이상</strong>인 작업현장에 설치하고, 대피 신호를 주는 <strong>비상경보장치·간이피난유도선·가스누설경보기·비상조명등</strong>은 연면적 400제곱미터 이상(비상경보장치)이거나 지하층·무창층 바닥면적 150제곱미터 이상인 현장에 설치합니다(정규 설비에서 자동화재탐지설비 대상 중 <strong>방송통신시설</strong>은 시각경보기 설치 대상에 포함되며, 터널을 제외한 <strong>지하상가</strong> 등 지하가는 연면적 1,000제곱미터 이상일 때 제연설비를 설치합니다).</span>
+            <span class="prose-sub">&bull; <strong>완공검사 현장확인 대상(공사업법 시행령 제5조)</strong>: 문화집회·종교·판매·노유자·수련·운동·숙박·창고·지하상가·다중이용업소, 호스릴 제외 물분무·스프링클러 설치 대상, <strong>지상에 노출된 가연성가스탱크의 저장용량 합계가 1천 톤 이상인 시설</strong>, 그리고 <strong>연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물</strong>이되 아파트는 제외됩니다.</span>
+            <span class="prose-sub">&bull; <strong>분리도급 예외 및 중앙소방기술심의위원회 심의</strong>: 분리도급 예외(공사업법 시행령 제11조의2)에는 <strong>연면적 1천 제곱미터 이하인 특정소방대상물에 비상경보설비</strong>를 설치하는 공사와 재개발·재건축·<strong>문화재수리</strong> 등으로서 <strong>성질상 분리도급이 곤란하다고 소방청장</strong>(시·도지사 아님)이 인정하는 경우가 포함되며, <strong>소방시설설계업</strong> 등록자가 특수 공법으로 화재안전기준과 다르게 설계하려면 법 제18조에 따른 위원회 중 지방위원회가 아닌 <strong>중앙소방기술심의위원회</strong> 심의를 거쳐야 하고 일반설계업자도 위험물 제조소등의 해당 분야 소방시설을 설계할 수 있습니다.</span>
           </p>
         </div>
       </div>
     </section>
 
     <div class="para-block diagram-wrapper" id="diagramSection">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 건축허가등의 동의 절차·대상 및 성능위주설계·내진설계 핵심 체계</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">CORE CHEAT SHEET</span>
+          <span class="cheat-title">단원 핵심 압축 정리본 — 건축허가동의(영 제7조·규칙 제3조) · 성능위주설계(영 제9조) · 내진설계 4종 · 증축·용도변경 특례</span>
         </div>
-        <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 건축허가등의 소방동의 행정 절차 및 법정 기한 (5일 · 10일 · 4일 · 7일)</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">소방동의 요구 주체 vs 동의권자 (법 제6조)</div>
-                <div>· 동의 요구자: <strong>건축허가등의 권한이 있는 행정기관</strong><br/>· 동의권자: 시공지·소재지 관할 <strong>소방본부장 또는 소방서장</strong><br/>· 동의대상물 범위 위임: <strong>대통령령</strong>(시행령 제11조)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">법정 동의 회신 기한 (5일 vs 10일)</div>
-                <div>· 일반 대상물: 접수일로부터 <strong>5일 이내</strong> 회신<br/>· 특급 대상물 및 성능위주설계 대상물: <strong>10일 이내</strong> 회신</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">서류 보완 요구 및 허가 취소 통보</div>
-                <div>· 서류 보완 기한: <strong>4일 이내</strong> (보완 기간은 회신 기한 불산입)<br/>· 건축허가 취소 시: 취소한 날부터 <strong>7일 이내</strong> 소방서 통보</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">내진설계 의무 설치 소방시설 4종 (제16조)</div>
-                <div>· <strong>옥내소화전설비 · 스프링클러설비 · 간이스프링클러설비 · 물분무등소화설비</strong><br/>· 제외 함정: <strong>옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐 제외!</strong></div>
-              </div>
-            </div>
-            <div class="schema-alert">★ 건축허가동의 면적 기준: <strong>6층 이상(면적 무관)</strong> / 일반 <strong>400㎡</strong> · 정신의료·재활 <strong>300㎡</strong> · 노유자·수련·주차장 <strong>200㎡</strong> · 학교 <strong>100㎡ 이상</strong> / 지하·무창층 <strong>150㎡(공연장 100㎡) 이상</strong>!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 성능위주설계(PBD) 의무 대상 및 증축·용도변경 적용 원칙</div>
-            <div class="space-y-2.5">
-              <div class="schema-box">
-                <div class="schema-box-title">성능위주설계 의무 대상 (시행령 제9조 · 별표 1의2)</div>
-                <ul class="schema-list">
-                  <li><strong>연면적 10만 ㎡ 이상</strong>(구법 20만 ㎡) 특정소방대상물 (<strong>아파트등은 제외!</strong>)</li>
-                  <li>일반(아파트등 제외): <strong>지하층 포함 30층 이상</strong> 또는 <strong>높이 100m 이상</strong> / 아파트등: <strong>지하층 제외 50층 이상</strong> 또는 <strong>지상 높이 200m 이상</strong></li>
-                  <li><strong>연면적 3만 ㎡ 이상</strong> 철도·도시철도·공항시설 / 하나의 건축물에 <strong>영화상영관 10개 이상</strong> / <strong>수저터널 또는 길이 5,000m 이상 터널</strong></li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">증축 vs 용도변경 시 소방시설 기준 적용 (시행령 제18조)</div>
-                <ul class="schema-list">
-                  <li><strong>증축 원칙</strong>: 기존 부분 포함 <strong>전체에 증축 당시 기준</strong> 적용 (단, 방화문·자동방화셔터·드렌처·3면 개방 캐노피 등 구획 시 기존 부분 배제)</li>
-                  <li><strong>용도변경 원칙</strong>: <strong>용도변경되는 부분만 용도변경 당시 기준</strong> 적용 (단, 위험도 감소 또는 일정한 근무자 이용 용도로 변경 시 <strong>전체에 용도변경 전 기준</strong> 적용)</li>
-                </ul>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01. 건축허가등의 동의 주체 · 4대 행정기한 및 대상 규모 (법 제6조 · 영 제7조 · 규칙 제3조)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">동의 주체 · 위임 분담</div>
+              <div class="cheat-val">요구자 = <strong>건축허가청</strong> ➔ 동의권자 = 시공지·소재지 <strong>소방본부장·소방서장</strong>(시·도지사 X) / 대상물 범위 = <span class="cheat-eq">대통령령(영 제7조)</span> ↔ 요구 절차·서류·기한 = <span class="cheat-eq">행정안전부령(규칙 제3조)</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">4대 법정 기한 (규칙 제3조)</div>
+              <div class="cheat-val"><span class="cheat-eq">회신 5일(특급 10일) · 보완 4일 · 취소통보 7일</span> 보완 기간(4일 이내)은 회신 기간에 <strong>불산입</strong>(미보완 시 반려) / 허가 취소 시 취소일부터 <strong>7일 이내</strong> 소방본부장·서장 통보</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">층수 · 계단식 연면적</div>
+              <div class="cheat-val"><strong>6층 이상 건축물(연면적 무관)</strong> / 6층 미만: <span class="cheat-eq">일반 400㎡ · 정신의료·재활 300㎡ · 노유자·수련 200㎡ · 학교 100㎡ 이상</span> (단, <strong>입원실 없는 정신건강의학과 의원</strong>은 300㎡ 제외 ➔ 400㎡ 적용)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">지하·무창층 · 면적 무관</div>
+              <div class="cheat-val">지하·무창층 바닥면적 <strong>150㎡(공연장 100㎡) 이상</strong> / 면적·대수 무관: <strong>차고·주차장·기계식 주차시설(개정!)</strong>, 격납고·관망탑·관제탑·송수신탑·공동주택·산후조리원·숙박·지하구·위험물·전기저장시설 (성능위주설계 대상도 동의 포함!)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02. 성능위주설계 의무 대상(신축 한정) 및 내진설계 소방시설 4종 (법 제7조·제8조 · 영 제8조·제9조)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">성능위주설계 자격·면적·고층</div>
+              <div class="cheat-val">자격(공사업법 영 별표 1의2): 전문설계업 + <span class="cheat-eq">소방기술사 2명 이상</span> / 일반 <strong>연면적 20만㎡ 이상(아파트등 제외!)</strong>, 창고 <strong>10만㎡(지하 2층+3만㎡)</strong> / 아파트등 <strong>50층(지하 제외)·200m</strong> ↔ 일반 <strong>30층(지하 포함)·120m</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">성능위주 교통·영화·터널</div>
+              <div class="cheat-val">철도·도시철도·공항시설 <strong>연면적 3만㎡ 이상</strong> / 단일 건축물 <strong>영화상영관 10개 이상</strong> / 지하연계 복합건축물 / <span class="cheat-eq">수저터널(길이 무관) 또는 길이 5,000m 이상 터널</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">내진설계 4종 (영 제8조)</div>
+              <div class="cheat-val"><strong>소방청장</strong> 고시 기준 / <span class="cheat-eq">옥내소화전 · 스프링클러 · 간이스프링클러 · 물분무등소화설비</span> (<strong>옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐은 모두 제외!</strong>)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03. 증축·용도변경 기준 적용 특례(시행령 제15조) 및 임시소방시설·공사업법 연결</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">증축 vs 용도변경 (영 제15조)</div>
+              <div class="cheat-val"><strong>증축</strong> = 원칙 <strong>전체</strong> 당시 기준(내화구획, 자동방화셔터·<strong>60분+·60분 방화문</strong>, 공장 내 <strong>33㎡ 이하 휴게실</strong>, 3면 무벽 캐노피 시 기존 배제) ↔ <strong>용도변경</strong> = 원칙 <strong>변경 부분만</strong>(위험·고정 가연물 감소 시 전체 변경 전 기준)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">임시소방시설 핵심 규모 (별표 8)</div>
+              <div class="cheat-val"><strong>간이소화장치</strong> = <span class="cheat-eq">연면적 3,000㎡ 또는 지하·무창·4층 이상 600㎡ 이상</span> ↔ 비상경보·피난유도선·가스누설·비상조명등 = <strong>연면적 400㎡(비상경보) 또는 지하·무창층 150㎡ 이상</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">공사업법 3대 연결 급소</div>
+              <div class="cheat-val">특수 공법 심의 = <strong>중앙소방기술심의위원회</strong>(법 제18조) / 분리도급 예외 = <strong>1천㎡ 이하 비상경보</strong>, 곤란 공사 <strong>소방청장</strong> 인정 / 완공 현장확인 = <strong>1만㎡·11층 이상(아파트 제외!)</strong>, 지상 노출 가연성가스탱크 <strong>1천 톤 이상</strong></div>
             </div>
           </div>
         </div>
       </div>
-      <aside class="sidenote">
-        <div class="sidenote-box">
-          <div class="sidenote-title">도해 요약</div>
-          <ul class="sidenote-list">
-            <li><strong>주제</strong>: 건축허가등의 동의 절차·대상 및 성능위주설계·내진설계 체계</li>
-            <li><strong>핵심</strong>: 동의 회신 기한(5일·10일·4일·7일), 내진설계 4종(옥내·스·간이·물분무), 성능위주설계 기준을 한눈에 대조합니다.</li>
-          </ul>
-        </div>
-      </aside>
     </div>
 
     <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
@@ -309,7 +244,7 @@
 
     <section class="mt-16 pt-8 border-t border-emerald-900/60" id="quizSection">
       <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mt-1">핵심 지문 OX 확인 (43문항)</h2>
+        <h2 class="text-2xl font-bold text-white mt-1">핵심 공식·수치 주관식 (12문항) &amp; 정예 OX 확인 (정예 30문항 / 전체 57문항)</h2>
         <p class="text-xs text-slate-400 mt-1">
           기출 선택지 중 시험에서 자주 변형되는 핵심 문장입니다. O 또는 X를 선택하여 법령의 정확한 수치를 점검하십시오.
         </p>
@@ -323,14 +258,14 @@
     <p>소방관계법규 · 제3편 소방시설 설치 및 관리에 관한 법률 제2장. 건축허가등의 동의, 성능위주설계 및 내진설계</p>
   </footer>
 
-  <script src="assets/js/harness-core.js?v=5"></script>
+  <script src="assets/js/harness-core.js?v=6"></script>
   <script>
     const STATS_03_02 = {
   "unitTitle": "제3편 소방시설 설치 및 관리에 관한 법률 제2장. 건축허가등의 동의, 성능위주설계 및 내진설계",
   "totalUniqueQs": 21,
   "totalAppearances": 27,
   "totalChoices": 84,
-  "totalOx": 43,
+  "totalOx": 57,
   "themes": [
     {
       "name": "성능위주설계·내진설계 및 임시소방시설",
@@ -398,7 +333,7 @@
       "결핵환자나 한센인이 24시간 생활하는 노유자시설(단독 주택 또는 공동주택에 설치되는 시설은 제외)"
     ],
     "ans": 1,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따른 건축허가등의 동의대상물 기준 면적을 묻는 최빈출 문항입니다. 노유자시설 및 수련시설은 연면적 200제곱미터 이상부터 동의대상이 되며(학교시설은 100제곱미터 이상, 정신의료기관·장애인의료재활시설은 300제곱미터 이상, 일반 건축물은 400제곱미터 이상), 연면적 100제곱미터 이상인 노유자·수련시설은 틀린 지문입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조에 따른 건축허가등의 동의대상물 기준 면적을 묻는 최빈출 문항입니다. 노유자시설 및 수련시설은 연면적 200제곱미터 이상부터 동의대상이 되며(학교시설은 100제곱미터 이상, 정신의료기관·장애인의료재활시설은 300제곱미터 이상, 일반 건축물은 400제곱미터 이상), 연면적 100제곱미터 이상인 노유자·수련시설은 틀린 지문입니다.",
     "c_expls": [
       "[틀림 · 정답] 노유자시설 및 수련시설은 연면적 100제곱미터 이상이 아니라 '연면적 200제곱미터 이상'인 건축물부터 건축허가등의 동의대상에 해당합니다(연면적 100제곱미터 이상은 학교시설).",
       "[옳음] 지하층 또는 무창층이 있는 건축물로서 바닥면적이 150제곱미터(공연장의 경우에는 100제곱미터) 이상인 층이 있는 것은 연면적에 관계없이 건축허가등의 동의대상입니다.",
@@ -698,7 +633,7 @@
       "차고·주차장 또는 주차 용도로 사용되는 시설로서 차고· 주차장으로 사용되는 바닥면적이 200제곱미터 이상인 층이 있는 건축물이나 주차시설"
     ],
     "ans": 1,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따른 건축허가등의 동의대상물 기준 면적에서 학교시설은 100제곱미터 이상이지만, 노유자시설 및 수련시설은 '200제곱미터 이상'입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조에 따른 건축허가등의 동의대상물 기준 면적에서 학교시설은 100제곱미터 이상이지만, 노유자시설 및 수련시설은 '200제곱미터 이상'입니다.",
     "c_expls": [
       "[틀림 · 정답] 특정소방대상물 중 노유자시설 및 수련시설은 연면적 100제곱미터 이상이 아니라 '연면적 200제곱미터 이상'일 때 건축허가등의 동의대상에 해당합니다.",
       "[옳음] ｢학교시설사업 촉진법｣에 따라 건축등을 하려는 연면적 100제곱미터 이상의 학교시설(또는 일반 연면적 100제곱미터 이상 학교시설)은 동의대상입니다.",
@@ -773,7 +708,7 @@
       "특정소방대상물 중 노유자(老幼者)시설로서 연면적 100 제곱미터인 건축물"
     ],
     "ans": 4,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따른 건축허가등의 동의대상물 기준(층수 6층 이상, 일반 연면적 400제곱미터 이상, 지하층·무창층 바닥면적 150제곱미터 이상, 노유자·수련시설 연면적 200제곱미터 이상)을 묻는 문항입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조에 따른 건축허가등의 동의대상물 기준(층수 6층 이상, 일반 연면적 400제곱미터 이상, 지하층·무창층 바닥면적 150제곱미터 이상, 노유자·수련시설 연면적 200제곱미터 이상)을 묻는 문항입니다.",
     "c_expls": [
       "[옳음] 층수가 6층 이상인 건축물은 연면적에 관계없이 건축허가등의 동의대상에 해당합니다.",
       "[옳음] 연면적 400제곱미터 이상인 일반 건축물은 건축허가등의 동의대상에 해당합니다.",
@@ -798,11 +733,11 @@
       "연결송수관설비, 연결살수설비"
     ],
     "ans": 2,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제16조에 따른 내진설계 대상 소방시설 4종(옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비)만을 나열한 선지를 고르는 문항입니다.",
+    "q_expl": "｢소방시설 설치 및 관리에 관한 법률｣ 제7조 및 시행령 제8조에 따른 내진설계 대상 소방시설 4종(옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비)만을 나열한 선지를 고르는 문항입니다.",
     "c_expls": [
       "[틀림] 옥외소화전설비는 내진설계 대상에 해당하지 않습니다.",
       "[옳음 · 정답] 스프링클러설비와 간이스프링클러설비는 모두 내진설계 기준에 맞게 설치해야 하는 소방시설입니다.",
-      "[틀림] 포소화설비와 이산화탄소소화설비는 물분무등소화설비의 세부 종류이나, 내진설계 대상에서 제외되거나 법령상 상위 분류인 '옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비' 4종 중 시행령 제16조에 명시된 조합은 2번입니다.",
+      "[틀림] 포소화설비와 이산화탄소소화설비는 물분무등소화설비의 세부 종류이나, 내진설계 대상에서 제외되거나 법령상 상위 분류인 '옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비' 4종 중 시행령 제8조 및 내진설계기준에 명시된 조합은 2번입니다.",
       "[틀림] 연결송수관설비와 연결살수설비(소화활동설비)는 내진설계 대상이 아닙니다."
     ]
   },
@@ -825,7 +760,7 @@
     "ans": 2,
     "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조에 따른 성능위주설계 대상 특정소방대상물의 정확한 요건을 묻는 문항입니다.",
     "c_expls": [
-      "[틀림] 연면적 10만 제곱미터 이상인 특정소방대상물 중 '아파트등'은 제외되므로, 아파트등 제외 단서가 빠져 있어 틀렸습니다.",
+      "[틀림] 현행 시행령 제9조상 일반 특정소방대상물은 '연면적 20만 제곱미터 이상(아파트등 제외)'이어야 하며, 연면적 10만 제곱미터 이상 기준은 '창고시설'에만 적용되므로 틀렸습니다.",
       "[옳음 · 정답] 하나의 건축물에 영화상영관이 10개 이상인 특정소방대상물(비상설상영장 제외)은 성능위주설계를 해야 하는 대상에 해당합니다.",
       "[틀림] 아파트등은 50층 이상(지하층 제외)이거나 지상으로부터 높이가 150미터 이상이 아니라 '200미터 이상'이어야 합니다.",
       "[틀림] 철도 및 도시철도 시설, 공항시설은 연면적 2만 제곱미터가 아니라 '3만 제곱미터 이상'이어야 합니다."
@@ -885,231 +820,868 @@
     const QUIZ_03_02 = [
   {
     "grade": "S",
-    "text": "건축허가등의 동의 요구를 받은 소방본부장 또는 소방서장은 원칙적으로 5일 이내에 동의 여부를 회신하여야 하며, 특급 소방안전관리대상물이나 성능위주설계 대상물은 10일 이내에 회신하여야 한다.",
+    "tier": "core",
+    "text": "건축허가등의 동의 요구를 받은 소방본부장 또는 소방서장은 원칙적으로 접수한 날부터 5일 이내에 동의 여부를 회신하여야 하며, 허가를 신청한 건축물 등이 특급 소방안전관리대상물에 해당하는 경우에는 10일 이내에 회신하여야 한다.",
     "isCorrect": true,
-    "source": "소방시설법 시행령 제12조 핵심 기출",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제12조에 따라 일반 대상물의 동의 회신 기한은 5일 이내이고, 특급 소방안전관리대상물 및 성능위주설계 대상물은 10일 이내입니다(보완 요구는 4일 이내, 허가취소 통보는 7일 이내).",
+    "source": "소방시설법 시행규칙 제3조 제3항 핵심 기출",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행규칙｣ 제3조 제3항에 따라 일반 대상물의 동의 회신 기한은 접수한 날부터 5일 이내이고, 특급 소방안전관리대상물에 해당하는 경우에는 10일 이내입니다(보완 요구는 4일 이내, 허가취소 통보는 7일 이내).",
     "origQId": "",
-    "id": "LAW_03_02_001"
+    "id": "LAW_03_02_001",
+    "hlKey": "시행규칙 제3조",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "건축허가등의 동의 대상 기준 연면적은 학교시설 100제곱미터 이상, 노유자시설 및 수련시설 200제곱미터 이상, 정신의료기관 및 장애인의료재활시설 300제곱미터 이상, 일반 건축물 400제곱미터 이상이다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q5 · 2021년 소방경채 Q11",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따른 용도별 건축허가등의 동의 기준 연면적(학교 100·노유자 및 수련 200·정신의료 및 재활 300·일반 400제곱미터 이상)입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조 제1항 제1호에 따른 용도별 건축허가등의 동의 기준 연면적(학교 100·노유자 및 수련 200·정신의료 및 재활 300·일반 400제곱미터 이상)입니다.",
     "origQId": "Q_03_01_2018_공채_5",
-    "id": "LAW_03_02_002"
+    "id": "LAW_03_02_002",
+    "hlKey": "시행령 제7조",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "층수가 6층 이상인 건축물은 연면적에 관계없이 건축허가등의 동의대상에 해당한다.",
     "isCorrect": true,
     "source": "2024년 소방경채 Q33 · 소방공채 Q21",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조 제1항 제2호에 따라 층수가 6층 이상인 건축물은 연면적과 관계없이 건축허가등의 동의대상입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조 제1항 제4호에 따라 층수가 6층 이상인 건축물은 연면적과 관계없이 건축허가등의 동의대상입니다.",
     "origQId": "Q_03_01_2024_경채_33",
-    "id": "LAW_03_02_003"
+    "id": "LAW_03_02_003",
+    "hlKey": "층수가 6층 이상인 건축물",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "지하층 또는 무창층이 있는 건축물로서 바닥면적이 150제곱미터(공연장의 경우에는 100제곱미터) 이상인 층이 있는 것은 건축허가등의 동의 대상이다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q11",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따라 지하층·무창층 바닥면적 150제곱미터(공연장 100제곱미터) 이상인 층이 있는 건축물은 동의 대상입니다.",
-    "origQId": "Q_03_01_2022_공채_11",
-    "id": "LAW_03_02_004"
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조 제1항 제2호에 따라 지하층·무창층 바닥면적 150제곱미터(공연장 100제곱미터) 이상인 층이 있는 건축물은 동의 대상입니다.",
+    "origQId": "",
+    "id": "LAW_03_02_004",
+    "hlKey": "바닥면적이 150제곱미터 이상",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
-    "text": "차고·주차장으로 사용되는 바닥면적이 200제곱미터 이상인 층이 있는 건축물이나 승강기 등 기계장치에 의한 주차시설로서 자동차 20대 이상을 주차할 수 있는 시설은 건축허가등의 동의 대상이다.",
+    "tier": "core",
+    "text": "현행 소방시설법 시행령상 차고·주차장 또는 주차 용도로 사용되는 층이 있는 건축물이나 주차시설 및 승강기 등 기계장치에 의한 주차시설은 면적이나 주차 대수에 관계없이 건축허가등의 동의 대상이다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q11 · 2024년 소방경채 Q33",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제11조에 따라 차고·주차장은 바닥면적 200제곱미터 이상이거나 기계식 주차시설 20대 이상일 때 동의 대상입니다.",
-    "origQId": "Q_03_01_2021_경채_11",
-    "id": "LAW_03_02_005"
+    "explanation": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제7조 제1항 제3호·제3호의2(개정 반영)에 따라 과거의 바닥면적 200제곱미터·기계식 20대 이상 요건이 삭제되어 차고·주차장 및 기계식 주차시설은 규모와 관계없이 모두 건축허가등의 동의 대상입니다.",
+    "origQId": "",
+    "id": "LAW_03_02_005",
+    "hlKey": "차고·주차장",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "건축허가등을 할 때에 소방본부장이나 소방서장의 동의를 받아야 하는 건축물 등의 범위는 행정안전부령으로 정한다.",
     "isCorrect": false,
     "source": "2020년 소방경채 Q18",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제6조 제5항에 따라 건축허가등의 동의대상물 범위는 행정안전부령이 아니라 '대통령령'(시행령 제11조)으로 정합니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제6조 및 같은 법 시행령 제7조에 따라 건축허가등의 동의대상물 범위는 행정안전부령이 아니라 '대통령령'(시행령 제7조)으로 정합니다.",
     "origQId": "Q_03_01_2020_경채_18",
-    "id": "LAW_03_02_006"
+    "id": "LAW_03_02_006",
+    "hlKey": "시행령 제7조",
+    "paraIdx": 0,
+    "isEssential": false
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "바닥면적 150제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에는 반드시 간이소화장치를 설치하여야 한다.",
     "isCorrect": false,
     "source": "2018년 소방경채 Q12",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 8에 따라 지하층·무창층 또는 4층 이상인 층에 간이소화장치를 설치해야 하는 기준 바닥면적은 150제곱미터 이상이 아니라 '600제곱미터 이상'(또는 연면적 3,000제곱미터 이상)입니다. 바닥면적 150제곱미터 이상인 지하층·무창층에는 비상경보장치, 간이피난유도선, 가스누설경보기, 비상조명등을 설치합니다.",
     "origQId": "Q_03_01_2018_경채_12",
-    "id": "LAW_03_02_007"
+    "id": "LAW_03_02_007",
+    "hlKey": "간이소화장치",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "지진이 발생할 경우 정상 작동될 수 있도록 내진설계기준에 맞게 설치해야 하는 소방시설은 옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비 총 4종이다.",
     "isCorrect": true,
     "source": "2018년 소방공채 Q8 · 2024년 소방경채 Q34",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제16조에 따라 내진설계 대상 소방시설은 옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비 총 4종입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제7조, 같은 법 시행령 제8조 및 소방청장이 정하는 내진설계기준에 따라 내진설계 대상 소방시설은 옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비 총 4종입니다.",
     "origQId": "Q_03_01_2018_공채_8",
-    "id": "LAW_03_02_008"
+    "id": "LAW_03_02_008",
+    "hlKey": "시행령 제8조",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "연결송수관설비, 옥외소화전설비, 연결살수설비 및 제연설비는 소방시설법령상 내진설계기준에 맞게 설치하여야 하는 소방시설에 해당하지 아니한다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q16 · 2024년 소방경채 Q34",
     "explanation": "내진설계 대상 소방시설은 옥내소화전·스프링클러·간이스프링클러·물분무등소화설비 4종뿐이므로, 연결송수관설비·옥외소화전설비·연결살수설비·제연설비는 내진설계 대상이 아닙니다.",
     "origQId": "Q_03_01_2022_경채_16",
-    "id": "LAW_03_02_009"
+    "id": "LAW_03_02_009",
+    "hlKey": "연결송수관설비",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "연면적 3만 제곱미터 이상인 철도 및 도시철도 시설과 공항시설은 성능위주설계를 해야 하는 특정소방대상물에 해당한다.",
     "isCorrect": true,
     "source": "2019년 소방경채 Q12",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조(별표 1의2)에 따라 연면적 3만 제곱미터 이상인 철도·도시철도 시설 및 공항시설은 성능위주설계 의무 대상입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조 제4호에 따라 연면적 3만 제곱미터 이상인 철도·도시철도 시설 및 공항시설(신축)은 성능위주설계 의무 대상입니다.",
     "origQId": "Q_03_01_2019_경채_12",
-    "id": "LAW_03_02_010"
+    "id": "LAW_03_02_010",
+    "hlKey": "연면적 3만 제곱미터 이상인 철도·도시철도 시설 및 공항시설",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
-    "text": "아파트등을 제외한 특정소방대상물로서 지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 100미터 이상인 건축물은 성능위주설계를 하여야 한다.",
+    "tier": "core",
+    "text": "아파트등을 제외한 특정소방대상물(신축)로서 지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 120미터 이상인 건축물은 성능위주설계를 하여야 한다.",
     "isCorrect": true,
     "source": "2020년 소방경채 Q12 · 2025년 소방경채 Q28",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조(별표 1의2)에 따라 아파트등 외의 특정소방대상물은 지하층 포함 30층 이상 또는 높이 100미터 이상(또는 연면적 10만 제곱미터 이상)일 때 성능위주설계 대상입니다.",
+    "explanation": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조 제3호에 따라 아파트등 외의 특정소방대상물은 지하층 포함 30층 이상이거나 지상으로부터 높이가 120미터 이상(또는 일반 연면적 20만 제곱미터 이상, 창고시설 연면적 10만 제곱미터 이상)일 때 성능위주설계 대상입니다(구법 시절 100미터에서 120미터로 개정되어 특급 기준과 일치함).",
     "origQId": "Q_03_01_2020_경채_12",
-    "id": "LAW_03_02_011"
+    "id": "LAW_03_02_011",
+    "hlKey": "지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 120미터 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "지하층을 제외한 층수가 50층 이상이거나 지상으로부터 높이가 200미터 이상인 아파트등은 성능위주설계를 해야 하는 특정소방대상물에 해당한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q28",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조(별표 1의2)에 따라 아파트등은 50층 이상(지하층 제외) 또는 지상 높이 200미터 이상일 때 성능위주설계 대상입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조 제2호에 따라 아파트등(신축)은 50층 이상(지하층 제외) 또는 지상 높이 200미터 이상일 때 성능위주설계 대상입니다.",
     "origQId": "Q_03_01_2025_경채_28",
-    "id": "LAW_03_02_012"
+    "id": "LAW_03_02_012",
+    "hlKey": "지하층을 제외한 층수가 50층 이상이거나 지상으로부터 높이가 200미터 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "지하 2층이며 지상 48층으로 지상으로부터 높이가 250미터인 신축 아파트는 성능위주설계를 해야 하는 특정소방대상물의 범위에 포함된다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q27 · 소방공채 Q18",
     "explanation": "아파트등은 지하층 제외 50층 이상 '이거나' 지상으로부터 높이가 200미터 이상이면 성능위주설계 대상이므로, 지상 48층이라도 높이가 250미터(200미터 이상)인 신축 아파트는 성능위주설계 범위에 포함됩니다.",
     "origQId": "Q_03_01_2026_경채_27",
-    "id": "LAW_03_02_013"
+    "id": "LAW_03_02_013",
+    "hlKey": "지상으로부터 높이가 200미터 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "하나의 건축물에 영화 및 비디오물의 진흥에 관한 법률에 따른 영화상영관이 10개 이상인 특정소방대상물과 수저터널 또는 길이 5,000미터 이상인 터널은 성능위주설계를 하여야 한다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q15",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조(별표 1의2)에 따라 영화상영관이 10개 이상인 특정소방대상물과 수저터널 또는 길이 5,000미터 이상인 터널은 성능위주설계 의무 대상입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조 제6호·제8호에 따라 하나의 건축물에 영화상영관이 10개 이상인 특정소방대상물과 수저터널 또는 길이 5,000미터 이상인 터널은 성능위주설계 의무 대상입니다.",
     "origQId": "Q_03_01_2021_경채_15",
-    "id": "LAW_03_02_014"
+    "id": "LAW_03_02_014",
+    "hlKey": "영화상영관이 10개 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "소방시설공사업법령상 연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물(아파트는 제외)은 완공검사를 위한 현장확인 대상에 해당한다.",
     "isCorrect": true,
     "source": "2020년 소방공채 Q7",
     "explanation": "｢소방시설공사업법 시행령｣ 제5조에 따라 연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물은 완공검사 현장확인 대상이나, 아파트는 제외됩니다.",
     "origQId": "Q_03_01_2020_공채_7",
-    "id": "LAW_03_02_015"
+    "id": "LAW_03_02_015",
+    "hlKey": "연면적 1만 제곱미터 이상이거나 11층 이상",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물이 증축되는 경우에는 원칙적으로 기존 부분을 포함한 특정소방대상물의 전체에 대하여 증축 당시의 소방시설 설치에 관한 대통령령 또는 화재안전기준을 적용하여야 한다.",
     "isCorrect": true,
     "source": "2020년 소방공채 Q10",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제18조 제1항 본문에 따른 증축 시 전체 적용의 대원칙입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제15조 제1항 본문에 따른 증축 시 전체 적용의 대원칙입니다.",
     "origQId": "Q_03_01_2020_공채_10",
-    "id": "LAW_03_02_016"
+    "id": "LAW_03_02_016",
+    "hlKey": "시행령 제15조",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "기존 부분과 증축 부분이 건축법 시행령에 따른 방화문 또는 자동방화셔터로 구획되어 있거나 자동차 생산공장 등에 3면 이상 벽이 없는 구조의 캐노피를 설치하는 경우에는 기존 부분에 대해서는 증축 당시의 기준을 적용하지 아니한다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q18",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제18조 제1항 단서에 따른 증축 시 기존 부분 적용 배제 특례입니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제15조 제1항 단서에 따른 증축 시 기존 부분 적용 배제 특례(60분+·60분 방화문, 자동방화셔터, 3면 이상 벽 없는 캐노피 등)입니다.",
     "origQId": "Q_03_01_2022_경채_18",
-    "id": "LAW_03_02_017"
+    "id": "LAW_03_02_017",
+    "hlKey": "3면 이상에 벽이 없는 구조의 캐노피",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물이 용도변경되는 경우에는 원칙적으로 용도변경되는 부분에 대해서만 용도변경 당시의 소방시설 설치에 관한 대통령령 또는 화재안전기준을 적용한다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q18",
     "explanation": "증축은 원칙적으로 '전체'에 증축 당시 기준을 적용하지만, 용도변경은 원칙적으로 '용도변경되는 부분'에 대해서만 용도변경 당시 기준을 적용합니다.",
     "origQId": "Q_03_01_2022_경채_18",
-    "id": "LAW_03_02_018"
+    "id": "LAW_03_02_018",
+    "hlKey": "용도변경되는 부분에 대해서만",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "문화 및 집회시설 중 공연장·집회장·관람장, 판매시설, 운수시설, 창고시설 중 물류터미널이 불특정 다수인이 이용하는 것이 아닌 일정한 근무자가 이용하는 용도로 변경되는 경우에는 용도변경되는 부분에 대해서만 용도변경 당시의 기준을 적용한다.",
     "isCorrect": false,
     "source": "2022년 소방경채 Q18",
-    "explanation": "공연장·집회장·관람장, 판매시설, 운수시설, 물류터미널이 불특정 다수인이 아닌 일정한 근무자가 이용하는 용도로 변경되는 경우에는 위험도가 낮아지므로 특정소방대상물 전체에 대하여 용도변경 당시가 아니라 '용도변경 전'에 적용되던 기준을 적용합니다.",
+    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제15조 제2항 단서(및 구법 기출 조문)에 따라 화재연소 확대 요인이 적어지거나 천장·바닥·벽 고정 가연성 물질 양이 줄어드는 경우(구법상 공연장·판매·운수·물류터미널이 일정한 근무자 이용 용도로 변경되는 경우)에는 특정소방대상물 전체에 대하여 용도변경 당시가 아니라 '용도변경 전'에 적용되던 기준을 적용합니다.",
     "origQId": "Q_03_01_2022_경채_18",
-    "id": "LAW_03_02_019"
+    "id": "LAW_03_02_019",
+    "hlKey": "일정한 근무자가 이용하는 용도",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "연면적이 1천 제곱미터 이하인 특정소방대상물에 비상경보설비를 설치하는 공사는 소방시설공사 분리도급의 예외에 해당한다.",
     "isCorrect": true,
     "source": "2023년 소방경채 Q16 · 소방공채 Q7",
     "explanation": "｢소방시설공사업법 시행령｣ 제11조의2에 따라 연면적 1천 제곱미터 이하인 특정소방대상물에 비상경보설비를 설치하는 공사는 분리도급 예외 대상입니다.",
     "origQId": "Q_03_01_2023_경채_16",
-    "id": "LAW_03_02_020"
+    "id": "LAW_03_02_020",
+    "hlKey": "연면적 1천 제곱미터 이하인 특정소방대상물에 비상경보설비",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "문화재수리 및 재개발·재건축 등의 공사로서 공사의 성질상 분리하여 도급하는 것이 곤란하다고 소방청장이 인정하는 경우는 분리도급의 예외에 해당한다.",
     "isCorrect": true,
     "source": "2023년 소방경채 Q16 · 소방공채 Q7",
     "explanation": "분리도급 곤란 공사의 인정권자는 시·도지사가 아니라 '소방청장'입니다.",
     "origQId": "Q_03_01_2023_경채_16",
-    "id": "LAW_03_02_021"
+    "id": "LAW_03_02_021",
+    "hlKey": "문화재수리",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "지방소방기술심의위원회의 심의를 거쳐 소방시설의 구조와 원리 등에서 특수한 특정소방대상물로 인정된 경우는 화재안전기준을 따르지 아니하고 설계할 수 있다.",
     "isCorrect": false,
     "source": "2024년 소방경채 Q10",
     "explanation": "｢소방시설공사업법｣ 제11조 제1항 단서에 따라 화재안전기준을 따르지 아니할 수 있는 특수한 특정소방대상물의 설계는 지방소방기술심의위원회가 아니라 '중앙소방기술심의위원회'의 심의를 거쳐 인정된 경우입니다.",
     "origQId": "Q_03_01_2024_경채_10",
-    "id": "LAW_03_02_022"
+    "id": "LAW_03_02_022",
+    "hlKey": "중앙소방기술심의위원회",
+    "paraIdx": 5,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "소방기술사 2명 이상을 기술인력으로 보유한 전문소방시설설계업을 등록한 자는 성능위주설계를 할 수 있으며, 일반소방시설설계업(기계분야)을 등록한 자는 위험물 제조소등에 설치되는 기계분야 소방시설을 설계할 수 있다.",
     "isCorrect": true,
     "source": "2024년 소방경채 Q10",
     "explanation": "전문소방시설설계업 등록자 중 소방기술사 2명 이상 보유자는 성능위주설계를 수행할 수 있고, 일반소방시설설계업 등록자도 위험물 제조소등에 설치되는 해당 분야 소방시설을 설계할 수 있습니다.",
     "origQId": "Q_03_01_2024_경채_10",
-    "id": "LAW_03_02_023"
+    "id": "LAW_03_02_023",
+    "hlKey": "소방기술사 2명 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "대통령령 또는 화재안전기준이 변경되어 그 기준이 강화되는 경우 기존의 특정소방대상물의 소방시설에 대하여는 원칙적으로 변경 전의 대통령령 또는 화재안전기준을 적용한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q32 · 소방공채 Q20",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제13조 제1항 본문에 따른 불소급의 원칙입니다(단, 소화기구, 비상경보설비, 자동화재속보설비, 피난구조설비 및 노유자·의료시설 등의 일부 설비는 강화된 기준 소급 적용).",
     "origQId": "Q_03_01_2025_경채_32",
-    "id": "LAW_03_02_024"
+    "id": "LAW_03_02_024",
+    "hlKey": "법 제13조 제1항",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "자동화재탐지설비를 설치해야 하는 특정소방대상물 중 방송통신시설(방송국)은 시각경보기를 설치해야 하는 대상에 포함되며, 임시소방시설 중 비상경보장치는 연면적 400제곱미터 이상이거나 바닥면적 150제곱미터 이상인 지하층·무창층의 화재위험작업현장에 설치한다.",
     "isCorrect": true,
     "source": "2026년 소방경채 Q27 · 소방공채 Q18",
     "explanation": "자동화재탐지설비 설치 대상 중 방송통신시설은 시각경보기 설치 대상에 포함되며, 비상경보장치는 연면적 400제곱미터 이상이거나 바닥면적 150제곱미터 이상인 지하층·무창층의 화재위험작업현장에 설치합니다.",
     "origQId": "Q_03_01_2026_경채_27",
-    "id": "LAW_03_02_025"
+    "id": "LAW_03_02_025",
+    "hlKey": "방송통신시설",
+    "paraIdx": 5,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "건축허가등의 권한이 있는 행정기관은 건축허가등을 할 때 미리 그 건축물 등의 시공지 또는 소재지를 관할하는 소방본부장이나 소방서장의 동의를 받아야 한다.",
+    "isCorrect": true,
+    "source": "2020년 소방경채 Q18 · 건축허가등의 동의 절차 및 동의대상 위임 법령",
+    "explanation": "건축허가등의 권한이 있는 행정기관은 건축허가등을 할 때 미리 그 건축물 등의 시공지 또는 소재지를 관할하는 소방본부장이나 소방서장의 동의를 받아야 합니다.",
+    "origQId": "Q_03_01_2020_경채_18",
+    "id": "EXT_03_02_001",
+    "hlKey": "건축허가등의 권한이 있는 행정기관",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "성능위주설계를 한 특정소방대상물은 소방본부장 또는 소방서장의 건축허가등의 동의대상에서 제외된다.",
+    "isCorrect": true,
+    "source": "2020년 소방경채 Q18 · 건축허가등의 동의 절차 및 동의대상 위임 법령",
+    "explanation": "출제 당시 구 시행령에서는 성능위주설계를 한 특정소방대상물을 동의대상에서 제외하는 단서가 있었습니다(단, 현행 법령에서는 해당 제외 단서가 삭제되어 동의대상에 포함됨).",
+    "origQId": "Q_03_01_2020_경채_18",
+    "id": "EXT_03_02_002",
+    "hlKey": "성능위주설계를 한 대상물을 제외하는 단서가 있었으나",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "기존 부분과 증축 부분이 ｢건축법 시행령｣ 제46조제1항 제2호에 따른 방화문 또는 자동방화셔터로 구획되어 있는 경우, 기존 부분에 대해서는 증축 당시의 소방시설 의 설치에 관한 대통령령 또는 화재안전기준을 적용하 지 않는다.",
+    "isCorrect": true,
+    "source": "2022년 소방경채 Q18 · 특정소방대상물의 증축 또는 용도변경 시 소방시설기준 적용 특례",
+    "explanation": "기존 부분과 증축 부분이 갑종 방화문(현행 60분+ 방화문 또는 60분 방화문) 또는 자동방화셔터로 구획되어 있는 경우에는 기존 부분에 대하여 증축 당시의 기준을 적용하지 않습니다.",
+    "origQId": "Q_03_01_2022_경채_18",
+    "id": "EXT_03_02_003",
+    "hlKey": "자동방화셔터",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "소방시설설계업을 등록한 자는 이 법이나 이 법에 따른 명령과 화재안전기준에 맞게 소방시설을 설계하여야 한다.",
+    "isCorrect": true,
+    "source": "2024년 소방경채 Q10 · 소방시설설계의 기준 및 업종별 영업범위",
+    "explanation": "소방시설설계업자는 법과 화재안전기준에 맞게 소방시설을 설계하여야 합니다.",
+    "origQId": "Q_03_01_2024_경채_10",
+    "id": "EXT_03_02_004",
+    "hlKey": "소방시설설계업",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "B",
+    "tier": "ext",
+    "text": "소방기술사 2명을 기술인력으로 보유한 전문소방시설 설계업을 등록한 자는 성능위주설계를 할 수 있다.",
+    "isCorrect": true,
+    "source": "2024년 소방경채 Q10 · 소방시설설계의 기준 및 업종별 영업범위",
+    "explanation": "전문소방시설설계업 등록자 중 소방기술사 2명 이상을 기술인력으로 보유한 자는 성능위주설계를 수행할 수 있습니다.",
+    "origQId": "Q_03_01_2024_경채_10",
+    "id": "EXT_03_02_005",
+    "hlKey": "소방기술사 2명 이상",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "자동화재탐지설비가 설치된 특정소방대상물 중 방송통신 시설(방송국)은 시각경보기를 설치해야 하는 대상에 포함 되지 않는다.",
+    "isCorrect": false,
+    "source": "2026년 소방경채 Q27 · 소방시설 설치기준 및 성능위주설계 대상 종합 판별",
+    "explanation": "자동화재탐지설비를 설치해야 하는 특정소방대상물 중 방송통신시설(방송국)은 시각경보기를 설치해야 하는 대상에 포함됩니다.",
+    "origQId": "Q_03_01_2026_경채_27",
+    "id": "EXT_03_02_006",
+    "hlKey": "방송통신시설",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "연면적이 500 ㎡인 지하상가는 제연설비를 설치해야 하는 특정소방대상물의 범위에 포함된다.",
+    "isCorrect": false,
+    "source": "2026년 소방경채 Q27 · 소방시설 설치기준 및 성능위주설계 대상 종합 판별",
+    "explanation": "지하가(터널 제외, 지하상가 포함)는 연면적 500제곱미터가 아니라 '연면적 1,000제곱미터 이상'일 때 제연설비 설치 대상입니다.",
+    "origQId": "Q_03_01_2026_경채_27",
+    "id": "EXT_03_02_007",
+    "hlKey": "지하상가",
+    "paraIdx": 5,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "ext",
+    "text": "임시소방시설 중 비상경보장치는 연면적이 200 ㎡이며, 지하층 및 무창층이 없는 건축물 공사의 화재위험작업 현장에 설치한다.",
+    "isCorrect": false,
+    "source": "2026년 소방경채 Q27 · 소방시설 설치기준 및 성능위주설계 대상 종합 판별",
+    "explanation": "임시소방시설 중 비상경보장치는 연면적 200제곱미터가 아니라 '연면적 400제곱미터 이상'이거나 바닥면적 150제곱미터 이상인 지하층 또는 무창층의 화재위험작업현장에 설치합니다.",
+    "origQId": "Q_03_01_2026_경채_27",
+    "id": "EXT_03_02_008",
+    "hlKey": "비상경보장치",
+    "paraIdx": 5,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "건축허가등의 권한이 있는 행정기관은 건축허가 등을 할 때 미리 그 건축물 등의 시공지 또는 소재지를 관할하는 시·도지사의 동의를 받아야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제6조 제1항 (건축허가등의 동의권자 본부장·서장)",
+    "explanation": "건축허가청이 건축허가 등을 할 때 미리 동의를 받아야 하는 권한자는 시·도지사가 아니라 그 건축물 등의 시공지 또는 소재지를 관할하는 '소방본부장이나 소방서장'입니다.",
+    "origQId": null,
+    "id": "PRED_03_02_001",
+    "hlKey": "시공지 또는 소재지를 관할하는 소방본부장이나 소방서장의 동의",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "건축허가등을 할 때에 소방본부장이나 소방서장의 동의를 받아야 하는 건축물 등의 구체적 범위는 행정안전부령으로 정하고, 동의 요구 절차 및 제출 서류는 대통령령으로 정한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제6조 제5항 및 제8항 (동의대상물 대통령령 vs 절차·서류 행정안전부령 구분)",
+    "explanation": "🚨 [출제위원 착시 함정] 위임법령을 정반대로 뒤바꾼 전형적인 함정입니다! 동의대상물의 구체적 범위는 '대통령령'(시행령 제7조)으로 정하고, 동의 요구 절차·제출 서류 및 회신 기간은 '행정안전부령'(시행규칙 제3조)으로 정합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_002",
+    "hlKey": "동의 요구 절차 및 제출 서류는 행정안전부령",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "소방본부장 또는 소방서장은 건축허가등의 동의 요구서 및 첨부서류의 보완이 필요한 경우 7일 이내의 기간을 정하여 보완을 요구할 수 있으며, 이 경우 보완 기간은 동의 회신 기간에 산입한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행규칙 제3조 제4항 (보완 요구 기간 4일 이내 및 회신기간 불산입)",
+    "explanation": "🚨 [출제위원 착시 함정] 보완 요구 기간은 7일 이내가 아니라 '4일 이내'이며, 보완 기간은 동의 회신 기간에 '산입하지 아니합니다'(미보완 시 동의요구서 반려, 시행규칙 제3조 제4항).",
+    "origQId": null,
+    "id": "PRED_03_02_003",
+    "hlKey": "4일 이내",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "건축허가등의 권한이 있는 행정기관이 동의를 받은 건축물 등의 건축허가 등을 취소하였을 때에는 취소한 날부터 14일 이내에 관할 소방본부장 또는 소방서장에게 그 사실을 통보하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행규칙 제3조 제5항 (건축허가등 취소 통보 기한 7일 이내)",
+    "explanation": "건축허가청이 건축허가 등을 취소하였을 때에는 취소한 날부터 14일 이내가 아니라 '7일 이내'에 관할 소방본부장·소방서장에게 통보하여야 합니다(일반 5일 · 특급 10일 · 보완 4일 · 취소통보 7일).",
+    "origQId": null,
+    "id": "PRED_03_02_004",
+    "hlKey": "취소한 날부터 7일 이내",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "정신의료기관은 입원실의 유무와 관계없이 바닥면적의 합계가 300제곱미터 이상이면 모두 건축허가등의 동의 대상에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제7조 제1항 제1호다목 괄호 (입원실 없는 정신건강의학과 의원 제외)",
+    "explanation": "🚨 [출제위원 착시 함정] 정신의료기관 중 '입원실이 없는 정신건강의학과 의원'은 연면적 300제곱미터 이상 동의 대상 기준에서 명시적으로 제외됩니다(시행령 제7조 제1항 제1호 다목 괄호). 따라서 일반 건축물 기준(400제곱미터 이상)을 적용받습니다.",
+    "origQId": null,
+    "id": "PRED_03_02_005",
+    "hlKey": "입원실이 없는 정신건강의학과 의원은 제외",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "지하층 또는 무창층이 있는 건축물로서 해당 지하층 또는 무창층이 공연장인 경우에도 일반 용도와 동일하게 그 층의 바닥면적이 150제곱미터 이상이어야 건축허가등의 동의 대상에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제7조 제1항 제2호 (지하층·무창층 공연장 바닥면적 100㎡ 이상)",
+    "explanation": "🚨 [출제위원 착시 함정] 지하층 또는 무창층의 바닥면적 동의 기준은 일반 용도가 150제곱미터 이상이지만, '공연장'의 경우에는 '100제곱미터 이상'만 되어도 건축허가등의 동의 대상에 해당합니다. 지하층 또는 무창층 바닥면적이 일반 용도는 150제곱미터 이상일 때 동의 대상이지만, 불을 끄고 관람하는 '공연장'의 경우에는 100제곱미터 이상만 되어도 동의 대상에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_006",
+    "hlKey": "공연장의 경우에는 100제곱미터 이상",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "항공기 격납고, 관망탑, 항공관제탑, 방송용 송수신탑, 지하구, 위험물 저장 및 처리 시설, 전기저장시설은 연면적이나 바닥면적의 규모와 관계없이 건축허가등의 동의 대상에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제7조 제1항 제5호·제6호 (면적 무관 당연 동의대상)",
+    "explanation": "현행 시행령 제7조 제1항 제5호·제6호에 따라 항공기 격납고, 관망탑, 항공관제탑, 방송용 송수신탑, 공동주택, 조산원·산후조리원, 숙박시설, 위험물 저장 및 처리 시설, 풍력발전소·전기저장시설, 지하구 등은 면적 규모에 관계없이 건축허가등의 동의를 받아야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_007",
+    "hlKey": "항공기 격납고, 관망탑, 항공관제탑",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣상 성능위주설계를 한 특정소방대상물은 건축허가등의 동의 대상에서 제외된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제7조 및 시행규칙 제3조 (성능위주설계 대상물의 동의 포함)",
+    "explanation": "과거 구법에서는 성능위주설계를 한 대상물을 동의 대상에서 제외하는 단서가 있었으나 현행 시행령에서는 삭제되어 건축허가등의 동의 대상에 포함되며, 회신 기한은 10일 이내입니다.",
+    "origQId": null,
+    "id": "PRED_03_02_008",
+    "hlKey": "성능위주설계를 한 대상물을 제외하는 단서가 있었으나 현행 시행령에서는 삭제되어 동의 대상에 포함",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "성능위주설계를 수행할 수 있는 자는 전문소방시설설계업을 등록한 자 중 소방기술사 1명 이상을 기술인력으로 보유한 자이다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제8조 제2항 및 공사업법 시행령 별표 1 (성능위주설계 소방기술사 2명 이상)",
+    "explanation": "성능위주설계를 할 수 있는 자는 전문소방시설설계업을 등록한 자 중 소방기술사 1명이 아니라 '소방기술사 2명 이상'을 기술인력으로 보유한 자여야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_009",
+    "hlKey": "전문소방시설설계업을 등록한 자 중 소방기술사 2명 이상을 기술인력으로 보유한 자",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "지하층을 제외한 층수가 35층이고 지상으로부터 높이가 110미터이며 연면적이 25만 제곱미터인 신축 아파트는 연면적이 20만 제곱미터 이상이므로 성능위주설계를 해야 하는 특정소방대상물에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제9조 제1호·제2호 (성능위주설계 연면적 20만㎡ 기준의 아파트등 제외)",
+    "explanation": "현행 시행령 제9조 제1호에 따른 연면적 20만 제곱미터 이상(창고시설은 10만 제곱미터 이상) 기준에서는 '아파트등'이 제외됩니다. 아파트등은 연면적과 상관없이 지하층 제외 50층 이상이거나 지상 높이 200미터 이상이어야 성능위주설계 대상이 됩니다.",
+    "origQId": null,
+    "id": "PRED_03_02_010",
+    "hlKey": "연면적 20만 제곱미터 이상인 특정소방대상물",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "아파트등을 제외한 일반 특정소방대상물로서 지하층을 포함한 층수가 25층이고 지상으로부터 높이가 110미터이며 연면적이 6만 제곱미터인 신축 업무시설은 성능위주설계를 해야 하는 특정소방대상물에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제9조 제3호 (일반 건축물 성능위주설계 높이 120m 이상 기준)",
+    "explanation": "🚨 [출제위원 착시 함정] 현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 제9조 제3호상 일반 특정소방대상물(아파트등 제외)의 성능위주설계 고층 기준은 구법의 100미터가 아니라 특급 기준과 동일한 '지하층 포함 30층 이상이거나 지상으로부터 높이가 120미터 이상'(연면적은 20만 제곱미터 이상)이므로, 25층·높이 110미터·연면적 6만 제곱미터인 업무시설은 성능위주설계 대상이 아닙니다!",
+    "origQId": null,
+    "id": "PRED_03_02_011",
+    "hlKey": "지하층을 포함한 층수가 30층 이상이거나 지상으로부터 높이가 120미터 이상",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "지하가 중 터널로서 길이가 3,000미터인 수저(水底)터널은 길이가 5,000미터 미만이므로 성능위주설계를 해야 하는 특정소방대상물에 해당하지 아니한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제9조 제8호 (수저터널 길이 무관 성능위주설계 대상)",
+    "explanation": "일반 터널은 길이가 5,000미터 이상일 때 성능위주설계 대상이지만, 물 밑을 지나는 '수저(水底)터널'은 길이와 관계없이 무조건 성능위주설계를 해야 하는 대상에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_012",
+    "hlKey": "수저터널 또는 길이가 5,000미터 이상인 터널",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "지진이 발생할 경우 소방시설이 정상적으로 작동될 수 있도록 내진설계기준을 정하여 고시하는 권한자는 행정안전부장관이며, 간이스프링클러설비는 내진설계 대상 소방시설에서 제외된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 제7조 및 시행령 제8조 (내진설계기준 고시권자 소방청장 및 간이스프링클러 포함)",
+    "explanation": "🚨 [출제위원 착시 함정] 내진설계기준을 정하여 고시하는 권한자는 행정안전부장관이 아니라 '소방청장'(법 제7조)이며, 시행령 제8조 및 소방청장이 정하는 내진설계기준상 대상 설비는 옥내소화전설비, 스프링클러설비(간이스프링클러설비 포함), 물분무등소화설비의 4종입니다.",
+    "origQId": null,
+    "id": "PRED_03_02_013",
+    "hlKey": "소방청장이 정하는 내진설계기준에 맞게 설치하여야 하는 소방시설",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "수계 소화설비인 옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 옥외소화전설비는 모두 내진설계기준에 맞게 설치하여야 하는 소방시설에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제8조 (옥외소화전·연결송수관 내진설계 제외 함정)",
+    "explanation": "옥내소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비의 4종만 내진설계 대상이며, '옥외소화전설비'와 '연결송수관설비'는 내진설계 대상이 아닙니다.",
+    "origQId": null,
+    "id": "PRED_03_02_014",
+    "hlKey": "연결송수관설비와 옥외소화전설비는 내진설계 대상이 아니며 간이스프링클러설비는 내진설계 대상에 포함된다",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "대통령령 또는 화재안전기준이 변경되어 그 기준이 강화되는 경우 기존의 특정소방대상물에는 원칙적으로 변경 전의 기준을 적용하나, 소화기구·비상경보설비·자동화재속보설비 및 피난구조설비에 대하여는 변경으로 강화된 기준을 소급하여 적용한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 제13조 제1항 단서 및 시행령 제17조 (강화 기준 소급 적용 필수 4대 설비)",
+    "explanation": "법 제13조 제1항 단서에 따라 소화기구, 비상경보설비, 자동화재속보설비, 피난구조설비(및 노유자·의료시설 등의 필수 설비)는 설치 비용 대비 인명 보호 효과가 절대적이므로 기존 특정소방대상물에도 강화된 기준을 소급 적용합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_015",
+    "hlKey": "소화기구·비상경보설비·자동화재속보설비·피난구조설비",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "특정소방대상물이 증축되는 경우 기존 부분과 증축 부분이 내화구조로 된 바닥과 벽으로 구획되어 있거나, 건축법 시행령에 따른 자동방화셔터 또는 60분+ 방화문·60분 방화문으로 구획되어 있는 경우에는 기존 부분에 대해서는 증축 당시의 기준을 적용하지 아니한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제15조 제1항 제1호·제2호 (증축 시 내화구획·방화문 기존 부분 적용 배제)",
+    "explanation": "현행 시행령 제15조 제1항 단서에 따라 증축 시 원칙적으로 전체에 증축 당시 기준을 적용하나, 내화구조 바닥·벽 구획이나 자동방화셔터 또는 60분+ 방화문·60분 방화문 구획 시에는 기존 부분에 증축 당시 기준을 적용하지 않습니다.",
+    "origQId": null,
+    "id": "PRED_03_02_016",
+    "hlKey": "60분+ 방화문 또는 60분 방화문",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "자동차 생산공장 등 화재 위험이 낮은 특정소방대상물 내부에 연면적 33제곱미터 이하의 직원 휴게실을 증축하는 경우에도 기존 부분을 포함한 특정소방대상물 전체에 대하여 증축 당시의 소방시설 설치 기준을 적용하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제15조 제1항 제3호·제4호 (자동차 생산공장 33㎡ 이하 직원 휴게실 증축 특례)",
+    "explanation": "현행 시행령 제15조 제1항 제3호·제4호(2025.11.25. 개정)에 따라 자동차 생산공장 등 화재 위험이 낮은 특정소방대상물 내부에 '연면적 33제곱미터 이하의 직원 휴게실'을 증축하거나 외부에 '3면 이상에 벽이 없는 구조의 캐노피'를 설치하는 경우에는 기존 부분에 대해서는 증축 당시의 기준을 적용하지 않습니다.",
+    "origQId": null,
+    "id": "PRED_03_02_017",
+    "hlKey": "연면적 33제곱미터 이하의 직원 휴게실을 증축",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "특정소방대상물의 구조·설비가 화재연소 확대 요인이 적어지거나 피난 또는 화재진압활동이 쉬워지도록 용도변경되는 경우에도 특정소방대상물 전체에 대하여 용도변경 당시의 강화된 기준을 적용한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 제15조 제2항 (화재위험 감소 용도변경 시 변경 전 기준 적용)",
+    "explanation": "🚨 [출제위원 착시 함정] 화재연소 확대 요인이 적어지거나 피난·화재진압활동이 쉬워지도록 변경되거나 천장·바닥·벽 고정 가연성 물질 양이 줄어드는 용도변경의 경우에는 특정소방대상물 전체에 대하여 용도변경 당시가 아니라 '용도변경 전에 적용되던 기준'을 적용합니다(시행령 제15조 제2항 단서).",
+    "origQId": null,
+    "id": "PRED_03_02_018",
+    "hlKey": "화재연소 확대 요인이 적어지거나 피난 또는 화재진압활동이 쉬워지도록 변경되는 경우",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "건설현장 화재위험작업현장으로서 연면적이 3,000제곱미터 이상이거나, 지하층·무창층 또는 4층 이상인 층의 바닥면적이 300제곱미터 이상인 경우에는 임시소방시설 중 간이소화장치를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 8 (임시소방시설 중 간이소화장치 설치 기준)",
+    "explanation": "🚨 [출제위원 착시 함정] 임시소방시설 중 간이소화장치의 지하층·무창층·4층 이상 층 바닥면적 기준은 300제곱미터 이상이 아니라 '600제곱미터 이상'(또는 연면적 3,000제곱미터 이상)입니다. 간이소화장치는 연면적 3,000제곱미터 이상이거나 지하층·무창층·4층 이상인 층의 바닥면적이 600제곱미터 이상인 작업현장에 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_019",
+    "hlKey": "연면적 3,000제곱미터 이상이거나 지하층·무창층·4층 이상인 층의 바닥면적이 600제곱미터 이상",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "건설현장 화재위험작업현장으로서 연면적이 400제곱미터 이상이거나 지하층·무창층의 바닥면적이 150제곱미터 이상인 경우에는 임시소방시설 중 비상경보장치, 간이피난유도선, 가스누설경보기, 비상조명등을 설치하여야 한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 8 (비상경보장치·간이피난유도선·가스누설경보기·비상조명등 설치 기준)",
+    "explanation": "비상경보장치·간이피난유도선·가스누설경보기·비상조명등의 4종은 연면적 400제곱미터 이상이거나 지하층·무창층 바닥면적이 150제곱미터 이상인 화재위험작업현장에 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_020",
+    "hlKey": "비상경보장치·간이피난유도선·가스누설경보기·비상조명등",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "지상 25층이고 연면적이 3만 제곱미터인 아파트는 11층 이상이고 연면적이 1만 제곱미터 이상이므로 ｢소방시설공사업법 시행령｣상 완공검사를 위한 현장확인 대상 특정소방대상물에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설공사업법 시행령 제5조 제1항 제4호 괄호 (완공검사 현장확인 대상에서 아파트 제외)",
+    "explanation": "연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물은 완공검사 현장확인 대상에 해당하나, 법령상 괄호 단서로 '아파트는 제외'되어 있습니다.",
+    "origQId": null,
+    "id": "PRED_03_02_021",
+    "hlKey": "연면적 1만 제곱미터 이상이거나 11층 이상인 특정소방대상물",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "가연성가스를 제조·저장 또는 취급하는 시설 중 지상에 노출된 가연성가스탱크의 저장용량 합계가 1천 톤 이상인 시설은 ｢소방시설공사업법 시행령｣상 소방본부장 또는 소방서장이 완공검사를 위하여 현장확인을 해야 하는 특정소방대상물에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설공사업법 시행령 제5조 제4호 (지상 노출 가연성가스탱크 합계 1천 톤 이상 완공검사 현장확인)",
+    "explanation": "｢소방시설공사업법 시행령｣ 제5조 제4호에 따라 지상에 노출된 가연성가스탱크의 저장용량 합계가 1천 톤 이상인 시설(1급 소방안전관리대상물 가스 기준과 동일!)은 완공검사를 위한 현장확인 대상 특정소방대상물에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_02_022",
+    "hlKey": "지상에 노출된 가연성가스탱크의 저장용량 합계가 1천 톤 이상인 시설",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "재개발·재건축 및 문화재수리 등의 공사로서 공사의 성질상 소방시설공사를 다른 업종의 공사와 분리하여 도급하는 것이 곤란하다고 시·도지사가 인정하는 경우에는 분리도급의 예외에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설공사업법 시행령 제11조의2 제2호 (분리도급 곤란 공사 인정권자 소방청장)",
+    "explanation": "공사의 성질상 분리하여 도급하는 것이 곤란하다고 인정하는 권한자는 시·도지사가 아니라 '소방청장'입니다.",
+    "origQId": null,
+    "id": "PRED_03_02_023",
+    "hlKey": "성질상 분리도급이 곤란하다고 소방청장",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "소방시설의 구조와 원리 등에서 공법이 특수한 특정소방대상물로서 지방소방기술심의위원회의 심의를 거쳐 인정된 경우에는 화재안전기준을 따르지 아니하고 설계할 수 있다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설공사업법 제11조 제1항 단서 (특수 공법 대상물 중앙소방기술심의위원회 심의)",
+    "explanation": "🚨 [출제위원 착시 함정] 특수 공법으로 화재안전기준을 따르지 아니하고 설계할 수 있도록 심의하는 기관은 지방위원회가 아니라 소방청에 두는 '중앙소방기술심의위원회'(소방시설공사업법 제11조 제1항 단서)입니다. 화재안전기준을 따르지 아니하고 특수하게 설계할 수 있는 경우는 지방위원회가 아니라 '중앙소방기술심의위원회'의 심의를 거쳐 인정된 경우입니다.",
+    "origQId": null,
+    "id": "PRED_03_02_024",
+    "hlKey": "중앙소방기술심의위원회",
+    "paraIdx": 5,
+    "isEssential": false
   }
 ];
-
+    window.SUBJ_DATA = [
+  {
+    "id": "SUBJ_LAW_03_02_01",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "건축허가등의 동의 기한 · 면적 서열 공식 (시행령 제7조 · 시행규칙 제3조)",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"회신 5일(특급 10일)·보완 4일·취소통보 7일\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">회신 5일(특급 10일)·보완 4일·취소통보 7일</span></span> &nbsp;|&nbsp; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"6층 이상 또는 일반 400㎡·정신의료 300㎡·노유자 200㎡·학교 100㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">6층 이상 또는 일반 400㎡·정신의료 300㎡·노유자 200㎡·학교 100㎡ 이상</span></span></div><div class=\"subj-ex-line\">💡 <strong>개정 핵심 급소</strong> | 지하·무창층 = 바닥면적 150㎡(공연장 100㎡) 이상 / 차고·주차장·기계식 주차시설 = 현행법상 면적·대수 무관 전원 동의 대상!</div>",
+    "answerEq": "회신 5일(특급 10일)·보완 4일·취소통보 7일 / 6층 이상 또는 일반 400㎡·정신의료 300㎡·노유자 200㎡·학교 100㎡ 이상",
+    "fullFormula": "회신 5일(특급 10일)·보완 4일·취소통보 7일 | 6층 이상 또는 일반 400㎡·정신의료 300㎡·노유자 200㎡·학교 100㎡ 이상",
+    "explanation": "💡 개정 핵심 급소 | 지하·무창층 = 바닥면적 150㎡(공연장 100㎡) 이상 / 차고·주차장·기계식 주차시설 = 현행법상 면적·대수 무관 전원 동의 대상!"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_02",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "성능위주설계(신축) & 내진설계 의무 4종 핵심 등식 (법 제7조·제8조 · 영 제8조·제9조)",
+    "promptHtml": "<div class=\"subj-eq-line\">내진설계 4종(소방청장 고시) = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"옥내소화전 + 스프링클러 + 간이스프링클러 + 물분무등소화설비\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">옥내소화전 + 스프링클러 + 간이스프링클러 + 물분무등소화설비</span></span></div><div class=\"subj-ex-line\">💡 <strong>포함 대 제외 경계</strong> | 간이스프링클러설비 포함(O) ↔ 옥외소화전·연결송수관·연결살수·제연·자동화재탐지설비 제외(X) / 성능위주설계 = 전문설계업 + 소방기술사 2명 이상</div>",
+    "answerEq": "옥내소화전 + 스프링클러 + 간이스프링클러 + 물분무등소화설비",
+    "fullFormula": "내진설계 4종(소방청장 고시) = 옥내소화전 + 스프링클러 + 간이스프링클러 + 물분무등소화설비",
+    "explanation": "💡 포함 대 제외 경계 | 간이스프링클러설비 포함(O) ↔ 옥외소화전·연결송수관·연결살수·제연·자동화재탐지설비 제외(X) / 성능위주설계 = 전문설계업 + 소방기술사 2명 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_03",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "동의 주체 · 위임 분담",
+    "promptHtml": "<div class=\"subj-prose-line\">요구자 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건축허가청\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">건축허가청</span></span> ➔ 동의권자 = 시공지·소재지 <strong>소방본부장·소방서장</strong>(시·도지사 X) / 대상물 범위 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"대통령령(영 제7조)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">대통령령(영 제7조)</span></span> ↔ 요구 절차·서류·기한 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"행정안전부령(규칙 제3조)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">행정안전부령(규칙 제3조)</span></span></div>",
+    "answerEq": "대통령령(영 제7조) / 행정안전부령(규칙 제3조) / 건축허가청",
+    "fullFormula": "",
+    "explanation": "요구자 = 건축허가청 ➔ 동의권자 = 시공지·소재지 소방본부장·소방서장(시·도지사 X) / 대상물 범위 = 대통령령(영 제7조) ↔ 요구 절차·서류·기한 = 행정안전부령(규칙 제3조)"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_04",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "4대 법정 기한 (규칙 제3조)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"회신 5일(특급 10일) · 보완 4일 · 취소통보 7일\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">회신 5일(특급 10일) · 보완 4일 · 취소통보 7일</span></span> 보완 기간(4일 이내)은 회신 기간에 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"불산입\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">불산입</span></span>(미보완 시 반려) / 허가 취소 시 취소일부터 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"7일 이내\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">7일 이내</span></span> 소방본부장·서장 통보</div>",
+    "answerEq": "회신 5일(특급 10일) · 보완 4일 · 취소통보 7일 / 불산입 / 7일 이내",
+    "fullFormula": "",
+    "explanation": "회신 5일(특급 10일) · 보완 4일 · 취소통보 7일 보완 기간(4일 이내)은 회신 기간에 불산입(미보완 시 반려) / 허가 취소 시 취소일부터 7일 이내 소방본부장·서장 통보"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_05",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "층수 · 계단식 연면적",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"6층 이상 건축물(연면적 무관)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">6층 이상 건축물(연면적 무관)</span></span> / 6층 미만: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"일반 400㎡ · 정신의료·재활 300㎡ · 노유자·수련 200㎡ · 학교 100㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">일반 400㎡ · 정신의료·재활 300㎡ · 노유자·수련 200㎡ · 학교 100㎡ 이상</span></span> (단, <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"입원실 없는 정신건강의학과 의원\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">입원실 없는 정신건강의학과 의원</span></span>은 300㎡ 제외 ➔ 400㎡ 적용)</div>",
+    "answerEq": "일반 400㎡ · 정신의료·재활 300㎡ · 노유자·수련 200㎡ · 학교 100㎡ 이상 / 6층 이상 건축물(연면적 무관) / 입원실 없는 정신건강의학과 의원",
+    "fullFormula": "",
+    "explanation": "6층 이상 건축물(연면적 무관) / 6층 미만: 일반 400㎡ · 정신의료·재활 300㎡ · 노유자·수련 200㎡ · 학교 100㎡ 이상 (단, 입원실 없는 정신건강의학과 의원은 300㎡ 제외 ➔ 400㎡ 적용)"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_06",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "지하·무창층 · 면적 무관",
+    "promptHtml": "<div class=\"subj-prose-line\">지하·무창층 바닥면적 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"150㎡(공연장 100㎡) 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">150㎡(공연장 100㎡) 이상</span></span> / 면적·대수 무관: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"차고·주차장·기계식 주차시설(개정!)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">차고·주차장·기계식 주차시설(개정!)</span></span>, 격납고·관망탑·관제탑·송수신탑·공동주택·산후조리원·숙박·지하구·위험물·전기저장시설 (성능위주설계 대상도 동의 포함!)</div>",
+    "answerEq": "150㎡(공연장 100㎡) 이상 / 차고·주차장·기계식 주차시설(개정!)",
+    "fullFormula": "",
+    "explanation": "지하·무창층 바닥면적 150㎡(공연장 100㎡) 이상 / 면적·대수 무관: 차고·주차장·기계식 주차시설(개정!), 격납고·관망탑·관제탑·송수신탑·공동주택·산후조리원·숙박·지하구·위험물·전기저장시설 (성능위주설계 대상도 동의 포함!)"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_07",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "성능위주설계 자격·면적·고층",
+    "promptHtml": "<div class=\"subj-prose-line\">자격(공사업법 영 별표 1의2): 전문설계업 + <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방기술사 2명 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">소방기술사 2명 이상</span></span> / 일반 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연면적 20만㎡ 이상(아파트등 제외!)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">연면적 20만㎡ 이상(아파트등 제외!)</span></span>, 창고 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"10만㎡(지하 2층+3만㎡)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">10만㎡(지하 2층+3만㎡)</span></span> / 아파트등 <strong>50층(지하 제외)·200m</strong> ↔ 일반 <strong>30층(지하 포함)·120m</strong></div>",
+    "answerEq": "소방기술사 2명 이상 / 연면적 20만㎡ 이상(아파트등 제외!) / 10만㎡(지하 2층+3만㎡)",
+    "fullFormula": "",
+    "explanation": "자격(공사업법 영 별표 1의2): 전문설계업 + 소방기술사 2명 이상 / 일반 연면적 20만㎡ 이상(아파트등 제외!), 창고 10만㎡(지하 2층+3만㎡) / 아파트등 50층(지하 제외)·200m ↔ 일반 30층(지하 포함)·120m"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_08",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "성능위주 교통·영화·터널",
+    "promptHtml": "<div class=\"subj-prose-line\">철도·도시철도·공항시설 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연면적 3만㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">연면적 3만㎡ 이상</span></span> / 단일 건축물 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"영화상영관 10개 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">영화상영관 10개 이상</span></span> / 지하연계 복합건축물 / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"수저터널(길이 무관) 또는 길이 5,000m 이상 터널\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">수저터널(길이 무관) 또는 길이 5,000m 이상 터널</span></span></div>",
+    "answerEq": "수저터널(길이 무관) 또는 길이 5,000m 이상 터널 / 연면적 3만㎡ 이상 / 영화상영관 10개 이상",
+    "fullFormula": "",
+    "explanation": "철도·도시철도·공항시설 연면적 3만㎡ 이상 / 단일 건축물 영화상영관 10개 이상 / 지하연계 복합건축물 / 수저터널(길이 무관) 또는 길이 5,000m 이상 터널"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_09",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "내진설계 4종 (영 제8조)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장</span></span> 고시 기준 / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"옥내소화전 · 스프링클러 · 간이스프링클러 · 물분무등소화설비\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">옥내소화전 · 스프링클러 · 간이스프링클러 · 물분무등소화설비</span></span> (<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐은 모두 제외!\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐은 모두 제외!</span></span>)</div>",
+    "answerEq": "옥내소화전 · 스프링클러 · 간이스프링클러 · 물분무등소화설비 / 소방청장 / 옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐은 모두 제외!",
+    "fullFormula": "",
+    "explanation": "소방청장 고시 기준 / 옥내소화전 · 스프링클러 · 간이스프링클러 · 물분무등소화설비 (옥외소화전 · 연결송수관 · 연결살수 · 제연 · 자탐은 모두 제외!)"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_10",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "증축 vs 용도변경 (영 제15조)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"증축\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">증축</span></span> = 원칙 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"전체\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">전체</span></span> 당시 기준(내화구획, 자동방화셔터·<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"60분+·60분 방화문\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">60분+·60분 방화문</span></span>, 공장 내 <strong>33㎡ 이하 휴게실</strong>, 3면 무벽 캐노피 시 기존 배제) ↔ <strong>용도변경</strong> = 원칙 <strong>변경 부분만</strong>(위험·고정 가연물 감소 시 전체 변경 전 기준)</div>",
+    "answerEq": "증축 / 전체 / 60분+·60분 방화문",
+    "fullFormula": "",
+    "explanation": "증축 = 원칙 전체 당시 기준(내화구획, 자동방화셔터·60분+·60분 방화문, 공장 내 33㎡ 이하 휴게실, 3면 무벽 캐노피 시 기존 배제) ↔ 용도변경 = 원칙 변경 부분만(위험·고정 가연물 감소 시 전체 변경 전 기준)"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_11",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "임시소방시설 핵심 규모 (별표 8)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"간이소화장치\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">간이소화장치</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연면적 3,000㎡ 또는 지하·무창·4층 이상 600㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">연면적 3,000㎡ 또는 지하·무창·4층 이상 600㎡ 이상</span></span> ↔ 비상경보·피난유도선·가스누설·비상조명등 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연면적 400㎡(비상경보) 또는 지하·무창층 150㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">연면적 400㎡(비상경보) 또는 지하·무창층 150㎡ 이상</span></span></div>",
+    "answerEq": "연면적 3,000㎡ 또는 지하·무창·4층 이상 600㎡ 이상 / 간이소화장치 / 연면적 400㎡(비상경보) 또는 지하·무창층 150㎡ 이상",
+    "fullFormula": "",
+    "explanation": "간이소화장치 = 연면적 3,000㎡ 또는 지하·무창·4층 이상 600㎡ 이상 ↔ 비상경보·피난유도선·가스누설·비상조명등 = 연면적 400㎡(비상경보) 또는 지하·무창층 150㎡ 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_02_12",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "공사업법 3대 연결 급소",
+    "promptHtml": "<div class=\"subj-prose-line\">특수 공법 심의 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"중앙소방기술심의위원회\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">중앙소방기술심의위원회</span></span>(법 제18조) / 분리도급 예외 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1천㎡ 이하 비상경보\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">1천㎡ 이하 비상경보</span></span>, 곤란 공사 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"소방청장\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">소방청장</span></span> 인정 / 완공 현장확인 = <strong>1만㎡·11층 이상(아파트 제외!)</strong>, 지상 노출 가연성가스탱크 <strong>1천 톤 이상</strong></div>",
+    "answerEq": "중앙소방기술심의위원회 / 1천㎡ 이하 비상경보 / 소방청장",
+    "fullFormula": "",
+    "explanation": "특수 공법 심의 = 중앙소방기술심의위원회(법 제18조) / 분리도급 예외 = 1천㎡ 이하 비상경보, 곤란 공사 소방청장 인정 / 완공 현장확인 = 1만㎡·11층 이상(아파트 제외!), 지상 노출 가연성가스탱크 1천 톤 이상"
+  }
+];
     document.addEventListener('DOMContentLoaded', () => {
       HarnessEngine.renderUnitStats('statsContainer_03_02', STATS_03_02);
       HarnessEngine.renderOriginalQuestions('origQuestions_03_02', ORIG_Q_03_02);

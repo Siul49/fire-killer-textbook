@@ -1,0 +1,3696 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 11 · 인쇄용] 제3편 화재론 및 소화약제론 · 제3장 가스계 소화약제(CO2·할론·청정·IG) 및 분말소화약제 1·2·3·4종 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY10_03_02_물소화약제_첨가제와_포소화약제_혼합방식_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 11</span>
+        <a href="DAY12_04_01_소방시설_5대분류_피난구조와_소화활동설비_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(18제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 11 · 제3편 화재론 및 소화약제론 · 제3장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(18문항)</span>
+            <span>□ OX 30제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">가스계 소화약제(CO2·할론·청정·IG) 및 분말소화약제 1·2·3·4종</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 이산화탄소(CO2) 소화약제의 물성(삼중점·임계점)과 설비 작동 계통</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>CO<sub>2</sub> 핵심 물성(2019년 Q2·2024년 Q20)</strong>: 무색·무취·<strong>비전도성</strong>, 오손 없음, <strong>자체 증기압 방출</strong>, <strong>질식(주) + 기화열 냉각(부)</strong> / <strong>제3류·제5류·D급 금속화재 사용 불가</strong></li>
+                <li><strong>삼중점 vs 임계점 &amp; 설계농도</strong>: 삼중점(<strong>영하 56.6℃, 5.18 atm</strong>) / 임계점(<strong>31.1℃, 72.8 atm</strong>) / 표준 설계농도 <strong>34% 이상</strong>(이황화탄소·아세틸렌 최대)</li>
+                <li><strong>CO<sub>2</sub> 설비 작동 순서 및 기동용기(2025년 Q24·2026년 Q23)</strong>: <strong>기동용기 솔레노이드 동작 ➔ 선택밸브 개방 ➔ 저장용기밸브 개방 ➔ 분사헤드 방출</strong> / 기동용기에는 질소가 아닌 <strong>이산화탄소(CO<sub>2</sub>) 충전!</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            물이나 포 소화약제는 소화력은 우수하지만 전기가 통하고 방출 후 수손(오손) 피해를 남겨 전산실, 통신기기실, 전기실, 박물관 수장고에는 사용할 수 없습니다. 이처럼 소화 후 약제에 의한 2차 오손 피해 없이 불을 끄는 <strong>가스계 소화약제</strong> 중 가장 널리 쓰이는 <strong>이산화탄소(CO<sub>2</sub>, 분자량 44)</strong>는 무색·무취의 <strong>전기 비전도성 불연성 기체</strong>로서 공기(평균 분자량 29)보다 약 <strong>1.5배 무겁고(증기비중 44 &divide; 29 &asymp; 1.52)</strong>, 변질되지 않아 장기보존이 용이하며, 상온에서 <strong>자체 증기압이 매우 높아(섭씨 21도에서 약 5.8 MPa) 별도의 가압원 없이 자체 압력만으로 방출</strong>됩니다(기출: 2019년 Q2, 2024년 Q20, 2025년 Q24, 2026년 Q23). 방출된 액화 이산화탄소는 급격히 기화하며 실내 산소 농도를 15퍼센트 이하로 떨어뜨리는 <strong>질식소화(주된 소화효과)</strong>와 단열팽창(줄&middot;톰슨 효과) 및 기화열 흡수에 의한 <strong>자기증발 냉각소화(보조 소화효과)</strong>를 동시에 발휘합니다(단, 고온에서 CO<sub>2</sub>의 산소를 빼앗아 반응하는 <strong>제3류 금수성·알칼리금속 위험물이나 D급 금속화재[마그네슘·나트륨·칼륨 등]</strong>, 그리고 자체 산소를 함유한 <strong>제5류 자기반응성 위험물에는 절대 사용할 수 없습니다</strong>!).
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            이산화탄소의 상태도(Phase Diagram)에서 고체(드라이아이스)·액체·기체 3상이 동시에 평형을 이루며 공존하는 <strong>삼중점(Triple Point)</strong>은 <strong>온도 영하 56.6℃, 압력 5.18 atm(약 0.518 MPa)</strong>이며, 대기압(1 atm)이 삼중점 압력보다 낮기 때문에 상온 1기압에서 드라이아이스는 액체를 거치지 않고 곧바로 기체로 승화합니다. 반면 아무리 압력을 가해도 더 이상 액화되지 않는 한계점인 <strong>임계점(Critical Point)</strong>은 <strong>임계온도 31.1℃, 임계압력 72.8 atm(약 7.38 MPa)</strong>입니다. 또한 전역방출방식에서 공기 중 산소 농도 21퍼센트를 15퍼센트 이하(약 13.8퍼센트)로 낮추기 위한 일반 가연물 기준 최소 <strong>설계농도는 34퍼센트 이상</strong>이며, 최소산소농도(MOC)가 낮고 위험도가 큰 <strong>이황화탄소(CS<sub>2</sub>, 약 72퍼센트)나 아세틸렌(C<sub>2</sub>H<sub>2</sub>, 약 66퍼센트)</strong>일수록 더 높은 설계농도가 필요합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            특히 최근 시험(2025년 Q24, 2026년 Q23)에서는 <strong>가스압력식 이산화탄소 소화설비의 계통도 부품 기능과 단계별 작동 순서</strong>가 연이어 출제되었습니다. 화재감지기가 작동하여 수신부(제어반)로 화재신호가 수신되면, ① 먼저 기동용 가스용기 상단의 <strong>솔레노이드(전자개방밸브)가 동작</strong>하여 파괴침이 기동용기 밸브의 봉판을 뚫어 기동용 가스를 방출시키고(<strong>ㄱ</strong>) ➔ ② 방출된 기동가스가 배관 파열을 막기 위해 해당 방호구역으로 가는 출구 통로인 <strong>'선택밸브'를 먼저 개방</strong>한 뒤(<strong>ㄷ</strong>) ➔ ③ 이어서 주 약제가 담긴 <strong>'저장용기밸브'를 개방</strong>하고(<strong>ㄹ</strong>) ➔ ④ 저장용기 연결관의 <strong>체크밸브(역류방지밸브)</strong>와 집합관, 선택밸브, 압력스위치를 거쳐 <strong>분사헤드에서 가스가 방출</strong>됩니다(<strong>ㄴ</strong>). 이때 저장용기 밸브를 개방하기 위한 <strong>기동용 가스용기에는 질소(N<sub>2</sub>) 등 비활성기체가 아니라 액화 '이산화탄소(CO<sub>2</sub>)'를 충전</strong>한다는 점을 반드시 기억해야 합니다(2026년 Q23에서 질소를 충전한다고 속여 출제!).
+          </p>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 할론(Halon) 명명법·특성과 할로겐화합물·불활성기체(IG)·고체에어로졸</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>할론 3종 비교(2024년 Q21)</strong>: <strong>Halon 1301(CF<sub>3</sub>Br)</strong>은 기체·소화력 최강·ODP=10 최대 / <strong>Halon 1211(CF<sub>2</sub>ClBr)</strong>은 자체 증기압이 낮아 <strong>질소가스로 가압 저장</strong> / <strong>Halon 2402(C<sub>2</sub>F<sub>4</sub>Br<sub>2</sub>)</strong>는 상온 <strong>액체</strong>·자체 독성 최대</li>
+                <li><strong>불활성기체 IG 4종(2019년 Q16·2023년 Q21)</strong>: <strong>IG-01(Ar 100%, 질소 미포함!)</strong>, <strong>IG-100(N<sub>2</sub> 100%)</strong>, <strong>IG-55(N<sub>2</sub> 50%+Ar 50%)</strong>, <strong>IG-541(N<sub>2</sub> 52%+Ar 40%+CO<sub>2</sub> 8%)</strong> / 부촉매 효과 없음(질식소화만)</li>
+                <li><strong>고체에어로졸화합물 정의(2026년 Q20)</strong>: 불연성 혼합물이 아니라 <strong>연소과정에 의해 직경 10&mu;m 이하 에어로졸을 만드는 가연성 축합물질</strong> (인산염류 분말·할로겐/불활성기체·고체에어로졸은 <strong>A·B·C급 모두 적응</strong>, 2026년 Q19)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            단 5퍼센트 내외의 적은 농도로도 화염 속 활성 자유 라디칼(H&middot;, OH&middot;)을 화학적으로 포착하여 연쇄반응 속도를 끊는 대표적인 <strong>화학적 부촉매(억제) 소화약제</strong>가 <strong>할론(Halon) 소화약제</strong>입니다(기출: 2019년 Q16, 2020년 Q1, 2022년 Q18, 2023년 Q21, 2024년 Q21, 2026년 Q19·Q20). 할론은 메테인(CH<sub>4</sub>)이나 에테인(C<sub>2</sub>H<sub>6</sub>) 같은 지방족 탄화수소의 수소 원자 일부 또는 전부를 할로겐 원소(F, Cl, Br, I)로 치환한 <strong>불연성</strong> 화합물로서(가연성인 메테인·에테인과 물리·화학적 성질이 전혀 다름!), 명칭 뒤의 숫자는 <strong>『첫째 자리 = 탄소(C), 둘째 자리 = 불소(F), 셋째 자리 = 염소(Cl), 넷째 자리 = 브롬(Br)』</strong> 원자 수를 뜻합니다. 이에 따라 <strong>Halon 1301은 CF<sub>3</sub>Br</strong>, <strong>Halon 1211은 CF<sub>2</sub>ClBr</strong>, <strong>Halon 2402는 C<sub>2</sub>F<sub>4</sub>Br<sub>2</sub></strong>, <strong>Halon 1011은 CH<sub>2</sub>ClBr</strong>이 됩니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            할론 분자 내의 <strong>불소(F)</strong>는 탄소와의 결합력이 강해 화합물의 <strong>화학적 안정성을 높이고 독성을 낮추는 역할</strong>을 하며, <strong>브롬(Br)과 염소(Cl)</strong>는 화염 속에서 쉽게 분리되어 활성 라디칼을 잡는 <strong>부촉매 소화력(소화력 크기: I &gt; Br &gt; Cl &gt; F)</strong>을 발휘합니다. 3대 할론의 상온 상태와 저장 특성을 비교하면, ① <strong>Halon 1301(비점 영하 57.8℃)</strong>은 상온 기체로서 할론 중 독성이 가장 낮고 소화력이 가장 뛰어나나 성층권 오존층파괴지수(<strong>ODP = 10</strong>)가 가장 큽니다. ② <strong>Halon 1211(비점 영하 4℃)</strong>은 상온·상압에서 기체이나 <strong>자체 증기압이 낮아 저장용기에 저장할 때 소화약제의 원활한 방출을 위해 질소가스(N<sub>2</sub>)로 가압(축압)</strong>합니다(2024년 Q21 정답 선지). ③ <strong>Halon 2402(비점 영상 47.3℃)</strong>는 상온·상압에서 <strong>액체</strong>로 존재하며 할론 중 <strong>자체 독성이 가장 커서</strong> 상주 공간 전역방출에는 쓸 수 없습니다(또한 모든 할론 약제는 금속의 수소화물[제3류], 유기과산화물[제5류], 금속화재[D급]에는 적응성이 없습니다).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            몬트리올 의정서로 할론이 규제되면서 도입된 친환경 대체 약제가 <strong>할로겐화합물 및 불활성기체 소화약제(청정소화약제)</strong>입니다. 이들 약제는 <strong>인체 독성, 오존층파괴지수(ODP), 지구온난화지수(GWP)가 작을수록 좋고, 대기 중 잔존 시간(대기잔류수명, ALT)은 짧을수록 좋습니다</strong>(2022년 Q18). 화재안전기술기준(NFTC 101·107A)상 <strong>'할로겐화합물소화약제'</strong>란 <strong>불소(F), 염소(Cl), 브롬(Br) 또는 요오드(I) 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본성분</strong>으로 하는 소화약제로서(대표 약제인 <strong>HFC-23[트리플루오르메탄]의 화학식은 CHF<sub>3</sub></strong>, HFC-227ea는 CF<sub>3</sub>CHFCF<sub>3</sub>), 물리적 냉각 및 화학적 <strong>부촉매 소화효과</strong>를 지닙니다(2023년 Q21). 반면 <strong>'불활성기체소화약제'</strong>란 <strong>헬륨(He), 네온(Ne), 아르곤(Ar) 또는 질소(N<sub>2</sub>)가스 중 하나 이상의 원소를 기본성분</strong>으로 하는 소화약제로서(2026년 Q20), 화학적 부촉매 소화효과는 전혀 없고 산소 농도를 낮추는 <strong>물리적 질식소화 효과</strong>만 있습니다. 불활성기체 4종의 조성비는 <strong>IG-01(아르곤 Ar 100%, 4종 중 유일하게 질소 미포함!), IG-100(질소 N<sub>2</sub> 100%), IG-55(질소 50% + 아르곤 50%), IG-541(질소 52% + 아르곤 40% + 이산화탄소 CO<sub>2</sub> 8%, 호흡중추 자극으로 대피 시간 확보; 2019년 Q16에서 CO<sub>2</sub>를 네온 Ne으로 속여 출제!)</strong>입니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            아울러 2026년 기출(Q19, Q20)에서 집중 출제된 <strong>'고체에어로졸화합물'</strong>이란 불연성 물질의 혼합물이 아니라, 자체적인 산화제와 가연성 결합제의 연소(발열) 과정을 통해 비전도성 미세입자인 에어로졸을 생성하는 <strong>비폭발성 가연성 고체 화합물(축합물질)</strong>을 말하며, <strong>'고체에어로졸'</strong>이란 고체에어로졸화합물의 연소과정에 의해 생성된 <strong>직경 10마이크로미터(&mu;m) 이하의 고체 입자와 기체 상태의 물질로 구성된 혼합물</strong>을 말합니다. 특히 ｢소화기구 및 자동소화장치의 화재안전기술기준(NFTC 101)｣ 별표 1에 따라 소화기구의 소화약제 중 <strong>A급(일반)·B급(유류·가스)·C급(전기) 화재 3가지 모두에 적응성이 있는 약제</strong>는 <strong>① 인산염류 분말소화약제(제3종 분말), ② 고체에어로졸화합물, ③ 할로겐화합물 및 불활성기체소화약제</strong>(물·강화액 무상주수 포함)라는 점을 명확히 정리해 두어야 합니다(2026년 Q19).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">약제 구분</th>
+                <th style="width:26%;">대표 약제 및 화학식·조성비</th>
+                <th style="width:54%;">핵심 물리·화학적 특성 및 기출 판별 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>이산화탄소 (CO<sub>2</sub>)</strong></td>
+                <td>CO<sub>2</sub> (분자량 44, 증기비중 1.52)</td>
+                <td>· 삼중점(<strong>영하 56.6℃, 5.18 atm</strong>) / 임계점(<strong>31.1℃, 72.8 atm</strong>) / 표준 설계농도 <strong>34% 이상</strong><br/>· <strong>자체 증기압 방출</strong>, 질식(주)+냉각(부), 기동용기에도 <strong>CO<sub>2</sub> 충전</strong> (제3류·제5류·D급 불가)</td>
+              </tr>
+              <tr>
+                <td><strong>할론 (Halon)</strong><br/>(탄·불·염·브)</td>
+                <td>· <strong>1301</strong>: CF<sub>3</sub>Br (ODP=10)<br/>· <strong>1211</strong>: CF<sub>2</sub>ClBr (ODP=3)<br/>· <strong>2402</strong>: C<sub>2</sub>F<sub>4</sub>Br<sub>2</sub> (ODP=6)</td>
+                <td>· 강력한 <strong>부촉매(억제)소화</strong> / F는 안정성 증가·독성 감소, Br은 부촉매 소화력 발휘<br/>· <strong>Halon 1211</strong>은 자체 증기압이 낮아 <strong>질소(N<sub>2</sub>) 가압 저장</strong> / <strong>Halon 2402</strong>는 상온 <strong>액체</strong>·자체 독성 큼</td>
+              </tr>
+              <tr>
+                <td><strong>할로겐화합물</strong><br/>청정소화약제</td>
+                <td>· <strong>HFC-23</strong>: <strong>CHF<sub>3</sub></strong><br/>· HFC-227ea: CF<sub>3</sub>CHFCF<sub>3</sub><br/>· FK-5-1-12 (플루오로케톤)</td>
+                <td>· F, Cl, Br, I 중 하나 이상 포함 유기화합물 / <strong>부촉매 + 냉각소화</strong> (A·B·C급 모두 적응)<br/>· 구비 조건: 독성·ODP·GWP는 작을수록, <strong>대기 중 잔존 시간(ALT)은 짧을수록 좋음</strong></td>
+              </tr>
+              <tr>
+                <td><strong>불활성기체</strong><br/>(IG 계열 4종)</td>
+                <td>· <strong>IG-01</strong>: Ar 100% (<strong>질소 미포함!</strong>)<br/>· <strong>IG-100</strong>: N<sub>2</sub> 100% / <strong>IG-55</strong>: 50:50<br/>· <strong>IG-541</strong>: N<sub>2</sub> 52%+Ar 40%+<strong>CO<sub>2</sub> 8%</strong></td>
+                <td>· He, Ne, Ar, N<sub>2</sub> 중 하나 이상 기본성분 (ODP=0, GWP=0)<br/>· <strong>부촉매 소화효과 없음(물리적 질식소화만 수행)</strong> / IG-541의 CO<sub>2</sub> 8%는 호흡중추 자극용</td>
+              </tr>
+              <tr>
+                <td><strong>고체에어로졸</strong></td>
+                <td>산화제 + 가연성 결합제 고체 화합물</td>
+                <td>· <strong>연소과정에 의해 생성된 직경 10&mu;m 이하 고체 입자 + 기체 혼합물</strong> (<strong class="text-amber-300">불연성 혼합물 X</strong>)<br/>· 부촉매·질식 작용으로 <strong>A·B·C급 화재 모두 적응성 보유</strong> (NFTC 101)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 분말소화약제 제1·2·3·4종의 주성분·착색·적응성 및 열분해 메커니즘</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>분말 1·2·3·4종 주성분·색상·적응성(2018년 Q17·2026년 Q19)</strong>: 1종(NaHCO<sub>3</sub>, 백색, B·C급) / 2종(KHCO<sub>3</sub>, 담회색, B·C급) / <strong>3종(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>, 담홍색, A·B·C급 유일!)</strong> / 4종(KHCO<sub>3</sub>+요소, 회색, B·C급)</li>
+                <li><strong>열분해 CO<sub>2</sub> 발생 여부 및 비누화(2023년 Q20)</strong>: 1·2·4종은 열분해 시 <strong>CO<sub>2</sub> 생성</strong> / <strong>3종(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>)은 탄소(C)가 없어 CO<sub>2</sub> 미생성</strong> 및 산성염이라 <strong>비누화 현상 없음!</strong></li>
+                <li><strong>제3종 분말 열분해 생성물별 소화효과(2019년 Q12·2025년 Q21)</strong>: <strong>H<sub>2</sub>O(냉각)</strong> · <strong>H<sub>3</sub>PO<sub>4</sub>(오르토인산: 탈수탄화)</strong> · <strong>HPO<sub>3</sub>(메타인산: 방진작용)</strong> · <strong>NH<sub>3</sub>(암모니아: 질식작용!)</strong> · <strong>NH<sub>4</sub><sup>+</sup>(부촉매작용)</strong></li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            소방학개론 전 범위를 통틀어 출제 빈도 1위를 다투는 파트가 바로 <strong>분말소화약제 제1종·제2종·제3종·제4종</strong>의 비교와 열분해 화학반응 메커니즘입니다(기출: 2018년 Q17, 2019년 Q12, 2023년 Q20, 2025년 Q21, 2026년 Q19). ① <strong>제1종 분말</strong>은 중탄산염류인 <strong>탄산수소나트륨(NaHCO<sub>3</sub>)</strong>이 주성분이며, 착색 색상은 <strong>백색</strong>이고, <strong>B급(유류·가스)과 C급(전기) 화재</strong>에만 적응성이 있습니다(A급 부적응). ② <strong>제2종 분말</strong>은 <strong>탄산수소칼륨(KHCO<sub>3</sub>)</strong>이 주성분이며, 착색 색상은 <strong>담회색(자색·보라색)</strong>이고, 역시 <strong>B급·C급 화재</strong>에만 적응합니다. ③ <strong>제3종 분말</strong>은 인산염류인 <strong>제1인산암모늄(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>)</strong>이 주성분이며, 착색 색상은 <strong>담홍색(분홍색)</strong>이고, 열분해 시 생성되는 메타인산(HPO<sub>3</sub>) 피막 덕분에 분말 중 유일하게 <strong>A급(일반)·B급(유류)·C급(전기) 화재 모두에 적응성</strong>이 있어 현재 생산되는 분말소화약제의 대부분을 차지합니다(2018년 Q17). ④ <strong>제4종 분말</strong>은 <strong>탄산수소칼륨(KHCO<sub>3</sub>)과 요소[(NH<sub>2</sub>)<sub>2</sub>CO]의 반응물</strong>로서 착색 색상은 <strong>회색</strong>이며, <strong>B급·C급 화재</strong>에 적응하고 분말 중 단위 중량당 소화력이 가장 강력(<strong>4종 &gt; 2종 &gt; 3종 &gt; 1종</strong>)합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            시험에서 최고난도로 출제되는 포인트는 <strong>제1·2·4종(탄산수소염류)과 제3종(인산염류)의 열분해 생성물 비교</strong>입니다(2023년 Q20, 2025년 Q21). 제1종 분말(2NaHCO<sub>3</sub> &rarr; Na<sub>2</sub>CO<sub>3</sub> + CO<sub>2</sub> + H<sub>2</sub>O), 제2종 분말(2KHCO<sub>3</sub> &rarr; K<sub>2</sub>CO<sub>3</sub> + CO<sub>2</sub> + H<sub>2</sub>O), 제4종 분말은 분자 내에 탄소(C) 원자를 가지고 있어 열분해 반응에서 모두 <strong>이산화탄소(CO<sub>2</sub>)와 수증기(H<sub>2</sub>O)가 생성</strong>되며, 알칼리염이어서 식용유와 반응하면 비누화 현상을 일으킵니다. 반면 <strong>제3종 분말(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>)은 화학식 내에 탄소(C) 원자가 아예 없으므로 열분해 반응에서 이산화탄소(CO<sub>2</sub>)가 절대 생성되지 않으며</strong>, 산성염이어서 <strong>비누화 현상도 일어나지 않습니다</strong>(2023년 Q20에서 "제1·2·3종 분말은 열분해에서 CO<sub>2</sub>가 생성된다"고 속여 정답으로 출제!).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 <strong>제3종 분말(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>)이 열분해될 때 나오는 각 생성물의 소화효과 매칭</strong>(2019년 Q12, 2025년 Q21)을 정밀하게 구분해야 합니다. 제1인산암모늄이 열을 받으면 단계적으로 분해(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub> &rarr; H<sub>3</sub>PO<sub>4</sub> + NH<sub>3</sub> &rarr; HPO<sub>3</sub> + NH<sub>3</sub> + H<sub>2</sub>O)되면서 다섯 가지 소화 작용을 수행합니다. ① <strong>수증기(H<sub>2</sub>O)</strong>는 흡열 반응 및 기화열 흡수에 의한 <strong>냉각작용</strong>(및 보조 질식작용)을 하고, ② 중간 생성물인 <strong>오르토인산(H<sub>3</sub>PO<sub>4</sub>, 정인산)</strong>은 목재·종이 등 섬유소(셀룰로오스)에서 수분을 빼앗아 숯으로 만드는 <strong>탈수탄화작용</strong>을 하며, ③ 최종 고체 생성물인 <strong>메타인산(HPO<sub>3</sub>)</strong>은 나무나 종이 표면에 유리상의 불연성 피막을 입혀 산소를 차단하는 <strong>방진작용</strong>을 수행합니다(2019년 Q12). ④ 그리고 기체로 방출되는 <strong>암모니아(NH<sub>3</sub>) 가스는 가연물 주위의 산소 농도를 낮추는 '질식작용'</strong>을 수행하며, ⑤ 화학적 연쇄반응을 끊는 <strong>부촉매작용은 암모늄 이온(NH<sub>4</sub><sup>+</sup>) 등 분해 이온과 입자</strong>가 수행합니다(2025년 Q21에서 "NH<sub>3</sub> : 부촉매작용"이라고 잘못 매칭하여 정답으로 출제!).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:15%;">구분</th>
+                <th style="width:25%;">주성분 (화학식)</th>
+                <th style="width:14%;">착색 색상</th>
+                <th style="width:14%;">적응 화재</th>
+                <th style="width:32%;">열분해 생성물 및 핵심 기출 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>제1종 분말</strong><br/>(중탄산염류)</td>
+                <td>탄산수소나트륨<br/>(<strong>NaHCO<sub>3</sub></strong>)</td>
+                <td><strong class="text-emerald-400">백색</strong></td>
+                <td><strong>B급 · C급</strong><br/>(<strong class="text-amber-300">A급 불가</strong>)</td>
+                <td>· 270℃ 분해: Na<sub>2</sub>CO<sub>3</sub> + <strong>CO<sub>2</sub> + H<sub>2</sub>O</strong><br/>· 알칼리염으로 식용유 비누화 현상 가능</td>
+              </tr>
+              <tr>
+                <td><strong>제2종 분말</strong><br/>(중탄산염류)</td>
+                <td>탄산수소칼륨<br/>(<strong>KHCO<sub>3</sub></strong>)</td>
+                <td><strong class="text-emerald-400">담회색 (자색)</strong></td>
+                <td><strong>B급 · C급</strong><br/>(<strong class="text-amber-300">A급 불가</strong>)</td>
+                <td>· K<sub>2</sub>CO<sub>3</sub> + <strong>CO<sub>2</sub> + H<sub>2</sub>O</strong><br/>· Na<sup>+</sup>보다 K<sup>+</sup>의 부촉매 소화력이 우수</td>
+              </tr>
+              <tr>
+                <td><strong>제3종 분말</strong><br/>(인산염류)</td>
+                <td>제1인산암모늄<br/>(<strong>NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub></strong>)</td>
+                <td><strong class="text-emerald-400">담홍색 (분홍)</strong></td>
+                <td><strong class="text-emerald-400">A · B · C급</strong><br/>(유일한 A급)</td>
+                <td>· <strong class="text-amber-300">CO<sub>2</sub> 미생성! 비누화 현상 없음!</strong> (2023년 Q20)<br/>· <strong>H<sub>2</sub>O(냉각) · H<sub>3</sub>PO<sub>4</sub>(탈수탄화) · HPO<sub>3</sub>(방진 피막) · NH<sub>3</sub>(질식!) · NH<sub>4</sub><sup>+</sup>(부촉매)</strong> (2025년 Q21)</td>
+              </tr>
+              <tr>
+                <td><strong>제4종 분말</strong></td>
+                <td>탄산수소칼륨 + 요소<br/>(<strong>KHCO<sub>3</sub> + (NH<sub>2</sub>)<sub>2</sub>CO</strong>)</td>
+                <td><strong class="text-emerald-400">회색</strong></td>
+                <td><strong>B급 · C급</strong><br/>(<strong class="text-amber-300">A급 불가</strong>)</td>
+                <td>· K<sub>2</sub>CO<sub>3</sub> + 2NH<sub>3</sub> + <strong>2CO<sub>2</sub> + H<sub>2</sub>O</strong><br/>· 입자 파쇄 효과로 <strong>단위 중량당 소화력 최강</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 가스계 소화약제(CO2·할론·청정·고체에어로졸) 및 분말소화약제 1·2·3·4종 핵심 도해</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 이산화탄소(CO2) 설비 계통 · 할론 명명법 및 불활성기체(IG)·고체에어로졸</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">CO<sub>2</sub> 물성 &amp; 가스압력식 작동 순서</div>
+                <div>· 삼중점(<strong>영하 56.6℃, 5.18 atm</strong>) / 임계점(<strong>31.1℃, 72.8 atm</strong>)<br/>· 작동: <strong>기동용기 솔레노이드(CO<sub>2</sub> 충전!) ➔ 선택밸브 ➔ 저장용기밸브 ➔ 분사헤드 방출</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">할론 3종 비교 (탄·불·염·브)</div>
+                <div>· <strong>1301(CF<sub>3</sub>Br)</strong>: 기체, 소화력 최강, ODP=10<br/>· <strong>1211(CF<sub>2</sub>ClBr)</strong>: 증기압 낮아 <strong>질소가스 가압 저장</strong><br/>· <strong>2402(C<sub>2</sub>F<sub>4</sub>Br<sub>2</sub>)</strong>: 상온 <strong>액체</strong>, 자체 독성 최대</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">불활성기체 IG 4종 (부촉매 X · 질식 O)</div>
+                <div>· <strong>IG-01(Ar 100%, 질소 미포함!)</strong>, IG-100(N<sub>2</sub> 100%)<br/>· IG-55(50:50), <strong>IG-541(N<sub>2</sub> 52%+Ar 40%+CO<sub>2</sub> 8%)</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">고체에어로졸 &amp; A·B·C급 모두 적응 약제</div>
+                <div>· <strong>연소과정</strong>으로 생성된 <strong>10&mu;m 이하 입자+기체</strong> (불연성 혼합물 X)<br/>· A·B·C급 적응: <strong>인산염류 분말 · 고체에어로졸 · 할로겐/불활성기체</strong></div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 분말소화약제 1·2·3·4종: <strong>1종(NaHCO<sub>3</sub>·백색·BC급) · 2종(KHCO<sub>3</sub>·담회색·BC급) · 3종(제1인산암모늄 NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>·담홍색·ABC급 유일, CO<sub>2</sub> 미생성!) · 4종(KHCO<sub>3</sub>+요소·회색·BC급 소화력 최강)</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 제3종 분말소화약제(NH4H2PO4) 열분해 메커니즘 및 생성물별 소화효과</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">분말 1·2·4종 vs 제3종 분말의 결정적 차이 (2023년 Q20)</div>
+                <ul class="schema-list">
+                  <li>1종·2종·4종(탄산수소염류): 분자 내 탄소(C) 보유 ➔ 열분해 시 <strong>이산화탄소(CO<sub>2</sub>) + H<sub>2</sub>O 생성</strong> (B·C급만 적응, 알칼리염 비누화 가능)</li>
+                  <li><strong>제3종 분말(NH<sub>4</sub>H<sub>2</sub>PO<sub>4</sub>, 인산염류)</strong>: 탄소(C) 없음 ➔ 열분해 시 <strong>CO<sub>2</sub> 절대 미생성!</strong> 산성염이라 <strong>비누화 현상 없음!</strong></li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">제3종 분말 열분해 생성물 5가지의 소화효과 정확 매칭 (2019년 Q12 · 2025년 Q21)</div>
+                <ul class="schema-list">
+                  <li><strong>H<sub>2</sub>O(수증기 = 냉각작용)</strong> · <strong>H<sub>3</sub>PO<sub>4</sub>(오르토인산 = 탈수탄화작용)</strong> · <strong>HPO<sub>3</sub>(메타인산 유리상 피막 = 방진작용)</strong></li>
+                  <li><strong>NH<sub>3</sub>(암모니아 기체 = 질식작용! 부촉매 아님 주의)</strong> · <strong>NH<sub>4</sub><sup>+</sup> 등 분해 이온 = 부촉매(억제)작용</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (18문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 18문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소화약제로 팽창질석 또는 팽창진주암을 사용하였을 때, 적응성이 가장 좋은 화재로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">일반화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">전기화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">금속화재</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">가스화재</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음 특성에 해당하는 소화약제는?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>◦소화 후 소화약제에 의한 오손이 없고, 비전도성이다.<br/>◦장기보존이 용이하고, 추운 지방에서도 사용 가능하다.<br/>◦자체 압력으로 방출이 가능하고, 불연성 기체로서 주된 소화효과는 질식효과이다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">이산화탄소 소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">산 알칼리 소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">포 소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">할로겐화합물 소화약제</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2019년 소방공채·경채 Q16</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">불활성기체소화약제의 표기와 화학식의 연결이 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">IG·01 · Ar</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">IG·100 · N2</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">IG·541 · N2: 52 %, Ar : 40 %, Ne : 8 %</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">IG·55 · N2: 50 %, Ar : 50 %</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채·경채 Q1</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가연물의 화학적 연쇄반응 속도를 줄여 소화하는 방법 으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">다량의 물을 주수하여 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">할론소화약제를 사용하여 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">연소물이나 화원을 제거하여 소화한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">에멀션(emulsion) 효과를 이용하여 소화한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소화 방법에 대해 옳은 설명만을 모두 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 질식소화는 일반적으로 공기 중 산소 농도를 낮추어 소화하는 방법을 말한다.<br/>ㄴ. 냉각소화가 가능한 약제로는 물, 강화액, CO2, 할론 등이 있다.<br/>ㄷ. 피복소화는 비중이 물보다 큰 비수용성 유류화재 시 무상주수하여 소화하는 방법을 말한다.<br/>ㄹ. 부촉매소화는 가스화재 시 가스공급을 차단하여 소화하는 방법을 말한다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2022년 소방공채·경채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">할로겐화합물 소화약제가 갖추어야 할 일반적인 조건 으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">독성이 적을수록 좋다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">지구 온난화에 끼치는 영향이 적을수록 좋다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">대기 중에 잔존 시간이 길수록 좋다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">오존층 파괴에 끼치는 영향이 적을수록 좋다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2023년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소화방법에 관한 설명으로 옳은 것만을 <보기>에서 있는 대로 고른 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 산림화재 시 화재 진행방향의 나무를 벌목하는 것은 제거소화의 방법 중 하나이다.<br/>ㄴ. 물은 비열, 증발잠열의 값이 작아서 주로 냉각소화에 사용된다.<br/>ㄷ. 부촉매 소화는 화학적 소화에 해당한다.<br/>ㄹ. 유류화재는 포 소화약제를 방사하여 유류 표면에 얇은 층을 형성함으로써 공기 공급을 차단해 소화한다.<br/>ㅁ. 물에 침투제를 첨가하는 이유는 표면장력을 증가시켜 소화능력을 향상하기 위함이다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄴ, ㄹ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ, ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㄹ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방공채·경채 Q21</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">할로겐화합물 및 불활성기체 소화약제에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">IG·01, IG·55, IG·100, IG·541 중 질소를 포함하지 않은 약제는 IG 100이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">할로겐화합물 소화약제 중 HFC·23(트리플루오르메탄)의 화학식은 CHF3이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">부촉매 소화효과는 불활성기체 소화약제에는 없으나 할로겐 화합물 소화약제는 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">할로겐화합물 소화약제는 불소, 염소, 브롬 또는 요오드 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본 성분으로 하는 소화약제를 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2024년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">이산화탄소 소화약제의 특징으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">무색, 무취로 전도성이며 독성이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">질식소화 효과와 기화열 흡수에 의한 냉각효과가 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제3류 위험물, 제5류 위험물의 소화에 사용한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">자체 증기압이 매우 낮아 별도의 가압원이 필요하다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2024년 소방공채·경채 Q21</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">할론(Halon) 소화약제에 관한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">지방족 탄화수소, 메테인, 에테인 등의 수소 원자 일부 또는 전부가 할로젠 원소(F, Cl, Br, I)로 치환된 화합물 이며 메테인, 에테인과 물리·화학적 성질이 비슷하다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">Halon 1301과 Halon 1211은 모두 상온, 상압에서 기체로 존재하며 유류화재, 전기화재, 금속의 수소화합물, 유기 과산화물에 적응성이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">Halon 2402는 상온, 상압에서 액체로 존재하며 자체적인 독성은 없지만 열분해 시 독성가스를 발생시킨다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">Halon 1211은 자체 증기압이 낮아 저장용기에 저장할 때 소화약제의 원활한 방출을 위해 질소가스로 가압한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방공채·경채 Q24</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><보기>의 이산화탄소 소화설비의 작동 단계를 순서대로 바르게 나열한 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 기동용기 솔레노이드 동작<br/>ㄴ. 분사헤드 가스 방출<br/>ㄷ. 선택밸브 개방<br/>ㄹ. 저장용기밸브 개방</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ→ㄷ→ㄹ→ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ→ㄹ→ㄷ→ㄴ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄷ→ㄱ→ㄴ→ㄹ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄷ→ㄹ→ㄱ→ㄴ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2026년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">소화기구의 소화약제 중 A·B·C급 화재에 모두 적응성이 있는 것을 <보기>에서 모두 고른 것은? (단, 다툼이 있는 경우 화재안전기술기준에 따름)</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>ㄱ. 인산염류소화약제<br/>ㄴ. 중탄산염류소화약제<br/>ㄷ. 고체에어로졸화합물<br/>ㄹ. 마른모래, 팽창질석·팽창진주암<br/>ㅁ. 할로겐화합물 및 불활성기체소화약제</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">ㄱ, ㄴ, ㄷ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ㄱ, ㄷ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">ㄴ, ㄹ, ㅁ</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">ㄷ, ㄹ, ㅁ</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">13</span>
+              <span class="q-source">2026년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">가스계 소화설비 소화약제와 관련된 용어에 관한 설명으로 옳지 않은 것은? (단, 다툼이 있는 경우 화재안전기술기준에 따름)</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">“불활성기체소화약제”란 헬륨, 네온, 아르곤 또는 질소가스 중 하나 이상의 원소를 기본성분으로 하는 소화약제를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">“할로겐화합물소화약제”란 불소, 염소, 브롬 또는 요오드 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본 성분으로 하는 소화약제를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">“고체에어로졸화합물”이란 불연성물질의 혼합물로서 화재를 소화하는 비전도성의 미세입자인 에어로졸을 만드는 고체 화합물을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">“고체에어로졸”이란 고체에어로졸화합물의 연소과정에 의해 생성된 직경 10 µm 이하의 고체 입자와 기체 상태의 물질로 구성된 혼합물을 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">14</span>
+              <span class="q-source">2026년 소방공채·경채 Q23</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><그림>은 가스압력식 이산화탄소 소화설비의 계통도이다. ㉠에서 ㉣의 주된 기능에 관한 설명으로 옳은 것만을 <보기>에서 모두 고른 것은? (단, 문제에서 제시한 사항 외의 것은 고려하지 않음) <그림> <보 기> ㉠가스가 역류하는 것을 방지하는 밸브로서 설치 시 가스 방출 방향에 주의하여야 한다. ㉡2 이상의 방호구역이 있는 곳에서 소화약제를 해당하는 방호구역에 선택적으로 방출되도록 제어하는 밸브다. ㉢화재감지기의 작동에 따라 화재신호가 수신부(제어반)로 수신되면 해당 장치의 파괴침이 기동용 가스용기 밸브의 봉판을 뚫어서 기동용 가스를 방출시키는 역할을 한다. ㉣소화약제 저장용기 밸브를 개방시키기 위한 가압용 가스를 저장하는 용기로서, 해당 용기에 사용하는 질소 등 비활성기체는 일정 수준 이상의 압력으로 충전하여야 한다.</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 그림 복원: 가스압력식 이산화탄소 소화설비 계통도상 ㉠에서 ㉣ 위치]</strong>· <strong>㉠ 체크밸브(역지밸브)</strong>: 저장용기 연결관과 집합관 사이에 설치되어 가스의 역류를 방지하는 밸브<br/>· <strong>㉡ 선택밸브</strong>: 집합관과 방호구역 배관 사이에 설치되어 화재가 발생한 방호구역으로만 약제를 방출하는 밸브<br/>· <strong>㉢ 솔레노이드밸브(전자개방밸브)</strong>: 기동용 가스용기 상단에 부착되어 수신반 신호로 파괴침을 작동시켜 기동용기 봉판을 뚫는 장치<br/>· <strong>㉣ 이산화탄소 약제 저장용기군</strong>: 주 소화약제(액화 이산화탄소)가 저장된 본 용기 <em>(선지 ㉣은 이를 가압용 질소 기동용기로 잘못 설명함)</em></div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">㉠, ㉡</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">㉢, ㉣</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">㉠, ㉡, ㉢</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">㉡, ㉢, ㉣</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">15</span>
+              <span class="q-source">2018년 소방공채·경채 Q17</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제3종 분말소화약제에 대한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">백색으로 착색되어 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">ABC급 분말소화약제라고도 부른다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">주성분은 제1인산암모늄(NH4H2PO4)이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">현재 생산되고 있는 분말소화약제의 대부분을 차지하고 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">16</span>
+              <span class="q-source">2019년 소방공채·경채 Q12</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음 중 HPO3가 일반 가연물질인 나무, 종이 등의 표면에 피막을 이루어 공기 중의 산소를 차단하는 방진 작용과 관련이 있는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제1종 분말소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제2종 분말소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">제3종 분말소화약제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">제4종 분말소화약제</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">17</span>
+              <span class="q-source">2023년 소방공채·경채 Q20</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">분말소화약제에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">제2종 분말소화약제의 주성분은 KHCO3이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">제1·2·3종 분말소화약제는 열분해 반응에서 CO2가 생성 된다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">NaHCO3이 주된 성분인 분말소화약제는 B·C급 화재에 사용하고 분말 색상은 백색이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">NH4H2PO4이 주된 성분인 분말소화약제는 A·B·C급 화재에 유효하고 비누화현상이 일어나지 않는다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">18</span>
+              <span class="q-source">2025년 소방공채·경채 Q21</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">제3종 분말소화약제의 열분해 결과로 생성되는 물질의 소화효과로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">H2O : 냉각작용</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">HPO3 : 방진작용</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">NH3 : 부촉매작용</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">H3PO4 : 탈수탄화작용</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>팽창질석, 팽창진주암, 마른모래는 물과 반응하여 수소가스를 발생시키는 금속화재(D급 화재) 및 금수성 위험물 화재의 피복 질식소화에 적응성이 우수하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이산화탄소 소화약제는 소화 후 오손이 없고 비전도성이며, 자체 증기압으로 방출이 가능하고 주된 소화효과는 질식효과(보조 냉각효과)이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>불활성기체 소화약제 중 IG·01은 아르곤(Ar) 100퍼센트, IG 100은 질소(N2) 100퍼센트, IG·55는 질소 50퍼센트와 아르곤 50퍼센트, IG 541은 질소 52퍼센트·아르곤 40퍼센트·이산화탄소(CO2) 8퍼센트로 구성된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>할론(Halon) 소화약제, 할로겐화합물 소화약제, 분말소화약제는 연소의 화학적 연쇄반응 속도를 줄이는 '부촉매소화(화학적 소화)' 효과를 발휘한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>비수용성 중질유 화재 시 무상주수하여 유류 표면에 에멀션 층을 형성해 소화하는 방법은 '유화소화'이고, 가스화재 시 가스공급을 차단하여 소화하는 방법은 '제거소화'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>할로겐화합물 소화약제는 인체 독성, 오존층파괴지수(ODP), 지구온난화지수(GWP)가 작을수록 좋고, 대기 중 잔존 시간(ALT)은 짧을수록 좋다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>산림화재 시 화재 진행방향의 나무를 벌목하여 방화선을 구축하는 것은 가연물을 차단하는 '제거소화'에 해당하며, 부촉매소화는 연쇄반응을 억제하는 '화학적 소화'에 해당한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>불활성기체 소화약제(IG·01, IG·55, IG·100, IG·541) 중 질소(N2)를 포함하지 않는 약제는 아르곤(Ar) 100퍼센트인 'IG·01'이며, 불활성기체 소화약제는 부촉매 소화효과가 없고 질식소화 효과로 소화한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>이산화탄소 소화약제는 무색·무취의 비전도성 불연성 가스로서 자체 증기압으로 방출되며, 주된 질식소화 효과와 기화열 흡수에 의한 냉각효과가 있으나 제3류 및 제5류 위험물에는 사용할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>할론(Halon) 소화약제 중 Halon 2402(C2F4Br2)는 상온·상압에서 액체로 존재하며 자체 독성이 크고, Halon 1211(CF2ClBr)은 자체 증기압이 낮아 원활한 방출을 위해 질소가스로 가압하여 저장한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가스압력식 이산화탄소 소화설비는 '기동용기 솔레노이드 동작 ➔ 선택밸브 개방 ➔ 저장용기밸브 개방 ➔ 분사헤드 가스 방출'의 순서로 작동한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재안전기술기준(NFTC 101)상 소화기구의 소화약제 중 인산염류 분말소화약제(제3종), 고체에어로졸화합물, 할로겐화합물 및 불활성기체소화약제는 A·B·C급 화재에 모두 적응성이 있으나, 중탄산염류 분말소화약제(제1종·제2종)는 B·C급 화재에만 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화재안전기술기준상 '불활성기체소화약제'는 헬륨·네온·아르곤·질소 중 하나 이상을 기본성분으로 하고, '할로겐화합물소화약제'는 불소·염소·브롬·요오드 중 하나 이상을 포함한 유기화합물을 기본성분으로 하며, '고체에어로졸'은 고체에어로졸화합물의 연소과정에 의해 생성된 직경 10마이크로미터 이하의 고체 입자와 기체 혼합물을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>가스압력식 이산화탄소 소화설비에서 선택밸브는 2 이상의 방호구역 중 화재가 발생한 방호구역에만 선택적으로 약제를 방출하도록 제어하는 밸브이며, 기동용 가스용기에는 저장용기 개방을 위하여 이산화탄소(CO2)를 충전한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제4종 분말소화약제는 탄산수소칼륨과 요소를 반응시킨 것으로 A급 화재에 가장 탁월하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3종 분말소화약제는 주성분이 제1인산암모늄(NH4H2PO4)이고 '담홍색(분홍색)'으로 착색되어 있으며, A·B·C급 화재에 모두 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3종 분말소화약제(제1인산암모늄)는 열분해 시 생성되는 메타인산(HPO3)이 일반 가연물 표면에 피막을 형성하여 산소를 차단하는 '방진작용'을 하므로 A급 화재에 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1종, 제2종, 제4종 분말소화약제는 열분해 반응에서 이산화탄소(CO2)가 생성되나, 제3종 분말소화약제(NH4H2PO4)는 열분해 시 이산화탄소가 생성되지 않고 암모니아(NH3), 수증기(H2O), 메타인산(HPO3)이 생성된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3종 분말소화약제의 열분해 결과 생성되는 물질 중 수증기(H2O)는 냉각작용, 오르토인산(H3PO4)은 탈수탄화작용, 메타인산(HPO3)은 방진작용, 암모니아(NH3) 가스는 질식작용, 암모늄이온(NH4+)은 부촉매작용을 수행한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[할로겐화합물 및 불활성기체 소화약제] IG·01, IG·55, IG·100, IG·541 중 질소를 포함하지 않은 약제는 IG 100이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제3류 위험물, 제5류 위험물의 소화에 사용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>자체 증기압이 매우 낮아 별도의 가압원이 필요하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[할론 소화약제] 지방족 탄화수소, 메테인, 에테인 등의 수소 원자 일부 또는 전부가 할로젠 원소(F, Cl, Br, I)로 치환된 화합물 이며 메테인, 에테인과 물리·화학적 성질이 비슷하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>Halon 1301과 Halon 1211은 모두 상온, 상압에서 기체로 존재하며 유류화재, 전기화재, 금속의 수소화합물, 유기 과산화물에 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>Halon 2402는 상온, 상압에서 액체로 존재하며 자체적인 독성은 없지만 열분해 시 독성가스를 발생시킨다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[가스계 소화설비 소화약제] “고체에어로졸화합물”이란 불연성물질의 혼합물로서 화재를 소화하는 비전도성의 미세입자인 에어로졸을 만드는 고체 화합물을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>제1·2·3종 분말소화약제는 열분해 반응에서 CO2가 생성 된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>대기 중 산소 농도(21%)를 이산화탄소(CO₂) 방출을 통해 15%로 낮추고자 할 때 필요한 이산화탄소의 이론 농도는 약 28.6%이며, 할론 1301이나 분말소화약제도 이와 동일한 산소희석 공식으로 설계농도를 산정한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>전역방출방식 이산화탄소 소화설비에서 유류 등 표면화재의 기준 방출시간은 7분 이내이고, 목재·케이블 등 심부화재의 기준 방출시간은 30초 이내이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>HFC 및 HCFC 계열 할로겐화합물 청정소화약제의 명명법에서 코드 번호에 90을 더한 세 자리 숫자의 백의 자리는 탄소(C) 원자 수, 십의 자리는 불소(F) 원자 수, 일의 자리는 염소(Cl) 원자 수를 나타낸다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:③ · 02:① · 03:③ · 04:② · 05:① · 06:③ · 07:① · 08:① · 09:② · 10:④ · 11:① · 12:② · 13:③ · 14:③ · 15:① · 16:③ · 17:② · 18:③</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:X · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 11 · 제3편 화재론 및 소화약제론 · 제3장 (18문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">13번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">14번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">15번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">16번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">17번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">18번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 나트륨, 칼륨, 마그네슘, 알루미늄분 등 금수성·가연성 금속화재(D급 화재)나 제3류 금수성 위험물 화재에는 물을 사용할 수 없으므로 '마른모래(건조사), 팽창질석, 팽창진주암, 전용 금속화재용 분말(D급 소화약제)'을 사용하여 피복 질식소화를 실시합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">일반화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 일반화재(A급)에는 물, 강화액, 제3종 분말 등이 가장 효과적입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">전기화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 전기화재(C급)에는 비전도성인 이산화탄소, 할로겐화합물, 불활성기체, 분말소화약제가 적합합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">금속화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 팽창질석, 팽창진주암, 마른모래는 수분과 반응하여 수소 폭발을 일으키는 '금속화재(D급 화재)' 및 금수성 물질 화재를 덮어 산소를 차단하는 데 가장 적응성이 높습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">가스화재</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 가스화재는 밸브 차단(제거소화) 및 가스·분말소화약제가 적합합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q2</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 소화 후 약제에 의한 오손(2차 피해)이 없고, 전기 비전도성이며, 변질되지 않아 장기보존이 용이하고, 별도 가압원 없이 자체 증기압(상온 약 5에서 6MPa)으로 방출 가능하며, 주된 소화효과가 '질식효과(보조 냉각효과)'인 약제는 '이산화탄소(CO₂) 소화약제'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">이산화탄소 소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 오손이 없고 비전도성이며 장기보존이 가능하고 자체 증기압으로 방출되어 질식소화(및 줄 · 톰슨 기화 냉각효과)를 발휘하는 불연성 기체 약제는 '이산화탄소 소화약제'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">산 알칼리 소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 산·알칼리 소화약제는 수용액 수계 약제로서 전도성이 있고 오손 피해가 발생합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">포 소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 포 소화약제는 거품을 방사하므로 소화 후 오손이 남고 전도성이 있어 C급 전기화재에 부적합합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">할로겐화합물 소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 할로겐화합물 소화약제의 주된 소화효과는 질식효과가 아니라 활성 라디칼을 제거하는 '부촉매(억제) 소화효과'이며 일부 약제(할론 1211 등)는 질소 가압이 필요합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q16</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 청정소화약제 중 불활성기체 소화약제 4종의 구성 성분을 묻는 S등급 필수 문항입니다.
+- IG·01: 아르곤(Ar) 100%
+- IG·100: 질소(N₂) 100%
+- IG·55: 질소(N₂) 50% + 아르곤(Ar) 50%
+- IG·541(이네젠): 질소(N₂) 52% + 아르곤(Ar) 40% + 이산화탄소(CO₂) 8%
+IG 541의 8% 성분은 네온(Ne)이 아니라 호흡을 자극하여 인명 대피를 돕는 '이산화탄소(CO₂)'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">IG·01 · Ar</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] IG·01은 아르곤(Ar) 100퍼센트로 구성된 불활성기체 소화약제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">IG·100 · N2</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] IG 100은 질소(N₂) 100퍼센트로 구성된 불활성기체 소화약제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">IG·541 · N2: 52 %, Ar : 40 %, Ne : 8 %</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] IG 541은 질소(N₂) 52퍼센트, 아르곤(Ar) 40퍼센트, 그리고 네온(Ne)이 아니라 '이산화탄소(CO₂) 8퍼센트'로 구성된 혼합 기체입니다(숫자 5·4·1은 각각 질소 약 50%, 아르곤 40%, 이산화탄소 약 10%를 뜻함).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">IG·55 · N2: 50 %, Ar : 50 %</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] IG·55는 질소(N₂) 50퍼센트와 아르곤(Ar) 50퍼센트로 구성된 소화약제입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q1</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">다량의 물을 주수하여 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 다량의 물을 주수하여 온도를 낮추는 것은 물리적 소화인 '냉각소화'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">할론소화약제를 사용하여 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 할론(Halon) 소화약제나 분말소화약제를 사용하여 화염 내 자유 라디칼의 화학적 연쇄반응 속도를 억제하는 방법은 '부촉매소화(억제소화)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">연소물이나 화원을 제거하여 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 연소물이나 화원을 치우는 것은 물리적 소화인 '제거소화'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">에멀션(emulsion) 효과를 이용하여 소화한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 에멀션 효과를 이용해 유증기 발생과 산소 접촉을 막는 것은 물리적 소화인 '유화소화(질식소화 일종)'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q17</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] ㄱ(산소농도를 낮추는 질식소화)과 ㄴ(물·강화액·이산화탄소·할론 등의 냉각소화 작용)만 옳은 설명입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄷ이 틀렸습니다. 비수용성 중질유 화재 시 무상주수하여 표면에 에멀션(물+기름 혼합층)을 형성해 소화하는 방법은 피복소화가 아니라 '유화소화'입니다(또한 일반 중질유는 물보다 비중이 작음).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄷ(비중이 물보다 작은 중질유 화재에 무상주수하여 에멀션을 만드는 것은 피복소화가 아니라 '유화소화')과 ㄹ(가스밸브를 차단하는 것은 부촉매소화가 아니라 '제거소화')이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㄷ(유화소화 설명)과 ㄹ(제거소화 설명)이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q18</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">독성이 적을수록 좋다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 재실자 안전을 위해 인체 독성이 적을수록(무독성 최고농도 NOAEL이 높을수록) 좋습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">지구 온난화에 끼치는 영향이 적을수록 좋다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 지구온난화지수(GWP)가 낮아 지구 온난화에 끼치는 영향이 적을수록 좋습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">대기 중에 잔존 시간이 길수록 좋다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 대기 중에 방출된 약제가 분해되지 않고 머무르는 시간인 '대기 중 잔존 시간(대기잔류수명, ALT)'은 길수록 온실효과와 환경오염을 유발하므로 '짧을수록' 좋습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">오존층 파괴에 끼치는 영향이 적을수록 좋다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 오존층파괴지수(ODP)가 낮아 성층권 오존층 파괴에 끼치는 영향이 적을수록 좋습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 물은 비열과 증발잠열이 매우 '커서' 냉각소화에 쓰이며(ㄴ 틀림), 물에 침투제를 첨가하는 이유는 표면장력을 '감소(저하)'시켜 심부 침투력을 높이기 위함입니다(ㅁ 틀림).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 산림화재 시 나무를 벌목하여 가연물을 없애는 제거소화( ㄱ ), 활성 라디칼을 억제하는 화학적 소화인 부촉매소화( ㄷ ), 포 약제로 유류 표면을 덮어 공기를 차단하는 질식소화( ㄹ )가 모두 옳으므로 'ㄱ, ㄷ, ㄹ'이 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㄴ(물의 비열·증발잠열은 매우 큼)과 ㅁ(침투제는 표면장력을 감소시킴)이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ, ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 물은 비열과 증발잠열이 매우 커서 냉각소화에 사용되므로 ㄴ이 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 물에 침투제를 첨가하는 이유는 표면장력을 감소시키기 위함이므로 ㅁ이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q21</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 불활성기체 소화약제 4종[IG·01(아르곤 100%), IG·100(질소 100%), IG·55(질소 50% + 아르곤 50%), IG·541(질소 52% + 아르곤 40% + 이산화탄소 8%)] 중 질소(N₂)를 전혀 포함하지 않은 약제는 IG 100이 아니라 순수 아르곤 가스인 'IG·01'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">IG·01, IG·55, IG·100, IG·541 중 질소를 포함하지 않은 약제는 IG 100이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] IG 100은 질소(N₂) 100퍼센트 약제입니다. 네 가지 중 질소를 포함하지 않은 약제는 아르곤(Ar) 100퍼센트로만 이루어진 'IG·01'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">할로겐화합물 소화약제 중 HFC·23(트리플루오르메탄)의 화학식은 CHF3이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] HFC·23(트리플루오르메탄)은 첫째 자리(C-1)=0 ➔ 탄소(C) 1개, 둘째 자리(H+1)=2 ➔ 수소(H) 1개, 셋째 자리(F)=3 ➔ 불소(F) 3개이므로 화학식은 CHF₃입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">부촉매 소화효과는 불활성기체 소화약제에는 없으나 할로겐 화합물 소화약제는 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 불활성기체 소화약제(IG 계열)는 산소농도를 낮추는 물리적 질식소화 효과만 있으며, 화학적 부촉매 소화효과는 할로겐화합물 소화약제에만 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">할로겐화합물 소화약제는 불소, 염소, 브롬 또는 요오드 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본 성분으로 하는 소화약제를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 할로겐화합물 소화약제는 불소(F), 염소(Cl), 브롬(Br), 요오드(I) 중 하나 이상의 할로겐 원소를 포함하는 유기화합물을 기본 성분으로 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 이산화탄소(CO₂) 소화약제의 물리·화학적 특성[무색·무취·비전도성·불연성 기체, 공기보다 약 1.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">무색, 무취로 전도성이며 독성이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 이산화탄소는 무색·무취이나 전기가 통하지 않는 '비전도성'이기 때문에 C급 전기화재에 널리 사용되며, 자체적인 화학 독성은 없습니다(고농도 시 산소 결핍 및 마취성 질식 유발).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">질식소화 효과와 기화열 흡수에 의한 냉각효과가 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 이산화탄소 소화약제는 산소농도를 15퍼센트 이하로 낮추는 '질식소화 효과'가 주된 작용이며, 액화 탄산가스가 방출·기화할 때 주변의 열을 빼앗는(줄 · 톰슨 효과 및 기화잠열 흡수) '냉각효과'를 함께 지닙니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제3류 위험물, 제5류 위험물의 소화에 사용한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 제3류 위험물(나트륨·칼륨·알킬알루미늄 등)이나 마그네슘은 고온에서 이산화탄소의 산소를 빼앗아 일산화탄소와 탄소를 만들며 더욱 격렬히 연소하고, 제5류 위험물은 자체 산소를 함유하여 질식소화가 불가능하므로 이산화탄소 소화약제를 사용할 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">자체 증기압이 매우 낮아 별도의 가압원이 필요하다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 이산화탄소는 자체 증기압이 매우 높아(상온 섭씨 21도에서 약 5.8MPa) 별도의 가압원(질소가스 등) 없이 자체 압력만으로 방출됩니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q21</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 할론 소화약제 3종[Halon 1301(CF₃Br, 비점 −57.8℃, 기체), Halon 1211(CF₂ClBr, 비점 −4℃, 기체이나 증기압이 낮아 질소가스 가압 저장), Halon 2402(C₂F₄Br₂, 비점 +47.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">지방족 탄화수소, 메테인, 에테인 등의 수소 원자 일부 또는 전부가 할로젠 원소(F, Cl, Br, I)로 치환된 화합물 이며 메테인, 에테인과 물리·화학적 성질이 비슷하다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 할론은 메테인·에테인 등 지방족 탄화수소의 수소 원자를 할로겐 원소(F, Cl, Br, I)로 치환한 화합물이지만, 가연성인 메테인·에테인과 달리 '불연성'이고 소화력을 지녀 물리·화학적 성질이 전혀 다릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">Halon 1301과 Halon 1211은 모두 상온, 상압에서 기체로 존재하며 유류화재, 전기화재, 금속의 수소화합물, 유기 과산화물에 적응성이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 할론 소화약제는 금속의 수소화물(제3류), 자기반응성 물질인 유기과산화물(제5류), 금속화재(D급)에는 적응성이 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">Halon 2402는 상온, 상압에서 액체로 존재하며 자체적인 독성은 없지만 열분해 시 독성가스를 발생시킨다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] Halon 2402는 상온·상압에서 액체로 존재하는 것은 맞으나, 할론 약제 중 '자체 독성이 가장 커서' 인체 상주 공간(전역방출방식)에는 사용이 금지됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">Halon 1211은 자체 증기압이 낮아 저장용기에 저장할 때 소화약제의 원활한 방출을 위해 질소가스로 가압한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] Halon 1211(CF₂ClBr, 비점 약 영하 4도)은 Halon 1301(비점 약 영하 58도)에 비해 상온에서 자체 증기압이 낮기 때문에, 저장용기에 저장할 때 원활한 방출을 위하여 '질소가스(N₂)로 가압(축압)'하여 충전합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q24</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 배관 파열 방지를 위해 저장용기밸브( ㄹ )가 열리기 전에 반드시 출구 길인 '선택밸브( ㄷ )'가 먼저 개방되어야 합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ→ㄷ→ㄹ→ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 기동용기 솔레노이드 동작( ㄱ ) ➔ 기동가스가 이동하여 방호구역 '선택밸브 개방( ㄷ )' ➔ 이어서 '저장용기밸브 개방( ㄹ )' ➔ '분사헤드 가스 방출( ㄴ )' 순서인 'ㄱ ➔ ㄷ ➔ ㄹ ➔ ㄴ'이 정확합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ→ㄹ→ㄷ→ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 저장용기밸브( ㄹ )가 선택밸브( ㄷ )보다 먼저 열리면 닫혀 있는 선택밸브 전단 집합관에 고압이 걸려 배관이 파손될 수 있으므로 반드시 선택밸브( ㄷ )가 먼저 개방됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄷ→ㄱ→ㄴ→ㄹ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 기동용기 솔레노이드 동작( ㄱ )이 선택밸브 개방( ㄷ )보다 선행되어야 기동가스의 압력으로 선택밸브가 열립니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄷ→ㄹ→ㄱ→ㄴ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 가스압력식 이산화탄소 소화설비는 '기동용 가스용기 솔레노이드 개방(ㄱ) ➔ 선택밸브 개방 및 저장용기 개방(ㄷ) ➔ 압력스위치 작동(ㄹ) ➔ 방출표시등 점등 및 헤드 방출(ㄴ)' 순으로 작동하므로 순서가 뒤섞였습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> - ㄱ. 인산염류 분말(제3종 분말): A·B·C급 모두 적응성 있음.
+- ㄴ. 중탄산염류 분말(제1종·제2종 분말): B·C급에만 적응성 있음(A급 부적응).
+- ㄷ. 고체에어로졸화합물: A·B·C급 모두 적응성 있음.
+- ㄹ. 마른모래, 팽창질석·팽창진주암: A급·B급에는 일부 쓰이나 C급(배전반 등 정밀 전기설비)에는 적응성이 인정되지 않음(주로 유류·위험물·금속화재용).
+- ㅁ. 할로겐화합물 및 불활성기체소화약제: A·B·C급 모두 적응성 있음.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">ㄱ, ㄴ, ㄷ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㄴ(중탄산염류 분말: 탄산수소나트륨·탄산수소칼륨)은 B·C급 화재에만 적응성이 있고 A급(일반화재)에는 적응성이 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ㄱ, ㄷ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] NFTC 101 별표 1에 따라 A·B·C급 화재에 모두 적응성이 있는 소화약제는 인산염류소화약제( ㄱ ), 고체에어로졸화합물( ㄷ ), 할로겐화합물 및 불활성기체소화약제( ㅁ )이므로 'ㄱ, ㄷ, ㅁ'이 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">ㄴ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] ㄴ(중탄산염류 소화약제는 나트륨·칼륨계로서 B·C급 화재에만 적응성이 있고 A급에는 부적응)과 ㄹ(마른모래 등은 A·B·C 모두 적응하는 약제가 아님)이 포함되어 틀렸습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">ㄷ, ㄹ, ㅁ</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] A·B·C급 모두 적응성이 있는 ㄱ(인산염류 소화약제, 제3종 분말)이 누락되었고 부적응인 ㄹ(마른모래, 팽창질석·팽창진주암)이 잘못 포함되었습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 13</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '고체에어로졸화합물'은 자체적인 산화제와 연료 성분이 연소(발열 반응)하면서 미세 에어로졸 입자를 생성하는 물질이므로, '불연성물질의 혼합물'이 아니라 '비폭발성 축합물질(또는 산화제와 가연성 결합제의 고체 혼합물)로서 연소과정에 의해 에어로졸을 만드는 고체 화합물'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">“불활성기체소화약제”란 헬륨, 네온, 아르곤 또는 질소가스 중 하나 이상의 원소를 기본성분으로 하는 소화약제를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] '불활성기체소화약제'란 헬륨(He), 네온(Ne), 아르곤(Ar) 또는 질소(N₂)가스 중 하나 이상의 원소를 기본성분으로 하는 소화약제를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">“할로겐화합물소화약제”란 불소, 염소, 브롬 또는 요오드 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본 성분으로 하는 소화약제를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] '할로겐화합물소화약제'란 불소(F), 염소(Cl), 브롬(Br) 또는 요오드(I) 중 하나 이상의 원소를 포함하고 있는 유기화합물을 기본성분으로 하는 소화약제를 말합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">“고체에어로졸화합물”이란 불연성물질의 혼합물로서 화재를 소화하는 비전도성의 미세입자인 에어로졸을 만드는 고체 화합물을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 선지 ④에 명시된 바와 같이 고체에어로졸은 '고체에어로졸화합물의 연소과정에 의해 생성'됩니다. 따라서 고체에어로졸화합물은 불연성물질의 혼합물이 아니라, 자체 연소반응을 통해 비전도성 미세입자인 에어로졸을 생성하는 '산화제와 가연물의 고체 혼합물(가연성 축합물질)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">“고체에어로졸”이란 고체에어로졸화합물의 연소과정에 의해 생성된 직경 10 µm 이하의 고체 입자와 기체 상태의 물질로 구성된 혼합물을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] '고체에어로졸'이란 고체에어로졸화합물의 연소과정에 의해 생성된 직경 10마이크로미터(μm) 이하의 고체 입자와 기체 상태의 물질로 구성된 혼합물을 말합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 14</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2026년 소방공채·경채 Q23</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ㉣ 기동용 가스용기는 저장용기 밸브와 선택밸브를 개방하기 위한 기동용 가스를 저장하는 용기이나, 여기에 충전하는 가스는 질소(N₂) 등 비활성기체가 아니라 액화 '이산화탄소(CO₂)'를 충전합니다(내용적 1리터 이상, 충전비 1.5 이상 1.9 이하, 안전장치 및 압력게이지 설치).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">㉠, ㉡</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ㉠(체크밸브)과 ㉡(선택밸브)뿐만 아니라 ㉢(솔레노이드밸브의 파괴침 기동 원리)도 옳은 설명이므로 ㉢이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">㉢, ㉣</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] ㉣(기동용 가스용기에는 질소 등 비활성기체가 아니라 '이산화탄소'를 충전함)은 틀린 설명이며, 옳은 설명인 ㉠과 ㉡이 누락되었습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">㉠, ㉡, ㉢</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 역류방지 체크밸브( ㉠ ), 방호구역별 선택 방출을 제어하는 선택밸브( ㉡ ), 제어반 신호를 받아 파괴침으로 기동용기 봉판을 뚫는 솔레노이드 장치( ㉢ )는 모두 옳은 설명입니다. 반면 ㉣ 기동용 가스용기에는 질소가 아니라 액화 '이산화탄소(CO₂)'를 충전하므로 ㉣은 틀렸습니다. 따라서 정답은 '㉠, ㉡, ㉢'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">㉡, ㉢, ㉣</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] ㉣(질소 충전이 아니라 이산화탄소 충전)이 틀렸습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 15</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q17</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 분말소화약제 4종의 주성분, 착색 색상, 화재 적응성을 묻는 S등급 필수 문항입니다.
+- 제1종 분말: 탄산수소나트륨(NaHCO₃), 백색, B·C급 · 제2종 분말: 탄산수소칼륨(KHCO₃), 담회색(보라색·자색), B·C급 · 제3종 분말: 제1인산암모늄(NH₄H₂PO₄), 담홍색(분홍색), A·B·C급 · 제4종 분말: 탄산수소칼륨(KHCO₃) + 요소[(NH₂)₂CO], 회색, B·C급</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">백색으로 착색되어 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제3종 분말소화약제는 백색이 아니라 '담홍색(분홍색)'으로 착색되어 있습니다(백색으로 착색된 것은 탄산수소나트륨이 주성분인 제1종 분말).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">ABC급 분말소화약제라고도 부른다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 제3종 분말은 일반화재(A급), 유류·가스화재(B급), 전기화재(C급)에 모두 적응성이 있어 'ABC급 분말소화약제'라고 부릅니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">주성분은 제1인산암모늄(NH4H2PO4)이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 제3종 분말의 주성분은 제1인산암모늄(NH₄H₂PO₄, 인산염류)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">현재 생산되고 있는 분말소화약제의 대부분을 차지하고 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] A·B·C급 전천후 적응성을 지녀 현재 국내외에서 생산·보급되는 분말소화약제의 대부분을 차지합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 16</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q12</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 제3종 분말소화약제(제1인산암모늄, NH₄H₂PO₄)가 열분해될 때 생성되는 '메타인산(HPO₃)'이 나무·종이 등 A급 일반 가연물 표면에 유리상의 끈끈한 피막을 형성하여 산소를 차단하고 재발화를 막는 '방진작용(질식작용)'을 수행하기 때문에 분말 중 유일하게 A급 화재 적응성을 가집니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제1종 분말소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 제1종 분말(NaHCO₃)은 열분해 시 Na₂CO₃, CO₂, H₂O를 생성하며 메타인산(HPO₃)이 생성되지 않아 A급 적응성이 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제2종 분말소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 제2종 분말(KHCO₃)은 열분해 시 K₂CO₃, CO₂, H₂O를 생성하며 B·C급에만 적응성이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">제3종 분말소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 열분해 시 오르토인산(H₃PO₄: 탈수탄화작용)을 거쳐 '메타인산(HPO₃)'을 생성함으로써 일반 가연물 표면에 불연성 유리상 피막을 입히는 '방진작용'을 하는 약제는 '제3종 분말소화약제(NH₄H₂PO₄)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">제4종 분말소화약제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 제4종 분말은 탄산수소칼륨과 요소의 반응물로서 B·C급에만 적응성이 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 17</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q20</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 탄산수소염류인 제1종(NaHCO₃), 제2종(KHCO₃), 제4종(KHCO₃ + (NH₂)₂CO)은 분자 내에 탄소(C)가 있어 열분해 시 이산화탄소(CO₂)가 생성되지만, 인산염류인 '제3종 분말(NH₄H₂PO₄)'은 분자 내에 탄소(C) 원자가 아예 없으므로 열분해 반응에서 이산화탄소(CO₂)가 절대 생성되지 않고 '암모니아(NH₃)와 수증기(H₂O), 메타인산(HPO₃)'이 생성됩니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">제2종 분말소화약제의 주성분은 KHCO3이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 제2종 분말소화약제의 주성분은 탄산수소칼륨(KHCO₃)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">제1·2·3종 분말소화약제는 열분해 반응에서 CO2가 생성 된다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] 제1종·제2종·제4종 분말은 열분해 반응에서 이산화탄소(CO₂)가 생성되지만, '제3종 분말(NH₄H₂PO₄)'은 구성 원소에 탄소(C)가 없으므로 열분해 시 CO₂가 생성되지 않고 암모니아(NH₃)와 수증기(H₂O)가 생성됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">NaHCO3이 주된 성분인 분말소화약제는 B·C급 화재에 사용하고 분말 색상은 백색이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 탄산수소나트륨(NaHCO₃)이 주성분인 제1종 분말은 B·C급 화재에 사용하며 분말 색상은 백색입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">NH4H2PO4이 주된 성분인 분말소화약제는 A·B·C급 화재에 유효하고 비누화현상이 일어나지 않는다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 제1인산암모늄(NH₄H₂PO₄)이 주성분인 제3종 분말은 A·B·C급 화재에 유효하며, 산성염이어서 알칼리염(1·2종)과 달리 식용유와 만나도 비누화 현상이 일어나지 않습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 18</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q21</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">H2O : 냉각작용</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 열분해 흡열반응 및 생성된 수증기(H₂O)는 열을 빼앗는 냉각작용(및 질식작용)을 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">HPO3 : 방진작용</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 최종 열분해 고체 생성물인 메타인산(HPO₃)은 가연물 표면에 불연성 피막을 형성하는 방진작용을 합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">NH3 : 부촉매작용</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 열분해로 발생하는 암모니아(NH₃) 가스는 화점 주변 공간의 산소농도를 희석·차단하는 '질식작용'을 하며, 화학적 부촉매작용은 분해 이온(NH₄^+ 등)에 의해 수행됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">H3PO4 : 탈수탄화작용</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 중간 생성물인 오르토인산(H₃PO₄, 정인산)은 목재·종이 등 셀룰로오스 가연물에서 수분을 빼앗아 탄화시키는 탈수탄화작용을 합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:X · 16:O · 17:O · 18:O · 19:O · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>금속화재(D급)에는 주수소화가 절대 금지되며 마른모래, 팽창질석, 팽창진주암 등을 사용하여 피복 질식소화합니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q12 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>이산화탄소는 불연성·비전도성 가스로서 자체 증기압이 높아 별도 가압가스 없이 방출되며 산소농도를 15퍼센트 이하로 낮추는 질식소화와 기화 잠열에 의한 냉각소화를 수행합니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>IG 541의 8퍼센트 성분은 네온(Ne)이 아니라 호흡중추를 자극하여 피난 시간을 늘려주는 이산화탄소(CO2)입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q16 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>물·이산화탄소·포·불활성기체는 물리적 소화약제이고, 할론·할로겐화합물·분말소화약제는 부촉매(억제) 작용을 하는 화학적 소화약제입니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q1 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>물보다 무거운 이황화탄소(CS2) 등을 물속에 잠기게 덮는 것이 피복소화이고, 중질유 표면에 무상주수로 에멀션 막을 만드는 것은 유화소화이며, 가스 차단은 제거소화입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>대기 중 잔존 시간(대기잔류수명, ALT)이 길면 온난화 등 환경 부하가 커지므로 잔존 시간은 짧을수록 친환경적입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>냉각·질식·제거소화는 물리적 소화이고, 부촉매(억제)소화는 화학적 소화입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>IG 100은 질소 100퍼센트이고, IG·01이 아르곤 100퍼센트(질소 미포함)입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q21 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>나트륨·칼륨·마그네슘 등 금속은 CO2와 반응하여 산소를 빼앗고 제5류 위험물은 자체 산소를 보유하므로 이산화탄소 소화약제로 소화할 수 없습니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>비점은 Halon 2402(+47.3℃, 상온 액체) &gt; Halon 1211(−4℃, 저압 기체) &gt; Halon 1301(−57.8℃, 고압 기체) 순이며, 증기압이 낮은 Halon 1211과 1301 설비에는 질소가스 가압이 활용됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q21 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>기동용기에서 방출된 기동가스는 먼저 배관 통로인 '선택밸브'를 개방한 직후 '저장용기밸브'를 개방하여 약제를 헤드로 방출시킵니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q24 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>중탄산염류(탄산수소염류) 분말은 방진·탈수탄화 작용이 없어 A급 일반화재에는 적응성이 없습니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>고체에어로졸화합물은 자체 연소과정을 거쳐 에어로졸을 생성하므로 불연성물질의 혼합물이 아닙니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>이산화탄소 소화설비의 기동용 가스용기에는 질소가 아니라 이산화탄소(용적 1L 이상, 충전비 1.5 이상 1.9 이하)를 충전합니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q23 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 15 · X 틀림</span>제4종 분말은 BC급 적응 약제로서 A급 화재에는 적응성이 없습니다. 분말 중 A급에 적응성을 갖는 것은 오직 제3종 분말뿐입니다.
+            <span class="ox-exp-src">분말약제 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>1종은 탄산수소나트륨(백색, BC급), 2종은 탄산수소칼륨(담회색·자색, BC급), 3종은 제1인산암모늄(담홍색, ABC급), 4종은 탄산수소칼륨+요소(회색, BC급)입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q17 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 17 · O 옳음</span>제3종 분말의 열분해 반응식(NH4H2PO4 -&gt; HPO3 + NH3 + H2O)에서 생성되는 메타인산(HPO3)의 방진작용이 A급 일반화재 진압의 핵심 원리입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q12 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>제3종 분말(NH4H2PO4)에는 탄소(C) 원자가 없으므로 열분해 시 CO2가 발생할 수 없으며, 또한 식용유 화재 시 비누화 현상이 일어나지 않습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q20 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>2025년 기출에서 NH3(질식작용)를 부촉매작용(NH4+)과 바꿔치기하여 출제하였으므로 각 생성물별 역할을 정확히 구분해야 합니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q21 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>IG 100은 질소(N₂) 100퍼센트 약제입니다. 네 가지 중 질소를 포함하지 않은 약제는 아르곤(Ar) 100퍼센트로만 이루어진 'IG·01'입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q21 · 불활성기체 소화약제(IG 계열) 중 질소 미포함 약제 및 할로겐화합물 화학식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 21 · O 옳음</span>HFC·23(트리플루오르메탄)은 첫째 자리(C-1)=0 ➔ 탄소(C) 1개, 둘째 자리(H+1)=2 ➔ 수소(H) 1개, 셋째 자리(F)=3 ➔ 불소(F) 3개이므로 화학식은 CHF₃입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q21 · 불활성기체 소화약제(IG 계열) 중 질소 미포함 약제 및 할로겐화합물 화학식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>불활성기체 소화약제(IG 계열)는 산소농도를 낮추는 물리적 질식소화 효과만 있으며, 화학적 부촉매 소화효과는 할로겐화합물 소화약제에만 있습니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q21 · 불활성기체 소화약제(IG 계열) 중 질소 미포함 약제 및 할로겐화합물 화학식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>할로겐화합물 소화약제는 불소(F), 염소(Cl), 브롬(Br), 요오드(I) 중 하나 이상의 할로겐 원소를 포함하는 유기화합물을 기본 성분으로 합니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q21 · 불활성기체 소화약제(IG 계열) 중 질소 미포함 약제 및 할로겐화합물 화학식</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>제3류 위험물(나트륨·칼륨·알킬알루미늄 등)이나 마그네슘은 고온에서 이산화탄소의 산소를 빼앗아 일산화탄소와 탄소를 만들며 더욱 격렬히 연소하고, 제5류 위험물은 자체 산소를 함유하여 질식소화가 불가능하므로 이산화탄소 소화약제를 사용할 수 없습니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q20 · 이산화탄소(CO2) 소화약제의 특징과 금기 위험물</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>이산화탄소는 자체 증기압이 매우 높아(상온 섭씨 21도에서 약 5.8MPa) 별도의 가압원(질소가스 등) 없이 자체 압력만으로 방출됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q20 · 이산화탄소(CO2) 소화약제의 특징과 금기 위험물</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>할론은 메테인·에테인 등 지방족 탄화수소의 수소 원자를 할로겐 원소(F, Cl, Br, I)로 치환한 화합물이지만, 가연성인 메테인·에테인과 달리 '불연성'이고 소화력을 지녀 물리·화학적 성질이 전혀 다릅니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q21 · 할론(Halon) 소화약제(1301, 1211, 2402)의 상온 상태 및 질소 가압 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>할론 소화약제는 금속의 수소화물(제3류), 자기반응성 물질인 유기과산화물(제5류), 금속화재(D급)에는 적응성이 없습니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q21 · 할론(Halon) 소화약제(1301, 1211, 2402)의 상온 상태 및 질소 가압 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>Halon 2402는 상온·상압에서 액체로 존재하는 것은 맞으나, 할론 약제 중 '자체 독성이 가장 커서' 인체 상주 공간(전역방출방식)에는 사용이 금지됩니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q21 · 할론(Halon) 소화약제(1301, 1211, 2402)의 상온 상태 및 질소 가압 특성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>선지 ④에 명시된 바와 같이 고체에어로졸은 '고체에어로졸화합물의 연소과정에 의해 생성'됩니다. 따라서 고체에어로졸화합물은 불연성물질의 혼합물이 아니라, 자체 연소반응을 통해 비전도성 미세입자인 에어로졸을 생성하는 '산화제와 가연물의 고체 혼합물(가연성 축합물질)'입니다.
+            <span class="ox-exp-src">2026년 소방공채·경채 Q20 · 가스계 소화약제 및 고체에어로졸화합물의 법정 용어 정의</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>제1종·제2종·제4종 분말은 열분해 반응에서 이산화탄소(CO₂)가 생성되지만, '제3종 분말(NH₄H₂PO₄)'은 구성 원소에 탄소(C)가 없으므로 열분해 시 CO₂가 생성되지 않고 암모니아(NH₃)와 수증기(H₂O)가 생성됩니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q20 · 분말소화약제 1·2·3·4종의 열분해 생성물(CO2 생성 여부) 및 비누화 반응 비교</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>

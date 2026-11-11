@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=6" />
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,9 +44,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 소방시설의 5대 분류(별표 1)와 피난구조·소화활동설비 구분</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 스프링클러·간이스프링클러 및 물분무등소화설비 설치 대상(별표 4)</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 단독경보형 감지기, 인명구조기구(공기호흡기) 및 제연설비 설치기준</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 재실자용 대 소방관 전용 — 소방시설 5대 분류(별표 1)와 소방용품(별표 3)</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 수계·특수 소화의 경계선 — 스프링클러·간이스프링클러·물분무등(별표 4)</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 단독경보형 감지기(개정 연동형), 공기호흡기 및 제연설비 기준(별표 4)</a>
           <a href="#diagramSection" class="block text-emerald-400 hover:text-white py-1 transition mt-2">단원 핵심 도해</a>
           <a href="#examStatsSection" class="block text-amber-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">
             출제 경향 및 핵심 쟁점 요약
@@ -55,7 +55,7 @@
             실전 기출문제 (12문항)
           </a>
           <a href="#quizSection" class="block text-teal-300 hover:text-white py-1 transition font-bold">
-            핵심 지문 OX 확인 (16문항)
+            핵심 지문 OX 확인 (42문항: 1회독 16 + 2회독확장 26)
           </a>
         </nav>
       </div>
@@ -69,232 +69,158 @@
 
     <header class="mb-14 pb-6 border-b border-emerald-900/40">
       <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 mb-2">
-        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제3장</span>
+        <span>제3편 소방시설 설치 및 관리에 관한 법률 · 제3장 · DAY 13 (건물 내 5대 설비 배치도 완성)</span>
       </div>
       <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
         소방시설의 5대 분류와 주요 소방시설 설치기준
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        소화·경보·피난구조·소화용수·소화활동설비로 나뉘는 소방시설 5대 분류 체계를 명확히 구분하고, 스프링클러·간이스프링클러·물분무등소화설비·단독경보형 감지기·인명구조기구(공기호흡기)의 의무 설치 대상 기준을 정리합니다.
+        어제 건축허가등의 동의와 공학 설계를 마친 특정소방대상물 내부에 실제로 어떤 설비를 깔아야 하는지 사용 주체별 원리로 5대 분류(별표 1)와 소방용품(별표 3)을 가르고, 스프링클러·간이스프링클러·물분무등소화설비부터 개정 단독경보형 감지기(연립·다세대 연동형)·공기호흡기·제연설비(별표 4)까지 앞 단원들과 입체적으로 연결합니다.
       </p>
     </header>
 
-        <section class="space-y-12 mb-16">
+    <section class="space-y-12 mb-16">
       <div id="sec1">
-        <h2 class="text-xl font-bold text-white mb-3">1. 왜 '제연설비'는 피난구조설비가 아니라 '소화활동설비'일까? — 소방시설 5대 분류(시행령 별표 1)와 소방용품(별표 3)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">1. 재실자가 탈출할 때 쓰는가, 소방관이 진입할 때 쓰는가 — 소방시설 5대 분류(별표 1)와 소방용품(별표 3)</h2>
         <div class="para-block">
           <p class="prose-body">
-            <strong>｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1</strong>은 건물에 설치하는 수십 가지 소방시설을 그 역할과 사용 주체에 따라 <strong>① 소화설비, ② 경보설비, ③ 피난구조설비, ④ 소화용수설비, ⑤ 소화활동설비</strong>의 5대 분류로 나눕니다. 시험에서는 이 다섯 가족의 구성원을 서로 섞어 놓고 "다음 중 피난구조설비가 아닌 것은?" 또는 "소화활동설비로 옳지 않은 것은?"을 묻는데, 무작정 표를 외우기 전에 <strong>'누가 언제 쓰는 설비인가'</strong>라는 원리를 이해하면 절대로 속지 않습니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>소화활동설비 6종(별표 1)</strong>: <strong>제연설비 · 연결송수관설비 · 연결살수설비 · 비상콘센트설비 · 무선통신보조설비 · 연소방지설비</strong> (비상조명등은 피난구조설비!)</li>
-              <li><strong>피난기구 vs 인명구조기구</strong>: 인명구조기구 3종은 <strong>방열복·방화복(안전헬멧·보호장갑·안전화 포함), 공기호흡기, 인공소생기</strong> (구조대·완강기는 피난기구!)</li>
-              <li><strong>경보설비 소방용품(별표 3)</strong>: 발신기·수신기·중계기·감지기·음향장치·시각경보기·<strong>누전경보기</strong>·가스누설경보기 (<strong>누전차단기는 소방용품 아님!</strong>)</li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            먼저 처음 세 가족은 <strong>'건물 안에 있던 일반인(재실자)이 초기에 감지·진화·대피할 때 쓰는 설비'</strong>입니다. 첫째, 불이 나자마자 알려주는 <strong>경보설비</strong>에는 단독경보형 감지기, 비상경보설비, 자동화재탐지설비, **시각경보기**(피난구조설비 아님 주의!), 비상방송설비, 자동화재속보설비, 통합감시시설, 누전경보기, 가스누설경보기가 속합니다. 이때 <strong>시행령 별표 3</strong>에 따라 경보설비를 구성하는 <strong>소방용품</strong>에는 발신기, 수신기, 중계기, 감지기, 음향장치(경종 포함), 시각경보기, 누전경보기, 가스누설경보기가 해당하며, 일반 전기 회로를 차단하는 <strong>누전차단기(지락차단장치)는 소방용품이 아니다</strong>라는 점이 빈출 함정입니다(2021년 공채 Q7). 둘째, 초기 불길을 직접 끄는 <strong>소화설비</strong>에는 소화기구, 자동소화장치(주거용·상업용 주방자동소화장치, 캐비넷형·가스·분말·고체에어로졸 자동소화장치), 옥내·옥외소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비가 속합니다. 셋째, 불길이 커져서 건물 밖으로 대피할 때 쓰는 <strong>피난구조설비</strong>는 다시 네 가지로 나뉘는데, ① 창문으로 타고 내려가는 <strong>피난기구(피난사다리, 구조대, 완강기, 미끄럼대, 피난교 등)</strong>, ② 연기와 열을 뚫고 인명을 구조하는 <strong>인명구조기구 3종(방열복·방화복[안전헬멧·보호장갑·안전화 포함], 공기호흡기, 인공소생기 — 주의: '구조대'나 '완강기'는 인명구조기구가 아니라 피난기구이며, 방독면은 포함되지 않음!)</strong>, ③ <strong>유도등(피난구·통로·객석유도등, 유도표지, 피난유도선)</strong>, ④ 정전 시 대피로를 비추는 <strong>비상조명등(휴대용비상조명등 포함)</strong>이 여기에 속합니다(2018년 Q17, 2020년 Q6).
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            반면에 넷째 가족인 <strong>소화용수설비</strong>는 상수도소화용수설비 및 소화수조·저수조이고, 다섯째 가족인 <strong>소화활동설비(6종)</strong>는 일반 시민이 쓰는 게 아니라 <strong>'현장에 도착한 소방대원이 건물 안으로 진입해 화재를 진압하고 작전을 펼칠 때 쓰는 소방관 전용 설비'</strong>입니다! 여기에는 ① <strong>제연설비</strong>, ② 고층 건물에 소방차가 물을 밀어 올려주는 <strong>연결송수관설비</strong>, ③ 지하층에 밖에서 물을 넣어 살수하는 <strong>연결살수설비</strong>, ④ 소방대 장비를 꽂아 쓰는 <strong>비상콘센트설비</strong>, ⑤ 지하·고층에서 무전기가 통하게 해주는 <strong>무선통신보조설비</strong>, ⑥ 지하구에서 연소 확대를 막는 <strong>연소방지설비</strong> 총 6종(앞 글자: <strong>'제·연·연·비·무·연'</strong>)이 속합니다. 수험생들이 가장 많이 틀리는 것이 바로 <strong>제연설비</strong>와 <strong>비상조명등</strong>의 맞교환 함정(2022년 공채 Q6)인데, 제연설비는 출동한 소방대원의 진입 시야 확보와 배연 작전을 위한 <strong>소화활동설비</strong>이고, 비상조명등은 재실자의 탈출을 돕는 <strong>피난구조설비</strong>라는 점을 명확히 대조해 두어야 합니다.
+            앞선 제2장에서 법령이나 화재안전기준이 강화되더라도 기존 특정소방대상물에는 원칙적으로 <strong>변경 전의 대통령령 또는 화재안전기준</strong>을 적용한다는 불소급 원칙(법 제13조 제1항)을 확인했습니다. 이제 신축·증축 건물에 적용할 현행 시행령 별표 1의 체계로 들어가 보면, 수십 가지 소방시설은 화재 타임라인과 사용 주체에 따라 <strong>소화설비, 경보설비, 피난구조설비, 소화용수설비, 소화활동설비의 5대 분류</strong>로 정연하게 나뉩니다(제2편 제3장에서 2급 안전관리대상물을 옥내소화전·스프링클러·일반 물분무로, 3급을 간이스프링클러·호스릴 물분무·자동화재탐지설비로 나누었던 바로 그 설비들의 본적지입니다). 먼저 건물 안 재실자가 초기 감지·진화·탈출에 쓰는 앞의 세 가족을 1개념 1줄로 가려냅니다.
+            <span class="prose-item"><strong>① 경보설비와 시행령 별표 3 소방용품의 경계</strong></span>
+            <span class="prose-sub">&bull; <strong>경보설비 소속</strong>: 단독경보형 감지기, 비상경보설비, 자동화재탐지설비, 청각장애인에게 점멸등으로 알리는 <strong>시각경보기</strong>(피난구조설비가 아닌 경보설비), <strong>비상방송설비, 자동화재속보설비, 통합감시시설, 누전경보기, 가스누설경보기</strong>가 속합니다.</span>
+            <span class="prose-sub">&bull; <strong>별표 3 소방용품 제외 급소</strong>: 경보설비를 구성하는 소방용품에는 발신기·수신기·중계기·감지기·음향장치·시각경보기·누전경보기·가스누설경보기가 해당하며, 일반 전기 차단 장치인 <strong>누전차단기는 소방용품이 아니다</strong>라는 점이 빈출 포인트입니다.</span>
+            <span class="prose-item"><strong>② 소화설비와 피난구조설비(피난기구 대 인명구조기구)</strong></span>
+            <span class="prose-sub">&bull; <strong>소화설비 소속</strong>: 소화기구, 6가지 자동소화장치인 <strong>주거용·상업용 주방자동소화장치, 캐비넷형·가스·분말·고체에어로졸 자동소화장치</strong>, 옥내·옥외소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비가 속합니다(제2장 내진설계 4종인 옥내·스·간이·물분무가 모두 여기 속하며 옥외소화전은 제외됩니다).</span>
+            <span class="prose-sub">&bull; <strong>피난기구 대 인명구조기구 3종</strong>: 피난구조설비 중 <strong>구조대와 완강기는 피난기구</strong>(피난사다리·미끄럼대·피난교 포함)에 해당하고, 열과 가스를 뚫고 구조하는 인명구조기구는 오직 <strong>방열복·방화복</strong>(안전헬멧·보호장갑·안전화 포함), 공기호흡기, 인공소생기 3종뿐이어서 일반 <strong>방독면은 포함되지 않는다</strong>는 점을 구별해야 합니다. 여기에 <strong>피난구·통로·객석유도등, 유도표지, 피난유도선</strong>을 묶은 유도등과 휴대용비상조명등을 포함한 비상조명등이 피난구조설비를 이룹니다.</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:22%;">5대 분류 (별표 1)</th>
-                <th style="width:48%;">소속 세부 소방시설 및 소방용품 종류</th>
-                <th>출제자의 단골 섞어치기 함정</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>1. 소화설비</strong></td>
-                <td>소화기구, 자동소화장치, 옥내·옥외소화전설비, 스프링클러설비, 간이스프링클러설비, 물분무등소화설비</td>
-                <td>연결송수관·연결살수설비는 소화설비가 아니라 <strong>소화활동설비</strong>!</td>
-              </tr>
-              <tr>
-                <td><strong>2. 경보설비</strong></td>
-                <td>단독경보형 감지기, 비상경보, 자동화재탐지, <strong>시각경보기</strong>, 비상방송, 자동화재속보, 통합감시, <strong>누전경보기</strong>, 가스누설경보기</td>
-                <td>· <strong>시각경보기 = 경보설비</strong> (피난구조설비 X)<br/>· <strong>누전차단기</strong>는 경보설비 소방용품이 아님!</td>
-              </tr>
-              <tr>
-                <td><strong>3. 피난구조설비</strong></td>
-                <td>· <strong>피난기구</strong>: 피난사다리, <strong>구조대</strong>, <strong>완강기</strong>, 미끄럼대 등<br/>· <strong>인명구조기구(3종)</strong>: <strong>방열복·방화복, 공기호흡기, 인공소생기</strong><br/>· <strong>유도등</strong>(유도표지·피난유도선) / <strong>비상조명등</strong>(휴대용 포함)</td>
-                <td>· <strong>구조대·완강기 = 피난기구</strong> (인명구조기구 X)<br/>· <strong>비상조명등 = 피난구조설비</strong> (소화활동설비 X)</td>
-              </tr>
-              <tr>
-                <td><strong>4. 소화용수설비</strong></td>
-                <td>상수도소화용수설비, 소화수조 및 저수조</td>
-                <td>적법한 상수도소화용수설비 설치 시 소화수조·저수조 면제</td>
-              </tr>
-              <tr>
-                <td><strong>5. 소화활동설비 (6종)</strong></td>
-                <td><strong>제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비</strong></td>
-                <td><strong>제연설비 = 소화활동설비</strong> (피난구조설비 X)</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            반면에 뒤의 두 가족인 소화용수설비와 소화활동설비는 일반 시민이 아니라 현장에 출동한 소방대원이 진압 용수를 공급받고 건물 내부로 진입해 전술 작전을 펼칠 때 사용하는 설비입니다.
+            <span class="prose-item"><strong>③ 소화용수설비 대 소화활동설비 6종 (시행령 별표 1 제4호·제5호)</strong></span>
+            <span class="prose-sub">&bull; <strong>소화용수설비</strong>: 특정소방대상물 부지 안에 갖추는 <strong>상수도소화용수설비 및 소화수조·저수조</strong>이며, 제1편 제5장에서 시·도지사가 도로변 등에 설치하던 공공 소방용수시설(소화전·급수탑·저수조)과 설치 주체·공간이 구별됩니다.</span>
+            <span class="prose-sub">&bull; <strong>소화활동설비 6종(제·연·연·비·무·연)</strong>: 소방대 전용 설비인 <strong>소화활동설비</strong>에는 진입 시야 확보와 배연을 돕는 제연설비, 고층에 소방차 물을 밀어 올리는 <strong>연결송수관설비</strong>, 지하층에 밖에서 물을 넣어 뿌리는 연결살수설비, 소방대 장비 전원을 공급하는 비상콘센트설비, 지하·고층 무전 교신을 돕는 무선통신보조설비, 그리고 지하구 연소 확대를 차단하는 <strong>연소방지설비</strong>까지 총 6종이 속합니다(제연설비는 소화활동설비, 비상조명등은 피난구조설비).</span>
+          </p>
         </div>
       </div>
 
       <div id="sec2">
-        <h2 class="text-xl font-bold text-white mb-3">2. '스프링클러' vs '간이스프링클러' vs '물분무등소화설비' 의무 설치 기준(시행령 별표 4)</h2>
+        <h2 class="text-xl font-bold text-white mb-3">2. 언제 정규 스프링클러를 깔고 언제 간이·물분무를 까는가 — 수계·특수 소화설비 기준(시행령 별표 4)</h2>
         <div class="para-block">
           <p class="prose-body">
-            천장에서 열을 감지해 자동으로 물을 뿜어주는 <strong>스프링클러설비</strong>와 <strong>간이스프링클러설비</strong>의 설치 기준(<strong>시행령 별표 4</strong>)은 두 설비의 경계선 숫자를 비교하며 묻는 문제가 매년 출제됩니다. 먼저 <strong>정규 스프링클러설비</strong>를 설치해야 하는 핵심 대상을 봅시다. ① <strong>층수가 6층 이상인 특정소방대상물은 모든 층</strong>에 설치합니다. ② 문화 및 집회시설(동·식물원 제외)·종교시설·운동시설(물놀이형 시설 제외)로서 수용인원이 100명 이상이거나, <strong>영화상영관 용도로 쓰는 층의 바닥면적이 지하층·무창층은 500제곱미터 이상, 그 밖의 일반 층은 1,000제곱미터 이상</strong>인 경우 모든 층에 설치합니다(2023년 공·경채 Q27!). ③ 판매시설·운수시설 및 창고시설(물류터미널 제외)로서 바닥면적 합계가 <strong>5,000제곱미터 이상</strong>이거나 수용인원이 500명 이상인 경우(물류터미널은 바닥면적 합계 3,000제곱미터 이상), ④ <strong>교육연구시설·수련시설 내에 있는 학생 수용을 위한 기숙사 또는 합숙소로서 연면적 5,000제곱미터 이상</strong>인 경우 모든 층(2023년 Q27!), ⑤ <strong>의료시설(정신의료기관·요양병원 등)·노유자시설·숙박시설·교정 및 군사시설로서 해당 용도로 사용되는 바닥면적 합계가 600제곱미터 이상</strong>인 경우, 그리고 근린생활시설 중 <strong>조산원 및 산후조리원으로서 연면적 600제곱미터 이상</strong>인 경우 모든 층에 정규 스프링클러설비를 설치합니다. (이때 2020년 공채 Q9에서 묻듯 <strong>병원·종합병원·요양병원·정신의료기관·마약진료소·장례시설은 '의료시설'</strong>이지만, <strong>노인의료복지시설은 '노유자시설'</strong>이고 입원실 없는 일반 <strong>한방의원[한의원]은 '근린생활시설'</strong>로 분류된다는 점을 정확히 구분해야 합니다.)
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>스프링클러 핵심(별표 4)</strong>: <strong>6층 이상 전 층</strong> / 영화상영관(지하·무창층 <strong>500㎡</strong>, 그 밖의 층 <strong>1,000㎡ 이상</strong>) / 학생 기숙사·합숙소 <strong>연면적 5,000㎡ 이상</strong> / 의료·노유자·숙박·조산원·산후조리원 <strong>600㎡ 이상</strong></li>
-              <li><strong>간이스프링클러 핵심</strong>: 입원실 있는 의원·치과의원·한의원, 고시원, <strong>생활형 숙박시설(면적 무관!)</strong> / 일반 숙박·정신의료·재활 <strong>300㎡ 이상 600㎡ 미만</strong> / 조산원·산후조리원 <strong>600㎡ 미만</strong> / 교육연구 합숙소 <strong>연면적 100㎡ 이상</strong> / 근린생활 바닥합계 <strong>1,000㎡ 이상</strong></li>
-              <li><strong>물분무등소화설비</strong>: 항공기격납고, <strong>주차용 건축물 연면적 800㎡ 이상</strong>(내부 주차장 200㎡, 기계식 20대), 전기·발전·통신·전산실 <strong>300㎡ 이상</strong></li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            그렇다면 정규 스프링클러 기준(600제곱미터 이상 등)에 미달하는 중소 규모 위험 시설을 방호하는 <strong>간이스프링클러설비</strong>의 의무 설치 기준(2021년 Q17·Q8, 2025년 Q24)은 무엇일까요? 시험에 나오는 7가지 기준을 정확히 짚어 봅시다. ① 근린생활시설 중 <strong>입원실이 있는 의원·치과의원·한의원</strong>, 다중이용업 중 <strong>고시원업</strong>, 그리고 건물을 임차하여 ｢출입국관리법｣에 따른 <strong>보호시설</strong>로 사용하는 부분은 <strong>면적에 관계없이</strong> 설치합니다. ② 특히 숙박시설 중 <strong>생활형 숙박시설은 해당 용도로 사용되는 바닥면적 합계와 관계없이(면적 제한 없이!)</strong> 모든 층에 간이스프링클러설비를 설치해야 하며, 생활형 숙박시설을 제외한 <strong>일반 숙박시설은 바닥면적 합계가 300제곱미터 이상 600제곱미터 미만</strong>인 시설에 설치합니다(따라서 "생활형 숙박시설로서 바닥면적 합계 300㎡ 또는 500㎡ 이상인 것"이라는 선지는 오답!). ③ 근린생활시설 중 <strong>조산원 및 산후조리원은 연면적 600제곱미터 미만</strong>인 시설에 설치합니다(660㎡ 미만 아님!). ④ 의료시설 중 <strong>정신의료기관 또는 의료재활시설은 바닥면적 합계가 300제곱미터 이상 600제곱미터 미만</strong>인 시설(또는 300제곱미터 미만으로서 창살이 설치된 시설)에 설치하고, <strong>요양병원은 600제곱미터 미만</strong>인 시설에 설치합니다. ⑤ <strong>교육연구시설 내에 있는 합숙소는 연면적 100제곱미터 이상</strong>인 것(복합건축물 내 합숙소는 바닥면적 100제곱미터 이상인 층)에 설치합니다(5,000㎡ 이상이면 정규 스프링클러!). ⑥ <strong>근린생활시설 중 근린생활시설로 사용하는 부분의 바닥면적 합계가 1,000제곱미터 이상</strong>인 것과 <strong>복합건축물로서 연면적 1,000제곱미터 이상</strong>인 것은 모든 층에 간이스프링클러설비를 설치합니다.
-          </p>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            한편 유류 화재나 전기·통신 화재처럼 일반 물줄기를 그대로 끼얹으면 안 되는 특수 공간에는 <strong>물분무등소화설비(물분무·미분무·포·이산화탄소·할론·할로겐화합물 및 불활성기체·분말소화설비)</strong>를 설치합니다(2018년 경채 Q13). 대표적 설치 대상은 ① 항공기 및 자동차 관련시설 중 <strong>항공기격납고(면적 불문)</strong>, ② <strong>주차용 건축물로서 연면적 800제곱미터 이상</strong>인 것(주의: 건축물 내부에 부속된 일반 차고·주차장은 바닥면적 합계 <strong>200제곱미터 이상</strong>이지만, 건물 전체가 주차장인 '주차용 건축물'은 <strong>연면적 800제곱미터 이상</strong>일 때 물분무등소화설비 대상입니다!), ③ 승강기 등 <strong>기계장치에 의한 주차시설로서 20대 이상</strong>의 차량을 주차할 수 있는 것, ④ 특정소방대상물에 설치된 <strong>전기실·발전실·변전실·축전지실·통신기기실 또는 전산실로서 바닥면적이 300제곱미터 이상</strong>인 것, ⑤ 지정문화유산으로서 연면적 1,000제곱미터 이상인 것 등입니다.
+            천장에서 열을 감지해 자동으로 살수하는 정규 스프링클러설비와 간이스프링클러설비(시행령 별표 4 제1호 라목·마목)는 면적 경계선 숫자를 맞대어 보면 한눈에 뚫립니다.
+            <span class="formula-box">
+              <span class="formula-badge">스프링클러 vs 간이스프링클러 vs 물분무등소화설비 핵심 경계식 (시행령 별표 4)</span>
+              <span class="formula-eq">정규 SP = 6층 이상 전 층 · 의료/노유자/숙박/산후조리원 600㎡ 이상 ↔ 간이 SP = 숙박·정신의료 300㎡ 이상 600㎡ 미만 · 연립/다세대(면적 무관)</span>
+              <span class="formula-ex">💡 <strong>특수 공간 수치</strong> | 판매·운수·일반창고 SP = 5,000㎡ 또는 500명(물류터미널 3,000㎡) / 물분무등 = 격납고(면적 무관) · 주차용 건축물 800㎡ · 전기/전산실 300㎡ 이상</span>
+            </span>
+            <span class="prose-item"><strong>① 정규 스프링클러설비 모든 층 의무 대상 (시행령 별표 4 제1호 라목)</strong></span>
+            <span class="prose-sub">&bull; <strong>층수 및 집회·영화관 기준</strong>: 건축허가동의 층수 기준과 똑같이 <strong>층수가 6층 이상인 특정소방대상물은 모든 층</strong>에 설치하며, 6층 미만이더라도 동·식물원 제외 문화집회·종교·운동시설로서 <strong>수용인원이 100명 이상</strong>인 경우나 <strong>영화상영관 용도로 쓰는 층의 바닥면적</strong>이 지하층·무창층 500제곱미터 이상, 일반 층 1,000제곱미터 이상인 경우 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>대형 판매·창고·기숙사 및 600제곱미터 취약시설</strong>: 판매시설·운수시설·일반 창고시설로서 <strong>바닥면적 합계가 5,000제곱미터 이상이거나 수용인원이 500명 이상</strong>(물류터미널은 3,000제곱미터 이상)인 경우, 교육연구·수련시설 내 <strong>학생 수용을 위한 기숙사 또는 합숙소로서 연면적 5,000제곱미터 이상</strong>인 경우, 그리고 의료시설·노유자시설·숙박시설·교정 및 군사시설로서 해당 용도 <strong>바닥면적 합계가 600제곱미터 이상</strong>인 경우와 조산원·산후조리원 연면적 600제곱미터 이상인 경우 모든 층에 설치합니다(제1장 분류상 정신의료기관과 <strong>마약진료소</strong>·요양병원은 의료시설, 노인의료복지시설은 노유자시설입니다).</span>
           </p>
         </div>
 
-        <div class="overflow-x-auto my-4">
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:24%;">설비 구분</th>
-                <th style="width:46%;">의무 설치 대상 핵심 기준 (시행령 별표 4)</th>
-                <th>출제 1순위 수치 비교 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>스프링클러설비</strong></td>
-                <td>· <strong>6층 이상</strong> 특정소방대상물의 모든 층<br/>· <strong>영화상영관</strong>: 지하·무창층 <strong>500㎡ 이상</strong>, 그 밖의 층 <strong>1,000㎡ 이상</strong><br/>· 교육연구·수련시설 내 학생 <strong>기숙사·합숙소 연면적 5,000㎡ 이상</strong><br/>· 의료·노유자·숙박시설 및 조산원·산후조리원 <strong>600㎡ 이상</strong></td>
-                <td>· 영화관: 지하·무창 500㎡ vs 일반층 1,000㎡<br/>· 합숙소: <strong>100㎡ 이상(간이)</strong> vs <strong>5,000㎡ 이상(정규)</strong></td>
-              </tr>
-              <tr>
-                <td><strong>간이스프링클러설비</strong></td>
-                <td>· <strong>면적 무관</strong>: 입원실 있는 의원·치과의원·한의원, 고시원, <strong>생활형 숙박시설</strong>, 출입국 보호시설<br/>· <strong>300㎡ 이상 600㎡ 미만</strong>: 일반 숙박시설, 정신의료기관·의료재활시설<br/>· <strong>600㎡ 미만</strong>: 조산원·산후조리원, 요양병원, 노유자시설<br/>· <strong>100㎡ 이상</strong>: 교육연구시설 내 합숙소 / <strong>1,000㎡ 이상</strong>: 근린생활 바닥합계·복합건축물</td>
-                <td>· <strong>생활형 숙박시설은 면적 제한 없음!</strong><br/>· 일반 숙박·정신의료·재활은 <strong>300㎡ 이상 600㎡ 미만</strong><br/>· 조산원·산후조리원은 <strong>600㎡ 미만</strong>(660㎡ X)</td>
-              </tr>
-              <tr>
-                <td><strong>물분무등소화설비</strong></td>
-                <td>· <strong>항공기격납고</strong>(면적 무관) / <strong>주차용 건축물 연면적 800㎡ 이상</strong><br/>· 건물 내 차고·주차장 바닥면적 <strong>200㎡ 이상</strong> / 기계식 주차시설 <strong>20대 이상</strong><br/>· 전기실·발전실·변전실·축전지실·통신기기실·전산실 <strong>바닥면적 300㎡ 이상</strong></td>
-                <td>· <strong>주차용 건축물 = 연면적 800㎡ 이상</strong> (600㎡ X)<br/>· 전산실·전기실·통신기기실 = <strong>바닥면적 300㎡ 이상</strong></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="para-block">
+          <p class="prose-body">
+            정규 스프링클러 문턱 아래에 있는 중소 규모 취약 시설은 간이스프링클러설비가 받아 내며, 일반 물줄기가 부적합한 유류·전기 공간은 물분무등소화설비가 담당합니다.
+            <span class="prose-item"><strong>② 간이스프링클러설비 의무 설치 대상 (시행령 별표 4 제1호 마목 · 최신 개정 반영)</strong></span>
+            <span class="prose-sub">&bull; <strong>면적 무관 당연 설치 대상</strong>: <strong>공동주택 중 연립주택 및 다세대주택</strong>(주택전용 간이스프링클러설비 설치), 근린생활시설 중 <strong>입원실 또는 인공신장실이 있는 시설</strong>인 의원·치과의원·한의원, 다중이용업 중 고시원업, 그리고 건물을 임차하여 <strong>출입국관리법에 따른 보호시설</strong>로 사용하는 부분은 면적 제한 없이 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>면적 구간별 설치 대상</strong>: <strong>숙박시설로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만</strong>인 시설과 정신의료기관·의료재활시설로서 바닥면적 합계 300제곱미터 이상 600제곱미터 미만인 시설(또는 <strong>300제곱미터 미만이고 창살이 설치된 시설</strong>), 종합병원·병원·요양병원 및 조산원·산후조리원 600제곱미터 미만, 교육연구시설 내 합숙소 연면적 100제곱미터 이상, 그리고 근린생활시설 중 <strong>근린생활시설로 사용하는 부분의 바닥면적 합계가 1,000제곱미터 이상</strong>인 것과 <strong>복합건축물로서 연면적 1,000제곱미터 이상</strong>인 것(전 층)에 설치합니다.</span>
+            <span class="prose-item"><strong>③ 7종 물분무등소화설비 의무 설치 대상 (시행령 별표 4 제1호 바목)</strong></span>
+            <span class="prose-sub">&bull; <strong>항공·주차·전산 특화 방호</strong>: <strong>물분무·미분무·포·이산화탄소·할론·할로겐화합물 및 불활성기체·분말소화설비</strong>는 대량 항공유를 다루는 <strong>항공기격납고</strong>(면적 불문), 건물 전체가 주차장인 <strong>주차용 건축물로서 연면적 800제곱미터 이상</strong>인 것(내부 부속 주차장은 200제곱미터 이상, 기계식 주차시설은 20대 이상), 수손 피해가 치명적인 <strong>전기실·발전실·변전실·축전지실·통신기기실 또는 전산실로서 바닥면적이 300제곱미터 이상</strong>인 것, 지정문화유산 연면적 1,000제곱미터 이상인 것에 설치합니다.</span>
+          </p>
         </div>
       </div>
 
       <div id="sec3">
-        <h2 class="text-xl font-bold text-white mb-3">3. 단독경보형 감지기, 인명구조기구(공기호흡기) 및 제연설비 의무 설치 기준</h2>
+        <h2 class="text-xl font-bold text-white mb-3">3. 연동형 단독경보형 감지기, 질식 방어 공기호흡기 및 배연 통로 제연설비(시행령 별표 4)</h2>
         <div class="para-block">
           <p class="prose-body">
-            경보설비 중 복잡한 배선 공사 없이 내장 배터리로 연기를 감지해 경보음을 울리는 <strong>단독경보형 감지기(시행령 별표 4)</strong>는 자동화재탐지설비 설치 기준에 미달하는 소규모(<strong>'미만'</strong>) 시설에 설치됩니다(2022년 경채 Q17). 법정 설치 대상은 면적 작은 순서대로 ① <strong>연면적 400제곱미터 미만의 유치원·노유자시설</strong> 및 수련시설(숙박시설이 있는 것만 해당 — 주의: 관광휴게시설인 <strong>'어린이회관'은 단독경보형 감지기 설치 대상이 아님!</strong>), ② <strong>연면적 600제곱미터 미만의 숙박시설</strong>, ③ <strong>연면적 1,000제곱미터 미만의 아파트등 및 기숙사</strong>, ④ 교육연구시설 또는 수련시설 내에 있는 <strong>합숙소 또는 기숙사로서 연면적 2,000제곱미터 미만</strong>인 것입니다(<strong>400㎡ 미만 유치원·노유자 ➔ 600㎡ 미만 숙박 ➔ 1,000㎡ 미만 아파트·기숙사 ➔ 2,000㎡ 미만 합숙소·기숙사</strong>).
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트</div>
-              <ul class="sidenote-list">
-              <li><strong>단독경보형 감지기(별표 4)</strong>: 연면적 <strong>400㎡ 미만 유치원·노유자</strong>(<strong>어린이회관 X</strong>), <strong>600㎡ 미만 숙박</strong>, <strong>1,000㎡ 미만 아파트등·기숙사</strong>, <strong>2,000㎡ 미만 교육연구·수련 합숙소·기숙사</strong></li>
-              <li><strong>공기호흡기 설치 대상</strong>: 지하역사·지하상가·대규모점포·영화관(100명 이상) 및 <strong>이산화탄소소화설비(단, 호스릴이산화탄소소화설비는 제외!)</strong> 설치 대상물</li>
-              <li><strong>제연설비 설치 대상</strong>: 무대부 바닥면적 <strong>200㎡ 이상</strong>, 영화상영관 수용인원 <strong>100명 이상</strong>, 지하가(터널 제외) 연면적 <strong>1,000㎡ 이상</strong></li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-        <div class="para-block">
-          <p class="prose-body">
-            다음으로 피난구조설비 중 인명구조기구인 <strong>공기호흡기</strong>를 의무적으로 비치해야 하는 특정소방대상물(2021년 경채 Q11)을 살펴봅시다. 공기호흡기는 유독가스가 가득 차기 쉬운 ① 운수시설 중 <strong>지하역사</strong>, ② 판매시설 중 <strong>대규모점포</strong>, ③ 지하가 중 <strong>지하상가</strong>, ④ 문화 및 집회시설 중 수용인원 100명 이상인 영화상영관, 그리고 ⑤ 물분무등소화설비 중 <strong>이산화탄소소화설비(단, 호스릴이산화탄소소화설비는 제외한다!)를 설치하여야 하는 특정소방대상물</strong>에 설치해야 합니다. 왜 이산화탄소소화설비 설치 대상에 공기호흡기를 의무화하면서 <strong>'호스릴이산화탄소소화설비'는 제외</strong>했을까요? 전역·국소방출 방식의 일반 이산화탄소소화설비는 방 전체에 대량의 가스가 자동으로 쏟아져 나와 산소 결핍 질식 위험이 극도로 높지만, 호스릴 방식은 사람이 직접 호스를 잡고 불이 난 지점에만 소량 분사하는 수동 설비라 구획실 전체가 질식 상태에 빠질 위험이 낮기 때문입니다!
+            복잡한 수신기 배선 없이 감지기와 음향장치가 일체형으로 작동하는 단독경보형 감지기(별표 4 제2호 가목)와 유독가스 질식을 막는 공기호흡기(별표 4 제3호 나목)는 최신 개정 사항과 물리적 단서 이유를 함께 꿰어야 합니다.
+            <span class="prose-item"><strong>① 현행 단독경보형 감지기 설치 대상 및 연동형 의무 (2024년 12월 시행 반영)</strong></span>
+            <span class="prose-sub">&bull; <strong>소규모 시설 및 연립·다세대 연동형</strong>: 아파트등·숙박·노유자시설이 면적 무관 자동화재탐지설비 대상으로 상향됨에 따라, 현행 단독경보형 감지기 대상은 연면적 400제곱미터 미만의 유치원(관광휴게시설인 <strong>어린이회관</strong>은 비대상), 자동화재탐지설비 대상 외의 <strong>숙박시설이 있는 수련시설</strong>, 교육연구·수련시설 내 기숙사·합숙소 연면적 2,000제곱미터 미만, 지하 차고·주차장 면적 합계 200제곱미터 미만 부분, 그리고 공동주택 중 연립주택 및 다세대주택이며, 연립·다세대주택에는 옆 세대까지 동시 경보가 울리도록 반드시 <strong>연동형으로 설치</strong>하여야 합니다.</span>
+            <span class="prose-item"><strong>② 인명구조기구 중 공기호흡기 의무 비치 5대 대상 (별표 4 제3호 나목)</strong></span>
+            <span class="prose-sub">&bull; <strong>질식 고위험 공간 및 호스릴 제외 원리</strong>: <strong>운수시설 중 지하역사</strong>, 판매시설 중 대규모점포, 지하가 중 지하상가, 수용인원 100명 이상인 영화상영관, 그리고 물분무등소화설비 중 이산화탄소소화설비를 설치해야 하는 특정소방대상물에 비치하되, 사람이 호스를 잡고 국소 수동 분사하여 구획실 전체 질식 위험이 낮은 <strong>호스릴이산화탄소소화설비는 제외</strong>합니다.</span>
           </p>
         </div>
+
         <div class="para-block">
           <p class="prose-body">
-            마지막으로 소화활동설비인 <strong>제연설비</strong>의 핵심 설치 기준 수치도 함께 정리해 둡시다. ① 문화 및 집회시설·종교시설·운동시설로서 <strong>무대부의 바닥면적이 200제곱미터 이상</strong>인 것, ② 문화 및 집회시설 중 <strong>영화상영관으로서 수용인원 100명 이상</strong>인 것, ③ <strong>지하가(터널은 제외)로서 연면적 1,000제곱미터 이상</strong>인 것(터널은 행정안전부령으로 정하는 터널에 설치), ④ 지하층이나 무창층에 설치된 근린생활·판매·운수·숙박·위락·의료·노유자시설로서 해당 용도로 사용되는 바닥면적 합계가 <strong>1,000제곱미터 이상</strong>인 층, ⑤ 특정소방대상물에 부설된 특별피난계단·비상용 승강기의 승강장 또는 피난용 승강기의 승강장에는 제연설비를 설치하여야 합니다.
+            마지막으로 소방대의 진입 시야를 열고 연기 확산을 막는 소화활동설비인 제연설비(별표 4 제5호 가목)의 5대 설치 기준을 정리합니다.
+            <span class="formula-box">
+              <span class="formula-badge">수용인원 100명 이상 영화상영관 3관왕 &amp; 제연설비 5대 공식 (시행령 별표 4)</span>
+              <span class="formula-eq">수용인원 100명 이상 영화상영관 = 정규 스프링클러 + 공기호흡기 + 제연설비 (1,000명 이상 시 특별관리시설물!)</span>
+              <span class="formula-ex">💡 <strong>제연설비 5대 범위</strong> | 무대부 200㎡ · 영화관 100명 · 지하가(터널 제외) 1,000㎡ · 지하/무창층 7대 용도 1,000㎡ · 특별피난계단 및 비상용·피난용 승강기 승강장</span>
+            </span>
+            <span class="prose-item"><strong>③ 소화활동설비 중 제연설비 5대 의무 대상 (별표 4 제5호 가목)</strong></span>
+            <span class="prose-sub">&bull; <strong>무대·영화관·지하가·지하무창층</strong>: 문화집회·종교·운동시설로서 무대부의 바닥면적이 200제곱미터 이상인 것, 문화 및 집회시설 중 <strong>영화상영관으로서 수용인원 100명 이상</strong>인 것, 터널을 제외한 지하가로서 연면적 1,000제곱미터 이상인 것, 그리고 <strong>지하층이나 무창층에 설치된 근린생활·판매·운수·숙박·위락·의료·노유자시설로서 해당 용도로 사용되는 바닥면적 합계가 1,000제곱미터 이상</strong>인 층에 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>수직 피난·소화활동 코어 구역</strong>: 특정소방대상물에 부설된 <strong>특별피난계단·비상용 승강기의 승강장 또는 피난용 승강기의 승강장에는 제연설비를 설치</strong>하여야 합니다(피난용 승강기 승강장 포함 필수).</span>
           </p>
         </div>
       </div>
     </section>
 
     <div class="para-block diagram-wrapper" id="diagramSection">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 소방시설 5대 분류(별표 1) 및 주요 소화·경보·피난구조설비 설치기준(별표 4)</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">CORE CHEAT SHEET</span>
+          <span class="cheat-title">단원 핵심 압축 정리본 — 소방시설 5대 분류(별표 1) · 소방용품(별표 3) · 주요 설비 설치기준(별표 4)</span>
         </div>
-        <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 소방시설 5대 분류 체계 (시행령 별표 1) 및 혼동 주의 포인트</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">1. 소화설비 &amp; 2. 경보설비</div>
-                <div>· <strong>소화설비</strong>: 소화기구, 자동소화장치, 옥내·옥외소화전, 스프링클러, 간이스프링클러, 물분무등<br/>· <strong>경보설비</strong>: 단독경보형감지기, 비상경보, 자탐, <strong>시각경보기</strong>, 비상방송, 속보, <strong>누전·가스누설경보기</strong> (누전차단기 X)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">3. 피난구조설비 &amp; 4. 소화용수설비</div>
-                <div>· <strong>피난기구</strong>: 완강기·<strong>구조대</strong>·피난사다리 등<br/>· <strong>인명구조기구(3종)</strong>: <strong>방열복·방화복, 공기호흡기, 인공소생기</strong><br/>· 유도등·유도표지·피난유도선 / <strong>비상조명등</strong></div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">5. 소화활동설비 6종 (제·연·연·비·무·연)</div>
-                <div>· <strong>제연설비 · 연결송수관설비 · 연결살수설비 · 비상콘센트설비 · 무선통신보조설비 · 연소방지설비</strong> (비상조명등 X)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">단독경보형 감지기 4대 설치 대상</div>
-                <div>· <strong>400㎡ 미만</strong> 유치원·노유자 (어린이회관 X)<br/>· <strong>600㎡ 미만</strong> 숙박 / <strong>1,000㎡ 미만</strong> 아파트등·기숙사<br/>· <strong>2,000㎡ 미만</strong> 교육연구·수련 합숙소·기숙사</div>
-              </div>
-            </div>
-            <div class="schema-alert">★ 공기호흡기 설치 대상: 지하역사·지하상가·대규모점포·영화관(100명 이상) 및 <strong>이산화탄소소화설비(단, 호스릴이산화탄소소화설비는 제외!)</strong> 설치 대상물!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 스프링클러 vs 간이스프링클러 vs 물분무등소화설비 핵심 기준 (별표 4)</div>
-            <div class="space-y-2.5">
-              <div class="schema-box">
-                <div class="schema-box-title">스프링클러설비 vs 간이스프링클러설비 면적 경계선</div>
-                <ul class="schema-list">
-                  <li><strong>스프링클러</strong>: <strong>6층 이상 전 층</strong> / 영화상영관(지하·무창 <strong>500㎡</strong>, 일반층 <strong>1,000㎡ 이상</strong>) / 학생 기숙사·합숙소 <strong>5,000㎡ 이상</strong> / 의료·노유자·숙박·조산원·산후조리원 <strong>600㎡ 이상</strong></li>
-                  <li><strong>간이스프링클러</strong>: 입원실 있는 의원·치과의원·한의원, 고시원, <strong>생활형 숙박시설(면적 무관!)</strong> / 일반 숙박·정신의료·재활 <strong>300㎡ 이상 600㎡ 미만</strong> / 조산원·산후조리원 <strong>600㎡ 미만</strong> / 합숙소 <strong>100㎡ 이상</strong> / 근린생활 바닥합계·복합건축물 <strong>1,000㎡ 이상</strong></li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">물분무등소화설비 &amp; 제연설비 핵심 수치</div>
-                <ul class="schema-list">
-                  <li><strong>물분무등소화설비</strong>: 항공기격납고 / <strong>주차용 건축물 연면적 800㎡ 이상</strong>(내부 주차장 200㎡, 기계식 20대) / 전기·발전·변전·통신·전산실 <strong>바닥면적 300㎡ 이상</strong></li>
-                  <li><strong>제연설비</strong>: 무대부 <strong>200㎡ 이상</strong> / 영화관 수용인원 <strong>100명 이상</strong> / 지하가(터널 제외) <strong>1,000㎡ 이상</strong></li>
-                </ul>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01. 사용 주체별 소방시설 5대 분류(별표 1) 및 소방용품(별표 3) 혼동 방어</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">1. 소화설비 · 2. 경보설비</div>
+              <div class="cheat-val">소화: 소화기구, 자동소화장치 6종, 옥내·옥외소화전, SP, 간이SP, 물분무등 / 경보: 단독경보, 비상경보, 자탐, <strong>시각경보기</strong>, 비상방송, 속보, 통합감시, 누전·가스누설경보기 (<span class="cheat-eq">누전차단기 = 소방용품 아님!</span>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">3. 피난기구 vs 인명구조기구</div>
+              <div class="cheat-val">피난기구 = 사다리·<strong>구조대·완강기</strong>·미끄럼대 ↔ 인명구조기구 3종 = <span class="cheat-eq">방열복/방화복 · 공기호흡기 · 인공소생기</span> (<strong>방독면 제외!</strong>) / 유도등(유도표지·피난유도선) · <strong>비상조명등(휴대용 포함)</strong> = 피난구조설비</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">4. 소화용수 · 5. 소화활동(6종)</div>
+              <div class="cheat-val">소화용수 = <strong>상수도소화용수설비</strong>·소화수조·저수조 / 소화활동 6종(제·연·연·비·무·연) = <span class="cheat-eq">제연 · 연결송수관 · 연결살수 · 비상콘센트 · 무선통신보조 · 연소방지설비</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02. 정규 스프링클러 vs 간이스프링클러 vs 물분무등소화설비 (시행령 별표 4 제1호)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">정규 스프링클러설비</div>
+              <div class="cheat-val"><strong>6층 이상 전 층</strong> / 문화·종교·운동 <strong>100명</strong> / 영화관(지하·무창 <strong>500㎡</strong>, 일반층 <strong>1,000㎡</strong>) / 판매·운수·일반창고 <strong>5,000㎡ 또는 500명</strong>(물류터미널 <strong>3,000㎡</strong>) / 학생 기숙사·합숙소 <strong>5,000㎡</strong> / 의료·노유자·숙박·산후조리원 <strong>600㎡ 이상</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">간이스프링클러 (개정 반영)</div>
+              <div class="cheat-val">면적 무관: <strong>연립·다세대주택(주택전용)</strong>, 입원실·인공신장실 의원·한의원, 고시원, 임차 출입국 보호시설 / 구간: 숙박·정신의료·재활 <span class="cheat-eq">300㎡ 이상 600㎡ 미만</span>(창살 시 300㎡ 미만도 해당), 병원·산후조리원 <strong>600㎡ 미만</strong>, 합숙소 <strong>100㎡</strong>, 근생합계·복합 <strong>1,000㎡ 이상</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">물분무등소화설비 (7종)</div>
+              <div class="cheat-val"><strong>항공기격납고(면적 불문)</strong> / <span class="cheat-eq">주차용 건축물 연면적 800㎡ 이상</span>(부속 주차장 200㎡, 기계식 20대) / 전기·발전·변전·축전지·통신기기·전산실 <strong>바닥면적 300㎡ 이상</strong> / 지정문화유산 <strong>1,000㎡ 이상</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03. 단독경보형 감지기(개정) · 공기호흡기 · 제연설비 (시행령 별표 4 제2호·제3호·제5호)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">단독경보형 감지기 (개정)</div>
+              <div class="cheat-val"><strong>400㎡ 미만 유치원</strong>(<strong>어린이회관 제외!</strong>) / <strong>숙박 있는 수련시설</strong> / <strong>2,000㎡ 미만</strong> 교육·수련 기숙사·합숙소 / 지하 주차장 <strong>200㎡ 미만</strong> / <span class="cheat-eq">연립주택·다세대주택 = 연동형 설치 의무!</span></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">인명구조기구 중 공기호흡기</div>
+              <div class="cheat-val">지하역사 · 대규모점포 · 지하상가 · <strong>수용인원 100명 이상 영화상영관</strong> · <strong>이산화탄소소화설비</strong> 설치 대상물 (<span class="cheat-eq">단, 호스릴이산화탄소소화설비는 제외!</span>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">제연설비 5대 설치 대상</div>
+              <div class="cheat-val">무대부 <strong>200㎡ 이상</strong> · 영화상영관 <strong>100명 이상</strong> · 지하가(터널 제외) <strong>1,000㎡ 이상</strong> · 지하/무창층 7대 용도(근·판·운·숙·위·의·노) 바닥합계 <strong>1,000㎡ 이상</strong> · 특별피난계단 및 비상용·<strong>피난용 승강기 승강장</strong></div>
             </div>
           </div>
         </div>
       </div>
-      <aside class="sidenote">
-        <div class="sidenote-box">
-          <div class="sidenote-title">도해 요약</div>
-          <ul class="sidenote-list">
-            <li><strong>주제</strong>: 소방시설 5대 분류 및 주요 소방시설 설치기준 비교</li>
-            <li><strong>핵심</strong>: 피난기구(구조대) vs 인명구조기구(공기호흡기), 스프링클러 vs 간이스프링클러 면적 경계를 한눈에 대조합니다.</li>
-          </ul>
-        </div>
-      </aside>
     </div>
 
     <section class="mt-20 pt-8 border-t border-emerald-900/60" id="examStatsSection">
@@ -313,7 +239,7 @@
 
     <section class="mt-16 pt-8 border-t border-emerald-900/60" id="quizSection">
       <div class="mb-8">
-        <h2 class="text-2xl font-bold text-white mt-1">핵심 지문 OX 확인 (16문항)</h2>
+        <h2 class="text-2xl font-bold text-white mt-1">핵심 공식·수치 주관식 (11문항) &amp; 정예 OX 확인 (정예 30문항 / 전체 42문항)</h2>
         <p class="text-xs text-slate-400 mt-1">
           기출 선택지 중 시험에서 자주 변형되는 핵심 문장입니다. O 또는 X를 선택하여 법령의 정확한 수치를 점검하십시오.
         </p>
@@ -327,14 +253,14 @@
     <p>소방관계법규 · 제3편 소방시설 설치 및 관리에 관한 법률 제3장. 소방시설의 5대 분류와 주요 소방시설 설치기준</p>
   </footer>
 
-  <script src="assets/js/harness-core.js?v=5"></script>
+  <script src="assets/js/harness-core.js?v=6"></script>
   <script>
     const STATS_03_03 = {
   "unitTitle": "제3편 소방시설 설치 및 관리에 관한 법률 제3장. 소방시설의 5대 분류와 주요 소방시설 설치기준",
   "totalUniqueQs": 12,
   "totalAppearances": 14,
   "totalChoices": 48,
-  "totalOx": 16,
+  "totalOx": 42,
   "themes": [
     {
       "name": "소화설비 설치기준(스프링클러·간이스프링클러·물분무등)",
@@ -570,7 +496,7 @@
       "교육연구시설 또는 수련시설 내에 있는 합숙소 또는 기숙사로서 연면적 2,000 ㎡ 미만인 것"
     ],
     "ans": 2,
-    "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 단독경보형 감지기 설치 대상을 묻는 문항입니다. 연면적 400제곱미터 미만의 '유치원'(교육연구시설·노유자시설 관련)에는 단독경보형 감지기를 설치하지만, 관광휴게시설인 '어린이회관'은 단독경보형 감지기 설치 대상이 아닙니다.",
+    "q_expl": "출제 당시 구 시행령상 단독경보형 감지기 설치 대상을 묻는 문항으로, 연면적 400제곱미터 미만의 '유치원'에는 설치하지만 관광휴게시설인 '어린이회관'은 설치 대상이 아닙니다. (※ 최신 개정 참고: 현행 시행령 별표 4에서는 아파트등·숙박시설·노유자시설이 면적 무관 자동화재탐지설비 대상으로 상향되었고, 단독경보형 감지기에 '연립주택·다세대주택[연동형]' 및 '200㎡ 미만 지하 차고·주차장'이 추가되었습니다.)",
     "c_expls": [
       "[옳음] 연면적 600제곱미터 미만의 숙박시설에는 단독경보형 감지기를 설치하여야 합니다.",
       "[틀림 · 정답] 연면적 400제곱미터 미만일 때 단독경보형 감지기를 설치해야 하는 대상은 어린이회관이 아니라 '유치원'입니다.",
@@ -647,7 +573,7 @@
     "ans": 1,
     "q_expl": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 간이스프링클러설비의 정확한 면적 기준(일반 숙박시설 바닥면적 합계 300제곱미터 이상 600제곱미터 미만, 교육연구시설 내 합숙소 연면적 100제곱미터 이상, 조산원·산후조리원 연면적 600제곱미터 미만, 정신의료기관·의료재활시설 바닥면적 합계 300제곱미터 이상 600제곱미터 미만 등)을 묻는 문항입니다.",
     "c_expls": [
-      "[옳음 · 정답] 숙박시설(생활형 숙박시설 제외)로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만인 시설에는 간이스프링클러설비를 설치해야 합니다(600제곱미터 이상은 정규 스프링클러설비).",
+      "[옳음 · 정답] 현행 시행령 별표 4 제1호 마목에 따라 숙박시설로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만인 시설에는 간이스프링클러설비를 설치해야 합니다(600제곱미터 이상은 정규 스프링클러설비).",
       "[틀림] 교육연구시설 내 합숙소는 바닥면적 50제곱미터가 아니라 '연면적 100제곱미터 이상'(또는 복합건축물 내 합숙소로서 바닥면적 100제곱미터 이상인 층)에 간이스프링클러설비를 설치합니다.",
       "[틀림] 근린생활시설 중 조산원 및 산후조리원은 연면적 660제곱미터 미만이 아니라 '연면적 600제곱미터 미만'인 시설에 간이스프링클러설비를 설치합니다(600제곱미터 이상은 스프링클러설비).",
       "[틀림] 의료시설 중 정신의료기관 또는 의료재활시설로 사용되는 바닥면적의 합계가 200제곱미터가 아니라 '300제곱미터 이상 600제곱미터 미만'인 시설(또는 300제곱미터 미만으로서 창살이 설치된 시설)에 간이스프링클러설비를 설치합니다."
@@ -657,150 +583,663 @@
     const QUIZ_03_03 = [
   {
     "grade": "S",
+    "tier": "core",
     "text": "소방시설 기준이 변경되어 강화된 경우 기존의 특정소방대상물에 대해서는 원칙적으로 변경 전의 대통령령 또는 화재안전기준을 적용한다.",
     "isCorrect": true,
     "source": "소방시설법 제13조 핵심 기출",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률｣ 제13조 제1항 본문에 따라 법적 안정성과 신뢰보호를 위해 변경 전 기준을 적용하는 것이 원칙입니다.",
     "origQId": "",
-    "id": "LAW_03_03_001"
+    "id": "LAW_03_03_001",
+    "hlKey": "변경 전의 대통령령 또는 화재안전기준",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비 및 연소방지설비는 소화활동설비에 해당한다.",
     "isCorrect": true,
     "source": "소방시설법 시행령 별표 1 핵심 기출",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따른 소화활동설비 6종입니다.",
     "origQId": "",
-    "id": "LAW_03_03_002"
+    "id": "LAW_03_03_002",
+    "hlKey": "연결송수관설비",
+    "paraIdx": 1,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "방열복·방화복(안전헬멧·보호장갑·안전화 포함), 공기호흡기 및 인공소생기는 피난구조설비 중 인명구조기구에 속한다.",
     "isCorrect": true,
     "source": "소방시설법 시행령 별표 1 핵심 기출",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따라 방열복·방화복, 공기호흡기, 인공소생기는 인명구조기구이며, 구조대·완강기·피난사다리는 피난기구입니다.",
     "origQId": "",
-    "id": "LAW_03_03_003"
+    "id": "LAW_03_03_003",
+    "hlKey": "방열복·방화복",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "항공기 및 자동차 관련시설 중 주차용 건축물로서 연면적 800제곱미터 이상인 것과 승강기 등 기계장치에 의한 주차시설로서 20대 이상 주차할 수 있는 것에는 물분무등소화설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2018년 소방경채 Q13",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 주차시설의 물분무등소화설비 설치기준(주차용 건축물 연면적 800제곱미터 이상, 기계식 주차시설 20대 이상)입니다.",
     "origQId": "Q_03_02_2018_경채_13",
-    "id": "LAW_03_03_004"
+    "id": "LAW_03_03_004",
+    "hlKey": "주차용 건축물로서 연면적 800제곱미터 이상",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "피난구조설비 중 인명구조기구에는 방열복·방화복(안전헬멧, 보호장갑 및 안전화 포함), 공기호흡기 및 인공소생기가 해당하며, 구조대와 완강기는 피난기구에 해당한다.",
     "isCorrect": true,
     "source": "2018년 소방경채 Q17",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따라 구조대는 인명구조기구가 아니라 피난기구입니다.",
     "origQId": "Q_03_02_2018_경채_17",
-    "id": "LAW_03_03_005"
+    "id": "LAW_03_03_005",
+    "hlKey": "구조대와 완강기는 피난기구",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "시각경보기는 피난구조설비가 아니라 경보설비에 해당하며, 비상조명등과 유도등은 피난구조설비에 해당한다.",
     "isCorrect": true,
     "source": "2020년 소방공채 Q6",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따라 시각경보기는 경보설비로 분류됩니다.",
     "origQId": "Q_03_02_2020_공채_6",
-    "id": "LAW_03_03_006"
+    "id": "LAW_03_03_006",
+    "hlKey": "시각경보기",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "특정소방대상물의 분류상 정신의료기관과 마약진료소는 의료시설에 해당하고, 노인의료복지시설은 노유자시설에 해당하며, 한의원은 근린생활시설에 해당한다.",
     "isCorrect": true,
     "source": "2020년 소방공채 Q9",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 2에 따른 정확한 용도 분류입니다.",
     "origQId": "Q_03_02_2020_공채_9",
-    "id": "LAW_03_03_007"
+    "id": "LAW_03_03_007",
+    "hlKey": "마약진료소",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "이산화탄소소화설비를 설치하여야 하는 특정소방대상물에는 인명구조기구 중 공기호흡기를 설치하여야 하나, 호스릴이산화탄소소화설비를 설치하는 경우에는 제외한다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q11",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따라 호스릴이산화탄소소화설비는 공기호흡기 의무 설치 대상에서 제외됩니다.",
     "origQId": "Q_03_02_2021_경채_11",
-    "id": "LAW_03_03_008"
+    "id": "LAW_03_03_008",
+    "hlKey": "호스릴이산화탄소소화설비는 제외",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "S",
-    "text": "근린생활시설 중 의원·치과의원·한의원으로서 입원실이 있는 시설과 교육연구시설 내 합숙소로서 연면적 100제곱미터 이상인 것에는 간이스프링클러설비를 설치하여야 한다.",
+    "tier": "core",
+    "text": "근린생활시설 중 의원·치과의원·한의원으로서 입원실 또는 인공신장실이 있는 시설과 교육연구시설 내 합숙소로서 연면적 100제곱미터 이상인 경우에는 간이스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2021년 소방경채 Q17",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 간이스프링클러설비 의무 설치 대상입니다.",
+    "explanation": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4 제1호 마목에 따른 간이스프링클러설비 의무 설치 대상(입원실 또는 인공신장실이 있는 의원·치과의원·한의원, 교육연구시설 내 연면적 100제곱미터 이상 합숙소 모든 층)입니다.",
     "origQId": "Q_03_02_2021_경채_17",
-    "id": "LAW_03_03_009"
+    "id": "LAW_03_03_009",
+    "hlKey": "입원실 또는 인공신장실이 있는 시설",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "경보설비를 구성하는 소방용품에는 발신기, 수신기, 중계기, 감지기, 음향장치, 시각경보기, 누전경보기, 가스누설경보기가 있으며 누전차단기는 포함되지 않는다.",
     "isCorrect": true,
     "source": "2021년 소방공채 Q7",
     "explanation": "누전경보기는 경보설비 소방용품이지만, 누전차단기는 전기설비로서 소방용품이 아닙니다.",
     "origQId": "Q_03_02_2021_공채_7",
-    "id": "LAW_03_03_010"
+    "id": "LAW_03_03_010",
+    "hlKey": "누전차단기는 소방용품이 아니다",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "근린생활시설 중 근린생활시설로 사용하는 부분의 바닥면적 합계가 1천 제곱미터 이상인 것은 모든 층에 간이스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2021년 소방공채 Q8",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따라 근린생활시설 바닥면적 합계 1,000제곱미터 이상인 것은 모든 층에 간이스프링클러설비를 설치해야 합니다.",
     "origQId": "Q_03_02_2021_공채_8",
-    "id": "LAW_03_03_011"
+    "id": "LAW_03_03_011",
+    "hlKey": "근린생활시설로 사용하는 부분의 바닥면적 합계가 1,000제곱미터 이상",
+    "paraIdx": 3,
+    "isEssential": true
   },
   {
     "grade": "A",
+    "tier": "core",
     "text": "교육연구시설 또는 수련시설 내에 있는 합숙소 또는 기숙사로서 연면적 2,000제곱미터 미만인 것에는 단독경보형 감지기를 설치하여야 하며, 연면적 400제곱미터 미만의 어린이회관은 단독경보형 감지기 설치 대상이 아니다.",
     "isCorrect": true,
     "source": "2022년 소방경채 Q17 선지 4번",
     "explanation": "교육연구시설 또는 수련시설 내에 있는 합숙소 또는 기숙사로서 연면적 2,000제곱미터 미만인 것에는 단독경보형 감지기를 설치하여야 합니다.",
     "origQId": "Q_03_02_2022_경채_17",
-    "id": "LAW_03_03_012"
+    "id": "LAW_03_03_012",
+    "hlKey": "어린이회관",
+    "paraIdx": 4,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "소화활동설비에는 제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비 6종이 해당하며, 비상조명등은 피난구조설비에 해당한다.",
     "isCorrect": true,
     "source": "2022년 소방공채 Q6",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1에 따른 소화활동설비 6종의 정확한 분류입니다.",
     "origQId": "Q_03_02_2022_공채_6",
-    "id": "LAW_03_03_013"
+    "id": "LAW_03_03_013",
+    "hlKey": "소화활동설비",
+    "paraIdx": 0,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "문화 및 집회시설 중 영화상영관의 용도로 쓰는 층의 바닥면적이 지하층 또는 무창층인 경우에는 500제곱미터 이상, 그 밖의 층인 경우에는 1천 제곱미터 이상인 층에는 스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2023년 소방경채 Q27 · 소방공채 Q15",
     "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 영화상영관의 스프링클러설비 설치기준(지하·무창층 500제곱미터 이상, 일반층 1,000제곱미터 이상)입니다.",
     "origQId": "Q_03_02_2023_경채_27",
-    "id": "LAW_03_03_014"
+    "id": "LAW_03_03_014",
+    "hlKey": "영화상영관 용도로 쓰는 층의 바닥면적",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
+    "tier": "core",
     "text": "교육연구시설·수련시설 내에 있는 학생 수용을 위한 기숙사 또는 합숙소로서 연면적 5천 제곱미터 이상인 경우에는 모든 층에 스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2023년 소방경채 Q27 · 소방공채 Q15",
     "explanation": "합숙소는 연면적 100제곱미터 이상이면 간이스프링클러설비 대상이고, 기숙사·합숙소가 연면적 5,000제곱미터 이상이면 모든 층에 정규 스프링클러설비를 설치해야 합니다.",
     "origQId": "Q_03_02_2023_경채_27",
-    "id": "LAW_03_03_015"
+    "id": "LAW_03_03_015",
+    "hlKey": "학생 수용을 위한 기숙사 또는 합숙소로서 연면적 5,000제곱미터 이상",
+    "paraIdx": 2,
+    "isEssential": true
   },
   {
     "grade": "S",
-    "text": "숙박시설(생활형 숙박시설 제외)로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만인 시설과 조산원 및 산후조리원으로서 연면적 600제곱미터 미만인 시설에는 간이스프링클러설비를 설치하여야 한다.",
+    "tier": "core",
+    "text": "숙박시설로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만인 시설과 근린생활시설 중 조산원 및 산후조리원으로서 연면적 600제곱미터 미만인 시설에는 간이스프링클러설비를 설치하여야 한다.",
     "isCorrect": true,
     "source": "2025년 소방경채 Q24 · 소방공채 Q15",
-    "explanation": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4에 따른 간이스프링클러설비 설치 기준이며, 두 시설 모두 600제곱미터 이상이 되면 정규 스프링클러설비 설치 대상이 됩니다.",
+    "explanation": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4 제1호 마목(2025년 공·경채 기출)에 따른 간이스프링클러설비 설치 기준이며, 두 시설 모두 600제곱미터 이상이 되면 모든 층에 정규 스프링클러설비를 설치해야 합니다.",
     "origQId": "Q_03_02_2025_경채_24",
-    "id": "LAW_03_03_016"
+    "id": "LAW_03_03_016",
+    "hlKey": "숙박시설로 사용되는 바닥면적의 합계가 300제곱미터 이상 600제곱미터 미만",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 1상 소방시설은 소화설비, 경보설비, 피난구조설비, 소화용수설비, 소화활동설비의 5가지로 분류된다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 (소방시설의 5대 분류 체계)",
+    "explanation": "시행령 별표 1은 소방시설을 소화설비, 경보설비, 피난구조설비, 소화용수설비, 소화활동설비의 5대 분류로 규정하고 있습니다.",
+    "origQId": null,
+    "id": "PRED_03_03_001",
+    "hlKey": "소화설비, 경보설비, 피난구조설비, 소화용수설비, 소화활동설비의 5대 분류",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "통합감시시설과 자동화재속보설비는 소화활동설비에 속하고, 누전경보기 및 가스누설경보기는 경보설비에 속한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제2호 (경보설비의 세부 종류)",
+    "explanation": "🚨 [출제위원 착시 함정] 통합감시시설과 자동화재속보설비 역시 소화활동설비가 아니라 모두 '경보설비'에 속합니다. 단독경보형 감지기, 비상경보설비, 자동화재탐지설비, 시각경보기, 비상방송설비, 자동화재속보설비, 통합감시시설, 누전경보기, 가스누설경보기는 모두 경보설비에 속합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_002",
+    "hlKey": "비상방송설비, 자동화재속보설비, 통합감시시설, 누전경보기, 가스누설경보기",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "주거용·상업용 주방자동소화장치와 캐비넷형·가스·분말·고체에어로졸 자동소화장치는 모두 소화설비 중 자동소화장치에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제1호나목 (자동소화장치 6종 분류)",
+    "explanation": "자동소화장치에는 주거용 주방자동소화장치, 상업용 주방자동소화장치, 캐비넷형 자동소화장치, 가스자동소화장치, 분말자동소화장치, 고체에어로졸자동소화장치의 6종이 속합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_003",
+    "hlKey": "주거용·상업용 주방자동소화장치, 캐비넷형·가스·분말·고체에어로졸 자동소화장치",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "피난구조설비 중 인명구조기구에는 방열복·방화복(안전헬멧·보호장갑·안전화 포함), 공기호흡기, 인공소생기 및 방독면이 포함된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제3호나목 (인명구조기구 3종에서 방독면 제외)",
+    "explanation": "피난구조설비 중 인명구조기구는 방열복·방화복(안전헬멧·보호장갑·안전화 포함), 공기호흡기, 인공소생기의 3종뿐이며, '방독면'은 인명구조기구에 포함되지 않습니다.",
+    "origQId": null,
+    "id": "PRED_03_03_004",
+    "hlKey": "방독면은 포함되지 않는다",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "유도표지와 피난유도선은 피난구조설비 중 유도등에 포함되나, 휴대용비상조명등은 소화활동설비에 속한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제3호다목·라목 (유도등 계열 및 휴대용비상조명등 분류)",
+    "explanation": "🚨 [출제위원 착시 함정] 휴대용비상조명등 역시 소화활동설비가 아니라 비상조명등에 포함되어 '피난구조설비'에 속합니다. 피난구조설비는 피난기구, 인명구조기구, 유도등(피난구·통로·객석유도등, 유도표지, 피난유도선), 비상조명등(휴대용비상조명등 포함)의 4가지로 구성됩니다.",
+    "origQId": null,
+    "id": "PRED_03_03_005",
+    "hlKey": "피난구·통로·객석유도등, 유도표지, 피난유도선",
+    "paraIdx": 0,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "상수도소화용수설비와 연결송수관설비는 모두 소방시설 분류상 소화용수설비에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제4호·제5호 (소화용수설비 vs 소화활동설비 구분)",
+    "explanation": "상수도소화용수설비 및 소화수조·저수조는 '소화용수설비'이지만, 연결송수관설비와 연결살수설비는 소방대원이 사용하는 '소화활동설비'에 해당합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_006",
+    "hlKey": "상수도소화용수설비 및 소화수조·저수조",
+    "paraIdx": 1,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "지하구에서 연소 확대를 방지하는 연소방지설비는 소화설비에 속하고, 지하·고층에서 무전 교신을 돕는 무선통신보조설비는 경보설비에 속한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제5호 (소화활동설비 6종 분류)",
+    "explanation": "🚨 [출제위원 착시 함정] 연소방지설비와 무선통신보조설비는 소화설비나 경보설비가 아니라 모두 '소화활동설비'(제연·연결송수관·연결살수·비상콘센트·무선통신보조·연소방지설비)에 속합니다. 소화활동설비 6종(제·연·연·비·무·연)은 제연설비, 연결송수관설비, 연결살수설비, 비상콘센트설비, 무선통신보조설비, 연소방지설비입니다.",
+    "origQId": null,
+    "id": "PRED_03_03_007",
+    "hlKey": "연소방지설비",
+    "paraIdx": 1,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "층수가 6층 이상인 특정소방대상물에는 6층 이상의 층에만 스프링클러설비를 설치하면 된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호라목 (6층 이상 특정소방대상물 전 층 스프링클러 설치)",
+    "explanation": "층수가 6층 이상인 특정소방대상물에는 6층 이상의 층만이 아니라 '모든 층'에 스프링클러설비를 설치하여야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_008",
+    "hlKey": "층수가 6층 이상인 특정소방대상물은 모든 층",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "동·식물원을 제외한 문화 및 집회시설, 종교시설, 물놀이형 시설을 제외한 운동시설로서 수용인원이 300명 이상인 경우에 한하여 모든 층에 스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호라목 (문화집회·종교·운동시설 수용인원 100명 이상 스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] 문화 및 집회시설(동·식물원 제외), 종교시설, 운동시설(물놀이형 시설 제외)의 전 층 스프링클러설비 설치 기준은 수용인원 300명 이상이 아니라 '100명 이상'입니다. 문화 및 집회시설(동·식물원 제외), 종교시설, 운동시설(물놀이형 시설 제외)로서 수용인원이 100명 이상인 경우에는 모든 층에 스프링클러설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_009",
+    "hlKey": "수용인원이 100명 이상",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "판매시설 또는 운수시설은 바닥면적 합계가 5,000제곱미터 이상이면서 동시에 수용인원이 500명 이상인 경우에만 모든 층에 스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호라목 (판매·운수시설 5,000㎡ 또는 수용인원 500명 이상 스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] '동시에(그리고)'가 아니라 '바닥면적 합계가 5,000제곱미터 이상이거나 수용인원이 500명 이상인 경우'(선택적 요건) 어느 하나만 충족해도 모든 층에 스프링클러설비를 설치하여야 합니다. 판매시설 및 운수시설은 바닥면적 합계가 5,000제곱미터 이상이거나 수용인원이 500명 이상인 경우 모든 층에 스프링클러설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_010",
+    "hlKey": "바닥면적 합계가 5,000제곱미터 이상이거나 수용인원이 500명 이상",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "의료시설, 노유자시설, 숙박시설 또는 교정 및 군사시설로서 해당 용도로 사용되는 바닥면적 합계가 1,000제곱미터 이상인 경우에 모든 층에 정규 스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호라목 (의료·노유자·숙박·교정시설 600㎡ 이상 전 층 스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] 의료시설·노유자시설·숙박시설·교정 및 군사시설의 전 층 정규 스프링클러설비 설치 기준은 해당 용도 바닥면적 합계 1,000제곱미터 이상이 아니라 '600제곱미터 이상'입니다. 의료시설(정신의료기관·요양병원 등), 노유자시설, 숙박시설, 교정 및 군사시설로서 해당 용도로 사용되는 바닥면적 합계가 600제곱미터 이상인 경우에는 모든 층에 정규 스프링클러설비를 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_011",
+    "hlKey": "바닥면적 합계가 600제곱미터 이상",
+    "paraIdx": 2,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "다중이용업 중 고시원업의 시설과 건물을 임차하여 ｢출입국관리법｣에 따른 보호시설로 사용하는 부분은 바닥면적 합계가 300제곱미터 이상인 경우에 한하여 간이스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호마목 (고시원업 및 출입국 보호시설 면적 무관 간이스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] 입원실이 있는 의원·치과의원·한의원, 다중이용업 중 고시원업, 출입국관리법에 따른 임차 보호시설은 바닥면적 규모에 관계없이 무조건 간이스프링클러설비를 설치하여야 합니다. 근린생활시설 중 입원실이 있는 의원·치과의원·한의원, 다중이용업 중 고시원업, 출입국관리법에 따른 임차 보호시설에는 면적에 관계없이 간이스프링클러설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_012",
+    "hlKey": "출입국관리법에 따른 보호시설",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "현행 소방시설법 시행령 별표 4상 공동주택 중 연립주택 및 다세대주택은 바닥면적의 합계가 600제곱미터 이상인 경우에 한하여 간이스프링클러설비를 설치한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호마목1) (연립·다세대주택 주택전용 간이스프링클러 의무화)",
+    "explanation": "🚨 [최신 개정 핵심] 현행 시행령 별표 4 제1호 마목 1)에 따라 공동주택 중 '연립주택 및 다세대주택'에는 면적 제한 없이 화재안전기준에 따른 '주택전용 간이스프링클러설비'를 의무적으로 설치하여야 합니다(숙박시설은 바닥면적 합계 300㎡ 이상 600㎡ 미만일 때 간이스프링클러설비 설치).",
+    "origQId": null,
+    "id": "PRED_03_03_013",
+    "hlKey": "공동주택 중 연립주택 및 다세대주택",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "의료시설 중 정신의료기관 또는 의료재활시설은 바닥면적 합계가 300제곱미터 이상 600제곱미터 미만인 시설(또는 300제곱미터 미만이고 창살이 설치된 시설)에 간이스프링클러설비를 설치하고, 병원·요양병원은 600제곱미터 미만인 시설에 간이스프링클러설비를 설치한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호마목 (정신의료기관·의료재활시설 vs 요양병원 간이스프링클러 기준)",
+    "explanation": "요양병원은 바닥면적 합계 600제곱미터 미만이면 하한 면적 제한 없이 간이스프링클러설비를 설치하고, 정신의료기관·의료재활시설은 300제곱미터 이상 600제곱미터 미만(또는 300제곱미터 미만으로서 창살 설치)일 때 간이스프링클러설비를 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_014",
+    "hlKey": "300제곱미터 미만이고 창살이 설치된 시설",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "복합건축물로서 연면적이 1,500제곱미터 이상인 것에 한하여 모든 층에 간이스프링클러설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호마목 (연면적 1,000㎡ 이상 복합건축물 전 층 간이스프링클러)",
+    "explanation": "🚨 [출제위원 착시 함정] 복합건축물(및 근린생활시설 사용 바닥면적 합계)의 간이스프링클러설비 전 층 설치 기준은 1,500제곱미터 이상이 아니라 '1,000제곱미터 이상'입니다. 근린생활시설로 사용하는 부분의 바닥면적 합계가 1,000제곱미터 이상인 것과 복합건축물로서 연면적 1,000제곱미터 이상인 것은 모든 층에 간이스프링클러설비를 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_015",
+    "hlKey": "복합건축물로서 연면적 1,000제곱미터 이상",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "물분무등소화설비에는 물분무소화설비, 미분무소화설비, 포소화설비, 이산화탄소소화설비, 할론소화설비, 할로겐화합물 및 불활성기체소화설비, 분말소화설비가 포함된다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 1 제1호바목 (물분무등소화설비 7종 분류)",
+    "explanation": "시행령 별표 1에 따른 물분무등소화설비의 7가지 세부 설비입니다.",
+    "origQId": null,
+    "id": "PRED_03_03_016",
+    "hlKey": "물분무·미분무·포·이산화탄소·할론·할로겐화합물 및 불활성기체·분말소화설비",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "항공기 및 자동차 관련시설 중 항공기격납고는 바닥면적의 합계가 1,000제곱미터 이상인 경우에 물분무등소화설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호바목 (항공기격납고 면적 불문 물분무등소화설비 설치)",
+    "explanation": "🚨 [출제위원 착시 함정] 항공기격납고는 대량의 항공유 화재 위험 때문에 바닥면적이나 연면적의 규모에 관계없이 무조건 물분무등소화설비를 설치하여야 합니다. 항공기격납고는 대량의 항공유 화재 위험이 있어 면적 규모에 관계없이 물분무등소화설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_017",
+    "hlKey": "항공기격납고",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "항공기 및 자동차 관련시설 중 주차용 건축물로서 연면적이 500제곱미터인 건축물에는 바닥면적 합계가 200제곱미터 이상이므로 물분무등소화설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호바목 (주차용 건축물 연면적 800㎡ 이상 vs 부속 차고·주차장 바닥면적 200㎡ 이상)",
+    "explanation": "건축물 내부에 부속된 일반 차고·주차장은 바닥면적 합계 200제곱미터 이상일 때 설치하지만, 건물 전체가 주차장인 '주차용 건축물'은 '연면적 800제곱미터 이상'일 때만 물분무등소화설비 설치 대상이므로 연면적 500㎡ 주차용 건축물은 대상이 아닙니다.",
+    "origQId": null,
+    "id": "PRED_03_03_018",
+    "hlKey": "주차용 건축물로서 연면적 800제곱미터 이상",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "특정소방대상물에 설치된 전기실·발전실·변전실·축전지실·통신기기실 또는 전산실로서 바닥면적이 500제곱미터 이상인 것에 한하여 물분무등소화설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제1호바목 (전기실·전산실 등 300㎡ 이상 및 지정문화유산 1,000㎡ 이상)",
+    "explanation": "🚨 [출제위원 착시 함정] 전기실·발전실·변전실·축전지실·통신기기실·전산실의 물분무등소화설비 설치 기준은 바닥면적 500제곱미터 이상이 아니라 '300제곱미터 이상'입니다(지정문화유산은 연면적 1,000제곱미터 이상). 수손 피해 우려가 큰 전기실·발전실·변전실·축전지실·통신기기실·전산실(바닥면적 300㎡ 이상)과 지정문화유산(연면적 1,000㎡ 이상)에는 물분무등소화설비를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_019",
+    "hlKey": "전기실·발전실·변전실·축전지실·통신기기실 또는 전산실로서 바닥면적이 300제곱미터 이상",
+    "paraIdx": 3,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "숙박시설이 없는 수련시설로서 연면적이 300제곱미터인 특정소방대상물에는 연면적이 400제곱미터 미만이므로 단독경보형 감지기를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제2호라목 (수련시설 중 숙박시설이 있는 것만 단독경보형 감지기 설치)",
+    "explanation": "현행 시행령 별표 4 제2호 가목에 따라 수련시설 중 단독경보형 감지기를 설치해야 하는 대상은 '숙박시설이 있는 수련시설'(자동화재탐지설비 대상 제외)에 한정되므로, 숙박시설이 없는 일반 수련시설은 제외됩니다.",
+    "origQId": null,
+    "id": "PRED_03_03_020",
+    "hlKey": "숙박시설이 있는 수련시설",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "현행 소방시설법 시행령 별표 4상 단독경보형 감지기는 연면적 400제곱미터 미만의 유치원, 연면적 2,000제곱미터 미만의 교육연구·수련시설 내 기숙사·합숙소 및 공동주택 중 연립주택·다세대주택에 설치하되, 연립주택 및 다세대주택에는 연동형으로 설치하여야 한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제2호가목 (현행 단독경보형 감지기 및 연립·다세대 연동형 의무화)",
+    "explanation": "현행 ｢소방시설 설치 및 관리에 관한 법률 시행령｣ 별표 4 제2호 가목(2024.12.1. 시행 개정 반영)에 따라 아파트등·숙박시설·노유자시설은 면적 무관 자동화재탐지설비 대상으로 상향되었고, 단독경보형 감지기는 400㎡ 미만 유치원, 숙박 있는 수련시설, 2,000㎡ 미만 교육연구·수련 내 기숙사·합숙소, 지하 차고·주차장 200㎡ 미만, 그리고 공동주택 중 연립주택·다세대주택(반드시 '연동형'으로 설치!)에 설치합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_021",
+    "hlKey": "연동형으로 설치",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "운수시설 중 지하역사, 판매시설 중 대규모점포, 지하가 중 지하상가 및 문화 및 집회시설 중 수용인원 300명 이상인 영화상영관에는 인명구조기구 중 공기호흡기를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제3호나목 (공기호흡기 의무 설치 대상 특정소방대상물)",
+    "explanation": "🚨 [출제위원 착시 함정] 공기호흡기를 설치하여야 하는 영화상영관의 수용인원 기준은 300명 이상이 아니라 '100명 이상'입니다. 지하역사, 백화점 등 대규모점포, 지하상가, 수용인원 100명 이상 영화상영관, 이산화탄소소화설비(호스릴 방식 제외) 설치 대상물에는 공기호흡기를 설치해야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_022",
+    "hlKey": "운수시설 중 지하역사",
+    "paraIdx": 4,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "물분무등소화설비 중 호스릴이산화탄소소화설비를 설치하여야 하는 특정소방대상물에는 질식 사고 예방을 위하여 인명구조기구 중 공기호흡기를 의무적으로 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제3호나목 단서 (호스릴이산화탄소소화설비 공기호흡기 제외)",
+    "explanation": "이산화탄소소화설비를 설치해야 하는 특정소방대상물에는 공기호흡기를 설치해야 하나, 사람이 직접 호스를 잡고 국소에 방사하는 '호스릴이산화탄소소화설비'는 공기호흡기 의무 설치 대상에서 제외됩니다.",
+    "origQId": null,
+    "id": "PRED_03_03_023",
+    "hlKey": "호스릴이산화탄소소화설비는 제외",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "tier": "pred",
+    "text": "지하층이나 무창층에 설치된 근린생활시설, 판매시설, 운수시설, 숙박시설, 위락시설, 의료시설 또는 노유자시설로서 해당 용도로 사용되는 바닥면적의 합계가 1,000제곱미터 이상인 층에는 제연설비를 설치하여야 한다.",
+    "isCorrect": true,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제5호다목 (지하층·무창층 1,000㎡ 이상 제연설비 설치)",
+    "explanation": "지하층·무창층에 설치된 근린생활·판매·운수·숙박·위락·의료·노유자시설로서 해당 용도 바닥면적 합계가 1,000제곱미터 이상인 층에는 제연설비를 설치하여야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_024",
+    "hlKey": "지하층이나 무창층에 설치된 근린생활·판매·운수·숙박·위락·의료·노유자시설로서 해당 용도로 사용되는 바닥면적 합계가 1,000제곱미터 이상",
+    "paraIdx": 5,
+    "isEssential": true
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "특정소방대상물에 부설된 특별피난계단 및 비상용 승강기의 승강장에는 제연설비를 설치하여야 하나, 피난용 승강기의 승강장은 제연설비 설치 대상에서 제외된다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제5호바목 (특별피난계단 및 비상용·피난용 승강기 승강장 제연설비)",
+    "explanation": "🚨 [출제위원 착시 함정] 특별피난계단과 비상용 승강기의 승강장뿐만 아니라 '피난용 승강기의 승강장'에도 제연설비를 설치하여야 합니다(시행령 별표 4 제5호 바목). 특별피난계단, 비상용 승강기의 승강장 또는 피난용 승강기의 승강장에는 연기 침투를 막는 부속실 제연설비를 설치하여야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_025",
+    "hlKey": "특별피난계단·비상용 승강기의 승강장 또는 피난용 승강기의 승강장에는 제연설비를 설치",
+    "paraIdx": 5,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "tier": "pred",
+    "text": "문화 및 집회시설 중 영화상영관은 수용인원이 200명 이상인 경우에만 제연설비를 설치하여야 한다.",
+    "isCorrect": false,
+    "source": "🎯 적중예상 · 소방시설법 시행령 별표 4 제5호나목 (영화상영관 수용인원 100명 이상 제연설비 설치)",
+    "explanation": "무대부 바닥면적 기준이 200제곱미터 이상이고, 문화 및 집회시설 중 영화상영관은 수용인원 200명이 아니라 '수용인원 100명 이상'이면 제연설비를 설치하여야 합니다.",
+    "origQId": null,
+    "id": "PRED_03_03_026",
+    "hlKey": "영화상영관으로서 수용인원 100명 이상",
+    "paraIdx": 5,
+    "isEssential": false
   }
 ];
-
+    window.SUBJ_DATA = [
+  {
+    "id": "SUBJ_LAW_03_03_01",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "스프링클러 vs 간이스프링클러 vs 물분무등소화설비 핵심 경계식 (시행령 별표 4)",
+    "promptHtml": "<div class=\"subj-eq-line\">정규 SP = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"6층 이상 전 층 · 의료/노유자/숙박/산후조리원 600㎡ 이상 ↔ 간이 SP\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">6층 이상 전 층 · 의료/노유자/숙박/산후조리원 600㎡ 이상 ↔ 간이 SP</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"숙박·정신의료 300㎡ 이상 600㎡ 미만 · 연립/다세대(면적 무관)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">숙박·정신의료 300㎡ 이상 600㎡ 미만 · 연립/다세대(면적 무관)</span></span></div><div class=\"subj-ex-line\">💡 <strong>특수 공간 수치</strong> | 판매·운수·일반창고 SP = 5,000㎡ 또는 500명(물류터미널 3,000㎡) / 물분무등 = 격납고(면적 무관) · 주차용 건축물 800㎡ · 전기/전산실 300㎡ 이상</div>",
+    "answerEq": "6층 이상 전 층 · 의료/노유자/숙박/산후조리원 600㎡ 이상 ↔ 간이 SP / 숙박·정신의료 300㎡ 이상 600㎡ 미만 · 연립/다세대(면적 무관)",
+    "fullFormula": "정규 SP = 6층 이상 전 층 · 의료/노유자/숙박/산후조리원 600㎡ 이상 ↔ 간이 SP = 숙박·정신의료 300㎡ 이상 600㎡ 미만 · 연립/다세대(면적 무관)",
+    "explanation": "💡 특수 공간 수치 | 판매·운수·일반창고 SP = 5,000㎡ 또는 500명(물류터미널 3,000㎡) / 물분무등 = 격납고(면적 무관) · 주차용 건축물 800㎡ · 전기/전산실 300㎡ 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_02",
+    "type": "formula",
+    "badge": "공식·산정식·서열",
+    "title": "수용인원 100명 이상 영화상영관 3관왕 & 제연설비 5대 공식 (시행령 별표 4)",
+    "promptHtml": "<div class=\"subj-eq-line\">수용인원 100명 이상 영화상영관 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"정규 스프링클러 + 공기호흡기 + 제연설비 (1,000명 이상 시 특별관리시설물!)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">정규 스프링클러 + 공기호흡기 + 제연설비 (1,000명 이상 시 특별관리시설물!)</span></span></div><div class=\"subj-ex-line\">💡 <strong>제연설비 5대 범위</strong> | 무대부 200㎡ · 영화관 100명 · 지하가(터널 제외) 1,000㎡ · 지하/무창층 7대 용도 1,000㎡ · 특별피난계단 및 비상용·피난용 승강기 승강장</div>",
+    "answerEq": "정규 스프링클러 + 공기호흡기 + 제연설비 (1,000명 이상 시 특별관리시설물!)",
+    "fullFormula": "수용인원 100명 이상 영화상영관 = 정규 스프링클러 + 공기호흡기 + 제연설비 (1,000명 이상 시 특별관리시설물!)",
+    "explanation": "💡 제연설비 5대 범위 | 무대부 200㎡ · 영화관 100명 · 지하가(터널 제외) 1,000㎡ · 지하/무창층 7대 용도 1,000㎡ · 특별피난계단 및 비상용·피난용 승강기 승강장"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_03",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "1. 소화설비 · 2. 경보설비",
+    "promptHtml": "<div class=\"subj-prose-line\">소화: 소화기구, 자동소화장치 6종, 옥내·옥외소화전, SP, 간이SP, 물분무등 / 경보: 단독경보, 비상경보, 자탐, <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"시각경보기\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">시각경보기</span></span>, 비상방송, 속보, 통합감시, 누전·가스누설경보기 (<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"누전차단기 = 소방용품 아님!\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">누전차단기 = 소방용품 아님!</span></span>)</div>",
+    "answerEq": "누전차단기 = 소방용품 아님! / 시각경보기",
+    "fullFormula": "",
+    "explanation": "소화: 소화기구, 자동소화장치 6종, 옥내·옥외소화전, SP, 간이SP, 물분무등 / 경보: 단독경보, 비상경보, 자탐, 시각경보기, 비상방송, 속보, 통합감시, 누전·가스누설경보기 (누전차단기 = 소방용품 아님!)"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_04",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "3. 피난기구 vs 인명구조기구",
+    "promptHtml": "<div class=\"subj-prose-line\">피난기구 = 사다리·<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"구조대·완강기\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">구조대·완강기</span></span>·미끄럼대 ↔ 인명구조기구 3종 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"방열복/방화복 · 공기호흡기 · 인공소생기\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">방열복/방화복 · 공기호흡기 · 인공소생기</span></span> (<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"방독면 제외!\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">방독면 제외!</span></span>) / 유도등(유도표지·피난유도선) · <strong>비상조명등(휴대용 포함)</strong> = 피난구조설비</div>",
+    "answerEq": "방열복/방화복 · 공기호흡기 · 인공소생기 / 구조대·완강기 / 방독면 제외!",
+    "fullFormula": "",
+    "explanation": "피난기구 = 사다리·구조대·완강기·미끄럼대 ↔ 인명구조기구 3종 = 방열복/방화복 · 공기호흡기 · 인공소생기 (방독면 제외!) / 유도등(유도표지·피난유도선) · 비상조명등(휴대용 포함) = 피난구조설비"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_05",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "4. 소화용수 · 5. 소화활동(6종)",
+    "promptHtml": "<div class=\"subj-prose-line\">소화용수 = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"상수도소화용수설비\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">상수도소화용수설비</span></span>·소화수조·저수조 / 소화활동 6종(제·연·연·비·무·연) = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"제연 · 연결송수관 · 연결살수 · 비상콘센트 · 무선통신보조 · 연소방지설비\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">제연 · 연결송수관 · 연결살수 · 비상콘센트 · 무선통신보조 · 연소방지설비</span></span></div>",
+    "answerEq": "제연 · 연결송수관 · 연결살수 · 비상콘센트 · 무선통신보조 · 연소방지설비 / 상수도소화용수설비",
+    "fullFormula": "",
+    "explanation": "소화용수 = 상수도소화용수설비·소화수조·저수조 / 소화활동 6종(제·연·연·비·무·연) = 제연 · 연결송수관 · 연결살수 · 비상콘센트 · 무선통신보조 · 연소방지설비"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_06",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "정규 스프링클러설비",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"6층 이상 전 층\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">6층 이상 전 층</span></span> / 문화·종교·운동 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100명\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">100명</span></span> / 영화관(지하·무창 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"500㎡\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">500㎡</span></span>, 일반층 <strong>1,000㎡</strong>) / 판매·운수·일반창고 <strong>5,000㎡ 또는 500명</strong>(물류터미널 <strong>3,000㎡</strong>) / 학생 기숙사·합숙소 <strong>5,000㎡</strong> / 의료·노유자·숙박·산후조리원 <strong>600㎡ 이상</strong></div>",
+    "answerEq": "6층 이상 전 층 / 100명 / 500㎡",
+    "fullFormula": "",
+    "explanation": "6층 이상 전 층 / 문화·종교·운동 100명 / 영화관(지하·무창 500㎡, 일반층 1,000㎡) / 판매·운수·일반창고 5,000㎡ 또는 500명(물류터미널 3,000㎡) / 학생 기숙사·합숙소 5,000㎡ / 의료·노유자·숙박·산후조리원 600㎡ 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_07",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "간이스프링클러 (개정 반영)",
+    "promptHtml": "<div class=\"subj-prose-line\">면적 무관: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연립·다세대주택(주택전용)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">연립·다세대주택(주택전용)</span></span>, 입원실·인공신장실 의원·한의원, 고시원, 임차 출입국 보호시설 / 구간: 숙박·정신의료·재활 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"300㎡ 이상 600㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">300㎡ 이상 600㎡ 미만</span></span>(창살 시 300㎡ 미만도 해당), 병원·산후조리원 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"600㎡ 미만\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">600㎡ 미만</span></span>, 합숙소 <strong>100㎡</strong>, 근생합계·복합 <strong>1,000㎡ 이상</strong></div>",
+    "answerEq": "300㎡ 이상 600㎡ 미만 / 연립·다세대주택(주택전용) / 600㎡ 미만",
+    "fullFormula": "",
+    "explanation": "면적 무관: 연립·다세대주택(주택전용), 입원실·인공신장실 의원·한의원, 고시원, 임차 출입국 보호시설 / 구간: 숙박·정신의료·재활 300㎡ 이상 600㎡ 미만(창살 시 300㎡ 미만도 해당), 병원·산후조리원 600㎡ 미만, 합숙소 100㎡, 근생합계·복합 1,000㎡ 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_08",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "물분무등소화설비 (7종)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"항공기격납고(면적 불문)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">항공기격납고(면적 불문)</span></span> / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"주차용 건축물 연면적 800㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">주차용 건축물 연면적 800㎡ 이상</span></span>(부속 주차장 200㎡, 기계식 20대) / 전기·발전·변전·축전지·통신기기·전산실 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"바닥면적 300㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">바닥면적 300㎡ 이상</span></span> / 지정문화유산 <strong>1,000㎡ 이상</strong></div>",
+    "answerEq": "주차용 건축물 연면적 800㎡ 이상 / 항공기격납고(면적 불문) / 바닥면적 300㎡ 이상",
+    "fullFormula": "",
+    "explanation": "항공기격납고(면적 불문) / 주차용 건축물 연면적 800㎡ 이상(부속 주차장 200㎡, 기계식 20대) / 전기·발전·변전·축전지·통신기기·전산실 바닥면적 300㎡ 이상 / 지정문화유산 1,000㎡ 이상"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_09",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "단독경보형 감지기 (개정)",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"400㎡ 미만 유치원\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">400㎡ 미만 유치원</span></span>(<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"어린이회관 제외!\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">어린이회관 제외!</span></span>) / <strong>숙박 있는 수련시설</strong> / <strong>2,000㎡ 미만</strong> 교육·수련 기숙사·합숙소 / 지하 주차장 <strong>200㎡ 미만</strong> / <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"연립주택·다세대주택 = 연동형 설치 의무!\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">연립주택·다세대주택 = 연동형 설치 의무!</span></span></div>",
+    "answerEq": "연립주택·다세대주택 = 연동형 설치 의무! / 400㎡ 미만 유치원 / 어린이회관 제외!",
+    "fullFormula": "",
+    "explanation": "400㎡ 미만 유치원(어린이회관 제외!) / 숙박 있는 수련시설 / 2,000㎡ 미만 교육·수련 기숙사·합숙소 / 지하 주차장 200㎡ 미만 / 연립주택·다세대주택 = 연동형 설치 의무!"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_10",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "인명구조기구 중 공기호흡기",
+    "promptHtml": "<div class=\"subj-prose-line\">지하역사 · 대규모점포 · 지하상가 · <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"수용인원 100명 이상 영화상영관\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">수용인원 100명 이상 영화상영관</span></span> · <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"이산화탄소소화설비\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">이산화탄소소화설비</span></span> 설치 대상물 (<span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"단, 호스릴이산화탄소소화설비는 제외!\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">단, 호스릴이산화탄소소화설비는 제외!</span></span>)</div>",
+    "answerEq": "단, 호스릴이산화탄소소화설비는 제외! / 수용인원 100명 이상 영화상영관 / 이산화탄소소화설비",
+    "fullFormula": "",
+    "explanation": "지하역사 · 대규모점포 · 지하상가 · 수용인원 100명 이상 영화상영관 · 이산화탄소소화설비 설치 대상물 (단, 호스릴이산화탄소소화설비는 제외!)"
+  },
+  {
+    "id": "SUBJ_LAW_03_03_11",
+    "type": "keynum",
+    "badge": "핵심 수치·법정기준",
+    "title": "제연설비 5대 설치 대상",
+    "promptHtml": "<div class=\"subj-prose-line\">무대부 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"200㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">200㎡ 이상</span></span> · 영화상영관 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100명 이상\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">100명 이상</span></span> · 지하가(터널 제외) <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"1,000㎡ 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">1,000㎡ 이상</span></span> · 지하/무창층 7대 용도(근·판·운·숙·위·의·노) 바닥합계 <strong>1,000㎡ 이상</strong> · 특별피난계단 및 비상용·<strong>피난용 승강기 승강장</strong></div>",
+    "answerEq": "200㎡ 이상 / 100명 이상 / 1,000㎡ 이상",
+    "fullFormula": "",
+    "explanation": "무대부 200㎡ 이상 · 영화상영관 100명 이상 · 지하가(터널 제외) 1,000㎡ 이상 · 지하/무창층 7대 용도(근·판·운·숙·위·의·노) 바닥합계 1,000㎡ 이상 · 특별피난계단 및 비상용·피난용 승강기 승강장"
+  }
+];
     document.addEventListener('DOMContentLoaded', () => {
       HarnessEngine.renderUnitStats('statsContainer_03_03', STATS_03_03);
       HarnessEngine.renderOriginalQuestions('origQuestions_03_03', ORIG_Q_03_03);

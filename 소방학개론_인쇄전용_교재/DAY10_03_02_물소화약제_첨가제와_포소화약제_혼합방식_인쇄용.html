@@ -1,0 +1,3082 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[DAY 10 · 인쇄용] 제3편 화재론 및 소화약제론 · 2장 물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식 · 소방학개론</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style id="pageMarginStyle">
+    @page {
+      size: A4 portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+  </style>
+  <style>
+    @font-face {
+      font-family: "RIDIBatang";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --font-body: "Noto Serif KR", "RIDIBatang", "Batang", Georgia, serif;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      --body-size: 13.6px;
+      --line-height: 2.04;
+      --para-gap: 24px;
+      --theory-side-pad: 6px; /* 보통(Normal) 여백 기본값 */
+
+      /* Print-Friendly Editorial Ink Palette */
+      --bg-desk: #DED8CC;
+      --bg-sheet: #FFFFFF;
+      --bg-subtle: #F7F5F0;
+      --text-main: #181715;
+      --text-sub: #45413B;
+      --text-muted: #736D63;
+      --accent: #8B2635;
+      --accent-soft: rgba(139, 38, 53, 0.08);
+      --gold-hl: rgba(212, 163, 68, 0.25);
+      --border-line: #E2DDD2;
+      --border-strong: #C2B9A7;
+      --margin-rule: #D8D1C4;
+      --correct-ink: #164E28;
+      --correct-bg: #F2F8F4;
+      --correct-border: #8CBE9B;
+    }
+
+    body.font-sans-mode {
+      --font-body: var(--font-sans);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      word-break: keep-all;
+      letter-spacing: -0.015em;
+    }
+
+    code {
+      font-family: var(--font-sans);
+      font-size: 0.92em;
+      font-weight: 700;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       SCREEN-ONLY PREVIEW CONTROLLER BAR (.no-print-bar)
+       ========================================================================== */
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(24, 22, 19, 0.96);
+      color: #F5F2EB;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #3D3830;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .no-print-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #A8A093;
+      margin-right: 2px;
+    }
+
+    .ctrl-btn {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 5px;
+      border: 1px solid #4A443B;
+      background: #2A2723;
+      color: #EAE5DC;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .ctrl-btn:hover {
+      border-color: #D4A373;
+      color: #FFFFFF;
+    }
+
+    .ctrl-btn.active {
+      background: #8B2635;
+      border-color: #A93545;
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .ctrl-btn.print-primary {
+      background: #10B981;
+      border-color: #059669;
+      color: #06281E;
+      font-weight: 800;
+      padding: 6px 13px;
+    }
+
+    .ctrl-btn.print-primary:hover {
+      background: #34D399;
+    }
+
+    /* ==========================================================================
+       A4 BOOK SHEET CONTAINER (DEFAULT: NORMAL MARGIN)
+       ========================================================================== */
+    .book-sheet {
+      max-width: 860px;
+      margin: 28px auto 64px auto;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      box-shadow: 0 14px 44px rgba(25, 20, 15, 0.14);
+      padding: 52px 54px 64px 54px;
+      transition: padding 0.2s ease, max-width 0.2s ease;
+    }
+
+    /* ==========================================================================
+       CHAPTER COVER HEADER & DAILY WORKBOOK CHECKLIST
+       ========================================================================== */
+    .chapter-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 22px;
+      margin-bottom: 34px;
+    }
+
+    .chapter-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .chapter-badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .study-tracker-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-sub);
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 4px 11px;
+      border-radius: 4px;
+    }
+
+    .chapter-title {
+      font-family: var(--font-sans);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.34;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.03em;
+    }
+
+    .chapter-lead {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--text-sub);
+      margin: 0;
+    }
+
+    .part-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      padding: 10px 16px;
+      margin-bottom: 26px;
+    }
+
+    .part-banner-title {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .part-banner-sub {
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ==========================================================================
+       PART 1: WIDE 1-COLUMN THEORY WITH COMFORTABLE READING MEASURE (DEFAULT)
+       ========================================================================== */
+    #sec1, #sec2, #sec3, #sec4, #sec5 {
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      font-family: var(--font-sans) !important;
+      font-size: 16.5px !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      line-height: 1.42 !important;
+      margin: 32px 0 16px 0 !important;
+      padding: 7px 12px;
+      background-color: var(--bg-subtle);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    body.layout-wide .para-block {
+      display: block;
+      padding-left: var(--theory-side-pad);
+      padding-right: var(--theory-side-pad);
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-wide .prose-body {
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      letter-spacing: -0.01em;
+      text-indent: 0.65em;
+      margin: 0 !important;
+    }
+
+    body.layout-wide .sidenote {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.88) !important;
+      line-height: 1.62 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      border-radius: 5px;
+      padding: 11px 16px;
+      margin: 0 0 18px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-wide .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.88);
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    body.layout-wide .sidenote-title::before {
+      content: "📌";
+      font-size: 0.95em;
+    }
+
+    body.layout-wide .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    body.layout-oxford .para-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 205px;
+      column-gap: 22px;
+      align-items: start;
+      margin-bottom: var(--para-gap);
+    }
+
+    body.layout-oxford .prose-body {
+      grid-column: 1;
+      grid-row: 1;
+      font-family: var(--font-body) !important;
+      font-size: var(--body-size) !important;
+      line-height: var(--line-height) !important;
+      color: var(--text-main) !important;
+      text-align: justify;
+      text-indent: 0.65em;
+      margin: 0 !important;
+      padding-right: 18px;
+      border-right: 1px solid var(--margin-rule);
+    }
+
+    body.layout-oxford .sidenote {
+      grid-column: 2;
+      grid-row: 1;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size) * 0.84) !important;
+      line-height: 1.56 !important;
+      color: var(--text-sub) !important;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 2.5px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    body.layout-oxford .sidenote-title {
+      font-weight: 800;
+      font-size: calc(var(--body-size) * 0.82);
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    body.layout-oxford .sidenote-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .sidenote-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 3px;
+    }
+
+    .sidenote-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .sidenote-list li strong {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .prose-body strong {
+      font-weight: 700 !important;
+      color: var(--text-main) !important;
+      background: linear-gradient(transparent 64%, var(--gold-hl) 64%);
+      padding: 0 1px;
+    }
+
+    .diagram-wrapper {
+      display: block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .diagram-wrapper .sidenote {
+      display: none !important;
+    }
+
+    .overflow-x-auto {
+      width: 100%;
+      margin: 22px 0 28px 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .overflow-x-auto > div:first-child {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 6px !important;
+    }
+
+    .font-bold {
+      font-weight: 700 !important;
+    }
+
+    .chem {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .book-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1.5px solid var(--text-main);
+      font-family: var(--font-body) !important;
+      font-size: calc(var(--body-size) * 0.93) !important;
+      line-height: 1.7 !important;
+    }
+
+    .book-table th {
+      background-color: var(--bg-subtle) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      font-weight: 700;
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-strong);
+      text-align: left;
+    }
+
+    .book-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border-line);
+      color: var(--text-main) !important;
+      vertical-align: top;
+    }
+
+    .diagram-container {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 3.5px solid var(--accent);
+      padding: 16px 18px;
+      border-radius: 4px;
+    }
+
+    .diagram-container > div:first-child {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .diagram-container > div:first-child span {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+    }
+
+    .schema-board {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .schema-panel {
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .schema-panel-title {
+      font-family: var(--font-sans) !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .schema-subgrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    .schema-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 9px 12px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.65;
+    }
+
+    .schema-box-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+
+    .schema-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schema-list li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 4px;
+      line-height: 1.65;
+    }
+
+    .schema-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schema-badge-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      padding: 9px 12px;
+      margin-bottom: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+    }
+
+    .schema-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 34px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 4px;
+      background-color: var(--accent);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 10.5px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .schema-arrow-down {
+      text-align: center;
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .schema-alert {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      background-color: var(--accent-soft);
+      border: 1px solid var(--border-strong);
+      color: var(--accent);
+      font-family: var(--font-sans);
+      font-size: calc(var(--body-size) * 0.9);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats-block {
+      margin-top: 28px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .section-subhead {
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    /* ==========================================================================
+       PART 2: 2-COLUMN EXAM QUESTIONS WORKBOOK
+       ========================================================================== */
+    .page-break-section {
+      page-break-before: always;
+      break-before: page;
+      margin-top: 48px;
+      padding-top: 8px;
+    }
+
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    body.q-cols-2 .questions-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+      row-gap: 22px;
+      align-items: start;
+      position: relative;
+    }
+
+    .q-card {
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .q-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 7px;
+    }
+
+    .q-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+    }
+
+    .q-num-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #FFFFFF;
+      background-color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    .q-source {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-sub);
+    }
+
+    .q-ans-blank {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      border: 1px solid var(--border-strong);
+      padding: 1px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-stem {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.97);
+      font-weight: 700;
+      line-height: 1.68;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .q-stem-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-left: 2.5px solid var(--accent);
+      padding: 8px 11px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 9px;
+    }
+
+    .stem-box-title {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    .q-choices {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-left: 2px;
+    }
+
+    .q-choice-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.92);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    .q-choice-num {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       PART 3: QUICK ANSWER KEY & 2-COLUMN DETAILED EXPLANATIONS
+       ========================================================================== */
+    .quick-ans-box {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .quick-ans-title {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .quick-ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+      gap: 6px;
+    }
+
+    .quick-ans-cell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-sheet);
+      border: 1px solid var(--border-line);
+      padding: 4px 9px;
+      border-radius: 3px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+    }
+
+    .qa-num {
+      color: var(--text-sub);
+      font-weight: 600;
+    }
+
+    .qa-val {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .explanations-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    body.exp-cols-2 .explanations-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+      row-gap: 18px;
+      align-items: start;
+    }
+
+    body.exp-compact .orig-choice-line {
+      display: none !important;
+    }
+    body:not(.exp-compact) .exp-choice-num-inline {
+      display: none !important;
+    }
+
+    .exp-card {
+      border: 1px solid var(--border-strong);
+      border-radius: 5px;
+      padding: 12px 14px;
+      background-color: var(--bg-sheet);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .exp-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--border-line);
+      font-family: var(--font-sans);
+    }
+
+    .exp-header-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-num-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .exp-ans-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--correct-ink);
+      background-color: var(--correct-bg);
+      border: 1px solid var(--correct-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .exp-header-right {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .exp-summary {
+      background-color: var(--bg-subtle);
+      border-left: 2.5px solid var(--accent);
+      padding: 7px 10px;
+      border-radius: 3px;
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .exp-summary strong {
+      font-family: var(--font-sans);
+      color: var(--accent);
+    }
+
+    .exp-choices-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-choice-item {
+      border: 1px solid var(--border-line);
+      border-radius: 4px;
+      padding: 6px 9px;
+      background-color: var(--bg-sheet);
+    }
+
+    .exp-choice-item.is-answer {
+      background-color: var(--correct-bg);
+      border-color: var(--correct-border);
+    }
+
+    .exp-choice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 3px;
+      font-size: calc(var(--body-size) * 0.84);
+      color: var(--text-muted);
+      line-height: 1.48;
+    }
+
+    .exp-choice-num,
+    .exp-choice-num-inline {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .exp-choice-item.is-answer .exp-choice-num,
+    .exp-choice-item.is-answer .exp-choice-num-inline {
+      color: var(--correct-ink);
+    }
+
+    .exp-choice-body {
+      font-family: var(--font-body);
+      font-size: calc(var(--body-size) * 0.89);
+      line-height: 1.62;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       PRINT MEDIA RULES (@media print)
+       ========================================================================== */
+    @media print {
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .page-break-section {
+        page-break-before: always !important;
+        break-before: page !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+    }
+  </style>
+
+  <style>
+    /* 단원 필수 기출 OX 부록 (한국사 인쇄용 규격과 동일) */
+    .ox-check-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin-top: 10px; }
+    body:not(.q-cols-2) .ox-check-grid { grid-template-columns: 1fr; }
+    .ox-check-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.92); line-height: 1.58; break-inside: avoid; page-break-inside: avoid; }
+    .ox-check-head { display:flex; justify-content:space-between; align-items:center; font-family: var(--font-sans); font-size: 0.86em; color: var(--text-muted); margin-bottom: 3px; }
+    .ox-check-num { font-weight: 800; color: var(--accent); }
+    .ox-check-ans { font-family: var(--font-sans); font-size: 0.85em; font-weight: 700; color: var(--text-sub); }
+    .ox-exp-item { border-bottom: 1px dashed var(--border-line); padding: 7px 4px; font-size: calc(var(--body-size) * 0.88); line-height: 1.6; break-inside: avoid; page-break-inside: avoid; }
+    .ox-exp-badge { display:inline-block; font-family: var(--font-sans); font-weight: 800; font-size: 0.85em; padding: 1px 7px; border-radius: 3px; margin-right: 6px; }
+    .ox-exp-badge.o { color:#164E28; background: rgba(22,78,40,0.08); border:1px solid rgba(22,78,40,0.35); }
+    .ox-exp-badge.x { color:#8B2635; background: rgba(139,38,53,0.08); border:1px solid rgba(139,38,53,0.35); }
+    .ox-exp-src { display:block; font-family: var(--font-sans); font-size: 0.82em; color: var(--text-muted); margin-top: 2px; }
+  
+    
+    
+    
+    
+    
+    /* ==========================================================================
+       SPACIOUS THEORY (PART 1) + COMPACT ATTACHED QUESTIONS (PART 2) + NO PART 3
+       ========================================================================== */
+    .compact-bottom-ans {
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-top: 1.5px solid #45413B;
+      background-color: #F7F5F0;
+      font-family: var(--font-sans);
+      font-size: 9.2px;
+      line-height: 1.45;
+      color: #181715;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .compact-bottom-ans div + div {
+      margin-top: 3px;
+    }
+    .compact-bottom-ans strong {
+      color: #8B2635;
+      font-weight: 800;
+      margin-right: 5px;
+    }
+
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 10mm 10mm !important;
+      }
+      html, body {
+        background-color: #FFFFFF !important;
+      }
+      .no-print-bar, .no-print-inline {
+        display: none !important;
+      }
+      .book-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: #FFFFFF !important;
+      }
+      .chapter-header {
+        padding-bottom: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .chapter-title {
+        font-size: 19px !important;
+        margin-bottom: 4px !important;
+      }
+      .part-banner {
+        padding: 6px 12px !important;
+        margin: 10px 0 12px 0 !important;
+      }
+      .part-banner-title {
+        font-size: 12.5px !important;
+      }
+
+      /* PART 1 (개념 설명): 글씨 크기(13.4px)와 줄간격(1.92), 문단 여백을 시원시원하게 유지! */
+      #sec1, #sec2, #sec3, #sec4, #sec5, section[id^="sec"] {
+        margin-bottom: 24px !important;
+      }
+      h2 {
+        font-size: 15.5px !important;
+        line-height: 1.4 !important;
+        margin: 22px 0 12px 0 !important;
+        padding: 6px 11px !important;
+      }
+      body.layout-wide .para-block, .para-block {
+        padding-left: 2px !important;
+        padding-right: 2px !important;
+        margin-bottom: 16px !important;
+      }
+      body.layout-wide .prose-body, .prose-body {
+        font-size: 13.2px !important;
+        line-height: 1.92 !important;
+        text-indent: 0.6em !important;
+      }
+      body.layout-wide .sidenote, .sidenote {
+        font-size: 11.6px !important;
+        line-height: 1.58 !important;
+        padding: 9px 14px !important;
+        margin: 0 0 14px 0 !important;
+      }
+      body.layout-wide .sidenote-title, .sidenote-title {
+        font-size: 11.8px !important;
+        margin-bottom: 5px !important;
+      }
+      .sidenote-list {
+        gap: 3px !important;
+      }
+      .sidenote-list li {
+        margin-bottom: 2px !important;
+      }
+      .overflow-x-auto {
+        margin: 14px 0 18px 0 !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .overflow-x-auto > div:first-child {
+        font-size: 12.2px !important;
+        margin-bottom: 5px !important;
+      }
+      .book-table {
+        font-size: 11.8px !important;
+        line-height: 1.62 !important;
+      }
+      .book-table th, .book-table td {
+        padding: 6px 9px !important;
+      }
+      .diagram-wrapper {
+        margin-top: 16px !important;
+      }
+
+      /* PART 2 (기출 + OX): 개념 설명 바로 뒤에 페이지 넘김 없이 첨부 + 2단 컴팩트 배치 */
+      #part2.page-break-section, #part2 {
+        page-break-before: auto !important;
+        break-before: auto !important;
+        margin-top: 16px !important;
+        padding-top: 6px !important;
+      }
+      .stats-block {
+        margin-top: 10px !important;
+        break-inside: auto !important;
+        page-break-inside: auto !important;
+      }
+      .section-subhead {
+        font-size: 11px !important;
+        margin-bottom: 5px !important;
+        padding: 3px 8px !important;
+        background-color: #F7F5F0 !important;
+        border-left: 3px solid #8B2635 !important;
+      }
+      body.q-cols-2 .questions-grid,
+      .questions-grid,
+      .ox-check-grid {
+        display: block !important;
+        column-count: 2 !important;
+        column-gap: 15px !important;
+        column-rule: 0.8px solid #C8BFA8 !important;
+        margin-top: 4px !important;
+      }
+      .unit-divider-banner {
+        display: none !important;
+      }
+      .q-card {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border: none !important;
+        border-bottom: 0.8px solid #D8D0C5 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        padding: 2.5px 0 4.5px 0 !important;
+        margin-bottom: 4px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .q-card-header {
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+      }
+      .q-num-badge {
+        font-size: 9.0px !important;
+        padding: 0.5px 4.5px !important;
+      }
+      .q-source, .q-unit-tag {
+        font-size: 8.6px !important;
+      }
+      .q-trans-tag, .q-orig-line {
+        display: none !important;
+      }
+      .q-ans-blank {
+        font-size: 8.8px !important;
+        padding: 0px 4px !important;
+      }
+      .q-stem {
+        font-size: 10.2px !important;
+        line-height: 1.38 !important;
+        margin-bottom: 3px !important;
+      }
+      .q-stem-box {
+        padding: 3px 5.5px !important;
+        margin-bottom: 3px !important;
+        font-size: 9.3px !important;
+        line-height: 1.34 !important;
+      }
+      .stem-box-title {
+        font-size: 8.5px !important;
+        margin-bottom: 1px !important;
+      }
+      .q-choices {
+        gap: 1px !important;
+      }
+      .q-choice-item {
+        padding: 0.4px 1px !important;
+        font-size: 9.5px !important;
+        line-height: 1.35 !important;
+      }
+      .ox-check-item {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 2.2px 1px !important;
+        font-size: 9.4px !important;
+        line-height: 1.35 !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .ox-check-head {
+        margin-bottom: 1px !important;
+        font-size: 8.4px !important;
+      }
+      .compact-bottom-ans {
+        margin-top: 8px !important;
+        padding: 5px 8px !important;
+        font-size: 9.0px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      #part3 {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
+
+  <!-- 화면 미리보기 및 인쇄 옵션 컨트롤러 (인쇄 시 자동 숨김) -->
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <a href="00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">📋 사이클별 인쇄 포털</a>
+        <a href="DAY09_03_01_화재의_분류_소화원리와_화재조사_피해산정_인쇄용.html" class="ctrl-btn">&larr; 이전</a>
+        <span class="ctrl-btn active">DAY 10</span>
+        <a href="DAY11_03_03_가스계소화약제와_분말소화약제_1234종_인쇄용.html" class="ctrl-btn">다음 &rarr;</a>
+        <span style="color:#4A443B; margin:0 2px;">|</span>
+        <a href="#part1" class="ctrl-btn">1. 이론</a>
+        <a href="#part2" class="ctrl-btn">2. 문제(12제)</a>
+        <a href="#part3" class="ctrl-btn">3. 해설</a>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-label">용지 여백:</span>
+        <button id="btnMarginNorm" onclick="setPageMargin('normal')" class="ctrl-btn active">보통(기본)</button>
+        <button id="btnMarginWide" onclick="setPageMargin('wide')" class="ctrl-btn">넓게</button>
+        <button id="btnMarginXWide" onclick="setPageMargin('xwide')" class="ctrl-btn">더 넓게</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">서체:</span>
+        <button id="btnFontSerif" onclick="setFontMode('serif')" class="ctrl-btn active">명조</button>
+        <button id="btnFontSans" onclick="setFontMode('sans')" class="ctrl-btn">고딕</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">이론:</span>
+        <button id="btnLayoutWide" onclick="setTheoryLayout('wide')" class="ctrl-btn active">와이드 1단</button>
+        <button id="btnLayoutOxford" onclick="setTheoryLayout('oxford')" class="ctrl-btn">옥스퍼드 각주</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">문제/해설:</span>
+        <button id="btnQCol2" onclick="toggleCols()" class="ctrl-btn active">2단 고정</button>
+
+        <span class="ctrl-label" style="margin-left:4px;">크기:</span>
+        <button onclick="adjustFontSize(-0.4)" class="ctrl-btn">가-</button>
+        <span id="fontSizeLabel" style="font-size:11.5px; font-weight:800; color:#D4A373; min-width:38px; text-align:center;">13.6px</span>
+        <button onclick="adjustFontSize(0.4)" class="ctrl-btn">가+</button>
+
+        <button onclick="window.print()" class="ctrl-btn print-primary" style="margin-left:4px;">🖨️ 인쇄 (Ctrl+P)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 실제 인쇄되는 책 본문 영역 -->
+  <main class="book-sheet" id="bookSheet">
+
+    <!-- PART 1: 기본서 이론 및 도해 -->
+    <div id="part1">
+      <header class="chapter-header">
+        <div class="chapter-top-row">
+          <span class="chapter-badge">DAY 10 · 제3편 화재론 및 소화약제론 · 2장</span>
+          <div class="study-tracker-box">
+            <span>학습일: 2026. ____. ____</span>
+            <span>|</span>
+            <span>□ 이론 정독</span>
+            <span>□ 기출 풀이(12문항)</span>
+            <span>□ OX 26제</span>
+            <span>□ 오답 복습</span>
+          </div>
+        </div>
+        <h1 class="chapter-title">물 소화약제·첨가제 및 포(Foam) 소화약제·4대 혼합방식</h1>
+      </header>
+
+      <div class="part-banner">
+        <span class="part-banner-title">PART 1 · 기본서 핵심 이론 및 체계도</span>
+        
+      </div>
+
+      <section class="space-y-12 mb-16">
+      <div id="sec1">
+        <h2 class="text-xl font-bold text-white mb-3">1. 물 소화약제의 열역학적 물성·주수 형태별 적응성과 5대 첨가제</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>물의 물성 및 주수 형태(2021년 Q18)</strong>: 비열(<strong>1 cal/g&middot;℃</strong>)·증발잠열(<strong>539 cal/g</strong>)이 매우 커서 냉각 우수 + <strong>1,700배</strong> 팽창 질식 / <strong>분무상(무상) 방사 시 B급·C급 화재에도 적응성 보유</strong></li>
+                <li><strong>침투제 vs 증점제(2020년 Q2)</strong>: <strong>침투제(계면활성제)</strong> = 표면장력 감소·심부화재 침투 / <strong>증점제(CMC 등)</strong> = 점도 증가·산림 및 벽면 부착성 향상</li>
+                <li><strong>부동제 vs 폴리에틸렌옥사이드(2025년 Q2)</strong>: 글리세린·프로필렌글리콜·염화칼슘은 <strong>부동제</strong> / <strong>폴리에틸렌옥사이드</strong>는 마찰저항 감소제(유동성 개량제)!</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            인류가 가장 오래전부터 사용해 온 <strong>물(H<sub>2</sub>O)</strong>이 현대 소방공학에서도 부동의 제1원소 소화약제로 군림하는 이유는 자연계 액체 중 가장 압도적인 <strong>열역학적 냉각 능력</strong>을 지니고 있기 때문입니다(기출: 2020년 Q2, 2021년 Q18, 2025년 Q2). 물 1그램의 온도를 섭씨 1도 올리는 데 필요한 <strong>비열(Specific Heat)은 1 cal/(g&middot;℃) [약 4.186 kJ/(kg&middot;K)]</strong>이고, 1기압 섭씨 100도의 물 1그램이 수증기로 기화할 때 주변 화원으로부터 빼앗는 <strong>증발잠열(기화잠열)은 무려 539 cal/g(약 2,260 kJ/kg, 얼음의 융해잠열 80 cal/g의 약 6.7배)</strong>에 달합니다. 즉 물이 비열과 기화열 값이 다른 액체보다 월등히 <strong>'커서'</strong> 가연물 온도를 발화점·인화점 밑으로 급강하시키는 <strong>냉각소화</strong> 효과가 가장 우수합니다(2021년 Q18에서 비열과 기화열이 작다고 속여 출제!). 동시에 액체 상태의 물이 섭씨 100도에서 수증기로 기화하면 체적이 약 <strong>1,650배에서 1,700배</strong>로 급팽창하여 화점 주변 산소를 밀어내는 <strong>질식소화</strong>를 병행하며, 고점도 비수용성 중질유 표면에 에멀션 막을 입히는 <strong>유화소화</strong>와 알코올·에테르·에스테르·케톤 등 수용성 가연물질에 다량 주수하여 농도를 낮추는 <strong>희석소화</strong> 적응성까지 갖추고 있습니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            물의 화재 적응성은 노즐을 통해 어떤 형태로 방사하느냐에 따라 완전히 달라집니다. 물줄기를 한 줄기 기둥처럼 강하게 쏘는 <strong>봉상주수(직사주수)</strong>는 관통력과 사거리가 뛰어나 <strong>A급 일반화재</strong>에만 적응성이 있으며, 유류를 비산시키는 B급 화재나 물줄기를 타고 전류가 흐르는 C급 전기화재에는 사용할 수 없습니다. 반면 물을 미세한 안개 입자로 쪼개어 분사하는 <strong>분무상 주수(무상주수, Water Fog)</strong>는 비표면적이 극대화되어 냉각·질식 및 복사열 차단 효과가 급상승할 뿐만 아니라, 유화·질식 효과에 의해 <strong>B급(유류) 화재에도 적응성</strong>이 있고 미세 물입자 사이가 공기층으로 끊어져 전기 비전도성이 확보되므로 <strong>C급(통전 전기) 화재에도 적응성이 있습니다</strong>(2021년 Q18 정답 선지).
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            나아가 순수한 물이 가진 물리적 한계(높은 표면장력, 낮은 점도, 배관 마찰손실, 섭씨 0도 이하 동결)를 극복하기 위해 5대 기능성 첨가제를 투입합니다. 첫째, <strong>침투제(Penetrant / Wetting Agent)</strong>는 알킬벤젠술폰산염 등 계면활성제를 약 1퍼센트 내외로 첨가하여 물의 높은 <strong>표면장력(72.8 dyne/cm)을 크게 감소</strong>시킴으로써 면화·석탄·목재·섬유 등 <strong>심부화재</strong> 내부로 물이 깊숙이 침투하게 합니다(2020년 Q2). 둘째, <strong>증점제(Thickener)</strong>는 CMC(카복시메틸셀룰로스), 젤라틴, 알긴산나트륨 등을 첨가하여 물의 <strong>점도를 높임으로써</strong> 산림화재 수목이나 건물 벽면에 물이 흘러내리지 않고 오래 <strong>부착</strong>되게 합니다. 셋째, <strong>유동성 개량제(마찰저항 감소제)</strong>는 사슬형 고분자인 <strong>폴리에틸렌옥사이드(Polyethylene Oxide)</strong>를 미량 첨가하여 배관 및 소방호스 내부의 난류 마찰손실을 줄이고 방수거리와 유량을 늘려 줍니다. 넷째, <strong>부동제(Antifreeze)</strong>는 물의 어는점(1기압, 섭씨 0도) 이하에서 동파 및 응고현상을 방지하기 위해 첨가하는 물질로서 다가 알코올류인 <strong>에틸렌글리콜, 프로필렌글리콜, 글리세린</strong>과 무기염류인 <strong>염화칼슘(CaCl<sub>2</sub>)</strong> 등이 쓰입니다(2025년 Q2에서 폴리에틸렌옥사이드를 부동제로 속여 정답으로 출제!). 다섯째, 물에 <strong>탄산칼륨(K<sub>2</sub>CO<sub>3</sub>)</strong>을 진하게 녹인 <strong>강화액</strong>은 어는점을 영하 20도 이하로 낮추는 부동 효과에 더해 칼륨 이온(K<sup>+</sup>)의 부촉매 효과와 동·식물유 비누화 효과까지 발휘합니다.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:18%">구분 항목</th>
+                <th style="width:24%">세부 분류 및 대표 물질</th>
+                <th style="width:58%">물리·화학적 작용 메커니즘 및 화재 적응성 (기출 포인트)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2"><strong>주수 형태별</strong><br/><strong>화재 적응성</strong></td>
+                <td><strong class="text-emerald-400">봉상주수</strong> (직사주수)<br/>· 적상주수 (물방울)</td>
+                <td>· <strong>A급(일반화재)만 적응성 있음</strong> (관통력·사거리 우수, 냉각소화 위주)<br/>· <strong class="text-amber-300">B급(유류 확산 위험) 및 C급(전류 전도·감전 위험) 사용 불가</strong></td>
+              </tr>
+              <tr>
+                <td><strong class="text-emerald-400">무상주수</strong> (분무상 주수)</td>
+                <td>· <strong>A급 · B급 · C급 화재 모두 적응성 있음</strong> (2021년 Q18)<br/>· 비표면적 증대로 기화(1,700배 팽창 질식)·냉각 극대화 + 중유 에멀션(유화) + <strong>전기 비전도성 확보</strong></td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>물 소화약제</strong><br/><strong>주요 첨가제</strong></td>
+                <td><strong class="text-emerald-400">침투제</strong> (계면활성제)</td>
+                <td>· 알킬벤젠술폰산염 등 첨가 ➔ <strong>표면장력을 작게 하여</strong> 면화·석탄·목재 등 <strong>심부화재 침투성 향상</strong> (2020년 Q2)</td>
+              </tr>
+              <tr>
+                <td><strong class="text-emerald-400">증점제</strong> (점도 향상)</td>
+                <td>· CMC, 젤라틴, 알긴산나트륨 등 첨가 ➔ <strong>점도를 높여</strong> 벽면·산림화재 수목에 대한 <strong>부착성 향상</strong></td>
+              </tr>
+              <tr>
+                <td><strong class="text-emerald-400">유동성 개량제</strong><br/>(마찰저항 감소제)</td>
+                <td>· <strong>폴리에틸렌옥사이드(Polyethylene Oxide)</strong> 첨가 ➔ 호스·배관 내 난류 마찰손실 감소 및 방수거리 증대 (<strong class="text-amber-300">부동제 아님!</strong> 2025년 Q2)</td>
+              </tr>
+              <tr>
+                <td><strong class="text-emerald-400">부동제</strong> (동결방지제)<br/>· <strong class="text-emerald-400">강화액</strong></td>
+                <td>· <strong>부동제</strong>: <strong>에틸렌글리콜, 프로필렌글리콜, 글리세린, 염화칼슘(CaCl<sub>2</sub>)</strong> 등 ➔ 어는점(0℃) 강하로 동파 방지<br/>· <strong>강화액</strong>: 물 + <strong>탄산칼륨(K<sub>2</sub>CO<sub>3</sub>)</strong> 수용액 ➔ 빙점 강하(영하 20℃ 이하) + 부촉매 + 비누화 작용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+
+      <div id="sec2">
+        <h2 class="text-xl font-bold text-white mb-3">2. 포(Foam) 소화약제 5종의 특성·표면하 주입방식 및 팽창비 분류</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>표면하 주입방식 가능 포(2022년 Q19·2023년 Q22)</strong>: 내유성이 우수한 <strong>불화단백포</strong>와 <strong>수성막포(AFFF)</strong>만 가능! (단백포·합성계면활성제포 사용 불가)</li>
+                <li><strong>단백포 vs 합성계면활성제포 vs 알코올형포(2024년 Q22)</strong>: 단백포(내열성 우수, 유동성·내유성 불량) / 합성계면활성제포(<strong>저팽창포부터 고팽창포까지 모두 사용</strong>) / 알코올형포(케톤·알데히드·아민·알코올 등 수용성 용제 소화)</li>
+                <li><strong>팽창비 정의 및 구분(2020년 Q15·2023년 Q25)</strong>: 팽창비 = <strong>최종 발생한 포의 체적 ÷ 원래 포 수용액의 체적</strong> / 고발포 1종(80배 이상 250배 미만)·2종(250배 이상 500배 미만)·3종(500배 이상 1,000배 이하)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            B급 유류 화재에서 기름보다 가벼운 기포층으로 유류 표면을 덮어 산소를 차단(<strong>피복 질식소화</strong>)하고 수분으로 유면을 식히는(<strong>냉각소화</strong>) <strong>포(Foam) 소화약제</strong>는 원료와 계면활성제의 성질에 따라 <strong>단백포, 불화단백포, 수성막포(AFFF), 합성계면활성제포, 알코올형포(내알코올포)</strong>의 5가지로 구분됩니다(기출: 2020년 Q15, 2022년 Q19, 2023년 Q22·Q25, 2024년 Q22). 첫째, 동·식물성 단백질을 가수분해한 것을 주원료로 하는 <strong>단백포</strong>는 거품이 단단하여 <strong>내열성(내화성)과 포의 안정성은 매우 우수</strong>하지만, 점성이 커서 <strong>유동성이 나쁘고 기름에 쉽게 오염(내유성 불량)되므로 소화속도가 느립니다</strong>(2022년 Q19·2024년 Q22에서 단백포가 유동성·내유성이 좋고 소화속도가 빠르다고 거꾸로 속여 출제!). 둘째, <strong>불화단백포</strong>는 단백포에 <strong>불소계 계면활성제</strong>를 첨가하여 단백포의 단점인 <strong>낮은 유동성과 낮은 내유성을 보완</strong>한 약제로서 소화속도가 빠르고 분말소화약제와의 병용성도 우수합니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>수성막포(AFFF, Aqueous Film Forming Foam)</strong>는 <strong>불소계 계면활성제</strong>가 주원료로서 거품에서 배어 나온 수용액이 유류 표면에 얇은 <strong>'수성막(Aqueous Film)'</strong>을 선제 형성하여 미끄러지듯 퍼지므로 <strong>유동성과 소화속도가 가장 빠르고 내유성이 뛰어납니다</strong>. 여기서 시험에 가장 자주 출제되는 핵심 원리가 바로 대형 유류저장탱크 하부 배관을 통해 포를 주입하여 포가 유류층 내부를 통과해 표면으로 떠올라 덮게 하는 <strong>'표면하 주입방식(Subsurface Injection)'</strong>입니다(2022년 Q19, 2023년 Q22 그림 문제). 포가 기름층을 뚫고 올라오는 동안 기름에 오염·파괴되지 않으려면 반드시 불소계 계면활성제가 함유되어 <strong>내유성</strong>이 우수해야 하므로, 표면하 주입방식에는 오직 <strong>불화단백포와 수성막포만 사용할 수 있으며</strong>, 기름과 섞여 파괴되는 <strong>단백포나 일반 합성계면활성제포는 절대 사용할 수 없습니다</strong>!
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            넷째, <strong>합성계면활성제포</strong>는 유동성과 장기 저장성이 우수하고 발포력이 뛰어나 <strong>저팽창포(저발포)부터 고팽창포(고발포)까지 모두 사용할 수 있는 유일한 포 약제</strong>이나, 불소를 함유하지 않고 친유성이 있어 내유성과 내열성은 떨어집니다(2024년 Q22). 다섯째, <strong>알코올형포(내알코올포)</strong>는 메탄올·에탄올 등 <strong>알코올류, 케톤류(아세톤), 알데히드류, 에테르류, 에스테르류, 아민류 등 수용성 인화성 액체(제4류 위험물)</strong> 화재에 사용하며, 수용성 액체 표면에 녹지 않는 <strong>불용성 고분자 젤(Gel) 피막</strong>을 형성하여 거품이 수용성 용제에 녹아 파괴되는 것을 방지합니다(2022년 Q19에서 알코올형포를 K급 식용유의 비누화 현상과 혼동하도록 속인 함정에 주의!). 아울러 ｢포소화설비의 화재안전성능기준(NFPC 105)｣ 제3조상 <strong>'팽창비(발포배율)'</strong>란 <strong>최종 발생한 '포(거품)의 체적'을 원래 '포 수용액(포 원액 + 물)의 체적'으로 나눈 값</strong>을 말합니다(2023년 Q25에서 분자·분모를 거꾸로 서술하여 정답으로 출제!). 팽창비 기준상 <strong>저발포는 20배 이하</strong>이고, <strong>고발포는 80배 이상 1,000배 이하</strong>로서 다시 <strong>제1종 기계포(80배 이상 250배 미만), 제2종 기계포(250배 이상 500배 미만), 제3종 기계포(500배 이상 1,000배 이하)</strong>로 구분됩니다(2020년 Q15). 또한 같은 조문에서 <strong>'연성계(Compound Gauge)'</strong>는 대기압 이상의 압력과 대기압 이하의 압력(진공압)을 모두 측정할 수 있는 계측기를 말하며, <strong>'국소방출방식'</strong>은 소화약제 공급장치에 배관 및 분사헤드 등을 설치하여 직접 화점에 소화약제를 방출하는 방식을 말합니다.
+          </p>
+        </div></div>
+
+      <div id="sec3">
+        <h2 class="text-xl font-bold text-white mb-3">3. 포소화약제 4대 혼합방식(프로포셔너)의 계통도 원리와 장단점</h2>
+        <div class="para-block has-sidenote"><aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">기출 출제 포인트</div>
+              <ul class="sidenote-list">
+                <li><strong>라인 프로포셔너(2018년 Q19·2025년 Q22)</strong>: <strong>벤추리 작용만</strong>으로 흡입 / 구조가 간단하나 <strong>혼합기 압력손실이 매우 크고 흡입 가능 유량 범위가 좁음!</strong></li>
+                <li><strong>펌프 프로포셔너(2021년 Q11·2025년 Q22)</strong>: 주펌프 토출관·흡입관 사이 바이패스 배관의 <strong>흡입기 + 농도조정밸브</strong> / <strong>화학소방차</strong>에 주로 사용</li>
+                <li><strong>프레셔 vs 프레셔사이드(2019년 Q4·2020년 Q1·2025년 Q22)</strong>: 프레셔(<strong>벤추리 작용 + 가압수 탱크 압력</strong>, 격막형은 원액 잔량 재사용 가능) / 프레셔사이드(<strong>압입기 + 압입용 펌프</strong>, 대규모 플랜트·격납고 고정식 설비)</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="prose-body">
+            포소화설비에서 펌프가 송수하는 물에 포 소화약제 원액을 일정 농도(3퍼센트형 또는 6퍼센트형)로 혼합하는 장치를 <strong>'프로포셔너(Proportioner)'</strong>라 하며, ｢포소화설비의 화재안전성능기준(NFPC 105)｣ 제3조는 이를 <strong>라인 프로포셔너, 펌프 프로포셔너, 프레셔 프로포셔너, 프레셔사이드 프로포셔너</strong>의 4대 방식으로 규정합니다(기출: 2018년 Q19, 2019년 Q4, 2020년 Q1, 2021년 Q11, 2023년 Q25, 2025년 Q22). 시험에서는 각 방식의 법정 정의 키워드 매칭과 계통도 그림 식별, 그리고 실무적 장단점 비교가 매년 출제됩니다.
+          </p>
+          
+        </div><div class="para-block">
+          <p class="prose-body">
+            첫째, <strong>라인 프로포셔너(Line Proportioner) 방식</strong>은 펌프와 발포기의 중간에 설치된 <strong>벤추리관(Venturi Tube)의 벤추리 작용만으로</strong> 포 소화약제를 흡입·혼합하는 방식입니다(2018년 Q19). 배관 도중의 벤추리관 1개만으로 약제를 빨아들이므로 4가지 방식 중 구조가 가장 간단하지만, 좁은 벤추리관 목을 통과하면서 <strong>혼합기에서의 압력손실이 매우 크고(약 30퍼센트에서 35퍼센트 이상), 흡입 가능한 유량의 범위가 좁아</strong> 소규모 호스릴포 설비 등에만 제한적으로 쓰입니다(2025년 Q22에서 "압력손실이 적고 흡입 가능한 유량의 범위가 넓다"고 거꾸로 속여 정답으로 출제!). 둘째, <strong>펌프 프로포셔너(Pump Proportioner) 방식</strong>은 주펌프의 <strong>토출관과 흡입관 사이의 바이패스 배관 도중에 설치한 흡입기</strong>에 펌프에서 토출된 물의 일부를 보내고, <strong>농도조정밸브</strong>에서 조정된 포 소화약제의 필요량을 펌프 흡입측으로 보내어 혼합하는 방식입니다(2021년 Q11 계통도 그림 문제). 별도 동력 없이 펌프 자체 흡입력을 이용하므로 <strong>화학소방차</strong>에 주로 사용합니다.
+          </p>
+        </div><div class="para-block">
+          <p class="prose-body">
+            셋째, <strong>프레셔 프로포셔너(Pressure Proportioner) 방식</strong>은 펌프와 발포기의 중간에 설치된 <strong>벤추리관의 벤추리 작용과 펌프 가압수의 포 소화약제 저장탱크에 대한 압력에 의하여</strong> 포 소화약제를 흡입·혼합하는 방식입니다(2020년 Q1). 즉 주배관의 가압수 일부를 약제 저장탱크로 보내어 탱크를 가압하면서 동시에 벤추리관으로 흡입하는 구조이며, 특히 약제 탱크 내부에 고무 격막(다이어프램)이 설치된 <strong>다이어프램 내장형(압송식)은 물과 포 원액이 직접 섞이지 않아 사용 후 남은 약제 원액 잔량을 버리지 않고 계속 사용할 수 있습니다</strong>(2025년 Q22). 넷째, <strong>프레셔사이드 프로포셔너(Pressure Side Proportioner) 방식</strong>은 주펌프의 토출관에 <strong>압입기</strong>를 설치하여 <strong>별도의 포 소화약제 압입용 펌프</strong>로 포 소화약제를 강제 압입시켜 혼합하는 방식입니다(2019년 Q4). 혼합기의 압력손실이 적고 흡입·혼합 가능한 유량 범위가 넓어 <strong>비행기 격납고, 석유화학 플랜트 등과 같은 대단위 고정식 소화설비에 주로 사용하며 설치비가 비쌉니다</strong>(2025년 Q22).
+          </p>
+        </div>
+
+        <div class="overflow-x-auto my-4">
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:20%">혼합방식 명칭</th>
+                <th style="width:42%">법정 정의 및 계통도 식별 키워드 (NFPC 105 제3조)</th>
+                <th style="width:38%">주요 용도 및 실무적 장단점 비교</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>라인 프로포셔너</strong><br/>(Line)</td>
+                <td>· 펌프와 발포기 중간에 설치된 <strong class="text-emerald-400">벤추리관의 벤추리 작용에 의하여</strong> 포 소화약제를 흡입·혼합<br/>· [계통도] 주배관에 벤추리 혼합기 1개만 직결 (가압 배관·보조 펌프 없음)</td>
+                <td>· 구조가 가장 간단, 소규모·이동식(호스릴포) 사용<br/>· <strong class="text-amber-300">혼합기 압력손실이 매우 크고(약 30%에서 35%) 흡입 가능 유량 범위가 좁음</strong> (2025년 Q22)</td>
+              </tr>
+              <tr>
+                <td><strong>펌프 프로포셔너</strong><br/>(Pump)</td>
+                <td>· 펌프의 <strong class="text-emerald-400">토출관과 흡입관 사이의 배관 도중에 설치한 흡입기</strong>에 토출수 일부를 보내고 <strong class="text-emerald-400">농도조정밸브</strong>에서 조정된 약제를 펌프 흡입측으로 보내 혼합<br/>· [계통도] 주펌프 토출측 ➔ 흡입측 바이패스 순환 배관 (2021년 Q11)</td>
+                <td>· <strong>화학소방차</strong>에 주로 사용<br/>· 포 원액이 주펌프 내부로 직접 유입되어 펌프 부식 및 공동현상(캐비테이션) 우려</td>
+              </tr>
+              <tr>
+                <td><strong>프레셔 프로포셔너</strong><br/>(Pressure)</td>
+                <td>· 펌프와 발포기 중간의 <strong class="text-emerald-400">벤추리관의 벤추리 작용 + 펌프 가압수의 포 소화약제 저장탱크에 대한 압력</strong>에 의하여 흡입·혼합<br/>· [계통도] 주배관에서 약제 탱크로 들어가는 가압수 배관 존재</td>
+                <td>· 중소규모 고정식 설비에 사용<br/>· <strong>다이어프램(격막) 내장형</strong>은 물과 원액이 섞이지 않아 <strong>남은 약제 원액 잔량을 버리지 않고 재사용 가능</strong></td>
+              </tr>
+              <tr>
+                <td><strong>프레셔사이드</strong><br/><strong>프로포셔너</strong><br/>(Pressure Side)</td>
+                <td>· 펌프의 토출관에 <strong class="text-emerald-400">압입기</strong>를 설치하여 <strong class="text-emerald-400">포 소화약제 압입용 펌프</strong>로 포 소화약제를 압입시켜 혼합<br/>· [계통도] 주펌프 외에 별도의 포 약제 압입용 펌프 1대 추가 존재</td>
+                <td>· <strong>비행기 격납고·석유화학 플랜트 등 대단위 고정식 설비</strong>에 주로 사용<br/>· 압력손실이 적고 유량 범위가 넓으나 <strong>설치비가 비쌈</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div></div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container">
+        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
+          <span class="text-xs font-bold text-emerald-400">그림 1. 물 소화약제 물성·첨가제 및 포(Foam) 소화약제 5종·4대 혼합방식 핵심 도해</span>
+        </div>
+        <div class="schema-board">
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 물 소화약제 열역학적 수치 · 무상주수 적응성 및 5대 첨가제</div>
+            <div class="schema-subgrid">
+              <div class="schema-box">
+                <div class="schema-box-title">물의 열역학적 수치 (냉각 + 질식)</div>
+                <div>· <strong>비열 = 1 cal/(g&middot;℃)</strong>, 융해잠열 = 80 cal/g<br/>· <strong>증발잠열 = 539 cal/g</strong>, 기화 시 체적 <strong>약 1,700배 팽창(질식)</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">봉상주수 vs 분무상(무상) 주수</div>
+                <div>· <strong>봉상주수</strong>: A급만 적응 (B·C급 사용 불가)<br/>· <strong>분무상(무상) 주수</strong>: <strong>A급·B급(유화·질식)·C급(비전도성) 모두 적응!</strong></div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">침투제(심부화재) vs 증점제(부착성)</div>
+                <div>· <strong>침투제(계면활성제)</strong>: 표면장력 감소, 면화·석탄 심부 침투<br/>· <strong>증점제(CMC·젤라틴)</strong>: 점도 증가, 벽면·산림 수목 부착</div>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">부동제 vs 폴리에틸렌옥사이드</div>
+                <div>· <strong>부동제</strong>: 에틸렌·프로필렌글리콜, 글리세린, 염화칼슘(CaCl<sub>2</sub>)<br/>· <strong>폴리에틸렌옥사이드</strong>: 배관 마찰저항 감소제(유동성 개량제)</div>
+              </div>
+            </div>
+            <div class="schema-alert">★ 핵심 구분: 유류탱크 하부 <strong>표면하 주입방식</strong>에는 내유성이 우수한 <strong>불화단백포와 수성막포(AFFF)</strong>만 사용 가능(단백포·합성계면활성제포 사용 불가) / <strong>팽창비 = 최종 발생한 포의 체적 ÷ 원래 포 수용액의 체적</strong>!</div>
+          </div>
+
+          <div class="schema-panel">
+            <div class="schema-panel-title">📌 5대 포(Foam) 소화약제 특성 및 4대 혼합방식(프로포셔너) 식별</div>
+            <div class="space-y-2.5">
+              <div class="schema-box">
+                <div class="schema-box-title">단백포 · 불화단백포 · 수성막포 · 합성계면활성제포 · 알코올형포</div>
+                <ul class="schema-list">
+                  <li><strong>단백포</strong>(내열성 우수, 유동성·내유성 나빠 소화속도 느림) vs <strong>불화단백포·수성막포</strong>(불소계 계면활성제 함유 ➔ 유동성·내유성·소화속도 우수, <strong>표면하 주입방식 가능</strong>)</li>
+                  <li><strong>합성계면활성제포</strong>(저팽창포부터 고팽창포까지 모두 사용) / <strong>알코올형포</strong>(알코올·케톤·알데히드·아민 등 수용성 용제에 불용성 고분자 젤 피막 형성)</li>
+                </ul>
+              </div>
+              <div class="schema-box">
+                <div class="schema-box-title">4대 포 혼합방식 (라인 · 펌프 · 프레셔 · 프레셔사이드 프로포셔너)</div>
+                <ul class="schema-list">
+                  <li><strong>라인</strong>(벤추리 작용만, <strong>압력손실 크고 유량 범위 좁음</strong>) / <strong>펌프</strong>(토출·흡입 바이패스 <strong>흡입기 + 농도조정밸브</strong>, <strong>화학소방차</strong>)</li>
+                  <li><strong>프레셔</strong>(벤추리 작용 + <strong>가압수 탱크 압력</strong>, 격막형은 원액 잔량 재사용) / <strong>프레셔사이드</strong>(<strong>압입기 + 압입용 펌프</strong>, 대규모 플랜트·격납고, 고가)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
+    <!-- PART 2: 실전 기출문제 풀이 (새 페이지 분리) -->
+    <section id="part2" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 2 · 단원별 실전 기출문제 워크북 (12문항)</span>
+        <span class="part-banner-sub">[ 내 득점: &nbsp;&nbsp;&nbsp;&nbsp; / 12문항 ]</span>
+      </div>
+
+      <div class="questions-grid">
+        
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">01</span>
+              <span class="q-source">2018년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포소화약제의 혼합방식 중 펌프와 발포기의 중간에 설치된 벤츄리(Venturi) 관의 벤츄리(Venturi) 작용에 의하여 포소화 약제를 흡입·혼합하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">라인 프로포셔너(Line Proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">펌프 프로포셔너(Pump Proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">프레셔 프로포셔너(Pressure Proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">프레셔 사이드 프로포셔너(Pressure Side Proportioner)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">02</span>
+              <span class="q-source">2019년 소방공채·경채 Q4</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포소화설비에서 펌프의 토출관에 압입기를 설치하여 포 소화약제 압입용 펌프로 포 소화약제를 압입시켜 혼합 하는 방식은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">라인 프로포셔너(line proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">펌프 프로포셔너(pump proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">프레셔 프로포셔너(pressure proportioner)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">프레셔사이드 프로포셔너(pressure side proportioner)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">03</span>
+              <span class="q-source">2020년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">물 소화약제 첨가제 중 주요 기능이 물의 표면장력을 작게 하여 심부화재에 대한 적응성을 높여 주는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">부동제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">증점제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">침투제</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">유화제</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">04</span>
+              <span class="q-source">2020년 소방공채·경채 Q15</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">고발포인 제2종 기계포의 팽창비에 해당하는 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">10배 이상 20배 이하</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">100배 이상 200배 이하</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">300배 이상 400배 이하</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">500배 이상 600배 이하</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">05</span>
+              <span class="q-source">2021년 소방공채·경채 Q11</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포혼합장치 중 펌프 프로포셔너(pump proportioner) 방식에 해당하는 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 계통도 4종 구성 요약]</strong>· <strong>①번 도식</strong>: 펌프와 발포기 사이 배관 도중에 벤추리관만 설치되어 포 원액을 흡입하는 구조 (<strong>라인 프로포셔너</strong>)<br/>· <strong>②번 도식</strong>: 주펌프의 토출관과 흡입관 사이 바이패스(순환) 배관에 흡입기(농도조절밸브)를 설치하여 포 원액을 펌프 흡입측으로 끌어들이는 구조 (<strong>펌프 프로포셔너 · 정답</strong>)<br/>· <strong>③번 도식</strong>: 펌프 토출수의 일부를 포 소화약제 저장탱크 내부로 보내 가압·배출시키는 구조 (<strong>프레셔 프로포셔너</strong>)<br/>· <strong>④번 도식</strong>: 주펌프 외에 별도의 포 약제 압입용 펌프(전동기)가 설치되어 토출관의 압입기로 밀어 넣는 구조 (<strong>프레셔사이드 프로포셔너</strong>)</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">[도식 ①] 배관 도중의 벤추리관 작용만으로 포 원액을 흡입·혼합하는 계통도 (라인 프로포셔너)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">[도식 ②] 펌프 토출관과 흡입관 사이의 바이패스 배관 및 흡입기(농도조절밸브)로 포 원액을 흡입하는 계통도 (펌프 프로포셔너)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">[도식 ③] 가압수 배관을 통해 포 약제 저장탱크 내부에 수압을 가하여 포 원액을 혼합기로 보내는 계통도 (프레셔 프로포셔너)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">[도식 ④] 별도의 포 소화약제 압입용 펌프를 설치하여 주펌프 토출관의 압입기로 약제를 압입하는 계통도 (프레셔사이드 프로포셔너)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">06</span>
+              <span class="q-source">2021년 소방공채·경채 Q18</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">물소화약제에 대한 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">질식소화 작용은 기대하기 어렵다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">분무상으로 방사 시 B급화재 및 C급화재에도 적응성이 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">물은 비열과 기화열 값이 작아 냉각소화 효과가 우수 하다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">수용성 가연물질인 알코올, 에테르, 에스테르 등으로 인한 화재에는 적응성이 없다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">07</span>
+              <span class="q-source">2022년 소방공채·경채 Q19</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포(foam)에 대한 일반적인 설명으로 옳은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">불화단백포 및 수성막포는 표면하 주입방식에 사용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">불소를 함유하고 있는 합성계면활성제포는 친수성이 므로 유동성과 내유성이 좋다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">단백포는 유동성은 좋으나, 내화성은 나쁘다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">알콜형포 사용 시 비누화현상이 일어나면 소화능력이 떨어진다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">08</span>
+              <span class="q-source">2023년 소방공채·경채 Q22</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">다음 그림의 주입 방식에 가장 적합한 포 소화약제로만 짝 지어진 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 그림 복원: 유류저장탱크 하부 포 주입 방식(표면하 주입방식, Subsurface Injection) 모식도]</strong>· 대형 위험물 유류저장탱크 상부 화재 시, 고 발포기 및탱크 하부 유류 배관을 통해 포(거품)를 주입하여 <strong>포가 유류층 내부를 통과해 유류 표면으로 떠올라 피복·질식소화</strong>하는 계통도입니다.</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">단백포, 불화단백포</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">수성막포, 불화단백포</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">합성계면활성제포, 수성막포</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">단백포, 수성막포</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">09</span>
+              <span class="q-source">2023년 소방공채·경채 Q25</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포소화설비에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">팽창비란 최종 발생한 포 수용액 체적을 원래 포 체적으로 나눈 값을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">연성계란 대기압 이상의 압력과 대기압 이하의 압력을 측정할 수 있는 계측기를 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">국소방출방식이란 소화약제 공급장치에 배관 및 분사 헤드 등을 설치하여 직접 화점에 소화약제를 방출하는 방식을 말한다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">프레셔사이드 프로포셔너방식이란 펌프의 토출관에 압입 기를 설치하여 포 소화약제 압입용펌프로 포 소화약제를 압입시켜 혼합하는 방식을 말한다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">10</span>
+              <span class="q-source">2024년 소방공채·경채 Q22</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">포 소화약제에 관한 설명으로 옳지 않은 것은?</div>
+          
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">불화단백포 소화약제는 불소계 계면활성제를 첨가하여 단백포 소화약제의 단점인 유동성을 보완하였다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">알콜형포 소화약제는 케톤류, 알데히드류, 아민류 등 수용성 용제의 소화에 사용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">단백포 소화약제는 단백질을 가수분해 한 것을 주원료로 하며 내유성이 뛰어나 소화속도가 빠르다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">합성계면활성제포 소화약제는 유동성과 저장성이 우수 하며 저팽창포부터 고팽창포까지 사용할 수 있다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">11</span>
+              <span class="q-source">2025년 소방공채·경채 Q2</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem"><보기>에서 설명하는 물소화약제의 첨가제로 옳지 않은 것은?</div>
+          <div class="q-stem-box"><strong class="stem-box-title">&lt;보 기&gt;</strong>물의 어는점(1기압, 0℃) 이하에서 동파 및 응고현상을 방지하기 위하여 첨가하는 물질</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">염화칼슘(Calcium Chloride)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">글리세린(Glycerin)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">프로필렌글리콜(Propylene Glycol)</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">폴리에틸렌옥사이드(Polyethylene Oxide)</span>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="q-card">
+          <div class="q-card-header">
+            <div class="q-meta">
+              <span class="q-num-badge">12</span>
+              <span class="q-source">2025년 소방공채·경채 Q22</span>
+            </div>
+            <div class="q-ans-blank">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
+          </div>
+          <div class="q-stem">( 가 )에서 ( 라 )의 포소화약제 혼합방식에 관한 설명으로 옳지 않은 것은? ( 가 ) ( 나 ) ( 다 ) ( 라 )</div>
+          <div class="q-stem-box"><strong class="stem-box-title">[원문 도식 ( 가 )·( 나 )·( 다 )·( 라 ) 포소화약제 4대 혼합방식 계통도 복원]</strong>· <strong>( 가 ) 펌프 프로포셔너(Pump Proportioner)</strong>: 주펌프 토출측과 흡입측 바이패스 배관에 흡입기(농도조절밸브) 설치 (화학소방차 주로 사용)<br/>· <strong>( 나 ) 라인 프로포셔너(Line Proportioner)</strong>: 펌프와 노즐 사이 배관 도중에 벤추리관 흡입기만 설치 (구조가 가장 간단하나 <strong>혼합기 압력손실이 크고 흡입 가능 유량 범위가 좁음</strong>)<br/>· <strong>( 다 ) 프레셔 프로포셔너(Pressure Proportioner)</strong>: 약제 탱크 내부에 다이아프램(격막)이 있는 다이아프램식의 경우 원액과 물이 섞이지 않아 남은 약제 원액 재사용 가능<br/>· <strong>( 라 ) 프레셔사이드 프로포셔너(Pressure Side Proportioner)</strong>: 별도의 약제 압입용 펌프 사용 (대규모 석유화학 플랜트·비행기 격납고 고정식 설비에 주로 사용)</div>
+          <div class="q-choices">
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">①</span>
+              <span class="q-choice-text">( 가 ) : 화학소방차에 주로 사용하는 방식이다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">②</span>
+              <span class="q-choice-text">( 나 ) : 혼합기의 압력손실이 적고, 흡입 가능한 유량의 범위가 넓다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">③</span>
+              <span class="q-choice-text">( 다 ) : 약제 원액 잔량을 버리지 않고 계속 사용할 수 있다.</span>
+            </div>
+            
+            <div class="q-choice-item">
+              <span class="q-choice-num">④</span>
+              <span class="q-choice-text">( 라 ) : 비행기 격납고, 석유화학 플랜트 등과 같은 대단위 고정식 소화설비에 주로 사용하며, 설치비가 비싸다.</span>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 26제</div>
+        <div class="ox-check-grid">
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 01</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>B급 화재(유류화재)에 포 소화약제를 도포하여 소화하는 주원리는 질식소화이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 02</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>포소화약제 혼합방식 중 펌프와 발포기의 중간에 설치된 벤추리관의 벤추리 작용에 의하여 포소화약제를 흡입·혼합하는 방식은 '라인 프로포셔너(Line Proportioner)'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 03</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>포소화설비에서 펌프의 토출관에 압입기를 설치하여 포소화약제 압입용 펌프로 포소화약제를 압입시켜 혼합하는 방식은 '프레셔사이드 프로포셔너'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 04</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물 소화약제 첨가제 중 물의 표면장력을 작게 하여 심부화재에 대한 침투성과 적응성을 높여 주는 것은 '침투제(계면활성제)'이고, 점도를 높여 부착성을 향상시키는 것은 '증점제'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 05</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>포소화약제의 팽창비 기준에서 저발포는 20배 이하이며, 고발포는 제1종 기계포(80배 이상 250배 미만), 제2종 기계포(250배 이상 500배 미만), 제3종 기계포(500배 이상 1,000배 이하)로 구분된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 06</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>포혼합장치 중 펌프의 토출관과 흡입관 사이의 배관 도중에 설치한 흡입기에 토출수의 일부를 보내고 농도조정밸브에서 조정된 포 약제를 펌프 흡입측으로 보내 혼합하는 방식은 '펌프 프로포셔너'이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 07</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물은 비열(1cal/g·℃)과 기화잠열(539cal/g)이 매우 커서 냉각소화 효과가 가장 우수하며, 기화 시 체적이 약 1,700배 팽창하여 질식소화 작용도 병행한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 08</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물 소화약제를 분무상(무상)으로 방사할 경우 유화·질식 효과 및 전기 절연성이 확보되어 B급 화재 및 C급 화재에도 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 09</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>유류탱크 하부에서 포를 주입하는 '표면하 주입방식'에는 내유성이 우수한 '불화단백포'와 '수성막포'만 사용할 수 있으며, 단백포는 사용할 수 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 10</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단백포 소화약제는 내열성(내화성)과 포의 안정성은 우수하나, 유동성과 내유성이 떨어져 불화단백포나 수성막포보다 소화속도가 느리다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 11</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>합성계면활성제포 소화약제는 유동성과 저장성이 우수하며 저팽창포부터 고팽창포까지 모두 사용할 수 있고, 알코올형포는 알코올·케톤(아세톤)·에테르 등 수용성 액체 화재에 사용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 12</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물 소화약제의 동결을 방지하는 부동제로는 에틸렌글리콜, 프로필렌글리콜, 글리세린, 염화칼슘 등이 사용되며, 폴리에틸렌옥사이드는 부동제가 아니라 마찰저항 감소제(유동성 개량제) 및 증점제로 사용된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 13</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>포소화약제 혼합방식 중 라인 프로포셔너 방식은 구조가 간단하나 혼합기의 압력손실이 크고 흡입 가능한 유량의 범위가 좁으며, 프레셔사이드 프로포셔너 방식은 대규모 고정식 설비에 주로 사용된다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 14</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>｢포소화설비의 화재안전성능기준(NFPC 105)｣상 '팽창비'란 최종 발생한 포(거품)의 체적을 원래 포 수용액(포 원액 + 물)의 체적으로 나눈 값을 말하며, '연성계'란 대기압 이상의 압력과 대기압 이하의 압력을 모두 측정할 수 있는 계측기를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 15</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[물소화약제] 분무상으로 방사 시 B급화재 및 C급화재에도 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 16</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[물소화약제] 물은 비열과 기화열 값이 작아 냉각소화 효과가 우수 하다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 17</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[물소화약제] 수용성 가연물질인 알코올, 에테르, 에스테르 등으로 인한 화재에는 적응성이 없다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 18</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포] 불화단백포 및 수성막포는 표면하 주입방식에 사용할 수 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 19</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포] 불소를 함유하고 있는 합성계면활성제포는 친수성이 므로 유동성과 내유성이 좋다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 20</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포] 단백포는 유동성은 좋으나, 내화성은 나쁘다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 21</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포] 알콜형포 사용 시 비누화현상이 일어나면 소화능력이 떨어진다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 22</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포소화설비] 연성계란 대기압 이상의 압력과 대기압 이하의 압력을 측정할 수 있는 계측기를 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 23</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>[포소화설비] 프레셔사이드 프로포셔너방식이란 펌프의 토출관에 압입 기를 설치하여 포 소화약제 압입용펌프로 포 소화약제를 압입시켜 혼합하는 방식을 말한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 24</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>단백포 소화약제는 단백질을 가수분해 한 것을 주원료로 하며 내유성이 뛰어나 소화속도가 빠르다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 25</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>1기압에서 0 ℃의 얼음 1 g이 녹아 100 ℃의 수증기로 완전히 기화할 때 흡수하는 총열량은 현열 100 cal와 기화잠열 539 cal를 합한 639 cal이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 26</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>순수한 물은 0 ℃에서 밀도가 가장 크며, 얼음으로 동결될 때 부피가 약 9% 수축한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 27</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물에 탄산칼륨(K₂CO₃)을 진하게 녹인 강화액 소화약제는 응고점이 영하 20 ℃ 이하로 낮아 한랭지에 적합하며, 봉상(줄기 모양)으로 방사할 경우 A급·B급·C급·K급 화재에 모두 적응성이 있다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 28</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>탄산수소나트륨(NaHCO₃) 수용액과 황산(H₂SO₄)의 화학반응으로 발생하는 이산화탄소 압력으로 방출하는 산알칼리 소화기는 봉상으로 방사하여 A급·B급·C급 화재에 모두 사용한다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 29</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>물 소화약제의 첨가제 중 에틸렌글리콜이나 프로필렌글리콜은 소방호스 내부의 마찰손실을 줄여 방수거리와 유량을 늘려 주는 유동성 개량제(마찰저항 감소제)이다.</div>
+          </div>
+          <div class="ox-check-item">
+            <div class="ox-check-head">
+              <span><strong class="ox-check-num">OX 30</strong></span>
+              <span class="ox-check-ans">[ O / X ]</span>
+            </div>
+            <div>화학포(Chemical Foam) 소화약제는 탄산수소나트륨(NaHCO₃) 수용액(A약제)과 황산알루미늄[Al₂(SO₄)₃] 수용액(B약제)의 화학반응으로 생성되는 질소(N₂) 가스를 이용해 거품을 형성한다.</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="compact-bottom-ans">
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:③ · 05:② · 06:② · 07:① · 08:② · 09:① · 10:③ · 11:④ · 12:②</div>
+        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:X · 17:X · 18:O · 19:X · 20:X · 21:X · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+      </div>
+    </section>
+
+    <!-- PART 3: 빠른 정답표 및 상세 해설 (새 페이지 분리) -->
+    <section id="part3" class="page-break-section">
+      <div class="part-banner">
+        <span class="part-banner-title">PART 3 · 빠른 정답 및 선택지별 상세 해설</span>
+        <span class="part-banner-sub">DAY 10 · 제3편 화재론 및 소화약제론 · 2장 (12문항 전 선지 정오 분석)</span>
+      </div>
+
+      
+    <div class="quick-ans-box">
+      <div class="quick-ans-title">빠른 정답표</div>
+      <div class="quick-ans-grid">
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">01번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">02번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">03번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">04번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">05번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">06번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">07번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">08번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">09번</span>
+          <span class="qa-val">①</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">10번</span>
+          <span class="qa-val">③</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">11번</span>
+          <span class="qa-val">④</span>
+        </div>
+        
+        <div class="quick-ans-cell">
+          <span class="qa-num">12번</span>
+          <span class="qa-val">②</span>
+        </div>
+        
+      </div>
+    </div>
+    
+
+      <div class="explanations-grid">
+        
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 01</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2018년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 포소화설비의 4대 혼합방식[라인 프로포셔너(펌프와 발포기 중간 배관의 벤추리관 작용만으로 흡입), 펌프 프로포셔너(펌프 토출수 일부를 흡입기로 보내 펌프 흡입측으로 약제 흡입, 화학소방차용), 프레셔 프로포셔너(벤추리관 작용 + 가압수의 약제탱크 가압 병행), 프레셔사이드 프로포셔너(토출관 압입기에 별도의 약제 압입용 펌프로 강제 압입, 대규모 플랜트용)]을 묻는 초빈출 S등급 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">라인 프로포셔너(Line Proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 펌프와 발포기의 중간에 설치된 벤추리(Venturi)관의 벤추리 작용(유속 증가에 따른 부압 형성)만으로 포소화약제를 흡입·혼합하는 방식은 '라인 프로포셔너(Line Proportioner)'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">펌프 프로포셔너(Pump Proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 펌프 프로포셔너는 펌프의 토출관과 흡입관 사이의 바이패스 배관에 설치된 흡입기(농도조절밸브)를 통해 약제를 펌프 흡입측으로 보내 혼합하는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">프레셔 프로포셔너(Pressure Proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 프레셔 프로포셔너는 벤추리관의 벤추리 작용과 함께 펌프 가압수가 포소화약제 저장탱크를 누르는 압력을 병행하여 혼합하는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">프레셔 사이드 프로포셔너(Pressure Side Proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 프레셔 사이드 프로포셔너는 펌프 토출관에 압입기를 설치하고 별도의 포소화약제 압입용 펌프로 약제를 강제 압입하여 혼합하는 방식입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 02</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2019년 소방공채·경채 Q4</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 2018년 19번에 이어 출제된 포 혼합방식 문항으로, '펌프의 토출관에 압입기를 설치하여 포소화약제 압입용 펌프로 약제를 압입시켜 혼합하는 방식'은 '프레셔사이드 프로포셔너'입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">라인 프로포셔너(line proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 라인 프로포셔너는 펌프와 발포기 사이 벤추리관의 벤추리 작용만으로 흡입하는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">펌프 프로포셔너(pump proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 펌프 프로포셔너는 펌프 토출관과 흡입관 사이 흡입기를 통해 약제를 펌프 흡입측으로 보내는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">프레셔 프로포셔너(pressure proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 프레셔 프로포셔너는 벤추리 작용과 가압수의 약제탱크 가압을 병행하는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">프레셔사이드 프로포셔너(pressure side proportioner)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 펌프의 토출관에 압입기를 설치하고 별도의 '포소화약제 압입용 펌프'로 약제를 압입시켜 혼합하는 방식은 '프레셔사이드 프로포셔너'입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 03</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">부동제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 부동제는 겨울철 물의 어는점을 낮추어 동파·응고를 방지하는 첨가제(에틸렌글리콜, 프로필렌글리콜, 글리세린, 염화칼슘 등)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">증점제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 증점제는 물의 점성을 높여(CMC, 폴리에틸렌옥사이드 등) 가연물 표면에 물이 오래 달라붙어 있게 하는 첨가제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">침투제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 침투제(계면활성제, Wetting Agent)는 물의 높은 표면장력(상온 약 72.8dyne/cm)을 작게 낮추어 면화류·석탄·목재 내부 깊숙한 곳(심부화재)까지 물이 잘 스며들게 하는 첨가제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">유화제</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 유화제는 물과 기름의 유화 작용을 돕는 물질입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 04</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2020년 소방공채·경채 Q15</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> - 저발포(저팽창포): 팽창비 20배 이하 · 고발포(고팽창포): 제1종 기계포(80배 이상 250배 미만), 제2종 기계포(250배 이상 500배 미만), 제3종 기계포(500배 이상 1,000배 이하).
+따라서 '300배 이상 400배 이하'는 250배 이상 500배 미만 구간인 '제2종 기계포'에 해당합니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">10배 이상 20배 이하</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 10배 이상 20배 이하는 '저발포(저팽창포)'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">100배 이상 200배 이하</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 100배 이상 200배 이하는 80배 이상 250배 미만 구간인 고발포 '제1종 기계포'에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">300배 이상 400배 이하</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 고발포 제2종 기계포의 팽창비 범위는 '250배 이상 500배 미만'이므로, 이 구간에 속하는 '300배 이상 400배 이하'가 정답입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">500배 이상 600배 이하</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 500배 이상 600배 이하는 500배 이상 1,000배 이하 구간인 고발포 '제3종 기계포'에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 05</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q11</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 포소화설비 4대 혼합방식의 계통도 그림을 보고 '펌프 프로포셔너(Pump Proportioner)'를 찾는 문항입니다. 펌프 프로포셔너는 주펌프의 토출측과 흡입측을 연결하는 바이패스 배관에 흡입기(농도조절밸브)가 설치되어 있어 물이 펌프 자체로 순환하며 포 원액을 빨아들이는 구조입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">[도식 ①] 배관 도중의 벤추리관 작용만으로 포 원액을 흡입·혼합하는 계통도 (라인 프로포셔너)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] ①번 그림은 배관 도중 벤추리관만으로 흡입하는 라인 프로포셔너(또는 다른 방식)입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">[도식 ②] 펌프 토출관과 흡입관 사이의 바이패스 배관 및 흡입기(농도조절밸브)로 포 원액을 흡입하는 계통도 (펌프 프로포셔너)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] ②번 그림은 펌프의 토출관과 흡입관 사이의 바이패스 배관 도중에 설치한 흡입기(농도조정밸브)를 통해 포소화약제를 펌프 흡입측으로 보내 혼합하는 '펌프 프로포셔너' 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">[도식 ③] 가압수 배관을 통해 포 약제 저장탱크 내부에 수압을 가하여 포 원액을 혼합기로 보내는 계통도 (프레셔 프로포셔너)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 프레셔 프로포셔너(가압수가 약제탱크를 가압하는 구조)에 해당합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">[도식 ④] 별도의 포 소화약제 압입용 펌프를 설치하여 주펌프 토출관의 압입기로 약제를 압입하는 계통도 (프레셔사이드 프로포셔너)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 프레셔사이드 프로포셔너(별도의 약제 압입용 펌프가 있는 구조)에 해당합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 06</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2021년 소방공채·경채 Q18</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 물 소화약제의 핵심 물성[비열(1 cal/g·℃)과 증발잠열(539 cal/g)이 다른 물질보다 월등히 '커서' 냉각소화 효과가 가장 우수함 / 기화 시 약 1,700배 부피 팽창으로 '질식소화' 병행 / 알코올 등 수용성 액체화재에는 다량 주수 시 '희석소화' 가능 / 무상(분무상) 방사 시 유류(B급) 및 전기(C급, 전기절연성 확보) 화재에도 적응성 있음]을 묻는 S등급 필수 문항입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">질식소화 작용은 기대하기 어렵다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 물은 섭씨 100도에서 수증기로 기화할 때 체적이 약 1,700배로 급격히 팽창하여 주변 공기를 밀어내므로(특히 무상주수 시) 우수한 '질식소화' 작용을 병행합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">분무상으로 방사 시 B급화재 및 C급화재에도 적응성이 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 물을 봉상(줄기 형태)으로 방사하면 A급 일반화재에만 적응성이 있으나, 미세한 '분무상(무상)'으로 방사하면 유화·질식작용에 의해 B급(유류) 화재와 전기 비전도성 확보에 의해 C급(전기) 화재에도 적응성이 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">물은 비열과 기화열 값이 작아 냉각소화 효과가 우수 하다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 물은 비열(1 cal/g·℃)과 기화열(증발잠열, 539 cal/g) 값이 다른 액체에 비해 매우 '커서' 냉각소화 효과가 탁월합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">수용성 가연물질인 알코올, 에테르, 에스테르 등으로 인한 화재에는 적응성이 없다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 알코올, 에테르, 케톤 등 수용성 가연물질 화재에는 다량의 물을 주수하여 농도를 낮추는 '희석소화'가 가능하므로 적응성이 있습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 07</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2022년 소방공채·경채 Q19</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 유류탱크 하부에서 포를 주입하여 유류층을 뚫고 표면으로 떠올라 덮게 하는 '표면하 주입방식(Subsurface Injection)'은 기름에 오염되지 않는 내유성(기름 저항성)이 뛰어나야 하므로, 불소계 계면활성제가 포함된 '불화단백포'와 '수성막포(AFFF)'만 사용할 수 있습니다(단백포나 일반 합성계면활성제포는 기름과 섞여 파괴되므로 사용 불가).</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">불화단백포 및 수성막포는 표면하 주입방식에 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 불화단백포 및 수성막포는 불소계 계면활성제를 함유하여 유류에 오염되지 않는 내유성이 우수하므로 유류탱크 하부로 주입하는 '표면하 주입방식'에 사용할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">불소를 함유하고 있는 합성계면활성제포는 친수성이 므로 유동성과 내유성이 좋다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림] 불소를 함유한 포는 수성막포와 불화단백포이며, 일반 합성계면활성제포는 불소를 함유하지 않고 친유성(기름과 잘 섞임)이 있어 내유성이 떨어지므로 표면하 주입방식에 쓸 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">단백포는 유동성은 좋으나, 내화성은 나쁘다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 단백포는 거품이 견고하여 '내열성·내화성은 매우 우수'하나, 점성이 커서 '유동성이 나쁘고' 소화속도가 느린 것이 단점입니다(설명이 반대로 됨).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">알콜형포 사용 시 비누화현상이 일어나면 소화능력이 떨어진다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 비누화 현상은 동·식물유 화재(K급)에서 알칼리염 약제가 만드는 소화 기전이며, 수용성 위험물(알코올·케톤 등)에 사용하는 알코올형포는 고분자 젤(Gel) 피막을 형성하여 포가 수용성 액체에 녹아 파괴되는 것을 방지합니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 08</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q22</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 그림은 유류저장탱크 하부 배관을 통해 포를 주입하여 유류층을 통과해 표면으로 부상시키는 '표면하 주입방식(Subsurface Injection)'을 나타내며, 여기에 사용 가능한 포 소화약제는 내유성이 뛰어난 '수성막포(AFFF)'와 '불화단백포(FP)' 2종뿐입니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">단백포, 불화단백포</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림] 단백포는 내유성이 없어 유류층을 통과하는 동안 기름에 오염·파괴되므로 표면하 주입방식에 사용할 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">수성막포, 불화단백포</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 유류탱크 하부로 주입하는 표면하 주입방식에 적합한 포 소화약제는 불소계 계면활성제가 포함되어 내유성이 우수한 '수성막포, 불화단백포'입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">합성계면활성제포, 수성막포</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림] 합성계면활성제포는 친유성이 강해 유류와 섞이므로 표면하 주입방식에 사용할 수 없습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">단백포, 수성막포</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림] 표면하 주입방식(Subsurface Injection)에는 유류에 오염되지 않는 '불화단백포, 수성막포, 내알코올형 수성막포'만 사용할 수 있으며, 일반 '단백포'는 유류 통과 시 포가 파괴되어 사용할 수 없습니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 09</span>
+              <span class="exp-ans-badge">정답 ①</span>
+            </div>
+            <div class="exp-header-right">2023년 소방공채·경채 Q25</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> '팽창비(발포배율)'란 최종 발생한 '포(거품)의 체적'을 원래 '포 수용액(물+포원액)의 체적'으로 나눈 값을 말합니다. 선지 ①은 분자와 분모를 반대로 뒤집어 서술하였습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">팽창비란 최종 발생한 포 수용액 체적을 원래 포 체적으로 나눈 값을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [틀림 · 정답] '팽창비'란 최종 발생한 '포(Foam)의 체적'을 원래의 '포 수용액(포 원액 + 물)의 체적'으로 나눈 값을 말합니다(선지는 분자와 분모를 거꾸로 서술함).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">연성계란 대기압 이상의 압력과 대기압 이하의 압력을 측정할 수 있는 계측기를 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 연성계(Compound Gauge)는 펌프 흡입측에 설치하여 대기압 이상의 정압(양압)과 대기압 이하의 부압(진공압)을 모두 측정할 수 있는 계측기입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">국소방출방식이란 소화약제 공급장치에 배관 및 분사 헤드 등을 설치하여 직접 화점에 소화약제를 방출하는 방식을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 국소방출방식은 소화약제 공급장치에 배관 및 분사헤드 등을 설치하여 방호대상물(화점)에 직접 소화약제를 방출하는 방식입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">프레셔사이드 프로포셔너방식이란 펌프의 토출관에 압입 기를 설치하여 포 소화약제 압입용펌프로 포 소화약제를 압입시켜 혼합하는 방식을 말한다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 프레셔사이드 프로포셔너 방식은 펌프의 토출관에 압입기를 설치하여 포 소화약제 압입용 펌프로 약제를 압입시켜 혼합하는 방식입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 10</span>
+              <span class="exp-ans-badge">정답 ③</span>
+            </div>
+            <div class="exp-header-right">2024년 소방공채·경채 Q22</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 동·식물성 단백질을 가수분해하여 만든 '단백포'는 내열성과 안정성은 좋으나 점성이 커서 유동성이 나쁘고 기름에 쉽게 오염(내유성 불량)되므로 소화속도가 느립니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">불화단백포 소화약제는 불소계 계면활성제를 첨가하여 단백포 소화약제의 단점인 유동성을 보완하였다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 불화단백포는 단백포에 불소계 계면활성제를 첨가하여 단백포의 단점인 낮은 유동성과 낮은 내유성을 보완한 약제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">알콜형포 소화약제는 케톤류, 알데히드류, 아민류 등 수용성 용제의 소화에 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 알코올형포(내알코올포)는 알코올류, 케톤류(아세톤), 알데히드류, 에테르류, 에스테르류, 아민류 등 수용성 인화성 액체(제4류 위험물) 화재 소화에 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">단백포 소화약제는 단백질을 가수분해 한 것을 주원료로 하며 내유성이 뛰어나 소화속도가 빠르다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 단백포는 단백질을 가수분해한 것을 주원료로 하나, 기름에 오염되기 쉬워 '내유성이 나쁘고' 점성이 커서 유동성이 떨어지므로 '소화속도가 느립니다'(내유성이 뛰어나고 유동성·소화속도가 빠른 것은 수성막포와 불화단백포).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">합성계면활성제포 소화약제는 유동성과 저장성이 우수 하며 저팽창포부터 고팽창포까지 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] 합성계면활성제포는 유동성과 장기 저장성이 우수하며, 저팽창포(저발포)부터 고팽창포(고발포)까지 모두 사용할 수 있는 유일한 포 약제입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 11</span>
+              <span class="exp-ans-badge">정답 ④</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q2</div>
+          </div>
+          
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">염화칼슘(Calcium Chloride)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] 염화칼슘(CaCl₂)은 물의 빙점을 낮추는 대표적인 무기염류 부동제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">글리세린(Glycerin)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [옳음] 글리세린(Glycerin)은 다가 알코올류로서 물의 동결을 방지하는 부동제로 사용됩니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">프로필렌글리콜(Propylene Glycol)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] 프로필렌글리콜(Propylene Glycol)은 에틸렌글리콜과 함께 가장 널리 쓰이는 부동제입니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">폴리에틸렌옥사이드(Polyethylene Oxide)</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 폴리에틸렌옥사이드(Polyethylene Oxide)는 부동제가 아니라, 배관 내 물의 마찰손실을 줄여 방수거리와 유량을 늘려주는 '마찰저항 감소제(유동성 개량제)' 또는 점도를 높이는 '증점제'로 사용되는 고분자 물질입니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+
+        <article class="exp-card">
+          <div class="exp-card-header">
+            <div class="exp-header-left">
+              <span class="exp-num-badge">문항 12</span>
+              <span class="exp-ans-badge">정답 ②</span>
+            </div>
+            <div class="exp-header-right">2025년 소방공채·경채 Q22</div>
+          </div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ( 나 ) 라인 프로포셔너 방식은 벤추리관의 좁은 목 부분에서 유속 차만으로 흡입하므로 '혼합기의 압력손실이 매우 크고(약 30에서 35%), 흡입 가능한 유량의 범위가 좁다'는 치명적 단점이 있습니다.</div>
+          <div class="exp-choices-list">
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">①</span>
+                <span class="exp-choice-orig">( 가 ) : 화학소방차에 주로 사용하는 방식이다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">①</span> [옳음] ( 가 )는 펌프 프로포셔너 방식으로서 구조가 간단하고 펌프 자체 흡입력을 이용하므로 화학소방차에 주로 사용합니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item is-answer">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">②</span>
+                <span class="exp-choice-orig">( 나 ) : 혼합기의 압력손실이 적고, 흡입 가능한 유량의 범위가 넓다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">②</span> [틀림 · 정답] ( 나 )는 라인 프로포셔너 방식으로서 벤추리관의 벤추리 작용만으로 포 원액을 빨아들이기 때문에 '혼합기에서의 압력손실이 크고, 흡입 가능한 유량의 범위가 좁다'는 단점이 있습니다(압력손실이 적고 유량 범위가 넓은 것은 프레셔사이드 프로포셔너).
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">③</span>
+                <span class="exp-choice-orig">( 다 ) : 약제 원액 잔량을 버리지 않고 계속 사용할 수 있다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">③</span> [옳음] ( 다 )는 격막(다이어프램)이 있는 프레셔 프로포셔너 방식으로서 물과 포 원액이 직접 섞이지 않아 사용 후 남은 약제 원액 잔량을 버리지 않고 계속 재사용할 수 있습니다.
+              </div>
+            </div>
+            
+            <div class="exp-choice-item">
+              <div class="exp-choice-head orig-choice-line">
+                <span class="exp-choice-num">④</span>
+                <span class="exp-choice-orig">( 라 ) : 비행기 격납고, 석유화학 플랜트 등과 같은 대단위 고정식 소화설비에 주로 사용하며, 설치비가 비싸다.</span>
+              </div>
+              <div class="exp-choice-body">
+                <span class="exp-choice-num-inline">④</span> [옳음] ( 라 )는 별도의 포 원액 압입용 펌프를 사용하는 프레셔사이드 프로포셔너 방식으로서 비행기 격납고, 석유화학 플랜트 같은 대규모 고정식 설비에 주로 쓰이며 설치비가 비쌉니다.
+              </div>
+            </div>
+            
+          </div>
+        </article>
+        
+      </div>
+    
+      <div class="stats-block" style="margin-top:28px;">
+        <div class="section-subhead">단원 필수 기출 OX 26제 정답 및 해설</div>
+        <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:X · 17:X · 18:O · 19:X · 20:X · 21:X · 22:O · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+        </div>
+        <div class="ox-check-grid">
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 01 · O 옳음</span>유류 표면에 기포층을 덮어 공기 중 산소의 접촉을 차단하는 피복 질식소화가 포의 기본 원리입니다.
+            <span class="ox-exp-src">소화약제 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 02 · O 옳음</span>벤추리관의 벤추리 작용만 이용하면 라인 프로포셔너이고, 벤추리 작용에 가압수의 탱크 가압까지 더해지면 프레셔 프로포셔너입니다.
+            <span class="ox-exp-src">2018년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>'압입기'와 '포소화약제 압입용 펌프'라는 키워드가 나오면 항상 프레셔사이드 프로포셔너 방식입니다.
+            <span class="ox-exp-src">2019년 소방공채·경채 Q4 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 04 · O 옳음</span>물은 표면장력이 커서 섬유·석탄 내부로 잘 스며들지 못하므로, 계면활성제인 침투제를 넣어 표면장력을 낮추어 주면 심부화재 소화력이 극대화됩니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>300배에서 400배는 제2종 기계포(250배 이상 500배 미만)에 속합니다.
+            <span class="ox-exp-src">2020년 소방공채·경채 Q15 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 06 · O 옳음</span>펌프 프로포셔너는 펌프의 토출측에서 흡입측으로 되돌아가는 순환 배관과 흡입기가 있는 것이 시각적·기능적 특징이며 주로 화학소방차에 쓰입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q11 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 07 · O 옳음</span>물의 높은 비열과 증발잠열은 냉각소화의 원천이며, 1,700배 수증기 체적 팽창은 질식소화의 원천입니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 08 · O 옳음</span>봉상주수는 A급에만 적응성이 있으나, 분무상(무상) 주수는 A·B·C급 화재에 모두 적응성이 있습니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q18 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>단백포는 기름을 통과할 때 유류에 오염되어 포가 파괴되므로 표면하 주입방식에 쓸 수 없으며, 내유성이 뛰어난 수성막포와 불화단백포만 사용 가능합니다.
+            <span class="ox-exp-src">2022년 Q19 · 2023년 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 10 · O 옳음</span>단백포의 단점인 낮은 유동성과 낮은 내유성을 보완하기 위해 불소계 계면활성제를 첨가해 개발한 것이 불화단백포입니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>고발포용으로 주로 쓰이는 약제는 합성계면활성제포이며, 수용성 위험물 화재에는 일반 포가 녹아 파괴되므로 반드시 알코올형포(내알코올포)를 사용해야 합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 12 · O 옳음</span>폴리에틸렌옥사이드(Polyethylene Oxide)는 미끄러운 사슬형 고분자로서 소방호스 내 마찰손실을 줄여주는 유동성 개량제(마찰저항 감소제)입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q2 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>라인 프로포셔너는 벤추리관 단독 흡입 방식이어서 배관 압력손실이 크고 소규모 설비(호스릴포 등)에만 제한적으로 쓰입니다.
+            <span class="ox-exp-src">2025년 소방공채·경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 14 · O 옳음</span>팽창비 정의에서 분자(최종 발생한 포의 체적)와 분모(원래 포 수용액의 체적)를 반대로 뒤집는 선지는 대표적 오답 함정입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q25 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 15 · O 옳음</span>물을 봉상(줄기 형태)으로 방사하면 A급 일반화재에만 적응성이 있으나, 미세한 '분무상(무상)'으로 방사하면 유화·질식작용에 의해 B급(유류) 화재와 전기 비전도성 확보에 의해 C급(전기) 화재에도 적응성이 있습니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q18 · 물 소화약제의 열역학적 특성(비열·기화잠열)과 주수 형태별 화재 적응성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 16 · X 틀림</span>물은 비열(1 cal/g·℃)과 기화열(증발잠열, 539 cal/g) 값이 다른 액체에 비해 매우 '커서' 냉각소화 효과가 탁월합니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q18 · 물 소화약제의 열역학적 특성(비열·기화잠열)과 주수 형태별 화재 적응성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 17 · X 틀림</span>알코올, 에테르, 케톤 등 수용성 가연물질 화재에는 다량의 물을 주수하여 농도를 낮추는 '희석소화'가 가능하므로 적응성이 있습니다.
+            <span class="ox-exp-src">2021년 소방공채·경채 Q18 · 물 소화약제의 열역학적 특성(비열·기화잠열)과 주수 형태별 화재 적응성</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 18 · O 옳음</span>불화단백포 및 수성막포는 불소계 계면활성제를 함유하여 유류에 오염되지 않는 내유성이 우수하므로 유류탱크 하부로 주입하는 '표면하 주입방식'에 사용할 수 있습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q19 · 포(Foam) 소화약제 종류별 특성 및 표면하 주입방식(Subsurface Injection)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 19 · X 틀림</span>불소를 함유한 포는 수성막포와 불화단백포이며, 일반 합성계면활성제포는 불소를 함유하지 않고 친유성(기름과 잘 섞임)이 있어 내유성이 떨어지므로 표면하 주입방식에 쓸 수 없습니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q19 · 포(Foam) 소화약제 종류별 특성 및 표면하 주입방식(Subsurface Injection)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>단백포는 거품이 견고하여 '내열성·내화성은 매우 우수'하나, 점성이 커서 '유동성이 나쁘고' 소화속도가 느린 것이 단점입니다(설명이 반대로 됨).
+            <span class="ox-exp-src">2022년 소방공채·경채 Q19 · 포(Foam) 소화약제 종류별 특성 및 표면하 주입방식(Subsurface Injection)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>비누화 현상은 동·식물유 화재(K급)에서 알칼리염 약제가 만드는 소화 기전이며, 수용성 위험물(알코올·케톤 등)에 사용하는 알코올형포는 고분자 젤(Gel) 피막을 형성하여 포가 수용성 액체에 녹아 파괴되는 것을 방지합니다.
+            <span class="ox-exp-src">2022년 소방공채·경채 Q19 · 포(Foam) 소화약제 종류별 특성 및 표면하 주입방식(Subsurface Injection)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>연성계(Compound Gauge)는 펌프 흡입측에 설치하여 대기압 이상의 정압(양압)과 대기압 이하의 부압(진공압)을 모두 측정할 수 있는 계측기입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q25 · 포소화설비의 팽창비 정의·연성계·국소방출방식·프레셔사이드 프로포셔너</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>프레셔사이드 프로포셔너 방식은 펌프의 토출관에 압입기를 설치하여 포 소화약제 압입용 펌프로 약제를 압입시켜 혼합하는 방식입니다.
+            <span class="ox-exp-src">2023년 소방공채·경채 Q25 · 포소화설비의 팽창비 정의·연성계·국소방출방식·프레셔사이드 프로포셔너</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 24 · O 옳음</span>불화단백포는 단백포에 불소계 계면활성제를 첨가하여 단백포의 단점인 낮은 유동성과 낮은 내유성을 보완한 약제입니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q22 · 포 소화약제 4종(단백포·불화단백포·수성막포·합성계면활성제포·알코올형포) 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 25 · O 옳음</span>알코올형포(내알코올포)는 알코올류, 케톤류(아세톤), 알데히드류, 에테르류, 에스테르류, 아민류 등 수용성 인화성 액체(제4류 위험물) 화재 소화에 사용합니다.
+            <span class="ox-exp-src">2024년 소방공채·경채 Q22 · 포 소화약제 4종(단백포·불화단백포·수성막포·합성계면활성제포·알코올형포) 비교</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>단백포는 단백질을 가수분해한 것을 주원료로 하나, 기름에 오염되기 쉬워 '내유성이 나쁘고' 점성이 커서 유동성이 떨어지므로 '소화속도가 느립니다'(내유성이 뛰어나고 유동성·소화속도가 빠른 것은 수성막포와 불화단백포).
+            <span class="ox-exp-src">2024년 소방공채·경채 Q22 · 포 소화약제 4종(단백포·불화단백포·수성막포·합성계면활성제포·알코올형포) 비교</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let curSize = 13.6;
+    let is2Col = true;
+
+    function adjustFontSize(delta) {
+      curSize = Math.round((curSize + delta) * 10) / 10;
+      curSize = Math.min(17.5, Math.max(11.5, curSize));
+      document.documentElement.style.setProperty('--body-size', curSize + 'px');
+      document.getElementById('fontSizeLabel').textContent = curSize + 'px';
+    }
+
+    function setFontMode(mode) {
+      document.body.classList.toggle('font-sans-mode', mode === 'sans');
+      document.getElementById('btnFontSerif').classList.toggle('active', mode === 'serif');
+      document.getElementById('btnFontSans').classList.toggle('active', mode === 'sans');
+    }
+
+    function setTheoryLayout(mode) {
+      document.body.classList.toggle('layout-wide', mode === 'wide');
+      document.body.classList.toggle('layout-oxford', mode === 'oxford');
+      document.getElementById('btnLayoutWide').classList.toggle('active', mode === 'wide');
+      document.getElementById('btnLayoutOxford').classList.toggle('active', mode === 'oxford');
+    }
+
+    function toggleCols() {
+      is2Col = !is2Col;
+      document.body.classList.toggle('q-cols-2', is2Col);
+      document.body.classList.toggle('exp-cols-2', is2Col);
+      const btn = document.getElementById('btnQCol2');
+      btn.textContent = is2Col ? '2단 고정' : '1단 전환됨';
+      btn.classList.toggle('active', is2Col);
+    }
+
+    function setPageMargin(level) {
+      const styleEl = document.getElementById('pageMarginStyle');
+      const sheet = document.getElementById('bookSheet');
+      if (level === 'normal') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 18mm 18mm 18mm 18mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '6px');
+        sheet.style.padding = '52px 54px 64px 54px';
+      } else if (level === 'wide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 25mm 24mm 25mm 24mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '16px');
+        sheet.style.padding = '72px 78px 84px 78px';
+      } else if (level === 'xwide') {
+        styleEl.textContent = '@page { size: A4 portrait; margin: 28mm 28mm 28mm 28mm; }';
+        document.documentElement.style.setProperty('--theory-side-pad', '28px');
+        sheet.style.padding = '84px 96px 96px 96px';
+      }
+      document.getElementById('btnMarginNorm').classList.toggle('active', level === 'normal');
+      document.getElementById('btnMarginWide').classList.toggle('active', level === 'wide');
+      document.getElementById('btnMarginXWide').classList.toggle('active', level === 'xwide');
+    }
+  </script>
+</body>
+</html>
