@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>소방관계법규 기출 OX 소거 앱 — 단원별 선택 & 몰입 타격</title>
+  <title>소방관계법규 기출·법조문 OX 소거 앱 — 단원별 선택 & 몰입 타격</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
@@ -396,11 +396,11 @@
       <div class="flex items-center gap-1.5 min-w-0">
         <a href="../index.html" class="c-pill" style="text-decoration:none;" title="통합 포털">&larr; 포털</a>
         <a href="index.html" id="navBackTextbook" class="c-pill" style="text-decoration:none;" title="소방관계법규 기본서 목차">기본서 목차</a>
-        <span class="text-xs sm:text-sm font-extrabold tracking-tight ml-1 truncate" style="color:var(--accent);">소방관계법규 기출 OX</span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-tight ml-1 truncate" style="color:var(--accent);">소방관계법규 기출·사료 OX</span>
       </div>
 
       <div class="flex items-center gap-1.5 shrink-0">
-        <span id="navGlobalProgress" class="hidden sm:inline text-xs font-bold px-2" style="color:var(--text-sub);">잔여 578문항</span>
+        <span id="navGlobalProgress" class="hidden sm:inline text-xs font-bold px-2" style="color:var(--text-sub);">잔여 523문항</span>
         <button id="btnSettingsToggle" onclick="OxApp.toggleSettingsModal()" class="c-pill" title="화면·글자·좌우간격 설정">⚙️ 설정</button>
       </div>
     </div>
@@ -472,14 +472,14 @@
       </div>
       <div class="flex flex-wrap items-center gap-1.5">
         <a href="../소방학개론_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">🔥 소방학개론 OX (945제)</a>
-        <span class="c-pill active" style="cursor:default;">⚖️ 소방관계법규 OX (1,041제) · 현재</span>
-        <a href="../한국사_한능검2급_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">📜 한국사 사료·OX (1,050제)</a>
+        <a href="../소방관계법규_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">⚖️ 소방관계법규 OX (1,041제)</a>
+        <span class="c-pill active" style="cursor:default;">📜 한국사 사료·OX (1,050제) · 현재</span>
       </div>
     </div>
     <!-- 상단 요약 배너 -->
     <div class="mb-5 p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
       <div>
-        <div class="text-xs font-extrabold mb-0.5" style="color:var(--accent);">STEP 1 &rarr; STEP 2 맞춤 타격 로비</div>
+        <div class="text-xs font-extrabold mb-0.5" style="color:var(--accent);">STEP 1 &rarr; STEP 2 맞춤 타격 로비 · 한국사 (한능검 2급 · 사료 단서 탑재)</div>
         <h1 class="text-lg sm:text-xl font-extrabold tracking-tight" style="color:var(--text-main);">
           어느 단원의 어떤 문제를 풀어볼지 선택하세요
         </h1>
@@ -488,7 +488,7 @@
       <div class="flex flex-wrap items-center gap-2 text-xs">
         <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
           <span style="color:var(--text-sub);">전체 잔여</span>
-          <strong id="globalStatRemaining" class="ml-1 font-extrabold" style="color:var(--accent);">1,041</strong>
+          <strong id="globalStatRemaining" class="ml-1 font-extrabold" style="color:var(--accent);">1050</strong>
         </div>
         <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
           <span style="color:var(--text-sub);">누적 오답</span>
@@ -512,16 +512,19 @@
       <div class="lg:col-span-5 p-4 rounded-2xl border space-y-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-extrabold" style="color:var(--text-main);">1단계 · 풀어볼 단원 선택</h2>
-          <span class="text-xs font-bold" style="color:var(--text-muted);">총 20개 단원</span>
+          <span class="text-xs font-bold" style="color:var(--text-muted);">전 7편 21개 단원</span>
         </div>
 
         <!-- 편별 탭 -->
         <div class="flex flex-wrap items-center gap-1 pb-2 border-b" style="border-color:var(--border-line);">
           <button onclick="OxApp.setLobbyPart('all')" id="lobby_part_all" class="c-pill active">전체 단원</button>
-          <button onclick="OxApp.setLobbyPart('01')" id="lobby_part_01" class="c-pill">1편 기본·조사</button>
-          <button onclick="OxApp.setLobbyPart('02')" id="lobby_part_02" class="c-pill">2편 예방</button>
-          <button onclick="OxApp.setLobbyPart('03')" id="lobby_part_03" class="c-pill">3편 시설·공사</button>
-          <button onclick="OxApp.setLobbyPart('04')" id="lobby_part_04" class="c-pill">4편 위험물</button>
+          <button onclick="OxApp.setLobbyPart('01')" id="lobby_part_01" class="c-pill">1편 선사·고조선</button>
+          <button onclick="OxApp.setLobbyPart('02')" id="lobby_part_02" class="c-pill">2편 삼국·남북국</button>
+          <button onclick="OxApp.setLobbyPart('03')" id="lobby_part_03" class="c-pill">3편 고려</button>
+          <button onclick="OxApp.setLobbyPart('04')" id="lobby_part_04" class="c-pill">4편 조선전기</button>
+          <button onclick="OxApp.setLobbyPart('05')" id="lobby_part_05" class="c-pill">5편 조선후기</button>
+          <button onclick="OxApp.setLobbyPart('06')" id="lobby_part_06" class="c-pill">6편 근대개항</button>
+          <button onclick="OxApp.setLobbyPart('07')" id="lobby_part_07" class="c-pill">7편 일제·현대</button>
         </div>
 
         <!-- 단원 카드 리스트 -->
@@ -533,12 +536,12 @@
         <!-- 선택한 단원 헤더 -->
         <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b" style="border-color:var(--border-line);">
           <div>
-            <span id="selectedUnitPartBadge" class="text-xs font-extrabold" style="color:var(--accent);">제1편 소방기본법 및 화재조사법</span>
+            <span id="selectedUnitPartBadge" class="text-xs font-extrabold" style="color:var(--accent);">제1편 선사 문화와 국가의 형성</span>
             <h2 id="selectedUnitTitle" class="text-base sm:text-lg font-extrabold mt-0.5" style="color:var(--text-main);">
-              제1장. 총칙, 소방기관의 설치 및 119종합상황실
+              제1편 제1장. 구석기·신석기 도구와 생활상
             </h2>
           </div>
-          <a id="selectedUnitBookLink" href="01_01_총칙_및_소방기관과_종합상황실.html" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);">
+          <a id="selectedUnitBookLink" href="01_01_구석기_신석기_도구와_생활상.html" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);">
             📖 이 단원 기본서 읽기 &nearr;
           </a>
         </div>
@@ -571,27 +574,26 @@
             </div>
           </div>
 
-          <!-- (B) 출제 함정·난이도 기준 -->
+          <!-- (B) 출제 함정·난이도 기준 (한국사 5대 함정 특화) -->
           <div class="space-y-1.5">
-            <div class="text-[11px] font-bold" style="color:var(--text-muted);">출제 포인트 · 함정 유형 기준 (중복 선택 가능)</div>
+            <div class="text-[11px] font-bold" style="color:var(--text-muted);">출제 포인트 · 한국사 5대 함정 유형 기준 (중복 선택 가능)</div>
             <div class="flex flex-wrap items-center gap-1.5">
               <button onclick="OxApp.resetUnitSubFilters()" id="btnResetSubFlt" class="c-pill active">전체 유형</button>
-              <button onclick="OxApp.toggleQuickGradeS()" id="btnQuickS" class="c-pill">🔥 S급 최빈출</button>
-              <button onclick="OxApp.toggleQuickTrap('권한자·주체')" id="flt_trap_권한자·주체" class="c-pill">권한자·주체</button>
-              <button onclick="OxApp.toggleQuickTrap('위임법령')" id="flt_trap_위임법령" class="c-pill">위임법령</button>
-              <button onclick="OxApp.toggleQuickTrap('수치·기한')" id="flt_trap_수치·기한" class="c-pill">수치·기한</button>
-              <button onclick="OxApp.toggleQuickTrap('기속·재량·예외')" id="flt_trap_기속·재량·예외" class="c-pill">기속·재량</button>
-              <button onclick="OxApp.toggleQuickTrap('법령·정의')" id="flt_trap_법령·정의" class="c-pill">법령·정의</button>
+              <button onclick="OxApp.toggleQuickGradeS()" id="btnQuickS" class="c-pill">🔥 S급·사료판별</button>
+              <button onclick="OxApp.toggleQuickTrap('왕대·인물')" id="flt_trap_왕대·인물" class="c-pill">왕대·인물</button>
+              <button onclick="OxApp.toggleQuickTrap('사료·연대기')" id="flt_trap_사료·연대기" class="c-pill">사료·연대기</button>
+              <button onclick="OxApp.toggleQuickTrap('제도·기구')" id="flt_trap_제도·기구" class="c-pill">제도·기구</button>
+              <button onclick="OxApp.toggleQuickTrap('토지·수취·경제')" id="flt_trap_토지·수취·경제" class="c-pill">토지·수취·경제</button>
+              <button onclick="OxApp.toggleQuickTrap('사상·문화·독립운동')" id="flt_trap_사상·문화·독립운동" class="c-pill">사상·문화·독립운동</button>
             </div>
           </div>
 
-          <!-- (C) 문제 풀 범위 & 순서 섞기 & 키워드 검색 -->
+          <!-- (C) 문제 풀 범위 & 사료 단서 제시 모드 & 순서 섞기 & 키워드 검색 -->
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t" style="border-color:var(--border-line);">
             <div class="flex flex-wrap items-center gap-1">
-              <button onclick="OxApp.setFilter('tier', 'essential')" id="flt_tier_essential" class="c-pill active">🔥 핵심 정예(30선·중복압축)</button>
-              <button onclick="OxApp.setFilter('tier', 'all')" id="flt_tier_all" class="c-pill">전체 풀(1,041제)</button>
-              <button onclick="OxApp.setFilter('tier', 'core')" id="flt_tier_core" class="c-pill">기출 코어</button>
-              <button onclick="OxApp.setFilter('tier', 'ext')" id="flt_tier_ext" class="c-pill">기출 확장</button>
+              <button onclick="OxApp.setFilter('tier', 'all')" id="flt_tier_all" class="c-pill active">통합(핵심+사료)</button>
+              <button onclick="OxApp.setFilter('tier', 'core')" id="flt_tier_core" class="c-pill">핵심 지문만</button>
+              <button onclick="OxApp.setFilter('tier', 'ext')" id="flt_tier_ext" class="c-pill">📜 사료 제시형만</button>
               <button onclick="OxApp.setFilter('tier', 'pred')" id="flt_tier_pred" class="c-pill">🎯 적중 예상(미기출)</button>
               <button onclick="OxApp.toggleShuffleMode()" id="btnShuffleToggle" class="c-pill">🔀 랜덤 셔플</button>
             </div>
@@ -608,7 +610,7 @@
           <div>
             <div class="text-xs font-bold" style="color:var(--text-sub);">현재 선택된 조건에 해당하는 문항</div>
             <div class="text-base font-extrabold" style="color:var(--accent);">
-              총 <span id="selectedMatchCount">35</span>문항 준비됨
+              총 <span id="selectedMatchCount">50</span>문항 준비됨
             </div>
           </div>
 
@@ -666,7 +668,7 @@
 
         <!-- 최하단 중앙 카운터 (1 / N) -->
         <div id="solveSessionCounter" class="fk-bottom-counter-bar">
-          <strong>1</strong> / 35
+          <strong>1</strong> / 50
         </div>
 
       </div>
@@ -696,8 +698,16 @@
   </div>
 
   <!-- 데이터 로드 -->
-  <script src="assets/js/fire-law-ox-db.js"></script>
+  <script src="assets/js/law-ox-db.js"></script>
   <script>
+    const TRAP_KEYS = [
+      '왕대·인물',
+      '사료·연대기',
+      '제도·기구',
+      '토지·수취·경제',
+      '사상·문화·독립운동'
+    ];
+
     const OxApp = {
       db: null,
       stage: 'select', // 'select' | 'solve'
@@ -710,8 +720,8 @@
       lastScrollY: 0,
 
       filters: {
-        unit: '01_01', // 기본 선택 단원 ('all' 또는 '01_01' ~ '04_03')
-        tier: 'essential',
+        unit: '01_01', // 기본 선택 단원 ('all' 또는 '01_01' ~ '05_03')
+        tier: 'all',
         grade: 'all',
         status: 'all',
         trap: 'all',
@@ -724,11 +734,11 @@
       sessionAnswers: {},
 
       init() {
-        if (!window.FIRE_LAW_OX_DB) {
-          alert('기출 OX 데이터베이스를 불러오지 못했습니다.');
+        if (!window.LAW_OX_DB) {
+          alert('소방관계법규 기출·사료 OX 데이터베이스를 불러오지 못했습니다.');
           return;
         }
-        this.db = window.FIRE_LAW_OX_DB;
+        this.db = window.LAW_OX_DB;
         this.loadPreferences();
         this.loadUserRecords();
 
@@ -748,7 +758,7 @@
           const resumeFlag = params.get('resume') === '1';
 
           if (resumeFlag) {
-            const savedSess = sessionStorage.getItem('fk_ox_active_session');
+            const savedSess = sessionStorage.getItem('fk_history_ox_active_session');
             if (savedSess) {
               const parsed = JSON.parse(savedSess);
               if (parsed && parsed.filters) {
@@ -787,7 +797,7 @@
 
       saveActiveSession() {
         try {
-          sessionStorage.setItem('fk_ox_active_session', JSON.stringify({
+          sessionStorage.setItem('fk_history_ox_active_session', JSON.stringify({
             filters: this.filters,
             isShuffle: this.isShuffle,
             currentIndex: this.currentIndex
@@ -830,7 +840,7 @@
 
       loadUserRecords() {
         try {
-          const raw = localStorage.getItem('fk_fire_law_ox_records_v1');
+          const raw = localStorage.getItem('fk_history_ox_records_v1');
           if (raw) this.userRecords = JSON.parse(raw) || {};
         } catch (e) {
           this.userRecords = {};
@@ -839,7 +849,7 @@
 
       saveUserRecords() {
         try {
-          localStorage.setItem('fk_fire_law_ox_records_v1', JSON.stringify(this.userRecords));
+          localStorage.setItem('fk_history_ox_records_v1', JSON.stringify(this.userRecords));
         } catch (e) {}
       },
 
@@ -957,6 +967,8 @@
          ===================================================================== */
       showSelectView() {
         this.stage = 'select';
+        const topNav = document.getElementById('topStickyNav');
+        if (topNav) topNav.classList.remove('hidden');
         document.getElementById('selectView').classList.remove('hidden');
         document.getElementById('solveView').classList.add('hidden');
         this.applyFilters();
@@ -1010,7 +1022,7 @@
                 <span class="text-[11px] font-bold" style="color:var(--text-muted);">총 ${totalAll}문항</span>
               </div>
               <div class="text-sm font-extrabold mt-0.5" style="color:var(--text-main);">
-                소방관계법규 4대 분법 전 범위 (20개 단원)
+                소방관계법규 전 7편 21개 단원 통합
               </div>
               <div class="flex items-center gap-3 mt-2 text-[11px] font-bold">
                 <span style="color:var(--text-sub);">잔여 <strong style="color:var(--accent);">${remAll}</strong></span>
@@ -1069,7 +1081,7 @@
 
         if (this.filters.unit === 'all') {
           if (partBadge) partBadge.textContent = '소방관계법규 전 범위 통합';
-          if (titleEl) titleEl.textContent = '전 단원 통합 (제1편부터 제4편까지 전체)';
+          if (titleEl) titleEl.textContent = '전 단원 통합 (제1편부터 제7편까지 전체)';
           if (bookLink) {
             bookLink.href = 'index.html';
             bookLink.innerHTML = '📖 기본서 전체 목차 열기 &nearr;';
@@ -1125,7 +1137,7 @@
               <div class="flex items-center justify-between gap-2 mb-1">
                 <div class="flex items-center gap-1.5">
                   <span class="text-xs font-extrabold" style="color:var(--accent);">#${idx + 1}</span>
-                  ${item.tier === 'pred' ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent); color:#fff;">🎯 적중예상</span>` : ''}
+                  ${item.tier === 'pred' ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent); color:#fff;">🎯적중</span>` : ''}
                   ${item.grade === 'S' ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold" style="background-color:var(--accent-soft); color:var(--accent);">S급</span>` : ''}
                   ${statusBadge}
                   <span class="text-[11px] font-bold" style="color:var(--text-muted);">${(item.trapTags || []).map(t => '#' + t).join(' ')}</span>
@@ -1154,7 +1166,7 @@
         this.filters.trap = 'all';
         const btnS = document.getElementById('btnQuickS');
         if (btnS) btnS.classList.remove('active');
-        ['권한자·주체', '위임법령', '수치·기한', '기속·재량·예외'].forEach(tp => {
+        TRAP_KEYS.forEach(tp => {
           const b = document.getElementById(`flt_trap_${tp}`);
           if (b) b.classList.remove('active');
         });
@@ -1180,7 +1192,7 @@
 
       toggleQuickTrap(trapName) {
         this.filters.trap = this.filters.trap === trapName ? 'all' : trapName;
-        ['권한자·주체', '위임법령', '수치·기한', '기속·재량·예외'].forEach(tp => {
+        TRAP_KEYS.forEach(tp => {
           const btn = document.getElementById(`flt_trap_${tp}`);
           if (btn) btn.classList.toggle('active', this.filters.trap === tp);
         });
@@ -1191,7 +1203,7 @@
       setFilter(key, val) {
         this.filters[key] = val;
         if (key === 'tier') {
-          ['essential', 'all', 'core', 'ext', 'pred'].forEach(v => {
+          ['all', 'core', 'ext', 'pred'].forEach(v => {
             const btn = document.getElementById(`flt_tier_${v}`);
             if (btn) btn.classList.toggle('active', v === val);
           });
@@ -1236,11 +1248,7 @@
         let list = this.db.oxList.filter(item => {
           const rec = this.getRecord(item.id);
           if (f.unit !== 'all' && item.unitId !== f.unit) return false;
-          if (f.tier === 'essential') {
-            if (item.isEssential === false) return false;
-          } else if (f.tier !== 'all' && item.tier !== f.tier) {
-            return false;
-          }
+          if (f.tier !== 'all' && item.tier !== f.tier) return false;
           if (f.grade === 'S' && item.grade !== 'S') return false;
           if (f.trap !== 'all' && (!item.trapTags || !item.trapTags.includes(f.trap))) return false;
 
@@ -1339,6 +1347,8 @@
 
       enterSolveView() {
         this.stage = 'solve';
+        const topNav = document.getElementById('topStickyNav');
+        if (topNav) topNav.classList.add('hidden');
         document.getElementById('selectView').classList.add('hidden');
         document.getElementById('solveView').classList.remove('hidden');
         this.saveActiveSession();
@@ -1386,7 +1396,7 @@
         const answered = this.sessionAnswers[item.id];
         const isLast = this.currentIndex === this.filteredList.length - 1;
         const numStr = String(this.currentIndex + 1).padStart(2, '0');
-        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^[A-Z]+_/, '기');
+        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^H_/, '기');
 
         if (unitBadge) {
           const uIdx = unitObj ? (this.db.units.indexOf(unitObj) + 1) : 1;
@@ -1425,7 +1435,7 @@
 
         const deepLinkUrl = this.buildDeepLinkUrl(item);
 
-        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역
+        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역 (카드 하단에 자연스럽게 펼쳐짐)
         let feedbackHtml = '';
         if (answered !== undefined) {
           const isUserRight = answered.userChoice === item.isCorrect;
@@ -1444,26 +1454,11 @@
                   <a href="${deepLinkUrl}" onclick="OxApp.saveActiveSession()" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition" style="background-color:var(--accent); color:#ffffff; text-decoration:none;">
                     📖 기본서 설명 파트 보기 &nearr;
                   </a>
-                  ${item.origQId ? `
-                    <button onclick="OxApp.openOrigModal('${item.origQId}', '${item.id}')" class="c-pill">
-                      📄 기출 원문
-                    </button>
-                  ` : ''}
-                  <button onclick="OxApp.toggleExclude('${item.id}')" class="c-pill ${rec.excluded ? 'active' : ''}">
-                    ${rec.excluded ? '✓ 소거됨' : '✓ 소거'}
-                  </button>
                 </div>
               </div>
 
               <div class="ox-expl">
                 ${this.formatExplanation(item.explanation)}
-              </div>
-
-              <div class="mt-3 pt-2.5 border-t flex items-center justify-between gap-2" style="border-color:var(--border-line);">
-                <span class="text-[11px] font-bold" style="color:var(--text-muted);">${this.escapeHtml(item.source || '')}</span>
-                <button onclick="OxApp.nextOrFinishCard()" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
-                  ${isLast ? '풀이 완료 · 목록으로 &rarr;' : '다음 문제 &rarr;'}
-                </button>
               </div>
             </div>
           `;
@@ -1478,7 +1473,7 @@
                   <span class="fk-c-icon">C</span>
                   <span class="fk-num-digits">${numStr}</span>
                 </div>
-                <span class="fk-sub-code">${this.escapeHtml(subCode)}${item.source ? ' · ' + this.escapeHtml(item.source) : ''}</span>
+                <span class="fk-sub-code">${this.escapeHtml(subCode)}</span>
               </div>
 
               <button onclick="OxApp.toggleStar('${item.id}')" class="fk-save-btn ${rec.starred ? 'saved' : ''}" title="중요 문제 저장 (단축키 S)">
@@ -1489,16 +1484,16 @@
             <!-- 카드 중앙 지문 -->
             <div class="fk-statement-area">
               <div class="ox-statement">
-                ${this.escapeHtml(item.text)}
+                ${this.formatStatementHtml(item.text)}
               </div>
             </div>
 
-            <!-- 카드 내부 하단 2열 대형 O / X 박스 -->
+            <!-- 카드 내부 하단 2열 대형 O / X 박스 (스크린샷과 100% 동일한 배치) -->
             <div class="fk-inside-ox-grid">
-              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O 옳다">
+              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O">
                 <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
               </button>
-              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X 틀리다">
+              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X">
                 <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
               </button>
             </div>
@@ -1531,7 +1526,63 @@
         }
       },
 
+      formatStatementHtml(text) {
+        const escaped = this.escapeHtml(text || '');
+        return escaped.replace(/^(\[[^\]]+\]\s*)/, '');
+      },
+
+      buildClueBoxHtml(item, isAnswered) {
+        if (!item.clueQuote) return '';
+        const showBox = (item.tier === 'ext') || !!this.forceShowClue;
+        if (!showBox) return '';
+        const revealHint = isAnswered || !!this.showClueHint;
+        let quoteHtml = this.escapeHtml(item.clueQuote);
+        const kws = item.clueKeywords || [];
+        if (revealHint && kws.length > 0) {
+          kws.forEach(kw => {
+            const ekw = this.escapeHtml(kw);
+            if (ekw && quoteHtml.includes(ekw)) {
+              quoteHtml = quoteHtml.split(ekw).join(`<mark style="background:rgba(245,158,11,0.32); color:inherit; font-weight:800; padding:0 3px; border-radius:3px;">${ekw}</mark>`);
+            }
+          });
+        }
+        const kwBadges = kws.map(k => `<span class="px-1.5 py-0.5 rounded font-bold text-[11px]" style="background-color:var(--accent-soft); color:var(--accent);">#${this.escapeHtml(k)}</span>`).join(' ');
+        return `
+          <div id="cardClueWrap" class="mb-4 p-3.5 sm:p-4 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-strong);">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2 pb-1.5 border-b" style="border-color:var(--border-line);">
+              <span class="text-xs font-extrabold" style="color:var(--accent);">${this.escapeHtml(item.clueTitle || '📜 한능검 핵심 사료 · 자료 제시문')}</span>
+              <button onclick="OxApp.toggleClueHint()" class="px-2 py-0.5 rounded text-[11px] font-bold border transition cursor-pointer" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-sub);">
+                ${revealHint ? '🙈 1초 키워드 · 정체 숨기기' : '🔍 1초 키워드 · 사료 정체 보기'}
+              </button>
+            </div>
+            <p class="text-xs sm:text-sm leading-relaxed" style="color:var(--text-main); margin:0;">${quoteHtml}</p>
+            ${revealHint ? `
+              <div id="cardClueHintBar" class="mt-2.5 pt-2 border-t flex flex-wrap items-center gap-1.5 text-xs" style="border-color:var(--border-line);">
+                <span class="font-extrabold" style="color:var(--accent);">🎯 사료 판독 정답: ${this.escapeHtml(item.clueTarget || '')}</span>
+                <span style="color:var(--text-muted);">|</span>
+                <span class="text-[11px]" style="color:var(--text-sub);">1초 키워드:</span>
+                ${kwBadges}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      },
+
+      toggleClueBox() {
+        const item = this.filteredList[this.currentIndex];
+        if (!item) return;
+        const currentlyShown = (item.tier === 'ext') ? (this.forceShowClue !== false) : !!this.forceShowClue;
+        this.forceShowClue = !currentlyShown;
+        this.renderCurrentSolveCard();
+      },
+
+      toggleClueHint() {
+        this.showClueHint = !this.showClueHint;
+        this.renderCurrentSolveCard();
+      },
+
       prevCard() {
+        this.showClueHint = false;
         if (this.currentIndex > 0) {
           this.currentIndex--;
           this.saveActiveSession();
@@ -1540,6 +1591,7 @@
       },
 
       nextOrFinishCard() {
+        this.showClueHint = false;
         if (this.currentIndex < this.filteredList.length - 1) {
           this.currentIndex++;
           this.saveActiveSession();
@@ -1597,8 +1649,8 @@
 
         const circles = ['①', '②', '③', '④', '⑤'];
         const stemBoxHtml = oq.stem_box ? `
-          <div class="p-2.5 rounded-lg border text-xs leading-relaxed whitespace-pre-line" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main);">
-            ${this.escapeHtml(oq.stem_box)}
+          <div class="p-2.5 rounded-lg border text-xs leading-relaxed" style="background-color:var(--bg-subtle); border-color:var(--border-line); color:var(--text-main);">
+            ${oq.stem_box}
           </div>
         ` : '';
 

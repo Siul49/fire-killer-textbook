@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>소방학개론 기출 OX 소거 앱 — 단원별 선택 & 몰입 타격</title>
+  <title>소방학개론 기출·함정 OX 소거 앱 — 단원별 선택 & 몰입 타격</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
@@ -396,11 +396,11 @@
       <div class="flex items-center gap-1.5 min-w-0">
         <a href="../index.html" class="c-pill" style="text-decoration:none;" title="통합 포털">&larr; 포털</a>
         <a href="index.html" id="navBackTextbook" class="c-pill" style="text-decoration:none;" title="소방학개론 기본서 목차">기본서 목차</a>
-        <span class="text-xs sm:text-sm font-extrabold tracking-tight ml-1 truncate" style="color:var(--accent);">소방학개론 기출 OX</span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-tight ml-1 truncate" style="color:var(--accent);">소방학개론 기출·사료 OX</span>
       </div>
 
       <div class="flex items-center gap-1.5 shrink-0">
-        <span id="navGlobalProgress" class="hidden sm:inline text-xs font-bold px-2" style="color:var(--text-sub);">잔여 681문항</span>
+        <span id="navGlobalProgress" class="hidden sm:inline text-xs font-bold px-2" style="color:var(--text-sub);">잔여 523문항</span>
         <button id="btnSettingsToggle" onclick="OxApp.toggleSettingsModal()" class="c-pill" title="화면·글자·좌우간격 설정">⚙️ 설정</button>
       </div>
     </div>
@@ -471,15 +471,15 @@
         <span>🎯 3과목 OX 훈련장 바로 전환</span>
       </div>
       <div class="flex flex-wrap items-center gap-1.5">
-        <span class="c-pill active" style="cursor:default;">🔥 소방학개론 OX (945제) · 현재</span>
+        <a href="../소방학개론_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">🔥 소방학개론 OX (945제)</a>
         <a href="../소방관계법규_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">⚖️ 소방관계법규 OX (1,041제)</a>
-        <a href="../한국사_한능검2급_기본서_및_기출하네스/ox_app.html" class="c-pill" style="text-decoration:none;">📜 한국사 사료·OX (1,050제)</a>
+        <span class="c-pill active" style="cursor:default;">📜 한국사 사료·OX (1,050제) · 현재</span>
       </div>
     </div>
     <!-- 상단 요약 배너 -->
     <div class="mb-5 p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
       <div>
-        <div class="text-xs font-extrabold mb-0.5" style="color:var(--accent);">STEP 1 &rarr; STEP 2 맞춤 타격 로비 · 소방학개론</div>
+        <div class="text-xs font-extrabold mb-0.5" style="color:var(--accent);">STEP 1 &rarr; STEP 2 맞춤 타격 로비 · 한국사 (한능검 2급 · 사료 단서 탑재)</div>
         <h1 class="text-lg sm:text-xl font-extrabold tracking-tight" style="color:var(--text-main);">
           어느 단원의 어떤 문제를 풀어볼지 선택하세요
         </h1>
@@ -488,7 +488,7 @@
       <div class="flex flex-wrap items-center gap-2 text-xs">
         <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
           <span style="color:var(--text-sub);">전체 잔여</span>
-          <strong id="globalStatRemaining" class="ml-1 font-extrabold" style="color:var(--accent);">681</strong>
+          <strong id="globalStatRemaining" class="ml-1 font-extrabold" style="color:var(--accent);">1050</strong>
         </div>
         <div class="px-3 py-1.5 rounded-lg border" style="background-color:var(--bg-subtle); border-color:var(--border-line);">
           <span style="color:var(--text-sub);">누적 오답</span>
@@ -512,17 +512,19 @@
       <div class="lg:col-span-5 p-4 rounded-2xl border space-y-3" style="background-color:var(--bg-sheet); border-color:var(--border-line);">
         <div class="flex items-center justify-between">
           <h2 class="text-sm font-extrabold" style="color:var(--text-main);">1단계 · 풀어볼 단원 선택</h2>
-          <span class="text-xs font-bold" style="color:var(--text-muted);">전 5편 17개 단원</span>
+          <span class="text-xs font-bold" style="color:var(--text-muted);">전 7편 21개 단원</span>
         </div>
 
         <!-- 편별 탭 -->
         <div class="flex flex-wrap items-center gap-1 pb-2 border-b" style="border-color:var(--border-line);">
           <button onclick="OxApp.setLobbyPart('all')" id="lobby_part_all" class="c-pill active">전체 단원</button>
-          <button onclick="OxApp.setLobbyPart('01')" id="lobby_part_01" class="c-pill">1편 조직·재난</button>
-          <button onclick="OxApp.setLobbyPart('02')" id="lobby_part_02" class="c-pill">2편 연소·폭발</button>
-          <button onclick="OxApp.setLobbyPart('03')" id="lobby_part_03" class="c-pill">3편 화재·약제</button>
-          <button onclick="OxApp.setLobbyPart('04')" id="lobby_part_04" class="c-pill">4편 소방시설</button>
-          <button onclick="OxApp.setLobbyPart('05')" id="lobby_part_05" class="c-pill">5편 위험물</button>
+          <button onclick="OxApp.setLobbyPart('01')" id="lobby_part_01" class="c-pill">1편 선사·고조선</button>
+          <button onclick="OxApp.setLobbyPart('02')" id="lobby_part_02" class="c-pill">2편 삼국·남북국</button>
+          <button onclick="OxApp.setLobbyPart('03')" id="lobby_part_03" class="c-pill">3편 고려</button>
+          <button onclick="OxApp.setLobbyPart('04')" id="lobby_part_04" class="c-pill">4편 조선전기</button>
+          <button onclick="OxApp.setLobbyPart('05')" id="lobby_part_05" class="c-pill">5편 조선후기</button>
+          <button onclick="OxApp.setLobbyPart('06')" id="lobby_part_06" class="c-pill">6편 근대개항</button>
+          <button onclick="OxApp.setLobbyPart('07')" id="lobby_part_07" class="c-pill">7편 일제·현대</button>
         </div>
 
         <!-- 단원 카드 리스트 -->
@@ -534,12 +536,12 @@
         <!-- 선택한 단원 헤더 -->
         <div class="flex flex-wrap items-start justify-between gap-2 pb-3 border-b" style="border-color:var(--border-line);">
           <div>
-            <span id="selectedUnitPartBadge" class="text-xs font-extrabold" style="color:var(--accent);">제1편 소방조직 및 재난관리론</span>
+            <span id="selectedUnitPartBadge" class="text-xs font-extrabold" style="color:var(--accent);">제1편 선사 문화와 국가의 형성</span>
             <h2 id="selectedUnitTitle" class="text-base sm:text-lg font-extrabold mt-0.5" style="color:var(--text-main);">
-              제1편 제1장. 소방의 역사·발전 과정 및 소방조직·인사 원리
+              제1편 제1장. 구석기·신석기 도구와 생활상
             </h2>
           </div>
-          <a id="selectedUnitBookLink" href="01_01_소방의_역사_발전과_조직_인사원리.html" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);">
+          <a id="selectedUnitBookLink" href="01_01_구석기_신석기_도구와_생활상.html" class="c-pill" style="text-decoration:none; color:var(--accent); border-color:var(--accent);">
             📖 이 단원 기본서 읽기 &nearr;
           </a>
         </div>
@@ -572,28 +574,27 @@
             </div>
           </div>
 
-          <!-- (B) 출제 함정·난이도 기준 (소방학개론 5대 함정 특화) -->
+          <!-- (B) 출제 함정·난이도 기준 (한국사 5대 함정 특화) -->
           <div class="space-y-1.5">
-            <div class="text-[11px] font-bold" style="color:var(--text-muted);">출제 포인트 · 함정 유형 기준 (중복 선택 가능)</div>
+            <div class="text-[11px] font-bold" style="color:var(--text-muted);">출제 포인트 · 한국사 5대 함정 유형 기준 (중복 선택 가능)</div>
             <div class="flex flex-wrap items-center gap-1.5">
               <button onclick="OxApp.resetUnitSubFilters()" id="btnResetSubFlt" class="c-pill active">전체 유형</button>
-              <button onclick="OxApp.toggleQuickGradeS()" id="btnQuickS" class="c-pill">🔥 S급 최빈출</button>
-              <button onclick="OxApp.toggleQuickTrap('비례·증감·물성')" id="flt_trap_비례·증감·물성" class="c-pill">비례·증감·물성</button>
-              <button onclick="OxApp.toggleQuickTrap('화학식·약제·위험물')" id="flt_trap_화학식·약제·위험물" class="c-pill">화학식·약제·위험물</button>
-              <button onclick="OxApp.toggleQuickTrap('화재현상·비교개념')" id="flt_trap_화재현상·비교개념" class="c-pill">화재현상·비교개념</button>
-              <button onclick="OxApp.toggleQuickTrap('소방시설·수치기준')" id="flt_trap_소방시설·수치기준" class="c-pill">소방시설·수치기준</button>
-              <button onclick="OxApp.toggleQuickTrap('역사·재난·조직')" id="flt_trap_역사·재난·조직" class="c-pill">역사·재난·조직</button>
+              <button onclick="OxApp.toggleQuickGradeS()" id="btnQuickS" class="c-pill">🔥 S급·사료판별</button>
+              <button onclick="OxApp.toggleQuickTrap('왕대·인물')" id="flt_trap_왕대·인물" class="c-pill">왕대·인물</button>
+              <button onclick="OxApp.toggleQuickTrap('사료·연대기')" id="flt_trap_사료·연대기" class="c-pill">사료·연대기</button>
+              <button onclick="OxApp.toggleQuickTrap('제도·기구')" id="flt_trap_제도·기구" class="c-pill">제도·기구</button>
+              <button onclick="OxApp.toggleQuickTrap('토지·수취·경제')" id="flt_trap_토지·수취·경제" class="c-pill">토지·수취·경제</button>
+              <button onclick="OxApp.toggleQuickTrap('사상·문화·독립운동')" id="flt_trap_사상·문화·독립운동" class="c-pill">사상·문화·독립운동</button>
             </div>
           </div>
 
-          <!-- (C) 문제 풀 범위 & 순서 섞기 & 키워드 검색 -->
+          <!-- (C) 문제 풀 범위 & 사료 단서 제시 모드 & 순서 섞기 & 키워드 검색 -->
           <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t" style="border-color:var(--border-line);">
             <div class="flex flex-wrap items-center gap-1">
-              <button onclick="OxApp.setFilter('tier', 'essential')" id="flt_tier_essential" class="c-pill active">🔥 핵심 정예(30선·중복압축)</button>
-              <button onclick="OxApp.setFilter('tier', 'all')" id="flt_tier_all" class="c-pill">전체 풀(945제)</button>
-              <button onclick="OxApp.setFilter('tier', 'core')" id="flt_tier_core" class="c-pill">엄선 코어만</button>
-              <button onclick="OxApp.setFilter('tier', 'ext')" id="flt_tier_ext" class="c-pill">기출 확장만</button>
-              <button onclick="OxApp.setFilter('tier', 'pred')" id="flt_tier_pred" class="c-pill">🎯 2회독 주변확장(미기출)</button>
+              <button onclick="OxApp.setFilter('tier', 'all')" id="flt_tier_all" class="c-pill active">통합(핵심+사료)</button>
+              <button onclick="OxApp.setFilter('tier', 'core')" id="flt_tier_core" class="c-pill">핵심 지문만</button>
+              <button onclick="OxApp.setFilter('tier', 'ext')" id="flt_tier_ext" class="c-pill">📜 사료 제시형만</button>
+              <button onclick="OxApp.setFilter('tier', 'pred')" id="flt_tier_pred" class="c-pill">🎯 적중 예상(미기출)</button>
               <button onclick="OxApp.toggleShuffleMode()" id="btnShuffleToggle" class="c-pill">🔀 랜덤 셔플</button>
             </div>
 
@@ -697,14 +698,14 @@
   </div>
 
   <!-- 데이터 로드 -->
-  <script src="assets/js/fire-intro-ox-db.js"></script>
+  <script src="assets/js/science-ox-db.js"></script>
   <script>
     const TRAP_KEYS = [
-      '비례·증감·물성',
-      '화학식·약제·위험물',
-      '화재현상·비교개념',
-      '소방시설·수치기준',
-      '역사·재난·조직'
+      '왕대·인물',
+      '사료·연대기',
+      '제도·기구',
+      '토지·수취·경제',
+      '사상·문화·독립운동'
     ];
 
     const OxApp = {
@@ -720,7 +721,7 @@
 
       filters: {
         unit: '01_01', // 기본 선택 단원 ('all' 또는 '01_01' ~ '05_03')
-        tier: 'essential',
+        tier: 'all',
         grade: 'all',
         status: 'all',
         trap: 'all',
@@ -733,11 +734,11 @@
       sessionAnswers: {},
 
       init() {
-        if (!window.FIRE_INTRO_OX_DB) {
-          alert('소방학개론 기출 OX 데이터베이스를 불러오지 못했습니다.');
+        if (!window.SCIENCE_OX_DB) {
+          alert('소방학개론 기출·사료 OX 데이터베이스를 불러오지 못했습니다.');
           return;
         }
-        this.db = window.FIRE_INTRO_OX_DB;
+        this.db = window.SCIENCE_OX_DB;
         this.loadPreferences();
         this.loadUserRecords();
 
@@ -757,7 +758,7 @@
           const resumeFlag = params.get('resume') === '1';
 
           if (resumeFlag) {
-            const savedSess = sessionStorage.getItem('fk_intro_ox_active_session');
+            const savedSess = sessionStorage.getItem('fk_history_ox_active_session');
             if (savedSess) {
               const parsed = JSON.parse(savedSess);
               if (parsed && parsed.filters) {
@@ -776,11 +777,10 @@
           const unitParam = params.get('unit');
           const sortParam = params.get('sort');
 
-          if (unitParam && (this.db.units.some(u => u.unitId === unitParam) || ['01_01_sec1', '01_01_sec2', '01_01_sec3'].includes(unitParam))) {
+          if (unitParam && this.db.units.some(u => u.unitId === unitParam)) {
             this.filters.unit = unitParam;
             this.lobbyPart = unitParam.slice(0, 2);
-            const baseUid = unitParam.slice(0, 5);
-            const unitObj = this.db.units.find(u => u.unitId === baseUid);
+            const unitObj = this.db.units.find(u => u.unitId === unitParam);
             const backBtn = document.getElementById('navBackTextbook');
             if (backBtn && unitObj) {
               backBtn.href = unitObj.fileName;
@@ -797,7 +797,7 @@
 
       saveActiveSession() {
         try {
-          sessionStorage.setItem('fk_intro_ox_active_session', JSON.stringify({
+          sessionStorage.setItem('fk_history_ox_active_session', JSON.stringify({
             filters: this.filters,
             isShuffle: this.isShuffle,
             currentIndex: this.currentIndex
@@ -840,7 +840,7 @@
 
       loadUserRecords() {
         try {
-          const raw = localStorage.getItem('fk_fire_intro_ox_records_v1');
+          const raw = localStorage.getItem('fk_history_ox_records_v1');
           if (raw) this.userRecords = JSON.parse(raw) || {};
         } catch (e) {
           this.userRecords = {};
@@ -849,7 +849,7 @@
 
       saveUserRecords() {
         try {
-          localStorage.setItem('fk_fire_intro_ox_records_v1', JSON.stringify(this.userRecords));
+          localStorage.setItem('fk_history_ox_records_v1', JSON.stringify(this.userRecords));
         } catch (e) {}
       },
 
@@ -967,6 +967,8 @@
          ===================================================================== */
       showSelectView() {
         this.stage = 'select';
+        const topNav = document.getElementById('topStickyNav');
+        if (topNav) topNav.classList.remove('hidden');
         document.getElementById('selectView').classList.remove('hidden');
         document.getElementById('solveView').classList.add('hidden');
         this.applyFilters();
@@ -996,18 +998,6 @@
         }
       },
 
-      is0101Sec(item, secNum) {
-        if (item.unitId !== '01_01') return false;
-        const id = item.id || '';
-        if (id === 'PRED_SCI_01_01_025' || id === 'PRED_SCI_01_01_026') return secNum === 1;
-        if (id >= 'PRED_SCI_01_01_027' && id <= 'PRED_SCI_01_01_033') return secNum === 2;
-        if (id >= 'PRED_SCI_01_01_034' && id <= 'PRED_SCI_01_01_042') return secNum === 3;
-        const p = typeof item.paraIdx === 'number' ? item.paraIdx : 0;
-        if (secNum === 1) return p <= 2;
-        if (secNum === 2) return p >= 3 && p <= 5;
-        return p >= 6;
-      },
-
       renderUnitCardList() {
         const mount = document.getElementById('unitCardList');
         if (!mount) return;
@@ -1032,7 +1022,7 @@
                 <span class="text-[11px] font-bold" style="color:var(--text-muted);">총 ${totalAll}문항</span>
               </div>
               <div class="text-sm font-extrabold mt-0.5" style="color:var(--text-main);">
-                소방학개론 전 5편 17개 단원 통합
+                소방학개론 전 7편 21개 단원 통합
               </div>
               <div class="flex items-center gap-3 mt-2 text-[11px] font-bold">
                 <span style="color:var(--text-sub);">잔여 <strong style="color:var(--accent);">${remAll}</strong></span>
@@ -1042,53 +1032,10 @@
           `);
         }
 
-        // 2. 개별 단원 카드 (01_01은 Unit 01·02·03 3개 절로 분할 지원)
-        const expandedUnits = [];
+        // 2. 개별 단원 카드
         this.db.units.forEach(u => {
-          if (u.unitId === '01_01') {
-            expandedUnits.push({
-              unitId: '01_01', partId: '01', partTitle: u.partTitle, fileName: u.fileName,
-              badgeLabel: '1편 1장 통합 (Unit 1·2·3)',
-              shortTitle: u.shortTitle + ' (전체 92문항)',
-              unitTitle: u.unitTitle + ' (전 범위 통합)'
-            });
-            expandedUnits.push({
-              unitId: '01_01_sec1', baseUnitId: '01_01', secRange: [0, 1, 2, 3, 4],
-              partId: '01', partTitle: 'DAY 01 · Unit 01 (제1편 제1장 제1절)', fileName: u.fileName + '#sec1',
-              badgeLabel: '🎯 Unit 01 (01_01 제1절)',
-              shortTitle: '[Unit 01] 삼국·고려·조선 금화도감·멸화군·경국대전 금화조',
-              unitTitle: 'Unit 01 · 삼국·고려·조선시대의 소방제도 변천 (금화도감·멸화군·경국대전)'
-            });
-            expandedUnits.push({
-              unitId: '01_01_sec2', baseUnitId: '01_01', secRange: [5, 6, 7, 8],
-              partId: '01', partTitle: 'DAY 02 · Unit 02 (제1편 제1장 제2절)', fileName: u.fileName + '#sec2',
-              badgeLabel: '🎯 Unit 02 (01_01 제2절)',
-              shortTitle: '[Unit 02] 개항·일제·해방 후 4대 체제·의용소방대·자체소방대',
-              unitTitle: 'Unit 02 · 근현대 소방 행정 체제 변천과 의용소방대·자체소방대'
-            });
-            expandedUnits.push({
-              unitId: '01_01_sec3', baseUnitId: '01_01', secRange: [9, 10, 11],
-              partId: '01', partTitle: 'DAY 03 · Unit 03 (제1편 제1장 제3절)', fileName: u.fileName + '#sec3',
-              badgeLabel: '🎯 Unit 03 (01_01 제3절)',
-              shortTitle: '[Unit 03] 조직 원리(가외성)·11계급·임용·징계 6종·정년·소방신호',
-              unitTitle: 'Unit 03 · 소방조직 원리(가외성), 11계급·징계·정년 및 4대 소방신호'
-            });
-          } else {
-            expandedUnits.push(Object.assign({}, u, {
-              badgeLabel: `${u.unitId.replace('_', '편 ')}장`
-            }));
-          }
-        });
-        this.expandedUnits = expandedUnits;
-
-        expandedUnits.forEach(u => {
           if (this.lobbyPart !== 'all' && u.partId !== this.lobbyPart) return;
-          const unitItems = this.db.oxList.filter(x => {
-            if (u.unitId === '01_01_sec1') return OxApp.is0101Sec(x, 1);
-            if (u.unitId === '01_01_sec2') return OxApp.is0101Sec(x, 2);
-            if (u.unitId === '01_01_sec3') return OxApp.is0101Sec(x, 3);
-            return x.unitId === u.unitId;
-          });
+          const unitItems = this.db.oxList.filter(x => x.unitId === u.unitId);
           const totalU = unitItems.length;
           let remU = 0;
           let wrongU = 0;
@@ -1104,7 +1051,7 @@
           cardsHtml.push(`
             <div onclick="OxApp.selectUnit('${u.unitId}')" class="unit-card ${isActive ? 'active' : ''}">
               <div class="flex items-center justify-between gap-2">
-                <span class="text-[11px] font-extrabold" style="color:var(--accent);">${u.badgeLabel}</span>
+                <span class="text-[11px] font-extrabold" style="color:var(--accent);">${u.unitId.replace('_', '편 ')}장</span>
                 <span class="text-[11px] font-bold" style="color:var(--text-muted);">총 ${totalU}문항</span>
               </div>
               <div class="text-sm font-extrabold mt-0.5 leading-snug" style="color:var(--text-main);">
@@ -1134,14 +1081,13 @@
 
         if (this.filters.unit === 'all') {
           if (partBadge) partBadge.textContent = '소방학개론 전 범위 통합';
-          if (titleEl) titleEl.textContent = '전 단원 통합 (제1편부터 제5편까지 전체)';
+          if (titleEl) titleEl.textContent = '전 단원 통합 (제1편부터 제7편까지 전체)';
           if (bookLink) {
             bookLink.href = 'index.html';
             bookLink.innerHTML = '📖 기본서 전체 목차 열기 &nearr;';
           }
         } else {
-          const pool = this.expandedUnits || this.db.units;
-          const u = pool.find(x => x.unitId === this.filters.unit) || this.db.units.find(x => x.unitId === this.filters.unit);
+          const u = this.db.units.find(x => x.unitId === this.filters.unit);
           if (u) {
             if (partBadge) partBadge.textContent = u.partTitle;
             if (titleEl) titleEl.textContent = u.unitTitle;
@@ -1257,7 +1203,7 @@
       setFilter(key, val) {
         this.filters[key] = val;
         if (key === 'tier') {
-          ['essential', 'all', 'core', 'ext', 'pred'].forEach(v => {
+          ['all', 'core', 'ext', 'pred'].forEach(v => {
             const btn = document.getElementById(`flt_tier_${v}`);
             if (btn) btn.classList.toggle('active', v === val);
           });
@@ -1301,22 +1247,8 @@
 
         let list = this.db.oxList.filter(item => {
           const rec = this.getRecord(item.id);
-          if (f.unit !== 'all') {
-            if (f.unit === '01_01_sec1') {
-              if (item.unitId !== '01_01' || !OxApp.is0101Sec(item, 1)) return false;
-            } else if (f.unit === '01_01_sec2') {
-              if (item.unitId !== '01_01' || !OxApp.is0101Sec(item, 2)) return false;
-            } else if (f.unit === '01_01_sec3') {
-              if (item.unitId !== '01_01' || !OxApp.is0101Sec(item, 3)) return false;
-            } else if (item.unitId !== f.unit) {
-              return false;
-            }
-          }
-          if (f.tier === 'essential') {
-            if (item.isEssential === false) return false;
-          } else if (f.tier !== 'all' && item.tier !== f.tier) {
-            return false;
-          }
+          if (f.unit !== 'all' && item.unitId !== f.unit) return false;
+          if (f.tier !== 'all' && item.tier !== f.tier) return false;
           if (f.grade === 'S' && item.grade !== 'S') return false;
           if (f.trap !== 'all' && (!item.trapTags || !item.trapTags.includes(f.trap))) return false;
 
@@ -1381,12 +1313,7 @@
         // 2. 현재 선택된 단원 기준 통계
         const unitPool = this.filters.unit === 'all'
           ? this.db.oxList
-          : this.db.oxList.filter(x => {
-              if (this.filters.unit === '01_01_sec1') return x.unitId === '01_01' && OxApp.is0101Sec(x, 1);
-              if (this.filters.unit === '01_01_sec2') return x.unitId === '01_01' && OxApp.is0101Sec(x, 2);
-              if (this.filters.unit === '01_01_sec3') return x.unitId === '01_01' && OxApp.is0101Sec(x, 3);
-              return x.unitId === this.filters.unit;
-            });
+          : this.db.oxList.filter(x => x.unitId === this.filters.unit);
 
         let uRem = 0, uUnsolved = 0, uWrong = 0, uStar = 0, uEx = 0;
         unitPool.forEach(item => {
@@ -1420,6 +1347,8 @@
 
       enterSolveView() {
         this.stage = 'solve';
+        const topNav = document.getElementById('topStickyNav');
+        if (topNav) topNav.classList.add('hidden');
         document.getElementById('selectView').classList.add('hidden');
         document.getElementById('solveView').classList.remove('hidden');
         this.saveActiveSession();
@@ -1467,7 +1396,7 @@
         const answered = this.sessionAnswers[item.id];
         const isLast = this.currentIndex === this.filteredList.length - 1;
         const numStr = String(this.currentIndex + 1).padStart(2, '0');
-        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^[A-Z]+_/, '기');
+        const subCode = (item.id || item.source || `기${String(this.currentIndex + 1).padStart(3, '0')}`).replace(/^H_/, '기');
 
         if (unitBadge) {
           const uIdx = unitObj ? (this.db.units.indexOf(unitObj) + 1) : 1;
@@ -1506,7 +1435,7 @@
 
         const deepLinkUrl = this.buildDeepLinkUrl(item);
 
-        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역
+        // 정답/오답 해설 및 기본서 해당 줄 이동 버튼 영역 (카드 하단에 자연스럽게 펼쳐짐)
         let feedbackHtml = '';
         if (answered !== undefined) {
           const isUserRight = answered.userChoice === item.isCorrect;
@@ -1525,26 +1454,11 @@
                   <a href="${deepLinkUrl}" onclick="OxApp.saveActiveSession()" class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition" style="background-color:var(--accent); color:#ffffff; text-decoration:none;">
                     📖 기본서 설명 파트 보기 &nearr;
                   </a>
-                  ${item.origQId ? `
-                    <button onclick="OxApp.openOrigModal('${item.origQId}', '${item.id}')" class="c-pill">
-                      📄 기출 원문
-                    </button>
-                  ` : ''}
-                  <button onclick="OxApp.toggleExclude('${item.id}')" class="c-pill ${rec.excluded ? 'active' : ''}">
-                    ${rec.excluded ? '✓ 소거됨' : '✓ 소거'}
-                  </button>
                 </div>
               </div>
 
               <div class="ox-expl">
                 ${this.formatExplanation(item.explanation)}
-              </div>
-
-              <div class="mt-3 pt-2.5 border-t flex items-center justify-between gap-2" style="border-color:var(--border-line);">
-                <span class="text-[11px] font-bold" style="color:var(--text-muted);">${this.escapeHtml(item.source || '')}</span>
-                <button onclick="OxApp.nextOrFinishCard()" class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold cursor-pointer" style="background-color:var(--accent); color:#ffffff; border:none;">
-                  ${isLast ? '풀이 완료 · 목록으로 &rarr;' : '다음 문제 &rarr;'}
-                </button>
               </div>
             </div>
           `;
@@ -1559,7 +1473,7 @@
                   <span class="fk-c-icon">C</span>
                   <span class="fk-num-digits">${numStr}</span>
                 </div>
-                <span class="fk-sub-code">${this.escapeHtml(subCode)}${item.source ? ' · ' + this.escapeHtml(item.source) : ''}</span>
+                <span class="fk-sub-code">${this.escapeHtml(subCode)}</span>
               </div>
 
               <button onclick="OxApp.toggleStar('${item.id}')" class="fk-save-btn ${rec.starred ? 'saved' : ''}" title="중요 문제 저장 (단축키 S)">
@@ -1570,16 +1484,16 @@
             <!-- 카드 중앙 지문 -->
             <div class="fk-statement-area">
               <div class="ox-statement">
-                ${this.escapeHtml(item.text)}
+                ${this.formatStatementHtml(item.text)}
               </div>
             </div>
 
-            <!-- 카드 내부 하단 2열 대형 O / X 박스 -->
+            <!-- 카드 내부 하단 2열 대형 O / X 박스 (스크린샷과 100% 동일한 배치) -->
             <div class="fk-inside-ox-grid">
-              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O 옳다">
+              <button id="dockBtnO" type="button" onclick="OxApp.answerCurrentCard(true)" class="${oBtnCls}" aria-label="O">
                 <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
               </button>
-              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X 틀리다">
+              <button id="dockBtnX" type="button" onclick="OxApp.answerCurrentCard(false)" class="${xBtnCls}" aria-label="X">
                 <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
               </button>
             </div>
@@ -1612,7 +1526,63 @@
         }
       },
 
+      formatStatementHtml(text) {
+        const escaped = this.escapeHtml(text || '');
+        return escaped.replace(/^(\[[^\]]+\]\s*)/, '');
+      },
+
+      buildClueBoxHtml(item, isAnswered) {
+        if (!item.clueQuote) return '';
+        const showBox = (item.tier === 'ext') || !!this.forceShowClue;
+        if (!showBox) return '';
+        const revealHint = isAnswered || !!this.showClueHint;
+        let quoteHtml = this.escapeHtml(item.clueQuote);
+        const kws = item.clueKeywords || [];
+        if (revealHint && kws.length > 0) {
+          kws.forEach(kw => {
+            const ekw = this.escapeHtml(kw);
+            if (ekw && quoteHtml.includes(ekw)) {
+              quoteHtml = quoteHtml.split(ekw).join(`<mark style="background:rgba(245,158,11,0.32); color:inherit; font-weight:800; padding:0 3px; border-radius:3px;">${ekw}</mark>`);
+            }
+          });
+        }
+        const kwBadges = kws.map(k => `<span class="px-1.5 py-0.5 rounded font-bold text-[11px]" style="background-color:var(--accent-soft); color:var(--accent);">#${this.escapeHtml(k)}</span>`).join(' ');
+        return `
+          <div id="cardClueWrap" class="mb-4 p-3.5 sm:p-4 rounded-xl border" style="background-color:var(--bg-subtle); border-color:var(--border-strong);">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2 pb-1.5 border-b" style="border-color:var(--border-line);">
+              <span class="text-xs font-extrabold" style="color:var(--accent);">${this.escapeHtml(item.clueTitle || '📜 한능검 핵심 사료 · 자료 제시문')}</span>
+              <button onclick="OxApp.toggleClueHint()" class="px-2 py-0.5 rounded text-[11px] font-bold border transition cursor-pointer" style="background-color:var(--bg-sheet); border-color:var(--border-line); color:var(--text-sub);">
+                ${revealHint ? '🙈 1초 키워드 · 정체 숨기기' : '🔍 1초 키워드 · 사료 정체 보기'}
+              </button>
+            </div>
+            <p class="text-xs sm:text-sm leading-relaxed" style="color:var(--text-main); margin:0;">${quoteHtml}</p>
+            ${revealHint ? `
+              <div id="cardClueHintBar" class="mt-2.5 pt-2 border-t flex flex-wrap items-center gap-1.5 text-xs" style="border-color:var(--border-line);">
+                <span class="font-extrabold" style="color:var(--accent);">🎯 사료 판독 정답: ${this.escapeHtml(item.clueTarget || '')}</span>
+                <span style="color:var(--text-muted);">|</span>
+                <span class="text-[11px]" style="color:var(--text-sub);">1초 키워드:</span>
+                ${kwBadges}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      },
+
+      toggleClueBox() {
+        const item = this.filteredList[this.currentIndex];
+        if (!item) return;
+        const currentlyShown = (item.tier === 'ext') ? (this.forceShowClue !== false) : !!this.forceShowClue;
+        this.forceShowClue = !currentlyShown;
+        this.renderCurrentSolveCard();
+      },
+
+      toggleClueHint() {
+        this.showClueHint = !this.showClueHint;
+        this.renderCurrentSolveCard();
+      },
+
       prevCard() {
+        this.showClueHint = false;
         if (this.currentIndex > 0) {
           this.currentIndex--;
           this.saveActiveSession();
@@ -1621,6 +1591,7 @@
       },
 
       nextOrFinishCard() {
+        this.showClueHint = false;
         if (this.currentIndex < this.filteredList.length - 1) {
           this.currentIndex++;
           this.saveActiveSession();
