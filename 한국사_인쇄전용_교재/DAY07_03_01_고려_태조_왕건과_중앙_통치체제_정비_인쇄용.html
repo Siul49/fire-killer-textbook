@@ -1233,7 +1233,7 @@
 
       <section class="space-y-12 mb-16">
 
-      <div id="sec1"""">
+      <div id="sec1""""">
         <h2 class="text-xl font-bold text-white mb-3">1. 태조 왕건의 후삼국 통일과 호족 통합·견제 정책</h2>
         <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote">
             <div class="sidenote-box">
@@ -1269,7 +1269,7 @@
         </div>
       </div>
 
-      <div id="sec2"""">
+      <div id="sec2""""">
         <h2 class="text-xl font-bold text-white mb-3">2. 광종의 왕권 강화(노비안검법·과거제)와 성종의 유교 통치 체제 확립</h2>
         <div id="theory-sec2-p4" class="para-block">
           <p class="prose-body">
@@ -1331,7 +1331,7 @@
         </div>
       </div>
 
-      <div id="sec3"""">
+      <div id="sec3""""">
         <h2 class="text-xl font-bold text-white mb-3">3. 중앙 2성 6부·독자적 회의 기구(도병마사·식목도감)와 지방 5도 양계</h2>
         <div id="theory-sec3-p7" class="para-block">
           <p class="prose-body">
@@ -1397,7 +1397,7 @@
           </table>
         </div>
       </div>
-      <div id="sec4"""" class="space-y-6">
+      <div id="sec4""""" class="space-y-6">
         <h2 class="text-xl font-bold text-white mb-3">4. [60회부터 69회까지 심화 보강] 태조·정종·광종 사료 단서와 고려 중앙·지방 기구·서경 지역사</h2>
 
         <div id="theory-sec4-p10" class="para-block">
@@ -4138,17 +4138,15 @@
       border-color: #1E3A5F;
     }
 
-    /* 기본서 본문 점프 시 하이라이트 펄스 */
-    @keyframes theoryPulse {
-      0% { box-shadow: 0 0 0 0 rgba(139, 38, 53, 0.55); background-color: rgba(212, 163, 68, 0.28); }
-      70% { box-shadow: 0 0 0 10px rgba(139, 38, 53, 0); background-color: rgba(212, 163, 68, 0.14); }
-      100% { box-shadow: 0 0 0 0 rgba(139, 38, 53, 0); background-color: transparent; }
-    }
+    /* 기본서 본문 점프 시 정적 하이라이트 (번쩍임/애니메이션 없이 차분한 좌측 포인트 및 웜 배경 표시) */
     .theory-target-highlight {
-      animation: theoryPulse 2.4s ease-out 2;
-      border-radius: 6px;
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
+      animation: none !important;
+      background-color: rgba(212, 163, 68, 0.13) !important;
+      border-left: 3.5px solid var(--accent) !important;
+      border-radius: 4px;
+      padding: 6px 10px !important;
+      outline: none !important;
+      box-shadow: none !important;
     }
 
     /* 갤럭시 S26 Ultra 가로 슬라이드 퀴즈 덱 컨트롤러 바 */
@@ -4288,60 +4286,49 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* 기본서로 이동했을 때 하단 플로팅 복귀 바 & 기본서 미리보기 토스트 */
+    /* 기본서로 이동했을 때 하단 단일 복귀 버튼 (본문을 가리는 중복 설명 텍스트 제거) */
     #s26ReturnFloat {
       position: fixed;
-      bottom: 16px;
+      bottom: 18px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 9999;
-      width: min(94vw, 400px);
-      background: rgba(24, 21, 18, 0.97);
-      color: #F7F4EE;
-      border: 2px solid #8B2635;
-      border-radius: 12px;
-      padding: 11px 14px;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+      width: auto;
+      max-width: 92vw;
+      background: transparent;
+      border: none;
+      padding: 0;
+      box-shadow: none;
       font-family: var(--font-sans);
       display: none;
     }
     #s26ReturnFloat.show-float {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .s26-float-preview {
-      font-size: 11.5px;
-      line-height: 1.52;
-      color: #E5DFD5;
-      margin-bottom: 8px;
-      padding-bottom: 7px;
-      border-bottom: 1px solid #3D362E;
+      display: none !important;
     }
     .s26-float-actions {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
     }
     .s26-return-btn {
-      flex: 1;
       background: #8B2635;
       color: #FFFFFF;
-      border: none;
-      border-radius: 7px;
-      padding: 8px 12px;
-      font-size: 12px;
+      border: 1.5px solid #D4A373;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 13px;
       font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(20, 16, 12, 0.38);
       cursor: pointer;
     }
     .s26-close-float {
-      background: #332E29;
-      color: #CCC4B8;
-      border: 1px solid #4A443B;
-      border-radius: 7px;
-      padding: 8px 10px;
-      font-size: 11.5px;
-      font-weight: 700;
-      cursor: pointer;
+      display: none !important;
     }
 
     /* 갤럭시 S26 Ultra (412px × 892px) 및 모바일 뷰포트 최적화 + 웹소설 좌측정렬(강물현상 완전 제거) + 상단바 스크롤 자동숨김 */
