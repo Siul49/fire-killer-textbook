@@ -92,8 +92,8 @@ const HarnessEngine = {
       html body main .schema-board,
       html body main .schema-board *:not(.schema-badge-icon):not(sub):not(sup) {
         font-family: var(--font-body) !important;
-        font-size: ${sz} !important;
-        line-height: 1.78 !important;
+        font-size: calc(${sz} * 0.88) !important;
+        line-height: 1.68 !important;
       }
       html body main .schema-panel-title {
         font-size: calc(${sz} + 1px) !important;

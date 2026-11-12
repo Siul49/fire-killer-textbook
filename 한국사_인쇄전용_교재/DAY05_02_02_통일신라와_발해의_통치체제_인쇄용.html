@@ -422,6 +422,9 @@
 
  .overflow-x-auto {
  width: 100%;
+ max-width: 100%;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
  margin: 22px 0 28px 0;
  break-inside: avoid;
  page-break-inside: avoid;
@@ -472,6 +475,15 @@
  vertical-align: top;
  }
 
+ .book-table tbody td:first-child {
+ font-family: var(--font-sans) !important;
+ font-weight: 800 !important;
+ color: var(--accent) !important;
+ background-color: rgba(139, 38, 53, 0.04) !important;
+ word-break: keep-all !important;
+ min-width: 96px;
+ }
+
  .diagram-container {
  background-color: var(--bg-subtle);
  border: 1px solid var(--border-strong);
@@ -498,6 +510,11 @@
  flex-direction: column;
  gap: 14px;
  }
+ .schema-timeline { margin-top:14px; padding:10px 14px; border-top:1.5px solid var(--accent); background:rgba(139,38,53,0.04); border-radius:4px; font-family:var(--font-sans); font-size:12.5px; line-height:1.9; word-break:keep-all; }
+ .schema-timeline-title { display:block; font-weight:800; color:var(--accent); margin-bottom:4px; letter-spacing:-0.01em; }
+ .schema-timeline b { color:var(--text-main); font-weight:800; }
+ @media (max-width:640px){ .schema-timeline{ font-size:12px; padding:9px 10px; } }
+ @media print { .schema-timeline{ break-inside:avoid; } }
 
  .schema-panel {
  background-color: var(--bg-sheet);
@@ -1228,7 +1245,7 @@
 </div>
 <section class="space-y-12 mb-16">
 <div id="sec1">
-<h2 class="text-xl font-bold text-white mb-3">1. 고구려의 대수·대당 항쟁과 삼국 통일, 신문왕의 전제 왕권 확립</h2>
+<h2 class="text-xl font-bold mb-3">1. 고구려의 대수·대당 항쟁과 삼국 통일, 신문왕의 전제 왕권 확립</h2>
 <div class="para-block has-sidenote" id="theory-sec1-p1"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1254,7 +1271,7 @@
 </div>
 </div>
 <div id="sec2">
-<h2 class="text-xl font-bold text-white mb-3">2. 통일신라의 통치 체제(9주 5소경·9서당 10정)와 국제 해상 교역망</h2>
+<h2 class="text-xl font-bold mb-3">2. 통일신라의 통치 체제(9주 5소경·9서당 10정)와 국제 해상 교역망</h2>
 <div class="para-block has-sidenote" id="theory-sec2-p4"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1275,7 +1292,7 @@
 </div>
 </div>
 <div id="sec3">
-<h2 class="text-xl font-bold text-white mb-3">3. 신라 하대의 동요와 호족·6두품의 대두, 후삼국의 성립과 통일</h2>
+<h2 class="text-xl font-bold mb-3">3. 신라 하대의 동요와 호족·6두품의 대두, 후삼국의 성립과 통일</h2>
 <div class="para-block has-sidenote" id="theory-sec3-p6"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1302,13 +1319,14 @@
 </div>
 </div>
 <div id="sec4">
-<h2 class="text-xl font-bold text-white mb-3">4. 발해의 건국과 해동성국의 발전, 독자적 관제와 고분·대외 문화</h2>
+<h2 class="text-xl font-bold mb-3">4. 발해의 건국과 해동성국의 발전, 독자적 관제와 고분·대외 문화</h2>
 <div class="para-block has-sidenote" id="theory-sec4-p9"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
 <ul class="sidenote-list">
 <li><strong>발해 왕대별 업적·연호</strong>: <strong>고왕(대조영, 천통)</strong> 동모산 건국(698) ➔ <strong>무왕(인안)</strong>: 동생 <strong>대문예 망명</strong>·<strong>장문휴의 당 산둥반도 등주 선제공격(732)</strong>·일본 국서 ➔ <strong>문왕(대흥·보력·황상)</strong>: 당과 친선, 3성 6부·<strong>주자감</strong>, <strong>상경 용천부 천도</strong>, <strong>신라도</strong> 개설 ➔ <strong>선왕(건흥)</strong>: 말갈 복속·요동 진출, <strong>5경 15부 62주</strong> 완성, <strong>'해동성국'</strong> ➔ 926 거란 멸망·세자 <strong>대광현</strong> 고려 망명</li>
 <li><strong>독자적 3성 6부·유적</strong>: <strong>정당성(대내상)</strong> 총괄·좌우사정 이원화·<strong>충인의지예신</strong> 유교 명칭, 감찰 <strong>중정대</strong>·문적원·주자감 / <strong>정혜공주 묘</strong>(육정산·모줄임천장·돌사자상=고구려) vs <strong>정효공주 묘</strong>(용두산·벽돌무덤·벽화=당), <strong>장백 영광탑(지궁)·상경성 석등·양태사·솔빈부의 말</strong></li>
+<li><strong>⚡ 1초 함정 소거 공식</strong>: <strong>남북국 기관 대칭(최고 기구: 집사부[중시] vs 정당성[대내상] / 감찰: 사정부 vs 중정대 / 국립대학: 국학 vs 주자감)</strong> · <strong>토지(신문왕=관료전 지급·녹읍 폐지 / 성덕왕=정전 지급 / 경덕왕=녹읍 부활)</strong> · <strong>후삼국 승패(927 공산=견훤 승·신숭겸 전사 ➔ 930 고창=왕건 역전승 ➔ 936 일리천=통일 완성)</strong></li>
 </ul>
 </div>
 </aside>
@@ -1425,6 +1443,7 @@
 <div class="schema-alert">※ 정혜공주 묘 = 굴식 돌방무덤·모줄임천장·돌사자상(고구려 양식) vs 정효공주 묘 = 벽돌무덤·벽화(당나라 양식)!</div>
 </div>
 </div>
+<div class="schema-timeline"><span class="schema-timeline-title">⏱ 필수 연표 1줄 타임라인</span><b>612</b> 살수 대첩 ➔ <b>645</b> 안시성 전투 ➔ <b>648</b> 나·당 동맹 ➔ <b>660</b> 백제 멸망 ➔ <b>663</b> 백강 전투 ➔ <b>668</b> 고구려 멸망 ➔ <b>675</b> 매소성 ➔ <b>676</b> 기벌포 ➔ <b>681</b> 김흠돌의 난 ➔ <b>682</b> 국학 ➔ <b>687</b> 관료전 ➔ <b>689</b> 녹읍 폐지 ➔ <b>698</b> 발해 건국 ➔ <b>722</b> 정전 ➔ <b>732</b> 장문휴 등주 공격 ➔ <b>757</b> 녹읍 부활 ➔ <b>788</b> 독서삼품과 ➔ <b>822</b> 김헌창의 난 ➔ <b>828</b> 청해진 ➔ <b>889</b> 원종·애노의 난 ➔ <b>900</b> 후백제 ➔ <b>901</b> 후고구려 ➔ <b>918</b> 고려 건국 ➔ <b>926</b> 발해 멸망 ➔ <b>927</b> 공산 전투 ➔ <b>930</b> 고창 전투 ➔ <b>935</b> 신라 항복 ➔ <b>936</b> 일리천 전투(후삼국 통일)</div>
 </div>
 </div>
 </div>
@@ -5233,9 +5252,20 @@
  document.body.classList.remove('print-q-only');
  }, 500);
  }
+ window.printQuestionsOnly = printQuestionsOnly;
+ window.printPart23Only = printQuestionsOnly;
  </script>
 <!-- FK_ONE_LINE_BAR_START -->
 <style id="fkOneLineBarStyle">
+ @media screen and (max-width: 768px) {
+ html, body { max-width: 100vw !important; overflow-x: hidden !important; }
+ :root { --theory-side-pad: 0px !important; }
+ .book-sheet { width: 100% !important; max-width: 100vw !important; padding: 20px 14px 36px 14px !important; box-sizing: border-box !important; }
+ #part1 section, #part1 .prose-body { padding-left: 0 !important; padding-right: 0 !important; }
+ .overflow-x-auto { width: 100% !important; max-width: 100% !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+ .book-table { min-width: 480px; }
+ .no-print-bar .btn-print { display: none !important; }
+ }
  body.layout-wide .prose-body,
  body.layout-oxford .prose-body,
  .prose-body,
@@ -5701,14 +5731,39 @@
  }
 
  @media only screen and (max-width: 768px) {
+ html, body {
+ max-width: 100vw !important;
+ overflow-x: hidden !important;
+ }
+ :root {
+ --theory-side-pad: 0px !important;
+ }
  .no-print-bar {
  padding: 6px 10px !important;
  }
+ .no-print-bar .btn-print {
+ display: none !important;
+ }
  .book-sheet {
- max-width: 100% !important;
+ width: 100% !important;
+ max-width: 100vw !important;
  margin: 0 !important;
- padding: 16px 14px 72px 14px !important;
+ padding: 20px 14px 36px 14px !important;
  border: none !important;
+ box-sizing: border-box !important;
+ }
+ #part1 section, #part1 .prose-body {
+ padding-left: 0 !important;
+ padding-right: 0 !important;
+ }
+ .overflow-x-auto {
+ width: 100% !important;
+ max-width: 100% !important;
+ overflow-x: auto !important;
+ -webkit-overflow-scrolling: touch !important;
+ }
+ .book-table {
+ min-width: 480px;
  }
  body.q-cols-2 .questions-grid,
  body.exp-cols-2 .explanations-grid {

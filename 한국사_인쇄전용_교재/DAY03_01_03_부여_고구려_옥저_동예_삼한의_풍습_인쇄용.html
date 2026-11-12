@@ -417,6 +417,9 @@
 
  .overflow-x-auto {
  width: 100%;
+ max-width: 100%;
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
  margin: 22px 0 28px 0;
  break-inside: avoid;
  page-break-inside: avoid;
@@ -467,6 +470,15 @@
  vertical-align: top;
  }
 
+ .book-table tbody td:first-child {
+ font-family: var(--font-sans) !important;
+ font-weight: 800 !important;
+ color: var(--accent) !important;
+ background-color: rgba(139, 38, 53, 0.04) !important;
+ word-break: keep-all !important;
+ min-width: 96px;
+ }
+
  .diagram-container {
  background-color: var(--bg-subtle);
  border: 1px solid var(--border-strong);
@@ -476,12 +488,13 @@
  }
 
  .diagram-container > div:first-child {
- border-bottom: 1px solid var(--border-line);
+ border-bottom: 1px solid var(--border-strong) !important;
  padding-bottom: 8px;
  margin-bottom: 12px;
  }
 
- .diagram-container > div:first-child span {
+ .diagram-container > div:first-child span,
+ .diagram-container > span:first-child {
  font-family: var(--font-sans) !important;
  font-size: 13px !important;
  font-weight: 800 !important;
@@ -493,6 +506,11 @@
  flex-direction: column;
  gap: 14px;
  }
+ .schema-timeline { margin-top:14px; padding:10px 14px; border-top:1.5px solid var(--accent); background:rgba(139,38,53,0.04); border-radius:4px; font-family:var(--font-sans); font-size:12.5px; line-height:1.9; word-break:keep-all; }
+ .schema-timeline-title { display:block; font-weight:800; color:var(--accent); margin-bottom:4px; letter-spacing:-0.01em; }
+ .schema-timeline b { color:var(--text-main); font-weight:800; }
+ @media (max-width:640px){ .schema-timeline{ font-size:12px; padding:9px 10px; } }
+ @media print { .schema-timeline{ break-inside:avoid; } }
 
  .schema-panel {
  background-color: var(--bg-sheet);
@@ -1232,7 +1250,7 @@
 </div>
 <section class="space-y-12 mb-16">
 <div id="sec1">
-<h2 class="text-xl font-bold text-white mb-3">1. 철기 확산이 연 연맹왕국의 길과 북방 5부족 국가의 인과: 부여와 고구려</h2>
+<h2 class="text-xl font-bold mb-3">1. 철기 확산이 연 연맹왕국의 길과 북방 5부족 국가의 인과: 부여와 고구려</h2>
 <div class="para-block has-sidenote" id="theory-sec1-p1"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1240,6 +1258,7 @@
 <li><strong>앞 단원 인과 연결</strong>: 철제 농기구·무기 보급 + 고조선 유이민 확산 ➔ 만주·한반도 초기 국가 태동</li>
 <li><strong>부여(5부족 연맹)</strong>: 마가·우가·저가·구가의 <strong>사출도</strong> 통치, <strong>12월 영고</strong>(은력 정월·수렵 전통·죄수 석방), 순장(최대 100여 명)·우제점복(우제점법, 소 발굽 점)·형사취수제·1책 12법</li>
 <li><strong>고구려(5부족 연맹)</strong>: 주몽 건국(졸본 ➔ 국내성), <strong>제가회의</strong>(상가·대로·패자·고추가), <strong>사자·조의·선인</strong>, 약탈 경제(<strong>부경</strong> 창고), <strong>서옥제</strong>, <strong>10월 동맹</strong>(국동대혈 수신 제사)</li>
+<li><strong>⚡ 1초 함정 소거 공식</strong>: <strong>부영(부여=12월 영고·대사자) · 고동(고구려=10월 동맹·조의 선인) · 동무(동예=10월 무천·단궁 과하마 반어피) · 옥X(옥저=제천행사 없음·민며느리제·골장제) · 삼계(삼한=5월 수릿날 10월 계절제·천군 소도)</strong></li>
 </ul>
 </div>
 </aside>
@@ -1259,7 +1278,7 @@
 </div>
 </div>
 <div id="sec2">
-<h2 class="text-xl font-bold text-white mb-3">2. 왜 왕이 있는 나라로 크지 못했는가: 동해안 군장 국가 옥저와 동예</h2>
+<h2 class="text-xl font-bold mb-3">2. 왜 왕이 있는 나라로 크지 못했는가: 동해안 군장 국가 옥저와 동예</h2>
 <div class="para-block has-sidenote" id="theory-sec2-p4"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1286,7 +1305,7 @@
 </div>
 </div>
 <div id="sec3">
-<h2 class="text-xl font-bold text-white mb-3">3. 고조선 유이민의 남하와 남방 벼농사·철기 교역권: 삼한의 제정분리 사회</h2>
+<h2 class="text-xl font-bold mb-3">3. 고조선 유이민의 남하와 남방 벼농사·철기 교역권: 삼한의 제정분리 사회</h2>
 <div class="para-block has-sidenote" id="theory-sec3-p7"><aside class="sidenote">
 <div class="sidenote-box">
 <div class="sidenote-title">기출 출제 포인트</div>
@@ -1431,6 +1450,7 @@
 <div class="schema-alert">※ 혼인·장례 1초 구별: 서옥제=고구려 / 민며느리제·골장제=옥저 / 족외혼·책화=동예 / 천군·소도=삼한!</div>
 </div>
 </div>
+<div class="schema-timeline"><span class="schema-timeline-title">⏱ 필수 연표 1줄 타임라인</span><b>기원전 194년</b> 위만 집권 ➔ <b>기원전 108년</b> 고조선 멸망(한 군현 설치) ➔ <b>56년</b> 고구려 태조왕 옥저 정복 ➔ <b>494년</b> 부여 고구려에 병합 · 삼한은 마한➔백제, 진한➔신라, 변한➔가야로 발전</div>
 </div>
 </div>
 </div>
@@ -1492,23 +1512,23 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="1" onclick="handleChoiceClick(1, 1, 4)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">(가) - 신성 지역인 소도가 있었다</span>
+<span class="q-choice-text">(가): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="1" onclick="handleChoiceClick(1, 2, 4)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">(가) - 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
+<span class="q-choice-text">(가): 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="1" onclick="handleChoiceClick(1, 3, 4)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">(나) - 제가 회의에서 나라의 중대사를 결정하였다</span>
+<span class="q-choice-text">(나): 제가 회의에서 나라의 중대사를 결정하였다</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="1" onclick="handleChoiceClick(1, 4, 4)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">(나) - 특산물로 단궁, 과하마, 반어피가 유명하였다</span>
+<span class="q-choice-text">(나): 특산물로 단궁, 과하마, 반어피가 유명하였다</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="1" onclick="handleChoiceClick(1, 5, 4)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">(가), (나) - 도둑질한 자에게 12배로 배상하게 하였다</span>
+<span class="q-choice-text">(가), (나): 도둑질한 자에게 12배로 배상하게 하였다</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-1"><div class="inline-exp-head"><span><strong>정답: ④</strong> · 선지별 상세 해설 및 기본서 매핑</span><a class="inline-exp-jump" href="#exp-card-1">PART 3 해설지 이동 ↓</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> <strong>[부여(영고·형사취수제)와 동예(책화·족외혼·단궁·과하마·반어피) 비교]</strong> (가)는 12월 제천 행사 영고와 형사취수제가 있었던 부여이고, (나)는 책화·족외혼·호랑이 신 숭배가 있었던 동예입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 제사장인 천군이 다스리는 신성 지역 소도가 있었던 나라는 <strong>삼한</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="고조선의 제정일치와 달리 삼한은 정치 군장(신지·읍차)과 별도로 제사장인 천군이 큰 나무(솟대)를 세운 신성 별읍 소도를 주관하여 죄인이 도망쳐도 잡아갈 수 없는 제정분리 사회였습니다." data-qnum="1" data-theory-id="theory-sec3-p8" onclick="jumpToTheory('theory-sec3-p8', 1, this)" type="button">📖 기본서 제3절 · 삼한의 천군·소도 제정분리 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 사회 질서를 유지하기 위해 범금 8조(8조법)를 만든 나라는 <strong>고조선</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="1" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 1, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 귀족 회의인 제가 회의에서 나라의 중대사를 결정한 나라는 <strong>고구려</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="산악 지대에 자리 잡은 고구려는 약탈물을 보관하는 부경 창고를 두었고, 상가·대로·패자·고추가 등 대가들이 제가회의를 열었으며 혼인 풍습 서옥제와 국동대혈 10월 동맹 제사를 행했습니다." data-qnum="1" data-theory-id="theory-sec1-p3" onclick="jumpToTheory('theory-sec1-p3', 1, this)" type="button">📖 기본서 제1절 · 고구려 제가회의·서옥제·10월 동맹 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음 · 정답] 강원도 북부 동해안의 <strong>(나) 동예는 박달나무로 만든 짧은 활인 단궁, 과일나무 아래를 지나는 조랑말인 과하마, 바다표범 가죽인 반어피 등 3대 특산물</strong>로 유명하였습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="동예는 타 부족의 산천 경계를 침범하면 노비·소·말로 배상하는 책화, 동성불혼의 족외혼, 10월 무천과 호랑이 신 제사, 단궁·과하마·반어피 3대 특산물 및 '철'자·'여'자형 집터가 특징입니다." data-qnum="1" data-theory-id="theory-sec2-p6" onclick="jumpToTheory('theory-sec2-p6', 1, this)" type="button">📖 기본서 제2절 · 동예의 책화·족외혼·무천·특산물 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="5"><div class="inline-exp-txt"><span class="exp-choice-num-inline">⑤</span> [틀림] 도둑질한 자에게 물건값의 12배를 배상하게 한 1책 12법은 <strong>(가) 부여와 고구려</strong>의 형법이며, (나) 동예에는 해당하지 않습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="1" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 1, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div></div></div>
@@ -1522,27 +1542,27 @@
 <div class="q-ans-blank" id="q-status-2">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가), (나) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· <strong>(가)</strong>: "해마다 <strong>5월이면 씨뿌리기를 마치고</strong> 귀신에게 제사를 지낸다. 떼를 지어 노래와 춤을 즐기며 술 마시기를 밤낮으로 쉬지 않는다. ... 귀신을 믿기 때문에 국읍에 각각 한 사람씩을 세워서 천신에 대한 제사를 주관하니, 이를 <strong>천군</strong>이라 부른다." - 『삼국지』 위서 동이전<br/>· <strong>(나)</strong>: "<strong>은력 정월에 하늘에 제사를 지내는 국중대회</strong>에서는 날마다 마시고 먹고 노래하고 춤추는데, 이를 <strong>영고</strong>라 한다. 이때에는 <strong>형옥을 중단하고 죄수를 풀어 준다</strong>." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· <strong>(가)</strong>: "해마다 <strong>5월이면 씨뿌리기를 마치고</strong> 귀신에게 제사를 지낸다. 떼를 지어 노래와 춤을 즐기며 술 마시기를 밤낮으로 쉬지 않는다. ... 귀신을 믿기 때문에 국읍에 각각 한 사람씩을 세워서 천신에 대한 제사를 주관하니, 이를 <strong>천군</strong>이라 부른다." — 『삼국지』 위서 동이전<br/>· <strong>(나)</strong>: "<strong>은력 정월에 하늘에 제사를 지내는 국중대회</strong>에서는 날마다 마시고 먹고 노래하고 춤추는데, 이를 <strong>영고</strong>라 한다. 이때에는 <strong>형옥을 중단하고 죄수를 풀어 준다</strong>." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="2" onclick="handleChoiceClick(2, 1, 1)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">(가) - 신성 지역인 소도가 있었다</span>
+<span class="q-choice-text">(가): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="2" onclick="handleChoiceClick(2, 2, 1)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">(가) - 혼인 풍습으로 민며느리제가 있었다</span>
+<span class="q-choice-text">(가): 혼인 풍습으로 민며느리제가 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="2" onclick="handleChoiceClick(2, 3, 1)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">(나) - 위화부, 영객부 등의 관청이 있었다</span>
+<span class="q-choice-text">(나): 위화부, 영객부 등의 관청이 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="2" onclick="handleChoiceClick(2, 4, 1)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">(나) - 왕 아래 상가, 대로, 패자 등의 관직이 있었다</span>
+<span class="q-choice-text">(나): 왕 아래 상가, 대로, 패자 등의 관직이 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="2" onclick="handleChoiceClick(2, 5, 1)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">(가), (나) - 읍락 간의 경계를 중시하는 책화가 있었다</span>
+<span class="q-choice-text">(가), (나): 읍락 간의 경계를 중시하는 책화가 있었다</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-2"><div class="inline-exp-head"><span><strong>정답: ①</strong> · 선지별 상세 해설 및 기본서 매핑</span><a class="inline-exp-jump" href="#exp-card-2">PART 3 해설지 이동 ↓</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> <strong>[삼한(천군·소도·5월 수릿날)과 부여(영고·사출도) 비교]</strong> (가)는 5월·10월 계절제와 제사장 천군이 존재한 삼한이고, (나)는 은력 정월(음력 12월) 제천 행사 영고를 개최한 부여입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음 · 정답] <strong>(가) 삼한</strong>은 제정분리 사회로서 정치적 지배자인 신지·읍차와 별도로 <strong>제사장인 천군이 다스리는 신성 불가침 지역인 소도</strong>가 존재하여, 죄인이 도망쳐 들어와도 군장이 함부로 잡아갈 수 없었습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="고조선의 제정일치와 달리 삼한은 정치 군장(신지·읍차)과 별도로 제사장인 천군이 큰 나무(솟대)를 세운 신성 별읍 소도를 주관하여 죄인이 도망쳐도 잡아갈 수 없는 제정분리 사회였습니다." data-qnum="2" data-theory-id="theory-sec3-p8" onclick="jumpToTheory('theory-sec3-p8', 2, this)" type="button">📖 기본서 제3절 · 삼한의 천군·소도 제정분리 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 혼인 풍습으로 민며느리제가 있었던 나라는 <strong>옥저</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="옥저는 고구려에 소금·어물·맥포를 공납하였고, 여자아이를 10세 이전에 데려다 기른 뒤 돈을 치르는 민며느리제와 가족의 뼈를 하나의 큰 목곽에 모시고 쌀 항아리를 매다는 골장제를 행했습니다." data-qnum="2" data-theory-id="theory-sec2-p5" onclick="jumpToTheory('theory-sec2-p5', 2, this)" type="button">📖 기본서 제2절 · 옥저의 민며느리제와 가족 공동묘 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 위화부, 영객부, 병부 등의 중앙 관청을 설치한 나라는 삼국 시대의 <strong>신라(법흥왕·진평왕 등)</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="삼한은 저수지(벽골제·의림지)와 벼농사가 발달해 5월 수릿날·10월 계절제를 열었고 변한은 덩이쇠를 화폐처럼 쓰고 수출했으며, 이후 마한은 백제, 진한은 신라, 변한은 가야로 발전했습니다." data-qnum="2" data-theory-id="theory-sec3-p9" onclick="jumpToTheory('theory-sec3-p9', 2, this)" type="button">📖 기본서 제3절 · 삼한 벼농사·변한 철 수출과 삼국 발전 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 왕 아래 상가, 대로, 패자, 고추가 등의 관직을 둔 나라는 <strong>고구려</strong>이며, (나) 부여는 마가·우가·저가·구가와 대사·대사자·사자 등의 관직을 두었습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="산악 지대에 자리 잡은 고구려는 약탈물을 보관하는 부경 창고를 두었고, 상가·대로·패자·고추가 등 대가들이 제가회의를 열었으며 혼인 풍습 서옥제와 국동대혈 10월 동맹 제사를 행했습니다." data-qnum="2" data-theory-id="theory-sec1-p3" onclick="jumpToTheory('theory-sec1-p3', 2, this)" type="button">📖 기본서 제1절 · 고구려 제가회의·서옥제·10월 동맹 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="5"><div class="inline-exp-txt"><span class="exp-choice-num-inline">⑤</span> [틀림] 읍락 간의 경계를 중시하는 책화가 있었던 나라는 <strong>동예</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="동예는 타 부족의 산천 경계를 침범하면 노비·소·말로 배상하는 책화, 동성불혼의 족외혼, 10월 무천과 호랑이 신 제사, 단궁·과하마·반어피 3대 특산물 및 '철'자·'여'자형 집터가 특징입니다." data-qnum="2" data-theory-id="theory-sec2-p6" onclick="jumpToTheory('theory-sec2-p6', 2, this)" type="button">📖 기본서 제2절 · 동예의 책화·족외혼·무천·특산물 본문 보기</button></div></div></div></div>
@@ -1556,7 +1576,7 @@
 <div class="q-ans-blank" id="q-status-3">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 북쪽으로 고구려·읍루와 접하고 남쪽으로 동예와 접해 있으며, 토지가 비옥하여 오곡이 잘 자란다. 대군왕(왕)은 없고 대대로 <strong>읍군, 삼로</strong>들이 아랫사람들을 통치하였다."<br/>· "장례를 치를 때에는 큰 나무 곽(목곽)을 만드는데 길이가 10여 장이나 되며 한쪽을 터놓아 문으로 삼는다. <strong>새로 죽은 자는 모두 가매장하였다가 살이 다 썩으면 뼈만 추려 곽 속에 안치하는데 온 집안 식구를 모두 하나의 곽 속에 넣어 둔다</strong>." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 북쪽으로 고구려·읍루와 접하고 남쪽으로 동예와 접해 있으며, 토지가 비옥하여 오곡이 잘 자란다. 대군왕(왕)은 없고 대대로 <strong>읍군, 삼로</strong>들이 아랫사람들을 통치하였다."<br/>· "장례를 치를 때에는 큰 나무 곽(목곽)을 만드는데 길이가 10여 장이나 되며 한쪽을 터놓아 문으로 삼는다. <strong>새로 죽은 자는 모두 가매장하였다가 살이 다 썩으면 뼈만 추려 곽 속에 안치하는데 온 집안 식구를 모두 하나의 곽 속에 넣어 둔다</strong>." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="3" onclick="handleChoiceClick(3, 1, 2)">
 <span class="q-choice-num">①</span>
@@ -1590,7 +1610,7 @@
 <div class="q-ans-blank" id="q-status-4">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 만리장성 북쪽에 있으며 현도군에서 천 리쯤 떨어져 있다. 나라에는 군왕이 있고, 모두 육축의 이름으로 관직명을 정하여 <strong>마가, 우가, 저가, 구가</strong>가 있고 대사, 대사자, 사자가 있다."<br/>· "왕이 죽으면 여름철에는 얼음을 사용하여 장사 지내고, <strong>사람을 죽여 순장하는데 많을 때는 백여 명</strong>에 이른다." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 만리장성 북쪽에 있으며 현도군에서 천 리쯤 떨어져 있다. 나라에는 군왕이 있고, 모두 육축의 이름으로 관직명을 정하여 <strong>마가, 우가, 저가, 구가</strong>가 있고 대사, 대사자, 사자가 있다."<br/>· "왕이 죽으면 여름철에는 얼음을 사용하여 장사 지내고, <strong>사람을 죽여 순장하는데 많을 때는 백여 명</strong>에 이른다." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="4" onclick="handleChoiceClick(4, 1, 3)">
 <span class="q-choice-num">①</span>
@@ -1624,7 +1644,7 @@
 <div class="q-ans-blank" id="q-status-5">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가)에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong><strong>[사료로 보는 초기 국가 (가)의 경제와 사회]</strong><br/>· "<strong>(가)의 변진(변한과 진한)에서는 철이 생산</strong>되는데, 한(한반도 중남부), 예(동예), 왜(일본)가 모두 와서 철을 가져간다. 모든 시장에서 매매할 때 철을 사용하여 마치 중국에서 돈을 쓰는 것과 같으며, 또 낙랑과 대방 두 군에도 철을 공급한다." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong><strong>[사료로 보는 초기 국가 (가)의 경제와 사회]</strong><br/>· "<strong>(가)의 변진(변한과 진한)에서는 철이 생산</strong>되는데, 한(한반도 중남부), 예(동예), 왜(일본)가 모두 와서 철을 가져간다. 모든 시장에서 매매할 때 철을 사용하여 마치 중국에서 돈을 쓰는 것과 같으며, 또 낙랑과 대방 두 군에도 철을 공급한다." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="5" onclick="handleChoiceClick(5, 1, 1)">
 <span class="q-choice-num">①</span>
@@ -1692,7 +1712,7 @@
 <div class="q-ans-blank" id="q-status-7">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 큰 산과 깊은 골짜기가 많고 평원과 연못이 없어 농사를 짓기에 땅이 척박하다. 좋은 밭이 없어 힘써 일해도 배불리 먹기에 부족하므로, <strong>집집마다 작은 창고를 지어 두는데 이름을 부경</strong>이라 한다."<br/>· "나라의 동쪽에 큰 굴이 있어 <strong>수혈(국동대혈)이라 부르는데, 10월 국중대회에 수신을 맞이하여 나라의 동쪽 위에서 제사</strong>를 지낸다." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 큰 산과 깊은 골짜기가 많고 평원과 연못이 없어 농사를 짓기에 땅이 척박하다. 좋은 밭이 없어 힘써 일해도 배불리 먹기에 부족하므로, <strong>집집마다 작은 창고를 지어 두는데 이름을 부경</strong>이라 한다."<br/>· "나라의 동쪽에 큰 굴이 있어 <strong>수혈(국동대혈)이라 부르는데, 10월 국중대회에 수신을 맞이하여 나라의 동쪽 위에서 제사</strong>를 지낸다." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="7" onclick="handleChoiceClick(7, 1, 2)">
 <span class="q-choice-num">①</span>
@@ -1726,7 +1746,7 @@
 <div class="q-ans-blank" id="q-status-8">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 북쪽으로 고구려·옥저와 접하고 남쪽으로 진한과 접해 있으며 동쪽은 큰 바다(동해)에 닿아 있다. 대군장은 없고 읍군, 삼로 등의 관직이 있다."<br/>· "풍속에 산천을 중요시하여 <strong>산과 내마다 각기 구분이 있어 함부로 들어가지 않으며</strong>, 동성끼리는 혼인하지 않는다. 항상 <strong>10월이면 하늘에 제사를 지내는데 밤낮으로 술 마시며 노래하고 춤추니 이를 무천</strong>이라 한다." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)</strong>는 북쪽으로 고구려·옥저와 접하고 남쪽으로 진한과 접해 있으며 동쪽은 큰 바다(동해)에 닿아 있다. 대군장은 없고 읍군, 삼로 등의 관직이 있다."<br/>· "풍속에 산천을 중요시하여 <strong>산과 내마다 각기 구분이 있어 함부로 들어가지 않으며</strong>, 동성끼리는 혼인하지 않는다. 항상 <strong>10월이면 하늘에 제사를 지내는데 밤낮으로 술 마시며 노래하고 춤추니 이를 무천</strong>이라 한다." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="8" onclick="handleChoiceClick(8, 1, 4)">
 <span class="q-choice-num">①</span>
@@ -1764,23 +1784,23 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="9" onclick="handleChoiceClick(9, 1, 5)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">(가) - 10월에 동맹이라는 제천 행사를 열었다</span>
+<span class="q-choice-text">(가): 10월에 동맹이라는 제천 행사를 열었다</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="9" onclick="handleChoiceClick(9, 2, 5)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">(가) - 왕이 없고 읍군, 삼로가 부족을 다스렸다</span>
+<span class="q-choice-text">(가): 왕이 없고 읍군, 삼로가 부족을 다스렸다</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="9" onclick="handleChoiceClick(9, 3, 5)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">(나) - 여러 가들이 별도로 사출도를 주관하였다</span>
+<span class="q-choice-text">(나): 여러 가들이 별도로 사출도를 주관하였다</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="9" onclick="handleChoiceClick(9, 4, 5)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">(나) - 해산물이 풍부하여 소금과 어물을 공납으로 바쳤다</span>
+<span class="q-choice-text">(나): 해산물이 풍부하여 소금과 어물을 공납으로 바쳤다</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="9" onclick="handleChoiceClick(9, 5, 5)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">(가), (나) - 형이 죽으면 형수를 아내로 삼는 형사취수제가 있었다</span>
+<span class="q-choice-text">(가), (나): 형이 죽으면 형수를 아내로 삼는 형사취수제가 있었다</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-9"><div class="inline-exp-head"><span><strong>정답: ⑤</strong> · 선지별 상세 해설 및 기본서 매핑</span><a class="inline-exp-jump" href="#exp-card-9">PART 3 해설지 이동 ↓</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> <strong>[부여(우제점법)와 고구려(서옥제)의 공통 풍습 형사취수제·1책 12법]</strong> (가)는 소의 발굽으로 점을 치는 우제점법이 있었던 부여이고, (나)는 서옥제(데릴사위제)가 있었던 고구려입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 10월에 동맹을 연 나라는 (나) 고구려이며, (가) 부여는 12월에 영고를 열었습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="산악 지대에 자리 잡은 고구려는 약탈물을 보관하는 부경 창고를 두었고, 상가·대로·패자·고추가 등 대가들이 제가회의를 열었으며 혼인 풍습 서옥제와 국동대혈 10월 동맹 제사를 행했습니다." data-qnum="9" data-theory-id="theory-sec1-p3" onclick="jumpToTheory('theory-sec1-p3', 9, this)" type="button">📖 기본서 제1절 · 고구려 제가회의·서옥제·10월 동맹 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 왕이 없고 읍군, 삼로가 다스린 나라는 <strong>옥저와 동예</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="동해안의 옥저와 동예는 낭림·태백산맥에 가로막힌 지리적 고립성과 고구려의 압박·수탈 때문에 연맹왕국으로 성장하지 못하고, 왕 없이 읍군·삼로가 부족을 다스리는 군장 국가에 머물렀습니다." data-qnum="9" data-theory-id="theory-sec2-p4" onclick="jumpToTheory('theory-sec2-p4', 9, this)" type="button">📖 기본서 제2절 · 옥저·동예의 고립과 읍군·삼로 통치 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 마가·우가·저가·구가 등 여러 가들이 사출도를 주관한 나라는 <strong>(가) 부여</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="위만조선(왕 아래 상·대부·장군) 멸망과 철기 확산 이후 성장한 부여는 마가·우가·저가·구가가 사출도를 자치 통치한 5부족 연맹왕국으로, 흉년 시 왕에게 책임을 물었습니다." data-qnum="9" data-theory-id="theory-sec1-p1" onclick="jumpToTheory('theory-sec1-p1', 9, this)" type="button">📖 기본서 제1절 · 부여의 사출도와 고조선 계승 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 소금과 어물을 고구려에 공납으로 바친 나라는 <strong>옥저</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="옥저는 고구려에 소금·어물·맥포를 공납하였고, 여자아이를 10세 이전에 데려다 기른 뒤 돈을 치르는 민며느리제와 가족의 뼈를 하나의 큰 목곽에 모시고 쌀 항아리를 매다는 골장제를 행했습니다." data-qnum="9" data-theory-id="theory-sec2-p5" onclick="jumpToTheory('theory-sec2-p5', 9, this)" type="button">📖 기본서 제2절 · 옥저의 민며느리제와 가족 공동묘 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="5"><div class="inline-exp-txt"><span class="exp-choice-num-inline">⑤</span> [옳음 · 정답] 같은 부여족 계통의 국가인 <strong>(가) 부여와 (나) 고구려에는 모두 형이 죽으면 동생이 형수를 아내로 맞이하는 형사취수제와 도둑질한 자에게 12배를 물리는 1책 12법이 공통으로 존재</strong>하였습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="9" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 9, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div></div></div>
@@ -1798,23 +1818,23 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="10" onclick="handleChoiceClick(10, 1, 3)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">(가) - 영고라는 제천 행사를 열었다</span>
+<span class="q-choice-text">(가): 영고라는 제천 행사를 열었다</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="10" onclick="handleChoiceClick(10, 2, 3)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">(가) - 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
+<span class="q-choice-text">(가): 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="10" onclick="handleChoiceClick(10, 3, 3)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">(나) - 신성 지역인 소도가 있었다</span>
+<span class="q-choice-text">(나): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="10" onclick="handleChoiceClick(10, 4, 3)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">(나) - 제가 회의에서 나라의 중대사를 결정하였다</span>
+<span class="q-choice-text">(나): 제가 회의에서 나라의 중대사를 결정하였다</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="10" onclick="handleChoiceClick(10, 5, 3)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">(가), (나) - 도둑질한 자에게 12배로 배상하게 하였다</span>
+<span class="q-choice-text">(가), (나): 도둑질한 자에게 12배로 배상하게 하였다</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-10"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a class="inline-exp-jump" href="#exp-card-10">PART 3 해설지 이동 ↓</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> <strong>[옥저(골장제·읍군·삼로)와 삼한(신지·읍차·소도) 비교]</strong> (가)는 읍군·삼로가 다스리고 가족 공동 무덤(골장제)이 있었던 옥저이고, (나)는 신지·읍차가 다스리고 5월·10월 계절제를 연 삼한입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 12월에 영고라는 제천 행사를 연 나라는 <strong>부여</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="10" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 10, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 범금 8조를 만든 나라는 <strong>고조선</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="10" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 10, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음 · 정답] <strong>(나) 삼한</strong>에는 제사장인 천군이 주관하는 <strong>신성 지역인 소도</strong>가 존재하여 제정분리 사회를 이루었습니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="고조선의 제정일치와 달리 삼한은 정치 군장(신지·읍차)과 별도로 제사장인 천군이 큰 나무(솟대)를 세운 신성 별읍 소도를 주관하여 죄인이 도망쳐도 잡아갈 수 없는 제정분리 사회였습니다." data-qnum="10" data-theory-id="theory-sec3-p8" onclick="jumpToTheory('theory-sec3-p8', 10, this)" type="button">📖 기본서 제3절 · 삼한의 천군·소도 제정분리 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 제가 회의에서 나라의 중대사를 결정한 나라는 <strong>고구려</strong>입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="산악 지대에 자리 잡은 고구려는 약탈물을 보관하는 부경 창고를 두었고, 상가·대로·패자·고추가 등 대가들이 제가회의를 열었으며 혼인 풍습 서옥제와 국동대혈 10월 동맹 제사를 행했습니다." data-qnum="10" data-theory-id="theory-sec1-p3" onclick="jumpToTheory('theory-sec1-p3', 10, this)" type="button">📖 기본서 제1절 · 고구려 제가회의·서옥제·10월 동맹 본문 보기</button></div></div><div class="inline-exp-line" data-choice-idx="5"><div class="inline-exp-txt"><span class="exp-choice-num-inline">⑤</span> [틀림] 도둑질한 자에게 12배로 배상하게 한 1책 12법은 <strong>부여와 고구려</strong>의 형법입니다.</div><div class="theory-map-row no-print-inline"><button class="theory-map-btn" data-preview="부여는 수렵 전통에 따라 은력 정월(12월)에 영고를 열어 죄수를 석방하고 소 발굽으로 점을 치는 우제점복과 순장을 행했으며, 고조선 범금 8조처럼 사유 재산을 지키는 1책 12법과 형사취수제를 시행했습니다." data-qnum="10" data-theory-id="theory-sec1-p2" onclick="jumpToTheory('theory-sec1-p2', 10, this)" type="button">📖 기본서 제1절 · 부여 12월 영고·우제점복·1책 12법 본문 보기</button></div></div></div></div>
@@ -1896,7 +1916,7 @@
 <div class="q-ans-blank" id="q-status-13">정답:     </div>
 </div>
 <div class="q-stem">다음 자료의 (가) 나라에 대한 설명으로 옳은 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)의 풍속에 혼인을 할 때에는 여자 나이가 10세가 되기 전에 혼인을 약속하고, 신랑 집에서 그 여자를 맞이하여 장성할 때까지 기른다</strong>. 여자가 성인이 되면 다시 친정으로 돌려보냈다가, 친정에서 돈을 요구하면 신랑 집에서 돈을 지불한 뒤에야 다시 신랑 집으로 돌아온다." - 『삼국지』 위서 동이전</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· "<strong>(가)의 풍속에 혼인을 할 때에는 여자 나이가 10세가 되기 전에 혼인을 약속하고, 신랑 집에서 그 여자를 맞이하여 장성할 때까지 기른다</strong>. 여자가 성인이 되면 다시 친정으로 돌려보냈다가, 친정에서 돈을 요구하면 신랑 집에서 돈을 지불한 뒤에야 다시 신랑 집으로 돌아온다." — 『삼국지』 위서 동이전</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="13" onclick="handleChoiceClick(13, 1, 3)">
 <span class="q-choice-num">①</span>
@@ -1930,7 +1950,7 @@
 <div class="q-ans-blank" id="q-status-14">정답:     </div>
 </div>
 <div class="q-stem">(가), (나) 나라에 대한 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은? [3점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· <strong>(가)</strong>: "풍속에 산천을 중시하여 산과 내마다 각기 구분이 있어 함부로 들어가지 않으며, 다른 읍락을 침범하면 노비나 소, 말로 배상하게 하니 이를 <strong>책화</strong>라 한다."<br/>· <strong>(나)</strong>: "국읍에 각각 한 사람씩을 세워 천신에 대한 제사를 주관하게 하니 이를 <strong>천군</strong>이라 부른다. 또 여러 나라에 각기 별읍이 있으니 이를 <strong>소도</strong>라 한다."<br/><br/><strong>&lt;보 기&gt;</strong><br/>ㄱ. (가) - 혼인 풍습으로 민며느리제가 있었다.<br/>ㄴ. (가) - 특산물로 단궁, 과하마, 반어피가 유명하였다.<br/>ㄷ. (나) - 신지, 읍차라 불리는 정치적 지배자가 있었다.<br/>ㄹ. (나) - 여러 가들이 별도로 사출도를 다스렸다.</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong>· <strong>(가)</strong>: "풍속에 산천을 중시하여 산과 내마다 각기 구분이 있어 함부로 들어가지 않으며, 다른 읍락을 침범하면 노비나 소, 말로 배상하게 하니 이를 <strong>책화</strong>라 한다."<br/>· <strong>(나)</strong>: "국읍에 각각 한 사람씩을 세워 천신에 대한 제사를 주관하게 하니 이를 <strong>천군</strong>이라 부른다. 또 여러 나라에 각기 별읍이 있으니 이를 <strong>소도</strong>라 한다."<br/><br/><strong>&lt;보 기&gt;</strong><br/>ㄱ. (가): 혼인 풍습으로 민며느리제가 있었다.<br/>ㄴ. (가): 특산물로 단궁, 과하마, 반어피가 유명하였다.<br/>ㄷ. (나): 신지, 읍차라 불리는 정치적 지배자가 있었다.<br/>ㄹ. (나): 여러 가들이 별도로 사출도를 다스렸다.</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="14" onclick="handleChoiceClick(14, 1, 3)">
 <span class="q-choice-num">①</span>
@@ -1964,7 +1984,7 @@
 <div class="q-ans-blank" id="q-status-15">정답:     </div>
 </div>
 <div class="q-stem">(가)에서 (라)에 들어갈 내용으로 옳은 것을 &lt;보기&gt;에서 고른 것은? [2점]</div>
-<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong><strong>[주제 탐구 표: 초기 여러 나라의 제천 행사와 사회 모습]</strong><br/>· <strong>부여</strong>: 12월에 영고 개최 — <strong>(가)</strong><br/>· <strong>고구려</strong>: 10월에 <strong>(나)</strong> 개최 — 제가 회의에서 국가 중대사 결정<br/>· <strong>동예</strong>: 10월에 무천 개최 — <strong>(다)</strong><br/>· <strong>삼한</strong>: 5월과 10월에 계절제 개최 — <strong>(라)</strong><br/><br/><strong>&lt;보 기&gt;</strong><br/>ㄱ. (가) - 시신을 가매장하였다가 가족 공동 목곽에 안치하였다.<br/>ㄴ. (나) - 동맹<br/>ㄷ. (다) - 왕 아래 상, 대부, 장군 등의 관직을 두었다.<br/>ㄹ. (라) - 천군이 다스리는 신성 지역인 소도가 존재하였다.</div>
+<div class="q-stem-box"><strong class="stem-box-title">[출제 사료 및 제시문]</strong><strong>[주제 탐구 표: 초기 여러 나라의 제천 행사와 사회 모습]</strong><br/>· <strong>부여</strong>: 12월에 영고 개최 — <strong>(가)</strong><br/>· <strong>고구려</strong>: 10월에 <strong>(나)</strong> 개최 — 제가 회의에서 국가 중대사 결정<br/>· <strong>동예</strong>: 10월에 무천 개최 — <strong>(다)</strong><br/>· <strong>삼한</strong>: 5월과 10월에 계절제 개최 — <strong>(라)</strong><br/><br/><strong>&lt;보 기&gt;</strong><br/>ㄱ. (가): 시신을 가매장하였다가 가족 공동 목곽에 안치하였다.<br/>ㄴ. (나): 동맹<br/>ㄷ. (다): 왕 아래 상, 대부, 장군 등의 관직을 두었다.<br/>ㄹ. (라): 천군이 다스리는 신성 지역인 소도가 존재하였다.</div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="15" onclick="handleChoiceClick(15, 1, 4)">
 <span class="q-choice-num">①</span>
@@ -2331,7 +2351,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">①</span>
-<span class="exp-choice-orig">(가) - 신성 지역인 소도가 있었다</span>
+<span class="exp-choice-orig">(가): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">①</span> [틀림] 제사장인 천군이 다스리는 신성 지역 소도가 있었던 나라는 <strong>삼한</strong>입니다.
@@ -2341,7 +2361,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">②</span>
-<span class="exp-choice-orig">(가) - 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
+<span class="exp-choice-orig">(가): 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">②</span> [틀림] 사회 질서를 유지하기 위해 범금 8조(8조법)를 만든 나라는 <strong>고조선</strong>입니다.
@@ -2351,7 +2371,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">③</span>
-<span class="exp-choice-orig">(나) - 제가 회의에서 나라의 중대사를 결정하였다</span>
+<span class="exp-choice-orig">(나): 제가 회의에서 나라의 중대사를 결정하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">③</span> [틀림] 귀족 회의인 제가 회의에서 나라의 중대사를 결정한 나라는 <strong>고구려</strong>입니다.
@@ -2361,7 +2381,7 @@
 <div class="exp-choice-item is-answer">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">④</span>
-<span class="exp-choice-orig">(나) - 특산물로 단궁, 과하마, 반어피가 유명하였다</span>
+<span class="exp-choice-orig">(나): 특산물로 단궁, 과하마, 반어피가 유명하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 강원도 북부 동해안의 <strong>(나) 동예는 박달나무로 만든 짧은 활인 단궁, 과일나무 아래를 지나는 조랑말인 과하마, 바다표범 가죽인 반어피 등 3대 특산물</strong>로 유명하였습니다.
@@ -2371,7 +2391,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">⑤</span>
-<span class="exp-choice-orig">(가), (나) - 도둑질한 자에게 12배로 배상하게 하였다</span>
+<span class="exp-choice-orig">(가), (나): 도둑질한 자에게 12배로 배상하게 하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">⑤</span> [틀림] 도둑질한 자에게 물건값의 12배를 배상하게 한 1책 12법은 <strong>(가) 부여와 고구려</strong>의 형법이며, (나) 동예에는 해당하지 않습니다.
@@ -2393,7 +2413,7 @@
 <div class="exp-choice-item is-answer">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">①</span>
-<span class="exp-choice-orig">(가) - 신성 지역인 소도가 있었다</span>
+<span class="exp-choice-orig">(가): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">①</span> [옳음 · 정답] <strong>(가) 삼한</strong>은 제정분리 사회로서 정치적 지배자인 신지·읍차와 별도로 <strong>제사장인 천군이 다스리는 신성 불가침 지역인 소도</strong>가 존재하여, 죄인이 도망쳐 들어와도 군장이 함부로 잡아갈 수 없었습니다.
@@ -2403,7 +2423,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">②</span>
-<span class="exp-choice-orig">(가) - 혼인 풍습으로 민며느리제가 있었다</span>
+<span class="exp-choice-orig">(가): 혼인 풍습으로 민며느리제가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">②</span> [틀림] 혼인 풍습으로 민며느리제가 있었던 나라는 <strong>옥저</strong>입니다.
@@ -2413,7 +2433,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">③</span>
-<span class="exp-choice-orig">(나) - 위화부, 영객부 등의 관청이 있었다</span>
+<span class="exp-choice-orig">(나): 위화부, 영객부 등의 관청이 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">③</span> [틀림] 위화부, 영객부, 병부 등의 중앙 관청을 설치한 나라는 삼국 시대의 <strong>신라(법흥왕·진평왕 등)</strong>입니다.
@@ -2423,7 +2443,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">④</span>
-<span class="exp-choice-orig">(나) - 왕 아래 상가, 대로, 패자 등의 관직이 있었다</span>
+<span class="exp-choice-orig">(나): 왕 아래 상가, 대로, 패자 등의 관직이 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">④</span> [틀림] 왕 아래 상가, 대로, 패자, 고추가 등의 관직을 둔 나라는 <strong>고구려</strong>이며, (나) 부여는 마가·우가·저가·구가와 대사·대사자·사자 등의 관직을 두었습니다.
@@ -2433,7 +2453,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">⑤</span>
-<span class="exp-choice-orig">(가), (나) - 읍락 간의 경계를 중시하는 책화가 있었다</span>
+<span class="exp-choice-orig">(가), (나): 읍락 간의 경계를 중시하는 책화가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">⑤</span> [틀림] 읍락 간의 경계를 중시하는 책화가 있었던 나라는 <strong>동예</strong>입니다.
@@ -2827,7 +2847,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">①</span>
-<span class="exp-choice-orig">(가) - 10월에 동맹이라는 제천 행사를 열었다</span>
+<span class="exp-choice-orig">(가): 10월에 동맹이라는 제천 행사를 열었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">①</span> [틀림] 10월에 동맹을 연 나라는 (나) 고구려이며, (가) 부여는 12월에 영고를 열었습니다.
@@ -2837,7 +2857,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">②</span>
-<span class="exp-choice-orig">(가) - 왕이 없고 읍군, 삼로가 부족을 다스렸다</span>
+<span class="exp-choice-orig">(가): 왕이 없고 읍군, 삼로가 부족을 다스렸다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">②</span> [틀림] 왕이 없고 읍군, 삼로가 다스린 나라는 <strong>옥저와 동예</strong>입니다.
@@ -2847,7 +2867,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">③</span>
-<span class="exp-choice-orig">(나) - 여러 가들이 별도로 사출도를 주관하였다</span>
+<span class="exp-choice-orig">(나): 여러 가들이 별도로 사출도를 주관하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">③</span> [틀림] 마가·우가·저가·구가 등 여러 가들이 사출도를 주관한 나라는 <strong>(가) 부여</strong>입니다.
@@ -2857,7 +2877,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">④</span>
-<span class="exp-choice-orig">(나) - 해산물이 풍부하여 소금과 어물을 공납으로 바쳤다</span>
+<span class="exp-choice-orig">(나): 해산물이 풍부하여 소금과 어물을 공납으로 바쳤다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">④</span> [틀림] 소금과 어물을 고구려에 공납으로 바친 나라는 <strong>옥저</strong>입니다.
@@ -2867,7 +2887,7 @@
 <div class="exp-choice-item is-answer">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">⑤</span>
-<span class="exp-choice-orig">(가), (나) - 형이 죽으면 형수를 아내로 삼는 형사취수제가 있었다</span>
+<span class="exp-choice-orig">(가), (나): 형이 죽으면 형수를 아내로 삼는 형사취수제가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">⑤</span> [옳음 · 정답] 같은 부여족 계통의 국가인 <strong>(가) 부여와 (나) 고구려에는 모두 형이 죽으면 동생이 형수를 아내로 맞이하는 형사취수제와 도둑질한 자에게 12배를 물리는 1책 12법이 공통으로 존재</strong>하였습니다.
@@ -2889,7 +2909,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">①</span>
-<span class="exp-choice-orig">(가) - 영고라는 제천 행사를 열었다</span>
+<span class="exp-choice-orig">(가): 영고라는 제천 행사를 열었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">①</span> [틀림] 12월에 영고라는 제천 행사를 연 나라는 <strong>부여</strong>입니다.
@@ -2899,7 +2919,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">②</span>
-<span class="exp-choice-orig">(가) - 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
+<span class="exp-choice-orig">(가): 사회 질서를 유지하기 위해 범금 8조를 만들었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">②</span> [틀림] 범금 8조를 만든 나라는 <strong>고조선</strong>입니다.
@@ -2909,7 +2929,7 @@
 <div class="exp-choice-item is-answer">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">③</span>
-<span class="exp-choice-orig">(나) - 신성 지역인 소도가 있었다</span>
+<span class="exp-choice-orig">(나): 신성 지역인 소도가 있었다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">③</span> [옳음 · 정답] <strong>(나) 삼한</strong>에는 제사장인 천군이 주관하는 <strong>신성 지역인 소도</strong>가 존재하여 제정분리 사회를 이루었습니다.
@@ -2919,7 +2939,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">④</span>
-<span class="exp-choice-orig">(나) - 제가 회의에서 나라의 중대사를 결정하였다</span>
+<span class="exp-choice-orig">(나): 제가 회의에서 나라의 중대사를 결정하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">④</span> [틀림] 제가 회의에서 나라의 중대사를 결정한 나라는 <strong>고구려</strong>입니다.
@@ -2929,7 +2949,7 @@
 <div class="exp-choice-item">
 <div class="exp-choice-head orig-choice-line">
 <span class="exp-choice-num">⑤</span>
-<span class="exp-choice-orig">(가), (나) - 도둑질한 자에게 12배로 배상하게 하였다</span>
+<span class="exp-choice-orig">(가), (나): 도둑질한 자에게 12배로 배상하게 하였다</span>
 </div>
 <div class="exp-choice-body">
 <span class="exp-choice-num-inline">⑤</span> [틀림] 도둑질한 자에게 12배로 배상하게 한 1책 12법은 <strong>부여와 고구려</strong>의 형법입니다.
@@ -3374,6 +3394,7 @@
  document.body.classList.remove('print-q-only');
  }, 500);
  }
+ window.printQuestionsOnly = printPart23Only;
  </script>
 <!-- FK_ONE_LINE_BAR_START -->
 <style id="fkOneLineBarStyle">
@@ -3433,6 +3454,14 @@
  }
  .no-print-bar.fk-misc-open .no-print-inner > .ctrl-group:nth-of-type(2) {
  display: flex !important;
+ }
+ @media screen and (max-width: 768px) {
+ html, body { max-width: 100vw !important; overflow-x: hidden !important; }
+ :root { --theory-side-pad: 0px !important; }
+ .book-sheet { width: 100% !important; max-width: 100vw !important; padding: 20px 14px 36px 14px !important; box-sizing: border-box !important; }
+ #part1 section, #part1 .prose-body, body.layout-wide .para-block { padding-left: 0 !important; padding-right: 0 !important; }
+ .book-table { min-width: 480px; }
+ .no-print-bar .btn-print, .no-print-bar .print-primary, .no-print-bar #printQuestionsOnly { display: none !important; }
  }
  </style>
 <script id="fkOneLineBarScript">
@@ -3842,14 +3871,28 @@
  }
 
  @media only screen and (max-width: 768px) {
+ html, body { max-width: 100vw !important; overflow-x: hidden !important; }
+ :root { --theory-side-pad: 0px !important; }
  .no-print-bar {
  padding: 6px 10px !important;
  }
+ .no-print-bar .btn-print, .no-print-bar .print-primary, .no-print-bar #printQuestionsOnly {
+ display: none !important;
+ }
  .book-sheet {
- max-width: 100% !important;
+ width: 100% !important;
+ max-width: 100vw !important;
  margin: 0 !important;
- padding: 16px 14px 72px 14px !important;
+ padding: 20px 14px 36px 14px !important;
+ box-sizing: border-box !important;
  border: none !important;
+ }
+ #part1 section, #part1 .prose-body, body.layout-wide .para-block {
+ padding-left: 0 !important;
+ padding-right: 0 !important;
+ }
+ .book-table {
+ min-width: 480px;
  }
  body.q-cols-2 .questions-grid,
  body.exp-cols-2 .explanations-grid {
