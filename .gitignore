@@ -9,3 +9,6 @@ study_logs.json
 과목별_학습기록/
 인쇄할_파일/
 scratch/
+render_audit/
+__pycache__/
+*.pyc

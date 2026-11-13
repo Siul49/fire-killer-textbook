@@ -342,7 +342,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 2,
-      "hlKey": "1894년 갑오개혁",
+      "hlKey": "1894년 갑오개혁과 '소방(消防)' 용어 최초 등장",
       "isEssential": true
     },
     {
@@ -360,7 +360,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 3,
-      "hlKey": "경성소방서",
+      "hlKey": "1925년 4월 경성소방서",
       "isEssential": true
     },
     {
@@ -414,7 +414,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "중앙소방청",
+      "hlKey": "1947년 중앙소방청",
       "isEssential": true
     },
     {
@@ -450,7 +450,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "1958년",
+      "hlKey": "1958년 ｢소방법｣ 제정",
       "isEssential": true
     },
     {
@@ -504,7 +504,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 5,
-      "hlKey": "2004년 소방방재청",
+      "hlKey": "현대 중앙 소방행정기관 개편 계통",
       "isEssential": true
     },
     {
@@ -630,7 +630,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 8,
-      "hlKey": "4대 소방신호",
+      "hlKey": "경계신호, 발화신호, 해제신호, 훈련신호",
       "isEssential": true
     },
     {
@@ -738,7 +738,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 5,
-      "hlKey": "소방 4분법",
+      "hlKey": "2004년 소방방재청 및 소방 4분법",
       "isEssential": false
     },
     {
@@ -756,7 +756,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 6,
-      "hlKey": "의용소방대",
+      "hlKey": "의용소방대(의용소방대법)",
       "isEssential": false
     },
     {
@@ -793,7 +793,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 6,
-      "hlKey": "자체소방대",
+      "hlKey": "옥내저장소는 자체소방대 대상 아님",
       "isEssential": false
     },
     {
@@ -812,7 +812,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 6,
-      "hlKey": "50만 배 이상",
+      "hlKey": "48만 배 이상(4대·20명)",
       "isEssential": false
     },
     {
@@ -941,7 +941,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 7,
-      "hlKey": "보수 전액 감액",
+      "hlKey": "강등 · 정직(중징계 교정징계)",
       "isEssential": false
     },
     {
@@ -960,7 +960,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 7,
-      "hlKey": "파면",
+      "hlKey": "파면 · 해임(배제징계)",
       "isEssential": false
     },
     {
@@ -6686,7 +6686,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 2,
-      "hlKey": "우리나라",
+      "hlKey": "우리나라 법제 속에 근대적 의미의",
       "isEssential": false
     },
     {
@@ -6704,7 +6704,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "우리나라",
+      "hlKey": "1972년 서울·부산 소방본부 설치",
       "isEssential": false
     },
     {
@@ -6722,7 +6722,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 1,
-      "hlKey": "금화도감",
+      "hlKey": "세종 8년(1426년) 2월 금화도감 창설",
       "isEssential": false
     },
     {
@@ -6740,7 +6740,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 3,
-      "hlKey": "경성소방서",
+      "hlKey": "우리나라 최초의 근대식 상설 소방서인",
       "isEssential": false
     },
     {
@@ -6758,7 +6758,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "대한민국",
+      "hlKey": "우리나라 최초의 근대적 단독 법률인",
       "isEssential": false
     },
     {
@@ -6776,7 +6776,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "우리나라",
+      "hlKey": "미군정기 자치소방체제 (1946년에서 1948년까지)",
       "isEssential": false
     },
     {
@@ -6794,7 +6794,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "우리나라",
+      "hlKey": "정부 수립 후 국가소방체제 (1948년에서 1971년까지)",
       "isEssential": false
     },
     {
@@ -6830,7 +6830,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 5,
-      "hlKey": "대구지하철",
+      "hlKey": "2003년 대구지하철 화재 발생 당시의 소방행정체제는 모두 광역자치소방체제",
       "isEssential": false
     },
     {
@@ -6848,7 +6848,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 2,
-      "hlKey": "경무청",
+      "hlKey": "내무아문 산하에 경찰 기관인",
       "isEssential": false
     },
     {
@@ -6866,7 +6866,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "과정",
+      "hlKey": "다시 경찰 행정에 통합된 국가소방체제로 환원하였습니다",
       "isEssential": false
     },
     {
@@ -6884,7 +6884,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 0,
-      "hlKey": "고려",
+      "hlKey": "불을 끄고 재앙을 물리친다는 뜻으로 소방을",
       "isEssential": false
     },
     {
@@ -6902,7 +6902,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 1,
-      "hlKey": "금화도감",
+      "hlKey": "성문도감(수성도감)과 금화도감을 병합하여",
       "isEssential": false
     },
     {
@@ -6920,7 +6920,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 3,
-      "hlKey": "경성소방서",
+      "hlKey": "1939년 및 1944년 지방 증설",
       "isEssential": false
     },
     {
@@ -6938,7 +6938,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 6,
-      "hlKey": "민간",
+      "hlKey": "의용소방대 vs 자체소방대",
       "isEssential": false
     },
     {
@@ -6992,7 +6992,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "미군정",
+      "hlKey": "소방을 경찰로부터 완전히 독립시켰습니다",
       "isEssential": false
     },
     {
@@ -7028,7 +7028,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 8,
-      "hlKey": "소방신호의",
+      "hlKey": "타종신호, 사이렌신호, 그 밖의 신호(통풍대·게시판·기)",
       "isEssential": false
     },
     {
@@ -7046,7 +7046,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 8,
-      "hlKey": "하는",
+      "hlKey": "경계신호는 '5초 간격을 두고 30초씩 3회'",
       "isEssential": false
     },
     {
@@ -7064,7 +7064,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 8,
-      "hlKey": "소방신호의",
+      "hlKey": "비상신호·대응신호·복구신호는 법정 신호 아님",
       "isEssential": false
     },
     {
@@ -7082,7 +7082,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 7,
-      "hlKey": "임용권자",
+      "hlKey": "소방령 이상은 소방청장의 제청으로",
       "isEssential": false
     },
     {
@@ -7100,7 +7100,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 7,
-      "hlKey": "소방공무원법",
+      "hlKey": "소방준감 이하 계급으로의 승진은 승진심사에 의하되",
       "isEssential": false
     },
     {
@@ -7118,7 +7118,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 7,
-      "hlKey": "소방공무원법",
+      "hlKey": "인사교류계획을 수립·실시할 수 있습니다(제9조)",
       "isEssential": false
     },
     {
@@ -10932,7 +10932,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 0,
-      "hlKey": "화통도감",
+      "hlKey": "왜구를 격퇴하기 위해 화약과 화기를 제조하던 군사 관서였으므로",
       "isEssential": true
     },
     {
@@ -11071,7 +11071,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "중앙소방위원회",
+      "hlKey": "1946년 중앙소방위원회 · 도소방위원회",
       "isEssential": true
     },
     {
@@ -11088,7 +11088,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 4,
-      "hlKey": "내무부 치안국 소방과",
+      "hlKey": "1948년 내무부 치안국 소방과 흡수",
       "isEssential": true
     },
     {
@@ -11156,7 +11156,7 @@ window.FIRE_INTRO_OX_DB = {
         "역사·재난·조직"
       ],
       "paraIdx": 5,
-      "hlKey": "2004년 소방방재청",
+      "hlKey": "2014년 국민안전처 중앙소방본부",
       "isEssential": false
     },
     {
@@ -11333,7 +11333,7 @@ window.FIRE_INTRO_OX_DB = {
         "소방시설·수치기준"
       ],
       "paraIdx": 8,
-      "hlKey": "사이렌신호",
+      "hlKey": "상당한 간격을 두고 1타씩 반복",
       "isEssential": false
     },
     {
