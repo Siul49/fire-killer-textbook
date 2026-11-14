@@ -90,40 +90,50 @@
         <h2 class="text-xl font-bold text-white mb-3">1. 열전달 3대 방식(전도·대류·복사)과 푸리에·스테판·볼츠만 법칙 및 자연발화</h2>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제2편 제1장과 제2장에서 연소가 활성화에너지 장벽을 넘어 열을 방출하는 발열반응(&Delta;H &lt; 0)이며 온도 상승이 아레니우스 반응속도를 지수함수적으로 가속한다는 원리를 확인했습니다. 그렇다면 한 지점에서 시작된 불씨가 어떻게 인접 가연물과 방 전체를 발화점 이상으로 가열하여 연소를 확산시킬까요? 그 해답은 열에너지가 고온부에서 저온부로 이동하는 세 가지 물리적 메커니즘인 <strong>전도(Conduction), 대류(Convection), 복사(Radiation)</strong>에 있습니다.
-            <span class="prose-item"><strong>① 전도(Conduction)</strong>: 일반적으로 <strong>화재 초기단계에서 고체 내부의 열전달</strong>을 주도하는 방식으로, 분자 진동이나 자유전자 이동을 통해 온도 구배를 따라 접촉면으로 열이 직접 전달됩니다.</span>
+            2017년 제천 스포츠센터와 2018년 밀양 세종병원 화재 당시, 1층에서 시작된 작은 불씨가 불과 몇 분 만에 두꺼운 내화벽 반대편과 위층 병실 전체로 번진 비극은 열이 눈에 보이지 않는 물리적 통로를 타고 사방으로 쏟아져 나왔기 때문입니다. 앞선 제2편 제1장과 제2장에서 연소가 활성화에너지 장벽을 넘어 열을 방출하는 발열반응(&Delta;H &lt; 0)이며 온도 상승이 아레니우스 반응속도를 지수함수적으로 가속한다는 원리를 확인했는데, 바로 그 방출된 열이 인접 가연물을 발화점 이상으로 데워 연소를 확대시키는 세 가지 메커니즘이 <strong>전도(Conduction), 대류(Convection), 복사(Radiation)</strong>입니다. 화재 초기에는 고체 접촉면을 타고 흐르는 전도와 가열 유체가 솟구치는 대류가 주축을 이루지만, 화염 온도가 급상승하는 최성기에는 절대온도의 4제곱에 비례해 폭증하는 복사가 압도적인 지배 메커니즘으로 전환됩니다.
+            <span class="prose-item"><strong>① 전도(Conduction)</strong>: 일반적으로 <strong>화재 초기단계에서 고체 내부의 열전달</strong>을 주도하는 방식으로, 분자 진동이나 자유전자 이동을 통해 온도 구배를 따라 접촉면으로 열이 직접 전달됩니다(철골 빔이나 배관을 타고 방화구획 너머의 가연물에 착화시키는 주범).</span>
             <span class="formula-box"><span class="formula-badge">푸리에(Fourier)의 열전도법칙</span><span class="formula-eq">q = k &middot; A &middot; (&Delta;T &divide; L) &nbsp;&nbsp;[단위 시간당 전도 열량]</span><span class="formula-ex">💡 <strong>비례 · 반비례 조건</strong> | 물질을 통과하는 전도 열량(q)은 <strong>열전도율(k), 전열 단면적(A), 양면의 온도차(&Delta;T)에 정비례</strong>하고 물질의 <strong>두께(L)에 반비례</strong>합니다.</span></span>
-            <span class="prose-sub">&bull; <strong>다공성 단열재와 수분 침투</strong>: 열전도율 크기는 <strong>고체(금속) &gt; 액체 &gt; 기체(정지 공기)</strong> 순이므로, 스티로폼이나 유리섬유 같은 <strong>다공성 단열재</strong>는 내부 기공의 정지 공기 덕분에 열전도율이 매우 낮지만, 기공에 수분(물)이 침투하면 공기보다 열전도율이 약 25배 큰 물이 자리를 차지하여 열전도율이 급증하고 단열 성능이 상실됩니다.</span>
+            <span class="prose-sub">&bull; <strong>다공성 단열재와 수분 침투</strong>: 열전도율 크기는 <strong>고체(금속) &gt; 액체 &gt; 기체(정지 공기)</strong> 순이므로, 스티로폼·유리섬유·제2장에서 본 목재의 탄화층 같은 <strong>다공성 단열재</strong>는 내부 기공의 정지 공기 덕분에 열전도율이 매우 낮지만, 기공에 수분(물)이 침투하면 공기보다 열전도율이 약 25배 큰 물이 자리를 차지하여 열전도율이 급증하고 단열 성능이 상실됩니다.</span>
             <span class="prose-item"><strong>② 열관류(Overall Heat Transfer, 열통과)와 대류(Convection)</strong></span>
-            <span class="prose-sub">&bull; <strong>열관류</strong>: 고체 벽체 양쪽에 온도가 다른 유체가 접해 있을 때 <strong>고온 유체의 대류 ➔ 고체 벽체 내부의 전도 ➔ 저온 유체의 대류</strong>로 이어지는 복합 열전달 과정입니다.</span>
-            <span class="prose-sub">&bull; <strong>대류는</strong> 화재 시 뜨거운 연기가 부력에 의해 위로 향하거나 화로에 의해 실내 공기가 데워져 <strong>천장 제트 기류(Ceiling Jet Flow)</strong>를 형성하는 것처럼 유체가 직접 이동하며 열을 전달하는 현상으로서 <strong>뉴턴의 냉각법칙(q = h &middot; A &middot; &Delta;T)</strong>을 따릅니다.</span>
+            <span class="prose-sub">&bull; <strong>열관류</strong>: 고체 벽체 양쪽에 온도가 다른 유체가 접해 있을 때 <strong>고온 유체의 대류 ➔ 고체 벽체 내부의 전도 ➔ 저온 유체의 대류</strong>로 이어지는 복합 열전달 과정입니다(화재실 열기가 콘크리트 벽을 뚫고 옆방 공기를 데우는 실제 경로).</span>
+            <span class="prose-sub">&bull; <strong>대류는</strong> 화재 시 뜨거운 연기가 밀도 차(부력)에 의해 위로 향하거나 화로에 의해 실내 공기가 데워져 천장을 타고 수평으로 퍼지는 <strong>천장 제트 기류(Ceiling Jet Flow)</strong>를 형성하는 것처럼 유체가 직접 이동하며 열을 전달하는 현상으로서 <strong>뉴턴의 냉각법칙(q = h &middot; A &middot; &Delta;T)</strong>을 따릅니다(부력에 의한 자연대류 외에 환기팬·바람에 의한 강제대류는 열전달계수 h를 키워 화세와 연소 확대를 더욱 가속합니다).</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            셋째, <strong>복사열</strong>은 매개 물질(매질) 없이 전자기파 형태로 열에너지가 공간을 날아가 전달되는 현상으로서, 화재 최성기에 플래시오버를 유발하고 인접 건물로 연소를 확대시키는 결정적 원동력입니다. 복사 열전달에서는 주요 물리 법칙과 고체 착화 모델을 정확히 구별해야 합니다.
+            셋째, <strong>복사열</strong>은 공기 같은 매개 물질(매질)이 전혀 없는 진공 상태에서도 빛(전자기파, 적외선) 형태로 열에너지가 공간을 직진해 날아가 전달되는 현상입니다. 왜 전도와 대류가 아닌 복사가 고온 화재의 최성기를 지배하고 인접 건물까지 불을 옮기는 가장 무서운 주범일까요? 전도와 대류가 온도차(&Delta;T)의 1제곱에 비례해 완만하게 증가하는 반면, 복사는 <strong>절대온도(T)의 4제곱(T<sup>4</sup>)</strong>에 비례하기 때문입니다. 실내 온도가 300 K(약 27&deg;C)에서 900 K(약 627&deg;C)로 3배 오르면 복사열은 무려 3<sup>4</sup> = 81배로 폭증하여, 결국 제4장에서 배울 천장 연기층의 복사열 피드백(플래시오버)과 도로 건너편 건물 착화를 일으킵니다. 복사 열전달에서는 핵심 법칙과 고체 착화 모델을 정확히 구별해야 합니다.
             <span class="prose-item"><strong>① 스테판·볼츠만(Stefan·Boltzmann) 법칙</strong>: 면적 A인 물체가 시간 t(초) 동안 방출하는 총복사에너지(E)는 섭씨온도가 아닌 <strong>절대온도(T, 단위 K)의 4제곱(T<sup>4</sup>)에 정비례</strong>합니다.</span>
             <span class="formula-box"><span class="formula-badge">스테판·볼츠만 공식</span><span class="formula-eq">E = &epsilon; &middot; &sigma; &middot; A &middot; T<sup>4</sup> &middot; t &nbsp;&nbsp;[단위: J]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 표면온도가 섭씨 127도(절대온도 T = 127 + 273 = <strong>400 K</strong>)인 5제곱미터 흑체(&epsilon; = 1) 금속벽체가 100초 동안 방출하는 총복사에너지(상수 &sigma; = 5 &times; 10<sup>&minus;8</sup> W/m<sup>2</sup>K<sup>4</sup> 기준) ➔ E = 1 &times; (5 &times; 10<sup>&minus;8</sup>) &times; 5 &times; (400)<sup>4</sup> &times; 100 = 6,400 W &times; 100 s = <strong>640 kJ</strong></span></span>
-            <span class="prose-item"><strong>② 점열원 복사열유속(q&prime;&prime;) 공식</strong>: 화원 중심으로부터 거리 R(m) 떨어진 물체에 전달되는 복사열유속은 총 열방출률(Q&#775;)에 복사열 분율(&chi;<sub>r</sub>)을 곱한 값을 구의 표면적(4&pi;R<sup>2</sup>)으로 나눕니다.</span>
+            <span class="prose-item"><strong>② 점열원 복사열유속(q&prime;&prime;)과 거리 역제곱 법칙</strong>: 화원 중심으로부터 거리 R(m) 떨어진 물체에 전달되는 단위면적당 복사열(복사열유속)은 총 열방출률(Q&#775;)에 복사열 분율(&chi;<sub>r</sub>)을 곱한 값을 구의 표면적(4&pi;R<sup>2</sup>)으로 나누므로, <strong>거리(R)의 제곱에 반비례</strong>하여 급감합니다(건축물 인접 이격거리 및 방화벽 설치의 물리적 근거).</span>
             <span class="formula-box"><span class="formula-badge">점열원 복사열유속 공식</span><span class="formula-eq">q&prime;&prime; = (&chi;<sub>r</sub> &times; Q&#775;) &divide; (4 &middot; &pi; &middot; R<sup>2</sup>) &nbsp;&nbsp;[단위: kW/m<sup>2</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 열방출률이 120킬로와트이고 복사열 분율이 0.5인 화원으로부터 1미터 떨어진 지점의 복사열유속(원주율 3 기준) ➔ q&prime;&prime; = (0.5 &times; 120) &divide; (4 &times; 3 &times; 1<sup>2</sup>) = <strong>5.0 kW/m<sup>2</sup></strong></span></span>
-            <span class="prose-item"><strong>③ 복사 열전달 관련 주요 법칙</strong></span>
-            <span class="prose-sub">&bull; <strong>키르히호프(Kirchhoff)의 법칙</strong>: 열평형 상태에서 물체의 <strong>방사율(&epsilon;)과 흡수율(&alpha;)은 같다(&epsilon; = &alpha;)</strong>는 법칙입니다(외부 복사열을 전부 흡수하는 이상적 물체인 <strong>흑체[Black Body]는 &alpha; = &epsilon; = 1</strong>).</span>
-            <span class="prose-sub">&bull; <strong>빈(Wien)의 변위 법칙</strong>: 흑체가 방출하는 복사에너지 최대 강도 파장(&lambda;<sub>max</sub>)은 <strong>절대온도(T)에 반비례한다(&lambda;<sub>max</sub> &middot; T = 일정)</strong>는 법칙입니다.</span>
-            <span class="prose-sub">&bull; <strong>형태계수(형상계수, View Factor)</strong>: 방출면에서 나온 복사열 중 수열면에 직접 도달하는 기하학적 비율을 말합니다.</span>
+            <span class="prose-item"><strong>③ 복사 열전달 관련 주요 법칙과 형태계수</strong></span>
+            <span class="prose-sub">&bull; <strong>키르히호프(Kirchhoff)의 법칙</strong>: 열평형 상태에서 물체의 <strong>방사율(&epsilon;)과 흡수율(&alpha;)은 같다(&epsilon; = &alpha;)</strong>는 법칙입니다(외부 복사열을 반사·투과 없이 전부 흡수하고 최대치로 방출하는 이상적 물체인 <strong>흑체[Black Body]는 &alpha; = &epsilon; = 1</strong>).</span>
+            <span class="prose-sub">&bull; <strong>빈(Wien)의 변위 법칙</strong>: 흑체가 방출하는 복사에너지 최대 강도 파장(&lambda;<sub>max</sub>)은 <strong>절대온도(T)에 반비례한다(&lambda;<sub>max</sub> &middot; T = 일정)</strong>는 법칙으로, 제2장에서 본 화염 색온도가 붉은 저온(긴 파장)에서 휘백색 고온(짧은 파장)으로 변하는 이유를 설명합니다.</span>
+            <span class="prose-sub">&bull; <strong>형태계수(형상계수, View Factor, F<sub>12</sub>)</strong>: 방출면에서 나온 전체 복사열 중 수열면에 직접 도달하는 기하학적 비율(0에서 1 이하)을 말하며, 두 면이 정면으로 마주 볼수록, 화원 면적이 클수록, 거리가 가까울수록 커져 연소 확대 위험을 높입니다.</span>
             <span class="prose-item"><strong>④ 고체 가연물의 복사 착화 모델 (열적 박물 vs 열적 후물)</strong></span>
-            <span class="prose-sub">&bull; <strong>열적 박물(Thermally Thin, 비오 수 Bi &lt; 0.1)</strong>: 종이나 커튼처럼 두께가 매우 얇아 내부 온도 구배가 없으므로 착화시간이 <strong>밀도(&rho;)·비열(c)·두께(L)의 곱(&rho;cL)에 비례</strong>합니다.</span>
-            <span class="prose-sub">&bull; <strong>열적 후물(Thermally Thick)</strong>: 두꺼운 목재나 단열재처럼 표면의 열이 내부로 전도되어 빠져나가므로 착화시간이 열전도율(k)·밀도(&rho;)·비열(c)의 곱인 <strong>열관성(Thermal Inertia, k&rho;c)에 정비례</strong>합니다. 즉 폴리우레탄폼이나 스티로폼처럼 <strong>열관성(k&rho;c)이 작을수록</strong> 열이 표면에만 집중되어 착화시간이 극도로 짧고 화염 확산이 무섭게 빠릅니다.</span>
+            <span class="prose-sub">&bull; <strong>열적 박물(Thermally Thin, 비오 수 Bi &lt; 0.1)</strong>: 종이나 커튼처럼 두께가 매우 얇아 내부 온도 구배가 없으므로 열전도율(k)과 무관하게 착화시간이 <strong>밀도(&rho;)·비열(c)·두께(L)의 곱(&rho;cL)에 비례</strong>합니다.</span>
+            <span class="prose-sub">&bull; <strong>열적 후물(Thermally Thick)</strong>: 두꺼운 목재나 단열재처럼 표면의 열이 내부로 전도되어 빠져나가므로 착화시간이 열전도율(k)·밀도(&rho;)·비열(c)의 곱인 <strong>열관성(Thermal Inertia, k&rho;c)에 정비례</strong>합니다. 즉 폴리우레탄폼이나 스티로폼처럼 <strong>열관성(k&rho;c)이 작을수록</strong> 열이 내부로 달아나지 못하고 표면에만 집중되어 착화시간이 극도로 짧고 화염 확산이 무섭게 빠릅니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            한편 외부에서 점화원을 주지 않았는데도 상온의 공기 중에서 물질 내부의 발열 속도가 전도·대류에 의한 방열 속도를 앞질러 열이 축적됨으로써 스스로 발화점에 도달하는 현상을 <strong>자연발화(Spontaneous Ignition)</strong>라 합니다. 제2편 제1장에서 발화점이 낮을수록 연소가 쉽다는 원리를 배웠듯, 자연발화는 <strong>가연물의 열전도율이 낮을수록(내부 축열 용이), 단위 질량당 발열량이 클수록, 입자가 미세하여 산소와 닿는 비표면적(표면적)이 넓을수록, 주위 온도와 습도가 높을수록, 그리고 통풍(환기)이 불량하여 열 방출이 억제될수록</strong> 일어나기 쉽습니다. 자연발화를 일으키는 4대 열원은 다음과 같이 구분됩니다.
+            앞선 제2편 제1장에서 외부 불꽃 없이 열만으로 활성화에너지 장벽을 넘어 스스로 착화하는 최저온도를 발화점(AIT)이라 배웠습니다. 그런데 아무런 외부 열원이나 불꽃도 없는 한밤중 창고 구석에서 기름 걸레나 석탄 야적장, 퇴비 더미가 왜 저절로 불타오를까요? 바로 물질 내부에서 일어나는 미세한 발열 반응의 <strong>열생성률</strong>이 전도·대류로 빠져나가는 <strong>열방출률</strong>을 앞지르면, 빠져나가지 못한 열이 내부에 계속 쌓여(축열) 스스로 온도를 끌어올리다 마침내 <strong>발화점(AIT)</strong>에 도달하기 때문이며, 이를 <strong>자연발화(Spontaneous Ignition)</strong>라 합니다.
+            <span class="prose-item"><strong>① 자연발화 열균형 메커니즘 (세메노프 vs 프랭크·카메네츠키 이론)</strong></span>
+            <span class="prose-sub">&bull; <strong>세메노프(Semenov) 열발화 이론</strong>: 반응계 내부의 온도가 공간적으로 균일하다고 가정하고, 아레니우스 식에 따라 <strong>지수곡선으로 급증하는 열생성률(발열)</strong>과 주위 온도차에 비례해 <strong>직선으로 완만히 증가하는 열방출률(방열)</strong>의 균형을 해석합니다. 열생성률 곡선이 열방출률 직선보다 항상 위에 놓이는 임계 주위온도를 넘으면 열폭주(자연발화)가 일어납니다.</span>
+            <span class="prose-sub">&bull; <strong>프랭크·카메네츠키(Frank·Kamenetskii) 열균형 이론</strong>: 세메노프 모델을 확장해 퇴적된 석탄·톱밥처럼 실제 고체 내부에서는 중심부가 가장 뜨겁고 표면으로 갈수록 식는 <strong>내부 온도 구배와 열전도</strong>를 고려합니다. 물질 크기(반경)와 발열량, 열전도율을 묶은 무차원수가 임계값을 초과하면 중심부의 열이 표면으로 빠져나가지 못해 자연발화가 터집니다.</span>
+            <span class="prose-item"><strong>② 자연발화를 촉진하는 7대 조건 (열축적 · 반응속도 · 촉매 인자)</strong></span>
+            <span class="prose-sub">&bull; <strong>열축적 촉진 인자</strong>: <strong>가연물의 열전도율이 낮을수록</strong>(내부 축열 용이), <strong>통풍(환기)이 불량할수록</strong>(대류 방열 억제), 퇴적 두께가 두꺼울수록 열이 빠져나가지 못해 자연발화가 쉽게 일어납니다.</span>
+            <span class="prose-sub">&bull; <strong>발열 · 반응속도 촉진 인자</strong>: <strong>단위 질량당 발열량이 클수록</strong>, 입자가 미세하여 산소와 닿는 <strong>비표면적(표면적)이 넓을수록</strong>, <strong>주위 온도가 높을수록</strong>, 그리고 물질의 <strong>활성화에너지(E<sub>a</sub>)가 작을수록</strong> 산화 속도가 빨라져 발화가 촉진됩니다.</span>
+            <span class="prose-sub">&bull; <strong>수분(습도) 및 촉매의 영향</strong>: 적당한 <strong>수분(습도)</strong>은 산화반응과 미생물 번식을 돕는 <strong>촉매 작용</strong>을 하거나 흡착열을 발생시켜 자연발화를 촉진합니다(단, 과도한 수분은 물의 큰 증발잠열로 온도를 빼앗아 오히려 발화를 억제하는 양면성을 지닙니다). 또한 금속이온이나 불순물 같은 <strong>정촉매</strong>가 섞이면 제1장에서 배운 활성화에너지 장벽을 낮추어 훨씬 낮은 온도에서도 자연발화가 급발진합니다.</span>
+            <span class="prose-item"><strong>③ 자연발화를 일으키는 5대 열원 (산화·분해·흡착·발효·중합열)</strong></span>
             <span class="prose-sub">① <strong>산화열</strong>: 공기 중 산소와 결합하여 발열하는 경우 (<strong>건성유·석탄·고무분말·금속분</strong>)</span>
             <span class="prose-sub">② <strong>분해열</strong>: 불안정한 화합물이 스스로 분해되며 발열하는 경우 (<strong>셀룰로이드·니트로셀룰로오스 등 제5류 자기반응성 물질</strong>)</span>
             <span class="prose-sub">③ <strong>흡착열</strong>: 다공성 표면에 기체 분자가 달라붙으며 발열하는 경우 (<strong>활성탄·목탄 분말·환원니켈·그을음</strong>)</span>
-            <span class="prose-sub">④ <strong>발효열</strong>: 미생물이 번식·호흡하며 발열하는 경우 (<strong>퇴비·건초·곡물·원면·톱밥</strong>)</span>
-            <span class="prose-item">특히 식물성·동물성 유지(식용유·기름)가 묻은 걸레나 톱밥 뭉치에서 일어나는 자연발화는 발효열이 아니라 불포화지방산이 산소와 결합하는 <strong>산화열</strong>이 주원인이며, 유지 100그램에 부가되는 요오드의 그램 수인 <strong>요오드값(Iodine Value, 불포화도 지표)이 클수록</strong> 산소와 쉽게 산화하여 자연발화 위험성이 높아집니다.</span>
+            <span class="prose-sub">④ <strong>발효열(미생물 발효열)</strong>: 미생물이 번식·호흡하며 발열하는 경우 (<strong>퇴비·건초·곡물·원면·톱밥</strong>)</span>
+            <span class="prose-sub">⑤ <strong>중합열</strong>: 시안화수소(HCN), 산화에틸렌(C<sub>2</sub>H<sub>4</sub>O), 스티렌 단량체처럼 반응성이 큰 저분자(모노머)가 스스로 결합해 고분자로 중합되면서 방출하는 열이 축적되는 경우</span>
+            <span class="prose-item"><strong>④ 유지류 산화열과 요오드값 서열</strong>: 특히 식물성·동물성 유지(식용유·기름)가 묻은 걸레나 톱밥 뭉치에서 일어나는 자연발화는 발효열이 아니라 불포화지방산이 <strong>산소와 결합하여</strong> 발열하는 <strong>산화열</strong>이 주원인이며, 유지 100그램에 부가되는 요오드의 그램 수인 <strong>요오드값(Iodine Value, 불포화도 지표)이 클수록</strong> 산소와 쉽게 산화하여 자연발화 위험성이 높아집니다.</span>
             <span class="formula-box"><span class="formula-badge">유지류 요오드값 서열</span><span class="formula-eq">건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)</span><span class="formula-ex">&bull; <strong>건성유(요오드값 130 이상)</strong>: 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름<br/>&bull; <strong>반건성유(요오드값 100에서 130까지)</strong>: 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</span></span>
+            <span class="prose-item"><strong>⑤ 열균형 원리에서 도출되는 자연발화 방지법</strong>: 세메노프와 프랭크·카메네츠키의 열균형을 깨뜨려 열생성률은 낮추고 열방출률은 높이면 자연발화를 막을 수 있습니다. 구체적으로 <strong>① 통풍·환기를 원활히 하여 축적 열을 방산</strong>하고(단, 상온 공기 노출 즉시 발화하는 <strong>황린</strong>은 통풍이 아니라 약알칼리성 물속 저장), <strong>② 퇴적 높이를 낮추고 분할 저장하여 중심부 축열을 차단</strong>하며, <strong>③ 저장실 주위 온도와 습도를 낮게 유지</strong>하고, <strong>④ 촉매·산화제와 격리 보관하며 중합성 단량체에는 중합억제제 첨가 또는 질소 등 불활성 가스 치환</strong>을 실시합니다.</span>
           </p>
         </div>
       </div>
@@ -132,40 +142,45 @@
         <h2 class="text-xl font-bold text-white mb-3">2. 건축물 연기 유동 5대 요인·감광계수와 굴뚝효과(연돌효과) 및 중성대 이동</h2>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제1절에서 대류 열전달이 가열된 유체의 밀도 차(부력)를 통해 상부로 열을 실어 나른다는 원리를 살펴보았는데, 고층건축물 화재 시 화염보다 먼저 피난 계단과 복도를 점령하여 인명 피해를 일으키는 주범이 바로 이 대류와 압력 차를 타고 퍼지는 <strong>연기(Smoke)</strong>입니다. 고층건축물에서 <strong>연기유동을 일으키는 5대 물리적 요인</strong>으로는 다음 5가지가 있습니다.
-            <span class="prose-sub">① <strong>부력효과</strong>: 화재실 내부의 고온 기체가 열팽창하여 밀도 차로 떠오르는 현상</span>
-            <span class="prose-sub">② <strong>바람에 의한 압력차(풍압 작용)</strong>: 외부 바람이 건물 외벽에 부딪혀 풍상측(정압)과 풍하측(부압) 압력차를 형성하는 현상</span>
+            2017년 제천 스포츠센터(29명 사망), 2018년 밀양 세종병원(47명 사망), 2003년 대구 지하철 참사(192명 사망)처럼 대형 건축물 화재 시 인명 피해의 절대다수는 화염이 직접 닿기 전에 발생합니다. 앞선 제1절에서 대류 열전달이 가열된 유체의 밀도 차(부력)를 통해 상부로 열을 실어 나른다는 원리를 살펴보았는데, 불이 나자마자 계단실과 엘리베이터 승강로를 타고 사람보다 몇 배 빠른 속도로 솟구쳐 피난로의 시야와 호흡을 먼저 끊어 놓는 주범이 바로 <strong>연기(Smoke)</strong>입니다. 고층건축물에서 <strong>연기유동을 일으키는 핵심 물리적 요인</strong>으로는 다음 요인들이 복합적으로 작용합니다.
+            <span class="prose-sub">① <strong>부력효과 및 연소가스의 열팽창(팽창효과)</strong>: 화재실 내부의 고온 기체가 가열되어 체적이 3배 이상 팽창하며 인접 구획으로 밀어내는 <strong>팽창압</strong>과 밀도 차로 떠오르는 부력 현상</span>
+            <span class="prose-sub">② <strong>바람에 의한 압력차(풍압 작용)</strong>: 외부 바람이 건물 외벽에 부딪혀 풍상측(정압)과 풍하측(부압) 압력차를 형성해 건물 내부 기류를 밀어붙이는 현상</span>
             <span class="prose-sub">③ <strong>굴뚝효과(연돌효과, Stack Effect)</strong>: 건축물 내부와 외부의 온도차에 의해 내부의 더운 공기가 수직 통로를 따라 상승하는 현상</span>
-            <span class="prose-sub">④ <strong>공기조화설비(HVAC, 환기설비)의 영향</strong>: 급·배기 공조 덕트를 통해 연기가 확산되는 현상</span>
+            <span class="prose-sub">④ <strong>공기조화설비(HVAC, 환기설비)의 영향</strong>: 급·배기 공조 덕트와 팬이 가동되며 방화구획을 넘어 연기가 강제 확산되는 현상</span>
             <span class="prose-sub">⑤ <strong>피스톤 효과(Piston Effect)</strong>: 승강기(엘리베이터)가 수직 승강로를 고속으로 이동할 때 상·하부 압력차로 연기가 인접 층으로 빨려 들어가는 현상</span>
             <span class="prose-item"><strong>연기의 수평 · 수직 이동속도 비교</strong></span>
             <span class="prose-sub">&bull; <strong>수평 방향 이동속도</strong>: 복도를 따라 <strong>초당 0.5미터에서 1미터(0.5 m/s에서 1.0 m/s)</strong>로 사람의 보행 속도와 비슷합니다.</span>
-            <span class="prose-sub">&bull; <strong>수직 이동속도</strong>: 계단실이나 승강로를 타고 솟구치며 <strong>초당 2미터에서 3미터(농연·굴뚝효과 시 초당 3미터에서 5미터)</strong>에 달하여 수평 이동속도보다 훨씬 빠릅니다.</span>
+            <span class="prose-sub">&bull; <strong>수직 이동속도</strong>: 계단실이나 승강로를 타고 솟구치며 <strong>초당 2미터에서 3미터(농연·굴뚝효과 시 초당 3미터에서 5미터)</strong>에 달하여 수평 이동속도보다 훨씬 빠르므로, 상층부 재실자는 수평 대피 전에 계단실 연기 유입으로 고립되기 쉽습니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            연기가 피난로를 채우면 빛이 입자에 흡수·산란되어 시야가 급격히 차단되는데, 연기로 인한 빛의 감소를 나타내는 지표가 <strong>감광계수(C<sub>s</sub>, 단위 m<sup>&minus;1</sup>)</strong>이며 <strong>감광계수가 증가할수록 가시거리는 반비례하여 짧아집니다</strong>.
+            연기가 피난로를 채우면 빛이 입자에 흡수·산란되어 시야가 급격히 차단되므로, 방재 공학에서는 피난 유도등 설계와 감지기 감도를 정하기 위해 연기의 짙기를 정량화합니다. 연기로 인한 빛의 감소를 나타내는 지표가 <strong>감광계수(C<sub>s</sub> 또는 K, 단위 m<sup>&minus;1</sup>)</strong>이며 <strong>감광계수가 증가할수록 가시거리는 반비례하여 짧아집니다</strong>. 또한 소방대가 현장에 도착했을 때 창문 밖으로 뿜어져 나오는 <strong>연기의 색깔</strong>은 내부 가연물의 종류와 연소 진행 단계를 즉각 판독하는 현장 단서가 됩니다.
             <span class="prose-item"><strong>① 람베르트·비어(Lambert·Beer) 법칙</strong>: 두께 L(m)인 연기층을 통과한 투과광의 세기(I)와 초기 입사광 세기(I<sub>0</sub>)의 관계는 다음과 같습니다.</span>
-            <span class="formula-box"><span class="formula-badge">람베르트·비어 감광계수 공식</span><span class="formula-eq">I = I<sub>0</sub> &middot; exp(&minus;C<sub>s</sub> &middot; L) &nbsp;&rArr;&nbsp; C<sub>s</sub> = (1 &divide; L) &middot; ln(I<sub>0</sub> &divide; I) &nbsp;&nbsp;[단위: m<sup>&minus;1</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <strong>0.1 m<sup>&minus;1</sup></strong>입니다.<br/>&bull; <strong>농도별 가시거리</strong>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 2미터에서 5미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</span></span>
-            <span class="prose-item"><strong>② 가시거리 공식과 발광 · 비발광 표지 비교</strong></span>
-            <span class="formula-box"><span class="formula-badge">가시거리 반비례 공식</span><span class="formula-eq">D = K &divide; C<sub>s</sub> &nbsp;&nbsp;[D: 가시거리(m), K: 비례상수, C<sub>s</sub>: 감광계수]</span><span class="formula-ex">&bull; <strong>발광 표지(피난구 유도등)</strong>: 비례상수 <strong>K = 5에서 10까지</strong> (동일 연기 농도에서 비발광 표지보다 가시거리가 <strong>약 2.5배에서 3배 더 김</strong>)<br/>&bull; <strong>비발광 표지(반사 물체 · 일반 벽면·문)</strong>: 비례상수 <strong>K = 2에서 4까지</strong></span></span>
+            <span class="formula-box"><span class="formula-badge">람베르트·비어 감광계수 공식</span><span class="formula-eq">I = I<sub>0</sub> &middot; exp(&minus;C<sub>s</sub> &middot; L) &nbsp;&rArr;&nbsp; C<sub>s</sub> = (1 &divide; L) &middot; ln(I<sub>0</sub> &divide; I) &nbsp;&nbsp;[단위: m<sup>&minus;1</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <strong>0.1 m<sup>&minus;1</sup></strong>입니다.<br/>&bull; <strong>농도별 가시거리</strong>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>0.3 m<sup>&minus;1</sup></strong>(건물 익숙자 피난 지장 수준, 약 5미터) / <strong>0.5 m<sup>&minus;1</sup></strong>(어둠 체감 한계, 약 3미터에서 5미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 1미터에서 5미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</span></span>
+            <span class="prose-item"><strong>② 가시거리 관계식(S &times; K = 상수)과 발광 · 비발광 표지 비교</strong></span>
+            <span class="formula-box"><span class="formula-badge">가시거리 반비례 공식</span><span class="formula-eq">D = K<sub>c</sub> &divide; C<sub>s</sub> &nbsp;(또는 가시거리 S &times; 감광계수 K = 상수 C)</span><span class="formula-ex">&bull; <strong>발광 표지(피난구 유도등)</strong>: 비례상수 <strong>5에서 10까지</strong> (동일 연기 농도에서 비발광 표지보다 가시거리가 <strong>약 2.5배에서 3배 더 김</strong>)<br/>&bull; <strong>비발광 표지(반사 물체 · 일반 벽면·문)</strong>: 비례상수 <strong>2에서 4까지</strong></span></span>
             <span class="prose-item"><strong>③ 재실자 피난 한계 감광계수</strong></span>
             <span class="prose-sub">&bull; <strong>건물 내부 구조에 익숙하지 않은 불특정 다수인(백화점·다중이용업소 손님)</strong>: <strong>0.15 m<sup>&minus;1</sup></strong> (가시거리 15미터에서 20미터)</span>
             <span class="prose-sub">&bull; <strong>건물 내부 구조에 익숙한 재실자</strong>: <strong>0.5 m<sup>&minus;1</sup></strong> (가시거리 4미터에서 5미터)</span>
+            <span class="prose-item"><strong>④ 연기의 색깔에 따른 연소 상태 및 가연물 판별</strong></span>
+            <span class="prose-sub">&bull; <strong>백색(흰색) 연기</strong>: 화재 초기 저온 상태나 목재·종이·섬유 등의 <strong>수분(수증기)</strong>이 응축될 때, 또는 주수 진압 시 수증기가 발생할 때(감쇠기 말기 회복 단계 포함) 나타납니다.</span>
+            <span class="prose-sub">&bull; <strong>청색(청백색) 연기</strong>: 유류나 전기 절연유·화학물질이 비교적 낮은 온도에서 열분해되며 미세 입자가 빛을 산란할 때 관찰됩니다(화재 표시 색상에서는 청색이 C급 전기화재를 상징).</span>
+            <span class="prose-sub">&bull; <strong>회색 연기</strong>: 백색과 흑색의 중간 단계로서, 화재가 초기에서 성장기로 넘어가며 수증기와 불완전연소 탄소 입자가 뒤섞일 때 나타납니다.</span>
+            <span class="prose-sub">&bull; <strong>흑색(검은색) 연기</strong>: 석유류·고무·플라스틱·합성수지 등 <strong>탄소(C) 함량이 높은 가연물</strong>이 산소 부족으로 고온 <strong>불완전연소</strong>하며 다량의 검댕과 일산화탄소를 내뿜는 성장기 말에서 최성기의 위험 신호입니다(황갈색·적갈색 연기는 니트로셀룰로오스·질소산화물 등 맹독성 가스 징후).</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            나아가 고층건축물 연기 제어의 핵심인 <strong>굴뚝효과(연돌효과)와 중성대(Neutral Plane)</strong>의 압력 분포를 살펴보면 다음과 같습니다.
-            <span class="prose-item"><strong>① 정상 굴뚝효과 vs 역굴뚝효과</strong></span>
-            <span class="prose-sub">&bull; <strong>정상 굴뚝효과(정연돌효과)</strong>: 겨울철 난방 시나 실내 화재 발생 시처럼 건물 내부 온도가 외부 온도보다 높을 때 수직 샤프트 내부의 더운 공기가 아래에서 위로 상승하는 현상입니다.</span>
-            <span class="prose-sub">&bull; <strong>역굴뚝효과(역연돌효과)</strong>: 여름철 냉방으로 내부 온도가 외부보다 낮을 때 차고 무거운 실내 공기가 위에서 아래로 하강하는 현상입니다.</span>
+            나아가 고층건축물 제연설비(차압 유지)와 피난 대책의 핵심이 되는 <strong>굴뚝효과(연돌효과)와 중성대(Neutral Plane)</strong>의 압력 분포를 살펴보면 다음과 같습니다. 계절(동계 대 하계)에 따라 실내외 온도차 부호가 뒤집히면서 계단실 상·하부 압력차와 연기 이동 방향도 정반대로 바뀝니다.
+            <span class="prose-item"><strong>① 동계 정상 굴뚝효과 vs 하계 역굴뚝효과 및 계단실 상하부 압력차</strong></span>
+            <span class="prose-sub">&bull; <strong>동계 · 화재 시 정상 굴뚝효과(정연돌효과, T<sub>i</sub> &gt; T<sub>o</sub>)</strong>: 겨울철 난방 시나 실내 화재 발생 시처럼 건물 내부 온도가 외부 온도보다 높을 때 수직 샤프트 내부의 더운 공기가 아래에서 위로 상승하는 현상입니다. 이때 <strong>중성대 아래 하층부는 실내 압력이 실외보다 낮은 부압(&Delta;P &lt; 0)</strong>이 되어 외부 찬 공기가 계단실로 빨려 들어오고, <strong>중성대 위 상층부는 실내 압력이 실외보다 높은 정압(&Delta;P &gt; 0)</strong>이 되어 연기와 공기가 상층 거실과 외부로 강하게 뿜어져 나갑니다.</span>
+            <span class="prose-sub">&bull; <strong>하계 역굴뚝효과(역연돌효과, T<sub>i</sub> &lt; T<sub>o</sub>)</strong>: 여름철 냉방으로 내부 온도가 외부보다 낮을 때 차고 무거운 실내 공기가 위에서 아래로 하강하는 현상입니다. 정상 굴뚝효과와 정반대로 <strong>상층부는 부압(외기 유입)</strong>, <strong>하층부는 정압(공기·연기 유출)</strong>이 형성되어 저층부 로비나 지하층으로 연기가 쏟아져 내려올 수 있습니다.</span>
             <span class="prose-item"><strong>② 중성대(Neutral Plane)의 정의와 굴뚝효과 압력차 공식</strong></span>
             <span class="prose-sub">&bull; <strong>중성대의 정의</strong>: 실내 화재 시 실내와 실외의 온도가 같은 면이 아니라, <strong>실내와 실외의 압력(정압)이 같아져 압력차(&Delta;P)가 0 Pa이 되므로 공기의 유출입이 없는 수평 경계면</strong>을 의미합니다.</span>
-            <span class="formula-box"><span class="formula-badge">굴뚝효과 실내외 압력차 공식</span><span class="formula-eq">&Delta;P = 3,460 &middot; h &middot; [ (1 &divide; T<sub>o</sub>) &minus; (1 &divide; T<sub>i</sub>) ] &nbsp;&nbsp;[단위: Pa]</span><span class="formula-ex">💡 <strong>비례 조건</strong> | 압력차(&Delta;P)는 <strong>중성대로부터의 수직 거리(높이 h)에 정비례</strong>하고 외기 절대온도(T<sub>o</sub>)와 실내 절대온도(T<sub>i</sub>)의 온도차가 클수록 증가합니다.</span></span>
+            <span class="formula-box"><span class="formula-badge">굴뚝효과 실내외 압력차 공식</span><span class="formula-eq">&Delta;P = 3,460 &middot; h &middot; [ (1 &divide; T<sub>o</sub>) &minus; (1 &divide; T<sub>i</sub>) ] &nbsp;&nbsp;[단위: Pa]</span><span class="formula-ex">💡 <strong>비례 조건</strong> | 압력차(&Delta;P)는 <strong>중성대로부터의 수직 거리(높이 h)에 정비례</strong>하고 외기 절대온도(T<sub>o</sub>)와 실내 절대온도(T<sub>i</sub>)의 온도차가 클수록 증가하므로, 초고층 건물일수록 계단실 상하부 압력차가 극대화되어 문이 안 열리거나 연기가 틈새를 뚫고 분출합니다.</span></span>
             <span class="prose-item"><strong>③ 개구부 개방 위치에 따른 중성대 이동 방향</strong> (정상 굴뚝효과 기준: 상층부는 연기 유출, 하층부는 외기 유입)</span>
-            <span class="prose-sub">&bull; <strong>상층 개구부를 크게 개방할 때</strong>: 내부 기체가 쉽게 배출되어 실내 압력이 낮아지므로 <strong>중성대가 위쪽(상층부)으로 이동</strong>합니다.</span>
+            <span class="prose-sub">&bull; <strong>상층 개구부를 크게 개방할 때</strong>: 내부 기체가 쉽게 배출되어 실내 압력이 낮아지므로 <strong>중성대가 위쪽(상층부)으로 이동</strong>합니다(다음 제4장에서 배울 구획실 화재 시 중성대가 높아지면 하층 신선한 공기 층이 두꺼워져 피난·진입 시야 확보에 유리해짐).</span>
             <span class="prose-sub">&bull; <strong>하층 개구부를 크게 개방할 때</strong>: 외기가 대량 유입되어 실내 압력이 높아지므로 <strong>중성대가 아래쪽(하층부)으로 이동</strong>합니다.</span>
           </p>
         </div>
@@ -175,7 +190,12 @@
         <h2 class="text-xl font-bold text-white mb-3">3. 연소생성 독성가스 특성과 허용농도(TLV) 비교 및 연소가스 발생량 계산</h2>
         <div class="para-block">
           <p class="prose-body">
-            제2편 제2장에서 환기가 부족한 구획실 훈소나 고분자 가연물 화재 시 산소가 결핍되면서 불완전연소가 일어난다는 점을 확인했는데, 바로 이 불완전연소 연기 속에 포함된 <strong>연소생성 독성가스</strong>와 <strong>산소 결핍(무산소증, Anoxia)</strong>이 화재 현장 질식사의 직접적 원인이 됩니다. 근로자가 1일 8시간 노출되어도 무해한 기준인 <strong>TLV(Threshold Limit Value, 허용농도, 단위 ppm)는 수치가 작을수록 극소량만 흡입해도 치명적인 맹독성 가스이고, 수치가 클수록 허용농도가 높은(독성이 상대적으로 약한) 가스</strong>입니다.
+            앞선 제2편 제2장에서 환기가 부족한 구획실 훈소나 열가소성·열경화성 합성고분자 가연물이 탈 때 산소가 결핍되면서 불완전연소가 일어난다는 점을 확인했습니다. 실제 밀양 세종병원이나 제천 스포츠센터 같은 건물 화재에서는 바로 이 불완전연소 연기 속에 숨은 <strong>연소생성 독성가스</strong>와 <strong>산소 결핍(무산소증, Anoxia)</strong>이 피난자를 불과 몇 호흡 만에 쓰러뜨리는 직접적 원인이 됩니다. 따라서 소방대원이 공기호흡기(SCBA)를 착용해야 할 즉각 치사 경계와 평상시 노출 안전 한계를 과학적으로 구분하기 위해 <strong>허용농도(TLV 3종)와 급성위험농도(IDLH)</strong> 지표가 사용됩니다. <strong>TLV(Threshold Limit Value, 허용농도, 단위 ppm)는 수치가 작을수록 극소량만 흡입해도 치명적인 맹독성 가스이고, 수치가 클수록 허용농도가 높은(독성이 상대적으로 약한) 가스</strong>입니다.
+            <span class="prose-item"><strong>① 독성가스 노출 기준 4대 지표 (TLV-TWA · STEL · C vs IDLH)</strong></span>
+            <span class="prose-sub">&bull; <strong>TLV-TWA (시간가중평균농도)</strong>: 근로자가 1일 8시간, 주 40시간 반복 노출되어도 건강상 악영향이 없는 평균 농도(일반적으로 시험에서 제시하는 기본 허용농도 TLV 기준).</span>
+            <span class="prose-sub">&bull; <strong>TLV-STEL (단시간 노출기준)</strong>: 근로자가 해로운 영향 없이 1회 <strong>15분간</strong> 연속 노출될 수 있는 최대 농도(1일 4회 이하, 노출 간격 최소 60분 이상).</span>
+            <span class="prose-sub">&bull; <strong>TLV-C (최고노출기준, Ceiling)</strong>: 작업 시간 중 <strong>단 한 순간도 초과해서는 안 되는</strong> 절대 최고 한계 농도(염화수소 등 급성 자극성 가스 기준).</span>
+            <span class="prose-sub">&bull; <strong>IDLH (생명·건강 즉각 위험 농도)</strong>: 노출 시 <strong>즉시 생명에 위협</strong>을 주거나 30분 이내 자력 탈출 능력을 상실시키는 치명적 농도(예: CO 1,200 ppm, NH<sub>3</sub> 300 ppm, HCN 50 ppm, HCl 50 ppm — 소방대원의 공기호흡기 필수 착용 기준).</span>
             <span class="formula-box"><span class="formula-badge">독성가스 허용농도(TLV) 높은 순 (독성 약한 순)</span><span class="formula-eq">CO<sub>2</sub>(5,000) &gt; CO(50) &gt; NH<sub>3</sub>(25) &gt; HCN·H<sub>2</sub>S(10) &gt; HCl·SO<sub>2</sub>·NO<sub>2</sub>(5) &gt; HF(3) &gt; Cl<sub>2</sub>(1) &gt; 아크롤레인·포스겐(0.1 ppm)</span><span class="formula-ex">&bull; <strong>기출 최빈출 서열 ①</strong>: 암모니아(25 ppm) &gt; 시안화수소(10 ppm) &gt; 불화수소(3 ppm) &gt; 포스겐(0.1 ppm, 독성 최강)<br/>&bull; <strong>기출 최빈출 서열 ②(자극성 가스)</strong>: 염화수소(5 ppm) &gt; 불화수소(3 ppm) &gt; 염소(1 ppm) &gt; 아크롤레인·포스겐(각 0.1 ppm)</span></span>
           </p>
         </div>
@@ -183,7 +203,7 @@
           <p class="prose-body">
             화재 독성가스는 생리적 작용 기전에 따라 중추신경 억제와 조직 산소 결핍을 통해 의식 상실(마취 효과)을 유발하는 <strong>나르코시스(Narcosis)성 질식 가스(일산화탄소, 시안화수소, 고농도 이산화탄소 및 저산소증)</strong>와 호흡기 점막·폐를 손상시키는 <strong>자극성 가스</strong>로 나뉩니다.
             <span class="prose-item"><strong>① 일산화탄소(CO, TLV 50 ppm)와 이산화탄소(CO<sub>2</sub>, TLV 5,000 ppm)의 상승작용</strong></span>
-            <span class="prose-sub">&bull; <strong>일산화탄소(CO)</strong>: 탄소 화합물의 불완전연소 시 발생하는 무색·무취 가스로, 혈액 내 <strong>산소와 헤모글로빈(Hb)의 결합을 방해(친화력이 산소의 200배에서 300배)</strong>하여 질식에 이르게 하며 1 vol%(10,000 ppm) 농도에서도 수 분 내에 사망합니다.</span>
+            <span class="prose-sub">&bull; <strong>일산화탄소(CO)</strong>: 제2장에서 본 훈소나 탄소 화합물의 불완전연소 시 대량 발생하는 무색·무취 가스로, 혈액 내 <strong>산소와 헤모글로빈(Hb)의 결합을 방해(친화력이 산소의 200배에서 300배)</strong>하여 카르복시헤모글로빈을 형성함으로써 질식에 이르게 하며 1 vol%(10,000 ppm) 농도에서도 수 분 내에 사망합니다.</span>
             <span class="prose-sub">&bull; <strong>이산화탄소(CO<sub>2</sub>)와 상승작용(Synergism)</strong>: 완전연소 생성물인 이산화탄소는 <strong>농도가 2 vol%(2퍼센트)가 되면 호흡 심도가 1.5배 정도 증가하고 3 vol%(3퍼센트)에 이르면 약 2배 정도의 호흡 심도</strong>를 보여주어 일산화탄소나 시안화수소의 흡입을 급격히 가속화합니다. 이처럼 복합 독성이 개별 독성의 단순 합보다 몇 배로 증폭되는 현상을 <strong>상승작용(Synergism)</strong>이라 합니다.</span>
             <span class="prose-item"><strong>② 시안화수소(HCN, TLV 10 ppm, 일명 청산가스)</strong></span>
             <span class="prose-sub">&bull; 동물의 털(양모)·실크·폴리우레탄·나일론 등 질소 함유물이 불완전연소할 때 발생하며, 일산화탄소와 달리 <strong>헤모글로빈과 결합하지 않고도 세포 내 시토크롬 산화효소를 마비시켜 내호흡 질식</strong>을 유발합니다.</span>
@@ -195,7 +215,7 @@
         </div>
         <div class="para-block">
           <p class="prose-body">
-            다음으로 주요 <strong>자극성·부식성 연소 생성물의 특성</strong>과 화학양론 부피 계산을 살펴보면 다음과 같습니다.
+            다음으로 주요 <strong>자극성·부식성 연소 생성물의 특성</strong>과 화학양론 부피 계산을 살펴보고, 끝으로 앞선 제2편 제1장·제2장의 원리를 본 장 개념과 입체적으로 누적 대조합니다.
             <span class="prose-item"><strong>① 염소·불소 계열 독성가스 (포스겐 · 염화수소 · 아크롤레인 · 불화수소 · 염소)</strong></span>
             <span class="prose-sub">&bull; <strong>포스겐(COCl<sub>2</sub>, TLV 0.1 ppm) &amp; 염화수소(HCl, TLV 5 ppm)</strong>: 폴리염화비닐(PVC) 등 염소 함유 플라스틱 연소 시 발생하며(포스겐은 사염화탄소·할론 열분해 시에도 생성), 염화수소는 물에 잘 녹아 <strong>염산</strong>을 형성하여 점막 손상과 전자기기·철골 부식을 일으킵니다.</span>
             <span class="prose-sub">&bull; <strong>아크롤레인(Acrolein, CH<sub>2</sub>=CHCHO, TLV 0.1 ppm)</strong>: 식용유(유지류)·글리세린·목재가 불완전연소할 때 발생하는 맹독성·인화성 가스로 포스겐과 함께 허용농도가 가장 낮습니다.</span>
@@ -205,6 +225,10 @@
             <span class="prose-sub">&bull; <strong>이산화질소(NO<sub>2</sub>, TLV 3 ppm에서 5 ppm)</strong>: 셀룰로이드·니트로셀룰로오스 연소 시 발생하는 적갈색 가스로 <strong>200 ppm에서 700 ppm 정도의 농도에 단시간 노출되기만 해도 폐수종 등으로 인체에 치명적</strong>입니다.</span>
             <span class="prose-sub">&bull; <strong>황화수소(H<sub>2</sub>S, TLV 10 ppm, 불완전연소) vs 이산화황(SO<sub>2</sub>, TLV 5 ppm, 완전연소)</strong>: 황 함유물이 <strong>불완전연소</strong>할 때 발생하는 <strong>황화수소(H<sub>2</sub>S)</strong>는 <strong>계란(썩은 달걀)과 비슷한 냄새가 나는 가연성 독성가스(연소범위 4퍼센트에서 44퍼센트까지)</strong>로서 후각을 마비시키며 <strong>약 0.04 % 농도에서도 30분 이상 호흡하면 위험하고 0.08 % 정도의 농도에서는 치명적인 위험 상태</strong>에 빠지는 반면, <strong>완전연소</strong>할 때 발생하는 가스는 불연성인 <strong>이산화황(SO<sub>2</sub>, 아황산가스)</strong>입니다.</span>
             <span class="formula-box"><span class="formula-badge">황(S) 완전연소 시 이산화황(SO₂) 발생 부피 계산</span><span class="formula-eq">S + O<sub>2</sub> &rarr; SO<sub>2</sub> &nbsp;&nbsp;|&nbsp;&nbsp; V = (n &middot; R &middot; T) &divide; P</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 섭씨 800도(절대온도 T = 800 + 273 = <strong>1,073 K</strong>), 1기압에서 황(S, 원자량 32) 1킬로그램(1,000 g)이 완전연소할 때 생성되는 SO<sub>2</sub> 부피:<br/>&bull; 몰수(n) = 1,000 g &divide; 32 = <strong>31.25 mol</strong> &nbsp;&rArr;&nbsp; V = (31.25 &times; 0.082 &times; 1,073) &divide; 1 &asymp; 2,749.6 L &asymp; <strong>2.75 세제곱미터(m<sup>3</sup>)</strong></span></span>
+            <span class="prose-item"><strong>③ &#x1F517; 앞 단원(제2편 제1장 · 제2장) 누적 입체 대조 요약 및 제4장 연결</strong></span>
+            <span class="prose-sub">&bull; <strong>제1장 활성화에너지·발화점(AIT)·불완전연소 &harr; 자연발화·독성가스 회수</strong>: 제1장에서 배운 아레니우스 식에 따라 활성화에너지(E<sub>a</sub>)가 작거나 수분·정촉매가 개입하면 산화 속도가 급증하며, 열생성률이 열방출률을 앞질러 열이 축적되면 외부 점화원 없이도 제1장의 발화점(AIT)에 도달해 <strong>자연발화</strong>가 일어납니다. 또한 제1장에서 정리한 불완전연소 3대 조건(산소 부족·저온체 냉각·배기 불량)이 곧바로 본 장의 CO·검댕(흑색 연기·감광계수 증가)을 낳는 근본 원인입니다.</span>
+            <span class="prose-sub">&bull; <strong>제2장 목재·합성수지·훈소 &harr; 연소생성 독성가스 배출원 1대1 매칭</strong>: 제2장에서 분류한 가연물별 연소 생성물을 묶어 복습합니다 &mdash; <strong>목재·유지류 불완전연소 및 훈소</strong> ➔ 일산화탄소(CO)·아크롤레인(0.1 ppm) / <strong>열가소성 수지 PVC(염소 함유)</strong> ➔ 염화수소(HCl 5 ppm)·포스겐(COCl<sub>2</sub> 0.1 ppm) / <strong>열가소성 나일론·양모·폴리우레탄 &amp; 열경화성 멜라민·요소수지(질소 함유)</strong> ➔ 시안화수소(HCN 10 ppm)·암모니아(NH<sub>3</sub> 25 ppm) / <strong>제5류 자기연소 셀룰로이드·니트로셀룰로오스</strong> ➔ 이산화질소(NO<sub>2</sub>) / <strong>제2류 황(S) 함유물</strong> ➔ 불완전연소 황화수소(H<sub>2</sub>S) 대 완전연소 이산화황(SO<sub>2</sub>).</span>
+            <span class="prose-sub">&bull; <strong>제4장 구획실 화재 예고</strong>: 본 장에서 완성한 <strong>스테판·볼츠만 복사열(T<sup>4</sup>)</strong>, <strong>중성대 높이 변화</strong>, 그리고 <strong>훈소 CO 축적</strong> 원리가 이어지는 제4장 구획실 화재에서 천장 연기층의 복사열 피드백에 의한 <strong>플래시오버</strong>와 중성대 하부 산소 재유입 폭발인 <strong>백드래프트</strong>로 폭발 증폭됩니다.</span>
           </p>
         </div>
       </div>
@@ -237,8 +261,8 @@
               <div class="cheat-val"><strong>점열원 복사열유속</strong>: <span class="cheat-eq">q&prime;&prime; = (&chi;<sub>r</sub> &times; Q&#775;) &divide; (4&pi;R<sup>2</sup>)</span> (Q&#775;=120 kW, &chi;<sub>r</sub>=0.5, R=1 m[&pi;=3] &rArr; <strong>5.0 kW/m<sup>2</sup></strong>) &nbsp;|&nbsp; <strong>열적 박물</strong>(종이·커튼, Bi&lt;0.1): 착화시간 &prop; <strong>&rho;&middot;c&middot;L</strong> &nbsp;|&nbsp; <strong>열적 후물</strong>(목재·단열재): 착화시간 &prop; <strong>열관성(k&rho;c)</strong> (발포단열재처럼 <strong>열관성이 작을수록 급속 착화!</strong>)</div>
             </div>
             <div class="cheat-row">
-              <div class="cheat-key">자연발화 5조건 · 4열원</div>
-              <div class="cheat-val"><strong>촉진 5조건</strong>: <strong>열전도율 낮을수록 · 발열량 클수록 · 비표면적 넓을수록 · 온습도 높을수록 · 통풍(환기) 불량할수록</strong> / <strong>4대 열원</strong>: ① <strong>산화열</strong>(건성유·석탄·고무분말·금속분) · ② <strong>분해열</strong>(셀룰로이드·니트로셀룰로오스 등 제5류) · ③ <strong>흡착열</strong>(활성탄·목탄·환원니켈) · ④ <strong>발효열</strong>(퇴비·건초·곡물·톱밥)</div>
+              <div class="cheat-key">자연발화 열균형·5열원·방지법</div>
+              <div class="cheat-val"><strong>열균형</strong>: <strong>세메노프</strong>(내부 균일온도 가정) vs <strong>프랭크·카메네츠키</strong>(내부 온도구배·열전도 반영) ➔ <strong>열생성률 &gt; 열방출률</strong> 시 발화점(AIT) 도달 / <strong>촉진 조건</strong>: 열전도율↓·환기불량·발열량↑·비표면적↑·온도↑·활성화에너지↓·적당 습도/촉매 / <strong>5대 열원</strong>: ① <strong>산화열</strong>(건성유·석탄·금속분) · ② <strong>분해열</strong>(셀룰로이드·5류) · ③ <strong>흡착열</strong>(활성탄·목탄·환원니켈) · ④ <strong>발효열</strong>(퇴비·건초·곡물) · ⑤ <strong>중합열</strong>(HCN·산화에틸렌·스티렌) / <strong>방지법</strong>: 통풍(<strong>황린은 수중 저장</strong>)·퇴적 높이 제한·저온/건조·중합억제제</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">유지류 요오드값 서열</div>
@@ -248,26 +272,34 @@
         </div>
 
         <div class="cheat-part">
-          <div class="cheat-part-title">PART 02. 건축물 연기 유동 5대 요인 · 람베르트·비어 감광계수 · 굴뚝효과 및 중성대 이동</div>
+          <div class="cheat-part-title">PART 02. 건축물 연기 유동 · 감광계수 · 연기 색깔 · 굴뚝효과 및 중성대 이동</div>
           <div class="cheat-grid">
             <div class="cheat-row">
-              <div class="cheat-key">연기유동 5요인 · 속도</div>
-              <div class="cheat-val"><strong>부력효과 · 바람의 압력차(풍압) · 굴뚝효과(연돌효과) · 공기조화설비(HVAC) 영향 · 승강기 피스톤 효과</strong> &nbsp;|&nbsp; 연기 이동속도: 수평(초당 <strong>0.5에서 1 m</strong>, 보행 속도 수준) &lt; <strong>수직(초당 2에서 3 m, 농연·굴뚝효과 시 초당 3에서 5 m)</strong></div>
+              <div class="cheat-key">연기유동 요인 · 속도</div>
+              <div class="cheat-val"><strong>부력효과·열팽창(팽창압) · 바람의 압력차(풍압) · 굴뚝효과(연돌효과) · 공기조화설비(HVAC) 영향 · 승강기 피스톤 효과</strong> &nbsp;|&nbsp; 연기 이동속도: 수평(초당 <strong>0.5에서 1 m</strong>, 보행 속도 수준) &lt; <strong>수직(초당 2에서 3 m, 농연·굴뚝효과 시 초당 3에서 5 m)</strong></div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">감광계수 · 가시거리</div>
-              <div class="cheat-val"><strong>람베르트·비어</strong>: <span class="cheat-eq">I = I<sub>0</sub>&middot;exp(&minus;C<sub>s</sub>L) &rArr; C<sub>s</sub> = (1/L)&middot;ln(I<sub>0</sub>/I) [m<sup>&minus;1</sup>]</span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <strong>C<sub>s</sub> = 0.1 m<sup>&minus;1</sup></strong>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(2에서 5 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K &divide; C<sub>s</sub>)</strong>: <strong>발광 표지(유도등, K=5에서 10)</strong>가 비발광 반사체(K=2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>
+              <div class="cheat-val"><strong>람베르트·비어</strong>: <span class="cheat-eq">I = I<sub>0</sub>&middot;exp(&minus;C<sub>s</sub>L) &rArr; C<sub>s</sub> = (1/L)&middot;ln(I<sub>0</sub>/I) [m<sup>&minus;1</sup>]</span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <strong>C<sub>s</sub> = 0.1 m<sup>&minus;1</sup></strong>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>0.3 m<sup>&minus;1</sup></strong>(약 5 m) · <strong>0.5 m<sup>&minus;1</sup></strong>(3에서 5 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(1에서 5 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K<sub>c</sub> &divide; C<sub>s</sub>, S&times;K=상수)</strong>: <strong>발광 표지(유도등, 5에서 10)</strong>가 비발광 반사체(2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">연기 색깔 4종 판별</div>
+              <div class="cheat-val"><strong>백색</strong>(초기 저온 · 수증기 응축 · 감쇠기 말) · <strong>청색</strong>(저온 열분해 미세입자 · C급 전기화재 상징색) · <strong>회색</strong>(초기➔성장기 전환 · 수증기+그을음 혼재) · <strong>흑색</strong>(탄소 함량 높은 유류·플라스틱 고온 불완전연소 검댕 · 최성기 위험)</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">중성대 · 굴뚝효과 압력</div>
-              <div class="cheat-val"><strong>중성대 정의</strong>: 실내외 온도가 같은 면이 아니라 <strong>실내외 정압(압력)이 같아져 공기의 유출입이 없는 수평 경계면(&Delta;P = 0 Pa)</strong> / 압력차: <span class="cheat-eq">&Delta;P = 3,460 &middot; h &middot; (1/T<sub>o</sub> &minus; 1/T<sub>i</sub>) [Pa]</span> (수직거리 h에 정비례) / 여름철 냉방(T<sub>i</sub>&lt;T<sub>o</sub>) 시 하강기류인 <strong>역굴뚝효과</strong> / 개구부 개방 시 이동: <strong>상층 개방 ➔ 위쪽(상층) 이동</strong>, <strong>하층 개방 ➔ 아래쪽(하층) 이동</strong></div>
+              <div class="cheat-val"><strong>중성대 정의</strong>: 실내외 온도가 같은 면이 아니라 <strong>실내외 정압(압력)이 같아져 공기의 유출입이 없는 수평 경계면(&Delta;P = 0 Pa)</strong> / 압력차: <span class="cheat-eq">&Delta;P = 3,460 &middot; h &middot; (1/T<sub>o</sub> &minus; 1/T<sub>i</sub>) [Pa]</span> (수직거리 h 정비례) / <strong>동계 정상 굴뚝효과(T<sub>i</sub>&gt;T<sub>o</sub>)</strong>: 하층 부압(외기 유입)·상층 정압(연기 유출) vs <strong>하계 역굴뚝효과(T<sub>i</sub>&lt;T<sub>o</sub>)</strong>: 상층 부압·하층 정압 하강기류 / <strong>상층 개방 ➔ 위쪽 이동</strong>, <strong>하층 개방 ➔ 아래쪽 이동</strong></div>
             </div>
           </div>
         </div>
 
         <div class="cheat-part">
-          <div class="cheat-part-title">PART 03. 연소생성 독성가스 허용농도(TLV) 서열 · 나르코시스/자극성 기전 · 산소 결핍</div>
+          <div class="cheat-part-title">PART 03. 연소생성 독성가스 노출기준·TLV 서열 · 나르코시스/자극성 기전 · 산소 결핍 &amp; 누적 연결</div>
           <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">노출기준 (TWA·STEL·C·IDLH)</div>
+              <div class="cheat-val"><strong>TLV-TWA</strong>(1일 8시간·주 40시간 평균) · <strong>TLV-STEL</strong>(15분 단시간, 1일 4회 이하·60분 간격) · <strong>TLV-C</strong>(순간도 초과 금지 천장값) · <strong>IDLH</strong>(즉각 생명·탈출 위험 농도: CO 1,200 · NH<sub>3</sub> 300 · HCN 50 · HCl 50 ppm ➔ 공기호흡기 필수)</div>
+            </div>
             <div class="cheat-row">
               <div class="cheat-key">허용농도(TLV) 서열</div>
               <div class="cheat-val"><strong>TLV 높은 순(수치 클수록 독성 약함 · 작을수록 맹독성)</strong>:<br/><span class="cheat-eq">CO<sub>2</sub>(5,000) &gt; CO(50) &gt; NH<sub>3</sub>(25) &gt; HCN·H<sub>2</sub>S(10) &gt; HCl·SO<sub>2</sub>·NO<sub>2</sub>(5) &gt; HF(3) &gt; Cl<sub>2</sub>(1) &gt; 아크롤레인·포스겐(0.1 ppm)</span></div>
@@ -283,6 +315,10 @@
             <div class="cheat-row">
               <div class="cheat-key">황(S) 연소 · 산소 결핍</div>
               <div class="cheat-val">&bull; 황(S) <strong>불완전연소 = 황화수소(H<sub>2</sub>S, 10 ppm</strong>, 계란 썩는 냄새, <strong>가연성 4에서 44%</strong>, 0.04% 30분 위험·0.08% 치명적) vs <strong>완전연소 = 이산화황(SO<sub>2</sub>, 5 ppm</strong>, 불연성, <strong>800&deg;C[1,073 K]·1기압에서 황 1 kg[31.25 mol] 완전연소 시 <span class="cheat-eq">2.75 m<sup>3</sup></span> 발생</strong>)<br/>&bull; <strong>산소(O<sub>2</sub>) 농도 저하(정상 21%, 안전 한계 18%)</strong>: <strong>15에서 16 vol%</strong>(일반 가연물 화염 소멸·어지럼증) ➔ <strong>10에서 14 vol%</strong>(판단력·근육 운동 상실) ➔ <strong>6에서 10 vol%</strong>(실신·6에서 8분 내 사망) ➔ 6 vol% 이하(즉시 호흡 정지)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">&#x1F517; 제1·2장 ➔ 제3장 연결</div>
+              <div class="cheat-val">&bull; <strong>제1장 발화점(AIT)·E<sub>a</sub>·불완전연소 회수</strong>: E<sub>a</sub>↓·촉매·방열 억제 축열 ➔ 발화점 도달 시 <strong>자연발화</strong> / 불완전연소 조건 ➔ CO·흑색 검댕 발생<br/>&bull; <strong>제2장 가연물별 독성가스 매칭</strong>: 목재·훈소(<strong>CO·아크롤레인</strong>) · PVC(<strong>HCl·포스겐</strong>) · 나일론·폴리우레탄·멜라민(<strong>HCN·NH<sub>3</sub></strong>) · 셀룰로이드(<strong>NO<sub>2</sub></strong>) ➔ <strong>제4장 T<sup>4</sup> 복사 플래시오버 &amp; 백드래프트</strong> 직결</div>
             </div>
           </div>
         </div>
@@ -717,62 +753,85 @@
     const QUIZ_DATA = [
   {
     "grade": "S",
-    "text": "전도는 푸리에(Fourier) 법칙을 따르며 고체 내부의 온도 구배에 의해 발생한다.",
+    "text": "전도는 푸리에(Fourier) 법칙을 따르며 고체 내부의 온도 구배를 따라 분자 진동이나 자유전자 이동으로 열이 직접 전달되는 현상이다.",
     "isCorrect": true,
     "source": "열전달 기출",
-    "explanation": "전도는 물질 내부의 온도 경사에 비례하여 열이 흐르는 현상으로 푸리에 법칙을 따릅니다.",
+    "explanation": "전도는 고체 내부의 온도 경사에 비례하여 분자 진동과 자유전자 이동으로 열이 전달되는 현상으로 푸리에 법칙을 따릅니다. 💡 핵심 암기 팁: 화재 초기 고체 내부 열전달 = 전도(푸리에 법칙)!",
     "origQId": "",
     "id": "SCI_02_03_001",
-    "hlKey": "푸리에",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "분자 진동이나 자유전자 이동",
     "paraIdx": 0,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "대류는 유체의 밀도차에 의한 이동으로 천장 제트 기류(Ceiling Jet Flow)를 형성한다.",
-    "isCorrect": true,
-    "source": "열전달 기출",
-    "explanation": "부력에 의해 상승한 고온 연기가 천장을 타고 수평으로 확산하는 기류가 천장 제트 기류입니다.",
-    "origQId": "",
-    "id": "SCI_02_03_002",
-    "hlKey": "대류는",
-    "paraIdx": 0,
-    "isEssential": true
-  },
-  {
-    "grade": "S",
-    "text": "복사열은 스테판 볼츠만 법칙에 따라 절대온도의 2제곱에 비례하여 방사된다.",
+    "text": "화재 시 뜨거운 연기가 밀도차(부력)에 의해 상승하여 천장을 타고 수평으로 확산하는 천장 제트 기류(Ceiling Jet Flow)는 전도에 의한 열전달 현상이다.",
     "isCorrect": false,
     "source": "열전달 기출",
-    "explanation": "스테판 볼츠만 법칙에 따라 복사 에너지는 절대온도의 4제곱에 비례합니다. 2제곱은 오답입니다.",
+    "explanation": "부력에 의해 상승한 고온 연기가 천장을 타고 수평으로 퍼지는 천장 제트 기류는 유체의 직접 이동에 의한 '대류' 현상입니다. 💡 1초 판별 팁: 천장 제트 기류는 유체 이동이므로 '전도'가 아니라 '대류'(뉴턴의 냉각법칙)로 1초 소거!",
+    "origQId": "",
+    "id": "SCI_02_03_002",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "천장 제트 기류(Ceiling Jet Flow)",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "복사열은 스테판·볼츠만 법칙에 따라 물체의 절대온도(K)가 아니라 섭씨온도(℃)의 2제곱에 비례하여 방사된다.",
+    "isCorrect": false,
+    "source": "열전달 기출",
+    "explanation": "스테판·볼츠만 법칙에 따라 복사 에너지는 섭씨온도의 2제곱이 아니라 반드시 '절대온도(K = ℃ + 273)의 4제곱(T⁴)'에 비례합니다. 💡 1초 판별 팁: 스테판·볼츠만 법칙은 무조건 '절대온도(K)의 4제곱'!",
     "origQId": "",
     "id": "SCI_02_03_003",
-    "hlKey": "스테판",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "절대온도(T, 단위 K)의 4제곱",
     "paraIdx": 1,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "자연발화는 가연물의 열전도율이 낮을수록, 발열량이 클수록, 표면적이 넓을수록, 주위 온도와 습도가 높을수록 일어나기 쉽다.",
-    "isCorrect": true,
+    "text": "자연발화는 가연물의 열전도율이 높을수록, 발열량이 클수록, 비표면적(표면적)이 넓을수록, 주위 온도가 높을수록 일어나기 쉽다.",
+    "isCorrect": false,
     "source": "2018년 소방공채·경채 Q8 기출",
-    "explanation": "열전도율이 낮고 통풍이 안 될수록 발생한 열이 외부로 방산되지 못하고 내부에 축적되어 자연발화가 촉진됩니다.",
+    "explanation": "자연발화는 내부에 열이 빠져나가지 못하고 축적(축열)되어야 일어나므로, 가연물의 열전도율이 '낮을수록' 잘 발생합니다. 💡 1초 판별 팁: 열전도율이 '높을수록' 열이 밖으로 쉽게 방산되어 자연발화가 억제됩니다(낮을수록 촉진)!",
     "origQId": "Q₂018₈",
     "id": "SCI_02_03_004",
-    "hlKey": "가연물의",
-    "paraIdx": 1,
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "가연물의 열전도율이 낮을수록",
+    "paraIdx": 2,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "암모니아(NH3)는 나일론이나 열경화성 수지 연소 시 발생하고 냉동시설의 냉매로 많이 쓰이며, 허용농도(TLV)는 25ppm이다.",
-    "isCorrect": true,
+    "text": "암모니아(NH3)는 나일론이나 열경화성 수지 연소 시 발생하고 냉동시설의 냉매로 많이 쓰이며, 허용농도(TLV)는 50ppm이다.",
+    "isCorrect": false,
     "source": "2018년 소방공채·경채 Q9 기출",
-    "explanation": "암모니아는 자극성이 강한 수용성·가연성 가스로 냉동창고 냉매 누출 위험이 크며 허용농도는 25ppm입니다.",
+    "explanation": "암모니아(NH₃)의 허용농도(TLV)는 50ppm이 아니라 '25ppm'입니다(50ppm은 일산화탄소 CO의 허용농도). 💡 1초 판별 팁: 수치 치환 함정! 허용농도(TLV)는 'CO 50 ppm > 암모니아(NH₃) 25 ppm'입니다.",
     "origQId": "Q₂018₉",
     "id": "SCI_02_03_005",
-    "hlKey": "암모니아",
-    "paraIdx": 6,
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "냉동창고 화재 발생 시",
+    "paraIdx": 8,
     "isEssential": true
   },
   {
@@ -780,59 +839,80 @@
     "text": "화재 초기단계에서 고체 내부의 열전달은 주로 '전도'에 기인하며, 화재 시 뜨거운 연기가 위로 향하거나 실내 공기가 데워지는 현상은 유체 이동에 의한 '대류'이다.",
     "isCorrect": true,
     "source": "2018년 소방공채·경채 Q10 기출",
-    "explanation": "전도는 고체 내부의 분자 진동 전달이고, 대류는 기체·액체 등 유체의 직접적인 이동에 의한 열전달입니다.",
+    "explanation": "전도는 고체 내부의 분자 진동 전달이고, 대류는 기체·액체 등 유체의 직접적인 이동에 의한 열전달입니다. 💡 핵심 암기 팁: 화재 초기 고체 내부 = 전도, 공기·연기 상승 = 대류, 최성기 지배 = 복사!",
     "origQId": "Q₂018₁0",
     "id": "SCI_02_03_006",
-    "hlKey": "화재",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "화재 초기단계에서 고체 내부의 열전달",
     "paraIdx": 0,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "시안화수소(HCN)는 청산가스라고도 하며, 폴리우레탄·나일론 등 질소 함유물이 불완전연소할 때 발생하고 헤모글로빈과 결합하지 않고도 세포 호흡을 마비시켜 질식을 유발한다.",
-    "isCorrect": true,
+    "text": "시안화수소(HCN)는 청산가스라고도 하며, 폴리우레탄·나일론 등 질소 함유물이 불완전연소할 때 발생하고 혈중 헤모글로빈과 강하게 결합하여 산소 운반을 차단함으로써 질식을 유발한다.",
+    "isCorrect": false,
     "source": "2019년 소방공채·경채 Q15 기출",
-    "explanation": "일산화탄소(CO)는 헤모글로빈과 결합하여 산소 운반을 차단하지만, 시안화수소(HCN)는 세포 내 산화효소를 마비시켜 일산화탄소보다 약 20배 강한 급성 독성을 나타냅니다.",
+    "explanation": "헤모글로빈과 결합하여 산소 운반을 차단하는 가스는 일산화탄소(CO)이고, 시안화수소(HCN)는 헤모글로빈과 결합하지 않고 세포 내 시토크롬 산화효소를 마비시켜 내호흡 질식을 일으킵니다. 💡 1초 판별 팁: 독성 기전 바꿔치기! '헤모글로빈 결합 = CO' vs '헤모글로빈 미결합·시토크롬 산화효소 마비 = HCN'입니다.",
     "origQId": "Q₂019₁5",
     "id": "SCI_02_03_007",
-    "hlKey": "일산화탄소",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "시토크롬 산화효소를 마비",
     "paraIdx": 7,
     "isEssential": true
   },
   {
     "grade": "A",
-    "text": "고층건축물에서 연기유동을 일으키는 요인에는 부력효과, 외부 바람에 의한 압력차, 굴뚝효과(연돌효과), 공기조화설비의 영향, 승강기 피스톤 효과 등이 있다.",
-    "isCorrect": true,
+    "text": "고층건축물에서 연기유동을 일으키는 요인에는 부력효과, 외부 바람에 의한 압력차, 굴뚝효과(연돌효과), 승강기 피스톤 효과 등이 있으며, 공기조화설비(HVAC)의 가동은 방화구획을 넘는 연기 유동에 영향을 미치지 않는다.",
+    "isCorrect": false,
     "source": "2020년 소방공채·경채 Q18 기출",
-    "explanation": "건축물 내 연기 이동은 열팽창 부력, 굴뚝효과, 외부 풍압, 공조설비 기류, 엘리베이터 피스톤 작용에 의해 복합적으로 발생합니다.",
+    "explanation": "공기조화설비(HVAC)의 급·배기 공조 덕트와 팬이 가동되면 방화구획을 넘어 연기가 강제 확산되므로, 고층건축물 연기유동 5대 요인에 반드시 포함됩니다. 💡 1초 판별 팁: '공조설비(HVAC) 영향 없음'은 무조건 X! 부력·풍압·굴뚝·공조·피스톤 5대 요인 전부 연기 유동 원인입니다.",
     "origQId": "Q₂020₁8",
     "id": "SCI_02_03_008",
-    "hlKey": "굴뚝효과",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "공조 덕트와 팬이 가동되며",
     "paraIdx": 3,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "중성대(Neutral Plane)는 실내 화재 시 실내와 실외의 온도가 같은 면이 아니라, 실내와 실외의 압력(정압)이 같아지는 경계면을 의미한다.",
-    "isCorrect": true,
+    "text": "중성대(Neutral Plane)는 실내 화재 시 실내와 실외의 압력이 같은 면이 아니라, 실내와 실외의 온도가 같아지는 수평 경계면을 의미한다.",
+    "isCorrect": false,
     "source": "2021년 소방공채·경채 Q2 기출",
-    "explanation": "중성대 상부는 실내압이 실외압보다 높아 연기가 유출되고, 중성대 하부는 실외압이 높아 신선한 공기가 유입되며, 중성대에서는 실내외 압력이 같습니다.",
+    "explanation": "중성대(Neutral Plane)는 실내외 온도가 같은 면이 아니라, 실내와 실외의 압력(정압)이 같아져 압력차(ΔP)가 0 Pa이 되므로 공기의 유출입이 없는 수평 경계면입니다. 💡 1초 판별 팁: 중성대 = '온도' 동일(X)이 아니라 '정압(압력)' 동일(ΔP = 0) 경계면!",
     "origQId": "Q₂021₂",
     "id": "SCI_02_03_009",
-    "hlKey": "중성대",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "압력차(ΔP)가 0 Pa이 되므로",
     "paraIdx": 5,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "화재 시 연기의 수직 이동속도는 수평 이동속도보다 빠르며, 연기의 감광계수가 증가할수록 가시거리는 반비례하여 짧아진다.",
-    "isCorrect": true,
+    "text": "화재 시 연기의 수직 이동속도는 수평 이동속도보다 빠르며, 연기의 감광계수가 증가할수록 가시거리는 정비례하여 길어진다.",
+    "isCorrect": false,
     "source": "2021년 소방공채·경채 Q2 기출",
-    "explanation": "연기는 부력에 의해 수직 이동속도(초당 2미터에서 5미터)가 수평(초당 0.5미터에서 1미터)보다 훨씬 빠르며, 감광계수와 가시거리는 반비례합니다.",
+    "explanation": "연기 수직 이동속도(초당 2미터에서 5미터)가 수평(초당 0.5미터에서 1미터)보다 빠른 것은 맞으나, 연기가 짙어져 감광계수(Cs)가 증가할수록 가시거리(D = Kc ÷ Cs)는 반비례하여 짧아집니다. 💡 1초 판별 팁: 감광계수(연기 짙기) ↑ ➔ 가시거리(보이는 거리) ↓, 절대 정비례가 아닙니다!",
     "origQId": "Q₂021₂",
     "id": "SCI_02_03_010",
-    "hlKey": "화재",
-    "paraIdx": 0,
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "감광계수가 증가할수록 가시거리는 반비례",
+    "paraIdx": 4,
     "isEssential": true
   },
   {
@@ -840,82 +920,115 @@
     "text": "섭씨 800도(1,073K), 1기압에서 황(S, 원자량 32) 1킬로그램이 완전연소할 때 생성되는 이산화황(SO2)의 부피는 이상기체 상태방정식 적용 시 약 2.75세제곱미터이다.",
     "isCorrect": true,
     "source": "2022년 소방공채·경채 Q12 기출",
-    "explanation": "황 1kg은 31.25mol이므로 생성 SO2도 31.25mol이며, V = nRT/P = 31.25 × 0.082 × 1,073 = 약 2,750L = 2.75세제곱미터입니다.",
+    "explanation": "황 1kg은 31.25mol이므로 생성 SO₂도 31.25mol이며, V = nRT/P = 31.25 × 0.082 × 1,073 = 약 2,750L = 2.75세제곱미터입니다. 💡 핵심 암기 팁: 0℃ 표준상태(0.70 m³) × (1,073 ÷ 273) ≈ 2.75 m³로도 1초 검산!",
     "origQId": "Q₂022₁2",
     "id": "SCI_02_03_011",
-    "hlKey": "섭씨",
-    "paraIdx": 1,
-    "isEssential": true
-  },
-  {
-    "grade": "S",
-    "text": "독성가스의 허용농도(TLV)는 일산화탄소(50ppm) > 암모니아(25ppm) > 시안화수소·황화수소(10ppm) > 이산화황(5ppm) > 불화수소(3ppm) > 포스겐(0.1ppm) 순으로 높다.",
-    "isCorrect": true,
-    "source": "2023년 소방공채·경채 Q8 기출",
-    "explanation": "허용농도(TLV) 수치가 낮을수록 인체에 치명적인 맹독성 가스이며, 포스겐(0.1ppm)의 허용농도가 가장 낮고 암모니아(25ppm), 일산화탄소(50ppm)가 상대적으로 높습니다.",
-    "origQId": "Q₂023₈",
-    "id": "SCI_02_03_012",
-    "hlKey": "포스겐",
-    "paraIdx": 6,
-    "isEssential": true
-  },
-  {
-    "grade": "S",
-    "text": "열방출률이 120킬로와트이고 복사열 분율이 0.5인 화원 중심으로부터 1미터 떨어진 물체에 전달되는 복사열유속(원주율 3 기준)은 5.0kW/㎡이다.",
-    "isCorrect": true,
-    "source": "2024년 소방공채·경채 Q23 기출",
-    "explanation": "점열원 복사열유속 공식 q'' = (0.5 × 120) / (4 × 3 × 1²) = 60 / 12 = 5.0kW/㎡로 산출됩니다.",
-    "origQId": "Q₂024₂3",
-    "id": "SCI_02_03_013",
-    "hlKey": "복사열",
-    "paraIdx": 1,
-    "isEssential": true
-  },
-  {
-    "grade": "S",
-    "text": "푸리에(Fourier)의 열전도법칙에 따라 물질을 통해 전달되는 열량은 열전도율, 전열면적, 양면의 온도차에 비례하고, 물질의 두께에 반비례한다.",
-    "isCorrect": true,
-    "source": "2025년 소방공채·경채 Q10 기출",
-    "explanation": "푸리에 법칙 q = k·A·ΔT / L에서 분자(열전도율 k, 단면적 A, 온도차 ΔT)에는 비례하고 분모(두께 L)에는 반비례합니다.",
-    "origQId": "Q₂025₁0",
-    "id": "SCI_02_03_014",
-    "hlKey": "푸리에",
-    "paraIdx": 0,
-    "isEssential": true
-  },
-  {
-    "grade": "S",
-    "text": "황화수소(H2S)는 황 함유 물질이 불완전연소할 때 발생하며 계란 썩는 냄새가 나는 가연성 독성가스이고, 완전연소할 때 발생하는 가스는 이산화황(SO2)이다.",
-    "isCorrect": true,
-    "source": "2025년 소방공채·경채 Q11 기출",
-    "explanation": "황(S) 성분은 불완전연소 시 황화수소(H2S, 계란 썩는 냄새, 가연성)를 생성하고, 완전연소 시 이산화황(SO2, 아황산가스, 불연성)을 생성합니다.",
-    "origQId": "Q₂025₁1",
-    "id": "SCI_02_03_015",
-    "hlKey": "황화수소",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "2.75 세제곱미터",
     "paraIdx": 8,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "스테판 ·볼츠만 법칙에 따라 복사열량은 절대온도의 4제곱(T⁴)에 비례하며, 표면온도가 섭씨 127도(400K)인 5제곱미터 흑체 벽체가 100초 동안 방출하는 총복사에너지(상수 5×10⁻⁸ 기준)는 640킬로줄(kJ)이다.",
-    "isCorrect": true,
-    "source": "2026년 소방공채·경채 Q11 기출",
-    "explanation": "E = σ·A·T⁴·t = (5×10⁻⁸) × 5 × (400)⁴ × 100 = 6,400W × 100s = 640,000J = 640kJ입니다.",
-    "origQId": "Q₂026₁1",
-    "id": "SCI_02_03_016",
-    "hlKey": "스테판",
+    "text": "독성가스의 허용농도(TLV)는 일산화탄소(50ppm) > 암모니아(25ppm) > 불화수소(3ppm) > 시안화수소(10ppm) > 포스겐(0.1ppm) 순으로 높다.",
+    "isCorrect": false,
+    "source": "2023년 소방공채·경채 Q8 기출",
+    "explanation": "허용농도(TLV)는 일산화탄소(50ppm) > 암모니아(25ppm) > 시안화수소(10ppm) > 불화수소(3ppm) > 포스겐(0.1ppm) 순으로 높습니다. 선지는 불화수소(3ppm)와 시안화수소(10ppm)의 순서를 뒤바꿨습니다. 💡 1초 판별 팁: '일(50) > 암(25) > 시·황(10) > 염·아·이(5) > 불(3) > 염소(1) > 아·포(0.1)' 순서 암기!",
+    "origQId": "Q₂023₈",
+    "id": "SCI_02_03_012",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "아크롤레인·포스겐(0.1 ppm)",
+    "paraIdx": 6,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "열방출률이 120킬로와트이고 복사열 분율이 0.5인 화원 중심으로부터 1미터 떨어진 물체에 전달되는 복사열유속(원주율 3 기준)은 10.0kW/㎡이다.",
+    "isCorrect": false,
+    "source": "2024년 소방공채·경채 Q23 기출",
+    "explanation": "점열원 복사열유속 공식 q'' = (χr × Q̇) ÷ (4πR²) = (0.5 × 120) ÷ (4 × 3 × 1²) = 60 ÷ 12 = '5.0 kW/㎡'입니다. 분모의 4를 빠뜨리면 10.0이 되는 계산 함정입니다. 💡 1초 판별 팁: 구 표면적 분모는 '4πR²'! (0.5 × 120) ÷ (4 × 3 × 1) = 5.0 kW/㎡!",
+    "origQId": "Q₂024₂3",
+    "id": "SCI_02_03_013",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "거리(R)의 제곱에 반비례",
     "paraIdx": 1,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "건물 화재 시 중성대(Neutral Plane)는 실내와 실외의 정압이 같아지는 경계면이며, 상층 개구부를 크게 개방하면 내부 기체가 배출되어 중성대가 위쪽(상층부)으로 이동하고 하층 개구부를 크게 개방하면 중성대가 아래쪽(하층부)으로 이동한다.",
-    "isCorrect": true,
+    "text": "푸리에(Fourier)의 열전도법칙에 따라 물질을 통해 전달되는 열량은 열전도율, 전열면적, 양면의 온도차 및 물질의 두께에 모두 정비례한다.",
+    "isCorrect": false,
+    "source": "2025년 소방공채·경채 Q10 기출",
+    "explanation": "푸리에 법칙 q = k·A·ΔT ÷ L에서 분자(열전도율 k, 단면적 A, 온도차 ΔT)에는 정비례하지만 분모인 물질의 두께(L)에는 '반비례'합니다. 💡 1초 판별 팁: 두꺼운 벽일수록 열이 덜 통하므로 두께(L)는 항상 분모(반비례)!",
+    "origQId": "Q₂025₁0",
+    "id": "SCI_02_03_014",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "두께(L)에 반비례",
+    "paraIdx": 0,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "황화수소(H2S)는 황 함유 물질이 완전연소할 때 발생하며 계란 썩는 냄새가 나는 불연성 독성가스이고, 불완전연소할 때 발생하는 가스는 이산화황(SO2)이다.",
+    "isCorrect": false,
+    "source": "2025년 소방공채·경채 Q11 기출",
+    "explanation": "황(S) 성분이 '불완전연소'할 때 발생하는 가스가 계란 썩는 냄새가 나는 가연성·독성가스인 황화수소(H₂S)이고, '완전연소'할 때 발생하는 가스가 불연성인 이산화황(SO₂)입니다. 💡 1초 판별 팁: 불완전(H₂S, 가연성) ↔ 완전(SO₂, 불연성) 스왑 함정!",
+    "origQId": "Q₂025₁1",
+    "id": "SCI_02_03_015",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "계란(썩은 달걀)과 비슷한 냄새",
+    "paraIdx": 8,
+    "isEssential": true
+  },
+  {
+    "grade": "S",
+    "text": "스테판·볼츠만 법칙에 따라 표면온도가 섭씨 127도인 5제곱미터 흑체 벽체가 100초 동안 방출하는 총복사에너지(상수 5×10⁻⁸ 기준)를 구할 때, 섭씨온도 127의 4제곱을 그대로 대입하여 계산하면 된다.",
+    "isCorrect": false,
+    "source": "2026년 소방공채·경채 Q11 기출",
+    "explanation": "[사각지대 계산 함정] 스테판·볼츠만 공식 E = ε·σ·A·T⁴·t의 온도 T는 반드시 절대온도(K = 127 + 273 = 400 K)로 환산해야 하며, 400⁴을 대입하면 640 kJ이 산출됩니다(섭씨 127⁴을 그대로 대입하면 오답이 됨). 💡 1초 판별 팁: 복사 T⁴ 계산은 무조건 '섭씨 + 273 = K' 환산 후 4제곱!",
+    "origQId": "Q₂026₁1",
+    "id": "SCI_02_03_016",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "127 + 273",
+    "paraIdx": 1,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "건물 화재 시 상층 개구부를 크게 개방하면 내부 압력이 높아져 중성대가 아래쪽(하층부)으로 이동하고, 하층 개구부를 크게 개방하면 중성대가 위쪽(상층부)으로 이동한다.",
+    "isCorrect": false,
     "source": "2026년 소방공채·경채 Q16 기출",
-    "explanation": "중성대는 개구부 면적이 커진 쪽으로 끌려 이동하므로, 상층 개방 시 상부로 이동(실내 감압)하고 하층 개방 시 하부로 이동(실내 가압)합니다.",
+    "explanation": "중성대는 개구 면적이 커진 쪽으로 끌려 이동합니다. 상층 개구부를 개방하면 연기가 빠져나가 실내 압력이 낮아지므로 중성대가 '위쪽(상층부)'으로 올라가고, 하층 개구부를 개방하면 외기가 유입되어 실내 압력이 높아지므로 중성대가 '아래쪽(하층부)'으로 내려갑니다. 💡 1초 판별 팁: 중성대는 '열린 구멍(개방한 층)을 따라 이동'합니다(상층 개방 ➔ 위, 하층 개방 ➔ 아래)!",
     "origQId": "Q₂026₁6",
     "id": "SCI_02_03_017",
-    "hlKey": "중성대",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "상층 개구부를 크게 개방할 때",
     "paraIdx": 5,
     "isEssential": false
   },
@@ -924,10 +1037,244 @@
     "text": "이산화탄소(CO2)는 농도가 2퍼센트가 되면 호흡 심도가 1.5배 정도 증가하고 3퍼센트에 이르면 약 2배 증가하여 호흡을 촉진시키나, 일산화탄소(CO)는 1퍼센트(10,000ppm) 농도에서도 수 분 내에 사망에 이르는 맹독성 가스이다.",
     "isCorrect": true,
     "source": "2026년 소방공채·경채 Q18 기출",
-    "explanation": "2026년 기출은 이산화탄소(CO2)의 호흡중추 자극 특성(2퍼센트에서 1.5배, 3퍼센트에서 2배 호흡 심도 증가)을 일산화탄소(CO)로 바꿔치기하여 출제하였습니다.",
+    "explanation": "2026년 기출은 이산화탄소(CO₂)의 호흡중추 자극 특성(2퍼센트에서 1.5배, 3퍼센트에서 2배 호흡 심도 증가)을 일산화탄소(CO)로 바꿔치기하여 출제하였습니다. 💡 핵심 암기 팁: CO₂ 2% = 호흡 1.5배 / CO₂ 3% = 호흡 2배, CO 1% = 수 분 내 사망!",
     "origQId": "Q₂026₁8",
     "id": "SCI_02_03_018",
-    "hlKey": "일산화탄소",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "호흡 심도가 1.5배 정도 증가",
+    "paraIdx": 7,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "화재 시 연기의 수직 이동속도는 초당 0.5미터에서 1미터 정도이고, 수평 이동속도는 초당 2미터에서 5미터로 수평 이동속도가 수직보다 빠르다.",
+    "isCorrect": false,
+    "source": "2021년 소방공채·경채 Q2 · 연기의 이동속도·감광계수·중성대(Neutral Plane)·굴뚝효과",
+    "explanation": "연기의 수평 이동속도가 초당 0.5미터에서 1미터(보행 속도 수준)이고, 계단실·승강로를 타고 올라가는 수직 이동속도가 초당 2미터에서 5미터로 수평보다 훨씬 빠릅니다. 💡 1초 판별 팁: 수평(0.5에서 1 m/s) ↔ 수직(2에서 5 m/s) 수치 스왑 함정!",
+    "origQId": "Q₂021₂",
+    "id": "EXT_SCI_02_03_001",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "수평 이동속도보다 훨씬 빠르므로",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "연기의 감광계수(Cs)가 증가할수록 연기가 짙어지므로 피난 시 가시거리는 반비례하여 짧아진다.",
+    "isCorrect": true,
+    "source": "2021년 소방공채·경채 Q2 · 연기의 이동속도·감광계수·중성대(Neutral Plane)·굴뚝효과",
+    "explanation": "람베르트·비어 법칙에 따른 연기의 감광계수(Cs, 단위 m⁻¹)가 증가할수록(연기가 짙을수록) 가시거리(D = Kc ÷ Cs)는 반비례하여 짧아집니다. 💡 핵심 암기 팁: 가시거리 × 감광계수 = 상수(반비례)!",
+    "origQId": "Q₂021₂",
+    "id": "EXT_SCI_02_03_002",
+    "tier": "ext",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "연기의 짙기를 정량화",
+    "paraIdx": 4,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "[동계 vs 하계 굴뚝효과] 겨울철 난방이나 실내 화재로 건물 내부 온도가 외부보다 높을 때(정상 굴뚝효과)에는 중성대 위 상층부 계단실이 실외보다 낮은 부압(ΔP < 0)이 되어 외기가 유입되고, 여름철 냉방 시(역굴뚝효과)에는 상층부가 정압(ΔP > 0)이 되어 공기가 유출된다.",
+    "isCorrect": false,
+    "source": "2021년 소방공채·경채 Q2 · 동계 정상 굴뚝효과 vs 하계 역굴뚝효과 압력차",
+    "explanation": "[사각지대 킬러] 동계 정상 굴뚝효과(Ti > To)와 하계 역굴뚝효과(Ti < To)의 상하부 압력차 부호를 정반대로 뒤집었습니다. 정상 굴뚝효과에서는 하층부가 부압(외기 유입)·상층부가 정압(연기 유출)이고, 역굴뚝효과에서는 상층부가 부압(외기 유입)·하층부가 정압(하강 유출)입니다. 💡 1초 판별 팁: 정상 굴뚝효과 = '하부 흡입(부압) ➔ 상부 배출(정압)'! 하계 역굴뚝은 정반대!",
+    "origQId": "Q₂021₂",
+    "id": "EXT_SCI_02_03_003",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "차고 무거운 실내 공기가 위에서 아래로 하강",
+    "paraIdx": 5,
+    "isEssential": false,
+    "isKiller": true
+  },
+  {
+    "grade": "B",
+    "text": "[화재 시 연소생성물] 황화수소(H2S)는 썩은 달걀 냄새가 나며 후각을 마비시키는 가연성 독성가스이고, 연소범위는 4퍼센트에서 44퍼센트까지이다.",
+    "isCorrect": true,
+    "source": "2023년 소방공채·경채 Q8 · 연소생성물의 특성 및 독성가스 허용농도(TLV) 대소 비교",
+    "explanation": "황화수소(H₂S)는 황 함유 유기물의 불완전연소 시 발생하며 썩은 달걀 냄새가 나는 무색의 가연성·독성 가스(연소범위 4%에서 44%까지)입니다. 💡 핵심 암기 팁: 황화수소(H₂S) = 불완전연소 + 계란 썩는 냄새 + 가연성 + TLV 10 ppm!",
+    "origQId": "Q₂023₈",
+    "id": "EXT_SCI_02_03_004",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "후각을 마비시키며",
+    "paraIdx": 8,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "[자연발화 열균형 이론] 세메노프(Semenov) 열발화 이론은 고체 내부의 중심부가 표면보다 뜨거운 내부 온도 구배와 열전도를 고려한 모델이고, 프랭크·카메네츠키(Frank·Kamenetskii) 이론은 반응계 내부 온도가 공간적으로 균일하다고 가정한 모델이다.",
+    "isCorrect": false,
+    "source": "자연발화 열균형 이론 · 세메노프 vs 프랭크·카메네츠키",
+    "explanation": "[사각지대 킬러] 자연발화의 양대 열균형 이론을 통째로 맞바꿨습니다! 반응계 내부 온도가 공간적으로 균일하다고 가정해 지수 열생성률과 직선 열방출률을 비교한 모델이 '세메노프'이고, 실제 고체 퇴적물 내부의 온도 구배와 열전도를 반영해 무차원수로 임계조건을 해석한 모델이 '프랭크·카메네츠키'입니다. 💡 1초 판별 팁: 세메노프 = '균일 온도' vs 프랭크·카메네츠키 = '내부 온도 구배·열전도'!",
+    "origQId": "",
+    "id": "EXT_SCI_02_03_005",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "세메노프(Semenov) 열발화 이론",
+    "paraIdx": 2,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "B",
+    "text": "[화재 시 연소생성물] 일산화탄소(CO)는 산소보다 헤모글로빈(Hb)과의 친화력이 약해 혈중 산소와 결합하지 못하므로 호흡 자극 작용만을 일으킨다.",
+    "isCorrect": false,
+    "source": "2023년 소방공채·경채 Q8 · 연소생성물의 특성 및 독성가스 허용농도(TLV) 대소 비교",
+    "explanation": "일산화탄소(CO)는 혈액 내 헤모글로빈(Hb)과의 친화력이 산소보다 200배에서 300배나 강해 카르복시헤모글로빈을 형성함으로써 산소 운반을 차단하여 치명적 질식에 이르게 합니다. 💡 1초 판별 팁: CO의 헤모글로빈 친화력은 산소보다 '약한' 게 아니라 '200배에서 300배 강함'!",
+    "origQId": "Q₂023₈",
+    "id": "EXT_SCI_02_03_006",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "친화력이 산소의 200배에서 300배",
+    "paraIdx": 7,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "[화재 시 연소생성물] TLV(Threshold Limit Value)로 측정한 독성가스의 허용농도는 불화수소, 시안화수소, 암모니아, 포스겐 순으로 높다.",
+    "isCorrect": false,
+    "source": "2023년 소방공채·경채 Q8 · 연소생성물의 특성 및 독성가스 허용농도(TLV) 대소 비교",
+    "explanation": "허용농도(TLV)는 암모니아(25ppm) > 시안화수소(10ppm) > 불화수소(3ppm) > 포스겐(0.1ppm) 순으로 높습니다. 선지는 불화수소가 암모니아보다 높다고 잘못 나열하였습니다. 💡 1초 판별 팁: TLV 수치가 클수록 독성이 약함(암 25 > 시 10 > 불 3 > 포 0.1)!",
+    "origQId": "Q₂023₈",
+    "id": "EXT_SCI_02_03_007",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "기출 최빈출 서열 ①",
+    "paraIdx": 6,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "[연소 시 발생하는 황화수소] 황화수소(H2S)는 폴리염화비닐(PVC) 등이 연소할 때 발생되는 맹독성가스이다.",
+    "isCorrect": false,
+    "source": "2025년 소방공채·경채 Q11 · 연소생성가스 중 황화수소(H2S)와 포스겐·시안화수소·이산화황의 구분",
+    "explanation": "폴리염화비닐(PVC) 등 염소 함유물이 연소할 때 발생하는 맹독성 가스는 '포스겐(COCl₂)' 및 '염화수소(HCl)'이며, 황화수소(H₂S)는 황(S) 함유물의 불완전연소 시 발생합니다. 💡 1초 판별 팁: PVC(염소) 연소 = '염화수소·포스겐', 황(S) 불완전연소 = '황화수소'!",
+    "origQId": "Q₂025₁1",
+    "id": "EXT_SCI_02_03_008",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "폴리염화비닐(PVC) 등 염소 함유 플라스틱",
+    "paraIdx": 8,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "[연소 시 발생하는 황화수소] 황화수소(H2S)는 청산가스라고도 하며 동물의 털이 불완전연소할 때 발생한다.",
+    "isCorrect": false,
+    "source": "2025년 소방공채·경채 Q11 · 연소생성가스 중 황화수소(H2S)와 포스겐·시안화수소·이산화황의 구분",
+    "explanation": "청산가스라고도 하며 동물의 털(양모)·실크·폴리우레탄 등이 불완전연소할 때 발생하는 가스는 '시안화수소(HCN)'입니다. 💡 1초 판별 팁: 청산가스·양모·폴리우레탄 = '시안화수소(HCN)', 계란 썩는 냄새 = '황화수소(H₂S)'!",
+    "origQId": "Q₂025₁1",
+    "id": "EXT_SCI_02_03_009",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "동물의 털(양모)·실크·폴리우레탄",
+    "paraIdx": 7,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "[자연발화 5대 열원·방지법] 자연발화를 일으키는 열원에는 산화·분해·흡착·발효열 외에 시안화수소나 산화에틸렌 단량체의 중합열이 포함되며, 상온 공기 노출 시 즉시 발화하는 황린도 일반 자연발화 방지 원칙에 따라 통풍이 잘되는 건조한 곳에 저장해야 한다.",
+    "isCorrect": false,
+    "source": "자연발화 5대 열원 및 황린 수중 저장 예외",
+    "explanation": "[사각지대 킬러] 앞부분(중합열이 5대 열원에 포함됨)은 맞지만, 뒷부분 '황린 저장법'이 특례 예외를 놓친 함정입니다! 일반 퇴적물은 통풍·환기로 방열하지만, 상온 공기 노출 즉시 발화하는 제3류 위험물 황린은 통풍 건조가 아니라 산소와 접촉을 끊는 '약알칼리성 물속(수중) 저장'이 필수입니다. 💡 1초 판별 팁: 황린은 통풍·건조가 아니라 '물속(수중) 저장' 예외 조항!",
+    "origQId": "",
+    "id": "EXT_SCI_02_03_010",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "약알칼리성 물속 저장",
+    "paraIdx": 2,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "B",
+    "text": "[연소 생성물의 특성] 이산화질소(NO2)는 무색의 가스로 2,000 ppm 이상 고농도에 장시간 노출되어야만 인체에 위험하며 단시간 노출로는 치명적이지 않다.",
+    "isCorrect": false,
+    "source": "2026년 소방공채·경채 Q18 · 연소생성물(이산화질소·암모니아·황화수소·일산화탄소)과 이산화탄소의 인체 호흡 영향",
+    "explanation": "이산화질소(NO₂)는 셀룰로이드·니트로셀룰로오스 연소 시 발생하는 '적갈색' 가스이며, 200 ppm에서 700 ppm 정도의 농도에 단시간 노출되기만 해도 폐수종 등으로 인체에 치명적일 수 있습니다. 💡 1초 판별 팁: 이산화질소(NO₂) = 적갈색 + 200에서 700 ppm 단시간 노출도 치명적!",
+    "origQId": "Q₂026₁8",
+    "id": "EXT_SCI_02_03_011",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "200 ppm에서 700 ppm 정도의 농도",
+    "paraIdx": 8,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "[연소 생성물의 특성] 암모니아(NH3) 가스는 상·공업용 냉동시설에서 냉매로 널리 사용되나, 불연성이고 물에 전혀 녹지 않으므로 냉동창고 화재 시 누출되어도 폭발이나 부식 위험이 없다.",
+    "isCorrect": false,
+    "source": "2026년 소방공채·경채 Q18 · 연소생성물(이산화질소·암모니아·황화수소·일산화탄소)과 이산화탄소의 인체 호흡 영향",
+    "explanation": "암모니아(NH₃)는 냉동시설 냉매로 널리 쓰이며 자극성·부식성이 매우 강할 뿐만 아니라 가연성(약 15%에서 28%)이고 수용성이라 화재 시 누출되면 폭발 및 독성 중독의 큰 위험을 초래합니다. 💡 1초 판별 팁: 암모니아(NH₃)는 '불연성'이 아니라 약한 가연성·독성·냉동창고 냉매 위험 물질!",
+    "origQId": "Q₂026₁8",
+    "id": "EXT_SCI_02_03_012",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "상·공업용의 냉동시설에서 냉매로",
+    "paraIdx": 8,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "[연소 생성물의 특성] 황화수소 가스는 0.8 % 농도에서도 30분 이상 호흡하면 위험하며, 8.0 % 정도의 농도에서 비로소 치명적인 위험 상태에 빠진다.",
+    "isCorrect": false,
+    "source": "2026년 소방공채·경채 Q18 · 연소생성물(이산화질소·암모니아·황화수소·일산화탄소)과 이산화탄소의 인체 호흡 영향",
+    "explanation": "황화수소(H₂S)는 소수점 한 자리가 더 작은 약 '0.04 %(400ppm)' 농도에서도 30분 이상 호흡하면 위험하며, '0.08 %(800ppm)' 정도의 극저농도에서 이미 치명적인 위험 상태에 빠집니다. 💡 1초 판별 팁: 소수점 자릿수 장난! 황화수소는 '0.04%(30분 위험)·0.08%(치명적)'입니다.",
+    "origQId": "Q₂026₁8",
+    "id": "EXT_SCI_02_03_013",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "0.08 % 정도의 농도에서는 치명적인 위험",
+    "paraIdx": 8,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "[연소 생성물의 특성] 일산화탄소의 농도가 2 vol%가 되면 호흡 심도는 1.5배 정도 증가하고, 3 vol%의 농도에 이르면 약 2배 정도의 호흡 심도를 보여주는 것으로 알려져 있다.",
+    "isCorrect": false,
+    "source": "2026년 소방공채·경채 Q18 · 연소생성물(이산화질소·암모니아·황화수소·일산화탄소)과 이산화탄소의 인체 호흡 영향",
+    "explanation": "공기 중 농도가 2 vol%(20,000ppm)일 때 호흡 심도가 1.5배 증가하고 3 vol%(30,000ppm)일 때 호흡 심도가 약 2배 증가하며 호흡 속도를 자극하는 가스는 일산화탄소가 아니라 '이산화탄소(CO₂)'입니다. 일산화탄소(CO)는 1 vol%(10,000ppm)만 되어도 수 분 내에 사망하는 맹독성 가스입니다. 💡 1초 판별 팁: 호흡 심도 1.5배·2배 자극 = '이산화탄소(CO₂)'! 일산화탄소(CO)는 1%에서 사망!",
+    "origQId": "Q₂026₁8",
+    "id": "EXT_SCI_02_03_014",
+    "tier": "ext",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "약 2배 정도의 호흡 심도",
     "paraIdx": 7,
     "isEssential": false
   },
@@ -936,14 +1283,14 @@
     "text": "고체 벽체 양쪽에 온도가 다른 유체가 접해 있을 때 고온 유체의 대류, 고체 벽체 내부의 전도, 저온 유체의 대류로 이어지는 복합 열전달 과정을 열관류(열통과)라 한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (열관류의 정의)",
-    "explanation": "실내 공기로부터 벽체를 거쳐 실외 공기로 열이 빠져나가는 것처럼 대류 ➔ 전도 ➔ 대류가 결합된 열전달 현상을 열관류(Overall Heat Transfer)라 합니다.",
+    "explanation": "실내 공기로부터 벽체를 거쳐 실외 공기로 열이 빠져나가는 것처럼 대류 ➔ 전도 ➔ 대류가 결합된 열전달 현상을 열관류(Overall Heat Transfer)라 합니다. 💡 핵심 암기 팁: 열관류 = 대류 + 전도 + 대류 복합 전달!",
     "origQId": "",
     "id": "PRED_SCI_02_03_001",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "열관류",
+    "hlKey": "고온 유체의 대류 ➔ 고체 벽체 내부의 전도",
     "paraIdx": 0,
     "isEssential": true
   },
@@ -952,14 +1299,14 @@
     "text": "다공성 단열재 내부의 기공에 수분(물)이 침투하면 물의 열전도율이 공기보다 작기 때문에 단열재의 열전도율이 낮아져 단열 성능이 향상된다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (다공성 단열재 수분 침투 시 열전도율 변화)",
-    "explanation": "기체(정지 공기)의 열전도율이 가장 작고 액체(물)의 열전도율은 공기보다 약 25배 더 큽니다. 따라서 다공성 단열재가 물에 젖으면 기공 속 공기가 물로 치환되어 열전도율이 급격히 커지고 단열 성능이 떨어집니다.",
+    "explanation": "기체(정지 공기)의 열전도율이 가장 작고 액체(물)의 열전도율은 공기보다 약 25배 더 큽니다. 따라서 다공성 단열재가 물에 젖으면 기공 속 공기가 물로 치환되어 열전도율이 급격히 커지고 단열 성능이 떨어집니다. 💡 1초 판별 팁: 열전도율은 '고체 > 액체(물) > 기체(공기)'! 물이 스며들면 단열 성능 급락!",
     "origQId": "",
     "id": "PRED_SCI_02_03_002",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "다공성 단열재",
+    "hlKey": "다공성 단열재와 수분 침투",
     "paraIdx": 0,
     "isEssential": true
   },
@@ -968,14 +1315,14 @@
     "text": "두꺼운 고체 가연물(열적 후물)이 외부 복사열을 받아 착화할 때, 물질의 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)이 클수록 표면 온도가 급격히 상승하여 착화시간이 짧아진다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (열관성 kρc 대소와 표면 온도 상승·착화시간 반비례)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 열관성(kρc)의 대소와 착화시간의 관계를 정반대로 뒤집었습니다! 열관성(kρc)이 작을수록(예: 스티로폼·발포우레탄) 열이 내부로 빠져나가지 못하고 표면에 집중되어 표면 온도가 급상승하므로 착화시간이 짧아지며, 열관성이 클수록(예: 참나무·콘크리트) 착화시간은 길어집니다!",
+    "explanation": "열관성(kρc)이 '작을수록'(예: 스티로폼·발포우레탄) 열이 내부로 빠져나가지 못하고 표면에 집중되어 표면 온도가 급상승하므로 착화시간이 짧아지며, 열관성이 클수록(예: 참나무·콘크리트) 착화시간은 길어집니다. 💡 1초 판별 팁: 열관성(열적 관성)이 '작을수록' 온도가 빨리 올라 착화시간 ↓!",
     "origQId": "",
     "id": "PRED_SCI_02_03_003",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "열관성",
+    "hlKey": "열관성(Thermal Inertia, kρc)",
     "paraIdx": 1,
     "isEssential": true
   },
@@ -984,30 +1331,31 @@
     "text": "종이나 커튼처럼 두께가 매우 얇은 열적 박물(Thermally Thin, 비오 수 Bi < 0.1)의 착화시간은 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)에 정비례한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (열적 박물 ρcL vs 열적 후물 kρc 바꿔치기)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 열관성(kρc)에 비례하는 것은 두께가 두꺼운 '열적 후물(Thermally Thick)'의 착화시간입니다! 두께가 얇은 '열적 박물'은 내부 온도 구배가 없으므로 열전도율(k)과 무관하며, 오직 밀도(ρ)·비열(c)·두께(L)의 곱(ρcL)에 비례합니다.",
+    "explanation": "[사각지대 킬러] 열관성(kρc)에 비례하는 것은 두께가 두꺼운 '열적 후물(Thermally Thick)'의 착화시간입니다! 두께가 얇은 '열적 박물'은 내부 온도 구배가 없으므로 열전도율(k)과 무관하며, 오직 밀도(ρ)·비열(c)·두께(L)의 곱(ρcL)에 비례합니다. 💡 1초 판별 팁: 열적 박물은 얇아서 열전도(k)가 무의미! '박물 = ρcL (k 제외)' vs '후물 = kρc'!",
     "origQId": "",
     "id": "PRED_SCI_02_03_004",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "열적 박물",
+    "hlKey": "두께가 매우 얇아 내부 온도 구배가 없으므로",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "A",
-    "text": "스테판·볼츠만 법칙에 따르면 흑체가 단위면적당 방출하는 복사열량은 섭씨온도(℃)의 4제곱에 비례하며, 빈(Wien)의 변위 법칙에 따르면 복사체의 온도가 높아질수록 최대 복사에너지 파장(λmax)은 길어진다.",
+    "text": "키르히호프(Kirchhoff)의 법칙에 따르면 열평형 상태에서 흑체(Black Body)의 방사율(ε)은 1이고 흡수율(α)은 0이며, 두 면이 정면으로 마주 볼수록 형태계수(F12)는 0에 가까워진다.",
     "isCorrect": false,
-    "source": "🎯 2회독 주변확장·악질함정 (스테판-볼츠만 절대온도 K⁴ 및 빈의 변위 법칙 파장 반비례)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 복사 법칙의 단골 함정 2개를 동시에 심었습니다! 첫째, 스테판-볼츠만 법칙의 복사열량은 섭씨온도(℃)가 아니라 '절대온도(K)의 4제곱'에 비례합니다! 둘째, 빈의 변위 법칙(λmax·T = 일정)에 따라 온도가 높아질수록 최대 에너지 파장은 길어지는 것이 아니라 '짧아집니다(단파장·청백색 이동)'!",
+    "source": "🎯 2회독 주변확장 (키르히호프 법칙·흑체·형태계수)",
+    "explanation": "키르히호프의 법칙에 따라 열평형 상태에서 물체의 방사율(ε)과 흡수율(α)은 같으며 흑체는 α = ε = 1입니다. 또한 두 면이 정면으로 마주 볼수록 형태계수(0에서 1 이하)는 1에 가까워집니다. 💡 1초 판별 팁: 흑체 = ε = α = 1(전부 흡수·전부 방출), 정면 마주봄 ➔ 형태계수 최대(1)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_005",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "키르히호프",
+    "hlKey": "키르히호프(Kirchhoff)의 법칙",
     "paraIdx": 1,
     "isEssential": true
   },
@@ -1016,7 +1364,7 @@
     "text": "빈(Wien)의 변위 법칙에 따르면 흑체가 방출하는 복사에너지의 최대 강도를 나타내는 파장(λmax)은 물체의 절대온도(T)에 정비례한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (빈의 변위 법칙)",
-    "explanation": "빈(Wien)의 변위 법칙(λmax · T = 2,898 μm·K)에 따르면 복사에너지 최대 강도 파장(λmax)은 절대온도(T)에 '반비례'합니다(온도가 높아질수록 파장이 짧아짐).",
+    "explanation": "빈(Wien)의 변위 법칙(λmax · T = 일정)에 따르면 복사에너지 최대 강도 파장(λmax)은 절대온도(T)에 '반비례'합니다(온도가 높아질수록 파장이 짧아져 청백색으로 이동). 💡 1초 판별 팁: 고온 화염 = 짧은 파장(단파장)! 따라서 λmax와 T는 정비례가 아니라 반비례!",
     "origQId": "",
     "id": "PRED_SCI_02_03_006",
     "tier": "pred",
@@ -1029,17 +1377,17 @@
   },
   {
     "grade": "S",
-    "text": "식물성 유지(기름)의 불포화도를 나타내는 요오드값(Iodine Value)이 작을수록 공기 중 산소와 쉽게 결합하여 산화열에 의한 자연발화 위험성이 높아진다.",
+    "text": "자연발화 현상에서 수분(습도)은 양과 무관하게 항상 산화반응 촉매 및 흡착열 발생으로만 작용하므로, 가연물에 수분이 과도하게 많아질수록 자연발화 위험성은 한없이 커진다.",
     "isCorrect": false,
-    "source": "🎯 2회독 주변확장 (요오드값과 자연발화 위험성)",
-    "explanation": "요오드값(요오드가)이 '클수록' 분자 내 불포화 이중결합이 많아 공기 중 산소와 쉽게 산화반응을 일으키므로 산화열에 의한 자연발화 위험성이 높아집니다.",
+    "source": "🎯 2회독 주변확장 (자연발화 수분의 양면성)",
+    "explanation": "수분(습도)의 양면성을 놓친 함정입니다! 적당한 수분은 산화와 미생물 번식을 돕는 촉매·흡착열로 작용해 자연발화를 촉진하지만, '과도한 수분'은 물의 큰 증발잠열로 온도를 빼앗아 오히려 자연발화를 억제합니다. 💡 1초 판별 팁: '적당한 수분 = 촉진' vs '과도한 수분 = 증발잠열로 냉각·억제' 양면성 주의!",
     "origQId": "",
     "id": "PRED_SCI_02_03_007",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "요오드값",
+    "hlKey": "과도한 수분은 물의 큰 증발잠열로",
     "paraIdx": 2,
     "isEssential": true
   },
@@ -1048,14 +1396,14 @@
     "text": "제4류 동식물유류 중 올리브유, 피마자유, 땅콩기름은 요오드값이 130 이상인 건성유에 해당하여 공기 중 산소와 결합할 때 산화열에 의해 자연발화할 위험성이 가장 높고, 아마인유, 들기름, 동유는 요오드값이 100 이하인 불건성유로서 자연발화 위험성이 낮다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (건성유 아마인유·들기름 vs 불건성유 올리브유·피마자유 스왑)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 '건성유'가 '아마인유·들기름·동유·해바라기유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 '불건성유'가 '올리브유·피마자유·땅콩기름·야자유'입니다!",
+    "explanation": "건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 건성유가 '아마인유·들기름·동유·해바라기유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 불건성유가 '올리브유·피마자유·땅콩기름·야자유'입니다. 💡 1초 판별 팁: '아·들·동·해·콩 = 건성유(130↑, 위험)', '올·피·땅·야 = 불건성유(100↓, 안전)'!",
     "origQId": "",
     "id": "PRED_SCI_02_03_008",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "건성유",
+    "hlKey": "유지류 요오드값 서열",
     "paraIdx": 2,
     "isEssential": true
   },
@@ -1063,15 +1411,15 @@
     "grade": "A",
     "text": "자연발화 현상 중 활성탄이나 목탄 분말은 미생물의 발효열에 의해 발화하고, 셀룰로이드나 니트로셀룰로오스는 흡착열에 의해 발화한다.",
     "isCorrect": false,
-    "source": "🎯 2회독 주변확장 (자연발화 4대 열원 매칭)",
-    "explanation": "다공성 물질인 활성탄·목탄 분말·환원니켈은 기체 분자가 표면에 달라붙는 '흡착열'에 의해 자연발화하고, 제5류 위험물인 셀룰로이드·니트로셀룰로오스는 자체 '분해열'에 의해 자연발화합니다(발효열은 퇴비·건초·곡물).",
+    "source": "🎯 2회독 주변확장 (자연발화 5대 열원 매칭)",
+    "explanation": "다공성 물질인 활성탄·목탄 분말·환원니켈은 기체 분자가 표면에 달라붙는 '흡착열'에 의해 자연발화하고, 제5류 위험물인 셀룰로이드·니트로셀룰로오스는 자체 '분해열'에 의해 자연발화합니다(발효열은 퇴비·건초·곡물). 💡 1초 판별 팁: 활성탄(다공성) = 흡착열 / 셀룰로이드(5류) = 분해열 / 퇴비·건초 = 발효열!",
     "origQId": "",
     "id": "PRED_SCI_02_03_009",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "흡착열",
+    "hlKey": "다공성 표면에 기체 분자가 달라붙으며",
     "paraIdx": 2,
     "isEssential": true
   },
@@ -1080,14 +1428,14 @@
     "text": "람베르트·비어(Lambert-Beer) 법칙[I = I₀·exp(-Cs·L)]에 따라 거리 10 m인 연기층을 통과한 빛의 세기(I)가 초기 세기(I₀)의 e⁻¹배(약 36.8%)로 감소했을 때 연기의 감광계수(Cs)는 1.0 m⁻¹이다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (감광계수 Cs 소수점 계산 착시)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] Cs × L = 1이어야 I = I₀·exp(-1)이 되므로, 거리 L = 10 m일 때 감광계수 Cs = 1 ÷ 10 = '0.1 m⁻¹'입니다! (소수점 한 자리 착시 함정)",
+    "explanation": "Cs × L = 1이어야 I = I₀·exp(-1)이 되므로, 거리 L = 10 m일 때 감광계수 Cs = 1 ÷ 10 = '0.1 m⁻¹'입니다. 💡 1초 판별 팁: 소수점 한 자리 착시 함정! 지수부(-Cs·L)가 -1이 되려면 10 m × 0.1 m⁻¹ = 1!",
     "origQId": "",
     "id": "PRED_SCI_02_03_010",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "람베르트·비어",
+    "hlKey": "감광계수는 1.0이 아니라",
     "paraIdx": 4,
     "isEssential": true
   },
@@ -1096,30 +1444,30 @@
     "text": "화재 시 동일한 연기 농도(감광계수 Cs) 조건에서는 스스로 빛을 내는 유도등(발광 표지)보다 빛을 반사하는 일반 벽면이나 출입문(비발광 표지)의 가시거리가 약 2.5배 더 길다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (발광 표지 vs 비발광 표지 가시거리)",
-    "explanation": "가시거리 공식(D = K ÷ Cs)에서 스스로 빛을 내는 발광 표지(유도등)의 상수 K는 5에서 10이고, 비발광 표지(반사체)의 K는 2에서 4입니다. 따라서 발광 표지(유도등)의 가시거리가 비발광 표지보다 약 2.5배 더 깁니다!",
+    "explanation": "가시거리 공식(D = Kc ÷ Cs)에서 스스로 빛을 내는 발광 표지(유도등)의 상수는 5에서 10이고, 비발광 표지(반사체)의 상수는 2에서 4입니다. 따라서 발광 표지(유도등)의 가시거리가 비발광 표지보다 약 2.5배에서 3배 더 깁니다. 💡 1초 판별 팁: 캄캄한 연기 속에서는 불빛 나는 유도등(K=5에서 10)이 벽(K=2에서 4)보다 2.5배 더 멀리 보입니다!",
     "origQId": "",
     "id": "PRED_SCI_02_03_011",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "발광 표지",
+    "hlKey": "가시거리 반비례 공식",
     "paraIdx": 4,
     "isEssential": true
   },
   {
     "grade": "A",
-    "text": "연기 속에서의 가시거리(V)는 반사 물체(벽·바닥·문)보다 자체 발광 물체(유도등)를 볼 때 약 2.5배에서 3배 더 길며, 건물 내부 구조에 익숙하지 않은 불특정 다수인의 피난 한계 감광계수(0.5 m⁻¹)는 내부 구조에 익숙한 재실자의 한계 감광계수(0.15 m⁻¹)보다 크다.",
+    "text": "연기 속에서의 가시거리는 반사 물체보다 자체 발광 물체(유도등)를 볼 때 약 2.5배에서 3배 더 길며, 건물 내부 구조에 익숙하지 않은 불특정 다수인의 피난 한계 감광계수(0.5 m⁻¹)는 내부 구조에 익숙한 재실자의 한계 감광계수(0.15 m⁻¹)보다 크다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (불특정 다수인 한계 감광계수 0.15m⁻¹ vs 익숙한 자 0.5m⁻¹)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 앞절(유도등 가시거리가 2.5배에서 3배 김)은 맞지만 뒷절의 감광계수 수치를 뒤집었습니다! 건물에 익숙하지 않은 백화점·극장 손님(불특정 다수)은 연기가 조금만 차도 피난이 불가능하므로 한계 감광계수가 '0.15 m⁻¹(가시거리 15 m에서 20 m)'로 매우 낮고, 익숙한 사람은 '0.5 m⁻¹(가시거리 4 m에서 5 m)'까지 버틸 수 있습니다!",
+    "explanation": "앞절(유도등 가시거리가 2.5배에서 3배 김)은 맞지만 뒷절의 감광계수 수치를 뒤집었습니다! 건물에 익숙하지 않은 불특정 다수인은 연기가 조금만 차도 피난이 불가능하므로 한계 감광계수가 '0.15 m⁻¹(가시거리 15 m에서 20 m)'로 매우 낮고, 익숙한 사람은 '0.5 m⁻¹(가시거리 4 m에서 5 m)'까지 버틸 수 있습니다. 💡 1초 판별 팁: 익숙하지 않은 손님 = 더 옅은 연기(0.15)에서 한계 도달, 익숙한 사람 = 짙은 연기(0.5)까지 버팀!",
     "origQId": "",
     "id": "PRED_SCI_02_03_012",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "0.15",
+    "hlKey": "불특정 다수인(백화점·다중이용업소 손님)",
     "paraIdx": 4,
     "isEssential": true
   },
@@ -1128,7 +1476,7 @@
     "text": "고층건축물의 굴뚝효과(연돌효과)에 의한 실내외 압력차(ΔP)는 중성대로부터의 수직 거리(높이 h)에 정비례하고 실내외 온도차가 클수록 증가한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (굴뚝효과 압력차 공식 및 비례 인자)",
-    "explanation": "굴뚝효과 압력차 공식[ΔP = 3,460 · h · (1/To - 1/Ti)]에 따라 중성대로부터의 수직 거리(h)가 멀수록(초고층일수록), 그리고 실내외 온도차가 클수록 압력차가 비례하여 커집니다.",
+    "explanation": "굴뚝효과 압력차 공식[ΔP = 3,460 · h · (1/To - 1/Ti)]에 따라 중성대로부터의 수직 거리(h)가 멀수록(초고층일수록), 그리고 실내외 온도차가 클수록 압력차가 비례하여 커집니다. 💡 핵심 암기 팁: 초고층 건물일수록 h가 커져 계단실 압력차가 폭증!",
     "origQId": "",
     "id": "PRED_SCI_02_03_013",
     "tier": "pred",
@@ -1140,34 +1488,35 @@
     "isEssential": true
   },
   {
-    "grade": "A",
-    "text": "여름철 냉방으로 인해 고층건축물 내부 온도가 외부 온도보다 낮을 때에는 수직 샤프트 내부의 공기가 아래에서 위로 상승하는 정상 굴뚝효과(정연돌효과)가 발생한다.",
+    "grade": "S",
+    "text": "화재 현장에서 유류나 전기 절연유가 저온에서 열분해되며 미세 입자가 빛을 산란할 때에는 흑색 연기가 관찰되고, 석유류·고무·플라스틱이 산소 부족으로 고온 불완전연소하며 다량의 검댕을 내뿜을 때에는 청색 연기가 관찰된다.",
     "isCorrect": false,
-    "source": "🎯 2회독 주변확장 (정상 굴뚝효과 vs 역굴뚝효과)",
-    "explanation": "실내 온도가 실외보다 높을 때(겨울철 난방·실내 화재 시) 공기가 상승하는 것이 정상 굴뚝효과이고, 여름철 냉방으로 실내 온도가 실외보다 낮을 때는 차고 무거운 실내 공기가 위에서 아래로 하강하는 '역굴뚝효과(역연돌효과)'가 발생합니다.",
+    "source": "🎯 2회독 주변확장·사각지대 (연기 색깔 4종 판별)",
+    "explanation": "[사각지대 킬러] 연기 색깔 4종(백·청·회·흑) 중 청색 연기와 흑색 연기의 판별 조건을 맞바꿨습니다! 유류·전기 절연유·화학물질의 저온 열분해 시 관찰되는 것이 '청색(청백색) 연기'(화재 표시 색상 C급 전기화재 상징)이고, 탄소 함량 높은 가연물의 고온 불완전연소·검댕 다량 발생 최성기 신호가 '흑색 연기'입니다. 💡 1초 판별 팁: 백(수증기·초기) / 청(전기·절연유 저온 열분해) / 회(전환기) / 흑(탄소 불완전연소·최성기 검댕)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_014",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "역굴뚝효과",
-    "paraIdx": 5,
-    "isEssential": false
+    "hlKey": "청색(청백색) 연기",
+    "paraIdx": 4,
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "A",
-    "text": "건축물 화재 시 연기의 수평 방향 이동속도는 초당 3 m에서 5 m로서 수직 방향 이동속도(초당 0.5 m에서 1 m)보다 훨씬 빠르다.",
-    "isCorrect": false,
+    "text": "건축물 화재 시 연기의 수평 방향 이동속도는 초당 0.5 m에서 1.0 m 정도로 사람의 보행 속도와 비슷하지만, 수직 방향 이동속도는 초당 2 m에서 5 m로 수평 속도보다 훨씬 빠르다.",
+    "isCorrect": true,
     "source": "🎯 2회독 주변확장 (연기의 수평 vs 수직 이동속도)",
-    "explanation": "수치가 반대로 바뀌었습니다. 복도 등 수평 방향 연기 이동속도는 초당 0.5 m에서 1 m(보행 속도 수준)이고, 계단실·승강로 등 수직 방향 이동속도가 초당 2 m에서 5 m로 수평 속도보다 훨씬 빠릅니다.",
+    "explanation": "복도 등 수평 방향 연기 이동속도는 초당 0.5 m에서 1.0 m(보행 속도 수준)이고, 계단실·승강로 등 수직 방향 이동속도는 초당 2 m에서 5 m로 수평 속도보다 약 3배에서 5배 이상 빠릅니다. 💡 핵심 암기 팁: 수평(보행 속도 0.5에서 1 m/s) ≪ 수직(2에서 5 m/s)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_015",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "수평 방향 이동속도",
+    "hlKey": "보행 속도와 비슷합니다",
     "paraIdx": 3,
     "isEssential": false
   },
@@ -1176,55 +1525,57 @@
     "text": "연소생성 독성가스 중 염화수소(HCl, 허용농도 5 ppm), 이산화황(SO₂, 5 ppm), 암모니아(NH₃, 25 ppm), 일산화탄소(CO, 50 ppm), 이산화탄소(CO₂, 5,000 ppm)를 비교하면 허용농도(TLV) 수치가 가장 큰 이산화탄소가 인체 독성이 가장 강하다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (독성가스 허용농도 TLV 수치 대소와 독성 강도 반비례)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 각 가스의 TLV 수치는 모두 정확하지만 결론이 정반대입니다! 허용농도(TLV)나 반수치사농도(LC₅₀)는 수치가 '작을수록' 극소량만 마셔도 치명적인 맹독성 가스입니다! (독성 서열: 포스겐·아크롤레인 0.1 ppm > 염소 1 ppm > 황화수소·시안화수소·이산화질소 10 ppm > 일산화탄소 50 ppm > 이산화탄소 5,000 ppm)",
+    "explanation": "각 가스의 TLV 수치는 모두 정확하지만 결론이 정반대입니다! 허용농도(TLV)는 수치가 '작을수록' 극소량만 마셔도 치명적인 맹독성 가스이고, 수치가 클수록 독성이 약한 가스입니다. 💡 1초 판별 팁: TLV는 '허용할 수 있는 양'이므로 수치가 작을수록 맹독(포스겐 0.1 최강 vs CO₂ 5,000 최약)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_016",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "염화수소",
+    "hlKey": "수치가 작을수록 극소량만 흡입해도",
     "paraIdx": 6,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "식용유(유지류)가 묻은 걸레나 톱밥 뭉치에서 불포화지방산이 공기 중의 산소와 결합하여 자연발화를 일으키는 현상은 미생물의 호흡열에 의한 발열이 주원인이다.",
+    "text": "식용유(유지류)가 묻은 걸레나 톱밥 뭉치에서 불포화지방산이 공기 중의 산소와 결합하여 자연발화를 일으키는 현상은 미생물의 발효열에 의한 발열이 주원인이다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (유지류 자연발화 산화열 vs 발효열 바꿔치기)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 퇴비·건초·석탄 가루가 자연발화하는 것은 '발효열(미생물 호흡열)'이나 '흡착열' 때문이지만, 건성유·식용유(유지류)의 불포화지방산이 산소와 결합해 자연발화하는 것은 '산화열'의 축적 때문입니다!",
+    "explanation": "퇴비·건초·곡물이 자연발화하는 것은 미생물의 '발효열' 때문이지만, 건성유·식용유(유지류)의 불포화지방산이 산소와 결합해 자연발화하는 것은 '산화열'의 축적 때문입니다. 💡 1초 판별 팁: 기름 걸레(유지류) = 발효열(X)이 아니라 '산화열'(O)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_017",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "아크롤레인",
-    "paraIdx": 6,
+    "hlKey": "불포화지방산이",
+    "paraIdx": 2,
     "isEssential": true
   },
   {
-    "grade": "A",
-    "text": "염소(Cl₂), 염화수소(HCl), 불화수소(HF), 포스겐(COCl₂), 아크롤레인은 허용농도(TLV, ppm)가 큰 순서대로 나열할 때 포스겐 > 아크롤레인 > 염소 > 불화수소 > 염화수소 순이다.",
+    "grade": "S",
+    "text": "독성가스 노출 기준 중 작업 시간 중 단 한 순간도 초과해서는 안 되는 절대 최고 한계 농도를 TLV-STEL이라 하고, 1회 15분간 연속 노출될 수 있는 단시간 노출기준을 TLV-C라 한다.",
     "isCorrect": false,
-    "source": "🎯 2회독 주변확장 (자극성 독성가스 TLV 대소 서열)",
-    "explanation": "허용농도(TLV)는 수치가 클수록 독성이 약합니다. 염화수소(HCl, 5 ppm) > 불화수소(HF, 3 ppm) > 염소(Cl₂, 1 ppm) > 아크롤레인·포스겐(각 0.1 ppm) 순으로 허용농도가 높습니다!",
+    "source": "🎯 2회독 주변확장·사각지대 (독성가스 4대 노출기준 TWA·STEL·C·IDLH)",
+    "explanation": "[사각지대 킬러] TLV-STEL과 TLV-C의 정의를 맞바꿨습니다! 1회 15분간 연속 노출될 수 있는 단시간 노출기준이 'TLV-STEL'(1일 4회 이하, 60분 이상 간격)이고, 단 한 순간도 초과해서는 안 되는 천장값(Ceiling)이 'TLV-C'입니다(30분 내 자력 탈출 능력 상실·공기호흡기 필수 착용 기준은 IDLH). 💡 1초 판별 팁: STEL = Short-Term(15분), C = Ceiling(천장값, 단 한 순간도 초과 금지)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_018",
     "tier": "pred",
     "trapTags": [
-      "비례·증감·물성"
+      "비례·증감·물성",
+      "화재현상·비교개념"
     ],
-    "hlKey": "염소",
+    "hlKey": "독성가스 노출 기준 4대 지표",
     "paraIdx": 6,
-    "isEssential": false
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "S",
-    "text": "화재로 인해 실내 공기 중 산소(O₂) 농도가 15 vol%에서 16 vol%로 낮아지면 수분 내에 의식을 잃고 뇌사·사망에 이르며, 산소 농도가 6 vol% 이하로 낮아질 때 비로소 일반 가연물의 불꽃 연소가 중단된다.",
+    "text": "화재로 인해 실내 공기 중 산소(O₂) 농도가 15 vol%에서 16 vol%로 낮아지면 수분 내에 의식을 잃고 즉시 호흡 정지·사망에 이르며, 산소 농도가 6 vol% 이하로 낮아질 때 비로소 일반 가연물의 불꽃 연소가 중단된다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (산소 농도 15%에서 16% 불꽃 중단 vs 6% 이하 호흡정지·사망)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 산소 농도 15%에서 16%와 6% 이하의 현상을 서로 맞바꿨습니다! 산소 농도가 '15%에서 16%'로 낮아질 때 일반 가연물의 불꽃 연소가 중단되고 어지럼증·호흡 증가가 시작되며, 수분 내 의식 상실 및 호흡 정지·사망에 이르는 치명적 농도는 '6 vol% 이하'일 때입니다!",
+    "explanation": "산소 농도 15%에서 16%와 6% 이하의 현상을 서로 맞바꿨습니다! 산소 농도가 '15%에서 16%'로 낮아질 때 일반 가연물의 불꽃 연소가 중단되고 어지럼증·호흡 증가가 시작되며, 즉시 호흡 정지·사망에 이르는 치명적 농도는 '6 vol% 이하'일 때입니다. 💡 1초 판별 팁: 15에서 16% = 불꽃 소멸 / 10에서 14% = 자력대피 불능 / 6에서 10% = 실신·6에서 8분 사망 / 6% 이하 = 즉시 호흡정지!",
     "origQId": "",
     "id": "PRED_SCI_02_03_019",
     "tier": "pred",
@@ -1240,7 +1591,7 @@
     "text": "공기 중 산소 농도가 6 vol%에서 10 vol% 구간으로 낮아지더라도 재실자의 의식과 판단력은 정상적으로 유지되어 자력으로 대피할 수 있다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (산소 결핍 6%에서 10% 실신·사망)",
-    "explanation": "산소 농도가 10%에서 14%만 되어도 판단력 상실과 근육 운동 불능으로 자력 탈출이 불가능해지며, 6%에서 10% 구간에서는 구토와 함께 실신(의식 불명)하여 6분에서 8분 내에 사망합니다.",
+    "explanation": "산소 농도가 10%에서 14%만 되어도 판단력 상실과 근육 운동 불능으로 자력 탈출이 불가능해지며, 6%에서 10% 구간에서는 구토와 함께 실신(의식 불명)하여 6분에서 8분 내에 사망합니다. 💡 1초 판별 팁: 10에서 14%부터 이미 자력 대피 불가! 6에서 10%는 실신·사망 구간!",
     "origQId": "",
     "id": "PRED_SCI_02_03_020",
     "tier": "pred",
@@ -1256,7 +1607,7 @@
     "text": "일산화탄소(CO)와 시안화수소(HCN)는 중추신경 억제와 조직 산소 결핍을 통해 의식 상실(마취 효과)을 유발하는 나르코시스(Narcosis)성 질식 가스에 해당한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (나르코시스 마취성 가스 vs 자극성 가스)",
-    "explanation": "화재 독성가스 중 CO, HCN, 고농도 CO₂ 및 저산소증은 의식 불명(마취)과 행동 불능을 일으키는 나르코시스(Narcosis) 유발 인자이고, HCl·HF·SO₂·NO₂·포스겐·아크롤레인은 점막과 폐를 손상시키는 자극성(Irritant) 가스입니다.",
+    "explanation": "화재 독성가스 중 CO, HCN, 고농도 CO₂ 및 저산소증은 의식 불명(마취)과 행동 불능을 일으키는 나르코시스(Narcosis) 유발 인자이고, HCl·HF·SO₂·NO₂·포스겐·아크롤레인은 점막과 폐를 손상시키는 자극성(Irritant) 가스입니다. 💡 핵심 암기 팁: 마취·질식(나르코시스) = CO·HCN·고농도 CO₂·저산소!",
     "origQId": "",
     "id": "PRED_SCI_02_03_021",
     "tier": "pred",
@@ -1272,14 +1623,14 @@
     "text": "화재 현장에서 이산화탄소(CO₂)가 호흡 심도와 호흡 속도를 증가시켜 일산화탄소(CO)나 시안화수소(HCN)의 흡입을 가속화함으로써 복합 독성이 개별 독성의 합보다 훨씬 커지는 현상을 상승작용(Synergism)이라 한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (독성가스의 상승작용 Synergism)",
-    "explanation": "두 가지 이상의 독성가스가 공존할 때 이산화탄소의 호흡중추 자극 효과 등으로 인해 단독 노출 시의 단순 합(상가작용)보다 치사 독성이 몇 배로 증폭되는 현상을 상승작용(Synergism)이라 합니다.",
+    "explanation": "두 가지 이상의 독성가스가 공존할 때 이산화탄소의 호흡중추 자극 효과 등으로 인해 단독 노출 시의 단순 합(상가작용)보다 치사 독성이 몇 배로 증폭되는 현상을 상승작용(Synergism)이라 합니다. 💡 핵심 암기 팁: CO₂ + CO 공존 시 독성 증폭(1+1 > 2) = 상승작용(Synergism)!",
     "origQId": "",
     "id": "PRED_SCI_02_03_022",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "상승작용",
+    "hlKey": "개별 독성의 단순 합보다 몇 배로 증폭되는 현상",
     "paraIdx": 7,
     "isEssential": false
   },
@@ -1288,15 +1639,15 @@
     "text": "불소 수지(테플론)나 불소계 청정소화약제가 고온에서 열분해될 때 발생하는 독성가스는 포스겐(COCl₂)이다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (불화수소 HF vs 포스겐 COCl₂ 발생원)",
-    "explanation": "포스겐(COCl₂)은 염소(Cl) 함유 플라스틱(PVC)이나 사염화탄소 열분해 시 발생하며, 불소(F) 수지나 불소계 청정소화약제(HFC-227ea 등)가 열분해될 때 발생하는 부식성 독성가스는 '불화수소(HF, TLV 3 ppm)'입니다.",
+    "explanation": "포스겐(COCl₂)은 염소(Cl) 함유 플라스틱(PVC)이나 사염화탄소 열분해 시 발생하며, 불소(F) 수지나 불소계 청정소화약제(HFC-227ea 등)가 열분해될 때 발생하는 부식성 독성가스는 '불화수소(HF, TLV 3 ppm)'입니다. 💡 1초 판별 팁: 원소 기호 1초 판별! '불소(F) 수지 ➔ 불화수소(HF)' vs '염소(Cl) 플라스틱·사염화탄소 ➔ 포스겐(COCl₂)'!",
     "origQId": "",
     "id": "PRED_SCI_02_03_023",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "불화수소",
-    "paraIdx": 6,
+    "hlKey": "불소 수지(테플론)나 불소계 청정소화약제",
+    "paraIdx": 8,
     "isEssential": false
   },
   {
@@ -1304,14 +1655,14 @@
     "text": "고층건축물에서 엘리베이터(승강기)가 수직 승강로를 고속으로 이동할 때 승강로 상·하부의 압력차로 인해 연기가 인접 층으로 빨려 들어가거나 밀려 나가는 현상을 피스톤 효과(Piston Effect)라 한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (승강기 피스톤 효과)",
-    "explanation": "연기유동 5대 요인(부력·굴뚝효과·풍압·공조설비·피스톤 효과) 중 승강기 운행에 의해 수직 샤프트 내 기류와 연기가 이동하는 현상이 피스톤 효과입니다.",
+    "explanation": "연기유동 5대 요인(부력·굴뚝효과·풍압·공조설비·피스톤 효과) 중 승강기 운행에 의해 수직 샤프트 내 기류와 연기가 이동하는 현상이 피스톤 효과입니다. 💡 핵심 암기 팁: 승강기 상하 주행 압력차 연기 유동 = 피스톤 효과!",
     "origQId": "",
     "id": "PRED_SCI_02_03_024",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "피스톤 효과",
+    "hlKey": "피스톤 효과(Piston Effect)",
     "paraIdx": 3,
     "isEssential": false
   }

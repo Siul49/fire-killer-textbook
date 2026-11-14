@@ -90,33 +90,39 @@
         <h2 class="text-xl font-bold text-white mb-3">1. 연소범위(폭발한계)·위험도(H)와 르샤틀리에 식 및 최소산소농도(MOC)</h2>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제1장에서 우리는 가연성 액체 표면에 피어오른 증기 농도가 <strong>연소하한계(LFL)</strong>에 도달할 때의 최저 액체온도를 인화점이라고 배웠고, 완전연소 화학양론농도(C<sub>st</sub>)로부터 존스(Jones) 식을 이용해 연소하한계와 상한계를 추산하는 원리를 확인했습니다. 공기 중에 가연성 가스가 너무 조금 섞여 있으면(당량비 &phi; &lt; 1인 희박 상태 극단화) 분자 간 거리가 멀어 연소열이 이웃 분자로 전달되지 못해 불이 꺼지고, 반대로 가연성 가스가 너무 가득 차 있으면(당량비 &phi; &gt; 1인 과농 상태 극단화) 반응할 산소가 부족해 불이 붙지 못합니다.
-            <span class="prose-item"><strong>① 연소범위(폭발범위)의 정의와 온도 · 압력 영향</strong></span>
-            <span class="prose-sub">&bull; 점화원을 주었을 때 화염이 전파될 수 있는 공기 중 가연성 가스의 부피 백분율(vol%) 최저 한계를 <strong>연소하한계(LFL, 폭발하한계)</strong>, 최고 한계를 <strong>연소상한계(UFL, 폭발상한계)</strong>라 하며, 두 한계 사이의 폭(UFL &minus; LFL)을 <strong>연소범위</strong>라 부릅니다.</span>
-            <span class="prose-sub">&bull; 일반적으로 가연성 가스의 온도나 초기 압력이 상승하면(탄화수소 가스는 초기 압력 상승 시 하한계는 거의 일정하고 상한계가 크게 상승하여) 연소범위가 넓어지나, <strong>일산화탄소(CO)는 예외적으로 압력이 상승할 때 연소범위가 좁아집니다</strong>.</span>
-            <span class="prose-item"><strong>② 위험도(H) 산정 공식</strong>: 연소범위의 폭이 넓고 연소하한계(LFL)가 낮을수록 미량 누출 시 즉시 착화하므로 더 위험합니다.</span>
+            산업현장의 지하 맨홀이나 밀폐된 LPG 저장실·배관실에 가연성 가스가 누출될 때, 왜 어떤 때는 용접 불꽃이 튀어도 불이 붙지 않고 어떤 때는 건물 전체를 날려버리는 대형 가스폭발로 번질까요? 직전 제1장에서 우리는 가연성 액체 표면에 피어오른 증기 농도가 일정 임계치인 <strong>연소하한계(LFL)</strong>에 도달할 때의 최저 액체온도를 인화점이라고 배웠고, 완전연소가 딱 맞아떨어지는 이론 농도인 <strong>화학양론농도(C<sub>st</sub>)</strong>와 <strong>당량비(&phi;)</strong>를 산출했습니다. 또한 제1장 말미에서 확인했듯이 가연성 혼합기가 화학양론농도(&phi; &approx; 1.0) 부근일 때는 <strong>최소발화에너지(MIE)</strong>가 극소로 떨어져 미세한 정전기 스파크만으로도 즉각 착화하지만, 그 중심에서 벗어나면 점화에 필요한 에너지 장벽이 급격히 치솟습니다. 화염이 꺼지지 않고 이웃한 미연소 혼합기 층으로 스스로 번져 나가려면, 한 층이 타면서 방출한 반응열이 바로 옆 층을 제1장의 <strong>활성화에너지(E<sub>a</sub>)</strong> 장벽 이상으로 데워 주어야 합니다. 그런데 공기 중에 가연성 가스가 너무 적으면(당량비 &phi; &lt; 1의 극단적 희박 상태) 연료 분자 사이가 너무 멀어 열이 닿기 전에 식어 버려 불이 꺼지고, 반대로 가연성 가스가 너무 많아도(당량비 &phi; &gt; 1의 극단적 과농 상태) 반응할 산소가 부족할 뿐만 아니라 남은 가연성 가스가 오히려 연소열을 빼앗아 냉각시키므로 불이 붙지 못합니다. 바로 이 현장 폭발 통제의 절박한 필요성에서 제1장의 화학양론농도(C<sub>st</sub>)·존스 식·최소발화에너지로부터 <strong>연소범위(LFL·UFL)와 위험도(H)</strong>가 필연적으로 도출됩니다.
+            <span class="prose-item"><strong>① 연소범위(폭발범위)의 정의와 존스(Jones) 식 연계</strong></span>
+            <span class="prose-sub">&bull; 점화원을 주었을 때 화염이 스스로 전파될 수 있는 공기 중 가연성 가스(증기)의 부피 백분율(vol%) 최저 한계를 <strong>연소하한계(LFL, 폭발하한계)</strong>, 최고 한계를 <strong>연소상한계(UFL, 폭발상한계)</strong>라 하며, 두 한계 사이의 폭(UFL &minus; LFL)을 <strong>연소범위</strong>라 부릅니다.</span>
+            <span class="formula-box"><span class="formula-badge">제1장 연계 · 존스(Jones) 연소범위 추산식</span><span class="formula-eq">LFL = 0.55 &times; C<sub>st</sub> , &nbsp;UFL = 3.5 &times; C<sub>st</sub> &nbsp;|&nbsp; C<sub>st</sub> = 100 &divide; [1 + (x &divide; 0.21)] [vol%]</span><span class="formula-ex">💡 <strong>인과 연결</strong> | 제1장에서 구한 연료 1몰당 이론산소량(x몰)으로 <strong>완전연소 화학양론농도(C<sub>st</sub>)</strong>를 먼저 도출하면, 탄화수소 가스의 연소하한계는 약 0.55배, 상한계는 약 3.5배에서 형성되며 이 LFL이 곧바로 뒤이어 배울 <strong>최소산소농도(MOC)</strong> 계산의 출발점이 됩니다.</span></span>
+            <span class="prose-item"><strong>② 온도 · 압력 · 산소농도 · 불활성가스 첨가에 따른 연소범위 변화 및 예외</strong></span>
+            <span class="prose-sub">&bull; <strong>온도 상승(예외 없음)</strong>: 혼합기의 초기 온도가 높아지면 분자 운동에너지가 커져 활성화에너지 장벽을 쉽게 넘으므로, <strong>하한계(LFL)는 낮아지고 상한계(UFL)는 높아져 연소범위가 항상 넓어집니다</strong>.</span>
+            <span class="prose-sub">&bull; <strong>압력 상승 및 2대 예외(CO · H<sub>2</sub>)</strong>: 초기 압력이 상승하면 분자 밀도와 유효충돌 횟수가 증가하므로 일반 탄화수소 가스는 <strong>하한계(LFL)는 거의 일정하고 상한계(UFL)가 크게 상승하여 연소범위가 넓어집니다</strong>(반대로 감압하면 범위가 좁아져 임계저압 이하에서는 착화 불가). 그러나 <strong>일산화탄소(CO)는 유일한 대표 예외로서 압력이 상승할 때 연소상한계가 감소하여 오히려 연소범위가 좁아지며</strong>, <strong>수소(H<sub>2</sub>)</strong>는 압력 증가 시 처음에는 연소범위가 다소 좁아지다가 고압 구간 이후 다시 넓어지는 특이 거동을 보입니다.</span>
+            <span class="prose-sub">&bull; <strong>산소(O<sub>2</sub>) 농도 증가</strong>: 일반 공기(산소 21 vol%) 대신 산소 농도를 높이거나 순수 산소(O<sub>2</sub> 100%) 중에서 연소시키면 열을 빼앗는 질소(N<sub>2</sub>)가 줄고 산화력이 커져 <strong>하한계(LFL)는 거의 변화가 없으나 상한계(UFL)가 크게 상승하여 연소범위가 대폭 넓어집니다</strong>(수소: 공기 중 4%에서 75%까지 ➔ 순수 산소 중 4%에서 94%까지, 메테인: 공기 중 5%에서 15%까지 ➔ 순수 산소 중 5%에서 61%까지).</span>
+            <span class="prose-sub">&bull; <strong>불활성가스(N<sub>2</sub> · CO<sub>2</sub> · Ar 등) 첨가</strong>: 불활성가스가 연소열을 흡수하고 산소를 희석하므로 하한계는 약간 높아지고 상한계가 급격히 내려가 <strong>연소범위가 좁아지며</strong>, 결국 하한과 상한이 만나는 한계점 이후에는 폭발이 불가능해집니다.</span>
+            <span class="prose-item"><strong>③ 위험도(H) 산정 공식의 방재적 의도</strong>: 단순히 연소범위의 폭(UFL &minus; LFL)만으로 폭발 위험을 판정하면 위험한 오판이 생깁니다. 현장 가스 누출 사고는 농도 0%에서 서서히 올라가며 시작되므로, <strong>연소하한계(LFL)가 낮을수록 극소량 누출만으로 순식간에 착화·폭발 구간에 진입</strong>하기 때문입니다. 따라서 연소범위의 폭을 연소하한계로 나눈 <strong>위험도(H)</strong>가 클수록 미량 누출 시 즉각 폭발하는 고위험 가스로 판정합니다.</span>
             <span class="formula-box"><span class="formula-badge">가연성 가스 위험도(H) 공식</span><span class="formula-eq">H = (UFL &minus; LFL) &divide; LFL</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 연소범위가 A(2%에서 22%), B(4%에서 75%), C(1%에서 44%)인 가스의 위험도 ➔ A = (22 &minus; 2) &divide; 2 = <strong>10</strong>, B = (75 &minus; 4) &divide; 4 = <strong>17.75</strong>, C = (44 &minus; 1) &divide; 1 = <strong>43</strong>이므로 위험도가 낮은 순서는 <strong>A &lt; B &lt; C</strong>입니다.</span></span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            실전 시험에서 반복 출제되는 주요 가연성 가스와 증기의 <strong>연소범위 및 위험도(H) 서열</strong>과 <strong>혼합가스 르샤틀리에 식</strong>을 비교하면 다음과 같습니다.
-            <span class="prose-item"><strong>① 주요 가연성 가스 · 특수인화물의 연소범위 및 위험도(H) 비교</strong></span>
-            <span class="prose-sub">&bull; <strong>일반 가연성 기체 서열</strong>: <strong>아세틸렌(C<sub>2</sub>H<sub>2</sub>, 2.5%에서 81%까지, H = 31.4) &gt; 수소(H<sub>2</sub>, 4%에서 75%까지, H &approx; 17.8) &gt; 일산화탄소(CO, 12.5%에서 74%까지, H &approx; 4.9) &gt; 프로판(C<sub>3</sub>H<sub>8</sub>, 2.1%에서 9.5%까지, H &approx; 3.52)</strong> 순으로 위험도가 큽니다.</span>
-            <span class="prose-sub">&bull; <strong>파라핀계 탄화수소 서열</strong>: <strong>메탄(5%에서 15%까지, H = 2.0) &lt; 에탄(3%에서 12.4%까지, H &approx; 3.13) &lt; 프로판(2.1%에서 9.5%까지, H &approx; 3.52) &lt; 부탄(1.8%에서 8.4%까지, H &approx; 3.67)</strong> 순으로 탄소수가 많아 LFL이 가장 낮은 <strong>부탄의 위험도가 가장 큽니다</strong>.</span>
-            <span class="prose-sub">&bull; <strong>연소상한계 100% 분해폭발 가스</strong>: <strong>산화에틸렌(C<sub>2</sub>H<sub>4</sub>O, 3.0%에서 100%까지, H = 32.3)과 히드라진(N<sub>2</sub>H<sub>4</sub>, 4.7%에서 100%까지)</strong>은 상한계가 100퍼센트이므로 산소 혼합 없이도 분해폭발을 일으킵니다.</span>
-            <span class="prose-sub">&bull; <strong>이황화탄소 vs 디에틸에테르</strong>: 연소범위 폭 자체는 디에틸에테르(1.9%에서 48%까지, 폭 46.1%)가 조금 더 넓지만, 분모인 하한계가 더 낮은 <strong>이황화탄소(CS<sub>2</sub>, 1.2%에서 44%까지, H &approx; 35.7)의 위험도가 디에틸에테르(H &approx; 24.3)보다 훨씬 큽니다</strong>.</span>
-            <span class="prose-sub">&bull; <strong>휘발유 vs 암모니아</strong>: <strong>휘발유(약 1.4%에서 7.6%까지, H &approx; 4.43)</strong>는 범위 폭은 좁지만 하한계가 낮아 위험하고, <strong>암모니아(NH<sub>3</sub>, 약 15%에서 28%까지, H &approx; 0.87)</strong>는 위험도가 1 미만으로 폭발 위험성이 낮습니다.</span>
-            <span class="prose-item"><strong>② 혼합가스의 연소하한계(L<sub>m</sub>) — 르샤틀리에(Le Chatelier) 공식</strong></span>
+            실제 산업현장에서는 단일 가스보다 여러 가연성 가스가 섞여 누출되는 경우가 많고, 또 연소범위 폭이 좁더라도 하한계가 극도로 낮아 위험도가 치솟는 물질이 있는가 하면 아예 산소 없이 혼자 터지는 물질도 있습니다. 실전 시험에서 반복 출제되는 주요 가연성 가스와 증기의 <strong>연소범위 및 위험도(H) 서열</strong>과 <strong>혼합가스 르샤틀리에 식</strong>을 인과 원리로 정리하면 다음과 같습니다.
+            <span class="prose-item"><strong>① 주요 가연성 기체 · 특수인화물의 연소범위 및 위험도(H) 서열</strong></span>
+            <span class="prose-sub">&bull; <strong>일반 가연성 기체 서열</strong>: <strong>아세틸렌(C<sub>2</sub>H<sub>2</sub>, 2.5%에서 81%까지, H = 31.4) &gt; 수소(H<sub>2</sub>, 4%에서 75%까지, H &approx; 17.8) &gt; 일산화탄소(CO, 12.5%에서 74%까지, H &approx; 4.9) &gt; 프로판(C<sub>3</sub>H<sub>8</sub>, 2.1%에서 9.5%까지, H &approx; 3.52)</strong> 순으로 위험도가 큽니다(삼중결합을 지닌 아세틸렌과 확산·연소속도가 극히 빠른 수소가 최상위권을 차지합니다).</span>
+            <span class="prose-sub">&bull; <strong>파라핀계 탄화수소 서열 (제1장 탄소수 원리 연결)</strong>: 제1장에서 배웠듯 탄화수소 사슬이 길어질수록 C&minus;C 결합이 열에 약해지고 단위 몰당 연소열이 커져 버제스·휠러 법칙에 따라 LFL이 낮아지므로, <strong>메탄(5%에서 15%까지, H = 2.0) &lt; 에탄(3%에서 12.4%까지, H &approx; 3.13) &lt; 프로판(2.1%에서 9.5%까지, H &approx; 3.52) &lt; 부탄(1.8%에서 8.4%까지, H &approx; 3.67)</strong> 순으로 탄소수가 많아 LFL이 가장 낮은 <strong>부탄의 위험도가 가장 큽니다</strong>.</span>
+            <span class="prose-sub">&bull; <strong>연소상한계 100% 분해폭발 가스 (제1장 분해폭발 연결)</strong>: <strong>산화에틸렌(C<sub>2</sub>H<sub>4</sub>O, 3.0%에서 100%까지, H = 32.3)과 히드라진(N<sub>2</sub>H<sub>4</sub>, 4.7%에서 100%까지, H &approx; 20.3)</strong>은 불안정한 고리 구조나 질소 결합이 가열·충격 시 자체 발열 분해하므로, 연소상한계가 100퍼센트에 달해 공기(산소) 혼합이 전혀 없는 순수 가스 상태에서도 <strong>분해폭발</strong>을 일으킵니다.</span>
+            <span class="prose-sub">&bull; <strong>이황화탄소 vs 디에틸에테르 (분모 LFL 착시 주의)</strong>: 연소범위 폭(U &minus; L) 자체는 디에틸에테르(1.9%에서 48%까지, 폭 46.1%)가 이황화탄소(폭 42.8%)보다 조금 더 넓지만, 위험도 공식은 분모가 연소하한계(LFL)이므로 하한계가 더 낮은 <strong>이황화탄소(CS<sub>2</sub>, 1.2%에서 44%까지, H &approx; 35.7)의 위험도가 디에틸에테르(H &approx; 24.3)보다 훨씬 큽니다</strong>.</span>
+            <span class="prose-sub">&bull; <strong>휘발유 vs 암모니아</strong>: <strong>휘발유(약 1.4%에서 7.6%까지, H &approx; 4.43)</strong>는 범위 폭은 좁지만 하한계가 1.4퍼센트로 극히 낮아 소량 증기만으로 착화되어 매우 위험한 반면, <strong>암모니아(NH<sub>3</sub>, 약 15%에서 28%까지, H &approx; 0.87)</strong>는 하한계가 높아 위험도가 1 미만으로 폭발 위험성이 낮습니다.</span>
+            <span class="prose-item"><strong>② 혼합가스의 연소하한계(L<sub>m</sub>) — 르샤틀리에(Le Chatelier) 공식</strong>: 2종 이상의 가연성 가스가 서로 화학반응을 일으키지 않고 섞여 있을 때, 각 성분이 자기만의 연소하한계(L<sub>i</sub>) 대비 차지하는 체적 지분(V<sub>i</sub> &divide; L<sub>i</sub>)을 합산해 혼합가스 전체가 화염 전파 임계치에 도달하는 <strong>혼합가스 연소하한계(L<sub>m</sub>)</strong>를 산정합니다(특히 연소하한계 추산에 잘 맞으며, 상한계나 수소·이황화탄소 등 특이 반응 혼합물에는 오차가 생길 수 있습니다).</span>
             <span class="formula-box"><span class="formula-badge">르샤틀리에(Le Chatelier) 혼합가스 연소하한계 공식</span><span class="formula-eq">(100 &divide; L<sub>m</sub>) = (V<sub>1</sub> &divide; L<sub>1</sub>) + (V<sub>2</sub> &divide; L<sub>2</sub>) + (V<sub>3</sub> &divide; L<sub>3</sub>) &nbsp;&nbsp;[단, V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub> = 100 vol%]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 혼합가스 체적비가 V<sub>A</sub> 20%(L<sub>A</sub> 4%), V<sub>B</sub> 40%(L<sub>B</sub> 20%), V<sub>C</sub> 40%(L<sub>C</sub> 10%)일 때 ➔ 100 &divide; L<sub>m</sub> = (20 &divide; 4) + (40 &divide; 20) + (40 &divide; 10) = 5 + 2 + 4 = 11 &nbsp;&rArr;&nbsp; L<sub>m</sub> = 100 &divide; 11 &approx; <strong>약 9.1%</strong></span></span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            한편 가연성 혼합기가 연소할 때 화염 전파에 필요한 최소한의 임계산소농도를 <strong>최소산소농도(MOC, 한계산소농도 LOC)</strong>라 하며, 불활성 가스 주입 시 열용량에 따른 <strong>소염 효과</strong> 차이와 직결됩니다.
-            <span class="formula-box"><span class="formula-badge">최소산소농도(MOC) 산정 공식</span><span class="formula-eq">MOC = 연소하한계(LFL) &times; 완전연소 산소 몰수(n) &nbsp;&nbsp;[단위: vol%]</span><span class="formula-ex">💡 <strong>기출 3대 물질 풀이</strong> | ① <strong>프로판(C<sub>3</sub>H<sub>8</sub>, n = 5, LFL = 2.1%)</strong>: MOC = 2.1% &times; 5 = <strong>10.5%</strong> &nbsp;/&nbsp; ② <strong>메틸알코올(CH<sub>3</sub>OH, n = 1.5, UFL 37%·폭 30% &rArr; LFL 7%)</strong>: MOC = 7% &times; 1.5 = <strong>10.5%</strong> &nbsp;/&nbsp; ③ <strong>펜테인(C<sub>5</sub>H<sub>12</sub>, n = 8)</strong>: 대기 산소 20 vol% 가정 및 단계별 소수점 첫째 자리 반올림 시 C<sub>st</sub>(2 vol%) ➔ 존스 LFL(1 vol%) &times; 8 = <strong>8 vol%</strong> (한편 <strong>수소 H<sub>2</sub>는 최소산소농도가 약 5 vol%</strong>로 극히 낮아 질식소화가 곤란합니다).</span></span>
-            <span class="prose-item"><strong>불활성 가스의 소염 효과 서열 및 CO<sub>2</sub> vs N<sub>2</sub> 비교</strong></span>
-            <span class="formula-box"><span class="formula-badge">불활성 가스 소염 효과(단위 몰당 열용량) 서열</span><span class="formula-eq">CCl<sub>4</sub> &gt; CO<sub>2</sub>(MOC 약 14.5 vol%) &gt; H<sub>2</sub>O &gt; N<sub>2</sub>(MOC 약 12.0 vol%) &gt; He &gt; Ar</span><span class="formula-ex">💡 <strong>인과 원리</strong> | 메테인 혼합기에 열용량이 큰 <strong>이산화탄소(CO<sub>2</sub>)를 주입할 때의 최소산소농도(약 14.5 vol%)</strong>가 질소(N<sub>2</sub>) 주입 시(약 12.0 vol%)보다 더 높게 나타나므로, 더 높은 산소농도에서도 불을 끄는 <strong>이산화탄소(CO<sub>2</sub>)가 질소(N<sub>2</sub>)보다 질식·소염 효과가 우수</strong>합니다.</span></span>
+            한편 석유화학 플랜트나 유류 저장탱크 내부에 용접·정비 작업을 들어가기 전 질소나 이산화탄소를 불어넣는 불활성화(Inerting·치환) 작업을 할 때, 공기 중 산소 농도를 0퍼센트까지 완전히 빼내지 않더라도 화염이 전파될 수 없는 안전 한계선만 지키면 폭발을 막을 수 있습니다. 바로 그 최소한의 임계산소농도를 <strong>최소산소농도(MOC, 한계산소농도 LOC)</strong>라 합니다. 왜 MOC가 연소상한계가 아니라 <strong>연소하한계(LFL)</strong>로 결정될까요? 연소가 겨우 이어지는 가장 묽은 연료 한계 농도(LFL)가 제1장에서 배운 완전연소 화학양론 산소 몰수(n)와 짝을 이루어야 화염 유지에 필요한 최소 산소 농도가 정해지기 때문이며, 만약 산소가 그 아래로 떨어지면 혼합기는 아예 탈 수 없는 영역으로 진입합니다. 나아가 어떤 불활성 가스로 치환해야 가장 적은 양으로 불을 끄는지는 <strong>제1장에서 배운 완전산화물(CO<sub>2</sub>)과 질소(N<sub>2</sub>)의 분자 구조 및 열용량(비열) 차이</strong>에서 그대로 설명됩니다.
+            <span class="formula-box"><span class="formula-badge">최소산소농도(MOC) 산정 공식</span><span class="formula-eq">MOC = 연소하한계(LFL) &times; 완전연소 산소 몰수(n) &nbsp;&nbsp;[단위: vol%]</span><span class="formula-ex">💡 <strong>기출 3대 물질 풀이</strong> | ① <strong>프로판(C<sub>3</sub>H<sub>8</sub>, n = 5, LFL = 2.1%)</strong>: MOC = 2.1% &times; 5 = <strong>10.5%</strong> &nbsp;/&nbsp; ② <strong>메틸알코올(CH<sub>3</sub>OH, n = 1.5, UFL 37%·폭 30% &rArr; LFL 7%)</strong>: 분자 내 산소 1원자를 차감한 외부 산소 몰수 n = 1.5 적용 ➔ MOC = 7% &times; 1.5 = <strong>10.5%</strong> &nbsp;/&nbsp; ③ <strong>펜테인(C<sub>5</sub>H<sub>12</sub>, n = 8)</strong>: LFL 미제시 시 제1장 화학양론농도부터 순차 도출(대기 산소 20 vol% 가정 및 단계별 소수점 첫째 자리 반올림) ➔ 필요 공기 8 &divide; 0.20 = 40몰 ➔ C<sub>st</sub> = 100 &divide; 41 &approx; 2.4%(반올림 2 vol%) ➔ 존스 식 LFL = 0.55 &times; 2 = 1.1%(반올림 1 vol%) ➔ MOC = 1 vol% &times; 8 = <strong>8 vol%</strong> (한편 <strong>수소 H<sub>2</sub>는 최소산소농도가 약 5 vol%</strong>로 일반 탄화수소[10%에서 12%]보다 극히 낮아 질식소화가 매우 곤란합니다).</span></span>
+            <span class="prose-item"><strong>불활성 가스의 소염 효과 서열 및 CO<sub>2</sub> vs N<sub>2</sub> 비교 (제1장 비열 원리 누적 복습)</strong></span>
+            <span class="prose-sub">&bull; <strong>제1장 원리 소환</strong>: 앞선 제1장에서 우리는 <strong>이산화탄소(CO<sub>2</sub>)</strong>가 이미 산화가 끝난 <strong>완전산화물</strong>, <strong>질소(N<sub>2</sub>)</strong>가 산화 시 흡열하는 <strong>불연성 기체</strong>, <strong>헬륨(He)·아르곤(Ar)</strong>이 <strong>18족 비활성기체</strong>임을 배웠고, 단원자 기체보다 이원자 기체가, 이원자 기체보다 <strong>다원자 기체가 분자 내 진동·회전 자유도가 많아 단위 몰당 열용량(몰비열 C<sub>p</sub>)이 크다</strong>는 사실(비열비 &gamma; 역순)을 확인했습니다. 따라서 5원자 분자이면서 할로겐 라디칼 포착 부촉매 작용까지 겸비한 사염화탄소(CCl<sub>4</sub>)가 최강이고, 3원자 다원자 분자인 이산화탄소(CO<sub>2</sub>)가 이원자 질소(N<sub>2</sub>)나 단원자 He·Ar보다 화염의 열을 훨씬 많이 빼앗아 불을 끄는 <strong>소염 효과</strong>가 뛰어납니다(같은 단원자인 He과 Ar 중에서는 몰열용량은 같지만 가볍고 열전도율·확산속도가 월등히 큰 He이 Ar보다 화염면 냉각 효과가 큽니다).</span>
+            <span class="formula-box"><span class="formula-badge">불활성 가스 소염 효과(단위 몰당 열용량) 서열</span><span class="formula-eq">CCl<sub>4</sub> &gt; CO<sub>2</sub>(MOC 약 14.5 vol%) &gt; H<sub>2</sub>O &gt; N<sub>2</sub>(MOC 약 12.0 vol%) &gt; He &gt; Ar</span><span class="formula-ex">💡 <strong>인과 원리</strong> | 메테인(CH<sub>4</sub>) 혼합기에 열용량이 큰 <strong>이산화탄소(CO<sub>2</sub>)를 주입할 때의 최소산소농도(약 14.5 vol%)</strong>가 질소(N<sub>2</sub>) 주입 시(약 12.0 vol%)보다 더 높게 나타납니다. 이는 산소를 12%까지가 아니라 <strong>14.5% 아래로만 낮춰도 이미 화염이 꺼진다는 뜻</strong>이므로, 더 적은 양으로도 불을 끄는 <strong>이산화탄소(CO<sub>2</sub>)가 질소(N<sub>2</sub>)보다 질식·소염 효과가 훨씬 우수</strong>합니다.</span></span>
           </p>
         </div>
       </div>
@@ -125,29 +131,29 @@
         <h2 class="text-xl font-bold text-white mb-3">2. 고체 및 액체 가연물의 연소 형태와 목재 열분해·합성수지·훈소</h2>
         <div class="para-block">
           <p class="prose-body">
-            제1절에서 기체 혼합기의 연소범위를 살펴보았다면, 이제 상온에서 고체나 액체인 가연물이 어떻게 산소와 반응하는지 <strong>고체 가연물의 4대 연소 형태</strong>와 <strong>액체 가연물의 3대 연소 형태</strong>를 명확히 구분해 봅시다.
+            제1절에서 기체 혼합기가 타오르는 농도 조건을 살펴보았다면, 실제 화재 현장에서 소방대가 맞닥뜨리는 가연물의 대다수는 상온에서 <strong>고체</strong>나 <strong>액체</strong> 상태입니다. 그런데 현장에 출동한 대원이 숯·코크스 저장고나 마그네슘 금속분 화재에 값비싼 할론·분말 소화기를 쏘았는데도 불씨가 죽지 않고 되살아나는가 하면, 어떤 플라스틱 물류창고는 불똥이 빗방울처럼 녹아내리며 순식간에 번지고, 또 어떤 위험물 저장고는 산소를 덮어 막아도 내부에서 스스로 폭발해 버립니다. 왜 물질마다 소화약제의 성패가 이토록 극명하게 갈릴까요? 제1장에서 배웠듯이 진정한 발염연소는 기상에서 연료 증기와 산소가 라디칼 연쇄반응을 일으켜야만 성립하므로, 고체와 액체는 자기 물성(분자량, 끓는점, 열안정성, 분자 내 산소 유무)에 따라 기체로 바뀌거나 표면·내부에서 직접 반응하는 서로 다른 경로를 밟기 때문입니다. 바로 이 현장 대응의 절박한 필요성과 분자 구조·상변화의 차이로부터 <strong>고체 가연물의 4대 연소 형태</strong>와 <strong>액체 가연물의 3대 연소 형태</strong>가 필연적으로 도출됩니다.
             <span class="prose-item"><strong>① 고체 가연물의 4대 연소 형태 (표면 · 분해 · 증발 · 자기연소)</strong></span>
-            <span class="prose-sub">&bull; <strong>표면연소(작열연소, 무염연소)</strong>: 가연성 가스 발생 없이 고체 표면에서 산소와 직접 반응하여 화염(불꽃) 없이 타는 형태로 <strong>숯, 목탄, 코크스, 활성탄, 금속분(마그네슘·철분)</strong>이 해당합니다. 기상 라디칼 연쇄반응이 없으므로 <strong>할론이나 분말 같은 부촉매소화약제는 표면연소 화재에 소화 효과를 발휘하지 못합니다</strong>.</span>
-            <span class="prose-sub">&bull; <strong>분해연소</strong>: 고체가 열을 받아 열분해되면서 방출된 가연성 가스가 산소와 섞여 불꽃을 내며 타는 형태로 <strong>목재, 종이, 섬유(면화), 석탄, 플라스틱(열경화성 수지)</strong>이 해당합니다.</span>
-            <span class="prose-sub">&bull; <strong>증발연소</strong>: 액체뿐만 아니라 고체에서도 일어나며, 열분해 없이 융해·기화(승화)한 증기가 타는 형태로 <strong>유황(황), 나프탈렌, 파라핀(양초), 장뇌, 황린</strong>이 해당합니다.</span>
-            <span class="prose-sub">&bull; <strong>자기연소(내부연소)</strong>: 분자 내부의 산소를 소모하며 빠르게 연소하는 <strong>제5류 위험물(자기반응성 물질: 피크르산, TNT, 니트로셀룰로오스, 니트로글리세린, 다이너마이트, 셀룰로이드)</strong>의 연소 형태입니다.</span>
+            <span class="prose-sub">&bull; <strong>표면연소(작열연소, 무염연소)</strong>: 이미 휘발성 성분이 빠져나간 탄소 덩어리나 끓는점이 극도로 높은 금속은 열을 받아도 가연성 가스를 내뿜지 않고 고체 표면에서 산소와 직접 반응하여 화염(불꽃) 없이 붉게 달아오르며 탑니다. 대표 물질로 <strong>숯, 목탄, 코크스, 활성탄, 금속분(마그네슘·철분)</strong>이 해당하며, 제1장에서 배운 기상 라디칼 연쇄반응이 없는 <strong>연소의 3요소(무염연소)</strong>이므로 <strong>할론이나 분말 같은 부촉매소화약제는 표면연소 화재에 소화 효과를 발휘하지 못합니다</strong>(반드시 냉각 또는 피복 질식 필요).</span>
+            <span class="prose-sub">&bull; <strong>분해연소</strong>: <strong>목재, 종이, 섬유(면화), 석탄, 플라스틱(열경화성 수지)</strong>처럼 분자량이 큰 고분자 고체는 기화하기 전에 먼저 열에 의해 분자 결합이 끊어지는 열분해를 일으키며, 이때 방출된 가연성 가스가 산소와 섞여 불꽃을 내며 타는 4요소 발염연소를 합니다.</span>
+            <span class="prose-sub">&bull; <strong>증발연소</strong>: 증발연소는 액체에서만 일어나는 것이 아니라 고체에서도 일어나며, 열분해 과정 없이 고체가 액체로 녹거나 곧바로 승화하여 기화한 증기가 타는 형태로서 <strong>유황(황), 나프탈렌, 파라핀(양초), 장뇌, 황린</strong>이 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>자기연소(내부연소)</strong>: 제1장 산소공급원에서 예고했듯이, 외부 공기를 기다리지 않고 분자 내부에 결합된 니트로기(&minus;NO<sub>2</sub>)나 질산에스테르기(&minus;ONO<sub>2</sub>)의 산소를 스스로 소모하며 초고속으로 연소·폭발하는 <strong>제5류 위험물(자기반응성 물질: 피크르산, TNT, 니트로셀룰로오스, 니트로글리세린, 다이너마이트, 셀룰로이드)</strong>의 연소 형태입니다(외부 산소 차단 질식소화 무효).</span>
             <span class="prose-item"><strong>② 액체 가연물의 3대 연소 형태 (증발 · 액체 분해 · 액적연소)</strong></span>
-            <span class="prose-sub">&bull; <strong>증발연소</strong>: 휘발유·등유·경유·알코올처럼 액면에서 증발한 증기가 공기와 혼합되어 타는 가장 일반적인 형태입니다.</span>
-            <span class="prose-sub">&bull; <strong>액체 분해연소</strong>: <strong>중유(벙커C유), 아스팔트, 글리세린, 콜타르</strong>처럼 점도와 비점이 높은 중질 액체가 기화하기 전에 열분해가 먼저 일어나 타는 형태입니다.</span>
-            <span class="prose-sub">&bull; <strong>액적연소(분무연소)</strong>: 가연성 액체를 노즐로 미세한 안개 모양 기름방울로 분사하여 공기와 혼합해 태우는 보일러 버너의 연소 방식입니다.</span>
+            <span class="prose-sub">&bull; <strong>증발연소</strong>: 휘발유·등유·경유·알코올처럼 액면에서 증발한 증기가 공기와 혼합되어 인화점 이상에서 타는 가장 일반적인 형태입니다.</span>
+            <span class="prose-sub">&bull; <strong>액체 분해연소</strong>: <strong>중유(벙커C유), 아스팔트, 글리세린, 콜타르</strong>처럼 점도와 비점(끓는점)이 매우 높은 중질 액체는 기화하여 증발하기 전에 고분자 탄화수소가 먼저 열분해되어 가연성 가스를 내며 타는 형태입니다.</span>
+            <span class="prose-sub">&bull; <strong>액적연소(분무연소)</strong>: 점도가 높거나 대량 연소가 필요한 가연성 액체를 노즐로 미세한 안개 모양 기름방울(액적)로 분사하여 제1장에서 배운 <strong>표면적 극대화(연소속도 급증)</strong> 원리로 공기와 섞어 태우는 보일러 버너의 연소 방식입니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            나아가 대표적인 분해연소 고체인 <strong>목재의 온도별 열분해 메커니즘</strong>과 <strong>합성수지(열가소성 수지 vs 열경화성 수지)</strong>, 그리고 <strong>훈소(Smoldering)</strong>를 깊이 있게 연결합니다.
-            <span class="prose-item"><strong>① 목재의 연소 단계 전환 · 온도 기준 및 표면 탄화층(Char)</strong></span>
-            <span class="prose-sub">&bull; <strong>단계 전환</strong>: 목재나 석탄은 연소 초기에는 휘발성 열분해 가스가 불꽃을 내며 타는 <strong>분해연소</strong>를 하다가, 휘발분이 빠져나간 후반부에는 남은 숯이 불꽃 없이 타는 <strong>표면연소</strong>로 전환됩니다.</span>
-            <span class="prose-sub">&bull; <strong>인화 온도 vs 발화 온도</strong>: 약 섭씨 <strong>250도에서 260도</strong>에 이르면 외부 점화원이 있을 때 착화하는 <strong>인화 온도(위험 온도)</strong>에 도달하고, 약 섭씨 <strong>400도에서 450도</strong>에 이르면 점화원 없이 스스로 착화하는 <strong>발화 온도(자발화 온도)</strong>에 도달합니다.</span>
-            <span class="prose-sub">&bull; <strong>탄화층(숯층, Char)의 단열 효과</strong>: 목재 연소 시 표면에 형성되는 다공성 <strong>탄화층은 열전도율이 생목재의 약 4분의 1로 매우 낮아 심부로의 열전달을 차단·억제하는 단열재 역할</strong>을 합니다.</span>
+            나아가 실제 건축물 화재에서 인명 피해와 붕괴·폭발을 좌우하는 대표 고체 연소 사례를 짚어 봅시다. 굵은 목조 건축물 기둥은 겉이 검게 타들어가도 한동안 무너지지 않고 버티는 반면, 제천 스포츠센터나 물류창고의 가연성 플라스틱·스티로폼 외장재는 불이 붙자마자 녹아 흘러내리며 화재를 아래층까지 번지게 하며, 침대 매트리스나 톱밥 창고는 불꽃 하나 보이지 않아 진압된 줄 알고 문을 여는 순간 대원들을 덮치는 폭발로 이어집니다. 이처럼 현장의 생사를 가르는 <strong>목재의 온도별 열분해 메커니즘</strong>, <strong>합성수지(열가소성 수지 vs 열경화성 수지)</strong>의 대조적 거동, 그리고 <strong>훈소(Smoldering)</strong>를 원리로 연결하면 다음과 같습니다.
+            <span class="prose-item"><strong>① 목재의 온도별 열분해 · 단계 전환 및 표면 탄화층(Char)의 단열 효과</strong></span>
+            <span class="prose-sub">&bull; <strong>단계 전환</strong>: 목재나 석탄은 가열되면 먼저 섭씨 100도에서 150도 부근에서 내부 수분이 증발하고, 섭씨 200도를 넘어서며 헤미셀룰로스·셀룰로스 열분해가 시작되어 휘발성 열분해 가스가 불꽃을 내며 타는 <strong>분해연소</strong>를 하다가, 휘발분이 빠져나간 후반부에는 남은 목탄(숯)이 불꽃 없이 타는 <strong>표면연소</strong>로 전환됩니다.</span>
+            <span class="prose-sub">&bull; <strong>인화 온도 vs 발화 온도</strong>: 약 섭씨 <strong>250도에서 260도</strong>에 이르면 가연성 분해 가스가 본격 방출되어 외부 점화원이 있을 때 착화하는 <strong>인화 온도(위험 온도)</strong>에 도달하고, 약 섭씨 <strong>400도에서 450도</strong>에 이르면 점화원 없이 스스로 착화하는 <strong>발화 온도(자발화 온도)</strong>에 도달합니다.</span>
+            <span class="prose-sub">&bull; <strong>탄화층(숯층, Char)의 단열 효과</strong>: 목재 연소 시 표면에 형성되는 다공성 <strong>탄화층은 내부 공극의 정지 공기 때문에 열전도율이 생목재의 약 4분의 1로 매우 낮아 심부로의 열전달을 차단·억제하는 단열재 역할</strong>을 합니다(덕분에 굵은 목재 기둥은 표면이 타더라도 내부 강도를 일정 시간 유지합니다).</span>
             <span class="prose-item"><strong>② 합성수지 비교 (열가소성 수지 vs 열경화성 수지) 및 훈소(Smoldering)</strong></span>
-            <span class="prose-sub">&bull; <strong>열가소성 수지(용융 적하 Drip · 분해 및 증발연소 병행)</strong>: 가열 시 연화·용융되어 액체 방울로 흘러내리는 <strong>폴리에틸렌(PE), 폴리프로필렌(PP), 폴리염화비닐(PVC), 폴리스티렌(PS), 나일론(폴리아미드), 아크릴(PMMA)</strong>이 해당합니다.</span>
-            <span class="prose-sub">&bull; <strong>열경화성 수지(불융 탄화 · 분해연소)</strong>: 가교 결합되어 열을 가해도 녹지 않고 탄화되는 <strong>페놀수지, 멜라민수지, 요소수지, 에폭시수지, 불포화폴리에스테르수지</strong>가 해당합니다.</span>
-            <span class="prose-sub">&bull; <strong>훈소(Smoldering)</strong>: 산소 공급이 부족한 밀폐 공간이나 다공성 가연물(면화·매트리스·톱밥) 내부에서 <strong>화염 없이 섭씨 300도에서 400도의 저온으로 느리게 진행되는 불완전연소</strong>로서, 다량의 일산화탄소와 일산화탄소(CO) 혼합 미연소 가스를 축적시켜 개구부 개방 시 폭발적인 <strong>백드래프트</strong>를 유발합니다.</span>
+            <span class="prose-sub">&bull; <strong>열가소성 수지(용융 적하 Drip · 분해 및 증발연소 병행)</strong>: 분자 사슬이 선형으로 놓여 있어 가열 시 연화·용융되어 액체 방울로 뚝뚝 흘러내리며(용융 적하) 액면 화재로 번지는 <strong>폴리에틸렌(PE), 폴리프로필렌(PP), 폴리염화비닐(PVC), 폴리스티렌(PS), 나일론(폴리아미드), 아크릴(PMMA)</strong>이 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>열경화성 수지(불융 탄화 · 분해연소)</strong>: 분자 사슬이 3차원 그물망으로 가교 결합되어 열을 가해도 절대 녹지 않고 검게 탄화되며 분해연소만 하는 <strong>페놀수지, 멜라민수지, 요소수지, 에폭시수지, 불포화폴리에스테르수지</strong>가 해당합니다.</span>
+            <span class="prose-sub">&bull; <strong>훈소(Smoldering)</strong>: 산소 공급이 부족한 밀폐 구획실이나 다공성 가연물(면화·매트리스·톱밥) 내부에서 <strong>화염 없이 섭씨 300도에서 400도의 저온으로 느리게 진행되는 불완전연소</strong>입니다. 불꽃이 보이지 않아 진압된 것으로 오인하기 쉽지만, 내부에 다량의 <strong>일산화탄소(CO)</strong>와 미연소 열분해 가스를 고농도로 축적시켜 소방대가 문이나 창을 여는 순간(산소 급유입) 폭발적인 <strong>백드래프트(제4장 심화)</strong>를 유발합니다.</span>
           </p>
         </div>
       </div>
@@ -156,25 +162,30 @@
         <h2 class="text-xl font-bold text-white mb-3">3. 기체 연료의 연소(확산·예혼합·역화·선화·황염), 화염온도 및 액체 화재패턴</h2>
         <div class="para-block">
           <p class="prose-body">
-            이제 기체 상태의 연료가 타는 두 가지 기본 방식인 <strong>확산연소(Diffusion Combustion)</strong>와 <strong>예혼합연소(Premixed Combustion)</strong>, 그리고 노즐 화염의 거동과 화염온도를 정리합니다.
+            이제 가정용 가스레인지나 공업용 가스 버너에서 벌어지는 위기 상황을 떠올려 봅시다. 버너의 공기 흡입구를 닫고 가스만 분사하면 매캐한 그을음과 노란 불꽃(<strong>황염</strong>)이 일고, 반대로 공기를 미리 섞어 파란 불꽃으로 태우다가 가스 밸브를 너무 줄이면 불꽃이 배관 속으로 빨려 들어가 버너가 폭발(<strong>역화</strong>)하며, 가스 압력을 너무 세게 틀면 불꽃이 노즐 위에서 들뜨다 꺼져 버립니다(<strong>선화·블로우오프</strong>). 이 모든 현상은 기체 연료와 공기가 <strong>분리되어 만나는가(확산연소), 미리 섞여 나오는가(예혼합연소)</strong>의 근본적인 차이에서 도출됩니다.
             <span class="prose-item"><strong>① 확산연소(휘염) vs 예혼합연소(비휘염) 및 연소속도 영향인자</strong></span>
-            <span class="prose-sub">&bull; <strong>확산연소(황색 휘염)</strong>: 연료와 공기가 분리 공급되어 화염 경계면에서 확산·혼합되며 타므로 <strong>물리적 혼합(확산) 속도에 의해 지배</strong>되고 <strong>역화 위험이 전혀 없습니다</strong>. 연료노즐에서 분출되는 기체 확산화염 높이는 <strong>층류에서는 분출속도에 정비례</strong>하지만, <strong>난류인 경우 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례</strong>합니다.</span>
-            <span class="prose-sub">&bull; <strong>예혼합연소(청색 비휘염)</strong>: 연소 전 연료와 일차 공기를 미리 혼합하므로 <strong>화학적 반응속도에 의해 지배</strong>되어 연소속도가 매우 빠르지만 노즐 내부로 불꽃이 빨려 들어가는 <strong>역화 위험</strong>이 있습니다.</span>
-            <span class="prose-sub">&bull; <strong>연소속도에 영향을 미치는 요인</strong>: 가연성 물질의 종류, 촉매의 존재 유무와 농도, 공기 중 산소량, 가연물과 산화제의 당량비(화학양론비 부근 최대), 초기 온도·압력 및 난류 강도가 모두 포함됩니다.</span>
-            <span class="prose-item"><strong>② 기체 노즐 3대 이상 연소 (역화 · 선화 · 황염)</strong></span>
-            <span class="prose-sub">&bull; <strong>역화(Flashback)</strong>: <strong>연소속도 &gt; 분출속도</strong>일 때 불꽃이 노즐 속으로 빨려 들어가 연소하는 현상입니다.</span>
-            <span class="prose-sub">&bull; <strong>선화(Lifting)</strong>: <strong>분출속도 &gt; 연소속도</strong>일 때 불꽃이 노즐 위에 들뜨는 현상입니다(더 빨라지면 블로오프 소멸).</span>
-            <span class="prose-sub">&bull; <strong>황염(Yellow Flame)</strong>: 화학양론비보다 공기량이 적을 때 미연소 탄소 입자(그을음)가 백열하여 노란 불꽃을 내는 현상입니다(황색 <strong>휘염</strong>은 복사열 방출은 크지만, 화염 자체 온도는 완전연소하는 청색 <strong>비휘염</strong>이 더 높습니다).</span>
-            <span class="formula-box"><span class="formula-badge">화염 색온도 서열 (빈의 변위법칙 — 파장 짧을수록 고온)</span><span class="formula-eq">암적색(700℃) &lt; 적색(850℃) &lt; 주황색·등황색(950℃에서 1,100℃) &lt; 백황색(1,300℃) &lt; 휘백색(1,500℃ 이상, 최고온)</span><span class="formula-ex">💡 <strong>단열화염온도 vs 실제 화염온도</strong> | 공기 중 약 79%를 차지하는 <strong>질소(N<sub>2</sub>)가 연소열을 흡수·냉각</strong>하므로 공기 중보다 <strong>순수 산소(O<sub>2</sub>) 중 단열화염온도가 훨씬 높으며</strong>, 고온에서의 <strong>열해리(흡열 반응)</strong>와 외부 열손실 때문에 <strong>실제 화염온도는 이론 단열화염온도보다 항상 낮습니다</strong>.</span></span>
+            <span class="prose-sub">&bull; <strong>확산연소(황색 휘염)</strong>: 연료와 공기가 분리 공급되어 화염 경계면에서 만나 확산·혼합되며 타므로 <strong>물리적 혼합(확산) 속도에 의해 지배</strong>되고, 노즐 내부에는 공기가 없어 <strong>역화 위험이 전혀 없습니다</strong>. 연료노즐에서 분출되는 기체 확산화염 높이는 <strong>층류(Laminar)에서는 분출속도에 정비례</strong>하지만, <strong>난류(Turbulent)인 경우 난류 혼합이 지배하여 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례</strong>합니다.</span>
+            <span class="prose-sub">&bull; <strong>예혼합연소(청색 비휘염)</strong>: 연소 전 연료와 일차 공기를 미리 혼합하여 분사하므로 <strong>화학적 반응속도에 의해 지배</strong>되어 연소속도가 매우 빠르고 완전연소에 가깝지만, 노즐 내부에도 이미 가연성 혼합기가 채워져 있어 불꽃이 빨려 들어가는 <strong>역화 위험</strong>이 큽니다.</span>
+            <span class="prose-sub">&bull; <strong>연소속도에 영향을 미치는 요인</strong>: 가연성 물질의 종류, 촉매의 존재 유무와 농도, 공기 중 산소량, 가연물과 산화제의 당량비(제1장 화학양론비 &phi; &approx; 1.0 부근 최대), 초기 온도·압력 및 난류 강도가 모두 포함됩니다.</span>
+            <span class="prose-item"><strong>② 기체 노즐 이상 연소 (역화 · 선화 · 블로우오프 · 황염)</strong></span>
+            <span class="prose-sub">&bull; <strong>역화(Flashback)</strong>: <strong>연소속도 &gt; 분출속도</strong>일 때(밸브를 너무 줄이거나 노즐이 과열되었을 때) 불꽃이 노즐 속으로 빨려 들어가 배관 내부에서 연소·폭발하는 현상입니다.</span>
+            <span class="prose-sub">&bull; <strong>선화(Lifting) 및 블로우오프(Blow-off)</strong>: <strong>분출속도 &gt; 연소속도</strong>일 때 불꽃이 노즐 위에 들뜨는 현상을 <strong>선화</strong>라 하며, 분출속도가 한계 이상으로 더 빨라져 화염이 완전히 날아가 소멸하는 현상을 <strong>블로우오프(Blow-off)</strong>라 합니다.</span>
+            <span class="prose-sub">&bull; <strong>황염(Yellow Flame)</strong>: 화학양론비보다 공기량이 적을 때(공기 부족 불완전연소) 미연소 탄소 입자(그을음)가 고온 화염 속에서 백열하여 노란 불꽃을 내는 현상입니다. 그을음 입자가 있는 황색 <strong>휘염</strong>은 주변으로 내뿜는 복사열 방출(방사율)은 크지만, <strong>화염 자체의 온도는 완전연소하는 청색 비휘염이 더 높습니다</strong>.</span>
+            <span class="formula-box"><span class="formula-badge">화염 색온도 서열 (빈의 변위법칙 — 파장 짧을수록 고온)</span><span class="formula-eq">암적색(700℃) &lt; 적색(850℃) &lt; 주황색·등황색(950℃에서 1,100℃) &lt; 백황색(1,300℃) &lt; 휘백색(1,500℃ 이상, 최고온)</span><span class="formula-ex">💡 <strong>단열화염온도 vs 실제 화염온도 (제1장 엔탈피·질소 연계)</strong> | 공기 중 약 79%를 차지하는 <strong>질소(N<sub>2</sub>)가 연소열을 흡수·냉각</strong>하므로 공기 중보다 <strong>순수 산소(O<sub>2</sub>) 중 단열화염온도가 훨씬 높으며</strong>, 고온에서 CO<sub>2</sub>·H<sub>2</sub>O가 CO·H<sub>2</sub> 등으로 쪼개지는 <strong>열해리(흡열 반응, &Delta;H &gt; 0)</strong>와 외부 열손실 때문에 <strong>실제 화염온도는 이론 단열화염온도보다 항상 낮습니다</strong>.</span></span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            끝으로 화재 현장에서 <strong>인화성 액체(유류)가 바닥에서 연소할 때 남기는 4대 탄화 흔적(화재패턴)</strong>을 명확히 구분합니다.
+            끝으로 제1편 제6장 화재조사 실무와 직결되는 감식 쟁점으로서, 방화 의심 현장에서 <strong>인화성 액체(유류)가 바닥에서 연소할 때 남기는 4대 탄화 흔적(화재패턴)</strong>을 명확히 구분하고, 이어 제1장의 원리로부터 도출된 본 장 핵심 개념을 입체적으로 누적 대조합니다.
+            <span class="prose-item"><strong>① 인화성 액체 4대 화재패턴 (포어 · 스플래시 · 도넛 · 틈새연소)</strong></span>
             <span class="prose-sub">&bull; <strong>포어 패턴(Pour Pattern, 유류 살포 패턴)</strong>: 인화성 액체가 바닥 낮은 곳으로 흘러 고이면서 살포된 본체 부위가 물웅덩이 모양의 뚜렷한 탄화 경계를 남기는 흔적입니다.</span>
-            <span class="prose-sub">&bull; <strong>스플래시 패턴(Splash Pattern, 비산 패턴)</strong>: 액체가 쏟아지거나 끓어 튀면서 포어 패턴 주변의 미연소 바닥에서 국부적으로 점처럼 연소된 흔적입니다.</span>
+            <span class="prose-sub">&bull; <strong>스플래시 패턴(Splash Pattern, 비산 패턴)</strong>: 액체가 쏟아지거나 연소열에 의해 끓어 튀면서 포어 패턴 주변의 미연소 바닥에서 국부적으로 점처럼 연소된 흔적입니다.</span>
             <span class="prose-sub">&bull; <strong>도넛 패턴(Doughnut Pattern)</strong>: 고인 액체의 <strong>중심부는 액체 자체의 증발잠열(냉각 작용)과 산소 차단으로 덜 타서 보호되고, 산소 공급이 원활한 가장자리 경계면만 둥근 도넛 고리 모양으로 깊게 탄화되는 흔적</strong>입니다.</span>
             <span class="prose-sub">&bull; <strong>틈새연소 패턴(Seam Burn Pattern)</strong>: 바닥재 이음매나 갈라진 틈새로 인화성 액체가 스며들어 그 틈을 따라 깊게 탄화된 흔적입니다.</span>
+            <span class="prose-item"><strong>② &#x1F517; 앞 단원(제2편 제1장) 누적 입체 대조 요약</strong></span>
+            <span class="prose-sub">&bull; <strong>제1장 화학양론(C<sub>st</sub>)·존스 식 &harr; 연소범위·위험도(H)·MOC 연결</strong>: 제1장에서 계산한 이론산소량(x몰)과 화학양론농도(C<sub>st</sub>)로부터 LFL(0.55 C<sub>st</sub>)과 UFL(3.5 C<sub>st</sub>)이 도출되고, LFL이 낮을수록 위험도 H = (UFL &minus; LFL) &divide; LFL이 급증하며, 여기에 산소 몰수(n)를 곱한 값이 최소산소농도(MOC = LFL &times; n)입니다.</span>
+            <span class="prose-sub">&bull; <strong>제1장 불연성 기체·몰열용량 &harr; CO<sub>2</sub> vs N<sub>2</sub> 소염 효과 연결</strong>: 제1장의 완전산화물(CO<sub>2</sub>, 3원자 다원자)과 불연성 질소(N<sub>2</sub>, 이원자)는 분자 내 자유도 차이로 몰열용량이 달라(CO<sub>2</sub> &gt; N<sub>2</sub>), 메테인 불활성화 시 CO<sub>2</sub> 주입 MOC(약 14.5 vol%)가 N<sub>2</sub> 주입 MOC(약 12.0 vol%)보다 높아 CO<sub>2</sub>의 질식·소염 효과가 더 우수합니다.</span>
+            <span class="prose-sub">&bull; <strong>제1장 3요소(무염)·4요소(발염)·산소공급원 &harr; 고체 4대 연소 형태 연결</strong>: 무염연소(3요소)인 표면연소(숯·금속분)는 기상 라디칼이 없어 부촉매소화약제가 무효이고, 발염연소(4요소)인 분해·증발연소는 부촉매가 유효하며, 분자 내 산소공급원을 품은 제5류 위험물의 자기연소는 질식소화가 무효입니다.</span>
           </p>
         </div>
       </div>
@@ -191,8 +202,12 @@
           <div class="cheat-part-title">PART 01. 연소범위 · 위험도(H) 서열 · 르샤틀리에 식 · 최소산소농도(MOC) 및 소염 효과</div>
           <div class="cheat-grid">
             <div class="cheat-row">
-              <div class="cheat-key">연소범위 · 위험도(H)</div>
-              <div class="cheat-val"><span class="cheat-eq">H = (UFL &minus; LFL) &divide; LFL</span> / 온도·압력 상승 시 범위 확대(단, <strong>일산화탄소 CO는 압력 상승 시 예외적으로 축소!</strong>)<br/>&bull; <strong>위험도 서열</strong>: <strong>이황화탄소(1.2%에서 44%, H=35.7) &gt; 산화에틸렌(3%에서 100%, H=32.3, 상한 100% 분해폭발!) &gt; 아세틸렌(2.5%에서 81%, H=31.4) &gt; 디에틸에테르(1.9%에서 48%, H=24.3) &gt; 수소(4%에서 75%, H=17.8) &gt; 일산화탄소(12.5%에서 74%, H=4.9) &gt; 부탄(3.67) &gt; 프로판(3.52) &gt; 에탄(3.13) &gt; 메탄(2.0) &gt; 암모니아(15%에서 28%, H=0.87)</strong></div>
+              <div class="cheat-key">연소범위 · 영향요인 · 예외</div>
+              <div class="cheat-val"><span class="cheat-eq">LFL = 0.55 &times; C<sub>st</sub> , &nbsp;UFL = 3.5 &times; C<sub>st</sub></span> / 온도↑·산소↑ ➔ 범위 확대(UFL 크게 상승) · 불활성가스↑ ➔ 범위 축소 · 압력↑ ➔ 일반 탄화수소 확대(단, <strong>CO는 압력↑ 시 예외적 축소!</strong> / <strong>H<sub>2</sub>는 좁아지다 고압에서 재확대</strong>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">위험도(H) · 서열 총정리</div>
+              <div class="cheat-val"><span class="cheat-eq">H = (UFL &minus; LFL) &divide; LFL</span> (분모 LFL이 작을수록 급증!)<br/>&bull; <strong>위험도 서열</strong>: <strong>이황화탄소(1.2%에서 44%, H=35.7) &gt; 산화에틸렌(3%에서 100%, H=32.3, 상한 100% 분해폭발!) &gt; 아세틸렌(2.5%에서 81%, H=31.4) &gt; 디에틸에테르(1.9%에서 48%, H=24.3) &gt; 수소(4%에서 75%, H=17.8) &gt; 일산화탄소(12.5%에서 74%, H=4.9) &gt; 부탄(3.67) &gt; 프로판(3.52) &gt; 에탄(3.13) &gt; 메탄(2.0) &gt; 암모니아(15%에서 28%, H=0.87)</strong></div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">르샤틀리에 혼합가스 식</div>
@@ -200,7 +215,7 @@
             </div>
             <div class="cheat-row">
               <div class="cheat-key">최소산소농도(MOC)</div>
-              <div class="cheat-val"><span class="cheat-eq">MOC = LFL &times; 산소 몰수(n)</span> &nbsp;|&nbsp; 프로판(2.1%&times;5 = <strong>10.5%</strong>) · 메탄올(7%&times;1.5 = <strong>10.5%</strong>) · 펜테인(산소 20%·반올림 조건 시 1%&times;8 = <strong>8 vol%</strong>) · <strong>수소(약 5 vol%</strong>, 질식소화 극난)</div>
+              <div class="cheat-val"><span class="cheat-eq">MOC = LFL &times; 산소 몰수(n)</span> &nbsp;|&nbsp; 프로판(2.1%&times;5 = <strong>10.5%</strong>) · 메탄올(7%&times;1.5 = <strong>10.5%</strong>) · 펜테인(산소 20%·반올림 조건 시 C<sub>st</sub> 2% &rArr; LFL 1%&times;8 = <strong>8 vol%</strong>) · <strong>수소(약 5 vol%</strong>, 질식소화 극난)</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">불활성 가스 소염 효과</div>
@@ -218,15 +233,15 @@
             </div>
             <div class="cheat-row">
               <div class="cheat-key">액체 3대 연소 형태</div>
-              <div class="cheat-val">① <strong>증발연소</strong>: 휘발유·등유·경유·알코올 &nbsp;|&nbsp; ② <strong>액체 분해연소</strong>: 고점도·고비점인 <strong>중유(벙커C유)·아스팔트·글리세린·콜타르</strong> &nbsp;|&nbsp; ③ <strong>액적연소(분무연소)</strong>: 보일러 노즐 안개 분사</div>
+              <div class="cheat-val">① <strong>증발연소</strong>: 휘발유·등유·경유·알코올 &nbsp;|&nbsp; ② <strong>액체 분해연소</strong>: 고점도·고비점인 <strong>중유(벙커C유)·아스팔트·글리세린·콜타르</strong> &nbsp;|&nbsp; ③ <strong>액적연소(분무연소)</strong>: 보일러 노즐 안개 분사(표면적 극대화)</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">목재 열분해 · 탄화층</div>
-              <div class="cheat-val">초기 <strong>분해연소</strong> ➔ 후반부 숯 <strong>표면연소</strong> 전환 / <strong>250도에서 260도 = 인화 온도(위험 온도)</strong> vs <strong>400도에서 450도 = 발화 온도(자발화 온도)</strong> / 표면 <strong>탄화층(Char)</strong>은 열전도율이 낮아 심부 열전달 억제(<strong>단열 효과</strong>)</div>
+              <div class="cheat-val">100℃에서 150℃ 수분 증발 ➔ 200℃↑ 열분해(초기 <strong>분해연소</strong>) ➔ 후반부 숯 <strong>표면연소</strong> 전환 / <strong>250도에서 260도 = 인화 온도(위험 온도)</strong> vs <strong>400도에서 450도 = 발화 온도(자발화 온도)</strong> / 표면 <strong>탄화층(Char)</strong>은 열전도율이 생목재의 약 4분의 1로 낮아 심부 열전달 억제(<strong>단열 효과</strong>)</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">합성수지 · 훈소 비교</div>
-              <div class="cheat-val"><strong>열가소성 수지(용융 적하 Drip)</strong>: <strong>PE·PP·PVC·PS·나일론·아크릴</strong> vs <strong>열경화성 수지(불융 탄화)</strong>: <strong>페놀·멜라민·요소·에폭시·폴리에스테르</strong> &nbsp;|&nbsp; <strong>훈소</strong>: 산소 부족 시 화염 없는 저온 불완전연소(CO 축적 ➔ <strong>백드래프트</strong> 원인)</div>
+              <div class="cheat-val"><strong>열가소성 수지(용융 적하 Drip)</strong>: <strong>PE·PP·PVC·PS·나일론·아크릴</strong> vs <strong>열경화성 수지(불융 탄화)</strong>: <strong>페놀·멜라민·요소·에폭시·폴리에스테르</strong> &nbsp;|&nbsp; <strong>훈소</strong>: 산소 부족 시 화염 없는 300도에서 400도 저온 불완전연소(CO 축적 ➔ <strong>백드래프트</strong> 원인)</div>
             </div>
           </div>
         </div>
@@ -239,8 +254,8 @@
               <div class="cheat-val"><strong>확산연소(황색 휘염)</strong>: 물리적 혼합 속도 지배 · 역화 없음 · 복사열 크나 화염온도 낮음 · 난류 화염 높이는 <strong>노즐 직경에만 비례(분출속도 무관!)</strong> &nbsp;|&nbsp; <strong>예혼합연소(청색 비휘염)</strong>: 화학적 반응속도 지배 · <strong>화염 자체 온도 높음</strong> · 역화 위험</div>
             </div>
             <div class="cheat-row">
-              <div class="cheat-key">역화 · 선화 · 황염</div>
-              <div class="cheat-val"><strong>역화(Flashback)</strong>: 연소속도 &gt; 분출속도(노즐 속 연소) &nbsp;|&nbsp; <strong>선화(Lifting)</strong>: 분출속도 &gt; 연소속도(불꽃 들뜸) &nbsp;|&nbsp; <strong>황염</strong>: 공기량 부족 시 미연소 탄소 백열</div>
+              <div class="cheat-key">역화 · 선화 · 블로우오프 · 황염</div>
+              <div class="cheat-val"><strong>역화(Flashback)</strong>: 연소속도 &gt; 분출속도(노즐 속 연소) &nbsp;|&nbsp; <strong>선화(Lifting)</strong>: 분출속도 &gt; 연소속도(불꽃 들뜸 ➔ 더 빨라지면 <strong>블로우오프</strong> 소멸) &nbsp;|&nbsp; <strong>황염</strong>: 공기량 부족 시 미연소 탄소 백열</div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">색온도 · 단열화염온도</div>
@@ -249,6 +264,10 @@
             <div class="cheat-row">
               <div class="cheat-key">액체 화재패턴 4종</div>
               <div class="cheat-val"><strong>포어 패턴</strong>(흘러 고인 물웅덩이 탄화 본체) · <strong>스플래시 패턴</strong>(주변 미연소 바닥에 점처럼 튄 흔적) · <strong>도넛 패턴</strong>(<strong>중심부는 증발잠열로 덜 타고</strong> 가장자리만 고리 탄화) · <strong>틈새연소 패턴</strong>(바닥 이음매 침투 탄화)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">&#x1F517; 제1장 ➔ 제2장 입체 연결</div>
+              <div class="cheat-val">&bull; <strong>C<sub>st</sub>·MIE ➔ LFL ➔ H·MOC</strong>: 화학양론농도(C<sub>st</sub>, MIE 극소)에서 LFL(0.55 C<sub>st</sub>) 도출 ➔ LFL이 작을수록 위험도 H 급증 &amp; MOC = LFL &times; n<br/>&bull; <strong>CO<sub>2</sub> vs N<sub>2</sub> · 3/4요소</strong>: 다원자 CO<sub>2</sub>의 큰 몰열용량(MOC 14.5% &gt; N<sub>2</sub> 12.0%) ➔ 소염 우위 / 3요소 표면연소는 부촉매 무효, 5류 자기연소는 질식 무효</div>
             </div>
           </div>
         </div>
@@ -385,7 +404,7 @@
       "부탄"
     ],
     "ans": 4,
-    "q_expl": "가연성 가스의 위험도 공식[H = (U • L) / L, 여기서 U는 연소상한계, L은 연소하한계]을 적용하여 각 가스의 위험도를 비교하는 빈출 계산 문항입니다. 파라핀계 탄화수소(메탄·에탄·프로판·부탄)는 탄소수가 많아질수록 연소하한계가 낮아져 위험도가 커집니다.",
+    "q_expl": "가연성 가스의 위험도 공식[H = (U − L) / L, 여기서 U는 연소상한계, L은 연소하한계]을 적용하여 각 가스의 위험도를 비교하는 빈출 계산 문항입니다. 파라핀계 탄화수소(메탄·에탄·프로판·부탄)는 탄소수가 많아질수록 연소하한계가 낮아져 위험도가 커집니다.",
     "c_expls": [
       "[틀림] 메탄(CH₄)의 위험도 H = (15 − 5) / 5 = 2.0으로 네 물질 중 가장 작습니다.",
       "[틀림] 에탄(C₂H₆)의 위험도 H = (12.4 − 3) / 3 ≈ 3.13입니다.",
@@ -460,7 +479,7 @@
       "14.0"
     ],
     "ans": 3,
-    "q_expl": "연소상한계(37퍼센트)와 연소범위 폭(30퍼센트) 조건으로부터 먼저 연소하한계(LFL = 37 • 30 = 7%)를 구한 뒤, 메틸알코올 완전연소 반응식[CH₃OH + 1.5O₂ ➔ CO₂ + 2H₂O]의 산소 몰수(1.5몰)를 곱해 최소산소농도(MOC)를 산출하는 계산 문항입니다.",
+    "q_expl": "연소상한계(37퍼센트)와 연소범위 폭(30퍼센트) 조건으로부터 먼저 연소하한계(LFL = 37 − 30 = 7%)를 구한 뒤, 메틸알코올 완전연소 반응식[CH₃OH + 1.5O₂ ➔ CO₂ + 2H₂O]의 산소 몰수(1.5몰)를 곱해 최소산소농도(MOC)를 산출하는 계산 문항입니다.",
     "c_expls": [
       "[틀림] 메틸알코올(CH₃OH) 1몰 완전연소 시 산소 몰수(n=1.5)와 연소하한계(LFL = 37 − 30 = 7%)를 최소산소농도 공식(MOC = LFL × n = 7 × 1.5 = 10.5%)에 대입해야 하는데, 산소 몰수를 잘못 적용한 수치입니다.",
       "[틀림] 최소산소농도는 MOC = LFL(7%) × 산소 몰수(1.5) = 10.5 vol%이므로 8.5는 공식 대입과 어긋나는 오답입니다.",
@@ -535,7 +554,7 @@
       "C, B, A"
     ],
     "ans": 1,
-    "q_expl": "위험도 공식[H = (U • L) / L]에 따라 A, B, C 세 가스의 위험도를 직접 계산하여 '낮은 것에서 높은 순서'로 나열하는 문항입니다.\n• HA = (22 • 2) / 2 = 10\n• HB = (75 • 4) / 4 = 71 / 4 = 17.75\n• HC = (44 • 1) / 1 = 43\n따라서 위험도가 낮은 것부터 나열하면 A(10) < B(17.75) < C(43)입니다.",
+    "q_expl": "위험도 공식[H = (U − L) / L]에 따라 A, B, C 세 가스의 위험도를 직접 계산하여 '낮은 것에서 높은 순서'로 나열하는 문항입니다.\n• HA = (22 − 2) / 2 = 10\n• HB = (75 − 4) / 4 = 71 / 4 = 17.75\n• HC = (44 − 1) / 1 = 43\n따라서 위험도가 낮은 것부터 나열하면 A(10) < B(17.75) < C(43)입니다.",
     "c_expls": [
       "[옳음 · 정답] 위험도 계산 결과 A = (22 − 2)/2 = 10, B = (75 − 4)/4 = 17.75, C = (44 − 1)/1 = 43이므로, 위험도가 낮은 것에서 높은 순서는 'A, B, C'입니다.",
       "[틀림] B(17.75)보다 C(43)의 위험도가 더 높습니다.",
@@ -610,7 +629,7 @@
       "ㄱ, ㄴ, ㄷ, ㄹ"
     ],
     "ans": 4,
-    "q_expl": "4대 빈출 가연성 가스의 연소범위 암기 수치와 위험도[H = (U • L) / L] 계산값을 묻는 2025년 기출 문항입니다.\n• ㄱ. 수소(H₂, 4에서 75퍼센트): (75 • 4) / 4 = 71 / 4 = 17.75 ≈ 17.8\n• ㄴ. 프로페인(C₃H₈, 2.1에서 9.5퍼센트): (9.5 • 2.1) / 2.1 = 7.4 / 2.1 ≈ 3.52 ≈ 3.5\n• ㄷ. 일산화탄소(CO, 12.5에서 74퍼센트): (74 • 12.5) / 12.5 = 61.5 / 12.5 = 4.92 ≈ 4.9\n• ㄹ. 아세틸렌(C₂H₂, 2.5에서 81퍼센트): (81 • 2.5) / 2.5 = 78.5 / 2.5 = 31.4",
+    "q_expl": "4대 빈출 가연성 가스의 연소범위 암기 수치와 위험도[H = (U − L) / L] 계산값을 묻는 2025년 기출 문항입니다.\n• ㄱ. 수소(H₂, 4에서 75퍼센트): (75 − 4) / 4 = 71 / 4 = 17.75 ≈ 17.8\n• ㄴ. 프로페인(C₃H₈, 2.1에서 9.5퍼센트): (9.5 − 2.1) / 2.1 = 7.4 / 2.1 ≈ 3.52 ≈ 3.5\n• ㄷ. 일산화탄소(CO, 12.5에서 74퍼센트): (74 − 12.5) / 12.5 = 61.5 / 12.5 = 4.92 ≈ 4.9\n• ㄹ. 아세틸렌(C₂H₂, 2.5에서 81퍼센트): (81 − 2.5) / 2.5 = 78.5 / 2.5 = 31.4",
     "c_expls": [
       "[틀림] ㄱ, ㄹ뿐만 아니라 ㄴ, ㄷ도 모두 정확한 위험도 값입니다.",
       "[틀림] 위험도 H = (U − L) / L 계산 시 ㄴ(프로페인 3.5)과 ㄷ(일산화탄소 4.9)뿐만 아니라 ㄱ(수소: (75 − 4)/4 = 17.8)과 ㄹ(아세틸렌: (81 − 2.5)/2.5 = 31.4)도 모두 옳은 값이므로 ㄱ, ㄹ이 누락되었습니다.",
@@ -675,10 +694,15 @@
     "text": "고체의 연소 형태 중 숯, 목탄, 코크스, 금속분은 가연성 가스 발생 없이 고체 표면에서 산소와 직접 반응하는 '표면연소(작열연소)'를 한다.",
     "isCorrect": true,
     "source": "2018년 소방공채·경채 Q7 기출",
-    "explanation": "숯, 목탄, 코크스, 금속분은 휘발분이 없어 불꽃(화염)이 생기지 않는 무염 표면연소(연소의 3요소만 작용)를 합니다.",
+    "explanation": "숯, 목탄, 코크스, 금속분은 휘발분이 없어 불꽃(화염)이 생기지 않는 무염 표면연소(연소의 3요소만 작용)를 합니다. 💡 핵심 암기 팁: 숯·목탄·코크스·활성탄·금속분 = 가연성 가스 없는 무염 표면연소(작열연소)!",
     "origQId": "Q₂018₇",
     "id": "SCI_02_02_001",
-    "hlKey": "표면연소",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "표면연소(작열연소, 무염연소)",
     "paraIdx": 3,
     "isEssential": true
   },
@@ -687,23 +711,33 @@
     "text": "플라스틱, 목재, 종이는 열분해 과정 없이 고체 표면에서 직접 산소와 결합하는 표면연소를 한다.",
     "isCorrect": false,
     "source": "2018년 소방공채·경채 Q7 기출",
-    "explanation": "플라스틱, 목재, 종이, 석탄은 열을 받으면 열분해되어 가연성 가스를 발생시키고 불꽃을 내며 타는 '분해연소' 물질입니다.",
+    "explanation": "플라스틱, 목재, 종이, 석탄은 열을 받으면 열분해되어 가연성 가스를 발생시키고 불꽃을 내며 타는 '분해연소' 물질입니다. 💡 1초 판별 팁: 목재·종이·석탄·플라스틱 = 열분해 가스 방출 ➔ 분해연소(표면연소 X)!",
     "origQId": "Q₂018₇",
     "id": "SCI_02_02_002",
-    "hlKey": "분해연소",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "목재, 종이, 섬유(면화), 석탄, 플라스틱(열경화성 수지)",
     "paraIdx": 3,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "가연성 가스의 위험도(H)는 연소범위의 폭(상한계 빼기 하한계)을 연소하한계로 나눈 값이며, 메탄·에탄·프로판·부탄 중에서는 연소하한계가 가장 낮은 부탄의 위험도가 약 3.67로 가장 크다.",
-    "isCorrect": true,
+    "text": "가연성 가스의 위험도(H)는 연소범위의 폭(상한계 빼기 하한계)을 연소상한계로 나눈 값이며, 메탄·에탄·프로판·부탄 중에서는 탄소수가 가장 적은 메탄의 위험도가 가장 크다.",
+    "isCorrect": false,
     "source": "2020년 소방공채·경채 Q3 기출",
-    "explanation": "위험도 H = (UFL 빼기 LFL) ÷ LFL 공식에 따라 메탄(2.0) < 에탄(3.13) < 프로판(3.52) < 부탄(3.67) 순으로 탄소수가 클수록 위험도가 증가합니다.",
+    "explanation": "위험도(H)는 연소범위의 폭(UFL 빼기 LFL)을 연소상한계가 아니라 '연소하한계(LFL)'로 나눈 값입니다. 또한 파라핀계 탄화수소는 탄소수가 클수록 하한계가 낮아지므로 메탄(2.0) < 에탄(3.13) < 프로판(3.52) < 부탄(3.67) 순으로 부탄의 위험도가 가장 큽니다. 💡 1초 판별 팁: 위험도 H 분모 = 연소하한계(LFL)! 탄소수↑ ➔ LFL↓ ➔ 부탄 위험도 최대!",
     "origQId": "Q₂020₃",
     "id": "SCI_02_02_003",
-    "hlKey": "연소범위",
-    "paraIdx": 0,
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "부탄의 위험도가 가장 큽니다",
+    "paraIdx": 1,
     "isEssential": true
   },
   {
@@ -711,22 +745,32 @@
     "text": "최소산소농도(MOC)는 연소상한계에 의해 결정되며, 가연성 혼합기가 연소할 때 화염이 전파되는 데 필요한 최소한의 임계 산소농도를 말한다.",
     "isCorrect": false,
     "source": "2021년 소방공채·경채 Q13 기출",
-    "explanation": "최소산소농도(MOC)는 연소상한계가 아니라 '연소하한계(LFL)'와 완전연소반응식의 산소 몰수의 곱(MOC = LFL × 산소 몰수)에 의해 결정됩니다.",
+    "explanation": "최소산소농도(MOC)는 연소상한계가 아니라 '연소하한계(LFL)'와 완전연소반응식의 산소 몰수의 곱(MOC = LFL × 산소 몰수)에 의해 결정됩니다. 💡 1초 판별 팁: MOC = LFL(하한계) × 산소 몰수(n)! 상한계(UFL) 아님!",
     "origQId": "Q₂021₁3",
     "id": "SCI_02_02_004",
-    "hlKey": "최소산소농도",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "연소하한계(LFL) × 완전연소 산소 몰수(n)",
     "paraIdx": 2,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "프로판(C3H8)의 연소하한계가 2.1퍼센트일 때 완전연소에 필요한 최소산소농도(MOC)는 10.5퍼센트이다.",
-    "isCorrect": true,
+    "text": "프로판(C3H8)의 연소하한계가 2.1퍼센트일 때 완전연소에 필요한 최소산소농도(MOC)는 6.3퍼센트이다.",
+    "isCorrect": false,
     "source": "2021년 소방공채·경채 Q13 기출",
-    "explanation": "C3H8 + 5O2 ➔ 3CO2 + 4H2O 반응식에서 산소 몰수는 5이므로, MOC = 2.1퍼센트 × 5 = 10.5퍼센트입니다.",
+    "explanation": "프로판 완전연소 반응식(C3H8 + 5O2 ➔ 3CO2 + 4H2O)에서 필요한 산소 몰수는 이산화탄소 몰수(3)가 아니라 5몰이므로, MOC = 2.1퍼센트 × 5 = 10.5퍼센트입니다. 💡 1초 판별 팁: 프로판(C3H8) 이론산소 = 3 + 8÷4 = 5몰! 2.1% × 5 = 10.5%(6.3%는 CO2 계수 3을 곱한 함정)!",
     "origQId": "Q₂021₁3",
     "id": "SCI_02_02_005",
-    "hlKey": "최소산소농도",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "MOC = 2.1% × 5 =",
     "paraIdx": 2,
     "isEssential": false
   },
@@ -735,47 +779,64 @@
     "text": "연소속도에 영향을 미치는 요인으로는 가연성 물질의 종류, 촉매의 존재 유무와 농도, 공기 중 산소량, 가연성 물질과 산화제의 당량비, 온도 등이 있다.",
     "isCorrect": true,
     "source": "2021년 소방공채·경채 Q15 기출",
-    "explanation": "연소속도는 가연물의 종류, 산소 농도, 당량비(화학양론비 부근에서 최대), 온도, 정촉매·부촉매 유무에 따라 결정됩니다.",
+    "explanation": "연소속도는 가연물의 종류, 산소 농도, 당량비(화학양론비 부근에서 최대), 온도, 정촉매·부촉매 유무에 따라 결정됩니다. 💡 핵심 암기 팁: 연소속도 영향요인 = 종류·촉매·산소량·당량비·온도·압력·난류!",
     "origQId": "Q₂021₁5",
     "id": "SCI_02_02_006",
-    "hlKey": "영향을",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "연소속도에 영향을 미치는 요인",
     "paraIdx": 5,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "메틸알코올(CH3OH)의 연소상한계가 37퍼센트이고 연소범위 폭이 30퍼센트일 때, 연소하한계는 7퍼센트이며 최소산소농도(MOC)는 10.5퍼센트이다.",
-    "isCorrect": true,
+    "text": "메틸알코올(CH3OH)의 연소상한계가 37퍼센트이고 연소범위 폭이 30퍼센트일 때, 연소하한계는 7퍼센트이며 최소산소농도(MOC)는 14.0퍼센트이다.",
+    "isCorrect": false,
     "source": "2022년 소방공채·경채 Q5 기출",
-    "explanation": "CH3OH + 1.5O2 ➔ CO2 + 2H2O 반응식에서 산소 몰수는 1.5이므로 MOC = 하한계(7퍼센트) × 1.5 = 10.5퍼센트입니다.",
+    "explanation": "연소하한계는 37 빼기 30 = 7퍼센트가 맞으나, 메틸알코올(CH3OH + 1.5O2 ➔ CO2 + 2H2O)은 분자 내에 산소 원자 1개를 포함하고 있어 외부 산소 몰수는 2몰이 아니라 1.5몰이므로, MOC = 7퍼센트 × 1.5 = 10.5퍼센트입니다. 💡 1초 판별 팁: 메탄올(CH3OH) 분자 내 O 1개 차감 ➔ 외부 산소 n = 1.5몰 ➔ 7% × 1.5 = 10.5%(14.0%는 2몰 함정)!",
     "origQId": "Q₂022₅",
     "id": "SCI_02_02_007",
-    "hlKey": "연소범위",
-    "paraIdx": 0,
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "분자 내 산소 1원자를 차감한 외부 산소 몰수",
+    "paraIdx": 2,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "기체 연료노즐에서 연소속도가 분출속도보다 빠를 때 불꽃이 노즐 속으로 빨려 들어가는 현상을 '역화(Flashback)'라 하고, 분출속도가 연소속도보다 빠를 때 불꽃이 노즐 위에 들뜨는 현상을 '선화(Lifting)'라 한다.",
-    "isCorrect": true,
+    "text": "기체 연료노즐에서 분출속도가 연소속도보다 빠를 때 불꽃이 노즐 속으로 빨려 들어가는 현상을 '역화(Flashback)'라 하고, 연소속도가 분출속도보다 빠를 때 불꽃이 노즐 위에 들뜨는 현상을 '선화(Lifting)'라 한다.",
+    "isCorrect": false,
     "source": "2022년 소방공채·경채 Q16 기출",
-    "explanation": "역화는 연소속도 > 분출속도일 때, 선화(들뜸) 및 블로오프(꺼짐)는 분출속도 > 연소속도일 때 발생합니다.",
+    "explanation": "역화와 선화의 속도 조건을 서로 맞바꾸었습니다. '역화'는 연소속도가 분출속도보다 빨라 불꽃이 노즐 속으로 빨려 들어가는 현상이고, '선화(들뜸)' 및 '블로우오프(소멸)'는 분출속도가 연소속도보다 빠를 때 발생합니다. 💡 1초 판별 팁: 연소속도 > 분출속도 = 역화(안으로 빨림) / 분출속도 > 연소속도 = 선화(위로 들뜸)!",
     "origQId": "Q₂022₁6",
     "id": "SCI_02_02_008",
-    "hlKey": "기체",
-    "paraIdx": 1,
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "역화(Flashback)",
+    "paraIdx": 5,
     "isEssential": true
   },
   {
     "grade": "A",
-    "text": "기체 연료노즐에서 분출하는 기체연료와 공기의 화학양론비에서 공기량이 적을 때 탄소 입자가 백열하여 '황염'이 발생한다.",
-    "isCorrect": true,
+    "text": "기체 연료노즐에서 분출하는 기체연료와 공기의 화학양론비에서 공기량이 과잉일 때 미연소 탄소 입자가 백열하여 '황염'이 발생한다.",
+    "isCorrect": false,
     "source": "2022년 소방공채·경채 Q16 기출",
-    "explanation": "공기량이 화학양론비보다 부족하면 불완전연소에 의해 생성된 미세 탄소 입자(그을음)가 고온 화염 속에서 백열하여 노란 불꽃인 황염이 발생합니다.",
+    "explanation": "황염(노란 불꽃)은 공기량이 화학양론비보다 '과잉'일 때가 아니라 '적을 때(공기 부족 불완전연소)' 미연소 미세 탄소 입자(그을음)가 고온 화염 속에서 백열하며 발생합니다. 💡 1초 판별 팁: 황염 = 공기 부족(불완전연소) 시 그을음 백열! 공기 충분 시 청색 비휘염!",
     "origQId": "Q₂022₁6",
     "id": "SCI_02_02_009",
-    "hlKey": "기체",
-    "paraIdx": 1,
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "황염(Yellow Flame)",
+    "paraIdx": 5,
     "isEssential": false
   },
   {
@@ -783,10 +844,15 @@
     "text": "연료노즐에서 흐름이 난류(Turbulent)인 경우 확산연소에서 화염의 높이는 분출속도에 비례한다.",
     "isCorrect": false,
     "source": "2022년 소방공채·경채 Q16 기출",
-    "explanation": "층류 확산화염의 높이는 분출속도에 비례하지만, 난류 확산화염의 높이는 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례합니다.",
+    "explanation": "층류 확산화염의 높이는 분출속도에 비례하지만, 난류 확산화염의 높이는 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례합니다. 💡 1초 판별 팁: 층류 화염 높이 ∝ 분출속도 / 난류 화염 높이 ∝ 노즐 직경(속도 무관)!",
     "origQId": "Q₂022₁6",
     "id": "SCI_02_02_010",
-    "hlKey": "연료노즐에서",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "분출속도와 무관하게 일정하며 오직 노즐 직경에 비례",
     "paraIdx": 5,
     "isEssential": true
   },
@@ -795,10 +861,14 @@
     "text": "작열연소는 화염이 없는 표면연소이며, 고체 가연물 중 유황(황), 나프탈렌, 파라핀(양초)은 분해연소가 아니라 '증발연소'를 한다.",
     "isCorrect": true,
     "source": "2024년 소방공채·경채 Q5 기출",
-    "explanation": "숯·코크스는 표면연소(작열연소), 유황·나프탈렌·파라핀은 증발연소, 목재·종이·석탄은 분해연소를 합니다.",
+    "explanation": "숯·코크스는 표면연소(작열연소), 유황·나프탈렌·파라핀은 증발연소, 목재·종이·석탄은 분해연소를 합니다. 💡 핵심 암기 팁: 고체 증발연소 3대장 = 유황(황)·나프탈렌·파라핀(양초)!",
     "origQId": "Q₂024₅",
     "id": "SCI_02_02_011",
-    "hlKey": "표면연소",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "유황(황), 나프탈렌, 파라핀(양초), 장뇌, 황린",
     "paraIdx": 3,
     "isEssential": false
   },
@@ -807,34 +877,47 @@
     "text": "물질 자체 내의 산소를 소모하며 빠르게 연소하는 자기연소(내부연소)는 제3류 위험물의 대표적인 연소 형태이다.",
     "isCorrect": false,
     "source": "2024년 소방공채·경채 Q5 기출",
-    "explanation": "분자 내 산소를 소모하여 자체 연소하는 자기연소(내부연소) 물질은 제3류 위험물이 아니라 '제5류 위험물(자기반응성 물질: 피크르산, TNT, 니트로셀룰로오스, 셀룰로이드 등)'입니다.",
+    "explanation": "분자 내 산소를 소모하여 자체 연소하는 자기연소(내부연소) 물질은 제3류 위험물이 아니라 '제5류 위험물(자기반응성 물질: 피크르산, TNT, 니트로셀룰로오스, 셀룰로이드 등)'입니다. 💡 1초 판별 팁: 자기연소(분자 내 산소) = 제5류 자기반응성 물질! 제3류(자연발화·금수성) 아님!",
     "origQId": "Q₂024₅",
     "id": "SCI_02_02_012",
-    "hlKey": "자기연소",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "자기연소(내부연소)",
     "paraIdx": 3,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "연소범위가 A(2퍼센트에서 22퍼센트), B(4퍼센트에서 75퍼센트), C(1퍼센트에서 44퍼센트)인 가스의 위험도(H)는 각각 A는 10, B는 17.75, C는 43이므로 위험도가 낮은 순서는 A, B, C이다.",
-    "isCorrect": true,
+    "text": "연소범위가 A(2퍼센트에서 22퍼센트), B(4퍼센트에서 75퍼센트), C(1퍼센트에서 44퍼센트)인 가스의 위험도(H)는 각각 A는 10, B는 17.75, C는 43이므로 위험도가 가장 높은 가스는 연소상한계가 가장 높은 B이다.",
+    "isCorrect": false,
     "source": "2024년 소방공채·경채 Q16 기출",
-    "explanation": "위험도 H = (상한계 빼기 하한계) ÷ 하한계 공식에 대입하면 A(10) < B(17.75) < C(43) 순으로 위험도가 커집니다.",
+    "explanation": "위험도 H = (상한계 빼기 하한계) ÷ 하한계 공식에 대입하면 A = 10, B = 17.75, C = 43이므로 연소상한계가 가장 높은 B(17.75)가 아니라 연소하한계가 가장 낮은 C(43)의 위험도가 가장 높습니다. 💡 1초 판별 팁: UFL 최고(B 75%)라도 분모 LFL 최저(C 1%)인 C의 위험도(43)가 최대!",
     "origQId": "Q₂024₁6",
     "id": "SCI_02_02_013",
-    "hlKey": "연소범위",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "위험도가 낮은 순서는",
     "paraIdx": 0,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "혼합가스 각 성분의 체적비가 VA 20퍼센트(LA 4퍼센트), VB 40퍼센트(LB 20퍼센트), VC 40퍼센트(LC 10퍼센트)일 때 르샤틀리에(Le Chatelier) 식에 따른 혼합가스의 연소하한계는 약 9.1퍼센트이다.",
-    "isCorrect": true,
+    "text": "혼합가스 각 성분의 체적비가 VA 20퍼센트(LA 4퍼센트), VB 40퍼센트(LB 20퍼센트), VC 40퍼센트(LC 10퍼센트)일 때 르샤틀리에(Le Chatelier) 식에 따른 혼합가스의 연소하한계는 11.0퍼센트이다.",
+    "isCorrect": false,
     "source": "2024년 소방공채·경채 Q24 기출",
-    "explanation": "100 ÷ Lm = (20 ÷ 4) + (40 ÷ 20) + (40 ÷ 10) = 5 + 2 + 4 = 11이므로, Lm = 100 ÷ 11 = 약 9.1퍼센트가 됩니다.",
+    "explanation": "100 ÷ Lm = (20 ÷ 4) + (40 ÷ 20) + (40 ÷ 10) = 5 + 2 + 4 = 11이므로, 11.0퍼센트는 우변 합계값일 뿐이고 최종 연소하한계는 Lm = 100 ÷ 11 = 약 9.1퍼센트입니다. 💡 1초 판별 팁: 르샤틀리에 식 마지막 역수(100 ÷ 합계) 잊지 말기! 100 ÷ 11 ≈ 9.1%!",
     "origQId": "Q₂024₂4",
     "id": "SCI_02_02_014",
-    "hlKey": "혼합가스",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "약 9.1%",
     "paraIdx": 1,
     "isEssential": true
   },
@@ -843,34 +926,48 @@
     "text": "인화성 액체 화재에서 액체가 쏟아지면서 주변으로 튀거나 끓어올라 포어패턴(Pour pattern) 주변의 미연소 부분에 국부적으로 점처럼 연소된 흔적을 '스플래시패턴(Splash pattern)'이라 한다.",
     "isCorrect": true,
     "source": "2025년 소방공채·경채 Q6 기출",
-    "explanation": "포어패턴(쏟아진 유류 본체 흔적), 도넛패턴(중심부 미연소 고리 흔적), 스플래시패턴(주변에 튄 점 모양 연소 흔적), 틈새연소패턴(바닥 틈새 침투 연소 흔적)은 인화성 액체 화재의 4대 감식 패턴입니다.",
+    "explanation": "포어패턴(쏟아진 유류 본체 흔적), 도넛패턴(중심부 미연소 고리 흔적), 스플래시패턴(주변에 튄 점 모양 연소 흔적), 틈새연소패턴(바닥 틈새 침투 연소 흔적)은 인화성 액체 화재의 4대 감식 패턴입니다. 💡 핵심 암기 팁: 포어(고임 본체)·스플래시(주변 튄 점)·도넛(중심 보호 고리)·틈새(이음매)!",
     "origQId": "Q₂025₆",
     "id": "SCI_02_02_015",
-    "hlKey": "인화성",
+    "tier": "core",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "스플래시 패턴(Splash Pattern, 비산 패턴)",
     "paraIdx": 6,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "주요 가연성 가스의 위험도(H)는 아세틸렌(31.4) > 수소(17.8) > 일산화탄소(4.9) > 프로페인(3.5) 순으로 크다.",
-    "isCorrect": true,
+    "text": "주요 가연성 가스의 위험도(H)는 아세틸렌(31.4) > 수소(17.8) > 프로페인(4.9) > 일산화탄소(3.5) 순으로 크다.",
+    "isCorrect": false,
     "source": "2025년 소방공채·경채 Q8 기출",
-    "explanation": "아세틸렌(2.5퍼센트에서 81퍼센트, H=31.4), 수소(4퍼센트에서 75퍼센트, H=17.8), 일산화탄소(12.5퍼센트에서 74퍼센트, H=4.9), 프로페인(2.1퍼센트에서 9.5퍼센트, H=3.5)은 필수 암기 수치입니다.",
+    "explanation": "일산화탄소(12.5퍼센트에서 74퍼센트, H = 4.92 ≈ 4.9)의 위험도가 프로페인(2.1퍼센트에서 9.5퍼센트, H = 3.52 ≈ 3.5)보다 더 큽니다. 아세틸렌(31.4) > 수소(17.8) > 일산화탄소(4.9) > 프로페인(3.5) 순서입니다. 💡 1초 판별 팁: H 서열 = 아(31.4) > 수(17.8) > 일(4.9) > 프(3.5)! CO가 프로페인보다 큼!",
     "origQId": "Q₂025₈",
     "id": "SCI_02_02_016",
-    "hlKey": "일산화탄소",
-    "paraIdx": 0,
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "일산화탄소(CO, 12.5%에서 74%까지, H ≈ 4.9)",
+    "paraIdx": 1,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "제5류 위험물인 피크르산(트리니트로페놀), 트리니트로톨루엔(TNT), 니트로글리세린, 셀룰로이드의 연소 형태는 '자기연소(내부연소)'이다.",
-    "isCorrect": true,
+    "text": "제5류 위험물인 피크르산(트리니트로페놀), 트리니트로톨루엔(TNT), 니트로글리세린, 셀룰로이드는 고체 표면에서 외부 산소와 직접 반응하는 '표면연소'를 한다.",
+    "isCorrect": false,
     "source": "2025년 소방공채·경채 Q9 기출",
-    "explanation": "제5류 자기반응성 물질은 분자 구조 내에 산소를 함유하고 있어 외부 산소 없이도 급격히 타는 자기연소를 합니다.",
+    "explanation": "제5류 자기반응성 물질(피크르산, TNT, 니트로글리세린, 셀룰로이드)은 외부 산소를 기다리는 표면연소가 아니라 분자 구조 내 산소를 자체 소모하는 '자기연소(내부연소)'를 합니다. 💡 1초 판별 팁: 피크르산·TNT·니트로·셀룰로이드 = 제5류 위험물 ➔ 자기연소(외부 질식 무효)!",
     "origQId": "Q₂025₉",
     "id": "SCI_02_02_017",
-    "hlKey": "자기연소",
+    "tier": "core",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "제5류 위험물(자기반응성 물질:",
     "paraIdx": 3,
     "isEssential": false
   },
@@ -879,127 +976,240 @@
     "text": "펜테인(C5H12)의 완전연소 반응식(C5H12 + 8O2 ➔ 5CO2 + 6H2O)에서 펜테인 1몰당 필요한 산소는 8몰이며, 대기 산소농도 20 vol% 가정 및 각 단계 소수점 첫째 자리 반올림 조건 적용 시 최소산소농도(MOC) 계산값은 8 vol%이다.",
     "isCorrect": true,
     "source": "2026년 소방공채·경채 Q15 기출",
-    "explanation": "화학양론농도 Cst = 100 ÷ 41 ≈ 2.4%(반올림 시 2 vol%), 존스 식 LFL = 0.55 × 2 = 1.1%(반올림 시 1 vol%), MOC = 1 vol% × 8 = 8 vol%가 산출됩니다.",
+    "explanation": "화학양론농도 Cst = 100 ÷ 41 ≈ 2.4%(반올림 시 2 vol%), 존스 식 LFL = 0.55 × 2 = 1.1%(반올림 시 1 vol%), MOC = 1 vol% × 8 = 8 vol%가 산출됩니다. 💡 핵심 암기 팁: 펜테인(n=8, 산소 20%) ➔ Cst 2% ➔ LFL 1% ➔ MOC = 1 × 8 = 8 vol%!",
     "origQId": "Q₂026₁5",
     "id": "SCI_02_02_018",
-    "hlKey": "최소산소농도",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "대기 산소 20 vol% 가정 및 단계별 소수점 첫째 자리 반올림",
     "paraIdx": 2,
     "isEssential": false
   },
   {
     "grade": "A",
-    "text": "일반적으로 가연성 가스의 온도와 압력이 상승하면 연소범위가 넓어져 폭발 위험성이 커지나, 일산화탄소(CO)는 예외적으로 압력이 상승할 때 연소범위가 좁아진다.",
-    "isCorrect": true,
-    "source": "연소범위 영향인자 핵심",
-    "explanation": "대부분의 가연성 기체는 온도와 압력이 높을수록 분자 운동이 활발해져 연소범위가 넓어지지만, 일산화탄소(CO)는 압력이 증가하면 오히려 연소범위가 좁아지는 예외 물질입니다.",
+    "text": "일반적으로 가연성 가스의 초기 압력이 상승할 때 일산화탄소(CO)는 연소상한계가 감소하여 연소범위가 좁아지나, 수소(H2)는 압력 증가에 따라 처음부터 일직선으로 연소범위가 계속 넓어진다.",
+    "isCorrect": false,
+    "source": "연소범위 영향인자 사각지대",
+    "explanation": "일산화탄소(CO)가 압력 상승 시 연소범위가 좁아지는 대표 예외인 것은 맞지만, 수소(H2) 역시 압력이 증가할 때 처음에는 연소범위가 다소 좁아지다가 고압 구간 이후에야 다시 넓어지는 특이 거동을 보입니다. 💡 1초 판별 팁: 사각지대 킬러! 압력 상승 예외 2총사 = CO(계속 축소) + H2(좁아지다 고압에서 재확대)!",
     "origQId": "",
     "id": "SCI_02_02_019",
-    "hlKey": "연소범위",
+    "tier": "core",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "고압 구간 이후 다시 넓어지는 특이 거동",
     "paraIdx": 0,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "B",
+    "text": "[최소산소농도] 연소할 때 화염이 전파되는 데 허용되는 최대의 임계산소농도를 말한다.",
+    "isCorrect": false,
+    "source": "2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산",
+    "explanation": "최소산소농도(MOC, 한계산소농도 LOC)는 최대가 아니라 가연성 혼합기가 연소할 때 화염이 전파되는 데 필요한 '최소한의' 임계 산소농도를 말합니다. 💡 1초 판별 팁: MOC(Minimum) = 화염 전파에 필요한 '최소' 임계산소농도(최대 X)!",
+    "origQId": "Q₂021₁3",
+    "id": "EXT_SCI_02_02_001",
+    "tier": "ext",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "최소산소농도(MOC, 한계산소농도 LOC)",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "불완전연소반응식에서 생성되는 일산화탄소(CO) 몰수에 의해 최소산소농도가 결정된다.",
+    "isCorrect": false,
+    "source": "2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산",
+    "explanation": "이론적 최소산소농도(MOC) 계산 시에는 불완전연소 생성물이 아니라 '완전연소반응식'에서 연료 1몰당 필요한 산소(O2)의 화학양론 몰수와 연소하한계(LFL)가 사용됩니다. 💡 1초 판별 팁: MOC = LFL × 완전연소반응식 산소(O2) 몰수!",
+    "origQId": "Q₂021₁3",
+    "id": "EXT_SCI_02_02_002",
+    "tier": "ext",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "완전연소 화학양론 산소 몰수(n)",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "B",
+    "text": "[최소산소농도] 프로판(C3H8) 1몰(mol)이 완전 연소하는 데 필요한 최소 산소농도는 15.0 %이다.",
+    "isCorrect": false,
+    "source": "2021년 소방공채·경채 Q13 · 최소산소농도(MOC)의 결정 인자 및 프로판 MOC 계산",
+    "explanation": "프로판(C3H8 + 5O2 ➔ 3CO2 + 4H2O)의 연소하한계는 약 2.1퍼센트이고 산소 몰수는 5이므로, MOC = 2.1% × 5 = 10.5%가 됩니다. 💡 1초 판별 팁: 프로판(C3H8) LFL 2.1% × O2 5몰 = 10.5%!",
+    "origQId": "Q₂021₁3",
+    "id": "EXT_SCI_02_02_003",
+    "tier": "ext",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "최소산소농도(MOC) 산정 공식",
+    "paraIdx": 2,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "분해연소: 유황이나 나프탈렌이 열분해되면서 일어나는 연소이다.",
+    "isCorrect": false,
+    "source": "2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)",
+    "explanation": "유황(황)이나 나프탈렌, 파라핀은 열분해되는 것이 아니라 고체가 액화·승화하여 증발된 증기가 타는 '증발연소' 물질입니다. 💡 1초 판별 팁: 유황·나프탈렌·파라핀 = 고체 증발연소(열분해 X)!",
+    "origQId": "Q₂024₅",
+    "id": "EXT_SCI_02_02_004",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "고체 가연물의 4대 연소 형태 (표면 · 분해 · 증발 · 자기연소)",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "증발연소: 액체에서만 발생하는 연소형태로서 액면에서 비등하는 기체에서 발생한다.",
+    "isCorrect": false,
+    "source": "2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)",
+    "explanation": "증발연소는 액체 가연물뿐만 아니라 황, 나프탈렌, 양초(파라핀)와 같은 '고체 가연물'에서도 발생합니다. 💡 1초 판별 팁: 증발연소는 액체뿐만 아니라 고체(유황·나프탈렌·파라핀)에서도 발생!",
+    "origQId": "Q₂024₅",
+    "id": "EXT_SCI_02_02_005",
+    "tier": "ext",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "고체에서도 일어나며",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "A",
+    "text": "자기연소: 제3류 위험물과 같이 물질 자체 내의 산소를 소모하는 연소로서 연소속도가 빠르다.",
+    "isCorrect": false,
+    "source": "2024년 소방공채·경채 Q5 · 고체 및 액체 가연물의 연소 형태(작열·분해·증발·자기연소)",
+    "explanation": "물질 자체 내의 산소를 소모하여 연소하는 자기연소(내부연소) 물질은 제3류 위험물(자연발화성 및 금수성)이 아니라 '제5류 위험물(자기반응성 물질: 니트로화합물, 질산에스테르류 등)'입니다. 💡 1초 판별 팁: 분자 내 산소 자기연소 = 제5류 위험물(제3류 X)!",
+    "origQId": "Q₂024₅",
+    "id": "EXT_SCI_02_02_006",
+    "tier": "ext",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "외부 산소 차단 질식소화 무효",
+    "paraIdx": 3,
     "isEssential": false
   },
   {
     "grade": "S",
-    "text": "산화에틸렌(C₂H₄O, 연소범위 3.0%에서 100%까지)과 히드라진(N₂H₄, 4.7%에서 100%까지)은 연소상한계(UFL)가 100%이므로 공기(산소) 혼합 없이 100% 순수 가스 상태에서도 분해폭발을 일으킬 수 있다.",
-    "isCorrect": true,
+    "text": "산화에틸렌(C₂H₄O, 연소범위 3.0%에서 100%까지)과 히드라진(N₂H₄, 4.7%에서 100%까지)은 연소상한계(UFL)가 100%이므로 외부 공기(산소)를 완전히 차단하면 어떤 경우에도 폭발이 일어나지 않는다.",
+    "isCorrect": false,
     "source": "🎯 2회독 주변확장 (산화에틸렌·히드라진 상한계 100%)",
-    "explanation": "산화에틸렌(3%에서 100%)과 히드라진(4.7%에서 100%)은 연소상한계가 100%로서 외부 산소가 전혀 없는 상태에서도 점화원에 의해 자체 분해폭발이 일어나는 대표적인 물질입니다.",
+    "explanation": "산화에틸렌(3%에서 100%)과 히드라진(4.7%에서 100%)은 연소상한계가 100%이므로, 외부 공기(산소)를 완전히 차단한 100% 순수 가스 상태에서도 점화원이나 충격에 의해 자체 '분해폭발'을 일으킵니다. 💡 1초 판별 팁: 상한계 100%(산화에틸렌·히드라진) = 공기 0% 순수 상태에서도 자체 분해폭발!",
     "origQId": "",
     "id": "PRED_SCI_02_02_001",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "산화에틸렌",
+    "hlKey": "연소상한계 100% 분해폭발 가스",
     "paraIdx": 1,
     "isEssential": true
   },
   {
     "grade": "S",
-    "text": "제4류 특수인화물인 디에틸에테르(연소범위 1.9%에서 48%까지)와 이황화탄소(연소범위 1.2%에서 44%까지)를 비교하면, 연소범위의 폭(U - L)이 더 넓은 디에틸에테르가 이황화탄소보다 위험도(H)가 더 크다.",
+    "text": "제4류 특수인화물인 디에틸에테르(연소범위 1.9%에서 48%까지)와 이황화탄소(연소범위 1.2%에서 44%까지)를 비교하면, 연소범위의 폭(U 빼기 L)이 더 넓은 디에틸에테르가 이황화탄소보다 위험도(H)가 더 크다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (이황화탄소 H≈35.7 vs 디에틸에테르 H≈24.3 분모 착시)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 수험생이 '연소범위 폭(46.1% vs 42.8%)이 넓으면 위험도도 크겠지'라고 직관적으로 속는 함정입니다! 위험도 공식 H = (U - L) ÷ L은 분모가 '연소하한계(L)'이므로, 하한계가 1.2%로 더 낮은 이황화탄소의 위험도(H = 42.8 / 1.2 ≈ 35.7)가 디에틸에테르(H = 46.1 / 1.9 ≈ 24.3)보다 훨씬 큽니다!",
+    "explanation": "수험생이 '연소범위 폭(46.1% vs 42.8%)이 넓으면 위험도도 크겠지'라고 직관적으로 속는 사각지대 착시 함정입니다. 위험도 공식 H = (U 빼기 L) ÷ L은 분모가 '연소하한계(L)'이므로, 하한계가 1.2%로 더 낮은 이황화탄소의 위험도(H = 42.8 ÷ 1.2 ≈ 35.7)가 디에틸에테르(H = 46.1 ÷ 1.9 ≈ 24.3)보다 훨씬 큽니다. 💡 1초 판별 팁: 사각지대 킬러! 폭(U−L)보다 분모 LFL! 이황화탄소(H≈35.7) > 디에틸에테르(H≈24.3)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_002",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "이황화탄소",
+    "hlKey": "디에틸에테르(H ≈ 24.3)보다 훨씬 큽니다",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "A",
     "text": "휘발유(가솔린)는 연소범위가 약 1.4%에서 48%까지로 매우 넓기 때문에 화재 위험성이 높다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (휘발유 vs 디에틸에테르 연소범위 구분)",
-    "explanation": "연소범위가 1.9%에서 48%까지로 매우 넓은 것은 '디에틸에테르'입니다. 휘발유는 연소범위가 1.4%에서 7.6%까지로 폭 자체는 좁지만, 연소하한계(1.4%)와 인화점(영하 43도)이 매우 낮아 위험성이 높습니다.",
+    "explanation": "연소범위가 1.9%에서 48%까지로 매우 넓은 것은 '디에틸에테르'입니다. 휘발유는 연소범위가 1.4%에서 7.6%까지로 폭 자체는 좁지만, 연소하한계(1.4%)와 인화점(영하 43도)이 매우 낮아 위험성이 높습니다. 💡 1초 판별 팁: 휘발유 연소범위 = 1.4%에서 7.6%(좁지만 하한계 극저)! 48%는 디에틸에테르!",
     "origQId": "",
     "id": "PRED_SCI_02_02_003",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "휘발유",
+    "hlKey": "휘발유(약 1.4%에서 7.6%까지, H ≈ 4.43)",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "A",
     "text": "암모니아(NH₃)는 공기 중 연소범위가 약 15%에서 28%까지로서 연소하한계가 높고 위험도(H ≈ 0.87)가 1 미만이어서 일반 탄화수소 가스에 비해 폭발 위험성이 낮다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (암모니아 연소범위 및 위험도)",
-    "explanation": "암모니아(NH₃)는 가연성 가스이나 연소범위가 15%에서 28%까지여서 위험도 H = (28 - 15) ÷ 15 ≈ 0.87로 가연성 가스 중 상대적으로 착화·폭발 위험이 낮습니다.",
+    "explanation": "암모니아(NH₃)는 가연성 가스이나 연소범위가 15%에서 28%까지여서 위험도 H = (28 빼기 15) ÷ 15 ≈ 0.87로 가연성 가스 중 상대적으로 착화·폭발 위험이 낮습니다. 💡 핵심 암기 팁: 암모니아(NH₃) = 15%에서 28%, 위험도 H ≈ 0.87(1 미만)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_004",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "암모니아",
+    "hlKey": "하한계가 높아 위험도가 1 미만으로 폭발 위험성이 낮습니다",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
-    "text": "가연성 혼합기에 불활성 가스를 첨가할 때 폭발범위를 축소시키는 소염 효과는 질소(N₂)가 이산화탄소(CO₂)보다 더 우수하다.",
+    "text": "가연성 혼합기에 불활성 가스를 첨가할 때 폭발범위를 축소시키는 소염 효과는 이원자 분자인 질소(N₂)가 다원자 분자인 이산화탄소(CO₂)보다 몰열용량이 커서 더 우수하다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (불활성 가스 종류별 폭발범위 축소 효과)",
-    "explanation": "불활성 가스의 폭발범위 축소(소염) 효과는 단위 부피당 열용량이 클수록 우수하므로 '사염화탄소(CCl₄) > 이산화탄소(CO₂) > 수증기(H₂O) > 질소(N₂) > 헬륨(He) > 아르곤(Ar)' 순입니다. 따라서 이산화탄소가 질소보다 소염 효과가 더 우수합니다.",
+    "explanation": "단원자·이원자 기체보다 다원자 기체가 분자 내 진동·회전 자유도가 많아 단위 몰당 열용량(몰비열 Cp)이 큽니다. 따라서 소염 효과는 '사염화탄소(CCl₄) > 이산화탄소(CO₂) > 수증기(H₂O) > 질소(N₂) > 헬륨(He) > 아르곤(Ar)' 순으로 이산화탄소(CO₂)가 질소(N₂)보다 더 우수합니다. 💡 1초 판별 팁: 사각지대 킬러! 다원자(CCl₄·CO₂) 몰열용량↑ ➔ CO₂ > N₂ > He > Ar 순으로 소염 우수!",
     "origQId": "",
     "id": "PRED_SCI_02_02_005",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "소염 효과",
+    "hlKey": "불활성 가스의 소염 효과 서열",
     "paraIdx": 2,
-    "isEssential": true
+    "isEssential": false,
+    "isKiller": true
   },
   {
     "grade": "S",
     "text": "메테인(CH₄) 혼합기에 불활성 가스로 이산화탄소(CO₂)를 주입할 때보다 질소(N₂)를 주입할 때의 최소산소농도(MOC)가 더 높으므로, 질식·소염 효과는 질소(N₂)가 이산화탄소(CO₂)보다 더 우수하다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (불활성 가스 CO₂ vs N₂ 최소산소농도 MOC 고저와 소염 효과)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 최소산소농도(MOC)의 고저와 소염 효과의 우열을 뒤집은 함정입니다! 열용량이 더 큰 이산화탄소(CO₂)를 넣을 때 더 높은 산소 농도(약 14.5 vol%)에서도 불이 꺼지므로 MOC 수치는 'CO₂ 주입 시(14.5%) > N₂ 주입 시(12.0%)'로 CO₂가 더 높고, 따라서 소염 효과 역시 '이산화탄소(CO₂) > 질소(N₂)'입니다!",
+    "explanation": "최소산소농도(MOC)의 고저와 소염 효과의 우열을 뒤집은 사각지대 착시 함정입니다. 열용량이 더 큰 이산화탄소(CO₂)를 넣을 때 산소를 12%까지가 아니라 약 14.5 vol% 아래로만 낮춰도 불이 꺼지므로 MOC 수치는 'CO₂ 주입 시(약 14.5 vol%) > N₂ 주입 시(약 12.0 vol%)'로 CO₂가 더 높고, 소염 효과 역시 CO₂ > N₂입니다. 💡 1초 판별 팁: 사각지대 킬러! MOC 수치 높을수록 적은 희석으로 소화 ➔ CO₂(14.5%) > N₂(12.0%)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_006",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "14.5 vol%",
+    "hlKey": "14.5% 아래로만 낮춰도 이미 화염이 꺼진다는 뜻",
     "paraIdx": 2,
-    "isEssential": true
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "A",
     "text": "수소(H₂)는 최소산소농도(MOC)가 약 5 vol%로 일반 탄화수소(약 10%에서 12%)보다 현저히 낮아 질식소화가 매우 어렵다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (수소의 최소산소농도 특성)",
-    "explanation": "수소(H₂, LFL 4% × 산소 몰수 0.5 = 이론 MOC 2%, 실측 질소 희석 시 약 5%)는 산소 농도가 5% 수준으로 떨어질 때까지 연소가 지속되므로 질식소화가 극히 어렵습니다.",
+    "explanation": "수소(H₂, LFL 4% × 산소 몰수 0.5 = 이론 MOC 2%, 실측 질소 희석 시 약 5%)는 산소 농도가 5% 수준으로 떨어질 때까지 연소가 지속되므로 질식소화가 극히 어렵습니다. 💡 핵심 암기 팁: 수소 MOC 약 5 vol%(일반 탄화수소 10%에서 12%보다 절반 이하) ➔ 질식소화 극난!",
     "origQId": "",
     "id": "PRED_SCI_02_02_007",
     "tier": "pred",
@@ -1015,23 +1225,23 @@
     "text": "일반 탄화수소 가연성 가스는 초기 압력이 상승하면 연소하한계는 거의 변하지 않고 연소상한계가 크게 상승하여 연소범위가 넓어지며, 일산화탄소(CO) 역시 압력이 상승할수록 연소범위가 넓어진다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (일산화탄소 압력 상승 시 연소범위 축소 예외)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 앞부분의 일반 탄화수소 압력 효과(상한계 상승 ➔ 연소범위 확대)는 완벽히 맞지만, '일산화탄소(CO)'는 유일한 예외로서 압력이 상승하면 오히려 연소범위가 '좁아집니다'!",
+    "explanation": "앞부분의 일반 탄화수소 압력 효과(상한계 상승 ➔ 연소범위 확대)는 맞지만, 일산화탄소(CO)는 대표적 예외로서 압력이 상승하면 연소상한계가 감소하여 오히려 연소범위가 좁아집니다. 💡 1초 판별 팁: 압력 상승 시 일반 탄화수소는 범위 확대, 일산화탄소(CO)만 예외적으로 축소!",
     "origQId": "",
     "id": "PRED_SCI_02_02_008",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "일산화탄소(CO)",
+    "hlKey": "압력이 상승할 때 연소상한계가 감소하여 오히려 연소범위가 좁아지며",
     "paraIdx": 0,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
-    "text": "목재가 가열될 때 약 250 ℃에서 260 ℃에 이르면 외부 점화원 없이도 스스로 착화하는 발화 온도(자발화 온도)에 도달하고, 약 400 ℃에서 450 ℃에 이르면 외부 점화원이 있을 때 비로소 착화하는 인화 온도(위험 온도)에 도달한다.",
+    "text": "목재가 가열될 때 약 250도에서 260도에 이르면 외부 점화원 없이도 스스로 착화하는 발화 온도(자발화 온도)에 도달하고, 약 400도에서 450도에 이르면 외부 점화원이 있을 때 비로소 착화하는 인화 온도(위험 온도)에 도달한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (목재 250℃ 인화 온도 vs 400℃ 발화 온도 스왑)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 온도 숫자(250℃에서 260℃ vs 400℃에서 450℃)는 그대로 두고 '인화 온도'와 '발화 온도'의 위치를 맞바꿨습니다! 약 250℃에서 260℃는 외부 점화원이 있어야 불이 붙는 '인화 온도(위험 온도)'이고, 약 400℃에서 450℃가 점화원 없이 스스로 불이 붙는 '발화 온도'입니다!",
+    "explanation": "온도 수치(250도에서 260도 vs 400도에서 450도)는 그대로 두고 '인화 온도'와 '발화 온도'의 위치를 맞바꾸었습니다. 약 250도에서 260도는 외부 점화원이 있어야 불이 붙는 '인화 온도(위험 온도)'이고, 약 400도에서 450도가 점화원 없이 스스로 불이 붙는 '발화 온도(자발화 온도)'입니다. 💡 1초 판별 팁: 목재 250도에서 260도 = 인화 온도(위험 온도) / 400도에서 450도 = 발화 온도!",
     "origQId": "",
     "id": "PRED_SCI_02_02_009",
     "tier": "pred",
@@ -1044,17 +1254,17 @@
   },
   {
     "grade": "S",
-    "text": "목재가 연소할 때 표면에 형성되는 탄화층(숯, Char)은 열전도율이 매우 높아 목재 내부 심부로의 열전달을 급격히 촉진시킨다.",
-    "isCorrect": false,
+    "text": "목재가 연소할 때 표면에 형성되는 다공성 탄화층(숯, Char)은 내부 공극의 정지 공기 때문에 열전도율이 생목재의 약 4분의 1로 낮아 목재 내부 심부로의 열전달을 억제하는 단열재 역할을 한다.",
+    "isCorrect": true,
     "source": "🎯 2회독 주변확장 (목재 탄화층의 단열 효과)",
-    "explanation": "목재 표면에 생성되는 탄화층(Char layer)은 다공성 탄소 구조로서 열전도율이 매우 낮기 때문에, 오히려 목재 내부 심부로의 열전달을 차단·지연시키는 단열재 역할을 합니다.",
+    "explanation": "목재 표면에 생성되는 탄화층(Char layer)은 다공성 탄소 구조로서 열전도율이 생목재의 약 4분의 1로 매우 낮기 때문에, 오히려 목재 내부 심부로의 열전달을 차단·지연시키는 단열재 역할을 합니다. 💡 핵심 암기 팁: 목재 탄화층 = 열전도율 생목재의 1/4 ➔ 심부 열전달 억제(단열 효과)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_010",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "탄화층",
+    "hlKey": "열전도율이 생목재의 약 4분의 1로 매우 낮아 심부로의 열전달을 차단·억제하는 단열재 역할",
     "paraIdx": 4,
     "isEssential": true
   },
@@ -1063,46 +1273,47 @@
     "text": "목재나 석탄은 연소 초기에는 가연성 가스가 불꽃 없이 타는 표면연소를 하다가 후반부에는 분해연소로 전환되며, 목재 표면에 형성된 탄화층(숯층)은 열전도율이 생목재보다 약 4배 커서 내부로의 열전달을 촉진한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (목재 분해연소➔표면연소 순서 및 탄화층 열전도율 단열 효과)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 두 군데가 정반대로 뒤집혔습니다! 목재·석탄은 초기에 휘발분이 빠져나오며 불꽃을 내는 '분해연소'를 하다가 후반부에 숯 상태로 불꽃 없이 타는 '표면연소'로 전환됩니다. 또한 표면에 형성된 '탄화층(Char)'은 다공성 구조여서 열전도율이 생목재의 약 4분의 1로 '작아져' 내부 열침투를 막는 단열재 역할을 합니다!",
+    "explanation": "연소 전환 순서와 탄화층 열전도율을 정반대로 뒤집은 사각지대 킬러입니다. 목재·석탄은 초기에 휘발분이 빠져나오며 불꽃을 내는 '분해연소'를 하다가 후반부에 숯 상태로 불꽃 없이 타는 '표면연소'로 전환됩니다. 또한 표면에 형성된 탄화층은 열전도율이 생목재의 약 4분의 1로 작아져 내부 열침투를 막는 단열재 역할을 합니다. 💡 1초 판별 팁: 사각지대 킬러! 목재 순서 = 초기 분해연소 ➔ 후반 표면연소, 탄화층 열전도율 = 1/4배(단열)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_011",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "분해연소",
-    "paraIdx": 3,
-    "isEssential": false
+    "hlKey": "남은 목탄(숯)이 불꽃 없이 타는",
+    "paraIdx": 4,
+    "isEssential": false,
+    "isKiller": true
   },
   {
     "grade": "S",
     "text": "합성수지 중 페놀수지, 멜라민수지, 요소수지, 에폭시수지는 열을 가하면 쉽게 녹아 액체 방울로 흘러내리는 용융 적하(Drip) 현상을 일으키며 증발연소를 병행한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (열가소성 수지 vs 열경화성 수지 구분)",
-    "explanation": "페놀·멜라민·요소·에폭시수지는 '열경화성 수지'로서 열을 가해도 녹지 않고 그대로 탄화되며 분해연소만 합니다. 열을 받아 용융 적하(Drip) 현상을 일으키며 분해·증발연소를 병행하는 것은 폴리에틸렌(PE)·폴리프로필렌(PP)·폴리염화비닐(PVC)·폴리스티렌(PS)·나일론 등 '열가소성 수지'입니다.",
+    "explanation": "페놀·멜라민·요소·에폭시수지는 3차원 그물망 가교 결합을 한 '열경화성 수지'로서 열을 가해도 녹지 않고 그대로 탄화되며 분해연소만 합니다. 용융 적하(Drip) 현상을 일으키는 것은 PE·PP·PVC·PS·나일론 등 '열가소성 수지'입니다. 💡 1초 판별 팁: 페·멜·요·에(열경화성) = 안 녹고 탄화! PE·PP·PVC·PS·나일론(열가소성) = 녹아 적하!",
     "origQId": "",
     "id": "PRED_SCI_02_02_012",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "열경화성 수지",
-    "paraIdx": 3,
-    "isEssential": true
+    "hlKey": "페놀수지, 멜라민수지, 요소수지, 에폭시수지",
+    "paraIdx": 4,
+    "isEssential": false
   },
   {
     "grade": "S",
     "text": "합성수지 중 폴리에틸렌(PE), 폴리프로필렌(PP), 폴리염화비닐(PVC), 페놀 수지(Phenol), 나일론은 가열 시 연화·용융되어 액면 화재를 일으키는 열가소성 수지에 해당한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (열가소성 수지 목록에 페놀 수지 끼워 넣기)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] PE, PP, PVC, 나일론 사이에 '페놀 수지'를 슬쩍 끼워 넣었습니다! 페놀 수지·멜라민 수지·에폭시 수지·요소 수지·불포화폴리에스테르 수지는 가열해도 녹지 않고 탄화되는 대표적인 '열경화성 수지'입니다.",
+    "explanation": "PE, PP, PVC, 나일론 사이에 '페놀 수지'를 슬쩍 끼워 넣은 함정입니다. 페놀수지·멜라민수지·에폭시수지·요소수지·불포화폴리에스테르수지는 가열해도 녹지 않고 탄화되는 대표적인 '열경화성 수지'입니다. 💡 1초 판별 팁: 열가소성(PE·PP·PVC·PS·나일론) 속에 '페놀수지(열경화성)' 끼워 넣기 함정 주의!",
     "origQId": "",
     "id": "PRED_SCI_02_02_013",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "열가소성 수지",
+    "hlKey": "열가소성 수지(용융 적하 Drip · 분해 및 증발연소 병행)",
     "paraIdx": 4,
     "isEssential": true
   },
@@ -1111,30 +1322,30 @@
     "text": "액체 가연물은 모두 증발연소만 하며, 중유(벙커C유)나 아스팔트, 글리세린처럼 점도와 비점이 높은 중질 액체도 열분해 과정 없이 순수 증발연소만 한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (중유·아스팔트·글리세린의 액체 분해연소)",
-    "explanation": "휘발유·알코올 등 대부분의 저점도 액체는 증발연소를 하지만, 중유(벙커C유)·아스팔트·글리세린·콜타르 같은 고점도·고비점 액체는 기화하기 전에 열분해가 먼저 일어나 가연성 가스를 방출하는 '액체 분해연소'를 합니다.",
+    "explanation": "휘발유·알코올 등 저점도 액체는 증발연소를 하지만, 중유(벙커C유)·아스팔트·글리세린·콜타르 같은 고점도·고비점 액체는 기화하기 전에 열분해가 먼저 일어나 가연성 가스를 방출하는 '액체 분해연소'를 합니다. 💡 1초 판별 팁: 고비점·고점도 액체(중유·아스팔트·글리세린·콜타르) = 액체 분해연소!",
     "origQId": "",
     "id": "PRED_SCI_02_02_014",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "중유",
+    "hlKey": "중유(벙커C유), 아스팔트, 글리세린, 콜타르",
     "paraIdx": 3,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
     "text": "훈소(Smoldering)는 산소 공급이 부족한 밀폐 공간이나 다공성 가연물 내부에서 화염(불꽃) 없이 저온으로 느리게 진행되는 불완전연소로서, 다량의 일산화탄소(CO)를 축적시켜 백드래프트의 원인이 된다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (훈소의 메커니즘과 백드래프트 전이)",
-    "explanation": "훈소는 불꽃 없이 연기만 피어오르며 타는 저온 불완전연소 현상이며, 밀폐 구획실에서 훈소가 지속되다가 개구부가 열려 산소가 급유입되면 백드래프트(연기폭발)가 발생합니다.",
+    "explanation": "훈소는 불꽃 없이 섭씨 300도에서 400도의 저온으로 타는 불완전연소 현상이며, 밀폐 구획실에서 훈소가 지속되다가 개구부가 열려 산소가 급유입되면 백드래프트(연기폭발)가 발생합니다. 💡 핵심 암기 팁: 훈소 = 화염 없는 300도에서 400도 저온 불완전연소 ➔ CO 축적 ➔ 백드래프트!",
     "origQId": "",
     "id": "PRED_SCI_02_02_015",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "훈소",
+    "hlKey": "화염 없이 섭씨 300도에서 400도의 저온으로 느리게 진행되는 불완전연소",
     "paraIdx": 4,
     "isEssential": true
   },
@@ -1143,30 +1354,31 @@
     "text": "숯, 목탄, 코크스, 금속분과 같이 화염 없이 고체 표면에서 산소와 직접 반응하는 표면연소(무염연소) 화재에는 할론이나 분말 같은 부촉매소화약제가 가장 뛰어난 소화 효과를 발휘한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (표면연소와 부촉매소화약제 비적응성)",
-    "explanation": "표면연소(작열·무염연소)는 기상에서의 활성 라디칼 연쇄반응 없이 고체 표면 산화만으로 진행되는 3요소 연소이므로, 라디칼을 포착하는 부촉매소화약제(할론·분말 등)는 표면연소에 소화 효과를 발휘하지 못합니다.",
+    "explanation": "표면연소(작열·무염연소)는 기상에서의 활성 라디칼 연쇄반응 없이 고체 표면 산화만으로 진행되는 3요소 연소이므로, 라디칼을 포착하는 부촉매소화약제(할론·분말 등)는 표면연소에 소화 효과를 발휘하지 못합니다. 💡 1초 판별 팁: 사각지대 킬러! 표면연소(3요소·라디칼 없음) = 부촉매소화약제 무효! 냉각 또는 피복 질식 필요!",
     "origQId": "",
     "id": "PRED_SCI_02_02_016",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "부촉매소화약제",
+    "hlKey": "부촉매소화약제는 표면연소 화재에 소화 효과를 발휘하지 못합니다",
     "paraIdx": 3,
-    "isEssential": true
+    "isEssential": true,
+    "isKiller": true
   },
   {
     "grade": "S",
     "text": "연료와 공기가 분리되어 공급되는 확산연소는 화학적 반응속도에 의해 연소속도가 지배되며, 노즐 내부로 불꽃이 빨려 들어가는 역화(Flashback) 위험이 크다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (확산연소 vs 예혼합연소 비교)",
-    "explanation": "확산연소는 연료와 공기가 만나는 물리적 혼합(확산) 속도에 의해 연소속도가 지배되며 노즐 내부에 공기가 없어 역화 위험이 없습니다. 화학적 반응속도에 의해 지배되고 역화 위험이 있는 것은 '예혼합연소'입니다.",
+    "explanation": "확산연소는 연료와 공기가 만나는 물리적 혼합(확산) 속도에 의해 연소속도가 지배되며 노즐 내부에 공기가 없어 역화 위험이 없습니다. 화학적 반응속도에 의해 지배되고 역화 위험이 있는 것은 '예혼합연소'입니다. 💡 1초 판별 팁: 확산연소 = 물리적 혼합 속도 지배 + 역화 없음 / 예혼합연소 = 화학적 반응속도 지배 + 역화 위험!",
     "origQId": "",
     "id": "PRED_SCI_02_02_017",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "확산연소",
+    "hlKey": "확산연소(황색 휘염)",
     "paraIdx": 5,
     "isEssential": true
   },
@@ -1175,14 +1387,14 @@
     "text": "미연소 탄소 입자(그을음)가 백열하는 황색의 휘염(확산화염)은 완전연소하는 청색의 비휘염(예혼합화염)보다 화염 자체 온도와 주변으로 방출하는 복사열량(방사율)이 모두 높다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (휘염 vs 비휘염 온도·복사열 동시 묶기 함정)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 그을음 입자가 백열하는 황색 휘염은 복사열 방출(방사율)은 비휘염보다 훨씬 크지만, 불완전연소를 동반하므로 '화염 자체의 온도'는 완전연소하는 청색 비휘염보다 '낮습니다'!",
+    "explanation": "그을음 입자가 백열하는 황색 휘염은 복사열 방출(방사율)은 비휘염보다 훨씬 크지만, 불완전연소를 동반하므로 '화염 자체의 온도'는 완전연소하는 청색 비휘염보다 낮습니다. 💡 1초 판별 팁: 복사열(방사율) = 휘염 > 비휘염 / 화염 자체 온도 = 비휘염(청색) > 휘염(황색)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_018",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "휘염",
+    "hlKey": "화염 자체의 온도는 완전연소하는 청색 비휘염이 더 높습니다",
     "paraIdx": 5,
     "isEssential": true
   },
@@ -1191,14 +1403,14 @@
     "text": "고온 물체나 화염의 색깔에 따른 온도(색온도)는 휘백색 < 백황색 < 주황색(등황색) < 적색 < 암적색 순으로 높다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장 (화염의 색상별 온도 서열)",
-    "explanation": "빈의 변위 법칙에 따라 온도가 높을수록 파장이 짧은 빛을 내므로, 화염의 색온도는 '암적색(약 700도) < 적색(850도) < 주황색·등황색(950도에서 1,100도) < 백황색(1,300도) < 휘백색(1,500도 이상)' 순으로 휘백색이 가장 높습니다!",
+    "explanation": "빈의 변위 법칙에 따라 온도가 높을수록 파장이 짧은 빛을 내므로, 화염의 색온도는 '암적색(700℃) < 적색(850℃) < 주황색·등황색(950℃에서 1,100℃) < 백황색(1,300℃) < 휘백색(1,500℃ 이상)' 순으로 휘백색이 가장 높습니다. 💡 1초 판별 팁: 색온도 최고온 = 휘백색(1,500℃ 이상), 최저온 = 암적색(700℃)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_019",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "휘백색",
+    "hlKey": "휘백색(1,500℃ 이상, 최고온)",
     "paraIdx": 5,
     "isEssential": true
   },
@@ -1207,14 +1419,14 @@
     "text": "가연성 가스를 순수 산소(O₂) 중에서 연소시킬 때보다 공기 중에서 연소시킬 때 단열화염온도가 훨씬 높은 이유는, 공기 중의 질소(N₂)가 연소 반응의 촉매로 작용하기 때문이다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (공기 vs 순수 산소 단열화염온도 및 질소 역할 역전)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 정반대입니다! 공기 중의 질소(약 79%)는 연소 반응에 전혀 참여하지 않고 연소열만 빼앗아 흡수(냉각)하므로, 공기 중에서 연소시킬 때보다 '순수 산소(O₂)' 중에서 연소시킬 때 단열화염온도가 훨씬 높습니다.",
+    "explanation": "공기 중의 질소(약 79%)는 연소 반응의 촉매가 아니라 연소열만 빼앗아 흡수(냉각)하므로, 공기 중에서 연소시킬 때보다 '순수 산소(O₂)' 중에서 연소시킬 때 단열화염온도가 훨씬 높습니다. 💡 1초 판별 팁: 질소(N₂)는 열흡수·냉각 역할 ➔ 단열화염온도는 순수 산소 > 공기 중!",
     "origQId": "",
     "id": "PRED_SCI_02_02_020",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "단열화염온도",
+    "hlKey": "단열화염온도가 훨씬 높으며",
     "paraIdx": 5,
     "isEssential": true
   },
@@ -1223,30 +1435,30 @@
     "text": "연소 시 외부로의 복사·대류 열손실이 전혀 없다고 가정한 이론 단열화염온도는 고온에서 연소생성물(CO₂, H₂O)이 일산화탄소나 수소 등으로 쪼개지는 열해리(Thermal Dissociation) 반응이 활발할수록 더 높아진다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (고온 열해리 흡열 반응에 의한 화염온도 저하)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 고온에서 CO₂나 H₂O 분자가 다시 쪼개지는 '열해리(Thermal Dissociation)' 반응은 열을 방출하는 것이 아니라 주변의 열을 빼앗아 가는 강한 '흡열 반응'입니다! 따라서 열해리가 일어나면 화염온도는 높아지는 것이 아니라 오히려 '낮아집니다'!",
+    "explanation": "고온에서 CO₂나 H₂O 분자가 다시 쪼개지는 '열해리(Thermal Dissociation)' 반응은 열을 빼앗아 가는 강한 '흡열 반응(ΔH > 0)'입니다. 따라서 열해리와 외부 열손실 때문에 실제 화염온도는 이론 단열화염온도보다 항상 낮습니다. 💡 1초 판별 팁: 열해리 = 흡열 반응 ➔ 실제 화염온도 < 이론 단열화염온도!",
     "origQId": "",
     "id": "PRED_SCI_02_02_021",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "실제 화염온도",
+    "hlKey": "실제 화염온도는 이론 단열화염온도보다 항상 낮습니다",
     "paraIdx": 5,
     "isEssential": false
   },
   {
     "grade": "A",
-    "text": "연료노즐에서 분출되는 기체 확산화염의 길이는 층류와 난류 모두 분출 유속에 정비례하여 길어진다.",
-    "isCorrect": false,
+    "text": "연료노즐에서 분출되는 기체 확산화염의 높이는 층류(Laminar)에서는 분출속도에 정비례하지만, 난류(Turbulent)에서는 분출속도와 무관하게 일정하며 오직 노즐 직경에 비례한다.",
+    "isCorrect": true,
     "source": "🎯 2회독 주변확장 (층류 vs 난류 확산화염 길이)",
-    "explanation": "층류(Laminar) 확산화염의 높이는 분출 유속에 비례하지만, 난류(Turbulent) 확산화염의 높이는 분출 유속과 무관하게 일정하며 오직 노즐 직경에만 비례합니다.",
+    "explanation": "층류 확산화염은 분출속도가 빠를수록 화염 높이가 길어지지만, 난류 확산화염은 난류 혼합이 지배하므로 분출속도와 무관하게 일정하고 노즐 직경에만 비례합니다. 💡 핵심 암기 팁: 층류 화염 높이 ∝ 분출속도 / 난류 화염 높이 ∝ 노즐 직경!",
     "origQId": "",
     "id": "PRED_SCI_02_02_022",
     "tier": "pred",
     "trapTags": [
       "비례·증감·물성"
     ],
-    "hlKey": "난류",
+    "hlKey": "층류(Laminar)에서는 분출속도에 정비례",
     "paraIdx": 5,
     "isEssential": false
   },
@@ -1255,32 +1467,137 @@
     "text": "인화성 액체 화재패턴 중 바닥에 고인 액체의 중심부가 가장 온도가 높아 가장 깊게 패여 탄화되고, 가장자리는 증발잠열로 인해 타지 않고 둥근 고리 모양으로 남는 흔적을 도넛 패턴(Doughnut pattern)이라 한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (액체 화재 도넛 패턴 중심부 증발잠열 보호 vs 가장자리 탄화)",
-    "explanation": "🚨 [출제위원 착시 함정 주의] 도넛 패턴의 중심부와 가장자리를 정반대로 설명했습니다! 고인 액체의 '중심부'가 액체의 증발잠열(냉각 작용)과 산소 차단 때문에 덜 타서 보호되고, 산소 공급이 원활한 '가장자리(경계면)'가 둥근 도넛 고리 모양으로 깊게 탄화되는 것이 도넛 패턴입니다!",
+    "explanation": "도넛 패턴의 중심부와 가장자리를 정반대로 설명한 사각지대 함정입니다. 고인 액체의 '중심부'가 액체 자체의 증발잠열(냉각 작용)과 산소 차단 때문에 덜 타서 보호되고, 산소 공급이 원활한 '가장자리(경계면)'가 둥근 도넛 고리 모양으로 깊게 탄화되는 것이 도넛 패턴입니다. 💡 1초 판별 팁: 사각지대 킬러! 도넛 패턴 = 중심부(증발잠열 보호·덜 탐) vs 가장자리(산소 원활·고리 탄화)!",
     "origQId": "",
     "id": "PRED_SCI_02_02_023",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "도넛 패턴",
+    "hlKey": "도넛 패턴(Doughnut Pattern)",
     "paraIdx": 6,
-    "isEssential": false
+    "isEssential": false,
+    "isKiller": true
   },
   {
     "grade": "A",
     "text": "가연성 액체를 노즐로 미세한 안개 모양의 기름방울로 분사하여 공기와 혼합해 연소시키는 보일러 버너의 연소 방식은 액적연소(분무연소)에 해당한다.",
     "isCorrect": true,
     "source": "🎯 2회독 주변확장 (액적연소·분무연소)",
-    "explanation": "액체 연료를 미립자(액적) 형태로 무화시켜 표면적을 극대화한 뒤 예혼합기처럼 태우는 방식을 액적연소(분무연소)라 합니다.",
+    "explanation": "액체 연료를 미립자(액적) 형태로 무화시켜 표면적을 극대화한 뒤 연소속도를 급증시켜 태우는 방식을 액적연소(분무연소)라 합니다. 💡 핵심 암기 팁: 액적연소(분무연소) = 기름방울 안개 분사 ➔ 표면적 극대화!",
     "origQId": "",
     "id": "PRED_SCI_02_02_024",
     "tier": "pred",
     "trapTags": [
       "화재현상·비교개념"
     ],
-    "hlKey": "액적연소",
+    "hlKey": "액적연소(분무연소)",
     "paraIdx": 3,
     "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "산소(O₂) 농도를 높여 순수 산소(O₂ 100%) 중에서 가연성 가스를 연소시키면 질소 냉각이 사라져 연소상한계(UFL)는 거의 변하지 않으나 연소하한계(LFL)가 극적으로 낮아져 연소범위가 대폭 넓어진다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (산소 농도 상승 시 LFL·UFL 비대칭 이동)",
+    "explanation": "순수 산소(O₂ 100%) 중에서 연소시킬 때 연소범위가 대폭 넓어지는 것은 맞지만, 변하지 않는 쪽이 연소하한계(LFL)이고 크게 상승하는 쪽이 연소상한계(UFL)입니다(수소: 공기 중 4%에서 75%까지 ➔ 순수 산소 중 4%에서 94%까지, 메테인: 공기 중 5%에서 15%까지 ➔ 순수 산소 중 5%에서 61%까지로 LFL 유지). 💡 1초 판별 팁: 사각지대 킬러! 산소 농도↑ ➔ LFL 거의 일정(수소 4%·메테인 5%), UFL 대폭 상승(수소 94%·메테인 61%)!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_025",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "하한계(LFL)는 거의 변화가 없으나 상한계(UFL)가 크게 상승하여 연소범위가 대폭 넓어집니다",
+    "paraIdx": 0,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "연료와 산화제의 혼합비가 화학양론농도(Cst)에 도달한 상태에서 존스(Jones) 식을 적용할 때 탄화수소 가스의 연소하한계(LFL)는 3.5 × Cst, 연소상한계(UFL)는 0.55 × Cst로 추산한다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (존스 식 계수 스왑)",
+    "explanation": "존스(Jones) 연소범위 추산식의 하한계 계수(0.55)와 상한계 계수(3.5)를 맞바꾼 함정입니다. 연소하한계(LFL)는 화학양론농도(Cst)보다 희박하므로 0.55 × Cst이고, 연소상한계(UFL)는 과농하므로 3.5 × Cst로 산정합니다. 💡 1초 판별 팁: 사각지대 킬러! 존스 식 = LFL 0.55 Cst(1보다 작음), UFL 3.5 Cst(1보다 큼)!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_026",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성",
+      "화학식·약제·위험물"
+    ],
+    "hlKey": "존스(Jones) 연소범위 추산식",
+    "paraIdx": 0,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "A",
+    "text": "가연성 액체의 바닥 탄화 흔적 중 이음매나 갈라진 틈새로 액체가 스며들어 그 틈을 따라 깊게 탄화된 흔적을 스플래시 패턴(Splash Pattern)이라 하고, 고인 액체 본체의 물웅덩이 모양 탄화 경계를 도넛 패턴(Doughnut Pattern)이라 한다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (인화성 액체 4대 화재패턴 구분)",
+    "explanation": "바닥재 이음매나 갈라진 틈새로 인화성 액체가 스며들어 깊게 탄화된 흔적은 '틈새연소 패턴(Seam Burn Pattern)'이고, 고인 액체 본체가 물웅덩이 모양의 뚜렷한 탄화 경계를 남긴 흔적은 '포어 패턴(Pour Pattern)'입니다. 💡 1초 판별 팁: 사각지대 킬러! 틈새 침투 = 틈새연소 패턴, 본체 물웅덩이 경계 = 포어 패턴, 주변 튄 점 = 스플래시 패턴!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_027",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "틈새연소 패턴(Seam Burn Pattern)",
+    "paraIdx": 6,
+    "isEssential": false,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "르샤틀리에(Le Chatelier) 혼합가스 공식은 상호 화학반응이 없는 혼합가스의 연소하한계보다 연소상한계(UFL) 추산에 훨씬 정밀하게 일치하며, 수소나 이황화탄소 등이 포함된 특이 혼합물에서도 오차 없이 성립한다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (르샤틀리에 공식 적용 한계)",
+    "explanation": "르샤틀리에(Le Chatelier) 공식은 혼합가스의 '연소하한계(LFL)' 추산에는 비교적 잘 맞지만, '연소상한계(UFL)'나 수소(H₂)·이황화탄소(CS₂) 등이 포함된 특이 반응 혼합물에서는 실험값과 오차가 생길 수 있습니다. 💡 1초 판별 팁: 사각지대 킬러! 르샤틀리에 공식 = 하한계(LFL) 추산에 적합, 상한계(UFL)·특이 혼합물(H₂·CS₂)에서는 오차 발생!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_028",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "상한계나 수소·이황화탄소 등 특이 반응 혼합물에는 오차가 생길 수 있습니다",
+    "paraIdx": 1,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "같은 18족 단원자 비활성기체인 헬륨(He)과 아르곤(Ar)은 단위 몰당 열용량(몰비열)이 같으므로 화염면 냉각·소염 효과도 완전히 동일하며, 확산속도나 열전도율 차이는 소염 효율에 영향을 미치지 않는다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (단원자 불활성기체 He > Ar 소염 효과 차이 원인)",
+    "explanation": "같은 단원자 비활성기체인 헬륨(He)과 아르곤(Ar)은 단위 몰당 열용량은 같지만, 헬륨(He)은 아르곤(Ar)보다 분자량이 훨씬 가볍고 열전도율과 확산속도가 월등히 크기 때문에 화염면으로 빠르게 침투하여 냉각시키는 소염 효과가 Ar보다 더 우수합니다(CCl₄ > CO₂ > H₂O > N₂ > He > Ar). 💡 1초 판별 팁: 사각지대 킬러! He·Ar은 몰열용량은 같지만 가볍고 열전도율·확산속도가 큰 He > Ar 순으로 소염 우수!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_029",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성"
+    ],
+    "hlKey": "가볍고 열전도율·확산속도가 월등히 큰 He이 Ar보다 화염면 냉각 효과가 큽니다",
+    "paraIdx": 2,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "피크르산이나 니트로글리세린 같은 제5류 위험물은 자기연소(내부연소)를 하지만, 화재 시 외부에서 불활성가스나 포말로 공기 중 산소를 완전히 차단하면 일반 가연물과 동일하게 질식소화가 유효하다.",
+    "isCorrect": false,
+    "source": "🎯 최신 사각지대 킬러 (제5류 자기연소 질식소화 무효)",
+    "explanation": "제5류 자기반응성 물질은 분자 내부에 산소공급원(니트로기·질산에스테르기 등)을 포함하고 있어 외부 공기 없이도 스스로 연소(자기연소)하므로, 외부 산소를 차단하는 질식소화는 무효입니다(다량의 주수에 의한 냉각소화 필요). 💡 1초 판별 팁: 사각지대 킬러! 표면연소(무염) = 부촉매소화 무효 / 제5류 자기연소(분자 내 산소) = 질식소화 무효!",
+    "origQId": "",
+    "id": "PRED_SCI_02_02_030",
+    "tier": "pred",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "분자 내 산소공급원을 품은 제5류 위험물의 자기연소는 질식소화가 무효입니다",
+    "paraIdx": 6,
+    "isEssential": true,
+    "isKiller": true
   }
 ];
     window.SUBJ_DATA = [
