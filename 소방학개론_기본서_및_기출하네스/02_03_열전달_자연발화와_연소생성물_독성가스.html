@@ -103,7 +103,7 @@
           <p class="prose-body">
             셋째, <strong>복사열</strong>은 공기 같은 매개 물질(매질)이 전혀 없는 진공 상태에서도 빛(전자기파, 적외선) 형태로 열에너지가 공간을 직진해 날아가 전달되는 현상입니다. 왜 전도와 대류가 아닌 복사가 고온 화재의 최성기를 지배하고 인접 건물까지 불을 옮기는 가장 무서운 주범일까요? 전도와 대류가 온도차(&Delta;T)의 1제곱에 비례해 완만하게 증가하는 반면, 복사는 <strong>절대온도(T)의 4제곱(T<sup>4</sup>)</strong>에 비례하기 때문입니다. 실내 온도가 300 K(약 27&deg;C)에서 900 K(약 627&deg;C)로 3배 오르면 복사열은 무려 3<sup>4</sup> = 81배로 폭증하여, 결국 제4장에서 배울 천장 연기층의 복사열 피드백(플래시오버)과 도로 건너편 건물 착화를 일으킵니다. 복사 열전달에서는 핵심 법칙과 고체 착화 모델을 정확히 구별해야 합니다.
             <span class="prose-item"><strong>① 스테판·볼츠만(Stefan·Boltzmann) 법칙</strong>: 면적 A인 물체가 시간 t(초) 동안 방출하는 총복사에너지(E)는 섭씨온도가 아닌 <strong>절대온도(T, 단위 K)의 4제곱(T<sup>4</sup>)에 정비례</strong>합니다.</span>
-            <span class="formula-box"><span class="formula-badge">스테판·볼츠만 공식</span><span class="formula-eq">E = &epsilon; &middot; &sigma; &middot; A &middot; T<sup>4</sup> &middot; t &nbsp;&nbsp;[단위: J]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 표면온도가 섭씨 127도(절대온도 T = 127 + 273 = <strong>400 K</strong>)인 5제곱미터 흑체(&epsilon; = 1) 금속벽체가 100초 동안 방출하는 총복사에너지(상수 &sigma; = 5 &times; 10<sup>&minus;8</sup> W/m<sup>2</sup>K<sup>4</sup> 기준) ➔ E = 1 &times; (5 &times; 10<sup>&minus;8</sup>) &times; 5 &times; (400)<sup>4</sup> &times; 100 = 6,400 W &times; 100 s = <strong>640 kJ</strong></span></span>
+            <span class="formula-box"><span class="formula-badge">스테판·볼츠만 공식</span><span class="formula-eq">E = &epsilon; &middot; &sigma; &middot; A &middot; T<sup>4</sup> &middot; t &nbsp;&nbsp;[단위: J]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 표면온도가 섭씨 127도(절대온도 T = 127 + 273 = <strong>400 K</strong>)인 5제곱미터 흑체(&epsilon; = 1) 금속벽체가 100초 동안 방출하는 총복사에너지(이론상 스테판·볼츠만 상수 &sigma; = 5.67 &times; 10<sup>&minus;8</sup> W/m<sup>2</sup>K<sup>4</sup>이나, 문제 조건상 상수 &sigma; = 5 &times; 10<sup>&minus;8</sup> W/m<sup>2</sup>K<sup>4</sup> 기준) ➔ E = 1 &times; (5 &times; 10<sup>&minus;8</sup>) &times; 5 &times; (400)<sup>4</sup> &times; 100 = 6,400 W &times; 100 s = <strong>640 kJ</strong></span></span>
             <span class="prose-item"><strong>② 점열원 복사열유속(q&prime;&prime;)과 거리 역제곱 법칙</strong>: 화원 중심으로부터 거리 R(m) 떨어진 물체에 전달되는 단위면적당 복사열(복사열유속)은 총 열방출률(Q&#775;)에 복사열 분율(&chi;<sub>r</sub>)을 곱한 값을 구의 표면적(4&pi;R<sup>2</sup>)으로 나누므로, <strong>거리(R)의 제곱에 반비례</strong>하여 급감합니다(건축물 인접 이격거리 및 방화벽 설치의 물리적 근거).</span>
             <span class="formula-box"><span class="formula-badge">점열원 복사열유속 공식</span><span class="formula-eq">q&prime;&prime; = (&chi;<sub>r</sub> &times; Q&#775;) &divide; (4 &middot; &pi; &middot; R<sup>2</sup>) &nbsp;&nbsp;[단위: kW/m<sup>2</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 열방출률이 120킬로와트이고 복사열 분율이 0.5인 화원으로부터 1미터 떨어진 지점의 복사열유속(원주율 3 기준) ➔ q&prime;&prime; = (0.5 &times; 120) &divide; (4 &times; 3 &times; 1<sup>2</sup>) = <strong>5.0 kW/m<sup>2</sup></strong></span></span>
             <span class="prose-item"><strong>③ 복사 열전달 관련 주요 법칙과 형태계수</strong></span>
@@ -111,13 +111,13 @@
             <span class="prose-sub">&bull; <strong>빈(Wien)의 변위 법칙</strong>: 흑체가 방출하는 복사에너지 최대 강도 파장(&lambda;<sub>max</sub>)은 <strong>절대온도(T)에 반비례한다(&lambda;<sub>max</sub> &middot; T = 일정)</strong>는 법칙으로, 제2장에서 본 화염 색온도가 붉은 저온(긴 파장)에서 휘백색 고온(짧은 파장)으로 변하는 이유를 설명합니다.</span>
             <span class="prose-sub">&bull; <strong>형태계수(형상계수, View Factor, F<sub>12</sub>)</strong>: 방출면에서 나온 전체 복사열 중 수열면에 직접 도달하는 기하학적 비율(0에서 1 이하)을 말하며, 두 면이 정면으로 마주 볼수록, 화원 면적이 클수록, 거리가 가까울수록 커져 연소 확대 위험을 높입니다.</span>
             <span class="prose-item"><strong>④ 고체 가연물의 복사 착화 모델 (열적 박물 vs 열적 후물)</strong></span>
-            <span class="prose-sub">&bull; <strong>열적 박물(Thermally Thin, 비오 수 Bi &lt; 0.1)</strong>: 종이나 커튼처럼 두께가 매우 얇아 내부 온도 구배가 없으므로 열전도율(k)과 무관하게 착화시간이 <strong>밀도(&rho;)·비열(c)·두께(L)의 곱(&rho;cL)에 비례</strong>합니다.</span>
+            <span class="prose-sub">&bull; <strong>열적 박물(Thermally Thin, 비오 수 Bi = h&middot;L &divide; k &lt; 0.1)</strong>: 종이나 커튼처럼 두께가 매우 얇아 내부 온도 구배가 없으므로(표면 대류 저항 대비 내부 전도 저항이 극히 작음) 열전도율(k)과 무관하게 착화시간이 <strong>밀도(&rho;)·비열(c)·두께(L)의 곱(&rho;cL)에 비례</strong>합니다.</span>
             <span class="prose-sub">&bull; <strong>열적 후물(Thermally Thick)</strong>: 두꺼운 목재나 단열재처럼 표면의 열이 내부로 전도되어 빠져나가므로 착화시간이 열전도율(k)·밀도(&rho;)·비열(c)의 곱인 <strong>열관성(Thermal Inertia, k&rho;c)에 정비례</strong>합니다. 즉 폴리우레탄폼이나 스티로폼처럼 <strong>열관성(k&rho;c)이 작을수록</strong> 열이 내부로 달아나지 못하고 표면에만 집중되어 착화시간이 극도로 짧고 화염 확산이 무섭게 빠릅니다.</span>
           </p>
         </div>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제2편 제1장에서 외부 불꽃 없이 열만으로 활성화에너지 장벽을 넘어 스스로 착화하는 최저온도를 발화점(AIT)이라 배웠습니다. 그런데 아무런 외부 열원이나 불꽃도 없는 한밤중 창고 구석에서 기름 걸레나 석탄 야적장, 퇴비 더미가 왜 저절로 불타오를까요? 바로 물질 내부에서 일어나는 미세한 발열 반응의 <strong>열생성률</strong>이 전도·대류로 빠져나가는 <strong>열방출률</strong>을 앞지르면, 빠져나가지 못한 열이 내부에 계속 쌓여(축열) 스스로 온도를 끌어올리다 마침내 <strong>발화점(AIT)</strong>에 도달하기 때문이며, 이를 <strong>자연발화(Spontaneous Ignition)</strong>라 합니다.
+            앞선 제2편 제1장에서 외부 불꽃 없이 열만으로 활성화에너지 장벽을 넘어 스스로 착화하는 최저온도를 발화점(AIT)이라 배웠고, 제2장에서 분해연소하는 고체나 훈소·제5류 위험물의 열적 불안정성을 살펴보았습니다. 그런데 실제 도장·기계 정비 공장의 폐기물통이나 대규모 석탄·톱밥 야적장, 유류·화학물질 물류창고에서는 작업자가 퇴근하며 전기와 화기를 완전히 차단했는데도 아무런 외부 열원이나 불꽃 없는 한밤중 창고 구석의 기름 걸레나 석탄·퇴비 더미가 저절로 불타오르는 대형 화재가 끊이지 않습니다. 왜 불씨 하나 없이도 스스로 불이 붙을까요? 바로 물질 내부에서 일어나는 미세한 발열 반응의 <strong>열생성률</strong>이 전도·대류로 빠져나가는 <strong>열방출률</strong>을 앞지르면, 빠져나가지 못한 열이 내부에 계속 쌓여(축열) 아레니우스 반응속도가 스스로를 가속시키다 마침내 <strong>발화점(AIT)</strong>에 도달하기 때문이며, 이를 <strong>자연발화(Spontaneous Ignition)</strong>라 합니다. 이를 사전에 통제하기 위해 열균형 이론과 7대 촉진 조건, 5대 발열원, 유지류 요오드값 서열이 도출됩니다.
             <span class="prose-item"><strong>① 자연발화 열균형 메커니즘 (세메노프 vs 프랭크·카메네츠키 이론)</strong></span>
             <span class="prose-sub">&bull; <strong>세메노프(Semenov) 열발화 이론</strong>: 반응계 내부의 온도가 공간적으로 균일하다고 가정하고, 아레니우스 식에 따라 <strong>지수곡선으로 급증하는 열생성률(발열)</strong>과 주위 온도차에 비례해 <strong>직선으로 완만히 증가하는 열방출률(방열)</strong>의 균형을 해석합니다. 열생성률 곡선이 열방출률 직선보다 항상 위에 놓이는 임계 주위온도를 넘으면 열폭주(자연발화)가 일어납니다.</span>
             <span class="prose-sub">&bull; <strong>프랭크·카메네츠키(Frank·Kamenetskii) 열균형 이론</strong>: 세메노프 모델을 확장해 퇴적된 석탄·톱밥처럼 실제 고체 내부에서는 중심부가 가장 뜨겁고 표면으로 갈수록 식는 <strong>내부 온도 구배와 열전도</strong>를 고려합니다. 물질 크기(반경)와 발열량, 열전도율을 묶은 무차원수가 임계값을 초과하면 중심부의 열이 표면으로 빠져나가지 못해 자연발화가 터집니다.</span>
@@ -132,7 +132,7 @@
             <span class="prose-sub">④ <strong>발효열(미생물 발효열)</strong>: 미생물이 번식·호흡하며 발열하는 경우 (<strong>퇴비·건초·곡물·원면·톱밥</strong>)</span>
             <span class="prose-sub">⑤ <strong>중합열</strong>: 시안화수소(HCN), 산화에틸렌(C<sub>2</sub>H<sub>4</sub>O), 스티렌 단량체처럼 반응성이 큰 저분자(모노머)가 스스로 결합해 고분자로 중합되면서 방출하는 열이 축적되는 경우</span>
             <span class="prose-item"><strong>④ 유지류 산화열과 요오드값 서열</strong>: 특히 식물성·동물성 유지(식용유·기름)가 묻은 걸레나 톱밥 뭉치에서 일어나는 자연발화는 발효열이 아니라 불포화지방산이 <strong>산소와 결합하여</strong> 발열하는 <strong>산화열</strong>이 주원인이며, 유지 100그램에 부가되는 요오드의 그램 수인 <strong>요오드값(Iodine Value, 불포화도 지표)이 클수록</strong> 산소와 쉽게 산화하여 자연발화 위험성이 높아집니다.</span>
-            <span class="formula-box"><span class="formula-badge">유지류 요오드값 서열</span><span class="formula-eq">건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)</span><span class="formula-ex">&bull; <strong>건성유(요오드값 130 이상)</strong>: 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름<br/>&bull; <strong>반건성유(요오드값 100에서 130까지)</strong>: 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</span></span>
+            <span class="formula-box"><span class="formula-badge">유지류 요오드값 서열</span><span class="formula-eq">건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)</span><span class="formula-ex">&bull; <strong>건성유(요오드값 130 이상)</strong>: 아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유<br/>&bull; <strong>반건성유(요오드값 100에서 130까지)</strong>: 콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</span></span>
             <span class="prose-item"><strong>⑤ 열균형 원리에서 도출되는 자연발화 방지법</strong>: 세메노프와 프랭크·카메네츠키의 열균형을 깨뜨려 열생성률은 낮추고 열방출률은 높이면 자연발화를 막을 수 있습니다. 구체적으로 <strong>① 통풍·환기를 원활히 하여 축적 열을 방산</strong>하고(단, 상온 공기 노출 즉시 발화하는 <strong>황린</strong>은 통풍이 아니라 약알칼리성 물속 저장), <strong>② 퇴적 높이를 낮추고 분할 저장하여 중심부 축열을 차단</strong>하며, <strong>③ 저장실 주위 온도와 습도를 낮게 유지</strong>하고, <strong>④ 촉매·산화제와 격리 보관하며 중합성 단량체에는 중합억제제 첨가 또는 질소 등 불활성 가스 치환</strong>을 실시합니다.</span>
           </p>
         </div>
@@ -142,7 +142,7 @@
         <h2 class="text-xl font-bold text-white mb-3">2. 건축물 연기 유동 5대 요인·감광계수와 굴뚝효과(연돌효과) 및 중성대 이동</h2>
         <div class="para-block">
           <p class="prose-body">
-            2017년 제천 스포츠센터(29명 사망), 2018년 밀양 세종병원(47명 사망), 2003년 대구 지하철 참사(192명 사망)처럼 대형 건축물 화재 시 인명 피해의 절대다수는 화염이 직접 닿기 전에 발생합니다. 앞선 제1절에서 대류 열전달이 가열된 유체의 밀도 차(부력)를 통해 상부로 열을 실어 나른다는 원리를 살펴보았는데, 불이 나자마자 계단실과 엘리베이터 승강로를 타고 사람보다 몇 배 빠른 속도로 솟구쳐 피난로의 시야와 호흡을 먼저 끊어 놓는 주범이 바로 <strong>연기(Smoke)</strong>입니다. 고층건축물에서 <strong>연기유동을 일으키는 핵심 물리적 요인</strong>으로는 다음 요인들이 복합적으로 작용합니다.
+            2017년 제천 스포츠센터(29명 사망), 2018년 밀양 세종병원(47명 사망), 2003년 대구 지하철 참사(192명 사망)처럼 대형 건축물·지하 공간 화재 시 인명 피해의 절대다수는 화염이 직접 닿기 전에 발생합니다. 앞선 제1절에서 대류 열전달이 가열된 유체의 밀도 차(부력)를 통해 상부로 열을 실어 나른다는 원리를 살펴보았는데, 실제로 제천과 밀양 화재에서는 1층에서 치솟은 검은 연기가 계단실과 배관 통로를 타고 불과 몇 분 만에 2층 사우나와 상층 병실로 들이닥쳐 시야를 지워 버렸고, 대구 지하철 참사에서도 터널과 계단을 타고 밀려든 연기가 맞은편 전동차 승객들의 호흡과 탈출로를 먼저 끊어 놓았습니다. 이처럼 불이 나자마자 계단실과 엘리베이터 승강로를 타고 사람보다 몇 배 빠른 속도로 솟구쳐 피난로의 시야와 호흡을 먼저 끊어 놓는 주범이 바로 <strong>연기(Smoke)</strong>입니다. 고층건축물에서 <strong>연기유동을 일으키는 핵심 물리적 요인</strong>으로는 다음 요인들이 복합적으로 작용합니다.
             <span class="prose-sub">① <strong>부력효과 및 연소가스의 열팽창(팽창효과)</strong>: 화재실 내부의 고온 기체가 가열되어 체적이 3배 이상 팽창하며 인접 구획으로 밀어내는 <strong>팽창압</strong>과 밀도 차로 떠오르는 부력 현상</span>
             <span class="prose-sub">② <strong>바람에 의한 압력차(풍압 작용)</strong>: 외부 바람이 건물 외벽에 부딪혀 풍상측(정압)과 풍하측(부압) 압력차를 형성해 건물 내부 기류를 밀어붙이는 현상</span>
             <span class="prose-sub">③ <strong>굴뚝효과(연돌효과, Stack Effect)</strong>: 건축물 내부와 외부의 온도차에 의해 내부의 더운 공기가 수직 통로를 따라 상승하는 현상</span>
@@ -157,7 +157,7 @@
           <p class="prose-body">
             연기가 피난로를 채우면 빛이 입자에 흡수·산란되어 시야가 급격히 차단되므로, 방재 공학에서는 피난 유도등 설계와 감지기 감도를 정하기 위해 연기의 짙기를 정량화합니다. 연기로 인한 빛의 감소를 나타내는 지표가 <strong>감광계수(C<sub>s</sub> 또는 K, 단위 m<sup>&minus;1</sup>)</strong>이며 <strong>감광계수가 증가할수록 가시거리는 반비례하여 짧아집니다</strong>. 또한 소방대가 현장에 도착했을 때 창문 밖으로 뿜어져 나오는 <strong>연기의 색깔</strong>은 내부 가연물의 종류와 연소 진행 단계를 즉각 판독하는 현장 단서가 됩니다.
             <span class="prose-item"><strong>① 람베르트·비어(Lambert·Beer) 법칙</strong>: 두께 L(m)인 연기층을 통과한 투과광의 세기(I)와 초기 입사광 세기(I<sub>0</sub>)의 관계는 다음과 같습니다.</span>
-            <span class="formula-box"><span class="formula-badge">람베르트·비어 감광계수 공식</span><span class="formula-eq">I = I<sub>0</sub> &middot; exp(&minus;C<sub>s</sub> &middot; L) &nbsp;&rArr;&nbsp; C<sub>s</sub> = (1 &divide; L) &middot; ln(I<sub>0</sub> &divide; I) &nbsp;&nbsp;[단위: m<sup>&minus;1</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <strong>0.1 m<sup>&minus;1</sup></strong>입니다.<br/>&bull; <strong>농도별 가시거리</strong>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>0.3 m<sup>&minus;1</sup></strong>(건물 익숙자 피난 지장 수준, 약 5미터) / <strong>0.5 m<sup>&minus;1</sup></strong>(어둠 체감 한계, 약 3미터에서 5미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 1미터에서 5미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</span></span>
+            <span class="formula-box"><span class="formula-badge">람베르트·비어 감광계수 공식</span><span class="formula-eq">I = I<sub>0</sub> &middot; exp(&minus;C<sub>s</sub> &middot; L) &nbsp;&rArr;&nbsp; C<sub>s</sub> = (1 &divide; L) &middot; ln(I<sub>0</sub> &divide; I) &nbsp;&nbsp;[단위: m<sup>&minus;1</sup>]</span><span class="formula-ex">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <strong>0.1 m<sup>&minus;1</sup></strong>입니다.<br/>&bull; <strong>농도별 가시거리</strong>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>0.3 m<sup>&minus;1</sup></strong>(건물 익숙자 피난 지장 수준, 약 5미터) / <strong>0.5 m<sup>&minus;1</sup></strong>(어둠 체감 한계, 약 3미터에서 5미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 1미터에서 2미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</span></span>
             <span class="prose-item"><strong>② 가시거리 관계식(S &times; K = 상수)과 발광 · 비발광 표지 비교</strong></span>
             <span class="formula-box"><span class="formula-badge">가시거리 반비례 공식</span><span class="formula-eq">D = K<sub>c</sub> &divide; C<sub>s</sub> &nbsp;(또는 가시거리 S &times; 감광계수 K = 상수 C)</span><span class="formula-ex">&bull; <strong>발광 표지(피난구 유도등)</strong>: 비례상수 <strong>5에서 10까지</strong> (동일 연기 농도에서 비발광 표지보다 가시거리가 <strong>약 2.5배에서 3배 더 김</strong>)<br/>&bull; <strong>비발광 표지(반사 물체 · 일반 벽면·문)</strong>: 비례상수 <strong>2에서 4까지</strong></span></span>
             <span class="prose-item"><strong>③ 재실자 피난 한계 감광계수</strong></span>
@@ -172,7 +172,7 @@
         </div>
         <div class="para-block">
           <p class="prose-body">
-            나아가 고층건축물 제연설비(차압 유지)와 피난 대책의 핵심이 되는 <strong>굴뚝효과(연돌효과)와 중성대(Neutral Plane)</strong>의 압력 분포를 살펴보면 다음과 같습니다. 계절(동계 대 하계)에 따라 실내외 온도차 부호가 뒤집히면서 계단실 상·하부 압력차와 연기 이동 방향도 정반대로 바뀝니다.
+            겨울철 초고층 아파트나 고층 빌딩 1층에서 불이 나면 환기팬이 멈춰 있더라도 실내의 따뜻한 공기가 수직 계단실과 승강로를 거대한 굴뚝 삼아 솟구치면서 연기를 순식간에 최상층까지 끌어올리고, 심지어 층간 압력차가 커져 계단실 방화문이 잘 열리지 않는 고립 위기가 발생합니다. 반대로 여름철 냉방 중인 고층 건물에서는 연기가 아래층 로비나 지하층으로 역류할 수도 있습니다. 따라서 소방대와 제연설비 설계자는 건물 높이에 따라 어느 층에서 외기가 빨려 들어가고 어느 층에서 연기가 뿜어져 나오는지, 그리고 창문이나 배연창을 위아래 중 어느 쪽에서 열어야 연기 층을 높여 피난 시야를 확보할 수 있는지 예측해야 합니다. 바로 이 고층건축물 제연설비(차압 유지)와 배연·피난 대책의 물리적 뼈대가 되는 것이 <strong>굴뚝효과(연돌효과)와 중성대(Neutral Plane)</strong>의 압력 분포입니다. 계절(동계 대 하계)에 따라 실내외 온도차 부호가 뒤집히면서 계단실 상·하부 압력차와 연기 이동 방향도 정반대로 바뀝니다.
             <span class="prose-item"><strong>① 동계 정상 굴뚝효과 vs 하계 역굴뚝효과 및 계단실 상하부 압력차</strong></span>
             <span class="prose-sub">&bull; <strong>동계 · 화재 시 정상 굴뚝효과(정연돌효과, T<sub>i</sub> &gt; T<sub>o</sub>)</strong>: 겨울철 난방 시나 실내 화재 발생 시처럼 건물 내부 온도가 외부 온도보다 높을 때 수직 샤프트 내부의 더운 공기가 아래에서 위로 상승하는 현상입니다. 이때 <strong>중성대 아래 하층부는 실내 압력이 실외보다 낮은 부압(&Delta;P &lt; 0)</strong>이 되어 외부 찬 공기가 계단실로 빨려 들어오고, <strong>중성대 위 상층부는 실내 압력이 실외보다 높은 정압(&Delta;P &gt; 0)</strong>이 되어 연기와 공기가 상층 거실과 외부로 강하게 뿜어져 나갑니다.</span>
             <span class="prose-sub">&bull; <strong>하계 역굴뚝효과(역연돌효과, T<sub>i</sub> &lt; T<sub>o</sub>)</strong>: 여름철 냉방으로 내부 온도가 외부보다 낮을 때 차고 무거운 실내 공기가 위에서 아래로 하강하는 현상입니다. 정상 굴뚝효과와 정반대로 <strong>상층부는 부압(외기 유입)</strong>, <strong>하층부는 정압(공기·연기 유출)</strong>이 형성되어 저층부 로비나 지하층으로 연기가 쏟아져 내려올 수 있습니다.</span>
@@ -201,7 +201,7 @@
         </div>
         <div class="para-block">
           <p class="prose-body">
-            화재 독성가스는 생리적 작용 기전에 따라 중추신경 억제와 조직 산소 결핍을 통해 의식 상실(마취 효과)을 유발하는 <strong>나르코시스(Narcosis)성 질식 가스(일산화탄소, 시안화수소, 고농도 이산화탄소 및 저산소증)</strong>와 호흡기 점막·폐를 손상시키는 <strong>자극성 가스</strong>로 나뉩니다.
+            화재 현장에서 구조대상자가 의식을 잃고 쓰러졌을 때, 혈액의 산소 운반이 차단된 것인지 세포 내 호흡 효소가 마비된 것인지, 혹은 호흡 중추 자극으로 독성 흡입이 폭증한 것인지에 따라 위험 양상과 대응이 달라집니다. 화재 독성가스는 생리적 작용 기전에 따라 중추신경 억제와 조직 산소 결핍을 통해 의식 상실(마취 효과)을 유발하는 <strong>나르코시스(Narcosis)성 질식 가스(일산화탄소, 시안화수소, 고농도 이산화탄소 및 저산소증)</strong>와 호흡기 점막·폐를 손상시키는 <strong>자극성 가스</strong>로 나뉩니다.
             <span class="prose-item"><strong>① 일산화탄소(CO, TLV 50 ppm)와 이산화탄소(CO<sub>2</sub>, TLV 5,000 ppm)의 상승작용</strong></span>
             <span class="prose-sub">&bull; <strong>일산화탄소(CO)</strong>: 제2장에서 본 훈소나 탄소 화합물의 불완전연소 시 대량 발생하는 무색·무취 가스로, 혈액 내 <strong>산소와 헤모글로빈(Hb)의 결합을 방해(친화력이 산소의 200배에서 300배)</strong>하여 카르복시헤모글로빈을 형성함으로써 질식에 이르게 하며 1 vol%(10,000 ppm) 농도에서도 수 분 내에 사망합니다.</span>
             <span class="prose-sub">&bull; <strong>이산화탄소(CO<sub>2</sub>)와 상승작용(Synergism)</strong>: 완전연소 생성물인 이산화탄소는 <strong>농도가 2 vol%(2퍼센트)가 되면 호흡 심도가 1.5배 정도 증가하고 3 vol%(3퍼센트)에 이르면 약 2배 정도의 호흡 심도</strong>를 보여주어 일산화탄소나 시안화수소의 흡입을 급격히 가속화합니다. 이처럼 복합 독성이 개별 독성의 단순 합보다 몇 배로 증폭되는 현상을 <strong>상승작용(Synergism)</strong>이라 합니다.</span>
@@ -215,7 +215,7 @@
         </div>
         <div class="para-block">
           <p class="prose-body">
-            다음으로 주요 <strong>자극성·부식성 연소 생성물의 특성</strong>과 화학양론 부피 계산을 살펴보고, 끝으로 앞선 제2편 제1장·제2장의 원리를 본 장 개념과 입체적으로 누적 대조합니다.
+            한편 건물 내부의 PVC 전선 피복이나 합성수지, 냉동창고 냉매, 테플론·셀룰로이드, 황 함유 고무가 불탈 때는 앞선 질식 가스뿐만 아니라 호흡기 점막을 즉각 태우고 소방 장비와 철골·전자설비까지 부식시키는 자극성·부식성 가스가 쏟아지며, 고온 상태에서는 기체 부피가 몇 배로 팽창해 피해 반경을 넓힙니다. 따라서 현장 진압과 인명 구조에 앞서 가연물별 <strong>자극성·부식성 연소 생성물의 특성</strong>과 고온에서의 화학양론 부피 계산을 정확히 익혀야 하며, 끝으로 앞선 제2편 제1장·제2장의 원리를 본 장 개념과 입체적으로 누적 대조합니다.
             <span class="prose-item"><strong>① 염소·불소 계열 독성가스 (포스겐 · 염화수소 · 아크롤레인 · 불화수소 · 염소)</strong></span>
             <span class="prose-sub">&bull; <strong>포스겐(COCl<sub>2</sub>, TLV 0.1 ppm) &amp; 염화수소(HCl, TLV 5 ppm)</strong>: 폴리염화비닐(PVC) 등 염소 함유 플라스틱 연소 시 발생하며(포스겐은 사염화탄소·할론 열분해 시에도 생성), 염화수소는 물에 잘 녹아 <strong>염산</strong>을 형성하여 점막 손상과 전자기기·철골 부식을 일으킵니다.</span>
             <span class="prose-sub">&bull; <strong>아크롤레인(Acrolein, CH<sub>2</sub>=CHCHO, TLV 0.1 ppm)</strong>: 식용유(유지류)·글리세린·목재가 불완전연소할 때 발생하는 맹독성·인화성 가스로 포스겐과 함께 허용농도가 가장 낮습니다.</span>
@@ -266,7 +266,7 @@
             </div>
             <div class="cheat-row">
               <div class="cheat-key">유지류 요오드값 서열</div>
-              <div class="cheat-val">불포화도 지표인 <strong>요오드값이 클수록</strong> 산화열 자연발화 위험 최고: <span class="cheat-eq">건성유(130 이상) &gt; 반건성유(100에서 130) &gt; 불건성유(100 이하)</span><br/>&bull; <strong>건성유(130↑)</strong>: <strong>아마인유·들기름·동유·해바라기유·콩기름</strong> / <strong>반건성유</strong>: 면실유·참기름·채종유 / <strong>불건성유(100↓)</strong>: <strong>올리브유·피마자유·땅콩기름·야자유·동백유</strong></div>
+              <div class="cheat-val">불포화도 지표인 <strong>요오드값이 클수록</strong> 산화열 자연발화 위험 최고: <span class="cheat-eq">건성유(130 이상) &gt; 반건성유(100에서 130) &gt; 불건성유(100 이하)</span><br/>&bull; <strong>건성유(130↑)</strong>: <strong>아마인유·들기름·동유·해바라기유·양귀비유</strong> / <strong>반건성유</strong>: 콩기름·면실유·참기름·채종유·옥수수유 / <strong>불건성유(100↓)</strong>: <strong>올리브유·피마자유·땅콩기름·야자유·동백유</strong></div>
             </div>
           </div>
         </div>
@@ -280,7 +280,7 @@
             </div>
             <div class="cheat-row">
               <div class="cheat-key">감광계수 · 가시거리</div>
-              <div class="cheat-val"><strong>람베르트·비어</strong>: <span class="cheat-eq">I = I<sub>0</sub>&middot;exp(&minus;C<sub>s</sub>L) &rArr; C<sub>s</sub> = (1/L)&middot;ln(I<sub>0</sub>/I) [m<sup>&minus;1</sup>]</span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <strong>C<sub>s</sub> = 0.1 m<sup>&minus;1</sup></strong>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>0.3 m<sup>&minus;1</sup></strong>(약 5 m) · <strong>0.5 m<sup>&minus;1</sup></strong>(3에서 5 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(1에서 5 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K<sub>c</sub> &divide; C<sub>s</sub>, S&times;K=상수)</strong>: <strong>발광 표지(유도등, 5에서 10)</strong>가 비발광 반사체(2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>
+              <div class="cheat-val"><strong>람베르트·비어</strong>: <span class="cheat-eq">I = I<sub>0</sub>&middot;exp(&minus;C<sub>s</sub>L) &rArr; C<sub>s</sub> = (1/L)&middot;ln(I<sub>0</sub>/I) [m<sup>&minus;1</sup>]</span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <strong>C<sub>s</sub> = 0.1 m<sup>&minus;1</sup></strong>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>0.3 m<sup>&minus;1</sup></strong>(약 5 m) · <strong>0.5 m<sup>&minus;1</sup></strong>(3에서 5 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(1에서 2 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K<sub>c</sub> &divide; C<sub>s</sub>, S&times;K=상수)</strong>: <strong>발광 표지(유도등, 5에서 10)</strong>가 비발광 반사체(2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>
             </div>
             <div class="cheat-row">
               <div class="cheat-key">연기 색깔 4종 판별</div>
@@ -766,7 +766,7 @@
     ],
     "hlKey": "분자 진동이나 자유전자 이동",
     "paraIdx": 0,
-    "isEssential": false
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -1030,7 +1030,7 @@
     ],
     "hlKey": "상층 개구부를 크게 개방할 때",
     "paraIdx": 5,
-    "isEssential": false
+    "isEssential": true
   },
   {
     "grade": "S",
@@ -1047,7 +1047,7 @@
     ],
     "hlKey": "호흡 심도가 1.5배 정도 증가",
     "paraIdx": 7,
-    "isEssential": false
+    "isEssential": true
   },
   {
     "grade": "B",
@@ -1095,7 +1095,7 @@
     ],
     "hlKey": "차고 무거운 실내 공기가 위에서 아래로 하강",
     "paraIdx": 5,
-    "isEssential": false,
+    "isEssential": true,
     "isKiller": true
   },
   {
@@ -1328,7 +1328,7 @@
   },
   {
     "grade": "S",
-    "text": "종이나 커튼처럼 두께가 매우 얇은 열적 박물(Thermally Thin, 비오 수 Bi < 0.1)의 착화시간은 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)에 정비례한다.",
+    "text": "종이나 커튼처럼 두께가 매우 얇은 열적 박물(Thermally Thin, 비오 수 Bi = h·L ÷ k < 0.1)의 착화시간은 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)에 정비례한다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (열적 박물 ρcL vs 열적 후물 kρc 바꿔치기)",
     "explanation": "[사각지대 킬러] 열관성(kρc)에 비례하는 것은 두께가 두꺼운 '열적 후물(Thermally Thick)'의 착화시간입니다! 두께가 얇은 '열적 박물'은 내부 온도 구배가 없으므로 열전도율(k)과 무관하며, 오직 밀도(ρ)·비열(c)·두께(L)의 곱(ρcL)에 비례합니다. 💡 1초 판별 팁: 열적 박물은 얇아서 열전도(k)가 무의미! '박물 = ρcL (k 제외)' vs '후물 = kρc'!",
@@ -1357,7 +1357,7 @@
     ],
     "hlKey": "키르히호프(Kirchhoff)의 법칙",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "A",
@@ -1373,7 +1373,7 @@
     ],
     "hlKey": "빈(Wien)의 변위 법칙",
     "paraIdx": 1,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1396,16 +1396,16 @@
     "text": "제4류 동식물유류 중 올리브유, 피마자유, 땅콩기름은 요오드값이 130 이상인 건성유에 해당하여 공기 중 산소와 결합할 때 산화열에 의해 자연발화할 위험성이 가장 높고, 아마인유, 들기름, 동유는 요오드값이 100 이하인 불건성유로서 자연발화 위험성이 낮다.",
     "isCorrect": false,
     "source": "🎯 2회독 주변확장·악질함정 (건성유 아마인유·들기름 vs 불건성유 올리브유·피마자유 스왑)",
-    "explanation": "건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 건성유가 '아마인유·들기름·동유·해바라기유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 불건성유가 '올리브유·피마자유·땅콩기름·야자유'입니다. 💡 1초 판별 팁: '아·들·동·해·콩 = 건성유(130↑, 위험)', '올·피·땅·야 = 불건성유(100↓, 안전)'!",
+    "explanation": "건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 건성유가 '아마인유·들기름·동유·해바라기유·양귀비유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 불건성유가 '올리브유·피마자유·땅콩기름·야자유·동백유'입니다(콩기름·면실유·참기름·채종유·옥수수유는 요오드값 100에서 130까지인 반건성유). 💡 1초 판별 팁: '아·들·동·해·양 = 건성유(130↑, 위험)', '콩·면·참·채·옥 = 반건성유(100에서 130)', '올·피·땅·야·동백 = 불건성유(100↓, 안전)'!",
     "origQId": "",
     "id": "PRED_SCI_02_03_008",
     "tier": "pred",
     "trapTags": [
       "화학식·약제·위험물"
     ],
-    "hlKey": "유지류 요오드값 서열",
+    "hlKey": "아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유",
     "paraIdx": 2,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "A",
@@ -1421,7 +1421,7 @@
     ],
     "hlKey": "다공성 표면에 기체 분자가 달라붙으며",
     "paraIdx": 2,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1437,7 +1437,7 @@
     ],
     "hlKey": "감광계수는 1.0이 아니라",
     "paraIdx": 4,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1453,7 +1453,7 @@
     ],
     "hlKey": "가시거리 반비례 공식",
     "paraIdx": 4,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "A",
@@ -1469,7 +1469,7 @@
     ],
     "hlKey": "불특정 다수인(백화점·다중이용업소 손님)",
     "paraIdx": 4,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1534,7 +1534,7 @@
     ],
     "hlKey": "수치가 작을수록 극소량만 흡입해도",
     "paraIdx": 6,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1550,7 +1550,7 @@
     ],
     "hlKey": "불포화지방산이",
     "paraIdx": 2,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1584,7 +1584,7 @@
     ],
     "hlKey": "15 vol%에서 16 vol%",
     "paraIdx": 7,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "S",
@@ -1600,7 +1600,7 @@
     ],
     "hlKey": "6 vol%에서 10 vol%",
     "paraIdx": 7,
-    "isEssential": true
+    "isEssential": false
   },
   {
     "grade": "A",
@@ -1632,7 +1632,7 @@
     ],
     "hlKey": "개별 독성의 단순 합보다 몇 배로 증폭되는 현상",
     "paraIdx": 7,
-    "isEssential": false
+    "isEssential": true
   },
   {
     "grade": "A",
@@ -1663,6 +1663,76 @@
       "화재현상·비교개념"
     ],
     "hlKey": "피스톤 효과(Piston Effect)",
+    "paraIdx": 3,
+    "isEssential": false
+  },
+  {
+    "grade": "S",
+    "text": "[유지류 요오드값 사각지대] 유지류 자연발화 위험성 서열에서 아마인유·들기름과 함께 콩기름(대두유)은 요오드값 130 이상인 건성유에 해당하고, 면실유·참기름·채종유·옥수수유는 요오드값 100에서 130까지인 반건성유에 해당한다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·사각지대 (콩기름 반건성유 vs 건성유 구별)",
+    "explanation": "[사각지대 킬러] 수험생이 두문자로 암기하다 가장 자주 빠지는 함정입니다! '콩기름'은 요오드값 130 이상인 건성유가 아니라 면실유·참기름·채종유·옥수수유와 함께 요오드값 100에서 130까지인 '반건성유'에 해당합니다(건성유는 아마인유·들기름·동유·해바라기유·양귀비유). 💡 1초 판별 팁: 콩기름 = 건성유(X)가 아니라 '반건성유(100에서 130)'! 건성유는 '아·들·동·해·양'!",
+    "origQId": "",
+    "id": "PRED_SCI_02_03_025",
+    "tier": "pred",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유",
+    "paraIdx": 2,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "[감광계수 농도별 가시거리] 연기의 감광계수가 0.1 m⁻¹일 때는 연기감지기가 작동하며 가시거리가 20미터에서 30미터 수준이고, 감광계수가 1.0 m⁻¹일 때는 가시거리가 약 5미터에서 10미터 수준으로 건물에 익숙한 사람의 피난에는 큰 지장이 없다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·사각지대 (감광계수 1.0 m⁻¹ 가시거리 1에서 2 m)",
+    "explanation": "[사각지대 킬러] 감광계수 1.0 m⁻¹는 앞이 거의 보이지 않아 피난이 불가능한 수준이며 가시거리는 5미터에서 10미터가 아니라 '1미터에서 2미터'에 불과합니다(감광계수 0.1 m⁻¹ = 20미터에서 30미터, 0.3 m⁻¹ = 약 5미터, 0.5 m⁻¹ = 3미터에서 5미터, 10 m⁻¹ = 0.2미터에서 0.5미터 암흑 상태). 💡 1초 판별 팁: 감광계수 1.0 m⁻¹ = '거의 안 보임(가시거리 1에서 2 m)'! 익숙한 자 피난 한계(0.5 m⁻¹)의 2배 농도!",
+    "origQId": "",
+    "id": "PRED_SCI_02_03_026",
+    "tier": "pred",
+    "trapTags": [
+      "비례·증감·물성",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "거의 안 보임, 1미터에서 2미터",
+    "paraIdx": 4,
+    "isEssential": true,
+    "isKiller": true
+  },
+  {
+    "grade": "S",
+    "text": "[연기 색깔 사각지대] 화재 현장에서 창문 밖으로 황갈색이나 적갈색 연기가 뿜어져 나올 때는 목재나 종이의 수분이 응축되는 초기 저온 현상이므로 인체 독성 위험은 백색 연기와 동일하다.",
+    "isCorrect": false,
+    "source": "🎯 2회독 주변확장·사각지대 (황갈색·적갈색 연기 판별)",
+    "explanation": "[사각지대 킬러] 수증기 응축으로 나타나는 초기 저온 현상은 '백색 연기'이며, 황갈색이나 적갈색 연기는 니트로셀룰로오스(셀룰로이드 등 제5류 위험물) 연소나 이산화질소(NO₂) 등 질소산화물 발생을 알리는 맹독성 가스 징후입니다. 💡 1초 판별 팁: 황갈색·적갈색 연기 = '니트로셀룰로오스·질소산화물(NO₂) 맹독성' 경보!",
+    "origQId": "",
+    "id": "PRED_SCI_02_03_027",
+    "tier": "pred",
+    "trapTags": [
+      "화학식·약제·위험물",
+      "화재현상·비교개념"
+    ],
+    "hlKey": "황갈색·적갈색 연기는 니트로셀룰로오스·질소산화물 등 맹독성 가스 징후",
+    "paraIdx": 4,
+    "isEssential": false,
+    "isKiller": true
+  },
+  {
+    "grade": "A",
+    "text": "화재실 내부의 고온 기체가 가열되어 체적이 3배 이상 팽창하며 인접 구획으로 연기를 밀어내는 팽창압과 밀도 차에 의한 부력 현상은 고층건축물 연기유동을 일으키는 핵심 요인에 해당한다.",
+    "isCorrect": true,
+    "source": "🎯 2회독 주변확장 (열팽창 팽창압과 부력효과)",
+    "explanation": "화재 시 실내 기체가 고온으로 가열되면 체적이 3배 이상 팽창하여 인접 구획으로 연기를 밀어내는 팽창압이 발생하며, 이는 부력·풍압·굴뚝효과·공조설비·피스톤 효과와 함께 고층건축물 연기유동의 핵심 원인입니다. 💡 핵심 암기 팁: 화재실 연소가스 열팽창 = 체적 3배 이상 팽창압 ➔ 연기 유동 추진!",
+    "origQId": "",
+    "id": "PRED_SCI_02_03_028",
+    "tier": "pred",
+    "trapTags": [
+      "화재현상·비교개념"
+    ],
+    "hlKey": "체적이 3배 이상 팽창하며",
     "paraIdx": 3,
     "isEssential": false
   }
@@ -1703,20 +1773,20 @@
     "type": "formula",
     "badge": "공식·산정식·서열",
     "title": "유지류 요오드값 서열",
-    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)</span></span></div><div class=\"subj-ex-line\">💡 &bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(요오드값 130 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(요오드값 130 이상)</span></span>: 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"반건성유(요오드값 100에서 130까지)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">반건성유(요오드값 100에서 130까지)</span></span>: 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</div>",
+    "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)</span></span></div><div class=\"subj-ex-line\">💡 &bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(요오드값 130 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(요오드값 130 이상)</span></span>: 아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"반건성유(요오드값 100에서 130까지)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">반건성유(요오드값 100에서 130까지)</span></span>: 콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</div>",
     "answerEq": "건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저) / 건성유(요오드값 130 이상) / 반건성유(요오드값 100에서 130까지)",
     "fullFormula": "건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)",
-    "explanation": "• 건성유(요오드값 130 이상): 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름• 반건성유(요오드값 100에서 130까지): 면실유 · 참기름 · 채종유 · 옥수수유• 불건성유(요오드값 100 이하): 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유"
+    "explanation": "• 건성유(요오드값 130 이상): 아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유• 반건성유(요오드값 100에서 130까지): 콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유• 불건성유(요오드값 100 이하): 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유"
   },
   {
     "id": "SUBJ_SCI_02_03_05",
     "type": "formula",
     "badge": "공식·산정식·서열",
     "title": "람베르트·비어 감광계수 공식",
-    "promptHtml": "<div class=\"subj-eq-line\">I = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I0 · exp(−Cs · L) ⇒ Cs\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I0 · exp(−Cs · L) ⇒ Cs</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]</span></span></div><div class=\"subj-ex-line\">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">0.1 m−1</span></span>입니다.<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"농도별 가시거리\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">농도별 가시거리</span></span>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 2미터에서 5미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</div>",
+    "promptHtml": "<div class=\"subj-eq-line\">I = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I0 · exp(−Cs · L) ⇒ Cs\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I0 · exp(−Cs · L) ⇒ Cs</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]</span></span></div><div class=\"subj-ex-line\">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">0.1 m−1</span></span>입니다.<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"농도별 가시거리\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">농도별 가시거리</span></span>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 1미터에서 2미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</div>",
     "answerEq": "I0 · exp(−Cs · L) ⇒ Cs / (1 ÷ L) · ln(I0 ÷ I) [단위: m−1] / 0.1 m−1 / 농도별 가시거리",
     "fullFormula": "I = I0 · exp(−Cs · L) ⇒ Cs = (1 ÷ L) · ln(I0 ÷ I) [단위: m−1]",
-    "explanation": "💡 예제 풀이 | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I0)의 e−1배(약 36.8퍼센트)로 감소했다면 Cs × 10 = 1이므로 감광계수는 1.0이 아니라 0.1 m−1입니다.• 농도별 가시거리: 감광계수 0.1 m−1(연기감지기 작동 수준, 20미터에서 30미터) / 1.0 m−1(거의 안 보임, 2미터에서 5미터) / 10 m−1(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)"
+    "explanation": "💡 예제 풀이 | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I0)의 e−1배(약 36.8퍼센트)로 감소했다면 Cs × 10 = 1이므로 감광계수는 1.0이 아니라 0.1 m−1입니다.• 농도별 가시거리: 감광계수 0.1 m−1(연기감지기 작동 수준, 20미터에서 30미터) / 1.0 m−1(거의 안 보임, 1미터에서 2미터) / 10 m−1(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)"
   },
   {
     "id": "SUBJ_SCI_02_03_06",
@@ -1773,10 +1843,10 @@
     "type": "keynum",
     "badge": "핵심 수치·법정기준",
     "title": "감광계수 · 가시거리",
-    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"람베르트·비어\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">람베르트·비어</span></span>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]</span></span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"Cs = 0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">Cs = 0.1 m−1</span></span>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(2에서 5 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K &divide; C<sub>s</sub>)</strong>: <strong>발광 표지(유도등, K=5에서 10)</strong>가 비발광 반사체(K=2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>",
+    "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"람베르트·비어\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">람베르트·비어</span></span>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]</span></span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"Cs = 0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">Cs = 0.1 m−1</span></span>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(1에서 2 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K &divide; C<sub>s</sub>)</strong>: <strong>발광 표지(유도등, K=5에서 10)</strong>가 비발광 반사체(K=2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>",
     "answerEq": "I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] / 람베르트·비어 / Cs = 0.1 m−1",
     "fullFormula": "",
-    "explanation": "람베르트·비어: I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] (L=10 m에서 e−1배 감소 시 Cs = 0.1 m−1) / 농도별: 0.1 m−1(감지기 작동, 20에서 30 m) · 1.0 m−1(2에서 5 m) · 10 m−1(암흑, 0.2에서 0.5 m)• 가시거리(D = K ÷ Cs): 발광 표지(유도등, K=5에서 10)가 비발광 반사체(K=2에서 4)보다 약 2.5에서 3배 더 김 / 피난 한계: 불특정 다수인 0.15 m−1 vs 익숙한 자 0.5 m−1"
+    "explanation": "람베르트·비어: I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] (L=10 m에서 e−1배 감소 시 Cs = 0.1 m−1) / 농도별: 0.1 m−1(감지기 작동, 20에서 30 m) · 1.0 m−1(1에서 2 m) · 10 m−1(암흑, 0.2에서 0.5 m)• 가시거리(D = K ÷ Cs): 발광 표지(유도등, K=5에서 10)가 비발광 반사체(K=2에서 4)보다 약 2.5에서 3배 더 김 / 피난 한계: 불특정 다수인 0.15 m−1 vs 익숙한 자 0.5 m−1"
   },
   {
     "id": "SUBJ_SCI_02_03_12",

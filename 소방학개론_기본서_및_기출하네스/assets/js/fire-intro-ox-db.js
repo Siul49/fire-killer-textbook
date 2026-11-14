@@ -77,9 +77,9 @@ window.FIRE_INTRO_OX_DB = {
       "coreOxCount": 18,
       "extOxCount": 14,
       "origQCount": 14,
-      "predOxCount": 24,
-      "totalOxCount": 56,
-      "oxCount": 56
+      "predOxCount": 28,
+      "totalOxCount": 60,
+      "oxCount": 60
     },
     {
       "unitId": "02_04",
@@ -3245,7 +3245,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 0,
       "hlKey": "분자 진동이나 자유전자 이동",
-      "isEssential": false
+      "isEssential": true
     },
     {
       "id": "SCI_02_03_002",
@@ -3541,7 +3541,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 5,
       "hlKey": "상층 개구부를 크게 개방할 때",
-      "isEssential": false
+      "isEssential": true
     },
     {
       "id": "SCI_02_03_018",
@@ -3560,7 +3560,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 7,
       "hlKey": "호흡 심도가 1.5배 정도 증가",
-      "isEssential": false
+      "isEssential": true
     },
     {
       "id": "SCI_02_04_001",
@@ -7685,7 +7685,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 5,
       "hlKey": "차고 무거운 실내 공기가 위에서 아래로 하강",
-      "isEssential": false
+      "isEssential": true
     },
     {
       "id": "EXT_SCI_02_03_004",
@@ -11924,7 +11924,7 @@ window.FIRE_INTRO_OX_DB = {
       "grade": "S",
       "isKiller": true,
       "isCorrect": false,
-      "text": "종이나 커튼처럼 두께가 매우 얇은 열적 박물(Thermally Thin, 비오 수 Bi < 0.1)의 착화시간은 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)에 정비례한다.",
+      "text": "종이나 커튼처럼 두께가 매우 얇은 열적 박물(Thermally Thin, 비오 수 Bi = h·L ÷ k < 0.1)의 착화시간은 열전도율(k)·밀도(ρ)·비열(c)의 곱인 열관성(kρc)에 정비례한다.",
       "explanation": "[사각지대 킬러] 열관성(kρc)에 비례하는 것은 두께가 두꺼운 '열적 후물(Thermally Thick)'의 착화시간입니다! 두께가 얇은 '열적 박물'은 내부 온도 구배가 없으므로 열전도율(k)과 무관하며, 오직 밀도(ρ)·비열(c)·두께(L)의 곱(ρcL)에 비례합니다. 💡 1초 판별 팁: 열적 박물은 얇아서 열전도(k)가 무의미! '박물 = ρcL (k 제외)' vs '후물 = kρc'!",
       "source": "🎯 2회독 주변확장·악질함정 (열적 박물 ρcL vs 열적 후물 kρc 바꿔치기)",
       "origQId": "",
@@ -11951,7 +11951,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 1,
       "hlKey": "키르히호프(Kirchhoff)의 법칙",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_006",
@@ -11969,7 +11969,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 1,
       "hlKey": "빈(Wien)의 변위 법칙",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_007",
@@ -11997,15 +11997,15 @@ window.FIRE_INTRO_OX_DB = {
       "grade": "S",
       "isCorrect": false,
       "text": "제4류 동식물유류 중 올리브유, 피마자유, 땅콩기름은 요오드값이 130 이상인 건성유에 해당하여 공기 중 산소와 결합할 때 산화열에 의해 자연발화할 위험성이 가장 높고, 아마인유, 들기름, 동유는 요오드값이 100 이하인 불건성유로서 자연발화 위험성이 낮다.",
-      "explanation": "건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 건성유가 '아마인유·들기름·동유·해바라기유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 불건성유가 '올리브유·피마자유·땅콩기름·야자유'입니다. 💡 1초 판별 팁: '아·들·동·해·콩 = 건성유(130↑, 위험)', '올·피·땅·야 = 불건성유(100↓, 안전)'!",
+      "explanation": "건성유와 불건성유의 대표 기름 종류를 통째로 맞바꿨습니다! 요오드값 130 이상으로 자연발화 위험이 가장 큰 건성유가 '아마인유·들기름·동유·해바라기유·양귀비유'이고, 요오드값 100 이하로 자연발화 위험이 거의 없는 불건성유가 '올리브유·피마자유·땅콩기름·야자유·동백유'입니다(콩기름·면실유·참기름·채종유·옥수수유는 요오드값 100에서 130까지인 반건성유). 💡 1초 판별 팁: '아·들·동·해·양 = 건성유(130↑, 위험)', '콩·면·참·채·옥 = 반건성유(100에서 130)', '올·피·땅·야·동백 = 불건성유(100↓, 안전)'!",
       "source": "🎯 2회독 주변확장·악질함정 (건성유 아마인유·들기름 vs 불건성유 올리브유·피마자유 스왑)",
       "origQId": "",
       "trapTags": [
         "화학식·약제·위험물"
       ],
       "paraIdx": 2,
-      "hlKey": "유지류 요오드값 서열",
-      "isEssential": true
+      "hlKey": "아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유",
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_009",
@@ -12023,7 +12023,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 2,
       "hlKey": "다공성 표면에 기체 분자가 달라붙으며",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_010",
@@ -12041,7 +12041,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 4,
       "hlKey": "감광계수는 1.0이 아니라",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_011",
@@ -12059,7 +12059,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 4,
       "hlKey": "가시거리 반비례 공식",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_012",
@@ -12077,7 +12077,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 4,
       "hlKey": "불특정 다수인(백화점·다중이용업소 손님)",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_013",
@@ -12150,7 +12150,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 6,
       "hlKey": "수치가 작을수록 극소량만 흡입해도",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_017",
@@ -12168,7 +12168,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 2,
       "hlKey": "불포화지방산이",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_018",
@@ -12206,7 +12206,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 7,
       "hlKey": "15 vol%에서 16 vol%",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_020",
@@ -12224,7 +12224,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 7,
       "hlKey": "6 vol%에서 10 vol%",
-      "isEssential": true
+      "isEssential": false
     },
     {
       "id": "PRED_SCI_02_03_021",
@@ -12260,7 +12260,7 @@ window.FIRE_INTRO_OX_DB = {
       ],
       "paraIdx": 7,
       "hlKey": "개별 독성의 단순 합보다 몇 배로 증폭되는 현상",
-      "isEssential": false
+      "isEssential": true
     },
     {
       "id": "PRED_SCI_02_03_023",
@@ -16973,6 +16973,84 @@ window.FIRE_INTRO_OX_DB = {
       "paraIdx": 6,
       "hlKey": "분자 내 산소공급원을 품은 제5류 위험물의 자기연소는 질식소화가 무효입니다",
       "isEssential": true
+    },
+    {
+      "id": "PRED_SCI_02_03_025",
+      "unitId": "02_03",
+      "partId": "02",
+      "tier": "pred",
+      "grade": "S",
+      "isKiller": true,
+      "isCorrect": false,
+      "text": "[유지류 요오드값 사각지대] 유지류 자연발화 위험성 서열에서 아마인유·들기름과 함께 콩기름(대두유)은 요오드값 130 이상인 건성유에 해당하고, 면실유·참기름·채종유·옥수수유는 요오드값 100에서 130까지인 반건성유에 해당한다.",
+      "explanation": "[사각지대 킬러] 수험생이 두문자로 암기하다 가장 자주 빠지는 함정입니다! '콩기름'은 요오드값 130 이상인 건성유가 아니라 면실유·참기름·채종유·옥수수유와 함께 요오드값 100에서 130까지인 '반건성유'에 해당합니다(건성유는 아마인유·들기름·동유·해바라기유·양귀비유). 💡 1초 판별 팁: 콩기름 = 건성유(X)가 아니라 '반건성유(100에서 130)'! 건성유는 '아·들·동·해·양'!",
+      "source": "🎯 2회독 주변확장·사각지대 (콩기름 반건성유 vs 건성유 구별)",
+      "origQId": "",
+      "trapTags": [
+        "화학식·약제·위험물",
+        "화재현상·비교개념"
+      ],
+      "paraIdx": 2,
+      "hlKey": "콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유",
+      "isEssential": true
+    },
+    {
+      "id": "PRED_SCI_02_03_026",
+      "unitId": "02_03",
+      "partId": "02",
+      "tier": "pred",
+      "grade": "S",
+      "isKiller": true,
+      "isCorrect": false,
+      "text": "[감광계수 농도별 가시거리] 연기의 감광계수가 0.1 m⁻¹일 때는 연기감지기가 작동하며 가시거리가 20미터에서 30미터 수준이고, 감광계수가 1.0 m⁻¹일 때는 가시거리가 약 5미터에서 10미터 수준으로 건물에 익숙한 사람의 피난에는 큰 지장이 없다.",
+      "explanation": "[사각지대 킬러] 감광계수 1.0 m⁻¹는 앞이 거의 보이지 않아 피난이 불가능한 수준이며 가시거리는 5미터에서 10미터가 아니라 '1미터에서 2미터'에 불과합니다(감광계수 0.1 m⁻¹ = 20미터에서 30미터, 0.3 m⁻¹ = 약 5미터, 0.5 m⁻¹ = 3미터에서 5미터, 10 m⁻¹ = 0.2미터에서 0.5미터 암흑 상태). 💡 1초 판별 팁: 감광계수 1.0 m⁻¹ = '거의 안 보임(가시거리 1에서 2 m)'! 익숙한 자 피난 한계(0.5 m⁻¹)의 2배 농도!",
+      "source": "🎯 2회독 주변확장·사각지대 (감광계수 1.0 m⁻¹ 가시거리 1에서 2 m)",
+      "origQId": "",
+      "trapTags": [
+        "비례·증감·물성",
+        "화재현상·비교개념"
+      ],
+      "paraIdx": 4,
+      "hlKey": "거의 안 보임, 1미터에서 2미터",
+      "isEssential": true
+    },
+    {
+      "id": "PRED_SCI_02_03_027",
+      "unitId": "02_03",
+      "partId": "02",
+      "tier": "pred",
+      "grade": "S",
+      "isKiller": true,
+      "isCorrect": false,
+      "text": "[연기 색깔 사각지대] 화재 현장에서 창문 밖으로 황갈색이나 적갈색 연기가 뿜어져 나올 때는 목재나 종이의 수분이 응축되는 초기 저온 현상이므로 인체 독성 위험은 백색 연기와 동일하다.",
+      "explanation": "[사각지대 킬러] 수증기 응축으로 나타나는 초기 저온 현상은 '백색 연기'이며, 황갈색이나 적갈색 연기는 니트로셀룰로오스(셀룰로이드 등 제5류 위험물) 연소나 이산화질소(NO₂) 등 질소산화물 발생을 알리는 맹독성 가스 징후입니다. 💡 1초 판별 팁: 황갈색·적갈색 연기 = '니트로셀룰로오스·질소산화물(NO₂) 맹독성' 경보!",
+      "source": "🎯 2회독 주변확장·사각지대 (황갈색·적갈색 연기 판별)",
+      "origQId": "",
+      "trapTags": [
+        "화학식·약제·위험물",
+        "화재현상·비교개념"
+      ],
+      "paraIdx": 4,
+      "hlKey": "황갈색·적갈색 연기는 니트로셀룰로오스·질소산화물 등 맹독성 가스 징후",
+      "isEssential": false
+    },
+    {
+      "id": "PRED_SCI_02_03_028",
+      "unitId": "02_03",
+      "partId": "02",
+      "tier": "pred",
+      "grade": "A",
+      "isCorrect": true,
+      "text": "화재실 내부의 고온 기체가 가열되어 체적이 3배 이상 팽창하며 인접 구획으로 연기를 밀어내는 팽창압과 밀도 차에 의한 부력 현상은 고층건축물 연기유동을 일으키는 핵심 요인에 해당한다.",
+      "explanation": "화재 시 실내 기체가 고온으로 가열되면 체적이 3배 이상 팽창하여 인접 구획으로 연기를 밀어내는 팽창압이 발생하며, 이는 부력·풍압·굴뚝효과·공조설비·피스톤 효과와 함께 고층건축물 연기유동의 핵심 원인입니다. 💡 핵심 암기 팁: 화재실 연소가스 열팽창 = 체적 3배 이상 팽창압 ➔ 연기 유동 추진!",
+      "source": "🎯 2회독 주변확장 (열팽창 팽창압과 부력효과)",
+      "origQId": "",
+      "trapTags": [
+        "화재현상·비교개념"
+      ],
+      "paraIdx": 3,
+      "hlKey": "체적이 3배 이상 팽창하며",
+      "isEssential": false
     }
   ],
   "origMap": {
@@ -18913,7 +18991,7 @@ window.FIRE_INTRO_OX_DB = {
       "q_expl": "건축물 화재 시 연기를 이동·확산시키는 물리적 추진력[온도 차에 의한 열부력(부력효과), 실내외 온도 차에 의한 수직 통로 상승기류(굴뚝효과·연돌효과), 외부 바람에 의한 풍압 차(바람의 압력차), 피스톤 효과(승강기 운행), 공조설비(HVAC)의 강제 송풍 영향]을 묻는 문항입니다.",
       "c_expls": [
         "[틀림] ㄱ, ㄴ 외에 ㄷ(굴뚝효과)과 ㄹ(공기조화설비)도 고층건축물 연기유동의 핵심 요인입니다.",
-        "[틀림] 건물 화재 시 연기 이동 추진력에는 ㄱ(부력효과)과 ㄷ(바람의 압력차)뿐만 아니라 ㄴ(굴뚝효과)과 ㄹ(공조설비·승강기 피스톤 효과)도 모두 해당합니다.",
+        "[틀림] 건물 화재 시 연기 이동 추진력에는 ㄱ(부력효과)과 ㄷ(굴뚝효과)뿐만 아니라 ㄴ(바람에 의한 압력차)과 ㄹ(공기조화설비의 영향)도 모두 해당합니다.",
         "[틀림] ㄴ, ㄷ, ㄹ 외에 화재실 내부의 고온 연기가 온도 차에 의해 팽창·상승하는 ㄱ(부력효과)도 가장 기본적인 연기 이동 추진력이므로 포함되어야 합니다.",
         "[옳음 · 정답] 고온 연기의 밀도 차에 의한 부력효과( ㄱ ), 외부 바람에 의한 압력차( ㄴ ), 수직 샤프트를 통한 굴뚝효과( ㄷ ), 공기조화설비(HVAC)의 영향( ㄹ ) 모두 고층건축물에서 연기유동을 일으키는 주요 요인입니다."
       ],
@@ -18967,7 +19045,7 @@ window.FIRE_INTRO_OX_DB = {
       "q_expl": "화학반응식[S + O₂ ➔ SO₂]과 이상기체 상태방정식[PV = nRT 또는 샤를의 법칙 V = V₀ × (T ÷ 273)]을 결합한 대표 계산 문항입니다.\n• 1단계(몰수 계산): 황(S, 원자량 32) 1 kg(= 1,000 g)의 몰수 n = 1,000 ÷ 32 = 31.25 mol입니다. 반응 계수가 1 대 1이므로 생성되는 이산화황(SO₂)도 31.25 mol입니다.\n• 2단계(온도 보정 부피 계산): 섭씨 800도는 절대온도 T = 800 + 273 = 1,073 K입니다.\n따라서 V = (n × R × T) ÷ P = (31.25 mol × 0.082 atm·L/mol·K × 1,073 K) ÷ 1 atm ≈ 2,749.56 L ≈ 2.75 m³입니다.",
       "c_expls": [
         "[틀림] 황 1 kg(31.25 mol)이 연소할 때 발생하는 이산화황은 표준상태(0 ℃, 273 K)에서 31.25 × 0.0224 = 0.70 m³이며, 이를 섭씨 800도(1,073 K)로 온도 보정하면 0.70 × (1,073 ÷ 273) ≈ 2.75 m³가 되므로 2.00 m³는 오답입니다.",
-        "[틀림] 이상기체 상태방정식 V = nRT ÷ P = (31.25 × 0.082 × 1,073) ÷ 1,000 ≈ 2.75 m³이므로 2.35 m³는 오답입니다.",
+        "[틀림] 이상기체 상태방정식 V = nRT ÷ P = (31.25 × 0.082 × 1,073) ÷ 1 ≈ 2,749.56 L ≈ 2.75 m³이므로 2.35 m³는 오답입니다.",
         "[틀림] 표준상태 부피(0.70 m³)에 절대온도 비(1,073 K ÷ 273 K ≈ 3.93)를 곱하면 약 2.75 m³가 되므로 2.50 m³는 오답입니다.",
         "[옳음 · 정답] S + O₂ ➔ SO₂에서 황 1 kg(1,000 ÷ 32 = 31.25 mol) 완전연소 시 이산화황 31.25 mol이 발생하며, 섭씨 800도(1,073 K), 1기압에서 부피 V = 31.25 × 0.0224 × (1,073 ÷ 273) ≈ 2.75 m³입니다."
       ],
@@ -22701,7 +22779,7 @@ window.FIRE_INTRO_OX_DB = {
       "fileName": "05_03_위험물_저장_혼재_운반과_특수가연물.html"
     }
   },
-  "totalOx": 937,
+  "totalOx": 941,
   "subjMap": {
     "01_01": [
       {
@@ -23399,20 +23477,20 @@ window.FIRE_INTRO_OX_DB = {
         "type": "formula",
         "badge": "공식·산정식·서열",
         "title": "유지류 요오드값 서열",
-        "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)</span></span></div><div class=\"subj-ex-line\">💡 &bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(요오드값 130 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(요오드값 130 이상)</span></span>: 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"반건성유(요오드값 100에서 130까지)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">반건성유(요오드값 100에서 130까지)</span></span>: 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</div>",
+        "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(130 이상, 위험 최고) &gt; 반건성유(100에서 130까지) &gt; 불건성유(100 이하, 위험 최저)\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)</span></span></div><div class=\"subj-ex-line\">💡 &bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"건성유(요오드값 130 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">건성유(요오드값 130 이상)</span></span>: 아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"반건성유(요오드값 100에서 130까지)\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">반건성유(요오드값 100에서 130까지)</span></span>: 콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유<br/>&bull; <strong>불건성유(요오드값 100 이하)</strong>: 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유</div>",
         "answerEq": "건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저) / 건성유(요오드값 130 이상) / 반건성유(요오드값 100에서 130까지)",
         "fullFormula": "건성유(130 이상, 위험 최고) > 반건성유(100에서 130까지) > 불건성유(100 이하, 위험 최저)",
-        "explanation": "• 건성유(요오드값 130 이상): 아마인유 · 들기름 · 동유 · 해바라기유 · 콩기름• 반건성유(요오드값 100에서 130까지): 면실유 · 참기름 · 채종유 · 옥수수유• 불건성유(요오드값 100 이하): 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유"
+        "explanation": "• 건성유(요오드값 130 이상): 아마인유 · 들기름 · 동유 · 해바라기유 · 양귀비유• 반건성유(요오드값 100에서 130까지): 콩기름 · 면실유 · 참기름 · 채종유 · 옥수수유• 불건성유(요오드값 100 이하): 올리브유 · 피마자유 · 땅콩기름 · 야자유 · 동백유"
       },
       {
         "id": "SUBJ_SCI_02_03_05",
         "type": "formula",
         "badge": "공식·산정식·서열",
         "title": "람베르트·비어 감광계수 공식",
-        "promptHtml": "<div class=\"subj-eq-line\">I = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I0 · exp(−Cs · L) ⇒ Cs\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I0 · exp(−Cs · L) ⇒ Cs</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]</span></span></div><div class=\"subj-ex-line\">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">0.1 m−1</span></span>입니다.<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"농도별 가시거리\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">농도별 가시거리</span></span>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 2미터에서 5미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</div>",
+        "promptHtml": "<div class=\"subj-eq-line\">I = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I0 · exp(−Cs · L) ⇒ Cs\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I0 · exp(−Cs · L) ⇒ Cs</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">(1 ÷ L) · ln(I0 ÷ I) [단위: m−1]</span></span></div><div class=\"subj-ex-line\">💡 <strong>예제 풀이</strong> | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I<sub>0</sub>)의 e<sup>&minus;1</sup>배(약 36.8퍼센트)로 감소했다면 C<sub>s</sub> &times; 10 = 1이므로 감광계수는 1.0이 아니라 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">0.1 m−1</span></span>입니다.<br/>&bull; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"농도별 가시거리\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">농도별 가시거리</span></span>: 감광계수 <strong>0.1 m<sup>&minus;1</sup></strong>(연기감지기 작동 수준, 20미터에서 30미터) / <strong>1.0 m<sup>&minus;1</sup></strong>(거의 안 보임, 1미터에서 2미터) / <strong>10 m<sup>&minus;1</sup></strong>(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)</div>",
         "answerEq": "I0 · exp(−Cs · L) ⇒ Cs / (1 ÷ L) · ln(I0 ÷ I) [단위: m−1] / 0.1 m−1 / 농도별 가시거리",
         "fullFormula": "I = I0 · exp(−Cs · L) ⇒ Cs = (1 ÷ L) · ln(I0 ÷ I) [단위: m−1]",
-        "explanation": "💡 예제 풀이 | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I0)의 e−1배(약 36.8퍼센트)로 감소했다면 Cs × 10 = 1이므로 감광계수는 1.0이 아니라 0.1 m−1입니다.• 농도별 가시거리: 감광계수 0.1 m−1(연기감지기 작동 수준, 20미터에서 30미터) / 1.0 m−1(거의 안 보임, 2미터에서 5미터) / 10 m−1(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)"
+        "explanation": "💡 예제 풀이 | 거리 10미터(L = 10 m)인 연기층을 통과한 빛의 세기(I)가 초기 세기(I0)의 e−1배(약 36.8퍼센트)로 감소했다면 Cs × 10 = 1이므로 감광계수는 1.0이 아니라 0.1 m−1입니다.• 농도별 가시거리: 감광계수 0.1 m−1(연기감지기 작동 수준, 20미터에서 30미터) / 1.0 m−1(거의 안 보임, 1미터에서 2미터) / 10 m−1(화재 최성기 암흑 상태, 0.2미터에서 0.5미터)"
       },
       {
         "id": "SUBJ_SCI_02_03_06",
@@ -23469,10 +23547,10 @@ window.FIRE_INTRO_OX_DB = {
         "type": "keynum",
         "badge": "핵심 수치·법정기준",
         "title": "감광계수 · 가시거리",
-        "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"람베르트·비어\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">람베르트·비어</span></span>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]</span></span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"Cs = 0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">Cs = 0.1 m−1</span></span>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(2에서 5 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K &divide; C<sub>s</sub>)</strong>: <strong>발광 표지(유도등, K=5에서 10)</strong>가 비발광 반사체(K=2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>",
+        "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"람베르트·비어\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">람베르트·비어</span></span>: <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1]</span></span> (L=10 m에서 e<sup>&minus;1</sup>배 감소 시 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"Cs = 0.1 m−1\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">Cs = 0.1 m−1</span></span>) / 농도별: <strong>0.1 m<sup>&minus;1</sup></strong>(감지기 작동, 20에서 30 m) · <strong>1.0 m<sup>&minus;1</sup></strong>(1에서 2 m) · <strong>10 m<sup>&minus;1</sup></strong>(암흑, 0.2에서 0.5 m)<br/>&bull; <strong>가시거리(D = K &divide; C<sub>s</sub>)</strong>: <strong>발광 표지(유도등, K=5에서 10)</strong>가 비발광 반사체(K=2에서 4)보다 <strong>약 2.5에서 3배 더 김</strong> / 피난 한계: <strong>불특정 다수인 0.15 m<sup>&minus;1</sup></strong> vs <strong>익숙한 자 0.5 m<sup>&minus;1</sup></strong></div>",
         "answerEq": "I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] / 람베르트·비어 / Cs = 0.1 m−1",
         "fullFormula": "",
-        "explanation": "람베르트·비어: I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] (L=10 m에서 e−1배 감소 시 Cs = 0.1 m−1) / 농도별: 0.1 m−1(감지기 작동, 20에서 30 m) · 1.0 m−1(2에서 5 m) · 10 m−1(암흑, 0.2에서 0.5 m)• 가시거리(D = K ÷ Cs): 발광 표지(유도등, K=5에서 10)가 비발광 반사체(K=2에서 4)보다 약 2.5에서 3배 더 김 / 피난 한계: 불특정 다수인 0.15 m−1 vs 익숙한 자 0.5 m−1"
+        "explanation": "람베르트·비어: I = I0·exp(−CsL) ⇒ Cs = (1/L)·ln(I0/I) [m−1] (L=10 m에서 e−1배 감소 시 Cs = 0.1 m−1) / 농도별: 0.1 m−1(감지기 작동, 20에서 30 m) · 1.0 m−1(1에서 2 m) · 10 m−1(암흑, 0.2에서 0.5 m)• 가시거리(D = K ÷ Cs): 발광 표지(유도등, K=5에서 10)가 비발광 반사체(K=2에서 4)보다 약 2.5에서 3배 더 김 / 피난 한계: 불특정 다수인 0.15 m−1 vs 익숙한 자 0.5 m−1"
       },
       {
         "id": "SUBJ_SCI_02_03_12",
