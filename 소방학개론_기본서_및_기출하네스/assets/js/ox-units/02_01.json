@@ -724,8 +724,8 @@
       "tier": "pred",
       "grade": "S",
       "isCorrect": false,
-      "text": "존스(Jones) 식에 따르면 가연성 가스의 완전연소 화학양론농도(Cst)에 0.55를 곱하면 연소하한계(LFL)를 추산할 수 있으므로, 프로페인(C₃H₈)의 공기 중 화학양론농도(약 4.02 vol%)를 대입하면 연소상한계(UFL)는 약 2.2 vol%로 산출된다.",
-      "explanation": "🚨 [출제위원 착시 함정 주의] 계산 숫자(4.02 × 0.55 ≈ 2.2 vol%)까지 완벽하게 맞지만, 맨 끝 용어를 '연소하한계(LFL)'가 아닌 '연소상한계(UFL)'로 적었습니다! 0.55 × Cst로 구한 약 2.2 vol%는 프로페인의 '연소하한계(LFL)'이며, 연소상한계(UFL)는 3.5 × Cst입니다. 💡 1초 판별 팁: 존스 식 0.55 × Cst = 연소하한계(LFL), 3.5 × Cst = 연소상한계(UFL)!",
+      "text": "존스(Jones) 식에 따르면 가연성 가스의 완전연소 화학양론농도(Cst)에 0.55를 곱하면 연소하한계(LFL)를 추산할 수 있으므로, 프로페인(C₃H₈)의 공기 중 화학양론농도(약 4.03 vol%)를 대입하면 연소상한계(UFL)는 약 2.2 vol%로 산출된다.",
+      "explanation": "🚨 [출제위원 착시 함정 주의] 계산 숫자(4.03 × 0.55 ≈ 2.2 vol%)까지 완벽하게 맞지만, 맨 끝 용어를 '연소하한계(LFL)'가 아닌 '연소상한계(UFL)'로 적었습니다! 0.55 × Cst로 구한 약 2.2 vol%는 프로페인의 '연소하한계(LFL)'이며, 연소상한계(UFL)는 3.5 × Cst입니다. 💡 1초 판별 팁: 존스 식 0.55 × Cst = 연소하한계(LFL), 3.5 × Cst = 연소상한계(UFL)!",
       "source": "🎯 2회독 주변확장·악질함정 (존스 식 0.55×Cst 연소하한계 vs 연소상한계 용어 착시)",
       "trapTags": [
         "비례·증감·물성"
@@ -1253,7 +1253,7 @@
       "ans": 3,
       "q_expl": "화학양론농도(Cst)를 이용하여 연소하한계(LFL = 0.55 × Cst)와 연소상한계(UFL = 3.5 × Cst)를 추정하는 존스(Jones) 식 계산 문항입니다.\n1단계: 에테인 완전연소 반응식 C₂H₆ + 3.5O₂ ➔ 2CO₂ + 3H₂O에서 산소 몰수 x = 3.5몰.\n2단계: 공기 중 산소 비율이 21퍼센트(0.21)이므로 공기 몰수는 3.5 / 0.21 = 16.67몰.\n3단계: 화학양론농도 Cst = [1 / (1 + 16.67)] × 100 ≈ 5.66 vol%.\n4단계: LFL = 0.55 × 5.66 ≈ 3.11 ≈ 3.1 vol%.",
       "c_expls": [
-        "[틀림] 프로페인(C₃H₈ + 5O₂)의 화학양론농도 Cst ≈ 4.02 vol%로부터 존스 식을 적용하면 LFL = 0.55 × 4.02 ≈ 2.2 vol%이며, 1.7은 부탄(C₄H₁₀) 수준의 하한계 수치입니다.",
+        "[틀림] 프로페인(C₃H₈ + 5O₂)의 화학양론농도 Cst ≈ 4.03 vol%로부터 존스 식을 적용하면 LFL = 0.55 × 4.03 ≈ 2.2 vol%이며, 1.7은 부탄(C₄H₁₀) 수준의 하한계 수치입니다.",
         "[틀림] 프로판(C₃H₈)의 연소하한계(약 2.1에서 2.2퍼센트)에 해당하는 수치입니다.",
         "[옳음 · 정답] C₂H₆ + 3.5O₂ 반응식으로부터 공기 중 화학양론농도 Cst = 100 / (1 + 3.5/0.21) ≈ 5.66%를 구하고, 존스(Jones)의 하한계 식 LFL = 0.55 Cst = 0.55 × 5.66 = 3.11%에 대입하면 소수점 둘째 자리 반올림 값인 '3.1'이 산출됩니다.",
         "[틀림] 메테인(CH₄, 약 5.0퍼센트)에 가까운 수치입니다."
@@ -1379,10 +1379,10 @@
       "type": "formula",
       "badge": "공식·산정식·서열",
       "title": "화학양론농도(Cₛₜ) 및 존스(Jones) 폭발한계 추산식",
-      "promptHtml": "<div class=\"subj-eq-line\">Cst = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.55 × Cst , UFL\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.55 × Cst , UFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3.5 × Cst\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">3.5 × Cst</span></span></div><div class=\"subj-ex-line\">💡 <strong>기출 대입 풀이</strong> | <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"에테인(C2H6, x = 3.5몰)\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">에테인(C2H6, x = 3.5몰)</span></span>: C<sub>st</sub> &approx; 5.66% &rArr; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"LFL = 0.55 × 5.66 ≈ 3.1%\"><span class=\"subj-ph\">[ 빈칸 5 · 정답 확인 ]</span><span class=\"subj-ans\">LFL = 0.55 × 5.66 ≈ 3.1%</span></span> &nbsp;/&nbsp; <strong>프로페인(C<sub>3</sub>H<sub>8</sub>, x = 5몰)</strong>: C<sub>st</sub> &approx; 4.02% &rArr; <strong>LFL = 0.55 &times; 4.02 &approx; 2.2%</strong> (연소상한계 UFL이 아니라 연소하한계 LFL임!)</div>",
+      "promptHtml": "<div class=\"subj-eq-line\">Cst = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.55 × Cst , UFL\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.55 × Cst , UFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3.5 × Cst\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">3.5 × Cst</span></span></div><div class=\"subj-ex-line\">💡 <strong>기출 대입 풀이</strong> | <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"에테인(C2H6, x = 3.5몰)\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">에테인(C2H6, x = 3.5몰)</span></span>: C<sub>st</sub> &approx; 5.66% &rArr; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"LFL = 0.55 × 5.66 ≈ 3.1%\"><span class=\"subj-ph\">[ 빈칸 5 · 정답 확인 ]</span><span class=\"subj-ans\">LFL = 0.55 × 5.66 ≈ 3.1%</span></span> &nbsp;/&nbsp; <strong>프로페인(C<sub>3</sub>H<sub>8</sub>, x = 5몰)</strong>: C<sub>st</sub> &approx; 4.03% &rArr; <strong>LFL = 0.55 &times; 4.03 &approx; 2.2%</strong> (연소상한계 UFL이 아니라 연소하한계 LFL임!)</div>",
       "answerEq": "100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL / 0.55 × Cst , UFL / 3.5 × Cst / 에테인(C2H6, x = 3.5몰) / LFL = 0.55 × 5.66 ≈ 3.1%",
       "fullFormula": "Cst = 100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL = 0.55 × Cst , UFL = 3.5 × Cst",
-      "explanation": "💡 기출 대입 풀이 | 에테인(C2H6, x = 3.5몰): Cst ≈ 5.66% ⇒ LFL = 0.55 × 5.66 ≈ 3.1% / 프로페인(C3H8, x = 5몰): Cst ≈ 4.02% ⇒ LFL = 0.55 × 4.02 ≈ 2.2% (연소상한계 UFL이 아니라 연소하한계 LFL임!)"
+      "explanation": "💡 기출 대입 풀이 | 에테인(C2H6, x = 3.5몰): Cst ≈ 5.66% ⇒ LFL = 0.55 × 5.66 ≈ 3.1% / 프로페인(C3H8, x = 5몰): Cst ≈ 4.03% ⇒ LFL = 0.55 × 4.03 ≈ 2.2% (연소상한계 UFL이 아니라 연소하한계 LFL임!)"
     },
     {
       "id": "SUBJ_SCI_02_01_05",

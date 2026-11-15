@@ -4438,7 +4438,7 @@ window.FIRE_INTRO_OX_DB = {
       "text": "｢화재조사 및 보고규정｣상 건물의 소실정도 구분에서 전소는 건물 입체면적의 70퍼센트 이상이 소실된 경우만을 말하며, 70퍼센트 미만이면 잔존부분을 보수하여 재사용할 수 없더라도 반소로 구분한다.",
       "isCorrect": false,
       "source": "2020년 소방공채·경채 Q9 기출 변형",
-      "explanation": "건물 입체면적의 70퍼센트 이상 소실된 경우는 물론, 70퍼센트 미만이라도 잔존부분을 보수하여 재사용할 수 없는 경우에는 '전소'로 구분합니다(반소도 30퍼센트 미만이라도 보수 재사용 불가 시 포함). 💡 1초 판별 팁: '보수 재사용 불가' 단서가 붙으면 70% 미만도 무조건 '전소'(30% 미만도 반소)로 한 단계 격상됩니다!",
+      "explanation": "건물 입체면적의 70퍼센트 이상 소실된 경우는 물론, 70퍼센트 미만이라도 잔존부분을 보수하여 재사용할 수 없는 경우에는 '전소'로 구분합니다(반소는 전소에 해당하지 않고 30퍼센트 이상 70퍼센트 미만 소실된 경우만 해당). 💡 1초 판별 팁: 70% 미만이라도 '보수 재사용 불가' 단서가 붙으면 무조건 '전소'(반소×)!",
       "origQId": "INTRO_03_01_Q₂020₉",
       "trapTags": [
         "소방시설·수치기준"
@@ -8574,7 +8574,7 @@ window.FIRE_INTRO_OX_DB = {
       "text": "｢화재조사 및 보고규정｣상 건물의 소실정도에서 반소는 건물 입체면적의 30퍼센트 이상 70퍼센트 미만이 소실된 경우만을 말하며, 30퍼센트 미만 소실된 경우라도 보수 재사용이 불가능하면 부분소로 본다.",
       "isCorrect": false,
       "source": "2023년 소방공채·경채 Q18 기출 변형",
-      "explanation": "전소에 해당하지 않고 입체면적의 30퍼센트 이상 70퍼센트 미만이 소실된 경우는 물론, 30퍼센트 미만이라도 잔존부분을 보수하여 재사용할 수 없는 경우에도 '반소'로 구분합니다. 💡 1초 판별 팁: 30% 미만이라도 '보수 재사용 불가' 단서가 붙으면 부분소가 아니라 '반소'!",
+      "explanation": "전소에 해당하지 않고 입체면적의 30퍼센트 이상 70퍼센트 미만이 소실된 경우만 반소에 해당하며, 30퍼센트 미만이 소실되었더라도 잔존부분을 보수하여 재사용할 수 없는 경우에는 부분소가 아니라 '전소'로 구분합니다. 💡 1초 판별 팁: 70% 미만(30% 미만 포함)이라도 '보수 재사용 불가' 단서가 붙으면 무조건 '전소'!",
       "origQId": "INTRO_03_01_Q₂023₁8",
       "trapTags": [
         "소방시설·수치기준"
@@ -9099,10 +9099,10 @@ window.FIRE_INTRO_OX_DB = {
       "partId": "03",
       "tier": "ext",
       "grade": "A",
-      "text": "이산화탄소 전역방출방식의 최소 설계농도는 표준 34퍼센트 이상이며, 최소산소농도가 높은 가연물일수록 이산화탄소 설계농도를 더 높여야 하므로 메탄올·프로판(72퍼센트)이 이황화탄소(42퍼센트)보다 설계농도가 크다.",
+      "text": "이산화탄소 전역방출방식의 최소 설계농도는 표준 34퍼센트 이상이며, 최소산소농도가 높은 가연물일수록 이산화탄소 설계농도를 더 높여야 하므로 프로판(75퍼센트)이 수소(36퍼센트)보다 설계농도가 크다.",
       "isCorrect": false,
-      "source": "🎯 2회독 주변확장 (CO₂ 물질별 설계농도 및 이황화탄소 72% 최대)",
-      "explanation": "최소산소농도(MOC)가 '낮은' 물질일수록 산소를 더 많이 밀어내야 하므로 CO₂ 설계농도가 높아집니다. 따라서 이황화탄소(CS₂)의 설계농도가 '72%'로 가장 높고, 메탄올·프로판은 42%, 에틸렌은 49%, 아세틸렌은 66%입니다. 💡 1초 판별 팁: CO₂ 설계농도 1위 = 이황화탄소(CS₂, 72%)! MOC 낮을수록 설계농도 상승!",
+      "source": "🎯 2회독 주변확장 (CO₂ 물질별 설계농도 NFTC 106 기준 및 수소 75% 최대)",
+      "explanation": "최소산소농도(MOC)가 '낮은' 물질일수록 산소를 더 많이 밀어내야 하므로 CO₂ 설계농도가 높아집니다. 따라서 NFTC 106 기준 수소(H₂)의 설계농도가 '75%'로 가장 높고, 아세틸렌은 66%, 일산화탄소는 64%, 에틸렌은 49%, 에탄은 40%, 프로판은 36%, 메탄·부탄은 34%입니다. 💡 1초 판별 팁: CO₂ 설계농도 1위 = 수소(H₂, 75%, NFTC 106)! MOC 낮을수록 설계농도 상승!",
       "origQId": "",
       "trapTags": [
         "비례·증감·물성",
@@ -9252,7 +9252,7 @@ window.FIRE_INTRO_OX_DB = {
       "text": "제1종 분말(NaHCO₃)은 270 ℃에서 1단 열분해만 일어나며 더 높은 고온에서도 재분해되지 않고, 산성염인 제3종 분말이 식용유와 반응해 비누화 현상을 일으킨다.",
       "isCorrect": false,
       "source": "🎯 2회독 주변확장 (제1종 850℃ 2단 열분해 및 비누화 현상 주체)",
-      "explanation": "제1종 분말(NaHCO₃)은 약 270℃ 1단 분해 후 850℃ 이상의 고온에서는 Na₂CO₃가 재분해되어 Na₂O + 2CO₂ + H₂O(2단 열분해)를 생성합니다. 또한 비누화 현상을 일으키는 것은 알칼리염을 생성하는 1·2·4종이지, 산성염인 제3종 분말은 비누화 현상이 없습니다. 💡 1초 판별 팁: 1종 = 850℃ 이상 2단 분해(○), 비누화 = 1·2·4종 알칼리염(3종은 산성염이라 비누화 ×)!",
+      "explanation": "제1종 분말(NaHCO₃)은 약 270℃ 1단 분해(Na₂CO₃ + CO₂ + H₂O) 후 850℃ 이상의 고온에서는 Na₂CO₃가 마저 분해(Na₂CO₃ ➔ Na₂O + CO₂)되어 전체 2단 열분해 총괄식이 '2NaHCO₃ ➔ Na₂O + 2CO₂ + H₂O'가 됩니다. 또한 비누화 현상을 일으키는 것은 알칼리염을 생성하는 1·2·4종이지, 산성염인 제3종 분말은 비누화 현상이 없습니다. 💡 1초 판별 팁: 1종 = 850℃ 이상 2단 분해(Na₂CO₃ ➔ Na₂O + CO₂, ○), 비누화 = 1·2·4종 알칼리염(3종은 산성염이라 비누화 ×)!",
       "origQId": "",
       "trapTags": [
         "화학식·약제·위험물"
@@ -10696,8 +10696,8 @@ window.FIRE_INTRO_OX_DB = {
       "tier": "pred",
       "grade": "S",
       "isCorrect": false,
-      "text": "존스(Jones) 식에 따르면 가연성 가스의 완전연소 화학양론농도(Cst)에 0.55를 곱하면 연소하한계(LFL)를 추산할 수 있으므로, 프로페인(C₃H₈)의 공기 중 화학양론농도(약 4.02 vol%)를 대입하면 연소상한계(UFL)는 약 2.2 vol%로 산출된다.",
-      "explanation": "🚨 [출제위원 착시 함정 주의] 계산 숫자(4.02 × 0.55 ≈ 2.2 vol%)까지 완벽하게 맞지만, 맨 끝 용어를 '연소하한계(LFL)'가 아닌 '연소상한계(UFL)'로 적었습니다! 0.55 × Cst로 구한 약 2.2 vol%는 프로페인의 '연소하한계(LFL)'이며, 연소상한계(UFL)는 3.5 × Cst입니다. 💡 1초 판별 팁: 존스 식 0.55 × Cst = 연소하한계(LFL), 3.5 × Cst = 연소상한계(UFL)!",
+      "text": "존스(Jones) 식에 따르면 가연성 가스의 완전연소 화학양론농도(Cst)에 0.55를 곱하면 연소하한계(LFL)를 추산할 수 있으므로, 프로페인(C₃H₈)의 공기 중 화학양론농도(약 4.03 vol%)를 대입하면 연소상한계(UFL)는 약 2.2 vol%로 산출된다.",
+      "explanation": "🚨 [출제위원 착시 함정 주의] 계산 숫자(4.03 × 0.55 ≈ 2.2 vol%)까지 완벽하게 맞지만, 맨 끝 용어를 '연소하한계(LFL)'가 아닌 '연소상한계(UFL)'로 적었습니다! 0.55 × Cst로 구한 약 2.2 vol%는 프로페인의 '연소하한계(LFL)'이며, 연소상한계(UFL)는 3.5 × Cst입니다. 💡 1초 판별 팁: 존스 식 0.55 × Cst = 연소하한계(LFL), 3.5 × Cst = 연소상한계(UFL)!",
       "source": "🎯 2회독 주변확장·악질함정 (존스 식 0.55×Cst 연소하한계 vs 연소상한계 용어 착시)",
       "trapTags": [
         "비례·증감·물성"
@@ -13641,7 +13641,7 @@ window.FIRE_INTRO_OX_DB = {
       "partId": "03",
       "tier": "pred",
       "grade": "S",
-      "text": "제4종 분말소화약제는 탄산수소칼륨(KHCO₃)과 요소[(NH₂)₂CO]의 반응물로서, 약 175 ℃에서 2KHCO₃ + (NH₂)₂CO ➔ K₂CO₃ + 2NH₃ + 2CO₂ + H₂O로 열분해되며 입자 파쇄 효과에 의해 분말 4종 중 단위 중량당 소화력이 가장 우수하다.",
+      "text": "제4종 분말소화약제는 탄산수소칼륨(KHCO₃)과 요소[(NH₂)₂CO]의 반응물로서, 약 175 ℃에서 2KHCO₃ + (NH₂)₂CO ➔ K₂CO₃ + 2NH₃ + 2CO₂로 열분해되며 입자 파쇄 효과에 의해 분말 4종 중 단위 중량당 소화력이 가장 우수하다.",
       "isCorrect": true,
       "source": "🎯 2회독 주변확장 (제4종 분말 열분해 반응식 및 입자 파쇄 효과)",
       "explanation": "제4종 분말(회색, B·C급 적응)은 화염 속 열에 의해 알갱이가 잘게 터지는 입자 파쇄 효과(Decrepitation)로 비표면적이 극대화되어 단위 중량당 소화력 서열(4종 > 2종 > 3종 > 1종) 1위입니다. 💡 핵심 암기 팁: 4종 = 입자 파쇄 효과 + 소화력 1위 + 175℃ 열분해(NH₃와 CO₂ 동시 생성)!",
@@ -13865,8 +13865,8 @@ window.FIRE_INTRO_OX_DB = {
       "grade": "S",
       "text": "제1종 분말소화약제(NaHCO₃)는 270 ℃에서 1단 열분해될 때 곧바로 산화나트륨(Na₂O)·이산화탄소·수증기로 완전 분해되어 850 ℃ 이상에서도 추가 분해가 일어나지 않으며, 유일한 A·B·C급 겸용인 제3종 분말(NH₄H₂PO₄)은 열분해 시 이산화탄소(CO₂)와 오르토인산 유리상 피막을 함께 생성한다.",
       "isCorrect": false,
-      "source": "🎯 2회독 사각지대 킬러 (제1종 270℃➔850℃ 2단 열분해 Na₂O + 2CO₂ + H₂O vs 제3종 메타인산 HPO₃·CO₂ 미생성)",
-      "explanation": "제1종 분말(NaHCO₃)은 270℃ 1단 열분해 시 '탄산나트륨(Na₂CO₃) + CO₂ + H₂O'로 분해되고, 850℃ 이상 고온에서 탄산나트륨이 재분해되어야 비로소 2단 열분해 생성물인 'Na₂O + 2CO₂ + H₂O'가 생성됩니다. 또한 유일한 A·B·C급 겸용 약제인 제3종 분말(NH₄H₂PO₄)은 탄소(C)가 없어 이산화탄소(CO₂)를 전혀 생성하지 않으며, 유리상 방진 피막은 오르토인산(H₃PO₄)이 아니라 최종 고체 생성물인 '메타인산(HPO₃)'이 형성합니다. 💡 1초 판별 팁: 사각지대 킬러! 1종 = 270℃(Na₂CO₃) ➔ 850℃(Na₂O + 2CO₂ + H₂O), 3종 = CO₂ 미생성 + 메타인산(HPO₃) 방진막!",
+      "source": "🎯 2회독 사각지대 킬러 (제1종 270℃➔850℃ 2단 열분해 Na₂CO₃ ➔ Na₂O + CO₂ vs 제3종 메타인산 HPO₃·CO₂ 미생성)",
+      "explanation": "제1종 분말(NaHCO₃)은 270℃ 1단 열분해 시 '탄산나트륨(Na₂CO₃) + CO₂ + H₂O'로 분해되고, 850℃ 이상 고온에서는 탄산나트륨이 마저 재분해(Na₂CO₃ ➔ Na₂O + CO₂)되어 전체 2단 열분해 총괄식이 '2NaHCO₃ ➔ Na₂O + 2CO₂ + H₂O'가 됩니다. 또한 유일한 A·B·C급 겸용 약제인 제3종 분말(NH₄H₂PO₄)은 탄소(C)가 없어 이산화탄소(CO₂)를 전혀 생성하지 않으며, 유리상 방진 피막은 오르토인산(H₃PO₄)이 아니라 최종 고체 생성물인 '메타인산(HPO₃)'이 형성합니다. 💡 1초 판별 팁: 사각지대 킬러! 1종 = 270℃(Na₂CO₃) ➔ 850℃(Na₂CO₃ ➔ Na₂O + CO₂), 3종 = CO₂ 미생성 + 메타인산(HPO₃) 방진막!",
       "origQId": "",
       "trapTags": [
         "화학식·약제·위험물",
@@ -18264,7 +18264,7 @@ window.FIRE_INTRO_OX_DB = {
       "ans": 3,
       "q_expl": "화학양론농도(Cst)를 이용하여 연소하한계(LFL = 0.55 × Cst)와 연소상한계(UFL = 3.5 × Cst)를 추정하는 존스(Jones) 식 계산 문항입니다.\n1단계: 에테인 완전연소 반응식 C₂H₆ + 3.5O₂ ➔ 2CO₂ + 3H₂O에서 산소 몰수 x = 3.5몰.\n2단계: 공기 중 산소 비율이 21퍼센트(0.21)이므로 공기 몰수는 3.5 / 0.21 = 16.67몰.\n3단계: 화학양론농도 Cst = [1 / (1 + 16.67)] × 100 ≈ 5.66 vol%.\n4단계: LFL = 0.55 × 5.66 ≈ 3.11 ≈ 3.1 vol%.",
       "c_expls": [
-        "[틀림] 프로페인(C₃H₈ + 5O₂)의 화학양론농도 Cst ≈ 4.02 vol%로부터 존스 식을 적용하면 LFL = 0.55 × 4.02 ≈ 2.2 vol%이며, 1.7은 부탄(C₄H₁₀) 수준의 하한계 수치입니다.",
+        "[틀림] 프로페인(C₃H₈ + 5O₂)의 화학양론농도 Cst ≈ 4.03 vol%로부터 존스 식을 적용하면 LFL = 0.55 × 4.03 ≈ 2.2 vol%이며, 1.7은 부탄(C₄H₁₀) 수준의 하한계 수치입니다.",
         "[틀림] 프로판(C₃H₈)의 연소하한계(약 2.1에서 2.2퍼센트)에 해당하는 수치입니다.",
         "[옳음 · 정답] C₂H₆ + 3.5O₂ 반응식으로부터 공기 중 화학양론농도 Cst = 100 / (1 + 3.5/0.21) ≈ 5.66%를 구하고, 존스(Jones)의 하한계 식 LFL = 0.55 Cst = 0.55 × 5.66 = 3.11%에 대입하면 소수점 둘째 자리 반올림 값인 '3.1'이 산출됩니다.",
         "[틀림] 메테인(CH₄, 약 5.0퍼센트)에 가까운 수치입니다."
@@ -23054,10 +23054,10 @@ window.FIRE_INTRO_OX_DB = {
         "type": "formula",
         "badge": "공식·산정식·서열",
         "title": "화학양론농도(Cₛₜ) 및 존스(Jones) 폭발한계 추산식",
-        "promptHtml": "<div class=\"subj-eq-line\">Cst = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.55 × Cst , UFL\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.55 × Cst , UFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3.5 × Cst\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">3.5 × Cst</span></span></div><div class=\"subj-ex-line\">💡 <strong>기출 대입 풀이</strong> | <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"에테인(C2H6, x = 3.5몰)\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">에테인(C2H6, x = 3.5몰)</span></span>: C<sub>st</sub> &approx; 5.66% &rArr; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"LFL = 0.55 × 5.66 ≈ 3.1%\"><span class=\"subj-ph\">[ 빈칸 5 · 정답 확인 ]</span><span class=\"subj-ans\">LFL = 0.55 × 5.66 ≈ 3.1%</span></span> &nbsp;/&nbsp; <strong>프로페인(C<sub>3</sub>H<sub>8</sub>, x = 5몰)</strong>: C<sub>st</sub> &approx; 4.02% &rArr; <strong>LFL = 0.55 &times; 4.02 &approx; 2.2%</strong> (연소상한계 UFL이 아니라 연소하한계 LFL임!)</div>",
+        "promptHtml": "<div class=\"subj-eq-line\">Cst = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"0.55 × Cst , UFL\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">0.55 × Cst , UFL</span></span> = <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"3.5 × Cst\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">3.5 × Cst</span></span></div><div class=\"subj-ex-line\">💡 <strong>기출 대입 풀이</strong> | <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"에테인(C2H6, x = 3.5몰)\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">에테인(C2H6, x = 3.5몰)</span></span>: C<sub>st</sub> &approx; 5.66% &rArr; <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"LFL = 0.55 × 5.66 ≈ 3.1%\"><span class=\"subj-ph\">[ 빈칸 5 · 정답 확인 ]</span><span class=\"subj-ans\">LFL = 0.55 × 5.66 ≈ 3.1%</span></span> &nbsp;/&nbsp; <strong>프로페인(C<sub>3</sub>H<sub>8</sub>, x = 5몰)</strong>: C<sub>st</sub> &approx; 4.03% &rArr; <strong>LFL = 0.55 &times; 4.03 &approx; 2.2%</strong> (연소상한계 UFL이 아니라 연소하한계 LFL임!)</div>",
         "answerEq": "100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL / 0.55 × Cst , UFL / 3.5 × Cst / 에테인(C2H6, x = 3.5몰) / LFL = 0.55 × 5.66 ≈ 3.1%",
         "fullFormula": "Cst = 100 ÷ [ 1 + (x ÷ 0.21) ] [vol%] | LFL = 0.55 × Cst , UFL = 3.5 × Cst",
-        "explanation": "💡 기출 대입 풀이 | 에테인(C2H6, x = 3.5몰): Cst ≈ 5.66% ⇒ LFL = 0.55 × 5.66 ≈ 3.1% / 프로페인(C3H8, x = 5몰): Cst ≈ 4.02% ⇒ LFL = 0.55 × 4.02 ≈ 2.2% (연소상한계 UFL이 아니라 연소하한계 LFL임!)"
+        "explanation": "💡 기출 대입 풀이 | 에테인(C2H6, x = 3.5몰): Cst ≈ 5.66% ⇒ LFL = 0.55 × 5.66 ≈ 3.1% / 프로페인(C3H8, x = 5몰): Cst ≈ 4.03% ⇒ LFL = 0.55 × 4.03 ≈ 2.2% (연소상한계 UFL이 아니라 연소하한계 LFL임!)"
       },
       {
         "id": "SUBJ_SCI_02_01_05",
@@ -23948,10 +23948,10 @@ window.FIRE_INTRO_OX_DB = {
         "type": "formula",
         "badge": "공식·산정식·서열",
         "title": "이산화탄소 전역방출 농도 공식 및 최소 설계농도",
-        "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6%\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6%</span></span> ➔ <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"표준 설계농도 34% 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">표준 설계농도 34% 이상)</span></span></div><div class=\"subj-ex-line\">💡 <strong>물질별 설계농도</strong> | 이론 최소 농도 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"28.6%\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">28.6%</span></span>에 안전율(1.2)을 곱해 표준 설계농도를 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"34% 이상\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">34% 이상</span></span>으로 하며, 최소산소농도가 낮은 메탄올·프로판(42%), 에틸렌(49%), 아세틸렌(66%), <strong>이황화탄소(<span class=\"chem\">CS<sub>2</sub></span>, 72% 최대)</strong>일수록 설계농도가 커집니다(비수용성 중질유 무상주수는 유화소화, 밸브 차단은 제거소화).</div>",
+        "promptHtml": "<div class=\"subj-eq-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6%\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6%</span></span> ➔ <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"표준 설계농도 34% 이상)\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">표준 설계농도 34% 이상)</span></span></div><div class=\"subj-ex-line\">💡 <strong>물질별 설계농도(NFTC 106)</strong> | 이론 최소 농도 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"28.6%\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">28.6%</span></span>에 안전율(1.2)을 곱해 표준 설계농도를 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"34% 이상\"><span class=\"subj-ph\">[ 빈칸 4 · 정답 확인 ]</span><span class=\"subj-ans\">34% 이상</span></span>으로 하며, 최소산소농도가 낮은 메탄·부탄(34%)·프로판(36%)·에탄(40%)·에틸렌(49%)·일산화탄소(64%)·아세틸렌(66%)·<strong>수소(<span class=\"chem\">H<sub>2</sub></span>, 75% 최대)</strong>일수록 설계농도가 커집니다(비수용성 중질유 무상주수는 유화소화, 밸브 차단은 제거소화).</div>",
         "answerEq": "C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6% / 표준 설계농도 34% 이상) / 28.6% / 34% 이상",
         "fullFormula": "C(%) = [(21 − O2) ÷ 21] × 100 (산소 15% 대입 시 이론치 28.6% ➔ 표준 설계농도 34% 이상)",
-        "explanation": "💡 물질별 설계농도 | 이론 최소 농도 28.6%에 안전율(1.2)을 곱해 표준 설계농도를 34% 이상으로 하며, 최소산소농도가 낮은 메탄올·프로판(42%), 에틸렌(49%), 아세틸렌(66%), 이황화탄소(CS2, 72% 최대)일수록 설계농도가 커집니다(비수용성 중질유 무상주수는 유화소화, 밸브 차단은 제거소화)."
+        "explanation": "💡 물질별 설계농도(NFTC 106) | 이론 최소 농도 28.6%에 안전율(1.2)을 곱해 표준 설계농도를 34% 이상으로 하며, 최소산소농도가 낮은 메탄·부탄(34%)·프로판(36%)·에탄(40%)·에틸렌(49%)·일산화탄소(64%)·아세틸렌(66%)·수소(H2, 75% 최대)일수록 설계농도가 커집니다(비수용성 중질유 무상주수는 유화소화, 밸브 차단은 제거소화)."
       },
       {
         "id": "SUBJ_SCI_03_03_02",
@@ -23988,10 +23988,10 @@ window.FIRE_INTRO_OX_DB = {
         "type": "formula",
         "badge": "공식·산정식·서열",
         "title": "중탄산염계 분말(제1 · 2 · 4종) 열분해 반응식",
-        "promptHtml": "<div class=\"subj-eq-line\">1종(270℃): <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2NaHCO3 → Na2CO3 + CO2 + H2O\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">2NaHCO3 → Na2CO3 + CO2 + H2O</span></span> &nbsp;|&nbsp; 2종(190℃): <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2KHCO3 → K2CO3 + CO2 + H2O\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">2KHCO3 → K2CO3 + CO2 + H2O</span></span></div><div class=\"subj-ex-line\">💡 <strong>제4종(175℃) 및 고온 분해</strong> | 4종 반응식은 <span class=\"chem\">2KHCO<sub>3</sub> + (NH<sub>2</sub>)<sub>2</sub>CO &rarr; K<sub>2</sub>CO<sub>3</sub> + 2NH<sub>3</sub> + 2CO<sub>2</sub> + H<sub>2</sub>O</span>이며, 제1·2·4종은 모두 분자 내 탄소(<span class=\"chem\">C</span>)로 인해 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"CO2가 생성\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">CO2가 생성</span></span>되고 알칼리염 비누화 반응이 일어납니다(1종 850℃ 2차 분해 시 <span class=\"chem\">Na<sub>2</sub>O + 2CO<sub>2</sub> + H<sub>2</sub>O</span>).</div>",
+        "promptHtml": "<div class=\"subj-eq-line\">1종(270℃): <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2NaHCO3 → Na2CO3 + CO2 + H2O\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">2NaHCO3 → Na2CO3 + CO2 + H2O</span></span> &nbsp;|&nbsp; 2종(190℃): <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"2KHCO3 → K2CO3 + CO2 + H2O\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">2KHCO3 → K2CO3 + CO2 + H2O</span></span></div><div class=\"subj-ex-line\">💡 <strong>제4종(175℃) 및 고온 분해</strong> | 4종 반응식은 <span class=\"chem\">2KHCO<sub>3</sub> + (NH<sub>2</sub>)<sub>2</sub>CO &rarr; K<sub>2</sub>CO<sub>3</sub> + 2NH<sub>3</sub> + 2CO<sub>2</sub></span>이며, 제1·2·4종은 모두 분자 내 탄소(<span class=\"chem\">C</span>)로 인해 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"CO2가 생성\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">CO2가 생성</span></span>되고 알칼리염 비누화 반응이 일어납니다(1종 850℃ 2차 분해 <span class=\"chem\">Na<sub>2</sub>CO<sub>3</sub> &rarr; Na<sub>2</sub>O + CO<sub>2</sub></span> 총괄식 <span class=\"chem\">2NaHCO<sub>3</sub> &rarr; Na<sub>2</sub>O + 2CO<sub>2</sub> + H<sub>2</sub>O</span>).</div>",
         "answerEq": "2NaHCO3 → Na2CO3 + CO2 + H2O / 2KHCO3 → K2CO3 + CO2 + H2O / CO2가 생성",
         "fullFormula": "1종(270℃): 2NaHCO3 → Na2CO3 + CO2 + H2O | 2종(190℃): 2KHCO3 → K2CO3 + CO2 + H2O",
-        "explanation": "💡 제4종(175℃) 및 고온 분해 | 4종 반응식은 2KHCO3 + (NH2)2CO → K2CO3 + 2NH3 + 2CO2 + H2O이며, 제1·2·4종은 모두 분자 내 탄소(C)로 인해 CO2가 생성되고 알칼리염 비누화 반응이 일어납니다(1종 850℃ 2차 분해 시 Na2O + 2CO2 + H2O)."
+        "explanation": "💡 제4종(175℃) 및 고온 분해 | 4종 반응식은 2KHCO3 + (NH2)2CO → K2CO3 + 2NH3 + 2CO2이며, 제1·2·4종은 모두 분자 내 탄소(C)로 인해 CO2가 생성되고 알칼리염 비누화 반응이 일어납니다(1종 850℃ 2차 분해 Na2CO3 → Na2O + CO2 총괄식 2NaHCO3 → Na2O + 2CO2 + H2O)."
       },
       {
         "id": "SUBJ_SCI_03_03_06",
@@ -24008,10 +24008,10 @@ window.FIRE_INTRO_OX_DB = {
         "type": "keynum",
         "badge": "핵심 수치·법정기준",
         "title": "설계농도 · 고압 vs 저압식",
-        "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"C(%) = [(21 − O2) ÷ 21] × 100\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">C(%) = [(21 − O2) ÷ 21] × 100</span></span> 산소 15% 이론치 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"28.6%\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">28.6%</span></span> ➔ 표준 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"34% 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">34% 이상</span></span>(<strong>이황화탄소 72% 최대</strong>) / 고압식(40℃ 이하, 충전비 <strong>1.5 이상 1.9 이하</strong>) vs 저압식(<strong>영하 18℃ 이하·2.1 MPa 냉동기, 충전비 1.1 이상 1.4 이하</strong>)</div>",
+        "promptHtml": "<div class=\"subj-prose-line\"><span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"C(%) = [(21 − O2) ÷ 21] × 100\"><span class=\"subj-ph\">[ 빈칸 1 · 정답 확인 ]</span><span class=\"subj-ans\">C(%) = [(21 − O2) ÷ 21] × 100</span></span> 산소 15% 이론치 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"28.6%\"><span class=\"subj-ph\">[ 빈칸 2 · 정답 확인 ]</span><span class=\"subj-ans\">28.6%</span></span> ➔ 표준 <span class=\"subj-blank\" tabindex=\"0\" role=\"button\" onclick=\"HarnessEngine.toggleSubjBlank(this)\" data-ans=\"34% 이상\"><span class=\"subj-ph\">[ 빈칸 3 · 정답 확인 ]</span><span class=\"subj-ans\">34% 이상</span></span>(<strong>NFTC 106: 메탄 34% · 프로판 36% · 에틸렌 49% · 아세틸렌 66% · 수소 75% 최대</strong>) / 고압식(40℃ 이하, 충전비 <strong>1.5 이상 1.9 이하</strong>) vs 저압식(<strong>영하 18℃ 이하·2.1 MPa 냉동기, 충전비 1.1 이상 1.4 이하</strong>)</div>",
         "answerEq": "C(%) = [(21 − O2) ÷ 21] × 100 / 28.6% / 34% 이상",
         "fullFormula": "",
-        "explanation": "C(%) = [(21 − O2) ÷ 21] × 100 산소 15% 이론치 28.6% ➔ 표준 34% 이상(이황화탄소 72% 최대) / 고압식(40℃ 이하, 충전비 1.5 이상 1.9 이하) vs 저압식(영하 18℃ 이하·2.1 MPa 냉동기, 충전비 1.1 이상 1.4 이하)"
+        "explanation": "C(%) = [(21 − O2) ÷ 21] × 100 산소 15% 이론치 28.6% ➔ 표준 34% 이상(NFTC 106: 메탄 34% · 프로판 36% · 에틸렌 49% · 아세틸렌 66% · 수소 75% 최대) / 고압식(40℃ 이하, 충전비 1.5 이상 1.9 이하) vs 저압식(영하 18℃ 이하·2.1 MPa 냉동기, 충전비 1.1 이상 1.4 이하)"
       },
       {
         "id": "SUBJ_SCI_03_03_08",
