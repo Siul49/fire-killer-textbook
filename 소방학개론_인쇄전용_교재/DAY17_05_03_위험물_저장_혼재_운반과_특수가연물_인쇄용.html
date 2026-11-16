@@ -1220,12 +1220,237 @@
         line-height: 1.4 !important;
       }
 
-      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      /* PART 3: 양면 인쇄 및 PDF 출력 시 상세 해설 파트 활성화 및 새 페이지 시작 */
       #part3 {
-        display: none !important;
+        display: block !important;
+        page-break-before: always !important;
+        break-before: page !important;
       }
     }
 
+  </style>
+  <style id="goldenReadabilityStyle">
+    /* Golden Readability & Cheat-Sheet CSS (02_03 / DAY01_01_01 Standard) */
+    *, *::before, *::after {
+      font-family: var(--font-sans);
+    }
+    .prose-body, .prose-body *,
+    .q-stem, .q-choices, .q-choice-item,
+    .exp-choice-body, .book-table td {
+      font-family: var(--font-body) !important;
+    }
+    .formula-box, .formula-box *,
+    .prose-item strong, .prose-sub strong,
+    .q-meta *, .q-ans-blank, .exp-header-left *, .exp-header-right * {
+      font-family: var(--font-sans) !important;
+    }
+    #part1 .sidenote,
+    #part1 .novel-note-pill,
+    #part1 #sec1 .book-table,
+    #part1 #sec2 .book-table,
+    #part1 #sec3 .book-table {
+      display: none !important;
+    }
+    .prose-body .prose-item {
+      display: block;
+      margin: 10px 0 4px 0;
+      padding: 0;
+      background: transparent;
+      border: none !important;
+      font-weight: 400;
+      line-height: 1.85 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .prose-sub {
+      display: block;
+      margin: 4px 0 4px 14px;
+      padding: 0;
+      border: none !important;
+      font-weight: 400;
+      line-height: 1.8 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .formula-box {
+      display: block;
+      margin: 10px 0 12px 0;
+      padding: 10px 14px;
+      background-color: var(--bg-card, #FAF7F2);
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.95) !important;
+      font-weight: 400 !important;
+      color: var(--text-main) !important;
+      line-height: 1.72 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      box-shadow: 0 2px 6px rgba(35, 30, 20, 0.04);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .prose-body .formula-box * {
+      font-family: var(--font-sans) !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .formula-badge {
+      display: inline-block;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.80) !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      background-color: var(--accent) !important;
+      padding: 1px 7px;
+      border-radius: 4px;
+      margin-right: 7px;
+      vertical-align: middle;
+      letter-spacing: 0.01em;
+    }
+    .prose-body .formula-eq {
+      display: block;
+      font-size: calc(var(--body-size, 13.6px) * 1.02) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin: 4px 0 3px 0;
+      letter-spacing: -0.01em;
+    }
+    .prose-body .formula-ex {
+      display: block;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border-strong);
+      font-size: calc(var(--body-size, 13.6px) * 0.91) !important;
+      font-weight: 400 !important;
+      color: var(--text-sub) !important;
+      line-height: 1.68 !important;
+    }
+    .diagram-container.cheat-sheet-wrap {
+      background-color: var(--bg-sheet) !important;
+      border: 1.5px solid var(--border-strong) !important;
+      border-top: 3.5px solid var(--accent) !important;
+      border-left: 1.5px solid var(--border-strong) !important;
+      border-radius: 7px !important;
+      padding: 16px 18px !important;
+      margin: 22px 0 !important;
+      box-shadow: 0 4px 14px rgba(35, 30, 20, 0.05) !important;
+    }
+    .cheat-sheet-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 9px;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid var(--text-main) !important;
+    }
+    .cheat-sheet-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.96) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      letter-spacing: -0.02em;
+    }
+    .cheat-sheet-sub {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.80) !important;
+      font-weight: 600 !important;
+      color: var(--text-muted) !important;
+    }
+    .cheat-part {
+      margin-bottom: 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .cheat-part:last-child {
+      margin-bottom: 0;
+    }
+    .cheat-part-title {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.88) !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      background-color: var(--bg-subtle) !important;
+      border-left: 3px solid var(--accent);
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .cheat-grid {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border-line);
+    }
+    .cheat-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      padding: 6px 6px;
+      border-bottom: 1px solid var(--border-line);
+      align-items: baseline;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.91) !important;
+      line-height: 1.65 !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .cheat-key {
+      font-family: var(--font-sans) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      letter-spacing: -0.02em;
+    }
+    .cheat-val {
+      font-family: var(--font-sans) !important;
+      color: var(--text-main) !important;
+      word-break: keep-all;
+    }
+    .cheat-val strong {
+      color: var(--text-main) !important;
+      font-weight: 700 !important;
+      background: linear-gradient(transparent 62%, var(--gold-hl) 62%);
+      padding: 0 1px;
+    }
+    .cheat-eq {
+      display: inline-block;
+      font-family: var(--font-sans) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      background-color: var(--accent-soft);
+      padding: 0 6px;
+      border-radius: 4px;
+      margin: 1px 2px;
+    }
+    @media screen and (max-width: 600px) {
+      .cheat-row {
+        grid-template-columns: 1fr !important;
+        gap: 4px !important;
+      }
+      .cheat-key {
+        border-bottom: 1px dashed var(--border-line);
+        padding-bottom: 2px;
+      }
+    }
+    @media only screen and (min-width: 601px) and (max-width: 1180px) {
+      .prose-body .formula-box {
+        margin: 12px 0 16px 0 !important;
+        padding: 12px 16px !important;
+        border-radius: 6px !important;
+      }
+      .prose-body .formula-eq {
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+      }
+      .cheat-row {
+        grid-template-columns: 135px 1fr;
+      }
+    }
   </style>
 </head>
 <body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
@@ -1284,7 +1509,7 @@
             <span>|</span>
             <span>□ 이론 정독</span>
             <span>□ 기출 풀이(12문항)</span>
-            <span>□ OX 28제</span>
+            <span>□ OX 30제</span>
             <span>□ 오답 복습</span>
           </div>
         </div>
@@ -1297,151 +1522,156 @@
       </div>
 
       <section class="space-y-12 mb-16">
-        
-        <div id="sec1"" class="space-y-6">
-          <h2>제1절. 위험물 유별 혼재 기준(16·245·34)과 옥내·옥외저장소 저장 기준 (시행령 별표 2 · 시행규칙 별표 18·19)</h2>
-          
-          <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">혼재 기준 및 동일장소 저장 금기 (2024년 Q14)</div><ul class="sidenote-list"><li><strong>운반 혼재 허용 (16 · 245 · 34)</strong>: <strong>1류↔6류</strong> / <strong>2류↔4류↔5류</strong> / <strong>3류↔4류</strong> (지정수량 $\frac{1}{10}$ 이하는 혼재 규정 미적용)</li><li><strong>제3류 내부 동시 저장 금지</strong>: 물속에 저장하는 <strong>황린</strong>과 <strong>금수성 물질</strong>은 동일 저장소에 함께 저장 금지!</li></ul></div></aside>
-            <p class="prose-body">
-              성질이 서로 상극인 위험물(예: 산소를 방출하는 제1류 산화제와 불이 잘 붙는 제4류 인화성 액체)을 같은 창고나 같은 차량에 함께 두면 용기 파손 시 혼촉 발화·폭발로 이어진다. 이에 <strong>위험물안전관리법 시행규칙 별표 18(저장기준) 및 별표 19·별표 20(운반기준)</strong>은 <strong>유별을 달리하는 위험물은 동일한 저장소나 동일한 차량에 함께 적재하지 못하는 것(혼재 금지)을 대원칙</strong>으로 삼되, 지정수량의 <strong>10분의 1 이하</strong>인 소량 위험물이거나 상호 접촉 시 반응 위험이 낮은 법정 조합에 한하여 예외적으로 혼재를 허용한다. 먼저 <strong>운반 시 유별 상호 간 혼재 허용 조합</strong>은 화학적 성질에 따라 <strong>'16 · 245 · 34'</strong> 세 가지 그룹으로 정리된다. ① <strong>제1류(산화성 고체)와 제6류(산화성 액체)</strong>는 둘 다 불연성 산화제이므로 상호 혼재가 가능하고(<strong>16</strong>), ② <strong>제2류(가연성 고체)·제4류(인화성 액체)·제5류(자기반응성 물질)</strong>는 모두 가연물 계열이므로 세 유별 상호 간에 양방향으로 혼재가 가능하며(<strong>245</strong>), ③ <strong>제3류(자연발화·금수성)와 제4류(인화성 액체)</strong>는 나트륨을 석유 속에 보관하듯 서로 혼재가 가능하다(<strong>34</strong>). 또한 지정수량의 <strong>10배를 초과하는 저장소</strong>에서 유별마다 정리하여 서로 <strong>1미터 이상</strong>의 간격을 두는 경우 허용되는 저장 혼재 조합은 ① <strong>제1류(알칼리금속의 과산화물 제외)와 제6류</strong>, ② <strong>제1류와 제5류 중 질산구아니딘 등</strong>, ③ <strong>제2류 중 인화성고체와 제4류</strong>, ④ <strong>제3류 중 알킬알루미늄등과 제4류(제1석유류 및 알코올류에 한함)</strong>, ⑤ <strong>제4류 중 유기과산화물 함유물과 제5류 중 유기과산화물 함유물</strong>이다. 반대로 <strong>동일한 제3류 위험물 안에서도 절대 같은 저장소에 함께 저장할 수 없는 치명적 금기 조합</strong>이 있는데, 바로 <strong>물속에 저장하는 '황린'과 물이 닿으면 폭발하는 '금수성 물질(칼륨·나트륨·탄화칼슘 등)'</strong>이다! 소화 방법이 정반대이므로 법령은 황린(그 밖에 물속에 저장하는 물품)과 금수성 물질을 동일한 저장소(칸막이로 구획된 저장소에서는 동일한 실)에서 함께 저장하지 못하도록 엄격히 금지한다.
-            </p>
-            
-          </div><div id="theory-sec1-p2" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34)</div><ul class="sidenote-list"><li>옥내저장소 온도: <strong>$55^\circ\text{C}$ 이하</strong></li><li>옥내·옥외 <strong>선반(랙) 저장 높이</strong>: <strong>$6\text{m}$ 이하</strong> ('10m 이하' X!)</li><li>옥내 용기 겹쳐 쌓기: 기계하역 <strong>$6\text{m}$</strong> / 3·4석유류·동식물유류 <strong>$4\text{m}$</strong> / 기타 <strong>$3\text{m}$ 이하</strong></li><li><strong>옥외저장소 가능 품목</strong>: <strong>제2류 유황 · 제4류(특수인화물 및 인화점 $0^\circ\text{C}$ 미만 제1석유류 제외) · 제6류</strong> (제1류 염소산염류 저장 불가!)</li></ul></div></aside>
-            <p class="prose-body">
-              <strong>옥내저장소</strong>와 <strong>옥외저장소</strong>의 온도·적재 높이 및 저장 가능 품목 제한도 매년 반복 출제된다. 첫째, <strong>옥내저장소</strong>에서는 용기에 수납하여 저장하는 위험물의 온도가 <strong>섭씨 55도를 넘지 아니하도록</strong> 필요한 조치를 강구해야 하며, 보냉장치가 있는 이동저장탱크에 저장하는 <strong>아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점(끓는점) 이하</strong>로 유지해야 한다. 둘째, 옥내저장소나 옥외저장소에서 위험물을 수납한 용기를 <strong>선반(랙, Rack)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야(즉, 6미터 이하로 저장)</strong> 한다('선반에 10미터 이하로 저장한다'는 선지는 2024년 Q14의 정답 오답 선지!). 셋째, 옥내저장소에서 바닥에 위험물 용기를 포개어 쌓는 <strong>겹쳐 쌓기 높이 한도</strong>는 3단계로 나뉘어 ① <strong>기계에 의하여 하역하는 구조로 된 용기</strong>만을 겹쳐 쌓는 경우에는 <strong>6미터 이하</strong>, ② <strong>제4류 위험물 중 제3석유류·제4석유류 및 동식물유류</strong>를 수납하는 용기만을 겹쳐 쌓는 경우에는 <strong>4미터 이하</strong>, ③ 그 밖의 경우에는 <strong>3미터 이하</strong>로 제한된다. 넷째, 지붕과 벽이 없는 야외 노지인 <strong>옥외저장소</strong>에 일반 용기(국제해상위험물규칙 IMDG Code 적합 용기 제외)로 저장할 수 있는 법정 위험물은 <strong>시행령 별표 2 제7호</strong>에 따라 오직 ① <strong>제2류 위험물 중 유황</strong>(및 인화점이 섭씨 0도 이상인 인화성고체), ② <strong>제4류 위험물 중 인화점이 섭씨 0도 이상인 제1석유류·알코올류·제2석유류·제3석유류·제4석유류 및 동식물유류</strong>, ③ <strong>제6류 위험물</strong>, ④ 제2류·제4류·제6류 중 시·도 조례로 정하는 위험물뿐이다. 따라서 홀수 유별인 <strong>제1류 위험물(염소산염류 등), 제3류 위험물, 제5류 위험물</strong>과 제4류 중 <strong>특수인화물 및 인화점 섭씨 0도 미만인 제1석유류(휘발유·아세톤·벤젠 등)</strong>는 일반 옥외저장소에 절대 저장할 수 없다!
-            </p>
-            
-          </div></div>
+      <div id="sec1">
+        <h2 class="text-xl font-bold mb-3">1. 위험물 유별 혼재 기준(16·245·34), 옥내·옥외저장소 및 제조소등 안전거리·방유제</h2>
+        <div class="para-block" id="theory-sec1-p1">
+          <p class="prose-body">
+            앞서 제5편 제1장(<code>05_01</code>)과 제2장(<code>05_02</code>)에서 제1류부터 제6류까지의 화학적 성상과 소화 적응성을 모두 꿰어냈다면, 이제 왜 특정 위험물끼리는 같은 창고나 차량에 함께 둘 수 없는지(<strong>혼재</strong> 금지와 예외 허용)가 화학적 인과관계로 도출됩니다. 산화제(제1류·제6류)와 가연물(제2류·제3류·제4류·제5류)이 뒤섞이거나 물속에 보관하는 황린과 물에 닿으면 수소 폭발을 일으키는 금수성 물질을 한 방에 두면, 누출이나 진압 과정에서 곧바로 연쇄 폭발·오인 소화 참사로 번지기 때문입니다. 이를 막기 위해 ｢위험물안전관리법 시행규칙｣은 유별을 달리하는 위험물의 동시 저장·적재를 원칙적으로 금지하되, <strong>저장(별표 18 제3호)</strong>과 <strong>운반(별표 19 부표 2)</strong>의 목적에 맞추어 예외 기준을 엄격히 분리합니다. 먼저 <strong>저장 기준(별표 18)</strong>에서는 <strong>지정수량</strong>의 <strong>10분의 1 이하</strong>인 소량이거나, <strong>옥내저장소 또는 옥외저장소</strong>에서 유별로 각각 정리하여 모아서 저장하고 상호 간에 <strong>1미터 이상</strong>의 간격을 두는 <strong>6대 예외 조합</strong>(① 제1류[알칼리금속 과산화물 제외]&harr;제5류, ② 제1류&harr;제6류, ③ 제1류&harr;제3류 황린, ④ 제2류 인화성고체&harr;제4류, ⑤ 제3류 알킬알루미늄등&harr;제4류[알킬알루미늄·알킬리튬 함유], ⑥ 제4류 유기과산화물&harr;제5류 유기과산화물)에 한해 동시 저장을 허용합니다(여기서 알칼리금속 과산화물은 수분·열 방출로 제5류를 폭발시킬 수 있어 1류&harr;5류 조합에서 제외됩니다). 반면 <strong>운반 기준(별표 19 부표 2)</strong>에서는 각각의 위험물이 <strong>지정수량</strong>의 <strong>10분의 1 이하</strong>일 때 혼재 제한을 면제하고, 10분의 1을 초과할 때에만 상호 반응 위험이 적은 <strong>5쌍(16 · 245 · 34)</strong>의 혼재를 허용합니다.
+            <span class="formula-box">
+              <span class="formula-badge">저장(별표 18 · 6대 조합) vs 운반(별표 19 부표 2 · 5쌍) 유별 혼재 허용 공식</span>
+              <span class="formula-eq">운반 5쌍: ① 1류&harr;6류 [16] | ② 2류&harr;4류 · 2류&harr;5류 · 4류&harr;5류 [245] | ③ 3류&harr;4류 [34]</span>
+              <span class="formula-ex">💡 <strong>제3류 황린 vs 금수성 물질 진압 딜레마 (별표 18)</strong> | 같은 <strong>제3류 위험물</strong> 안에서도 공기 중 자연발화를 막기 위해 <strong>물속에 저장하고 다량의 물로 주수소화하는 황린</strong>과 물 접촉 시 수소가스 폭발을 일으켜 <strong>주수를 엄금하는 금수성 물질(칼륨·나트륨·탄화칼슘 등)</strong>은 소화 방법이 정반대이므로(불이 났을 때 물을 뿌려도, 안 뿌려도 참사가 발생하는 진압 딜레마!) <strong>동일한 저장소에 동시 저장하는 것이 절대 금지</strong>됩니다! (운반 시에도 제2류와 제3류 혼재는 불가)</span>
+            </span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec1-p2">
+          <p class="prose-body">
+            위험물을 안전하게 저장·취급하기 위해 법령은 <strong>제조소등</strong>을 <strong>제조소(1종)·저장소(8종: 옥내·옥외탱크·옥내탱크·지하탱크·간이탱크·이동탱크·옥외·암반탱크)·취급소(4종: 주유·판매·이송·일반)의 3대 구분 13종</strong>으로 체계화하고, 권한 계통에 따라 영구 시설인 <strong>제조소등 설치허가</strong>는 광역 수장인 <strong>시·도지사</strong>(일반 시설은 소방서장 위임, 둘 이상 소방서 관할 이송취급소는 시·도지사 직접 관할, <strong>소방청장</strong>은 이송취급소 기술검토·기준 고시 총괄)가 관장하는 반면, 공사장 등 단기 사용을 위한 <strong>90일 이내 임시저장·취급 승인</strong>은 일선 관할 <strong>소방본부장 또는 소방서장</strong>(시·도 조례에 따른 관할 서장)이 담당하도록 분장합니다. 이어 옥내·옥외저장소의 온도·적재 높이와 판매취급소·안전거리·방유제 법정 수치를 정리합니다.
+            <span class="prose-item"><strong>① 옥내저장소 온도 · 적재 높이 및 옥외저장소 저장 가능 품목</strong></span>
+            <span class="prose-sub">&bull; <strong>옥내저장소 실내 온도(55 ℃ 이하) 및 보냉 탱크</strong>: 여름철 복사열이나 실내 축열로 용기 내 위험물이 열팽창·기화해 용기를 파열시키는 위기를 막기 위해 옥내저장소에서 용기에 수납하여 저장하는 위험물의 온도는 <strong>55 ℃를 넘지 아니하도록</strong> 환기·냉방 등 필요한 조치를 해야 합니다(참고로 <strong>보냉장치가</strong> 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 끓어 넘침 방지를 위해 당해 위험물의 <strong>비점 이하</strong>로 유지).</span>
+            <span class="prose-sub">&bull; <strong>용기 겹쳐 쌓기(3·4·6 m) 및 선반(랙) 높이(6 m 이하)</strong>: 다단 적재 중 하중 붕괴와 용기 낙하·파손 누출을 막기 위해 옥내저장소에서는 용기 겹쳐 쌓기 높이를 원칙 <strong>3미터 이하</strong>로 하되, <strong>인화점</strong>이 높아 상대적으로 착화 위험이 완만한 <strong>제4류 위험물</strong> 중 <strong>제3석유류·제4석유류 및 동식물유류</strong>만 쌓는 경우 <strong>4미터 이하</strong>, 파렛트 등 지게차 같은 <strong>기계에 의하여 하역하는 구조로 된 용기</strong>만 쌓는 경우 <strong>6미터 이하</strong>까지 허용합니다. 또한 <strong>옥외저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터 이하(6미터 초과 금지)</strong>로 제한됩니다.</span>
+            <span class="prose-sub">&bull; <strong>옥외저장소 저장 가능 품목 (제5편 제2장 누적 소환)</strong>: 지붕 없이 햇볕·빗물에 노출되는 일반 <strong>옥외저장소</strong>에는 <code>05_02</code>에서 확인한 산화제 제1류, 금수·자연발화성 제3류, 자기반응성 제5류와 휘발성·위험도가 극심한 특수인화물 및 인화점 0 ℃ 미만 제1석유류(휘발유 등)는 저장할 수 없고, 오직 ① <strong>제2류 중 유황</strong>(및 인화점 0 ℃ 이상 인화성고체), ② <strong>제4류 중 인화점 0 ℃ 이상인 제1석유류·알코올류·제2·3·4석유류·동식물유류</strong>, ③ <strong>제6류 위험물</strong>(불연성 산화성 액체)만 저장 가능합니다.</span>
+            <span class="prose-item"><strong>② 판매취급소 · 법정 안전거리(별표 4) · 옥외탱크 방유제(별표 6)</strong></span>
+            <span class="prose-sub">&bull; <strong>제1종 vs 제2종 판매취급소</strong>: 점포에서 위험물을 용기에 담아 판매하는 <strong>판매취급소</strong>는 지정수량 <strong>20배 이하인 제1종 판매취급소</strong>와 <strong>20배 초과 40배 이하인 제2종 판매취급소</strong>로 구분됩니다.</span>
+            <span class="prose-sub">&bull; <strong>보호대상별 법정 안전거리(별표 4)</strong>: 위험물 시설 화재의 복사열·폭발 압력이 담장 밖 보호대상물을 덮치는 참사를 막기 위해 제조소·옥내·옥외탱크·옥외·일반취급소는 소실 시 복원 불가한 <strong>지정문화재(유형문화재·기념물 등) 50 m 이상</strong>, 대피 약자와 다수가 밀집한 <strong>학교·병원(병원급 의료기관)·300명 이상 다수인 수용시설(공연장·영화상영관 등)·20명 이상 노유자시설(어린이집·복지시설 등) 30 m 이상</strong>, 2차 대형 폭발 위험이 큰 <strong>고압가스·액화석유가스(LPG)·도시가스 시설 20 m 이상</strong>, 그리고 해당 제조소등의 <strong>부지 외 주거용 건축물·공작물 10 m 이상</strong>의 <strong>안전거리</strong>를 확보해야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>특고압 가공전선 안전거리 및 제6류 안전거리 면제</strong>: 화염·열기로 가공전선이 단선·추락해 감전·2차 스파크 폭발을 일으키는 것을 막기 위해 <strong>특고압 가공전선</strong>은 사용전압 <strong>7,000 V 초과 35,000 V 이하 시 3 m 이상</strong>, <strong>35,000 V 초과 시 5 m 이상</strong>의 수평거리를 유지해야 합니다. 반면 자체는 불연성 산화제여서 복사열에 의한 연소 확산 위험이 없는 <strong>제6류 위험물 취급 제조소등은 안전거리 적용이 면제</strong>됩니다.</span>
+            <span class="prose-sub">&bull; <strong>옥외탱크저장소 방유제(별표 6 · 110% 인과)</strong>: 인화성 액체(수조에 넣는 이황화탄소 제외) 옥외탱크 파열 시 유출 유류가 주변으로 쏟아지는 것을 가두고 화재 진압용 <strong>소화용수와 빗물(10퍼센트 여유분)</strong>까지 넘치지 않도록, <strong>방유제</strong>는 철근콘크리트로 높이 <strong>0.5 m 이상 3 m 이하</strong>, 면적 <strong>80,000 m<sup>2</sup> 이하</strong>, 내부 탱크 수 <strong>10기 이하</strong>로 설치하되, <strong>방유제의 용량</strong>은 탱크 1기일 때 그 탱크 용량의 <strong>110퍼센트 이상</strong>, 탱크 2기 이상일 때에는 합계가 아니라 <strong>그중 최대인 탱크 1기 용량의 110퍼센트 이상</strong>으로 설치합니다.</span>
+          </p>
+        </div>
+      </div>
 
-        <div id="sec2"" class="space-y-6">
-          <h2>제2절. 위험물 운반용기 수납률(95%·98%·90%), 외부 주의사항 표시 및 주유취급소 기준 (시행규칙 별표 18·19)</h2>
+      <div id="sec2">
+        <h2 class="text-xl font-bold mb-3">2. 운반용기 수납률(95%·98%·90%), 외부 주의사항 표시 및 간이·이동탱크·주유취급소</h2>
+        <div class="para-block" id="theory-sec2-p3">
+          <p class="prose-body">
+            도로 위로 나온 위험물 운반 차량은 여름철 직사광선과 복사열로 용기 내부 액체·기체가 열팽창해 파열·누설되거나, 빗물과 햇볕이 스며들어 금수성 폭발·자연발화를 일으킬 위험에 직면합니다. 이를 차단하기 위해 법령은 드럼통 등 운반용기로 옮기는 <strong>운반(법 제20조)</strong>과 탱크로리(이동탱크저장소)·배관(이송취급소)으로 옮기는 <strong>이송</strong>(법 제21조)을 엄격히 구분하고, 열팽창 여유 공간을 강제하는 위험물 운반용기 3대 <strong>수납률</strong>, 적재 높이 제한, 직사광선·빗물을 막는 차광성·방수성 피복(덮개), 그리고 현장 소방대가 즉시 위험 성상을 판별하도록 유별 외부 주의사항 표시(시행규칙 별표 19)를 의무화합니다.
+            <span class="formula-box">
+              <span class="formula-badge">위험물 운반용기 법정 수납률 3대 공식 (시행규칙 별표 19)</span>
+              <span class="formula-eq">고체 위험물 &le; 95% &nbsp;|&nbsp; 액체 위험물 &le; 98% (55 ℃에서 누설 없을 것) &nbsp;|&nbsp; 알킬알루미늄등 &le; 90% (50 ℃에서 공간용적 5% 이상)</span>
+              <span class="formula-ex">💡 <strong>적재 높이 및 차광·방수 피복(덮개) 인과</strong> | 고체(95%)보다 열팽창·공간 여유를 감안한 액체(98% · 55 ℃ 누설 방지)와 극고위험 알킬알루미늄등(90% · 50 ℃ 5%↑ 공간)을 구분하며, 차량 적재 높이는 <strong>3 m 이하</strong>로 제한하고, 햇볕 가열·분해 위험이 큰 물질(1·3자연발화·4특수·5·6류)에는 <strong>차광성 피복(덮개)</strong>을, 수분 반응 폭발 위험이 큰 금수성 물질(1알칼리금속과산화·2철금마·3금수)에는 <strong>방수성 피복(덮개)</strong>을 씌웁니다.</span>
+            </span>
+            <span class="prose-item"><strong>① 운반용기 외부 유별 법정 주의사항 표시 (별표 19)</strong></span>
+            <span class="prose-sub">&bull; <strong>제1류 · 제2류 · 제3류 주의사항</strong>: <strong>제1류</strong>는 "화기·충격주의" 및 "가연물접촉주의"(단, 물과 반응하는 <strong>알칼리금속 과산화물은 "물기엄금"을 추가</strong>해 3종 모두 표시!), <strong>제2류</strong>는 일반 품목에 "화기주의"(단, 물·산 접촉 시 수소가스를 내는 <strong>철분·금속분·마그네슘은 "화기주의" 및 "물기엄금"</strong>, 인화성고체는 "화기엄금"), <strong>제3류</strong>는 공기 노출로 발화하는 자연발화성에 <strong>"공기접촉엄금" 및 "화기엄금"</strong>, 물과 접촉 시 폭발하는 금수성에 오직 <strong>"물기엄금" 단독</strong>으로 표시합니다.</span>
+            <span class="prose-sub">&bull; <strong>제4류 · 제5류 · 제6류 주의사항</strong>: 제4류는 <strong>"화기엄금"</strong>, 제5류는 열·충격 민감성 때문에 <strong>"화기엄금" 및 "충격주의"</strong>를 표시하며, 특히 자체는 불연성 액체 산화제인 <strong>제6류 위험물</strong>(과염소산·과산화수소·질산)에는 "화기엄금"이 아니라 오직 <strong>"가연물접촉주의"</strong>만 단독 표시합니다.</span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec2-p4">
+          <p class="prose-body">
+            소규모 저장 및 도로 주행·주유 현장은 고정 저장창고와 달리 차량 전복 시 액체 쏠림(슬로싱) 폭발, 소규모 탱크 연쇄 화재, 주유 중 정전기·통기관 유증기 점화 위기가 상시 도사리고 있습니다. 이를 막기 위해 간이탱크저장소, 이동탱크저장소, 주유취급소에는 구조적·거리적 방어선을 법제화하였습니다.
+            <span class="prose-item"><strong>② 간이탱크저장소 · 이동탱크저장소 · 주유취급소 핵심 수치</strong></span>
+            <span class="prose-sub">&bull; <strong>간이탱크저장소(별표 9)</strong>: 두께 <strong>3.2 mm 이상</strong> 강판으로 제작하되 <strong>간이탱크저장소</strong>는 1기 용량 <strong>600 L 이하</strong>, 최대 <strong>3기 이하</strong>까지 설치하며, 동일 유종 화재 시 연쇄 폭발과 위험 집중을 분산하기 위해 <strong>동일한 품질의 위험물 간이저장탱크를 2기 이상 설치하는 것이 절대 금지</strong>됩니다.</span>
+            <span class="prose-sub">&bull; <strong>이동탱크저장소(탱크로리, 별표 10)</strong>: <strong>이동탱크저장소</strong>는 두께 <strong>3.2 mm 이상</strong> 강철판으로 제작하고 급제동 시 전후 방향 액체 출렁임(슬로싱)으로 인한 전복을 막기 위해 내부를 <strong>4,000 L 이하마다 두께 3.2 mm 이상의 강철판 등으로 칸막이</strong>(고체 위험물 등 제외)를 설치합니다. 또한 선회 시 좌우 쏠림과 전복 모멘트까지 추가로 감쇄하기 위해 칸막이로 구획된 각 부분의 용량이 <strong>2,000 L 이상</strong>이면 하나의 구획 부분에 <strong>2개 이상의 방파판(두께 1.6 mm 이상 강철판 등)</strong>을 이동저장탱크의 <strong>진행 방향과 평행</strong>하게 설치하되 각 <strong>방파판의 높이 및 칸막이로부터의 거리를 다르게</strong> 하며, 각 방파판 <strong>면적의 합계는 해당 구획 부분 최대 수직단면적의 50퍼센트 이상</strong>(단, 수직단면이 <strong>원형이거나 짧은 지름이 1 m 이하인 타원형일 때는 40퍼센트 이상</strong>)으로 해야 합니다.</span>
+            <span class="prose-sub">&bull; <strong>주유취급소 주차·점검 등 금지 거리</strong>: <strong>주유취급소</strong>에서 <strong>자동차</strong> 등에 주유할 때는 배기가스·정전기 점화를 막기 위해 <strong>고정주유설비로부터 4미터 이내</strong>에, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때는 탱크로리 주변과 통기관에서 뿜어져 나오는 고농도 유증기 착화를 막기 위해 <strong>전용탱크 주입구로부터 3미터 이내</strong> 및 <strong>전용탱크 통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지합니다.</span>
+          </p>
+        </div>
+      </div>
 
-          <div id="theory-sec2-p3" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34)</div><ul class="sidenote-list"><li>1. <strong>고체 위험물</strong>: 내용적의 <strong>95% 이하</strong></li><li>2. <strong>액체 위험물</strong>: 내용적의 <strong>98% 이하</strong> ($55^\circ\text{C}$에서 누설 없을 것)</li><li>3. <strong>알킬알루미늄등</strong>: 내용적의 <strong>90% 이하</strong> (<strong>$50^\circ\text{C}$에서 5% 이상 공간용적</strong> 유지)</li></ul></div></aside>
-            <p class="prose-body">
-              위험물을 운반용기에 수납하여 적재·운반할 때에는 하나의 외장용기에 다른 종류의 위험물을 함께 수납하지 아니하여야 하며, 온도 상승 시 열팽창에 의한 용기 파열과 누설을 막기 위해 성상별 <strong>법정 수납률과 공간용적 기준(시행규칙 별표 19)</strong>을 준수해야 한다. 첫째, <strong>고체 위험물</strong>은 운반용기 내용적의 <strong>95퍼센트 이하</strong>의 수납률로 수납한다. 둘째, <strong>액체 위험물</strong>은 운반용기 내용적의 <strong>98퍼센트 이하</strong>의 수납률로 수납하되, <strong>섭씨 55도의 온도에서 누설되지 아니하도록</strong> 충분한 공간용적을 유지해야 한다. 셋째, 가장 위험한 <strong>자연발화성물질 중 알킬알루미늄등</strong>은 운반용기 내용적의 <strong>90퍼센트 이하</strong>의 수납률로 수납하되, <strong>섭씨 50도의 온도에서 5퍼센트 이상의 공간용적</strong>을 유지하도록 해야 한다(2023년 Q25에서 알킬알루미늄등을 '95퍼센트 이하·55도·10퍼센트 이상'으로 왜곡하여 정답 오답 선지로 출제!). 또한 운반용기를 차량에 포개어 적재할 때에는 수납구가 위를 향하게 하고 <strong>높이 3미터 이하</strong>로 쌓아야 한다.
-            </p>
-            
-          </div><div id="theory-sec2-p4" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34)</div><ul class="sidenote-list"><li><strong>제6류(과염소산 등) 주의사항</strong>: 오직 <strong>‘가연물접촉주의’</strong>만 표시! ('화기엄금' X)</li><li><strong>제1류 알칼리금속 과산화물</strong>: <strong>화기·충격주의 + 물기엄금 + 가연물접촉주의</strong></li><li><strong>주유취급소 주차·정비·세정 금지 거리</strong>: 고정주유설비 <strong>$4\text{m}$ 이내</strong> / 전용탱크 주입구 <strong>$3\text{m}$ 이내</strong> / 통기관 끝부분 수평거리 <strong>$1.5\text{m}$ 이내</strong> ('2m 이내' X!)</li></ul></div></aside>
-            <p class="prose-body">
-              또한 위험물을 수납한 운반용기 외부에는 위험물의 품명·수량·화학적 명칭과 함께 유별 물리·화학적 성질에 따른 <strong>법정 주의사항</strong>을 정확히 표시해야 한다. ① <strong>제1류(산화성 고체)</strong>는 <strong>화기·충격주의</strong> 및 <strong>가연물접촉주의</strong>를 표시하되, 금수성을 겸비한 <strong>제1류 중 알칼리금속의 과산화물(과산화나트륨 등) 또는 이를 함유한 것</strong>은 <strong>“화기·충격주의”, “물기엄금” 및 “가연물접촉주의” 3가지를 모두 표시</strong>해야 한다. ② <strong>제2류(가연성 고체)</strong>는 <strong>화기주의</strong>를 표시하되, 철분·금속분·마그네슘은 <strong>물기엄금</strong>을 추가하고 인화성고체는 <strong>화기엄금</strong>을 표시한다. ③ <strong>제3류</strong> 중 자연발화성물질은 <strong>화기엄금 및 공기접촉엄금</strong>을, 금수성물질은 <strong>물기엄금</strong>(가연성 액체계는 화기엄금 추가)을 표시한다. ④ <strong>제4류(인화성 액체)</strong>는 <strong>화기엄금</strong>을, ⑤ <strong>제5류(자기반응성물질)</strong>는 <strong>화기엄금 및 충격주의</strong>를 표시한다. ⑥ 특히 2025년 기출(Q39)에서 단독 문항으로 출제된 <strong>제6류 위험물(과염소산·과산화수소·질산)</strong>은 그 자체는 타지 않는 불연성 산화성 액체이므로 화기엄금이나 충격주의가 아니라 오직 <strong>“가연물접촉주의” 단 하나만 표시</strong>한다! 아울러 2026년 기출(Q34)에서 함께 다뤄진 <strong>주유취급소의 주유 및 위험물 주입 시 주차·점검·정비·세정 금지 이격거리(시행규칙 별표 18)</strong>를 보면, 자동차 등에 주유할 때에는 <strong>고정주유설비로부터 4미터 이내</strong>의 부분, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 <strong>전용탱크의 주입구로부터 3미터 이내</strong>의 부분 및 <strong>전용탱크 통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분(2미터 이내 아님!)에서는 다른 자동차 등의 주차를 금지하고 자동차 등의 점검·정비 또는 세정을 하지 아니하여야 한다.
-            </p>
-            
+      <div id="sec3">
+        <h2 class="text-xl font-bold mb-3">3. 화재예방법상 특수가연물 품명별 기준수량·배수 합산 및 실내·실외 적재 기준</h2>
+        <div class="para-block" id="theory-sec3-p5">
+          <p class="prose-body">
+            앞선 제2편 제4장(<code>02_04</code>)에서 구획실 내 가연물 발열량 밀도인 <strong>화재하중</strong>이 커질수록 화재 지속시간과 파괴력이 급증하고, 겉면의 불꽃을 꺼도 산소 부족 다공성 내부로 불씨가 파고드는 <strong>심부화재(훈소)</strong>가 며칠씩 이어진다는 점을 배웠습니다. 위험물안전관리법상 위험물에 해당하지 않는 솜·종이·목재·고무·석탄이라도 창고나 야적장에 산더미처럼 대량 야적되면 작은 불티 하나가 심부화재를 타고 폭발적 연소 확대로 번져 진압이 불가능해집니다. 이러한 법적 사각지대의 대형 창고·야적장 참사를 막기 위해 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 2는 불길이 빠르게 번지는 10대 품명을 <strong>특수가연물</strong>로 지정해 통제합니다(다만 화력발전소 저탄장 현실을 고려해 <strong>석탄·목탄류</strong>를 <strong>발전용</strong>으로 저장하는 경우는 특수가연물 저장·취급 기준 적용 제외).
+            <span class="formula-box">
+              <span class="formula-badge">특수가연물 배수 합산 공식 및 위험물 vs 특수가연물 경계 (시행령 별표 2)</span>
+              <span class="formula-eq">&Sigma;(품명별 수량 &divide; 기준수량) 합계가 1 이상 &nbsp;|&nbsp; 고체 40 ℃ 미만(2류 위험물) vs 40 ℃ 이상(특수가연물) &middot; 동식물유 250 ℃ 미만(4류) vs 이상(특수가연물)</span>
+              <span class="formula-ex">💡 <strong>복수 품명 배수 합산</strong> | 품명이 다른 둘 이상의 특수가연물을 같은 장소에 저장할 때 각 수량을 <strong>기준수량</strong>으로 나눈 값의 <strong>합계가 1 이상</strong>이면 특수가연물로 보며(예: 면화류 100 kg[0.5] + 나무껍질 200 kg[0.5] + 볏짚류 500 kg[0.5] = 1.5배), 인화점 40 ℃ 미만 고체는 제2류 인화성고체(1,000 kg), 40 ℃ 이상 고체 등은 특수가연물 가연성고체류(3,000 kg)입니다.</span>
+            </span>
+            <span class="prose-item"><strong>① 10대 특수가연물 품명별 법정 기준수량 (체적 3종 · 질량 7종) 및 가연성고체·액체류 경계</strong></span>
+            <span class="prose-sub">&bull; <strong>체적(m<sup>3</sup>) 단위 3종</strong>: <strong>가연성액체류 2 m<sup>3</sup> 이상</strong> &middot; <strong>목재가공품 및 나무부스러기 10 m<sup>3</sup> 이상</strong> &middot; <strong>발포시킨 합성수지류</strong>(스티로폼 등) <strong>20 m<sup>3</sup> 이상</strong>입니다.</span>
+            <span class="prose-sub">&bull; <strong>질량(kg) 단위 7종</strong>: <strong>면화류 200 kg 이상</strong> &middot; <strong>나무껍질 및 대팻밥 400 kg 이상</strong> &middot; <strong>넝마 및 종이부스러기 · 사류(실) · 볏짚류 각각 1,000 kg 이상</strong> &middot; <strong>가연성고체류 · 기타 합성수지류(발포 제외: 고무·폐타이어 등) 각각 3,000 kg 이상</strong> &middot; <strong>석탄·목탄류 10,000 kg(10톤) 이상</strong>입니다.</span>
+            <span class="prose-sub">&bull; <strong>가연성고체류(3,000 kg) 법정 경계 (별표 2 비고 제5호)</strong>: 고체로서 ① 인화점 <strong>40 ℃ 이상 100 ℃ 미만</strong>인 것, ② 인화점 <strong>100 ℃ 이상 200 ℃ 미만이고 연소열량 1 g당 8 kcal 이상</strong>인 것, ③ 인화점 <strong>200 ℃ 이상·연소열량 1 g당 8 kcal 이상이면서 융점(녹는점) 100 ℃ 미만</strong>인 것, ④ 1기압·20 ℃ 초과 40 ℃ 이하 액상으로서 인화점 70 ℃ 이상 200 ℃ 미만이거나 ②·③에 해당하는 것을 말합니다.</span>
+            <span class="prose-sub">&bull; <strong>가연성액체류(2 m<sup>3</sup>) 법정 경계 (별표 2 비고 제7호)</strong>: ① 1기압·20 ℃ 이하 액상 중 가연성 액체량 <strong>40중량퍼센트 이하</strong>이면서 인화점 <strong>40 ℃ 이상 70 ℃ 미만·연소점 60 ℃ 이상</strong>인 물품, ② 1기압·20 ℃ 액상 중 가연성 액체량 <strong>40중량퍼센트 이하</strong>·인화점 <strong>70 ℃ 이상 250 ℃ 미만</strong>인 물품, ③ 동·식물 추출물 중 1기압·20 ℃ 액상·인화점 <strong>250 ℃ 미만</strong>이라도 위험물안전관리법상 용기·수납·저장기준에 적합하고 용기 외부에 물품명·수량·“화기엄금” 등을 <strong>표시한 용기</strong>에 담긴 것(및 인화점 <strong>250 ℃ 이상</strong> 동식물유류 등; 표시 없는 250 ℃ 미만 동식물유류는 제4류 위험물)을 말합니다.</span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec3-p6">
+          <p class="prose-body">
+            기준수량 이상의 특수가연물을 실내나 실외에 적재할 때 더미를 너무 높고 넓게 붙여서 쌓아 두면 내부 심부화재 진압을 위한 소방호스 진입 통로가 막히고 옆 더미와 인접 건물로 불길이 순식간에 건너뜁니다. 이에 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3·별표 9는 적재 규모와 완화 조건, 실내외 구조·이격 기준 및 표지·과태료를 정밀하게 규정합니다.
+            <span class="prose-item"><strong>② 특수가연물 적재 높이 · 바닥면적 · 실내외 이격거리 및 표지 · 과태료 (별표 3 · 별표 9)</strong></span>
+            <span class="prose-sub">&bull; <strong>쌓는 높이 및 바닥면적(완화 포함)</strong>: 높이는 원칙 <strong>10 m 이하(살수설비·대형수동식소화기 설치 시 15 m 이하)</strong>, 한 더미 바닥면적은 원칙 <strong>50 m<sup>2</sup> 이하, 석탄·목탄류는 200 m<sup>2</sup> 이하(살수설비·대형수동식소화기 설치 시 200 m<sup>2</sup> 이하, 석탄·목탄류는 300 m<sup>2</sup> 이하)</strong>로 합니다.</span>
+            <span class="prose-sub">&bull; <strong>실내 저장 구조 및 통로 간격(별표 3 제2호)</strong>: 실내에 쌓아 저장할 때 건물의 주요구조부는 화재 열기에 무너지거나 타지 않도록 <strong>내화구조이면서 불연재료(AND 조건)</strong>여야 하며, 다른 종류의 특수가연물과는 같은 공간에 보관하지 않되 <strong>내화구조의 벽</strong>으로 각각 분리한 경우에는 예외로 합니다. 또한 실내에서 쌓는 부분 바닥면적 사이의 통로 간격은 <strong>1.2 m 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>(살수설비 또는 대형수동식소화기 설치 시 <strong>1.2 m 이상</strong>)으로 둡니다.</span>
+            <span class="prose-sub">&bull; <strong>실외 저장 이격·면제 벽체 및 통로 간격(별표 3 제3호)</strong>: 실외에 쌓아 저장할 때 대지경계선·도로 및 인접 건축물과 최소 <strong>6 m 이상</strong> 간격을 두되, <strong>쌓는 높이보다 0.9 m 이상 높은 내화구조 벽체</strong>를 설치한 경우에만 면제됩니다. 또한 실외 바닥면적 사이의 통로 간격은 <strong>3 m 또는 쌓는 높이 중 큰 값 이상</strong>(살수설비 또는 대형수동식소화기 설치 시 <strong>2 m 이상</strong>)으로 둡니다.</span>
+            <span class="prose-sub">&bull; <strong>표지 규격·색상 및 위반 과태료(법 제52조 · 별표 9)</strong>: 표지는 한 변 <strong>0.3 m 이상 &times; 다른 한 변 0.6 m 이상</strong> 직사각형 판에 일반 바탕 <strong>흰색·문자 검은색</strong>("화기엄금" 표시 부분만 바탕 붉은색·문자 백색)으로 품명·최대저장수량·단위부피당 질량(단위체적당 질량)·관리책임자 성명·직책·연락처·화기취급 금지표시를 기재하며, 저장·취급 기준 위반 시 현행 법 제52조 제2항 제1호 및 시행령 별표 9에 따라 <strong>200만 원 이하의 과태료(1차·2차·3차 이상 모두 200만 원)</strong>를 부과합니다.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+      <div class="para-block diagram-wrapper" id="diagramBox">
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">⚡ 1분 속독 스캔</span>
+          <h3 class="cheat-title">제5편 제3장 · 위험물 유별 혼재 · 저장 · 운반 기준 및 특수가연물 초고밀도 압축 정리본</h3>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01 · 유별 혼재 허용 조합(16·245·34) · 옥내외 저장소 · 안전거리 · 방유제</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">유별 혼재 · 동시 금지</div>
+              <div class="cheat-val"><span class="cheat-eq">저장(별표 18·1 m↑ 6조합): 1류(과산화물 제외)&harr;5 · 1&harr;6 · 1&harr;3황린 · 2인화&harr;4 · 3알킬&harr;4 · 4유기&harr;5유기 | 운반(별표 19·5쌍): 1&harr;6 · 245 · 3&harr;4</span> 지정수량 <strong>1/10 이하</strong> 혼재 면제 / 제3류 내 <strong>황린과 금수성 물질은 동일 저장소 동시 저장 절대 금지!</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">옥내 적재 높이 · 옥외 품목</div>
+              <div class="cheat-val">옥내 온도 <strong>55 ℃ 이하</strong> / 용기 쌓기 원칙 <strong>3 m↓</strong>, 3·4석유·동식물유 <strong>4 m↓</strong>, 기계 하역·옥외 선반 <strong>6 m↓</strong> / <strong>옥외저장 가능</strong>: <strong>제2류 유황 · 제4류(0 ℃↑ 제1석유·알코올·2·3·4석유·동식물유) · 제6류</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">안전거리 · 방유제 · 판매</div>
+              <div class="cheat-val">안전거리(제6류 면제): 문화재 <strong>50 m</strong> · 학교·병원·300명↑ 다수인·20명↑ 노유자 <strong>30 m</strong> · 고압/LPG/도시가스 <strong>20 m</strong> · 부지 외 주거 <strong>10 m</strong> · 특고압(7,000 V 초과 35,000 V 이하 <strong>3 m</strong> / 초과 <strong>5 m</strong>) / <strong>방유제 용량 = 최대 탱크 1기의 110%↑</strong>(0.5에서 3 m, 10기↓) / 판매 1종(<strong>20배↓</strong>)·2종(<strong>40배↓</strong>)</div>
+            </div>
           </div>
+        </div>
 
-          <div class="para-block overflow-x-auto">
-            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 위험물 유별 혼재 허용 매트릭스(16·245·34), 운반용기 수납률 및 외부 주의사항 표시 총정리</div>
-            <table class="book-table">
-              <thead>
-                <tr>
-                  <th>유별 구분</th>
-                  <th>운반 시 혼재 허용 유별<br/>(암기 공식: 16 · 245 · 34)</th>
-                  <th>운반용기 외부 법정 주의사항 표시<br/>(시행규칙 별표 19 · 2025 Q39 · 2026 Q34)</th>
-                  <th>운반용기 수납률 및 핵심 저장 제한<br/>(2023 Q22·Q25 · 2024 Q14)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="font-bold text-emerald-300">제1류<br/>(산화성 고체)</td>
-                  <td><strong>제6류</strong>와 혼재 가능 (<strong>16</strong>)</td>
-                  <td>· 일반: <strong>화기·충격주의, 가연물접촉주의</strong><br/>· 알칼리금속 과산화물: <strong>+ 물기엄금</strong> 추가</td>
-                  <td>· 고체 수납률: 내용적의 <strong>95% 이하</strong><br/>· 일반 옥외저장소 저장 불가</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">제2류<br/>(가연성 고체)</td>
-                  <td><strong>제4류, 제5류</strong>와 혼재 가능 (<strong>245</strong>)</td>
-                  <td>· 일반: <strong>화기주의</strong> (인화성고체는 <strong>화기엄금</strong>)<br/>· 철분·금속분·마그네슘: <strong>+ 물기엄금</strong> 추가</td>
-                  <td>· 고체 수납률: 내용적의 <strong>95% 이하</strong><br/>· 옥외저장소는 <strong>유황</strong>(및 $0^\circ\text{C}\uparrow$ 인화성고체)만 가능</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">제3류<br/>(자연발화·금수성)</td>
-                  <td><strong>제4류</strong>와 혼재 가능 (<strong>34</strong>)</td>
-                  <td>· 자연발화성: <strong>화기엄금, 공기접촉엄금</strong><br/>· 금수성: <strong>물기엄금</strong> (가연성 액체계는 화기엄금 추가)</td>
-                  <td>· <strong>알킬알루미늄등: 90% 이하 ($50^\circ\text{C}$, 공간 5%↑)</strong><br/>· <strong>황린과 금수성물질 동일 저장소 저장 금지!</strong></td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">제4류<br/>(인화성 액체)</td>
-                  <td><strong>제2류, 제3류, 제5류</strong>와<br/>모두 혼재 가능 (<strong>245 · 34</strong>)</td>
-                  <td>· 전 품목: <strong>화기엄금</strong></td>
-                  <td>· 액체 수납률: <strong>98% 이하 ($55^\circ\text{C}$에서 누설 없을 것)</strong><br/>· 옥외저장소: 특수인화물·$0^\circ\text{C}$ 미만 제1석유류 제외</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">제5류<br/>(자기반응성)</td>
-                  <td><strong>제2류, 제4류</strong>와 혼재 가능 (<strong>245</strong>)</td>
-                  <td>· 전 품목: <strong>화기엄금, 충격주의</strong></td>
-                  <td>· 고체 <strong>95% 이하</strong> / 액체 <strong>98% 이하($55^\circ\text{C}$)</strong><br/>· 일반 옥외저장소 저장 불가</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">제6류<br/>(산화성 액체)</td>
-                  <td><strong>제1류</strong>와 혼재 가능 (<strong>16</strong>)</td>
-                  <td class="text-amber-300 font-bold">· 과염소산·과산화수소·질산:<br/>&nbsp;&nbsp;오직 <strong>‘가연물접촉주의’</strong>만 표시!</td>
-                  <td>· 액체 수납률: <strong>98% 이하 ($55^\circ\text{C}$에서 누설 없을 것)</strong><br/>· 일반 옥외저장소 저장 가능</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></div>
-
-        <div id="sec3"" class="space-y-6">
-          <h2>제3절. 화재예방법령상 특수가연물 기준수량과 실내·실외 저장·취급 기준 (시행령 별표 2·별표 3·별표 9)</h2>
-
-          <div id="theory-sec3-p5" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4)</div><ul class="sidenote-list"><li><strong>200kg</strong>: <strong>면화류</strong></li><li><strong>400kg</strong>: <strong>나무껍질 및 대팻밥</strong></li><li><strong>1,000kg</strong>: <strong>넝마 및 종이부스러기 · 사류 · 볏짚류</strong></li><li><strong>3,000kg</strong>: <strong>가연성고체류 · 기타 합성수지류</strong></li><li><strong>10,000kg</strong>: <strong>석탄·목탄류</strong> (발전용은 적용 제외)</li><li>체적($\text{m}^3$): <strong>가연성액체류($2\text{m}^3$) · 목재가공품($10\text{m}^3$) · 발포합성수지($20\text{m}^3$)</strong></li></ul></div></aside>
-            <p class="prose-body">
-              <strong>화재의 예방 및 안전관리에 관한 법률 시행령 별표 2</strong>는 위험물안전관리법상 위험물에 해당하지 않더라도 화재가 발생할 경우 불길이 급격히 번지고 진압이 곤란한 고무류·플라스틱류·면화류·석탄류 등 10대 가연물을 <strong>특수가연물</strong>로 지정하고 품명별 <strong>기준수량</strong>을 규정하고 있다. 시험에서는 품명과 기준수량의 짝짓기나 저장 배수 합산 문제가 자주 출제되므로 질량($\text{kg}$) 단위 7종과 체적($\text{m}^3$) 단위 3종을 정확히 구분해야 한다. 첫째, <strong>질량(킬로그램) 기준 품목</strong>을 작은 수치부터 보면 ① <strong>면화류</strong>(불연성·난연성이 아닌 면류·마류·양모 등): <strong>200킬로그램 이상</strong>(시험에서 '면화류 1,000킬로그램'으로 속이는 함정이 최빈출!), ② <strong>나무껍질 및 대팻밥</strong>: <strong>400킬로그램 이상</strong>, ③ <strong>넝마 및 종이부스러기 · 사류(실) · 볏짚류</strong>: 세 품목 모두 각각 <strong>1,000킬로그램 이상</strong>('넝마 및 종이부스러기 400킬로그램'으로 속이는 함정 주의!), ④ <strong>가연성고체류 · 합성수지류(발포시킨 것 제외)</strong>: 두 품목 모두 각각 <strong>3,000킬로그램 이상</strong>, ⑤ <strong>석탄·목탄류</strong>: <strong>10,000킬로그램(10톤) 이상</strong>(단, 석탄·목탄류를 <strong>발전용</strong>으로 저장하는 경우에는 특수가연물 저장·취급 기준을 적용하지 아니한다)이다. 둘째, <strong>체적(세제곱미터) 기준 품목</strong>은 ① <strong>가연성액체류</strong>: <strong>2세제곱미터 이상</strong>, ② <strong>목재가공품 및 나무부스러기</strong>: <strong>10세제곱미터 이상</strong>, ③ <strong>발포시킨 합성수지류(스티로폼 등)</strong>: <strong>20세제곱미터 이상</strong>이다.
-            </p>
-            
-          </div><div id="theory-sec3-p6" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17)</div><ul class="sidenote-list"><li><strong>높이·바닥면적</strong>: 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 <strong>$15\text{m}$ 이하 · $200\text{m}^2$(석탄·목탄 $300\text{m}^2$) 이하</strong></li><li><strong>바닥면적 사이 간격</strong>: 실내 <strong>$1.2\text{m}$</strong>(또는 높이의 $\frac{1}{2}$) 이상 / 실외 <strong>$3\text{m}$</strong>(또는 높이의 $\frac{1}{2}$) 이상</li><li><strong>실외 대지경계선 이격</strong>: 최소 <strong>$6\text{m}$ 이상</strong> (단, 쌓는 높이보다 <strong>$1\text{m}$ 이상</strong> 높은 내화구조 벽체 설치 시 예외)</li><li><strong>표지 색상</strong>: 일반은 <strong>흰색 바탕·검은색 문자</strong> / ‘화기엄금’은 <strong>붉은색 바탕·백색 문자</strong> ($0.3\text{m}\times 0.6\text{m}\uparrow$)</li><li><strong>위반 시 과태료</strong>: 현행 화재예방법상 <strong>1차 100만 · 2차 200만 · 3차 이상 300만 원</strong> (구법 20·50·100·100만 원)</li></ul></div></aside>
-            <p class="prose-body">
-              나아가 <strong>화재의 예방 및 안전관리에 관한 법률 시행령 별표 3</strong>에 규정된 특수가연물의 저장·취급 기준과 표지 규격은 최근 개정으로 대폭 강화된 실내·실외 이격거리 수치까지 완벽히 장악해야 한다. 첫째, <strong>쌓는 높이와 바닥면적</strong>을 보면 원칙적으로 쌓는 높이는 <strong>10미터 이하</strong>, 쌓는 부분의 바닥면적은 <strong>50제곱미터 이하(석탄·목탄류의 경우에는 200제곱미터 이하)</strong>가 되도록 해야 한다. 다만, <strong>살수설비를 설치하거나 방사능력 범위에 해당 특수가연물이 포함되도록 대형수동식소화기를 설치하는 경우</strong>에는 쌓는 높이를 <strong>15미터 이하</strong>, 쌓는 부분의 바닥면적을 <strong>200제곱미터 이하(석탄·목탄류의 경우에는 300제곱미터 이하)</strong>로 완화할 수 있다(참고로 구 소방기본법 결합 기출에서 자주 함께 묻는 기간 수치로, 화재경계지구 안의 관계인에 대한 훈련·교육 사전 통보는 <strong>10일 전</strong>까지이며, 손실보상심의위원회를 거친 보상금 지급 결정은 청구서를 받은 날부터 <strong>60일 이내</strong>, 결정 통지는 결정일부터 <strong>10일 이내</strong>, 보상금 지급은 통지한 날부터 <strong>30일 이내</strong>이다). 둘째, 2024년 기출(Q17)에서 출제된 현행 <strong>실내·실외 저장 구조 및 이격거리(통로 간격)</strong>를 보면, ① <strong>쌓는 부분 바닥면적의 사이(통로 간격)</strong>는 <strong>실내의 경우 1.2미터(구법 1미터에서 1.2미터로 강화!) 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로, <strong>실외의 경우 3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 한다. ② <strong>실내에 쌓아 저장하는 경우</strong> 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 불가!)여야 하고 내화구조의 벽·기둥과 최소 <strong>0.5미터 이상</strong> 간격을 두며, 다른 종류의 특수가연물과 같은 공간에 보관하지 않되 <strong>내화구조의 벽</strong>(방화구조 불가!)으로 분리하는 경우는 예외로 한다. ③ <strong>실외에 쌓아 저장하는 경우</strong> 쌓는 부분이 대지경계선·도로 및 인접 건축물과 최소 <strong>6미터 이상</strong> 간격을 두어야 하나, <strong>쌓는 높이보다 1미터 이상</strong>(0.9미터 아님!) 높은 내화구조 벽체를 설치한 경우는 그러하지 아니하다. 셋째, <strong>특수가연물 표지</strong>는 한 변의 길이가 <strong>0.3미터 이상</strong>, 다른 한 변의 길이가 <strong>0.6미터 이상</strong>인 직사각형으로 하되, 일반 부분의 <strong>바탕은 흰색(백색)·문자는 검은색(흑색)</strong>으로 하고 <strong>“화기엄금” 표시 부분만 바탕은 붉은색(적색)·문자는 백색</strong>으로 표시한다. 마지막으로 특수가연물의 저장·취급 기준을 위반한 자에게는 현행 <strong>화재예방법 제52조 제1항 제2호 및 시행령 별표 9</strong>에 따라 <strong>300만 원 이하의 과태료(개별기준: 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원</strong>; 참고로 2022년 기출 당시 구 소방기본법 시행령 기준은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었음)를 부과한다.
-            </p>
-            
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02 · 운반용기 수납률 · 외부 주의사항 표시 및 간이 · 이동탱크 · 주유취급소</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">운반용기 수납률 3대 공식</div>
+              <div class="cheat-val"><span class="cheat-eq">고체 &le; 95% | 액체 &le; 98% (55℃ 누설 X) | 알킬알루미늄 &le; 90% (50℃ 공간 5%↑)</span> 적재 높이 <strong>3 m 이하</strong> / 운반(용기 이동) vs 이송(탱크로리 이동) 구분</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">유별 외부 주의사항 핵심</div>
+              <div class="cheat-val"><strong>제1류 알칼리금속 과산화물</strong>(화기·충격주의 + <strong>물기엄금</strong> + 가연물접촉주의) / <strong>제2류 철·금·마</strong>(화기주의 + <strong>물기엄금</strong>) / 제3류 자연(공기접촉엄금·화기엄금)·<strong>금수(물기엄금 단독!)</strong> / 제5류(화기엄금·충격주의) / <strong>제6류 = 오직 '가연물접촉주의'만 표시!(화기엄금 X)</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">간이탱크 · 이동탱크 · 주유소</div>
+              <div class="cheat-val"><strong>간이탱크</strong>(1기 <strong>600 L↓ · 총 3기↓ · 동일 품질 2기↑ 설치 금지!</strong>) / <strong>이동탱크</strong>(강판 3.2 mm↑, <strong>4,000 L↓마다 3.2 mm↑ 칸막이</strong>, 2,000 L↑ 2개↑ <strong>1.6 mm↑ 방파판</strong>[수직단면 50%↑, 원형·1 m↓ 타원 40%↑]) / 주유취급소 주차·정비·세정 금지: <strong>주유설비 4 m 내 · 주입구 3 m 내 · 통기관 끝 1.5 m 내</strong></div>
+            </div>
           </div>
+        </div>
 
-          <div class="para-block overflow-x-auto">
-            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 화재예방법 시행령 별표 2·별표 3 특수가연물 품명별 기준수량 및 실내·실외 저장·취급·표지 기준 총정리</div>
-            <table class="book-table">
-              <thead>
-                <tr>
-                  <th>구분 영역</th>
-                  <th>세부 품목 또는 규제 항목</th>
-                  <th>법정 기준 수치 및 기출 함정 방어 포인트 (2018년에서 2024년까지 기출)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="2">1. 품명별 기준수량<br/>(시행령 별표 2)</td>
-                  <td class="font-bold text-slate-200">질량($\text{kg}$) 단위 7종</td>
-                  <td>· <strong>면화류: 200kg 이상</strong> / <strong>나무껍질 및 대팻밥: 400kg 이상</strong><br/>· <strong>넝마 및 종이부스러기 · 사류 · 볏짚류: 각 1,000kg 이상</strong><br/>· <strong>가연성고체류 · 합성수지류(발포 외): 각 3,000kg 이상</strong> / <strong>석탄·목탄류: 10,000kg 이상</strong></td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">체적($\text{m}^3$) 단위 3종</td>
-                  <td>· <strong>가연성액체류: $2\text{m}^3$ 이상</strong> / <strong>목재가공품 및 나무부스러기: $10\text{m}^3$ 이상</strong> / <strong>발포시킨 합성수지류: $20\text{m}^3$ 이상</strong></td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="3">2. 저장·취급 기준<br/>(시행령 별표 3)</td>
-                  <td class="font-bold text-slate-200">쌓는 높이 및 바닥면적</td>
-                  <td>· <strong>원칙</strong>: 높이 <strong>10m 이하</strong> / 바닥면적 <strong>$50\text{m}^2$ 이하</strong> (석탄·목탄류는 <strong>$200\text{m}^2$ 이하</strong>)<br/>· <strong>살수설비·대형수동식소화기 설치 시</strong>: 높이 <strong>15m 이하</strong> / 바닥면적 <strong>$200\text{m}^2$ 이하</strong> (석탄·목탄류 <strong>$300\text{m}^2$ 이하</strong>)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-amber-300">쌓는 부분 바닥면적 사이 간격</td>
-                  <td>· <strong>실내 저장</strong>: <strong>1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong> ('1미터' X! 2024 Q17)<br/>· <strong>실외 저장</strong>: <strong>3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong></td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">실내 구조 및 실외 이격거리</td>
-                  <td>· <strong>실내</strong>: 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 X), 내화구조의 벽으로 타 품목과 분리, 벽·기둥과 <strong>$0.5\text{m}\uparrow$</strong> 이격<br/>· <strong>실외</strong>: 대지경계선·도로·인접 건축물과 <strong>6m 이상</strong> 이격 (단, 쌓는 높이보다 <strong>1m 이상</strong> 높은 내화구조 벽체 설치 시 예외)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="2">3. 표지 및 제재<br/>(별표 3 · 별표 9)</td>
-                  <td class="font-bold text-slate-200">특수가연물 표지 규격·색상</td>
-                  <td>· 규격: 한 변 <strong>$0.3\text{m}$ 이상</strong> × 다른 한 변 <strong>$0.6\text{m}$ 이상</strong> 직사각형<br/>· 색상: 일반 바탕은 <strong>흰색·문자는 검은색</strong> / ‘화기엄금’ 바탕은 <strong>붉은색·문자는 백색</strong> (2023 Q10)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">저장·취급 기준 위반 과태료</td>
-                  <td>· 현행 화재예방법(제52조·별표 9): <strong>1차 100만 원 / 2차 200만 원 / 3차 이상 300만 원</strong><br/>· (구 소방기본법 시행령 기준: 1회 20만 원 / 2회 50만 원 / 3회 100만 원 / 4회 이상 100만 원, 2022 Q5)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></div>
-
-        </section>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03 · 화재예방법상 특수가연물 기준수량 · 인화점 경계 및 실내외 적재 기준</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">10대 품명별 기준수량</div>
+              <div class="cheat-val">부피 3종: <strong>액체 2 m<sup>3</sup> · 목재 10 m<sup>3</sup> · 발포수지 20 m<sup>3</sup></strong> / 무게 7종: <strong>면화 200 kg · 나무껍질·대팻밥 400 kg · 넝마·사류·볏짚 각 1,000 kg · 가연성고체·기타수지 각 3,000 kg · 석탄·목탄 10,000 kg(발전용 제외!)</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">배수 합산 · 인화점 경계</div>
+              <div class="cheat-val"><span class="cheat-eq">&Sigma;(수량 &divide; 기준수량) &ge; 1 이면 특수가연물 적용</span> 고체 인화점 <strong>40 ℃ 미만 = 제2류 위험물</strong> vs <strong>40 ℃ 이상 = 특수가연물 가연성고체류</strong> / 동식물유 <strong>250 ℃ 미만 = 제4류</strong> vs <strong>250 ℃ 이상 = 가연성액체류</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">적재 높이 · 바닥면적 완화</div>
+              <div class="cheat-val">높이 원칙 <strong>10 m 이하</strong>(살수·대형소화기 시 <strong>15 m 이하</strong>) / 바닥면적 원칙 <strong>50 m<sup>2</sup> 이하, 석탄·목탄 200 m<sup>2</sup> 이하</strong>(살수·대형소화기 시 <strong>200 m<sup>2</sup> 이하, 석탄·목탄 300 m<sup>2</sup> 이하</strong>)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">실내외 간격 · 표지 · 과태료</div>
+              <div class="cheat-val"><strong>실내</strong>(<strong>내화구조이면서 불연재료</strong>[AND], 이종은 내화벽 분리, 통로 <strong>1.2 m 또는 높이 1/2↑</strong>[완화 1.2 m↑]) / <strong>실외</strong>(경계선·도로·건물 <strong>6 m↑</strong> 이격[<strong>높이+0.9 m↑ 내화벽</strong> 면제], 통로 <strong>3 m 또는 쌓는 높이↑</strong>[완화 2 m↑]) / 표지 <strong>0.3&times;0.6 m 흰 바탕 검정 글씨</strong> / 위반 <strong>200만 원↓ 과태료</strong>(1·2·3차 200만 원)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     </div>
 
@@ -1525,7 +1755,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-1"><div class="inline-exp-head"><span><strong>정답: ①</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-1" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 2 제7호에 따라 일반 용기로 <strong>옥외저장소</strong>에 저장할 수 있는 위험물은 ① <strong>제2류 위험물 중 유황</strong>, ② <strong>제4류 위험물 중 인화점 0도 이상인 제1석유류·알코올류·제2석유류·제3석유류·제4석유류·동식물유류</strong>, ③ <strong>제6류 위험물</strong>, ④ 제2류·제4류 중 보온을 위해 저장하는 것뿐입니다. 제1류 위험물(염소산염류 등), 제3류 위험물, 제5류 위험물, 제4류 중 특수인화물 및 인화점 0도 미만 제1석유류는 옥외저장소에 저장할 수 없습니다(단, IMDG Code 용기에 수납한 경우는 전 유별 가능).</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제1류 위험물 중 염소산염류는 빗물(수분)이나 직사광선, 이물질 혼입 시 분해·폭발 위험이 있어 일반 옥외저장소에 저장할 수 없습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 제2류 위험물 중 유황(황)은 비수용성이고 안정하여 옥외저장소에 저장할 수 있습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 제4류 위험물 중 알코올류(및 인화점 0도 이상 제1석유류, 제2·3·4석유류, 동식물유류)는 옥외저장소에 저장할 수 있습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 제6류 위험물(과염소산·과산화수소·질산)은 옥외저장소에 저장할 수 있는 법정 위험물에 해당합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p1" data-qnum="1" data-preview="혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 운반 혼재 허용 (16 · 245 · 34) : 1류↔6류 / 2류↔4류↔5류 / 3류↔4류 (지정수량 $\frac{1}{10}$ 이하는 혼재 규정 미적용) 제3류 내부 동시 저장 금지 : 물속에 저장하는 황린 과 금수성 물질 은 동일 저장…" onclick="jumpToTheory('theory-sec1-p1', 1, this)">📖 기본서 제1절 · 혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-1"><div class="inline-exp-head"><span><strong>정답: ①</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-1" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행령｣ 별표 2 제7호에 따라 일반 용기로 <strong>옥외저장소</strong>에 저장할 수 있는 위험물은 ① <strong>제2류 위험물 중 유황</strong>, ② <strong>제4류 위험물 중 인화점 0도 이상인 제1석유류·알코올류·제2석유류·제3석유류·제4석유류·동식물유류</strong>, ③ <strong>제6류 위험물</strong>, ④ 제2류·제4류 중 보온을 위해 저장하는 것뿐입니다. 제1류 위험물(염소산염류 등), 제3류 위험물, 제5류 위험물, 제4류 중 특수인화물 및 인화점 0도 미만 제1석유류는 옥외저장소에 저장할 수 없습니다(단, IMDG Code 용기에 수납한 경우는 전 유별 가능).</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림 · 정답] 제1류 위험물 중 염소산염류는 빗물(수분)이나 직사광선, 이물질 혼입 시 분해·폭발 위험이 있어 일반 옥외저장소에 저장할 수 없습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 제2류 위험물 중 유황(황)은 비수용성이고 안정하여 옥외저장소에 저장할 수 있습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 제4류 위험물 중 알코올류(및 인화점 0도 이상 제1석유류, 제2·3·4석유류, 동식물유류)는 옥외저장소에 저장할 수 있습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 제6류 위험물(과염소산·과산화수소·질산)은 옥외저장소에 저장할 수 있는 법정 위험물에 해당합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1641,10 +1871,10 @@
         
           <div class="inline-exp-box no-print-inline" id="inline-exp-4"><div class="inline-exp-head"><span><strong>정답: ①</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-4" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> · <strong>제1류(산화성 고체)</strong>: 화기·충격주의, 가연물접촉주의 (단, 알칼리금속 과산화물은 <strong>물기엄금</strong> 추가)
 · <strong>제2류(가연성 고체)</strong>: 화기주의 (철분·금속분·마그네슘은 <strong>물기엄금</strong> 추가, 인화성고체는 <strong>화기엄금</strong>)
-· <strong>제3류</strong>: 자연발화성 = <strong>화기엄금 및 공기접촉엄금</strong>, 금수성 = <strong>물기엄금</strong> (가연성 액체계는 화기엄금 추가)
+· <strong>제3류</strong>: 자연발화성 = <strong>화기엄금 및 공기접촉엄금</strong>, 금수성 = <strong>물기엄금</strong> 단독
 · <strong>제4류(인화성 액체)</strong>: <strong>화기엄금</strong>
 · <strong>제5류(자기반응성물질)</strong>: <strong>화기엄금 및 충격주의</strong>
-· <strong>제6류(산화성 액체 · 과염소산·과산화수소·질산)</strong>: 불연성 액체 산화제이므로 오직 <strong>'가연물접촉주의'( ㄱ )</strong> 하나만 표시합니다!</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제6류 위험물인 과염소산은 불연성 산화성 액체로서 가연물과 접촉 시 발화·폭발 위험이 있으므로 운반용기 외부에 <strong>'가연물접촉주의'( ㄱ )</strong>만 표기합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] '공기접촉엄금'( ㄴ ) 및 '화기엄금'( ㄷ )은 제3류 자연발화성물질(황린 등)에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] '화기엄금'( ㄷ ) 및 '충격주의'( ㅁ )는 제5류 자기반응성물질에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] '화기·충격주의', '물기엄금', '가연물접촉주의'(ㄱ, ㄹ, ㅁ, ㅂ)는 제1류 위험물 중 알칼리금속의 과산화물에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div></div></div>
+· <strong>제6류(산화성 액체 · 과염소산·과산화수소·질산)</strong>: 불연성 액체 산화제이므로 오직 <strong>'가연물접촉주의'( ㄱ )</strong> 하나만 표시합니다!</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제6류 위험물인 과염소산은 불연성 산화성 액체로서 가연물과 접촉 시 발화·폭발 위험이 있으므로 운반용기 외부에 <strong>'가연물접촉주의'( ㄱ )</strong>만 표기합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] '공기접촉엄금'( ㄴ ) 및 '화기엄금'( ㄷ )은 제3류 자연발화성물질(황린 등)에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] '화기엄금'( ㄷ ) 및 '충격주의'( ㅁ )는 제5류 자기반응성물질에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] '화기·충격주의', '물기엄금', '가연물접촉주의'(ㄱ, ㄹ, ㅁ, ㅂ)는 제1류 위험물 중 알칼리금속의 과산화물에 표기하는 주의사항입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1682,7 +1912,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-5"><div class="inline-exp-head"><span><strong>정답: ④</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-5" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18에 따른 위험물의 저장·취급 및 운반 종합 기준입니다. 주유취급소에서 다른 자동차의 주차 및 점검·정비·세정을 금지하는 범위는 ① 고정주유설비로부터 <strong>4미터 이내</strong>의 부분, ② 전용탱크의 <strong>주입구로부터 3미터 이내</strong>의 부분, ③ 전용탱크 <strong>통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분입니다(고정주유설비에 접속된 탱크 주입구가 아니라 고정주유설비 자체로부터 4미터 이내이며, 통기관 끝부분으로부터는 2미터가 아니라 <strong>1.5미터 이내</strong>임).</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 <strong>6미터</strong>, 제4류 중 제3·4석유류 및 동식물유류 수납 용기 <strong>4미터</strong>, 그 밖의 경우 <strong>3미터</strong> 이하입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="5" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 5, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 운반용기 수납률은 고체 위험물 <strong>95퍼센트 이하</strong>, 액체 위험물 <strong>98퍼센트 이하</strong>(55도 누설 방지 공간 유지)입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="5" data-preview="운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 1. 고체 위험물 : 내용적의 95% 이하 2. 액체 위험물 : 내용적의 98% 이하 ($55^\circ\text{C}$에서 누설 없을 것) 3. 알킬알루미늄등 : 내용적의 90% 이하 ( $50^\circ\text{C}$에서 5…" onclick="jumpToTheory('theory-sec2-p3', 5, this)">📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림 · 정답] 주유취급소에서 주차 및 점검·정비·세정이 금지되는 통기관 끝부분으로부터의 수평거리는 2미터 이내가 아니라 <strong>1.5미터 이내</strong>이며, 주유 시에는 고정주유설비로부터 <strong>4미터 이내</strong>, 전용탱크 주입 시에는 전용탱크 주입구로부터 <strong>3미터 이내</strong>입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-5"><div class="inline-exp-head"><span><strong>정답: ④</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-5" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18에 따른 위험물의 저장·취급 및 운반 종합 기준입니다. 주유취급소에서 다른 자동차의 주차 및 점검·정비·세정을 금지하는 범위는 ① <strong>고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4미터 이내</strong>의 부분, ② 전용탱크의 <strong>주입구로부터 3미터 이내</strong>의 부분, ③ 전용탱크 <strong>통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분입니다(통기관 끝부분으로부터는 2미터가 아니라 <strong>1.5미터 이내</strong>임).</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 <strong>6미터</strong>, 제4류 중 제3·4석유류 및 동식물유류 수납 용기 <strong>4미터</strong>, 그 밖의 경우 <strong>3미터</strong> 이하입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="5" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 5, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="5" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 3종 모두 표시" onclick="jumpToTheory('theory-sec2-p3', 5, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 운반용기 수납률은 고체 위험물 <strong>95퍼센트 이하</strong>, 액체 위험물 <strong>98퍼센트 이하</strong>(55도 누설 방지 공간 유지)입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="5" data-preview="운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 1. 고체 위험물 : 내용적의 95% 이하 2. 액체 위험물 : 내용적의 98% 이하 ($55^\circ\text{C}$에서 누설 없을 것) 3. 알킬알루미늄등 : 내용적의 90% 이하 ( $50^\circ\text{C}$에서 5…" onclick="jumpToTheory('theory-sec2-p3', 5, this)">📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림 · 정답] 주유취급소에서 주차 및 점검·정비·세정이 금지되는 통기관 끝부분으로부터의 수평거리는 2미터 이내가 아니라 <strong>1.5미터 이내</strong>이며, 주유 시에는 고정주유설비로부터 <strong>4미터 이내</strong>, 전용탱크 주입 시에는 전용탱크 주입구로부터 <strong>3미터 이내</strong>입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="간이탱크 · 이동탱크 · 주유취급소 금지 거리 (2026 Q34) 주유취급소 주차·정비·세정 금지 거리: 고정주유설비 4 m 이내 · 전용탱크 주입구 3 m 이내 · 통기관 끝 수평거리 1.5 m 이내" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 간이·이동탱크 및 주유취급소 거리 (2026 Q34) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1872,7 +2102,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-10"><div class="inline-exp-head"><span><strong>정답: ②</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-10" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 출제 당시 구 ｢소방기본법 시행령｣ 별표 3에 따르면 특수가연물의 저장 및 취급 기준을 위반한 경우 과태료 금액은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다. 단, 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제1항 제2호(300만 원 이하의 과태료) 및 같은 법 시행령 별표 9 제2호 라목에서는 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원으로 상향 개정되었으므로 현행 수치를 반드시 함께 숙지해야 합니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 일치하지 않으며, 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9 기준(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)과도 다릅니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음 · 정답] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3상 특수가연물 저장·취급기준 위반 과태료는 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다 (현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9에서는 1차 100만 원, 2차 200만 원, 3차 이상 300만 원으로 상향 개정됨).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 2022년 출제 당시 구 시행령 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 비교할 때 1회(50만 원), 2회(100만 원), 4회 이상(200만 원) 수치가 모두 어긋납니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 2022년 출제 당시 구 시행령 별표 3 기준상 4회 이상 위반 시 과태료(ㄹ)는 150만 원이 아니라 3회 위반과 동일한 '100만 원'이었습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-10"><div class="inline-exp-head"><span><strong>정답: ②</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-10" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 출제 당시 구 ｢소방기본법 시행령｣ 별표 3에 따르면 특수가연물의 저장 및 취급 기준을 위반한 경우 과태료 금액은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다. 단, 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 같은 법 시행령 별표 9에서는 <strong>200만 원 이하의 과태료(1차 위반 200만 원, 2차 위반 200만 원, 3차 이상 위반 200만 원)</strong>로 규정하고 있으므로 현행 수치를 반드시 함께 숙지해야 합니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 일치하지 않으며, 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9 기준(1차·2차·3차 이상 모두 200만 원)과도 다릅니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음 · 정답] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3상 특수가연물 저장·취급기준 위반 과태료는 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다 (현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 시행령 별표 9에서는 1차·2차·3차 이상 모두 200만 원으로 규정됨).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 2022년 출제 당시 구 시행령 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 비교할 때 1회(50만 원), 2회(100만 원), 4회 이상(200만 원) 수치가 모두 어긋납니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 2022년 출제 당시 구 시행령 별표 3 기준상 4회 이상 위반 시 과태료(ㄹ)는 150만 원이 아니라 3회 위반과 동일한 '100만 원'이었습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1910,11 +2140,11 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-11"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-11" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3에 따른 <strong>특수가연물 표지</strong> 기준입니다. 특수가연물 표지의 일반 부분(화기엄금 제외)은 가독성을 위해 <strong>바탕은 흰색(백색)으로, 문자는 검은색(흑색)</strong>으로 해야 합니다(선지 ③은 바탕과 문자 색상을 정반대로 뒤집음).</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 특수가연물 표지 중 '화기엄금' 표시 부분의 바탕은 <strong>붉은색(적색)</strong>으로, 문자는 <strong>백색(흰색)</strong>으로 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 특수가연물 표지는 한 변의 길이가 <strong>0.3미터 이상</strong>, 다른 한 변의 길이가 <strong>0.6미터 이상</strong>인 직사각형으로 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] 특수가연물 표지의 바탕은 <strong>흰색(백색)</strong>으로, 문자는 <strong>검은색(흑색)</strong>으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="11" data-preview="특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 200kg : 면화류 400kg : 나무껍질 및 대팻밥 1,000kg : 넝마 및 종이부스러기 · 사류 · 볏짚류 3,000kg : 가연성고체류 · 기타 합성수지류 10,000kg : 석탄·목탄류 (발전용은 적용 제외) 체적($\…" onclick="jumpToTheory('theory-sec3-p5', 11, this)">📖 기본서 제3절 · 특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-11"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-11" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3에 따른 <strong>특수가연물 표지</strong> 기준입니다. 특수가연물 표지의 일반 부분(화기엄금 제외)은 가독성을 위해 <strong>바탕은 흰색(백색)으로, 문자는 검은색(흑색)</strong>으로 해야 합니다(선지 ③은 바탕과 문자 색상을 정반대로 뒤집음).</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 특수가연물 표지 중 '화기엄금' 표시 부분의 바탕은 <strong>붉은색(적색)</strong>으로, 문자는 <strong>백색(흰색)</strong>으로 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 특수가연물 표지는 한 변의 길이가 <strong>0.3미터 이상</strong>, 다른 한 변의 길이가 <strong>0.6미터 이상</strong>인 직사각형으로 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] 특수가연물 표지의 바탕은 <strong>흰색(백색)</strong>으로, 문자는 <strong>검은색(흑색)</strong>으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div></div></div>
         </article>
         
 
-        <article class="q-card" id="q-card-12" data-q="12" data-ans="4">
+        <article class="q-card" id="q-card-12" data-q="12" data-ans="1">
           <div class="q-card-header">
             <div class="q-meta">
               <span class="q-num-badge">12</span>
@@ -1922,258 +2152,259 @@
             </div>
             <div class="q-ans-blank" id="q-status-12">정답: &nbsp;&nbsp;&nbsp;&nbsp;</div>
           </div>
-          <div class="q-stem">｢화재의 예방 및 안전관리에 관한 법률 시행령｣상 화재의 확대가 빠른 특수가연물의 저장 및 취급 기준으로 옳은 것은? (단, 석탄·목탄류를 발전용(發電用)으로 저장하는 경우는 제외한다.)</div>
+          <div class="q-stem">｢화재의 예방 및 안전관리에 관한 법률 시행령｣상 화재의 확대가 빠른 특수가연물의 저장 및 취급 기준으로 옳은 것은? (단, 석탄·목탄류를 발전용으로 저장하는 경우는 제외한다.)</div>
           
           <div class="q-choices">
             
-            <div class="q-choice-item" data-q="12" data-idx="1" onclick="handleChoiceClick(12, 1, 4)">
+            <div class="q-choice-item" data-q="12" data-idx="1" onclick="handleChoiceClick(12, 1, 1)">
               <span class="q-choice-num">①</span>
               <span class="q-choice-text">실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</span>
             </div>
             
-            <div class="q-choice-item" data-q="12" data-idx="2" onclick="handleChoiceClick(12, 2, 4)">
+            <div class="q-choice-item" data-q="12" data-idx="2" onclick="handleChoiceClick(12, 2, 1)">
               <span class="q-choice-num">②</span>
               <span class="q-choice-text">실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</span>
             </div>
             
-            <div class="q-choice-item" data-q="12" data-idx="3" onclick="handleChoiceClick(12, 3, 4)">
+            <div class="q-choice-item" data-q="12" data-idx="3" onclick="handleChoiceClick(12, 3, 1)">
               <span class="q-choice-num">③</span>
               <span class="q-choice-text">쌓는 부분 바닥면적의 사이는 실내의 경우 1미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
             </div>
             
-            <div class="q-choice-item" data-q="12" data-idx="4" onclick="handleChoiceClick(12, 4, 4)">
+            <div class="q-choice-item" data-q="12" data-idx="4" onclick="handleChoiceClick(12, 4, 1)">
               <span class="q-choice-num">④</span>
               <span class="q-choice-text">쌓는 부분 바닥면적의 사이는 실외의 경우 3미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
             </div>
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-12"><div class="inline-exp-head"><span><strong>정답: ④</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-12" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 1) <strong>실외 대지경계선·도로·인접 건축물과의 간격</strong>: 최소 <strong>6미터 이상</strong> 간격을 두어야 하며, 다만 쌓는 높이보다 <strong>1미터 이상</strong>(0.9미터 아님!) 높은 내화구조 벽체를 설치한 경우는 예외로 합니다.
-2) <strong>실내 저장 구조 및 격리</strong>: 실내에 쌓아 저장하는 경우 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 불가!)여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않아야 하되, <strong>내화구조의 벽</strong>(방화구조 아님!)으로 분리하는 경우는 예외로 합니다.
-3) <strong>쌓는 부분 바닥면적 사이의 간격(통로 폭)</strong>: · <strong>실내</strong>: <strong>1.2미터</strong>(구법 1미터에서 1.2미터로 강화됨!) 또는 쌓는 높이의 2분의 1 중 큰 값 이상 · <strong>실외</strong>: <strong>3미터</strong> 또는 쌓는 높이의 2분의 1 중 큰 값 이상</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 <strong>1미터 이상</strong> 높아야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조 또는 불연재료</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 쌓는 부분 바닥면적의 사이는 실내의 경우 1미터가 아니라 <strong>1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다(구 소방기본법 시절 1미터에서 화재예방법 제정 시 1.2미터로 강화됨).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음 · 정답] 쌓는 부분 바닥면적의 사이는 <strong>실외의 경우 3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-12"><div class="inline-exp-head"><span><strong>정답: ①</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-12" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3의 특수가연물 실내·실외 저장 기준을 묻는 핵심 기출 문항입니다.
+1) <strong>실외 대지경계선·도로·인접 건축물과의 간격(별표 3 제3호)</strong>: 최소 <strong>6미터 이상</strong> 간격을 두어야 하며, 다만 쌓는 높이보다 <strong>0.9미터 이상</strong> 높은 내화구조 벽체를 설치한 경우는 예외로 합니다.
+2) <strong>실내 저장 구조 및 격리(별표 3 제2호)</strong>: 실내에 쌓아 저장하는 경우 주요구조부는 <strong>내화구조이면서 불연재료(AND 조건, 준불연재료 불가)</strong>여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않아야 하되, <strong>내화구조의 벽</strong>(방화구조 아님)으로 분리하는 경우는 예외로 합니다.
+3) <strong>쌓는 부분 바닥면적 사이의 간격(통로 폭)</strong>: 실내는 <strong>1.2미터</strong>(구법 1미터에서 강화) 또는 쌓는 높이의 2분의 1 중 큰 값 이상, 실외는 <strong>3미터 또는 쌓는 높이 중 큰 값 이상</strong>(높이의 1/2 아님!)으로 간격을 두어야 합니다.</div><div class="inline-exp-choices"><div class="inline-exp-line is-ans-choice" data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음 · 정답] 실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 쌓는 높이보다 <strong>0.9미터 이상 높은 내화구조 벽체</strong>를 설치한 경우는 그러하지 아니합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조이면서 불연재료(AND 조건)</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림] 쌓는 부분 바닥면적의 사이는 실내의 경우 1미터가 아니라 <strong>1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다(구 소방기본법 시절 1미터에서 화재예방법 제정 시 1.2미터로 강화됨).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 쌓는 부분 바닥면적의 사이는 실외의 경우 '3미터 또는 쌓는 높이의 1/2 중 큰 값'이 아니라 <strong>'3미터 또는 쌓는 높이 중 큰 값 이상'</strong>으로 간격을 두어야 합니다(살수설비 등 설치 시 2미터 이상).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div></div></div></div>
         </article>
         
       </div>
     
       <div class="stats-block" style="margin-top:28px;">
-        <div class="section-subhead">단원 필수 기출 OX 28제</div>
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
         <div class="ox-check-grid">
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 01</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>지정수량의 10배를 초과하는 위험물을 저장할 때 제1류 위험물(알칼리금속의 과산화물 제외)과 제6류 위험물은 유별마다 정리하여 1미터 이상 간격을 두면 동일한 저장소에서 함께 저장할 수 있다.</div>
+            <div>위험물안전관리법 시행규칙 별표 18상 지정수량의 10배를 초과하는 위험물을 옥내저장소에 저장할 때 제1류 위험물(알칼리금속의 과산화물 포함)과 제5류 위험물은 유별마다 정리하여 1미터 이상 간격을 두면 함께 저장할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 02</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물 운반 시 유별 상호 간 혼재가 허용되는 조합은 '제1류와 제6류', '제2류·제4류·제5류 상호 간', '제3류와 제4류'이며, 지정수량의 10분의 1 이하인 위험물에 대하여는 혼재 금지 규정을 적용하지 아니한다.</div>
+            <div>위험물 운반 시 각각의 위험물이 지정수량의 10분의 1을 초과할 때 제1류와 제5류, 제2류와 제3류는 혼재하여 적재할 수 있으며, 지정수량의 5분의 1 이하인 위험물에 대하여는 혼재 금지 규정을 적용하지 아니한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 03</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>위험물안전관리법 시행령상 국제해상위험물규칙(IMDG Code) 용기가 아닌 일반 용기로 옥외저장소에 저장할 수 있는 위험물은 제2류 중 유황, 제4류(특수인화물 및 인화점 섭씨 0도 미만 제1석유류 제외), 제6류 위험물 등이며 제1류 염소산염류는 저장할 수 없다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 04</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물 운반 시 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하(섭씨 55도에서 누설되지 않는 공간용적 유지)로 수납하며, 알킬알루미늄등은 90퍼센트 이하로 수납하되 섭씨 50도의 온도에서 5퍼센트 이상의 공간용적을 유지해야 한다.</div>
+            <div>위험물 운반 시 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하로 수납하며, 자연발화성물질 중 알킬알루미늄등은 95퍼센트 이하로 수납하되 섭씨 55도의 온도에서 10퍼센트 이상의 공간용적을 유지해야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 05</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>제3류 위험물 중 물속에 저장하는 황린과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 하며, 옥내저장소에서 용기에 수납하여 저장하는 위험물의 온도는 섭씨 55도를 넘지 아니하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 06</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>옥내저장소 또는 옥외저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야 한다.</div>
+            <div>옥내저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터 이하로 저장하여야 하나, 지붕이 없는 옥외저장소의 선반에 저장하는 경우에는 10미터 이하까지 저장할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 07</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물 운반용기 외부 주의사항 표시에서 제6류 위험물(과염소산·과산화수소·질산)은 '가연물접촉주의'만 표시하며, 제1류 알칼리금속의 과산화물은 '화기·충격주의, 물기엄금, 가연물접촉주의'를 모두 표시한다.</div>
+            <div>위험물 운반용기 외부 주의사항 표시에서 제6류 위험물은 '화기엄금' 및 '가연물접촉주의'를 표시하고, 제3류 금수성물질은 '화기주의' 및 '물기엄금'을 표시하며, 제2류 중 철분·금속분·마그네슘은 '화기엄금'만 표시한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 08</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>옥내저장소에서 위험물 용기를 겹쳐 쌓는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터, 제4류 중 제3석유류·제4석유류 및 동식물유류 수납 용기는 4미터, 그 밖의 경우는 3미터 높이를 초과하지 아니하여야 한다.</div>
+            <div>옥내저장소에서 위험물 용기를 겹쳐 쌓는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터, 제4류 중 제2석유류·제3석유류·제4석유류 및 동식물유류 수납 용기는 4미터, 그 밖의 경우는 3미터 높이를 초과하지 아니하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 09</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>주유취급소에서 자동차 등에 주유할 때에는 고정주유설비로부터 4미터 이내, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크 주입구로부터 3미터 이내 및 전용탱크 통기관 끝부분으로부터 수평거리 1.5미터 이내의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지해야 한다.</div>
+            <div>주유취급소에서 자동차 등에 주유할 때에는 고정주유설비로부터 4미터 이내, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크 주입구로부터 3미터 이내 및 전용탱크 통기관의 끝부분으로부터 수평거리 2미터 이내의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지해야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 10</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>특수가연물의 기준수량에서 면화류는 200킬로그램 이상이고, 나무껍질 및 대팻밥은 400킬로그램 이상이며, 넝마 및 종이부스러기·사류·볏짚류는 모두 1,000킬로그램 이상이다.</div>
+            <div>특수가연물의 기준수량에서 면화류는 400킬로그램 이상이고, 나무껍질 및 대팻밥은 200킬로그램 이상이며, 넝마 및 종이부스러기·사류·볏짚류는 모두 1,000킬로그램 이상이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 11</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>특수가연물 중 '가연성액체류'의 기준수량은 2세제곱미터 이상이고, '목재가공품 및 나무부스러기'는 10세제곱미터 이상이며, '발포시킨 합성수지류'는 20세제곱미터 이상이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 12</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>석탄 및 목탄류를 발전용으로 저장하는 경우에는 특수가연물 저장·취급 기준을 적용하지 아니한다.</div>
+            <div>석탄 및 목탄류를 발전용으로 저장하는 경우에도 기준수량인 10,000킬로그램 이상에 해당하면 특수가연물 저장·취급 기준을 동일하게 적용한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 13</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>특수가연물의 쌓는 높이는 원칙적으로 10미터 이하, 바닥면적은 50제곱미터(석탄·목탄류는 200제곱미터) 이하로 하되, 살수설비 또는 대형수동식소화기를 설치하는 경우 높이를 15미터 이하, 바닥면적을 200제곱미터(석탄·목탄류는 300제곱미터) 이하로 완화할 수 있다.</div>
+            <div>특수가연물의 쌓는 높이는 원칙적으로 10미터 이하, 바닥면적은 50제곱미터(석탄·목탄류는 100제곱미터) 이하로 하되, 살수설비 또는 대형수동식소화기를 설치하는 경우 높이를 15미터 이하, 바닥면적을 200제곱미터(석탄·목탄류는 400제곱미터) 이하로 완화할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 14</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>석탄·목탄류를 제외한 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 쌓는 높이는 15미터 이하, 쌓는 부분의 바닥면적은 200제곱미터 이하로 할 수 있다.</div>
+            <div>석탄·목탄류를 제외한 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 쌓는 높이는 15미터 이하, 쌓는 부분의 바닥면적은 300제곱미터 이하로 할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 15</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>현행 화재의 예방 및 안전관리에 관한 법률상 특수가연물의 저장 및 취급 기준을 위반한 자에게는 300만 원 이하의 과태료를 부과하며, 시행령 별표 9상 개별기준은 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 16</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 하되, 바탕은 흰색·문자는 검은색으로 하고 '화기엄금' 표시 부분만 바탕을 붉은색·문자를 백색으로 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 17</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>현행 화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물을 쌓는 부분 바닥면적의 사이는 실내의 경우 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상', 실외의 경우 '3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'으로 간격을 두어야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 18</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>특수가연물을 실외에 쌓아 저장하는 경우 대지경계선·도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하나, 쌓는 높이보다 1미터 이상 높은 내화구조 벽체를 설치한 경우는 그러하지 아니하다.</div>
+            <div>특수가연물을 실외에 쌓아 저장하는 경우 대지경계선·도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하나, 쌓는 높이보다 1미터 이상 높은 내화구조 벽체를 설치한 경우에만 면제되며 살수설비를 설치하더라도 실외 바닥면적 사이의 통로 간격은 3미터 미만으로 줄일 수 없다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 19</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[｢위험물안전관리법 시행규칙｣상 위험물의 저장기준] 옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10 m 이하의 높이로 저장하여야 한다.</div>
+            <div>위험물안전관리법 시행규칙상 제3류 위험물 중 황린 그 밖에 물속에 저장하는 물품과 금수성물질은 동일한 저장소에서 저장할 수 없으나, 유별로 정리하여 1미터 이상 간격을 두면 예외적으로 함께 저장할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 20</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[｢화재의 예방 및 안전관리] 특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 할 것. 다만, “화기엄금” 표시 부분은 제외한다.</div>
+            <div>옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 섭씨 40도를 넘지 아니하도록 필요한 조치를 강구하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 21</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[｢화재의 예방 및 안전관리] 실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</div>
+            <div>위험물안전관리법 시행규칙상 옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하의 높이로 저장하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 22</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[｢화재의 예방 및 안전관리] 실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</div>
+            <div>보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점 이하로 유지하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 23</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>인화성 액체(이황화탄소 제외)의 옥외탱크저장소 주위에 설치하는 방유제의 용량은 방유제 안에 설치된 탱크가 2기 이상일 때에는 모든 탱크 용량 합계의 110퍼센트 이상으로 해야 한다.</div>
+            <div>옥내저장소에서 위험물을 저장하는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터 이하로 쌓을 수 있으나, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류를 수납하는 용기는 일반 기준과 동일하게 3미터를 초과하여 쌓을 수 없다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 24</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>인화성 액체 옥외탱크저장소의 방유제는 높이 0.5 m 이상 3 m 이하, 면적 80,000 m² 이하, 방유제 내 탱크 수 10기 이하로 설치하며, 방유제 내에 10,000 L 탱크 1기와 20,000 L 탱크 1기가 함께 설치된 경우 방유제의 용량은 두 탱크 합계의 110%인 33,000 L 이상이어야 한다.</div>
+            <div>제1류 위험물 중 알칼리금속의 과산화물을 운반하고자 수납할 때는 그 운반용기의 외부에 '화기·충격주의' 및 '가연물접촉주의'만 표시하면 되고 '물기엄금'은 표시하지 않아도 된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 25</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물 취급소 중 점포에서 위험물을 용기에 담아 판매하는 판매취급소는 지정수량의 배수에 따라 구분하여, 지정수량의 15배 이하를 취급하는 곳은 제1종 판매취급소, 15배 초과 30배 이하를 취급하는 곳은 제2종 판매취급소라 한다.</div>
+            <div>화재예방법 시행령상 특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 해야 한다. 다만, '화기엄금' 표시 부분은 제외한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 26</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>일반 옥외저장소에는 제1류 위험물 중 염소산염류, 제2류 위험물 중 유황, 제4류 위험물 중 제2석유류, 제6류 위험물을 저장할 수 있다.</div>
+            <div>화재예방법 시행령상 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량 또는 단위체적당 질량 및 화기취급 금지표시만 기재하면 되고, 관리책임자의 성명·직책 및 연락처는 기재하지 않아도 된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 27</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>간이탱크저장소의 간이저장탱크는 1기의 용량이 600 L 이하이고 최대 3기까지 설치할 수 있으므로, 휘발유 전용 600 L 간이저장탱크 2기와 경유 전용 600 L 간이저장탱크 1기를 함께 설치할 수 있다.</div>
+            <div>화재예방법 시행령상 특수가연물을 실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하며, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치하더라도 이격거리는 면제되지 않는다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 28</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>이동탱크저장소(탱크로리)의 탱크는 두께 3.2 mm 이상의 강판으로 제작하고, 내부에는 액체의 출렁임을 막기 위해 2,000 L 이하마다 두께 1.6 mm 이상의 강판으로 칸막이를 설치해야 하며, 칸막이한 부분의 용량이 4,000 L 이상인 경우에는 진행 방향과 평행하게 방파판을 설치해야 한다.</div>
+            <div>화재예방법 시행령상 실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 29</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물안전관리법상 위험물을 이동탱크저장소(탱크로리)에 저장하여 옮기는 것을 '운반'이라 하고, 운반용기(드럼통 등)에 수납하여 화물자동차 등에 실어 옮기는 것을 '이송'이라 한다.</div>
+            <div>위험물안전관리법령상 제조소등이 유지해야 하는 안전거리는 지정문화재로부터 50 m 이상, 학교·병원·300명 이상 다수인 수용시설·20명 이상 노유자시설로부터 30 m 이상, 고압가스·도시가스 시설로부터 20 m 이상, 연면적 100 m² 이상인 일반 주거용 건축물로부터 20 m 이상이며, 제6류 위험물을 취급하는 제조소등도 동일하게 적용된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 30</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>위험물 운반용기의 수납 기준상 고체 위험물은 내용적의 98퍼센트 이하, 액체 위험물은 내용적의 95퍼센트 이하로 수납해야 한다.</div>
+            <div>제조소등과 특고압 가공전선 사이의 안전거리는 사용전압이 7,000 V 초과 35,000 V 이하인 경우 수평거리 3 m 이상, 35,000 V를 초과하는 경우 수평거리 5 m 이상이어야 하며, 제6류 위험물을 취급하는 제조소등은 안전거리 적용이 면제된다.</div>
           </div>
         </div>
       </div>
     
       <div class="compact-bottom-ans">
-        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:① · 05:④ · 06:① · 07:④ · 08:③ · 09:① · 10:② · 11:③ · 12:④</div>
-        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+        <div><strong>[실전 기출 정답]</strong> 01:① · 02:④ · 03:③ · 04:① · 05:④ · 06:① · 07:④ · 08:③ · 09:① · 10:② · 11:③ · 12:①</div>
+        <div><strong>[필수 OX 정답]</strong> 01:X · 02:X · 03:O · 04:X · 05:O · 06:X · 07:X · 08:X · 09:X · 10:X · 11:O · 12:X · 13:X · 14:X · 15:X · 16:O · 17:X · 18:X · 19:X · 20:X · 21:X · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:O</div>
       </div>
     </section>
 
@@ -2246,7 +2477,7 @@
         
         <div class="quick-ans-cell">
           <span class="qa-num">12번</span>
-          <span class="qa-val">④</span>
+          <span class="qa-val">①</span>
         </div>
         
       </div>
@@ -2302,7 +2533,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">④</span> [옳음] 제6류 위험물(과염소산·과산화수소·질산)은 옥외저장소에 저장할 수 있는 법정 위험물에 해당합니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p1" data-qnum="1" data-preview="혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 운반 혼재 허용 (16 · 245 · 34) : 1류↔6류 / 2류↔4류↔5류 / 3류↔4류 (지정수량 $\frac{1}{10}$ 이하는 혼재 규정 미적용) 제3류 내부 동시 저장 금지 : 물속에 저장하는 황린 과 금수성 물질 은 동일 저장…" onclick="jumpToTheory('theory-sec1-p1', 1, this)">📖 기본서 제1절 · 혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec1-p2" data-qnum="1" data-preview="옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 옥내저장소 온도: $55^\circ\text{C}$ 이하 옥내·옥외 선반(랙) 저장 높이 : $6\text{m}$ 이하 (&#39;10m 이하&#39; X!) 옥내 용기 겹쳐 쌓기: 기계하역 $6\text{m}$ / 3·4석…" onclick="jumpToTheory('theory-sec1-p2', 1, this)">📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
           </div>
@@ -2427,7 +2658,7 @@
           </div>
           <div class="exp-summary"><strong>[핵심 해설]</strong> · <strong>제1류(산화성 고체)</strong>: 화기·충격주의, 가연물접촉주의 (단, 알칼리금속 과산화물은 <strong>물기엄금</strong> 추가)
 · <strong>제2류(가연성 고체)</strong>: 화기주의 (철분·금속분·마그네슘은 <strong>물기엄금</strong> 추가, 인화성고체는 <strong>화기엄금</strong>)
-· <strong>제3류</strong>: 자연발화성 = <strong>화기엄금 및 공기접촉엄금</strong>, 금수성 = <strong>물기엄금</strong> (가연성 액체계는 화기엄금 추가)
+· <strong>제3류</strong>: 자연발화성 = <strong>화기엄금 및 공기접촉엄금</strong>, 금수성 = <strong>물기엄금</strong> 단독
 · <strong>제4류(인화성 액체)</strong>: <strong>화기엄금</strong>
 · <strong>제5류(자기반응성물질)</strong>: <strong>화기엄금 및 충격주의</strong>
 · <strong>제6류(산화성 액체 · 과염소산·과산화수소·질산)</strong>: 불연성 액체 산화제이므로 오직 <strong>'가연물접촉주의'( ㄱ )</strong> 하나만 표시합니다!</div>
@@ -2439,7 +2670,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 제6류 위험물인 과염소산은 불연성 산화성 액체로서 가연물과 접촉 시 발화·폭발 위험이 있으므로 운반용기 외부에 <strong>'가연물접촉주의'( ㄱ )</strong>만 표기합니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2449,7 +2680,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">②</span> [틀림] '공기접촉엄금'( ㄴ ) 및 '화기엄금'( ㄷ )은 제3류 자연발화성물질(황린 등)에 표기하는 주의사항입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2459,7 +2690,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">③</span> [틀림] '화기엄금'( ㄷ ) 및 '충격주의'( ㅁ )는 제5류 자기반응성물질에 표기하는 주의사항입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2469,7 +2700,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">④</span> [틀림] '화기·충격주의', '물기엄금', '가연물접촉주의'(ㄱ, ㄹ, ㅁ, ㅂ)는 제1류 위험물 중 알칼리금속의 과산화물에 표기하는 주의사항입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="4" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 4, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제6류(과염소산 등): 오직 ‘가연물접촉주의’만 단독 표시! (&#39;화기엄금&#39; X) · 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 · 제3류 금수성: 물기엄금 단독" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
           </div>
@@ -2484,7 +2715,7 @@
             </div>
             <div class="exp-header-right">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출)</div>
           </div>
-          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18에 따른 위험물의 저장·취급 및 운반 종합 기준입니다. 주유취급소에서 다른 자동차의 주차 및 점검·정비·세정을 금지하는 범위는 ① 고정주유설비로부터 <strong>4미터 이내</strong>의 부분, ② 전용탱크의 <strong>주입구로부터 3미터 이내</strong>의 부분, ③ 전용탱크 <strong>통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분입니다(고정주유설비에 접속된 탱크 주입구가 아니라 고정주유설비 자체로부터 4미터 이내이며, 통기관 끝부분으로부터는 2미터가 아니라 <strong>1.5미터 이내</strong>임).</div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢위험물안전관리법 시행규칙｣ 별표 18에 따른 위험물의 저장·취급 및 운반 종합 기준입니다. 주유취급소에서 다른 자동차의 주차 및 점검·정비·세정을 금지하는 범위는 ① <strong>고정주유설비 또는 고정주유설비에 접속된 탱크의 주입구로부터 4미터 이내</strong>의 부분, ② 전용탱크의 <strong>주입구로부터 3미터 이내</strong>의 부분, ③ 전용탱크 <strong>통기관의 끝부분으로부터 수평거리 1.5미터 이내</strong>의 부분입니다(통기관 끝부분으로부터는 2미터가 아니라 <strong>1.5미터 이내</strong>임).</div>
           <div class="exp-choices-list">
             <div class="exp-choice-item">
               <div class="exp-choice-head orig-choice-line">
@@ -2503,7 +2734,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">②</span> [옳음] 제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="5" data-preview="운반용기 수납률 · 유별 외부 주의사항 표시 (별표 19 · 2025 Q39 · 2026 Q34) 제1류 알칼리금속 과산화물: 화기·충격주의 + 물기엄금 + 가연물접촉주의 3종 모두 표시" onclick="jumpToTheory('theory-sec2-p3', 5, this)">📖 기본서 제2절 · 운반용기 수납률 및 외부 주의사항 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2523,7 +2754,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">④</span> [틀림 · 정답] 주유취급소에서 주차 및 점검·정비·세정이 금지되는 통기관 끝부분으로부터의 수평거리는 2미터 이내가 아니라 <strong>1.5미터 이내</strong>이며, 주유 시에는 고정주유설비로부터 <strong>4미터 이내</strong>, 전용탱크 주입 시에는 전용탱크 주입구로부터 <strong>3미터 이내</strong>입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 제6류(과염소산 등) 주의사항 : 오직 ‘가연물접촉주의’ 만 표시! (&#39;화기엄금&#39; X) 제1류 알칼리금속 과산화물 : 화기·충격주의 + 물기엄금 + 가연물접촉주의 주유취급소 주차·정비·세정 금지 거리 : 고정주유설비…" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="5" data-preview="간이탱크 · 이동탱크 · 주유취급소 금지 거리 (2026 Q34) 주유취급소 주차·정비·세정 금지 거리: 고정주유설비 4 m 이내 · 전용탱크 주입구 3 m 이내 · 통기관 끝 수평거리 1.5 m 이내" onclick="jumpToTheory('theory-sec2-p4', 5, this)">📖 기본서 제2절 · 간이·이동탱크 및 주유취급소 거리 (2026 Q34) 본문 보기</button></div>
               </div>
             </div>
           </div>
@@ -2754,7 +2985,7 @@
             </div>
             <div class="exp-header-right">2022 소방공채 Q5 (특수가연물 저장·취급기준 위반 과태료 기출)</div>
           </div>
-          <div class="exp-summary"><strong>[핵심 해설]</strong> 출제 당시 구 ｢소방기본법 시행령｣ 별표 3에 따르면 특수가연물의 저장 및 취급 기준을 위반한 경우 과태료 금액은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다. 단, 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제1항 제2호(300만 원 이하의 과태료) 및 같은 법 시행령 별표 9 제2호 라목에서는 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원으로 상향 개정되었으므로 현행 수치를 반드시 함께 숙지해야 합니다.</div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 출제 당시 구 ｢소방기본법 시행령｣ 별표 3에 따르면 특수가연물의 저장 및 취급 기준을 위반한 경우 과태료 금액은 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다. 단, 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 같은 법 시행령 별표 9에서는 <strong>200만 원 이하의 과태료(1차 위반 200만 원, 2차 위반 200만 원, 3차 이상 위반 200만 원)</strong>로 규정하고 있으므로 현행 수치를 반드시 함께 숙지해야 합니다.</div>
           <div class="exp-choices-list">
             <div class="exp-choice-item">
               <div class="exp-choice-head orig-choice-line">
@@ -2762,7 +2993,7 @@
                 <span class="exp-choice-orig">ㄱ: 50 / ㄴ: 100 / ㄷ: 150 / ㄹ: 200</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">①</span> [틀림] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 일치하지 않으며, 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9 기준(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)과도 다릅니다.
+                <span class="exp-choice-num-inline">①</span> [틀림] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3 기준(1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원)과 일치하지 않으며, 현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9 기준(1차·2차·3차 이상 모두 200만 원)과도 다릅니다.
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
@@ -2772,7 +3003,7 @@
                 <span class="exp-choice-orig">ㄱ: 20 / ㄴ: 50 / ㄷ: 100 / ㄹ: 100</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3상 특수가연물 저장·취급기준 위반 과태료는 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다 (현행 ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 9에서는 1차 100만 원, 2차 200만 원, 3차 이상 300만 원으로 상향 개정됨).
+                <span class="exp-choice-num-inline">②</span> [옳음 · 정답] 2022년 출제 당시 구 ｢소방기본법 시행령｣ 별표 3상 특수가연물 저장·취급기준 위반 과태료는 1회 20만 원, 2회 50만 원, 3회 100만 원, 4회 이상 100만 원이었습니다 (현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 시행령 별표 9에서는 1차·2차·3차 이상 모두 200만 원으로 규정됨).
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="10" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 10, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
@@ -2847,7 +3078,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">④</span> [옳음] 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="11" data-preview="특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 200kg : 면화류 400kg : 나무껍질 및 대팻밥 1,000kg : 넝마 및 종이부스러기 · 사류 · 볏짚류 3,000kg : 가연성고체류 · 기타 합성수지류 10,000kg : 석탄·목탄류 (발전용은 적용 제외) 체적($\…" onclick="jumpToTheory('theory-sec3-p5', 11, this)">📖 기본서 제3절 · 특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="11" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 11, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
           </div>
@@ -2858,21 +3089,22 @@
           <div class="exp-card-header">
             <div class="exp-header-left">
               <span class="exp-num-badge">문항 12</span>
-              <span class="exp-ans-badge">정답 ④</span>
+              <span class="exp-ans-badge">정답 ①</span>
             </div>
             <div class="exp-header-right">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출)</div>
           </div>
-          <div class="exp-summary"><strong>[핵심 해설]</strong> 1) <strong>실외 대지경계선·도로·인접 건축물과의 간격</strong>: 최소 <strong>6미터 이상</strong> 간격을 두어야 하며, 다만 쌓는 높이보다 <strong>1미터 이상</strong>(0.9미터 아님!) 높은 내화구조 벽체를 설치한 경우는 예외로 합니다.
-2) <strong>실내 저장 구조 및 격리</strong>: 실내에 쌓아 저장하는 경우 주요구조부는 <strong>내화구조 또는 불연재료</strong>(준불연재료 불가!)여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않아야 하되, <strong>내화구조의 벽</strong>(방화구조 아님!)으로 분리하는 경우는 예외로 합니다.
-3) <strong>쌓는 부분 바닥면적 사이의 간격(통로 폭)</strong>: · <strong>실내</strong>: <strong>1.2미터</strong>(구법 1미터에서 1.2미터로 강화됨!) 또는 쌓는 높이의 2분의 1 중 큰 값 이상 · <strong>실외</strong>: <strong>3미터</strong> 또는 쌓는 높이의 2분의 1 중 큰 값 이상</div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재의 예방 및 안전관리에 관한 법률 시행령｣ 별표 3의 특수가연물 실내·실외 저장 기준을 묻는 핵심 기출 문항입니다.
+1) <strong>실외 대지경계선·도로·인접 건축물과의 간격(별표 3 제3호)</strong>: 최소 <strong>6미터 이상</strong> 간격을 두어야 하며, 다만 쌓는 높이보다 <strong>0.9미터 이상</strong> 높은 내화구조 벽체를 설치한 경우는 예외로 합니다.
+2) <strong>실내 저장 구조 및 격리(별표 3 제2호)</strong>: 실내에 쌓아 저장하는 경우 주요구조부는 <strong>내화구조이면서 불연재료(AND 조건, 준불연재료 불가)</strong>여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않아야 하되, <strong>내화구조의 벽</strong>(방화구조 아님)으로 분리하는 경우는 예외로 합니다.
+3) <strong>쌓는 부분 바닥면적 사이의 간격(통로 폭)</strong>: 실내는 <strong>1.2미터</strong>(구법 1미터에서 강화) 또는 쌓는 높이의 2분의 1 중 큰 값 이상, 실외는 <strong>3미터 또는 쌓는 높이 중 큰 값 이상</strong>(높이의 1/2 아님!)으로 간격을 두어야 합니다.</div>
           <div class="exp-choices-list">
-            <div class="exp-choice-item">
+            <div class="exp-choice-item is-answer">
               <div class="exp-choice-head orig-choice-line">
                 <span class="exp-choice-num">①</span>
                 <span class="exp-choice-orig">실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">①</span> [틀림] 실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 <strong>1미터 이상</strong> 높아야 합니다.
+                <span class="exp-choice-num-inline">①</span> [옳음 · 정답] 실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 쌓는 높이보다 <strong>0.9미터 이상 높은 내화구조 벽체</strong>를 설치한 경우는 그러하지 아니합니다.
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
@@ -2882,7 +3114,7 @@
                 <span class="exp-choice-orig">실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">②</span> [틀림] 실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조 또는 불연재료</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.
+                <span class="exp-choice-num-inline">②</span> [틀림] 실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조이면서 불연재료(AND 조건)</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
@@ -2896,13 +3128,13 @@
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
-            <div class="exp-choice-item is-answer">
+            <div class="exp-choice-item">
               <div class="exp-choice-head orig-choice-line">
                 <span class="exp-choice-num">④</span>
                 <span class="exp-choice-orig">쌓는 부분 바닥면적의 사이는 실외의 경우 3미터 또는 쌓는 높이의 1/2 중 큰 값 이상으로 간격을 둘 것</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">④</span> [옳음 · 정답] 쌓는 부분 바닥면적의 사이는 <strong>실외의 경우 3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상</strong>으로 간격을 두어야 합니다.
+                <span class="exp-choice-num-inline">④</span> [틀림] 쌓는 부분 바닥면적의 사이는 실외의 경우 '3미터 또는 쌓는 높이의 1/2 중 큰 값'이 아니라 <strong>'3미터 또는 쌓는 높이 중 큰 값 이상'</strong>으로 간격을 두어야 합니다(살수설비 등 설치 시 2미터 이상).
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="12" data-preview="특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 높이·바닥면적 : 원칙 $10\text{m}$ 이하 · $50\text{m}^2$(석탄·목탄 $200\text{m}^2$) 이하 ➔ 살수·대형소화기 설치 시 $15\t…" onclick="jumpToTheory('theory-sec3-p6', 12, this)">📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기</button></div>
               </div>
             </div>
@@ -2912,122 +3144,130 @@
       </div>
     
       <div class="stats-block" style="margin-top:28px;">
-        <div class="section-subhead">단원 필수 기출 OX 28제 정답 및 해설</div>
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
         <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
-          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:O · 12:O · 13:O · 14:O · 15:O · 16:O · 17:O · 18:O · 19:X · 20:X · 21:X · 22:X · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:X · 02:X · 03:O · 04:X · 05:O · 06:X · 07:X · 08:X · 09:X · 10:X · 11:O · 12:X · 13:X · 14:X · 15:X · 16:O · 17:X · 18:X · 19:X · 20:X · 21:X · 22:O · 23:X · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:O
         </div>
         <div class="ox-check-grid">
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 01 · O 옳음</span>제1류 산화성고체(알칼리금속 과산화물 제외)와 제6류 산화성액체는 둘 다 불연성 산화제로서 상호 반응 위험이 낮아 혼재가 허용됩니다.
-            <span class="ox-exp-src">위험물 혼재기준 핵심</span>
+            <span class="ox-exp-badge x">OX 01 · X 틀림</span>사각지대 킬러! 두 가지가 틀렸습니다. 첫째, 위험물안전관리법 시행규칙 별표 18 제3호의 저장 혼재 예외에는 '지정수량의 10배 초과'라는 요건이 존재하지 않으며(지정수량 10분의 1 이하 면제 외에는 옥내·옥외저장소에서 1미터 이상 간격으로 6대 예외 조합만 허용), 둘째, 제1류와 제5류 혼재 시에는 수분·열 방출 폭발을 막기 위해 제1류에서 '알칼리금속의 과산화물'을 반드시 제외해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 저장 혼재 예외(별표 18) = '10배 초과' 없음 + 1류(알칼리금속 과산화물 제외)↔5류!</span>
+            <span class="ox-exp-src">위험물 저장 혼재기준 핵심 · 최신 사각지대 킬러 (별표 18 '10배 초과' 허위 요건 및 알칼리금속 과산화물 제외)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 02 · O 옳음</span>유별 혼재 허용 공식(16 · 245 · 34)과 지정수량 10분의 1 이하 면제 기준은 위험물 운반·저장 파트의 핵심 원칙입니다.
-            <span class="ox-exp-src">위험물 운반 혼재기준 핵심</span>
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>시행규칙 별표 19 부표 2상 운반 혼재 허용 5쌍은 '16 · 245 · 34'(제1류↔제6류, 제2류·제4류·제5류 상호 간, 제3류↔제4류)뿐이므로 제1류와 제5류, 제2류와 제3류는 혼재할 수 없습니다. 또한 혼재 금지 면제 기준은 지정수량의 5분의 1 이하가 아니라 '10분의 1 이하'입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 운반 혼재 = 5쌍(16·245·34) + 면제는 지정수량 10분의 1 이하! 1↔5, 2↔3, 5분의 1은 모두 X입니다.</span>
+            <span class="ox-exp-src">위험물 운반 혼재기준(별표 19 부표 2) 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 03 · O 옳음</span>옥외저장소 저장 가능 품목(제2류 유황, 제4류 인화점 0도 이상 제1석유류·알코올류·제2·3·4석유류·동식물유류, 제6류)은 필수 암기 사항입니다.
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>일반 용기로 옥외저장소에 저장 가능한 품목은 제2류 중 유황(및 인화점 0도 이상 인화성고체), 제4류 중 인화점 0도 이상 제1석유류·알코올류·제2·3·4석유류·동식물유류, 제6류 위험물이며 홀수 유별인 제1·3·5류는 저장할 수 없습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 일반 옥외저장소 = 짝수 유별 중심(2류 유황 · 4류 0℃↑ · 6류), 홀수 1·3·5류는 불가!</span>
             <span class="ox-exp-src">2023 소방공채 Q22 · 경채 Q35 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 04 · O 옳음</span>운반용기 수납률 3대 수치(고체 95퍼센트, 액체 98퍼센트/55도, 알킬알루미늄등 90퍼센트/50도·5퍼센트 공간)는 숫자 바꿔치기 1순위 지문입니다.
-            <span class="ox-exp-src">2023 소방공채 Q25 · 경채 Q40 기출</span>
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>고체 95퍼센트 이하, 액체 98퍼센트 이하(섭씨 55도 누설 방지)는 맞지만, 알킬알루미늄등은 운반용기 내용적의 '90퍼센트 이하'로 수납하되 '섭씨 50도의 온도에서 5퍼센트 이상'의 공간용적을 유지해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 알킬알루미늄등 수납률 = 90% 이하 · 50℃ · 공간 5%↑! (95%·55℃·10%는 기출 오답 선지 그대로이므로 X)</span>
+            <span class="ox-exp-src">2023 소방공채 Q25 · 경채 Q40 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 05 · O 옳음</span>황린(수중 저장·물 소화)과 금수성물질(물 접촉 시 폭발)의 동일 저장소 저장 금지 원칙과 옥내저장소 섭씨 55도 이하 온도 제한은 핵심 저장기준입니다.
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>황린(수중 저장·물 소화)과 금수성물질(물 접촉 시 폭발)의 동일 저장소 저장 금지 원칙과 옥내저장소 섭씨 55도 이하 온도 제한은 핵심 저장기준입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 황린·금수성 동일 저장소 절대 금지 + 옥내저장소 온도 55 ℃ 이하!</span>
             <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 06 · O 옳음</span>선반(랙) 저장 시 높이 제한은 옥내·옥외저장소 모두 '6미터 이하(6미터 초과 금지)'입니다.
-            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
+            <span class="ox-exp-badge x">OX 06 · X 틀림</span>위험물안전관리법 시행규칙 별표 18상 위험물을 수납한 용기를 선반(랙)에 저장하는 경우의 높이 제한은 옥내저장소와 옥외저장소 모두 '6미터 이하(6미터 초과 금지)'로 동일합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 선반(랙) 저장 높이 = 옥내·옥외저장소 공통 6 m 이하! 옥외 선반 10 m는 X입니다.</span>
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 07 · O 옳음</span>제6류는 불연성 산화성 액체이므로 오직 '가연물접촉주의' 하나만 표시하며, 제1류 알칼리금속 과산화물은 금수성을 겸비하여 '물기엄금'까지 3가지를 표시합니다.
-            <span class="ox-exp-src">2025 소방경채 Q39 · 2026 소방경채 Q34 기출</span>
+            <span class="ox-exp-badge x">OX 07 · X 틀림</span>사각지대 킬러! 세 유별 모두 주의사항이 왜곡되었습니다. ① 제6류는 불연성 산화성 액체이므로 '화기엄금' 없이 오직 '가연물접촉주의' 단독 표시, ② 제3류 금수성물질은 '화기주의' 없이 오직 '물기엄금' 단독 표시, ③ 제2류 철분·금속분·마그네슘은 '화기주의' 및 '물기엄금' 두 가지를 표시합니다(인화성고체만 '화기엄금'). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 6류='가연물접촉주의' 단독, 3류 금수='물기엄금' 단독, 2류 철금마='화기주의'+'물기엄금'!</span>
+            <span class="ox-exp-src">2025 소방경채 Q39 · 2026 소방경채 Q34 기출 변형 · 최신 사각지대 킬러 (유별 운반용기 주의사항)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 08 · O 옳음</span>옥내저장소 용기 적재 높이 3단계(기계하역 6미터, 3·4석유류·동식물유류 4미터, 기타 3미터)는 필수 수치입니다.
-            <span class="ox-exp-src">2026 소방경채 Q34 기출</span>
+            <span class="ox-exp-badge x">OX 08 · X 틀림</span>옥내저장소에서 용기를 겹쳐 쌓을 때 4미터 이하가 허용되는 것은 제4류 중 '제3석유류·제4석유류 및 동식물유류' 수납 용기뿐이며, 제2석유류 수납 용기는 그 밖의 경우로서 원칙인 3미터 이하를 적용받습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 옥내 4 m 적재 = 3·4석유류·동식물유류만! 제2석유류가 끼어들면 X입니다.</span>
+            <span class="ox-exp-src">2026 소방경채 Q34 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 09 · O 옳음</span>주유취급소 주차·정비·세정 금지 거리(고정주유설비 4미터, 전용탱크 주입구 3미터, 통기관 끝부분 수평거리 1.5미터 이내)에서 통기관 거리를 2미터로 속이는 함정에 주의해야 합니다.
-            <span class="ox-exp-src">2026 소방경채 Q34 기출</span>
+            <span class="ox-exp-badge x">OX 09 · X 틀림</span>고정주유설비로부터 4미터 이내, 전용탱크 주입구로부터 3미터 이내는 맞지만, 전용탱크 통기관의 끝부분으로부터는 수평거리 2미터 이내가 아니라 '1.5미터 이내'에서 주차 및 점검·정비·세정을 금지합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 주유취급소 금지 거리 = 주유설비 4 m · 주입구 3 m · 통기관 끝 1.5 m! (2 m는 2026년 기출 오답 함정)</span>
+            <span class="ox-exp-src">2026 소방경채 Q34 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 10 · O 옳음</span>특수가연물 질량 기준수량: 면화류(200킬로그램), 나무껍질·대팻밥(400킬로그램), 넝마·종이부스러기·사류·볏짚류(1,000킬로그램), 가연성고체류·기타 합성수지류(3,000킬로그램), 석탄·목탄류(10,000킬로그램).
-            <span class="ox-exp-src">2018 하반기 경채 Q2 기출</span>
+            <span class="ox-exp-badge x">OX 10 · X 틀림</span>면화류와 나무껍질·대팻밥의 기준수량이 서로 바뀌었습니다. 불길이 가장 빠른 면화류가 '200킬로그램 이상'이고, 나무껍질 및 대팻밥이 '400킬로그램 이상'입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 1위(가장 소량) = 면화류 200 kg, 2위 = 나무껍질·대팻밥 400 kg!</span>
+            <span class="ox-exp-src">2018 하반기 경채 Q2 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 11 · O 옳음</span>특수가연물 중 체적(세제곱미터) 단위 3종(가연성액체류 2세제곱미터, 목재가공품·나무부스러기 10세제곱미터, 발포합성수지류 20세제곱미터)과 가연성고체류(3,000킬로그램)·석탄·목탄류(10,000킬로그램) 기준수량입니다.
+            <span class="ox-exp-badge o">OX 11 · O 옳음</span>특수가연물 10대 품명 중 체적(세제곱미터) 단위 3종은 가연성액체류(2세제곱미터), 목재가공품 및 나무부스러기(10세제곱미터), 발포시킨 합성수지류(20세제곱미터)이며, 나머지 7종은 모두 질량(킬로그램) 단위입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 부피 3종 = 가연성액체 2 · 목재가공 10 · 발포합성수지 20 m3!</span>
             <span class="ox-exp-src">2021 소방경채 Q4 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 12 · O 옳음</span>석탄·목탄류 중 발전용으로 저장·취급하는 것은 법령상 특수가연물 저장·취급 기준 적용 제외 대상에 해당합니다.
-            <span class="ox-exp-src">화재예방법 시행령 별표 3 핵심</span>
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>화재예방법 시행령 별표 3 비고에 따라 석탄 및 목탄류를 '발전용'으로 저장·취급하는 경우에는 특수가연물의 저장 및 취급 기준을 적용하지 아니합니다(제외). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 석탄·목탄류를 '발전용'으로 저장 시 특수가연물 기준 적용 제외!</span>
+            <span class="ox-exp-src">화재예방법 시행령 별표 3 핵심 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 13 · O 옳음</span>특수가연물 높이(10미터 ➔ 완화 시 15미터)와 바닥면적(일반 50 ➔ 200제곱미터 / 석탄·목탄류 200 ➔ 300제곱미터)은 최빈출 수치입니다.
-            <span class="ox-exp-src">2018 하반기 경채 Q11 기출</span>
+            <span class="ox-exp-badge x">OX 13 · X 틀림</span>석탄·목탄류의 쌓는 부분 바닥면적은 원칙 '200제곱미터 이하', 살수설비 또는 대형수동식소화기 설치 시 완화 바닥면적은 '300제곱미터 이하'입니다(100제곱미터·400제곱미터는 오답 수치). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 바닥면적 = 일반 50➔200 m2, 석탄·목탄류 200➔300 m2!</span>
+            <span class="ox-exp-src">2018 하반기 경채 Q11 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 14 · O 옳음</span>석탄·목탄류 제외 조건이 주어졌으므로 완화 바닥면적은 300제곱미터가 아니라 200제곱미터 이하입니다.
-            <span class="ox-exp-src">2020 소방경채 Q5 기출</span>
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>석탄·목탄류를 제외한 일반 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 완화되는 바닥면적은 300제곱미터가 아니라 '200제곱미터 이하'입니다(300제곱미터는 석탄·목탄류에만 적용). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 석탄·목탄류 제외 시 완화 면적 = 200 m2 이하! 300 m2면 X입니다.</span>
+            <span class="ox-exp-src">2020 소방경채 Q5 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 15 · O 옳음</span>구 소방기본법 시절(1회 20만·2회 50만·3회 100만·4회 이상 100만 원)에서 현행 화재예방법 제52조 제1항 제2호 및 시행령 별표 9(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)로 상향 개정되었습니다.
-            <span class="ox-exp-src">2022 소방공채 Q5 기출</span>
+            <span class="ox-exp-badge x">OX 15 · X 틀림</span>사각지대 킬러! 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 같은 법 시행령 별표 9상 특수가연물 저장 및 취급 기준 위반 시에는 '200만 원 이하의 과태료'가 부과되며, 횟수별 개별기준 역시 1차·2차·3차 이상 위반 모두 동일하게 '200만 원'입니다(300만 원 이하 및 100·200·300만 원 차등 부과는 오답 함정). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 기준 위반 = 법 제52조 제2항 제1호 · 200만 원 이하 과태료(1·2·3차 모두 200만 원)!</span>
+            <span class="ox-exp-src">2022 소방공채 Q5 기출 변형 · 최신 사각지대 킬러 (현행 화재예방법 별표 9 과태료 200만 원)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 16 · O 옳음</span>특수가연물 표지 규격(0.3미터 이상 × 0.6미터 이상)과 색상(일반: 백색 바탕·흑색 문자 / 화기엄금: 적색 바탕·백색 문자)은 빈출 포인트입니다.
+            <span class="ox-exp-badge o">OX 16 · O 옳음</span>특수가연물 표지 규격(0.3미터 이상 × 0.6미터 이상)과 색상(일반: 백색 바탕·흑색 문자 / 화기엄금: 적색 바탕·백색 문자)은 빈출 포인트입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 표지 = 0.3 × 0.6 m · 흰 바탕 검정 글씨('화기엄금'만 붉은 바탕 흰 글씨)!</span>
             <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 17 · O 옳음</span>화재예방법 시행령 별표 3에서 실내 간격이 구법 1미터에서 '1.2미터(또는 높이의 2분의 1 중 큰 값)'로 강화되었습니다.
+            <span class="ox-exp-badge x">OX 17 · X 틀림</span>실내는 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'이 맞지만, 실외는 쌓는 높이의 2분의 1이 아니라 '3미터 또는 쌓는 높이 중 큰 값 이상'으로 간격을 두어야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 실내 통로 = 1.2 m or 높이 1/2↑ / 실외 통로 = 3 m or 쌓는 높이↑('1/2' 붙으면 X)!</span>
+            <span class="ox-exp-src">2024 소방경채 Q17 기출 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>사각지대 킬러! 화재예방법 시행령 별표 3 제3호상 ① 실외 6미터 이격 예외가 되는 내화구조 벽체는 쌓는 높이보다 '0.9미터 이상' 높으면 되며(1미터 아님!), ② 살수설비 또는 대형수동식소화기를 설치한 경우 실외 바닥면적 사이의 통로 간격은 '2미터 이상'으로 완화됩니다(실내 완화 시는 1.2미터 이상). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 실외 면제 내화벽 = 쌓는 높이 + 0.9 m↑ · 실외 완화 통로 = 2 m↑!</span>
+            <span class="ox-exp-src">2024 소방경채 Q17 기출 변형 · 최신 사각지대 킬러 (별표 3 제3호 실외 0.9m 벽체 및 완화 2m 통로)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 19 · X 틀림</span>같은 제3류 위험물이라도 물속에 저장하고 주수소화하는 황린과 물과 만나면 폭발하는 금수성물질(칼륨·나트륨·탄화칼슘 등)은 소화 방법이 정반대이므로 1미터 간격을 두더라도 동일한 저장소에 절대 함께 저장할 수 없습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 제3류 황린 vs 금수성 = 1 m 간격 예외 없이 동일 저장소 동시 저장 절대 금지!</span>
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>옥내저장소에서 용기에 수납하여 저장하는 위험물의 상한 온도는 섭씨 40도가 아니라 '섭씨 55도'를 넘지 아니하도록 환기·냉방 등 필요한 조치를 강구해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 옥내저장소 온도 제한 = 55 ℃ 이하! (40 ℃로 낮추면 X)</span>
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 '6미터 이하의 높이(6미터를 초과하지 아니할 것)'로 저장하여야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 옥외저장소 선반 저장 = 6 m 이하! 10 m는 기출 오답 선지입니다.</span>
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 22 · O 옳음</span>보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 증기압 상승을 막기 위해 당해 위험물의 비점(끓는점) 이하로 유지해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 보냉장치 이동탱크 아세트알데히드·디에틸에테르 = 당해 위험물의 비점 이하 유지!</span>
+            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 23 · X 틀림</span>옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 6미터, 제4류 중 제3석유류·제4석유류 및 동식물유류 수납 용기 '4미터', 그 밖의 경우 3미터 이하입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 옥내 적재 높이 = 기계 6 m · 3·4석유류·동식물유 4 m · 기타 3 m!</span>
+            <span class="ox-exp-src">2026 소방경채 Q34 기출 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>제1류 일반 품목은 '화기·충격주의'와 '가연물접촉주의' 2종만 표시하지만, 물과 반응해 산소·열을 방출하는 알칼리금속의 과산화물은 '물기엄금'까지 3종을 모두 표시해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 1류 알칼리금속 과산화물 = 화기·충격주의 + 가연물접촉주의 + 물기엄금 3종 모두!</span>
+            <span class="ox-exp-src">2026 소방경채 Q34 기출 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>특수가연물 표지의 일반 부분 바탕은 흰색(백색)으로, 문자는 검은색(흑색)으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 표지 일반 = 흰 바탕·검정 문자 ('화기엄금'만 붉은 바탕·흰 문자)!</span>
+            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 기출</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특수가연물 표지 기재사항 = 품명·최대저장수량·단위부피당 질량·관리책임자 성명/직책/연락처·화기엄금 모두 필수!</span>
+            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 쌓는 높이보다 '0.9미터 이상 높은 내화구조 벽체'를 설치한 경우에는 6미터 이격 의무가 면제됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 실외 6 m 이격 예외 = 쌓는 높이보다 0.9 m 이상 높은 내화구조 벽체 설치 시 면제!</span>
+            <span class="ox-exp-src">2024 소방경채 Q17 기출 변형</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>실내 저장 시 주요구조부는 준불연재료가 아닌 '내화구조이면서 불연재료(AND 조건)'여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 '내화구조의 벽'으로 분리해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 실내 주요구조부 = 내화구조 + 불연재료(AND), 이종 분리 = 내화구조의 벽!</span>
             <span class="ox-exp-src">2024 소방경채 Q17 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 18 · O 옳음</span>실외 저장 시 대지경계선 이격거리(6미터 이상)와 예외 벽체 기준(쌓는 높이보다 1미터 이상 높은 내화구조 벽체; 0.9미터 아님)은 최신 기출 핵심 지문입니다.
-            <span class="ox-exp-src">2024 소방경채 Q17 기출</span>
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>두 가지가 틀렸습니다. 첫째, 위험물안전관리법 시행규칙 별표 4상 부지 외 주거용 건축물·공작물에 대한 안전거리는 연면적과 무관하게 '10 m 이상'입니다('연면적 100 m² 이상 20 m' 기준은 존재하지 않음). 둘째, 자체는 불연성 산화제인 제6류 위험물 취급 제조소등은 안전거리 적용이 면제됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 안전거리 = 문화재 50 · 학교/병원/300명↑ 다수인/20명↑ 노유자 30 · 고압/LPG/도시가스 20 · 주거용 10 m, 제6류는 안전거리 면제!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (제조소등 대상별 안전거리 50m·30m·20m·10m 및 제6류 면제)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 19 · O 옳음</span>같은 제3류 위험물이라도 물속에 저장하는 황린과 물과 만나면 폭발하는 금수성물질(칼륨·나트륨·탄화칼슘 등)은 소화 방법이 정반대이므로 동일한 저장소에 함께 저장하면 안 됩니다.
-            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 20 · O 옳음</span>옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 섭씨 55도를 넘지 아니하도록 환기·냉방 등 필요한 조치를 강구해야 합니다.
-            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge x">OX 21 · X 틀림</span>옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 <strong>6미터 이하의 높이(6미터를 초과하지 아니할 것)</strong>로 저장하여야 합니다.
-            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 22 · O 옳음</span>보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 증기압 상승을 막기 위해 당해 위험물의 비점(끓는점) 이하로 유지해야 합니다.
-            <span class="ox-exp-src">2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 23 · O 옳음</span>옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 <strong>6미터</strong>, 제4류 중 제3·4석유류 및 동식물유류 수납 용기 <strong>4미터</strong>, 그 밖의 경우 <strong>3미터</strong> 이하입니다.
-            <span class="ox-exp-src">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출) · 옥내저장소 용기 겹쳐 쌓기 높이(6m·4m·3m), 운반 주의사항 및 주유취급소 이격거리</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 24 · O 옳음</span>제1류 알칼리금속의 과산화물 운반용기 외부에는 '화기·충격주의', '물기엄금', '가연물접촉주의'를 모두 표시해야 합니다.
-            <span class="ox-exp-src">2026 소방경채 Q34 (위험물 적재높이·운반·주유취급소 교차기출) · 옥내저장소 용기 겹쳐 쌓기 높이(6m·4m·3m), 운반 주의사항 및 주유취급소 이격거리</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge x">OX 25 · X 틀림</span>특수가연물 표지의 바탕은 <strong>흰색(백색)</strong>으로, 문자는 <strong>검은색(흑색)</strong>으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림).
-            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출) · 화재예방법령상 특수가연물 표지의 규격(0.3m×0.6m)·바탕색(흰색)·문자색(검은색) 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 26 · O 옳음</span>특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다.
-            <span class="ox-exp-src">2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출) · 화재예방법령상 특수가연물 표지의 규격(0.3m×0.6m)·바탕색(흰색)·문자색(검은색) 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge x">OX 27 · X 틀림</span>실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 <strong>1미터 이상</strong> 높아야 합니다.
-            <span class="ox-exp-src">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준</span>
-          </div>
-          <div class="ox-exp-item">
-            <span class="ox-exp-badge x">OX 28 · X 틀림</span>실내 저장 시 주요구조부는 준불연재료가 아닌 <strong>내화구조 또는 불연재료</strong>여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 <strong>내화구조의 벽</strong>으로 분리해야 합니다.
-            <span class="ox-exp-src">2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준</span>
+            <span class="ox-exp-badge o">OX 30 · O 옳음</span>특고압 가공전선 안전거리(사용전압 7,000 V 초과 35,000 V 이하 3 m 이상, 35,000 V 초과 5 m 이상)와 제6류 안전거리 면제 기준은 안전거리 표의 핵심입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 특고압 가공전선 = 7,000 V 초과 35,000 V 이하 3 m / 35,000 V 초과 5 m · 제6류 안전거리 면제!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (특고압 가공전선 7,000V 기준 3m·5m 및 제6류 면제)</span>
           </div>
         </div>
       </div>
@@ -3698,7 +3938,7 @@
     const s26Solved = {};
     const s26OxSolved = {};
     const s26OxSaved = {};
-    const s26OxDeckList = [{"num": 1, "code": "기001 · 위험물 혼재기준 핵심", "stmt": "지정수량의 10배를 초과하는 위험물을 저장할 때 제1류 위험물(알칼리금속의 과산화물 제외)과 제6류 위험물은 유별마다 정리하여 1미터 이상 간격을 두면 동일한 저장소에서 함께 저장할 수 있다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 본문 보기", "tpreview": "제1류 산화성고체(알칼리금속 과산화물 제외)와 제6류 산화성액체는 둘 다 불연성 산화제로서 상호 반응 위험이 낮아 혼재가 허용됩니다."}, {"num": 2, "code": "기002 · 위험물 운반 혼재기준 핵심", "stmt": "위험물 운반 시 유별 상호 간 혼재가 허용되는 조합은 '제1류와 제6류', '제2류·제4류·제5류 상호 간', '제3류와 제4류'이며, 지정수량의 10분의 1 이하인 위험물에 대하여는 혼재 금지 규정을 적용하지 아니한다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 혼재 기준 및 동일장소 저장 금기 (2024년 Q14) 본문 보기", "tpreview": "유별 혼재 허용 공식(16 · 245 · 34)과 지정수량 10분의 1 이하 면제 기준은 위험물 운반·저장 파트의 핵심 원칙입니다."}, {"num": 3, "code": "기003 · 2023 소방공채 Q22 · 경채 Q35 기출", "stmt": "위험물안전관리법 시행령상 국제해상위험물규칙(IMDG Code) 용기가 아닌 일반 용기로 옥외저장소에 저장할 수 있는 위험물은 제2류 중 유황, 제4류(특수인화물 및 인화점 섭씨 0도 미만 제1석유류 제외), 제6류 위험물 등이며 제1류 염소산염류는 저장할 수 없다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "옥외저장소 저장 가능 품목(제2류 유황, 제4류 인화점 0도 이상 제1석유류·알코올류·제2·3·4석유류·동식물유류, 제6류)은 필수 암기 사항입니다."}, {"num": 4, "code": "기004 · 2023 소방공채 Q25 · 경채 Q40 기출", "stmt": "위험물 운반 시 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하(섭씨 55도에서 누설되지 않는 공간용적 유지)로 수납하며, 알킬알루미늄등은 90퍼센트 이하로 수납하되 섭씨 50도의 온도에서 5퍼센트 이상의 공간용적을 유지해야 한다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기", "tpreview": "운반용기 수납률 3대 수치(고체 95퍼센트, 액체 98퍼센트/55도, 알킬알루미늄등 90퍼센트/50도·5퍼센트 공간)는 숫자 바꿔치기 1순위 지문입니다."}, {"num": 5, "code": "기005 · 2024 소방공채 Q14 · 경채 Q22 기출", "stmt": "제3류 위험물 중 물속에 저장하는 황린과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 하며, 옥내저장소에서 용기에 수납하여 저장하는 위험물의 온도는 섭씨 55도를 넘지 아니하여야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "황린(수중 저장·물 소화)과 금수성물질(물 접촉 시 폭발)의 동일 저장소 저장 금지 원칙과 옥내저장소 섭씨 55도 이하 온도 제한은 핵심 저장기준입니다."}, {"num": 6, "code": "기006 · 2024 소방공채 Q14 · 경채 Q22 기출", "stmt": "옥내저장소 또는 옥외저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터를 초과하여 저장하지 아니하여야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "선반(랙) 저장 시 높이 제한은 옥내·옥외저장소 모두 '6미터 이하(6미터 초과 금지)'입니다."}, {"num": 7, "code": "기007 · 2025 소방경채 Q39 · 2026 소방경채 Q34 기출", "stmt": "위험물 운반용기 외부 주의사항 표시에서 제6류 위험물(과염소산·과산화수소·질산)은 '가연물접촉주의'만 표시하며, 제1류 알칼리금속의 과산화물은 '화기·충격주의, 물기엄금, 가연물접촉주의'를 모두 표시한다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기", "tpreview": "제6류는 불연성 산화성 액체이므로 오직 '가연물접촉주의' 하나만 표시하며, 제1류 알칼리금속 과산화물은 금수성을 겸비하여 '물기엄금'까지 3가지를 표시합니다."}, {"num": 8, "code": "기008 · 2026 소방경채 Q34 기출", "stmt": "옥내저장소에서 위험물 용기를 겹쳐 쌓는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터, 제4류 중 제3석유류·제4석유류 및 동식물유류 수납 용기는 4미터, 그 밖의 경우는 3미터 높이를 초과하지 아니하여야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "옥내저장소 용기 적재 높이 3단계(기계하역 6미터, 3·4석유류·동식물유류 4미터, 기타 3미터)는 필수 수치입니다."}, {"num": 9, "code": "기009 · 2026 소방경채 Q34 기출", "stmt": "주유취급소에서 자동차 등에 주유할 때에는 고정주유설비로부터 4미터 이내, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크 주입구로부터 3미터 이내 및 전용탱크 통기관 끝부분으로부터 수평거리 1.5미터 이내의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지해야 한다.", "ans": true, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기", "tpreview": "주유취급소 주차·정비·세정 금지 거리(고정주유설비 4미터, 전용탱크 주입구 3미터, 통기관 끝부분 수평거리 1.5미터 이내)에서 통기관 거리를 2미터로 속이는 함정에 주의해야 합니다."}, {"num": 10, "code": "기010 · 2018 하반기 경채 Q2 기출", "stmt": "특수가연물의 기준수량에서 면화류는 200킬로그램 이상이고, 나무껍질 및 대팻밥은 400킬로그램 이상이며, 넝마 및 종이부스러기·사류·볏짚류는 모두 1,000킬로그램 이상이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 본문 보기", "tpreview": "특수가연물 기준수량: 면화류(200킬로그램), 나무껍질 및 대팻밥(400킬로그램), 넝마·종이부스러기·사류·볏짚류(1,000킬로그램), 가연성고체류·합성수지류·발포시킨 것 외(3,000킬로그램), 석탄·목탄류(10,000킬로그램), 목재가공품·나무부스러기(10세제곱미터), 발포시킨 합성수지류(20세제곱미터), 가연성액체류(2세제곱미터)."}, {"num": 11, "code": "기011 · 2021 소방경채 Q4 기출", "stmt": "특수가연물 중 '가연성액체류'의 기준수량은 2세제곱미터 이상이고, '목재가공품 및 나무부스러기'는 10세제곱미터 이상이며, '발포시킨 합성수지류'는 20세제곱미터 이상이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 본문 보기", "tpreview": "특수가연물 중 체적(세제곱미터) 단위 3종(가연성액체류 2세제곱미터, 목재가공품·나무부스러기 10세제곱미터, 발포합성수지류 20세제곱미터)과 가연성고체류(3,000킬로그램)·석탄·목탄류(10,000킬로그램) 기준수량입니다."}, {"num": 12, "code": "기012 · 화재예방법 시행령 별표 3 핵심", "stmt": "석탄 및 목탄류를 발전용으로 저장하는 경우에는 특수가연물 저장·취급 기준을 적용하지 아니한다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 특수가연물 기준수량 암기 공식 (2018 Q2 · 2021 Q4) 본문 보기", "tpreview": "석탄·목탄류 중 발전용으로 저장·취급하는 것은 법령상 특수가연물 저장·취급 기준 적용 제외 대상에 해당합니다."}, {"num": 13, "code": "기013 · 2018 하반기 경채 Q11 기출", "stmt": "특수가연물의 쌓는 높이는 원칙적으로 10미터 이하, 바닥면적은 50제곱미터(석탄·목탄류는 200제곱미터) 이하로 하되, 살수설비 또는 대형수동식소화기를 설치하는 경우 높이를 15미터 이하, 바닥면적을 200제곱미터(석탄·목탄류는 300제곱미터) 이하로 완화할 수 있다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "특수가연물 높이(10미터 ➔ 완화 시 15미터)와 바닥면적(일반 50 ➔ 200제곱미터 / 석탄·목탄류 200 ➔ 300제곱미터)은 최빈출 수치입니다."}, {"num": 14, "code": "기014 · 2020 소방경채 Q5 기출", "stmt": "석탄·목탄류를 제외한 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 쌓는 높이는 15미터 이하, 쌓는 부분의 바닥면적은 200제곱미터 이하로 할 수 있다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "석탄·목탄류 제외 조건이 주어졌으므로 완화 바닥면적은 300제곱미터가 아니라 200제곱미터 이하입니다."}, {"num": 15, "code": "기015 · 2022 소방공채 Q5 기출", "stmt": "현행 화재의 예방 및 안전관리에 관한 법률상 특수가연물의 저장 및 취급 기준을 위반한 자에게는 300만 원 이하의 과태료를 부과하며, 시행령 별표 9상 개별기준은 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원이다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "구 소방기본법 시절(1회 20만·2회 50만·3회 100만·4회 이상 100만 원)에서 현행 화재예방법 제52조 제1항 제2호 및 시행령 별표 9(1차 100만 원, 2차 200만 원, 3차 이상 300만 원)로 상향 개정되었습니다."}, {"num": 16, "code": "기016 · 2023 소방공채 Q10 · 경채 Q19 기출", "stmt": "화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 하되, 바탕은 흰색·문자는 검은색으로 하고 '화기엄금' 표시 부분만 바탕을 붉은색·문자를 백색으로 한다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "특수가연물 표지 규격(0.3미터 이상 × 0.6미터 이상)과 색상(일반: 백색 바탕·흑색 문자 / 화기엄금: 적색 바탕·백색 문자)은 빈출 포인트입니다."}, {"num": 17, "code": "기017 · 2024 소방경채 Q17 기출", "stmt": "현행 화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물을 쌓는 부분 바닥면적의 사이는 실내의 경우 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상', 실외의 경우 '3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'으로 간격을 두어야 한다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "화재예방법 시행령 별표 3에서 실내 간격이 구법 1미터에서 '1.2미터(또는 높이의 2분의 1 중 큰 값)'로 강화되었습니다."}, {"num": 18, "code": "기018 · 2024 소방경채 Q17 기출", "stmt": "특수가연물을 실외에 쌓아 저장하는 경우 대지경계선·도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하나, 쌓는 높이보다 1미터 이상 높은 내화구조 벽체를 설치한 경우는 그러하지 아니하다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "실외 저장 시 대지경계선 이격거리(6미터 이상)와 예외 벽체 기준(쌓는 높이보다 1미터 이상 높은 내화구조 벽체; 0.9미터 아님)은 최신 기출 핵심 지문입니다."}, {"num": 19, "code": "기019 · 2024 소방공채 Q14 · 경채 Q22 (위험물 저장·동일장소 금기 교차기출) · 제3류 황린과 금수성물질의 동일 저장소 저장 금지 및 옥내·옥외저장소 온도·높이 기준", "stmt": "[｢위험물안전관리법 시행규칙｣상 위험물의 저장기준] 옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10 m 이하의 높이로 저장하여야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 **6미터 이하의 높이(6미터를 초과하지 아니할 것)**로 저장하여야 합니다."}, {"num": 20, "code": "기020 · 2023 소방공채 Q10 · 경채 Q19 (화재예방법 특수가연물 표지 기출) · 화재예방법령상 특수가연물 표지의 규격(0.3m×0.6m)·바탕색(흰색)·문자색(검은색) 기준", "stmt": "[｢화재의 예방 및 안전관리] 특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 할 것. 다만, “화기엄금” 표시 부분은 제외한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "특수가연물 표지의 바탕은 **흰색(백색)**으로, 문자는 **검은색(흑색)**으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림)."}, {"num": 21, "code": "기021 · 2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준", "stmt": "[｢화재의 예방 및 안전관리] 실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 둘 것. 다만, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치한 경우는 그렇지 않다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 면제 예외가 되는 내화구조 벽체의 높이는 쌓는 높이보다 0.9미터가 아니라 **1미터 이상** 높아야 합니다."}, {"num": 22, "code": "기022 · 2024 소방경채 Q17 (화재예방법 특수가연물 실내·실외 저장 이격거리 기출) · 화재예방법령상 특수가연물 실내·실외 저장 시 통로 간격(1.2m·3m) 및 내화구조 벽체 기준", "stmt": "[｢화재의 예방 및 안전관리] 실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 특수가연물 저장·표지·과태료 핵심 (2018 Q11 · 2020 Q5 · 2022 Q5 · 2023 Q10 · 2024 Q17) 본문 보기", "tpreview": "실내 저장 시 주요구조부는 준불연재료가 아닌 **내화구조 또는 불연재료**여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 **내화구조의 벽**으로 분리해야 합니다."}, {"num": 23, "code": "기023 · 🎯 2회독 주변확장 (옥외탱크 방유제 용량 1기 110% vs 2기 이상 최대 탱크의 110%)", "stmt": "인화성 액체(이황화탄소 제외)의 옥외탱크저장소 주위에 설치하는 방유제의 용량은 방유제 안에 설치된 탱크가 2기 이상일 때에는 모든 탱크 용량 합계의 110퍼센트 이상으로 해야 한다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기", "tpreview": "옥외탱크저장소 방유제의 용량은 탱크가 1기일 때에는 그 탱크 용량의 110% 이상으로 하고, 탱크가 2기 이상일 때에는 모든 탱크의 합계가 아니라 '그중 최대인 탱크 용량의 110% 이상'으로 합니다!"}, {"num": 24, "code": "기024 · 🎯 2회독 주변확장·악질함정 (2기 이상 옥외탱크 방유제 용량 최대 탱크의 110% 실전 숫자 함정)", "stmt": "인화성 액체 옥외탱크저장소의 방유제는 높이 0.5 m 이상 3 m 이하, 면적 80,000 m² 이하, 방유제 내 탱크 수 10기 이하로 설치하며, 방유제 내에 10,000 L 탱크 1기와 20,000 L 탱크 1기가 함께 설치된 경우 방유제의 용량은 두 탱크 합계의 110%인 33,000 L 이상이어야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 앞의 방유제 수치(높이 0.5 m에서 3 m, 면적 8만 m² 이하, 10기 이하)를 정확히 준 뒤 마지막 용량 계산을 속였습니다! 하나의 방유제 안에 탱크가 2기 이상 설치된 때에는 모든 탱크의 합계가 아니라 '그중 최대인 탱크 용량의 110% 이상'으로 하므로, 최대 탱크인 20,000 L의 110%인 '22,000 L 이상'이면 됩니다!"}, {"num": 25, "code": "기025 · 🎯 2회독 주변확장·악질함정 (제1종·제2종 판매취급소 20배·40배 vs 15배·30배)", "stmt": "위험물 취급소 중 점포에서 위험물을 용기에 담아 판매하는 판매취급소는 지정수량의 배수에 따라 구분하여, 지정수량의 15배 이하를 취급하는 곳은 제1종 판매취급소, 15배 초과 30배 이하를 취급하는 곳은 제2종 판매취급소라 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 과거 구 소방법 시절 숫자(15배·30배)로 수험생을 낚는 단골 함정입니다! 현행 위험물안전관리법령상 제1종 판매취급소는 지정수량의 '20배 이하', 제2종 판매취급소는 '20배 초과 40배 이하'입니다."}, {"num": 26, "code": "기026 · 🎯 2회독 주변확장 (옥외저장소 저장 가능 품목 vs 제1류·3류·5류 불가)", "stmt": "일반 옥외저장소에는 제1류 위험물 중 염소산염류, 제2류 위험물 중 유황, 제4류 위험물 중 제2석유류, 제6류 위험물을 저장할 수 있다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 옥내·옥외저장소 핵심 수치 (2023 Q22 · 2024 Q14 · 2026 Q34) 본문 보기", "tpreview": "야외 노지인 일반 옥외저장소에는 제2류 중 유황(및 인화점 0℃ 이상 인화성고체), 제4류(특수인화물 및 인화점 0℃ 미만 제1석유류 제외), 제6류만 저장할 수 있으며, 홀수 유별인 '제1류(염소산염류 등)·제3류·제5류'는 절대 저장할 수 없습니다!"}, {"num": 27, "code": "기027 · 🎯 2회독 주변확장 (간이탱크저장소 600L·3기 이하 및 동일 품질 2기 이상 금지)", "stmt": "간이탱크저장소의 간이저장탱크는 1기의 용량이 600 L 이하이고 최대 3기까지 설치할 수 있으므로, 휘발유 전용 600 L 간이저장탱크 2기와 경유 전용 600 L 간이저장탱크 1기를 함께 설치할 수 있다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 외부 주의사항 &amp; 주유취급소 거리 (2025 Q39 · 2026 Q34) 본문 보기", "tpreview": "간이탱크저장소(1기 600 L 이하, 총 3기 이하)에서는 '동일한 품질의 위험물의 간이저장탱크를 2기 이상 설치하지 못한다'고 규정하고 있으므로, 휘발유 탱크를 2기 설치하는 것은 법령 위반입니다!"}, {"num": 28, "code": "기028 · 🎯 2회독 주변확장·악질함정 (이동탱크저장소 4,000L 이하마다 칸막이 vs 2,000L 이상 방파판 숫자 스왑)", "stmt": "이동탱크저장소(탱크로리)의 탱크는 두께 3.2 mm 이상의 강판으로 제작하고, 내부에는 액체의 출렁임을 막기 위해 2,000 L 이하마다 두께 1.6 mm 이상의 강판으로 칸막이를 설치해야 하며, 칸막이한 부분의 용량이 4,000 L 이상인 경우에는 진행 방향과 평행하게 방파판을 설치해야 한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 칸막이 기준 용량(4,000 L)과 방파판 기준 용량(2,000 L)의 위치를 맞바꿨습니다! 이동탱크저장소는 '4,000 L 이하마다' 두께 1.6 mm 이상의 칸막이를 설치하고, 그 칸막이한 부분의 용량이 '2,000 L 이상'인 경우에 진행 방향과 평행하게 방파판을 설치합니다!"}, {"num": 29, "code": "기029 · 🎯 2회독 주변확장·악질함정 (위험물 운반 vs 이송 정의 스왑)", "stmt": "위험물안전관리법상 위험물을 이동탱크저장소(탱크로리)에 저장하여 옮기는 것을 '운반'이라 하고, 운반용기(드럼통 등)에 수납하여 화물자동차 등에 실어 옮기는 것을 '이송'이라 한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 운반과 이송의 법적 정의를 정확히 맞바꾸었습니다! 운반용기(드럼통 등)에 담아 화물차로 옮기는 것이 '운반'이고, 이동탱크저장소(탱크로리)나 배관(이송취급소)으로 옮기는 것이 '이송'입니다."}, {"num": 30, "code": "기030 · 🎯 2회독 주변확장 (운반용기 수납률 고체 95% vs 액체 98% vs 알킬알루미늄 90%)", "stmt": "위험물 운반용기의 수납 기준상 고체 위험물은 내용적의 98퍼센트 이하, 액체 위험물은 내용적의 95퍼센트 이하로 수납해야 한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률 3대 공식 (2023 Q25 · 2026 Q34) 본문 보기", "tpreview": "수납률이 거꾸로 바뀌었습니다! '고체 위험물은 내용적의 95% 이하', '액체 위험물은 내용적의 98% 이하(55℃에서 누설되지 않을 것)', '알킬알루미늄등은 내용적의 90% 이하(50℃에서 5% 이상 공간용적 유지)'로 수납해야 합니다."}];
+    const s26OxDeckList = [{"num": 1, "code": "기001 · 위험물 저장 혼재기준 핵심 · 최신 사각지대 킬러 (별표 18 '10배 초과' 허위 요건 및 알칼리금속 과산화물 제외)", "stmt": "위험물안전관리법 시행규칙 별표 18상 지정수량의 10배를 초과하는 위험물을 옥내저장소에 저장할 때 제1류 위험물(알칼리금속의 과산화물 포함)과 제5류 위험물은 유별마다 정리하여 1미터 이상 간격을 두면 함께 저장할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "1미터 이상", "tpreview": "사각지대 킬러! 두 가지가 틀렸습니다. 첫째, 위험물안전관리법 시행규칙 별표 18 제3호의 저장 혼재 예외에는 '지정수량의 10배 초과'라는 요건이 존재하지 않으며(지정수량 10분의 1 이하 면제 외에는 옥내·옥외저장소에서 1미터 이상 간격으로 6대 예외 조합만 허용), 둘째, 제1류와 제5류 혼재 시에는 수분·열 방출 폭발을 막기 위해 제1류에서 '알칼리금속의 과산화물'을 반드시 제외해야 합니다. 💡 1초 판별 팁: 저장 혼재 예외(별표 18) = '10배 초과' 없음 + 1류(알칼리금속 과산화물 제외)↔5류!"}, {"num": 2, "code": "기002 · 위험물 운반 혼재기준(별표 19 부표 2) 변형", "stmt": "위험물 운반 시 각각의 위험물이 지정수량의 10분의 1을 초과할 때 제1류와 제5류, 제2류와 제3류는 혼재하여 적재할 수 있으며, 지정수량의 5분의 1 이하인 위험물에 대하여는 혼재 금지 규정을 적용하지 아니한다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "운반 5쌍", "tpreview": "시행규칙 별표 19 부표 2상 운반 혼재 허용 5쌍은 '16 · 245 · 34'(제1류↔제6류, 제2류·제4류·제5류 상호 간, 제3류↔제4류)뿐이므로 제1류와 제5류, 제2류와 제3류는 혼재할 수 없습니다. 또한 혼재 금지 면제 기준은 지정수량의 5분의 1 이하가 아니라 '10분의 1 이하'입니다. 💡 1초 판별 팁: 운반 혼재 = 5쌍(16·245·34) + 면제는 지정수량 10분의 1 이하! 1↔5, 2↔3, 5분의 1은 모두 X입니다."}, {"num": 3, "code": "기003 · 2023 소방공채 Q22 · 경채 Q35 기출", "stmt": "위험물안전관리법 시행령상 국제해상위험물규칙(IMDG Code) 용기가 아닌 일반 용기로 옥외저장소에 저장할 수 있는 위험물은 제2류 중 유황, 제4류(특수인화물 및 인화점 섭씨 0도 미만 제1석유류 제외), 제6류 위험물 등이며 제1류 염소산염류는 저장할 수 없다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "인화점 0 ℃ 이상인 제1석유류·알코올류·제2·3·4석유류·동식물유류", "tpreview": "일반 용기로 옥외저장소에 저장 가능한 품목은 제2류 중 유황(및 인화점 0도 이상 인화성고체), 제4류 중 인화점 0도 이상 제1석유류·알코올류·제2·3·4석유류·동식물유류, 제6류 위험물이며 홀수 유별인 제1·3·5류는 저장할 수 없습니다. 💡 1초 판별 팁: 일반 옥외저장소 = 짝수 유별 중심(2류 유황 · 4류 0℃↑ · 6류), 홀수 1·3·5류는 불가!"}, {"num": 4, "code": "기004 · 2023 소방공채 Q25 · 경채 Q40 기출 변형", "stmt": "위험물 운반 시 고체 위험물은 운반용기 내용적의 95퍼센트 이하, 액체 위험물은 98퍼센트 이하로 수납하며, 자연발화성물질 중 알킬알루미늄등은 95퍼센트 이하로 수납하되 섭씨 55도의 온도에서 10퍼센트 이상의 공간용적을 유지해야 한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률(95%·98%·90%), 외부 주의 보기", "hlKey": "고체(95%)보다", "tpreview": "고체 95퍼센트 이하, 액체 98퍼센트 이하(섭씨 55도 누설 방지)는 맞지만, 알킬알루미늄등은 운반용기 내용적의 '90퍼센트 이하'로 수납하되 '섭씨 50도의 온도에서 5퍼센트 이상'의 공간용적을 유지해야 합니다. 💡 1초 판별 팁: 알킬알루미늄등 수납률 = 90% 이하 · 50℃ · 공간 5%↑! (95%·55℃·10%는 기출 오답 선지 그대로이므로 X)"}, {"num": 5, "code": "기005 · 2024 소방공채 Q14 · 경채 Q22 기출", "stmt": "제3류 위험물 중 물속에 저장하는 황린과 금수성물질은 동일한 저장소에서 저장하지 아니하여야 하며, 옥내저장소에서 용기에 수납하여 저장하는 위험물의 온도는 섭씨 55도를 넘지 아니하여야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "옥내저장소에서 용기", "tpreview": "황린(수중 저장·물 소화)과 금수성물질(물 접촉 시 폭발)의 동일 저장소 저장 금지 원칙과 옥내저장소 섭씨 55도 이하 온도 제한은 핵심 저장기준입니다. 💡 1초 판별 팁: 황린·금수성 동일 저장소 절대 금지 + 옥내저장소 온도 55 ℃ 이하!"}, {"num": 6, "code": "기006 · 2024 소방공채 Q14 · 경채 Q22 기출 변형", "stmt": "옥내저장소에서 위험물을 수납한 용기를 선반(랙)에 저장하는 경우에는 6미터 이하로 저장하여야 하나, 지붕이 없는 옥외저장소의 선반에 저장하는 경우에는 10미터 이하까지 저장할 수 있다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "선반(랙)에 저장하는 경우에는 6미터 이하", "tpreview": "위험물안전관리법 시행규칙 별표 18상 위험물을 수납한 용기를 선반(랙)에 저장하는 경우의 높이 제한은 옥내저장소와 옥외저장소 모두 '6미터 이하(6미터 초과 금지)'로 동일합니다. 💡 1초 판별 팁: 선반(랙) 저장 높이 = 옥내·옥외저장소 공통 6 m 이하! 옥외 선반 10 m는 X입니다."}, {"num": 7, "code": "기007 · 2025 소방경채 Q39 · 2026 소방경채 Q34 기출 변형 · 최신 사각지대 킬러 (유별 운반용기 주의사항)", "stmt": "위험물 운반용기 외부 주의사항 표시에서 제6류 위험물은 '화기엄금' 및 '가연물접촉주의'를 표시하고, 제3류 금수성물질은 '화기주의' 및 '물기엄금'을 표시하며, 제2류 중 철분·금속분·마그네슘은 '화기엄금'만 표시한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률(95%·98%·90%), 외부 주의 보기", "hlKey": "제4류 · 제5류 · 제6류 주의사항", "tpreview": "사각지대 킬러! 세 유별 모두 주의사항이 왜곡되었습니다. ① 제6류는 불연성 산화성 액체이므로 '화기엄금' 없이 오직 '가연물접촉주의' 단독 표시, ② 제3류 금수성물질은 '화기주의' 없이 오직 '물기엄금' 단독 표시, ③ 제2류 철분·금속분·마그네슘은 '화기주의' 및 '물기엄금' 두 가지를 표시합니다(인화성고체만 '화기엄금'). 💡 1초 판별 팁: 6류='가연물접촉주의' 단독, 3류 금수='물기엄금' 단독, 2류 철금마='화기주의'+'물기엄금'!"}, {"num": 8, "code": "기008 · 2026 소방경채 Q34 기출 변형", "stmt": "옥내저장소에서 위험물 용기를 겹쳐 쌓는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터, 제4류 중 제2석유류·제3석유류·제4석유류 및 동식물유류 수납 용기는 4미터, 그 밖의 경우는 3미터 높이를 초과하지 아니하여야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "제3석유류·제4석유류 및 동식물유류", "tpreview": "옥내저장소에서 용기를 겹쳐 쌓을 때 4미터 이하가 허용되는 것은 제4류 중 '제3석유류·제4석유류 및 동식물유류' 수납 용기뿐이며, 제2석유류 수납 용기는 그 밖의 경우로서 원칙인 3미터 이하를 적용받습니다. 💡 1초 판별 팁: 옥내 4 m 적재 = 3·4석유류·동식물유류만! 제2석유류가 끼어들면 X입니다."}, {"num": 9, "code": "기009 · 2026 소방경채 Q34 기출 변형", "stmt": "주유취급소에서 자동차 등에 주유할 때에는 고정주유설비로부터 4미터 이내, 이동저장탱크로부터 전용탱크에 위험물을 주입할 때에는 전용탱크 주입구로부터 3미터 이내 및 전용탱크 통기관의 끝부분으로부터 수평거리 2미터 이내의 부분에 다른 자동차 등의 주차 및 점검·정비·세정을 금지해야 한다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 운반용기 수납률(95%·98%·90%), 외부 주의 보기", "hlKey": "전용탱크 통기관의 끝부분으로부터 수평거리 1.5미터 이내", "tpreview": "고정주유설비로부터 4미터 이내, 전용탱크 주입구로부터 3미터 이내는 맞지만, 전용탱크 통기관의 끝부분으로부터는 수평거리 2미터 이내가 아니라 '1.5미터 이내'에서 주차 및 점검·정비·세정을 금지합니다. 💡 1초 판별 팁: 주유취급소 금지 거리 = 주유설비 4 m · 주입구 3 m · 통기관 끝 1.5 m! (2 m는 2026년 기출 오답 함정)"}, {"num": 10, "code": "기010 · 2018 하반기 경채 Q2 기출 변형", "stmt": "특수가연물의 기준수량에서 면화류는 400킬로그램 이상이고, 나무껍질 및 대팻밥은 200킬로그램 이상이며, 넝마 및 종이부스러기·사류·볏짚류는 모두 1,000킬로그램 이상이다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "면화류 200 kg 이상", "tpreview": "면화류와 나무껍질·대팻밥의 기준수량이 서로 바뀌었습니다. 불길이 가장 빠른 면화류가 '200킬로그램 이상'이고, 나무껍질 및 대팻밥이 '400킬로그램 이상'입니다. 💡 1초 판별 팁: 특수가연물 1위(가장 소량) = 면화류 200 kg, 2위 = 나무껍질·대팻밥 400 kg!"}, {"num": 11, "code": "기011 · 2021 소방경채 Q4 기출", "stmt": "특수가연물 중 '가연성액체류'의 기준수량은 2세제곱미터 이상이고, '목재가공품 및 나무부스러기'는 10세제곱미터 이상이며, '발포시킨 합성수지류'는 20세제곱미터 이상이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "목재가공품 및 나무부스러기", "tpreview": "특수가연물 10대 품명 중 체적(세제곱미터) 단위 3종은 가연성액체류(2세제곱미터), 목재가공품 및 나무부스러기(10세제곱미터), 발포시킨 합성수지류(20세제곱미터)이며, 나머지 7종은 모두 질량(킬로그램) 단위입니다. 💡 1초 판별 팁: 특수가연물 부피 3종 = 가연성액체 2 · 목재가공 10 · 발포합성수지 20 m3!"}, {"num": 12, "code": "기012 · 화재예방법 시행령 별표 3 핵심 변형", "stmt": "석탄 및 목탄류를 발전용으로 저장하는 경우에도 기준수량인 10,000킬로그램 이상에 해당하면 특수가연물 저장·취급 기준을 동일하게 적용한다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "저장·취급 기준 적용 제외", "tpreview": "화재예방법 시행령 별표 3 비고에 따라 석탄 및 목탄류를 '발전용'으로 저장·취급하는 경우에는 특수가연물의 저장 및 취급 기준을 적용하지 아니합니다(제외). 💡 1초 판별 팁: 석탄·목탄류를 '발전용'으로 저장 시 특수가연물 기준 적용 제외!"}, {"num": 13, "code": "기013 · 2018 하반기 경채 Q11 기출 변형", "stmt": "특수가연물의 쌓는 높이는 원칙적으로 10미터 이하, 바닥면적은 50제곱미터(석탄·목탄류는 100제곱미터) 이하로 하되, 살수설비 또는 대형수동식소화기를 설치하는 경우 높이를 15미터 이하, 바닥면적을 200제곱미터(석탄·목탄류는 400제곱미터) 이하로 완화할 수 있다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "쌓는 높이 및 바닥면적(완화 포함)", "tpreview": "석탄·목탄류의 쌓는 부분 바닥면적은 원칙 '200제곱미터 이하', 살수설비 또는 대형수동식소화기 설치 시 완화 바닥면적은 '300제곱미터 이하'입니다(100제곱미터·400제곱미터는 오답 수치). 💡 1초 판별 팁: 특수가연물 바닥면적 = 일반 50➔200 m2, 석탄·목탄류 200➔300 m2!"}, {"num": 14, "code": "기014 · 2020 소방경채 Q5 기출 변형", "stmt": "석탄·목탄류를 제외한 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 쌓는 높이는 15미터 이하, 쌓는 부분의 바닥면적은 300제곱미터 이하로 할 수 있다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "한 더미 바닥면적은 원칙", "tpreview": "석탄·목탄류를 제외한 일반 특수가연물에 살수설비 또는 대형수동식소화기를 설치하는 경우 완화되는 바닥면적은 300제곱미터가 아니라 '200제곱미터 이하'입니다(300제곱미터는 석탄·목탄류에만 적용). 💡 1초 판별 팁: 석탄·목탄류 제외 시 완화 면적 = 200 m2 이하! 300 m2면 X입니다."}, {"num": 15, "code": "기015 · 2022 소방공채 Q5 기출 변형 · 최신 사각지대 킬러 (현행 화재예방법 별표 9 과태료 200만 원)", "stmt": "현행 화재의 예방 및 안전관리에 관한 법률상 특수가연물의 저장 및 취급 기준을 위반한 자에게는 300만 원 이하의 과태료를 부과하며, 시행령 별표 9상 개별기준은 1차 위반 100만 원, 2차 위반 200만 원, 3차 이상 위반 300만 원이다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "200만 원 이하의 과태료(1차·2차·3차 이상 모두 200만 원)", "tpreview": "사각지대 킬러! 현행 ｢화재의 예방 및 안전관리에 관한 법률｣ 제52조 제2항 제1호 및 같은 법 시행령 별표 9상 특수가연물 저장 및 취급 기준 위반 시에는 '200만 원 이하의 과태료'가 부과되며, 횟수별 개별기준 역시 1차·2차·3차 이상 위반 모두 동일하게 '200만 원'입니다(300만 원 이하 및 100·200·300만 원 차등 부과는 오답 함정). 💡 1초 판별 팁: 특수가연물 기준 위반 = 법 제52조 제2항 제1호 · 200만 원 이하 과태료(1·2·3차 모두 200만 원)!"}, {"num": 16, "code": "기016 · 2023 소방공채 Q10 · 경채 Q19 기출", "stmt": "화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물 표지는 한 변의 길이가 0.3미터 이상, 다른 한 변의 길이가 0.6미터 이상인 직사각형으로 하되, 바탕은 흰색·문자는 검은색으로 하고 '화기엄금' 표시 부분만 바탕을 붉은색·문자를 백색으로 한다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "흰색·문자 검은색", "tpreview": "특수가연물 표지 규격(0.3미터 이상 × 0.6미터 이상)과 색상(일반: 백색 바탕·흑색 문자 / 화기엄금: 적색 바탕·백색 문자)은 빈출 포인트입니다. 💡 1초 판별 팁: 특수가연물 표지 = 0.3 × 0.6 m · 흰 바탕 검정 글씨('화기엄금'만 붉은 바탕 흰 글씨)!"}, {"num": 17, "code": "기017 · 2024 소방경채 Q17 기출 변형", "stmt": "현행 화재의 예방 및 안전관리에 관한 법률 시행령상 특수가연물을 쌓는 부분 바닥면적의 사이는 실내의 경우 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상', 실외의 경우 '3미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'으로 간격을 두어야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "3 m 또는 쌓는 높이 중 큰 값 이상", "tpreview": "실내는 '1.2미터 또는 쌓는 높이의 2분의 1 중 큰 값 이상'이 맞지만, 실외는 쌓는 높이의 2분의 1이 아니라 '3미터 또는 쌓는 높이 중 큰 값 이상'으로 간격을 두어야 합니다. 💡 1초 판별 팁: 실내 통로 = 1.2 m or 높이 1/2↑ / 실외 통로 = 3 m or 쌓는 높이↑('1/2' 붙으면 X)!"}, {"num": 18, "code": "기018 · 2024 소방경채 Q17 기출 변형 · 최신 사각지대 킬러 (별표 3 제3호 실외 0.9m 벽체 및 완화 2m 통로)", "stmt": "특수가연물을 실외에 쌓아 저장하는 경우 대지경계선·도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하나, 쌓는 높이보다 1미터 이상 높은 내화구조 벽체를 설치한 경우에만 면제되며 살수설비를 설치하더라도 실외 바닥면적 사이의 통로 간격은 3미터 미만으로 줄일 수 없다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "쌓는 높이보다 0.9 m 이상 높은 내화구조 벽체", "tpreview": "사각지대 킬러! 화재예방법 시행령 별표 3 제3호상 ① 실외 6미터 이격 예외가 되는 내화구조 벽체는 쌓는 높이보다 '0.9미터 이상' 높으면 되며(1미터 아님!), ② 살수설비 또는 대형수동식소화기를 설치한 경우 실외 바닥면적 사이의 통로 간격은 '2미터 이상'으로 완화됩니다(실내 완화 시는 1.2미터 이상). 💡 1초 판별 팁: 실외 면제 내화벽 = 쌓는 높이 + 0.9 m↑ · 실외 완화 통로 = 2 m↑!"}, {"num": 19, "code": "기019 · 2024 소방공채 Q14 · 경채 Q22 변형", "stmt": "위험물안전관리법 시행규칙상 제3류 위험물 중 황린 그 밖에 물속에 저장하는 물품과 금수성물질은 동일한 저장소에서 저장할 수 없으나, 유별로 정리하여 1미터 이상 간격을 두면 예외적으로 함께 저장할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "동일한 저장소에 동시 저장하는 것이 절대 금지", "tpreview": "같은 제3류 위험물이라도 물속에 저장하고 주수소화하는 황린과 물과 만나면 폭발하는 금수성물질(칼륨·나트륨·탄화칼슘 등)은 소화 방법이 정반대이므로 1미터 간격을 두더라도 동일한 저장소에 절대 함께 저장할 수 없습니다. 💡 1초 판별 팁: 제3류 황린 vs 금수성 = 1 m 간격 예외 없이 동일 저장소 동시 저장 절대 금지!"}, {"num": 20, "code": "기020 · 2024 소방공채 Q14 · 경채 Q22 변형", "stmt": "옥내저장소에서는 용기에 수납하여 저장하는 위험물의 온도가 섭씨 40도를 넘지 아니하도록 필요한 조치를 강구하여야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "옥내저장소에서는", "tpreview": "옥내저장소에서 용기에 수납하여 저장하는 위험물의 상한 온도는 섭씨 40도가 아니라 '섭씨 55도'를 넘지 아니하도록 환기·냉방 등 필요한 조치를 강구해야 합니다. 💡 1초 판별 팁: 옥내저장소 온도 제한 = 55 ℃ 이하! (40 ℃로 낮추면 X)"}, {"num": 21, "code": "기021 · 2024 소방공채 Q14 · 경채 Q22 기출", "stmt": "위험물안전관리법 시행규칙상 옥외저장소에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하의 높이로 저장하여야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "지붕 없이 햇볕·빗물에 노출되는 일반", "tpreview": "옥외저장소(및 옥내저장소)에서 위험물을 수납한 용기를 선반에 저장하는 경우에는 10미터 이하가 아니라 '6미터 이하의 높이(6미터를 초과하지 아니할 것)'로 저장하여야 합니다. 💡 1초 판별 팁: 옥외저장소 선반 저장 = 6 m 이하! 10 m는 기출 오답 선지입니다."}, {"num": 22, "code": "기022 · 2024 소방공채 Q14 · 경채 Q22 기출", "stmt": "보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 당해 위험물의 비점 이하로 유지하여야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "보냉장치가", "tpreview": "보냉장치가 있는 이동저장탱크에 저장하는 아세트알데히드등 또는 디에틸에테르등의 온도는 증기압 상승을 막기 위해 당해 위험물의 비점(끓는점) 이하로 유지해야 합니다. 💡 1초 판별 팁: 보냉장치 이동탱크 아세트알데히드·디에틸에테르 = 당해 위험물의 비점 이하 유지!"}, {"num": 23, "code": "기023 · 2026 소방경채 Q34 기출 변형", "stmt": "옥내저장소에서 위험물을 저장하는 경우 기계에 의하여 하역하는 구조로 된 용기는 6미터 이하로 쌓을 수 있으나, 제4류 위험물 중 제3석유류·제4석유류 및 동식물유류를 수납하는 용기는 일반 기준과 동일하게 3미터를 초과하여 쌓을 수 없다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "4미터 이하", "tpreview": "옥내저장소 용기 겹쳐 쌓기 최대 높이는 기계 하역 구조 용기 6미터, 제4류 중 제3석유류·제4석유류 및 동식물유류 수납 용기 '4미터', 그 밖의 경우 3미터 이하입니다. 💡 1초 판별 팁: 옥내 적재 높이 = 기계 6 m · 3·4석유류·동식물유 4 m · 기타 3 m!"}, {"num": 24, "code": "기024 · 2026 소방경채 Q34 기출 변형", "stmt": "제1류 위험물 중 알칼리금속의 과산화물을 운반하고자 수납할 때는 그 운반용기의 외부에 '화기·충격주의' 및 '가연물접촉주의'만 표시하면 되고 '물기엄금'은 표시하지 않아도 된다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 운반용기 수납률(95%·98%·90%), 외부 주의 보기", "hlKey": "물과 반응하는", "tpreview": "제1류 일반 품목은 '화기·충격주의'와 '가연물접촉주의' 2종만 표시하지만, 물과 반응해 산소·열을 방출하는 알칼리금속의 과산화물은 '물기엄금'까지 3종을 모두 표시해야 합니다. 💡 1초 판별 팁: 1류 알칼리금속 과산화물 = 화기·충격주의 + 가연물접촉주의 + 물기엄금 3종 모두!"}, {"num": 25, "code": "기025 · 2023 소방공채 Q10 · 경채 Q19 기출", "stmt": "화재예방법 시행령상 특수가연물 표지의 바탕은 검은색으로, 문자는 흰색으로 해야 한다. 다만, '화기엄금' 표시 부분은 제외한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "바탕 붉은색·문자 백색", "tpreview": "특수가연물 표지의 일반 부분 바탕은 흰색(백색)으로, 문자는 검은색(흑색)으로 해야 합니다('바탕은 검은색, 문자는 흰색'으로 색상을 반대로 서술하여 틀림). 💡 1초 판별 팁: 특수가연물 표지 일반 = 흰 바탕·검정 문자 ('화기엄금'만 붉은 바탕·흰 문자)!"}, {"num": 26, "code": "기026 · 2023 소방공채 Q10 · 경채 Q19 변형", "stmt": "화재예방법 시행령상 특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량 또는 단위체적당 질량 및 화기취급 금지표시만 기재하면 되고, 관리책임자의 성명·직책 및 연락처는 기재하지 않아도 된다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "관리책임자 성명·직책·연락처", "tpreview": "특수가연물 표지에는 품명, 최대저장수량, 단위부피당 질량(단위체적당 질량), 관리책임자 성명·직책, 연락처 및 화기취급 금지표시(화기엄금)가 모두 포함되어야 합니다. 💡 1초 판별 팁: 특수가연물 표지 기재사항 = 품명·최대저장수량·단위부피당 질량·관리책임자 성명/직책/연락처·화기엄금 모두 필수!"}, {"num": 27, "code": "기027 · 2024 소방경채 Q17 기출 변형", "stmt": "화재예방법 시행령상 특수가연물을 실외에 쌓아 저장하는 경우 쌓는 부분이 대지경계선, 도로 및 인접 건축물과 최소 6미터 이상 간격을 두어야 하며, 쌓는 높이보다 0.9미터 이상 높은 내화구조 벽체를 설치하더라도 이격거리는 면제되지 않는다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "실외 저장 이격·면제 벽체", "tpreview": "실외 저장 시 대지경계선·도로·인접 건축물과 최소 6미터 이상 간격을 두되, 쌓는 높이보다 '0.9미터 이상 높은 내화구조 벽체'를 설치한 경우에는 6미터 이격 의무가 면제됩니다. 💡 1초 판별 팁: 실외 6 m 이격 예외 = 쌓는 높이보다 0.9 m 이상 높은 내화구조 벽체 설치 시 면제!"}, {"num": 28, "code": "기028 · 2024 소방경채 Q17 기출", "stmt": "화재예방법 시행령상 실내에 쌓아 저장하는 경우 주요구조부는 불연재료 또는 준불연재료여야 하고, 다른 종류의 특수가연물과 같은 공간에 보관하지 않을 것. 다만, 방화구조의 벽으로 분리하는 경우는 그렇지 않다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 화재예방법상 특수가연물 품명별 기준수량·배수 합산  보기", "hlKey": "내화구조의 벽", "tpreview": "실내 저장 시 주요구조부는 준불연재료가 아닌 '내화구조이면서 불연재료(AND 조건)'여야 하며, 다른 종류의 특수가연물과 분리할 때에도 방화구조가 아닌 '내화구조의 벽'으로 분리해야 합니다. 💡 1초 판별 팁: 실내 주요구조부 = 내화구조 + 불연재료(AND), 이종 분리 = 내화구조의 벽!"}, {"num": 29, "code": "기029 · 🎯 2회독 주변확장 (제조소등 대상별 안전거리 50m·30m·20m·10m 및 제6류 면제)", "stmt": "위험물안전관리법령상 제조소등이 유지해야 하는 안전거리는 지정문화재로부터 50 m 이상, 학교·병원·300명 이상 다수인 수용시설·20명 이상 노유자시설로부터 30 m 이상, 고압가스·도시가스 시설로부터 20 m 이상, 연면적 100 m² 이상인 일반 주거용 건축물로부터 20 m 이상이며, 제6류 위험물을 취급하는 제조소등도 동일하게 적용된다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "부지 외 주거용 건축물·공작물 10 m 이상", "tpreview": "두 가지가 틀렸습니다. 첫째, 위험물안전관리법 시행규칙 별표 4상 부지 외 주거용 건축물·공작물에 대한 안전거리는 연면적과 무관하게 '10 m 이상'입니다('연면적 100 m² 이상 20 m' 기준은 존재하지 않음). 둘째, 자체는 불연성 산화제인 제6류 위험물 취급 제조소등은 안전거리 적용이 면제됩니다. 💡 1초 판별 팁: 안전거리 = 문화재 50 · 학교/병원/300명↑ 다수인/20명↑ 노유자 30 · 고압/LPG/도시가스 20 · 주거용 10 m, 제6류는 안전거리 면제!"}, {"num": 30, "code": "기030 · 🎯 2회독 주변확장 (특고압 가공전선 7,000V 기준 3m·5m 및 제6류 면제)", "stmt": "제조소등과 특고압 가공전선 사이의 안전거리는 사용전압이 7,000 V 초과 35,000 V 이하인 경우 수평거리 3 m 이상, 35,000 V를 초과하는 경우 수평거리 5 m 이상이어야 하며, 제6류 위험물을 취급하는 제조소등은 안전거리 적용이 면제된다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 위험물 유별 혼재 기준(16·245·34), 옥내· 보기", "hlKey": "7,000 V 초과 35,000 V 이하", "tpreview": "특고압 가공전선 안전거리(사용전압 7,000 V 초과 35,000 V 이하 3 m 이상, 35,000 V 초과 5 m 이상)와 제6류 안전거리 면제 기준은 안전거리 표의 핵심입니다. 💡 1초 판별 팁: 특고압 가공전선 = 7,000 V 초과 35,000 V 이하 3 m / 35,000 V 초과 5 m · 제6류 안전거리 면제!"}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
     function disableAllMobileDecks() {

@@ -1220,12 +1220,237 @@
         line-height: 1.4 !important;
       }
 
-      /* PART 3: 단원 교재 인쇄 시 상세 해설 파트 완전 제거 */
+      /* PART 3: 인쇄 시에도 빠른 정답 및 상세 해설 출력 (양면 인쇄 짝수 정렬) */
       #part3 {
-        display: none !important;
+        display: block !important;
+        page-break-before: always !important;
+        break-before: page !important;
       }
     }
 
+  </style>
+  <style id="goldenReadabilityStyle">
+    /* Golden Readability & Cheat-Sheet CSS (02_03 / DAY01_01_01 Standard) */
+    *, *::before, *::after {
+      font-family: var(--font-sans);
+    }
+    .prose-body, .prose-body *,
+    .q-stem, .q-choices, .q-choice-item,
+    .exp-choice-body, .book-table td {
+      font-family: var(--font-body) !important;
+    }
+    .formula-box, .formula-box *,
+    .prose-item strong, .prose-sub strong,
+    .q-meta *, .q-ans-blank, .exp-header-left *, .exp-header-right * {
+      font-family: var(--font-sans) !important;
+    }
+    #part1 .sidenote,
+    #part1 .novel-note-pill,
+    #part1 #sec1 .book-table,
+    #part1 #sec2 .book-table,
+    #part1 #sec3 .book-table {
+      display: none !important;
+    }
+    .prose-body .prose-item {
+      display: block;
+      margin: 10px 0 4px 0;
+      padding: 0;
+      background: transparent;
+      border: none !important;
+      font-weight: 400;
+      line-height: 1.85 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .prose-sub {
+      display: block;
+      margin: 4px 0 4px 14px;
+      padding: 0;
+      border: none !important;
+      font-weight: 400;
+      line-height: 1.8 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .formula-box {
+      display: block;
+      margin: 10px 0 12px 0;
+      padding: 10px 14px;
+      background-color: var(--bg-card, #FAF7F2);
+      border: 1px solid var(--border-strong);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.95) !important;
+      font-weight: 400 !important;
+      color: var(--text-main) !important;
+      line-height: 1.72 !important;
+      text-align: left !important;
+      text-indent: 0 !important;
+      box-shadow: 0 2px 6px rgba(35, 30, 20, 0.04);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .prose-body .formula-box * {
+      font-family: var(--font-sans) !important;
+      text-indent: 0 !important;
+    }
+    .prose-body .formula-badge {
+      display: inline-block;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.80) !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      background-color: var(--accent) !important;
+      padding: 1px 7px;
+      border-radius: 4px;
+      margin-right: 7px;
+      vertical-align: middle;
+      letter-spacing: 0.01em;
+    }
+    .prose-body .formula-eq {
+      display: block;
+      font-size: calc(var(--body-size, 13.6px) * 1.02) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      margin: 4px 0 3px 0;
+      letter-spacing: -0.01em;
+    }
+    .prose-body .formula-ex {
+      display: block;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--border-strong);
+      font-size: calc(var(--body-size, 13.6px) * 0.91) !important;
+      font-weight: 400 !important;
+      color: var(--text-sub) !important;
+      line-height: 1.68 !important;
+    }
+    .diagram-container.cheat-sheet-wrap {
+      background-color: var(--bg-sheet) !important;
+      border: 1.5px solid var(--border-strong) !important;
+      border-top: 3.5px solid var(--accent) !important;
+      border-left: 1.5px solid var(--border-strong) !important;
+      border-radius: 7px !important;
+      padding: 16px 18px !important;
+      margin: 22px 0 !important;
+      box-shadow: 0 4px 14px rgba(35, 30, 20, 0.05) !important;
+    }
+    .cheat-sheet-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 9px;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid var(--text-main) !important;
+    }
+    .cheat-sheet-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.96) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      letter-spacing: -0.02em;
+    }
+    .cheat-sheet-sub {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.80) !important;
+      font-weight: 600 !important;
+      color: var(--text-muted) !important;
+    }
+    .cheat-part {
+      margin-bottom: 12px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .cheat-part:last-child {
+      margin-bottom: 0;
+    }
+    .cheat-part-title {
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.88) !important;
+      font-weight: 800 !important;
+      color: var(--text-main) !important;
+      background-color: var(--bg-subtle) !important;
+      border-left: 3px solid var(--accent);
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .cheat-grid {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border-line);
+    }
+    .cheat-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      padding: 6px 6px;
+      border-bottom: 1px solid var(--border-line);
+      align-items: baseline;
+      font-family: var(--font-sans) !important;
+      font-size: calc(var(--body-size, 13.6px) * 0.91) !important;
+      line-height: 1.65 !important;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .cheat-key {
+      font-family: var(--font-sans) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      letter-spacing: -0.02em;
+    }
+    .cheat-val {
+      font-family: var(--font-sans) !important;
+      color: var(--text-main) !important;
+      word-break: keep-all;
+    }
+    .cheat-val strong {
+      color: var(--text-main) !important;
+      font-weight: 700 !important;
+      background: linear-gradient(transparent 62%, var(--gold-hl) 62%);
+      padding: 0 1px;
+    }
+    .cheat-eq {
+      display: inline-block;
+      font-family: var(--font-sans) !important;
+      font-weight: 800 !important;
+      color: var(--accent) !important;
+      background-color: var(--accent-soft);
+      padding: 0 6px;
+      border-radius: 4px;
+      margin: 1px 2px;
+    }
+    @media screen and (max-width: 600px) {
+      .cheat-row {
+        grid-template-columns: 1fr !important;
+        gap: 4px !important;
+      }
+      .cheat-key {
+        border-bottom: 1px dashed var(--border-line);
+        padding-bottom: 2px;
+      }
+    }
+    @media only screen and (min-width: 601px) and (max-width: 1180px) {
+      .prose-body .formula-box {
+        margin: 12px 0 16px 0 !important;
+        padding: 12px 16px !important;
+        border-radius: 6px !important;
+      }
+      .prose-body .formula-eq {
+        font-size: 13px !important;
+        line-height: 1.65 !important;
+      }
+      .cheat-row {
+        grid-template-columns: 135px 1fr;
+      }
+    }
   </style>
 </head>
 <body class="layout-wide q-cols-2 exp-cols-2 exp-compact">
@@ -1284,7 +1509,7 @@
             <span>|</span>
             <span>□ 이론 정독</span>
             <span>□ 기출 풀이(6문항)</span>
-            <span>□ OX 16제</span>
+            <span>□ OX 30제</span>
             <span>□ 오답 복습</span>
           </div>
         </div>
@@ -1297,208 +1522,159 @@
       </div>
 
       <section class="space-y-12 mb-16">
-        
-        <div id="sec1"" class="space-y-6">
-          <h2>제1절. 자동화재탐지설비의 경계구역 산정 기준 (NFPC 203 제4조 · NFTC 203 제2.1)</h2>
-          
-          <div id="theory-sec1-p1" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수평 경계구역 핵심 수치 (NFPC 203 제4조)</div><ul class="sidenote-list"><li>원칙: 2개 이상 건물·층 금지 (단, <strong>2개 층 합계 $500\text{m}^2$ 이하</strong>는 허용)</li><li>기본 면적·길이: <strong>$600\text{m}^2$ 이하</strong>, 한 변 <strong>$50\text{m}$ 이하</strong></li><li>주된 출입구에서 내부 전체 투시 시: <strong>$1,000\text{m}^2$ 이하</strong> (한 변 $50\text{m}$ 유지)</li></ul></div></aside>
-            <p class="prose-body">
-              <strong>자동화재탐지설비</strong>는 건축물 내부에서 발생하는 초기 화재의 열, 연기, 불꽃을 감지기(감지부)가 자동으로 포착하여 수신기(판단부)에 전달하고, 지구음향장치와 시각경보장치(경보부)를 통해 재실자에게 신속히 피난을 유도하는 경보설비의 중추 신경망이다. 만약 수만 제곱미터에 달하는 대형 건축물 전체를 단 하나의 감시 회로로 묶어 버린다면, 수신기에 화재 신호가 들어왔을 때 어느 층 어느 구역에서 불이 났는지 찾는 데만 골든타임을 허비하게 된다. 반대로 구역을 너무 잘게 쪼개면 배선 공사와 수신기 회로 비용이 기하급수적으로 치솟는다. 이러한 신속한 발화 위치 특정과 경제적 설비 구현의 균형점으로 제정된 법적 단위가 바로 <strong>자동화재탐지설비 및 시각경보장치의 화재안전성능기준</strong>(NFPC 203) 제4조의 <strong>경계구역</strong>(1회선이 유효하게 화재를 감지할 수 있는 구역) 설정 기준이다. 수평적 원칙으로 하나의 경계구역은 <strong>둘 이상의 건축물</strong> 또는 <strong>둘 이상의 층에 걸치지 아니하여야</strong> 한다(다만, <strong>2개 층의 바닥면적 합계가 500제곱미터 이하</strong>인 소규모 구획의 경우에만 예외적으로 2개 층을 하나의 경계구역으로 묶을 수 있으며, 3개 층 이상은 면적과 무관하게 절대 불가하다). 또한 하나의 경계구역 바닥면적은 <strong>600제곱미터 이하</strong>로 하고 한 변의 길이는 <strong>50미터 이하</strong>로 하되, 해당 특정소방대상물의 <strong>주된 출입구에서 내부 전체가 보이는 경우</strong>에는 한 변의 길이 50미터 범위 안에서 바닥면적을 <strong>1,000제곱미터 이하</strong>까지 완화할 수 있다.
-            </p>
-            
-          </div><div id="theory-sec1-p2" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수직·특례 경계구역 핵심 수치</div><ul class="sidenote-list"><li>계단·경사로 수직 경계구역: 높이 <strong>$45\text{m}$ 이하</strong> (지하 2층 이상일 때 지하층 별도 구획)</li><li>외기 상시 개방 부분: 외기 면으로부터 <strong>$5\text{m}$ 미만</strong> 면적 제외</li><li>지하구 경계구역 길이: <strong>$700\text{m}$ 이하</strong></li></ul></div></aside>
-            <p class="prose-body">
-              연기와 열기가 굴뚝 효과(Stack effect)를 타고 수직으로 급격히 치솟는 공간은 일반 거실의 수평 경계구역과 완전히 분리하여 감시해야 한다. 따라서 계단(직통계단 외의 것에 한함), 경사로, 엘리베이터 권상기실·린넨슈트·파이프 피트 및 덕트 기타 이와 유사한 수직 관통 부분에 대하여는 별도로 경계구역을 설정하되, 하나의 수직 경계구역은 <strong>높이 45미터 이하</strong>로 하고, <strong>지하층의 계단 및 경사로</strong>(단, 지하층의 층수가 1개 층일 경우는 제외)는 지상층과 분리하여 또 별도로 하나의 경계구역으로 설정해야 한다. 또한 외기에 면하여 상시 개방된 부분이 있는 차고·주차장·창고 등에 있어서는 외기에 면하는 각 부분으로부터 <strong>5미터 미만</strong>의 범위 안에 있는 부분은 연기가 밖으로 흩어져 감지가 어려우므로 경계구역 면적 산정에서 제외하며, 스프링클러설비·물분무등소화설비 또는 제연설비의 화재감지장치로서 화재감지기를 설치한 경우의 경계구역은 방재 연동의 일치를 위해 해당 소화설비의 <strong>방사구역 또는 제연구역과 동일하게 설정</strong>할 수 있다. 아울러 전력·통신용 지하구의 경우에는 하나의 경계구역 길이를 <strong>700미터 이하</strong>로 설정한다.
-            </p>
-            
-          </div></div>
+      <div id="sec1">
+        <h2 class="text-xl font-bold mb-3">1. 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경보형감지기·발신기 기준</h2>
+        <div class="para-block" id="theory-sec1-p1">
+          <p class="prose-body">
+            앞서 제4편 제2장에서 준비작동식·일제살수식 스프링클러설비와 제3편 제3장의 가스·분말소화설비가 자동화재탐지설비 감지기의 전기 신호를 받아 솔레노이드밸브를 개방함을 확인했습니다. 그런데 수천 제곱미터에 달하는 대형 건물이나 다층 빌딩의 모든 감지기를 단 하나의 회선으로만 묶어 두면, 정작 수신기가 화재 신호를 받더라도 어느 층 어느 구역에서 불이 났는지 소방대와 방재실이 특정하지 못해 수색 과정에서 골든타임을 허비하게 되며, 반대로 수직 계단실·덕트를 타고 연기가 층간을 관통하면 경계 파악이 한순간에 무력화되는 위기에 빠집니다. 따라서 입법자는 소방대가 한눈에 발화 위치를 식별하여 즉각 진입·진압할 수 있는 적정 감시 단위로 건물을 구획하고자, ｢자동화재탐지설비 및 시각경보장치의 화재안전성능기준(NFPC 203)｣ 제4조에서 수신기가 화재 발생 위치를 1개의 지구표시등이나 고유 지구 번호로 신속히 식별해 내는 최소 감시 구획 단위인 <strong>경계구역(Alarm Zone)</strong> 설정 기준을 법제화하였습니다.
+            <span class="formula-box">
+              <span class="formula-badge">자동화재탐지설비 경계구역 핵심 수치 (NFPC 203 제4조)</span>
+              <span class="formula-eq">수평 면적 &le; 600 m<sup>2</sup>(출입구 내부 전체 투시 시 1,000 m<sup>2</sup>) &middot; 한 변 &le; 50 m &nbsp;|&nbsp; 2개층 합 &le; 500 m<sup>2</sup> 통합 &nbsp;|&nbsp; 수직 &le; 45 m</span>
+              <span class="formula-ex">💡 <strong>한 변 50 m 불변 원칙</strong> | 주된 출입구에서 내부 전체가 한눈에 내려다보이는 투시 예외로 면적이 1,000 m<sup>2</sup> 이하까지 완화되더라도, 연기를 육안 식별할 수 있는 거리 한계인 <strong>한 변의 길이 기준 50 m 이하는 절대 완화되지 않고 그대로 유지</strong>됩니다(3개 층 이상은 면적과 무관하게 통합 불가).</span>
+            </span>
+            <span class="prose-item"><strong>① 수평 · 수직 · 지하구 · 도로터널 경계구역 설정 세부 기준</strong></span>
+            <span class="prose-sub">&bull; <strong>수평 경계구역 및 층간 통합</strong>: <strong>하나의</strong> 경계구역은 원칙적으로 2 이상의 건축물 또는 2 이상의 층에 걸치지 아니하되, 2개 층 바닥면적 합계가 <strong>500제곱미터 이하</strong>인 소규모 구간에 한해 예외적으로 1개 경계구역으로 통합할 수 있습니다(동일 층 수평 면적은 원칙 <strong>600제곱미터 이하</strong>, 주된 출입구에서 내부 전체가 투시되는 경우 <strong>1,000제곱미터 이하</strong>, 한 변 길이 50미터 이하).</span>
+            <span class="prose-sub">&bull; <strong>수직 경계구역</strong>: 제2편 제3장에서 배운 굴뚝효과(연돌효과)를 타고 연기가 초속 2 m에서 5 m로 솟구치는 <strong>계단</strong>·경사로·엘리베이터 승강로·린넨슈트·파이프피트 및 덕트 등 수직 관통부는 일반 거실과 섞지 않고 별도 수직 경계구역으로 분리하여 높이 <strong>45미터 이하</strong>(일반 층고 기준 약 10층 내외 규모)마다 설정합니다(지하층이 지하 1층뿐이면 지상층 계단과 통합 가능하나, 지하 2층 이상이면 지하층 계단을 별도 경계구역으로 분리).</span>
+            <span class="prose-sub">&bull; <strong>지하구 · 도로터널 경계구역</strong>: 전력·통신용 지하구(NFTC 605)의 하나의 경계구역 길이는 <strong>700미터 이하</strong>로 설정하며, 도로터널(NFTC 603)은 긴 터널 내부에서도 발화 구간을 정밀 특정할 수 있도록 하나의 경계구역 길이를 <strong>100미터 이하</strong>로 설정합니다(참고: 도로터널 발신기와 소화기는 <strong>50미터 이내</strong> 간격으로 설치).</span>
+            <span class="prose-sub">&bull; <strong>경계구역 면적 산정 제외 vs 감지기 설치 제외 구별</strong>: 외기에 면하여 상시 개방된 부분이 있는 차고·주차장·창고 등에서 <strong>외기에 면하는 각 부분으로부터 5 m 미만</strong> 범위만 경계구역 면적 산정에서 제외합니다. 반면 목욕실·욕조나 샤워시설이 있는 화장실 등은 습기·수증기에 의한 비화재보 우려로 <strong>감지기 설치 제외</strong> 장소에 해당할 뿐, 경계구역 면적 산정 자체에서는 제외되지 않고 해당 층 면적에 포함됩니다.</span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec1-p2">
+          <p class="prose-body">
+            자동화재탐지설비 대상에 미치지 못하는 소규모 구획실이나 심야 취침 공간에서는 초기 연기나 화염이 발생하더라도 재실자가 잠든 사이 경보를 듣지 못해 질식 참사로 이어지기 쉽고, 대규모 건물에서도 천장 감지기가 작동하기 전에 사람이 먼저 불꽃을 목격하거나 각 층 구석의 재실자에게 경보음이 충분히 도달하지 못하면 초기 대응과 대피가 지연되는 위험이 발생합니다. 이러한 조기 경보 사각지대와 수동 통보 지연을 해소하기 위해, 독립 전원으로 즉시 경보를 울리는 비상경보설비의 단독경보형감지기(NFPC 201)와 자동화재탐지설비의 수동 기동장치인 발신기·지구음향장치의 법정 설치 수치를 명확히 규정하고 있습니다.
+            <span class="prose-item"><strong>② 단독경보형감지기 · 발신기 · 지구음향장치 법정 수치</strong></span>
+            <span class="prose-sub">&bull; <strong>단독경보형감지기(NFPC 201)</strong>: 별도 수신기 배선 없이 본체에 내장된 건전지와 부저로 즉시 경보를 울리는 <strong>단독경보형감지기</strong>는 구획된 각 실마다 설치하되 바닥면적이 150 m<sup>2</sup>를 초과하면 <strong>150 m<sup>2</sup>마다 1개 이상</strong> 설치하며, 이웃하는 실내의 <strong>바닥면적이 각각 30 m<sup>2</sup> 미만이고 벽체 상부의 전부 또는 일부가 개방되어 이웃하는 실내와 공기가 상호 유통되면</strong> <strong>1개의 실</strong>로 보아 감지기 1개로 통합 방호할 수 있습니다.</span>
+            <span class="prose-sub">&bull; <strong>발신기(수동 기동장치)</strong>: 사람이 불을 먼저 발견했을 때 누르는 P형 발신기는 각 층마다 보행거리가 아닌 <strong>수평거리 25 m 이하</strong>가 되도록 복도·계단 출입구 부근의 바닥으로부터 높이 <strong>0.8 m 이상 1.5 m 이하</strong>에 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>지구음향장치(경종·사이렌)</strong>: 각 층마다 <strong>수평거리 25 m 이하</strong>가 되도록 설치하되, 수면 중인 재실자도 즉시 인지할 수 있도록 음향장치 중심으로부터 <strong>1 m 떨어진 위치에서 음압이 90 dB 이상</strong>이 되도록 확보합니다.</span>
+          </p>
+        </div>
+      </div>
 
-        <div id="sec2"" class="space-y-6">
-          <h2>제2절. 화재감지기(열·연기·불꽃)의 분류와 작동 원리 (NFPC 203 제3조 · NFTC 203 제2.4)</h2>
+      <div id="sec2">
+        <h2 class="text-xl font-bold mb-3">2. 열감지기의 물리적 작동 원리 및 연기감지기·부착높이별 적응 기준</h2>
+        <div class="para-block" id="theory-sec2-p3">
+          <p class="prose-body">
+            화재 초기의 징후를 놓치지 않으려고 감지기의 감도를 무조건 예민하게만 설정하면, 평상시 주방의 조리 열기·수증기나 보일러실의 온풍, 난방기 가동, 미세 먼지에도 오작동(비화재보)이 빈발하여 결국 건물 관계인이 수신기 경종 스위치를 차단해 버리는 치명적 무경보 참사로 이어집니다. 반대로 오작동을 피하려고 감도를 둔감하게만 맞추면 불꽃 없이 연기만 내며 타들어 가는 훈소 화재를 제때 포착하지 못합니다. 이러한 비화재보 차단과 초기 감지 신속성의 딜레마를 해결하기 위해, 화재감지기는 연소 시 발생하는 열(온도 상승률·절대온도)·연기(이온전류 변화·산란광·감광률)·불꽃(자외선·적외선 파장)을 포착해 전기 신호로 변환하되 작동 원리와 구조에 따라 적응 장소를 엄격히 구분하고 있습니다.
+            <span class="prose-item"><strong>① 열감지기 분류(차동식 · 정온식 · 보상식) 및 분포형 3종</strong></span>
+            <span class="prose-sub">&bull; <strong>차동식 · 정온식 · 보상식 구분</strong>: 주위 온도가 일정 상승률 이상으로 급상승할 때 작동하는 <strong>차동식</strong>, 일정 공칭작동온도 이상에 도달할 때 작동하는 정온식, 그리고 차동식과 정온식 기능 중 어느 하나라도 먼저 도달하면 즉시 작동하는 <strong>보상식(오직 스포트형만 존재하며 분포형은 없음)</strong>으로 나뉩니다.</span>
+            <span class="prose-sub">&bull; <strong>다이어프램 · 리크구멍 및 비화재보 적응 장소</strong>: 차동식 스포트형은 감열실 공기 팽창으로 <strong>다이어프램</strong>을 밀어 접점을 닫되 난방 등 완만한 온도 상승 시 공기를 빼주어 비화재보를 막는 <strong>리크구멍(Leak hole)</strong>을 갖추며, 주방·보일러실처럼 평상시 급격한 온도 변화가 잦은 장소에는 차동식 대신 바이메탈 만곡이나 절연 피복 용융을 쓰는 <strong>정온식 감지기</strong>를 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>차동식 분포형 — 공기관식</strong>: 넓은 천장 면에 가느다란 구리 <strong>공기관식</strong> 튜브를 포설하는 방식으로서, 1개의 검출부에 연결하는 공기관 전체 길이는 <strong>100 m 이하</strong>, 하나의 감지구역 내 공기관 <strong>노출부분은 20 m 이상</strong>, 공기관 상호 간 거리는 원칙 <strong>6 m 이하(주요구조부 내화구조 시 9 m 이하)</strong>로 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>차동식 분포형 — 열전대식 · 열반도체식</strong>: <strong>열전대식</strong>은 서로 다른 두 종류의 금속선 접점 간 온도차에 의해 기전력이 발생하는 <strong>제벡 효과(Seebeck effect)</strong>를 이용하며 1검출부당 열전대부를 <strong>4개 이상 20개 이하</strong>로 직렬 접속하고, 열반도체식은 열기전력 소자를 분포 배치하여 감지합니다.</span>
+            <span class="prose-item"><strong>② 연기감지기(이온화식 vs 광전식) 및 불꽃감지기 원리</strong></span>
+            <span class="prose-sub">&bull; <strong>이온화식 연기감지기</strong>: <strong>이온화식</strong>은 내부 이온실의 방사성 동위원소 <strong>아메리슘(<sup>241</sup>Am)</strong>에서 방출되는 알파(&alpha;)선으로 공기를 이온화해 미세 전류를 흘려보내다가, 연기 입자가 유입되어 이온과 결합하면 이동 속도가 둔화되어 <strong>이온전류가 감소</strong>하는 원리로 작동합니다(눈에 잘 보이지 않는 극초기 미세 연기에 민감).</span>
+            <span class="prose-sub">&bull; <strong>광전식 연기감지기 및 불꽃감지기</strong>: <strong>광전식</strong>은 발광부(적외선 LED)와 수광부(광전셀)를 이용해 훈소 시 다량 발생하는 연기 입자의 산란광 증가(스포트형) 또는 투과광 감광률(분리형·공기흡입형)을 감지하며, 불꽃감지기는 화염 고유의 자외선(UV)·적외선(IR) 깜빡임 주파수를 포착하여 연기가 천장까지 도달하기 어려운 초고천장 체육관·창고·터널·옥외 시설에 최적입니다.</span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec2-p4">
+          <p class="prose-body">
+            앞서 제2편 제2장·제3장에서 배웠듯 가연물이 불꽃 없이 타는 <strong>훈소</strong> 초기에는 열기보다 다량의 연기가 먼저 발생하며, 계단실·승강로에서는 <strong>굴뚝효과(연돌효과)</strong>를 타고 연기가 초속 2 m에서 5 m까지 치솟아 피난로의 가시거리(감광계수)를 순식간에 지워 버립니다. 반대로 체육관·물류창고처럼 천장이 높아질수록 상승하는 화재 플룸(Plume)에 주변 찬 공기가 대량 유입(Air Entrainment)되어 열기와 연기가 급격히 냉각·희석되므로, 일반 열감지기나 저감도 감지기로는 천장에서 화재를 아예 포착하지 못하는 감지 공백 위기가 발생합니다. 따라서 건물 용도와 천장 부착높이에 맞추어 반응이 빠른 연기감지기를 의무 배치하고, 높이 구간별로 신뢰성이 떨어지는 감지기를 단계적으로 탈락시키는 엄격한 컷오프 기준(NFPC 203 제7조)이 적용됩니다.
+            <span class="formula-box">
+              <span class="formula-badge">천장 부착높이 구간별 적응 감지기 탈락 컷오프 (NFPC 203 제7조)</span>
+              <span class="formula-eq">4 m&uarr;: 정온 2종&middot;연기 3종 탈락 | 8 m&uarr;: 스포트 열&middot;정온선 탈락 | 15 m&uarr;: 전 열&middot;연기 2종 탈락 | 20 m&uarr;: 불꽃&middot;광전 아날로그(분리&middot;공기흡입)</span>
+              <span class="formula-ex">💡 <strong>구간별 생존 감지기</strong> | <strong>4 m 이상 8 m 미만</strong>부터 이미 <strong>연기 3종과 정온식 2종이 탈락</strong>(정온식 특·1종 및 연기 1·2종 생존)하며, <strong>8 m 이상 15 m 미만</strong> 구간은 모든 스포트형 열감지기와 정온식 감지선형이 탈락하여 차동식 분포형·연기(1·2종)·연기복합·불꽃만 가능하고, <strong>15 m 이상 20 m 미만</strong> 구간은 열감지기가 전멸하여 이온화 1종·광전 1종·연기복합·불꽃만 가능하며, <strong>20 m 이상</strong> 초고천장에서는 오직 <strong>불꽃감지기 및 광전식(분리형·공기흡입형) 중 아날로그방식(공칭감지농도 하한값 감광율 5%/m 미만)</strong>만 설치할 수 있습니다(비아날로그 광전 1종 불가).</span>
+            </span>
+            <span class="prose-item"><strong>③ 연기감지기 의무 설치 장소 및 면적 · 거리 · 이격 기준</strong></span>
+            <span class="prose-sub">&bull; <strong>의무 설치 장소</strong>: 화재 인지가 늦은 취침·입원·수용 시설(공동주택·오피스텔·숙박·노유자·의료·수련·교정·군사시설)의 거실, 모든 건물의 계단·경사로, 길이 30 m 이상 복도, 엘리베이터 승강로·린넨슈트에는 열감지기보다 반응이 빠른 <strong>연기감지기</strong>를 의무 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>연기감지기 배치 면적 및 거리 기준</strong>: 연기감지기(1·2종)는 거실 부착높이 4 m 미만 시 바닥면적 <strong>150 m<sup>2</sup>마다</strong>(4 m 이상 20 m 미만 시 절반인 <strong>75 m<sup>2</sup>마다</strong>, 3종은 50 m<sup>2</sup>마다), 복도는 <strong>보행거리 30 m</strong>(3종 20 m)마다, 계단·경사로는 <strong>수직거리 15 m</strong>(3종 10 m)마다 1개 이상 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>벽 · 보 이격거리, 보 구획 및 경사 제한</strong>: 연기감지기는 천장 모서리 사각지대(Dead Space)를 피해 벽 또는 보로부터 <strong>0.6 m 이상</strong> 이격하고 공조 급기구 등 공기 유입구로부터는 1.5 m 이상 이격하며(보 돌출 깊이 기준: 스포트형 열감지기는 부착면으로부터 깊이 <strong>0.4 m 이상</strong> 돌출한 보로 구획 시 별도 구획 설치, 연기감지기는 0.6 m 이상 돌출 보 기준), 불꽃감지기를 제외한 스포트형 감지기는 <strong>45도 이상 경사 금지</strong> 원칙을 준수합니다.</span>
+          </p>
+        </div>
+      </div>
 
-          <div id="theory-sec2-p3" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17)</div><ul class="sidenote-list"><li><strong>차동식</strong>: 주위 온도가 <strong>일정 상승률 이상</strong>일 때 작동</li><li>&nbsp;&nbsp;- <strong>스포트형</strong>: <strong>일국소</strong>에서의 열효과에 의해 작동 (리크구멍)</li><li>&nbsp;&nbsp;- <strong>분포형</strong>: <strong>넓은 범위 내에서의 열효과 누적</strong>에 의해 작동 ➔ <strong>공기관식 · 열전대식(제벡 효과) · 열반도체식</strong> 3종</li><li><strong>정온식</strong>: 일국소 주위 온도가 <strong>일정 온도 이상</strong>일 때 작동 (스포트형·감지선형)</li><li><strong>보상식</strong>: 차동식 + 정온식 겸비 (스포트형)</li></ul></div></aside>
-            <p class="prose-body">
-              화재가 발생하면 가연물에서 먼저 미세한 연소 입자(연기)가 피어오르고, 이어서 화염(불꽃)과 대류열이 천장으로 치솟는다. 화재감지기는 무엇을 감지하느냐에 따라 크게 <strong>열감지기(차동식·정온식·보상식·열아날로그식), 연기감지기(이온화식·광전식), 불꽃감지기(자외선식·적외선식), 복합형 감지기</strong>로 분류되며, <strong>NFPC 203 제3조</strong>에 규정된 법정 정의와 물리적 작동 원리를 정확히 구분하는 것이 출제 1순위이다. 먼저 <strong>열감지기</strong> 중 <strong>차동식 감지기</strong>는 주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동하는 감지기로, 감지 범위에 따라 두 가지로 나뉜다. ① <strong>차동식 스포트형 감지기</strong>는 <strong>일국소(한 지점)에서의 열효과</strong>에 의하여 작동하는 감지기로, 감열실 내부 공기가 급격히 팽창할 때 다이아프램(파상판)이 밀려 올라가 접점을 닫되, 난방이나 계절 변화에 따른 완만한 온도 상승 시에는 팽창 공기를 미세한 <strong>리크구멍</strong>(Leak hole)으로 배출하여 비화재보(오작동)를 막는다. ② <strong>차동식 분포형 감지기</strong>는 <strong>넓은 범위 내에서의 열효과 누적</strong>에 의하여 작동하는 감지기로, 천장이 넓거나 높은 공간에 설치하며 감지 소자의 원리에 따라 <strong>공기관식</strong>(긴 동관 내부 공기의 팽창 압력으로 다이아프램을 작동), <strong>열전대식</strong>(서로 다른 두 금속 접점의 온도차로 기전력이 발생하는 <strong>제벡 효과[Seebeck effect]</strong> 이용), <strong>열반도체식</strong>(열에 의한 반도체 소자의 기전력 이용) 3가지로 세분된다. 반면 <strong>정온식 감지기</strong>는 일국소의 주위 온도가 <strong>일정 온도 이상</strong>이 되는 경우에 작동하는 감지기로(외관이 전선으로 된 <strong>감지선형</strong>과 바이메탈의 열팽창계수 차이에 의한 만곡 등을 이용하는 <strong>스포트형</strong>이 있음), 주방이나 보일러실처럼 평상시 온도 변화가 심해 차동식을 쓰면 오작동이 나는 장소에 설치한다. 그리고 차동식(온도 상승률 감지)과 정온식(일정 온도 도달 감지)의 기능을 하나로 결합하여 두 조건 중 어느 하나만 충족해도 작동하는 열감지기가 바로 <strong>보상식 스포트형 감지기</strong>이다.
-            </p>
-            
-          </div><div id="theory-sec2-p4" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">연기감지기 · 불꽃감지기 핵심 포인트</div><ul class="sidenote-list"><li><strong>이온화식</strong>: 아메리슘($^{241}\text{Am}$) $\alpha$선에 의한 <strong>이온전류 감소</strong> 이용</li><li><strong>광전식</strong>: 빛의 <strong>산란</strong>(스포트형) 또는 <strong>감광·차폐</strong>(분리형·공기흡입형) 이용 (열감지기 아님! 2018년 Q20 · 2023년 Q23 · 2024년 Q18)</li><li><strong>불꽃감지기</strong>: 화염의 자외선($\text{UV}$)$\cdot$적외선($\text{IR}$) 감지 (고층 대공간·터널 적응)</li></ul></div></aside>
-            <p class="prose-body">
-              열보다 먼저 확산되는 연소 생성물이나 복사선을 포착하는 <strong>연기감지기</strong>와 <strong>불꽃감지기</strong>는 인명 대피가 시급한 계단·복도·취침시설이나 층고가 높은 대공간에서 결정적인 역할을 수행한다. <strong>연기감지기</strong>는 작동 원리에 따라 <strong>이온화식</strong>과 <strong>광전식</strong>으로 나뉜다(시험에서 '광전식'을 열감지기나 차동식 분포형의 일종으로 끼워 넣는 함정이 가장 빈번하다!). 첫째, <strong>이온화식 스포트형 감지기</strong>는 이온실 내부에 극미량의 방사성 동위원소인 <strong>아메리슘($^{241}\text{Am}$)</strong>을 넣어 방출되는 알파($\alpha$)선으로 공기를 이온화시켜 평상시 미세 전류가 흐르게 두었다가, 화재로 연기 입자가 유입되어 이온과 결합하면 이동 속도가 느려져 <strong>이온전류가 감소하는 현상</strong>을 감지한다. 눈에 보이지 않는 아주 작은 연소 초기 입자(0.01에서 1마이크로미터 크기) 감지에 탁월하다. 둘째, <strong>광전식 감지기</strong>는 연기 입자에 의한 빛의 <strong>산란(산란광식)</strong> 또는 <strong>차폐(감광식)</strong>를 이용한다. 일반 거실·복도 천장에 다는 <strong>광전식 스포트형</strong>은 암상자 내부에서 발광다이오드($\text{LED}$)의 빛이 평상시에는 수광소자(광전셀)에 닿지 않도록 굴절시켜 두었다가, 연기 입자가 들어와 빛이 부딪히며 흩어지는 <strong>산란광</strong>이 수광소자에 입사될 때 작동한다. 반면 송광부와 수광부를 멀리 마주 보게 설치하는 <strong>광전식 분리형</strong>이나 <strong>광전식 공기흡입형</strong>은 광축 사이에 연기가 끼어 수광부로 들어오는 빛의 양이 줄어드는 <strong>감광(차폐) 현상</strong>을 이용한다. 마지막으로 <strong>불꽃감지기</strong>는 화염에서 직접 방출되는 <strong>자외선($\text{UV}$)</strong>이나 <strong>적외선($\text{IR}$, 이산화탄소 공명방사 파장대인 약 4.3마이크로미터 대역의 불꽃 깜빡임 주파수 등)</strong>의 복사에너지 변화를 빛의 속도로 감지하므로, 열이나 연기가 천장까지 올라가는 데 오랜 시간이 걸리는 고층 체육관·전시장·문화집회시설 및 폭발성 위험물 저장소에 최적으로 사용된다.
-            </p>
-            
-          </div>
-
-          <div class="para-block overflow-x-auto">
-            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 1] 화재감지기(열감지기·연기감지기·불꽃감지기)의 법정 정의 및 작동 원리 총정리</div>
-            <table class="book-table">
-              <thead>
-                <tr>
-                  <th>대분류</th>
-                  <th>세부 종류</th>
-                  <th>NFPC 203 제3조 법정 정의 (2024년 Q17)</th>
-                  <th>물리·화학적 작동 메커니즘 및 세부 구분 (2018 Q20 · 2023 Q23)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="4">열감지기<br/>(Heat Detector)</td>
-                  <td class="font-bold text-slate-200">차동식 스포트형</td>
-                  <td>주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동 (<strong>일국소</strong>에서의 열효과에 의해 작동)</td>
-                  <td>· 감열실 공기 팽창 ➔ 다이아프램이 접점 폐쇄<br/>· <strong>리크구멍(Leak hole)</strong>으로 완만한 온도 상승 시 비화재보 방지</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">차동식 분포형</td>
-                  <td>주위 온도가 <strong>일정 상승률 이상</strong>이 되는 경우에 작동 (<strong>넓은 범위 내에서의 열효과 누적</strong>에 의해 작동)</td>
-                  <td>· <strong>공기관식</strong>: 동관 내부 공기 팽창압 이용<br/>· <strong>열전대식</strong>: 이종 금속 접점 열기전력(<strong>제벡 효과</strong>) 이용<br/>· <strong>열반도체식</strong>: 반도체 열기전력 이용 (※ 광전식은 제외!)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">정온식<br/>(스포트형·감지선형)</td>
-                  <td>일국소의 주위 온도가 <strong>일정 온도 이상</strong>이 되는 경우에 작동 (전선 형태는 감지선형, 그 밖은 스포트형)</td>
-                  <td>· 바이메탈 만곡, 가용절연물 용융, 액체 팽창 등 이용<br/>· 주방·보일러실 등 평상시 급격한 온도 변화 장소에 설치</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">보상식 스포트형</td>
-                  <td><strong>차동식과 정온식의 성능을 겸비</strong>하여 두 조건 중 어느 하나만 충족해도 작동</td>
-                  <td>· 급격한 온도 상승(차동식)과 완만한 고온 축적(정온식)을 모두 포착</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="2">연기감지기<br/>(Smoke Detector)</td>
-                  <td class="font-bold text-slate-200">이온화식 스포트형</td>
-                  <td>일국소의 주위 공기가 일정 농도의 연기를 포함하게 되는 경우에 이온전류 변화로 작동</td>
-                  <td>· 방사성 동위원소 <strong>아메리슘($^{241}\text{Am}$)</strong>의 알파($\alpha$)선 전리작용 이용<br/>· 연기 입자 유입 시 <strong>이온전류 감소</strong> 감지 (초기 미립자 연기 우수)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">광전식<br/>(스포트·분리·공기흡입)</td>
-                  <td>주위 공기가 일정 농도의 연기를 포함하게 되는 경우에 광전소자에 입사되는 광량 변화로 작동</td>
-                  <td>· <strong>광전식 스포트형</strong>: 연기 입자에 의한 <strong>산란광</strong> 증가 감지<br/>· <strong>광전식 분리형·공기흡입형</strong>: 연기 차폐에 의한 <strong>감광률</strong> 증가 감지</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300">불꽃감지기<br/>(Flame Detector)</td>
-                  <td class="font-bold text-slate-200">자외선식 · 적외선식 · 복합식</td>
-                  <td>화염에서 방사되는 자외선 또는 적외선의 변화가 일정량 이상이 되는 경우에 작동</td>
-                  <td>· 화염의 자외선($\text{UV}$) 또는 적외선($\text{IR}$, $\text{CO}_2$ 공명방사 파장) 감지<br/>· 층고가 높은 대공간, 터널, 폭발성 위험물 시설에 최적</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></div>
-
-        <div id="sec3"" class="space-y-6">
-          <h2>제3절. 수신기(P형·R형), 화재알림설비 및 우선경보방식 (NFPC 203 · NFPC 207 · NFTC 202·203)</h2>
-
-          <div id="theory-sec3-p5" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">수신기 및 화재알림설비 기출 급소</div><ul class="sidenote-list"><li><strong>P형 수신기 (2024년 Q18)</strong>: 경계구역별 <strong>1대 1 접점방식</strong> 수신 (중소형 건물)</li><li><strong>R형 수신기 (2024년 Q18)</strong>: <strong>중계기</strong>를 통한 <strong>다중전송방식(주소형 통신)</strong> 수신 ('R형이 1대 1 접점방식' = X!)</li><li><strong>화재알림설비 (NFPC 207, 2025년 Q25)</strong>: 화재알림형 감지기·단독경보형감지기·중계기·수신기·원격감시서버로 구성 ('화재알림형 비상경보장치'라는 용어는 없음!)</li></ul></div></aside>
-            <p class="prose-body">
-              감지기나 수동 <strong>발신기</strong>(수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치)에서 보낸 신호를 받아 화재 여부를 판단하고 경보·방재 설비를 연동시키는 두뇌 장치가 바로 <strong>수신기</strong>이다. 수신기는 신호 전송 방식에 따라 <strong>P형(Proprietary) 수신기</strong>와 <strong>R형(Record/Multiplex) 수신기</strong>로 양분되며, 두 방식의 신호 체계를 뒤바꾸는 선지가 자주 출제된다. <strong>P형 수신기</strong>는 감지기 또는 발신기로부터 발하는 화재신호를 경계구역별로 각각 독립된 전선을 통해 <strong>1대 1 접점방식(고유신호)</strong>으로 직접 수신하여 화재 발생 구역을 표시등으로 나타내는 수신기이다. 구조가 직관적이고 유지관리가 쉬워 중소규모 건축물에 널리 쓰이지만, 경계구역 수가 늘어날수록 수신기로 들어오는 전선 가닥수가 비례하여 급증한다는 한계가 있다. 이를 해결하기 위해 개발된 <strong>R형 수신기</strong>는 감지기 또는 발신기에서 발하는 신호를 현장의 <strong>중계기</strong>(Repeater)가 먼저 수집한 뒤, 이를 <strong>다중전송방식(고유 주소형 디지털 통신 신호)</strong>으로 변환하여 소수의 통신선만으로 수신기에 전송·기록·표시하는 수신기이다. R형 수신기는 선로 수를 획기적으로 줄일 뿐만 아니라 스프링클러, 제연설비, 방화셔터 등을 정밀하게 개별 제어할 수 있어 초고층·대형 복합 건축물에 필수적으로 채택된다. 또한 수신기가 화재신호를 수신하면 음향장치(지구경종·사이렌)와 함께 <strong>시각경보기</strong>(청각장애인에게 <strong>점멸 형태의 빛</strong>으로 시각경보를 하는 장치, 바닥으로부터 2미터 이상 2.5미터 이하 설치) 및 <strong>비상방송설비</strong>(수신기에 화재신호가 도달하면 음성 방송으로 화재 사실을 알리는 설비)가 즉시 연동하여 작동한다. 아울러 전통시장 등 화재 취약 구역에서 관계인과 소방관서에 실시간으로 화재정보를 통보하기 위해 제정된 <strong>화재알림설비의 화재안전성능기준</strong>(NFPC 207) 제3조에서는 ① <strong>발신기</strong>, ② <strong>화재알림형 감지기</strong>, ③ <strong>화재알림형 단독경보형감지기</strong>(열·연기·불꽃 등을 자동 감지하여 <strong>자체에 내장된 음향장치로 경보</strong>하고 화재정보값 및 화재신호 등을 유무선으로 송수신하는 감지기), ④ <strong>화재알림형 중계기</strong>(화재알림형 감지기·발신기 또는 전기적 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치), ⑤ <strong>화재알림형 수신기</strong>, ⑥ <strong>원격감시서버</strong>(원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호·상태신호 등을 원격으로 감시하기 위한 서버)를 규정하고 있으며, 법령상 <strong>'화재알림형 비상경보장치'라는 용어는 존재하지 않는다</strong>.
-            </p>
-            
-          </div><div id="theory-sec3-p6" class="para-block has-sidenote"><aside class="sidenote"><div class="sidenote-box"><div class="sidenote-title">현행 우선경보방식 계산 공식 (2026년 Q25)</div><ul class="sidenote-list"><li><strong>5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과)</strong>: 발화층 + <strong>직상 1개 층</strong> (1층 발화 시 지하 전 층 추가)</li><li><strong>11층 이상 [공동주택 16층 이상]</strong>: 발화층 + <strong>직상 4개 층</strong> (1층 발화 시 지하 전 층 추가)</li><li><strong>실전 적용 (지상 20층 건물, 지상 2층 발화)</strong>: <strong>지상 2층 + 지상 3·4·5·6층</strong> (지상 1층·지하층 제외!)</li></ul></div></aside>
-            <p class="prose-body">
-              마지막으로 자동화재탐지설비(NFTC 203)와 비상방송설비(NFTC 202)에서 가장 중요한 최신 개정 출제 포인트가 바로 <strong>우선경보방식</strong>의 경보 대상 층 산정 기준이다. 층수가 5층 미만이거나 연면적이 3,000제곱미터 이하인 소규모 건축물은 화재 시 전 층에 동시에 경보를 울리는 <strong>일제경보방식</strong>을 적용한다. 그러나 <strong>층수가 5층 이상으로서 연면적이 3,000제곱미터를 초과하는 특정소방대상물</strong>에서 전 층에 동시에 사이렌을 울리면 모든 층의 재실자가 한꺼번에 피난계단으로 몰려 압사 사고와 병목 현상(패닉)이 발생할 위험이 크다. 따라서 위험도가 가장 높은 발화층과 그 직상부 층부터 순차적으로 대피시키는 <strong>우선경보방식</strong>을 적용하는데, 2022년 말 화재안전기술기준(NFTC 202·203) 개정으로 <strong>11층 이상(공동주택은 16층 이상) 고층 건축물의 직상 경보 범위가 기존 1개 층에서 '직상 4개 층'으로 대폭 확대</strong>되었다. 현행 기준을 정확히 나누어 보면, 첫째 <strong>층수가 5층 이상 10층 이하(공동주택은 5층 이상 15층 이하)로서 연면적 3,000제곱미터를 초과</strong>하는 경우에는 ① 지상 2층 이상 발화 시 <strong>발화층 및 그 직상층</strong>, ② 지상 1층 발화 시 <strong>발화층(1층), 그 직상층(2층) 및 지하층 전 층</strong>, ③ 지하층 발화 시 <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보를 발한다. 둘째, <strong>층수가 11층 이상(공동주택은 16층 이상)로서 연면적 3,000제곱미터를 초과</strong>하는 경우에는 ① 지상 2층 이상 발화 시 <strong>발화층 및 그 직상 4개 층</strong>, ② 지상 1층 발화 시 <strong>발화층(1층), 그 직상 4개 층(2층·3층·4층·5층) 및 지하층 전 층</strong>, ③ 지하층 발화 시 <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보를 발한다. 예를 들어 <strong>지하 3층·지상 20층인 건물(11층 이상 대상)의 지상 2층에서 화재가 발생</strong>했다면, 발화층인 <strong>지상 2층</strong>과 그 직상 4개 층인 <strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>(총 5개 층)에만 우선경보를 발해야 하며, 직하층인 지상 1층이나 지하층은 경보 대상에 포함되지 않는다.
-            </p>
-            
-          </div>
-
-          <div class="para-block overflow-x-auto">
-            <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표 2] 수신기(P형·R형) 방식 비교 및 현행 우선경보방식(NFTC 202·203) 층수·발화위치별 경보 대상 층 총정리</div>
-            <table class="book-table">
-              <thead>
-                <tr>
-                  <th>구분 영역</th>
-                  <th>세부 기준 및 조건</th>
-                  <th>신호 전송 방식 또는 발화 층별 의무 경보 대상 층 (기출 1순위)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="2">수신기 방식 비교<br/>(2024년 Q18)</td>
-                  <td class="font-bold text-slate-200">P형 수신기 (Proprietary)</td>
-                  <td>· 감지기·발신기로부터 경계구역별로 <strong>1대 1 접점방식(고유신호)</strong>으로 직접 수신<br/>· 구조 단순·유지보수 용이, 경계구역 증가 시 배선 수 급증 (중소형 건물용)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">R형 수신기 (Record/Multiplex)</td>
-                  <td>· 감지기·발신기 신호를 <strong>중계기(Repeater)</strong>를 거쳐 <strong>다중전송방식(주소형 통신 신호)</strong>으로 수신·기록<br/>· 선로 수 대폭 절감 및 복합 방재 연동 용이 (초고층·대형 건물용)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="3">우선경보방식 I<br/><strong>5층 이상 10층 이하</strong><br/>(공동주택 15층 이하)<br/>[연면적 $3,000\text{m}^2$ 초과]</td>
-                  <td class="font-bold text-slate-200">지상 2층 이상에서 발화 시</td>
-                  <td>· <strong>발화층 및 그 직상층(1개 층)</strong>에 경보</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">지상 1층에서 발화 시</td>
-                  <td>· <strong>발화층(1층), 그 직상층(2층) 및 지하층 전 층</strong>에 경보</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">지하층에서 발화 시</td>
-                  <td>· <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-emerald-300" rowspan="3">우선경보방식 II<br/><strong>11층 이상</strong><br/>(공동주택 <strong>16층 이상</strong>)<br/>[2026년 Q25 기출]</td>
-                  <td class="font-bold text-amber-300">지상 2층 이상에서 발화 시</td>
-                  <td>· <strong>발화층 및 그 직상 4개 층</strong>에 경보<br/>&nbsp;&nbsp;(예: 지상 20층 건물의 지상 2층 발화 ➔ <strong>지상 2층, 3층, 4층, 5층, 6층</strong> 경보 / 1층·지하층 제외!)</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">지상 1층에서 발화 시</td>
-                  <td>· <strong>발화층(1층), 그 직상 4개 층(2층·3층·4층·5층) 및 지하층 전 층</strong>에 경보</td>
-                </tr>
-                <tr>
-                  <td class="font-bold text-slate-200">지하층에서 발화 시</td>
-                  <td>· <strong>발화층, 그 직상층 및 기타 지하층 전 층</strong>에 경보</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></div>
-
-        </section>
+      <div id="sec3">
+        <h2 class="text-xl font-bold mb-3">3. P형·R형 수신기, 화재알림설비, 비상방송 우선경보 및 교차회로 연동 제어</h2>
+        <div class="para-block" id="theory-sec3-p5">
+          <p class="prose-body">
+            천장의 <strong>감지기</strong>나 벽면 발신기가 불을 포착하더라도 이를 방재실로 집결시켜 경보와 소화설비 기동을 통제하는 두뇌인 수신기가 신호를 감당하지 못하면 건물 전체 대응이 마비됩니다. 특히 수십 층과 수백 개 경계구역을 갖춘 대형·고층 건물에서 구역마다 개별 전선을 일대일로 끌고 오면 배선 가닥수가 기하급수적으로 폭주하여 시공·유지보수와 단선·발화 지점 판별이 불가능해지는 위기가 발생하며, 경종 소리만으로는 청각장애인이 화재를 인지할 수 없고 심야 무인 전통시장에서는 구내 경보만 울리다 119 통보가 지연되어 대형 연소 확대로 번질 위험이 큽니다. 이러한 배선 폭주와 경보·통보 사각지대를 해결하기 위해 건물 규모에 따라 전송 방식을 분화한 P형·R형 수신기, 빛으로 알리는 시각경보기, 그리고 사물인터넷 기반 화재알림설비(NFPC 207)가 구축되었습니다.
+            <span class="prose-item"><strong>① P형 vs R형 수신기 · 시각경보기 및 화재알림설비 (NFPC 207)</strong></span>
+            <span class="prose-sub">&bull; <strong>P형 수신기(고유신호식 · 1대 1 접점방식)</strong>: 각 경계구역마다 개별 지구선을 일대일로 수신기까지 직접 끌고 오는 <strong>1대 1 접점방식</strong>이어서 회로 구조가 단순하고 경계구역이 적은 중·소규모 건물에 경제적입니다.</span>
+            <span class="prose-sub">&bull; <strong>R형 수신기(기록·다중전송식)</strong>: 각 층 <strong>중계기</strong>가 아날로그 신호를 고유 번지수 디지털 패킷으로 변환해 소수의 공통 통신선으로 전송하는 <strong>다중전송방식</strong>이므로 배선 가닥수를 획기적으로 절감하고 고장·발화 위치를 정밀 기록하여 대규모·초고층 복합 건물에 압도적으로 유리합니다.</span>
+            <span class="prose-sub">&bull; <strong>시각경보기 설치 높이</strong>: 비상벨 소리를 듣지 못하는 <strong>청각장애인에게</strong> 고휘도 점멸 빛(스트로브)으로 화재를 알리는 <strong>시각경보기</strong>는 시야에 가리지 않도록 복도·통로·객실의 바닥으로부터 높이 <strong>2 m 이상 2.5 m 이하</strong>(천장 높이가 2 m 이하로 낮은 곳은 천장으로부터 <strong>0.15 m 이내</strong>)에 설치합니다.</span>
+            <span class="prose-sub">&bull; <strong>화재알림설비 구성(NFPC 207 제3조)</strong>: 자동화재탐지설비와 자동화재속보설비를 융합해 전통시장 등에 설치하는 <strong>화재알림설비</strong> 기준에서 <strong>화재알림설비의</strong> 핵심 구성요소는 화재알림형 감지기·화재알림형 중계기·화재알림형 수신기·발신기·<strong>화재알림형 비상경보장치</strong>(발신기·표시등·지구음향장치를 내장하여 경보하며, 감지기는 내장하지 않음) 및 <strong>원격감시서버</strong>이며(단독경보형감지기는 NFPC 201 소관), 화재 시 구내 경보와 동시에 관계인 문자 및 관할 소방관서(119 상황실) 음성·원격감시서버로 실시간 자동 통보합니다.</span>
+          </p>
+        </div>
+        <div class="para-block" id="theory-sec3-p6">
+          <p class="prose-body">
+            고층 빌딩에서 전 층에 동시 대피 방송을 내보내면 비상계단에 수천 명이 한꺼번에 몰려 병목·압사 참사가 발생할 수 있으므로, <strong>수신기에</strong> 화재신호가 도달했을 때 위험한 층부터 순차 대피시키는 <strong>현행</strong> 화재안전기술기준(NFTC 202·203)상 우선경보방식과 교차회로·비상전원 기준은 최고 빈출 1순위 영역입니다.
+            <span class="formula-box">
+              <span class="formula-badge">11층 이상(공동주택 16층 이상) 우선경보 발화 층별 범위 (NFPC · NFTC 202 · 203)</span>
+              <span class="formula-eq">2층&uarr; 발화 = 발화층 + 직상 4개층 &nbsp;|&nbsp; 지상 1층 발화 = 1층 + 직상 4개층 + 지하 전 층 &nbsp;|&nbsp; 지하 발화 = 발화층 + 직상 1개층 + 기타 지하 전 층</span>
+              <span class="formula-ex">💡 <strong>구법 5층 이상 10층 이하 폐지 · 지하층 발화 정정</strong> | 과거 구법에서 연면적 3,000 m<sup>2</sup> 초과 <strong>5층 이상 10층 이하</strong>(공동주택 15층 이하) 건물에 적용하던 직상 1개층 우선경보 기준은 전면 폐지되어, 현행 기준상 10층 이하(공동주택 15층 이하)는 전 층 일제경보방식을 적용하며 오직 <strong>11층 이상(공동주택은 16층 이상)</strong> 건물만 우선경보방식을 적용합니다. 특히 <strong>지하층 발화 시</strong>에는 11층 이상 초고층 빌딩이라도 직상 4개층이 아니라 오직 <strong>발화층 + 직상 1개층 + 기타 지하층 전체</strong>만 경보합니다.</span>
+            </span>
+            <span class="prose-item"><strong>② 교차회로방식 · 면제 8종 및 비상전원 · 비상방송 · 속보설비</strong></span>
+            <span class="prose-sub">&bull; <strong>교차회로방식 및 면제 8종</strong>: 준비작동식·일제살수식 SP, 물분무·포·가스계·분말소화설비에서 감지기 1개의 오작동으로 약제가 잘못 방출되는 사고를 막기 위해 하나의 방호구역 내 2개 이상의 감지기 회로가 동시에 작동할 때만 솔레노이드를 기동하는 <strong>교차회로방식</strong>을 채택하되(습식·건식·부압식 제외), 자체 신뢰성이 입증된 <strong>불꽃감지기 · 정온식 감지선형(정온식 스포트형은 면제 불가) · 분포형 · 복합형 · 광전식 분리형(및 공기흡입형) · 아날로그방식 · 다신호방식 · 축적방식</strong> 8종은 1회로만으로 기동하는 <strong>교차회로 면제</strong> 대상입니다(단, 교차회로방식 자체를 구성할 때 사용하는 감지기는 신호 지연을 막기 위해 비축적형 설치 필수).</span>
+            <span class="prose-sub">&bull; <strong>자탐 · 비상방송 비상전원 용량 (NFPC 604 반영)</strong>: 상용전원 정전 시 감시 상태를 <strong>60분 감시</strong> 지속한 뒤 그 시점부터 모든 경보장치를 <strong>10분 이상</strong>(층수 <strong>30층 이상 고층건축물은 50층 이상 여부와 무관하게 30분 이상</strong>) 경보할 수 있는 축전지·전기저장장치 용량을 확보해야 합니다(50층 이상 60분 기준은 수계 소화설비·제연·연결송수관 기준과 구별).</span>
+            <span class="prose-sub">&bull; <strong>비상방송설비 vs 자동화재속보설비 작동 시간</strong>: 비상방송설비는 기동장치 작동 후 <strong>10초 이내</strong>에 안내 방송이 개시되어야 하며(확성기 수평거리 25 m 이하, 음성입력 3 W[실내 1 W] 이상, 음량조절기 3선식 배선 강제 전환), <strong>자동화재속보설비</strong>는 수신기로부터 화재신호를 수신한 후 <strong>20초 이내에 3회 이상</strong> 119 상황실로 자동 음성 속보해야 합니다.</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
       <div class="para-block diagram-wrapper" id="diagramBox">
-      <div class="diagram-container">
-        <div class="flex items-center justify-between mb-3 border-b border-emerald-900/40 pb-2">
-          <span class="text-xs font-bold text-emerald-400">그림 1. 자동화재탐지설비 경계구역 설정 기준 및 감지기·수신기·비상방송 연동 계통도</span>
+      <div class="diagram-container cheat-sheet-wrap">
+        <div class="cheat-header">
+          <span class="cheat-badge">⚡ 1분 속독 스캔</span>
+          <h3 class="cheat-title">제4편 제3장 · 자동화재탐지설비 경계구역 · 감지기 · 수신기 및 우선경보 초고밀도 압축 정리본</h3>
         </div>
-                <div class="schema-board">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 자동화재탐지설비 수평·수직 경계구역 기준 및 열·연기감지기 작동 원리</div>
-            <div class="schema-subgrid">
-              <div class="schema-box">
-                <div class="schema-box-title">수평 · 수직 경계구역 핵심 수치</div>
-                <div>· 수평: <strong>600 m<sup>2</sup> 이하</strong>(출입구 투시 시 <strong>1,000 m<sup>2</sup></strong>), 한 변 <strong>50 m 이하</strong>(2개층 합 500 m<sup>2</sup> 통합)<br/>· 수직: <strong>45 m 이하</strong>(아파트 <strong>10층 이하</strong>)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">차동식 스포트형 vs 분포형 3종</div>
-                <div>· 스포트형: 다이어프램 + <strong>리크구멍(비화재보 방지)</strong><br/>· 분포형: <strong>공기관식 · 열전대식(제벡효과) · 열반도체식</strong></div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">정온식 vs 보상식 열감지기</div>
-                <div>· <strong>정온식</strong>: 일정 온도 도달 시 바이메탈 만곡(주방·보일러실)<br/>· <strong>보상식</strong>: 차동+정온 겸용(<strong>스포트형만 존재</strong>)</div>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">이온화식 vs 광전식 연기감지기</div>
-                <div>· <strong>이온화식</strong>: 아메리슘(<sup>241</sup>Am) <strong>이온전류 감소</strong><br/>· <strong>광전식</strong>: 적외선 <strong>산란광 또는 감광률</strong> 감지</div>
-              </div>
-            </div>
-            <div class="schema-alert">★ 수평·수직 경계구역: 수평 <strong>600㎡ 이하(출입구 투시 시 1,000㎡ 이하)·한 변 50m 이하</strong> / 수직(계단·경사로) <strong>높이 45m 이하</strong> / 교차회로 방식 적용 설비: <strong>준비작동식·일제살수식·가스계·분말</strong> (습식·건식 제외)!</div>
-          </div>
 
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 P형·R형 수신기 · 시각경보기 및 비상방송 우선경보방식(NFPC 최신 기준)</div>
-            <div class="space-y-2.5">
-              <div class="schema-box">
-                <div class="schema-box-title">P형(접점식) vs R형(다중전송식) 수신기 &amp; 시각경보기 설치 높이</div>
-                <ul class="schema-list">
-                  <li><strong>P형</strong>: 일대일 개별 선로(소규모) vs <strong>R형</strong>: 중계기 디지털 주소 다중전송(배선 가닥수 절감, 고층·대형 건물 적합)</li>
-                  <li><strong>시각경보기</strong>: 바닥으로부터 <strong>2 m 이상 2.5 m 이하</strong> 설치 (천장 높이 2 m 이하면 천장에서 <strong>0.15 m 이내</strong>)</li>
-                </ul>
-              </div>
-              <div class="schema-box">
-                <div class="schema-box-title">비상방송 우선경보방식 대상 및 발화 층별 경보 범위 · 화재알림설비(NFPC 207)</div>
-                <ul class="schema-list">
-                  <li>적용 대상: <strong>11층 이상(공동주택 16층 이상) 또는 지하 3층 이상</strong> / <strong>화재알림설비</strong>: 경보 + 관계인 통보 + <strong>119 자동 신고</strong></li>
-                  <li>경보 층: ① <strong>2층 이상 발화 = 발화층 + 직상 4개 층</strong> / ② <strong>1층 발화 = 1층 + 직상 4개 층 + 지하층 전체</strong> / ③ <strong>지하 발화 = 발화층 + 직상층 + 기타 지하층 전체</strong></li>
-                </ul>
-              </div>
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 01 · 자동화재탐지설비 경계구역 · 단독경보형감지기 · 발신기 · 음향장치</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">수평 · 층간 통합 경계구역</div>
+              <div class="cheat-val"><span class="cheat-eq">수평 &le; 600 m<sup>2</sup>(투시 시 1,000 m<sup>2</sup>) &middot; 한 변 &le; 50 m</span> 투시 완화 시에도 <strong>한 변 50 m 유지!</strong> / 2개 층 바닥면적 합계 <strong>500 m<sup>2</sup> 이하</strong> 시 1개 구역 통합 가능(3개 층 통합 불가)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">수직 · 지하구 · 도로터널</div>
+              <div class="cheat-val">계단·경사로·승강로 수직 높이 <strong>45 m 이하(일반 층고 약 10층 내외)</strong> / 지하 1층만 있으면 지상 계단 통합 가능 / 지하구 길이 <strong>700 m 이하(NFTC 605)</strong> / 도로터널 길이 <strong>100 m 이하(NFTC 603, 발신기·소화기 50 m 이내)</strong> / 외기 상시 개방면 <strong>5 m 미만만</strong> 면적 산정 제외(화장실·목욕실은 감지기 설치 제외)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">단독경보형 · 발신기 · 경종</div>
+              <div class="cheat-val"><strong>단독경보형</strong>: 각 실 <strong>150 m<sup>2</sup>마다</strong>(인접 실 각 <strong>30 m<sup>2</sup> 미만</strong> 상부 개방 시 1실 간주) / <strong>발신기</strong>: 수평 <strong>25 m↓</strong>, 높이 <strong>0.8에서 1.5 m</strong> / <strong>지구음향장치</strong>: 수평 <strong>25 m↓</strong>, 1 m 거리 <strong>90 dB 이상</strong></div>
             </div>
           </div>
         </div>
-</div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 02 · 열감지기 · 연기감지기 물리 원리 및 부착높이 컷오프 (NFPC 203)</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">차동 · 정온 · 보상 · 분포형</div>
+              <div class="cheat-val">차동 스포트(다이어프램+<strong>리크구멍</strong>) · 정온(바이메탈, 주방·보일러실) · 보상(<strong>스포트형만 존재!</strong>) / 분포형 3종: <strong>공기관식</strong>(길이 <strong>100 m↓·노출 20 m↑·거리 6 m[내화 9 m]↓</strong>) · <strong>열전대식</strong>(<strong>제벡 효과·4에서 20개</strong>) · 열반도체식</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">연기감지기 2종 · 배치 수치</div>
+              <div class="cheat-val"><strong>이온화식</strong>(<strong><sup>241</sup>Am</strong> 알파선 이온전류 감소) vs <strong>광전식</strong>(LED 산란광·감광률) / 1·2종 거실 <strong>150 m<sup>2</sup></strong>(4 m↑ 75 m<sup>2</sup>) · 복도 보행 <strong>30 m(3종 20 m)</strong> · 계단 수직 <strong>15 m(3종 10 m)</strong> / 연기감지기 벽·보 <strong>0.6 m↑</strong> · 급기구 1.5 m↑ 이격, 보 돌출 깊이 열 0.4 m↑(연기 0.6 m↑) 별도 구획, 스포트형 <strong>45도 이상 경사 금지</strong></div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">부착높이 구간별 탈락</div>
+              <div class="cheat-val"><span class="cheat-eq">4 m↑: 정온 2종·연기 3종 탈락 | 8 m↑: 스포트 열·정온선 탈락 | 15 m↑: 전 열·연기 2종 탈락</span> <strong>15 m 이상 20 m 미만</strong>(이온화 1종·광전 1종·연기복합·불꽃) / <strong>20 m 이상</strong>(오직 <strong>불꽃 및 광전 분리형·공기흡입형 중 아날로그방식[감광율 5%/m 미만]</strong>만 가능, 비아날로그 광전 1종 불가!)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cheat-part">
+          <div class="cheat-part-title">PART 03 · P형·R형 수신기 · 우선경보방식 · 교차회로 및 비상전원 연동</div>
+          <div class="cheat-grid">
+            <div class="cheat-row">
+              <div class="cheat-key">P형 vs R형 · 시각 · 알림</div>
+              <div class="cheat-val"><strong>P형</strong>(1대 1 접점, 소규모) vs <strong>R형</strong>(<strong>중계기 다중전송</strong>, 배선 절감·고층) / <strong>시각경보기</strong> 높이 <strong>2 m 이상 2.5 m 이하</strong>(천장 2 m↓ 시 0.15 m 내) / <strong>화재알림설비</strong>(화재알림형 감지기·중계기·수신기·발신기·<strong>화재알림형 비상경보장치</strong>·<strong>원격감시서버</strong>, 관계인 문자+119 음성 통보)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">우선경보 대상 · 발화 층별</div>
+              <div class="cheat-val"><span class="cheat-eq">11층↑(공동 16층↑)만 우선경보 | 10층 이하(공동 15층↓) 전 층 일제경보</span> 2층↑: 발화층 + 직상 4개층 / 지상 1층: 1층 + 직상 4개층 + 지하 전 층 / <strong>지하층 발화 시 무조건 발화층 + 직상 1개층 + 기타 지하 전 층!</strong> (과거 5에서 10층 직상 1개층 기준 폐지)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">교차회로 면제 8대 감지기</div>
+              <div class="cheat-val">불꽃 · <strong>정온식 감지선형(정온식 스포트형은 면제 불가)</strong> · 분포형 · 복합형 · 광전식 분리형(및 공기흡입형) · 아날로그방식 · 다신호방식 · <strong>축적방식</strong> (단 교차회로 자체 감지기는 비축적형 필수)</div>
+            </div>
+            <div class="cheat-row">
+              <div class="cheat-key">비상전원 · 비상방송 · 속보</div>
+              <div class="cheat-val">자탐·비상방송 비상전원: <strong>60분 감시 + 10분 이상 경보</strong>(<strong>30층 이상 고층건축물은 50층 불문 30분 이상</strong>, 수계 20·40·60분과 구별) / 비상방송 <strong>10초 이내</strong> 개시(수평 25 m↓, 3 W[실내 1 W]↑, 3선식) vs 자동화재속보설비 <strong>20초 이내 3회 이상</strong> 119 통보</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
     </div>
@@ -1583,7 +1759,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-1"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-1" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 화재감지기 중 '열감지기'에는 차동식(온도 상승률 감지), 정온식(일정 온도 도달 감지), 보상식(차동식+정온식 기능 결합) 및 열아날로그식이 있으며, '광전식'과 '이온화식'은 연소 입자를 감지하는 '연기감지기'입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 보상식 감지기는 차동식과 정온식의 기능을 겸비한 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 정온식 감지기는 주위 온도가 일정 온도 이상이 될 때 작동하는 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] 광전식 감지기는 연기 입자에 의한 빛의 산란(광전식 스포트형) 또는 감광(광전식 분리형)을 이용하는 '연기감지기'이지 열감지기가 아닙니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="1" data-preview="연기감지기 · 불꽃감지기 핵심 포인트 이온화식 : 아메리슘($^{241}\text{Am}$) $\alpha$선에 의한 이온전류 감소 이용 광전식 : 빛의 산란 (스포트형) 또는 감광·차폐 (분리형·공기흡입형) 이용 (열감지기 아님! 2018년 Q20 · 2023년 Q23 · 2024년 Q18) …" onclick="jumpToTheory('theory-sec2-p4', 1, this)">📖 기본서 제2절 · 연기감지기 · 불꽃감지기 핵심 포인트 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 차동식 감지기는 주위 온도가 일정 상승률 이상이 될 때 작동하는 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-1"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-1" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 화재감지기 중 '열감지기'에는 차동식(온도 상승률 감지), 정온식(일정 온도 도달 감지), 보상식(차동식+정온식 기능 결합) 및 열아날로그식이 있으며, '광전식'과 '이온화식'은 연소 입자를 감지하는 '연기감지기'입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 보상식 감지기는 차동식과 정온식의 기능을 겸비한 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] 정온식 감지기는 주위 온도가 일정 온도 이상이 될 때 작동하는 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] 광전식 감지기는 연기 입자에 의한 빛의 산란(광전식 스포트형) 또는 감광(광전식 분리형)을 이용하는 '연기감지기'이지 열감지기가 아닙니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="연기감지기(이온화식 vs 광전식) 및 불꽃감지기 원리: 이온화식은 아메리슘(241Am) 알파선에 의한 이온전류 감소를, 광전식은 적외선 LED 산란광(스포트형) 또는 투과광 감광률(분리형·공기흡입형)을 감지하는 연기감지기입니다(열감지기 아님)." onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 연기감지기(이온화식 vs 광전식) 및 불꽃감지기 원리 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 차동식 감지기는 주위 온도가 일정 상승률 이상이 될 때 작동하는 열감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1697,7 +1873,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-4"><div class="inline-exp-head"><span><strong>정답: ②</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-4" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 자동화재탐지설비의 수신기 중 감지기 또는 발신기에서 경계구역별로 '1대 1 접점방식(고유신호)'으로 전송된 신호를 수신하는 것은 R형이 아니라 <strong>P형(Proprietary) 수신기</strong>입니다. <strong>R형(Record/Multiplex) 수신기</strong>는 중계기를 거쳐 '다중전송방식(주소형 디지털 통신 신호)'으로 신호를 수신하여 선로 수를 획기적으로 줄인 대형 건물용 수신기입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림 · 정답] 감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-4"><div class="inline-exp-head"><span><strong>정답: ②</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-4" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 자동화재탐지설비의 수신기 중 감지기 또는 발신기에서 경계구역별로 '1대 1 접점방식(고유신호)'으로 전송된 신호를 수신하는 것은 R형이 아니라 <strong>P형(Proprietary) 수신기</strong>입니다. <strong>R형(Record/Multiplex) 수신기</strong>는 중계기를 거쳐 '다중전송방식(주소형 디지털 통신 신호)'으로 신호를 수신하여 선로 수를 획기적으로 줄인 대형 건물용 수신기입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] 시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림 · 정답] 감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음] 비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="4" data-preview="비상방송설비 연동 및 작동 기준(NFTC 202·203): 수신기 화재신호 도달 시 10초 이내 안내 방송을 개시하며, 확성기 수평거리 25 m 이하, 음성입력 3 W(실내 1 W) 이상, 음량조절기 3선식 배선 강제 전환 기준을 적용합니다." onclick="jumpToTheory('theory-sec3-p6', 4, this)">📖 기본서 제3절 · 비상방송설비 연동 및 작동 기준 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] 이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="4" data-preview="열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 차동식 : 주위 온도가 일정 상승률 이상 일 때 작동 &nbsp;&nbsp;- 스포트형 : 일국소 에서의 열효과에 의해 작동 (리크구멍) &nbsp;&nbsp;- 분포형 : 넓은 범위 내에서의 열효과 누적 …" onclick="jumpToTheory('theory-sec2-p3', 4, this)">📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1735,7 +1911,7 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-5"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-5" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 화재알림설비에는 '화재알림형 비상경보장치'라는 용어는 존재하지 않으며, 대신 '화재알림형 단독경보형감지기(화재에 의하여 생성되는 열, 연기 또는 불꽃 등을 자동으로 감지하여 자체에 내장된 음향장치로 경보하고, 화재정보값 및 화재신호 등을 유무선으로 송수신하는 감지기)' 등이 규정되어 있습니다. 또한 선지 ③의 '발신기, 표시등, 지구음향장치를 내장한 것'은 비상경보설비의 '단독경보형감지기'나 '비상경보장치(발신기세트)'에 화재알림형 감지기를 임의로 합성한 허위 정의입니다.</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] '발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] '원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] NFPC 207에는 '화재알림형 비상경보장치'라는 정의가 없으며, 감지기까지 하나의 함에 내장하여 경보하는 장치가 아닙니다(화재알림설비는 화재알림형 수신기, 화재알림형 감지기, 화재알림형 중계기, 화재알림형 단독경보형감지기, 원격감시서버 등으로 구성됨).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] '화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-5"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-5" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> ｢화재알림설비의 화재안전성능기준(NFPC 207)｣ 제3조(정의)를 묻는 문항입니다. 제3조 제5호에 따라 '화재알림형 비상경보장치'란 '발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것으로 화재발생 상황을 경보하는 장치'를 말하며, '화재알림형 감지기'는 내장하지 않습니다. 선지 ③은 발신기·표시등·지구음향장치에 '화재알림형 감지기'까지 내장한다고 덧붙여 오답으로 출제되었습니다. (참고: 단독경보형감지기는 비상경보설비 NFPC 201 소관이며, 화재알림설비는 화재알림형 수신기, 화재알림형 감지기, 화재알림형 중계기, 발신기, 화재알림형 비상경보장치, 원격감시서버 등으로 구성됩니다.)</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [옳음] '발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조).</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [옳음] '원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [틀림 · 정답] NFPC 207 제3조 제5호상 '화재알림형 비상경보장치'는 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것으로 화재발생 상황을 경보하는 장치이며, '화재알림형 감지기'는 내장하지 않습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [옳음] '화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div></div></div></div>
         </article>
         
 
@@ -1773,231 +1949,231 @@
             
           </div>
         
-          <div class="inline-exp-box no-print-inline" id="inline-exp-6"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-6" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 2022년 말 개정·시행된 현행 ｢비상방송설비의 화재안전기술기준(NFTC 202)｣ 및 ｢자동화재탐지설비 및 시각경보장치의 화재안전기술기준(NFTC 203)｣의 <strong>우선경보방식</strong> 기준을 묻는 최신 실전 문항입니다. 과거에는 5층 이상(연면적 3,000제곱미터 초과)일 때 발화층 및 직상층만 경보했으나, 초고층·대형 건물 피난 안전 강화를 위해 <strong>11층 이상(공동주택은 16층 이상)인 특정소방대상물</strong>의 우선경보 기준이 <strong>'발화층 및 그 직상 4개 층'</strong>으로 대폭 확대되었습니다.
-· 대상 건물: 지하 3층, <strong>지상 20층</strong>(11층 이상에 해당하므로 발화층 + 직상 4개 층 경보 대상) · 발화 위치: <strong>지상 2층</strong>에서 화재 발생 · 경보 대상 층: 발화층(<strong>지상 2층</strong>) 및 그 직상 4개 층(<strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>). (참고: 지상 1층에서 발화했다면 지하 전 층도 포함되지만, 지상 2층 발화이므로 지하층과 지상 1층은 제외됨!)</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 지상 2층, 지상 3층(발화층 및 직상층)만 경보하는 것은 5층 이상 10층 이하(연면적 3,000제곱미터 초과)인 건물에 적용되는 기준입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 지하 전 층이 함께 경보되는 경우는 '지상 1층' 또는 '지하층'에서 화재가 발생했을 때입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음 · 정답] 지상 20층 건물은 11층 이상인 특정소방대상물에 해당하므로, 지상 2층에서 화재가 발생한 경우 발화층(지상 2층) 및 그 직상 4개 층(지상 3층, 지상 4층, 지상 5층, 지상 6층)에 화재경보를 발하여야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 지상 2층 발화 시 직하층인 지상 1층은 우선경보 대상 층에 포함되지 않습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div></div></div>
+          <div class="inline-exp-box no-print-inline" id="inline-exp-6"><div class="inline-exp-head"><span><strong>정답: ③</strong> · 선지별 상세 해설 및 기본서 매핑</span><a href="#exp-card-6" class="inline-exp-jump">PART 3 해설지 이동 &darr;</a></div><div class="inline-exp-summary"><strong>[핵심 해설]</strong> 현행 ｢비상방송설비의 화재안전기술기준(NFTC 202)｣ 및 ｢자동화재탐지설비 및 시각경보장치의 화재안전기술기준(NFTC 203)｣의 <strong>우선경보방식</strong> 기준을 묻는 최신 실전 문항입니다. 과거 구법의 '5층 이상 10층 이하(연면적 3,000제곱미터 초과) 직상 1개층' 우선경보 기준은 전면 폐지되어, 현행 기준상 10층 이하(공동주택은 15층 이하)는 전 층 일제경보방식을 적용하고, <strong>11층 이상(공동주택은 16층 이상)인 특정소방대상물</strong>에만 우선경보방식(<strong>'발화층 및 그 직상 4개 층'</strong>)을 적용합니다.
+· 대상 건물: 지하 3층, <strong>지상 20층</strong>(11층 이상에 해당하므로 발화층 + 직상 4개 층 경보 대상) · 발화 위치: <strong>지상 2층</strong>에서 화재 발생 · 경보 대상 층: 발화층(<strong>지상 2층</strong>) 및 그 직상 4개 층(<strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>). (참고: 지상 1층에서 발화했다면 지하 전 층도 포함되지만, 지상 2층 발화이므로 지하층과 지상 1층은 제외되며, 지하층 발화 시에는 직상 1개 층만 경보합니다!)</div><div class="inline-exp-choices"><div class="inline-exp-line " data-choice-idx="1"><div class="inline-exp-txt"><span class="exp-choice-num-inline">①</span> [틀림] 지상 2층과 지상 3층(발화층 및 직상 1개 층)만 경보하는 것은 폐지된 구법(5층 이상 10층 이하, 연면적 3,000제곱미터 초과) 기준입니다. 현행 기준상 10층 이하(공동주택 15층 이하)는 전 층 일제경보방식을 적용하고, 11층 이상(공동주택 16층 이상)은 발화층 및 직상 4개 층을 경보합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="2"><div class="inline-exp-txt"><span class="exp-choice-num-inline">②</span> [틀림] 지하 전 층이 함께 경보되는 경우는 '지상 1층' 또는 '지하층'에서 화재가 발생했을 때입니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line is-ans-choice" data-choice-idx="3"><div class="inline-exp-txt"><span class="exp-choice-num-inline">③</span> [옳음 · 정답] 지상 20층 건물은 11층 이상인 특정소방대상물에 해당하므로, 지상 2층에서 화재가 발생한 경우 발화층(지상 2층) 및 그 직상 4개 층(지상 3층, 지상 4층, 지상 5층, 지상 6층)에 화재경보를 발하여야 합니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div><div class="inline-exp-line " data-choice-idx="4"><div class="inline-exp-txt"><span class="exp-choice-num-inline">④</span> [틀림] 지상 2층 발화 시 직하층인 지상 1층은 우선경보 대상 층에 포함되지 않습니다.</div><div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div></div></div></div>
         </article>
         
       </div>
     
       <div class="stats-block" style="margin-top:28px;">
-        <div class="section-subhead">단원 필수 기출 OX 16제</div>
+        <div class="section-subhead">단원 필수 기출 OX 30제</div>
         <div class="ox-check-grid">
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 01</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재탐지설비의 하나의 경계구역은 둘 이상의 건축물 또는 둘 이상의 층에 걸치지 아니하여야 하나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에는 2개 층을 하나의 경계구역으로 할 수 있다.</div>
+            <div>자동화재탐지설비의 하나의 경계구역은 둘 이상의 층에 걸치지 아니하여야 하나, 2개 층의 바닥면적 합계가 600제곱미터 이하인 경우에는 2개 층을 하나의 경계구역으로 설정할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 02</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>하나의 경계구역의 바닥면적은 600제곱미터 이하, 한 변의 길이는 50미터 이하로 하되, 주된 출입구에서 내부 전체가 보이는 경우에는 한 변의 길이 50미터 범위 내에서 1,000제곱미터 이하로 할 수 있다.</div>
+            <div>하나의 경계구역의 바닥면적은 원칙적으로 600제곱미터 이하, 한 변의 길이는 50미터 이하로 하되, 주된 출입구에서 내부 전체가 보이는 경우에는 바닥면적 1,000제곱미터 이하, 한 변의 길이 100미터 이하로 완화할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 03</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>계단 및 경사로의 수직 경계구역은 높이 45미터 이하를 하나의 경계구역으로 하며, 지하구의 경우 하나의 경계구역 길이는 700미터 이하로 한다.</div>
+            <div>계단 및 경사로의 수직 경계구역은 높이 45미터 이하를 하나의 경계구역으로 하며, 전력·통신용 지하구의 경우 하나의 경계구역 길이는 700미터 이하로 설정한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 04</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>화재감지기 중 차동식, 정온식, 보상식은 열감지기에 해당하며, 이온화식과 광전식은 연기감지기에 해당한다.</div>
+            <div>화재감지기 중 차동식, 정온식, 보상식은 열감지기에 해당하며, 광전식과 이온화식 역시 주위 온도의 상승률을 포착하는 열감지기의 일종으로 분류된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 05</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
             <div>차동식 분포형 감지기는 넓은 범위 내에서의 열효과 누적에 의하여 작동하며, 그 종류에는 공기관식, 열전대식, 열반도체식이 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 06</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>주위 온도가 일정 상승률 이상이 되는 경우에 작동하는 감지기로서 넓은 범위 내에서 열효과 누적에 의해 작동하는 것은 '차동식 분포형 감지기'이며, 일국소에서의 열효과에 의해 작동하는 것은 '차동식 스포트형 감지기'이다.</div>
+            <div>주위 온도가 일정 상승률 이상이 되는 경우에 작동하는 감지기로서 넓은 범위 내에서의 열효과 누적에 의해 작동하는 것은 '차동식 스포트형 감지기'이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 07</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재탐지설비에서 감지기 또는 발신기로부터 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 중계기를 통해 다중전송(주소형 통신) 방식으로 신호를 수신하는 것은 'R형 수신기'이다.</div>
+            <div>자동화재탐지설비에서 감지기 또는 발신기로부터 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'R형 수신기'이며, 중계기를 통해 다중전송방식으로 신호를 수신하는 것은 'P형 수신기'이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 08</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>화재알림설비의 화재안전성능기준(NFPC 207)상 '화재알림형 중계기'는 화재알림형 감지기·발신기 등의 화재정보값 또는 화재신호를 받아 화재알림형 수신기에 전송하는 장치이며, '원격감시서버'는 원격지에서 이를 감시하기 위한 서버이다.</div>
+            <div>화재알림설비의 화재안전성능기준(NFPC 207) 제3조 제5호상 '화재알림형 비상경보장치'란 화재알림형 감지기, 발신기, 표시등, 지구음향장치를 모두 내장한 것으로 화재발생 상황을 경보하는 장치를 말한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 09</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>현행 화재안전기술기준(NFTC 202, 203)상 층수가 11층 이상(공동주택은 16층 이상)인 특정소방대상물의 지상 2층 이상에서 화재가 발생한 경우, 우선경보방식에 따라 '발화층 및 그 직상 4개 층'에 경보를 발하여야 한다.</div>
+            <div>현행 화재안전기술기준(NFTC 202, 203)상 층수가 11층 이상(공동주택은 16층 이상)인 특정소방대상물의 지상 2층 이상에서 화재가 발생한 경우, 우선경보방식에 따라 발화층 및 그 직상 4개 층에 경보를 발하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 10</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[소방시설 중 경보설비] 시각경보기는 청각장애인에게 점멸 형태로 시각경보를 하는 장치이다.</div>
+            <div>청각장애인에게 점멸 형태로 시각경보를 하는 시각경보기(NFPC 203)는 공연장·집회장·관람장 또는 높이가 낮은 실내를 제외하고는 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 11</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[소방시설 중 경보설비] R형 수신기는 감지기 또는 발신기에서 1 : 1 접점방식으로 전송된 신호를 수신한다.</div>
+            <div>비상방송설비(NFPC 202)는 수신기에 화재신호가 도달하거나 기동장치가 작동한 후 필요한 음량으로 방송이 개시될 때까지의 소요시간이 20초 이하가 되도록 설치한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 12</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[소방시설 중 경보설비] 비상방송설비는 수신기에 화재신호가 도달하면 방송으로 화재 사실을 알리는 설비이다.</div>
+            <div>이온화식 연기감지기는 방사성 동위원소 아메리슘(²⁴¹Am)에서 방출되는 알파선으로 공기를 이온화해 미세 전류를 흘려보내다가, 연기 입자가 유입되면 이온전류가 급격히 증가하는 원리로 작동한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 13</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[소방시설 중 경보설비] 이온화식 감지기와 광전식 감지기는 연기를 감지하여 화재신호를 발하는 장치이다.</div>
+            <div>화재알림설비(NFPC 207)의 '화재알림형 중계기'는 감지기·발신기 등의 화재정보값 또는 화재신호를 받아 화재알림형 수신기에 전송하는 장치이며, '원격감시서버'는 원격지에서 이를 감시하기 위한 서버이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 14</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[화재알림설비] “발신기”란 수동누름버튼 등의 작동으로 화재신호를 수신 기에 발신하는 장치를 말한다.</div>
+            <div>화재알림설비의 화재안전성능기준(NFPC 207)상 핵심 구성요소에는 화재알림형 감지기, 화재알림형 중계기, 화재알림형 수신기 외에 비상경보설비의 단독경보형감지기가 법정 필수 구성요소로 포함된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 15</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>“원격감시서버”란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말한다.</div>
+            <div>연면적 5,000제곱미터이고 지하 2층, 지상 8층인 업무시설의 지상 3층에서 화재가 발생한 경우, 현행 화재안전기술기준(NFTC 202, 203)상 우선경보방식에 따라 지상 3층과 그 직상 1개 층인 지상 4층에만 경보를 발하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 16</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>[화재알림설비] “화재알림형 중계기”란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말한다.</div>
+            <div>연면적 10,000제곱미터이고 지하 3층, 지상 20층인 오피스텔(11층 이상 우선경보 대상)의 지하 1층에서 화재가 발생한 경우, 우선경보방식에 따라 발화층(지하 1층), 그 직상 4개 층(지상 1층부터 지상 4층까지) 및 기타 지하층 전 층에 경보를 발하여야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 17</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재탐지설비(NFPC 203)에서 하나의 경계구역 면적은 600 m² 이하(주된 출입구에서 내부 전체가 보이는 경우 1,000 m² 이하)로 하고 한 변의 길이는 50 m 이하로 하되, 2개 이상의 층의 바닥면적 합계가 600 m² 이하인 경우에는 2개 층을 하나의 경계구역으로 설정할 수 있다.</div>
+            <div>화재안전기술기준상 전력·통신용 지하구(NFTC 605)의 하나의 경계구역 길이는 100미터 이하로 설정하며, 도로터널(NFTC 603)의 하나의 경계구역 길이는 700미터 이하로 설정한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 18</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>하나의 경계구역 면적은 원칙적으로 600 m² 이하이고 한 변의 길이는 50 m 이하이나, 주된 출입구에서 내부 전체가 보이는 경우에는 바닥면적을 1,000 m² 이하, 한 변의 길이를 100 m 이하까지 완화할 수 있다.</div>
+            <div>외기에 면하여 상시 개방된 부분이 있는 주차장은 외기에 면하는 각 부분으로부터 5미터 미만 범위를 경계구역 면적 산정에서 제외하며, 목욕실이나 샤워시설이 있는 화장실도 감지기 설치 제외 장소이므로 경계구역 면적 산정에서 제외한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 19</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>계단·경사로·엘리베이터 승강로 등 수직 관통 부분의 경계구역은 높이 45 m 이하마다 별도로 설정하며, 전력·통신용 지하구의 하나의 경계구역 길이는 700 m 이하로 한다.</div>
+            <div>단독경보형감지기(NFPC 201)는 구획된 각 실마다 설치하되 바닥면적이 150제곱미터를 초과하는 경우에는 150제곱미터마다 1개 이상 설치하며, 이웃하는 실내의 바닥면적이 각각 30제곱미터 미만이고 벽체 상부의 일부가 개방되어 공기가 상호 유통되면 1개의 실로 본다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 20</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>차동식 분포형 감지기 중 공기관식은 하나의 검출부분에 연결하는 공기관의 길이를 100 m 이하로 하고, 감지구역마다 공기관의 노출부분은 20 m 이하가 되도록 하며, 공기관 상호 간의 거리는 9 m 이하(내화구조는 6 m 이하)로 설치한다.</div>
+            <div>자동화재탐지설비의 P형 발신기는 각 층마다 수평거리 25 m 이하가 되도록 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치하며, 지구음향장치의 음량은 음향장치 중심으로부터 1 m 떨어진 위치에서 80 dB 이상이 되도록 해야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 21</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>차동식 분포형 감지기 중 열전대식은 서로 다른 두 금속 접점의 온도차에 의해 열기전력이 발생하는 제벡 효과(Seebeck effect)를 이용하며, 하나의 검출부에 접속하는 열전대부는 4개 이상 20개 이하로 한다.</div>
+            <div>차동식과 정온식 기능을 겸비하여 어느 하나의 기능에 의하여서도 화재신호를 발신하는 보상식 감지기는 넓은 범위의 열효과를 감지할 수 있도록 스포트형뿐만 아니라 분포형으로도 제작·설치된다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 22</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>단독경보형감지기(NFPC 201)는 구획된 각 실마다 설치하되 바닥면적이 150 m²를 초과하는 경우에는 150 m²마다 1개 이상을 설치해야 하며, 이웃하는 실내의 바닥면적이 각각 50 m² 미만이고 벽체 상부의 일부가 개방되어 공기가 상호 유통되는 경우에는 이를 1개의 실로 본다.</div>
+            <div>차동식 분포형 감지기 중 공기관식은 하나의 검출부에 연결하는 공기관 전체 길이를 100 m 이하로 하고, 하나의 감지구역 내 공기관 노출부분은 20 m 이하로 하며, 공기관 상호 간 거리는 원칙 9 m 이하(주요구조부 내화구조 시 6 m 이하)로 설치한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="O">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 23</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재탐지설비의 발신기는 각 부분으로부터 수평거리 25 m 이하가 되도록 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치하며, 지구음향장치의 음량은 중심으로부터 1 m 떨어진 위치에서 90 dB 이상이 되도록 해야 한다.</div>
+            <div>차동식 분포형 감지기 중 열전대식은 서로 다른 두 종류의 금속선 접점 간 온도차에 의해 열기전력이 발생하는 제벡 효과(Seebeck effect)를 이용하며, 1개의 검출부에 접속하는 열전대부는 4개 이상 20개 이하로 직렬 접속한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 24</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>감지기의 부착높이가 8 m 이상 15 m 미만인 장소에는 차동식 스포트형 감지기와 정온식 스포트형 감지기를 설치할 수 있으며, 부착높이가 20 m 이상인 장소에는 차동식 분포형 감지기를 설치할 수 있다.</div>
+            <div>NFPC 203 제7조상 천장 부착높이가 4 m 이상 8 m 미만인 장소에는 정온식 2종과 연기감지기 3종을 설치할 수 있으며, 8 m 이상 15 m 미만인 장소에는 차동식 스포트형 감지기와 정온식 감지선형 감지기를 설치할 수 있다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 25</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>감지기의 부착높이가 20 m 이상인 장소에 설치할 수 있는 감지기는 이온화식 1종, 광전식(스포트형·분리형·공기흡입형) 1종, 불꽃감지기이다.</div>
+            <div>감지기의 부착높이가 20 m 이상인 초고천장 장소에 설치할 수 있는 감지기는 불꽃감지기, 이온화식 1종, 광전식 스포트형 1종 및 비아날로그 광전식 분리형 1종이다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 26</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>연기감지기는 천장 또는 반자의 벽이나 보에 바짝 밀착하여 설치해야 하며, 불꽃감지기를 제외한 스포트형 감지기는 60도까지 경사지게 부착할 수 있다.</div>
+            <div>연기감지기(1종·2종)를 설치할 때 거실에는 부착높이 4 m 이상 20 m 미만 기준 바닥면적 150 m²마다 1개 이상, 복도 및 통로에는 보행거리 15 m마다 1개 이상, 계단 및 경사로에는 수직거리 30 m마다 1개 이상 설치한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 27</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>준비작동식 스프링클러설비나 가스계 소화설비의 감지기 회로에 불꽃감지기, 정온식 스포트형 감지기, 차동식 분포형 감지기, 복합형 감지기, 광전식 분리형·공기흡입형 감지기, 아날로그방식 감지기를 설치한 경우에는 교차회로방식을 적용하지 아니할 수 있다.</div>
+            <div>연기감지기는 벽 또는 보로부터 0.3 m 이상, 급기구로부터 1.0 m 이상 이격해야 하며, 스포트형 열감지기는 깊이 0.3 m 이상 돌출한 보로 구획 시 별도 구획 설치하고, 불꽃감지기를 제외한 스포트형 감지기는 60도 이상 경사지지 않게 부착한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 28</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재탐지설비 및 비상방송설비의 비상전원은 감시 상태를 60분간 지속한 후 유효하게 20분 이상(단, 층수가 30층 이상 49층 이하는 40분 이상, 50층 이상은 60분 이상) 경보할 수 있는 축전지설비 등으로 설치해야 한다.</div>
+            <div>준비작동식 스프링클러설비나 가스계 소화설비의 감지기 회로에 정온식 스포트형 감지기나 차동식 스포트형 감지기를 설치한 경우에는 교차회로방식을 면제받을 수 있으며, 교차회로방식 자체를 구성할 때 사용하는 감지기는 축적형으로 설치해야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 29</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>자동화재속보설비(NFPC 204)는 자동화재탐지설비의 수신기로부터 화재신호를 수신하거나 수동으로 동작시키는 경우 10초 이내에 소방관서에 자동적으로 신호를 발하여 통보하되, 3회 이상 속보할 수 있어야 한다.</div>
+            <div>자동화재탐지설비 및 비상방송설비의 비상전원은 감시 상태를 60분간 지속한 후 20분 이상(단, 30층 이상 49층 이하 고층건축물은 40분 이상, 50층 이상은 60분 이상) 경보할 수 있는 축전지·전기저장장치 용량을 확보해야 한다.</div>
           </div>
-          <div class="ox-check-item">
+          <div class="ox-check-item" data-ans="X">
             <div class="ox-check-head">
               <span><strong class="ox-check-num">OX 30</strong></span>
               <span class="ox-check-ans">[ O / X ]</span>
             </div>
-            <div>연면적 5,000 m²이고 지하 2층·지상 8층인 업무시설의 지상 3층에서 화재가 발생한 경우, 우선경보방식에 따라 지상 3층(발화층)과 그 직상 4개 층(지상 4·5·6·7층)에 경보를 발해야 한다.</div>
+            <div>자동화재속보설비(NFPC 204)는 자동화재탐지설비의 수신기로부터 화재신호를 수신한 후 10초 이내에 관할 소방관서로 3회 이상 자동 음성 속보할 수 있어야 한다.</div>
           </div>
         </div>
       </div>
     
       <div class="compact-bottom-ans">
         <div><strong>[실전 기출 정답]</strong> 01:③ · 02:④ · 03:① · 04:② · 05:③ · 06:③</div>
-        <div><strong>[필수 OX 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:X · 19:O · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
+        <div><strong>[필수 OX 정답]</strong> 01:X · 02:X · 03:O · 04:X · 05:O · 06:X · 07:X · 08:X · 09:O · 10:X · 11:X · 12:X · 13:O · 14:X · 15:X · 16:X · 17:X · 18:X · 19:O · 20:X · 21:X · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X</div>
       </div>
     </section>
 
@@ -2086,7 +2262,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">③</span> [틀림 · 정답] 광전식 감지기는 연기 입자에 의한 빛의 산란(광전식 스포트형) 또는 감광(광전식 분리형)을 이용하는 '연기감지기'이지 열감지기가 아닙니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p4" data-qnum="1" data-preview="연기감지기 · 불꽃감지기 핵심 포인트 이온화식 : 아메리슘($^{241}\text{Am}$) $\alpha$선에 의한 이온전류 감소 이용 광전식 : 빛의 산란 (스포트형) 또는 감광·차폐 (분리형·공기흡입형) 이용 (열감지기 아님! 2018년 Q20 · 2023년 Q23 · 2024년 Q18) …" onclick="jumpToTheory('theory-sec2-p4', 1, this)">📖 기본서 제2절 · 연기감지기 · 불꽃감지기 핵심 포인트 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec2-p3" data-qnum="1" data-preview="연기감지기(이온화식 vs 광전식) 및 불꽃감지기 원리: 이온화식은 아메리슘(241Am) 알파선에 의한 이온전류 감소를, 광전식은 적외선 LED 산란광(스포트형) 또는 투과광 감광률(분리형·공기흡입형)을 감지하는 연기감지기입니다(열감지기 아님)." onclick="jumpToTheory('theory-sec2-p3', 1, this)">📖 기본서 제2절 · 연기감지기(이온화식 vs 광전식) 및 불꽃감지기 원리 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2248,7 +2424,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">③</span> [옳음] 비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="4" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 4, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="4" data-preview="비상방송설비 연동 및 작동 기준(NFTC 202·203): 수신기 화재신호 도달 시 10초 이내 안내 방송을 개시하며, 확성기 수평거리 25 m 이하, 음성입력 3 W(실내 1 W) 이상, 음량조절기 3선식 배선 강제 전환 기준을 적용합니다." onclick="jumpToTheory('theory-sec3-p6', 4, this)">📖 기본서 제3절 · 비상방송설비 연동 및 작동 기준 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2273,7 +2449,7 @@
             </div>
             <div class="exp-header-right">2025년 소방공채·경채 Q25</div>
           </div>
-          <div class="exp-summary"><strong>[핵심 해설]</strong> 화재알림설비에는 '화재알림형 비상경보장치'라는 용어는 존재하지 않으며, 대신 '화재알림형 단독경보형감지기(화재에 의하여 생성되는 열, 연기 또는 불꽃 등을 자동으로 감지하여 자체에 내장된 음향장치로 경보하고, 화재정보값 및 화재신호 등을 유무선으로 송수신하는 감지기)' 등이 규정되어 있습니다. 또한 선지 ③의 '발신기, 표시등, 지구음향장치를 내장한 것'은 비상경보설비의 '단독경보형감지기'나 '비상경보장치(발신기세트)'에 화재알림형 감지기를 임의로 합성한 허위 정의입니다.</div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> ｢화재알림설비의 화재안전성능기준(NFPC 207)｣ 제3조(정의)를 묻는 문항입니다. 제3조 제5호에 따라 '화재알림형 비상경보장치'란 '발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것으로 화재발생 상황을 경보하는 장치'를 말하며, '화재알림형 감지기'는 내장하지 않습니다. 선지 ③은 발신기·표시등·지구음향장치에 '화재알림형 감지기'까지 내장한다고 덧붙여 오답으로 출제되었습니다. (참고: 단독경보형감지기는 비상경보설비 NFPC 201 소관이며, 화재알림설비는 화재알림형 수신기, 화재알림형 감지기, 화재알림형 중계기, 발신기, 화재알림형 비상경보장치, 원격감시서버 등으로 구성됩니다.)</div>
           <div class="exp-choices-list">
             <div class="exp-choice-item">
               <div class="exp-choice-head orig-choice-line">
@@ -2301,7 +2477,7 @@
                 <span class="exp-choice-orig">“화재알림형 비상경보장치”란 화재알림형 감지기, 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것 으로 화재발생 상황을 경보하는 장치를 말한다.</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] NFPC 207에는 '화재알림형 비상경보장치'라는 정의가 없으며, 감지기까지 하나의 함에 내장하여 경보하는 장치가 아닙니다(화재알림설비는 화재알림형 수신기, 화재알림형 감지기, 화재알림형 중계기, 화재알림형 단독경보형감지기, 원격감시서버 등으로 구성됨).
+                <span class="exp-choice-num-inline">③</span> [틀림 · 정답] NFPC 207 제3조 제5호상 '화재알림형 비상경보장치'는 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장한 것으로 화재발생 상황을 경보하는 장치이며, '화재알림형 감지기'는 내장하지 않습니다.
                 <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p5" data-qnum="5" data-preview="수신기 및 화재알림설비 기출 급소 P형 수신기 (2024년 Q18) : 경계구역별 1대 1 접점방식 수신 (중소형 건물) R형 수신기 (2024년 Q18) : 중계기 를 통한 다중전송방식(주소형 통신) 수신 (&#39;R형이 1대 1 접점방식&#39; = X!) 화재알림설비 (NFPC 207, 2025년 Q2…" onclick="jumpToTheory('theory-sec3-p5', 5, this)">📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기</button></div>
               </div>
             </div>
@@ -2327,8 +2503,8 @@
             </div>
             <div class="exp-header-right">2026년 소방공채·경채 Q25</div>
           </div>
-          <div class="exp-summary"><strong>[핵심 해설]</strong> 2022년 말 개정·시행된 현행 ｢비상방송설비의 화재안전기술기준(NFTC 202)｣ 및 ｢자동화재탐지설비 및 시각경보장치의 화재안전기술기준(NFTC 203)｣의 <strong>우선경보방식</strong> 기준을 묻는 최신 실전 문항입니다. 과거에는 5층 이상(연면적 3,000제곱미터 초과)일 때 발화층 및 직상층만 경보했으나, 초고층·대형 건물 피난 안전 강화를 위해 <strong>11층 이상(공동주택은 16층 이상)인 특정소방대상물</strong>의 우선경보 기준이 <strong>'발화층 및 그 직상 4개 층'</strong>으로 대폭 확대되었습니다.
-· 대상 건물: 지하 3층, <strong>지상 20층</strong>(11층 이상에 해당하므로 발화층 + 직상 4개 층 경보 대상) · 발화 위치: <strong>지상 2층</strong>에서 화재 발생 · 경보 대상 층: 발화층(<strong>지상 2층</strong>) 및 그 직상 4개 층(<strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>). (참고: 지상 1층에서 발화했다면 지하 전 층도 포함되지만, 지상 2층 발화이므로 지하층과 지상 1층은 제외됨!)</div>
+          <div class="exp-summary"><strong>[핵심 해설]</strong> 현행 ｢비상방송설비의 화재안전기술기준(NFTC 202)｣ 및 ｢자동화재탐지설비 및 시각경보장치의 화재안전기술기준(NFTC 203)｣의 <strong>우선경보방식</strong> 기준을 묻는 최신 실전 문항입니다. 과거 구법의 '5층 이상 10층 이하(연면적 3,000제곱미터 초과) 직상 1개층' 우선경보 기준은 전면 폐지되어, 현행 기준상 10층 이하(공동주택은 15층 이하)는 전 층 일제경보방식을 적용하고, <strong>11층 이상(공동주택은 16층 이상)인 특정소방대상물</strong>에만 우선경보방식(<strong>'발화층 및 그 직상 4개 층'</strong>)을 적용합니다.
+· 대상 건물: 지하 3층, <strong>지상 20층</strong>(11층 이상에 해당하므로 발화층 + 직상 4개 층 경보 대상) · 발화 위치: <strong>지상 2층</strong>에서 화재 발생 · 경보 대상 층: 발화층(<strong>지상 2층</strong>) 및 그 직상 4개 층(<strong>지상 3층, 지상 4층, 지상 5층, 지상 6층</strong>). (참고: 지상 1층에서 발화했다면 지하 전 층도 포함되지만, 지상 2층 발화이므로 지하층과 지상 1층은 제외되며, 지하층 발화 시에는 직상 1개 층만 경보합니다!)</div>
           <div class="exp-choices-list">
             <div class="exp-choice-item">
               <div class="exp-choice-head orig-choice-line">
@@ -2336,8 +2512,8 @@
                 <span class="exp-choice-orig">지상 2층, 지상 3층</span>
               </div>
               <div class="exp-choice-body">
-                <span class="exp-choice-num-inline">①</span> [틀림] 지상 2층, 지상 3층(발화층 및 직상층)만 경보하는 것은 5층 이상 10층 이하(연면적 3,000제곱미터 초과)인 건물에 적용되는 기준입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
+                <span class="exp-choice-num-inline">①</span> [틀림] 지상 2층과 지상 3층(발화층 및 직상 1개 층)만 경보하는 것은 폐지된 구법(5층 이상 10층 이하, 연면적 3,000제곱미터 초과) 기준입니다. 현행 기준상 10층 이하(공동주택 15층 이하)는 전 층 일제경보방식을 적용하고, 11층 이상(공동주택 16층 이상)은 발화층 및 직상 4개 층을 경보합니다.
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2347,7 +2523,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">②</span> [틀림] 지하 전 층이 함께 경보되는 경우는 '지상 1층' 또는 '지하층'에서 화재가 발생했을 때입니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item is-answer">
@@ -2357,7 +2533,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">③</span> [옳음 · 정답] 지상 20층 건물은 11층 이상인 특정소방대상물에 해당하므로, 지상 2층에서 화재가 발생한 경우 발화층(지상 2층) 및 그 직상 4개 층(지상 3층, 지상 4층, 지상 5층, 지상 6층)에 화재경보를 발하여야 합니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
               </div>
             </div>
             <div class="exp-choice-item">
@@ -2367,7 +2543,7 @@
               </div>
               <div class="exp-choice-body">
                 <span class="exp-choice-num-inline">④</span> [틀림] 지상 2층 발화 시 직하층인 지상 1층은 우선경보 대상 층에 포함되지 않습니다.
-                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식 계산 공식 (2026년 Q25) 5층 이상 10층 이하 (연면적 $3,000\text{m}^2$ 초과) : 발화층 + 직상 1개 층 (1층 발화 시 지하 전 층 추가) 11층 이상 [공동주택 16층 이상] : 발화층 + 직상 4개 층 (1층 발화 시 지하 전 층 추가) 실전 적…" onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
+                <div class="theory-map-row no-print-inline"><button type="button" class="theory-map-btn" data-theory-id="theory-sec3-p6" data-qnum="6" data-preview="현행 우선경보방식(NFTC 202·203): 과거 5층 이상 10층 이하 기준 폐지! 10층 이하(공동주택 15층 이하)는 전 층 일제경보, 11층 이상(공동주택 16층 이상)만 우선경보 적용(2층↑ 발화: 발화층+직상 4개층 / 지상 1층: 1층+직상 4개층+지하 전 층 / 지하 발화: 발화층+직상 1개층+기타 지하 전 층)." onclick="jumpToTheory('theory-sec3-p6', 6, this)">📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기</button></div>
               </div>
             </div>
           </div>
@@ -2376,74 +2552,130 @@
       </div>
     
       <div class="stats-block" style="margin-top:28px;">
-        <div class="section-subhead">단원 필수 기출 OX 16제 정답 및 해설</div>
+        <div class="section-subhead">단원 필수 기출 OX 30제 정답 및 해설</div>
         <div style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-sub); line-height:1.6; padding:4px 2px 8px 2px; border-bottom:1px solid var(--border-line);">
-          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:O · 02:O · 03:O · 04:O · 05:O · 06:O · 07:O · 08:O · 09:O · 10:O · 11:X · 12:O · 13:O · 14:O · 15:O · 16:O · 17:X · 18:X · 19:O · 20:X · 21:O · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
+          <strong style="color:var(--accent);">[OX 빠른 정답]</strong> 01:X · 02:X · 03:O · 04:X · 05:O · 06:X · 07:X · 08:X · 09:O · 10:X · 11:X · 12:X · 13:O · 14:X · 15:X · 16:X · 17:X · 18:X · 19:O · 20:X · 21:X · 22:X · 23:O · 24:X · 25:X · 26:X · 27:X · 28:X · 29:X · 30:X
         </div>
         <div class="ox-check-grid">
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 01 · O 옳음</span>하나의 경계구역은 원칙적으로 2개 이상의 층에 걸칠 수 없으나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에만 예외적으로 허용됩니다(3개 층 이상은 절대 불가).
+            <span class="ox-exp-badge x">OX 01 · X 틀림</span>동일 층의 일반 수평 경계구역 면적은 600제곱미터 이하이지만, 2개 층을 1개의 경계구역으로 통합할 수 있는 바닥면적 합계 상한은 500제곱미터 이하입니다(3개 층 이상은 면적과 무관하게 통합 불가). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 일반 수평은 600 m², 2개 층 통합 합계는 500 m²입니다! '2개 층 합계 600'이 나오면 숫자를 섞은 X입니다.</span>
             <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 02 · O 옳음</span>수평 경계구역의 기본 기준(600제곱미터 이하, 한 변 50미터 이하)과 주된 출입구 내부 투시 시 완화 기준(1,000제곱미터 이하)입니다.
+            <span class="ox-exp-badge x">OX 02 · X 틀림</span>주된 출입구에서 내부 전체가 투시되는 경우 바닥면적 기준은 600제곱미터 이하에서 1,000제곱미터 이하로 완화되지만, 연기를 육안으로 식별할 수 있는 거리 한계인 한 변의 길이 50미터 이하 기준은 완화되지 않고 그대로 유지됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 투시 예외 시 면적만 1,000 m²로 완화되고 '한 변 50 m 이하'는 불변입니다! 한 변 100 m가 보이면 즉시 X!</span>
             <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 03 · O 옳음</span>수직 경계구역(높이 45미터 이하)과 지하구 경계구역(길이 700미터 이하)의 법정 수치입니다.
-            <span class="ox-exp-src">경계구역 NFPC 203 제4조</span>
+            <span class="ox-exp-badge o">OX 03 · O 옳음</span>수직 관통부(계단·경사로·엘리베이터 승강로 등) 경계구역은 높이 45미터 이하(지하 1층만 있으면 지상층 계단과 통합 가능, 지하 2층 이상이면 지하층 계단 별도 분리), 지하구 경계구역은 길이 700미터 이하입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 수직 45 m(약 10층 내외) · 지하구 700 m · 도로터널 100 m 수치를 세트로 암기하세요.</span>
+            <span class="ox-exp-src">경계구역 NFPC 203 제4조 · NFTC 605</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 04 · O 옳음</span>감지기의 기본 분류(열: 차동·정온·보상 / 연기: 이온화·광전 / 불꽃: 자외선·적외선)는 매년 반복 출제됩니다.
-            <span class="ox-exp-src">2018년 소방공채·경채 Q20 기출</span>
+            <span class="ox-exp-badge x">OX 04 · X 틀림</span>차동식·정온식·보상식은 열감지기이고, 이온화식과 광전식은 연소 생성물인 연기 입자를 감지하는 '연기감지기'입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '광전식·이온화식 + 열감지기' 조합은 100% X! 광전·이온화는 연기감지기입니다.</span>
+            <span class="ox-exp-src">2018년 소방공채·경채 Q20 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 05 · O 옳음</span>차동식 분포형 3종(공기관식·열전대식·열반도체식)은 연기감지기인 광전식·이온화식과 섞어 출제됩니다.
+            <span class="ox-exp-badge o">OX 05 · O 옳음</span>차동식 분포형 감지기 3종은 공기관식(공기 팽창 압력), 열전대식(제벡 효과), 열반도체식(반도체 기전력)입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '차동식 분포형 3종 = 공·열전·열반' 공식으로 연기감지기(광전·이온)를 즉시 가려내세요.</span>
             <span class="ox-exp-src">2023년 소방공채·경채 Q23 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 06 · O 옳음</span>일정 상승률 이상 = 차동식(일정 온도 이상 = 정온식), 넓은 범위 열효과 누적 = 분포형(일국소 열효과 = 스포트형)의 법정 정의 조합을 정확히 구분해야 합니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q17 기출</span>
+            <span class="ox-exp-badge x">OX 06 · X 틀림</span>일정 상승률 이상일 때 작동하는 것은 차동식이고, 그중 '넓은 범위의 열효과 누적'으로 작동하는 것은 스포트형이 아니라 '차동식 분포형 감지기'입니다(스포트형은 일국소의 열효과). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '넓은 범위 누적 + 스포트형'이면 모순 X! 넓은 범위는 분포형, 일국소는 스포트형입니다.</span>
+            <span class="ox-exp-src">2024년 소방공채·경채 Q17 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 07 · O 옳음</span>P형(1대 1 접점방식, 중·소형 건물용)과 R형(중계기 및 다중전송방식, 대형·고층 건물용)의 신호 전송 방식을 바꿔 내는 함정에 주의해야 합니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q18 기출</span>
+            <span class="ox-exp-badge x">OX 07 · X 틀림</span>P형 수신기와 R형 수신기의 전송 방식이 뒤바뀌었습니다. 'P형 수신기'가 경계구역별 1대 1 접점방식(중·소형 건물용)이고, 'R형 수신기'가 중계기를 통한 다중전송방식(대형·고층 건물용)입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 'R형 + 1대 1 접점'이 보이면 무조건 X! P형 = 1대 1 접점, R형 = 중계기 다중전송입니다.</span>
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 기출 변형</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 08 · O 옳음</span>화재알림설비는 화재알림형 감지기·단독경보형감지기·중계기·수신기·원격감시서버 등으로 구성되며, '화재알림형 비상경보장치'라는 법정 용어는 존재하지 않습니다.
-            <span class="ox-exp-src">2025년 소방공채·경채 Q25 기출</span>
+            <span class="ox-exp-badge x">OX 08 · X 틀림</span>NFPC 207 제3조 제5호에 따른 '화재알림형 비상경보장치'는 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장하여 경보하는 장치이며, '화재알림형 감지기'는 내장하지 않습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: NFPC 207 '화재알림형 비상경보장치' 정의에 '화재알림형 감지기 내장'이 끼어 있으면 2025년 기출 정답 함정 X입니다!</span>
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 기출 핵심 함정</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 09 · O 옳음</span>우선경보방식 기준: ① 5층 이상 10층 이하(연면적 3,000제곱미터 초과) = 발화층 + 직상층(1층 발화 시 지하 전 층 포함), ② 11층 이상(공동주택 16층 이상) = 발화층 + 직상 4개 층(1층 발화 시 지하 전 층 포함).
+            <span class="ox-exp-badge o">OX 09 · O 옳음</span>현행 기준상 10층 이하(공동주택 15층 이하)는 전 층 일제경보방식이며, 11층 이상(공동주택 16층 이상)만 우선경보방식을 적용해 지상 2층 이상 발화 시 발화층과 직상 4개 층에 경보합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 11층 이상(공동 16층 이상) + 지상 2층 이상 발화 = 발화층 + 직상 4개 층 정답 공식입니다.</span>
             <span class="ox-exp-src">2026년 소방공채·경채 Q25 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 10 · O 옳음</span>시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+            <span class="ox-exp-badge x">OX 10 · X 틀림</span>높이 0.8 m 이상 1.5 m 이하는 손으로 누르는 P형 발신기의 설치 높이입니다. 시야에 가리지 않게 빛을 비추어야 하는 시각경보기는 바닥으로부터 높이 2 m 이상 2.5 m 이하(천장 높이 2 m 이하인 곳은 천장으로부터 0.15 m 이내)에 설치합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '시각경보기 + 0.8에서 1.5 m'는 발신기 높이와 바꿔친 X! 시각경보기는 눈높이 위 2에서 2.5 m입니다.</span>
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 연계 (시각경보기 vs 발신기 설치 높이)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge x">OX 11 · X 틀림</span>감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+            <span class="ox-exp-badge x">OX 11 · X 틀림</span>비상방송설비의 방송 개시 소요시간은 10초 이하(이내)입니다. 20초 이내 기준은 수신기로부터 화재신호를 수신해 119 상황실에 3회 이상 통보하는 자동화재속보설비 기준입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 비상방송은 10초 이내, 자동화재속보는 20초 이내(3회 이상)! 두 시간이 바뀌면 X입니다.</span>
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 연계 (비상방송 10초 vs 속보설비 20초)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 12 · O 옳음</span>비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+            <span class="ox-exp-badge x">OX 12 · X 틀림</span>이온화실 내부로 연기 입자가 유입되면 가벼운 공기 이온이 무거운 연기 입자와 결합해 이동 속도가 둔화되므로 흐르던 이온전류가 '감소'하여 화재를 감지합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 이온화식은 '연기 유입 ➔ 이동 둔화 ➔ 이온전류 감소'! 이온전류 증가는 반의어 X입니다.</span>
+            <span class="ox-exp-src">2024년 소방공채·경채 Q18 연계 (이온화식 연기감지기 작동 원리)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 13 · O 옳음</span>이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다.
-            <span class="ox-exp-src">2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성</span>
+            <span class="ox-exp-badge o">OX 13 · O 옳음</span>NFPC 207 제3조에 규정된 화재알림형 중계기(신호 중계 전송)와 원격감시서버(원격지 감시)의 정확한 법정 정의입니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 중계기(전송 장치) + 원격감시서버(원격 감시 서버) 정의는 기출 옳은 지문입니다.</span>
+            <span class="ox-exp-src">2025년 소방공채·경채 Q25 기출</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 14 · O 옳음</span>'발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조).
-            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+            <span class="ox-exp-badge x">OX 14 · X 틀림</span>NFPC 207 제3조의 화재알림설비 구성요소는 화재알림형 감지기·화재알림형 중계기·화재알림형 수신기·발신기·화재알림형 비상경보장치 및 원격감시서버입니다. 단독경보형감지기는 비상경보설비(NFPC 201) 소관 장치이지 화재알림설비 구성요소가 아닙니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 사각지대 킬러! NFPC 207 화재알림설비 구성요소에 일반 '단독경보형감지기'를 끼워 넣으면 소관 법령을 섞은 X입니다.</span>
+            <span class="ox-exp-src">🎯 최신 사각지대 킬러 · 2025년 Q25 연계 (NFPC 207 vs NFPC 201 단독경보형감지기)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 15 · O 옳음</span>'원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다.
-            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+            <span class="ox-exp-badge x">OX 15 · X 틀림</span>과거 구법에서 연면적 3,000제곱미터 초과 5층 이상 10층 이하 건물에 적용하던 직상 1개 층 우선경보 기준은 전면 폐지되었습니다. 현행 기준상 10층 이하(공동주택은 15층 이하) 건축물은 전 층 일제경보방식을 적용하므로 8층 업무시설은 전 층에 경보를 발합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 현행법상 '5층 이상 10층 이하 직상 1개 층 경보'는 폐지된 구법! 10층 이하(공동 15층 이하)는 무조건 전 층 일제경보입니다.</span>
+            <span class="ox-exp-src">2026년 소방공채·경채 Q25 연계 (구법 5층에서 10층 우선경보 폐지 · 현행 10층 이하 전 층 일제경보)</span>
           </div>
           <div class="ox-exp-item">
-            <span class="ox-exp-badge o">OX 16 · O 옳음</span>'화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다.
-            <span class="ox-exp-src">2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의</span>
+            <span class="ox-exp-badge x">OX 16 · X 틀림</span>11층 이상(공동주택 16층 이상) 건축물이라도 '지하층'에서 화재가 발생한 경우에는 직상 4개 층이 아니라 '발화층(지하 1층) + 그 직상층(지상 1층 단 1개 층) + 기타 지하층 전 층(지하 2·3층)'에 경보를 발합니다. 직상 4개 층 경보는 지상층 발화 시에만 적용됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 사각지대 킬러! 건물 층수가 아무리 높아도 '지하층 발화'가 뜨면 직상 4개 층이 아니라 무조건 '직상 1개 층'만 경보합니다!</span>
+            <span class="ox-exp-src">🎯 최신 사각지대 킬러 · 2026년 Q25 연계 (11층 이상 건물 지하층 발화 시 직상 1개 층만 경보)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 17 · X 틀림</span>지하구와 도로터널의 경계구역 길이 기준이 뒤바뀌었습니다. 전력·통신용 지하구(NFTC 605)는 하나의 경계구역 길이가 700미터 이하이고, 도로터널(NFTC 603)은 발화 구간 정밀 특정을 위해 100미터 이하로 설정합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '지하구 700 m · 도로터널 100 m' 수치가 서로 맞바뀌었으므로 X입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (지하구 700 m vs 도로터널 100 m 스왑)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 18 · X 틀림</span>외기에 면하여 상시 개방된 부분으로부터 5미터 미만 범위는 경계구역 면적 산정에서 제외하는 것이 맞지만, 목욕실·욕조나 샤워시설이 있는 화장실 등은 비화재보 우려로 '감지기 설치 제외' 장소에 해당할 뿐 '경계구역 면적 산정'에서는 제외되지 않고 해당 층 면적에 포함됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 사각지대 킬러! '감지기 설치 제외(목욕실·화장실) = 경계구역 면적 제외'라고 적으면 100% X! 면적 제외는 오직 외기 상시 개방 5 m 미만만입니다.</span>
+            <span class="ox-exp-src">🎯 최신 사각지대 킬러 (외기 5 m 미만 면적 제외 vs 화장실 감지기 설치 제외 구별)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 19 · O 옳음</span>NFPC 201에 따른 단독경보형감지기의 면적 기준(150 m²마다 1개 이상)과 이웃하는 실 통합 요건(각 30 m² 미만 + 벽체 상부 전부 또는 일부 개방으로 공기 유통)을 정확히 기술했습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 단독경보형은 '각 실 150 m² + 이웃 실 각 30 m² 미만·상부 개방 ➔ 1실 간주'로 기억하세요.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (단독경보형감지기 150 m² 및 이웃 실 30 m² 미만 합산)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 20 · X 틀림</span>발신기의 수평거리 25 m 이하 및 설치 높이 0.8 m 이상 1.5 m 이하 기준은 맞지만, 지구음향장치의 음량은 수면 중인 재실자도 인지할 수 있도록 1 m 떨어진 위치에서 80 dB 이상이 아니라 '90 dB 이상'이어야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '지구음향장치 + 80 dB'이면 X! 1 m 거리 음압은 반드시 '90 dB 이상'입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (발신기 설치 기준 및 지구음향장치 90 dB 이상)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 21 · X 틀림</span>보상식 감지기는 차동식 스포트형과 정온식 스포트형의 원리를 결합한 감지기로서, 법령상 오직 '보상식 스포트형'만 존재하며 분포형은 없습니다(분포형은 차동식 분포형만 존재). <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '보상식 분포형'이라는 말이 나오면 존재하지 않는 유령 감지기이므로 즉시 X!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (보상식은 스포트형만 존재)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 22 · X 틀림</span>두 가지가 뒤집혔습니다. 첫째, 공기관이 열기를 충분히 받도록 노출부분은 20 m 이하가 아니라 '20 m 이상'이어야 합니다. 둘째, 공기관 상호 간 거리는 원칙 '6 m 이하'이고 주요구조부가 내화구조인 경우 '9 m 이하'로 완화됩니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 노출부분은 많이 노출해야 하므로 '20 m 이상', 내화구조일수록 거리가 넓어지므로 '원칙 6 m · 내화 9 m 이하'입니다!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장·악질함정 (공기관 노출부분 20 m 이상 및 상호 거리 6 m·내화 9 m)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge o">OX 23 · O 옳음</span>열전대식 감지기는 제벡 효과를 이용하고 1검출부당 열전대부 4개 이상 20개 이하로 접속합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '열전대식 = 제벡 효과 + 4개 이상 20개 이하'는 정확한 기준입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (열전대식 제벡 효과 및 4개에서 20개 기준)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 24 · X 틀림</span>모두 설치 불가입니다. 부착높이 '4 m 이상'부터 이미 정온식 2종과 연기감지기 3종이 탈락하고(정온 특·1종 및 연기 1·2종 생존), '8 m 이상'부터는 모든 스포트형 열감지기와 정온식 감지선형이 탈락하여 차동식 분포형·연기 1·2종·연기복합·불꽃만 가능합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '4 m↑ 정온 2종·연기 3종 탈락 / 8 m↑ 스포트 열·정온선 탈락' 컷오프를 기억하면 1초 만에 X로 판별됩니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (NFPC 203 제7조 4 m 이상·8 m 이상 단계별 탈락 컷오프)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 25 · X 틀림</span>부착높이 '20 m 이상'인 초고천장에는 이온화식 1종과 일반 광전식 스포트형 1종은 물론 비아날로그 광전식 분리형 1종도 설치할 수 없으며, 오직 '불꽃감지기' 및 '광전식(분리형·공기흡입형) 중 아날로그방식(공칭감지농도 하한값 감광율 5%/m 미만)'만 설치할 수 있습니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 사각지대 킬러! 20 m 이상 구간에 '이온화 1종·광전 스포트 1종·비아날로그 광전 1종'이 나오면 즉시 X! 오직 불꽃 + 광전 아날로그(분리·공기흡입)만 생존합니다.</span>
+            <span class="ox-exp-src">🎯 최신 사각지대 킬러 (NFPC 203 제7조 20 m 이상 비아날로그 광전 1종 불가 · 아날로그 한정)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 26 · X 틀림</span>세 가지 수치 모두 틀렸습니다. 연기감지기(1·2종)는 거실 부착높이 4 m 미만 시 150 m²마다(4 m 이상 20 m 미만 시 절반인 '75 m²마다'), 복도·통로는 보행거리 '30 m'마다(3종 20 m), 계단·경사로는 수직거리 '15 m'마다(3종 10 m) 1개 이상 설치합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 복도는 길게 30 m, 계단은 수직 15 m, 4 m 이상 거실은 절반인 75 m²! 복도 15 m·계단 30 m로 바뀌면 X입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (연기감지기 거실 150/75 m² 및 복도 30 m·계단 15 m 스왑)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 27 · X 틀림</span>수치 네 군데가 모두 틀렸습니다. 연기감지기는 벽 또는 보로부터 '0.6 m 이상', 급기구 등 공기 유입구로부터 '1.5 m 이상' 이격해야 하며, 보 돌출 깊이 기준은 스포트형 열감지기 '0.4 m 이상'(연기감지기 0.6 m 이상)이고, 불꽃감지기를 제외한 스포트형 감지기는 '45도 이상' 경사지지 않도록 부착해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 연기 벽·보 이격 0.6 m, 급기구 1.5 m, 열감지기 보 돌출 0.4 m, 경사 45도 금지! 0.3 m나 60도가 보이면 X입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (연기 이격 0.6 m·급기구 1.5 m·보 깊이 0.4 m·경사 45도 미만)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 28 · X 틀림</span>두 가지 모두 틀렸습니다. 교차회로방식 면제 8종(불꽃·정온식 감지선형·분포형·복합형·광전식 분리형[및 공기흡입형]·아날로그·다신호·축적방식)에 정온식·차동식 스포트형은 포함되지 않으며(전선 형태의 정온식 감지선형만 면제), 교차회로방식 자체에 사용하는 감지기는 신호 지연을 막기 위해 반드시 '비축적형'으로 설치해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '정온식 스포트형 면제'는 X(정온식 감지선형만 면제!), '교차회로 자체 + 축적형'도 X(교차회로 자체는 비축적형 필수)!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (교차회로 면제 8종 정온식 감지선형 vs 스포트형 면제 불가)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 29 · X 틀림</span>수계 소화설비(옥내소화전·스프링클러) 비상전원 시간(20분·40분·60분)을 자탐·비상방송에 덮어씌운 함정입니다. 자동화재탐지설비와 비상방송설비는 60분 감시 지속 후 '10분 이상'(층수 30층 이상 고층건축물은 50층 이상 여부와 무관하게 '30분 이상') 경보할 수 있는 용량을 확보해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: 자탐·비상방송 비상전원은 '60분 감시 + 10분 이상(30층 이상은 50층 불문 30분 이상)'! 20·40·60분이 보이면 수계 수치이므로 X!</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장·악질함정 (자탐 비상전원 10분·30층↑ 30분 vs 수계 20·40·60분)</span>
+          </div>
+          <div class="ox-exp-item">
+            <span class="ox-exp-badge x">OX 30 · X 틀림</span>10초 이내는 비상방송설비의 방송 개시 시간이며, 자동화재속보설비는 수신기로부터 화재신호를 수신한 후 '20초 이내'에 3회 이상 119 상황실로 자동 음성 속보해야 합니다. <span class="exp-tip">💡 <strong>1초 판별 팁</strong>: '자동화재속보설비 + 10초 이내'가 보이면 비상방송과 바꾼 X! 속보설비는 20초 이내 3회 이상입니다.</span>
+            <span class="ox-exp-src">🎯 2회독 주변확장 (자동화재속보설비 20초 이내 3회 이상 vs 비상방송 10초 이내)</span>
           </div>
         </div>
       </div>
@@ -3114,7 +3346,7 @@
     const s26Solved = {};
     const s26OxSolved = {};
     const s26OxSaved = {};
-    const s26OxDeckList = [{"num": 1, "code": "기001 · 경계구역 NFPC 203 제4조", "stmt": "자동화재탐지설비의 하나의 경계구역은 둘 이상의 건축물 또는 둘 이상의 층에 걸치지 아니하여야 하나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에는 2개 층을 하나의 경계구역으로 할 수 있다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 수평 경계구역 핵심 수치 (NFPC 203 제4조) 본문 보기", "tpreview": "하나의 경계구역은 원칙적으로 2개 이상의 층에 걸칠 수 없으나, 2개 층의 바닥면적 합계가 500제곱미터 이하인 경우에만 예외적으로 허용됩니다(3개 층 이상은 절대 불가)."}, {"num": 2, "code": "기002 · 경계구역 NFPC 203 제4조", "stmt": "하나의 경계구역의 바닥면적은 600제곱미터 이하, 한 변의 길이는 50미터 이하로 하되, 주된 출입구에서 내부 전체가 보이는 경우에는 한 변의 길이 50미터 범위 내에서 1,000제곱미터 이하로 할 수 있다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 수평 경계구역 핵심 수치 (NFPC 203 제4조) 본문 보기", "tpreview": "수평 경계구역의 기본 기준(600제곱미터 이하, 한 변 50미터 이하)과 주된 출입구 내부 투시 시 완화 기준(1,000제곱미터 이하)입니다."}, {"num": 3, "code": "기003 · 경계구역 NFPC 203 제4조", "stmt": "계단 및 경사로의 수직 경계구역은 높이 45미터 이하를 하나의 경계구역으로 하며, 지하구의 경우 하나의 경계구역 길이는 700미터 이하로 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 수직·특례 경계구역 핵심 수치 본문 보기", "tpreview": "수직 경계구역(높이 45미터 이하)과 지하구 경계구역(길이 700미터 이하)의 법정 수치입니다."}, {"num": 4, "code": "기004 · 2018년 소방공채·경채 Q20 기출", "stmt": "화재감지기 중 차동식, 정온식, 보상식은 열감지기에 해당하며, 이온화식과 광전식은 연기감지기에 해당한다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "감지기의 기본 분류(열: 차동·정온·보상 / 연기: 이온화·광전 / 불꽃: 자외선·적외선)는 매년 반복 출제됩니다."}, {"num": 5, "code": "기005 · 2023년 소방공채·경채 Q23 기출", "stmt": "차동식 분포형 감지기는 넓은 범위 내에서의 열효과 누적에 의하여 작동하며, 그 종류에는 공기관식, 열전대식, 열반도체식이 있다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "차동식 분포형 3종(공기관식·열전대식·열반도체식)은 연기감지기인 광전식·이온화식과 섞어 출제됩니다."}, {"num": 6, "code": "기006 · 2024년 소방공채·경채 Q17 기출", "stmt": "주위 온도가 일정 상승률 이상이 되는 경우에 작동하는 감지기로서 넓은 범위 내에서 열효과 누적에 의해 작동하는 것은 '차동식 분포형 감지기'이며, 일국소에서의 열효과에 의해 작동하는 것은 '차동식 스포트형 감지기'이다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "일정 상승률 이상 = 차동식(일정 온도 이상 = 정온식), 넓은 범위 열효과 누적 = 분포형(일국소 열효과 = 스포트형)의 법정 정의 조합을 정확히 구분해야 합니다."}, {"num": 7, "code": "기007 · 2024년 소방공채·경채 Q18 기출", "stmt": "자동화재탐지설비에서 감지기 또는 발신기로부터 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 중계기를 통해 다중전송(주소형 통신) 방식으로 신호를 수신하는 것은 'R형 수신기'이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "P형(1대 1 접점방식, 중·소형 건물용)과 R형(중계기 및 다중전송방식, 대형·고층 건물용)의 신호 전송 방식을 바꿔 내는 함정에 주의해야 합니다."}, {"num": 8, "code": "기008 · 2025년 소방공채·경채 Q25 기출", "stmt": "화재알림설비의 화재안전성능기준(NFPC 207)상 '화재알림형 중계기'는 화재알림형 감지기·발신기 등의 화재정보값 또는 화재신호를 받아 화재알림형 수신기에 전송하는 장치이며, '원격감시서버'는 원격지에서 이를 감시하기 위한 서버이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "화재알림설비는 화재알림형 감지기·단독경보형감지기·중계기·수신기·원격감시서버 등으로 구성되며, '화재알림형 비상경보장치'라는 법정 용어는 존재하지 않습니다."}, {"num": 9, "code": "기009 · 2026년 소방공채·경채 Q25 기출", "stmt": "현행 화재안전기술기준(NFTC 202, 203)상 층수가 11층 이상(공동주택은 16층 이상)인 특정소방대상물의 지상 2층 이상에서 화재가 발생한 경우, 우선경보방식에 따라 '발화층 및 그 직상 4개 층'에 경보를 발하여야 한다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기", "tpreview": "우선경보방식 기준: ① 5층 이상 10층 이하(연면적 3,000제곱미터 초과) = 발화층 + 직상층(1층 발화 시 지하 전 층 포함, 지하층 발화 시 발화층·직상층·기타 지하 전 층), ② 11층 이상(공동주택 16층 이상) = 발화층 + 직상 4개 층(1층 발화 시 지하 전 층 포함, 지하층 발화 시 발화층·직상층·기타 지하 전 층)."}, {"num": 10, "code": "기010 · 2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성", "stmt": "[소방시설 중 경보설비] 시각경보기는 청각장애인에게 점멸 형태로 시각경보를 하는 장치이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "시각경보기는 자동화재탐지설비에서 발하는 화재신호를 시각경보장치에 전달하여 청각장애인에게 점멸 형태의 빛으로 시각경보를 하는 장치입니다."}, {"num": 11, "code": "기011 · 2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성", "stmt": "[소방시설 중 경보설비] R형 수신기는 감지기 또는 발신기에서 1 : 1 접점방식으로 전송된 신호를 수신한다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "감지기 또는 발신기에서 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'P형 수신기'이며, 'R형 수신기'는 감지기·발신기에서 발하는 신호를 중계기를 통해 다중전송(고유 주소 신호) 방식으로 수신하여 기록·표시하는 수신기입니다."}, {"num": 12, "code": "기012 · 2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성", "stmt": "[소방시설 중 경보설비] 비상방송설비는 수신기에 화재신호가 도달하면 방송으로 화재 사실을 알리는 설비이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "비상방송설비는 자동화재탐지설비의 수신기에 화재신호가 도달하면 연동하여 음성 방송으로 화재 사실을 알리는 경보설비입니다."}, {"num": 13, "code": "기013 · 2024년 소방공채·경채 Q18 · 경보설비(시각경보기·P형 및 R형 수신기·비상방송설비·연기감지기)의 작동 특성", "stmt": "[소방시설 중 경보설비] 이온화식 감지기와 광전식 감지기는 연기를 감지하여 화재신호를 발하는 장치이다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "이온화식 감지기와 광전식 감지기는 모두 연소 생성물인 연기를 감지하여 화재신호를 발하는 연기감지기입니다."}, {"num": 14, "code": "기014 · 2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의", "stmt": "[화재알림설비] “발신기”란 수동누름버튼 등의 작동으로 화재신호를 수신 기에 발신하는 장치를 말한다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "'발신기'란 수동누름버튼 등의 작동으로 화재신호를 수신기에 발신하는 장치를 말합니다(NFPC 207 제3조)."}, {"num": 15, "code": "기015 · 2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의", "stmt": "“원격감시서버”란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말한다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "'원격감시서버'란 원격지에서 각각의 화재알림설비로부터 수신한 화재정보값 및 화재신호, 상태신호 등을 원격으로 감시하기 위한 서버를 말합니다."}, {"num": 16, "code": "기016 · 2025년 소방공채·경채 Q25 · 화재알림설비(NFPC 207)의 구성요소 및 화재알림형 단독경보형감지기 정의", "stmt": "[화재알림설비] “화재알림형 중계기”란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말한다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "'화재알림형 중계기'란 화재알림형 감지기, 발신기 또는 전기적인 접점 등의 작동에 따른 화재정보값 또는 화재신호 등을 받아 이를 화재알림형 수신기에 전송하는 장치를 말합니다."}, {"num": 17, "code": "기017 · 🎯 2회독 주변확장·악질함정 (일반 경계구역 600m² 이하 vs 2개 층 합산 경계구역 500m² 이하)", "stmt": "자동화재탐지설비(NFPC 203)에서 하나의 경계구역 면적은 600 m² 이하(주된 출입구에서 내부 전체가 보이는 경우 1,000 m² 이하)로 하고 한 변의 길이는 50 m 이하로 하되, 2개 이상의 층의 바닥면적 합계가 600 m² 이하인 경우에는 2개 층을 하나의 경계구역으로 설정할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 수평 경계구역 핵심 수치 (NFPC 203 제4조) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 일반 수평 경계구역 면적(600 m² 이하)을 먼저 제시해서 뇌에 '600'을 각인시킨 뒤, '2개 층 합산 예외 기준'까지 슬쩍 600 m²로 적은 극악 착시 함정입니다! 2개 층을 하나의 경계구역으로 묶을 수 있는 바닥면적 합계 기준은 600 m² 이하가 아니라 '500 m² 이하'입니다!"}, {"num": 18, "code": "기018 · 🎯 2회독 주변확장 (경계구역 1,000 m² 완화 시 한 변 50 m 유지)", "stmt": "하나의 경계구역 면적은 원칙적으로 600 m² 이하이고 한 변의 길이는 50 m 이하이나, 주된 출입구에서 내부 전체가 보이는 경우에는 바닥면적을 1,000 m² 이하, 한 변의 길이를 100 m 이하까지 완화할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 수평 경계구역 핵심 수치 (NFPC 203 제4조) 본문 보기", "tpreview": "주된 출입구에서 내부 전체가 보이는 경우 바닥면적은 600 m² 이하에서 '1,000 m² 이하'로 완화할 수 있지만, '한 변의 길이 50 m 이하' 기준은 완화되지 않고 그대로 50 m 이하를 유지해야 합니다!"}, {"num": 19, "code": "기019 · 🎯 2회독 주변확장 (수직 경계구역 45 m 및 지하구 700 m)", "stmt": "계단·경사로·엘리베이터 승강로 등 수직 관통 부분의 경계구역은 높이 45 m 이하마다 별도로 설정하며, 전력·통신용 지하구의 하나의 경계구역 길이는 700 m 이하로 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 수직·특례 경계구역 핵심 수치 본문 보기", "tpreview": "수직 경계구역 높이 45 m 이하(지하 2층 이상 시 지하층 계단 별도), 외기 개방부 5 m 미만 제외, 지하구 길이 700 m 이하는 경계구역 산정의 핵심 수치입니다."}, {"num": 20, "code": "기020 · 🎯 2회독 주변확장·악질함정 (공기관 노출부분 20m 이상 및 상호 거리 원칙 6m·내화 9m 이하)", "stmt": "차동식 분포형 감지기 중 공기관식은 하나의 검출부분에 연결하는 공기관의 길이를 100 m 이하로 하고, 감지구역마다 공기관의 노출부분은 20 m 이하가 되도록 하며, 공기관 상호 간의 거리는 9 m 이하(내화구조는 6 m 이하)로 설치한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 두 군데가 아주 교묘하게 뒤집혔습니다! 첫째, 열을 충분히 감지하기 위해 공기관의 노출부분은 20 m 이하가 아니라 '20 m 이상'이어야 합니다! 둘째, 공기관 상호 간 거리는 원칙 '6 m 이하', 주요구조부를 내화구조로 한 경우 '9 m 이하'입니다!"}, {"num": 21, "code": "기021 · 🎯 2회독 주변확장 (열전대식 제벡 효과 및 4개에서 20개 기준)", "stmt": "차동식 분포형 감지기 중 열전대식은 서로 다른 두 금속 접점의 온도차에 의해 열기전력이 발생하는 제벡 효과(Seebeck effect)를 이용하며, 하나의 검출부에 접속하는 열전대부는 4개 이상 20개 이하로 한다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "열전대식 감지기는 제벡 효과(열기전력)를 이용하며, 1검출부당 열전대 수 4개 이상 20개 이하(바닥면적 72 m²[내화 88 m²] 이하 시 최소 4개 이상, 초과 시 18 m²[내화 22 m²]마다 1개 이상)로 설치합니다."}, {"num": 22, "code": "기022 · 🎯 2회독 주변확장·악질함정 (단독경보형감지기 이웃 실 합산 30m² 미만 기준)", "stmt": "단독경보형감지기(NFPC 201)는 구획된 각 실마다 설치하되 바닥면적이 150 m²를 초과하는 경우에는 150 m²마다 1개 이상을 설치해야 하며, 이웃하는 실내의 바닥면적이 각각 50 m² 미만이고 벽체 상부의 일부가 개방되어 공기가 상호 유통되는 경우에는 이를 1개의 실로 본다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 수직·특례 경계구역 핵심 수치 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 앞부분 150 m² 기준은 맞지만, 이웃하는 두 실을 1개의 실로 묶어 주는 바닥면적 기준은 각각 50 m² 미만이 아니라 '각각 30 m² 미만'일 때입니다!"}, {"num": 23, "code": "기023 · 🎯 2회독 주변확장 (발신기 25 m·높이 및 음향장치 90 dB 기준)", "stmt": "자동화재탐지설비의 발신기는 각 부분으로부터 수평거리 25 m 이하가 되도록 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치하며, 지구음향장치의 음량은 중심으로부터 1 m 떨어진 위치에서 90 dB 이상이 되도록 해야 한다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 수직·특례 경계구역 핵심 수치 본문 보기", "tpreview": "발신기(수평거리 25 m 이하, 높이 0.8 m에서 1.5 m)와 지구음향장치(수평거리 25 m 이하, 1 m 거리 음량 90 dB 이상)는 경보설비의 기본 수치입니다."}, {"num": 24, "code": "기024 · 🎯 2회독 주변확장 (부착높이 8 m 이상 스포트형 열감지기 탈락 · 20 m 이상 불꽃/광전식만)", "stmt": "감지기의 부착높이가 8 m 이상 15 m 미만인 장소에는 차동식 스포트형 감지기와 정온식 스포트형 감지기를 설치할 수 있으며, 부착높이가 20 m 이상인 장소에는 차동식 분포형 감지기를 설치할 수 있다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "모두 설치 불가능합니다! 부착높이가 8 m 이상이 되면 모든 '스포트형 열감지기(차동식 스포트·정온식 스포트·보상식 스포트)'와 연기감지기 3종은 탈락하여 설치할 수 없으며(8 m 이상 15 m 미만은 차동식 분포형·연기 1/2종·복합형·불꽃만 가능), 부착높이 20 m 이상인 초고층 천장에는 차동식 분포형도 탈락하고 오직 '불꽃감지기 및 광전식(분리형·공기흡입형 중 아날로그방식)'만 설치할 수 있습니다!"}, {"num": 25, "code": "기025 · 🎯 2회독 주변확장·악질함정 (부착높이 20m 이상 불꽃·광전식 아날로그/분리/공기흡입형만 가능)", "stmt": "감지기의 부착높이가 20 m 이상인 장소에 설치할 수 있는 감지기는 이온화식 1종, 광전식(스포트형·분리형·공기흡입형) 1종, 불꽃감지기이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 연기감지기 · 불꽃감지기 핵심 포인트 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 부착높이 '15 m 이상 20 m 미만' 기준과 '20 m 이상' 기준을 섞어 놓았습니다! 부착높이가 '20 m 이상'인 초고층 천장에서는 이온화식 감지기와 일반 광전식 스포트형 감지기가 모두 탈락하며, 오직 '불꽃감지기'와 '광전식 중 아날로그방식·분리형·공기흡입형(1종)'만 설치할 수 있습니다!"}, {"num": 26, "code": "기026 · 🎯 2회독 주변확장 (연기감지기 벽 이격 0.6 m 및 스포트형 45도 경사 제한)", "stmt": "연기감지기는 천장 또는 반자의 벽이나 보에 바짝 밀착하여 설치해야 하며, 불꽃감지기를 제외한 스포트형 감지기는 60도까지 경사지게 부착할 수 있다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "두 수치 모두 틀렸습니다! 연기감지기는 모서리 사각지대(Dead space)를 피하기 위해 벽 또는 보로부터 '0.6 m 이상' 떨어진 곳에 설치해야 하며(열감지기는 0.4 m 이상), 불꽃감지기를 제외한 모든 스포트형 감지기는 '45도 이상' 경사지지 아니하도록 부착해야 합니다!"}, {"num": 27, "code": "기027 · 🎯 2회독 주변확장·악질함정 (교차회로 면제 정온식 감지선형 vs 면제 불가 정온식 스포트형)", "stmt": "준비작동식 스프링클러설비나 가스계 소화설비의 감지기 회로에 불꽃감지기, 정온식 스포트형 감지기, 차동식 분포형 감지기, 복합형 감지기, 광전식 분리형·공기흡입형 감지기, 아날로그방식 감지기를 설치한 경우에는 교차회로방식을 적용하지 아니할 수 있다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기 기출 3대 분류 공식 (2018 Q20 · 2023 Q23 · 2024 Q17) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 교차회로 면제 7대 감지기 나열 속에 '정온식 감지선형'이 아닌 '정온식 스포트형'을 슬쩍 바꿔 끼워 넣었습니다! 일반 '정온식 스포트형 감지기'나 '차동식 스포트형 감지기'는 반드시 교차회로(2개 이상 회로)로 구성해야 하며, 면제되는 것은 전선 형태의 '정온식 감지선형 감지기'입니다!"}, {"num": 28, "code": "기028 · 🎯 2회독 주변확장·악질함정 (자탐설비 비상전원 10분·30분·60분 vs 수계 20분·40분·60분)", "stmt": "자동화재탐지설비 및 비상방송설비의 비상전원은 감시 상태를 60분간 지속한 후 유효하게 20분 이상(단, 층수가 30층 이상 49층 이하는 40분 이상, 50층 이상은 60분 이상) 경보할 수 있는 축전지설비 등으로 설치해야 한다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 수평 경계구역 핵심 수치 (NFPC 203 제4조) 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 옥내소화전·스프링클러 비상전원 시간(20분·40분·60분)을 자탐설비에 몰래 덮어씌운 악질 함정입니다! 자동화재탐지설비·비상방송설비는 '60분 감시 후 10분 이상 경보(30층 이상 49층 이하는 30분 이상, 50층 이상은 60분 이상)'입니다."}, {"num": 29, "code": "기029 · 🎯 2회독 주변확장·악질함정 (자동화재속보설비 20초 이내 vs 비상방송 10초 이하)", "stmt": "자동화재속보설비(NFPC 204)는 자동화재탐지설비의 수신기로부터 화재신호를 수신하거나 수동으로 동작시키는 경우 10초 이내에 소방관서에 자동적으로 신호를 발하여 통보하되, 3회 이상 속보할 수 있어야 한다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · 수신기 및 화재알림설비 기출 급소 본문 보기", "tpreview": "🚨 [출제위원 착시 함정 주의] 10초 이내는 '비상방송설비' 방송 개시 시간입니다! '자동화재속보설비'는 화재신호 수신 후 '20초 이내'에 소방관서에 자동 통보하되 3회 이상 속보할 수 있어야 합니다."}, {"num": 30, "code": "기030 · 🎯 2회독 주변확장 (우선경보방식 5층에서 10층 직상 1개 층 vs 11층 이상 직상 4개 층)", "stmt": "연면적 5,000 m²이고 지하 2층·지상 8층인 업무시설의 지상 3층에서 화재가 발생한 경우, 우선경보방식에 따라 지상 3층(발화층)과 그 직상 4개 층(지상 4·5·6·7층)에 경보를 발해야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · 현행 우선경보방식 계산 공식 (2026년 Q25) 본문 보기", "tpreview": "해당 업무시설은 층수가 11층 미만인 '5층 이상 10층 이하' 건축물이므로 직상 4개 층이 아니라 '발화층(3층) 및 그 직상층(4층, 1개 층)'에만 경보를 발합니다! '발화층 및 그 직상 4개 층' 경보는 층수가 11층 이상(공동주택은 16층 이상)인 건축물에 적용됩니다."}];
+    const s26OxDeckList = [{"num": 1, "code": "기001 · 경계구역 NFPC 203 제4조", "stmt": "자동화재탐지설비의 하나의 경계구역은 둘 이상의 층에 걸치지 아니하여야 하나, 2개 층의 바닥면적 합계가 600제곱미터 이하인 경우에는 2개 층을 하나의 경계구역으로 설정할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "500제곱미터 이하", "tpreview": "동일 층의 일반 수평 경계구역 면적은 600제곱미터 이하이지만, 2개 층을 1개의 경계구역으로 통합할 수 있는 바닥면적 합계 상한은 500제곱미터 이하입니다(3개 층 이상은 면적과 무관하게 통합 불가). 💡 1초 판별 팁: 일반 수평은 600 m², 2개 층 통합 합계는 500 m²입니다! '2개 층 합계 600'이 나오면 숫자를 섞은 X입니다."}, {"num": 2, "code": "기002 · 경계구역 NFPC 203 제4조", "stmt": "하나의 경계구역의 바닥면적은 원칙적으로 600제곱미터 이하, 한 변의 길이는 50미터 이하로 하되, 주된 출입구에서 내부 전체가 보이는 경우에는 바닥면적 1,000제곱미터 이하, 한 변의 길이 100미터 이하로 완화할 수 있다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "한 변의 길이 기준 50 m 이하는 절대 완화되지 않고 그대로 유지", "tpreview": "주된 출입구에서 내부 전체가 투시되는 경우 바닥면적 기준은 600제곱미터 이하에서 1,000제곱미터 이하로 완화되지만, 연기를 육안으로 식별할 수 있는 거리 한계인 한 변의 길이 50미터 이하 기준은 완화되지 않고 그대로 유지됩니다. 💡 1초 판별 팁: 투시 예외 시 면적만 1,000 m²로 완화되고 '한 변 50 m 이하'는 불변입니다! 한 변 100 m가 보이면 즉시 X!"}, {"num": 3, "code": "기003 · 경계구역 NFPC 203 제4조 · NFTC 605", "stmt": "계단 및 경사로의 수직 경계구역은 높이 45미터 이하를 하나의 경계구역으로 하며, 전력·통신용 지하구의 경우 하나의 경계구역 길이는 700미터 이하로 설정한다.", "ans": true, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "45미터 이하", "tpreview": "수직 관통부(계단·경사로·엘리베이터 승강로 등) 경계구역은 높이 45미터 이하(지하 1층만 있으면 지상층 계단과 통합 가능, 지하 2층 이상이면 지하층 계단 별도 분리), 지하구 경계구역은 길이 700미터 이하입니다. 💡 1초 판별 팁: 수직 45 m(약 10층 내외) · 지하구 700 m · 도로터널 100 m 수치를 세트로 암기하세요."}, {"num": 4, "code": "기004 · 2018년 소방공채·경채 Q20 기출 변형", "stmt": "화재감지기 중 차동식, 정온식, 보상식은 열감지기에 해당하며, 광전식과 이온화식 역시 주위 온도의 상승률을 포착하는 열감지기의 일종으로 분류된다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "차동식 · 정온식 · 보상식 구분", "tpreview": "차동식·정온식·보상식은 열감지기이고, 이온화식과 광전식은 연소 생성물인 연기 입자를 감지하는 '연기감지기'입니다. 💡 1초 판별 팁: '광전식·이온화식 + 열감지기' 조합은 100% X! 광전·이온화는 연기감지기입니다."}, {"num": 5, "code": "기005 · 2023년 소방공채·경채 Q23 기출", "stmt": "차동식 분포형 감지기는 넓은 범위 내에서의 열효과 누적에 의하여 작동하며, 그 종류에는 공기관식, 열전대식, 열반도체식이 있다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "열반도체식은 열기전력 소자를 분포 배치하여 감지합니다", "tpreview": "차동식 분포형 감지기 3종은 공기관식(공기 팽창 압력), 열전대식(제벡 효과), 열반도체식(반도체 기전력)입니다. 💡 1초 판별 팁: '차동식 분포형 3종 = 공·열전·열반' 공식으로 연기감지기(광전·이온)를 즉시 가려내세요."}, {"num": 6, "code": "기006 · 2024년 소방공채·경채 Q17 기출 변형", "stmt": "주위 온도가 일정 상승률 이상이 되는 경우에 작동하는 감지기로서 넓은 범위 내에서의 열효과 누적에 의해 작동하는 것은 '차동식 스포트형 감지기'이다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "일정 상승률 이상으로 급상승할 때 작동하는", "tpreview": "일정 상승률 이상일 때 작동하는 것은 차동식이고, 그중 '넓은 범위의 열효과 누적'으로 작동하는 것은 스포트형이 아니라 '차동식 분포형 감지기'입니다(스포트형은 일국소의 열효과). 💡 1초 판별 팁: '넓은 범위 누적 + 스포트형'이면 모순 X! 넓은 범위는 분포형, 일국소는 스포트형입니다."}, {"num": 7, "code": "기007 · 2024년 소방공채·경채 Q18 기출 변형", "stmt": "자동화재탐지설비에서 감지기 또는 발신기로부터 1대 1 접점방식으로 전송된 신호를 수신하는 것은 'R형 수신기'이며, 중계기를 통해 다중전송방식으로 신호를 수신하는 것은 'P형 수신기'이다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "P형 수신기(고유신호식 · 1대 1 접점방식)", "tpreview": "P형 수신기와 R형 수신기의 전송 방식이 뒤바뀌었습니다. 'P형 수신기'가 경계구역별 1대 1 접점방식(중·소형 건물용)이고, 'R형 수신기'가 중계기를 통한 다중전송방식(대형·고층 건물용)입니다. 💡 1초 판별 팁: 'R형 + 1대 1 접점'이 보이면 무조건 X! P형 = 1대 1 접점, R형 = 중계기 다중전송입니다."}, {"num": 8, "code": "기008 · 2025년 소방공채·경채 Q25 기출 핵심 함정", "stmt": "화재알림설비의 화재안전성능기준(NFPC 207) 제3조 제5호상 '화재알림형 비상경보장치'란 화재알림형 감지기, 발신기, 표시등, 지구음향장치를 모두 내장한 것으로 화재발생 상황을 경보하는 장치를 말한다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "화재알림형 비상경보장치", "tpreview": "NFPC 207 제3조 제5호에 따른 '화재알림형 비상경보장치'는 발신기, 표시등, 지구음향장치(경종 또는 사이렌 등)를 내장하여 경보하는 장치이며, '화재알림형 감지기'는 내장하지 않습니다. 💡 1초 판별 팁: NFPC 207 '화재알림형 비상경보장치' 정의에 '화재알림형 감지기 내장'이 끼어 있으면 2025년 기출 정답 함정 X입니다!"}, {"num": 9, "code": "기009 · 2026년 소방공채·경채 Q25 기출", "stmt": "현행 화재안전기술기준(NFTC 202, 203)상 층수가 11층 이상(공동주택은 16층 이상)인 특정소방대상물의 지상 2층 이상에서 화재가 발생한 경우, 우선경보방식에 따라 발화층 및 그 직상 4개 층에 경보를 발하여야 한다.", "ans": true, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "발화층 + 직상 4개층", "tpreview": "현행 기준상 10층 이하(공동주택 15층 이하)는 전 층 일제경보방식이며, 11층 이상(공동주택 16층 이상)만 우선경보방식을 적용해 지상 2층 이상 발화 시 발화층과 직상 4개 층에 경보합니다. 💡 1초 판별 팁: 11층 이상(공동 16층 이상) + 지상 2층 이상 발화 = 발화층 + 직상 4개 층 정답 공식입니다."}, {"num": 10, "code": "기010 · 2024년 소방공채·경채 Q18 연계 (시각경보기 vs 발신기 설치 높이)", "stmt": "청각장애인에게 점멸 형태로 시각경보를 하는 시각경보기(NFPC 203)는 공연장·집회장·관람장 또는 높이가 낮은 실내를 제외하고는 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치한다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "2 m 이상 2.5 m 이하", "tpreview": "높이 0.8 m 이상 1.5 m 이하는 손으로 누르는 P형 발신기의 설치 높이입니다. 시야에 가리지 않게 빛을 비추어야 하는 시각경보기는 바닥으로부터 높이 2 m 이상 2.5 m 이하(천장 높이 2 m 이하인 곳은 천장으로부터 0.15 m 이내)에 설치합니다. 💡 1초 판별 팁: '시각경보기 + 0.8에서 1.5 m'는 발신기 높이와 바꿔친 X! 시각경보기는 눈높이 위 2에서 2.5 m입니다."}, {"num": 11, "code": "기011 · 2024년 소방공채·경채 Q18 연계 (비상방송 10초 vs 속보설비 20초)", "stmt": "비상방송설비(NFPC 202)는 수신기에 화재신호가 도달하거나 기동장치가 작동한 후 필요한 음량으로 방송이 개시될 때까지의 소요시간이 20초 이하가 되도록 설치한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "10초 이내", "tpreview": "비상방송설비의 방송 개시 소요시간은 10초 이하(이내)입니다. 20초 이내 기준은 수신기로부터 화재신호를 수신해 119 상황실에 3회 이상 통보하는 자동화재속보설비 기준입니다. 💡 1초 판별 팁: 비상방송은 10초 이내, 자동화재속보는 20초 이내(3회 이상)! 두 시간이 바뀌면 X입니다."}, {"num": 12, "code": "기012 · 2024년 소방공채·경채 Q18 연계 (이온화식 연기감지기 작동 원리)", "stmt": "이온화식 연기감지기는 방사성 동위원소 아메리슘(²⁴¹Am)에서 방출되는 알파선으로 공기를 이온화해 미세 전류를 흘려보내다가, 연기 입자가 유입되면 이온전류가 급격히 증가하는 원리로 작동한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "이온전류가 감소", "tpreview": "이온화실 내부로 연기 입자가 유입되면 가벼운 공기 이온이 무거운 연기 입자와 결합해 이동 속도가 둔화되므로 흐르던 이온전류가 '감소'하여 화재를 감지합니다. 💡 1초 판별 팁: 이온화식은 '연기 유입 ➔ 이동 둔화 ➔ 이온전류 감소'! 이온전류 증가는 반의어 X입니다."}, {"num": 13, "code": "기013 · 2025년 소방공채·경채 Q25 기출", "stmt": "화재알림설비(NFPC 207)의 '화재알림형 중계기'는 감지기·발신기 등의 화재정보값 또는 화재신호를 받아 화재알림형 수신기에 전송하는 장치이며, '원격감시서버'는 원격지에서 이를 감시하기 위한 서버이다.", "ans": true, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "화재알림형 중계기", "tpreview": "NFPC 207 제3조에 규정된 화재알림형 중계기(신호 중계 전송)와 원격감시서버(원격지 감시)의 정확한 법정 정의입니다. 💡 1초 판별 팁: 중계기(전송 장치) + 원격감시서버(원격 감시 서버) 정의는 기출 옳은 지문입니다."}, {"num": 14, "code": "기014 · 🎯 최신 사각지대 킬러 · 2025년 Q25 연계 (NFPC 207 vs NFPC 201 단독경보형감지기)", "stmt": "화재알림설비의 화재안전성능기준(NFPC 207)상 핵심 구성요소에는 화재알림형 감지기, 화재알림형 중계기, 화재알림형 수신기 외에 비상경보설비의 단독경보형감지기가 법정 필수 구성요소로 포함된다.", "ans": false, "tid": "theory-sec3-p5", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "단독경보형감지기는 NFPC 201 소관", "tpreview": "NFPC 207 제3조의 화재알림설비 구성요소는 화재알림형 감지기·화재알림형 중계기·화재알림형 수신기·발신기·화재알림형 비상경보장치 및 원격감시서버입니다. 단독경보형감지기는 비상경보설비(NFPC 201) 소관 장치이지 화재알림설비 구성요소가 아닙니다. 💡 1초 판별 팁: 사각지대 킬러! NFPC 207 화재알림설비 구성요소에 일반 '단독경보형감지기'를 끼워 넣으면 소관 법령을 섞은 X입니다."}, {"num": 15, "code": "기015 · 2026년 소방공채·경채 Q25 연계 (구법 5층에서 10층 우선경보 폐지 · 현행 10층 이하 전 층 일제경보)", "stmt": "연면적 5,000제곱미터이고 지하 2층, 지상 8층인 업무시설의 지상 3층에서 화재가 발생한 경우, 현행 화재안전기술기준(NFTC 202, 203)상 우선경보방식에 따라 지상 3층과 그 직상 1개 층인 지상 4층에만 경보를 발하여야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "10층 이하(공동주택 15층 이하)는 전 층 일제경보방식을 적용하며", "tpreview": "과거 구법에서 연면적 3,000제곱미터 초과 5층 이상 10층 이하 건물에 적용하던 직상 1개 층 우선경보 기준은 전면 폐지되었습니다. 현행 기준상 10층 이하(공동주택은 15층 이하) 건축물은 전 층 일제경보방식을 적용하므로 8층 업무시설은 전 층에 경보를 발합니다. 💡 1초 판별 팁: 현행법상 '5층 이상 10층 이하 직상 1개 층 경보'는 폐지된 구법! 10층 이하(공동 15층 이하)는 무조건 전 층 일제경보입니다."}, {"num": 16, "code": "기016 · 🎯 최신 사각지대 킬러 · 2026년 Q25 연계 (11층 이상 건물 지하층 발화 시 직상 1개 층만 경보)", "stmt": "연면적 10,000제곱미터이고 지하 3층, 지상 20층인 오피스텔(11층 이상 우선경보 대상)의 지하 1층에서 화재가 발생한 경우, 우선경보방식에 따라 발화층(지하 1층), 그 직상 4개 층(지상 1층부터 지상 4층까지) 및 기타 지하층 전 층에 경보를 발하여야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "지하층 발화 시", "tpreview": "11층 이상(공동주택 16층 이상) 건축물이라도 '지하층'에서 화재가 발생한 경우에는 직상 4개 층이 아니라 '발화층(지하 1층) + 그 직상층(지상 1층 단 1개 층) + 기타 지하층 전 층(지하 2·3층)'에 경보를 발합니다. 직상 4개 층 경보는 지상층 발화 시에만 적용됩니다. 💡 1초 판별 팁: 사각지대 킬러! 건물 층수가 아무리 높아도 '지하층 발화'가 뜨면 직상 4개 층이 아니라 무조건 '직상 1개 층'만 경보합니다!"}, {"num": 17, "code": "기017 · 🎯 2회독 주변확장 (지하구 700 m vs 도로터널 100 m 스왑)", "stmt": "화재안전기술기준상 전력·통신용 지하구(NFTC 605)의 하나의 경계구역 길이는 100미터 이하로 설정하며, 도로터널(NFTC 603)의 하나의 경계구역 길이는 700미터 이하로 설정한다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "도로터널(NFTC 603)", "tpreview": "지하구와 도로터널의 경계구역 길이 기준이 뒤바뀌었습니다. 전력·통신용 지하구(NFTC 605)는 하나의 경계구역 길이가 700미터 이하이고, 도로터널(NFTC 603)은 발화 구간 정밀 특정을 위해 100미터 이하로 설정합니다. 💡 1초 판별 팁: '지하구 700 m · 도로터널 100 m' 수치가 서로 맞바뀌었으므로 X입니다."}, {"num": 18, "code": "기018 · 🎯 최신 사각지대 킬러 (외기 5 m 미만 면적 제외 vs 화장실 감지기 설치 제외 구별)", "stmt": "외기에 면하여 상시 개방된 부분이 있는 주차장은 외기에 면하는 각 부분으로부터 5미터 미만 범위를 경계구역 면적 산정에서 제외하며, 목욕실이나 샤워시설이 있는 화장실도 감지기 설치 제외 장소이므로 경계구역 면적 산정에서 제외한다.", "ans": false, "tid": "theory-sec1-p1", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "외기에 면하는 각 부분으로부터 5 m 미만", "tpreview": "외기에 면하여 상시 개방된 부분으로부터 5미터 미만 범위는 경계구역 면적 산정에서 제외하는 것이 맞지만, 목욕실·욕조나 샤워시설이 있는 화장실 등은 비화재보 우려로 '감지기 설치 제외' 장소에 해당할 뿐 '경계구역 면적 산정'에서는 제외되지 않고 해당 층 면적에 포함됩니다. 💡 1초 판별 팁: 사각지대 킬러! '감지기 설치 제외(목욕실·화장실) = 경계구역 면적 제외'라고 적으면 100% X! 면적 제외는 오직 외기 상시 개방 5 m 미만만입니다."}, {"num": 19, "code": "기019 · 🎯 2회독 주변확장 (단독경보형감지기 150 m² 및 이웃 실 30 m² 미만 합산)", "stmt": "단독경보형감지기(NFPC 201)는 구획된 각 실마다 설치하되 바닥면적이 150제곱미터를 초과하는 경우에는 150제곱미터마다 1개 이상 설치하며, 이웃하는 실내의 바닥면적이 각각 30제곱미터 미만이고 벽체 상부의 일부가 개방되어 공기가 상호 유통되면 1개의 실로 본다.", "ans": true, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "구획된 각 실마다 설치하되", "tpreview": "NFPC 201에 따른 단독경보형감지기의 면적 기준(150 m²마다 1개 이상)과 이웃하는 실 통합 요건(각 30 m² 미만 + 벽체 상부 전부 또는 일부 개방으로 공기 유통)을 정확히 기술했습니다. 💡 1초 판별 팁: 단독경보형은 '각 실 150 m² + 이웃 실 각 30 m² 미만·상부 개방 ➔ 1실 간주'로 기억하세요."}, {"num": 20, "code": "기020 · 🎯 2회독 주변확장 (발신기 설치 기준 및 지구음향장치 90 dB 이상)", "stmt": "자동화재탐지설비의 P형 발신기는 각 층마다 수평거리 25 m 이하가 되도록 바닥으로부터 높이 0.8 m 이상 1.5 m 이하에 설치하며, 지구음향장치의 음량은 음향장치 중심으로부터 1 m 떨어진 위치에서 80 dB 이상이 되도록 해야 한다.", "ans": false, "tid": "theory-sec1-p2", "tlabel": "📖 기본서 제1절 · 자동화재탐지설비의 수평·수직 경계구역 설정과 단독경 보기", "hlKey": "90 dB 이상", "tpreview": "발신기의 수평거리 25 m 이하 및 설치 높이 0.8 m 이상 1.5 m 이하 기준은 맞지만, 지구음향장치의 음량은 수면 중인 재실자도 인지할 수 있도록 1 m 떨어진 위치에서 80 dB 이상이 아니라 '90 dB 이상'이어야 합니다. 💡 1초 판별 팁: '지구음향장치 + 80 dB'이면 X! 1 m 거리 음압은 반드시 '90 dB 이상'입니다."}, {"num": 21, "code": "기021 · 🎯 2회독 주변확장 (보상식은 스포트형만 존재)", "stmt": "차동식과 정온식 기능을 겸비하여 어느 하나의 기능에 의하여서도 화재신호를 발신하는 보상식 감지기는 넓은 범위의 열효과를 감지할 수 있도록 스포트형뿐만 아니라 분포형으로도 제작·설치된다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "보상식(오직 스포트형만 존재하며 분포형은 없음)", "tpreview": "보상식 감지기는 차동식 스포트형과 정온식 스포트형의 원리를 결합한 감지기로서, 법령상 오직 '보상식 스포트형'만 존재하며 분포형은 없습니다(분포형은 차동식 분포형만 존재). 💡 1초 판별 팁: '보상식 분포형'이라는 말이 나오면 존재하지 않는 유령 감지기이므로 즉시 X!"}, {"num": 22, "code": "기022 · 🎯 2회독 주변확장·악질함정 (공기관 노출부분 20 m 이상 및 상호 거리 6 m·내화 9 m)", "stmt": "차동식 분포형 감지기 중 공기관식은 하나의 검출부에 연결하는 공기관 전체 길이를 100 m 이하로 하고, 하나의 감지구역 내 공기관 노출부분은 20 m 이하로 하며, 공기관 상호 간 거리는 원칙 9 m 이하(주요구조부 내화구조 시 6 m 이하)로 설치한다.", "ans": false, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "노출부분은 20 m 이상", "tpreview": "두 가지가 뒤집혔습니다. 첫째, 공기관이 열기를 충분히 받도록 노출부분은 20 m 이하가 아니라 '20 m 이상'이어야 합니다. 둘째, 공기관 상호 간 거리는 원칙 '6 m 이하'이고 주요구조부가 내화구조인 경우 '9 m 이하'로 완화됩니다. 💡 1초 판별 팁: 노출부분은 많이 노출해야 하므로 '20 m 이상', 내화구조일수록 거리가 넓어지므로 '원칙 6 m · 내화 9 m 이하'입니다!"}, {"num": 23, "code": "기023 · 🎯 2회독 주변확장 (열전대식 제벡 효과 및 4개에서 20개 기준)", "stmt": "차동식 분포형 감지기 중 열전대식은 서로 다른 두 종류의 금속선 접점 간 온도차에 의해 열기전력이 발생하는 제벡 효과(Seebeck effect)를 이용하며, 1개의 검출부에 접속하는 열전대부는 4개 이상 20개 이하로 직렬 접속한다.", "ans": true, "tid": "theory-sec2-p3", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "제벡 효과(Seebeck effect)", "tpreview": "열전대식 감지기는 제벡 효과를 이용하고 1검출부당 열전대부 4개 이상 20개 이하로 접속합니다. 💡 1초 판별 팁: '열전대식 = 제벡 효과 + 4개 이상 20개 이하'는 정확한 기준입니다."}, {"num": 24, "code": "기024 · 🎯 2회독 주변확장 (NFPC 203 제7조 4 m 이상·8 m 이상 단계별 탈락 컷오프)", "stmt": "NFPC 203 제7조상 천장 부착높이가 4 m 이상 8 m 미만인 장소에는 정온식 2종과 연기감지기 3종을 설치할 수 있으며, 8 m 이상 15 m 미만인 장소에는 차동식 스포트형 감지기와 정온식 감지선형 감지기를 설치할 수 있다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "연기 3종과 정온식 2종이 탈락", "tpreview": "모두 설치 불가입니다. 부착높이 '4 m 이상'부터 이미 정온식 2종과 연기감지기 3종이 탈락하고(정온 특·1종 및 연기 1·2종 생존), '8 m 이상'부터는 모든 스포트형 열감지기와 정온식 감지선형이 탈락하여 차동식 분포형·연기 1·2종·연기복합·불꽃만 가능합니다. 💡 1초 판별 팁: '4 m↑ 정온 2종·연기 3종 탈락 / 8 m↑ 스포트 열·정온선 탈락' 컷오프를 기억하면 1초 만에 X로 판별됩니다."}, {"num": 25, "code": "기025 · 🎯 최신 사각지대 킬러 (NFPC 203 제7조 20 m 이상 비아날로그 광전 1종 불가 · 아날로그 한정)", "stmt": "감지기의 부착높이가 20 m 이상인 초고천장 장소에 설치할 수 있는 감지기는 불꽃감지기, 이온화식 1종, 광전식 스포트형 1종 및 비아날로그 광전식 분리형 1종이다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "비아날로그 광전 1종 불가", "tpreview": "부착높이 '20 m 이상'인 초고천장에는 이온화식 1종과 일반 광전식 스포트형 1종은 물론 비아날로그 광전식 분리형 1종도 설치할 수 없으며, 오직 '불꽃감지기' 및 '광전식(분리형·공기흡입형) 중 아날로그방식(공칭감지농도 하한값 감광율 5%/m 미만)'만 설치할 수 있습니다. 💡 1초 판별 팁: 사각지대 킬러! 20 m 이상 구간에 '이온화 1종·광전 스포트 1종·비아날로그 광전 1종'이 나오면 즉시 X! 오직 불꽃 + 광전 아날로그(분리·공기흡입)만 생존합니다."}, {"num": 26, "code": "기026 · 🎯 2회독 주변확장 (연기감지기 거실 150/75 m² 및 복도 30 m·계단 15 m 스왑)", "stmt": "연기감지기(1종·2종)를 설치할 때 거실에는 부착높이 4 m 이상 20 m 미만 기준 바닥면적 150 m²마다 1개 이상, 복도 및 통로에는 보행거리 15 m마다 1개 이상, 계단 및 경사로에는 수직거리 30 m마다 1개 이상 설치한다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "보행거리 30 m", "tpreview": "세 가지 수치 모두 틀렸습니다. 연기감지기(1·2종)는 거실 부착높이 4 m 미만 시 150 m²마다(4 m 이상 20 m 미만 시 절반인 '75 m²마다'), 복도·통로는 보행거리 '30 m'마다(3종 20 m), 계단·경사로는 수직거리 '15 m'마다(3종 10 m) 1개 이상 설치합니다. 💡 1초 판별 팁: 복도는 길게 30 m, 계단은 수직 15 m, 4 m 이상 거실은 절반인 75 m²! 복도 15 m·계단 30 m로 바뀌면 X입니다."}, {"num": 27, "code": "기027 · 🎯 2회독 주변확장 (연기 이격 0.6 m·급기구 1.5 m·보 깊이 0.4 m·경사 45도 미만)", "stmt": "연기감지기는 벽 또는 보로부터 0.3 m 이상, 급기구로부터 1.0 m 이상 이격해야 하며, 스포트형 열감지기는 깊이 0.3 m 이상 돌출한 보로 구획 시 별도 구획 설치하고, 불꽃감지기를 제외한 스포트형 감지기는 60도 이상 경사지지 않게 부착한다.", "ans": false, "tid": "theory-sec2-p4", "tlabel": "📖 기본서 제2절 · 열감지기의 물리적 작동 원리 및 연기감지기·부착높이 보기", "hlKey": "45도 이상 경사 금지", "tpreview": "수치 네 군데가 모두 틀렸습니다. 연기감지기는 벽 또는 보로부터 '0.6 m 이상', 급기구 등 공기 유입구로부터 '1.5 m 이상' 이격해야 하며, 보 돌출 깊이 기준은 스포트형 열감지기 '0.4 m 이상'(연기감지기 0.6 m 이상)이고, 불꽃감지기를 제외한 스포트형 감지기는 '45도 이상' 경사지지 않도록 부착해야 합니다. 💡 1초 판별 팁: 연기 벽·보 이격 0.6 m, 급기구 1.5 m, 열감지기 보 돌출 0.4 m, 경사 45도 금지! 0.3 m나 60도가 보이면 X입니다."}, {"num": 28, "code": "기028 · 🎯 2회독 주변확장 (교차회로 면제 8종 정온식 감지선형 vs 스포트형 면제 불가)", "stmt": "준비작동식 스프링클러설비나 가스계 소화설비의 감지기 회로에 정온식 스포트형 감지기나 차동식 스포트형 감지기를 설치한 경우에는 교차회로방식을 면제받을 수 있으며, 교차회로방식 자체를 구성할 때 사용하는 감지기는 축적형으로 설치해야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "정온식 스포트형은 면제 불가", "tpreview": "두 가지 모두 틀렸습니다. 교차회로방식 면제 8종(불꽃·정온식 감지선형·분포형·복합형·광전식 분리형[및 공기흡입형]·아날로그·다신호·축적방식)에 정온식·차동식 스포트형은 포함되지 않으며(전선 형태의 정온식 감지선형만 면제), 교차회로방식 자체에 사용하는 감지기는 신호 지연을 막기 위해 반드시 '비축적형'으로 설치해야 합니다. 💡 1초 판별 팁: '정온식 스포트형 면제'는 X(정온식 감지선형만 면제!), '교차회로 자체 + 축적형'도 X(교차회로 자체는 비축적형 필수)!"}, {"num": 29, "code": "기029 · 🎯 2회독 주변확장·악질함정 (자탐 비상전원 10분·30층↑ 30분 vs 수계 20·40·60분)", "stmt": "자동화재탐지설비 및 비상방송설비의 비상전원은 감시 상태를 60분간 지속한 후 20분 이상(단, 30층 이상 49층 이하 고층건축물은 40분 이상, 50층 이상은 60분 이상) 경보할 수 있는 축전지·전기저장장치 용량을 확보해야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "30층 이상 고층건축물은 50층 이상 여부와 무관하게 30분 이상", "tpreview": "수계 소화설비(옥내소화전·스프링클러) 비상전원 시간(20분·40분·60분)을 자탐·비상방송에 덮어씌운 함정입니다. 자동화재탐지설비와 비상방송설비는 60분 감시 지속 후 '10분 이상'(층수 30층 이상 고층건축물은 50층 이상 여부와 무관하게 '30분 이상') 경보할 수 있는 용량을 확보해야 합니다. 💡 1초 판별 팁: 자탐·비상방송 비상전원은 '60분 감시 + 10분 이상(30층 이상은 50층 불문 30분 이상)'! 20·40·60분이 보이면 수계 수치이므로 X!"}, {"num": 30, "code": "기030 · 🎯 2회독 주변확장 (자동화재속보설비 20초 이내 3회 이상 vs 비상방송 10초 이내)", "stmt": "자동화재속보설비(NFPC 204)는 자동화재탐지설비의 수신기로부터 화재신호를 수신한 후 10초 이내에 관할 소방관서로 3회 이상 자동 음성 속보할 수 있어야 한다.", "ans": false, "tid": "theory-sec3-p6", "tlabel": "📖 기본서 제3절 · P형·R형 수신기, 화재알림설비, 비상방송 우선경보 보기", "hlKey": "20초 이내에 3회 이상", "tpreview": "10초 이내는 비상방송설비의 방송 개시 시간이며, 자동화재속보설비는 수신기로부터 화재신호를 수신한 후 '20초 이내'에 3회 이상 119 상황실로 자동 음성 속보해야 합니다. 💡 1초 판별 팁: '자동화재속보설비 + 10초 이내'가 보이면 비상방송과 바꾼 X! 속보설비는 20초 이내 3회 이상입니다."}];
     const s26Circled = ['①', '②', '③', '④', '⑤'];
 
     function disableAllMobileDecks() {
