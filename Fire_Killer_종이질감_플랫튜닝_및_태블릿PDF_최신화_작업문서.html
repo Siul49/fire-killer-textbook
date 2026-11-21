@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Killer 종이 질감 플랫 튜닝 · 태블릿 PDF 69종 · 구글 드라이브 최신화 작업 문서</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+    :root {
+      --ui-bg: #ECF0F5;
+      --ui-bar: rgba(252, 253, 255, 0.94);
+      --ui-border: #CBD3DF;
+      --bg-desk: #ECF0F5;
+      --bg-sheet: #FCFDFF;
+      --bg-panel: rgba(252, 253, 255, 0.62);
+      --bg-subtle: rgba(235, 240, 246, 0.56);
+      --bg-card: rgba(244, 247, 251, 0.68);
+      --text-main: #181B20;
+      --text-sub: #404652;
+      --text-muted: #707887;
+      --accent: #8B2332;
+      --accent-soft: rgba(139, 35, 50, 0.085);
+      --navy-accent: #1E3A5F;
+      --navy-soft: rgba(235, 241, 248, 0.72);
+      --gold-hl: rgba(246, 196, 42, 0.25);
+      --border-line: rgba(196, 205, 218, 0.65);
+      --border-strong: #C1CAD6;
+      --correct-bg: rgba(232, 245, 237, 0.72);
+      --correct-border: #95C5A6;
+      --correct-ink: #165B33;
+      --wrong-bg: rgba(252, 236, 237, 0.72);
+      --wrong-border: #E0A3A5;
+      --wrong-ink: #9E262B;
+      --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Noto Sans KR", "Malgun Gothic", sans-serif;
+      --font-body: "Noto Serif KR", Georgia, serif;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-desk);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.72;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    .no-print-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--ui-bar);
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E");
+      background-repeat: repeat;
+      background-size: 240px 240px;
+      border-bottom: 1px solid var(--ui-border);
+      padding: 10px 18px;
+      backdrop-filter: blur(8px);
+    }
+    .no-print-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .ctrl-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+    .ctrl-btn {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-sheet);
+      color: var(--text-main);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .ctrl-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .ctrl-btn.active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .ctrl-btn.print-primary {
+      background-color: var(--navy-accent);
+      border-color: var(--navy-accent);
+      color: #FFFFFF;
+    }
+    .book-sheet {
+      max-width: 1060px;
+      margin: 26px auto 60px auto;
+      padding: 46px 52px 60px 52px;
+      background-color: var(--bg-sheet);
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27al%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.92%27%20numOctaves%3D%273%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200.34%20-0.095%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23al%29%27%2F%3E%3C%2Fsvg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27420%27%20height%3D%27420%27%3E%3Cfilter%20id%3D%27ac%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.026%27%20numOctaves%3D%273%27%20seed%3D%2713%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.52%200%200%200%200%200.53%200%200%200%200%200.55%200%200%200%200.16%20-0.042%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27420%27%20height%3D%27420%27%20filter%3D%27url%28%23ac%29%27%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat, repeat, repeat, repeat;
+      background-size: 100% 100%, 260px 260px, 240px 240px, 420px 420px;
+      border: 1px solid var(--border-line);
+      box-shadow: 0 2px 10px rgba(24, 30, 42, 0.035);
+      border-radius: 4px;
+    }
+    .doc-header {
+      border-bottom: 2px solid var(--text-main);
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+    .doc-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      border: 1px solid rgba(139, 35, 50, 0.28);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .doc-title {
+      font-size: 24px;
+      font-weight: 900;
+      margin: 0 0 10px 0;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+    .doc-lead {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin: 0;
+      line-height: 1.72;
+    }
+    .sec-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      background-color: var(--text-main);
+      color: #FCFDFF;
+      padding: 9px 15px;
+      margin: 30px 0 16px 0;
+      border-radius: 4px;
+    }
+    .sec-banner-title {
+      font-size: 14.8px;
+      font-weight: 800;
+    }
+    .sec-banner-sub {
+      font-size: 12px;
+      color: #CBD3DF;
+    }
+    h3.sub-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy-accent);
+      border-left: 4px solid var(--navy-accent);
+      padding-left: 10px;
+      margin: 20px 0 10px 0;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 16px 0 22px 0;
+    }
+    .kpi-card {
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    .kpi-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .kpi-val {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1.25;
+    }
+    .kpi-sub {
+      font-size: 11.5px;
+      color: var(--text-sub);
+      margin-top: 3px;
+    }
+    .prose-box {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      font-size: 13.6px;
+      line-height: 1.75;
+    }
+    .prose-serif {
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.88;
+      background-color: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 4px;
+      margin: 12px 0 16px 0;
+    }
+    .prose-serif strong {
+      font-weight: 700;
+      background: linear-gradient(transparent 58%, var(--gold-hl) 58%);
+      padding: 0 2px;
+    }
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 10px 0 20px 0;
+    }
+    table.spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.6px;
+      line-height: 1.56;
+    }
+    table.spec-table th {
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      font-weight: 800;
+      text-align: left;
+      padding: 8px 10px;
+      border-top: 1.5px solid var(--text-main);
+      border-bottom: 1px solid var(--border-strong);
+      border-left: 1px solid var(--border-line);
+      border-right: 1px solid var(--border-line);
+      white-space: nowrap;
+    }
+    table.spec-table td {
+      padding: 8px 10px;
+      border: 1px solid var(--border-line);
+      vertical-align: top;
+      background-color: var(--bg-panel);
+    }
+    code {
+      background-color: var(--bg-subtle);
+      color: var(--accent);
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 11.8px;
+      font-family: var(--font-sans);
+    }
+    pre.code-block {
+      background-color: #181B20;
+      color: #ECF0F5;
+      padding: 13px 16px;
+      border-radius: 6px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 11.8px;
+      line-height: 1.55;
+      overflow-x: auto;
+      margin: 10px 0 16px 0;
+    }
+    .badge-ok {
+      display: inline-block;
+      background-color: var(--correct-bg);
+      color: var(--correct-ink);
+      border: 1px solid var(--correct-border);
+      font-weight: 800;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .muted-id {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    details.full-manifest {
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      background-color: var(--bg-card);
+      padding: 10px 14px;
+      margin-top: 12px;
+    }
+    details.full-manifest summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy-accent);
+      font-size: 13.5px;
+    }
+    @media (max-width: 768px) {
+      html, body {
+        background-color: var(--bg-sheet);
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)),
+          url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27al%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.92%27%20numOctaves%3D%273%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200.34%20-0.095%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23al%29%27%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27420%27%20height%3D%27420%27%3E%3Cfilter%20id%3D%27ac%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.026%27%20numOctaves%3D%273%27%20seed%3D%2713%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.52%200%200%200%200%200.53%200%200%200%200%200.55%200%200%200%200.16%20-0.042%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27420%27%20height%3D%27420%27%20filter%3D%27url%28%23ac%29%27%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat, repeat, repeat, repeat;
+        background-size: 100% 100%, 260px 260px, 240px 240px, 420px 420px;
+      }
+      .book-sheet {
+        margin: 0 auto;
+        padding: 24px 16px 40px 16px;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+      }
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media print {
+      html, body, .book-sheet {
+        background: #FFFFFF !important;
+        background-color: #FFFFFF !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .no-print-bar { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <div class="no-print-inner">
+      <div class="ctrl-group">
+        <span class="ctrl-btn active">📄 종이 질감 · 태블릿 PDF 작업 문서</span>
+        <a href="index.html" class="ctrl-btn">🏠 3과목 통합 포털</a>
+        <a href="Fire_Killer_통합_디자인시스템_및_출판아키텍처_표준명세서.html" class="ctrl-btn">🎨 디자인 시스템 SSOT (v4.0)</a>
+      </div>
+      <div class="ctrl-group">
+        <button onclick="window.print()" class="ctrl-btn print-primary">🖨️ A4 인쇄 / PDF 저장</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="book-sheet">
+    <header class="doc-header">
+      <div class="doc-badge">Fire Killer Session Archive &amp; Skill Spec · 깔끔 플랫 스노우 화이트 × 질감 A</div>
+      <h1 class="doc-title">3과목 종이 질감 깔끔 플랫 튜닝 · 태블릿 PDF 69종 빌드 · 구글 드라이브 제자리 최신화 작업 문서</h1>
+      <p class="doc-lead">
+        본 문서는 <strong>소방학개론, 소방관계법규, 한국사(한능검 심화)</strong> 3과목의 1회독 웹 기본서와 태블릿 학습용 PDF 전체를
+        <strong>깔끔 플랫형 스노우 화이트 × 질감 A</strong>(노란기 0% 순백 백상지 바탕 + 80g 미세 캘린더링 입자 + 좌우 책등 음영 0%)로 전환하고,
+        구글 드라이브의 기존 태블릿 PDF <strong>총 69종</strong>(1,322쪽 · 409.48 MB)을 파일명과 파일 ID 변경 없이
+        제자리 덮어쓰기로 최신화한 전체 아키텍처와 검증 결과를 영구 기록합니다.
+      </p>
+    </header>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">확정 표면 · 밝기 / 황변도</div>
+        <div class="kpi-val">249.0 / -1.95</div>
+        <div class="kpi-sub">스노우 화이트 × 질감 A 플랫(좌우 편차 0.01)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">웹 기본서 CSS 동기화</div>
+        <div class="kpi-val">3과목 + 포털</div>
+        <div class="kpi-sub">가로 넘침 0건 · 폴백 폰트 0건</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">태블릿 전용 PDF (16:10)</div>
+        <div class="kpi-val">69종 (1,322쪽)</div>
+        <div class="kpi-sub">180mm × 288mm · A4 인쇄본 미변경</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">구글 드라이브 제자리 덮어쓰기</div>
+        <div class="kpi-val">69 / 69 일치</div>
+        <div class="kpi-sub">기존 ID·파일명 100% 보존 · 수정시각 갱신</div>
+      </div>
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제1장 · 시안 탐색 및 최종 디자인 의사결정 타임라인</span>
+      <span class="sec-banner-sub">난색 미색 2종 ➔ 무황변 백색 4종 대조 ➔ 스노우 화이트 × 질감 A 깔끔 플랫형 확정</span>
+    </div>
+
+    <div class="prose-box">
+      <strong>1단계(미색 서적지 2종 프로토타입 비교)</strong>: 80g 미색 단행본지(버전 A)와 100g 사각 모조한지(버전 B) 시안을 제작해 구글 드라이브에 배포했으나, 태블릿 실기 확인 결과 웜 아이보리 계열(<code>#FCF9F4</code>)과 갈색 세피아 매트릭스 조합에서 황변도가 높게 나타나 누렇게 보이는 문제가 확인되었습니다.<br/>
+      <strong>2단계(무황변 순백 4종 대조표 검증)</strong>: <code>R-B &le; 0</code> 수준의 쿨 실버-슬레이트 입자 매트릭스를 도입하여 <strong>스노우 화이트 × 질감 A·B</strong> 및 <strong>내추럴 코튼 화이트 × 질감 A·B</strong> 4종과 2&times;2 비교 대조표 PDF(<code>종이질감_백색시안_4종/</code>)를 제작·비교했습니다.<br/>
+      <strong>3단계(최종 확정 · 깔끔 플랫형)</strong>: 사용자가 <strong>01 · 스노우 화이트 × 질감 A</strong>를 채택하되, 각 페이지 좌우의 책등 그림자(<code>spine_grad</code>)와 가장자리 비네팅 없이 사방이 균일한 <strong>깔끔 플랫형</strong> 적용과, <strong>태블릿 전용 PDF만 빌드해 구글 드라이브 기존 파일명 그대로 덮어쓰기</strong>를 확정했습니다.
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제2장 · 확정 스노우 화이트 × 질감 A 깔끔 플랫 광학 공식</span>
+      <span class="sec-banner-sub">3중 SVG 미세 캘린더링 입자 + 균일 플랫 화이트 글레이즈 + 좌우 음영 0%</span>
+    </div>
+
+    <div class="prose-serif">
+      [실제 적용 표면 미리보기] 본 박스 주변과 바탕 전체에 지금 렌더링된 화면이 <strong>스노우 화이트 × 질감 A(깔끔 플랫형)</strong>입니다. 순백 바탕(<code>#FCFDFF</code>) 위에 카올린 밝은 산, 쿨 실버-슬레이트 어두운 골, 저주파 펄프 지합을 얹고, 방향성 <code>radial-gradient</code> 대신 전면에 균일한 투명 화이트 글레이즈(<code>rgba(255, 255, 255, 0.38)</code>)를 덮어 눈부심 없이 또렷한 활자 대비를 유지합니다.
+    </div>
+
+    <div class="table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>레이어 / 파라미터</th>
+            <th>타일 및 규격</th>
+            <th>주파수 · 시드 · 행렬 값</th>
+            <th>광학적 역할</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>바탕 색상 (<code>--bg-sheet</code>)</strong></td>
+            <td>단색 베이스</td>
+            <td><code>#FCFDFF</code> (데스크톱 바깥 여백 <code>#ECF0F5</code>)</td>
+            <td>황색 기운을 배제한 순백 80g 백상지 기저색</td>
+          </tr>
+          <tr>
+            <td><strong>입자 1 · <code>a_light</code></strong></td>
+            <td><code>260px × 260px</code></td>
+            <td><code>fractalNoise</code>, <code>baseFrequency=0.92</code>, <code>octaves=3</code>, <code>seed=7</code>, RGB <code>(1.0, 1.0, 1.0)</code>, <code>a=0.34, bias=-0.095</code></td>
+            <td>미세 캘린더링 표면에 백색 광택 입자감 부여</td>
+          </tr>
+          <tr>
+            <td><strong>입자 2 · <code>a_dark</code></strong></td>
+            <td><code>240px × 240px</code></td>
+            <td><code>fractalNoise</code>, <code>baseFrequency=0.86</code>, <code>octaves=4</code>, <code>seed=3</code>, RGB <code>(0.41, 0.425, 0.45)</code>, <code>a=0.30, bias=-0.075</code></td>
+            <td>노란기 없는 무채색 쿨 실버-슬레이트 미세 골 표현</td>
+          </tr>
+          <tr>
+            <td><strong>입자 3 · <code>a_cloud</code></strong></td>
+            <td><code>420px × 420px</code></td>
+            <td><code>fractalNoise</code>, <code>baseFrequency=0.026</code>, <code>octaves=3</code>, <code>seed=13</code>, RGB <code>(0.52, 0.53, 0.55)</code>, <code>a=0.16, bias=-0.042</code></td>
+            <td>실제 제지 공정에서 생기는 완만한 섬유 밀도(지합) 구현</td>
+          </tr>
+          <tr>
+            <td><strong>균일 플랫 글레이즈</strong></td>
+            <td><code>100% × 100%</code></td>
+            <td><code>linear-gradient(rgba(255,255,255,0.38), rgba(255,255,255,0.38))</code></td>
+            <td>모서리·책등 음영 없이 페이지 전체 명도를 목표 대역(<code>249.0</code>)으로 균일화</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제3장 · 3과목 웹 기본서 적용 내역 및 Playwright 검증 결과</span>
+      <span class="sec-banner-sub">야간(mode-night)·세이지(mode-sage)·실물 인쇄(@media print) 100% 호환 보존</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>수정 대상 파일</th>
+            <th>주요 변경 내역</th>
+            <th>검증 결과 (`1280×900` 및 `412×892`)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>소방관계법규_기본서_및_기출하네스/assets/css/harness.css</code><br/><code>소방학개론_기본서_및_기출하네스/assets/css/harness.css</code></td>
+            <td><code>:root</code> 스노우 화이트 토큰 전환, <code>--bg-panel</code> 반투명화, 제11절 플랫 3중 SVG + 글레이즈 적용, 야간·세이지 <code>background-image: none</code>, 인쇄 시 <code>#FFFFFF</code> 초기화</td>
+            <td>두 파일 SHA-256 일치(<code>7d9fbef74412c509</code>) · 넘침 <code>0</code>건 · 폴백 폰트 <code>0</code>건 · 데스크톱 밝기 <code>248.84</code> (<code>R-B -1.92</code>, <code>std 1.67</code>)</td>
+          </tr>
+          <tr>
+            <td><code>한국사_한능검2급_기본서_및_기출하네스/assets/css/harness.css</code></td>
+            <td>한국사 전용 <code>1220px</code> 2단 날개각주(<code>760px</code> 본문 + 세로 실선 + <code>270px</code> 각주) 기하학 100% 유지 및 제9절 스노우 화이트 플랫 질감 적용</td>
+            <td>넘침 <code>0</code>건 · 폴백 폰트 <code>0</code>건 · 데스크톱 밝기 <code>248.78</code> (<code>R-B -1.95</code>, <code>std 1.77</code>)</td>
+          </tr>
+          <tr>
+            <td><code>index.html</code></td>
+            <td>모바일 브라우저 상단 테마 색상을 <code>#FCF9F4</code>에서 <code>#FCFDFF</code>로 갱신</td>
+            <td>구문 무결성 확인 완료</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제4장 · 태블릿 전용 (16:10) 풀블리드 PDF 아키텍처 및 69종 집계</span>
+      <span class="sec-banner-sub">180mm × 288mm · 투명 벡터 렌더링 + PyMuPDF 단일 공유 XObject 언더레이 · A4 인쇄본 미변경</span>
+    </div>
+
+    <div class="prose-box">
+      <strong>핵심 엔지니어링 구조</strong>: Chromium <code>--print-to-pdf</code>는 <code>@page</code> 바깥 여백(<code>10mm 12mm 14mm 12mm</code>)에 HTML 배경을 칠하지 않으므로, 먼저 Playwright Edge(뷰포트 <code>1280×1800</code>)에서 문서 배경을 투명화한 순수 벡터 PDF를 출력한 뒤, <code>PyMuPDF</code>로 사전 검증된 마스터 플랫 종이 시트(<code>1800×2880</code>px, <code>JPEG 95 / subsampling=0</code>)를 페이지마다 단 1개의 공유 이미지 객체(<code>xref</code>) 참조로 <code>overlay=False</code> 언더레이하여 <strong>사방 흰 테두리 0%, 선택 가능한 선명한 벡터 텍스트, 수식(KaTeX)·하이퍼링크 보존, 경량 파일 크기</strong>를 동시에 달성했습니다.
+    </div>
+
+    <div class="table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>과목명</th>
+            <th>빌드 수량</th>
+            <th>총 페이지 수 (범위)</th>
+            <th>로컬 총 용량</th>
+            <th>구글 드라이브 폴더 ID (<code>01_태블릿_학습용_PDF</code>)</th>
+            <th>사후 감사 판정</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr>
+        <td><strong>소방관계법규</strong></td>
+        <td>24종 (일일 18종 · 모의고사 6종)</td>
+        <td>458쪽 (파일당 7쪽에서 27쪽까지)</td>
+        <td>94.36 MB</td>
+        <td><code>1MfyT4QMMLc4McoxIV92Qr4DCcN-9eehb</code></td>
+        <td><span class="badge-ok">100% 일치 · 최신화 완료</span></td>
+      </tr>
+      <tr>
+        <td><strong>소방학개론</strong></td>
+        <td>23종 (일일 17종 · 모의고사 6종)</td>
+        <td>384쪽 (파일당 7쪽에서 26쪽까지)</td>
+        <td>100.84 MB</td>
+        <td><code>1FeAqd80NMjNmvLpW1ChECTdWDyJfD0ez</code></td>
+        <td><span class="badge-ok">100% 일치 · 최신화 완료</span></td>
+      </tr>
+      <tr>
+        <td><strong>한국사 (한능검 심화)</strong></td>
+        <td>22종 (일일 19종 · 모의고사 3종)</td>
+        <td>480쪽 (파일당 13쪽에서 41쪽까지)</td>
+        <td>214.28 MB</td>
+        <td><code>1H_AZOEsQghU_vp2M5jKgq1o2-yDwdK5X</code></td>
+        <td><span class="badge-ok">100% 일치 · 최신화 완료</span></td>
+      </tr>
+          <tr>
+            <td><strong>전 과목 합계</strong></td>
+            <td><strong>69종</strong> (일일 54 · 모의 15)</td>
+            <td><strong>1,322쪽</strong></td>
+            <td><strong>409.48 MB</strong></td>
+            <td>루트 <code>Fire_Killer_학습자료</code> (<code>1qqn5NpSV1GziA_D_6uRla37bbNNh8-Fz</code>)</td>
+            <td><span class="badge-ok">69 / 69 전수 통과</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="full-manifest">
+      <summary>📋 태블릿 전용 PDF 69종 전체 매핑 · 페이지 · 용량 · 광학 실측치 명세 펼치기</summary>
+      <div class="table-wrap" style="margin-top:10px;">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>과목</th>
+              <th>키</th>
+              <th>쪽수</th>
+              <th>크기</th>
+              <th>상단여백 Luma / R-B / Std</th>
+              <th>로컬 태블릿 PDF (<code>PDF_태블릿_학습용</code>)</th>
+              <th>구글 드라이브 파일명 (보존) · ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+      <tr>
+        <td>01</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_01</code></td>
+        <td>17쪽</td>
+        <td>4866.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY01_01_01_총칙_및_소방기관과_종합상황실_태블릿학습용.pdf</code></td>
+        <td>법규 DAY01 총칙·소방기관·상황실.pdf<br/><span class="muted-id">ID: <code>1XOee_9YlcpzwI8TAydod1eoFv6yzXD99</code></span></td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_04</code></td>
+        <td>22쪽</td>
+        <td>3893.1 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY04_01_04_강제처분_피난명령과_손실보상_태블릿학습용.pdf</code></td>
+        <td>법규 DAY04 강제처분·피난명령·손실보상.pdf<br/><span class="muted-id">ID: <code>1qQZLRTynDk0wuso3sFvVOzZWHKTiU6Ny</code></span></td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_04_06</code></td>
+        <td>9쪽</td>
+        <td>2694.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY04부터_DAY06까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY04부터06 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1Xv7b2tMK7C5aWDzkcVDk2T4patx3GmUu</code></span></td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_05</code></td>
+        <td>23쪽</td>
+        <td>3828.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY05_01_05_소방용수시설_비상소화장치와_안전원_태블릿학습용.pdf</code></td>
+        <td>법규 DAY05 소방용수·비상소화·안전원.pdf<br/><span class="muted-id">ID: <code>15K1J6uOPecB6oOH28RBt1MdQ2sGHtVme</code></span></td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_06</code></td>
+        <td>22쪽</td>
+        <td>3792.7 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY06_01_06_소방의_화재조사에_관한_법률_태블릿학습용.pdf</code></td>
+        <td>법규 DAY06 화재조사에 관한 법률.pdf<br/><span class="muted-id">ID: <code>13eeHLJYT2MymNrFv5wIWFMyZkULdoXAg</code></span></td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_07</code></td>
+        <td>23쪽</td>
+        <td>3872.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY07_02_01_화재예방기본계획과_화재안전조사_태블릿학습용.pdf</code></td>
+        <td>법규 DAY07 화재예방계획·안전조사.pdf<br/><span class="muted-id">ID: <code>1NAWp0Qp31Hygu5_VFfwsaoV1RGKv5XxP</code></span></td>
+      </tr>
+      <tr>
+        <td>07</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_07_09</code></td>
+        <td>9쪽</td>
+        <td>3387.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY07부터_DAY09까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY07부터09 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1ePhiP8lc9Al5NACjDQOJ4Os3UBGtJsge</code></span></td>
+      </tr>
+      <tr>
+        <td>08</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_08</code></td>
+        <td>24쪽</td>
+        <td>4726.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY08_02_02_화재예방강화지구와_불사용설비_태블릿학습용.pdf</code></td>
+        <td>법규 DAY08 예방강화지구·불사용설비.pdf<br/><span class="muted-id">ID: <code>1oHiLiNIAfd0YT7iOv9Filjob2mRdlGZH</code></span></td>
+      </tr>
+      <tr>
+        <td>09</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_09</code></td>
+        <td>27쪽</td>
+        <td>5168.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY09_02_03_소방안전관리자_선임과_자위소방대_태블릿학습용.pdf</code></td>
+        <td>법규 DAY09 안전관리자 선임·자위소방대.pdf<br/><span class="muted-id">ID: <code>1C1uW0tElAxhKCQquOGAE_Aqf-z4s4qLZ</code></span></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_10</code></td>
+        <td>20쪽</td>
+        <td>4626.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY10_02_04_특수가연물_건설현장과_예방안전진단_태블릿학습용.pdf</code></td>
+        <td>법규 DAY10 특수가연물·건설현장·안전진단.pdf<br/><span class="muted-id">ID: <code>1C9rSOkiEo-_YDXdTNfbZt39-G3SXAdDX</code></span></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_10_12</code></td>
+        <td>9쪽</td>
+        <td>3409.1 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY10부터_DAY12까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY10부터12 복습모의고사.pdf<br/><span class="muted-id">ID: <code>14vtfyhoT9Rpf-A0vQjR8Q8DKK9YXhvIE</code></span></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_11</code></td>
+        <td>23쪽</td>
+        <td>4674.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY11_03_01_특정소방대상물_분류와_수용인원_무창층_태블릿학습용.pdf</code></td>
+        <td>법규 DAY11 특정소방대상물·수용인원·무창층.pdf<br/><span class="muted-id">ID: <code>1nEUiS2JvS85jtazG7LVyijTAPx8KmlUa</code></span></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_12</code></td>
+        <td>24쪽</td>
+        <td>4321.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY12_03_02_건축허가동의_성능위주설계와_내진설계_태블릿학습용.pdf</code></td>
+        <td>법규 DAY12 건축허가동의·성능위주·내진설계.pdf<br/><span class="muted-id">ID: <code>1uW1KyDCypVfqWw7N-NwwmpjI_bovDPqT</code></span></td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_13</code></td>
+        <td>18쪽</td>
+        <td>3933.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY13_03_03_소방시설_설치기준과_주택용_임시소방시설_태블릿학습용.pdf</code></td>
+        <td>법규 DAY13 소방시설 설치기준·주택용·임시.pdf<br/><span class="muted-id">ID: <code>1PDp1FJvdVwv6NoD-YKhgGW6Mt6OWcQu_</code></span></td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_13_15</code></td>
+        <td>9쪽</td>
+        <td>3296.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY13부터_DAY15까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY13부터15 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1OSO5ByNkprfmtQIbN4AksNxX3yo0UKZW</code></span></td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_14</code></td>
+        <td>21쪽</td>
+        <td>4188.1 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY14_03_04_소방시설_설치면제와_소급적용_특례_태블릿학습용.pdf</code></td>
+        <td>법규 DAY14 소방시설 설치면제·소급적용 특례.pdf<br/><span class="muted-id">ID: <code>1svDLz_HXBEKlvGSRdd77-WY6__p8OKCk</code></span></td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_15</code></td>
+        <td>24쪽</td>
+        <td>4218.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY15_03_05_방염성능기준_자체점검과_소방용품_태블릿학습용.pdf</code></td>
+        <td>법규 DAY15 방염성능기준·자체점검·소방용품.pdf<br/><span class="muted-id">ID: <code>1DWWznrSMq9BXBUTHNWe6PQ3cG2GdrVEB</code></span></td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_16</code></td>
+        <td>25쪽</td>
+        <td>4804.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY16_03_06_소방시설업_등록과_착공_시공_감리_태블릿학습용.pdf</code></td>
+        <td>법규 DAY16 소방시설업 등록·착공·시공·감리.pdf<br/><span class="muted-id">ID: <code>1Jr-VTsQsIMV0Y41h-QzeLiV4cU6wNbFR</code></span></td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_16_17</code></td>
+        <td>7쪽</td>
+        <td>3018.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY16부터_DAY17까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY16부터17 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1Fhda2Mydcfd4sDFrUjeOhrlG5gQypt3U</code></span></td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_17</code></td>
+        <td>23쪽</td>
+        <td>4074.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY17_03_07_분리도급_완공검사와_하자보수_벌칙_태블릿학습용.pdf</code></td>
+        <td>법규 DAY17 분리도급·완공검사·하자보수·벌칙.pdf<br/><span class="muted-id">ID: <code>1LcwJIZOUk_JgPfE_EZdgYSCTyjnYlcfR</code></span></td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_18</code></td>
+        <td>24쪽</td>
+        <td>4224.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY18_04_01_위험물_정의_지정수량과_설치허가_태블릿학습용.pdf</code></td>
+        <td>법규 DAY18 위험물 정의·지정수량·설치허가.pdf<br/><span class="muted-id">ID: <code>1HGSpexrJKfLSlzmCpDYFjt8Ydvqs6um0</code></span></td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>소방관계법규</td>
+        <td><code>MOCK_18_20</code></td>
+        <td>7쪽</td>
+        <td>3054.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY18부터_DAY20까지_기출변형_복습모의고사.pdf</code></td>
+        <td>법규 DAY18부터20 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1tIYTGdYq6z3Km-ozOWHNeYQHey23ybJ5</code></span></td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_19</code></td>
+        <td>26쪽</td>
+        <td>4612.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY19_04_02_제조소등의_안전거리와_위험물안전관리자_태블릿학습용.pdf</code></td>
+        <td>법규 DAY19 제조소등 안전거리·설비·안전관리자.pdf<br/><span class="muted-id">ID: <code>1b4DaGd_U5ievGlbrywViXvX1BTwt4vAM</code></span></td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>소방관계법규</td>
+        <td><code>DAY_20</code></td>
+        <td>22쪽</td>
+        <td>3936.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY20_04_03_예방규정_정기점검과_위험물_운송관리_태블릿학습용.pdf</code></td>
+        <td>법규 DAY20 예방규정·정기점검·자체소방대·운송.pdf<br/><span class="muted-id">ID: <code>1q-7EyT2ZWkDb70FgCk8SEyzP4SJ2l1oV</code></span></td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>소방학개론</td>
+        <td><code>DAY_01</code></td>
+        <td>16쪽</td>
+        <td>5140.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY01_01_01_소방의_역사_발전과_조직_인사원리_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY01 소방역사·조직·인사원리.pdf<br/><span class="muted-id">ID: <code>1gu7BRaHIIBbqSeQVKnRzOCEYJbjXX8E1</code></span></td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_01_03</code></td>
+        <td>7쪽</td>
+        <td>3225.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY01부터_DAY03까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY01부터03 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1q9XgLjAAMCDlsp2cskbtlcy0M2G_b0he</code></span></td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td>소방학개론</td>
+        <td><code>DAY_02</code></td>
+        <td>22쪽</td>
+        <td>4753.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY02_01_02_재난의_분류_도미노이론과_재난관리단계_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY02 재난분류·도미노이론·재난관리.pdf<br/><span class="muted-id">ID: <code>1biWi-1zJ_jmf3ZjhsXIar0gj2krrRN1i</code></span></td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>소방학개론</td>
+        <td><code>DAY_03</code></td>
+        <td>19쪽</td>
+        <td>4014.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY03_01_03_긴급구조통제단과_재난사태_특별재난지역_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY03 긴급구조통제단·재난사태·특별재난.pdf<br/><span class="muted-id">ID: <code>1SlSUBYyFExiLjfsEfRNa2TqAO0E65DMX</code></span></td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>소방학개론</td>
+        <td><code>DAY_04</code></td>
+        <td>21쪽</td>
+        <td>5214.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY04_02_01_연소의_본질_화학양론과_인화점_발화점_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY04 연소본질·화학양론·인화점.pdf<br/><span class="muted-id">ID: <code>126szrUyJknbgNv3G6oi8ffIB9uOM3Oeo</code></span></td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_04_06</code></td>
+        <td>7쪽</td>
+        <td>3868.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY04부터_DAY06까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY04부터06 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1-j7CLc-Wupp9WLyKFO21SoqYkdhWFPOQ</code></span></td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td>소방학개론</td>
+        <td><code>DAY_05</code></td>
+        <td>21쪽</td>
+        <td>5240.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY05_02_02_연소범위_위험도_최소산소농도와_연소형태_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY05 연소범위·MOC·연소형태.pdf<br/><span class="muted-id">ID: <code>1YO19F77dAuXSEANidlQ9tAXM4vEqqoR6</code></span></td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td>소방학개론</td>
+        <td><code>DAY_06</code></td>
+        <td>26쪽</td>
+        <td>5724.7 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY06_02_03_열전달_자연발화와_연소생성물_독성가스_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY06 열전달·자연발화·독성가스.pdf<br/><span class="muted-id">ID: <code>15COifA1MsMDO3_g0HV_HLOhZ_3dYWQbu</code></span></td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td>소방학개론</td>
+        <td><code>DAY_07</code></td>
+        <td>22쪽</td>
+        <td>4972.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY07_02_04_구획실_화재단계와_플래시오버_백드래프트_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY07 구획실·플래시오버·백드래프트.pdf<br/><span class="muted-id">ID: <code>1-WylgNy48jkYPN5MbVBKGuKASTg-1QEJ</code></span></td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_07_08</code></td>
+        <td>7쪽</td>
+        <td>3629.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY07부터_DAY08까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY07부터08 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1lbKTRkatSwYkCckyIK80S1cO93uArRYs</code></span></td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>소방학개론</td>
+        <td><code>DAY_08</code></td>
+        <td>21쪽</td>
+        <td>5112.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY08_02_05_폭발동역학_분진폭발과_BLEVE_유류탱크현상_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY08 폭발·분진·BLEVE·유류탱크.pdf<br/><span class="muted-id">ID: <code>1NPUP8SjN3QHI8hNYDyUS7hFYCJ6qrYyM</code></span></td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>소방학개론</td>
+        <td><code>DAY_09</code></td>
+        <td>23쪽</td>
+        <td>5214.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY09_03_01_화재의_분류_소화원리와_화재조사_피해산정_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY09 화재분류·소화원리·화재조사.pdf<br/><span class="muted-id">ID: <code>1izcEJ4OUMwm301mtwEiRSNqv7MRbzzBK</code></span></td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_09_11</code></td>
+        <td>9쪽</td>
+        <td>3849.1 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY09부터_DAY11까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY09부터11 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1MsuySWmbuPyYQ3ghdvMJ54GktkMxS9BT</code></span></td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>소방학개론</td>
+        <td><code>DAY_10</code></td>
+        <td>19쪽</td>
+        <td>4802.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY10_03_02_물소화약제_첨가제와_포소화약제_혼합방식_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY10 물·첨가제·포소화약제.pdf<br/><span class="muted-id">ID: <code>1b3RbvWbVMwMBmO53no_rEGPH9Q7s23mV</code></span></td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td>소방학개론</td>
+        <td><code>DAY_11</code></td>
+        <td>24쪽</td>
+        <td>5460.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY11_03_03_가스계소화약제와_분말소화약제_1234종_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY11 가스계·분말소화약제.pdf<br/><span class="muted-id">ID: <code>10_Hv7fv-Z2WPOKXcR4Z2KX-YyTuB6OMt</code></span></td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>소방학개론</td>
+        <td><code>DAY_12</code></td>
+        <td>15쪽</td>
+        <td>4063.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY12_04_01_소방시설_5대분류_피난구조와_소화활동설비_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY12 소방시설 5대분류·피난·소화활동.pdf<br/><span class="muted-id">ID: <code>1VCSQeGaSCMmCDlllJ9AWLwdfAISiOGGa</code></span></td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_12_14</code></td>
+        <td>8쪽</td>
+        <td>3694.7 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY12부터_DAY14까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY12부터14 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1C2MN_ZW90AoJfqyCVcC0vQxm6gUD99-A</code></span></td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td>소방학개론</td>
+        <td><code>DAY_13</code></td>
+        <td>18쪽</td>
+        <td>4514.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY13_04_02_옥내소화전_펌프성능과_스프링클러설비_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY13 옥내소화전·펌프·스프링클러.pdf<br/><span class="muted-id">ID: <code>1BGSpi3OSMANXml06_r14f64LSd8sXbv7</code></span></td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td>소방학개론</td>
+        <td><code>DAY_14</code></td>
+        <td>15쪽</td>
+        <td>3633.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY14_04_03_자동화재탐지설비_감지기와_방재연동_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY14 자동화재탐지설비·감지기·연동.pdf<br/><span class="muted-id">ID: <code>1KUaZDdm9vQoqDz0PLGxuM1y6AH-aVGKl</code></span></td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td>소방학개론</td>
+        <td><code>DAY_15</code></td>
+        <td>17쪽</td>
+        <td>4206.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY15_05_01_제1류_제2류_제3류_위험물과_반응식_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY15 제1·2·3류 위험물·반응식.pdf<br/><span class="muted-id">ID: <code>1TVlhrVVpylht2R7cAiwY0KcxphGyFjR_</code></span></td>
+      </tr>
+      <tr>
+        <td>45</td>
+        <td>소방학개론</td>
+        <td><code>MOCK_15_17</code></td>
+        <td>9쪽</td>
+        <td>3820.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY15부터_DAY17까지_기출변형_복습모의고사.pdf</code></td>
+        <td>소방학 DAY15부터17 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1_BTQhNtqKxUkEQcn-wcRuYBda12pWejV</code></span></td>
+      </tr>
+      <tr>
+        <td>46</td>
+        <td>소방학개론</td>
+        <td><code>DAY_16</code></td>
+        <td>19쪽</td>
+        <td>4355.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY16_05_02_제4류_제5류_제6류_위험물과_지정수량_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY16 제4·5·6류 위험물·지정수량.pdf<br/><span class="muted-id">ID: <code>1c4A8prvPoxw2RvnvAp23W8y6Gobw2g7t</code></span></td>
+      </tr>
+      <tr>
+        <td>47</td>
+        <td>소방학개론</td>
+        <td><code>DAY_17</code></td>
+        <td>19쪽</td>
+        <td>4746.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY17_05_03_위험물_저장_혼재_운반과_특수가연물_태블릿학습용.pdf</code></td>
+        <td>소방학 DAY17 위험물 저장·혼재·운반·특수가연물.pdf<br/><span class="muted-id">ID: <code>1qh4Lw7HLSDzMEsYFihcEyjfkt4AAIh07</code></span></td>
+      </tr>
+      <tr>
+        <td>48</td>
+        <td>한국사</td>
+        <td><code>DAY_03</code></td>
+        <td>16쪽</td>
+        <td>8189.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY03_01_03_부여_고구려_옥저_동예_삼한의_풍습.pdf</code></td>
+        <td>한국사 DAY03 부여·고구려·옥저·동예·삼한.pdf<br/><span class="muted-id">ID: <code>1761crizVGfGunKGghLJMgABY23MH0fW7</code></span></td>
+      </tr>
+      <tr>
+        <td>49</td>
+        <td>한국사</td>
+        <td><code>DAY_04</code></td>
+        <td>25쪽</td>
+        <td>10880.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY04_02_01_삼국의_성립과_전성기_영토확장.pdf</code></td>
+        <td>한국사 DAY04 삼국 성립과 전성기.pdf<br/><span class="muted-id">ID: <code>1K0TRTcaDjRipyjoA6FxiAq8MOj8mIMyD</code></span></td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>한국사</td>
+        <td><code>DAY_05</code></td>
+        <td>26쪽</td>
+        <td>11660.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY05_02_02_통일신라와_발해의_통치체제.pdf</code></td>
+        <td>한국사 DAY05 통일신라·발해 통치체제.pdf<br/><span class="muted-id">ID: <code>1fJliSiXLelukoVkSvjojwvazxWwvbdR5</code></span></td>
+      </tr>
+      <tr>
+        <td>51</td>
+        <td>한국사</td>
+        <td><code>DAY_06</code></td>
+        <td>21쪽</td>
+        <td>10593.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY06_02_03_고대_경제_사회_및_불교_유학사상.pdf</code></td>
+        <td>한국사 DAY06 고대 경제·사회·불교·유학.pdf<br/><span class="muted-id">ID: <code>1LreON0bHEZykadQQouW4Z6I6wGVdcogP</code></span></td>
+      </tr>
+      <tr>
+        <td>52</td>
+        <td>한국사</td>
+        <td><code>DAY_07</code></td>
+        <td>20쪽</td>
+        <td>9982.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY07_03_01_고려_태조_왕건과_중앙_통치체제_정비.pdf</code></td>
+        <td>한국사 DAY07 고려 건국과 중앙통치체제.pdf<br/><span class="muted-id">ID: <code>1iKITsA2anhbASHG-cTY6u4FhUE1vI0iQ</code></span></td>
+      </tr>
+      <tr>
+        <td>53</td>
+        <td>한국사</td>
+        <td><code>DAY_08</code></td>
+        <td>20쪽</td>
+        <td>10488.1 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY08_03_02_문벌귀족_무신정변_및_대몽항쟁.pdf</code></td>
+        <td>한국사 DAY08 문벌귀족·무신정변·대몽항쟁.pdf<br/><span class="muted-id">ID: <code>1XFHhddGx5Z_OFTD86lP86y3lq_vNjdgd</code></span></td>
+      </tr>
+      <tr>
+        <td>54</td>
+        <td>한국사</td>
+        <td><code>DAY_09</code></td>
+        <td>26쪽</td>
+        <td>11249.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY09_03_03_고려의_토지제도_대외교역_불교문화.pdf</code></td>
+        <td>한국사 DAY09 고려 토지·대외교역·불교문화.pdf<br/><span class="muted-id">ID: <code>1qdPBtvLVlCssXdltH2nd1gWjI8Lz38KG</code></span></td>
+      </tr>
+      <tr>
+        <td>55</td>
+        <td>한국사</td>
+        <td><code>DAY_10</code></td>
+        <td>22쪽</td>
+        <td>10729.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY10_04_01_조선의_건국과_유교_통치기구_확립.pdf</code></td>
+        <td>한국사 DAY10 조선 건국과 유교통치기구.pdf<br/><span class="muted-id">ID: <code>1ltCPs-0ZmcUWlUyrucxMV6zPFTFpVOMY</code></span></td>
+      </tr>
+      <tr>
+        <td>56</td>
+        <td>한국사</td>
+        <td><code>DAY_11</code></td>
+        <td>18쪽</td>
+        <td>8668.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY11_04_02_사림의_성장과_붕당정치의_형성.pdf</code></td>
+        <td>한국사 DAY11 사림 성장과 붕당정치.pdf<br/><span class="muted-id">ID: <code>1i6wslDJup8HDurXKmK84CvvQ6mPedObQ</code></span></td>
+      </tr>
+      <tr>
+        <td>57</td>
+        <td>한국사</td>
+        <td><code>DAY_12</code></td>
+        <td>24쪽</td>
+        <td>10798.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY12_04_03_임진왜란과_병자호란_양난의_극복.pdf</code></td>
+        <td>한국사 DAY12 임진왜란·병자호란.pdf<br/><span class="muted-id">ID: <code>1jyV2-yrUjNGNQ494nUikCe0sX8B769tD</code></span></td>
+      </tr>
+      <tr>
+        <td>58</td>
+        <td>한국사</td>
+        <td><code>DAY_13</code></td>
+        <td>19쪽</td>
+        <td>9556.2 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY13_05_01_붕당정치의_변질과_영정조_탕평책.pdf</code></td>
+        <td>한국사 DAY13 붕당 변질과 영정조 탕평책.pdf<br/><span class="muted-id">ID: <code>1zR9mbnvVTuVASEBRlNVkac4a5eZUIYKS</code></span></td>
+      </tr>
+      <tr>
+        <td>59</td>
+        <td>한국사</td>
+        <td><code>MOCK_13_15</code></td>
+        <td>13쪽</td>
+        <td>6636.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY13부터_DAY15까지_기출변형_복습모의고사.pdf</code></td>
+        <td>한국사 DAY13부터15 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1dW711gBL1F70CT3iZpBzE43l_kac-PZG</code></span></td>
+      </tr>
+      <tr>
+        <td>60</td>
+        <td>한국사</td>
+        <td><code>DAY_14</code></td>
+        <td>18쪽</td>
+        <td>8991.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY14_05_02_모내기법_상품화폐경제와_신분제_동요.pdf</code></td>
+        <td>한국사 DAY14 모내기법·상품화폐·신분동요.pdf<br/><span class="muted-id">ID: <code>1g42FgfzChEnD_q733aa_fc2kQ_neNGne</code></span></td>
+      </tr>
+      <tr>
+        <td>61</td>
+        <td>한국사</td>
+        <td><code>DAY_15</code></td>
+        <td>21쪽</td>
+        <td>10416.9 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY15_05_03_실학사상_발달과_세도정치기_농민봉기.pdf</code></td>
+        <td>한국사 DAY15 실학사상과 세도정치 봉기.pdf<br/><span class="muted-id">ID: <code>1qk3H1B6ZEk7pV2y0XSAYcEzgtTaMt-lc</code></span></td>
+      </tr>
+      <tr>
+        <td>62</td>
+        <td>한국사</td>
+        <td><code>DAY_16</code></td>
+        <td>20쪽</td>
+        <td>10339.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY16_06_01_흥선대원군_개혁과_강화도조약_개항.pdf</code></td>
+        <td>한국사 DAY16 흥선대원군·강화도조약 개항.pdf<br/><span class="muted-id">ID: <code>13yTrkf7PFcCJOVvwIvbPyY3MkegYdjeb</code></span></td>
+      </tr>
+      <tr>
+        <td>63</td>
+        <td>한국사</td>
+        <td><code>MOCK_16_18</code></td>
+        <td>13쪽</td>
+        <td>6319.8 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY16부터_DAY18까지_기출변형_복습모의고사.pdf</code></td>
+        <td>한국사 DAY16부터18 복습모의고사.pdf<br/><span class="muted-id">ID: <code>11y4elkWKwtBnwUiHSsrZqbHsGn5JIQzm</code></span></td>
+      </tr>
+      <tr>
+        <td>64</td>
+        <td>한국사</td>
+        <td><code>DAY_17</code></td>
+        <td>19쪽</td>
+        <td>9931.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY17_06_02_임오군란_갑신정변_동학농민운동_전개.pdf</code></td>
+        <td>한국사 DAY17 임오군란·갑신정변·동학농민.pdf<br/><span class="muted-id">ID: <code>1khEN3hX8A7BkGQ10RMYbac_OOP3wT6yK</code></span></td>
+      </tr>
+      <tr>
+        <td>65</td>
+        <td>한국사</td>
+        <td><code>DAY_18</code></td>
+        <td>26쪽</td>
+        <td>11332.4 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY18_06_03_갑오개혁_독립협회_대한제국과_국권피탈.pdf</code></td>
+        <td>한국사 DAY18 갑오개혁·독립협회·대한제국.pdf<br/><span class="muted-id">ID: <code>1P3fB-JSX-2yfw-RGClziPkEano5kcQu5</code></span></td>
+      </tr>
+      <tr>
+        <td>66</td>
+        <td>한국사</td>
+        <td><code>DAY_19</code></td>
+        <td>41쪽</td>
+        <td>13490.3 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY19_07_01_일제_식민통치_3단계_변천과_31운동.pdf</code></td>
+        <td>한국사 DAY19 일제 식민통치 3단계와 3·1운동.pdf<br/><span class="muted-id">ID: <code>1dLyiNg2OMYXx-ZgXIbu_rahZmA9ScOFX</code></span></td>
+      </tr>
+      <tr>
+        <td>67</td>
+        <td>한국사</td>
+        <td><code>MOCK_19_21</code></td>
+        <td>13쪽</td>
+        <td>6411.0 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY19부터_DAY21까지_기출변형_복습모의고사.pdf</code></td>
+        <td>한국사 DAY19부터21 복습모의고사.pdf<br/><span class="muted-id">ID: <code>1i-zU0slymUfdQqiUZOaz0RnT51KeH82E</code></span></td>
+      </tr>
+      <tr>
+        <td>68</td>
+        <td>한국사</td>
+        <td><code>DAY_20</code></td>
+        <td>22쪽</td>
+        <td>10102.6 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY20_07_02_대한민국임시정부와_국내외_무장독립투쟁.pdf</code></td>
+        <td>한국사 DAY20 임시정부와 국내외 무장독립투쟁.pdf<br/><span class="muted-id">ID: <code>1EOoyPumn2sXjI2FlYSTw7_rF3tX8TcfL</code></span></td>
+      </tr>
+      <tr>
+        <td>69</td>
+        <td>한국사</td>
+        <td><code>DAY_21</code></td>
+        <td>37쪽</td>
+        <td>12655.5 KB</td>
+        <td>249.04 / -2.39 / 1.2</td>
+        <td><code>TAB_DAY21_07_03_광복_정부수립_625전쟁과_민주화과정.pdf</code></td>
+        <td>한국사 DAY21 광복·정부수립·6·25·민주화.pdf<br/><span class="muted-id">ID: <code>1jpSxm-Ji6vwch2CNt0JqnwUx0rpyAhLi</code></span></td>
+      </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제5장 · 구글 드라이브 제자리 덮어쓰기 &amp; 경계 준수 검증</span>
+      <span class="sec-banner-sub">파일명·파일 ID·기존 공유 링크 100% 보존 (<code>gdrive mutate update</code>)</span>
+    </div>
+
+    <div class="prose-box">
+      • <strong>제자리 덮어쓰기 스테이징 전략</strong>: 로컬의 <code>TAB_*.pdf</code>를 임시 스테이징 폴더에 <strong>기존 구글 드라이브 파일명과 바이트 단위로 똑같은 이름</strong>으로 복사한 뒤 <code>gdrive mutate update &lt;FILE_ID&gt; &lt;STAGED_PATH&gt; --json</code>으로 내용만 교체하여 파일명 오염 및 중복 생성을 원천 차단했습니다.<br/>
+      • <strong>사후 전수 감사 통과</strong>: <code>gdrive readonly ls &lt;FOLDER_ID&gt; --max 0 --json</code>으로 3개 폴더(<code>24 + 23 + 22 = 69</code>개)를 재조회한 결과, 파일 개수, 전체 <code>id</code> 집합, 전체 파일명이 업데이트 이전과 100% 일치하고 69개 파일 전부의 <code>modifiedTime</code>이 최신화되었음을 확인했습니다.<br/>
+      • <strong>작업 경계 보호</strong>: <code>02_A4_양면인쇄용_PDF</code>(로컬 <code>PDF_일괄출력본</code>)와 원본 워크북 HTML(<code>*_인쇄전용_교재/*.html</code>)은 일절 수정하거나 재생성하지 않았으며, 스테이징 및 빌드용 임시 폴더는 작업 직후 정리했습니다.<br/>
+      • <strong>후속 증분 반영 (현행 라이브 합계 71종)</strong>: <code>2026-11-16</code> 최초 69종 일괄 전환(<code>24 + 23 + 22</code>) 이후 <code>2026-11-19</code>에 한국사 <code>DAY 07</code>부터 <code>DAY 21</code>까지 단원 및 복습모의고사 2종(<code>DAY07부터09</code>, <code>DAY10부터12</code>)이 동일 스노우 화이트 규격으로 추가 반영되어 현재 구글 드라이브 3개 폴더 라이브 합계는 <strong>71종</strong>(<code>24 + 23 + 24</code>, 총 <code>1,412</code>쪽 · <code>417.28</code> MB)이며, 스킬의 <code>sync_tablet_drive_inplace.py --subject all --dry-run</code>이 <code>71 / 71</code> 전수 매칭으로 통과합니다. (위 69종 상세 표는 1차 일괄 전환 기록으로 보존됩니다.)
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제6장 · 실전 시행착오 및 영구 방어 가드 (7대 함정 해결)</span>
+      <span class="sec-banner-sub">재실행 시 동일한 오류가 재발하지 않도록 스킬 스크립트에 내장된 자동 방어 로직</span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>발견된 문제</th>
+            <th>원인 진단</th>
+            <th>스킬/스크립트에 반영된 영구 해결책</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. 평면화 후 명도 저하</strong></td>
+            <td>상단 방향성 <code>radial-gradient(..., 0.68)</code> 제거 시 Raw 3중 SVG의 평균 밝기가 <code>245.4</code>로 내려감</td>
+            <td>전면 균일 <code>linear-gradient(rgba(255,255,255,0.38), rgba(255,255,255,0.38))</code> 글레이즈를 얹어 사방 균일 <code>luma 249.0</code> 복원</td>
+          </tr>
+          <tr>
+            <td><strong>2. 모바일 뷰 자동 슬라이드 오발동</strong></td>
+            <td>일일 워크북 HTML이 <code>window.innerWidth &le; 600</code>일 때 <code>toggleSwipeMode(true)</code>를 자동 호출해 문항 1번만 남김</td>
+            <td>Playwright 컨텍스트를 <code>1280×1800</code>으로 고정하고 PDF 출력 전 <code>s26-swipe-active</code>·<code>s26-ox-deck-active</code> 클래스 강제 제거</td>
+          </tr>
+          <tr>
+            <td><strong>3. 복습모의고사 폰트 폴백</strong></td>
+            <td>모의고사 HTML의 Google Fonts 통합 URL에 미지원 폰트명 <code>Pretendard</code>가 섞여 stylesheet 전체가 400 실패 ➔ <code>MalgunGothicBold</code> 폴백</td>
+            <td>임시 렌더링 시 해당 깨진 링크를 제거하고 jsDelivr <code>pretendard.min.css</code>와 Google Fonts <code>Noto Serif KR</code>을 분리 주입</td>
+          </tr>
+          <tr>
+            <td><strong>4. 한국사 모의고사 배너 차이</strong></td>
+            <td>한국사 <code>MOCK_13_15</code>·<code>16_18</code>·<code>19_21</code> 원본 HTML이 <code>PART 1</code>(문제지 30문항) + <code>PART 3</code>(해설) 구조여서 <code>PART 2</code> 문자열 미존재</td>
+            <td>전수 검사 시 <code>hist/MOCK_*</code>에 한해 <code>PART 1</code> + <code>문항 30</code> + <code>PART 3|빠른 정답</code> 분기 검증 적용</td>
+          </tr>
+          <tr>
+            <td><strong>5. <code>RIDIBatang</code> 정규식 오탐</strong></td>
+            <td><code>batang</code> 부분 문자열 매칭 시 정상 서체인 <code>RIDIBatang</code>까지 Windows 폴백 폰트로 오인</td>
+            <td>정규식을 단어 경계 <code>(?:gulim|dotum|굴림|바탕|돋움)|\bbatang\b</code>로 정교화</td>
+          </tr>
+          <tr>
+            <td><strong>6. <code>gdrive readonly ls</code> 20건 절단</strong></td>
+            <td><code>--max</code> 생략 시 기본 상한 20건으로 잘려 24개 폴더(<code>소방관계법규</code>) 감사 시 4건 누락</td>
+            <td>모든 목록 조회 및 사후 감사 명령에 <code>--max 0</code>(무제한) 강제</td>
+          </tr>
+          <tr>
+            <td><strong>7. <code>gdrive.cmd</code> 직접 경로 인증 실패</strong></td>
+            <td>플러그인 원본 <code>gdrive.cmd</code> 경로를 직접 실행하면 <code>no credentials found</code> 발생</td>
+            <td>현재 세션 PATH의 인증 래퍼가 적용된 <code>shutil.which("gdrive")</code>(맨몸 <code>gdrive</code>)만 호출</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sec-banner">
+      <span class="sec-banner-title">제7장 · 재사용 스킬 (<code>paper-texture-tablet-sync</code>) 및 CLI 실행 가이드</span>
+      <span class="sec-banner-sub"><code>fire-killer</code> 플러그인 v1.6.0 수록 · 단원별 부분 업데이트부터 전 과목 일괄 동기화까지 지원</span>
+    </div>
+
+    <pre class="code-block"># 1. 파일럿 3종 선행 빌드 + 미리보기 PNG 추출 (read_file 육안 검수용)
+python -X utf8 "C:\Users\mini-twosea\.gemini\config\plugins\fire-killer\skills\paper-texture-tablet-sync\scripts\build_tablet_snow_flat_pdf.py" --subject all --pilot --preview-dir "$env:TEMP\fk_tab_pilot_previews"
+
+# 2. 전 과목 태블릿 전용 PDF 일괄 빌드 (로컬 PDF_태블릿_학습용 기준)
+python -X utf8 "C:\Users\mini-twosea\.gemini\config\plugins\fire-killer\skills\paper-texture-tablet-sync\scripts\build_tablet_snow_flat_pdf.py" --subject all --only-existing
+
+# 3. 구글 드라이브 매핑 드라이런 ➔ 파일럿 1건 ➔ 전체 덮어쓰기 및 사후 감사
+python -X utf8 "C:\Users\mini-twosea\.gemini\config\plugins\fire-killer\skills\paper-texture-tablet-sync\scripts\sync_tablet_drive_inplace.py" --subject all --dry-run
+python -X utf8 "C:\Users\mini-twosea\.gemini\config\plugins\fire-killer\skills\paper-texture-tablet-sync\scripts\sync_tablet_drive_inplace.py" --subject law --pilot-one
+python -X utf8 "C:\Users\mini-twosea\.gemini\config\plugins\fire-killer\skills\paper-texture-tablet-sync\scripts\sync_tablet_drive_inplace.py" --subject all --all</pre>
+
+  </main>
+</body>
+</html>

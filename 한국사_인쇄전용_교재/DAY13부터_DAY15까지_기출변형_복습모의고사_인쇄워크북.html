@@ -995,6 +995,107 @@
     }
 
   </style>
+<style id="examImgStyle">
+    .q-exam-fig {
+      margin: 8px 0 4px 0;
+      padding: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .q-exam-fig img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 250px;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+    .q-choice-fig-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .q-choice-fig-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 5px 4px;
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid var(--border-line);
+      border-radius: 5px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .q-choice-fig-cell .q-choice-num {
+      margin-bottom: 4px;
+    }
+    .q-choice-fig-cell .q-choice-text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+    .q-choice-photo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 112px;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+    .culture-fig-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 10px 0 14px 0;
+    }
+    .culture-fig-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-line);
+      border-radius: 6px;
+      padding: 6px;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .culture-fig-card img {
+      display: block;
+      margin: 0 auto 5px auto;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 155px;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+    .culture-fig-cap {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      line-height: 1.42;
+      color: var(--text-sub);
+      word-break: keep-all;
+    }
+    @media (max-width: 520px) {
+      .q-choice-fig-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .culture-fig-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
 <body class="q-cols-2 exp-cols-2 exp-compact interactive-on">
 <div class="no-print-bar">
@@ -1072,8 +1173,8 @@
 </div>
 <div class="q-stem">1. 다음 자료와 관련된 역사적 사실(시대·인물·사건·문화유산)에 대한 설명으로 옳은 것은? [2점]</div>
 <div class="q-stem-box">
-<span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">그림은 <strong>『영화당친림사선도』</strong>로 이 왕이 <strong>청계천 준설 공사(준천 사업)</strong>에 참여한 관리들에게 잔치를 베풀며 치하하는 장면입니다. 홍수 예방을 위해 준천 사업을 단행한 이 왕은 <strong>균역법을 실시</strong>하여 백성의 군역 부담(군포 2필에서 1필)을 줄여주는 등 민생 안정을 위해 노력하였습니다.</div>
+<span class="stem-box-title">&lt;보 기&gt;</span><figure class="q-exam-fig"><img alt="기출 자료 도판" src="assets/exam_imgs/r79_q23.jpg"/></figure>
+<div class="stem-box-content">그림은 <strong>『영화당친림사선도』</strong>로 이 왕이 <strong>청계천 준설 공사</strong>에 참여한 관리들에게 잔치를 베풀며 치하하는 장면입니다. 홍수 예방을 위해 준천 사업을 단행한 이 왕은 <strong>균역법을 실시</strong>하여 백성의 군역 부담을 줄여주는 등 민생 안정을 위해 노력하였습니다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="1" onclick="handleChoiceClick(1, 1, 2)">
@@ -1171,7 +1272,7 @@
 <div class="q-stem">3. 다음 자료와 관련된 역사적 사실(시대·인물·사건·문화유산)에 대한 설명으로 옳은 것은? [3점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">(『이십공신회맹록』 - 보사공신녹훈부)<br/>· "<strong>보사공신이란 경신환국의 공신들을 일컫는 말</strong>이지요?"<br/>· "맞습니다. 특히 이 자료에는 그들이 <strong>기사환국과 갑술환국을 거치며 공신의 지위를 박탈당했다가 회복하는 정황</strong>이 반영되어 있어, 재위 시기의 급변하는 정치적 상황을 파악하는 데 도움을 줍니다."</div>
+<div class="stem-box-content">[보사공신녹훈부]<br/>· "<strong>보사공신이란 경신환국의 공신들을 일컫는 말</strong>이지요?"<br/>· "맞습니다. 특히 이 자료에는 그들이 <strong>기사환국과 갑술환국을 거치며 공신의 지위를 박탈당했다가 회복하는 정황</strong>이 반영되어 있어, <strong>(가)</strong> 재위 시기의 급변하는 정치적 상황을 파악하는 데 도움을 줍니다."</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="3" onclick="handleChoiceClick(3, 1, 1)">
@@ -1219,8 +1320,8 @@
 </div>
 <div class="q-stem">4. 다음 자료와 관련된 역사적 사실(시대·인물·사건·문화유산)에 대한 설명으로 옳은 것은? [1점]</div>
 <div class="q-stem-box">
-<span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">"근래 듣건대, <strong>도고라는 방식이 새로 나와 한 사람이 물품을 독점하면서 다른 사람은 감히 개별적으로 살 수 없게 되었다</strong>고 합니다. ... 이른바, 이익은 한 사람에게로 돌아가고 피해는 만민이 받는다는 것입니다. <strong>청컨대 한성부와 평시서로 하여금 엄히 금단하게 하여 도고를 없애고</strong> 다시 각자가 매매하게 하소서."</div>
+<span class="stem-box-title">&lt;보 기&gt;</span><figure class="q-exam-fig"><img alt="기출 자료 도판" src="assets/exam_imgs/r77_q25.jpg"/></figure>
+<div class="stem-box-content">"근래 듣건대, <strong>도고라는 방식이 새로 나와 한 사람이 물품을 독점하면서 다른 사람은 감히 개별적으로 살 수 없게 되었다</strong>고 합니다.... 이른바, 이익은 한 사람에게로 돌아가고 피해는 만민이 받는다는 것입니다. <strong>청컨대 한성부와 평시서로 하여금 엄히 금단하게 하여 도고를 없애고</strong> 다시 각자가 매매하게 하소서."</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="4" onclick="handleChoiceClick(4, 1, 3)">
@@ -1270,23 +1371,23 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="5" onclick="handleChoiceClick(5, 1, 3)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">현종 대 1차 기해예송(1659)에서 서인은 효종이 차남이라는 이유로 자의대비의 1년 복(기년설)을 주장하여 채택되었다.</span>
+<span class="q-choice-text">현종 대 1차 기해예송에서 서인은 효종이 차남이라는 이유로 자의대비의 1년 복을 주장하여 채택되었다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="5" onclick="handleChoiceClick(5, 2, 3)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">현종 대 효종비 인선왕후의 상으로 일어난 2차 갑인예송(1674)에서는 남인의 1년 복설이 채택되어 남인이 집권하였다.</span>
+<span class="q-choice-text">현종 대 효종비 인선왕후의 상으로 일어난 2차 갑인예송에서는 남인의 1년 복설이 채택되어 남인이 집권하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="5" onclick="handleChoiceClick(5, 3, 3)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">기사환국(1689)은 인현왕후가 복위되면서 남인이 축출되고 서인이 재집권한 사건이다.</span>
+<span class="q-choice-text">기사환국은 인현왕후가 복위되면서 남인이 축출되고 서인이 재집권한 사건이다.</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="5" onclick="handleChoiceClick(5, 4, 3)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">숙종 대 세 차례의 환국(경신·기사·갑술)을 거치며 상대 붕당의 공존을 부정하고 한 당파가 권력을 독점하는 일당전제화가 나타났다.</span>
+<span class="q-choice-text">숙종 대 세 차례의 환국을 거치며 상대 붕당의 공존을 부정하고 한 당파가 권력을 독점하는 일당전제화가 나타났다.</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="5" onclick="handleChoiceClick(5, 5, 3)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">숙종 때 경신환국(1680)으로 남인이 실각하고 서인이 집권한 후, 남인 처벌 수위를 놓고 서인이 노론(송시열)과 소론(윤증)으로 분열되었다.</span>
+<span class="q-choice-text">숙종 때 경신환국으로 남인이 실각하고 서인이 집권한 후, 남인 처벌 수위를 놓고 서인이 노론과 소론으로 분열되었다.</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-5">
@@ -1314,11 +1415,11 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="6" onclick="handleChoiceClick(6, 1, 5)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">숙종 대에는 백두산 일대의 국경을 정한 백두산정계비(1712)가 세워졌고, 안용복이 일본에 건너가 울릉도·독도가 조선 영토임을 확인받았다.</span>
+<span class="q-choice-text">숙종 대에는 백두산 일대의 국경을 정한 백두산정계비가 세워졌고, 안용복이 일본에 건너가 울릉도·독도가 조선 영토임을 확인받았다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="6" onclick="handleChoiceClick(6, 2, 5)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">영조는 즉위 초 소론 강경파와 남인 일부가 일으킨 이인좌의 난(1728)을 진압하고 완론탕평을 본격적으로 추진하였다.</span>
+<span class="q-choice-text">영조는 즉위 초 소론 강경파와 남인 일부가 일으킨 이인좌의 난을 진압하고 완론탕평을 본격적으로 추진하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="6" onclick="handleChoiceClick(6, 3, 5)">
 <span class="q-choice-num">③</span>
@@ -1326,7 +1427,7 @@
 </div>
 <div class="q-choice-item" data-idx="4" data-q="6" onclick="handleChoiceClick(6, 4, 5)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">영조는 양인의 군포 부담을 1년 2필에서 1필로 줄이는 균역법(1750)을 실시하고, 부족한 재정은 결작·선무군관포·어염선세로 보충하였다.</span>
+<span class="q-choice-text">영조는 양인의 군포 부담을 1년 2필에서 1필로 줄이는 균역법을 실시하고, 부족한 재정은 결작·선무군관포·어염선세로 보충하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="6" onclick="handleChoiceClick(6, 5, 5)">
 <span class="q-choice-num">⑤</span>
@@ -1358,7 +1459,7 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="7" onclick="handleChoiceClick(7, 1, 2)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">영조는 도성 내 홍수를 막기 위해 청계천 준설 사업(준천)을 시행하고, 신문고를 부활시켰으며 법전인 ｢속대전｣과 백과사전 ｢동국문헌비고｣를 편찬하였다.</span>
+<span class="q-choice-text">영조는 도성 내 홍수를 막기 위해 청계천 준설 사업을 시행하고, 신문고를 부활시켰으며 법전인 ｢속대전｣과 백과사전 ｢동국문헌비고｣를 편찬하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="7" onclick="handleChoiceClick(7, 2, 2)">
 <span class="q-choice-num">②</span>
@@ -1414,11 +1515,11 @@
 </div>
 <div class="q-choice-item" data-idx="4" data-q="8" onclick="handleChoiceClick(8, 4, 4)">
 <span class="q-choice-num">④</span>
-<span class="q-choice-text">정조는 신해통공(1791)을 단행하여 육의전을 포함한 모든 시전 상인의 금난전권을 전면 철폐하였다.</span>
+<span class="q-choice-text">정조는 신해통공을 단행하여 육의전을 포함한 모든 시전 상인의 금난전권을 전면 철폐하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="5" data-q="8" onclick="handleChoiceClick(8, 5, 4)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">현종 때 효종과 효종비의 사망에 따른 자의대비(조대비)의 복상 기간을 둘러싸고 서인과 남인 사이에 두 차례의 예송(기해예송·갑인예송)이 전개되었다.</span>
+<span class="q-choice-text">현종 때 효종과 효종비의 사망에 따른 자의대비의 복상 기간을 둘러싸고 서인과 남인 사이에 두 차례의 예송이 전개되었다.</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-8">
@@ -1445,7 +1546,7 @@
 <div class="q-stem">9. 『붕당 변질과 영정조 탕평』와(과) 관련된 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은? [3점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">ㄱ. 현종 대 효종비 인선왕후의 상으로 일어난 2차 갑인예송(1674)에서는 남인의 1년 복설이 채택되어 남인이 집권하였다.<br/>ㄴ. 숙종 때 경신환국(1680)으로 남인이 실각하고 서인이 집권한 후, 남인 처벌 수위를 놓고 서인이 노론(송시열)과 소론(윤증)으로 분열되었다.<br/>ㄷ. 조선 후기 영조 때 최종 완성·반포된 법전은 ｢대전회통｣이다.<br/>ㄹ. 영조는 왕권 강화를 위해 국왕의 친위 부대인 장용영을 설치하여 수원 화성에 외영을 두었다.</div>
+<div class="stem-box-content">ㄱ. 현종 대 효종비 인선왕후의 상으로 일어난 2차 갑인예송에서는 남인의 1년 복설이 채택되어 남인이 집권하였다.<br/>ㄴ. 숙종 때 경신환국으로 남인이 실각하고 서인이 집권한 후, 남인 처벌 수위를 놓고 서인이 노론과 소론으로 분열되었다.<br/>ㄷ. 조선 후기 영조 때 최종 완성·반포된 법전은 ｢대전회통｣이다.<br/>ㄹ. 영조는 왕권 강화를 위해 국왕의 친위 부대인 장용영을 설치하여 수원 화성에 외영을 두었다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="9" onclick="handleChoiceClick(9, 1, 1)">
@@ -1494,7 +1595,7 @@
 <div class="q-stem">10. 『붕당 변질과 영정조 탕평』와(과) 관련된 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은? [3점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">ㄱ. 숙종 대에는 백두산 일대의 국경을 정한 백두산정계비(1712)가 세워졌고, 안용복이 일본에 건너가 울릉도·독도가 조선 영토임을 확인받았다.<br/>ㄴ. 현종 때 일어난 경신환국으로 서인이 실각하고 남인이 대거 집권하여 일당전제화가 시작되었다.<br/>ㄷ. 영조는 성균관에 탕평비를 건립하고, 붕당의 세력 기반이던 서원을 300여 개소 대폭 정리하였다.<br/>ㄹ. 정조는 신해통공을 단행하여 육의전을 포함한 모든 시전 상인의 금난전권을 전면 폐지하였다.</div>
+<div class="stem-box-content">ㄱ. 숙종 대에는 백두산 일대의 국경을 정한 백두산정계비가 세워졌고, 안용복이 일본에 건너가 울릉도·독도가 조선 영토임을 확인받았다.<br/>ㄴ. 현종 때 일어난 경신환국으로 서인이 실각하고 남인이 대거 집권하여 일당전제화가 시작되었다.<br/>ㄷ. 영조는 성균관에 탕평비를 건립하고, 붕당의 세력 기반이던 서원을 300여 개소 대폭 정리하였다.<br/>ㄹ. 정조는 신해통공을 단행하여 육의전을 포함한 모든 시전 상인의 금난전권을 전면 폐지하였다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="10" onclick="handleChoiceClick(10, 1, 2)">
@@ -1592,7 +1693,7 @@
 <div class="q-stem">12. 다음 자료가 작성된 시기의 경제 상황으로 옳지 않은 것은? [1점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">(비변사 계사 사료: 도고의 폐단)<br/>· "현재 시전의 병폐로 서울과 지방의 백성이 원망하는 바는 오로지 <strong>도고(독점 도매상)</strong>에 있습니다."<br/>· "시중 시세를 조종하여 홀로 이익을 취하니 그 폐단은 한이 없습니다. 한성부에서 엄히 금하도록 하되 그 가운데 매우 심하게 폐단을 빚는 서강의 시목전(땔나무 독점), 염해전(소금·젓갈 독점)과 같은 무리는 주모자를 색출하여 형조로 송치해서 엄한 형벌로 다스리도록 하소서."</div>
+<div class="stem-box-content">[비변사 계사 사료]<br/>· "현재 시전의 병폐로 서울과 지방의 백성이 원망하는 바는 오로지 <strong>도고</strong>에 있습니다."<br/>· "시중 시세를 조종하여 홀로 이익을 취하니 그 폐단은 한이 없습니다. 한성부에서 엄히 금하도록 하되 그 가운데 매우 심하게 폐단을 빚는 서강의 시목전, 염해전과 같은 무리는 주모자를 색출하여 형조로 송치해서 엄한 형벌로 다스리도록 하소서."</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="12" onclick="handleChoiceClick(12, 1, 4)">
@@ -1641,7 +1742,7 @@
 <div class="q-stem">13. 다음 대화가 이루어진 시기의 사회·경제 모습으로 옳지 않은 것은? [2점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">(가상 역사 대화: 1801년 공노비 해방)<br/>· "며칠 전 주상께서 각 궁방과 중앙 관청에 소속된 노비(내노비·시노비 6만 6천여 명)를 모두 양민으로 삼고, 노비 문서를 돈화문 밖에서 거두어 불태우라고 명하셨다는군."<br/>· "나도 들었네. 선왕(정조)께서 노비 추쇄관을 혁파하셨는데, 그 뜻을 이어받으신 것 아니겠는가."</div>
+<div class="stem-box-content">[가상 역사 대화]<br/>· "며칠 전 주상께서 각 궁방과 중앙 관청에 소속된 노비를 모두 양민으로 삼고, 노비 문서를 돈화문 밖에서 거두어 불태우라고 명하셨다는군."<br/>· "나도 들었네. 선왕께서 노비 추쇄관을 혁파하셨는데, 그 뜻을 이어받으신 것 아니겠는가."</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="13" onclick="handleChoiceClick(13, 1, 1)">
@@ -1740,7 +1841,7 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="15" onclick="handleChoiceClick(15, 1, 3)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">조선 후기 모내기법(이앙법)의 전국적 확산으로 김매기 노동력이 대폭 절감되고 벼와 보리의 이모작이 가능해졌다.</span>
+<span class="q-choice-text">조선 후기 모내기법의 전국적 확산으로 김매기 노동력이 대폭 절감되고 벼와 보리의 이모작이 가능해졌다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="15" onclick="handleChoiceClick(15, 2, 3)">
 <span class="q-choice-num">②</span>
@@ -1832,7 +1933,7 @@
 </div>
 <div class="q-choice-item" data-idx="2" data-q="17" onclick="handleChoiceClick(17, 2, 2)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">영조 때 실시된 균역법은 군포를 1년 2필에서 1필로 줄이는 대신, 부족분을 메우기 위해 양반에게도 호포(군포)를 부과하였다.</span>
+<span class="q-choice-text">영조 때 실시된 균역법은 군포를 1년 2필에서 1필로 줄이는 대신, 부족분을 메우기 위해 양반에게도 호포를 부과하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="17" onclick="handleChoiceClick(17, 3, 2)">
 <span class="q-choice-num">③</span>
@@ -1844,7 +1945,7 @@
 </div>
 <div class="q-choice-item" data-idx="5" data-q="17" onclick="handleChoiceClick(17, 5, 2)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">조선 후기에는 한글 소설·판소리·탈춤 등 서민 문화가 발달하였고, 정선의 진경산수화(『인왕제색도』)와 김홍도·신윤복의 풍속화가 유행하였다.</span>
+<span class="q-choice-text">조선 후기에는 한글 소설·판소리·탈춤 등 서민 문화가 발달하였고, 정선의 진경산수화와 김홍도·신윤복의 풍속화가 유행하였다.</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-17">
@@ -1872,11 +1973,11 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="18" onclick="handleChoiceClick(18, 1, 4)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">조선 후기 모내기법(이앙법)이 전국적으로 보급되면서 김매기 노동력이 절감되어 1인당 경작 면적을 넓히는 광작이 성행하였고, 이에 따라 부농과 임노동자로 농민층이 분화되었다.</span>
+<span class="q-choice-text">조선 후기 모내기법이 전국적으로 보급되면서 김매기 노동력이 절감되어 1인당 경작 면적을 넓히는 광작이 성행하였고, 이에 따라 부농과 임노동자로 농민층이 분화되었다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="18" onclick="handleChoiceClick(18, 2, 4)">
 <span class="q-choice-num">②</span>
-<span class="q-choice-text">조선 후기에는 소작농이 지주에게 수확량의 절반을 바치던 병작반수(타조법)에서 점차 일정 액수의 소작료만 내는 도조법으로 전환되는 경향이 나타났다.</span>
+<span class="q-choice-text">조선 후기에는 소작농이 지주에게 수확량의 절반을 바치던 병작반수에서 점차 일정 액수의 소작료만 내는 도조법으로 전환되는 경향이 나타났다.</span>
 </div>
 <div class="q-choice-item" data-idx="3" data-q="18" onclick="handleChoiceClick(18, 3, 4)">
 <span class="q-choice-num">③</span>
@@ -1888,7 +1989,7 @@
 </div>
 <div class="q-choice-item" data-idx="5" data-q="18" onclick="handleChoiceClick(18, 5, 4)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">조선 후기 의주의 만상은 청과의 국경 무역(책문 후시 등)을 통해 거대한 부를 축적하였으며, 만상 출신의 거상 임상옥은 청 상인들의 불매 동맹을 깨뜨리고 인삼 무역권을 장악하였다.</span>
+<span class="q-choice-text">조선 후기 의주의 만상은 청과의 국경 무역을 통해 거대한 부를 축적하였으며, 만상 출신의 거상 임상옥은 청 상인들의 불매 동맹을 깨뜨리고 인삼 무역권을 장악하였다.</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-18">
@@ -2013,7 +2114,7 @@
 <div class="q-stem">21. 다음 자료와 관련된 역사적 사실(시대·인물·사건·문화유산)에 대한 설명으로 옳은 것은? [3점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">이 책은 연행사의 일원으로 청나라에 다녀온 뒤 한글로 기록한 견문록(『을병연행록』)으로, 서양 선교사와 청나라 지식인을 만나 교유한 내용 등이 담겨 있습니다. 천주교와 천문학에 대해 대화한 내용을 기록한 「유포문답」 등 그의 저작은 <strong>『담헌서』</strong>로 정리되어 오늘날 전해지고 있습니다.</div>
+<div class="stem-box-content">이 책은 연행사의 일원으로 청나라에 다녀온 뒤 한글로 기록한 견문록『을병연행록』으로, 서양 선교사와 청나라 지식인을 만나 교유한 내용 등이 담겨 있습니다. 천주교와 천문학에 대해 대화한 내용을 기록한 「유포문답」 등 그의 저작은 <strong>『담헌서』</strong>로 정리되어 오늘날 전해지고 있습니다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="21" onclick="handleChoiceClick(21, 1, 2)">
@@ -2061,8 +2162,8 @@
 </div>
 <div class="q-stem">22. 다음 자료의 (가)에 대한 설명으로 옳은 것은? [1점]</div>
 <div class="q-stem-box">
-<span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">오늘 소개해 주실 <strong>『가산순절록』</strong>에는 어떤 내용이 들어 있나요?<br/>· <strong>답변</strong>: <strong>서북민(평안도)에 대한 차별</strong>이 원인이 되어 발생한 <strong>(가)</strong> 당시 가산 군수 정시가 봉기군에 항거하다 죽은 사실이 기록되어 있습니다. 봉기 세력은 한때 <strong>청천강 이북의 여러 고을을 장악</strong>하였지만 <strong>정주성</strong>에서 관군에게 진압되었습니다.</div>
+<span class="stem-box-title">&lt;보 기&gt;</span><figure class="q-exam-fig"><img alt="기출 자료 도판" src="assets/exam_imgs/r79_q27.jpg"/></figure>
+<div class="stem-box-content">오늘 소개해 주실 <strong>『가산순절록』</strong>에는 어떤 내용이 들어 있나요?<br/>· <strong>답변</strong>: <strong>서북민에 대한 차별</strong>이 원인이 되어 발생한 <strong>(가)</strong> 당시 가산 군수 정시가 봉기군에 항거하다 죽은 사실이 기록되어 있습니다. 봉기 세력은 한때 <strong>청천강 이북의 여러 고을을 장악</strong>하였지만 <strong>정주성</strong>에서 관군에게 진압되었습니다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="22" onclick="handleChoiceClick(22, 1, 4)">
@@ -2110,8 +2211,8 @@
 </div>
 <div class="q-stem">23. 다음 자료의 (가)에 대한 설명으로 옳은 것은? [1점]</div>
 <div class="q-stem-box">
-<span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">"이 작품은 <strong>(가)이/가 자신만의 서예 필법으로 글씨 쓰듯이 그린 『불이선란도』</strong>이다. 그림 속 글과 도장을 통해 그의 예술 세계와 소장자 변동 등을 확인할 수 있다. <strong>혹독한 제주도 유배 시절을 견뎌내며 추사체라는 독창적 서체</strong>를 남겼다."</div>
+<span class="stem-box-title">&lt;보 기&gt;</span><figure class="q-exam-fig"><img alt="기출 자료 도판" src="assets/exam_imgs/r78_q26.jpg"/></figure>
+<div class="stem-box-content">"이 작품은 <strong>(가)이/가 자신만의 서예 필법으로 글씨 쓰듯이 그린 『불이선란도』</strong>이다. 그림 속 글과 도장을 통해 그의 예술 세계와 소장자 변동 등을 확인할 수 있다. "</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="23" onclick="handleChoiceClick(23, 1, 1)">
@@ -2218,7 +2319,7 @@
 </div>
 <div class="q-choice-item" data-idx="3" data-q="25" onclick="handleChoiceClick(25, 3, 3)">
 <span class="q-choice-num">③</span>
-<span class="q-choice-text">이익은 『성호사설』에서 마을 단위로 토지를 공동 경작하고 일한 날수(노동량)에 따라 분배하는 여전론을 제시하였다.</span>
+<span class="q-choice-text">이익은 『성호사설』에서 마을 단위로 토지를 공동 경작하고 일한 날수에 따라 분배하는 여전론을 제시하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="4" data-q="25" onclick="handleChoiceClick(25, 4, 3)">
 <span class="q-choice-num">④</span>
@@ -2314,7 +2415,7 @@
 </div>
 <div class="q-choice-item" data-idx="5" data-q="27" onclick="handleChoiceClick(27, 5, 2)">
 <span class="q-choice-num">⑤</span>
-<span class="q-choice-text">삼정의 문란 중 농민들에게 가장 큰 고통을 준 것은 빈민 구제 제도였던 환곡(황정)이 고리대로 변질된 것이었다.</span>
+<span class="q-choice-text">삼정의 문란 중 농민들에게 가장 큰 고통을 준 것은 빈민 구제 제도였던 환곡이 고리대로 변질된 것이었다.</span>
 </div>
 </div>
 <div class="inline-exp-box no-print-inline" id="inline-exp-27">
@@ -2342,7 +2443,7 @@
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="28" onclick="handleChoiceClick(28, 1, 4)">
 <span class="q-choice-num">①</span>
-<span class="q-choice-text">1860년 경주의 몰락 양반 최제우는 서학(천주교)에 맞서 '사람이 곧 한울님'이라는 인내천 사상과 후천개벽을 내세우며 동학을 창시하였다.</span>
+<span class="q-choice-text">1860년 경주의 몰락 양반 최제우는 서학에 맞서 '사람이 곧 한울님'이라는 인내천 사상과 후천개벽을 내세우며 동학을 창시하였다.</span>
 </div>
 <div class="q-choice-item" data-idx="2" data-q="28" onclick="handleChoiceClick(28, 2, 4)">
 <span class="q-choice-num">②</span>
@@ -2385,7 +2486,7 @@
 <div class="q-stem">29. 『실학 발달과 세도기 봉기』와(과) 관련된 설명으로 옳은 것을 &lt;보기&gt;에서 고른 것은? [3점]</div>
 <div class="q-stem-box">
 <span class="stem-box-title">&lt;보 기&gt;</span>
-<div class="stem-box-content">ㄱ. 1811년(순조 11년) 일어난 홍경래의 난은 경상 우병사 백낙신의 탐학에 반발하여 진주성을 점령한 사건이다.<br/>ㄴ. 중농학파(경세치용학파)의 선구자인 유형원은 반계수록에서 신분에 따라 토지를 차등 분배하고 세금을 단일화하자는 한전론을 주장하였다.<br/>ㄷ. 정약용은 여전론과 정전제를 구상하고 『경세유표』·『목민심서』·『흠흠신서』를 저술하였으며, 수원 화성 축조에 쓰인 거중기를 설계하였다.<br/>ㄹ. 홍대용은 『의산문답』에서 지구가 하루에 한 바퀴 자전한다는 지전설과 무한우주론을 제시하여 중국 중심의 화이관을 비판하였다.</div>
+<div class="stem-box-content">ㄱ. 1811년 일어난 홍경래의 난은 경상 우병사 백낙신의 탐학에 반발하여 진주성을 점령한 사건이다.<br/>ㄴ. 중농학파의 선구자인 유형원은 반계수록에서 신분에 따라 토지를 차등 분배하고 세금을 단일화하자는 한전론을 주장하였다.<br/>ㄷ. 정약용은 여전론과 정전제를 구상하고 『경세유표』·『목민심서』·『흠흠신서』를 저술하였으며, 수원 화성 축조에 쓰인 거중기를 설계하였다.<br/>ㄹ. 홍대용은 『의산문답』에서 지구가 하루에 한 바퀴 자전한다는 지전설과 무한우주론을 제시하여 중국 중심의 화이관을 비판하였다.</div>
 </div>
 <div class="q-choices">
 <div class="q-choice-item" data-idx="1" data-q="29" onclick="handleChoiceClick(29, 1, 5)">

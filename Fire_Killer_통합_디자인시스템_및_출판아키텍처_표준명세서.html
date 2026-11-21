@@ -13,26 +13,27 @@
       margin: 15mm 15mm 15mm 15mm;
     }
     :root {
-      --bg-desk: #EAE3D5;
-      --bg-sheet: #FCF9F4;
-      --bg-subtle: #F4EFE6;
-      --bg-card: #FAF6EE;
-      --text-main: #22201D;
-      --text-sub: #544F47;
-      --text-muted: #8A8275;
-      --accent: #8B2635;
-      --accent-soft: #F7ECEE;
+      --bg-desk: #ECF0F5;
+      --bg-sheet: #FCFDFF;
+      --bg-panel: rgba(252, 253, 255, 0.62);
+      --bg-subtle: rgba(235, 240, 246, 0.56);
+      --bg-card: rgba(244, 247, 251, 0.68);
+      --text-main: #181B20;
+      --text-sub: #404652;
+      --text-muted: #707887;
+      --accent: #8B2332;
+      --accent-soft: rgba(139, 35, 50, 0.085);
       --navy-accent: #1E3A5F;
-      --navy-soft: #EBF1F8;
-      --gold-hl: rgba(212, 163, 68, 0.24);
-      --border-line: #DCD4C6;
-      --border-strong: #B8AE9E;
-      --correct-bg: #EAF3EC;
-      --correct-border: #86B893;
-      --correct-ink: #1B5E20;
-      --wrong-bg: #FDECEC;
-      --wrong-border: #E57373;
-      --wrong-ink: #B71C1C;
+      --navy-soft: rgba(235, 241, 248, 0.72);
+      --gold-hl: rgba(246, 196, 42, 0.25);
+      --border-line: rgba(196, 205, 218, 0.65);
+      --border-strong: #C1CAD6;
+      --correct-bg: rgba(232, 245, 237, 0.72);
+      --correct-border: #95C5A6;
+      --correct-ink: #165B33;
+      --wrong-bg: rgba(252, 236, 237, 0.72);
+      --wrong-border: #E0A3A5;
+      --wrong-ink: #9E262B;
       --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
       --font-body: 'Noto Serif KR', 'Batang', Georgia, serif;
     }
@@ -50,6 +51,7 @@
       font-size: 14px;
       line-height: 1.68;
       word-break: keep-all;
+      overflow-wrap: break-word;
     }
     .no-print-bar {
       position: sticky;
@@ -107,8 +109,16 @@
       margin: 28px auto 64px auto;
       padding: 48px 52px 60px 52px;
       background-color: var(--bg-sheet);
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27al%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.92%27%20numOctaves%3D%273%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200.34%20-0.095%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23al%29%27%2F%3E%3C%2Fsvg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E"),
+        url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27420%27%20height%3D%27420%27%3E%3Cfilter%20id%3D%27ac%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.026%27%20numOctaves%3D%273%27%20seed%3D%2713%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.52%200%200%200%200%200.53%200%200%200%200%200.55%200%200%200%200.16%20-0.042%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27420%27%20height%3D%27420%27%20filter%3D%27url%28%23ac%29%27%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat, repeat, repeat, repeat;
+      background-size: 100% 100%, 260px 260px, 240px 240px, 420px 420px;
       border: 1px solid var(--border-line);
-      box-shadow: 0 14px 40px rgba(28, 26, 23, 0.12);
+      box-shadow: 0 2px 10px rgba(24, 30, 42, 0.035);
+      border-radius: 4px;
     }
     .doc-header {
       border-bottom: 2.5px solid var(--text-main);
@@ -121,7 +131,7 @@
       font-weight: 800;
       color: var(--accent);
       background-color: var(--accent-soft);
-      border: 1px solid #DFB9BF;
+      border: 1px solid rgba(139, 35, 50, 0.28);
       padding: 4px 10px;
       border-radius: 4px;
       margin-bottom: 10px;
@@ -146,7 +156,7 @@
       flex-wrap: wrap;
       gap: 8px;
       background-color: var(--text-main);
-      color: #FAF7F2;
+      color: #FCFDFF;
       padding: 9px 16px;
       margin: 30px 0 16px 0;
       border-radius: 4px;
@@ -157,7 +167,7 @@
     }
     .sec-banner-sub {
       font-size: 12px;
-      color: #D6CFC2;
+      color: #CBD3DF;
     }
     h3.sub-title {
       font-size: 15px;
@@ -180,7 +190,7 @@
       font-family: var(--font-body);
       font-size: 15.5px;
       line-height: 1.9;
-      background-color: #FFFFFF;
+      background-color: var(--bg-panel);
       border: 1px solid var(--border-line);
       padding: 16px 20px;
       border-radius: 4px;
@@ -198,7 +208,7 @@
       margin-bottom: 18px;
     }
     .swatch-card {
-      background: #FFFFFF;
+      background: var(--bg-panel);
       border: 1px solid var(--border-line);
       border-radius: 5px;
       overflow: hidden;
@@ -250,29 +260,31 @@
       padding: 8px 11px;
       border: 1px solid var(--border-line);
       vertical-align: top;
-      background-color: #FFFFFF;
+      background-color: var(--bg-panel);
     }
     pre.code-block {
-      background-color: #1E1C19;
-      color: #EAE5DC;
+      background-color: #181B20;
+      color: #ECF0F5;
       padding: 14px 16px;
       border-radius: 5px;
       font-family: Consolas, Monaco, 'Courier New', monospace;
       font-size: 12px;
       line-height: 1.55;
+      max-width: 100%;
       overflow-x: auto;
       margin: 10px 0 18px 0;
     }
     code.inline-code {
-      background-color: #EFECE6;
-      color: #8B2635;
+      background-color: rgba(235, 240, 246, 0.85);
+      color: var(--accent);
       font-weight: 700;
       padding: 1.5px 5px;
       border-radius: 3px;
       font-size: 12px;
+      word-break: break-word;
     }
     .diagram-box {
-      background: #FFFFFF;
+      background: var(--bg-panel);
       border: 1.5px solid var(--navy-accent);
       border-radius: 5px;
       padding: 14px 18px;
@@ -280,7 +292,10 @@
       font-size: 13px;
     }
     @media print {
-      html, body { background: #FFFFFF !important; }
+      html, body {
+        background: #FFFFFF !important;
+        background-image: none !important;
+      }
       .no-print-bar { display: none !important; }
       .book-sheet {
         max-width: 100% !important;
@@ -288,11 +303,26 @@
         padding: 0 !important;
         border: none !important;
         box-shadow: none !important;
+        background: #FFFFFF !important;
+        background-image: none !important;
       }
     }
     @media (max-width: 768px) {
+      html, body { background-color: var(--bg-sheet); }
       .swatch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .book-sheet { padding: 24px 16px; }
+      .book-sheet {
+        margin: 0;
+        padding: 22px 16px 36px 16px;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      table.spec-table {
+        display: block;
+        overflow-x: auto;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -302,13 +332,12 @@
   <div class="no-print-bar">
     <div class="no-print-inner">
       <div class="ctrl-group">
-        <span class="ctrl-btn active">🎨 통합 디자인 시스템 명세서 (SSOT)</span>
+        <span class="ctrl-btn active">🎨 통합 디자인 시스템 명세서 (SSOT v4.0)</span>
         <a href="index.html" class="ctrl-btn">🏠 프로젝트 메인 포털</a>
+        <a href="Fire_Killer_종이질감_플랫튜닝_및_태블릿PDF_최신화_작업문서.html" class="ctrl-btn">📄 종이질감·태블릿PDF 문서</a>
         <a href="소방학개론_인쇄전용_교재/00_소방학개론_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 소방학개론 인쇄포털</a>
         <a href="소방관계법규_인쇄전용_교재/00_소방관계법규_사이클별_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 소방관계법규 인쇄포털</a>
         <a href="한국사_인쇄전용_교재/00_한국사_25일_마스터플랜_및_인쇄포털.html" class="ctrl-btn">🖨️ 한국사 인쇄포털</a>
-        
-        
       </div>
       <div class="ctrl-group">
         <button onclick="window.print()" class="ctrl-btn print-primary">🖨️ 명세서 A4 인쇄 (Ctrl+P)</button>
@@ -318,10 +347,10 @@
 
   <main class="book-sheet">
     <header class="doc-header">
-      <div class="doc-badge">Fire Killer Design System &amp; Publishing Architecture v3.0 · 전 과목 단일 표준 (Single Source of Truth)</div>
+      <div class="doc-badge">Fire Killer Design System &amp; Publishing Architecture v4.0 · 전 과목 단일 표준 (Single Source of Truth)</div>
       <h1 class="doc-title">Fire Killer 통합 디자인 시스템 및 출판 아키텍처 표준 명세서</h1>
       <p class="doc-lead">
-        본 문서는 <strong>소방학개론, 소방관계법규, 행정법총론, 한국사(한능검 심화)</strong> 등 본 프로젝트의 모든 수험 교재를 제작할 때 적용되는 <strong>① 옥스퍼드 &times; 리디북스 에디토리얼 기본서(단일 좌표계 날개 각주 그리드), ② 갤럭시 S26 Ultra 모바일 웹소설 리더 모드, ③ A4 2단 실전 기출 변형 모의고사(화면 즉시 채점 &amp; 클린 인쇄 이중 호환), ④ 양면 인쇄 시 스테이플러 소분을 보장하는 짝수 페이지 정렬(PyMuPDF) 파이프라인</strong>을 하나로 통합·정형화한 최종 마스터 명세서입니다.
+        본 문서는 <strong>소방학개론, 소방관계법규, 행정법총론, 한국사(한능검 심화)</strong> 등 본 프로젝트의 모든 수험 교재를 제작할 때 적용되는 <strong>① 스노우 화이트 &times; 질감 A 플랫 에디토리얼 기본서(단일 좌표계 날개 각주 그리드), ② 갤럭시 S26 Ultra 모바일 웹소설 리더 모드, ③ A4 2단 실전 기출 변형 모의고사(화면 즉시 채점 &amp; 클린 인쇄 이중 호환), ④ 양면 인쇄 시 스테이플러 소분을 보장하는 짝수 페이지 정렬(PyMuPDF) 파이프라인, ⑤ 태블릿 전용(16:10) 풀블리드 스노우 화이트 종이 질감 PDF 빌드 &amp; 구글 드라이브 제자리 덮어쓰기 표준</strong>을 하나로 통합·정형화한 최종 마스터 명세서입니다.
       </p>
     </header>
 
@@ -329,45 +358,45 @@
          제1장. 컬러 팔레트 및 디자인 토큰 표준 (Color Tokens)
          ===================================================================== -->
     <div class="sec-banner">
-      <span class="sec-banner-title">제1장 · 컬러 팔레트 및 CSS 디자인 토큰 표준 (Warm Editorial Paper &amp; E-Ink Dark)</span>
-      <span class="sec-banner-sub">장시간 수험 독해 시 눈부심(Glare)을 차단하는 저채도 난색 종이 질감 및 북 잉크 대비 체계</span>
+      <span class="sec-banner-title">제1장 · 컬러 팔레트 및 CSS 디자인 토큰 표준 (Clean Flat Snow White &times; Texture A)</span>
+      <span class="sec-banner-sub">무광 스노우 화이트 종이 입자(SVG 3겹)와 고대비 북 잉크 기반의 장시간 수험 독해 최적화 체계</span>
     </div>
 
     <p style="margin:0 0 12px 0; color:var(--text-sub);">
-      차가운 순백색(<code>#FFFFFF</code>) 화면에서 발생하는 시각적 피로를 원천 제거하기 위해, 모든 웹 기본서와 워크북은 <strong>옥스퍼드 대학출판부(OUP) 학술서와 리디북스 페이퍼의 난색 종이 토큰(Style A 확정본)</strong>을 표준으로 채택합니다. 단, <code>@media print</code>(실제 종이 인쇄 시)에는 토너 낭비 방지를 위해 시트 배경이 자동으로 <code>#FFFFFF</code>로 전환됩니다.
+      기존 <code>v3.0</code>의 난색 아이보리(<code>#EAE3D5</code> / <code>#FCF9F4</code>)에서 발생할 수 있는 황색 편향을 해소하고 장시간 태블릿·웹 독해 시 가장 선명한 대비를 제공하기 위해, <code>v4.0</code>부터 전 과목(소방학개론 · 소방관계법규 · 한국사)은 <strong>Clean Flat Snow White &times; Texture A(<code>#ECF0F5</code> 데스크 · <code>#FCFDFF</code> 시트 + 균일 화이트 글레이즈 0.38 + 3겹 프랙탈 노이즈 SVG 입자, 좌우 페이지 거터 음영 제거)</strong>를 단일 표준으로 채택합니다. 단, <code>@media print</code>(실물 종이 인쇄 시)에는 토너 낭비 방지를 위해 배경색과 SVG 질감 이미지가 자동으로 <code>#FFFFFF</code> / <code>none</code>으로 전환됩니다.
     </p>
 
     <div class="swatch-grid">
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#EAE3D5; color:#22201D;">#EAE3D5</div>
+        <div class="swatch-color" style="background:#ECF0F5; color:#181B20;">#ECF0F5</div>
         <div class="swatch-info">
-          <span class="swatch-token">--bg-desk / --bg-Workspace</span>
-          <span class="swatch-desc">데스크 배경 (차분한 샌드 베이지)</span>
+          <span class="swatch-token">--bg-desk</span>
+          <span class="swatch-desc">데스크 배경 (쿨 미스트 슬레이트)</span>
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#FCF9F4; color:#22201D;">#FCF9F4 / #FAF7F2</div>
+        <div class="swatch-color" style="background:#FCFDFF; color:#181B20;">#FCFDFF (+질감 A)</div>
         <div class="swatch-info">
-          <span class="swatch-token">--bg-sheet</span>
-          <span class="swatch-desc">본문 종이 시트 (웜 에디토리얼 아이보리)</span>
+          <span class="swatch-token">--bg-sheet / --bg-panel</span>
+          <span class="swatch-desc">본문 스노우 화이트 시트 (균일 글레이즈 + 3겹 입자)</span>
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#F4EFE6; color:#22201D;">#F4EFE6 / #F2ECE1</div>
+        <div class="swatch-color" style="background:#EBF0F6; color:#181B20;">rgba(235,240,246,0.56)</div>
         <div class="swatch-info">
           <span class="swatch-token">--bg-subtle</span>
-          <span class="swatch-desc">표 헤더 · &lt;보기&gt; 박스 · 인라인 해설 배경</span>
+          <span class="swatch-desc">표 헤더 · &lt;보기&gt; 박스 · 반투명 유리 패널 배경</span>
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#22201D; color:#FCF9F4;">#22201D / #1C1A17</div>
+        <div class="swatch-color" style="background:#181B20; color:#FCFDFF;">#181B20 / #404652</div>
         <div class="swatch-info">
-          <span class="swatch-token">--text-main</span>
-          <span class="swatch-desc">본문 주 잉크 (순검정이 아닌 딥 차콜 잉크)</span>
+          <span class="swatch-token">--text-main / --text-sub</span>
+          <span class="swatch-desc">본문 주 잉크 (고대비 스노우 차콜 잉크)</span>
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#8B2635; color:#FFFFFF;">#8B2635</div>
+        <div class="swatch-color" style="background:#8B2332; color:#FFFFFF;">#8B2332</div>
         <div class="swatch-info">
           <span class="swatch-token">--accent (Oxford Crimson)</span>
           <span class="swatch-desc">핵심 강조 · 문항 배지 · 정답 포인트</span>
@@ -381,14 +410,14 @@
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#EAF3EC; color:#1B5E20; border:1px solid #86B893;">#EAF3EC / #1B5E20</div>
+        <div class="swatch-color" style="background:#E8F5ED; color:#165B33; border:1px solid #95C5A6;">#E8F5ED / #165B33</div>
         <div class="swatch-info">
           <span class="swatch-token">--correct-bg / --correct-ink</span>
           <span class="swatch-desc">선지 클릭 정답 판정 및 정답 해설 하이라이트</span>
         </div>
       </div>
       <div class="swatch-card">
-        <div class="swatch-color" style="background:#FDECEC; color:#B71C1C; border:1px solid #E57373;">#FDECEC / #B71C1C</div>
+        <div class="swatch-color" style="background:#FCECED; color:#9E262B; border:1px solid #E0A3A5;">#FCECED / #9E262B</div>
         <div class="swatch-info">
           <span class="swatch-token">--wrong-bg / --wrong-ink</span>
           <span class="swatch-desc">선지 클릭 오답 판정 (취소선 동반)</span>
@@ -401,7 +430,7 @@
         <tr>
           <th style="width:22%;">토큰 카테고리</th>
           <th style="width:26%;">CSS 변수명</th>
-          <th style="width:26%;">주간 페이퍼 모드 (기본값)</th>
+          <th style="width:28%;">주간 스노우 화이트 플랫 모드 (v4.0 기본)</th>
           <th>야간 E-Ink 다크 모드 (<code>body.mode-night</code>)</th>
         </tr>
       </thead>
@@ -409,25 +438,25 @@
         <tr>
           <td><strong>배경 및 시트 표면</strong></td>
           <td><code>--bg-desk</code> / <code>--bg-sheet</code> / <code>--bg-subtle</code></td>
-          <td><code>#EAE3D5</code> / <code>#FCF9F4</code> / <code>#F4EFE6</code></td>
+          <td><code>#ECF0F5</code> / <code>#FCFDFF</code> (+3겹 SVG 질감 A) / <code>rgba(235, 240, 246, 0.56)</code></td>
           <td><code>#121211</code> / <code>#1B1B19</code> / <code>#242320</code></td>
         </tr>
         <tr>
           <td><strong>타이포그래피 잉크</strong></td>
           <td><code>--text-main</code> / <code>--text-sub</code> / <code>--text-muted</code></td>
-          <td><code>#22201D</code> / <code>#544F47</code> / <code>#8A8275</code></td>
+          <td><code>#181B20</code> / <code>#404652</code> / <code>#707887</code></td>
           <td><code>#E2DDD2</code> / <code>#B0AA9E</code> / <code>#787268</code></td>
         </tr>
         <tr>
           <td><strong>포인트 및 형광펜</strong></td>
           <td><code>--accent</code> / <code>--gold-hl</code></td>
-          <td><code>#8B2635</code> / <code>rgba(212, 163, 68, 0.24)</code></td>
+          <td><code>#8B2332</code> / <code>rgba(246, 196, 42, 0.25)</code></td>
           <td><code>#D4A373</code> / <code>rgba(212, 163, 115, 0.22)</code></td>
         </tr>
         <tr>
           <td><strong>경계선 및 구분선</strong></td>
           <td><code>--border-line</code> / <code>--border-strong</code> / <code>--margin-rule</code></td>
-          <td><code>#E4DDD0</code> / <code>#C9BFA8</code> / <code>#DED6C6</code></td>
+          <td><code>rgba(196, 205, 218, 0.65)</code> / <code>#C1CAD6</code> / <code>#D8DFE9</code></td>
           <td><code>#2E2D29</code> / <code>#42403A</code> / <code>#2E2D29</code></td>
         </tr>
       </tbody>
@@ -662,6 +691,62 @@
           <td><strong>⑥ 양면 인쇄 홀수 쪽 시작 &amp; 짝수 페이지 정렬</strong></td>
           <td><code>assert exp_start_1based % 2 == 1 and len(doc) % 2 == 0</code></td>
           <td>PDF 변환 시 모든 해설지와 각 일자(<code>DAY</code>)가 새 종이 앞면(홀수 쪽)에서 시작하고 총페이지가 짝수인지 검증</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- =====================================================================
+         제6장. [모드 4] 태블릿 전용(16:10) 풀블리드 PDF 빌드 & 드라이브 제자리 최신화
+         ===================================================================== -->
+    <div class="sec-banner">
+      <span class="sec-banner-title">제6장 · [모드 4] 태블릿 전용(16:10) 풀블리드 종이 질감 PDF 빌드 &amp; 구글 드라이브 제자리 덮어쓰기 표준</span>
+      <span class="sec-banner-sub">투명 벡터 PDF 추출 + PyMuPDF 공유 XObject 타일 합성 · 기존 Drive File ID 100% 보존</span>
+    </div>
+
+    <p style="margin:0 0 12px 0; color:var(--text-sub);">
+      웹 기본서 CSS에 적용된 <strong>Clean Flat Snow White &times; Texture A</strong> 질감을 태블릿 PDF(삼성 노트 · 필기 앱 등)에서도 웹과 동일한 무광 백색 지질로 재현하기 위해, 브라우저 SVG 반복 인쇄 시 발생하는 타일 이음매·화소 열화·용량 폭증을 원천 차단하는 <strong>2단계 투명 벡터 + 공유 XObject 합성 표준</strong>을 채택합니다. 본 파이프라인은 태블릿 전용 PDF 산출물에만 적용되며, 실물 종이 인쇄용 A4 양면 인쇄 PDF 및 원본 워크북 HTML(<code>*_인쇄전용_교재/*.html</code>)에는 일절 영향을 주지 않습니다.
+    </p>
+
+    <div class="diagram-box">
+      <strong>[태블릿 PDF 2단계 풀블리드 합성 및 Drive 제자리 최신화 아키텍처]</strong><br>
+      <div style="margin-top:8px; line-height:1.85; font-size:12.6px;">
+        <strong>① Stage A · 투명 벡터 HTML &rarr; PDF 추출 (Chromium / Edge Headless)</strong><br>
+        <code>@page { size: 180mm 288mm; margin: 10mm 12mm 14mm 12mm; }</code> + <code>html, body { background: transparent !important; background-color: transparent !important; }</code> + <code>#part3</code> 강제 인쇄 활성화(한국사 <code>DAY07부터09</code>부터 <code>DAY19부터21</code>까지 모의고사 포함) ➔ 좌우 거터 그림자 없이 순수 텍스트·표·도형 벡터 레이어만 추출<br>
+        <strong>② Stage B · 공유 XObject 종이 질감 A 풀블리드 합성 (PyMuPDF <code>overlay=False</code>)</strong><br>
+        스노우 화이트 바탕(<code>#FCFDFF</code> + 균일 화이트 글레이즈 0.38 + Texture A 3겹 노이즈)을 <code>1800 &times; 2880</code> 마스터 JPEG(<code>quality=95, subsampling=0</code>)로 <strong>문서당 단 1회 생성</strong>해 단일 이미지 <code>xref</code>로 등록하고, 전 페이지 뒷면에 <code>page.insert_image(page.rect, xref=xref, keep_proportion=False, overlay=False)</code>를 얹은 뒤 <code>garbage=3, deflate=True</code>로 저장<br>
+        <strong>③ Stage C · 구글 드라이브 제자리 덮어쓰기 (<code>gdrive mutate update</code>)</strong><br>
+        과목별 대상 폴더를 <code>gdrive readonly ls &lt;FOLDER_ID&gt; --max 0 --json</code>으로 전수 조회(기본 20건 제한 해제 필수)한 뒤 파일명 정확 매칭으로 기존 <code>File ID</code> 위에 <code>gdrive mutate update</code> 실행 ➔ <strong>파일명 · File ID · 태블릿 공유 링크 100% 보존</strong>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th style="width:24%;">규격 항목</th>
+          <th style="width:30%;">핵심 파라미터 및 하한·상한 기준</th>
+          <th>설계 근거 및 표준 운영 지침</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>① 판형 · 여백 · 조판 규격</strong></td>
+          <td><code>180mm &times; 288mm</code> (16:10), 상단 <code>10mm</code> · 좌우 <code>12mm</code> · 하단 <code>14mm</code></td>
+          <td>태블릿 연속 스크롤 필기에 최적화된 풀블리드 규격. A4 양면 인쇄용과 달리 홀수 쪽 시작 빈 여백 패딩은 삽입하지 않으며 <code>PART 1</code>부터 <code>PART 3</code>까지 전체 포함 (한국사 후기 모의고사는 <code>PART 1</code> + <code>PART 3</code> 구조)</td>
+        </tr>
+        <tr>
+          <td><strong>② 광학 실측 허용 구간</strong></td>
+          <td>마스터 시트 <code>luma</code> <code>248.0</code>에서 <code>251.5</code>까지(<code>150 DPI</code> 여백 <code>247.0</code>에서 <code>252.0</code>까지), <code>R-B</code> <code>0.5</code> 이하(마스터 <code>-3.0</code>에서 <code>0.2</code>까지), <code>std</code> <code>1.1</code> 이상(마스터 <code>1.5</code>에서 <code>2.8</code>까지), 좌우 차 <code>1.8</code> 미만</td>
+          <td>황변(Warm Yellow) 없이 맑고 산뜻한 스노우 화이트 지면과 미세 종이 입자 질감을 동시에 보증하며, 마스터 시트 좌·중·우 편차 <code>1.2</code> 미만으로 플랫 마감 검증</td>
+        </tr>
+        <tr>
+          <td><strong>③ 구글 드라이브 전수 조회 &amp; 제자리 동기화</strong></td>
+          <td><code>gdrive readonly ls --max 0 --json</code> &rarr; <code>gdrive mutate update &lt;ID&gt; &lt;FILE&gt;</code></td>
+          <td><code>--max 0</code> 누락 시 24종인 소방관계법규·한국사 폴더에서 초과 파일이 잘리는 장애가 발생하므로 전수 목록 조회를 의무화하며, 신규 업로드가 아닌 기존 ID 제자리 덮어쓰기로 동기화</td>
+        </tr>
+        <tr>
+          <td><strong>④ 재실행 표준 스킬 &amp; 상세 작업 아카이브</strong></td>
+          <td><code>fire-killer</code> 플러그인 &rarr; <code>paper-texture-tablet-sync</code> 스킬</td>
+          <td><code>scripts/build_tablet_snow_flat_pdf.py</code> 및 <code>scripts/sync_tablet_drive_inplace.py</code>로 3과목 전 단원(최초 일괄 69종 · 현행 라이브 71종) 빌드 및 드라이브 제자리 갱신 지원. 상세 이력은 <a href="Fire_Killer_종이질감_플랫튜닝_및_태블릿PDF_최신화_작업문서.html">종이질감·태블릿PDF 작업 문서</a> 참조</td>
         </tr>
       </tbody>
     </table>

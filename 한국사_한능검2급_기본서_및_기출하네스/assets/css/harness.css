@@ -20,36 +20,37 @@
 
 :root {
   /* Reader Bar & Chrome UI Tokens */
-  --ui-bg: #EAE3D5;
-  --ui-bar: rgba(252, 249, 244, 0.95);
-  --ui-border: #DCD3C4;
-  --ui-text: #22201D;
-  --ui-sub: #6E685F;
-  --ui-accent: #8B2635;
+  --ui-bg: #ECF0F5;
+  --ui-bar: rgba(252, 253, 255, 0.94);
+  --ui-border: #CBD3DF;
+  --ui-text: #181B20;
+  --ui-sub: #535B68;
+  --ui-accent: #8B2332;
 
-  /* Editorial Warm Paper Tokens (Day Mode Default) */
-  --bg-desk: #EAE3D5;
-  --bg-sheet: #FCF9F4;
-  --bg-subtle: #F4EFE6;
-  --bg-card: #FAF6EE;
-  --text-main: #22201D;
-  --text-sub: #544F47;
-  --text-muted: #8A8275;
-  --accent: #8B2635;
-  --accent-hover: #6E1D29;
-  --accent-soft: rgba(139, 38, 53, 0.08);
-  --gold-hl: rgba(212, 163, 68, 0.24);
-  --border-line: #E4DDD0;
-  --border-strong: #C9BFA8;
-  --margin-rule: #DED6C6;
+  /* Snow White Flat Paper Tokens (Day Mode Default) */
+  --bg-desk: #ECF0F5;
+  --bg-sheet: #FCFDFF;
+  --bg-panel: rgba(252, 253, 255, 0.62);
+  --bg-subtle: rgba(235, 240, 246, 0.56);
+  --bg-card: rgba(244, 247, 251, 0.68);
+  --text-main: #181B20;
+  --text-sub: #404652;
+  --text-muted: #707887;
+  --accent: #8B2332;
+  --accent-hover: #6E1A26;
+  --accent-soft: rgba(139, 35, 50, 0.085);
+  --gold-hl: rgba(246, 196, 42, 0.25);
+  --border-line: rgba(196, 205, 218, 0.65);
+  --border-strong: #C1CAD6;
+  --margin-rule: rgba(182, 192, 206, 0.78);
 
-  /* Feedback Colors (Muted Book Ink Style) */
-  --correct-ink: #1E5631;
-  --correct-bg: #EDF5F0;
-  --correct-border: #9BC4A8;
-  --wrong-ink: #9E2A2B;
-  --wrong-bg: #FBF0F0;
-  --wrong-border: #E0A8A8;
+  /* Feedback Colors (Crisp Book Ink Style on Snow White) */
+  --correct-ink: #165B33;
+  --correct-bg: rgba(232, 245, 237, 0.72);
+  --correct-border: #95C5A6;
+  --wrong-ink: #9E262B;
+  --wrong-bg: rgba(252, 236, 237, 0.72);
+  --wrong-border: #E0A3A5;
 
   /* Single-Origin Geometry Tokens (Zero Overlap Guarantee + Wider Reading Measure) */
   --main-col-width: 760px; /* 기존 600px -> 760px로 본문 가로 폭 대폭 확장 */
@@ -76,6 +77,7 @@ body.mode-night {
 
   --bg-desk: #121211;
   --bg-sheet: #1B1B19;
+  --bg-panel: #1B1B19;
   --bg-subtle: #242320;
   --bg-card: #201F1D;
   --text-main: #E2DDD2;
@@ -155,7 +157,7 @@ main {
   margin: 2rem auto 3.5rem auto !important;
   background-color: var(--bg-sheet) !important;
   border: 1px solid var(--border-line) !important;
-  box-shadow: 0 10px 35px -10px rgba(35, 30, 20, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(24, 30, 42, 0.035) !important;
   border-radius: 4px !important;
   padding: 52px 24px 72px 24px !important;
   position: relative !important;
@@ -603,6 +605,7 @@ body.mode-sage {
 
   --bg-desk: #DCE7DC;
   --bg-sheet: #EFF5EE;
+  --bg-panel: #EFF5EE;
   --bg-subtle: #E3EDE2;
   --bg-card: #E8F1E7;
   --text-main: #1C281D;
@@ -621,6 +624,7 @@ body.mode-sage {
 body.mode-night {
   --bg-desk: #0A0A09;
   --bg-sheet: #131311;
+  --bg-panel: #131311;
   --bg-subtle: #1C1C19;
   --bg-card: #181815;
 }
@@ -631,7 +635,7 @@ body.mode-novel main {
   margin: 1.25rem auto 4rem auto !important;
   padding: 44px 36px 76px 36px !important;
   border-radius: 12px !important;
-  box-shadow: 0 16px 48px -12px rgba(20, 18, 14, 0.14) !important;
+  box-shadow: 0 2px 10px rgba(24, 30, 42, 0.035) !important;
 }
 
 body.mode-novel .main-column {
@@ -944,11 +948,11 @@ body.mode-novel.notes-inline-open .main-column .sidenote {
 }
 
 .schema-panel {
-  background-color: var(--bg-sheet);
+  background-color: var(--bg-panel, var(--bg-sheet));
   border: 1.5px solid var(--border-strong);
   border-radius: 10px;
   padding: 18px 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: none;
 }
 
 .schema-panel-title {
@@ -1052,4 +1056,79 @@ body.mode-novel.notes-inline-open .main-column .sidenote {
   color: var(--wrong-ink) !important;
   font-weight: 700 !important;
   text-align: center;
+}
+
+/* ==========================================================================
+   9. CLEAN FLAT SNOW WHITE x TEXTURE A (80g 순백 백상지 · 좌우 음영 0% 플랫)
+   ========================================================================== */
+body:not(.mode-night):not(.mode-sage) main,
+body:not(.mode-night):not(.mode-sage) #tocSidebar,
+body:not(.mode-night):not(.mode-sage) .fk-bottom-sheet {
+  background-color: var(--bg-sheet) !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)),
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27al%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.92%27%20numOctaves%3D%273%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200.34%20-0.095%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23al%29%27%2F%3E%3C%2Fsvg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27420%27%20height%3D%27420%27%3E%3Cfilter%20id%3D%27ac%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.026%27%20numOctaves%3D%273%27%20seed%3D%2713%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.52%200%200%200%200%200.53%200%200%200%200%200.55%200%200%200%200.16%20-0.042%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27420%27%20height%3D%27420%27%20filter%3D%27url%28%23ac%29%27%2F%3E%3C%2Fsvg%3E") !important;
+  background-repeat: no-repeat, repeat, repeat, repeat !important;
+  background-size: 100% 100%, 260px 260px, 240px 240px, 420px 420px !important;
+}
+
+body:not(.mode-night):not(.mode-sage) nav.sticky,
+body:not(.mode-night):not(.mode-sage) #tocTriggerArea > div:first-child {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E") !important;
+  background-repeat: repeat !important;
+  background-size: 240px 240px !important;
+}
+
+@media (max-width: 1119px) {
+  body:not(.mode-night):not(.mode-sage) {
+    background-color: var(--bg-sheet) !important;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)),
+      url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27260%27%20height%3D%27260%27%3E%3Cfilter%20id%3D%27al%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.92%27%20numOctaves%3D%273%27%20seed%3D%277%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200%201.0%200%200%200%200.34%20-0.095%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27260%27%20height%3D%27260%27%20filter%3D%27url%28%23al%29%27%2F%3E%3C%2Fsvg%3E"),
+      url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27240%27%20height%3D%27240%27%3E%3Cfilter%20id%3D%27ad%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.86%27%20numOctaves%3D%274%27%20seed%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.41%200%200%200%200%200.425%200%200%200%200%200.45%200%200%200%200.30%20-0.075%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27240%27%20height%3D%27240%27%20filter%3D%27url%28%23ad%29%27%2F%3E%3C%2Fsvg%3E"),
+      url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27420%27%20height%3D%27420%27%3E%3Cfilter%20id%3D%27ac%27%20x%3D%270%25%27%20y%3D%270%25%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%270.026%27%20numOctaves%3D%273%27%20seed%3D%2713%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20type%3D%27matrix%27%20values%3D%270%200%200%200%200.52%200%200%200%200%200.53%200%200%200%200%200.55%200%200%200%200.16%20-0.042%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27420%27%20height%3D%27420%27%20filter%3D%27url%28%23ac%29%27%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat, repeat, repeat, repeat !important;
+    background-size: 100% 100%, 260px 260px, 240px 240px, 420px 420px !important;
+  }
+
+  main,
+  body.mode-novel main {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+body.mode-novel main {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+body.mode-night,
+body.mode-night main,
+body.mode-night nav.sticky,
+body.mode-night #tocSidebar,
+body.mode-night .fk-bottom-sheet,
+body.mode-night #tocTriggerArea > div:first-child,
+body.mode-sage,
+body.mode-sage main,
+body.mode-sage nav.sticky,
+body.mode-sage #tocSidebar,
+body.mode-sage .fk-bottom-sheet,
+body.mode-sage #tocTriggerArea > div:first-child {
+  background-image: none !important;
+}
+
+@media print {
+  html,
+  body,
+  main {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    box-shadow: none !important;
+  }
 }

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>소방학개론 단원별 랜덤 OX 웹앱</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/harness.css?v=4" />
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100dvh;
+      background-color: var(--bg-desk) !important;
+      color: var(--text-main) !important;
+      font-family: var(--font-sans) !important;
+      overflow-x: hidden;
+    }
+
+    /* 웹앱 컨테이너 (단일 화면 전환 구조) */
+    .webapp-shell {
+      width: 100%;
+      max-width: 480px;
+      min-height: 100dvh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .webapp-screen {
+      display: none;
+      width: 100%;
+      min-height: 100dvh;
+      flex-direction: column;
+      padding: 14px 16px 24px;
+      animation: appScreenIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .webapp-screen.active {
+      display: flex;
+    }
+    @keyframes appScreenIn {
+      from { opacity: 0; transform: translateX(18px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* [SCREEN 1] 단원 선택 화면 */
+    .select-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 4px 0 14px;
+      border-bottom: 1px solid var(--border-line);
+      margin-bottom: 14px;
+    }
+    .app-back-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      border-radius: 9px;
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-sheet);
+      color: var(--text-main);
+      font-size: 12.5px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .app-title-txt {
+      font-size: 15px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .random-all-banner {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background-color: var(--accent);
+      color: #FFFFFF;
+      border: none;
+      margin-bottom: 14px;
+      cursor: pointer;
+      text-align: left;
+      box-shadow: 0 8px 20px rgba(139, 38, 53, 0.22);
+      transition: transform 0.14s ease;
+    }
+    body.mode-night .random-all-banner {
+      color: #121211;
+    }
+    .random-all-banner:active {
+      transform: scale(0.98);
+    }
+
+    .part-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .part-tabs::-webkit-scrollbar { display: none; }
+    .part-tab {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-sheet);
+      color: var(--text-sub);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .part-tab.active {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    body.mode-night .part-tab.active {
+      color: #121211;
+    }
+
+    .unit-list-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+    }
+    .unit-item-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 15px;
+      border: 1.5px solid var(--border-line);
+      background-color: var(--bg-sheet);
+      color: var(--text-main);
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.14s ease;
+    }
+    .unit-item-btn:hover {
+      border-color: var(--accent);
+    }
+    .unit-item-btn:active {
+      transform: scale(0.985);
+      background-color: var(--accent-soft);
+    }
+    .unit-theme-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--accent);
+      background-color: var(--accent-soft);
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+    }
+    .unit-title-main {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.38;
+      word-break: keep-all;
+    }
+    .unit-go-pill {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* [SCREEN 2] 몰입형 OX 카드 풀이 화면 (보내주신 스크린샷 100% 동일 규격) */
+    .fk-theme-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 2px 14px;
+    }
+    .fk-theme-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      background: transparent;
+      border: none;
+      padding: 4px 0;
+      cursor: pointer;
+      text-align: left;
+      min-width: 0;
+    }
+    .fk-theme-back-btn svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      fill: none;
+      flex-shrink: 0;
+    }
+    .fk-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .fk-mini-pill {
+      border: 1px solid var(--border-strong);
+      background-color: var(--bg-sheet);
+      color: var(--text-sub);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .fk-prev-above-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px 10px;
+    }
+    .fk-prev-link {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      padding: 4px 2px;
+      cursor: pointer;
+    }
+    .fk-prev-link:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    .fk-ox-card {
+      background-color: var(--bg-sheet);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 22px;
+      padding: 24px 20px 20px;
+      box-shadow: 0 16px 38px -10px rgba(24, 23, 21, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 430px;
+    }
+    body.mode-night .fk-ox-card {
+      background-color: #1B1B19;
+      border-color: #35332E;
+      box-shadow: 0 20px 44px -10px rgba(0, 0, 0, 0.55);
+    }
+
+    .fk-card-top-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .fk-num-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .fk-num-badge-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fk-c-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fk-num-digits {
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .fk-sub-code {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.85;
+      padding-left: 2px;
+    }
+
+    .fk-save-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background-color: transparent;
+      color: var(--text-sub);
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .fk-save-btn.saved {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+    body.mode-night .fk-save-btn.saved {
+      color: #121211;
+    }
+
+    .fk-statement-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 4px 2px 26px;
+      min-height: 150px;
+    }
+    .ox-statement {
+      font-family: var(--font-body) !important;
+      font-size: 18px !important;
+      line-height: 1.78 !important;
+      letter-spacing: -0.012em;
+      text-align: left !important;
+      word-break: keep-all !important;
+      overflow-wrap: break-word !important;
+      color: var(--text-main);
+    }
+
+    .fk-inside-ox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .fk-ox-box-btn {
+      height: 132px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border-strong);
+      background-color: var(--bg-subtle);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.14s ease;
+    }
+    .fk-ox-box-btn:active {
+      transform: scale(0.96);
+    }
+    .fk-ox-box-btn svg {
+      width: 56px;
+      height: 56px;
+      stroke: currentColor;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+    .fk-ox-box-btn.selected-correct {
+      background-color: var(--correct-bg) !important;
+      border: 2.5px solid var(--correct-ink) !important;
+      color: var(--correct-ink) !important;
+    }
+    .fk-ox-box-btn.selected-wrong {
+      background-color: var(--wrong-bg) !important;
+      border: 2.5px solid var(--wrong-ink) !important;
+      color: var(--wrong-ink) !important;
+    }
+    .fk-ox-box-btn.dimmed-other {
+      opacity: 0.38;
+    }
+
+    .fk-feedback-box {
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      text-align: left;
+    }
+    .fk-feedback-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .fk-expl-body {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.68;
+      color: var(--text-main);
+      text-align: left !important;
+      word-break: keep-all;
+    }
+    .fk-book-jump-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      background-color: var(--accent);
+      color: #FFFFFF !important;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    body.mode-night .fk-book-jump-btn {
+      color: #121211 !important;
+    }
+
+    .fk-bottom-counter-bar {
+      padding-top: 20px;
+      padding-bottom: 6px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+    .fk-bottom-counter-bar strong {
+      color: var(--text-main);
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="webapp-shell">
+
+    <!-- =====================================================================
+         [SCREEN 1] 단원 선택 웹앱 화면 (복잡한 조건 없이 단원 터치 시 즉시 랜덤 OX 전환)
+         ===================================================================== -->
+    <section id="selectView" class="webapp-screen active">
+      <div class="select-topbar">
+        <div style="display:flex; align-items:center; gap:6px; min-width:0;">
+          <a href="../../index.html" class="app-back-pill">&larr; 포털</a>
+          <a href="index.html" class="app-back-pill">기본서</a>
+          <span class="app-title-txt">소방학개론 OX</span>
+        </div>
+        <button type="button" onclick="OxApp.toggleNightMode()" class="app-back-pill" id="btnThemeTop">🌓 테마</button>
+      </div>
+
+      <!-- 전 단원 랜덤 풀기 배너 -->
+      <button type="button" class="random-all-banner" onclick="OxApp.openUnitQuiz('all')">
+        <div>
+          <div style="font-size:11.5px; font-weight:800; opacity:0.9;">🔀 전 범위 무작위 출제</div>
+          <div style="font-size:15.5px; font-weight:900; margin-top:2px;">전체 단원 OX 랜덤 풀기</div>
+        </div>
+        <span style="font-size:13px; font-weight:900;">바로 시작 &rarr;</span>
+      </button>
+
+      <!-- 편별 빠른 탭 -->
+      <div class="part-tabs" id="partTabsMount"></div>
+
+      <!-- 단원 리스트 (터치 즉시 Screen 2로 페이지 전환 & 랜덤 출제) -->
+      <div id="unitCardList" class="unit-list-wrap"></div>
+    </section>
+
+    <!-- =====================================================================
+         [SCREEN 2] 몰입형 OX 퀴즈 카드 화면 (웹앱 단일 뷰 + 좌우 스와이프)
+         ===================================================================== -->
+    <section id="solveView" class="webapp-screen">
+      <div class="fk-theme-topbar">
+        <button type="button" onclick="OxApp.showSelectView()" class="fk-theme-back-btn" title="단원 선택 화면으로">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          <span id="solveSessionUnitBadge" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:240px;">THEME 01</span>
+        </button>
+        <div class="fk-top-actions">
+          <button type="button" onclick="OxApp.reshuffleCurrent()" class="fk-mini-pill" title="현재 단원 문제 다시 랜덤 섞기">🔀 랜덤 섞기</button>
+          <button type="button" onclick="OxApp.toggleNightMode()" class="fk-mini-pill" title="라이트/다크 테마 전환">🌓</button>
+        </div>
+      </div>
+
+      <div style="margin:auto 0; width:100%;">
+        <div class="fk-prev-above-row">
+          <button type="button" id="btnPrevAbove" onclick="OxApp.prevCard()" class="fk-prev-link">
+            &lt; 이전문제
+          </button>
+          <button type="button" id="btnNextOrFinish" onclick="OxApp.nextCard()" class="fk-prev-link">
+            다음문제 &gt;
+          </button>
+        </div>
+
+        <div id="singleCardMount"></div>
+      </div>
+
+      <div id="solveSessionCounter" class="fk-bottom-counter-bar">
+        <strong>1</strong> / 50
+      </div>
+    </section>
+
+  </div>
+
+  <script src="assets/js/fire-intro-ox-db.js?v=6"></script>
+  <script>
+    const OxApp = {
+      db: window.FIRE_INTRO_OX_DB || { units: [], oxList: [] },
+      partLabels: [["all", "전체 단원"], ["01", "1편 조직·재난"], ["02", "2편 연소·화재"], ["03", "3편 소화약제"], ["04", "4편 소방시설"], ["05", "5편 위험물"]],
+      currentPart: 'all',
+      currentUnitId: '01_01',
+      deck: [],
+      currentIndex: 0,
+      sessionAnswers: {},
+      savedMap: {},
+      touchStartX: 0,
+      touchStartY: 0,
+
+      getAllOxItems() {
+        const raw = (this.db && (this.db.oxList || this.db.items)) ? (this.db.oxList || this.db.items) : [];
+        return raw.filter(Boolean);
+      },
+
+      init() {
+        this.loadPrefs();
+        this.renderPartTabs();
+        this.renderUnitList();
+        this.bindSwipeAndKeys();
+
+        // URL 파라미터(?resume=1 또는 ?unit=02_01 등)로 진입 시 처리
+        const params = new URLSearchParams(window.location.search);
+        const resumeParam = params.get('resume');
+        const unitParam = params.get('unit');
+        const sortParam = params.get('sort');
+        if (resumeParam === '1' && this.restoreSession()) {
+          return;
+        }
+        if (unitParam && (unitParam === 'all' || (this.db.units && this.db.units.some(u => u.unitId === unitParam)))) {
+          this.openUnitQuiz(unitParam);
+        } else if (sortParam === 'shuffle') {
+          this.openUnitQuiz('all');
+        }
+      },
+
+      saveSession() {
+        try {
+          const state = {
+            currentUnitId: this.currentUnitId,
+            deckIds: this.deck.map(it => it.id),
+            currentIndex: this.currentIndex,
+            sessionAnswers: this.sessionAnswers
+          };
+          sessionStorage.setItem('fk_sci_ox_saved_v4_session', JSON.stringify(state));
+        } catch (e) {}
+      },
+
+      restoreSession() {
+        try {
+          const raw = sessionStorage.getItem('fk_sci_ox_saved_v4_session');
+          if (!raw) return false;
+          const state = JSON.parse(raw);
+          if (!state || !Array.isArray(state.deckIds) || !state.deckIds.length) return false;
+          const allItems = this.getAllOxItems();
+          const mapById = {};
+          allItems.forEach(it => { mapById[it.id] = it; });
+          const restoredDeck = state.deckIds.map(id => mapById[id]).filter(Boolean);
+          if (!restoredDeck.length) return false;
+          this.currentUnitId = state.currentUnitId || '01_01';
+          this.deck = restoredDeck;
+          this.currentIndex = Math.min(Math.max(0, state.currentIndex || 0), restoredDeck.length - 1);
+          this.sessionAnswers = state.sessionAnswers || {};
+          document.getElementById('selectView').classList.remove('active');
+          document.getElementById('solveView').classList.add('active');
+          this.renderCard();
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          return true;
+        } catch (e) {
+          return false;
+        }
+      },
+
+      loadPrefs() {
+        try {
+          const isNight = localStorage.getItem('fk_night_mode') === '1' || localStorage.getItem('fk_theme_mode') === 'night';
+          if (isNight) document.body.classList.add('mode-night');
+          const rawSaved = localStorage.getItem('fk_sci_ox_saved_v4');
+          if (rawSaved) this.savedMap = JSON.parse(rawSaved) || {};
+        } catch (e) {}
+      },
+
+      savePrefs() {
+        try {
+          localStorage.setItem('fk_sci_ox_saved_v4', JSON.stringify(this.savedMap));
+        } catch (e) {}
+      },
+
+      toggleNightMode() {
+        const isNight = document.body.classList.toggle('mode-night');
+        try {
+          localStorage.setItem('fk_night_mode', isNight ? '1' : '0');
+          localStorage.setItem('fk_theme_mode', isNight ? 'night' : 'paper');
+        } catch (e) {}
+      },
+
+      renderPartTabs() {
+        const mount = document.getElementById('partTabsMount');
+        if (!mount) return;
+        mount.innerHTML = this.partLabels.map(([pid, label]) => `
+          <button type="button" class="part-tab ${this.currentPart === pid ? 'active' : ''}" onclick="OxApp.setPart('${pid}')">
+            ${label}
+          </button>
+        `).join('');
+      },
+
+      setPart(pid) {
+        this.currentPart = pid;
+        this.renderPartTabs();
+        this.renderUnitList();
+      },
+
+      renderUnitList() {
+        const container = document.getElementById('unitCardList');
+        if (!container) return;
+        const allItems = this.getAllOxItems();
+        const units = this.currentPart === 'all'
+          ? (this.db.units || [])
+          : (this.db.units || []).filter(u => u.partId === this.currentPart);
+
+        container.innerHTML = units.map(u => {
+          const uIdx = this.db.units.indexOf(u) + 1;
+          const themeCode = `THEME ${String(uIdx).padStart(2, '0')}`;
+          const count = allItems.filter(it => it.unitId === u.unitId).length;
+          return `
+            <button type="button" class="unit-item-btn" onclick="OxApp.openUnitQuiz('${u.unitId}')">
+              <div style="min-width:0;">
+                <span class="unit-theme-badge">${themeCode}</span>
+                <div class="unit-title-main">${u.shortTitle || u.unitTitle}</div>
+              </div>
+              <span class="unit-go-pill">🎲 ${count}제 풀기 &rarr;</span>
+            </button>
+          `;
+        }).join('');
+      },
+
+      shuffleArray(arr) {
+        const copy = arr.slice();
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = copy[i];
+          copy[i] = copy[j];
+          copy[j] = tmp;
+        }
+        return copy;
+      },
+
+      openUnitQuiz(unitId) {
+        this.currentUnitId = unitId;
+        const allItems = this.getAllOxItems();
+        const pool = unitId === 'all'
+          ? allItems
+          : allItems.filter(it => it.unitId === unitId);
+        this.deck = this.shuffleArray(pool);
+        this.currentIndex = 0;
+        this.sessionAnswers = {};
+
+        document.getElementById('selectView').classList.remove('active');
+        document.getElementById('solveView').classList.add('active');
+        this.renderCard();
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      },
+
+      reshuffleCurrent() {
+        this.openUnitQuiz(this.currentUnitId);
+      },
+
+      showSelectView() {
+        document.getElementById('solveView').classList.remove('active');
+        document.getElementById('selectView').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      },
+
+      cleanStatement(txt) {
+        if (!txt) return '';
+        return String(txt).replace(/^\[([^\]]+)\]\s*/, '<span style="color:var(--accent); font-weight:800; margin-right:4px;">[$1]</span>').trim();
+      },
+
+      buildDeepLinkUrl(item) {
+        const unitObj = this.db.units.find(u => u.unitId === item.unitId);
+        const fileName = unitObj ? unitObj.fileName : 'index.html';
+        const paraIdx = typeof item.paraIdx === 'number' ? item.paraIdx : 0;
+        const hlKey = encodeURIComponent(item.hlKey || '');
+        return `${fileName}?para=${paraIdx}&hl=${hlKey}&from=ox&oxid=${encodeURIComponent(item.id)}&qnum=${this.currentIndex + 1}`;
+      },
+
+      renderCard() {
+        const mount = document.getElementById('singleCardMount');
+        const unitBadge = document.getElementById('solveSessionUnitBadge');
+        const counterEl = document.getElementById('solveSessionCounter');
+        const prevBtn = document.getElementById('btnPrevAbove');
+        const nextBtn = document.getElementById('btnNextOrFinish');
+        if (!mount || !this.deck.length) return;
+
+        this.saveSession();
+
+        const item = this.deck[this.currentIndex];
+        const unitObj = this.db.units.find(u => u.unitId === item.unitId);
+        const uIdx = unitObj ? (this.db.units.indexOf(unitObj) + 1) : 1;
+        const themeCode = this.currentUnitId === 'all'
+          ? `전체 랜덤 · THEME${String(uIdx).padStart(2, '0')}`
+          : `THEME${String(uIdx).padStart(2, '0')} · ${unitObj ? (unitObj.shortTitle || unitObj.unitTitle) : ''}`;
+
+        if (unitBadge) unitBadge.textContent = themeCode;
+        if (counterEl) counterEl.innerHTML = `<strong>${this.currentIndex + 1}</strong> / ${this.deck.length}`;
+        if (prevBtn) prevBtn.disabled = (this.currentIndex === 0);
+        if (nextBtn) nextBtn.textContent = (this.currentIndex === this.deck.length - 1) ? '단원목록 >' : '다음문제 >';
+
+        const numStr = String(this.currentIndex + 1).padStart(2, '0');
+        const rawCode = String(item.id || `기${String(this.currentIndex + 1).padStart(3, '0')}`);
+        const subCode = rawCode.replace(/^(HIS_|H_|SCI_|LAW_)/, '기');
+        const isSaved = !!this.savedMap[item.id];
+        const picked = this.sessionAnswers[item.id];
+
+        let oCls = 'fk-ox-box-btn';
+        let xCls = 'fk-ox-box-btn';
+        let feedbackHtml = '';
+
+        if (picked !== undefined) {
+          const isRight = (picked === item.isCorrect);
+          if (picked === true) {
+            oCls += isRight ? ' selected-correct' : ' selected-wrong';
+            xCls += ' dimmed-other';
+          } else {
+            xCls += isRight ? ' selected-correct' : ' selected-wrong';
+            oCls += ' dimmed-other';
+          }
+          const deepLinkUrl = this.buildDeepLinkUrl(item);
+          feedbackHtml = `
+            <div class="fk-feedback-box" style="border-left:4px solid ${isRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'};">
+              <div class="fk-feedback-head">
+                <strong style="font-size:13.5px; color:${isRight ? 'var(--correct-ink)' : 'var(--wrong-ink)'};">
+                  ${isRight ? '✓ 정답입니다!' : '✕ 오답입니다!'} (정답: ${item.isCorrect ? 'O' : 'X'})
+                </strong>
+                <a href="${deepLinkUrl}" class="fk-book-jump-btn">
+                  📖 기본서 설명 파트 보기 &nearr;
+                </a>
+              </div>
+              <div class="fk-expl-body">${item.explanation || ''}</div>
+            </div>
+          `;
+        }
+
+        mount.innerHTML = `
+          <article class="fk-ox-card">
+            <div class="fk-card-top-row">
+              <div class="fk-num-group">
+                <div class="fk-num-badge-line">
+                  <span class="fk-c-icon">C</span>
+                  <span class="fk-num-digits">${numStr}</span>
+                </div>
+                <span class="fk-sub-code">${subCode}</span>
+              </div>
+              <button type="button" onclick="OxApp.toggleSave('${item.id}')" class="fk-save-btn ${isSaved ? 'saved' : ''}">
+                ${isSaved ? '✓ 저장됨' : '+ 저장'}
+              </button>
+            </div>
+
+            <div class="fk-statement-area">
+              <div class="ox-statement">${this.cleanStatement(item.text)}</div>
+            </div>
+
+            <div class="fk-inside-ox-grid">
+              <button type="button" onclick="OxApp.answer(true)" class="${oCls}" aria-label="O">
+                <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"></circle></svg>
+              </button>
+              <button type="button" onclick="OxApp.answer(false)" class="${xCls}" aria-label="X">
+                <svg viewBox="0 0 64 64"><line x1="16" y1="16" x2="48" y2="48"></line><line x1="48" y1="16" x2="16" y2="48"></line></svg>
+              </button>
+            </div>
+
+            ${feedbackHtml}
+          </article>
+        `;
+      },
+
+      answer(pickO) {
+        if (!this.deck.length) return;
+        const item = this.deck[this.currentIndex];
+        this.sessionAnswers[item.id] = pickO;
+        this.renderCard();
+      },
+
+      toggleSave(itemId) {
+        this.savedMap[itemId] = !this.savedMap[itemId];
+        this.savePrefs();
+        this.renderCard();
+      },
+
+      prevCard() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.renderCard();
+        }
+      },
+
+      nextCard() {
+        if (this.currentIndex < this.deck.length - 1) {
+          this.currentIndex++;
+          this.renderCard();
+        } else {
+          this.showSelectView();
+        }
+      },
+
+      bindSwipeAndKeys() {
+        document.addEventListener('touchstart', (e) => {
+          if (!document.getElementById('solveView').classList.contains('active')) return;
+          if (!e.touches || !e.touches[0]) return;
+          this.touchStartX = e.touches[0].clientX;
+          this.touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+          if (!document.getElementById('solveView').classList.contains('active')) return;
+          if (!e.changedTouches || !e.changedTouches[0]) return;
+          const dx = e.changedTouches[0].clientX - this.touchStartX;
+          const dy = e.changedTouches[0].clientY - this.touchStartY;
+          if (Math.abs(dx) > 52 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+            if (dx < 0) this.nextCard();
+            else this.prevCard();
+          }
+        }, { passive: true });
+
+        document.addEventListener('keydown', (e) => {
+          if (!document.getElementById('solveView').classList.contains('active')) return;
+          if (e.key === 'ArrowRight') this.nextCard();
+          else if (e.key === 'ArrowLeft') this.prevCard();
+          else if (e.key === 'o' || e.key === 'O' || e.key === '1') this.answer(true);
+          else if (e.key === 'x' || e.key === 'X' || e.key === '2') this.answer(false);
+        });
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => OxApp.init());
+  </script>
+</body>
+</html>

@@ -8,6 +8,47 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <style id="cultureFigStyle">
+    .culture-fig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 14px 0 18px 0;
+    }
+    .culture-fig-card {
+      background: var(--bg-subtle, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--border-line, rgba(16, 185, 129, 0.25));
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .culture-fig-card img {
+      display: block;
+      margin: 0 auto 6px auto;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 170px;
+      object-fit: contain;
+      border-radius: 4px;
+      background: #FFFFFF;
+      padding: 2px;
+    }
+    .culture-fig-cap {
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--text-sub, #cbd5e1);
+      word-break: keep-all;
+    }
+    @media (max-width: 520px) {
+      .culture-fig-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,10 +85,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 성리학의 공리공담을 넘은 실학의 대두와 중농학파(경세치용파)·양명학</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 상공업 진흥의 북학론(중상학파)·기학과 자주적 국학·지리·백과사전·의학</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 60년 세도정치와 삼정의 문란, 민중의 예언 신앙과 새 종교(서학·동학)</a>
-          <a href="#sec4" class="block text-slate-300 hover:text-emerald-300 py-1 transition">4. 민중의 무장 항쟁 폭발: 홍경래의 난(1811)과 임술 농민 봉기(1862)</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 실학 사상의 두 갈래: 17세기부터 19세기 중반까지 중농·중상학파와 기학의 계보</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 17세기부터 19세기까지 조선 후기 의학·국학·지리·백과사전·과학의 시간순 집대성</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 19세기 세도 정치의 모순(순조·헌종·철종)과 농민 항쟁·민간 신앙 및 새 종교(천주교·동학)</a>
           <a href="#diagramSilhak" class="block text-emerald-400 hover:text-white py-1 transition mt-2">핵심 비교 도식</a>
           <a href="#quizSection" class="block text-emerald-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">기출 선지 30제 OX 확인 학습</a>
         </nav>
@@ -70,79 +110,74 @@
         실학사상의 발달과 세도정치기 농민 봉기
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        모내기법과 광작이 낳은 농촌 양극화와 성리학적 공리공담의 한계를 돌파하려 분화한 중농학파(경세치용파)·중상학파(이용후생·북학파)와 자주적 국학·지리·과학·의학의 성취, 그리고 정조 급서 이후 60여 년간 이어진 외척 세도정치와 삼정의 문란, 서학·동학의 확산 및 홍경래의 난(1811)·임술 농민 봉기(1862)로 이어지는 역사적 인과관계를 입체적으로 규명합니다.
+        양란 이후 농촌 양극화와 성리학적 공리공담의 한계를 타개하려 17세기부터 19세기 중반까지 시간순으로 발전한 중농학파(경세치용)·중상학파(이용후생·북학)·정약용·최한기의 실학 계보와, 17세기에서 19세기에 걸쳐 일방향으로 집대성된 의학·국학·지리·백과사전·과학의 성취, 그리고 1800년 정조 승하 이후 60여 년간 이어진 외척 세도정치와 삼정의 문란이 홍경래의 난(1811년)·임술 농민 봉기(1862년)·서학·동학의 확산으로 폭발하는 역사적 인과관계를 입체적으로 규명합니다.
       </p>
     </header>
 
     <section class="space-y-12 mb-16">
 
       <div id="sec1">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">1. 성리학의 공리공담을 넘은 실학의 대두와 중농학파(경세치용파)·양명학</h3>
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">1. 실학 사상의 두 갈래: 17세기부터 19세기 중반까지 중농·중상학파와 기학의 계보</h3>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제1장과 제2장에서 살펴본 바와 같이 17세기 후반 이후 모내기법과 광작이 전국으로 확산되면서 소수 경영형 부농이 성장한 반면 대다수 영세 농민은 토지를 잃고 임노동자나 화전민으로 몰락하는 극심한 농촌 양극화가 벌어졌고, 조정에서는 예송과 환국 속에 집권 성리학자들이 민생 구제는 외면한 채 공허한 예법 논쟁과 명분론에만 매몰되어 있었습니다. 이러한 현실적 위기 앞에서 사상적 교조주의를 깨뜨리고 백성의 삶을 실질적으로 구제하고자 하는 새로운 학풍이 필연적으로 태동하였습니다. 먼저 광해군 때 <strong>이수광</strong>은 명나라 사신으로 다녀온 경험을 바탕으로 마테오 리치의 『천주실의』와 서양의 천문·지리·문물을 소개한 백과사전적 저서 <strong>『지봉유설』(1614년)</strong>을 펴내 조선 지식인들의 세계 인식을 넓혔고, 한백겸은 실증적 역사 지리서인 『동국지리지』를 저술하며 실학의 선구적 토대를 닦았습니다. 또한 소론 계열 학자 <strong>정제두</strong>는 성리학의 관념성을 비판하고 앎과 실천의 일치를 강조하는 <strong>양명학(지행합일과 심즉리)</strong>을 받아들여 강화도로 옮겨 살며 저서 <strong>『존언』</strong>을 남겼고, 이후 이광사·이건창을 거쳐 근대 민족사학자 박은식·정인보로 이어지는 <strong>강화학파</strong>를 형성하였습니다. 이러한 사상적 전환 속에서 실사구시의 정신으로 민생 안정과 부국강병의 현실 개혁안을 제시한 <strong>실학</strong>이 본격적으로 대두하였습니다.
+            앞선 제1장과 제2장에서 살펴본 바와 같이 임진왜란과 병자호란 양란 이후 농토가 황폐해지고 모내기법과 광작이 확산되자, 소수 경영형 부농이 성장한 반면 대다수 영세 농민은 토지를 잃고 임노동자나 화전민으로 몰락하는 극심한 농촌 양극화가 벌어졌습니다. 그럼에도 조정의 집권 성리학자들은 예송과 환국 속에 민생 구제는 외면한 채 공허한 예법 논쟁과 명분론에만 매몰되어 있었습니다. 이러한 현실적 위기를 타개하고 백성의 삶을 실질적으로 구제하여 나라를 부강하게 만들겠다는 절박한 목적 아래, 17세기 초부터 사상적 교조주의를 깨는 새로운 학풍이 태동하였습니다. 광해군 때 <strong>이수광</strong>은 명나라 사신 견문을 바탕으로 마테오 리치의 『천주실의』와 서양의 천문·지리·문물을 소개한 <strong>『지봉유설』(1614년)</strong>을 펴내 지식인들의 세계 인식을 넓혔고, <strong>한백겸</strong>은 실증적 역사 지리서 『동국지리지』를 저술하였으며, 효종 때 <strong>김육</strong>은 대동법 확대와 더불어 서양식 역법 시헌력(1653년) 도입을 주도하며 실용적 경세의 길을 열었습니다. 또한 17세기 후반에서 18세기 초에 활동한 소론 계열 학자 <strong>정제두</strong>는 관념적 성리학을 비판하고 앎과 실천의 일치를 강조하는 <strong>양명학(지행합일과 심즉리)</strong>을 받아들여 강화도에서 저술 <strong>『존언』</strong>을 남겼으며, 이는 이광사·이건창을 거쳐 근대 민족사학자 박은식·정인보로 이어지는 <strong>강화학파</strong>를 형성하였습니다. 이처럼 실용과 실천을 중시하는 분위기 속에서, 한양 근교 농촌의 소작농 참상을 직시한 기호 남인 학자들은 지주전호제를 개혁해 자영농을 육성하려는 목적으로 <strong>중농학파(경세치용파)</strong>를 이루었습니다. 17세기 중농학파의 선구자 <strong>유형원</strong>은 <strong>『반계수록』</strong>에서 토지를 모두 국유화한 뒤 선비·관리·농민·상공업자 등 <strong>사·농·공·상의 신분과 직역에 따라 토지를 차등 분배</strong>하고 조세와 군역을 일치시키는(병농일치) <strong>균전론</strong>을 주장하였으며, 문벌 위주의 <strong>과거제를 폐지하고 덕행과 능력으로 관리를 추천하는 공거제</strong>와 노비 세습제 폐지를 건의하였습니다. 뒤이어 18세기 중농학파를 계승한 <strong>이익</strong>은 이미 공고해진 지주의 토지를 일시에 몰수하기 어렵다고 보고 점진적으로 소농의 몰락을 막고자 <strong>『성호사설』</strong>과 <strong>『곽우록』</strong>을 지어, 한 가구가 살아가는 데 꼭 필요한 최소한의 토지인 <strong>영업전을 설정해 법으로 매매를 영구히 금지</strong>하는 <strong>한전론</strong>을 제시하였습니다. 이익은 또한 나라를 좀먹는 여섯 가지 폐단인 <strong>6좀(노비제·과거제·양반 문벌제·사치와 미신·승려·게으름)</strong>을 비판하고, 앞 단원에서 본 숙종 대 상평통보 유통 이후 불거진 전황(동전 품귀 현상)이 고리대와 빈부 격차를 악화시킨다고 보아 화폐 폐지론을 폈습니다.
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트 및 토지 개혁 1초 구분</div>
+              <div class="sidenote-title">실학 선구 · 양명학 &amp; 중농학파 토지론 1초 구분</div>
               <ul class="sidenote-list">
-                <li><strong>실학의 선구와 양명학</strong>: <strong>이수광 『지봉유설』</strong>(마테오 리치 『천주실의』·서양 문물 소개), 한백겸 『동국지리지』 / <strong>정제두</strong>(『존언』, <strong>강화학파 양명학</strong> ➔ 박은식·정인보 계승)</li>
-                <li><strong>중농학파 토지론 3단계</strong>:<br/>① <strong>유형원</strong>(『반계수록』): 신분·직역별 차등 <strong>균전론</strong><br/>② <strong>이익</strong>(『성호사설』): 최소 생계 토지 <strong>영업전</strong> 매매 금지 <strong>한전론</strong> + <strong>6좀</strong> 비판<br/>③ <strong>정약용</strong>: 초기 <strong>여전론</strong>(마을 공동 경작·노동량 분배) ➔ 후기 <strong>정전제</strong>(『경세유표』, 공전 1 + 사전 8)</li>
-                <li><strong>함정 방어 1줄 공식</strong>: 같은 용어도 내용이 다르다! <strong>균전론</strong>은 유형원(신분 차등) vs <strong>홍대용</strong>(『임하경륜』, 신분 무관 성인 균등) / <strong>한전론</strong>은 이익(최소 <strong>하한선</strong> 영업전 매매 금지) vs <strong>박지원</strong>(『과농소초』, 소유 <strong>상한선</strong> 제한)!</li>
+                <li><strong>실학 선구와 양명학</strong>: <strong>이수광 『지봉유설』(1614)</strong>(『천주실의』·서양 문물), 한백겸 『동국지리지』, 김육(대동법·시헌력) / <strong>정제두</strong>(『존언』, <strong>강화학파 양명학</strong> ➔ 박은식·정인보 계승)</li>
+                <li><strong>17c에서 19c 초 중농학파 계보</strong>:<br/>① <strong>17c 유형원</strong>(『반계수록』): 신분·직역별 차등 <strong>균전론</strong>, 공거제, 노비 세습 폐지<br/>② <strong>18c 이익</strong>(『성호사설』·『곽우록』): 최소 생계 토지 <strong>영업전</strong> 매매 금지 <strong>한전론</strong> + <strong>6좀</strong> + 화폐 폐지론<br/>③ <strong>19c 초 정약용</strong>: 초기 『전론』 <strong>여전론</strong>(마을 공동 경작·노동량 분배) ➔ 후기 『경세유표』 <strong>정전제</strong>(공전 1 + 사전 8)</li>
+                <li><strong>함정 방어 1줄 공식</strong>: <strong>균전론</strong> = 유형원(신분 차등) vs <strong>홍대용</strong>(『임하경륜』, 신분 무관 성인 균등) / <strong>한전론</strong> = 이익(최소 <strong>하한선</strong> 영업전 매매 금지) vs <strong>박지원</strong>(『과농소초』 「한민명전의」, 소유 <strong>상한선</strong> 제한)!</li>
               </ul>
             </div>
           </aside>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            실학자 가운데 한양 근교의 농촌에서 소작농의 참상을 목격한 <strong>기호 남인 계열 학자들</strong>은 농촌 사회의 모순을 근본적으로 치유하려면 지주전호제를 개혁해 자영농을 육성해야 한다고 보고 <strong>중농학파(경세치용파)</strong>를 이루었습니다. 첫째, 17세기 중농학파의 선구자 <strong>유형원</strong>은 <strong>『반계수록』</strong>에서 국가가 모든 토지를 거두어들여 국유화한 뒤 선비·관리·농민·상공업자 등 <strong>사·농·공·상의 신분과 직역에 따라 토지를 차등 분배</strong>하고 조세와 군역을 일치시키는 <strong>균전론</strong>을 주장하였으며, 과거제를 폐지하고 덕행과 능력을 추천받아 관리를 뽑는 공거제와 노비 세습제 폐지를 건의하였습니다. 둘째, 18세기 유형원의 문제의식을 계승한 <strong>이익</strong>은 백과사전식 저술인 <strong>『성호사설』</strong>과 『곽우록』에서 지주의 토지를 일시에 몰수하기는 현실적으로 어렵다고 판단하고, 한 가구가 살아가는 데 꼭 필요한 최소한의 토지인 <strong>영업전을 설정하여 법으로 매매를 영구히 금지</strong>함으로써 토지 겸병을 점진적으로 막자는 <strong>한전론</strong>을 제시하였습니다. 이익은 또한 나라를 좀먹는 여섯 가지 폐단으로 노비제, 과거제, 양반 문벌제, 사치와 미신, 승려, 게으름을 지목한 <strong>6좀</strong>을 날카롭게 비판하였으며, 앞 단원에서 살펴본 조선 후기 전황(동전 품귀 현상)이 고리대와 빈부 격차를 악화시킨다고 보아 화폐 폐지론을 폈습니다. 셋째, 19세기 초 실학을 집대성한 <strong>정약용</strong>은 초기 『전론』에서 약 30가구 단위의 마을인 여를 중심으로 토지를 공동 소유·공동 경작하고 각자가 일한 <strong>노동량(일한 날수)에 따라 수확물을 나누는 여전론</strong>을 제시하였으나, 강진 유배 시절 저술한 <strong>『경세유표』</strong>에서는 현실적 실현 가능성을 높여 토지를 우물 정 자 모양의 9구획으로 나누어 가운데 공전 1구획을 공동 경작해 세금으로 바치고 나머지 8구획을 사유지로 경작하는 <strong>정전제(정전론)</strong>로 개혁안을 가다듬었습니다. 정약용은 나아가 중앙 통치 제도 개혁서인 『경세유표』, 지방 수령의 통치 지침서인 <strong>『목민심서』</strong>, 공정한 재판과 형벌을 다룬 <strong>『흠흠신서』</strong>의 이른바 1표 2서를 완성하고, 서양 기술서 『기기도설』을 응용해 정조의 화성 행차용 <strong>배다리(주교)</strong>와 수원 화성 축성용 <strong>거중기</strong>를 설계하였으며, 홍역 치료법과 박제가와 함께 연구한 종두법을 정리한 의학서 <strong>『마과회통』</strong>과 『아언각비』·『아방강역고』까지 남겼습니다.
+            앞 단원에서 확인한 대동법의 전국 정착과 상평통보 유통, 공인·사상·장시의 성장으로 상품화폐경제가 거세게 팽창하던 18세기(이러한 상공업 진흥 흐름은 훗날 1791년 정조의 신해통공으로 결실함), 서울에 거주하던 노론 계열 학자들은 여전히 사대부들이 상공업을 천시하고 청나라를 오랑캐라 깔보며 선진 기술을 외면하는 현실에 위기감을 느꼈습니다. 이들은 상공업과 기술을 진흥하고 청나라의 발전된 문물을 적극 받아들여(북학) 백성의 생활을 풍요롭게 하고 부국강병을 이루겠다는 목적으로 <strong>중상학파(이용후생파·북학파)</strong>를 형성하였습니다. 먼저 18세기 전반 선구자인 <strong>유수원</strong>은 <strong>『우서』</strong>에서 양반도 생산 활동에 참여해야 한다는 <strong>사·농·공·상의 직업적 평등과 전문화</strong>, 상인 간 합자 경영을 역설하였습니다. 이어 18세기 중·후반 <strong>홍대용</strong>은 사설 천문대 농수각을 세워 혼천의를 제작하는 한편, <strong>『의산문답』</strong>에서 실옹과 허자의 대화를 통해 지구가 하루에 한 바퀴씩 자전한다는 <strong>지전설과 무한우주론</strong>을 설파하여 중국만이 세계의 중심이라는 성리학적 <strong>화이관을 근본부터 탈피</strong>하였으며, <strong>『임하경륜』</strong>에서는 유형원과 달리 신분 차별 없이 성인에게 토지를 고루 나누어 주고 양반도 일해야 한다는 균전론과 병농일치제를 주장하였습니다. 18세기 후반 <strong>박지원</strong>은 청나라 열하 기행문 <strong>『열하일기』</strong>에서 물자 유통이 막힌 현실을 뚫기 위해 <strong>수레와 선박, 벽돌, 화폐의 적극적 활용</strong>을 주장하며 이익과 달리 전황에 맞선 <strong>화폐 유통 확대론</strong>을 폈고, 정조의 농정 개혁 요청에 부응해 쓴 『과농소초』 권말 <strong>「한민명전의」</strong>에서는 개인의 <strong>토지 소유 상한선</strong>을 제한해 대토지 겸병을 막자는 <strong>한전론</strong>을 제안하였으며, 한문 소설 <strong>『양반전』·『호질』·『허생전』</strong>을 지어 무능한 양반 계층과 독점 상업의 취약성을 통렬히 풍자하였습니다. 같은 시기 규장각 검서관으로 발탁된 <strong>박제가</strong>는 청나라 연경을 다녀온 뒤 지은 <strong>『북학의』</strong>에서 재물을 퍼서 쓸수록 새 물이 차오르고 버려두면 말라버리는 <strong>'우물물'에 비유한 소비 촉진론</strong>을 전개하여 생산을 자극하기 위한 적절한 소비와 청·외국과의 <strong>통상 무역 확대</strong>, 그리고 <strong>수레와 선박·벽돌 활용</strong> 및 화폐 유통 확대를 역설하였습니다.
           </p>
         </div>
-      </div>
-
-      <div id="sec2">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">2. 상공업 진흥의 북학론(중상학파)·기학과 자주적 국학·지리·백과사전·의학</h3>
-        <div class="para-block">
+        <div class="culture-fig-grid">
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_bukhakui.jpg" alt="박제가의 북학의 서문 판본" />
+            <figcaption class="culture-fig-cap">
+              <strong>박제가 『북학의』(1778년)</strong> — 청나라의 선진 문물과 수레·선박·벽돌 수용, 우물물 비유 소비 촉진론 및 통상 무역 확대를 역설한 18세기 북학파 대표 저술
+            </figcaption>
+          </figure>
+        </div>
+        <div class="para-block mt-4">
           <p class="prose-body">
-            앞 단원에서 확인한 대동법의 정착과 정조의 신해통공(1791년)으로 상품화폐경제가 거세게 팽창하던 18세기 후반, 상공업의 중심지인 서울에 거주하던 노론 계열 학자들은 사신단을 따라 청나라 수도 연경(베이징)을 오가며 오랑캐라 깔보던 청나라가 누리는 눈부신 상업 번영과 선진 과학 기술을 직접 목격하였습니다. 이들은 백성의 삶을 풍요롭게 하고 나라를 부강하게 만들려면 상공업과 기술을 진흥하고 청나라의 선진 문물을 과감히 받아들여야 한다는 <strong>중상학파(이용후생파)</strong>이자 <strong>북학파</strong>를 형성하였습니다. 선구자인 <strong>유수원</strong>은 <strong>『우서』</strong>에서 <strong>사·농·공·상의 직업적 평등과 전문화</strong>, 상인들의 합자 경영을 역설하였고, 과학 사상가 <strong>홍대용</strong>은 사설 천문대 농수각을 세워 혼천의를 제작하는 한편 저서 <strong>『의산문답』</strong>에서 실옹과 허자의 대화를 통해 지구가 하루에 한 바퀴씩 자전한다는 <strong>지전설과 무한우주론</strong>을 펼쳐 중국만이 세계의 중심이라는 성리학적 <strong>화이관(중화사상)을 근본부터 무너뜨렸으며</strong>, 『임하경륜』에서는 신분 차별 없이 성인에게 토지를 고루 나누어 주고 양반도 놀지 말고 일해야 한다는 균전론과 병농일치제를 주장하였습니다. 이어 <strong>박지원</strong>은 청나라 기행문 <strong>『열하일기』</strong>에서 <strong>수레와 선박, 벽돌, 화폐의 적극적 활용</strong>을 강조하고 『과농소초』(한민명전의)에서 개인의 토지 소유 상한선을 두는 <strong>한전론</strong>을 제안하였으며, 한문 소설 <strong>『양반전』·『허생전』·『호질』</strong>을 지어 무능한 양반 계층과 독점 상업의 허약함을 통렬히 풍자하였습니다. 규장각 검서관 출신 <strong>박제가</strong>는 <strong>『북학의』</strong>에서 재물을 퍼서 쓸수록 새 물이 차오르고 쓰지 않으면 말라버리는 <strong>'우물물'에 비유한 소비 촉진론</strong>을 전개하며 생산을 자극하기 위한 적절한 소비와 청·외국과의 통상 무역 확대를 건의하였고, 박지원과 박제가 모두 앞 단원에서 다룬 전황에 맞서 화폐 유통을 오히려 확대하자고 맞섰습니다. 이러한 북학파의 실증 정신은 19세기 중엽 <strong>최한기</strong>에게 이어져, 그는 서양 근대 과학을 토대로 감각과 경험을 통한 인식 방법을 중시하는 독창적 <strong>기학</strong>을 세우고 <strong>『기측체의』</strong>, 인사 행정론인 <strong>『인정』</strong>, 김정호와 협력해 판각한 쌍폭 세계지도 <strong>『지구전후도』(1834년)</strong>, 우리나라 최초의 세계 지리서인 <strong>『지구전요』(1857년)</strong>를 저술하여 실학에서 근대 개화사상으로 넘어가는 든든한 징검다리 역할을 하였습니다.
+            18세기 말에서 19세기 초에 이르러 대토지 겸병과 제2장에서 살펴본 향전 이후 비대해진 지방 수령·아전의 수탈이 겹치며 국가 기강과 민생이 무너지자, 남인 실학의 맥을 이은 <strong>정약용</strong>은 기술·의학에서 농업, 중앙·지방 통치, 사법까지 실학을 총체적으로 집대성하여 나라를 재설계하고자 하였습니다. 먼저 그는 1790년대 정조 때 서양 기술서 『기기도설』을 응용해 화성 행차용 <strong>배다리(주교)</strong>와 수원 화성 축성용 <strong>거중기</strong>를 설계하였고, 홍역 치료법과 <strong>박제가와 함께 연구한 종두법(인두법)</strong>을 정리한 의학서 <strong>『마과회통』(1800년 완성)</strong>을 저술하였습니다. 한편 토지 개혁 구상에서는 초기 저술 『전론』에서 약 30가구 단위의 마을인 여를 중심으로 토지를 공동 소유하고 <strong>공동 경작</strong>한 뒤 각자가 일한 <strong>노동량(일한 날수)에 따라 수확물을 나누는 여전론</strong>을 제시하였으나, 1801년 신유박해로 전남 강진에 유배된 뒤 집필한 <strong>『경세유표』</strong>에서는 현실적 실현 가능성을 높여 토지를 9구획으로 나누어 가운데 공전 1구획을 공동 경작해 세금으로 바치고 나머지 8구획을 사유지로 경작하는 <strong>정전제(정전론)</strong>로 개혁안을 가다듬었습니다. 나아가 강진 유배지에서의 오랜 학문적 결실로 중앙 통치 제도 개혁서인 <strong>『경세유표』</strong>, 지방 수령의 통치 지침서인 <strong>『목민심서』</strong>, 공정한 재판과 형벌을 다룬 <strong>『흠흠신서』</strong>의 이른바 1표 2서를 완성하고, 강역·어휘 고증서인 『아방강역고』·『아언각비』까지 남겼습니다. 이러한 실증적 실학 정신은 19세기 중반 아편전쟁과 서양 이양선 출몰이라는 격변 속에서 활동한 <strong>최한기</strong>에게로 이어졌습니다. 그는 성리학적 관념론을 버리고 감각과 경험에 바탕을 둔 근대 과학을 수용해 통상 개국과 인재 등용을 이루고자 독창적 경험주의 <strong>기학</strong>을 세우고 대표 저술 <strong>『기학』</strong>·<strong>『기측체의』</strong>와 사회·인사 행정 개혁서 <strong>『인정』</strong>을 집필하였으며, 김정호와 협력해 쌍폭 세계지도 『지구전후도』(1834년)를 판각한 데 이어 청나라를 통해 유입된 서양 세계지리서 <strong>『해국도지』</strong>와 『영환지략』을 번역·수용해 엮은 세계 지리서 <strong>『지구전요』(1857년)</strong>를 편찬함으로써 실학에서 근대 개화사상으로 넘어가는 든든한 징검다리 역할을 하였습니다.
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트 및 국학·의학 1초 판별</div>
+              <div class="sidenote-title">북학파 · 정약용 · 최한기 1초 판별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>북학파 4인 + 최한기</strong>: <strong>유수원</strong>(『우서』, 직업 평등) ➔ <strong>홍대용</strong>(『의산문답』 지전설·『임하경륜』 균전론) ➔ <strong>박지원</strong>(『열하일기』 수레/선박/벽돌·『과농소초』 한전론·『허생전』) ➔ <strong>박제가</strong>(『북학의』 우물물 소비론·통상 확대) ➔ <strong>최한기</strong>(기학·『기측체의』·『인정』·『지구전후도』·『지구전요』)</li>
+                <li><strong>18c 북학파 4인 연대기</strong>: <strong>유수원</strong>(『우서』, 직업 평등·합자 경영) ➔ <strong>홍대용</strong>(『의산문답』 지전설·『임하경륜』 균전론) ➔ <strong>박지원</strong>(『열하일기』 수레/선박·「한민명전의」 상한선 한전론·『양반전』/『호질』/『허생전』) ➔ <strong>박제가</strong>(『북학의』 우물물 소비론·통상 확대)</li>
+                <li><strong>19c 초 정약용 ➔ 19c 중반 최한기</strong>: <strong>정약용</strong>(1표 2서, 여전론 ➔ 정전제, 거중기·배다리, 『마과회통』[박제가와 종두법]) ➔ <strong>최한기</strong>(기학·『기측체의』·『인정』·『해국도지』 번역 수용 기반 『지구전요』)</li>
                 <li><strong>전황 논쟁 대조(앞 단원 누적)</strong>: 숙종 상평통보 유통 후 동전 품귀 ➔ <strong>이익</strong>(화폐 폐지론) vs <strong>박지원·박제가</strong>(화폐 유통 확대론)</li>
-                <li><strong>백과사전 · 지리 · 의학 1초 구분</strong>: <strong>『동국문헌비고』</strong>(영조 명 관찬 백과사전) / 이덕무 <strong>『청장관전서』</strong> / 이규경 <strong>『오주연문장전산고』</strong> / 이중환 <strong>『택리지』</strong>(가거지 4조건) / 정상기 <strong>『동국지도』</strong>(최초 100리척) ➔ 김정호 <strong>『청구도』·『대동여지도』</strong>(1861, 목판본·22첩 분첩절첩식·10리 눈금) / 허준 <strong>『동의보감』</strong>(광해군) vs 정약용 <strong>『마과회통』</strong>(홍역·종두법) vs 이제마 <strong>『동의수세보원』</strong>(1894, 사상의학)</li>
               </ul>
             </div>
           </aside>
-        </div>
-        <div class="para-block mt-4">
-          <p class="prose-body">
-            앞 단원에서 살펴본 진경 문화와 고증 학풍이 무르익으면서, 중국 중심의 시각에서 벗어나 우리의 역사와 국토, 자연을 실증적으로 탐구하는 <strong>국학·지리학</strong>도 눈부시게 발전하였습니다. 역사학에서는 이익의 제자 <strong>안정복</strong>이 <strong>『동사강목』</strong>에서 단군·기자·마한·삼국·고려로 이어지는 우리 역사의 독자적 정통론을 세웠고, 규장각 검서관 <strong>유득공</strong>은 <strong>『발해고』</strong>에서 고려가 발해사를 편찬하지 않은 잘못을 지적하며 신라와 발해를 아울러 최초로 <strong>'남북국'</strong>이라는 용어를 써서 발해사를 우리 역사의 당당한 일부로 복원하였으며, 이종휘는 『동사』에서 고구려와 발해 중심의 북방사를 강조하였습니다. 또한 한치윤은 500여 종의 외국 사료를 교차 인용해 기전체로 쓴 『해동역사』를, 이긍익은 조선 정치사를 사건의 원인과 결과 중심인 기사본말체로 엮은 『연려실기술』을 남겼으며, 금석학에서는 <strong>추사 김정희</strong>가 <strong>『금석과안록』</strong>을 통해 북한산 비봉의 비석이 무학대사 비가 아니라 <strong>신라 진흥왕 순수비</strong>임을 최초로 고증하고 독창적 서체인 추사체와 문인화의 걸작 『세한도』를 완성하였습니다. 지리학에서는 <strong>이중환</strong>이 인문 지리서 <strong>『택리지』</strong>를 저술해 사민총론과 살기 좋은 <strong>가거지의 네 가지 조건(지리·생리·인심·산수)</strong>을 제시하였고, 영조 때 <strong>정상기</strong>가 최초로 <strong>100리척 축척</strong>을 적용한 정밀 지도 <strong>『동국지도』</strong>를 제작하였으며, 신경준은 『강계고』·『도로고』를 저술하고 『동국문헌비고』 여지고 편찬에 참여하였습니다. 이러한 성과는 19세기 철종 때 <strong>김정호</strong>에 이르러 절정에 달해, 그는 1834년 최한기의 세계지도 『지구전후도』를 판각하고 『청구도』를 만든 데 이어, 1861년 <strong>목판 인쇄 22첩 분첩절첩식</strong>으로 휴대와 열람이 편리하고 도로 <strong>10리마다 눈금</strong>을 표시해 거리를 계산할 수 있으며 산줄기와 물줄기를 정밀하게 연결한 <strong>『대동여지도』</strong>와 지리지 『대동지지』를 완성하였습니다.
-          </p>
-        </div>
-        <div class="para-block mt-4">
-          <p class="prose-body">
-            실증적 탐구 열기는 백과사전식 저술과 농학·박물학·의학 분야의 비약적인 성과로도 이어졌습니다. 이수광의 『지봉유설』과 이익의 『성호사설』에서 시작된 백과사전 편찬 전통은 영조의 명으로 서호수·홍봉한 등이 참여해 1770년 완성한 우리나라 최초의 관찬 백과사전 <strong>『동국문헌비고』</strong>(정조 대 증보)로 이어졌고, 정조의 총애를 받던 규장각 검서관 <strong>이덕무</strong>의 방대한 유고를 모아 간행한 <strong>『청장관전서』</strong>와 19세기 헌종 때 <strong>이규경</strong>이 천문·지리·역사·제도를 고증해 집대성한 <strong>『오주연문장전산고』</strong>로 만개하였습니다. 농학과 박물학에서는 숙종 때 <strong>홍만선</strong>이 농촌 생활과 영농 지식을 정리한 <strong>『산림경제』</strong>를, 순조·헌종 때 <strong>서유구</strong>가 농업 기술과 일상생활의 지식을 망라한 거질의 생활 백과사전 <strong>『임원경제지』</strong>를 편찬하였고, 정약용의 형 <strong>정약전</strong>은 신유박해로 흑산도에 유배된 뒤 현지 어민들과 함께 바다 생물을 직접 채집·관찰하여 <strong>『자산어보』</strong>를 저술하였습니다. 의학 분야에서도 광해군 때 <strong>허준</strong>이 우리 풍토와 체질에 맞는 자주적 의학을 집대성한 <strong>『동의보감』(1613년 간행)</strong>의 뒤를 이어, 정약용이 홍역 치료와 종두법 연구를 담은 <strong>『마과회통』</strong>을 남겼으며, 19세기 말(1894년)에는 <strong>이제마</strong>가 인간의 체질을 태양인·태음인·소양인·소음인의 네 부류로 나누어 체질별 맞춤 치료를 제시한 독창적 사상의학서 <strong>『동의수세보원』</strong>을 저술하였습니다.
-          </p>
         </div>
         <div class="overflow-x-auto my-6">
+          <div class="text-xs font-bold text-emerald-400 mb-2">[연대기 비교표] 17세기부터 19세기 중반까지 실학 사상과 기학의 시간순 계보</div>
           <table class="book-table">
             <thead>
               <tr>
-                <th style="width:16%;">분야 · 학파</th>
-                <th style="width:20%;">핵심 인물</th>
-                <th style="width:26%;">대표 저술 · 지도</th>
+                <th style="width:17%;">시기 · 학파</th>
+                <th style="width:19%;">핵심 인물</th>
+                <th style="width:26%;">대표 저술</th>
                 <th>핵심 사상 · 개혁론 및 기출 판별 포인트</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2"><strong>실학 선구 ·<br/>양명학</strong></td>
-                <td><strong>이수광 · 한백겸</strong></td>
-                <td><strong>『지봉유설』 · 『동국지리지』</strong></td>
-                <td>이수광은 『천주실의』와 서양 문물 소개, 한백겸은 실증적 역사 지리 연구 개척</td>
+                <td rowspan="2"><strong>17세기 초 · 말<br/>실학 선구 ·<br/>양명학</strong></td>
+                <td><strong>이수광 · 한백겸 · 김육</strong></td>
+                <td><strong>『지봉유설』(1614) · 『동국지리지』</strong></td>
+                <td>이수광은 『천주실의』와 서양 문물 소개, 한백겸은 실증 역사 지리 개척, 김육은 대동법 확대 및 <strong>시헌력(1653)</strong> 도입</td>
               </tr>
               <tr>
                 <td><strong>정제두</strong></td>
@@ -150,58 +185,166 @@
                 <td>지행합일·심즉리의 <strong>양명학</strong> 정립 ➔ 이광사·이건창·박은식·정인보로 계승</td>
               </tr>
               <tr>
-                <td rowspan="3"><strong>중농학파<br/>(경세치용파)</strong><br/>기호 남인 중심</td>
+                <td><strong>17세기 중농<br/>(경세치용파)</strong></td>
                 <td><strong>유형원</strong></td>
                 <td><strong>『반계수록』</strong></td>
-                <td><strong>균전론</strong>: 토지 국유화 후 사·농·공·상 신분별 차등 분배, 병농일치·공거제·노비 세습제 폐지</td>
+                <td><strong>균전론</strong>: 토지 국유화 후 사·농·공·상 신분·직역별 차등 분배, 병농일치·과거제 폐지 및 <strong>공거제</strong>·노비 세습제 폐지</td>
               </tr>
               <tr>
+                <td><strong>18세기 중농<br/>(경세치용파)</strong></td>
                 <td><strong>이익</strong></td>
                 <td><strong>『성호사설』, 『곽우록』</strong></td>
-                <td><strong>한전론</strong>(최소 생계 토지 <strong>영업전</strong> 매매 금지), <strong>6좀</strong> 비판, 전황 극복 위한 화폐 폐지론</td>
+                <td><strong>한전론</strong>(최소 생계 토지 <strong>영업전</strong> 매매 금지 — 하한선), <strong>6좀</strong> 비판, 전황 극복 위한 화폐 폐지론</td>
               </tr>
               <tr>
-                <td><strong>정약용</strong></td>
-                <td><strong>『경세유표』, 『목민심서』, 『흠흠신서』, 『마과회통』</strong></td>
-                <td>초기 <strong>여전론</strong>(마을 공동 경작·노동량 분배) ➔ 후기 <strong>정전제</strong>(공전 1 + 사전 8), <strong>거중기·배다리</strong> 설계, 홍역·종두법 의서 『마과회통』</td>
-              </tr>
-              <tr>
-                <td rowspan="5"><strong>중상학파<br/>(이용후생·북학) ·<br/>기학</strong><br/>서울 노론 중심</td>
+                <td rowspan="4"><strong>18세기 중상<br/>(이용후생 ·<br/>북학파)</strong></td>
                 <td><strong>유수원</strong></td>
                 <td><strong>『우서』</strong></td>
-                <td>사농공상 직업적 평등과 전문화, 상인 간 합자 경영 및 상공업 진흥 주장</td>
+                <td>사·농·공·상 직업적 평등과 전문화, 상인 간 합자 경영 및 상공업 진흥 역설</td>
               </tr>
               <tr>
                 <td><strong>홍대용</strong></td>
                 <td><strong>『의산문답』, 『임하경륜』</strong></td>
-                <td><strong>지전설·무한우주론</strong>으로 중국 중심 <strong>화이관 타파</strong>, 농수각·혼천의, 『임하경륜』 균전론(신분 무관 균등 분배)</td>
+                <td><strong>지전설·무한우주론</strong>으로 중국 중심 <strong>화이관 탈피</strong>, 농수각·혼천의, 『임하경륜』 균전론(신분 무관 성인 균등)</td>
               </tr>
               <tr>
                 <td><strong>박지원</strong></td>
-                <td><strong>『열하일기』, 『과농소초』</strong></td>
-                <td>수레·선박·벽돌·화폐 사용(화폐 확대론), 소유 상한선 설정 <strong>한전론</strong>, 『양반전』·『허생전』·『호질』</td>
+                <td><strong>『열하일기』, 『과농소초』(「한민명전의」)</strong></td>
+                <td>수레·선박·벽돌·화폐 사용(화폐 확대론), <strong>소유 상한선 제한 한전론</strong>, 풍자 소설 『양반전』·『호질』·『허생전』</td>
               </tr>
               <tr>
                 <td><strong>박제가</strong></td>
-                <td><strong>『북학의』</strong></td>
-                <td><strong>우물물 비유 소비 촉진론</strong>, 청과의 개항 및 통상 무역 확대·화폐 유통 확대 건의</td>
+                <td><strong>『북학의』(1778)</strong></td>
+                <td><strong>우물물 비유 소비 촉진론</strong>, 청과 통상 무역 확대·수레와 선박·벽돌 활용·화폐 유통 확대 건의</td>
               </tr>
               <tr>
+                <td><strong>19세기 초<br/>실학 집대성</strong></td>
+                <td><strong>정약용</strong></td>
+                <td><strong>『경세유표』, 『목민심서』, 『흠흠신서』, 『마과회통』</strong></td>
+                <td>초기 <strong>여전론</strong>(공동 경작·노동량 분배) ➔ 후기 <strong>정전제</strong>(공전 1 + 사전 8), <strong>거중기·배다리</strong>, 박제가와 종두법 연구 『마과회통』</td>
+              </tr>
+              <tr>
+                <td><strong>19세기 중반<br/>기철학</strong></td>
                 <td><strong>최한기</strong></td>
-                <td><strong>『기측체의』, 『인정』, 『지구전후도』, 『지구전요』</strong></td>
-                <td>경험주의 <strong>기학</strong> 창시, 김정호와 『지구전후도』 판각, 최초 세계 지리서 『지구전요』 ➔ 개화사상의 가교</td>
+                <td><strong>『기학』, 『기측체의』, 『인정』, 『지구전요』(1857)</strong></td>
+                <td>경험주의 근대 과학 수용(<strong>기학</strong>), 『해국도지』 번역·수용 및 『지구전후도』(1834) 판각 ➔ 개화사상의 가교</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="sec2">
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">2. 17세기부터 19세기까지 조선 후기 의학·국학·지리·백과사전·과학의 시간순 집대성</h3>
+        <div class="para-block">
+          <p class="prose-body">
+            앞선 제4편 제3장에서 살펴본 임진왜란과 병자호란 양난을 겪은 직후인 <strong>17세기(광해군부터 숙종까지)</strong> 조선 사회는 전염병 창궐과 민생 파탄, 무너진 일상·역법 질서를 하루빨리 복구해야 하는 절박한 위기에 놓여 있었습니다. 이에 17세기 의학자와 학자들은 중국의 이론을 맹종하지 않고 우리 풍토와 백성의 실생활에 당장 도움이 되는 자주적 의학, 실용 백과사전, 정밀한 역법과 영농 지식을 세우고자 하였습니다. 먼저 광해군 때 어의 <strong>허준</strong>은 선조 대부터 착수한 의학 정리를 이어받아 전란 뒤 역병으로 고통받는 백성을 살리기 위해 중국과 조선의 의학 처방을 총망라하되, 구하기 쉬운 향약과 우리말 약재명을 병기하고 예방과 양생을 강조한 자주적 의서 <strong>『동의보감』(1610년 완성·1613년 간행)</strong>을 펴냈습니다(이는 체질 의학인 19세기 말 이제마의 사상의학과 약 280여 년의 시차를 둡니다). 앞 절에서 실학의 선구자로 살펴본 <strong>이수광</strong>은 같은 시기 명나라 사신으로 접한 서양 학문(마테오 리치의 『천주실의』)과 동서 고금의 지식을 주제별로 망라한 우리나라 최초의 백과사전류 저술 <strong>『지봉유설』(1614년)</strong>을 간행하여 학문 분류의 새 지평을 열었고, 한백겸의 실증적 역사 지리서 『동국지리지』가 뒤를 받쳤습니다. 이어 17세기 중반 효종 때에는 충청도와 전라도 대동법 확대를 온몸으로 관철한 경세가 <strong>김육</strong>이 청나라 사행 중 서양 천문학(아담 샬)을 토대로 만든 역법의 정밀함에 주목하여, 부정확한 기존 역법을 버리고 백성에게 정확한 절기와 농사력을 제공하려는 목적으로 역관을 청에 거듭 보내 계산법을 익힌 뒤 <strong>1653년(효종 4년) 서양식 역법인 시헌력을 공식 도입</strong>(1654년 시행)하였습니다. 태양의 실제 황도상 위치를 반영하는 정기법 기반의 시헌력은 24절기와 일식·월식을 정밀하게 예측하여 1896년 태양력 도입 전까지 조선의 표준 역법으로 쓰였습니다. 나아가 숙종 때에는 효종 대 신속의 『농가집성』(1655년)을 이은 실학자 <strong>홍만선</strong>이 농촌 생활과 영농·양생 지식을 정리한 <strong>『산림경제』</strong>를 펴내 18세기 실용학 폭발의 든든한 토대를 마련하였습니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">17세기 실용학 &amp; 조선 후기 의학 3대 명저 1초 구분</div>
+              <ul class="sidenote-list">
+                <li><strong>17세기 시간순 핵심</strong>: <strong>허준 『동의보감』</strong>(1610 완성·1613 간행, 광해군) ➔ <strong>이수광 『지봉유설』(1614)</strong>(최초 백과사전류) ➔ <strong>김육</strong>(대동법 확대·<strong>1653 시헌력</strong> 도입, 효종) ➔ 홍만선 『산림경제』(숙종)</li>
+                <li><strong>의학서 연대기 절대 구분(280년 차이!)</strong>:<br/>① <strong>17c 초(1613, 광해군)</strong>: 허준 <strong>『동의보감』</strong>(전염병·민생 극복, 예방·양생·우리말 약재)<br/>② <strong>19c 초(1800, 정조 말)</strong>: 정약용 <strong>『마과회통』</strong>(홍역 치료 + 박제가와 <strong>종두법</strong>[인두법])<br/>③ <strong>19c 말(1894, 고종)</strong>: 이제마 <strong>『동의수세보원』</strong>(태양·태음·소양·소음 <strong>사상의학</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            17세기의 토대 위에서 앞선 제1장과 제2장에서 본 영·정조 탕평과 문예부흥기, 그리고 회화의 진경산수화가 개화하던 <strong>18세기</strong>에 접어들자 국학(국어·역사)과 지리·실용학이 일제히 폭발하였습니다. 청나라 고증학이 유입되는 가운데 지식인들은 중국 중심의 중화 사관을 벗어던지고 우리말과 훈민정음, 우리 산천과 도로, 그리고 우리의 역사를 실증적으로 고증하고 기록하겠다는 자주적 목적을 품게 되었습니다. 먼저 영조 때 <strong>국어와 훈민정음 음운 연구</strong>에서는 실학자 <strong>신경준</strong>이 <strong>『훈민정음운해』(1750년)</strong>를 저술해 훈민정음의 음운 체계를 과학적으로 도표화하고 해설함으로써 훗날 19세기 초 유희의 『언문지』로 이어지는 국어학 연구의 물꼬를 텄습니다. 같은 영조 때 <strong>지도와 인문 지리서</strong> 역시 국토에 대한 정확한 파악과 민생 경제를 위해 비약적으로 발전하여, <strong>정상기</strong>가 우리나라 <strong>최초로 100리 척 축척</strong>을 적용한 과학적 전국 지도 <strong>『동국지도』</strong>를 제작하였고, <strong>이중환</strong>은 인문 지리서 <strong>『택리지』(1751년경)</strong>에서 사대부와 서민의 거주를 다룬 사민총론과 살기 좋은 <strong>가거지의 네 가지 조건(지리·생리·인심·산수)</strong>을 제시하였으며, <strong>신경준</strong>은 국경·강역을 고증한 <strong>『강계고』</strong>와 전국 도로망·역참을 정리한 <strong>『도로고』</strong>, 한반도 산줄기를 물줄기(수계) 기준으로 백두대간·1정간·13정맥으로 체계화한 <strong>『산경표』</strong>를 저술하고 『동국문헌비고』 여지고 편찬에도 참여하였습니다. 뒤이어 18세기 후반 정조 때에는 우리 역사의 자주적 계보를 세우는 <strong>국사학</strong>이 만개하여 이익의 제자 <strong>안정복</strong>이 <strong>『동사강목』(1778년)</strong>에서 <strong>단군에서 기자·마한·삼국·고려로 이어지는 우리 역사의 독자적 정통론</strong>을 고증하였고, 정조 때 규장각 검서관 <strong>유득공</strong>은 <strong>『발해고』(1784년)</strong>에서 고려가 발해사를 편찬하지 않아 국력이 약해졌다고 비판하며 신라와 발해를 아울러 <strong>'남북국'이라는 명칭을 최초로 사용</strong>해 발해사를 우리 역사의 주류로 복원하였으며, 정조 대 학자 <strong>이종휘</strong>도 『동사』에서 고구려·발해 중심의 북방사를 강조하였습니다.
+          </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">18세기 · 19세기 전반 국어 · 지리 · 국사학 1초 판별 공식</div>
+              <ul class="sidenote-list">
+                <li><strong>국어학·어류학 계보</strong>: 18c 영조 <strong>신경준 『훈민정음운해』(1750)</strong> ➔ 19c 순조 <strong>정약전 『자산어보』(1814</strong>, 흑산도 유배) ➔ <strong>유희 『언문지』(1824</strong>, 한글 자모·발음·방언)·『물명고』</li>
+                <li><strong>18c 지리 ➔ 19c 지도 정점</strong>: 영조 <strong>정상기 『동국지도』</strong>(최초 <strong>100리 척</strong>) · <strong>이중환 『택리지』(1751)</strong>(가거지 4조건) · <strong>신경준 『강계고』·『도로고』·『산경표』</strong> ➔ 철종 <strong>김정호 『청구도』(1834)·『대동여지도』(1861</strong>, 목판 22첩·10리 눈금)</li>
+                <li><strong>국사학 5대 사서(18c 정조 ➔ 19c 전반)</strong>: [18c 정조] <strong>안정복 『동사강목』(1778)</strong>(독자 정통론) · <strong>유득공 『발해고』(1784)</strong>(<strong>남북국</strong> 명칭 최초 사용) · <strong>이종휘 『동사』</strong>(고구려·발해 북방사) ➔ [19c 전반] <strong>이긍익 『연려실기술』</strong>(조선 정치 야사, <strong>기사본말체</strong>) · <strong>한치윤 『해동역사』(1823 완간</strong>, 500여 종 해외 사료, <strong>기전체</strong>)</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            한편 18세기 영·정조 대에 이르러서는 개인 학자들의 저술이 흩어져 있어 국가 차원의 문물·제도 표준이 서지 못하고, 조선의 자연환경과 어긋난 중국 농서의 한계와 서얼 차별, 임진왜란 이후 약화된 국방 무예 체계의 공백이라는 현실적 결핍이 드러났습니다. 이를 타개하여 국가 문물과 농정·국방의 표준을 세우고 신분 제약을 넘어 유능한 인재를 등용해 왕권과 민생을 일으키겠다는 영조와 정조의 개혁 목적 아래, <strong>백과사전과 농서, 규장각 편찬 사업</strong>이 눈부시게 결실하였습니다. 17세기 이수광의 『지봉유설』과 18세기 이익의 『성호사설』로 이어진 백과사전 전통은 1770년 영조의 명으로 서호수·홍봉한 등이 참여해 편찬(정조 대 증보)한 우리나라 최초의 관찬 백과사전 <strong>『동국문헌비고』</strong>로 집대성되었습니다. 농학에서는 영조 때 <strong>서명응</strong>이 실무·농업 백과사전 『고사신서』(1771년)를 펴낸 데 이어, 정조의 농서 편찬 요청에 호응한 아들 <strong>서호수</strong>가 전통 농서(『농가집성』·『산림경제』)와 중국 선진 농법을 종합해 우리 자연조건에 맞게 체계화한 <strong>『해동농서』</strong>를 저술하였습니다. 또한 정조는 서얼 출신 실학자 <strong>유득공·이덕무·박제가·서이수 등을 규장각 검서관</strong>으로 파격 발탁해 왕실 편찬 사업을 맡겼으며, 정조의 명을 받은 <strong>이덕무·박제가·백동수</strong>는 24반 무예와 도보를 집대성한 국가 공식 무예 교범 <strong>『무예도보통지』(1790년)</strong>를 완성하였고 이덕무의 방대한 유고는 백과사전적 저술 <strong>『청장관전서』</strong>로 간행되었습니다. 그러나 1800년 정조 승하 이후 세도정치가 열리고 1801년 신유박해 등 잇단 사옥과 유배 속에 국가 주도의 개혁과 편찬 동력이 꺾이자, 민생이 파탄 나고 학문과 문물의 맥이 끊길 수 있다는 깊은 위기감이 퍼졌습니다. 이에 유배지로 쫓겨나거나 재야에 묻힌 실학자·고증학자들은 정치적 탄압에 굴하지 않고 객관적 사료와 현장 관찰·실측을 통해 우리 역사와 어류·우리말·금석·생활 기술·국토를 끝까지 증명하여 백성과 후대에 전하겠다는 절박한 목적을 품었고, 그 결과 <strong>19세기 초에서 중반(순조·헌종·철종)</strong>에 걸쳐 국학·박물학·금석학·지도의 정점이 만개하였습니다. 먼저 <strong>국사학</strong>에서는 <strong>이긍익</strong>이 조선 정치사와 문화 야사를 사건의 원인과 결과 중심으로 서술하는 <strong>기사본말체</strong>로 집대성한 <strong>『연려실기술』</strong>을 편찬·유통하였고, 정조 말부터 순조 대에 걸친 <strong>한치윤</strong>(과 조카 한진서)은 중국·일본 등 <strong>500여 종의 해외 사료를 교차 인용한 기전체</strong> 역사서 <strong>『해동역사』(1823년 완간)</strong>를 완성해 우리 역사의 실증적 지평을 넓혔습니다. 박물학과 국어학에서는 정약용의 형 <strong>정약전</strong>이 1801년 신유박해로 흑산도에 유배된 뒤 현지 어민들과 바다 생물을 직접 관찰해 어류학서 <strong>『자산어보』(1814년)</strong>를 저술한 데 이어, <strong>유희</strong>가 18세기 신경준의 음운 연구를 계승해 한글 자모와 발음 원리·방언을 체계화한 <strong>『언문지』(1824년)</strong>와 사물·동식물의 우리말 명칭을 고증한 <strong>『물명고』</strong>를 남겼습니다. 금석학에서는 19세기 초(1816년) <strong>추사 김정희</strong>가 북한산 비봉 비석이 무학대사비가 아닌 신라 <strong>진흥왕 순수비</strong>임을 직접 탁본해 최초 고증한 <strong>『금석과안록』</strong>을 남겼습니다(아울러 앞 단원에서 본 추사체와 1844년 『세한도』 제작). 생활·농학 백과사전에서는 서명응·서호수의 손자 <strong>서유구</strong>가 3대 농학 가문의 연구를 집대성해 19세기 전반 거질의 <strong>『임원경제지』</strong>를 완성하였고, 헌종 때 <strong>이규경</strong>은 천문·지리·역사·제도를 고증한 <strong>『오주연문장전산고』</strong>를 저술하였습니다. 지도학은 19세기 철종 때 <strong>김정호</strong>에 이르러 절정에 달해, 그는 <strong>1834년 『청구도』</strong> 제작과 최한기의 『지구전후도』 판각을 거쳐 <strong>1861년 『대동여지도』</strong>를 완성하였습니다. 『대동여지도』는 대량 보급과 휴대가 쉽도록 <strong>목판본 22첩 분첩절첩식</strong>으로 제작되었으며, 도로 <strong>10리마다 눈금</strong>을 찍어 거리를 계산할 수 있게 하고 산맥·하천·도로망을 정교한 기호로 표현해 우리 전통 지도학의 최고봉에 올랐습니다(지리지 『대동지지』도 함께 저술). 그리고 개항 이후인 <strong>19세기 말(1894년)</strong>에 이르러서는 <strong>이제마</strong>가 기존의 중국 중심 의학에서 벗어나 인간의 체질을 성격과 생리적 특성에 따라 <strong>태양인·태음인·소양인·소음인의 네 부류로 구분</strong>해 맞춤 치료를 제시한 독창적 <strong>사상의학</strong> 의서 <strong>『동의수세보원』</strong>을 저술하며 17세기 초 허준 『동의보감』에서 280여 년을 거쳐 근대 독자 의학으로 이행하는 거대한 흐름을 완성하였습니다.
+          </p>
+        </div>
+        <div class="overflow-x-auto my-6">
+          <div class="text-xs font-bold text-emerald-400 mb-2">[연대기 비교표] 17세기부터 19세기까지 조선 후기 의학 · 국학 · 지리 · 백과사전 · 과학 시간순 집대성</div>
+          <table class="book-table">
+            <thead>
+              <tr>
+                <th style="width:15%;">시대 구분</th>
+                <th style="width:18%;">분야</th>
+                <th style="width:27%;">핵심 인물 및 대표 저술 · 성과</th>
+                <th>역사적 의의 및 시험장 0.5초 판별 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3"><strong>17세기</strong><br/>(광해군에서<br/>숙종까지)</td>
+                <td><strong>의학</strong></td>
+                <td><strong>허준 『동의보감』</strong>(1610 완성·1613 간행)</td>
+                <td>양란 후 전염병·민생 위기 극복, 우리말 약재 병기·예방·양생 중시 (<strong>19c 말 이제마와 280여 년 차이</strong>)</td>
               </tr>
               <tr>
-                <td><strong>역사 · 금석학</strong></td>
-                <td><strong>안정복 · 유득공 · 이종휘 · 한치윤 · 이긍익 · 김정희</strong></td>
-                <td><strong>『동사강목』 · 『발해고』 · 『동사』 · 『해동역사』 · 『연려실기술』 · 『금석과안록』</strong></td>
-                <td>안정복(정통론), 유득공(<strong>'남북국'</strong> 용어 최초 사용), 이종휘(북방사), 한치윤(기전체), 이긍익(기사본말체), 김정희(<strong>진흥왕 순수비</strong> 고증·추사체·『세한도』)</td>
+                <td><strong>백과사전 · 역법</strong></td>
+                <td><strong>이수광 『지봉유설』(1614)</strong> · 한백겸 『동국지리지』 · <strong>김육 시헌력(1653)</strong></td>
+                <td>『지봉유설』은 최초 백과사전류·『천주실의』 소개 / 효종 때 김육은 대동법 확대와 정기법 기반 <strong>시헌력</strong> 도입</td>
               </tr>
               <tr>
-                <td><strong>지리 · 백과사전 · 농학 · 의학</strong></td>
-                <td><strong>이중환 · 정상기 · 김정호 · 이덕무 · 이규경 · 서유구 · 정약전 · 허준 · 이제마</strong></td>
-                <td><strong>『택리지』 · 『동국지도』 · 『대동여지도』 · 『동국문헌비고』 · 『청장관전서』 · 『오주연문장전산고』 · 『임원경제지』 · 『자산어보』 · 『동의보감』 · 『동의수세보원』</strong></td>
-                <td>이중환(가거지 4조건), 정상기(최초 100리척), 김정호(『청구도』·『대동여지도』 목판 22첩 분첩절첩식·10리 눈금), 영조 관찬 『동국문헌비고』, 홍만선 『산림경제』, 이제마(사상의학)</td>
+                <td><strong>농학 (숙종)</strong></td>
+                <td><strong>홍만선 『산림경제』</strong> (효종 신속 『농가집성』 계승)</td>
+                <td>농촌 생활과 영농·양생 지식 정리 ➔ 18세기 영·정조 농학 및 생활 백과사전의 전사</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>18세기</strong><br/>(영·정조<br/>문예부흥기)</td>
+                <td><strong>국어 · 음운</strong></td>
+                <td><strong>신경준 『훈민정음운해』(1750)</strong></td>
+                <td>훈민정음 음운 체계의 과학적 도표화·해설 ➔ 19세기 초 <strong>유희 『언문지』</strong>로 계승</td>
+              </tr>
+              <tr>
+                <td><strong>지도 · 인문지리</strong></td>
+                <td><strong>정상기 『동국지도』 · 이중환 『택리지』(1751) · 신경준 『강계고』·『도로고』·『산경표』</strong></td>
+                <td>『동국지도』(최초 <strong>100리 척</strong> 축척), 『택리지』(<strong>가거지 4조건</strong>: 지리·생리·인심·산수), 『산경표』(수계 기준 백두대간·1정간·13정맥)</td>
+              </tr>
+              <tr>
+                <td><strong>국사학</strong></td>
+                <td><strong>안정복 『동사강목』(1778) · 유득공 『발해고』(1784) · 이종휘 『동사』</strong></td>
+                <td>『동사강목』(단군부터 고려까지 독자 정통론), 『발해고』(<strong>'남북국'</strong> 최초 사용), 『동사』(고구려·발해 북방사 강조)</td>
+              </tr>
+              <tr>
+                <td><strong>백과 · 농서 · 규장각</strong></td>
+                <td><strong>『동국문헌비고』(1770) · 이익 『성호사설』 · 서명응 『고사신서』 · 서호수 『해동농서』 · 『무예도보통지』(1790) · 이덕무 『청장관전서』</strong></td>
+                <td>영조 명 최초 관찬 백과사전 『동국문헌비고』 / 정조 명 <strong>유득공·이덕무·박제가 등 규장각 검서관</strong> 활약 및 이덕무·박제가·백동수 『무예도보통지』 편찬</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>19세기<br/>전반 · 중반</strong><br/>(순조·헌종·철종)</td>
+                <td><strong>국사학</strong></td>
+                <td><strong>이긍익 『연려실기술』 · 한치윤 『해동역사』(1823 완간)</strong></td>
+                <td>『연려실기술』(조선 정치·문화 야사, <strong>기사본말체</strong>) / 『해동역사』(500여 종 해외 사료 교차 인용, <strong>기전체</strong>)</td>
+              </tr>
+              <tr>
+                <td><strong>어류 · 국어 · 박물</strong></td>
+                <td><strong>정약전 『자산어보』(1814) · 유희 『언문지』(1824)·『물명고』</strong></td>
+                <td>신유박해 흑산도 유배 정약전(어류학서 『자산어보』) / 『언문지』·『물명고』(한글 음운·우리말 사물 고증)</td>
+              </tr>
+              <tr>
+                <td><strong>금석 · 농학 · 백과</strong></td>
+                <td><strong>김정희 『금석과안록』 · 서유구 『임원경제지』 · 이규경 『오주연문장전산고』</strong></td>
+                <td>김정희(1816년 이후 북한산 비석이 <strong>신라 진흥왕 순수비</strong>임을 최초 고증) / 서유구(서명응·서호수 3대 농학 가문 집대성)</td>
+              </tr>
+              <tr>
+                <td><strong>지도학 정점</strong></td>
+                <td><strong>김정호 『청구도』(1834) ➔ 『대동여지도』(1861)</strong>·『대동지지』</td>
+                <td><strong>목판본 22첩 분첩절첩식</strong> 대량 보급·휴대 편리, 도로 <strong>10리마다 눈금</strong>, 산맥·하천·도로망 정교한 기호</td>
+              </tr>
+              <tr>
+                <td><strong>19세기 말</strong><br/>(개항기 · 고종)</td>
+                <td><strong>사상의학</strong></td>
+                <td><strong>이제마 『동의수세보원』(1894, 고종)</strong></td>
+                <td>인간 체질을 태양·태음·소양·소음 4체질로 나눈 <strong>사상의학</strong> 창시 (17세기 허준 『동의보감』과 명확히 구분)</td>
               </tr>
             </tbody>
           </table>
@@ -209,54 +352,61 @@
       </div>
 
       <div id="sec3">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">3. 60년 세도정치와 삼정의 문란, 민중의 예언 신앙과 새 종교(서학·동학)</h3>
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">3. 19세기 세도 정치의 모순(순조·헌종·철종)과 농민 항쟁·민간 신앙 및 새 종교(천주교·동학)</h3>
         <div class="para-block">
           <p class="prose-body">
-            앞선 제1장에서 살펴본 바와 같이 규장각과 장용영을 앞세워 왕권과 개혁 정치를 절정으로 이끌던 정조가 1800년 갑작스럽게 승하하고 11세의 어린 <strong>순조</strong>가 즉위하자, 왕권을 수호하던 장용영이 해체되고 군주를 보좌할 견제 장치가 순식간에 무너졌습니다. 이 권력의 공백을 틈타 <strong>순조·헌종·철종의 3대 60여 년(1800년부터 1863년까지)</strong> 동안 왕실의 외가인 <strong>안동 김씨(김조순 일파)와 풍양 조씨 등 소수 외척 가문</strong>이 국정 최고 의결 기구인 <strong>비변사</strong>와 중앙의 핵심 군영(훈련도감 등)을 독점하고 왕권마저 압도하는 <strong>세도정치</strong>가 고착되었습니다. 견제 세력이 사라진 조정에서는 과거 시험 부정과 관직을 돈으로 사고파는 <strong>매관매직</strong>이 공공연히 벌어졌고, 거액의 뇌물을 바치고 지방 수령 자리를 사들인 탐관오리들은 임기 안에 본전을 회수하기 위해 앞 단원 향전 이후 지방 실무 권한이 커진 아전(향리)들과 결탁하여 백성의 고혈을 쥐어짰습니다. 그 결과 국가 재정의 세 기둥인 <strong>삼정(전정·군정·환곡)의 문란</strong>이 극에 달하였습니다. 토지세인 <strong>전정</strong>에서는 주인 없이 황폐해진 땅이나 백지에까지 세금을 매기는 <strong>백지징세</strong>와 잡다한 세금을 토지세에 몰아 불법으로 덧붙여 걷는 <strong>도결</strong>이 성행하였습니다. 군포를 거두는 <strong>군정</strong>에서는 앞 단원 균역법 이후 양반의 면세·면역 특권이 유지되는 가운데 양반 수마저 폭증하자, 남아 있는 힘없는 상민에게 군포 총액을 채우기 위해 갓난아이를 장정에 올려 군포를 물리는 <strong>황구첨정</strong>, 죽은 사람의 이름을 지우지 않고 거두는 <strong>백골징포</strong>, 도망간 자의 군포를 친척과 이웃에게 연대 징수하는 <strong>족징과 인징</strong>이 횡행하였습니다. 특히 본래 봄에 곡식을 빌려주었다가 가을에 약간의 이자(모곡)를 붙여 갚던 빈민 구제 제도인 <strong>환곡</strong>은 이자 수익에 눈먼 수령과 아전들의 고리대 수탈 수단으로 변질되어, 쌀에 겨나 모래를 반씩 섞어 주고 온전한 쌀로 갚게 하거나(반진·반백) 필요 없는 백성에게도 억지로 빌려주고 이자만 뜯어내며(늑대) 장부에만 허위로 기록해 놓고 이자를 징수하는(허류·반작) 등 삼정 가운데 가장 극심한 원성의 대상이 되었습니다.
+            앞선 제1장에서 살펴본 바와 같이 규장각과 장용영을 앞세워 왕권과 개혁 정치를 절정으로 이끌던 정조가 1800년 갑자기 승하하고 11세의 어린 <strong>순조</strong>가 즉위하자, 왕권을 수호하던 장용영이 해체되고 군주를 보좌하거나 권력을 상호 견제할 정치 장치가 순식간에 무너졌습니다. 이 권력의 공백을 틈타 <strong>순조·헌종·철종 3대 60여 년(1800년부터 1863년까지)</strong> 동안 국왕의 외척인 <strong>안동 김씨(김조순 일파 — 삼청동 호화 별서 『옥호정도』로 상징되는 권력 독점)</strong>와 <strong>풍양 조씨</strong> 등 소수 외척 가문이 최고 의결 기구인 <strong>비변사</strong>와 중앙의 핵심 군영(훈련도감 등)을 장악하고 왕권마저 추락시킨 <strong>세도 정치</strong>가 고착되었습니다. 견제 세력이 사라진 조정에서는 과거 시험 부정과 관직을 돈으로 사고파는 <strong>매관매직</strong>이 공공연히 벌어졌고, 거액을 바치고 지방 수령 자리를 사들인 탐관오리들은 임기 안에 본전을 뽑기 위해 제2장 향전 이후 지방 실무 권한이 커진 아전(향리)들과 결탁하여 백성의 고혈을 쥐어짰으며, 밖으로는 연안에 서양의 <strong>이양선 출몰</strong>까지 잦아지며 국가 위기가 깊어졌습니다. 그 결과 국가 재정의 세 기둥인 <strong>삼정(전정·군정·환곡)의 문란</strong>이 극에 달하였습니다. 토지세인 <strong>전정</strong>에서는 주인 없이 황폐해진 땅이나 백지에 세금을 물리는 <strong>백지징세</strong>와 잡다한 세금을 토지세에 몰아 불법으로 덧붙여 걷는 <strong>도결</strong>이 성행하였습니다. 군포를 거두는 <strong>군정</strong>에서는 앞 단원 영조의 균역법(1750년) 이후에도 양반의 면세·면역 특권이 유지되는 가운데 양반 수마저 폭증하자, 남은 힘없는 상민에게 군포 액수를 채우기 위해 갓난아이를 장정에 올려 군포를 물리는 <strong>황구첨정</strong>, 죽은 사람의 이름을 지우지 않고 거두는 <strong>백골징포</strong>, 도망간 자의 군포를 친척과 이웃에게 연대 징수하는 <strong>족징과 인징</strong>이 횡행하였습니다. 특히 본래 봄에 곡식을 빌려주었다가 가을에 약간의 이자(모곡)를 붙여 갚던 빈민 구제 제도인 <strong>환곡</strong>은 이식 수취에 눈먼 수령과 아전들의 고리대 수탈 수단으로 변질되어, 쌀에 겨나 모래를 반씩 섞어 주고 온전한 쌀로 갚게 하거나(<strong>반진·반백</strong>), 필요 없는 백성에게 억지로 빌려주고 이자만 뜯어내며(<strong>늑대</strong>), 장부에만 허위로 기록해 놓고 이식을 징수하는(<strong>허류·반작</strong>) 등 삼정 가운데 가장 극심한 원성의 대상이 되었으며(훗날 다산 정약용이 『목민심서』에서 이러한 아전과 수령의 수탈·환곡 폐단을 통렬히 비판함), 민중의 생존 기반은 송두리째 무너졌습니다.
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
-              <div class="sidenote-title">기출 출제 포인트 및 종교 탄압 연표</div>
+              <div class="sidenote-title">세도정치와 삼정의 문란 1초 판별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>세도정치와 삼정의 문란 1초 구분</strong>: 순조·헌종·철종 60여 년, 안동 김씨·풍양 조씨 <strong>비변사 독점 + 매관매직</strong> ➔ <strong>전정</strong>(백지징세·도결) / <strong>군정</strong>(황구첨정·백골징포·족징·인징) / <strong>환곡(가장 극심!)</strong>(고리대화: 반진·늑대·허류)</li>
-                <li><strong>천주교 박해 5단계 연표</strong>: 정조 <strong>신해박해(1791</strong>, 윤지충 제사 거부) ➔ 순조 즉위 직후 <strong>신유박해(1801</strong>: 이승훈·정약종·주문모 처형, 정약용·정약전 유배, <strong>황사영 백서 사건</strong>) ➔ 헌종 <strong>기해박해(1839)</strong> ➔ 헌종 <strong>병오박해(1846</strong>, 김대건 순교) ➔ 흥선대원군 <strong>병인박해(1866)</strong></li>
-                <li><strong>동학(1860) 교주 구별</strong>: 창시자 <strong>최제우</strong>(1860 경주, 시천주·인내천·후천개벽·보국안민, 1864 대구 처형) vs 2대 교주 <strong>최시형</strong>(포접제 정비, <strong>『동경대전』·『용담유사』</strong> 간행)</li>
+                <li><strong>세도정치 권력 구조(1800년부터 1863년까지)</strong>: 정조 급서 ➔ 순조·헌종·철종 60여 년, <strong>안동 김씨(김조순 『옥호정도』)·풍양 조씨</strong> 외척 독점, <strong>비변사</strong> 권력 집중·왕권 추락·<strong>매관매직</strong>·이양선 출몰</li>
+                <li><strong>삼정의 문란 1초 구별(다산 『목민심서』 비판)</strong>:<br/>① <strong>전정</strong>(토지세): 백지징세 · 도결<br/>② <strong>군정</strong>(군포): 황구첨정 · 백골징포 · 족징 · 인징<br/>③ <strong>환곡(가장 극심!)</strong>: 빈민 구제 ➔ 고리대화(<strong>반진·반백, 늑대, 허류·반작, 이식 수취</strong>)</li>
               </ul>
             </div>
           </aside>
         </div>
+        <div class="culture-fig-grid">
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_okhojeongdo.jpg" alt="김조순의 삼청동 별서 옥호정을 그린 옥호정도" />
+            <figcaption class="culture-fig-cap">
+              <strong>「옥호정도」(19세기 초)</strong> — 순조의 장인이자 안동 김씨 세도 정치의 문을 연 김조순이 서울 북악산 기슭 삼청동에 세운 호화 별서로, 외척 세도 가문의 권력·부 독점을 상징함
+            </figcaption>
+          </figure>
+        </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            가혹한 수탈에 땅을 버리고 떠도는 유민과 화전민이 속출하는 절망 속에서, 민중은 현세의 질서를 부정하고 새 세상을 갈망하는 예언 사상과 새로운 종교로 눈을 돌렸습니다. 민중 사이에서는 이씨 왕조가 망하고 정씨 왕조가 들어서며 난리를 피할 열 곳의 명당(십승지)이 있다는 도참서 <strong>『정감록』</strong>과 미륵불이 내려와 고통받는 중생을 구원한다는 <strong>미륵신앙</strong>이 빠르게 번졌습니다. 한편 남인 실학자들이 서양 학문(서학)으로 접했던 <strong>천주교</strong>는 1784년 <strong>이승훈</strong>이 베이징에서 세례를 받고 귀국하면서 신앙으로 정착해 만민 평등 사상을 바탕으로 양반·중인·부녀자·상민층으로 급속히 확산되었으나, 조상 제사를 거부하는 교리가 유교적 가족 질서와 국왕 중심의 신분 질서에 정면으로 충돌하면서 거센 탄압을 받았습니다. 정조 때 윤지충과 권상연이 조상 신주를 불태운 사건으로 일어난 <strong>신해박해(1791년)</strong>에 이어, 1800년 순조가 즉위하고 수렴청정에 나선 정순왕후와 노론 벽파는 정치적 반대파인 남인 시파를 제거할 목적으로 대대적인 <strong>신유박해(1801년)</strong>를 일으켜 이승훈·정약종·청나라 출신 주문모 신부를 처형하고 정약용과 정약전을 유배 보냈습니다. 특히 이때 정약용의 조카사위인 <strong>황사영</strong>이 충청도 제천 배론의 토굴에 숨어 베이징 천주교 주교에게 박해의 참상을 알리고 서양의 군함과 군대를 파견해 신앙의 자유를 보장해 달라고 호소하는 비단 편지를 작성하다가 발각된 <strong>'황사영 백서 사건'(1801년)</strong>이 터지자, 조정은 천주교를 외세를 끌어들이는 반역 세력으로 규정해 기해박해(1839년)와 병오박해(1846년, 최초의 조선인 신부 김대건 순교)로 탄압의 고삐를 늦추지 않았습니다. 이처럼 서학이 모진 탄압을 받고 1860년 영·불 연합군의 베이징 점령 소식까지 전해져 서양 세력의 침략 위기감이 고조되자, 같은 해(1860년, 철종 11년) 경주의 몰락 양반 <strong>최제우</strong>가 유교·불교·도교의 핵심 사상과 민간 신앙을 융합하여 서학에 대항하는 민족 종교 <strong>동학</strong>을 창시하였습니다. 최제우는 내 안에 한울님을 모신다는 <strong>시천주</strong>와 사람이 곧 한울님이라는 <strong>인내천</strong>의 평등 사상, 현세의 낡은 질서가 끝나고 새 세상이 열린다는 <strong>후천개벽</strong>, 그리고 나라를 돕고 백성을 편안하게 하자는 <strong>보국안민</strong>을 외쳐 농민들의 열렬한 지지를 얻었으나, 조정은 세상을 어지럽힌다는 죄목(혹세무민)으로 1864년 대구에서 최제우를 처형하였습니다. 이후 제2대 교주 <strong>최시형</strong>이 교단을 재건해 포접제를 확립하고 한문 경전 <strong>『동경대전』</strong>과 한글 가사집 <strong>『용담유사』</strong>를 간행하며 동학의 맥을 굳건히 이어갔습니다(훗날 1894년 동학 농민 운동의 사상적 모태가 됨).
-          </p>
-        </div>
-      </div>
-
-      <div id="sec4">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">4. 민중의 무장 항쟁 폭발: 홍경래의 난(1811)과 임술 농민 봉기(1862)</h3>
-        <div class="para-block">
-          <p class="prose-body">
-            세도 정권의 수탈이 한계를 넘어서자 민중의 불만은 지배층을 비방하는 벽서나 밤중에 산 위에 올라 횃불을 들고 수령의 죄악을 성토하는 산소 같은 소극적 저항을 넘어, 마침내 조직적인 무장 항쟁으로 폭발하였습니다. 그 거대한 포문을 연 사건이 바로 <strong>1811년(순조 11년)</strong>에 일어난 <strong>홍경래의 난</strong>이었습니다. 평안도(서북 지역)는 대청 무역과 광업·상업의 발달로 경제적 부를 축적한 상인과 부호, 지식인이 적지 않았으나, 조정은 서북 지방 출신들을 중앙 고위 관직에서 철저히 배제하는 <strong>오랜 지역 차별 대우</strong>를 고수하고 있었고 여기에 세도 정권의 가혹한 세금 수탈과 대기근까지 겹쳐 민심이 극도로 흉흉해졌습니다. 이에 몰락 양반 <strong>홍경래</strong>와 <strong>우군칙</strong>, 김창시, 이희저 등은 평안도의 부유한 상인과 영세 상인, <strong>광산 노동자</strong>, 빈농 등 다양한 계층을 하나로 규합하여 <strong>평안도 가산 다복동</strong>에서 봉기하였습니다. 봉기군은 "조정이 서북 인재를 버린 지 사백 년이요, 지금 어진 임금은 어리고 권신과 간신이 날뛰고 있다"는 격문을 띄우고 순식간에 가산·곽산·선천·박천·정주 등 <strong>청천강 이북의 여러 고을을 장악</strong>하며 기세를 올렸습니다. 그러나 청천강 이남으로 진격하지 못한 채 관군의 반격에 밀려 <strong>정주성</strong>으로 후퇴한 봉기군은, 이듬해인 1812년까지 <strong>4개월에서 5개월간 치열한 농성전</strong>을 벌이다가 관군이 성벽 아래 땅굴을 파 화약을 터뜨려 성을 무너뜨리는 공격(파성법)에 끝내 함락되며 진압되었습니다. 홍경래의 난은 청천강 이북에 국한된 지역적 한계 속에 실패로 끝났으나, 조선 왕조의 지배 권력에 정면으로 맞선 19세기 최초의 대규모 조직적 민중 항쟁으로서 전국의 피지배층에게 거대한 각성을 불러일으켰습니다.
+            세도 정권의 수탈이 한계를 넘어서자 민중의 불만은 지배층을 비방하는 벽서나 밤중에 산 위에 올라 횃불을 들고 수령의 죄악을 성토하는 산호(산 위에서 횃불을 들고 외쳐 항의함) 같은 소극적 저항을 넘어, 억압적 체제를 부수고 살길을 찾으려는 조직적인 무장 항쟁으로 폭발하였습니다. 그 거대한 첫 포문을 연 사건이 <strong>1811년(순조 11년) 평안도에서 일어난 홍경래의 난</strong>이었습니다. 평안도(서북 지역)는 대청 무역과 광업·상업 발달로 부를 축적한 상인과 지식인이 적지 않았으나 조정의 오랜 <strong>서북민(평안도) 고위 관직 차별 대우</strong>를 받고 있었고, 여기에 세도 정권의 가혹한 세금 수탈과 대기근까지 겹치며 민심이 극도로 흉흉해졌습니다. 이에 몰락 양반 <strong>홍경래</strong>와 <strong>우군칙</strong>, 김창시, 이희저 등은 평안도의 상공업자와 부유 상인, <strong>광산 노동자</strong>, 유민과 빈농을 하나로 규합하여 <strong>평안도 가산 다복동</strong>에서 봉기하였습니다(당시 항전 중 순절한 가산군수 정시의 기록이 『가산순절록』으로 전해짐). 봉기군은 "조정이 서북 인재를 버린 지 사백 년이요, 지금 어진 임금은 어리고 권신과 간신이 날뛰고 있다"는 격문을 띄우고 곽산·선천·박천·정주 등 <strong>청천강 이북 고을을 순식간에 장악</strong>하였으나, 청천강 이남으로 진격하지 못한 채 관군의 반격에 밀려 <strong>정주성</strong>으로 후퇴하였고 이듬해인 1812년까지 <strong>4개월에서 5개월간 치열한 농성전</strong>을 벌이다가 관군이 성벽 아래 땅굴에 화약을 터뜨리는 공격(파성법)으로 성이 함락되며 진압되었습니다. 홍경래의 난을 무력으로 누른 뒤에도 세도 가문이 개혁 없이 수탈을 계속하자, 그 모순은 50여 년 뒤인 <strong>1862년(철종 13년) 삼남 전역을 휩쓴 임술 농민 봉기</strong>로 폭발하였습니다. 당시 경상 우병사 <strong>백낙신</strong>이 환곡 결손을 메운다는 명목으로 백성에게 거액의 불법 도결을 강제 징수하고 탐학을 부리자, 경상도 단성 봉기에 이어 몰락 양반 <strong>유계춘</strong> 등이 초군(나무꾼)과 농민들을 규합해 머리에 흰 수건을 두르고(백건적) 죽창을 들어 진주성을 점령한 <strong>진주 농민 봉기</strong>가 일어났습니다. 진주의 횃불은 충청·전라·경상 삼남 지방(개령·익산·함평 등)은 물론 북쪽 함흥과 남쪽 제주도(강제검의 난)까지 <strong>전국 70여 개 고을</strong>로 연쇄 확산되었습니다. 충격에 휩싸인 철종과 조정은 개화파의 선구자가 되는 <strong>박규수를 진주 안핵사로 파견</strong>하여 원인을 조사하게 하고 중앙에 임시 기구인 <strong>삼정이정청</strong>을 설치해 삼정 폐단을 고치려 하였으나, 세도 가문의 반발 속에 근본 해결에 실패한 미봉책에 그친 채 곧 폐지되었습니다.
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
               <div class="sidenote-title">19세기 양대 농민 봉기 1초 구별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>홍경래의 난(1811, 순조)</strong>: <strong>평안도(서북) 차별 대우</strong> + 세도 수탈 ➔ 몰락 양반 + 상인 + <strong>광산 노동자</strong> + 빈농 연합 ➔ 가산 다복동 봉기, 청천강 이북 장악 ➔ <strong>정주성 전투</strong> 끝 진압</li>
-                <li><strong>임술 농민 봉기(1862, 철종)</strong>: <strong>삼정의 문란(환곡·도결)</strong> + 경상 우병사 <strong>백낙신</strong> 탐학 ➔ <strong>유계춘</strong> 주도 <strong>진주 농민 봉기(백건적)</strong> ➔ 전국 70여 고을 확산 ➔ 안핵사 <strong>박규수</strong> 파견 + <strong>삼정이정청</strong> 설치</li>
-                <li><strong>다음 장 브릿지</strong>: 삼정이정청의 개혁 실패 ➔ 이듬해(1863) 고종 즉위·<strong>흥선대원군 집권</strong>(비변사 폐지·서원 철폐·양전·호포제·사창제)</li>
+                <li><strong>홍경래의 난(1811, 순조)</strong>: <strong>서북민(평안도) 차별 대우</strong> + 세도 수탈 ➔ 몰락 양반 + 상공업자 + <strong>광산 노동자</strong> + 유민 연합 ➔ 가산 다복동 봉기(『가산순절록』), 청천강 이북 장악 ➔ <strong>정주성 함락(4개월에서 5개월 항전)</strong> 끝 진압</li>
+                <li><strong>임술 농민 봉기(1862, 철종)</strong>: <strong>삼정의 문란(환곡·도결)</strong> + 경상 우병사 <strong>백낙신</strong> 탐학 ➔ <strong>유계춘</strong> 주도 <strong>진주 농민 봉기(백건적)</strong> ➔ 삼남 등 전국 70여 고을 확산 ➔ 안핵사 <strong>박규수</strong> 파견 + <strong>삼정이정청</strong> 설치(미봉책 실패)</li>
               </ul>
             </div>
           </aside>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            홍경래의 난을 무력으로 억누른 뒤에도 세도 가문은 체제를 개혁하기는커녕 매관매직과 수탈을 더욱 노골화하였고, 그 모순은 50여 년 뒤인 <strong>1862년(철종 13년)</strong> 전국적인 <strong>임술 농민 봉기</strong>로 폭발하였습니다. 당시 백성을 가장 괴롭힌 것은 고리대로 전락한 환곡과 불법 부가세인 도결이었는데, 경상 우병사 <strong>백낙신</strong>이 환곡 결손을 메운다는 명목으로 백성에게 거액의 도결을 강제 징수하고 횡포를 부리자 마침내 폭발점이 찾아왔습니다. 1862년 2월 경상도 단성 봉기에 이어, 몰락 양반 <strong>유계춘</strong> 등이 초군(나무꾼)과 농민들을 규합해 머리에 흰 수건을 두르고(이 때문에 관군 측은 이들을 백건적이라 부름) 죽창을 들어 진주성을 점령하고 아전들을 처단한 <strong>진주 농민 봉기(진주 민란)</strong>가 일어났습니다. 진주의 횃불은 들불처럼 번져 충청·전라·경상 삼남 지방(개령·익산·함평 등)은 물론 북쪽 함흥과 남쪽 제주도(강제검의 난)에 이르기까지 <strong>전국 70여 개 고을</strong>에서 농민 봉기가 연쇄적으로 터져 나왔습니다. 충격에 휩싸인 조정은 훗날 개화 사상의 선구자가 되는 <strong>박규수를 진주 안핵사로 파견</strong>하여 백낙신을 파직하고 민란의 원인을 조사하게 하는 한편, 중앙에 임시 기구인 <strong>삼정이정청</strong>을 설치하여 환곡의 폐단을 고치고자 하였습니다. 그러나 기득권을 놓지 않으려는 세도 가문의 반발 속에 삼정이정청은 근본적인 개혁안을 관철하지 못한 채 곧 폐지되는 미봉책에 그쳤습니다. 임술 농민 봉기는 양반 유생이 아닌 농민 대중이 주체로 나서 전국 규모로 봉기하며 세도정치의 명맥을 끊어놓았으나 지역 간 연대와 통합된 지도부가 부족해 체제를 무너뜨리지는 못하였고, 결국 이 미완의 개혁 요구는 이듬해인 <strong>1863년 철종의 승하와 어린 고종의 즉위 속에서 실권을 잡은 흥선대원군이 비변사를 혁파하고 양전·호포제·사창제와 서원 철폐를 단행하는 내정 개혁(제6편 제1장)</strong>으로 곧바로 이어지게 됩니다.
+            세도 정치의 가혹한 수탈과 거듭된 좌절 속에서, 민중은 낡은 왕조와 불평등한 신분 질서를 넘어 새 세상을 열어 줄 정신적 구원과 새로운 세계관을 갈구하였습니다. 민중 사이에서는 이씨 왕조가 망하고 정씨 왕조가 들어서며 난리를 피할 열 곳의 명당(십승지)이 있다는 비기·도참 사상 <strong>『정감록』</strong>과 미륵불이 내려와 중생을 구원한다는 <strong>미륵 신앙</strong>이 빠르게 번졌습니다. 한편 남인 실학자들이 학문(서학)으로 접했던 <strong>천주교</strong>는 1784년 <strong>이승훈</strong>이 베이징에서 세례를 받고 귀국하면서 신앙으로 정착해 만민 평등 사상을 바탕으로 양반·중인·부녀자·상민층으로 급속히 확산되었습니다. 그러나 천주교는 조상 제사를 거부하는 교리로 인해 유교적 가족·신분 질서와 충돌하면서 <strong>1785년(정조 9년) 서울 김범우의 집에서 열린 신앙 집회가 적발된 명례방 사건(을사추조적발사건)</strong>으로 첫 탄압을 겪었고, 정조 때 윤지충·권상연이 조상 신주를 불태운 사건으로 일어난 <strong>신해박해(1791년)</strong>가 뒤따랐습니다. 이어 1800년 순조 즉위 직후 수렴청정에 나선 정순왕후와 노론 벽파는 정치적 반대파인 남인 시파를 일거에 제거하려는 목적 아래 대대적인 <strong>신유박해(1801년)</strong>를 일으켜 이승훈·정약종·주문모 신부를 처형하고 <strong>정약용(강진)과 정약전(흑산도)을 유배</strong> 보냈습니다. 특히 이때 정약용의 조카사위 <strong>황사영</strong>이 충북 제천 배론의 천주교 은신처(오늘날 <strong>배론성지</strong>) 토굴에 숨어 베이징 주교에게 박해의 참상을 알리고 서양 군함과 군대 파견을 요청하는 비단 편지를 작성하다 발각된 <strong>'황사영 백서 사건'(1801년)</strong>이 터지자, 조정은 천주교를 외세와 내통하는 반역 세력으로 규정하고 헌종 때 <strong>기해박해(1839년)</strong>와 최초 조선인 신부 김대건이 순교한 <strong>병오박해(1846년)</strong>로 탄압을 이어갔습니다. 이처럼 서학이 모진 탄압을 받고 1860년 영·불 연합군의 베이징 점령 소식까지 전해져 서양 침략 위기감이 고조되자, 같은 해(<strong>1860년</strong>, 철종 11년) 경주의 몰락 양반(잔반) <strong>최제우</strong>가 유교·불교·도교의 핵심 사상과 민간 신앙을 융합하여 서학에 대항하는 민족 종교 <strong>동학</strong>을 창시하였습니다. 최제우는 내 안에 한울님을 모신다는 <strong>시천주</strong>와 사람이 곧 한울님이라는 <strong>인내천</strong>의 평등 사상, 현세의 낡은 질서가 끝나고 새 세상이 열린다는 <strong>후천개벽</strong>, 그리고 나라를 돕고 백성을 편안하게 하자는 <strong>보국안민</strong>을 외쳐 농민들의 열렬한 지지를 얻었으나, 조정은 세상을 어지럽힌다는 죄목(혹세무민)으로 <strong>1864년(고종 1년) 대구에서 최제우를 처형</strong>하였습니다. 이후 제2대 교주 <strong>최시형</strong>이 교단을 재건해 조직망인 <strong>포접제</strong>를 확립하고 한문 경전 <strong>『동경대전』</strong>과 한글 가사집 <strong>『용담유사』</strong>를 간행하며 동학의 맥을 굳건히 이어갔습니다(훗날 1894년 동학 농민 운동의 사상적 모태가 됨). 결국 세도 정치 60여 년의 파탄 난 삼정 문란과 농민 봉기의 개혁 요구, 그리고 서학 탄압과 서양 침략 위기는 임술 농민 봉기 이듬해인 <strong>1863년 철종의 승하와 어린 고종의 즉위 속에서 실권을 잡은 흥선대원군이 비변사를 혁파하고 양전·호포제·사창제·서원 철폐로 내정을 개혁하는 한편, 1866년 대규모 병인박해를 단행하며 서구 열강의 통상 압력에 맞서는 제6편 제1장</strong>으로 곧바로 이어지게 됩니다.
           </p>
+          <aside class="sidenote">
+            <div class="sidenote-box">
+              <div class="sidenote-title">종교 탄압 연표 · 동학 교주 &amp; 다음 장 브릿지</div>
+              <ul class="sidenote-list">
+                <li><strong>천주교 박해 연표(1785년부터 1866년까지)</strong>: <strong>명례방 사건(1785, 김범우)</strong> ➔ 정조 <strong>신해박해(1791</strong>, 윤지충 제사 거부) ➔ 순조 직후 <strong>신유박해(1801</strong>: 이승훈·정약종·주문모 처형, 정약용·정약전 유배, <strong>제천 배론성지 황사영 백서 사건</strong>) ➔ 헌종 <strong>기해박해(1839)</strong> ➔ 헌종 <strong>병오박해(1846</strong>, 김대건 순교) ➔ 흥선대원군 <strong>병인박해(1866)</strong></li>
+                <li><strong>동학(1860) 교주 구별</strong>: 창시자 경주 잔반 <strong>최제우</strong>(1860 창시, 시천주·인내천·후천개벽·보국안민, 1864 처형) vs 2대 교주 <strong>최시형</strong>(포접제 정비, <strong>『동경대전』·『용담유사』</strong> 간행)</li>
+                <li><strong>다음 장 브릿지</strong>: 삼정이정청 실패 ➔ <strong>1863년 고종 즉위·흥선대원군 집권</strong>(비변사 폐지·서원 철폐·양전·호포제·사창제·1866 병인박해)</li>
+              </ul>
+            </div>
+          </aside>
         </div>
 
         <div class="overflow-x-auto my-6">
-          <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표] 세도정치기 종교 탄압(서학·동학) 및 양대 농민 봉기(홍경래·임술) 핵심 비교</div>
+          <div class="text-xs font-bold text-emerald-400 mb-2">[필수 비교표] 세도정치기 양대 농민 봉기(홍경래·임술) 및 종교 탄압(천주교·동학) 핵심 비교</div>
           <table class="book-table">
             <thead>
               <tr>
@@ -268,28 +418,28 @@
             <tbody>
               <tr>
                 <td><strong>발발 배경 및 원인</strong></td>
-                <td>중앙 정부의 <strong>평안도(서북 지역) 출신 고위 관직 차별 대우</strong> + 세도정치기 가혹한 수탈과 대기근</td>
-                <td>세도정치기 <strong>삼정의 문란(특히 환곡의 고리대화와 도결)</strong> 극심 + 경상 우병사 <strong>백낙신</strong>의 불법 수탈</td>
+                <td>중앙 정부의 <strong>평안도(서북민) 고위 관직 차별 대우</strong> + 세도정치기 가혹한 수탈과 대기근</td>
+                <td>세도정치기 <strong>삼정의 문란(특히 환곡의 고리대화와 이식 수취·도결)</strong> 극심 + 경상 우병사 <strong>백낙신</strong>의 불법 수탈</td>
               </tr>
               <tr>
                 <td><strong>주도 및 참여 계층</strong></td>
-                <td>몰락 양반(<strong>홍경래</strong>·우군칙·김창시), 부유 상인·영세 상인, <strong>광산 노동자</strong>, 빈농 연합</td>
+                <td>몰락 양반(<strong>홍경래</strong>·우군칙·김창시), 부유 상인·상공업자, <strong>광산 노동자</strong>, 유민·빈농 연합</td>
                 <td>몰락 양반(<strong>유계춘</strong> 등), 초군(나무꾼), 소작농 및 자영농 중심</td>
               </tr>
               <tr>
                 <td><strong>전개 과정 및 거점</strong></td>
-                <td>평안도 <strong>가산 다복동</strong>에서 봉기 ➔ 선천·박천 등 <strong>청천강 이북 고을</strong> 장악 ➔ 관군에 밀려 <strong>정주성</strong>에서 4개월에서 5개월간 항전 후 화약 폭파로 함락·진압(1812년)</td>
-                <td>경상도 단성 봉기 직후 <strong>진주 농민 봉기(백건적, 진주성 점령)</strong> 폭발 ➔ 개령·익산·함흥·제주도 등 <strong>전국 70여 고을</strong>로 연쇄 확산</td>
+                <td>평안도 <strong>가산 다복동</strong>에서 봉기(『가산순절록』) ➔ <strong>청천강 이북 고을</strong> 장악 ➔ 관군에 밀려 <strong>정주성</strong>에서 4개월에서 5개월간 항전 후 화약 폭파로 함락·진압(1812년)</td>
+                <td>경상도 단성 봉기 직후 <strong>진주 농민 봉기(백건적, 진주성 점령)</strong> 폭발 ➔ 삼남 및 함흥·제주도 등 <strong>전국 70여 고을</strong>로 연쇄 확산</td>
               </tr>
               <tr>
                 <td><strong>정부의 대응 및 결과</strong></td>
-                <td>관군 파견 무력 진압 (청천강 이북에 국한된 한계 있으나 19세기 최초의 대규모 민중 항쟁)</td>
+                <td>관군 파견 무력 진압 (청천강 이북에 국한된 한계 있으나 19세기 최초의 대규모 조직적 민중 항쟁)</td>
                 <td>진주 안핵사 <strong>박규수</strong> 파견 + 중앙에 <strong>삼정이정청</strong> 설치(미봉책으로 곧 폐지) ➔ <strong>이듬해(1863년) 흥선대원군 집권 및 삼정 개혁 배경</strong></td>
               </tr>
               <tr>
                 <td><strong>종교·사상의 동향</strong></td>
-                <td><strong>신유박해(1801, 순조)</strong>: 이승훈·정약종·주문모 처형, 정약용·정약전 유배, <strong>황사영 백서 사건</strong>(제천 배론, 베이징 주교에게 서양 군함 파병 요청) ➔ 기해(1839)·병오(1846, 김대건)·병인박해(1866)</td>
-                <td><strong>동학 창시(1860, 철종, 경주 최제우)</strong>: 시천주·인내천·후천개벽·보국안민, 1864년 대구 처형 ➔ 2대 교주 <strong>최시형</strong>(포접제·<strong>『동경대전』·『용담유사』</strong> 간행)</td>
+                <td>1785년 명례방 사건(김범우) ➔ 1791년 신해박해(윤지충) ➔ <strong>신유박해(1801, 순조)</strong>: 이승훈·정약종·주문모 처형, 정약용·정약전 유배, <strong>제천 배론성지 황사영 백서 사건</strong> ➔ 기해(1839)·병오(1846, 김대건)·병인박해(1866)</td>
+                <td><strong>동학 창시(1860, 철종, 경주 잔반 최제우)</strong>: 시천주·인내천·후천개벽·보국안민, 1864년 대구 처형 ➔ 2대 교주 <strong>최시형</strong>(포접제·<strong>『동경대전』·『용담유사』</strong> 간행)</td>
               </tr>
             </tbody>
           </table>
@@ -301,29 +451,31 @@
     <!-- 시각 도식 -->
     <div class="para-block diagram-wrapper">
       <div class="diagram-container" id="diagramSilhak">
-      <span class="text-xs font-bold text-emerald-400 block mb-2">핵심 비교 도식 — 실학·국학·과학 사상의 분화와 세도정치기 민중 항쟁 인과도</span>
+      <span class="text-xs font-bold text-emerald-400 block mb-2">핵심 비교 도식 — 17세기부터 19세기까지 실학·국학·과학의 연대기 및 세도정치기 민중 항쟁 인과도</span>
       <div class="schema-board">
-        <div class="schema-subgrid">
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 성리학 한계 극복: 실학 · 양명학 · 기학 · 국학</div>
-            <div class="schema-flow">
-              <div class="schema-box"><strong>선구 및 양명학 · 중농학파(경세치용)</strong><span>이수광 『지봉유설』 · 정제두 강화학파 양명학 / 유형원(균전론) ➔ 이익(영업전 한전론·6좀) ➔ 정약용(여전론➔정전제·1표 2서·거중기·『마과회통』)</span></div>
-              <div class="schema-box"><strong>중상학파(이용후생·북학) 및 기학</strong><span>유수원(『우서』) ➔ 홍대용(『의산문답』 지전설·『임하경륜』 균전론) ➔ 박지원(『열하일기』·상한선 한전론) ➔ 박제가(『북학의』 소비론) ➔ 최한기(기학·『지구전요』)</span></div>
-              <div class="schema-box"><strong>자주적 역사학 · 금석학 · 지리학</strong><span>안정복 『동사강목』 · 유득공 『발해고』(남북국 최초) · 김정희 『금석과안록』(진흥왕 순수비) / 이중환 『택리지』 · 정상기 『동국지도』 ➔ 김정호 『대동여지도』(1861, 목판 22첩·10리 눈금)</span></div>
-              <div class="schema-box"><strong>백과사전 · 농학 · 박물 · 의학</strong><span>『동국문헌비고』 · 이덕무 『청장관전서』 · 이규경 『오주연문장전산고』 · 홍만선 『산림경제』 · 서유구 『임원경제지』 · 정약전 『자산어보』 · 이제마 『동의수세보원』(사상의학)</span></div>
-            </div>
-            <div class="schema-alert">💡 함정 구별: 균전론(유형원=신분 차등 vs 홍대용=신분 무관 균등) / 한전론(이익=영업전 하한선 vs 박지원=소유 상한선)!</div>
+        <div class="schema-panel">
+          <div class="schema-panel-title">1. 실학 사상의 두 갈래 (17세기부터 19세기 중반까지 시간순 계보)</div>
+          <div class="schema-subgrid">
+            <div class="schema-box"><strong>실학 선구 · 양명학 · 17c부터 18c까지 중농학파(경세치용)</strong><span>이수광 『지봉유설』(1614)·한백겸 『동국지리지』·정제두 『존언』(강화학파) / <strong>17c 유형원</strong>(『반계수록』 신분 차등 균전론·공거제) ➔ <strong>18c 이익</strong>(『성호사설』 영업전 매매 금지 한전론·6좀·화폐 폐지론)</span></div>
+            <div class="schema-box"><strong>18c 중상학파(북학파) ➔ 19c 초 정약용 ➔ 19c 중반 최한기</strong><span><strong>유수원</strong>(『우서』 직업 평등) ➔ <strong>홍대용</strong>(『의산문답』 지전설·『임하경륜』 균등 균전론) ➔ <strong>박지원</strong>(『열하일기』·상한선 한전론·『양반전』) ➔ <strong>박제가</strong>(『북학의』 소비 촉진론) ➔ <strong>19c 초 정약용</strong>(여전론➔정전제·1표 2서·거중기·『마과회통』) ➔ <strong>19c 중반 최한기</strong>(기학·『해국도지』 수용 『지구전요』·『인정』)</span></div>
           </div>
-          <div class="schema-panel">
-            <div class="schema-panel-title">📌 60년 세도정치와 종교 · 농민 항쟁 폭발</div>
-            <div class="schema-flow">
-              <div class="schema-box"><strong>정조 급서(1800) ➔ 세도정치와 삼정의 문란</strong><span>순조·헌종·철종 60여 년, 안동 김씨·풍양 조씨 비변사 독점 ➔ 매관매직 · 전정(도결·백지징세)·군정(황구첨정·백골징포)·환곡(가장 극심, 고리대화)</span></div>
-              <div class="schema-box"><strong>예언 사상과 천주교 · 동학의 확산</strong><span>『정감록』·미륵신앙 / 신유박해(1801, 황사영 백서)·기해·병오박해 / 최제우 동학 창시(1860, 인내천·보국안민) ➔ 최시형 『동경대전』·『용담유사』</span></div>
-              <div class="schema-box"><strong>홍경래의 난 (1811, 순조)</strong><span>평안도(서북) 차별 + 세도 수탈 반발 ➔ 가산 다복동 봉기(광산 노동자 등 연합) ➔ 청천강 이북 장악 ➔ 정주성 항전 끝 진압</span></div>
-              <div class="schema-box"><strong>임술 농민 봉기 (1862, 철종) ➔ 대원군 집권</strong><span>진주 백낙신 탐학 반발(유계춘 주도) ➔ 전국 70여 고을 확산 ➔ 안핵사 박규수·삼정이정청 설치(실패) ➔ 1863년 흥선대원군 내정 개혁</span></div>
-            </div>
-            <div class="schema-alert">💡 홍경래의 난(1811, 평안도 차별·정주성) vs 임술 농민 봉기(1862, 진주 백낙신·삼정이정청) 1초 구분!</div>
+          <div class="schema-alert">💡 함정 구별: 균전론(유형원=신분 차등 vs 홍대용=신분 무관 성인 균등) / 한전론(이익=영업전 하한선 vs 박지원=소유 상한선)!</div>
+        </div>
+        <div class="schema-panel">
+          <div class="schema-panel-title">2. 17세기부터 19세기까지 의학 · 국학 · 지리 · 백과사전 · 과학 연대기</div>
+          <div class="schema-subgrid">
+            <div class="schema-box"><strong>17세기 토대 ➔ 18세기 영·정조 국학·실용학 폭발</strong><span><strong>17c</strong> 허준 『동의보감』(1610/1613)·이수광 『지봉유설』(1614)·김육 시헌력(1653)·홍만선 『산림경제』 ➔ <strong>18c 영조</strong> 신경준 『훈민정음운해』(1750)·『강계고』·『산경표』·『도로고』 / 정상기 『동국지도』·이중환 『택리지』(1751) / <strong>정조</strong> 안정복 『동사강목』(1778)·유득공 『발해고』(1784)·이종휘 『동사』 / 『동국문헌비고』(1770)·서호수 『해동농서』·『무예도보통지』(1790)</span></div>
+            <div class="schema-box"><strong>19세기 전반·중반 정점 ➔ 19세기 말 독자 체질 의학</strong><span><strong>19c 초·중반</strong> 이긍익 『연려실기술』·한치윤 『해동역사』(1823 완간) / 정약전 『자산어보』(1814) / 유희 『언문지』(1824)·『물명고』 / 김정희 『금석과안록』 / 서유구 『임원경제지』·이규경 『오주연문장전산고』 / 김정호 『청구도』(1834)➔『대동여지도』(1861, 목판 22첩·10리 눈금) ➔ <strong>19c 말</strong> 이제마 『동의수세보원』(1894, 사상의학)</span></div>
           </div>
+          <div class="schema-alert">💡 의학 280년 차이: 17c 초 허준 『동의보감』(1613) ➔ 19c 초 정약용 『마과회통』(1800, 종두법) ➔ 19c 말 이제마 『동의수세보원』(1894, 사상의학)!</div>
+        </div>
+        <div class="schema-panel">
+          <div class="schema-panel-title">3. 19세기 세도 정치의 모순과 농민 항쟁 · 민간 신앙 및 새 종교</div>
+          <div class="schema-subgrid">
+            <div class="schema-box"><strong>1800년부터 1863년까지 세도정치·삼정 문란 ➔ 농민 항쟁</strong><span>안동 김씨(김조순 『옥호정도』)·풍양 조씨 비변사 독점·매관매직·삼정 문란(전정·군정·환곡) ➔ <strong>1811년 홍경래의 난</strong>(서북민 차별·가산 다복동·정주성 함락) ➔ <strong>1862년 임술 농민 봉기</strong>(백낙신 탐학·유계춘 진주 봉기·전국 70여 고을·박규수 안핵사·삼정이정청 실패)</span></div>
+            <div class="schema-box"><strong>민간 신앙 · 서학 박해 · 동학 ➔ 흥선대원군 집권</strong><span>『정감록』·미륵 신앙 / <strong>천주교</strong>: 명례방(1785)➔신해(1791)➔신유(1801, 배론성지 황사영 백서·정약용 유배)➔기해(1839)➔병오(1846) / <strong>동학(1860)</strong>: 최제우(인내천·보국안민, 1864 처형)➔최시형(포접제·『동경대전』·『용담유사』) ➔ <strong>1863년 흥선대원군 내정 개혁 · 1866년 병인박해</strong></span></div>
+          </div>
+          <div class="schema-alert">💡 홍경래의 난(1811, 평안도 차별·정주성) vs 임술 농민 봉기(1862, 진주 백낙신·박규수·삼정이정청) 1초 구분!</div>
         </div>
       </div>
       </div>
@@ -331,8 +483,8 @@
         <div class="sidenote-box">
           <div class="sidenote-title">핵심 도식 판독 가이드</div>
           <ul class="sidenote-list">
-            <li><strong>도식 주제</strong>: 실학·국학·과학 사상의 분화와 세도정치기 민중 항쟁 인과도</li>
-            <li><strong>활용법</strong>: 앞 단원(농촌 양극화·신해통공·진경 문화)에서 이어진 실학·국학의 성과와, 1800년 정조 급서 이후 세도정치의 모순이 홍경래·임술 농민 봉기 및 흥선대원군 집권으로 연결되는 흐름을 한눈에 대조하십시오.</li>
+            <li><strong>도식 주제</strong>: 17세기부터 19세기까지 실학·국학·과학의 연대기 및 세도정치기 민중 항쟁 인과도</li>
+            <li><strong>활용법</strong>: 1절(실학 시간순 계보), 2절(17세기에서 19세기까지 의학·국학·지리·백과·과학 일방향 연대기), 3절(세도정치·농민 항쟁·서학/동학에서 흥선대원군으로 이어지는 인과) 3개 패널을 본문 절 번호와 1대1로 대조하십시오.</li>
           </ul>
         </div>
       </aside>
@@ -366,7 +518,7 @@
   <script>
     const QUIZ_5_3 = [
       {
-        id: "5-3-1",
+        id: "5-3-01",
         grade: "S",
         text: "유형원은 『반계수록』에서 토지를 국유화한 뒤 사·농·공·상의 신분과 직역에 따라 토지를 차등 분배하는 균전론을 주장하였다.",
         isCorrect: true,
@@ -374,7 +526,7 @@
         explanation: "17세기 중농학파의 선구자 유형원은 『반계수록』에서 토지 국유화 후 신분과 직역에 따라 토지를 차등 지급해 조세와 군역을 일치시키는 균전론을 제시하였으며, 과거제 폐지 및 추천을 통한 공거제와 노비 세습제 폐지를 건의하였습니다."
       },
       {
-        id: "5-3-2",
+        id: "5-3-02",
         grade: "S",
         text: "유형원은 『반계수록』에서 신분 차별 없이 모든 성인에게 토지를 균등하게 나누어 주고 양반도 놀지 말고 일해야 한다는 균전론을 주장하였다.",
         isCorrect: false,
@@ -382,7 +534,7 @@
         explanation: "신분 차별 없이 성인에게 토지를 고루 분배하고 양반도 노동해야 한다고 주장한 균전론은 북학파 실학자 홍대용이 『임하경륜』에서 편 주장입니다. 유형원이 『반계수록』에서 주장한 균전론은 사·농·공·상 신분과 직역에 따라 차등 분배하는 개혁안입니다. 💡 1초 판별 팁: 유형원 균전론 = 신분·직역별 차등 분배 / 홍대용(『임하경륜』) 균전론 = 신분 무관 성인 균등 분배!"
       },
       {
-        id: "5-3-3",
+        id: "5-3-03",
         grade: "S",
         text: "이익은 『성호사설』에서 개인이 소유할 수 있는 토지의 최고 상한선을 설정하여 대토지 겸병을 막자는 한전론을 제시하였다.",
         isCorrect: false,
@@ -390,7 +542,7 @@
         explanation: "개인의 토지 소유 상한선을 두어 대토지 겸병을 억제하자고 제안한 한전론은 박지원이 『과농소초』(한민명전의)에서 편 주장입니다. 이익이 『성호사설』과 『곽우록』에서 주장한 한전론은 한 가구 생계 유지에 꼭 필요한 최소 토지인 '영업전'(하한선)을 설정해 매매를 영구 금지하자는 안이었습니다. 💡 1초 판별 팁: 이익 한전론 = 영업전(최소 생계 하한선 매매 금지) / 박지원(『과농소초』) 한전론 = 소유 상한선 제한!"
       },
       {
-        id: "5-3-4",
+        id: "5-3-04",
         grade: "S",
         text: "정약용은 강진 유배 시절 저술한 『경세유표』에서 마을 단위로 토지를 공동 소유·경작하고 노동량에 따라 수확물을 나누는 여전론을 처음 주장하였다.",
         isCorrect: false,
@@ -398,7 +550,7 @@
         explanation: "정약용은 초기 저술 『전론』에서 약 30가구 단위 마을(여) 중심으로 공동 경작하고 노동량(일한 날수)에 따라 분배하는 여전론을 제시하였으나, 이후 강진 유배 시절 저술한 『경세유표』에서는 현실적 실현 가능성을 높여 공전 1구획과 사전 8구획으로 나누는 정전제(정전론)로 가다듬었습니다. 💡 1초 판별 팁: 정약용 토지론 진화 = 초기 『전론』 여전론(공동 노동량 분배) ➔ 후기 『경세유표』 정전제(공전 1 + 사전 8)!"
       },
       {
-        id: "5-3-5",
+        id: "5-3-05",
         grade: "A",
         text: "유수원은 『의산문답』에서 사·농·공·상의 직업적 평등과 전문화, 상인들의 합자 경영을 역설하였다.",
         isCorrect: false,
@@ -406,7 +558,7 @@
         explanation: "사·농·공·상의 직업적 평등과 전문화, 상인 간 합자 경영을 역설한 유수원의 대표 저서는 『우서』입니다. 『의산문답』은 실옹과 허자의 대화를 통해 지전설과 무한우주론을 펼친 홍대용의 저술입니다. 💡 1초 판별 팁: 유수원 = 『우서』(직업 평등·합자 경영) / 홍대용 = 『의산문답』(지전설·화이관 타파)!"
       },
       {
-        id: "5-3-6",
+        id: "5-3-06",
         grade: "S",
         text: "홍대용은 『의산문답』에서 지구가 하루에 한 바퀴씩 자전한다는 지전설과 무한우주론을 펼쳐 중국 중심의 화이관을 무너뜨렸다.",
         isCorrect: true,
@@ -414,7 +566,7 @@
         explanation: "사설 천문대 농수각을 세우고 혼천의를 제작했던 홍대용은 『의산문답』에서 실옹과 허자의 대화를 통해 지전설과 무한우주론을 설파함으로써 성리학적 중화사상(화이관)을 근본부터 타파하였습니다."
       },
       {
-        id: "5-3-7",
+        id: "5-3-07",
         grade: "S",
         text: "박지원은 『열하일기』에서 조선 후기 동전 품귀 현상인 전황이 고리대와 빈부 격차를 악화시킨다고 보아 화폐 폐지론을 주장하였다.",
         isCorrect: false,
@@ -422,20 +574,20 @@
         explanation: "동전 품귀 현상인 전황의 폐단을 지적하며 화폐 폐지론을 편 인물은 중농학파 이익입니다. 반대로 박지원과 박제가 등 북학파 실학자들은 전황에 맞서 화폐 유통을 오히려 확대하고 수레·선박을 활용해 물자 교역을 늘려야 한다고 보았습니다. 💡 1초 판별 팁: 전황 대처 = 이익(화폐 폐지론) vs 박지원·박제가(화폐 유통 확대론)!"
       },
       {
-        id: "5-3-8",
+        id: "5-3-08",
         grade: "S",
-        text: "박제가는 『북학의』에서 재물을 우물물에 비유하며 나라의 부를 지키기 위해 백성의 소비를 철저히 억제하고 절약을 강제해야 한다고 주장하였다.",
+        text: "박제가는 『북학의』에서 소비 촉진론과 통상 확대를 주장하였으며, 『과농소초』에서 토지 소유 상한선을 제한하는 한전론과 풍자 소설 『양반전』을 남겼다.",
         isCorrect: false,
-        source: "한능검 심화 기출 변형 · 박제가 소비 촉진론 방향 왜곡",
-        explanation: "박제가는 『북학의』에서 우물물은 퍼서 쓸수록 새 물이 차오르고 쓰지 않으면 말라버리듯, 적절한 소비가 생산을 자극한다는 소비 촉진론과 청·외국과의 통상 무역 확대를 주장하였습니다. 💡 1초 판별 팁: 박제가 『북학의』 우물물 비유 = 소비 억제(X) ➔ 소비 권장·촉진론(O)!"
+        source: "한능검 심화 기출 변형 · 박제가와 박지원 업적 스왑",
+        explanation: "우물물 비유로 소비 촉진론과 청·외국과의 통상 무역 확대를 주장한 『북학의』의 저자는 박제가입니다. 반면 『과농소초』(한민명전의)에서 개인의 토지 소유 상한선을 두는 한전론을 제안하고 한문 소설 『양반전』·『허생전』·『호질』을 지어 양반 계층을 풍자한 인물은 박지원입니다. 💡 1초 판별 팁: 박제가 = 『북학의』(소비 촉진론·우물물) / 박지원 = 『열하일기』·『과농소초』(상한선 한전론)·『양반전』!"
       },
       {
-        id: "5-3-9",
+        id: "5-3-09",
         grade: "A",
-        text: "최한기는 서양 근대 과학의 수용을 거부하고 성리학적 명분론을 고수하는 가운데 『기측체의』와 최초의 세계 지리서 『지구전요』를 저술하였다.",
+        text: "최한기는 경험주의 기학을 세워 『기측체의』와 최초의 세계 지리서 『지구전요』를 저술하였으며, 영조 때 최초로 100리척 축척을 적용한 『동국지도』를 제작하였다.",
         isCorrect: false,
-        source: "한능검 심화 기출 변형 · 최한기 기학 성격 왜곡",
-        explanation: "19세기 중엽 실학자 최한기는 북학파의 실증 정신을 이어받아 서양 근대 과학을 토대로 감각과 경험 중심의 독창적 기학을 세우고 『기측체의』·『인정』·『지구전후도』(1834년)·『지구전요』(1857년)를 저술하여 근대 개화사상의 가교 역할을 하였습니다. 💡 1초 판별 팁: 최한기 기학 = 서양 근대 과학 + 경험주의 인식론 수용 ➔ 개화사상의 징검다리!"
+        source: "한능검 심화 기출 변형 · 최한기 기학 대 정상기 동국지도 스왑",
+        explanation: "19세기 중엽 실학자 최한기는 서양 근대 과학을 토대로 감각과 경험 중심의 기학을 세워 『기측체의』·『인정』·『지구전후도』(1834년)·『지구전요』(1857년)를 저술하였습니다. 반면 18세기 영조 때 최초로 100리척 축척을 적용한 정밀 지도 『동국지도』를 제작한 인물은 정상기입니다. 💡 1초 판별 팁: 최한기 = 기학·『지구전후도』(1834)·『지구전요』(1857) / 정상기 = 영조 때 100리척 『동국지도』!"
       },
       {
         id: "5-3-10",
@@ -544,10 +696,10 @@
       {
         id: "5-3-23",
         grade: "S",
-        text: "[박제가의 『북학의』 사료] 이 글을 쓴 실학자는 화폐 유통이 빈부 격차를 악화시킨다고 보아 화폐 폐지론을 펴고 청나라와의 교역을 전면 금지할 것을 주장하였다.",
+        text: "[박제가의 『북학의』 사료] 이 글을 쓴 실학자는 동전 품귀 현상인 전황을 우려하여 화폐 폐지론을 펴고, 한 가구 최소 생계 토지인 영업전의 매매를 금지하는 한전론을 주장하였다.",
         isCorrect: false,
-        source: "한능검 사료 추론 · 박제가 사상 정반대 왜곡",
-        explanation: "사료의 저자 박제가는 정조 때 규장각 검서관으로 등용되어 『북학의』를 통해 소비 촉진론(우물물 비유), 수레·선박 이용, 청·외국과의 통상 무역 확대 및 화폐 유통 확대를 적극 주장하였습니다. 화폐 폐지론은 중농학파 이익의 주장입니다. 💡 1초 판별 팁: 사료 키워드 '우물물·수레·선박' = 박제가 『북학의』(통상·소비·화폐 유통 모두 확대)!"
+        source: "한능검 사료 추론 · 박제가 대 이익(화폐 폐지론·영업전 한전론) 스왑",
+        explanation: "사료의 저자 박제가는 정조 때 규장각 검서관으로 등용되어 『북학의』를 통해 소비 촉진론(우물물 비유), 수레·선박 이용, 통상 무역 확대 및 화폐 유통 확대를 주장하였습니다. 반면 전황을 우려해 화폐 폐지론을 펴고 최소 생계 토지인 영업전의 매매를 금지하는 한전론을 주장한 인물은 중농학파 이익입니다. 💡 1초 판별 팁: 우물물 소비론·통상·화폐 유통 확대 = 박제가(북학파) / 화폐 폐지론·영업전 한전론 = 이익(중농학파)!"
       },
       {
         id: "5-3-24",
@@ -576,10 +728,10 @@
       {
         id: "5-3-27",
         grade: "S",
-        text: "[김정호·김정희 사료] 자료 1은 목판 인쇄 22첩 분첩절첩식과 도로 10리 눈금을 갖춘 김정호의 『대동여지도』이고, 자료 2는 북한산 진흥왕 순수비를 고증한 김정희의 『금석과안록』이다.",
+        text: "[김정호·김정희 사료] 자료 1의 지도 제작자는 최한기의 세계지도 『지구전후도』를 판각하고 『청구도』를 제작한 데 이어, 목판 22첩 분첩절첩식과 도로 10리 눈금을 갖춘 『대동여지도』와 지리지 『대동지지』를 완성하였다.",
         isCorrect: true,
-        source: "한능검 사료 추론 · 김정호 대동여지도 및 김정희 금석과안록",
-        explanation: "1861년 김정호가 완성한 『대동여지도』는 목판 22첩 분첩절첩식에 도로 10리마다 눈금을 표시한 정밀 지도이며, 추사 김정희는 『금석과안록』을 통해 북한산 비봉의 비석이 신라 진흥왕 순수비임을 최초로 고증하였습니다."
+        source: "한능검 사료 추론 · 김정호의 지도 제작과 지리지 편찬",
+        explanation: "19세기 철종 때 김정호는 1834년 최한기의 세계지도 『지구전후도』를 판각하고 『청구도』를 만든 데 이어, 1861년 목판 인쇄 22첩 분첩절첩식과 도로 10리마다 눈금을 표시해 거리를 계산할 수 있는 『대동여지도』 및 지리지 『대동지지』를 완성하였습니다."
       },
       {
         id: "5-3-28",

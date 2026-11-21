@@ -8,6 +8,47 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="stylesheet" href="assets/css/harness.css?v=5" />
+  <style id="cultureFigStyle">
+    .culture-fig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 14px 0 18px 0;
+    }
+    .culture-fig-card {
+      background: var(--bg-subtle, rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--border-line, rgba(16, 185, 129, 0.25));
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .culture-fig-card img {
+      display: block;
+      margin: 0 auto 6px auto;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 170px;
+      object-fit: contain;
+      border-radius: 4px;
+      background: #FFFFFF;
+      padding: 2px;
+    }
+    .culture-fig-cap {
+      font-size: 12px;
+      line-height: 1.45;
+      color: var(--text-sub, #cbd5e1);
+      word-break: keep-all;
+    }
+    @media (max-width: 520px) {
+      .culture-fig-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 <body class="antialiased selection:bg-emerald-600 selection:text-white">
 
@@ -44,10 +85,9 @@
           </button>
         </div>
         <nav class="space-y-2 text-xs">
-          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 전시과·과전법 토지 제도와 상업·화폐·대외 교역(벽란도)</a>
-          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 불교 통합·결사 운동과 교육·과거·성리학 수용</a>
-          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 고려의 역사서 변천과 신분·구휼·양성평등 가족 제도</a>
-          <a href="#sec4" class="block text-slate-300 hover:text-emerald-300 py-1 transition">4. 세계 최고 인쇄술·청자 공예와 건축·조각·석탑 문화유산</a>
+          <a href="#sec1" class="block text-slate-300 hover:text-emerald-300 py-1 transition">1. 고려의 토지 제도 변천과 상업·화폐·대외 교역(벽란도)</a>
+          <a href="#sec2" class="block text-slate-300 hover:text-emerald-300 py-1 transition">2. 고려의 신분·구휼·가족 제도와 전기 불교·학문 문화</a>
+          <a href="#sec3" class="block text-slate-300 hover:text-emerald-300 py-1 transition">3. 고려 후기 불교 결사·성리학 수용과 공예·인쇄술·건축의 완성</a>
           <a href="#diagramGoryeoCulture" class="block text-emerald-400 hover:text-white py-1 transition mt-2">핵심 비교 도식</a>
           <a href="#quizSection" class="block text-emerald-400 hover:text-white py-1 transition font-bold mt-3 border-t border-emerald-900/40 pt-2">기출 선지 30제 OX 확인 학습</a>
         </nav>
@@ -70,37 +110,42 @@
         고려의 토지 제도, 대외 교역 및 찬란한 불교 문화
       </h1>
       <p class="text-base text-slate-300 leading-relaxed">
-        태조의 역분전에서 경정전시과·녹과전·과전법으로 이어진 수조권 토지 제도의 변천과 상업·화폐·벽란도 국제 무역, 균여·의천·지눌·요세·혜심·보우의 불교 통합 및 국자감·성리학 교육의 흐름, 시대별 역사서와 양천제·구휼·양성평등 가족 제도, 그리고 직지심체요절·상감청자·주심포와 다포 건축·석탑 문화를 인과관계 중심으로 입체 규명합니다.
+        태조의 역분전에서 전시과·녹과전·과전법으로 이어진 토지 제도와 상업·화폐·벽란도 국제 무역의 일직선 흐름을 먼저 세우고, 고려의 양천제·구휼·양성평등 가족 제도를 토대로 고려 전기(10세기부터 12세기 중반까지) 호족 불교·국난 극복 문화·의천·관학 진흥·｢삼국사기｣에서 고려 후기(12세기 중후반부터 1392년까지) 지눌의 결사 운동·팔만대장경·상감청자·성리학 수용·목조 건축과 ｢직지심체요절｣에 이르는 문화사를 엄격한 연대기와 인과관계로 입체 규명합니다.
       </p>
     </header>
 
     <section class="space-y-12 mb-16">
 
       <div id="sec1">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">1. 전시과·과전법 토지 제도와 상업·화폐·대외 교역(벽란도)</h3>
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">1. 고려의 토지 제도 변천과 상업·화폐·대외 교역(벽란도)</h3>
         <div class="para-block">
           <p class="prose-body">
-            앞 단원에서 살펴본 바와 같이 태조 왕건이 호족을 포섭하려 지급한 <strong>역분전(940년)</strong>은 통일 전쟁의 공로와 주관적 인품에 기댄 임시 조처였기에, 광종의 과거제와 <strong>4색 공복</strong> 제정으로 관료 체제가 정비되자 개국 공신이 아닌 일반 관료들에게 직무 대가를 공정하게 배분할 새 토지 제도가 절실해졌습니다. 이에 고려 국가는 관리에게 땅의 소유권이 아니라 농민으로부터 조세를 거둘 수 있는 권리인 <strong>수조권</strong>을, 논밭인 <strong>전지</strong>와 땔감을 얻는 임야인 <strong>시지</strong>로 묶어 차등 지급함으로써 중앙 집권 관료제를 안정시키려 하였습니다. 먼저 <strong>경종 때 시정전시과(976년)</strong>에서는 아직 호족 세력이 남아 있던 현실을 감안하여 4색 공복을 바탕으로 <strong>관품과 함께 주관적 기준인 '인품'을 병행 적용해 전직·현직 관리</strong>에게 토지를 지급하였습니다. 이어 성종이 2성 6부와 12목을 정비한 직후 <strong>목종 때 개정전시과(998년)</strong>에서는 공신·호족의 주관적 우대를 끊어 내고 객관적 관료 서열을 세우려는 목적 아래 인품 기준을 완전히 배제하고 <strong>18과의 '관품'만을 기준</strong>으로 전직·현직 관리에게 지급하였습니다. 그러나 문벌귀족 사회가 굳어지고 세습 토지가 늘어나 국가가 나누어 줄 수조지가 바닥을 드러내는 위기가 닥치자, <strong>문종 때 경정전시과(1076년)</strong>를 단행하여 퇴직한 전직 관리를 지급 대상에서 제외하고 <strong>오직 '현직 관리'에게만 수조권을 지급</strong>하도록 축소하였으며, 동시에 소외되던 무관에 대한 대우를 일부 개선하여 체제의 균형을 맞추려 하였습니다.
+            앞 단원에서 살펴본 바와 같이 태조 왕건이 후삼국 통일 직후 호족을 포섭하려 지급한 <strong>역분전(940년)</strong>은 공로와 주관적 인품에 기댄 임시 조처였기에, 광종의 과거제와 <strong>4색 공복</strong> 제정으로 관료 체제가 정비되자 개국 공신이 아닌 일반 관료들에게 직무 대가를 공정하게 배분할 새 토지 제도가 절실해졌습니다. 이에 고려 국가는 백성들이 실제로 소유해 매매·상속·임대가 자유로웠던 사유지인 <strong>민전</strong>(수확량의 10분의 1 수세, 재해 시 촌전·수령·호부·삼사·안찰사 심사를 거쳐 감면)을 바탕으로 관리에게 땅의 소유권이 아니라 농민으로부터 조세를 거둘 권리인 <strong>수조권</strong>을, 논밭인 <strong>전지</strong>와 땔감을 얻는 임야인 <strong>시지</strong>로 묶어 <strong>18과</strong>로 차등 지급하는 전시과 제도를 세웠습니다(앞 단원 통일신라 신문왕이 노동력 징발이 포함된 녹읍을 폐지하고 수조권만 준 관료전의 원리를 계승함). 먼저 <strong>경종 때 시정전시과(976년)</strong>에서는 아직 호족 세력이 남아 있던 현실을 감안하여 4색 공복을 바탕으로 <strong>관품과 함께 주관적 기준인 '인품'을 병행 적용해 전직·현직 관리</strong>에게 토지를 지급하였습니다. 이어 성종이 2성 6부와 12목을 정비한 직후 <strong>목종 때 개정전시과(998년)</strong>에서는 공신·호족의 주관적 우대를 끊어 내고 객관적 관료 서열을 세우려는 목적 아래 인품 기준을 완전히 배제하고 <strong>18과의 '관품'만을 기준</strong>으로 전직·현직 관리에게 지급하였습니다. 그러나 문벌귀족 사회가 굳어지고 세습 토지가 늘어나 국가가 나누어 줄 수조지가 바닥을 드러내는 위기가 닥치자, <strong>문종 때 경정전시과(1076년)</strong>를 단행하여 퇴직한 전직 관리를 지급 대상에서 제외하고 <strong>오직 '현직 관리'에게만 수조권을 지급</strong>하도록 축소하였으며, 동시에 소외되던 무관에 대한 대우를 일부 개선하여 체제의 균형을 맞추려 하였습니다(이러한 수조지 부족 대응은 훗날 조선 세조가 현직 관리에게만 수조권을 준 직전법과 똑같은 논리입니다).
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
               <div class="sidenote-title">경제 · 토지 1줄 구별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>수조권 5단계</strong>: 태조 <strong>역분전</strong>(인품·공로) ➔ 경종 <strong>시정전시과</strong>(관품+인품, 전·현직) ➔ 목종 <strong>개정전시과</strong>(관품만, 전·현직) ➔ 문종 <strong>경정전시과(관품만, 오직 현직!)</strong> ➔ 원종 <strong>녹과전</strong>(경기 8현) ➔ 공양왕 <strong>과전법(경기 지방 한정)</strong></li>
-                <li><strong>세습 허용 토지</strong>: <strong>공음전(5품 이상)</strong> · <strong>한인전</strong>(6품 이하 미관직 자제) · <strong>구분전</strong>(유가족) · <strong>군인전·외역전</strong>(직역 세습)</li>
-                <li><strong>화폐·상업·농업</strong>: 성종 <strong>건원중보</strong> ➔ 숙종 <strong>주전도감(활구[은병]·삼한통보·해동통보·동국통보)</strong> ➔ 공양왕 <strong>저화</strong> / 개경 <strong>경시서</strong>·<strong>사개치부법</strong> / 충정왕 대 이암 <strong>｢농상집요｣</strong>·공민왕 대 문익점 <strong>목화씨</strong></li>
+                <li><strong>수조권 6단계</strong>: 태조 <strong>역분전</strong>(인품·공로) ➔ 경종 <strong>시정전시과</strong>(관품+인품, 전·현직) ➔ 목종 <strong>개정전시과</strong>(관품만, 전·현직) ➔ 문종 <strong>경정전시과(관품만, 오직 현직!)</strong> ➔ 원종 <strong>녹과전</strong>(경기 8현) ➔ 공양왕 <strong>과전법(경기 지방 한정)</strong></li>
+                <li><strong>세습 · 공용 토지</strong>: <strong>공음전(5품 이상)</strong> · <strong>한인전</strong>(6품 이하 미관직 자제) · <strong>구분전</strong>(유가족) · <strong>군인전·외역전</strong>(직역 세습) / <strong>내장전</strong>(왕실 경비) · <strong>공해전</strong>(관청 경비) · <strong>사원전</strong>(통도사 국장생 석표)</li>
+                <li><strong>화폐·상업·농업</strong>: 성종 <strong>건원중보(996)</strong> ➔ 숙종 <strong>주전도감(활구[은병]·삼한통보·해동통보·동국통보)</strong> ➔ 공양왕 <strong>자섬저화고·저화(1391)</strong> / <strong>경시서</strong>·<strong>사개치부법</strong> / 충정왕 이암 <strong>｢농상집요｣</strong>·공민왕 문익점 <strong>목화씨</strong></li>
               </ul>
             </div>
           </aside>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            전시과 체제에서 일반 관료가 받은 과전은 사망하거나 퇴직하면 국가에 반납하는 것이 원칙이었으나, 앞 단원에서 본 문벌귀족이 세력을 세습할 수 있었던 결정적 경제 기둥인 <strong>공음전</strong>은 <strong>5품 이상 고위 관리</strong>에게 지급되어 자손에게 합법적으로 세습되었습니다. 이 밖에도 6품 이하 하급 관리의 자제로서 관직에 오르지 못한 자에게 준 <strong>한인전</strong>, 군인이나 하급 관리의 유가족 생계를 도운 <strong>구분전</strong>, 그리고 군역을 세습하는 <strong>군인전</strong>과 앞 단원에서 배운 지방 <strong>향리</strong> 직역을 세습하는 <strong>외역전</strong>은 해당 신분이나 직역을 잇는 조건으로 세습이 허용되었습니다. 그러나 무신정변 이후 무신과 친원파 권문세족이 불법으로 <strong>대농장</strong>을 겸병하고 대몽 항쟁으로 토지 대장마저 불타 버리면서 전시과 제도는 완전히 붕괴하였습니다. 이에 1270년 개경 환도 직후 원종은 당장 관리들에게 줄 녹봉조차 부족한 재정 파탄을 수습하기 위해 <strong>1271년 경기 8현의 토지를 현직 관리에게 나누어 주는 미봉책인 '녹과전'</strong>을 실시하였습니다. 그럼에도 권문세족의 농장 겸병이 멈추지 않고 공민왕의 전민변정도감마저 좌절되자, 1388년 <strong>위화도 회군</strong>으로 실권을 장악한 이성계와 조준·정도전 등 급진파 신진사대부는 권문세족의 경제 기반을 완전히 해체하고 국가 재정과 신진사대부 자신의 경제 토대를 세우겠다는 목적 아래 <strong>1391년(공양왕 3년) '과전법'</strong>을 공포하였습니다. 과전법은 권문세족의 불법 농장을 몰수하고 지방 토지의 사적 지배를 막기 위해 <strong>오직 '경기 지방'의 토지에 한하여 전·현직 관리에게 수조권을 지급</strong>하였으며(관료 사망 후 과부와 어린 자녀의 생계를 보장하는 수신전·휼양전은 세습 허용), 이로써 다져진 경제력은 이듬해 신진사대부와 이성계가 조선을 건국하는 직접적 물적 토대가 되었습니다.
+            전시과 체제에서 일반 관료가 받은 과전은 사망하거나 퇴직하면 국가에 반납하는 것이 원칙이었으나, 앞 단원에서 본 문벌귀족이 세력을 세습할 수 있었던 결정적 경제 기둥인 <strong>공음전</strong>은 <strong>5품 이상 고위 관리</strong>에게 지급되어 자손에게 합법적으로 세습되었습니다. 이 밖에도 6품 이하 하급 관리의 자제로서 관직에 오르지 못한 자에게 준 <strong>한인전</strong>, 군인이나 하급 관리의 유가족 생계를 도운 <strong>구분전</strong>, 그리고 군역을 세습하는 <strong>군인전</strong>과 앞 단원에서 배운 지방 <strong>향리</strong> 직역을 세습하는 <strong>외역전</strong>은 해당 신분이나 직역을 잇는 조건으로 세습이 허용되었습니다. 한편 국가는 왕실의 경비를 충당하기 위해 <strong>내장전</strong>을, 중앙과 지방 각 관청의 행정 운영 경비를 충당하기 위해 <strong>공해전</strong>을 두었으며, 사찰이 보유한 <strong>사원전</strong>의 경계와 면세 특권을 공적으로 보증하기 위해 상서호부의 공문을 받아 선종 2년인 <strong>1085년 양산 통도사 국장생 석표</strong>를 세우기도 하였습니다. 그러나 무신정변 이후 무신과 친원파 권문세족이 불법으로 <strong>대농장</strong>을 겸병하고 대몽 항쟁으로 토지 대장마저 불타 버리면서 전시과 제도는 완전히 붕괴하였습니다. 이에 1270년 개경 환도 직후 원종은 당장 관리들에게 줄 녹봉조차 부족한 재정 파탄을 수습하기 위해 <strong>1271년(원종 12년) 경기 8현의 토지를 현직 관리에게 나누어 주는 미봉책인 '녹과전'</strong>을 실시하였습니다. 그럼에도 권문세족의 농장 겸병이 멈추지 않고 충목왕의 정치도감(1347년)과 공민왕·신돈의 <strong>전민변정도감(1366년)</strong>마저 좌절되자, 1388년 <strong>위화도 회군</strong>으로 실권을 장악한 이성계와 조준·정도전 등 급진파 신진사대부는 권문세족의 경제 기반을 완전히 해체하고 새 국가의 재정과 자신들의 경제 토대를 세우겠다는 목적 아래 <strong>1391년(공양왕 3년) '과전법'</strong>을 공포하였습니다. 과전법은 권문세족의 불법 농장을 몰수하고 지방 세력의 사적 토지 지배를 막기 위해 <strong>원칙적으로 '경기 지방'의 토지에 한하여 전·현직 관리에게 수조권을 지급</strong>하였으며(관료 사망 후 과부와 어린 자녀의 생계를 보장하는 수신전·휼양전은 세습 허용), 이로써 다져진 경제력은 이듬해 신진사대부와 이성계가 조선을 건국하는 직접적 물적 토대가 되었습니다.
           </p>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            농업 생산력과 상업 교역이 확대되자 고려 정부는 시장을 통제해 물가를 안정시키고 화폐를 유통해 국가 재정을 확충하려는 정책을 추진하였습니다. 수도 개경에는 시전을 설치하고 상행위와 물가를 감독하는 <strong>경시서</strong>를 두었으며(신라 경주의 동시전 및 훗날 조선 한양의 평시서와 대비됨), 서적점·약점·다점·주점 같은 <strong>관영 상점</strong>을 직접 운영하고 지방 사찰 토지인 사원전의 경계를 국가가 보증하기 위해 <strong>양산 통도사 국장생 석표(1085년)</strong>를 세웠습니다. 화폐 면에서는 성종 때 최초의 철전인 <strong>건원중보(996년)</strong>를 발행한 데 이어, 숙종 때 승려 <strong>의천</strong>과 윤관 등의 건의로 <strong>주전도감(1097년)</strong>을 설치하여 <strong>삼한통보·해동통보·해동중보·동국통보</strong> 등 동전과 우리나라 지형을 본뜬 고액 은화인 <strong>활구(은병, 1101년)</strong>를 주조하였으나 일반 백성 사이에는 여전히 곡식과 삼베가 주로 쓰였습니다(고려 말 공양왕 3년인 1391년에는 자섬저화고를 두어 닥나무 지폐인 <strong>저화</strong>를 발행함). 한편 개경과 지방의 상업 거래가 촘촘해지면서 개성 상인들은 현금과 외상 거래의 수입·지출을 네 항목으로 빈틈없이 기록하는 독자적 복식부기 회계법인 <strong>사개치부법</strong>을 발전시켰습니다. 대외 교역은 예성강 어귀의 국제 무역항 <strong>벽란도</strong>를 중심으로 번영하여, 송나라(비단·서적·자기·약재 수입 및 인삼·모시·종이·먹·나전칠기 수출)와 거란·여진·일본 상인은 물론 서역의 <strong>아라비아(대식국) 상인</strong>까지 내항해 수은·향료·산호를 교역하면서 고려의 국호가 서방 세계에 <strong>'코리아'</strong>로 널리 알려졌습니다. 고려 후기 농업에서는 <strong>2년 3작의 윤작법</strong>과 남부 일부 지방의 <strong>모내기법(이앙법)</strong>이 보급되었고, <strong>1349년(충정왕 1년) 이암이 원나라의 농서인 ｢농상집요｣를 국내에 소개</strong>(공민왕 때 합천에서 간행)하여 영농 기술을 보급하였으며, <strong>1363년(공민왕 12년) 문익점이 원에서 목화씨를 들여와 장인 정천익과 함께 재배하고 씨아·물레로 면포를 짜는 데 성공</strong>하면서 백성들의 의생활을 근본적으로 바꾸어 놓았습니다(수공업 역시 전기의 관청 및 앞 단원에서 본 특수 구역 '소' 중심에서 후기에는 <strong>사원·민영 수공업</strong> 중심으로 전환됨).
+            농업 생산력과 도회지 교역이 커지자 고려 정부는 시장을 통제해 물가를 안정시키고 화폐를 유통해 국가 재정을 확충하는 정책을 전기부터 말기까지 일관되게 추진하였습니다. 수도 개경에는 시전을 설치하고 상행위와 도량형·물가를 감독하는 <strong>경시서</strong>를 두었으며(신라 경주의 동시전 및 훗날 조선 한양의 평시서와 대비됨), 서적점·약점·다점·주점 같은 <strong>관영 상점</strong>을 직접 운영하였습니다. 개경과 지방의 상업 거래가 촘촘해지자 개성 상인들은 현금과 외상 거래의 수입·지출을 네 항목으로 빈틈없이 기록하는 독자적 복식부기 회계법인 <strong>사개치부법</strong>을 발전시켰으며, 수공업 역시 고려 전기에는 관청 수공업과 앞 단원에서 본 특수 행정 구역 <strong>'소'(동소·철소·자기소·지소·묵소 등)</strong>의 공납 생산이 중심이었다가 무신정변 이후 소 주민의 저항과 해체를 거쳐 고려 후기에는 승려가 직물·양조·제지를 맡은 <strong>사원 수공업과 민영 수공업</strong> 중심으로 전환되었습니다. 화폐 유통의 변화도 시간순으로 뚜렷한 계보를 이룹니다. 먼저 <strong>성종 15년(996년)</strong>에는 뒷면에 '동국'을 새겨 고려의 주체성을 드러낸 우리나라 최초의 금속 화폐이자 철전인 <strong>건원중보</strong>를 발행하였고, 이어 <strong>숙종</strong> 때에는 송나라의 화폐 경제를 보고 온 승려 <strong>의천</strong>과 <strong>윤관</strong> 등의 건의를 받아들여 화폐 유통으로 상업을 장려할 목적으로 <strong>주전도감(1097년)</strong>을 설치하여 우리나라 지형을 본떠 은 1근으로 만든 고액 은화인 <strong>활구(은병, 1101년)</strong>와 동전인 <strong>삼한통보·해동통보(1102년)·해동중보·동국통보</strong>를 주조해 재추와 문무 양반·군인에게 나누어 주었으나 일반 백성 사이에는 여전히 곡식과 삼베가 주로 쓰였습니다. 이후 원 간섭기에 원의 지폐인 보초가 유입되고 은병이 유출되며 거친 삼베(추포)가 난립해 화폐 질서가 극도로 문란해지자, <strong>공민왕</strong> 대 이후 소액 화폐와 지폐(<strong>저화</strong>) 도입 논의가 본격화되었고, 마침내 고려 말 <strong>1391년(공양왕 3년)에는 자섬저화고를 두어 닥나무 지폐인 저화(고려통행저화)</strong>를 발행하기에 이르렀습니다(비록 곧 폐기되었으나 조선 태종 때 사섬서 설치와 저화 발행의 직접적 선례가 됨).
+          </p>
+        </div>
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            후삼국 통일 이후 고려 사회가 안정을 되찾자 왕실과 귀족 사이에서 비단·서적·약재 같은 고급 물품의 수요가 크게 늘고, 동시에 국내에서 생산되지 않는 은·모피·유황 등의 전략·생활 물자를 안정적으로 확보해야 할 필요성이 커졌습니다. 이에 고려 국가는 선진 문물을 수용하는 한편 외국 사신과 상인의 출입을 수도의 관문에서 직접 통제·관리해 공·사 무역의 이익을 극대화하겠다는 목적 아래, 개경에서 가까운 예성강 어귀의 국제 무역항 <strong>벽란도</strong>를 국가적 교역 거점으로 삼아 고려 전기부터 후기까지 대외 교역을 크게 번영시켰습니다. 고려는 <strong>송나라</strong>로부터 비단·서적·자기·약재·악기를 수입하고 인삼·모시·종이·먹·나전칠기·화문석을 수출하였는데, 1123년(인종 원년) 송나라 사절의 일원으로 벽란도를 거쳐 개경에 들어온 <strong>서긍</strong>은 한 달 남짓 머물며 보고 들은 고려의 문물과 비색 청자의 아름다움을 <strong>｢선화봉사고려도경｣</strong>에 남겼으며, 풍랑을 헤치고 돛을 올린 무역선을 새긴 고려 동경인 <strong>황비창천 명 거울</strong>도 활발한 해상 교역을 증언합니다. 아울러 <strong>요(거란)</strong>·<strong>여진</strong>(은·모피 수입, 식량·농기구·포목 수출)·<strong>일본</strong>(수은·유황 수입, 곡물·서적·대장경 수출) 상인은 물론 멀리 서역의 <strong>아라비아(대식국) 상인</strong>까지 벽란도에 내항해 수은·향료·산호 등을 교역하면서 고려의 국호가 서방 세계에 <strong>'코리아'</strong>로 널리 알려졌습니다. 한편 고려 후기에는 무신정변과 대몽 항쟁, 권문세족의 농장 겸병과 과중한 수탈로 농촌이 피폐해지면서, 땅을 묵혀 지력을 회복하던 기존의 휴경 농법만으로는 식량 부족과 삼베 위주 의생활의 추위를 견디기 어려운 심각한 민생 위기가 닥쳤습니다. 이에 제한된 토지의 이용률을 끌어올려 수확량을 늘리고 백성에게 따뜻하고 질긴 새 의류 원료를 보급하려는 목적 아래 선진 영농 기술과 신작물 도입이 적극 추진되었습니다. 그 결과 농업에서는 휴경지를 줄여 2년 동안 세 번 수확하는 <strong>2년 3작 윤작법</strong>과 남부 일부 지방의 <strong>모내기법(이앙법)</strong>이 보급되어 생산력이 높아졌고, <strong>1349년(충정왕 1년) 이암이 원나라 강남의 영농 기술을 정리한 농서 ｢농상집요｣를 국내에 소개</strong>(공민왕 때 합천에서 간행, 훗날 조선 세종 때 우리 풍토에 맞춰 지은 정초·변효문의 ｢농사직설｣과 구별됨)하였으며, <strong>1363년(공민왕 12년) 문익점이 원에서 목화씨를 들여와 장인 정천익과 함께 재배하고 씨아·물레로 면포를 짜는 데 성공</strong>하면서 백성들의 의생활을 근본적으로 바꾸어 놓았습니다.
           </p>
         </div>
 
@@ -108,10 +153,10 @@
           <table class="book-table">
             <thead>
               <tr>
-                <th style="width:19%;">토지 제도 명칭</th>
+                <th style="width:19%;">경제 · 토지 구분</th>
                 <th style="width:22%;">제정 시기 및 국왕</th>
-                <th style="width:27%;">지급 기준 및 대상</th>
-                <th>핵심 특징 및 수험 판별 포인트</th>
+                <th style="width:27%;">핵심 대상 및 수조권·제도 내용</th>
+                <th>인과 배경 및 수험 판별 포인트</th>
               </tr>
             </thead>
             <tbody>
@@ -119,37 +164,43 @@
                 <td><strong>역분전</strong></td>
                 <td>태조 23년 (940)</td>
                 <td>후삼국 통일 공신·군인<br/>(<strong>인품과 공로</strong> 기준)</td>
-                <td>전시과 제도의 모태로, 관등이 아닌 개국 공신들의 충성도와 공로를 기준으로 차등 지급</td>
+                <td>전시과의 모태로, 관등 확립 전 개국 공신의 충성도와 공로를 기준으로 차등 지급</td>
               </tr>
               <tr>
                 <td><strong>시정전시과</strong></td>
                 <td>경종 원년 (976)</td>
                 <td><strong>전직 · 현직</strong> 관료<br/>(4색 공복 + <strong>관품·인품 병행</strong>)</td>
-                <td>전지와 시지를 지급하는 전시과의 첫 제정, 호족 세력 잔존으로 관품 외에 주관적 '인품'을 함께 반영</td>
+                <td>전지와 시지를 18과로 지급한 첫 전시과, 호족 잔존으로 주관적 '인품' 병행</td>
               </tr>
               <tr>
                 <td><strong>개정전시과</strong></td>
                 <td>목종 원년 (998)</td>
                 <td><strong>전직 · 현직</strong> 관료<br/>(인품 배제, <strong>18과 관품만 적용</strong>)</td>
-                <td>주관적 기준인 인품을 완전히 삭제하고 오직 18등급의 관품만을 기준으로 지급해 관료제 성격 확립</td>
+                <td>성종 2성 6부 정비 직후 인품을 완전히 삭제하고 오직 관품만으로 관료 서열 확립</td>
               </tr>
               <tr>
                 <td><strong>경정전시과</strong></td>
                 <td>문종 30년 (1076)</td>
                 <td><strong>오직 '현직' 관료에게만 지급!</strong><br/>(18과 관품 기준)</td>
-                <td>세습 토지 증가로 수조지가 부족해지자 <strong>전직 관리를 전면 배제하고 현직에게만 지급</strong>(무관 대우 일부 개선)</td>
+                <td>세습 토지 증가로 수조지가 고갈되자 <strong>전직 관리를 전면 배제</strong>(무관 대우 일부 개선)</td>
               </tr>
               <tr>
-                <td><strong>공음전 · 녹과전</strong></td>
+                <td><strong>세습 · 공용 토지<br/>및 녹과전</strong></td>
                 <td>문종 대 확립 /<br/>원종 12년 (1271)</td>
-                <td><strong>공음전</strong>: 5품 이상 고위 관료<br/><strong>녹과전</strong>: 현직 관료(경기 8현)</td>
-                <td><strong>공음전</strong>은 자손 세습이 허용된 문벌귀족의 경제 기반 / <strong>녹과전</strong>은 몽골 전쟁 뒤 녹봉 부족을 메운 임시 조처</td>
+                <td><strong>세습</strong>: 공음전(5품 이상)·한인전·구분전·군인전·외역전 / <strong>공용</strong>: 내장전·공해전·사원전 / <strong>녹과전</strong>: 경기 8현 현직</td>
+                <td><strong>공음전</strong>은 문벌귀족 세습 기반, <strong>통도사 국장생 석표(1085)</strong>는 사원전 경계 보증 / <strong>녹과전</strong>은 대몽항쟁 뒤 녹봉 부족 임시 미봉책</td>
               </tr>
               <tr>
                 <td><strong>과전법</strong></td>
                 <td>공양왕 3년 (1391)</td>
                 <td>전직 · 현직 관료<br/>(<strong>경기 지방 토지에 한정!</strong>)</td>
-                <td>이성계·조준 등 신진사대부가 권문세족의 농장을 몰수하고 경기 지방에 한해 수조권 지급(수신전·휼양전 세습 허용)</td>
+                <td>위화도 회군 후 조준·정도전 등 신진사대부가 농장 몰수 및 경기 한정 수조권 지급(수신전·휼양전 세습 허용)</td>
+              </tr>
+              <tr>
+                <td><strong>상업 · 화폐 ·<br/>벽란도 · 농업</strong></td>
+                <td>성종(996) ➔ 숙종(1097) ➔ 공양왕(1391)</td>
+                <td><strong>경시서</strong>·관영 상점·<strong>사개치부법</strong> / <strong>건원중보</strong> ➔ <strong>주전도감(활구·해동통보·삼한통보)</strong> ➔ <strong>자섬저화고(저화)</strong></td>
+                <td><strong>벽란도</strong>(송·요·여진·일본·아라비아[대식국], '코리아') / 충정왕 <strong>이암 ｢농상집요｣(1349)</strong> · 공민왕 <strong>문익점 목화씨(1363)</strong></td>
               </tr>
             </tbody>
           </table>
@@ -157,57 +208,91 @@
       </div>
 
       <div id="sec2">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">2. 불교 통합·결사 운동과 교육·과거·성리학 수용</h3>
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">2. 고려의 신분·구휼·가족 제도와 전기 불교·학문 문화</h3>
         <div class="para-block">
           <p class="prose-body">
-            앞 단원 통일신라 말의 사상적 전환과 맞물려 고려 초기는 중앙 집권을 뒷받침하던 교종과 지방 호족의 정신적 지주였던 선종이 대립하던 시기였습니다. 이에 고려 왕실은 분열된 불교 교단을 하나로 묶어 왕권을 뒷받침할 정신적 통합 이념을 세우려 하였습니다. 먼저 앞 단원 광종 대에 왕실의 후원을 받아 개경 귀법사 주지가 된 <strong>균여</strong>는 화엄종 내부의 남악파와 북악파를 융합하고, 어려운 불교 교리를 일반 백성에게 쉽게 전파하기 위해 향가 <strong>｢보현십원가｣ 11수</strong>를 지어 불교 대중화의 문을 열었습니다. 이어 문벌귀족 사회가 무르익은 11세기 말, 문종의 넷째 아들이었던 <strong>대각국사 의천</strong>은 왕실·문벌귀족과 결탁한 교종(화엄종·법상종)이 거대 사원을 차지하고 선종과 날카롭게 대립하는 위기를 극복하여 왕실 중심의 불교 통합을 이루겠다는 목표를 세웠습니다. 의천은 개경 <strong>흥왕사</strong>를 거점으로 화엄종을 중심으로 교종을 통합하고 <strong>교장도감</strong>을 설치해 고려·송·요의 경전 주석서를 집대성한 <strong>｢교장(속장경)｣</strong>을 간행하였으며, 송나라 유학에서 돌아와 숙종 때 개경 <strong>국청사(1097년)를 중심으로 '해동 천태종'을 개창</strong>하였습니다. 의천은 <strong>교종을 중심으로 선종을 통합</strong>하고자 교리 공부(교)와 참선 실천(관)을 함께 닦아야 한다는 <strong>'교관겸수'</strong>를 제창하고, 이론과 실천을 아우르는 <strong>내외겸전</strong>의 수행을 강조하였습니다.
+            고려의 사회 신분 구조는 법제적으로 양인과 천인으로 나누는 <strong>양천제</strong>를 원칙으로 삼았으나, 실제로는 지배층인 <strong>귀족·중류층</strong>과 피지배층인 <strong>양민·천민</strong>의 4계층으로 운영되었습니다. 중앙과 지방의 행정·군사 실무를 맡아 직역을 세습하던 <strong>중류층</strong>에는 중앙 관청 실무 관리인 <strong>서리</strong>, 궁중 실무직인 <strong>남반</strong>, 지방 행정 실무를 맡은 <strong>향리</strong>, 하급 장교인 <strong>군반</strong>, 그리고 지방 교통·통신을 관리한 <strong>역리</strong>가 속하였습니다. 여기서 시험에 가장 자주 혼동을 유발하는 개념이 양민 계층의 <strong>'백정'</strong>입니다. 조선 시대의 백정이 도축업에 종사하는 천민 계층이었던 것과 정반대로, <strong>고려 시대의 백정은 국가에 특정 직역을 지지 않는 일반 양인 농민</strong>을 가리켰습니다(성인 남자가 있어 군역·공역 등 직역의 의무를 지는 호구는 <strong>정호</strong>라 불렀음). 또한 같은 양민이라도 일반 군현민보다 조세와 공납에서 무거운 차별을 받던 특수 행정 구역인 <strong>향·부곡·소</strong>의 주민이 있었고, 최하층 천민인 <strong>공노비·사노비</strong>는 주인 집에서 부림을 당하는 솔거 노비와 떨어져 살며 신공을 바치면서 재산을 모을 수 있던 <strong>외거 노비</strong>로 나뉘었으며, 어머니의 신분을 따르는 <strong>천자수모법</strong> 및 부모 중 한쪽만 천민이어도 자녀가 노비가 되는 <strong>일천즉천</strong> 원칙이 적용되었습니다. 그럼에도 고려 사회는 신라 골품제보다 훨씬 개방적이어서 백정이 군공을 세워 무관으로 출세하거나 향리가 과거를 통해 중앙 관료로 올라갈 수 있었고, 앞 단원에서 본 공주 <strong>명학소(충순현 승격)</strong>와 충주 <strong>다인철소(익안현 승격)</strong>처럼 특수 구역 주민이 일반 군현민으로 상승하거나 외거 노비가 재산을 모아 양인이 되기도 하였습니다. 한편 농촌에서는 본래 부처를 기리며 향을 묻던(매향) 불교 신앙 공동체였던 <strong>향도</strong>가 고려 후기로 가면서 농민들의 공동 노동·장례·혼사를 돕는 마을 자치 상부상조 조직으로 발전하였습니다(조선 중기 사림의 향촌 규약인 향약과 구별됨).
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
-              <div class="sidenote-title">불교 · 교육 · 성리학 1줄 구별 공식</div>
+              <div class="sidenote-title">사회 · 전기 문화 1줄 구별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>고려 고승 시대순</strong>: 광종 <strong>균여</strong>(귀법사·보현십원가) ➔ 숙종 <strong>의천</strong>(교종 중심 선종 통합, 흥왕사 교장도감·국청사 천태종·교관겸수) ➔ 무신기 <strong>지눌</strong>(선종 중심 교종 통합, 송광사 수선사·조계종·돈오점수/정혜쌍수) · 제자 <strong>혜심(유불일치설·선문염송집)</strong> · <strong>요세</strong>(강진 만덕사 백련결사) ➔ 공민왕 <strong>보우</strong>(임제종)</li>
-                <li><strong>관학 vs 사학</strong>: 문종 <strong>최충 9재 학당(사학 12도)</strong> 융성 ➔ 숙종 <strong>서적포</strong> · 예종 <strong>7재(강예재 포함)·양현고·청연각·보문각</strong> · 인종 <strong>경사 6학</strong> · 충렬왕 <strong>섬학전(안향 건의)</strong> · 공민왕 성균관 대사성 <strong>이색</strong></li>
-                <li><strong>성리학 계보</strong>: 충렬왕 <strong>안향</strong>(최초 도입) ➔ 충선왕 연경 <strong>만권당(이제현)</strong> ➔ 공민왕 성균관 <strong>이색·정몽주·정도전</strong></li>
+                <li><strong>고려 백정 vs 조선 백정</strong>: 고려 <strong>백정 = 직역 없는 일반 양인 농민</strong>(vs 정호 = 직역 부담 / 조선 백정 = 도축업 천민)</li>
+                <li><strong>구휼('보' vs '도감')</strong>: 태조 흑창 ➔ 성종 <strong>의창·상평창</strong> / 기금 이자 재단 <strong>보</strong>(광종 <strong>제위보</strong>) vs 비상 임시 관서 <strong>도감(도)</strong>(예종 <strong>구제도감</strong>·구급도감) / 의료 <strong>동서대비원·혜민국</strong></li>
+                <li><strong>고려 가족 제도</strong>: <strong>서류부가혼(남귀여가혼) · 자녀 균분 상속 · 윤회 봉사(윤번 봉사) · 출생순 호적 · 여성 호주 · 재가 자유 · 사위와 외손자 음서 적용</strong></li>
+                <li><strong>전기 불교·역사·교육·조형</strong>: 광종 <strong>균여</strong>(귀법사·보현십원가)·<strong>철당간(준풍)</strong>·<strong>관촉사 은진미륵</strong> ➔ 현종 <strong>초조대장경·현화사비(천희/태평)</strong> ➔ 전기에서 중기(10세기 말부터 11세기까지) <strong>월정사 8각 9층 석탑</strong>(다각 다층)·11세기 <strong>비색 순청자</strong> ➔ 문종 <strong>최충 9재 학당</strong> ➔ 숙종 <strong>의천(국청사 해동 천태종·교관겸수·교장)</strong> ➔ 예종 <strong>7재·양현고</strong> ➔ 인종 <strong>김부식 ｢삼국사기｣(1145)</strong></li>
               </ul>
             </div>
           </aside>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            그러나 왕실의 후원에 기댄 의천의 통합은 그가 세상을 떠난 뒤 다시 흩어졌고, 앞 단원에서 본 1170년 <strong>무신정변</strong>으로 문벌귀족과 교종 사원이 몰락하면서 지방 선종 세력이 불교계의 주류로 떠올랐습니다. 그런데 정권을 잡은 무신과 결탁한 일부 불교계가 세속의 명예와 재물(명리)에 빠져 부패하는 위기가 닥치자, <strong>보조국사 지눌</strong>은 불교 본연의 순수한 수행 정신을 되살려 개혁하겠다는 뜻으로 ｢권수정혜결사문｣을 발표하고 전남 순천 <strong>송광사(길상사)에서 '수선사 결사'</strong>를 주도하였습니다. 지눌은 의천과 정반대로 <strong>선종을 중심으로 교종을 포용해 '조계종'의 사상 체계를 확립</strong>하였으며, 깨달음에 이르는 실천 원리로 인간의 본성이 곧 부처임을 단박에 깨달은(돈오) 뒤에도 오랜 나쁜 습관을 없애려 꾸준히 수행(점수)해야 한다는 <strong>'돈오점수'</strong>와, 선종의 마음 안정(정) 및 교종의 지혜(혜)를 함께 닦는 <strong>'정혜쌍수'</strong>를 제시하여 무신 정권의 후원을 받으며 호응을 얻었습니다. 지눌의 뒤를 이어 수선사 제2세 사주가 된 제자 <strong>혜심(진각국사)</strong>은 화두를 참구하는 간화선을 보급해 <strong>｢선문염송집｣</strong>을 편찬하고 유교와 불교가 심성 수양의 근본에서 같다는 <strong>'유불일치설'</strong>을 주장함으로써 훗날 고려 말 사대부가 성리학을 거부감 없이 받아들이는 사상적 다리를 놓았습니다. 같은 시기 천태종 승려 <strong>요세</strong>는 전남 강진 <strong>만덕사(백련사)에서 백련결사</strong>를 열어 자신의 죄업을 뉘우치는 법화 신앙과 아미타 정토 신앙을 결합해 지방 민중의 폭넓은 지지를 받았고, 훗날 원 간섭기의 폐단을 겪은 뒤 공민왕 때에는 <strong>보우</strong>가 원나라 임제종을 수용해 왕실의 지지 아래 선종 통합과 불교 정화를 추진하였습니다.
+            고려 국가는 백성이 굶주림과 질병으로 유랑하면 국가의 조세와 군역 기반 자체가 무너진다는 위기의식 아래 평상시 상설 기관과 기금 재단, 비상시 임시 기구를 촘촘히 결합한 <strong>구휼·의료 제도</strong>를 운영하였습니다. 먼저 태조가 곡식을 빌려주던 <strong>흑창</strong>을 세운 데 이어, <strong>광종 14년(963년)</strong>에는 특정 공익 목적을 위해 기본 기금을 모아 두고 그 이자로 사업을 영속적으로 운영하는 재단 방식인 <strong>'보'</strong> 체제를 활용하여 빈민 구제 및 질병 치료 기구인 <strong>제위보</strong>(및 학문을 돕는 학보 등)를 설치하였습니다. 뒤이어 <strong>성종</strong> 때에는 태조의 흑창을 전국적으로 확대한 <strong>의창</strong>(춘대추납 곡물 대여)과 물가 조절 기구 <strong>상평창</strong>을 정비하여 민생 안정을 뒷받침하였고, 이후 개경의 동쪽과 서쪽에 빈민과 행려병자를 수용·치료하는 <strong>동서대비원</strong>(조선 활인서로 계승)을 운영하여 구호망을 넓혔습니다. 나아가 전염병이나 대기근 같은 비상 재해가 닥치자 <strong>예종 4년(1109년)</strong>에는 필요에 따라 설치·폐지하는 임시 관서인 <strong>도감</strong> 체제를 가동해 <strong>구제도감</strong>(후대 비상시 설치된 구급도감 등 줄여서 '도'로 이어짐)을 두어 환자를 치료하고 주검을 수습하였으며, 이어 <strong>예종 7년(1112년)</strong>에는 가난한 백성과 병자에게 의약을 조제·지급하는 국립 의료 기관인 <strong>혜민국</strong>(조선 혜민서로 계승)을 설치하였습니다. 한편 아직 성리학적 가부장제가 사회 전반에 뿌리내리기 전이었던 고려 시대의 가족 제도와 여성의 지위는 조선 후기와 정반대로 <strong>매우 개방적이고 양성평등적</strong>이었습니다. 혼인에서는 남자가 신부 집(처가)에 들어가 살림을 차리는 <strong>서류부가혼(남귀여가혼, 고구려 서옥제 전통과 연결)</strong>이 일반적이었고, 부모의 토지와 노비는 아들과 딸 차별 없이 똑같이 나누어 주는 <strong>자녀 균분 상속</strong>이 이루어졌으며, 부모의 제사 역시 아들과 딸이 돌아가며 지내는 <strong>윤회 봉사(윤번 봉사)</strong>가 관행이었습니다. 또한 호적에는 남녀 구별 없이 <strong>태어난 순서(출생순)대로 기재</strong>하고 남편이 사망하면 <strong>여성이 집안의 호주</strong>가 되었으며, <strong>여성의 이혼과 재가(재혼)가 자유로워</strong> 재가녀 자손의 관직 진출에 아무런 차별이 없었을 뿐만 아니라(재가녀 자손의 문과 응시 제한은 조선 성종 ｢경국대전｣에서 법제화됨), 5품 이상 관리에게 부여하는 <strong>음서와 공음전의 혜택 역시 친손자뿐 아니라 사위와 외손자에게까지 똑같이 적용</strong>되었습니다.
           </p>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            한편 통치 이념인 유학 교육과 인재 선발 제도 역시 귀족 사회의 독점과 왕권의 관학 육성 욕구가 충돌하며 변천하였습니다. 성종 때 정비된 최고 국립 대학 <strong>국자감</strong>은 유학부인 국자학(문무관 3품 이상 자제)·태학(5품 이상 자제)·사문학(7품 이하 자제)과 기술학부인 율학·서학·산학(8품 이하 및 서인 자제)으로 나뉘어 <strong>입학 자격에 엄격한 신분 차등</strong>을 두었습니다. 그런데 문종 때 해동 공자라 불린 <strong>최충이 9재 학당(문헌공도)</strong>을 세우며 시작된 <strong>사학 12도</strong>에 과거 합격생이 몰려 국립 대학인 국자감이 위축되는 위기가 발생하자, 왕실은 관학을 되살려 왕권에 충성하는 관료를 직접 길러내려 하였습니다. 이에 숙종이 국자감에 출판 기구인 <strong>서적포</strong>를 둔 데 이어, <strong>예종은 국자감에 전문 강좌인 7재(유학 6재와 무학재인 강예재)와 장학 재단인 양현고, 궁중 학술 기구인 청연각·보문각</strong>을 설치하였고, 인종은 <strong>경사 6학</strong>과 지방 향교를 정비하였습니다. 고려의 <strong>과거제</strong>는 문학적 재능을 시험하는 <strong>제술과</strong>와 유교 경전을 묻는 <strong>명경과</strong>(제술과를 중시), 기술관을 뽑는 <strong>잡과</strong>, 승려를 뽑는 <strong>승과(교종선·선종선)</strong>로 운영되었으나 <strong>무과는 예종 때 강예재 설치와 고려 말 공양왕 때 잠시 시행된 것을 제외하면 사실상 실시되지 않았습니다</strong>. 이후 원 간섭기에 무너진 유학 교육을 일으키려 충렬왕 때 <strong>안향</strong>이 처음으로 <strong>성리학</strong>을 도입하고 관리들에게 기금을 거두어 양현고에 보탠 장학 기금인 <strong>섬학전(1304년)</strong>을 마련하였으며, 충선왕이 원나라 연경에 세운 <strong>만권당</strong>에서 <strong>이제현</strong> 등이 원의 학자 조맹부와 교류하며 성리학의 깊이를 더하였습니다. 마침내 앞 단원에서 본 <strong>공민왕</strong>이 권문세족에 맞설 개혁 인재를 키우기 위해 국학(성균관)을 순수 유학 교육 기관으로 개편하고 대사성 <strong>이색</strong> 아래 정몽주·정도전·권근 등을 교관으로 배치하면서, 부패한 권문세족과 불교 사원을 비판하며 새 시대를 열 <strong>신진사대부</strong>가 본격적으로 배출되었습니다.
+            이제 고려의 사상·역사·예술 문화를 <strong>10세기 건국 초부터 12세기 중반 문벌귀족기까지</strong> 엄격한 시간순으로 살펴보겠습니다. 먼저 10세기 태조에서 광종 대에는 후삼국 전란의 상처와 지방 호족의 독자적 세력이 강하게 남아 있던 현실 속에서, 왕실의 권위를 드높이는 동시에 아직 성리학이 들어오기 전 민중과 호족에게 친숙하던 토착 미륵 신앙을 끌어안아 국가적 통합을 이루려는 목적이 예술과 불교에 그대로 투영되었습니다. 앞 단원에서 본 왕실 통합의 상징으로 광종 2년(951년경) 개경 봉은사 진전에 봉안된 <strong>태조 왕건 청동상</strong>은 황제의 관인 통천관을 쓴 등신대 나체 청동상에 비단 옷을 입혀 경배한 걸작이며(후일 조선 세종 1429년 개성 현릉 옆에 매장되었다가 1992년 출토됨), 광종 때 개경 귀법사 주지 <strong>균여</strong>는 화엄종 남악파와 북악파를 융합하고 향가 <strong>｢보현십원가｣ 11수</strong>를 지어 불교 대중화의 문을 열었습니다. 또한 광종 13년(962년)에는 광종의 독자 연호인 <strong>'준풍' 3년</strong> 명문을 새긴 <strong>청주 용두사지 철당간</strong>이 세워져 왕실과 지방 세력의 위상을 과시하였고, 조각에서는 통일신라의 균형미를 넘어 지방 호족의 막강한 기상과 토착 미륵 신앙을 웅장하게 표출한 거대 불상들이 잇달아 조성되었으니, 국내 현존 최대 철불인 <strong>하남 하사창동 철조석가여래좌상</strong>, 태조의 통일을 기념한 <strong>논산 개태사지 석조여래삼존입상</strong>, 흙으로 빚어 우아한 조형미를 간직한 <strong>영주 부석사 소조여래좌상</strong>, 그리고 광종 때 착공해 목종 때 완성된 높이 18미터의 <strong>논산 관촉사 석조미륵보살입상(은진미륵)</strong>이 대표적입니다. 뒤이어 11세기 초 거란의 2차 침입(1010년)으로 개경이 불타고 <strong>현종</strong>이 나주까지 피란하는 절체절명의 국난이 닥치자, 부처의 힘(불력)을 빌려 외적을 물리치고 국권을 수호하겠다는 절박한 염원 아래 <strong>초조대장경</strong>(1011년 조판 시작, 현재 <strong>초조본 대반야바라밀다경 권162</strong> 등 일부 권자본만 전하며 목판은 1232년 몽골 2차 침입 때 대구 부인사에서 소실됨)을 간행하기 시작하였습니다. 아울러 현종 12년(1021년) 부모의 명복을 빌어 세운 개성의 <strong>현화사비</strong>는 <strong>앞면 원비명에는 송나라 연호인 '천희'</strong>를, <strong>뒷면 비음기(1022년 추각)에는 거란(요)의 연호인 '태평'</strong>을 나란히 새겨, 거란 침입을 막아낸 뒤 송과 요 사이에서 실리적 다원 외교를 펼친 고려의 국제 감각을 생생하게 증언합니다.
           </p>
+        </div>
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            10세기 말부터 12세기 초 문벌귀족 사회가 성숙하면서 조형 예술과 교육·불교 통합에서도 중앙 왕실과 귀족 문화의 품격이 한층 정제되었습니다. 먼저 조형과 공예 분야에서는 통일신라의 3층 사각 석탑 양식을 벗어나 송나라의 다각 다층 석탑 양식을 수용하고 고려만의 화려한 장식미를 결합한 <strong>평창 월정사 8각 9층 석탑</strong>이 <strong>10세기 말부터 11세기 사이(고려 전기에서 중기)</strong>에 건립되었으며, 같은 <strong>11세기</strong> 송나라와의 활발한 교류 속에서 맑은 비취색을 구현한 <strong>비색 순청자</strong>가 꽃피어 훗날 1123년(인종 원년) 송 사신 서긍의 ｢선화봉사고려도경｣에서도 천하제일로 극찬받았습니다. 한편 교육과 과거 제도에서는 앞 단원에서 배운 성종 때 정비된 최고 국립 대학 <strong>국자감</strong>이 유학부(국자학 3품 이상·태학 5품 이상·사문학 7품 이하 자제)와 기술학부(율학·서학·산학 8품 이하 및 서인 자제)의 <strong>입학 자격에 엄격한 신분 차등</strong>을 두었고, 과거제 역시 <strong>제술과·명경과</strong>(제술과 중시)·<strong>잡과·승과</strong>로 운영되었으나 <strong>무과는 예종 강예재와 고려 말 공양왕 때 잠시 시행된 것을 제외하면 원칙적으로 실시되지 않았습니다</strong>. 그런데 문종 때 과거 시험관(지공거) 출신으로 해동 공자라 불린 <strong>최충이 9재 학당(문헌공도)</strong>을 세워 과거 급제자를 대거 배출하면서 <strong>사학 12도</strong>가 융성하자 국립 대학인 국자감이 위축되는 위기가 닥쳤고, 불교계에서는 왕실·문벌귀족과 결탁한 교종(화엄종·법상종)과 선종의 대립이 깊어졌습니다. 이에 앞 단원에서 본 통일신라 <strong>원효가 일심과 화쟁 사상으로 종파 간 교리 대립을 융합하려 한 통합 정신</strong>을 이어받아, 문종의 넷째 아들인 <strong>대각국사 의천</strong>은 왕실의 권위를 바탕으로 분열된 불교 교단을 통합하겠다는 목표 아래 송나라 유학에서 돌아온 뒤 개경 <strong>흥왕사</strong>에 <strong>교장도감</strong>을 설치해 고려·송·요의 경전 주석서를 집대성한 <strong>｢교장(속장경)｣</strong>을 간행하고, 이어 숙종 2년(1097년) 개경 <strong>국청사를 중심으로 '해동 천태종'을 개창</strong>하였습니다. 의천은 <strong>교종을 중심으로 선종을 통합</strong>하고자 교리 공부(교)와 참선 실천(관)을 함께 닦아야 한다는 <strong>'교관겸수'</strong>와 <strong>'내외겸전'</strong>을 강조하며 왕권 안정에 기여하였습니다. 같은 시기 숙종이 국자감에 출판 기구 <strong>서적포(1101년)</strong>를 둔 데 이어, <strong>예종은 사학 12도에 밀린 관학을 일으켜 왕권에 충성하는 관료를 길러낼 목적 아래 국자감에 전문 강좌 7재(유학 6재와 무학재인 강예재), 장학 재단 양현고(1109년), 궁중 학술 기구 청연각·보문각</strong>을 설치하였고, 뒤이은 <strong>인종</strong> 때에는 <strong>경사 6학</strong>과 지방 향교를 정비하였습니다.
+          </p>
+        </div>
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            그러나 12세기 중반 인종 대에 이르러 앞 단원에서 본 이자겸의 난(1126년)과 <strong>묘청의 서경 천도 운동(1135년)</strong>으로 문벌귀족 지배 체제가 뿌리째 흔들리는 심각한 정치·사상적 위기가 닥쳤습니다. 이에 중군 원수로서 묘청의 반란을 진압하고 정국을 수습한 개경 문벌귀족 <strong>김부식</strong>은 유교적 합리주의 사관에 입각해 왕실의 정통성을 바로 세우고 신라 계승 의식을 공고히 하겠다는 목적 아래 왕명을 받아 <strong>1145년(인종 23년)</strong> 본기·연표·지·열전의 <strong>기전체</strong> 형식으로 50권의 <strong>｢삼국사기｣</strong>를 편찬하였습니다. 이는 오늘날 전해지는 우리나라 현존 최고(가장 오래된) 관찬 정사로서, 유교적 합리주의에 따라 기이하고 신화적인 요소로 본 <strong>단군 신화는 수록하지 않았습니다</strong>(훗날 춘추관에서 사초와 시정기를 바탕으로 편찬한 조선 시대의 ｢조선왕조실록｣이나 일연의 ｢삼국유사｣와 뚜렷이 구별됩니다).
+          </p>
+        </div>
+
+        <div class="culture-fig-grid">
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_wanggeon_statue.jpg" alt="태조 왕건 청동상" />
+            <figcaption class="culture-fig-cap"><strong>태조 왕건 청동상</strong><br/>광종 2년(951년경) 봉은사 진전 봉안 · 개성 현릉 출토</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_gwanchoksa.jpg" alt="논산 관촉사 석조미륵보살입상" />
+            <figcaption class="culture-fig-cap"><strong>논산 관촉사 석조미륵보살입상</strong><br/>광종 때 착공 · 은진미륵, 지방 호족과 토착 미륵 신앙</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_chojo_tripitaka.jpg" alt="초조대장경 초조본 대반야바라밀다경 권162" />
+            <figcaption class="culture-fig-cap"><strong>초조대장경(대반야바라밀다경)</strong><br/>현종 거란 2차 침입 국난 극복 발원(목판은 1232년 소실)</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_hyeonhwasa_stele.jpg" alt="개성 현화사비 탁본 앞면 천희 뒷면 태평" />
+            <figcaption class="culture-fig-cap"><strong>개성 현화사비</strong><br/>현종(1021) · 앞면 송 연호 '천희', 뒷면 요 연호 '태평'</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_woljeongsa_pagoda.jpg" alt="평창 월정사 8각 9층 석탑" />
+            <figcaption class="culture-fig-cap"><strong>평창 월정사 8각 9층 석탑</strong><br/>고려 전기에서 중기(10세기 말부터 11세기까지) · 송 다각 다층 탑 양식</figcaption>
+          </figure>
         </div>
 
         <div class="overflow-x-auto my-6">
           <table class="book-table">
             <thead>
               <tr>
-                <th style="width:18%;">사상 · 교육 구분</th>
-                <th style="width:41%;">고려 전기 · 중기 (균여 · 의천 / 국자감 · 7재)</th>
-                <th>고려 후기 · 말 (지눌 · 혜심 · 요세 / 성리학 · 성균관)</th>
+                <th style="width:19%;">사회 · 전기 문화 구분</th>
+                <th style="width:41%;">핵심 내용 및 기출 사료 단서</th>
+                <th>비교 대상 · 오답 함정 구별 포인트</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>불교 통합 방향 및 거점</strong></td>
-                <td>· <strong>균여(광종)</strong>: 개경 귀법사, 화엄종 남북악 통합, 향가 <strong>｢보현십원가｣</strong><br/>· <strong>의천(숙종)</strong>: 흥왕사 <strong>교장도감(교장[속장경])</strong> ➔ <strong>국청사 해동 천태종</strong>(<strong>교종 중심 선종 통합</strong>)</td>
-                <td>· <strong>지눌(무신기)</strong>: ｢권수정혜결사문｣, 순천 송광사 <strong>수선사 결사</strong> ➔ <strong>조계종</strong>(<strong>선종 중심 교종 통합</strong>)<br/>· <strong>요세</strong>: 강진 만덕사(백련사) <strong>백련결사</strong> / <strong>보우</strong>(공민왕): 임제종 전래</td>
+                <td><strong>신분 · 향도 ·<br/>구휼 · 가족 제도</strong></td>
+                <td>· <strong>양천제</strong>(귀족·중류층[서리·남반·향리·군반·역리]·양민[<strong>백정=일반 농민</strong>, 정호, 향·부곡·소]·천민[공·사노비, <strong>일천즉천</strong>])<br/>· <strong>향도</strong>: 불교 매향 공동체 ➔ 후기 마을 공동 노동·상부상조<br/>· <strong>구휼·의료</strong>: 흑창·의창·상평창 / <strong>보</strong>(제위보)·<strong>도감</strong>(구제도감·구급도감) / 동서대비원·혜민국<br/>· <strong>가족</strong>: <strong>서류부가혼(남귀여가혼) · 자녀 균분 상속 · 윤회 봉사 · 출생순 호적 · 여성 호주 · 재가 자유 · 사위와 외손자 음서</strong></td>
+                <td>· <strong>고려 백정</strong>(일반 양인 농민) vs <strong>조선 백정</strong>(도축업 천민)<br/>· <strong>고려 향도</strong>(매향 ➔ 상부상조) vs <strong>조선 향약</strong>(사림 향촌 규약)<br/>· <strong>조선 후기</strong>(장남 단독 제사·부계 우선) 및 <strong>｢경국대전｣</strong>(재가녀 자손 문과 응시 제한)과 정반대!</td>
               </tr>
               <tr>
-                <td><strong>핵심 수행 원리 · 사상</strong></td>
-                <td>· <strong>의천</strong>: <strong>교관겸수</strong>(교리 공부와 참선 겸수) · <strong>내외겸전</strong> (화폐 주조도 건의)</td>
-                <td>· <strong>지눌</strong>: <strong>돈오점수 · 정혜쌍수</strong><br/>· 제자 <strong>혜심</strong>: 간화선 보급, <strong>｢선문염송집｣</strong>, <strong>유불일치설</strong>(성리학 수용 토대)</td>
+                <td><strong>10세기부터 11세기 초<br/>초기 불교 · 호국 문화</strong></td>
+                <td>· <strong>태조부터 광종까지</strong>: <strong>태조 왕건 청동상</strong>(951), <strong>균여</strong>(귀법사·｢보현십원가｣), <strong>청주 용두사지 철당간</strong>(962, '준풍'), <strong>하사창동 철불</strong>·<strong>개태사지 삼존불</strong>·<strong>논산 관촉사 석조미륵보살입상(은진미륵)</strong>·<strong>부석사 소조여래좌상</strong><br/>· <strong>현종</strong>: 거란 2차 침입 극복 <strong>초조대장경</strong>(1011 착수·1232 소실), <strong>현화사비</strong>(1021, 앞면 송 '천희'·뒷면 요 '태평')</td>
+                <td>· 거대하고 투박·토속적인 미륵 불상은 <strong>고려 전기 호족 세력과 성리학 이전 토착 신앙</strong> 반영<br/>· 현종 <strong>초조대장경</strong>(거란 항전·소실) vs 고종 <strong>팔만대장경</strong>(몽골 항전·해인사)</td>
               </tr>
               <tr>
-                <td><strong>교육 진흥 · 과거 · 성리학</strong></td>
-                <td>· <strong>국자감</strong>: 유학부(국자·태학·사문학)와 기술학부(율·서·산학) 입학 신분 차등<br/>· 사학 12도(<strong>최충 9재 학당</strong>) 융성 ➔ 숙종(<strong>서적포</strong>) ➔ 예종(<strong>7재[강예재]·양현고·청연각·보문각</strong>) ➔ 인종(<strong>경사 6학</strong>)<br/>· 과거: 제술·명경·잡·승과 (<strong>무과 원칙적 미실시</strong>)</td>
-                <td>· 성리학 수용: 충렬왕 <strong>안향</strong>(성리학 도입·장학 기금 <strong>섬학전</strong>) ➔ 충선왕 연경 <strong>만권당(이제현)</strong><br/>· 공민왕: <strong>성균관</strong> 순수 유학 기관 개편, 대사성 <strong>이색</strong> 아래 정몽주·정도전 등 신진사대부 성장</td>
+                <td><strong>11세기 중반부터 12세기 중반<br/>교육 · 의천 · ｢삼국사기｣</strong></td>
+                <td>· <strong>사학 vs 관학</strong>: 국자감(유학부 vs 기술학부 신분 차등)·과거(<strong>무과 원칙적 미실시</strong>) ➔ 문종 <strong>최충 9재 학당(사학 12도)</strong> ➔ 숙종 <strong>서적포</strong>·예종 <strong>7재(강예재)·양현고·청연각·보문각</strong>·인종 경사 6학<br/>· <strong>의천</strong>: 흥왕사 <strong>교장도감(교장[속장경])</strong> ➔ 숙종 <strong>국청사 해동 천태종</strong>(<strong>교종 중심 선종 통합, 교관겸수·내외겸전</strong>)<br/>· <strong>월정사 8각 9층 석탑</strong>(10세기 말부터 11세기까지 전기에서 중기, 송 다각 다층 양식) · 11세기 <strong>비색 순청자</strong>(1123 ｢선화봉사고려도경｣)<br/>· <strong>김부식 ｢삼국사기｣(1145, 인종)</strong>: <strong>기전체</strong>, 유교 합리주의·신라 계승, 현존 최고 사서</td>
+                <td>· <strong>의천</strong>(교종 중심·국청사 천태종·교관겸수) vs 후기 <strong>지눌</strong>(선종 중심·송광사 수선사·조계종·돈오점수)<br/>· <strong>｢삼국사기｣(1145)</strong>는 합리주의 사관으로 <strong>단군 신화 미수록</strong>!</td>
               </tr>
             </tbody>
           </table>
@@ -215,120 +300,102 @@
       </div>
 
       <div id="sec3">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">3. 고려의 역사서 변천과 신분·구휼·양성평등 가족 제도</h3>
+        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">3. 고려 후기 불교 결사·성리학 수용과 공예·인쇄술·건축의 완성</h3>
         <div class="para-block">
           <p class="prose-body">
-            고려의 역사서 편찬은 당대 지배층이 직면한 대내외 위기와 민족적·정치적 목적에 따라 사관이 극명하게 변화한 거울입니다. 앞 단원에서 본 묘청의 서경 천도 운동(1135년)을 진압한 직후인 문벌귀족 전성기 <strong>1145년(인종 23년)</strong>, <strong>김부식</strong>은 왕명을 받아 유교적 합리주의 사관으로 왕실의 정통성을 바로 세우고 신라 계승 의식을 강조하기 위해 본기·연표·지·열전의 <strong>기전체</strong>로 서술한 우리나라 현존 최고(가장 오래된)의 관찬 정사인 <strong>｢삼국사기｣</strong>를 편찬하였습니다(합리주의 사관에 따라 단군 신화는 수록하지 않음). 그러나 무신정변으로 문벌귀족이 몰락하고 몽골의 침략으로 국토가 유린되는 절박한 위기가 닥치자, 문인·승려들은 우리 역사의 오랜 뿌리와 자주적 자긍심을 일깨워 외세에 맞설 민족정신을 결집하고자 하였습니다. 무신집권기 문인 <strong>이규보는 고구려 시조 주몽의 영웅적 건국을 노래한 서사시 ｢동명왕편｣</strong>을 지어 고구려 계승 의식을 드높였고, 고종 2년인 <strong>1215년에는 승려 각훈이 삼국 시대 고승들의 전기를 모은 ｢해동고승전｣</strong>을 남겼습니다. 이어 원 간섭기(충렬왕 대)에는 승려 <strong>일연이 불교 설화를 중심으로 고조선 단군왕검의 건국 신화를 최초로 수록하고 향가 14수를 전한 ｢삼국유사｣(1281년경)</strong>를 저술하였고, 유학자 <strong>이승휴가 단군 조선부터 고려까지를 중국사와 대등한 자주 역사로 읊고 발해사까지 우리 역사에 포함시킨 운문체 역사서 ｢제왕운기｣(1287년)</strong>를 저술하였습니다. 고려 말인 <strong>1357년(공민왕 6년)</strong>에는 성리학자 <strong>이제현이 편년체 역사서 ｢사략｣</strong>을 지어 성리학적 정통론과 대의명분론을 강조하며 신진사대부의 역사 인식을 열었습니다.
+            1170년 <strong>무신정변</strong>으로 문벌귀족과 교종 사원이 몰락하면서 지방 선종 세력이 불교계의 주류로 떠올랐으나, 정권을 잡은 무신 권력 및 권문과 결탁한 불교계가 세속의 명리와 이욕에 빠져 타락하는 깊은 위기가 닥쳤습니다. 이에 불교 본연의 순수한 수행 정신을 되살려 교단을 개혁하겠다는 뜻으로 지방 사찰을 중심으로 청정한 <strong>신앙 결사 운동</strong>이 일어났습니다. 그 선두에 선 <strong>보조국사 지눌</strong>은 ｢권수정혜결사문｣을 발표하고 팔공산 거조사를 거쳐 전남 순천 <strong>송광사(길상사)에서 '수선사 결사'</strong>를 주도하였습니다. 지눌은 전기의 의천과 정반대로 <strong>선종을 중심으로 교종을 포용해 '조계종'의 사상 체계를 확립</strong>하였으며, 인간의 본성이 곧 부처임을 단박에 깨달은(돈오) 뒤에도 오랜 나쁜 습관을 없애려 꾸준히 수행(점수)해야 한다는 <strong>'돈오점수'</strong>와, 선종의 마음 안정(정)과 교종의 지혜(혜)를 함께 닦는 <strong>'정혜쌍수'</strong>를 제시하고 <strong>독경·선 수행·노동을 병행</strong>하는 청빈한 수행 기풍을 세워 무신정권의 후원 속에 폭넓은 호응을 얻었습니다. 지눌의 뒤를 이어 수선사 제2대 사주가 된 제자 <strong>진각국사 혜심</strong>(최우의 후원, 강진 월남사지 비문)은 화두를 참구하는 간화선을 보급해 <strong>｢선문염송집｣</strong>을 편찬하고 유교와 불교가 심성 수양의 근본에서 같다는 <strong>'유불일치설'</strong>을 주장함으로써 훗날 고려 말 사대부가 성리학을 거부감 없이 받아들이는 사상적 다리를 놓았습니다. 같은 시기 천태종 승려 <strong>요세</strong>는 전남 강진 <strong>만덕사(백련사)에서 백련결사</strong>를 열어 자신의 죄업을 뉘우치는 참회와 <strong>법화 신앙</strong>·아미타 정토 신앙을 결합함으로써 지방 민중의 뜨거운 지지를 받았습니다. 한편 문벌귀족 사회가 무너진 혼란 속에서 무신정권기의 문인과 승려들은 우리 역사의 뿌리를 되살려 시대의 위기를 넘으려는 자주적 역사 서술에 나섰으니, 명종 23년(<strong>1193년</strong>) 문인 <strong>이규보</strong>는 고구려 시조 주몽의 영웅적 건국을 5언시 서사시로 노래한 <strong>｢동명왕편｣</strong>을 지어 고구려 계승 의식을 드높였고, 고종 2년(<strong>1215년</strong>) 수선사 승려 <strong>각훈</strong>은 왕명을 받아 삼국 시대 이래 고승들의 전기를 모은 <strong>｢해동고승전｣</strong>을 편찬하였습니다.
           </p>
           <aside class="sidenote">
             <div class="sidenote-box">
-              <div class="sidenote-title">역사서 · 사회 · 가족 1줄 구별 공식</div>
+              <div class="sidenote-title">후기 문화유산 1줄 구별 공식</div>
               <ul class="sidenote-list">
-                <li><strong>역사서 변천</strong>: 인종 <strong>｢삼국사기｣(1145, 김부식·기전체·현존 최고·신라 계승)</strong> ➔ 무신기 <strong>｢동명왕편｣(이규보)·｢해동고승전｣(1215, 각훈)</strong> ➔ 원 간섭기 <strong>｢삼국유사｣(1281경, 일연)·｢제왕운기｣(1287, 이승휴) [모두 단군 신화 수록!]</strong> ➔ 공민왕 <strong>｢사략｣(1357, 이제현·성리학 정통론)</strong></li>
-                <li><strong>고려 백정 vs 조선 백정</strong>: 고려 <strong>백정 = 특정 직역이 없는 일반 양인 농민</strong>(vs 조선 백정 = 도축업 종사 천민)</li>
-                <li><strong>구휼·의료 기관</strong>: 태조 <strong>흑창</strong> ➔ 성종 <strong>의창·상평창</strong> / 광종 <strong>제위보</strong> / <strong>동서대비원·혜민국</strong>(치료·의약) / <strong>구제도감·구급도감</strong>(재해 임시)</li>
-                <li><strong>고려 가족 제도</strong>: <strong>자녀 균분 상속 · 윤번 봉사(돌아가며 제사) · 서류부가혼 · 호적 출생순 · 여성 호주 · 재가 자유 · 사위와 외손자 음서 적용</strong></li>
+                <li><strong>불교 결사 3인방</strong>: <strong>지눌</strong>(순천 송광사 수선사·조계종·<strong>돈오점수/정혜쌍수</strong>·독경/선/노동) · 제자 <strong>혜심(｢선문염송집｣·유불일치설)</strong> · <strong>요세</strong>(강진 만덕사 백련결사·법화/참회) ➔ 공민왕 <strong>보우</strong>(임제종)</li>
+                <li><strong>대장경 · 금속활자</strong>: 몽골 항쟁 <strong>팔만대장경(재조대장경)</strong>(1236년부터 1251년까지, 강화도 대장도감·선원사 ➔ 합천 해인사) / <strong>｢상정고금예문｣(1234, 비현존)</strong> vs <strong>｢직지심체요절｣(1377 청주 흥덕사, 백운 화상, 현존 세계 최고 금속활자본)</strong></li>
+                <li><strong>후기 역사 · 성리학</strong>: 무신기 <strong>｢동명왕편｣(1193)·｢해동고승전｣(1215)</strong> ➔ 원 간섭기 <strong>｢삼국유사｣(1281경, 일연)·｢제왕운기｣(1287, 이승휴) [모두 단군 수록!]</strong> ➔ <strong>안향</strong>(성리학 도입·섬학전) ➔ <strong>백이정</strong> ➔ 만권당 <strong>이제현(｢역옹패설｣·｢사략｣)</strong> ➔ 성균관 <strong>이색·정몽주</strong></li>
+                <li><strong>주심포 vs 다포</strong>: <strong>주심포</strong>(기둥 위만 공포: <strong>안동 봉정사 극락전[공민왕 중수, 최고 목조]·예산 수덕사 대웅전[1308, 맞배]·영주 부석사 무량수전[1376 중수, 배흘림기둥]</strong>) vs <strong>다포</strong>(기둥 사이도 공포: <strong>황해 사리원 성불사 응진전[1327]·황주 심원사 보광전</strong>)</li>
               </ul>
             </div>
           </aside>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            고려의 사회 신분 구조는 법적으로 양인과 천인으로 나누는 <strong>양천제</strong>를 표방하였으나, 실제로는 지배층인 <strong>귀족·중류층(서리·남반·향리·하급 장교 등 직역 세습층)</strong>과 피지배층인 <strong>양민·천민</strong>의 4계층으로 운영되었습니다. 여기서 시험에 가장 자주 혼동을 유발하는 개념이 <strong>'백정'</strong>입니다. 조선 시대의 백정이 도축업에 종사하는 천민 계층이었던 것과 달리, <strong>고려 시대의 백정은 국가에 특정 직역을 지지 않는 일반 양인 농민</strong>을 가리켰습니다(성인 남자가 있어 군역·공역의 의무를 지는 호구는 <strong>정호</strong>라 불렀음). 고려 사회는 신분이 세습되는 귀족 사회였지만 신라 골품제보다 훨씬 개방적이어서, 백정이 군공을 세워 무관으로 출세하거나 향리가 과거를 통해 중앙 관료로 올라가는 등 신분 상승이 가능하였고, 앞 단원에서 본 공주 <strong>명학소</strong>(충순현 승격)와 충주 <strong>다인철소</strong>(익안현 승격)처럼 특수 행정 구역 주민이 일반 군현민으로 상승하기도 하였으며 외거 노비가 재산을 모아 양인이 되기도 하였습니다. 농촌 마을에서는 본래 부처를 기리며 향을 묻던 불교 신앙 공동체였던 <strong>향도</strong>가 고려 후기로 가면서 농민들의 공동 노동·장례·혼사를 돕는 마을 자치 상부상조 조직으로 발전하였습니다. 또한 국가는 백성이 굶주림과 질병으로 유랑하면 조세와 군역 기반이 무너진다는 인식 아래 다양한 <strong>구휼·의료 기관</strong>을 운영하였으니, 태조의 <strong>흑창</strong>을 확대한 성종의 <strong>의창</strong>(춘대추납 곡물 대여)과 물가 조절 기구 <strong>상평창</strong>, 광종 때 세운 빈민 구제 기금 <strong>제위보</strong>, 개경에서 행려병자와 빈민을 치료·수용한 <strong>동서대비원</strong>, 백성에게 약을 공급·치료한 <strong>혜민국</strong>, 그리고 흉년이나 전염병 등 비상 재해 때 임시로 가동한 <strong>구제도감·구급도감</strong>이 민생을 뒷받침하였습니다.
+            1231년 몽골의 침략이 시작되고 <strong>강화도 천도(1232년)</strong> 직후 대구 부인사에 보관되던 초조대장경까지 불타 소실되자, 최씨 무신정권과 고려 백성은 불력과 자주적 문화 역량으로 몽골군을 물리치고 나라를 지키겠다는 일념을 결집하였습니다. 먼저 강화도 천도 이후 개경에 두고 온 국가 전례서와 서적을 신속히 다시 찍어내려 했으나 수많은 목판을 일일이 새길 시간과 인력이 부족했던 현실 속에서, 이러한 제약을 극복하려는 기술적 목적 아래 세계 최초로 금속활자를 발명·활용하여 <strong>1234년 강화도에서 ｢상정고금예문｣을 금속활자로 인쇄</strong>하였습니다(책 실물은 전하지 않으며 이규보 문집에 기록으로만 전함). 이어 초조대장경 소실의 상처를 딛고 부처의 힘으로 국난을 타개하고자 고종 23년인 <strong>1236년부터 1251년까지</strong> 16년에 걸쳐 <strong>강화도에 대장도감</strong>(및 남해 등 분사대장도감)을 설치하고 최우가 강화도에 창건한 원찰 <strong>선원사</strong> 등을 중심으로 판각 사업을 벌여, 오자 하나 없이 정교하게 새긴 <strong>팔만대장경(재조대장경, 현재 경남 합천 해인사 장경판전 보관)</strong>을 완성하였습니다. 한편 인쇄술의 성취와 더불어 고려의 공예와 불화는 앞서 꽃핀 <strong>11세기 비색 순청자를 계승해 12세기 중엽부터</strong> 무신정권기와 대몽항쟁기·원 간섭기에 걸쳐 절정의 미의식을 피워냈습니다. 전남 강진과 전북 부안을 중심으로 도자기 표면을 파낸 자리에 백토와 흑토를 메워 굽는 고려만의 독창적 기법인 <strong>상감청자</strong>(<strong>청자 상감 운학문 매병</strong>·<strong>청자 상감 모란무늬 항아리</strong>·<strong>청자 상감 물가풍경무늬 매병</strong>·<strong>청자 상감모란문 표주박모양 주전자</strong> 등)가 12세기 중엽 완성되어 최자의 <strong>｢보한집｣</strong>에 그 아름다움이 기록되었고, 동식물과 상상의 동물을 빚은 <strong>상형자기</strong>인 <strong>청자 어룡모양(어룡형) 주전자</strong>·<strong>청자 투각 칠보무늬 향로</strong>·<strong>청자 모자원숭이모양 연적</strong>이 걸작으로 탄생하였습니다. 금속·옻칠 공예에서는 청동 표면에 홈을 파고 은실을 정교하게 박아 물가의 버드나무와 물새를 그린 <strong>청동 은입사 포류수금문 정병</strong>과 전복 껍데기를 촘촘히 붙인 <strong>나전칠기(나전 국화넝쿨무늬 합)</strong>가 발달하였으며, 감색 종이에 금가루로 경전을 필사한 <strong>감지금니 묘법연화경</strong>과 경전 글씨를 탑 모양으로 배치한 <strong>｢법화경서탑도｣</strong>가 제작되었습니다. 원 간섭기에는 정치적 수난 속에서도 왕실과 귀족·원 황실의 발원이 깊어져 원 순제 황후가 된 기황후가 <strong>금강산 장안사</strong>를 대대적으로 중창·후원하고 사대부의 금강산 유람 문화가 확산되었으며, 선재동자가 관음보살을 찾아가는 구법 장면을 투명한 베일과 화려한 금채로 묘사한 고려 불화의 백미 <strong>｢수월관음도｣</strong>와 승려 화가 <strong>혜허</strong>가 물방울 광배 속 입상 형태로 섬세한 금니 문양을 살려 그린 <strong>｢양류관음도｣</strong>가 예술혼을 빛냈습니다.
+          </p>
+        </div>
+
+        <div class="culture-fig-grid">
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_cheongja_oryong.jpg" alt="청자 어룡모양 주전자" />
+            <figcaption class="culture-fig-cap"><strong>청자 어룡모양 주전자</strong><br/>국보 · 비색 유약과 조형미가 결합한 고려 상형자기</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_cheongja_jooja.jpg" alt="청자 상감모란문 표주박모양 주전자" />
+            <figcaption class="culture-fig-cap"><strong>청자 표주박모양 주전자</strong><br/>12세기 백토·흑토 상감 기법이 돋보이는 상감청자</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_najeonchilgi.jpg" alt="나전 국화넝쿨무늬 합" />
+            <figcaption class="culture-fig-cap"><strong>나전 국화넝쿨무늬 합</strong><br/>전복 껍데기를 정교하게 장식한 고려 나전칠기 공예</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_suwolgwaneumdo.jpg" alt="수월관음도" />
+            <figcaption class="culture-fig-cap"><strong>｢수월관음도｣</strong><br/>고려 후기 불화 · 투명한 베일과 화려한 금채의 극치</figcaption>
+          </figure>
+        </div>
+
+        <div class="para-block mt-4">
+          <p class="prose-body">
+            앞 단원에서 살펴본 바와 같이 1270년 개경 환도 이후 고려가 원의 부마국으로 전락하여 13세기 말부터 14세기 중엽까지 약 80년간 원 간섭기를 겪자, 고려의 지식인 사회는 원의 내정 간섭이라는 민족적 위기 속에서 우리 역사의 자주성을 확인하고 동시에 권문세족과 불교계의 타락을 극복할 새 사상적 대안을 모색하였습니다. 먼저 역사 서술에서는 충렬왕 대 승려 <strong>일연</strong>이 유교 중심의 정사인 ｢삼국사기｣가 빠뜨린 민간 전승과 불교 설화·향가 14수를 집대성하고 기이 편에 <strong>단군왕검의 고조선 건국 신화를 최초로 수록한 ｢삼국유사｣(1281년경)</strong>를 저술하여 민족의 유구한 뿌리를 일깨웠습니다. 뒤이어 충렬왕 13년(<strong>1287년</strong>) 유학자 <strong>이승휴</strong>는 상권(중국사, 칠언시)과 하권(한국사, 오언·칠언시)으로 구성한 운문체 역사서 <strong>｢제왕운기｣</strong>를 지어, 단군조선부터 고려까지를 단일한 혈통 계통으로 서술하고 <strong>발해사</strong>까지 우리 역사에 당당히 포함시키며 요하 동쪽에 중국과 구별되는 <strong>'별도의 천하'</strong>가 존재함을 선언하였습니다. 한편 대외 교류의 중심이 전기의 송나라에서 원 간섭기 원나라의 수도 연경(대도)으로 옮겨 간 시대적 조건 속에서, 무너진 유학 교육을 되살리고 사회 개혁의 철학을 세우기 위해 원나라에서 <strong>성리학</strong>이 수용되었습니다. 충렬왕 때 <strong>안향</strong>이 원 연경에서 주희의 저서를 필사해 성리학을 최초로 들여오고 관학 장학 기금인 <strong>섬학전(1304년)</strong>을 마련하였으며, <strong>백이정</strong>이 충선왕을 따라 원 연경에 10여 년간 머물며 정주학을 깊이 연구한 뒤 1308년 귀국하여 본격적으로 제자들에게 강학하였습니다. 나아가 앞 단원에서 본 충선왕이 원나라 연경에 세운 학술 연구소 <strong>만권당</strong>에 참여한 백이정의 문인 <strong>이제현</strong>은 원나라 석학 조맹부·요수 등과 교유하며 성리학의 이해를 심화시키고 비평 문집 <strong>｢역옹패설｣</strong>을 남겼습니다. 또한 이러한 원 간섭기의 활발한 원나라 문화 교류 속에서 <strong>1348년(충목왕 4년)</strong>에는 원나라 라마교(티베트 불교) 양식의 영향을 받아 회색 대리석으로 정교하게 조각한 <strong>개성 경천사지 10층 석탑</strong>이 세워졌으며, 이 탑은 훗날 조선 세조 때 건립되는 서울 <strong>원각사지 10층 석탑(1467년)</strong>의 직접적 모태가 되었습니다. 이어 앞 단원에서 본 <strong>공민왕</strong>의 반원 자주 개혁이 단행되던 시기인 공민왕 6년(<strong>1357년</strong>)에는 <strong>이제현</strong>이 성리학적 정통론·대의명분론을 강조한 편년체 역사서 <strong>｢사략｣</strong>을 저술해, 원 간섭기를 넘어 고려 말 신진사대부의 자주적·성리학적 역사 인식을 활짝 열었습니다.
           </p>
         </div>
         <div class="para-block mt-4">
           <p class="prose-body">
-            한편 아직 성리학적 가부장제가 사회 전반에 뿌리내리기 전이었던 고려 시대의 가족 제도와 여성의 지위는 조선 후기와 정반대로 <strong>매우 개방적이고 양성평등적</strong>이었습니다. 부모의 토지와 노비는 아들과 딸, 장남과 차남의 차별 없이 똑같이 나누어 주는 <strong>자녀 균분 상속</strong>이 이루어졌고, 부모의 <strong>제사 역시 아들과 딸이 돌아가며 지내는 윤번 봉사</strong>가 일반적이었습니다. 혼인 풍습에서도 남자가 처가에 들어가 사는 <strong>서류부가혼(처가살이)</strong>이 흔하였으며, 호적에는 남녀 구별 없이 <strong>태어난 순서(출생순)대로 기재</strong>하고 남편이 세상을 떠나면 <strong>여성이 집안의 호주(가장)</strong>가 될 수 있었습니다. 나아가 <strong>여성의 이혼과 재가(재혼)가 자유로워</strong> 재가한 여성의 자손이 관직에 나아가는 데 아무런 법적 차별이 없었으며(재가녀 자손의 문과 응시 제한은 조선 성종 ｢경국대전｣에서 비로소 법제화됨), 5품 이상 관리에게 부여하는 <strong>음서와 공음전의 혜택도 친손자뿐만 아니라 사위와 외손자에게까지 똑같이 적용</strong>되었습니다.
+            13세기에서 14세기 고려 후기에는 목조 건축에서도 오늘날까지 전해지는 최고의 걸작들이 완성되어 조선 건축의 토대를 닦았습니다. 지붕 무게를 받치는 공포를 기둥 위에만 짜 올리고 기둥 가운데가 볼록한 배흘림기둥과 간결·장중한 멋을 살린 전통적 <strong>주심포 양식</strong>으로는, 12세기 말에서 13세기 초 건립되어 <strong>공민왕 12년(1363년)</strong> 지붕을 크게 수리한 상량문이 발견된 현존 우리나라 최고(가장 오래된) 목조 건물 <strong>안동 봉정사 극락전</strong>(맞배지붕), 보수 중 발견된 묵서명을 통해 <strong>충렬왕 34년(1308년)</strong> 건립 연대가 정확히 확인된 <strong>예산 수덕사 대웅전</strong>(맞배지붕), 그리고 <strong>우왕 2년(1376년)</strong> 중수 기록이 전하며 배흘림기둥과 팔작지붕·내부의 고려 전기 <strong>소조여래좌상</strong>이 조화를 이룬 <strong>영주 부석사 무량수전</strong>이 대표적입니다. 반면 무거운 지붕의 하중을 기둥 사이까지 고루 분산해 대형 전각과 깊은 처마를 안정적으로 지탱하고 한층 웅장하고 화려한 외관을 구현하려는 건축적 요구가 커지면서, 원 간섭기 이후에는 원나라 건축의 영향을 받아 기둥 위뿐만 아니라 <strong>기둥과 기둥 사이에도 공포를 촘촘히 올린 화려한 다포 양식</strong>이 도입되어 <strong>충숙왕 14년(1327년) 창건된 황해 사리원(황주) 성불사 응진전</strong>(같은 사찰의 성불사 극락전은 주심포 양식이나 응진전은 다포 양식임!)과 고려 말 <strong>황주 심원사 보광전(1374년)</strong>이 건립되어 조선 시대 궁궐·사찰 건축으로 이어졌습니다. 이윽고 앞 단원에서 본 공민왕의 반원 개혁 이후 불교계에서는 <strong>보우</strong>가 원나라 임제종을 수용해 왕실의 지지 아래 선종 통합과 불교 정화를 추진하였고, 유학계에서는 공민왕이 성종 때 정비된 <strong>국자감</strong>에서 원 간섭기 충렬왕 때 개칭되어 이어져 온 <strong>성균관</strong>을 순수 유학 교육 기관으로 개편해 대사성 <strong>이색</strong>(｢목은집｣ 저술, 고려·원 과거 급제) 아래 정몽주·정도전·권근(｢입학도설｣) 등을 교관으로 배치하면서 권문세족과 불교 사원의 폐단을 개혁할 <strong>신진사대부</strong>가 본격적으로 성장하였습니다. 그리고 고려 왕조의 마지막 불꽃이 타오르던 우왕 3년(<strong>1377년</strong>) <strong>청주 흥덕사</strong>에서는 승려 <strong>백운 화상(경한)</strong>이 부처와 고승들의 법어를 뽑아 엮은 <strong>｢직지심체요절｣</strong>이 제자들에 의해 금속활자로 간행되었으니, 이는 독일 구텐베르크의 42행 성서보다 78년 앞선 <strong>현존 세계 최고(가장 오래된) 금속활자본</strong>으로서 오늘날 유네스코 세계기록유산에 등재되어 고려 인쇄술과 과학 기술의 위상을 세계에 증명하고 있습니다. 마침내 다음 단원에서 살펴볼 바와 같이, 이처럼 성리학과 자주 사상으로 무장한 신진사대부가 홍건적·왜구 격퇴 과정에서 부상한 신흥 무인 세력 <strong>이성계</strong>와 결합하여 <strong>과전법(1391년)</strong>으로 경제 토대를 장악한 뒤 <strong>조선 건국(1392년)</strong>의 대업을 완수하게 됩니다.
           </p>
+        </div>
+
+        <div class="culture-fig-grid">
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_gyeongcheonsa.jpg" alt="개성 경천사지 10층 석탑" />
+            <figcaption class="culture-fig-cap"><strong>개성 경천사지 10층 석탑</strong><br/>충목왕 4년(1348) · 원 라마교 양식 대리석탑(원각사지 탑 모태)</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_buseoksa_muryang.jpg" alt="영주 부석사 무량수전" />
+            <figcaption class="culture-fig-cap"><strong>영주 부석사 무량수전</strong><br/>고려 후기 주심포 양식 · 배흘림기둥 · 우왕 2년(1376) 중수</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_sudeoksa_daeung.jpg" alt="예산 수덕사 대웅전" />
+            <figcaption class="culture-fig-cap"><strong>예산 수덕사 대웅전</strong><br/>충렬왕 34년(1308) 묵서명 건립 · 주심포 양식 · 맞배지붕</figcaption>
+          </figure>
+          <figure class="culture-fig-card">
+            <img src="assets/exam_imgs/cult_jikji.jpg" alt="직지심체요절" />
+            <figcaption class="culture-fig-cap"><strong>｢직지심체요절｣</strong><br/>우왕 3년(1377) 청주 흥덕사 · 현존 세계 최고 금속활자본</figcaption>
+          </figure>
         </div>
 
         <div class="overflow-x-auto my-6">
           <table class="book-table">
             <thead>
               <tr>
-                <th style="width:19%;">구분</th>
-                <th style="width:41%;">핵심 내용 및 기출 사료 단서</th>
-                <th>비교 대상 · 오답 함정 구별 포인트</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>고려 역사서 계보</strong></td>
-                <td>· <strong>김부식 ｢삼국사기｣(1145, 인종)</strong>: 기전체, 유교 합리주의·신라 계승, 현존 최고 사서<br/>· <strong>이규보 ｢동명왕편｣</strong>(주몽 서사시) · <strong>각훈 ｢해동고승전｣(1215)</strong><br/>· <strong>일연 ｢삼국유사｣(1281경)</strong> · <strong>이승휴 ｢제왕운기｣(1287)</strong>: 모두 <strong>단군 신화 수록</strong><br/>· <strong>이제현 ｢사략｣(1357, 공민왕)</strong>: 편년체, 성리학적 정통론·대의명분론</td>
-                <td>· <strong>함정 방어</strong>: 단군 신화는 <strong>｢삼국사기｣가 아니라</strong> 원 간섭기 <strong>｢삼국유사｣·｢제왕운기｣</strong>에 수록!<br/>· ｢삼국유사｣는 향가 14수 수록 / ｢제왕운기｣는 발해를 우리 역사로 서술</td>
-              </tr>
-              <tr>
-                <td><strong>신분 · 향도 · 구휼</strong></td>
-                <td>· <strong>양천제</strong> 원칙, 실상은 귀족·중류층·양민(<strong>백정=일반 농민</strong>)·천민<br/>· <strong>향도</strong>: 불교 매향 신앙 ➔ 후기 마을 공동 노동·상장례 상부상조 조직<br/>· <strong>구휼·의료</strong>: 흑창·의창·상평창·제위보·<strong>동서대비원·혜민국·구제도감·구급도감</strong></td>
-                <td>· <strong>고려 백정</strong>(일반 양인 농민) vs <strong>조선 백정</strong>(도축업 종사 천민)<br/>· 구휼 기구 중 <strong>동서대비원·혜민국</strong>은 의료·약제 구호 기능 강조</td>
-              </tr>
-              <tr>
-                <td><strong>양성평등 가족 제도</strong></td>
-                <td>· <strong>자녀 균분 상속</strong>, 제사 <strong>윤번 봉사</strong>, <strong>서류부가혼</strong>(처가살이)<br/>· 호적 출생순 기재, <strong>여성 호주</strong> 가능, <strong>이혼·재가 자유</strong><br/>· <strong>음서·공음전의 사위·외손자 적용</strong></td>
-                <td>· <strong>조선 후기</strong>(장남 단독 제사·아들 우대 상속·친영) 및 <strong>｢경국대전｣</strong>(재가녀 자손 관직 제한)과 정반대임!</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div id="sec4" class="space-y-6">
-        <h3 class="text-xl font-bold text-white mb-3 border-l-4 border-emerald-500 pl-3">4. 세계 최고 인쇄술·청자 공예와 건축·조각·석탑 문화유산</h3>
-
-        <div class="para-block">
-          <p class="prose-body">
-            고려는 거듭된 북방 민족의 침입을 부처의 힘으로 막아내고 방대한 불교 경전을 널리 보급하려는 절박한 염원 속에서 세계 인쇄 문화사의 정점을 세웠습니다. 앞 단원에서 배운 거란의 2차 침입 당시 현종이 적을 물리치려 조판한 <strong>초조대장경</strong>은 1232년 몽골의 2차 침입 때 대구 부인사에서 불타 소실되었습니다. 이에 <strong>강화도 천도(1232년)</strong>를 단행한 최씨 무신정권은 나라를 지키겠다는 국난 극복 의지를 결집하기 위해 강화도에 <strong>대장도감</strong>을 설치하고 16년에 걸쳐 오자 하나 없이 정교하게 새긴 <strong>팔만대장경(재조대장경, 현재 경남 합천 해인사 장경판전 보관)</strong>을 완성하였습니다. 나아가 수천 장의 목판을 일일이 새기지 않고도 소량의 책을 빠르고 효율적으로 찍어내려는 기술적 필요가 커지면서 고려는 세계 최초로 금속활자를 발명하였습니다. 1234년 강화도에서 이규보의 글에 기록으로 전해지는 <strong>｢상정고금예문｣</strong>을 금속활자로 찍어낸 데 이어(책 자체는 현존하지 않음), 우왕 3년인 <strong>1377년 청주 흥덕사에서 간행한 백운화상의 ｢직지심체요절｣은 독일 구텐베르크의 42행 성서보다 78년이나 앞선 현존 세계 최고(가장 오래된) 금속활자본</strong>으로서 오늘날 유네스코 세계기록유산에 등재되어 있습니다.
-          </p>
-          <aside class="sidenote">
-            <div class="sidenote-box">
-              <div class="sidenote-title">문화유산 1줄 구별 공식</div>
-              <ul class="sidenote-list">
-                <li><strong>인쇄술 3종</strong>: 현종 <strong>초조대장경</strong>(거란 항전·1232 소실) vs 고종 <strong>팔만대장경(재조대장경)</strong>(몽골 항전·해인사) / <strong>｢상정고금예문｣(1234, 비현존)</strong> vs <strong>｢직지심체요절｣(1377 청주 흥덕사, 현존 세계 최고 금속활자본)</strong></li>
-                <li><strong>주심포 vs 다포</strong>: <strong>주심포</strong>(기둥 위만 공포, 배흘림기둥·맞배지붕: <strong>안동 봉정사 극락전[최고 목조]·영주 부석사 무량수전·예산 수덕사 대웅전</strong>) vs <strong>다포</strong>(기둥 사이도 공포: <strong>사리원 성불사 응진전·황주 심원사 보광전</strong>)</li>
-                <li><strong>불상 · 석탑 · 공예</strong>: <strong>하남 하사창동 철불</strong>·<strong>논산 관촉사 석조미륵보살입상(은진미륵)</strong>·<strong>부석사 소조여래좌상</strong> / <strong>평창 월정사 8각 9층 석탑</strong>(송 영향) vs <strong>개성 경천사지 10층 석탑</strong>(원 대리석 ➔ 조선 원각사지 탑 영향) / <strong>비색 순청자(｢선화봉사고려도경｣) ➔ 상감청자(｢보한집｣)</strong> · <strong>청동 은입사 포류수금문 정병</strong> · <strong>수월관음도</strong></li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-
-        <div class="para-block">
-          <p class="prose-body">
-            공예와 불교 회화에서는 귀족 사회의 섬세한 미의식과 극락왕생에 대한 간절한 신앙이 독창적 기법으로 피어났습니다. 11세기 송나라의 청자 기술을 흡수해 맑은 비취색을 구현한 <strong>순청자(비색 청자)</strong>는 송나라 사신 서긍이 <strong>｢선화봉사고려도경｣</strong>에서 "비색이 절묘하다"고 극찬할 만큼 경지에 올랐고, 12세기 중엽에는 도자기 표면을 파낸 자리에 백토와 흑토를 메워 굽는 고려만의 독창적 기법인 <strong>상감청자(청자 상감 운학문 매병 등)</strong>로 발전하여 최자의 <strong>｢보한집｣</strong>에 그 아름다움이 기록되었습니다(원 간섭기 이후에는 분청사기로 이어짐). 금속·옻칠 공예에서는 청동 표면에 홈을 파고 은실을 정교하게 박아 물가의 버드나무와 물새를 그린 <strong>청동 은입사 포류수금문 정병</strong>과 전복 껍데기를 촘촘히 붙인 <strong>나전 국화넝쿨무늬 합</strong>이 대표적입니다. 회화와 사경 미술에서는 귀족과 왕실이 부모의 극락왕생과 국가 안녕을 발원하며 감색 종이에 금가루로 경전을 필사하고 변상도를 그린 <strong>감지금니 묘법연화경</strong>과 경전 글씨를 탑 모양으로 배치한 <strong>｢법화경서탑도｣</strong>, 그리고 선재동자가 관음보살을 찾아가는 장면을 투명한 베일과 화려한 금채로 묘사한 고려 불화의 최고 걸작 <strong>｢수월관음도｣</strong>가 찬란한 예술혼을 보여줍니다.
-          </p>
-        </div>
-
-        <div class="para-block">
-          <p class="prose-body">
-            불교 조각과 석탑, 목조 건축 역시 고려 전기 지방 호족의 역동성에서 후기 원 간섭기의 외래 양식 수용까지 시대의 흐름을 고스란히 담아냈습니다. 고려 초기에는 통일신라의 균형미에서 벗어나 지방 호족의 막강한 힘과 토속적 기상을 드러내는 거대 불상이 유행하였으니, 현존 국내 최대 철불인 <strong>하남 하사창동 철조석가여래좌상</strong>과 높이 18미터에 달하는 <strong>논산 관촉사 석조미륵보살입상(은진미륵)</strong>이 대표적이며, 흙으로 빚어 우아한 조형미를 간직한 <strong>영주 부석사 소조여래좌상</strong>도 고려 전기의 걸작으로 꼽힙니다. 석탑은 통일신라의 3층 사각 석탑 양식을 벗어나 송나라의 영향을 받아 <strong>평창 월정사 8각 9층 석탑</strong> 같은 다각 다층 석탑이 건립되었고, 원 간섭기인 <strong>1348년(충목왕 4년)</strong>에는 원나라 라마 불교 양식을 받아들여 대리석으로 정교하게 조각한 <strong>개성 경천사지 10층 석탑</strong>이 세워져 훗날 조선 세조 때 서울 원각사지 10층 석탑의 직접적 모델이 되었습니다. 목조 건축에서는 기둥 위에만 공포를 짜 올리고 기둥 가운데가 볼록한 배흘림기둥과 간결한 맞배지붕이 특징인 고려 후기 <strong>주심포 양식(안동 봉정사 극락전[현존 최고 목조 건물], 영주 부석사 무량수전, 예산 수덕사 대웅전)</strong>이 발달하였고, 원 간섭기 이후에는 기둥과 기둥 사이에도 공포를 촘촘히 올린 화려한 <strong>다포 양식(황해 사리원 성불사 응진전, 황주 심원사 보광전)</strong>이 도입되어 조선 시대 건축으로 이어졌습니다.
-          </p>
-        </div>
-
-        <div class="para-block overflow-x-auto">
-          <div class="text-xs font-bold text-emerald-400 mb-2">[핵심 비교표] 고려 인쇄술 · 공예 · 회화 · 조각 · 석탑 · 건축 문화유산 총정리</div>
-          <table class="book-table">
-            <thead>
-              <tr>
-                <th style="width:20%;">문화 영역</th>
-                <th style="width:42%;">대표 유산 및 기출 사료 단서</th>
+                <th style="width:20%;">후기 문화 영역</th>
+                <th style="width:42%;">대표 인물 · 유산 및 연대 단서</th>
                 <th>시대 · 양식 특징 및 오답 구별 포인트</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="font-bold text-emerald-300">목판 · 금속활자<br/>인쇄술</td>
-                <td>· 목판: 현종 <strong>초조대장경</strong>(1232 소실) ➔ 고종 <strong>팔만대장경(재조대장경, 강화도 대장도감, 해인사 보관)</strong><br/>· 금속활자: <strong>｢상정고금예문｣(1234, 비현존)</strong> ➔ <strong>｢직지심체요절｣(1377, 청주 흥덕사, 현존 세계 최고)</strong></td>
-                <td>· 해인사 팔만대장경은 거란이 아닌 <strong>몽골 침입(강화도)</strong> 때 판각된 재조대장경!<br/>· ｢직지심체요절｣은 구텐베르크 성서보다 78년 앞선 유네스코 세계기록유산</td>
+                <td class="font-bold text-emerald-300">불교 결사 ·<br/>성리학 · 역사서</td>
+                <td>· 불교 결사: <strong>지눌</strong>(송광사 수선사·조계종·<strong>돈오점수/정혜쌍수</strong>) · <strong>혜심</strong>(｢선문염송집｣·<strong>유불일치설</strong>) · <strong>요세</strong>(강진 만덕사 백련결사) · <strong>보우</strong>(공민왕, 임제종)<br/>· 역사서: <strong>이규보 ｢동명왕편｣(1193)</strong> · <strong>각훈 ｢해동고승전｣(1215)</strong> ➔ <strong>일연 ｢삼국유사｣(1281경)</strong> · <strong>이승휴 ｢제왕운기｣(1287)</strong> ➔ <strong>이제현 ｢사략｣(1357)</strong><br/>· 성리학: <strong>안향</strong>(도입·섬학전) ➔ <strong>백이정</strong> ➔ 만권당 <strong>이제현</strong>(｢역옹패설｣) ➔ 공민왕 성균관 <strong>이색</strong>(｢목은집｣)·정몽주</td>
+                <td>· <strong>｢삼국유사｣·｢제왕운기｣</strong>는 모두 원 간섭기 저술로 <strong>단군 신화 수록</strong>(｢제왕운기｣는 발해사 포함·'별도의 천하')<br/>· 성리학 계보는 <strong>안향 ➔ 백이정 ➔ 이제현(만권당) ➔ 이색(성균관)</strong> 순서 파악</td>
               </tr>
               <tr>
-                <td class="font-bold text-amber-300">청자 · 공예 · 불화</td>
-                <td>· 도자기: 11세기 <strong>비색 순청자</strong>(서긍 ｢선화봉사고려도경｣) ➔ 12세기 중엽 <strong>상감청자</strong>(최자 ｢보한집｣)<br/>· 공예·회화: <strong>청동 은입사 포류수금문 정병</strong>, <strong>나전 국화넝쿨무늬 합</strong>, <strong>수월관음도</strong>, <strong>감지금니 묘법연화경·｢법화경서탑도｣</strong></td>
-                <td>· 상감청자는 표면을 파고 백토·자토(흑토)를 메워 굽는 고려 독창 기법<br/>· 조선 분청사기·백자와 구분하여 12세기 상감청자 전성기 숙지</td>
+                <td class="font-bold text-amber-300">인쇄술 · 청자 ·<br/>공예 · 불화</td>
+                <td>· 목판·활자: 고종 <strong>팔만대장경(재조대장경)</strong>(1236년부터 1251년까지, 강화 대장도감·선원사 ➔ 해인사) / <strong>｢상정고금예문｣(1234, 비현존)</strong> ➔ 우왕 <strong>｢직지심체요절｣(1377, 청주 흥덕사, 백운 화상)</strong><br/>· 공예·회화: 12세기 <strong>상감청자</strong>(강진·부안, 운학문 매병·표주박모양 주전자, ｢보한집｣) · <strong>상형자기</strong>(어룡모양 주전자·투각 칠보무늬 향로) · <strong>청동 은입사 포류수금문 정병</strong> · <strong>나전 국화넝쿨무늬 합</strong> · 감지금니 사경 · <strong>｢수월관음도｣</strong> · <strong>혜허 ｢양류관음도｣</strong></td>
+                <td>· <strong>｢상정고금예문｣(1234, 비현존)</strong> vs <strong>｢직지심체요절｣(1377, 현존 최고 금속활자본, 유네스코 세계기록유산)</strong><br/>· 상감청자는 조선 <strong>분청사기·백자 달항아리</strong>와 시대 구별 / 청동 은입사 정병은 도자기가 아니라 <strong>금속 입사 공예</strong>!</td>
               </tr>
               <tr>
-                <td class="font-bold text-sky-300">불상 · 석탑 ·<br/>목조 건축</td>
-                <td>· 불상: <strong>하남 하사창동 철불</strong>, <strong>논산 관촉사 석조미륵보살입상(은진미륵)</strong>, <strong>영주 부석사 소조여래좌상</strong><br/>· 석탑: <strong>평창 월정사 8각 9층 석탑</strong>(송 영향) vs <strong>개성 경천사지 10층 석탑(1348, 원 대리석)</strong><br/>· 건축: <strong>주심포</strong>(<strong>봉정사 극락전·부석사 무량수전·수덕사 대웅전</strong>) vs <strong>다포</strong>(<strong>성불사 응진전·심원사 보광전</strong>)</td>
-                <td>· 봉정사 극락전·부석사 무량수전·수덕사 대웅전은 조선이 아닌 <strong>고려 후기 주심포 양식</strong>!<br/>· 경천사지 10층 석탑 ➔ <strong>조선 세조 서울 원각사지 10층 석탑</strong>에 영향</td>
+                <td class="font-bold text-sky-300">석탑 ·<br/>목조 건축</td>
+                <td>· 석탑: 충목왕 <strong>개성 경천사지 10층 석탑(1348, 원 라마교 대리석탑)</strong><br/>· 주심포: <strong>안동 봉정사 극락전</strong>(12세기 말에서 13세기 초 건립 추정·공민왕 1363 중수, 최고 목조)·<strong>예산 수덕사 대웅전</strong>(충렬왕 1308 건립, 맞배지붕)·<strong>영주 부석사 무량수전</strong>(우왕 1376 중수, 배흘림기둥·소조여래좌상)<br/>· 다포: <strong>황해 사리원 성불사 응진전</strong>(충숙왕 1327)·<strong>황주 심원사 보광전</strong>(1374)</td>
+                <td>· <strong>경천사지 10층 석탑</strong>(고려 후기) ➔ <strong>조선 세조 서울 원각사지 10층 석탑(1467)</strong>에 영향!<br/>· <strong>성불사 응진전</strong>은 주심포가 아니라 기둥 사이에도 공포를 둔 <strong>다포 양식</strong>임에 주의!</td>
               </tr>
             </tbody>
           </table>
@@ -340,38 +407,38 @@
     <!-- 시각 도식 -->
     <div class="para-block diagram-wrapper">
       <div class="diagram-container" id="diagramGoryeoCulture">
-      <span class="text-xs font-bold text-emerald-400 block mb-2">핵심 비교 도식 — 전시과·과전법 변천 및 고려 불교(의천 vs 지눌)·문화유산 총정리</span>
+      <span class="text-xs font-bold text-emerald-400 block mb-2">핵심 비교 도식 — 고려 토지·경제 흐름과 전기·후기 사상·문화유산 연대기 총정리</span>
       <div class="schema-board">
         <div class="schema-panel">
-          <div class="schema-panel-title">📌 고려 토지 제도의 변천 및 화폐·대외 무역·가족 제도</div>
+          <div class="schema-panel-title">📌 1절 토지·상업·화폐·벽란도 ➔ 2절 신분·구휼·가족 · 전기 문화(10세기부터 12세기 중반까지)</div>
           <div class="space-y-2.5">
             <div class="schema-subgrid">
               <div class="schema-box">
-                <span class="schema-box-title">전시과 ➔ 녹과전 ➔ 과전법 변천</span>
-                <span class="schema-box-desc">• <b>역분전(태조)</b>: 공신 인품·공로<br/>• <b>시정전시과(경종)</b>: 관품 + 인품 (전·현직)<br/>• <b>개정전시과(목종)</b>: 18과 관품만 (전·현직)<br/>• <b>경정전시과(문종)</b>: 관품만, <b>오직 '현직' 지급!</b><br/>• <b>녹과전(원종)</b>: 경기 8현 ➔ <b>과전법(1391)</b>: 경기 한정</span>
+                <span class="schema-box-title">수조권 6단계 · 화폐 · 벽란도</span>
+                <span class="schema-box-desc">• <b>역분전(태조 940)</b> ➔ <b>시정전시과(경종 976)</b>[관품+인품] ➔ <b>개정전시과(목종 998)</b>[관품만, 전현직] ➔ <b>경정전시과(문종 1076)</b>[<b>오직 현직만!</b>] ➔ <b>녹과전(원종 1271)</b>[경기 8현] ➔ <b>과전법(공양왕 1391)</b>[<b>경기 한정</b>]<br/>• 상업·화폐: <b>경시서</b>·관영 상점·<b>사개치부법</b> / <b>건원중보(성종)</b> ➔ <b>주전도감(숙종: 활구·삼한통보·해동통보)</b> ➔ <b>저화(공양왕)</b> / <b>벽란도</b>(아라비아 '코리아') · 이암 <b>｢농상집요｣</b> · 문익점 <b>목화씨</b></span>
               </div>
               <div class="schema-box">
-                <span class="schema-box-title">상업 · 화폐 · 벽란도 · 농업 혁신</span>
-                <span class="schema-box-desc">• 상업·회계: 개경 <b>경시서</b>·관영 상점·<b>사개치부법</b><br/>• 화폐: <b>건원중보</b>(성종) ➔ 주전도감(숙종: <b>활구[은병]·삼한통보·해동통보</b>) ➔ <b>저화</b>(공양왕)<br/>• 무역·농업: 예성강 <b>벽란도</b>(아라비아 상인) / <b>이암 ｢농상집요｣</b> · <b>문익점 목화씨</b></span>
+                <span class="schema-box-title">사회·가족 · 전기 사상·교육·역사 ①</span>
+                <span class="schema-box-desc">• 사회·가족: <b>고려 백정=일반 농민</b>(vs 조선 천민), <b>보(제위보)·도감(구제도감)·동서대비원·혜민국</b>, <b>서류부가혼(남귀여가혼)·자녀 균분 상속·윤회 봉사·재가 자유·사위와 외손자 음서</b><br/>• 10세기부터 12세기 중반까지: <b>왕건 청동상·균여·철당간·관촉사 은진미륵</b> ➔ <b>초조대장경·현화사비(천희/태평)</b> ➔ 전기에서 중기(10세기 말부터 11세기) <b>월정사 8각 9층 석탑</b>(송 다각 다층 양식)·11세기 <b>비색 순청자</b> ➔ <b>최충 9재 학당</b> ➔ <b>의천</b>(흥왕사 교장도감·국청사 해동 천태종·<b>교관겸수</b>) ➔ <b>예종 7재·양현고</b> ➔ <b>김부식 ｢삼국사기｣(1145, 기전체)</b></span>
               </div>
             </div>
-            <div class="schema-alert">※ 고려 신분·가족: 백정 = 일반 양인 농민(조선과 다름!) / 자녀 균분 상속 · 윤번 봉사 · 서류부가혼 · 재가 자유 · 사위와 외손자 음서 적용</div>
+            <div class="schema-alert">※ 구별 핵심: 경정전시과(오직 현직) vs 과전법(경기 지방 한정, 전·현직) / 고려 의천(교종 중심 천태종) vs 후기 지눌(선종 중심 조계종)!</div>
           </div>
         </div>
         <div class="schema-panel">
-          <div class="schema-panel-title">📌 고려 불교 통합 · 교육(성리학) · 역사서 · 문화유산</div>
+          <div class="schema-panel-title">📌 3절 고려 후기 불교 결사·성리학 · 인쇄·공예·석탑·건축 완성 ② (12세기 중후반부터 1392년까지)</div>
           <div class="space-y-2.5">
             <div class="schema-subgrid">
               <div class="schema-box">
-                <span class="schema-box-title">불교 통합 (의천 vs 지눌) · 교육·성리학</span>
-                <span class="schema-box-desc">• <b>균여</b>(광종): 귀법사 · ｢보현십원가｣<br/>• <b>의천</b>(숙종): 흥왕사 교장도감(속장경)·국청사 해동 천태종(교종 중심)·<b>교관겸수</b><br/>• <b>지눌</b>(무신기): 송광사 수선사·조계종(선종 중심)·<b>돈오점수/정혜쌍수</b> (제자 <b>혜심: 유불일치설</b> / <b>요세: 백련결사</b>)<br/>• 교육: 최충 <b>9재 학당</b> vs 예종 <b>7재·양현고</b> ➔ <b>안향·만권당·이색 성균관</b></span>
+                <span class="schema-box-title">불교 결사 · 자주 역사서 · 성리학 계보</span>
+                <span class="schema-box-desc">• 불교 결사: <b>지눌</b>(송광사 수선사·조계종·<b>돈오점수/정혜쌍수</b>·독경/선/노동) · <b>혜심</b>(｢선문염송집｣·<b>유불일치설</b>) · <b>요세</b>(만덕사 백련결사) ➔ 공민왕 <b>보우</b>(임제종)<br/>• 역사서: <b>｢동명왕편｣(1193)·｢해동고승전｣(1215)</b> ➔ 원 간섭기 <b>｢삼국유사｣(1281경, 일연)·｢제왕운기｣(1287, 이승휴)</b>[단군·발해사] ➔ <b>｢사략｣(1357, 이제현)</b><br/>• 성리학: <b>안향</b>(도입·섬학전) ➔ <b>백이정</b> ➔ 만권당 <b>이제현</b> ➔ 성균관 <b>이색·정몽주</b></span>
               </div>
               <div class="schema-box">
-                <span class="schema-box-title">역사서 · 인쇄술 · 건축 · 석탑</span>
-                <span class="schema-box-desc">• 역사서: <b>｢삼국사기｣</b>(기전체) ➔ <b>｢동명왕편｣·｢해동고승전｣</b> ➔ <b>｢삼국유사｣·｢제왕운기｣</b>(단군 신화) ➔ <b>｢사략｣</b><br/>• 인쇄·공예: <b>팔만대장경</b>, 청주 흥덕사 <b>｢직지심체요절｣(1377)</b>, 12세기 <b>상감청자</b>, 청동 은입사 정병, 수월관음도<br/>• 건축: <b>주심포</b>(봉정사 극락전·부석사 무량수전·수덕사 대웅전) vs <b>다포</b>(성불사 응진전·심원사 보광전)</span>
+                <span class="schema-box-title">대장경 · 금속활자 · 청자 · 석탑 · 건축</span>
+                <span class="schema-box-desc">• 인쇄술: 강화 <b>팔만대장경</b>(1236년부터 1251년까지, 대장도감·선원사 ➔ 해인사) / <b>｢상정고금예문｣(1234, 비현존)</b> ➔ 청주 흥덕사 <b>｢직지심체요절｣(1377, 백운 화상, 현존 세계 최고)</b><br/>• 공예·불화: <b>상감청자</b>·<b>상형자기</b>(어룡모양 주전자·칠보무늬 향로)·은입사 정병·<b>나전칠기</b>·<b>｢수월관음도｣·혜허 ｢양류관음도｣</b><br/>• 건축: <b>주심포</b>(봉정사 극락전·수덕사 대웅전·부석사 무량수전) vs <b>다포</b>(성불사 응진전·심원사 보광전)</span>
               </div>
             </div>
-            <div class="schema-alert">※ 평창 월정사 8각 9층 석탑(송 영향) vs 개성 경천사지 10층 석탑(원 대리석 양식 ➔ 조선 세조 서울 원각사지 10층 석탑에 영향!)</div>
+            <div class="schema-alert">※ 석탑 비교: 평창 월정사 8각 9층 석탑(고려 전기, 송 영향) vs 개성 경천사지 10층 석탑(1348, 원 라마교 대리석탑 ➔ 조선 서울 원각사지 10층 석탑 모태)!</div>
           </div>
         </div>
       </div>
@@ -380,8 +447,8 @@
         <div class="sidenote-box">
           <div class="sidenote-title">핵심 도식 판독 가이드</div>
           <ul class="sidenote-list">
-            <li><strong>도식 주제</strong>: 전시과·과전법 변천 및 고려 불교(의천 vs 지눌)·문화유산 총정리</li>
-            <li><strong>활용법</strong>: 서술형 문단에서 익힌 인과 흐름을 좌우 대조표로 1초 판별하십시오.</li>
+            <li><strong>도식 주제</strong>: 고려 경제·사회 흐름 및 전기·후기 사상·문화 연대기 총정리</li>
+            <li><strong>활용법</strong>: 단방향 연대기로 읽은 내용을 전·후기 대조표로 1초 판별하십시오.</li>
           </ul>
         </div>
       </aside>
@@ -415,7 +482,7 @@
   <script>
     const QUIZ_3_3 = [
       {
-        id: "3-3-1",
+        id: "3-3-01",
         grade: "S",
         text: "고려 경종 때 제정된 시정전시과는 4색 공복을 바탕으로 관품과 함께 주관적 기준인 인품을 병행 적용하여 전·현직 관리에게 토지를 지급하였다.",
         isCorrect: true,
@@ -423,7 +490,7 @@
         explanation: "태조의 역분전(940년)을 계승해 경종 원년(976년)에 제정된 시정전시과는 아직 호족 세력이 남아 있던 현실을 감안하여 4색 공복을 바탕으로 관품과 인품을 병행 적용해 전·현직 관리에게 전지와 시지를 지급하였습니다."
       },
       {
-        id: "3-3-2",
+        id: "3-3-02",
         grade: "S",
         text: "목종 때 단행된 개정전시과는 퇴직한 전직 관리를 지급 대상에서 제외하고 오직 현직 관리에게만 수조권을 지급하였다.",
         isCorrect: false,
@@ -431,23 +498,23 @@
         explanation: "목종 때의 개정전시과(998년)는 인품 기준을 폐지하고 18과 관품만을 적용하되 여전히 전·현직 관리 모두에게 토지를 지급하였습니다. 퇴직자를 배제하고 오직 현직 관리에게만 수조권을 지급하도록 축소한 것은 문종 때의 경정전시과(1076년)입니다. 💡 1초 판별 팁: 개정전시과(목종) = 관품만·전현직 지급 / 경정전시과(문종) = 관품만·오직 현직 지급!"
       },
       {
-        id: "3-3-3",
+        id: "3-3-03",
         grade: "S",
-        text: "고려의 공음전은 5품 이상의 고위 관료에게 지급되었으나, 원칙적으로 자손에게 세습하는 것은 엄격히 금지되었다.",
+        text: "고려의 공음전은 5품 이상의 고위 관료에게 지급되었으며, 일반 과전과 마찬가지로 관직에서 퇴직하거나 사망하면 국가에 반납하는 것이 원칙이었다.",
         isCorrect: false,
-        source: "한능검 심화 빈출 함정 (세습 여부 뒤집기)",
-        explanation: "공음전은 문벌귀족이 경제력을 세습할 수 있었던 핵심 기반으로, 5품 이상 고위 관리에게 지급되어 국가에 반납하지 않고 자손에게 합법적으로 세습되었습니다. 사망·퇴직 시 반납해야 했던 것은 일반 관료가 받은 과전입니다. 💡 1초 판별 팁: 일반 과전 = 반납 원칙 / 공음전(5품 이상) = 세습 허용!"
+        source: "한능검 심화 빈출 함정 (공음전 vs 일반 과전 반납 원칙 교차)",
+        explanation: "공음전은 문벌귀족이 경제력을 세습할 수 있었던 핵심 기반으로, 5품 이상 고위 관리에게 지급되어 자손에게 합법적으로 세습되었습니다. 사망하거나 퇴직할 때 국가에 반납해야 했던 원칙은 일반 관료가 받은 '과전'에 해당하는 사실입니다. 💡 1초 판별 팁: 일반 과전 = 사망·퇴직 시 반납 원칙 / 공음전(5품 이상) = 자손 세습 허용!"
       },
       {
-        id: "3-3-4",
+        id: "3-3-04",
         grade: "S",
-        text: "원종 때 실시된 녹과전은 권문세족의 농장을 몰수하고 전국 모든 도의 토지를 대상으로 전·현직 관리에게 수조권을 지급한 제도였다.",
+        text: "원종 때 실시된 녹과전은 권문세족의 불법 농장을 몰수하고 경기 지방의 토지에 한하여 전·현직 관리에게 수조권을 지급한 제도였다.",
         isCorrect: false,
-        source: "제74회 심화 18번, 제79회 심화 19번 변형 (녹과전 vs 과전법 혼동)",
-        explanation: "1271년(원종 12년) 개경 환도 직후 실시된 녹과전은 녹봉 부족을 메우기 위해 '경기 8현'의 토지를 '현직 관리'에게 나누어 준 임시 미봉책이었습니다. 권문세족의 농장을 몰수하고 경기 지방 토지에 한해 전·현직 관리에게 수조권을 지급한 것은 1391년(공양왕 3년) 과전법입니다. 💡 1초 판별 팁: 녹과전(원종 1271) = 경기 8현·현직 임시 지급 / 과전법(공양왕 1391) = 경기 지방 한정·전현직 지급!"
+        source: "제74회 심화 18번, 제79회 심화 19번 변형 (원종 녹과전 vs 공양왕 과전법 교차)",
+        explanation: "1271년(원종 12년) 개경 환도 직후 실시된 녹과전은 녹봉 부족을 메우기 위해 '경기 8현'의 토지를 '현직 관리'에게 나누어 준 임시 미봉책이었습니다. 권문세족의 농장을 몰수하고 경기 지방 토지에 한해 전·현직 관리에게 수조권을 지급한 제도는 1391년(공양왕 3년) 조준·정도전 등 신진사대부가 공포한 '과전법'입니다. 💡 1초 판별 팁: 녹과전(원종 1271) = 경기 8현·현직 임시 지급 / 과전법(공양왕 1391) = 경기 지방 한정·전현직 지급!"
       },
       {
-        id: "3-3-5",
+        id: "3-3-05",
         grade: "S",
         text: "예성강 어귀의 벽란도는 송나라와 거란·여진·일본 상인뿐만 아니라 아라비아(대식국) 상인까지 내항하여 '코리아'라는 이름을 서방에 알린 국제 무역항이었다.",
         isCorrect: true,
@@ -455,7 +522,7 @@
         explanation: "개경 인근 예성강 어귀에 자리한 벽란도는 송·거란·여진·일본은 물론 서역의 아라비아(대식국) 상인까지 왕래하며 수은·향료·산호 등을 교역하여 고려의 국호가 서방 세계에 '코리아'로 널리 알려지는 통로가 되었습니다."
       },
       {
-        id: "3-3-6",
+        id: "3-3-06",
         grade: "A",
         text: "고려 시대 수도 개경에 시전을 설치하고 상행위와 물가를 감독하기 위해 둔 관청은 평시서였다.",
         isCorrect: false,
@@ -463,7 +530,7 @@
         explanation: "고려 시대 개경 시전의 상행위와 물가를 감독한 관청은 '경시서'입니다. '평시서'는 조선 시대 한양 시전을 관장한 기구이며, 신라 수도 경주의 시전을 감독한 기구는 '동시전'입니다. 💡 1초 판별 팁: 신라 경주 = 동시전 / 고려 개경 = 경시서 / 조선 한양 = 평시서!"
       },
       {
-        id: "3-3-7",
+        id: "3-3-07",
         grade: "A",
         text: "고려 성종 때에는 의천의 건의로 주전도감을 설치하고 활구(은병)와 삼한통보·해동통보 등을 주조하였다.",
         isCorrect: false,
@@ -471,15 +538,15 @@
         explanation: "성종 때(996년) 발행된 화폐는 우리나라 최초의 철전인 '건원중보'입니다. 대각국사 의천과 윤관 등의 건의로 주전도감(1097년)을 설치하고 삼한통보·해동통보·활구(은병)를 주조한 시기는 '숙종' 때입니다. 💡 1초 판별 팁: 성종(996) = 건원중보(최초 철전) / 숙종(1097) = 주전도감·삼한통보·해동통보·활구(은병)!"
       },
       {
-        id: "3-3-8",
+        id: "3-3-08",
         grade: "A",
-        text: "고려 후기 충목왕 때 이암은 우리 풍토에 맞는 농법을 정리한 ｢농사직설｣을 편찬하여 보급하였다.",
+        text: "고려 후기 이암은 삼남 지방 농민의 실제 경험을 바탕으로 우리 풍토에 맞는 농법을 정리한 ｢농사직설｣을 편찬하여 보급하였다.",
         isCorrect: false,
-        source: "제74회 심화 17번, 제78회 기출 변형 (농상집요 왕대·농사직설 복합 함정)",
-        explanation: "이암이 원나라의 농서 ｢농상집요｣를 국내에 소개한 시기는 충목왕이 아니라 '충정왕 1년(1349년)'이며 공민왕 때 합천에서 간행되었습니다. 우리 풍토에 맞는 농법을 정리한 ｢농사직설｣은 조선 세종 때 정초·변효문 등이 편찬한 농서입니다. 💡 1초 판별 팁: 이암 ｢농상집요｣ = 충정왕 1년(1349) 도입·공민왕 합천 간행 / ｢농사직설｣ = 조선 세종!"
+        source: "제74회 심화 17번, 제73회 심화 12번 변형 (이암 ｢농상집요｣ vs 조선 세종 ｢농사직설｣ 교차)",
+        explanation: "1349년(충정왕 1년) 이암이 원나라에서 들여와 소개하고 공민왕 때 합천에서 간행한 농서는 중국 강남의 농업 기술을 정리한 ｢농상집요｣입니다. 삼남 지방 농민의 경험을 모아 우리 풍토에 맞는 농법을 정리한 ｢농사직설｣(1429년)은 조선 세종 때 정초·변효문 등이 편찬한 농서입니다. 💡 1초 판별 팁: 고려 충정왕 1년 이암 = 원 농서 ｢농상집요｣ / 조선 세종 정초·변효문 = 우리 풍토 ｢농사직설｣!"
       },
       {
-        id: "3-3-9",
+        id: "3-3-09",
         grade: "S",
         text: "대각국사 의천은 순천 송광사에서 수선사 결사를 주도하고, 선종을 중심으로 교종을 통합하며 돈오점수를 주장하였다.",
         isCorrect: false,
@@ -513,10 +580,10 @@
       {
         id: "3-3-13",
         grade: "S",
-        text: "김부식의 ｢삼국사기｣는 불교 설화를 중심으로 단군왕검의 건국 신화를 최초로 수록하고 향가 14수를 전하고 있다.",
+        text: "김부식이 인종 때 편찬한 ｢삼국사기｣는 춘추관에서 사관의 사초와 시정기를 바탕으로 전왕의 역사를 정리한 실록이었다.",
         isCorrect: false,
-        source: "제77회 심화 17번 (고려 역사서 비교)",
-        explanation: "김부식의 ｢삼국사기｣(1145년, 인종)는 유교적 합리주의 사관에 입각한 현존 최고 기전체 관찬 정사로, 단군 신화를 수록하지 않았습니다. 단군왕검의 건국 신화를 최초로 수록하고 불교 설화와 향가 14수를 전하는 역사서는 원 간섭기 일연의 ｢삼국유사｣입니다. 💡 1초 판별 팁: ｢삼국사기｣(김부식) = 단군 신화 미수록 / ｢삼국유사｣(일연) = 단군 신화·향가 14수 수록!"
+        source: "제79회 심화 15번, 제77회 심화 17번 변형 (｢삼국사기｣ vs ｢조선왕조실록｣ 교차)",
+        explanation: "김부식의 ｢삼국사기｣(1145년, 인종)는 유교적 합리주의 사관에 입각해 본기·연표·지·열전의 기전체로 편찬한 우리나라 현존 최고의 관찬 정사입니다. 춘추관에서 사관이 기록한 사초와 시정기를 바탕으로 전왕 사후에 편찬한 역사서는 조선 시대의 ｢조선왕조실록｣입니다. 💡 1초 판별 팁: 김부식(인종 1145) = 기전체 정사 ｢삼국사기｣ / 춘추관 사초·시정기 = ｢조선왕조실록｣!"
       },
       {
         id: "3-3-14",
@@ -539,8 +606,8 @@
         grade: "S",
         text: "안동 봉정사 극락전과 영주 부석사 무량수전은 기둥 사이에도 공포를 촘촘히 올린 조선 후기의 대표적인 다포 양식 건축물이다.",
         isCorrect: false,
-        source: "제74회 심화 13번 (시대·건축 양식 복합 함정)",
-        explanation: "시대와 건축 양식이 모두 틀렸습니다. 안동 봉정사 극락전(현존 최고 목조 건물), 영주 부석사 무량수전(배흘림기둥), 예산 수덕사 대웅전은 '고려 후기'에 건립된 대표적인 '주심포 양식(기둥 위에만 공포 배치)' 건축물입니다. 기둥 사이에도 공포를 올린 고려 말 다포 양식 건물로는 사리원 성불사 응진전과 황주 심원사 보광전이 있습니다. 💡 1초 판별 팁: 봉정사 극락전·부석사 무량수전·수덕사 대웅전 = 고려 후기 주심포!"
+        source: "제74회 심화 13번 변형 (고려 후기 주심포 vs 조선 후기 다포 양식 교차)",
+        explanation: "안동 봉정사 극락전(12세기 말에서 13세기 초 건립·공민왕 때 중수, 현존 최고 목조 건물), 영주 부석사 무량수전(배흘림기둥), 예산 수덕사 대웅전(1308년 건립)은 고려 시대의 대표적인 '주심포 양식(기둥 위에만 공포 배치)' 건축물입니다. 기둥 사이에도 공포를 올린 다포 양식 건축물로는 원 간섭기 이후 건립된 황해 사리원 성불사 응진전(1327년)·황주 심원사 보광전(1374년)과 조선 후기 구례 화엄사 각황전 등이 있습니다. 💡 1초 판별 팁: 봉정사 극락전·부석사 무량수전·수덕사 대웅전 = 고려 후기 대표 주심포!"
       },
       {
         id: "3-3-17",
@@ -561,18 +628,18 @@
       {
         id: "3-3-19",
         grade: "S",
-        text: "고려 시대의 백정은 도축업 등에 종사하던 최하층 천민을 가리켰으며, 일반 양인 농민은 정호라 불렸다.",
+        text: "고려 시대의 백정은 도축업이나 유기 제작 등 천역에 종사하던 최하층 천민 계층을 가리켰다.",
         isCorrect: false,
-        source: "한능검 심화 사각지대 킬러 (고려 백정 vs 조선 백정)",
-        explanation: "도축업에 종사하던 천민을 백정이라 부른 것은 조선 시대의 일입니다. 고려 시대의 '백정'은 국가에 특정 직역을 지지 않는 일반 양인 농민을 뜻하였으며, '정호'는 성인 남자가 있어 군역이나 공역 등 특정 직역을 지는 호구를 가리켰습니다. 💡 1초 판별 팁: 고려 백정 = 일반 양인 농민(직역 없음) / 조선 백정 = 도축업 천민!"
+        source: "한능검 심화 사각지대 킬러 (고려 백정 vs 조선 백정 교차)",
+        explanation: "도축업이나 유기 제작 등 천역에 종사하던 천민 계층을 백정이라 부른 것은 '조선 시대'의 사실입니다. 고려 시대의 '백정'은 국가에 특정 직역을 지지 않는 일반 양인 농민을 뜻하였으며, 성인 남자가 있어 군역·공역 등 직역을 지는 호구는 '정호'라 불렸습니다. 💡 1초 판별 팁: 고려 백정 = 직역 없는 일반 양인 농민 (직역 있는 호구는 정호) / 조선 백정 = 도축업 천민!"
       },
       {
         id: "3-3-20",
         grade: "S",
-        text: "고려 시대에는 성리학적 가부장제에 따라 부모의 제사는 장남이 독점하여 모셨으며, 여성의 재가(재혼)와 호주 등록은 법적으로 금지되었다.",
+        text: "고려 시대에는 부모의 제사를 장남이 단독으로 모셨으며, 재가한 여성의 자손은 문과 응시가 법적으로 제한되었다.",
         isCorrect: false,
-        source: "제70회, 제74회 기출 변형 (고려 vs 조선 후기·경국대전 비교)",
-        explanation: "장남 단독 제사는 17세기 이후 조선 후기의 모습이고, 재가녀 자손의 관직 제한은 조선 성종 때 ｢경국대전｣에서 법제화되었습니다. 고려 시대에는 아들과 딸이 돌아가며 제사를 지내는 '윤번 봉사'와 자녀 균분 상속이 일반적이었으며, 여성이 호주가 될 수 있고 이혼과 재가도 자유로웠습니다. 💡 1초 판별 팁: 고려 가족 = 자녀 균분 상속·윤번 봉사·서류부가혼·여성 호주·재가 자유·사위와 외손자 음서 적용!"
+        source: "제70회, 제74회 기출 변형 (고려 가족 제도 vs 조선 후기·｢경국대전｣ 교차)",
+        explanation: "장남이 제사를 독점하는 관행은 17세기 이후 '조선 후기' 성리학적 가부장제가 정착되면서 나타난 모습이며, 재가녀 자손의 문과 응시를 법적으로 제한한 것은 '조선 성종 때 ｢경국대전｣'의 규정입니다. 고려 시대에는 아들과 딸이 돌아가며 제사를 지내는 '윤번 봉사'가 일반적이었고, 여성의 이혼과 재가가 자유로워 재가녀 자손의 관직 진출에도 차별이 없었습니다. 💡 1초 판별 팁: 고려 = 윤번 봉사·균분 상속·재가 자유 / 조선 후기 = 장남 단독 제사, 조선 경국대전 = 재가녀 자손 문과 제한!"
       },
       {
         id: "3-3-21",
@@ -601,10 +668,10 @@
       {
         id: "3-3-24",
         grade: "S",
-        text: "[의천] 이 승려는 무신정변 이후 불교계의 타락을 비판하며 순천 송광사에서 수선사 결사를 주도하고 돈오점수와 정혜쌍수를 주장하였다.",
+        text: "[의천] 이 승려는 지눌의 뒤를 이어 수선사 제2세 사주가 되었으며, ｢선문염송집｣을 편찬하고 유불일치설을 주장하였다.",
         isCorrect: false,
-        source: "한능검 사료 추론 · 의천과 지눌 비교",
-        explanation: "문종의 넷째 아들로 국청사에서 해동 천태종을 개창하고 교관겸수를 제창한 인물은 '의천'입니다. 무신정변 이후 순천 송광사(길상사)에서 수선사 결사를 이끌며 돈오점수와 정혜쌍수를 주장한 인물은 '지눌'입니다. 💡 1초 판별 팁: 의천(문종 아들) = 국청사 천태종·교관겸수 / 지눌(무신정권기) = 송광사 수선사·돈오점수·정혜쌍수!"
+        source: "한능검 사료 추론 · 제70회 심화 12번 변형 (의천 vs 혜심 교차)",
+        explanation: "문종의 넷째 아들로 국청사에서 해동 천태종을 개창하고 교관겸수를 제창한 인물은 '대각국사 의천'입니다. 지눌의 뒤를 이어 수선사 제2세 사주가 되어 간화선을 보급하고 ｢선문염송집｣을 편찬하며 '유불일치설'을 주장한 승려는 무신집권기의 '진각국사 혜심'입니다. 💡 1초 판별 팁: 의천(문종 왕자) = 해동 천태종·교관겸수 / 혜심(지눌 제자) = ｢선문염송집｣·유불일치설!"
       },
       {
         id: "3-3-25",
